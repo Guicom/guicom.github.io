@@ -6,13 +6,20 @@
 /web/themes/contrib/
 /web/profiles/contrib/
 /web/libraries/
+/web/node_modules
+/config/drupal/local
 
 # Ignore sensitive information
 /web/sites/*/settings.php
 /web/sites/*/settings.local.php
+/phing/build.properties.local
+/config/drupal/settings.local.php
+
 
 # Ignore Drupal's file directory
 /web/sites/*/files/
+/data
+
 
 # Ignore SimpleTest multi-site environment.
 /web/sites/simpletest
@@ -24,3 +31,5 @@
 /.env
 .idea
 docker-compose.yml
+
+
