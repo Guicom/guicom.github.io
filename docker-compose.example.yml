@@ -8,22 +8,22 @@ services:
       - "80:80"
       #- "9001:9000"
     environment:
-      - SERVERNAME=socomec.com.loc
-      - SERVERALIAS=socomec.com.loc
+      - SERVERNAME=socomec_com.loc
+      - SERVERALIAS=socomec_com.loc
       - DOCUMENTROOT=web
       - DRUSH_VERSION=9
     volumes:
-      - /home/docker/projets/praeconis/:/var/www/html
-      - /home/docker/projets/praeconis/:/var/www/.ssh/
+      - /home/docker/projets/socomec/:/var/www/html
+      - /home/docker/projets/socomec/:/var/www/.ssh/
     links:
       - database:mysql
       - mailhog
     tty: true
     shm_size: 2G
     extra_hosts:
-      - "socomec.com.loc:127.0.0.1"
+      - "socomec_com.loc:127.0.0.1"
       - "docker_host:10.10.10.254" # YOUR IP HERE
-    hostname: "socomec.com.loc"
+    hostname: "socomec_com.loc"
 
   # database container - actency images
   database:
