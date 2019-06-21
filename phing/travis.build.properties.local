@@ -1,0 +1,25 @@
+# Drupal configuration DB
+# --------------------
+
+# The base URL.
+drupal.base_url = 127.0.0.1
+drupal.base_url_http = http://127.0.0.1
+drupal.travis.base_url_http = ${drupal.base_url_http}:8080
+
+# Database settings.
+drupal.db.type = mysql
+drupal.db.name = praeconis
+drupal.db.user = root
+drupal.db.password =
+drupal.db.host = 127.0.0.1
+drupal.db.port = 3306
+drupal.db.url = ${drupal.db.type}://${drupal.db.user}:${drupal.db.password}@${drupal.db.host}:${drupal.db.port}/${drupal.db.name}
+
+# Admin user.
+drupal.admin.username = admin
+drupal.admin.password = admin
+drupal.admin.email = admin@actency.fr
+
+# Database import on deploy (TRUE or FALSE)
+# -------------------
+db.deploy.import = FALSE

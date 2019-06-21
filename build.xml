@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<project name="ProjectName" default="help">
+
+    <!-- property-definitions are overridden in ascending order  -->
+    <property file="vendor/actency/phing/phing/build.properties.global"/>
+    <property file="phing/build.properties.project"/>
+    <property file="phing/build.properties.local"/>
+    <!-- phing/build.properties.local is generate add load in build-properties.xml file -->
+
+    <target name="help" description="Phing target list">
+        <exec executable="${phing.bin}"
+              passthru="true">
+            <arg value="-l"/>
+        </exec>
+    </target>
+
+    <!-- Load customs tasks files -->
+    <import file="vendor/actency/phing/phing/tasks/backup.xml"/>
+    <import file="vendor/actency/phing/phing/tasks/behat.xml"/>
+    <import file="vendor/actency/phing/phing/tasks/bower.xml"/>
+    <import file="vendor/actency/phing/phing/tasks/build.xml"/>
+    <import file="vendor/actency/phing/phing/tasks/build-properties.xml"/>
+    <import file="vendor/actency/phing/phing/tasks/cache.xml"/>
+    <import file="vendor/actency/phing/phing/tasks/composer.xml"/>
+    <import file="vendor/actency/phing/phing/tasks/database.xml"/>
+    <import file="vendor/actency/phing/phing/tasks/dev-rebuild.xml"/>
+    <import file="vendor/actency/phing/phing/tasks/drupal-console.xml"/>
+    <import file="vendor/actency/phing/phing/tasks/drush.xml"/>
+    <import file="vendor/actency/phing/phing/tasks/encryption.xml"/>
+    <import file="vendor/actency/phing/phing/tasks/gulp.xml"/>
+    <import file="vendor/actency/phing/phing/tasks/install.xml"/>
+    <import file="vendor/actency/phing/phing/tasks/maintenance-mode.xml"/>
+    <import file="vendor/actency/phing/phing/tasks/modules.xml"/>
+    <import file="vendor/actency/phing/phing/tasks/rewrite-drushrc-php.xml"/>
+    <import file="vendor/actency/phing/phing/tasks/set-shortcut-uuid.xml"/>
+    <import file="vendor/actency/phing/phing/tasks/site-uuid.xml"/>
+    <import file="vendor/actency/phing/phing/tasks/test.xml"/>
+    <import file="vendor/actency/phing/phing/tasks/theme.xml"/>
+    <import file="vendor/actency/phing/phing/tasks/travis-rebuild.xml"/>
+    <import file="vendor/actency/phing/phing/tasks/update.xml"/>
+    <import file="vendor/actency/phing/phing/tasks/writable-settings.xml"/>
+
+    <import file="phing/tasks/project.xml" optional="true"/>
+
+    <!-- import drush tasks -->
+    <import file="./vendor/drupal/phingdrushtask/import.xml"/>
+
+    <!-- Tasks Group -->
+    <target
+            name="install-local"
+            description="Install the website and set up the local development environment."
+            depends="install"/>
+    <target
+            name="build-local"
+            description="Rebuild the local environment."
+            depends="build"/>
+</project>

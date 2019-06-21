@@ -1,0 +1,29 @@
+# Drupal configuration DB
+# --------------------
+
+# The base URL.
+drupal.base_url = ${website.project.name}.loc
+drupal.base_url_http = http://${drupal.base_url}
+drupal.travis.base_url_http = ${drupal.base_url_http}:80
+
+# Database settings.
+drupal.db.type = mysql
+drupal.db.name = ${website.db.name}
+drupal.db.user = mysqlusr
+drupal.db.password = mysqlpwd
+drupal.db.host = mysql
+drupal.db.port = 3306
+drupal.db.url = ${drupal.db.type}://${drupal.db.user}:${drupal.db.password}@${drupal.db.host}:${drupal.db.port}/${drupal.db.name}
+
+# Admin user.
+drupal.admin.username = admin
+drupal.admin.password = admin
+drupal.admin.email = admin@actency.fr
+
+# Database import on deploy (TRUE or FALSE)
+# -------------------
+db.deploy.import = FALSE
+
+# Database reference
+# -------------------
+db.file.ref = database.sql.gz

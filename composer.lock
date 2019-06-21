@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "git@gitlab.com:actency/phing.git",
-                "reference": "c7ade652b5ed4349cb0529e4f17a166661168d4d"
+                "reference": "edd135d357089e8073d55335ff11913638ef3d74"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://gitlab.com/api/v4/projects/actency%2Fphing/repository/archive.zip?sha=c7ade652b5ed4349cb0529e4f17a166661168d4d",
-                "reference": "c7ade652b5ed4349cb0529e4f17a166661168d4d",
+                "url": "https://gitlab.com/api/v4/projects/actency%2Fphing/repository/archive.zip?sha=edd135d357089e8073d55335ff11913638ef3d74",
+                "reference": "edd135d357089e8073d55335ff11913638ef3d74",
                 "shasum": ""
             },
             "require": {
@@ -31,10 +31,10 @@
             },
             "scripts": {
                 "post-install-cmd": [
-                    "DrupalProject\\composer\\ActencyScriptHandler::createTestFolder"
+                    "DrupalProject\\composer\\ActencyScriptHandler::createRequiredFiles"
                 ]
             },
-            "time": "2019-06-18T15:48:20+00:00"
+            "time": "2019-06-21T15:18:49+00:00"
         },
         {
             "name": "alchemy/zippy",
@@ -8636,17 +8636,6 @@
         {
             "name": "webflo/drupal-core-require-dev",
             "version": "8.7.3",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/webflo/drupal-core-require-dev.git",
-                "reference": "75d11db587237934914a1cd150e81462665a19aa"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/webflo/drupal-core-require-dev/zipball/75d11db587237934914a1cd150e81462665a19aa",
-                "reference": "75d11db587237934914a1cd150e81462665a19aa",
-                "shasum": ""
-            },
             "require": {
                 "behat/mink": "1.7.x-dev",
                 "behat/mink-goutte-driver": "^1.2",

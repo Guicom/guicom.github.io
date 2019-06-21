@@ -1,0 +1,179 @@
+<project name="project" default="project:help">
+
+    <target name="help" description="Display project help">
+        <echo>No help defined yet.</echo>
+    </target>
+
+    <target name="project:pre-install">
+        <echo>Project Pre-Install</echo>
+    </target>
+
+    <target name="project:pre-build">
+        <echo>Project Pre-Build</echo>
+    </target>
+
+    <target name="project:pre-test">
+        <echo>Project Pre-Test</echo>
+    </target>
+
+    <target name="project:post-test">
+        <echo>Project Post-Test</echo>
+    </target>
+
+    <target name="project:pre-drupal-config-import">
+        <echo>Project Pre-Drupal Config Import</echo>
+        <phingcall target="project:remove-unwanted-config" />
+        <!-- <phingcall target="project:default-language-en" description="Tips to install LDAP correctly"/>-->
+    </target>
+
+    <target name="project:post-install">
+        <echo>Project Post-Install</echo>
+        <!-- Gulp install -->
+        <phingcall target="gulp:install" />
+
+        <!-- theme installation -->
+        <!-- <phingcall target="theme:init" /> -->
+
+        <phingcall target="gulp:css" />
+
+    </target>
+
+    <target name="project:post-build">
+        <echo>Project Post-Build</echo>
+        <phingcall target="project:setup-postinstall" />
+
+        <!--<phingcall target="project:setup-redis-cache" />-->
+
+        <phingcall target="project:temp-fixes" />
+
+        <phingcall target="project:updates" />
+
+        <!-- Gulp build -->
+        <phingcall target="gulp:build" />
+    </target>
+
+    <target name="project:post-drupal-config-import">
+        <echo>Project Post-Drupal Config Import</echo>
+    </target>
+
+    <!-- Specific Tasks -->
+    <target name="project:default-language-en" description="Enable English language and set it as default" >
+        <drush
+            command="en"
+            assume="yes"
+            root="${website.drupal.dir}"
+            bin="${drush.bin}"
+            verbose="${drush.verbose}"
+            uri="${multisite.uri}"
+        >
+            <param>locale</param>
+            <param>drush_language</param>
+        </drush>
+        <drush
+            command="config-set"
+            assume="yes"
+            root="${website.drupal.dir}"
+            bin="${drush.bin}"
+            verbose="${drush.verbose}"
+            uri="${multisite.uri}"
+        >
+            <param>system.site</param>
+            <param>default_langcode</param>
+            <param>en</param>
+        </drush>
+    </target>
+
+    <target name="project:setup-redis-cache" description="Setup REDIS cache backend">
+        <drush
+            command="config-set"
+            assume="yes"
+            root="${website.drupal.dir}"
+            bin="${drush.bin}"
+            verbose="${drush.verbose}"
+            uri="${multisite.uri}"
+        >
+            <param>cache.default</param>
+            <option name="value" value="cache.backend.redis"/>
+        </drush>
+    </target>
+
+    <target name="project:updates" description="Proceed to DB updates">
+        <!-- Perfom DB updates -->
+        <phingcall target="drush:updb" />
+
+        <drush
+            command="php-eval"
+            assume="yes"
+            root="${website.drupal.dir}"
+            bin="${drush.bin}"
+            verbose="${drush.verbose}"
+            uri="${multisite.uri}"
+        >
+            <param>'node_access_rebuild()'</param>
+        </drush>
+    </target>
+
+    <target name="project:setup-postinstall" description="Proceed to post install behaviors">
+        <echo>Project Post-Install</echo>
+    </target>
+
+    <target name="project:remove-unwanted-config" description="Remove unwanted configs">
+        <echo>Remove FR config file</echo>
+        <if>
+            <available file="${website.config.path}/sync/language.entity.fr.yml" />
+            <then>
+                <delete file="${website.config.path}/sync/language.entity.fr.yml" />
+            </then>
+        </if>
+
+        <echo>Remove EN config file</echo>
+        <if>
+            <available file="${website.config.path}/sync/language.entity.en.yml" />
+            <then>
+                <delete file="${website.config.path}/sync/language.entity.en.yml" />
+            </then>
+        </if>
+
+        <echo>Remove cache config file</echo>
+        <if>
+            <available file="${website.config.path}/sync/cache.default.yml" />
+            <then>
+                <delete file="${website.config.path}/sync/cache.default.yml" />
+            </then>
+        </if>
+    </target>
+
+    <target name="project:temp-fixes" description="Proceed to various temporary fixes">
+    </target>
+
+    <!-- Create a ref database-dump for current branch. -->
+    <target name="ld-db-dump">
+        <echo msg="create and save ref database-dump into ${db.tag.dir}/${db.file.ref}" />
+        <drush
+                command="watchdog-delete"
+                assume="yes"
+                root="${website.drupal.dir}"
+                verbose="${drush.verbose}">
+            <param>all</param>
+        </drush>
+
+        <drush
+                command="cr"
+                assume="yes"
+                root="${website.drupal.dir}"
+                verbose="${drush.verbose}">
+        </drush>
+
+        <drush
+                command="sql-dump"
+                assume="yes"
+                root="${website.drupal.dir}"
+                verbose="${drush.verbose}">
+            <option name="gzip" />
+            <option name="result-file">${db.tag.dir}/${db.file.ref}</option>
+        </drush>
+
+        <!-- Naming trick. -->
+        <move file="${db.tag.dir}/${db.file.ref}.gz" tofile="${db.tag.dir}/${db.file.ref}" overwrite="true"/>
+    </target>
+</project>
