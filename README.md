@@ -15,3 +15,8 @@ run ``docker-compose up -d``
 From the web container run ``composer install``
 
 Then, run ``/vendor/bin/phing install``
+
+
+## Theme :
+
+The Socomec theme is a subtheme of Barrio.
