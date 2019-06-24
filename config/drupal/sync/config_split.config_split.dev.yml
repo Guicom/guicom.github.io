@@ -2,7 +2,7 @@ uuid: 638aa725-3544-4a8c-a62e-a64838ba88b4
 langcode: en
 status: false
 dependencies: {  }
-id: dev_config
+id: dev
 label: 'Development config'
 description: 'Development modules & configuration'
 folder: ../config/drupal/dev
