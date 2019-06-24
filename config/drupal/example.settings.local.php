@@ -166,3 +166,9 @@ $settings['redis.connection']['interface'] = 'Predis';
 $settings['redis.connection']['host'] = 'redis';
 // You have to enable these lines AFTER your install (see https://github.com/pantheon-systems/documentation/issues/3215)
 //$settings['cache']['default'] = 'cache.backend.redis';
+
+/**
+ * Config Split overrides.
+ */
+$config['config_split.config_split.dev']['status'] = TRUE;
+$config['config_split.config_split.dev']['folder'] = "../config/drupal/dev";
