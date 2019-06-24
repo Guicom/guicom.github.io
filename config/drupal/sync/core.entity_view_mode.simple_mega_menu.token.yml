@@ -1,0 +1,10 @@
+uuid: 8d5079aa-52bb-4cd3-9a05-e0d1da809220
+langcode: en
+status: true
+dependencies:
+  module:
+    - simple_megamenu
+id: simple_mega_menu.token
+label: Token
+targetEntityType: simple_mega_menu
+cache: true

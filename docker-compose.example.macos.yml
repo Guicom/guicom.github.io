@@ -1,0 +1,56 @@
+version: '2'
+services:
+  # web with xdebug - actency images
+  web:
+    # @see https://github.com/Actency/docker-apache-php
+    image: actency/docker-apache-php:7.2
+    ports:
+      - "80:80"
+      #- "9001:9000"
+    environment:
+      - SERVERNAME=socomec.com.loc
+      - SERVERALIAS=socomec.com.loc
+      - DOCUMENTROOT=web
+      - DRUSH_VERSION=9
+    volumes:
+      - /Users/user/Documents/Docker/Projets/socomec/:/var/www/html/:cached
+      - /Users/user/.ssh/:/var/www/.ssh/:cached
+    links:
+      - database:mysql
+      - mailhog
+    tty: true
+    shm_size: 2G
+    extra_hosts:
+      - "socomec.com.loc:127.0.0.1"
+      - "docker_host:10.200.10.1" # YOUR IP HERE
+    hostname: "socomec.com.loc"
+
+  # database container - actency images
+  database:
+    # @see https://github.com/Actency/docker-mysql
+    image: actency/docker-mysql:5.7
+    ports:
+      - "3306:3306"
+    environment:
+      - MYSQL_ROOT_PASSWORD=mysqlroot
+      - MYSQL_DATABASE=socomec_com
+      - MYSQL_USER=mysqlusr
+      - MYSQL_PASSWORD=mysqlpwd
+
+  # phpmyadmin container - actency images
+  phpmyadmin:
+    image: actency/docker-phpmyadmin
+    ports:
+      - "8010:80"
+    environment:
+      - MYSQL_ROOT_PASSWORD=mysqlroot
+      - UPLOAD_SIZE=1G
+    links:
+      - database:mysql
+
+  # mailhog container - official images
+  mailhog:
+    image: mailhog/mailhog
+    ports:
+      - "1025:1025"
+      - "8025:8025"
