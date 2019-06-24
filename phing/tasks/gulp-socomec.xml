@@ -1,0 +1,10 @@
+<project name="gulp-socomec" default="gulp">
+    <target name="gulp-socomec:install">
+        <exec command="sudo ${npm.bin} install --global gulp-cli" dir="${website.drupal.dir}" passthru="true"/>
+        <exec command="sudo ${npm.bin} install" dir="${website.drupal.dir}" passthru="true"/>
+    </target>
+
+    <target name="gulp-socomec:css">
+        <exec command="gulp styles" dir="${website.drupal.dir}" passthru="true"/>
+    </target>
+</project>
