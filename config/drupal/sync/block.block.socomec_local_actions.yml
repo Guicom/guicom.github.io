@@ -1,0 +1,20 @@
+uuid: f7ec6cfd-d06a-4d04-90cf-077460042c23
+langcode: en
+status: true
+dependencies:
+  theme:
+    - socomec
+_core:
+  default_config_hash: 13GQpeITIJsp1kyPniXtWZfyFH87vb1xxJCHifL4UeE
+id: socomec_local_actions
+theme: socomec
+region: content
+weight: -20
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Primary admin actions'
+  provider: core
+  label_display: '0'
+visibility: {  }

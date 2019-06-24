@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<project name="ProjectName" default="help">
+<project name="Socomec" default="help">
 
     <!-- property-definitions are overridden in ascending order  -->
     <property file="vendor/actency/phing/phing/build.properties.global"/>
@@ -41,6 +41,7 @@
     <import file="vendor/actency/phing/phing/tasks/writable-settings.xml"/>
 
     <import file="phing/tasks/project.xml" optional="true"/>
+    <import file="phing/tasks/gulp-socomec.xml" optional="true"/>
 
     <!-- import drush tasks -->
     <import file="./vendor/drupal/phingdrushtask/import.xml"/>

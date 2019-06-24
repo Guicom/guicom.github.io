@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "7e71409315d4a7c3387e838296cf43f1",
+    "content-hash": "9831bba449621e94a4a6450d2f5efe7e",
     "packages": [
         {
             "name": "actency/phing",
@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "git@gitlab.com:actency/phing.git",
-                "reference": "edd135d357089e8073d55335ff11913638ef3d74"
+                "reference": "fe95d5a4314acb73054d28ba04fefd71ef0dfef1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://gitlab.com/api/v4/projects/actency%2Fphing/repository/archive.zip?sha=edd135d357089e8073d55335ff11913638ef3d74",
-                "reference": "edd135d357089e8073d55335ff11913638ef3d74",
+                "url": "https://gitlab.com/api/v4/projects/actency%2Fphing/repository/archive.zip?sha=fe95d5a4314acb73054d28ba04fefd71ef0dfef1",
+                "reference": "fe95d5a4314acb73054d28ba04fefd71ef0dfef1",
                 "shasum": ""
             },
             "require": {
@@ -34,7 +34,7 @@
                     "DrupalProject\\composer\\ActencyScriptHandler::createRequiredFiles"
                 ]
             },
-            "time": "2019-06-21T15:18:49+00:00"
+            "time": "2019-06-24T07:08:43+00:00"
         },
         {
             "name": "alchemy/zippy",
@@ -2308,6 +2308,110 @@
             "support": {
                 "source": "http://cgit.drupalcode.org/admin_toolbar",
                 "issues": "https://www.drupal.org/project/issues/admin_toolbar"
+            }
+        },
+        {
+            "name": "drupal/bootstrap_barrio",
+            "version": "4.22.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/bootstrap_barrio.git",
+                "reference": "8.x-4.22"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/bootstrap_barrio-8.x-4.22.zip",
+                "reference": "8.x-4.22",
+                "shasum": "93613bd20cd59997d60d6ce036384d46dfb3fce2"
+            },
+            "require": {
+                "drupal/core": "~8.0"
+            },
+            "type": "drupal-theme",
+            "extra": {
+                "branch-alias": {
+                    "dev-4.x": "4.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-4.22",
+                    "datestamp": "1551325387",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "Alberto Siles",
+                    "homepage": "https://www.drupal.org/user/2824325",
+                    "email": "alberto@siles.pe"
+                },
+                {
+                    "name": "hatuhay",
+                    "homepage": "https://www.drupal.org/user/827704"
+                }
+            ],
+            "description": "Bootstrap 4 base theme.",
+            "homepage": "https://www.drupal.org/project/bootstrap_barrio",
+            "support": {
+                "source": "https://git.drupalcode.org/project/bootstrap_barrio"
+            }
+        },
+        {
+            "name": "drupal/bootstrap_sass",
+            "version": "1.9.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/bootstrap_sass.git",
+                "reference": "8.x-1.9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/bootstrap_sass-8.x-1.9.zip",
+                "reference": "8.x-1.9",
+                "shasum": "268aed5386815dff31b2769b649cce817f11b40c"
+            },
+            "require": {
+                "drupal/bootstrap_barrio": "^4.8.0",
+                "drupal/core": "~8.0"
+            },
+            "type": "drupal-theme",
+            "extra": {
+                "branch-alias": {
+                    "dev-1.x": "1.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-1.9",
+                    "datestamp": "1551065287",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "hatuhay",
+                    "homepage": "https://www.drupal.org/user/827704"
+                },
+                {
+                    "name": "ndf",
+                    "homepage": "https://www.drupal.org/user/599438"
+                }
+            ],
+            "description": "SASS subtheme for Barrio Theme.",
+            "homepage": "http://drupal.org/project/bootstrap_sass",
+            "support": {
+                "source": "https://git.drupalcode.org/project/bootstrap_sass"
             }
         },
         {
