@@ -22,9 +22,6 @@ module:
   ctools: 0
   datetime: 0
   dblog: 0
-  devel: 0
-  devel_generate: 0
-  ds_devel: 0
   ds_extras: 0
   dynamic_page_cache: 0
   editor: 0
