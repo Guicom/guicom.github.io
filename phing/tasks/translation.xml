@@ -1,0 +1,24 @@
+<project name="translation" default="translate">
+    <target name="translation:export-fr">
+        <drush
+                command="language-export"
+                assume="yes"
+                root="${website.drupal.dir}"
+                verbose="${drush.verbose}">
+
+            <param>--langcodes=fr</param>
+            <param>--file=./../translations/fr.po</param>
+        </drush>
+    </target>
+
+    <target name="translation:import-fr">
+        <drush
+                command="language-import"
+                assume="yes"
+                root="${website.drupal.dir}"
+                verbose="${drush.verbose}">
+        </drush>
+        <param>--langcodes=fr</param>
+        <param>--file=./../translations/fr.po</param>
+    </target>
+</project>
