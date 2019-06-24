@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "git@gitlab.com:actency/phing.git",
-                "reference": "edd135d357089e8073d55335ff11913638ef3d74"
+                "reference": "fe95d5a4314acb73054d28ba04fefd71ef0dfef1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://gitlab.com/api/v4/projects/actency%2Fphing/repository/archive.zip?sha=edd135d357089e8073d55335ff11913638ef3d74",
-                "reference": "edd135d357089e8073d55335ff11913638ef3d74",
+                "url": "https://gitlab.com/api/v4/projects/actency%2Fphing/repository/archive.zip?sha=fe95d5a4314acb73054d28ba04fefd71ef0dfef1",
+                "reference": "fe95d5a4314acb73054d28ba04fefd71ef0dfef1",
                 "shasum": ""
             },
             "require": {
@@ -34,7 +34,7 @@
                     "DrupalProject\\composer\\ActencyScriptHandler::createRequiredFiles"
                 ]
             },
-            "time": "2019-06-21T15:18:49+00:00"
+            "time": "2019-06-24T07:08:43+00:00"
         },
         {
             "name": "alchemy/zippy",
