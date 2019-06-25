@@ -81,6 +81,10 @@ class MultisiteHandler {
       $fileSystem->appendToFile($settingsLocalPath, PHP_EOL . '  "namespace" => "Drupal\\Core\\Database\\Driver\\mysql",');
       $fileSystem->appendToFile($settingsLocalPath, PHP_EOL . '  "driver" => "mysql",');
       $fileSystem->appendToFile($settingsLocalPath, PHP_EOL . ');');
+      // Add trusted host patterns.
+      $siteDomainRegex = '^' . str_replace('.', '\.', $siteDomain) . '$';
+      $settingsTHP = '$settings["trusted_host_patterns"] = ["' . $siteDomainRegex . '"];';
+      $fileSystem->appendToFile($settingsLocalPath, PHP_EOL . $settingsTHP);
     } catch (IOExceptionInterface $e) {
 
     }
