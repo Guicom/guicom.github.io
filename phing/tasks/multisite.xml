@@ -1,11 +1,33 @@
 <project name="multisite" default="translate">
-    <target name="multisite:generate-site-fr">
-        <drush
-                command="soc_multisite:generate_site"
-                assume="yes"
-                root="${website.drupal.dir}"
-                verbose="${drush.verbose}">
-            <param>socomec_fr</param>
-        </drush>
-    </target>
+
+  <target name="multisite:generate-site-fr">
+    <phingcall target="multisite:prepare-site-fr" />
+    <phingcall target="multisite:install-site-fr" />
+  </target>
+
+  <target name="multisite:prepare-site-fr">
+    <drush
+      command="soc_multisite:generate_site"
+      assume="yes"
+      root="${website.drupal.dir}"
+      verbose="${drush.verbose}">
+      <param>socomec_fr</param>
+    </drush>
+  </target>
+
+  <target name="multisite:install-site-fr">
+    <drush
+      command="site:install"
+      assume="yes"
+      root="${website.drupal.dir}"
+      verbose="${drush.verbose}">
+      <param>standard</param>
+      <param>force</param>
+      <param>no-interaction</param>
+      <option name="locale">fr</option>
+      <option name="uri">socomec.fr.loc</option>
+      <option name="site-name">Socomec France</option>
+    </drush>
+  </target>
+
 </project>
