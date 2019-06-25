@@ -1,0 +1,7 @@
+soc_multisite.create_site_form:
+  path: '/admin/config/socomec/website-factory'
+  defaults:
+    _title: 'Créer un site'
+    _form: '\Drupal\soc_multisite\Form\CreateWebsiteForm'
+  requirements:
+    _permission: 'create new website'

@@ -1,0 +1,5 @@
+name: Socomec Multisite
+type: module
+description: Generate sites from Drupal admin
+core: 8.x
+package: Socomec

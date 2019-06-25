@@ -53,6 +53,7 @@ module:
   search: 0
   shortcut: 0
   simple_megamenu: 0
+  soc_multisite: 0
   system: 0
   taxonomy: 0
   text: 0
