@@ -3,6 +3,7 @@
   <target name="multisite:generate-site-fr">
     <phingcall target="multisite:prepare-site-fr" />
     <phingcall target="multisite:install-site-fr" />
+    <phingcall target="multisite:import-config-site-fr" />
   </target>
 
   <target name="multisite:prepare-site-fr">
@@ -10,7 +11,8 @@
       command="soc_multisite:generate_site"
       assume="yes"
       root="${website.drupal.dir}"
-      verbose="${drush.verbose}">
+      verbose="${drush.verbose}"
+    >
       <param>socomec_fr</param>
     </drush>
   </target>
@@ -20,13 +22,48 @@
       command="site:install"
       assume="yes"
       root="${website.drupal.dir}"
-      verbose="${drush.verbose}">
+      verbose="${drush.verbose}"
+    >
       <param>standard</param>
       <param>force</param>
       <param>no-interaction</param>
-      <option name="locale">fr</option>
       <option name="uri">socomec.fr.loc</option>
       <option name="site-name">Socomec France</option>
+      <option name="locale">fr</option>
+    </drush>
+  </target>
+
+  <target name="multisite:import-config-site-fr">
+    <drush
+      command="pm-uninstall"
+      assume="yes"
+      root="${website.drupal.dir}"
+      bin="${drush.bin}"
+      verbose="${drush.verbose}"
+      uri="socomec.fr.loc"
+    >
+      <param>shortcut</param>
+    </drush>
+    <drush
+      command="config-set"
+      assume="yes"
+      root="${website.drupal.dir}"
+      bin="${drush.bin}"
+      verbose="${drush.verbose}"
+      uri="socomec.fr.loc"
+    >
+      <param>"system.site"</param>
+      <param>"uuid"</param>
+      <param>0af06ffc-9b65-4d85-9658-4120d6f51796</param>
+    </drush>
+    <drush
+      command="config:import"
+      assume="yes"
+      root="${website.drupal.dir}"
+      verbose="${drush.verbose}"
+    >
+      <option name="uri">socomec.fr.loc</option>
+      <option name="source">/var/www/html/config/drupal/sync</option>
     </drush>
   </target>
 
