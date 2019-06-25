@@ -1,7 +1,8 @@
 <?php
 
-namespace Drupal\prae_multisite\Service;
+namespace Drupal\soc_multisite\Service;
 
+use Drupal\Core\Site\Settings;
 use Symfony\Component\Filesystem\Filesystem;
 use Symfony\Component\Filesystem\Exception\IOExceptionInterface;
 use Symfony\Component\Process\Process;
@@ -18,14 +19,17 @@ class MultisiteHandler {
   public function getEnabledSites() {
     $app_root = \Drupal::root();
     // Determine whether multi-site functionality is enabled.
-    if (!file_exists($app_root . '/sites/sites.php')) {
+    $sitesFile = $app_root . '/sites/sites.php';
+    if (!file_exists($sitesFile)) {
       return [];
     }
 
     require $app_root . '/sites/sites.php';
     $list = [];
-    foreach ($sites as $domain => $siteName) {
-      $list[$siteName] = $siteName;
+    if (sizeof($sites)) {
+      foreach ($sites as $domain => $siteName) {
+        $list[$siteName] = $siteName;
+      }
     }
 
     return $list;
@@ -51,6 +55,14 @@ class MultisiteHandler {
       $fileSystem->mirror($app_root . '/sites/template', $app_root . '/sites/' . $siteMachineName);
       // Clone template config folder.
       $fileSystem->mirror($app_root . '/../config/drupal/template', $app_root . '/../config/drupal/' . $siteMachineName);
+      // Create sites.php if not existing
+      $sitesFile = $app_root . '/sites/sites.php';
+      if (!file_exists($sitesFile)) {
+        $fileSystem->copy($app_root . '/sites/example.sites.php', $sitesFile);
+        $trusted_host_patterns = Settings::get('trusted_host_patterns');
+        $host = str_replace(['^', '\\', '$'], [], reset($trusted_host_patterns));
+        $fileSystem->appendToFile($sitesFile, PHP_EOL . '$sites["' . $host . '"] = "default";');
+      }
       // Add site to $sites variable.
       $fileSystem->appendToFile($app_root . '/sites/sites.php', PHP_EOL . '$sites["' . $siteDomain . '"] = "' . $siteMachineName . '";');
       // Set $_site_name variable.

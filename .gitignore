@@ -15,11 +15,12 @@
 /phing/build.properties.local
 /config/drupal/settings.local.php
 
-
 # Ignore Drupal's file directory
 /web/sites/*/files/
 /data
 
+# Ignore sites.php
+/web/sites/sites.php
 
 # Ignore SimpleTest multi-site environment.
 /web/sites/simpletest
@@ -35,6 +36,3 @@
 .docker-sync/
 docker-compose.yml
 docker-sync.yml
-
-
-

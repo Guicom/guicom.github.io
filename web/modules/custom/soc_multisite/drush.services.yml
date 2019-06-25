@@ -1,0 +1,5 @@
+services:
+  soc_multisite.commands:
+    class: \Drupal\soc_multisite\Commands\SocMultisiteCommands
+    tags:
+      - { name: drush.command }

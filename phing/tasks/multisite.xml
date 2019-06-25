@@ -1,0 +1,11 @@
+<project name="multisite" default="translate">
+    <target name="multisite:generate-site-fr">
+        <drush
+                command="soc_multisite:generate_site"
+                assume="yes"
+                root="${website.drupal.dir}"
+                verbose="${drush.verbose}">
+            <param>socomec_fr</param>
+        </drush>
+    </target>
+</project>
