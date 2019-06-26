@@ -7,19 +7,40 @@
     <propertyprompt propertyName="multisite.new.machine_name" promptText="Machine name of the site to create." defaultValue="socomec_${multisite.new.locale}" />
     <propertyprompt propertyName="multisite.new.uri" promptText="URI of the site to create." defaultValue="socomec.${multisite.new.locale}.loc" />
     <propertyprompt propertyName="multisite.new.alias" promptText="Name of the alias to create." defaultValue="${multisite.new.locale}" />
-    <!--<phingcall target="multisite:prepare-site" />
-    <phingcall target="multisite:install-site" />
-    <phingcall target="multisite:import-config" />-->
-    <phingcall target="multisite:create-site-alias" />
+    <propertyprompt propertyName="multisite.new.db_created" promptText="Please confirm that a database named ${multisite.new.machine_name} exists (yes/no)"  defaultValue="yes" />
+    <if>
+      <equals arg1="${multisite.new.db_created}" arg2="yes" />
+      <then>
+        <phingcall target="multisite:prepare-site" />
+        <phingcall target="multisite:install-site" />
+        <phingcall target="multisite:import-config" />
+        <phingcall target="multisite:create-site-alias" />
+      </then>
+    </if>
   </target>
 
   <target name="multisite:prepare-site">
     <if>
       <not>
-        <isset property="multisite.new.uri" />
+        <isset property="multisite.new.locale" />
       </not>
       <then>
         <propertyprompt propertyName="multisite.new.locale" promptText="Locale of the site to create." defaultValue="fr" />
+      </then>
+    </if>
+    <if>
+      <not>
+        <isset property="multisite.new.machine_name" />
+      </not>
+      <then>
+        <propertyprompt propertyName="multisite.new.machine_name" promptText="Machine name of the site to create." defaultValue="socomec_${multisite.new.locale}" />
+      </then>
+    </if>
+    <if>
+      <not>
+        <isset property="multisite.new.uri" />
+      </not>
+      <then>
         <propertyprompt propertyName="multisite.new.uri" promptText="URI of the site to create." defaultValue="socomec.${multisite.new.locale}.loc" />
       </then>
     </if>
@@ -29,6 +50,7 @@
       root="${website.drupal.dir}"
       verbose="${drush.verbose}"
     >
+      <param>${multisite.new.machine_name}</param>
       <param>${multisite.new.uri}</param>
     </drush>
   </target>
@@ -80,9 +102,11 @@
         <isset property="multisite.new.uri" />
       </not>
       <then>
+        <propertyprompt propertyName="multisite.new.locale" promptText="Locale of the site to create." defaultValue="fr" />
         <propertyprompt propertyName="multisite.new.uri" promptText="URI of the site to create." defaultValue="socomec.${multisite.new.locale}.loc" />
       </then>
     </if>
+    <exec command="${drupal.bin} entity:delete shortcut_set default --uri=${multisite.new.uri}" dir="${project.basedir}/web" passthru="true" />
     <drush
       command="pm-uninstall"
       assume="yes"
