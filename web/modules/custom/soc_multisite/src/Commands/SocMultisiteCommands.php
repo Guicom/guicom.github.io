@@ -50,71 +50,10 @@ class SocMultisiteCommands extends DrushCommands {
       'username' => $database['default']['username'],
       'password' => $database['default']['password'],
     ];
-    $sourceTheme = 'socomec';
-    $targetTheme = $siteMachineName;
 
     \Drupal::service('soc_multisite.handler')->prepareSiteDirectory($siteMachineName, $siteDomain, $siteName, $dbInfos);
 
-    /*
-    $batch = array(
-      'title' => t('Création du nouveau site @siteName', ['@siteName' => $siteName]),
-      'operations' => array(
-        array(
-          'soc_multisite_batch_operation_copy_template',
-          array(
-            $siteMachineName,
-            $siteDomain,
-            $siteName,
-            $dbInfos,
-          ),
-        ),
-        array(
-          'soc_multisite_batch_operation_site_install',
-          array(
-            $siteName,
-            $siteDomain,
-          )
-        ),
-        array(
-          'soc_multisite_batch_operation_import_config',
-          array(
-            $siteDomain,
-          )
-        ),
-        array(
-          'soc_multisite_batch_operation_clone_theme',
-          array(
-            $siteDomain,
-            $sourceTheme,
-            $targetTheme,
-          )
-        ),
-      ),
-      'finished' => 'soc_multisite_finish_clone_site',
-      'file' => drupal_get_path('module', 'soc_multisite') . '/soc_multisite.batch.inc',
-    );
-    batch_set($batch);
-    */
     $this->logger()->success(dt('Copying ' . $sourceSite . ' to ' . $destinationSite . '.'));
-  }
-
-  /**
-   * Command description here.
-   *
-   * @param $arg1
-   *   Argument description.
-   * @param array $options
-   *   An associative array of options whose values come from cli, aliases, config, etc.
-   * @option option-name
-   *   Description
-   * @usage soc_multisite-commandName foo
-   *   Usage description
-   *
-   * @command soc_multisite:commandName
-   * @aliases foo
-   */
-  public function commandName($arg1, $options = ['option-name' => 'default']) {
-    $this->logger()->success(dt('Achievement ' . $arg1 . ' unlocked.'));
   }
 
 }
