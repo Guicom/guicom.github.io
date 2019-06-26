@@ -81,19 +81,25 @@
         <propertyprompt propertyName="multisite.new.human_name" promptText="Name of the site to create." defaultValue="Socomec ${multisite.new.country}" />
       </then>
     </if>
-    <drush
-      command="site:install"
-      assume="yes"
-      root="${website.drupal.dir}"
-      verbose="${drush.verbose}"
-    >
-      <param>standard</param>
-      <param>force</param>
-      <param>no-interaction</param>
-      <option name="uri">${multisite.new.uri}</option>
-      <option name="site-name">${multisite.new.human_name}</option>
-      <option name="locale">${multisite.new.locale}</option>
-    </drush>
+    <propertyprompt propertyName="multisite.new.db_created" promptText="Please confirm that a database named ${multisite.new.machine_name} exists (yes/no)"  defaultValue="yes" />
+    <if>
+      <equals arg1="${multisite.new.db_created}" arg2="yes" />
+      <then>
+        <drush
+          command="site:install"
+          assume="yes"
+          root="${website.drupal.dir}"
+          verbose="${drush.verbose}"
+        >
+          <param>standard</param>
+          <param>force</param>
+          <param>no-interaction</param>
+          <option name="uri">${multisite.new.uri}</option>
+          <option name="site-name">${multisite.new.human_name}</option>
+          <option name="locale">${multisite.new.locale}</option>
+        </drush>
+      </then>
+    </if>
   </target>
 
   <target name="multisite:import-config">
@@ -129,6 +135,7 @@
       <param>"uuid"</param>
       <param>0af06ffc-9b65-4d85-9658-4120d6f51796</param>
     </drush>
+    <!--<phingcall target="multisite-language:sync-lang-uuid" />-->
     <drush
       command="config:import"
       assume="yes"

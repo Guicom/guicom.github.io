@@ -1,0 +1,81 @@
+<project name="multisite-language" default="sync-lang-uuid">
+
+  <!-- Set the site uuid". -->
+  <target name="set-lang-uuid">
+    <if>
+      <isset property="multisite.new.locale" />
+      <then>
+        <echo msg="UUID = ${lang.uuid}" />
+        <if>
+          <isset property="lang.uuid" />
+          <then>
+            <drush
+              command="config-set"
+              assume="yes"
+              root="${website.drupal.dir}"
+              bin="${drush.bin}"
+              verbose="${drush.verbose}"
+              uri="${multisite.new.uri}"
+            >
+              <param>"language.entity.${multisite.new.locale}"</param>
+              <param>"uuid"</param>
+              <param>${lang.uuid}</param>
+            </drush>
+          </then>
+        </if>
+      </then>
+      <else>
+        <fail msg="multisite.new.locale property not defined. Must be defined to sync for instance." />
+      </else>
+    </if>
+  </target>
+
+  <!-- Synchronize lang-UUID -->
+  <target name="sync-lang-uuid" depends="read-lang-uuid">
+    <phingcall target="set-lang-uuid" />
+  </target>
+
+  <!-- Read the uuid from system.site.yml and stored in website.uuid -->
+  <target name="read-lang-uuid">
+    <if>
+      <isset property="multisite.new.locale" />
+      <then>
+        <if>
+          <isset property="conf" />
+          <then>
+            <!-- if file doesnt exists we copy it -->
+            <if>
+              <not>
+                <available file="${project.basedir}/config/drupal/${conf}/language.entity.${multisite.new.locale}.yml" type="file"/>
+              </not>
+              <then>
+                <copy file="${project.basedir}/config/drupal/default/lang/language.entity.${multisite.new.locale}.yml"
+                      tofile="${project.basedir}/config/drupal/${conf}/language.entity.${multisite.new.locale}.yml" />
+              </then>
+            </if>
+
+            <!-- Retrieving stored UUID -->
+            <exec command="grep 'uuid:' ${project.basedir}/config/drupal/${conf}/language.entity.${multisite.new.locale}.yml | tail -n 1" outputProperty="siteId" />
+            <property name="langId" value="uuid: ${siteId}" />
+            <exec command="echo ${langId} | sed s/uuid:\ //g" outputProperty="lang.uuid" />
+
+            <!-- we exit if the uuid is not found -->
+            <if>
+              <equals arg1="${lang.uuid}" arg2=""/>
+              <then>
+                <fail msg="Unable to retrieve the lang UUID."/>
+              </then>
+            </if>
+          </then>
+          <else>
+            <fail msg="conf or lang.uuid property not defined. Must be defined to sync for instance." />
+          </else>
+        </if>
+      </then>
+      <else>
+        <fail msg="multisite.new.locale property not defined. Must be defined to sync for instance." />
+      </else>
+    </if>
+  </target>
+
+</project>
