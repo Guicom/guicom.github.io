@@ -1,23 +1,64 @@
 <project name="multisite" default="translate">
 
-  <target name="multisite:generate-site-fr">
-    <phingcall target="multisite:prepare-site-fr" />
-    <phingcall target="multisite:install-site-fr" />
-    <phingcall target="multisite:import-config-site-fr" />
+  <target name="multisite:generate-site">
+    <propertyprompt propertyName="multisite.new.locale" promptText="Locale of the site to create." defaultValue="fr" />
+    <propertyprompt propertyName="multisite.new.country" promptText="Country of the site to create." defaultValue="France" />
+    <propertyprompt propertyName="multisite.new.human_name" promptText="Name of the site to create." defaultValue="Socomec ${multisite.new.country}" />
+    <propertyprompt propertyName="multisite.new.machine_name" promptText="Machine name of the site to create." defaultValue="socomec_${multisite.new.locale}" />
+    <propertyprompt propertyName="multisite.new.uri" promptText="URI of the site to create." defaultValue="socomec.${multisite.new.locale}.loc" />
+    <propertyprompt propertyName="multisite.new.alias" promptText="Name of the alias to create." defaultValue="${multisite.new.locale}" />
+    <!--<phingcall target="multisite:prepare-site" />
+    <phingcall target="multisite:install-site" />
+    <phingcall target="multisite:import-config" />-->
+    <phingcall target="multisite:create-site-alias" />
   </target>
 
-  <target name="multisite:prepare-site-fr">
+  <target name="multisite:prepare-site">
+    <if>
+      <not>
+        <isset property="multisite.new.machine_name" />
+      </not>
+      <then>
+        <propertyprompt propertyName="multisite.new.locale" promptText="Locale of the site to create." defaultValue="fr" />
+        <propertyprompt propertyName="multisite.new.machine_name" promptText="Machine name of the site to create." defaultValue="socomec_${multisite.new.locale}" />
+      </then>
+    </if>
     <drush
       command="soc_multisite:generate_site"
       assume="yes"
       root="${website.drupal.dir}"
       verbose="${drush.verbose}"
     >
-      <param>socomec_fr</param>
+      <param>${multisite.new.machine_name}</param>
     </drush>
   </target>
 
-  <target name="multisite:install-site-fr">
+  <target name="multisite:install-site">
+    <if>
+      <not>
+        <isset property="multisite.new.locale" />
+      </not>
+      <then>
+        <propertyprompt propertyName="multisite.new.locale" promptText="Locale of the site to create." defaultValue="fr" />
+      </then>
+    </if>
+    <if>
+      <not>
+        <isset property="multisite.new.uri" />
+      </not>
+      <then>
+        <propertyprompt propertyName="multisite.new.uri" promptText="URI of the site to create." defaultValue="socomec.${multisite.new.locale}.loc" />
+      </then>
+    </if>
+    <if>
+      <not>
+        <isset property="multisite.new.human_name" />
+      </not>
+      <then>
+        <propertyprompt propertyName="multisite.new.country" promptText="Country of the site to create." defaultValue="France" />
+        <propertyprompt propertyName="multisite.new.human_name" promptText="Name of the site to create." defaultValue="Socomec ${multisite.new.country}" />
+      </then>
+    </if>
     <drush
       command="site:install"
       assume="yes"
@@ -27,20 +68,28 @@
       <param>standard</param>
       <param>force</param>
       <param>no-interaction</param>
-      <option name="uri">socomec.fr.loc</option>
-      <option name="site-name">Socomec France</option>
-      <option name="locale">fr</option>
+      <option name="uri">${multisite.new.uri}</option>
+      <option name="site-name">${multisite.new.human_name}</option>
+      <option name="locale">${multisite.new.locale}</option>
     </drush>
   </target>
 
-  <target name="multisite:import-config-site-fr">
+  <target name="multisite:import-config">
+    <if>
+      <not>
+        <isset property="multisite.new.uri" />
+      </not>
+      <then>
+        <propertyprompt propertyName="multisite.new.uri" promptText="URI of the site to create." defaultValue="socomec.${multisite.new.locale}.loc" />
+      </then>
+    </if>
     <drush
       command="pm-uninstall"
       assume="yes"
       root="${website.drupal.dir}"
       bin="${drush.bin}"
       verbose="${drush.verbose}"
-      uri="socomec.fr.loc"
+      uri="${multisite.new.uri}"
     >
       <param>shortcut</param>
     </drush>
@@ -50,7 +99,7 @@
       root="${website.drupal.dir}"
       bin="${drush.bin}"
       verbose="${drush.verbose}"
-      uri="socomec.fr.loc"
+      uri="${multisite.new.uri}"
     >
       <param>"system.site"</param>
       <param>"uuid"</param>
@@ -62,9 +111,47 @@
       root="${website.drupal.dir}"
       verbose="${drush.verbose}"
     >
-      <option name="uri">socomec.fr.loc</option>
+      <option name="uri">${multisite.new.uri}</option>
       <option name="source">/var/www/html/config/drupal/sync</option>
     </drush>
+  </target>
+
+  <target name="multisite:create-site-alias">
+    <if>
+      <not>
+        <isset property="multisite.new.locale" />
+      </not>
+      <then>
+        <propertyprompt propertyName="multisite.new.locale" promptText="Locale of the site to create." defaultValue="fr" />
+      </then>
+    </if>
+    <if>
+      <not>
+        <isset property="multisite.new.alias" />
+      </not>
+      <then>
+        <propertyprompt propertyName="multisite.new.alias" promptText="Name of the alias to create." defaultValue="${multisite.new.locale}" />
+      </then>
+    </if>
+    <if>
+      <available file="${project.basedir}/drush/sites/com.site.yml"
+        property="multisite.default_drush_alias" />
+      <then>
+        <copy file="${project.basedir}/drush/sites/com.site.yml"
+          tofile="${project.basedir}/drush/sites/${multisite.new.alias}.site.yml" />
+      </then>
+    </if>
+    <if>
+      <available file="${project.basedir}/drush/sites/${multisite.new.alias}.site.yml"
+        property="multisite.${multisite.new.locale}_drush_alias" />
+      <then>
+        <replaceregexp
+          file="${project.basedir}/drush/sites/${multisite.new.alias}.site.yml"
+          match="\.com"
+          replace=".${multisite.new.alias}"
+        />
+      </then>
+    </if>
   </target>
 
 </project>
