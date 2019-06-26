@@ -2,7 +2,7 @@
 
 function soc_multisite_batch_operation_copy_template($siteMachineName, $siteDomain, $siteName, $dbInfos, &$context) {
   sleep(1);
-  \drupal::service('soc_multisite.handler')->prepareSiteDirectory($siteMachineName, $siteDomain, $siteName, $dbInfos);
+  \drupal::service('soc_multisite.handler')->prepareSiteDirectory($siteMachineName, $siteDomain, $dbInfos);
   $context['results']['site_domain'] = $siteDomain;
   $context['message'] = t('Copie du dossier template de site');
 }

@@ -47,7 +47,7 @@ class MultisiteHandler {
     return $themes;
   }
 
-  public function prepareSiteDirectory($siteMachineName, $siteDomain, $siteName, $dbInfos) {
+  public function prepareSiteDirectory($siteMachineName, $siteDomain, $dbInfos) {
     $app_root = \Drupal::root();
     try {
       $fileSystem = new Filesystem();

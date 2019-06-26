@@ -2,11 +2,7 @@
 
 namespace Drupal\soc_multisite\Commands;
 
-use Consolidation\OutputFormatters\StructuredData\RowsOfFields;
 use Drupal\Core\Database\Database;
-use Drupal\Core\Site\Settings;
-use Drupal\Core\Transliteration\PhpTransliteration;
-use Drupal\token\Token;
 use Drush\Commands\DrushCommands;
 
 /**
@@ -25,10 +21,12 @@ class SocMultisiteCommands extends DrushCommands {
   /**
    * Command description here.
    *
-   * @param $destinationSite
-   *   Site to create.
+   * @param $destinationSiteMachineName
+   *   Machine name of the site to create.
+   * @param $destinationSiteUri
+   *   URI of the site to create.
    * @param $sourceSite
-   *   Site to copy.
+   *   Machine name of the site to copy.
    * @option option-name
    *   Description
    * @usage soc_multisite:generate_site source_site destination_site
@@ -37,23 +35,19 @@ class SocMultisiteCommands extends DrushCommands {
    * @command soc_multisite:generate_site
    * @aliases mgs
    */
-  public function generateSite($destinationSite, $sourceSite = 'default') {
-    $transliterator = new PHPTransliteration(NULL, \Drupal::moduleHandler());
-    $siteName = $destinationSite;
-    $siteMachineName = $transliterator->transliterate($siteName);
-    $siteDomain = str_replace('_', '.', $siteMachineName) . '.loc';
+  public function generateSite($destinationSiteMachineName, $destinationSiteUri, $sourceSite = 'default') {
     $database = Database::getConnectionInfo();
     $dbInfos = [
       'host' => $database['default']['host'],
       'port' => $database['default']['port'],
-      'dbname' => $siteMachineName,
+      'dbname' => $destinationSiteMachineName,
       'username' => $database['default']['username'],
       'password' => $database['default']['password'],
     ];
 
-    \Drupal::service('soc_multisite.handler')->prepareSiteDirectory($siteMachineName, $siteDomain, $siteName, $dbInfos);
+    \Drupal::service('soc_multisite.handler')->prepareSiteDirectory($destinationSiteMachineName, $destinationSiteUri, $dbInfos);
 
-    $this->logger()->success(dt('Copying ' . $sourceSite . ' to ' . $destinationSite . '.'));
+    $this->logger()->success(dt('Copying ' . $sourceSite . ' to ' . $destinationSiteMachineName . '.'));
   }
 
 }
