@@ -1,0 +1,42 @@
+uuid: c71b0b80-da79-458e-9889-f1108ea03556
+langcode: en
+status: true
+dependencies: {  }
+id: user
+filenames:
+  user: user
+bundles:
+  user:
+    mail:
+      bundle: user
+      name: mail
+      entity_type_id: user
+      rtf: remove
+      rta: inc
+      enabled: true
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: user
+    name:
+      bundle: user
+      name: name
+      entity_type_id: user
+      rtf: anonymize
+      rta: inc
+      enabled: true
+      anonymizer: username_anonymizer
+      notes: ''
+      relationship: 0
+      sars_filename: user
+    pass:
+      bundle: user
+      name: pass
+      entity_type_id: user
+      rtf: remove
+      rta: inc
+      enabled: true
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: user

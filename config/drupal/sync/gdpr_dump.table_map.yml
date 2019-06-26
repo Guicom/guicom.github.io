@@ -1,0 +1,23 @@
+mapping:
+  comment_field_data:
+    name: username_anonymizer
+    mail: email_anonymizer
+  users_field_data:
+    name: username_anonymizer
+    pass: password_anonymizer
+    mail: email_anonymizer
+empty_tables:
+  cache_bootstrap: 1
+  cache_config: 1
+  cache_container: 1
+  cache_data: 1
+  cache_default: 1
+  cache_discovery: 1
+  cache_dynamic_page_cache: 1
+  cache_entity: 1
+  cache_menu: 1
+  cache_page: 1
+  cache_render: 1
+  cache_toolbar: 1
+  cachetags: 1
+  watchdog: 1

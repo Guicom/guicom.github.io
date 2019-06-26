@@ -6,4 +6,5 @@ id: contributor
 label: Contributor
 weight: 5
 is_admin: null
-permissions: {  }
+permissions:
+  - 'display eu cookie compliance popup'
