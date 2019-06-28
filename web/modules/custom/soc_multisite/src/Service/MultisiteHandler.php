@@ -136,15 +136,23 @@ class MultisiteHandler {
     }
     // Try to create an override config
     if ($languageSplitCreated !== FALSE && strstr($destinationSiteMachineName, 'socomec_')) {
-      $modelOverrideName = str_replace('socomec_', 'overrides_', $modelSiteMachineName);
-      $destinationOverrideName = str_replace('socomec_', 'overrides_', $destinationSiteMachineName);
+      $modelOverrideName = str_replace('socomec_', 'overrides_', $modelSiteMachineName); // overrides_fr
+      $destinationOverrideName = str_replace('socomec_', 'overrides_', $destinationSiteMachineName); // overrides_de
       /** @var \Drupal\config_split\Entity\ConfigSplitEntity $languageSplitModel */
       $languageOverrideSplitModel = $entityTypeManager->getStorage('config_split')->load($modelOverrideName);
       $languageOverrideSplit = $languageOverrideSplitModel->createDuplicate();
       $languageOverrideSplit->set('id', $destinationOverrideName);
       $languageOverrideSplit->set('label', $destinationOverrideName);
-      $languageOverrideSplit->set('description', str_replace($modelOverrideName, $destinationOverrideName, $languageSplit->get('description')));
-      $languageOverrideSplit->set('folder', str_replace($modelOverrideName, $destinationOverrideName, $languageSplit->get('folder')));
+      $languageOverrideSplit->set('description', str_replace(
+        [$modelSiteMachineName, $modelOverrideName],
+        [$destinationSiteMachineName, $destinationOverrideName],
+        $languageOverrideSplit->get('description')
+      ));
+      $languageOverrideSplit->set('folder', str_replace(
+        [$modelSiteMachineName, $modelOverrideName],
+        [$destinationSiteMachineName, $destinationOverrideName],
+        $languageOverrideSplit->get('folder')
+      ));
       try {
         $languageOverrideSplit->save();
       } catch (EntityStorageException $e) {
