@@ -3,7 +3,7 @@ langcode: en
 status: false
 dependencies: {  }
 id: overrides
-label: Overrides
+label: overrides
 description: 'Changes who have to remain in their environment.'
 folder: ../config/drupal/overrides
 module: {  }

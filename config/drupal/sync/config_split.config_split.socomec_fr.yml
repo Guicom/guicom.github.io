@@ -4,7 +4,7 @@ status: false
 dependencies: {  }
 id: socomec_fr
 label: socomec_fr
-description: ''
+description: 'Changes for socomec_fr site.'
 folder: ../config/drupal/socomec_fr/sync
 module: {  }
 theme: {  }

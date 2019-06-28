@@ -155,7 +155,7 @@ class MultisiteHandler {
       ));
       try {
         $languageOverrideSplit->save();
-      } catch (EntityStorageException $e) {
+      } catch (\Exception $e) {
         \Drupal::logger('soc_multisite')->error($e->getMessage());
       }
     }
