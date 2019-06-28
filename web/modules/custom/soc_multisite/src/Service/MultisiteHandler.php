@@ -2,6 +2,9 @@
 
 namespace Drupal\soc_multisite\Service;
 
+use Drupal\Core\Config\ConfigFactoryInterface;
+use Drupal\Core\Entity\EntityStorageException;
+use Drupal\Core\Entity\EntityTypeManager;
 use Drupal\Core\Site\Settings;
 use Symfony\Component\Filesystem\Filesystem;
 use Symfony\Component\Filesystem\Exception\IOExceptionInterface;
@@ -16,7 +19,12 @@ class MultisiteHandler {
     'PATH' => '/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:/var/www/.composer/vendor/bamarni/symfony-console-autocomplete/',
   ];
 
-  public function getEnabledSites() {
+  /**
+   * Get enabled sites.
+   *
+   * @return array
+   */
+  public static function getEnabledSites() {
     $app_root = \Drupal::root();
     // Determine whether multi-site functionality is enabled.
     $sitesFile = $app_root . '/sites/sites.php';
@@ -35,7 +43,12 @@ class MultisiteHandler {
     return $list;
   }
 
-  public function getCustomThemes() {
+  /**
+   * Get custom themes.
+   *
+   * @return array
+   */
+  public static function getCustomThemes() {
     $app_root = \Drupal::root();
     $finder = new Finder();
     $directories = $finder->in($app_root . '/themes/custom')->depth(0)->directories();
@@ -47,6 +60,15 @@ class MultisiteHandler {
     return $themes;
   }
 
+  /**
+   * Create directories and files for a new Drupal site.
+   *
+   * @param $siteMachineName
+   * @param $siteDomain
+   * @param $dbInfos
+   *
+   * @throws \Exception
+   */
   public function prepareSiteDirectory($siteMachineName, $siteDomain, $dbInfos) {
     $app_root = \Drupal::root();
     try {
@@ -86,10 +108,55 @@ class MultisiteHandler {
       $settingsTHP = '$settings["trusted_host_patterns"] = ["' . $siteDomainRegex . '"];';
       $fileSystem->appendToFile($settingsLocalPath, PHP_EOL . $settingsTHP);
     } catch (IOExceptionInterface $e) {
-
+      throw new \Exception('Unable to prepare site directory.');
     }
   }
 
+  /**
+   * Create configuration splits for a new Drupal site.
+   *
+   * @param $destinationSiteMachineName
+   *
+   */
+  public function createConfigSplit($destinationSiteMachineName) {
+    $languageSplitCreated = FALSE;
+    $entityTypeManager = \Drupal::service('entity_type.manager');
+    $modelSiteMachineName = 'socomec_fr';
+    /** @var \Drupal\config_split\Entity\ConfigSplitEntity $languageSplitModel */
+    $languageSplitModel = $entityTypeManager->getStorage('config_split')->load($modelSiteMachineName);
+    $languageSplit = $languageSplitModel->createDuplicate();
+    $languageSplit->set('id', $destinationSiteMachineName);
+    $languageSplit->set('label', $destinationSiteMachineName);
+    $languageSplit->set('description', str_replace($modelSiteMachineName, $destinationSiteMachineName, $languageSplit->get('description')));
+    $languageSplit->set('folder', str_replace($modelSiteMachineName, $destinationSiteMachineName, $languageSplit->get('folder')));
+    try {
+      $languageSplitCreated = $languageSplit->save();
+    } catch (EntityStorageException $e) {
+      \Drupal::logger('soc_multisite')->error($e->getMessage());
+    }
+    // Try to create an override config
+    if ($languageSplitCreated !== FALSE && strstr($destinationSiteMachineName, 'socomec_')) {
+      $modelOverrideName = str_replace('socomec_', 'overrides_', $modelSiteMachineName);
+      $destinationOverrideName = str_replace('socomec_', 'overrides_', $destinationSiteMachineName);
+      /** @var \Drupal\config_split\Entity\ConfigSplitEntity $languageSplitModel */
+      $languageOverrideSplitModel = $entityTypeManager->getStorage('config_split')->load($modelOverrideName);
+      $languageOverrideSplit = $languageOverrideSplitModel->createDuplicate();
+      $languageOverrideSplit->set('id', $destinationOverrideName);
+      $languageOverrideSplit->set('label', $destinationOverrideName);
+      $languageOverrideSplit->set('description', str_replace($modelOverrideName, $destinationOverrideName, $languageSplit->get('description')));
+      $languageOverrideSplit->set('folder', str_replace($modelOverrideName, $destinationOverrideName, $languageSplit->get('folder')));
+      try {
+        $languageOverrideSplit->save();
+      } catch (EntityStorageException $e) {
+        \Drupal::logger('soc_multisite')->error($e->getMessage());
+      }
+    }
+  }
+
+  /**
+   * @param $siteDomain
+   * @param $command
+   */
   public function execConsoleCommand($siteDomain, $command) {
     $app_root = \Drupal::root();
     $process = new Process(
@@ -103,6 +170,9 @@ class MultisiteHandler {
     }
   }
 
+  /**
+   * @param $task
+   */
   public function execPhingTask($task) {
     $app_root = \Drupal::root();
     $process = new Process(
@@ -116,16 +186,26 @@ class MultisiteHandler {
     }
   }
 
+  /**
+   * @param $siteName
+   * @param $siteDomain
+   */
   public function siteInstall($siteName, $siteDomain) {
     $command = '--site-name="' . $siteName . '" site:install standard --force --no-interaction --langcode="fr"';
     $this->execConsoleCommand($siteDomain, $command);
   }
 
+  /**
+   * @param $siteDomain
+   */
   public function cacheRebuildAll($siteDomain) {
     $command = 'cache:rebuild all';
     $this->execConsoleCommand($siteDomain, $command);
   }
 
+  /**
+   * @param $siteDomain
+   */
   public function importConfigurations($siteDomain) {
     // Set UUID.
     $command = 'config:override system.site uuid d74caedc-cdeb-485d-9401-1d3c898a1a1c';
@@ -140,6 +220,11 @@ class MultisiteHandler {
     $this->cacheRebuildAll($siteDomain);
   }
 
+  /**
+   * @param $siteDomain
+   * @param $sourceTheme
+   * @param $targetTheme
+   */
   public function cloneTheme($siteDomain, $sourceTheme, $targetTheme) {
     // Clone existing theme.
     $task = "theme:clone -Dsource=$sourceTheme -Dtarget=$targetTheme";

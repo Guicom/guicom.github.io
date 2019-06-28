@@ -19,7 +19,7 @@ use Drush\Commands\DrushCommands;
 class SocMultisiteCommands extends DrushCommands {
 
   /**
-   * Command description here.
+   * Scaffold architecture for a new site.
    *
    * @param $destinationSiteMachineName
    *   Machine name of the site to create.
@@ -27,8 +27,6 @@ class SocMultisiteCommands extends DrushCommands {
    *   URI of the site to create.
    * @param $sourceSite
    *   Machine name of the site to copy.
-   * @option option-name
-   *   Description
    * @usage soc_multisite:generate_site source_site destination_site
    *   Usage description
    *
@@ -45,9 +43,36 @@ class SocMultisiteCommands extends DrushCommands {
       'password' => $database['default']['password'],
     ];
 
-    \Drupal::service('soc_multisite.handler')->prepareSiteDirectory($destinationSiteMachineName, $destinationSiteUri, $dbInfos);
+    $this->logger()->info(dt('Copying ' . $sourceSite . ' to ' . $destinationSiteMachineName . '.'));
+    try {
+      \Drupal::service('soc_multisite.handler')
+        ->prepareSiteDirectory($destinationSiteMachineName, $destinationSiteUri, $dbInfos);
+    } catch (\Exception $e) {
+      $this->logger()
+        ->error(dt('Error creating ' . $destinationSiteMachineName . ' site directory.'));
+    }
+  }
 
-    $this->logger()->success(dt('Copying ' . $sourceSite . ' to ' . $destinationSiteMachineName . '.'));
+  /**
+   * Create config split for a new site.
+   *
+   * @param $destinationSiteMachineName
+   *   Machine name of the site to create.
+   * @usage soc_multisite:generate_site source_site destination_site
+   *   Usage description
+   *
+   * @command soc_multisite:generate_config_split
+   * @aliases mgcs
+   */
+  public function generateConfigSplit($destinationSiteMachineName) {
+    $this->logger()->info(dt('Creating configuration split ' . $destinationSiteMachineName . '.'));
+    try {
+      \Drupal::service('soc_multisite.handler')
+        ->createConfigSplit($destinationSiteMachineName);
+    } catch (\Exception $e) {
+      $this->logger()
+        ->error(dt('Error creating configuration split ' . $destinationSiteMachineName . '.'));
+    }
   }
 
 }

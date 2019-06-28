@@ -185,4 +185,32 @@
     </if>
   </target>
 
+  <target name="multisite:create-config-split">
+    <if>
+      <not>
+        <isset property="multisite.new.locale" />
+      </not>
+      <then>
+        <propertyprompt propertyName="multisite.new.locale" promptText="Locale of the site to create." defaultValue="fr" />
+      </then>
+    </if>
+    <if>
+      <not>
+        <isset property="multisite.new.machine_name" />
+      </not>
+      <then>
+        <propertyprompt propertyName="multisite.new.machine_name" promptText="Machine name of the site to create." defaultValue="socomec_${multisite.new.locale}" />
+      </then>
+    </if>
+    <if>
+    <drush
+      command="soc_multisite:create_config_split"
+      assume="yes"
+      root="${website.drupal.dir}"
+      verbose="${drush.verbose}"
+    >
+      <param>${multisite.new.machine_name}</param>
+    </drush>
+  </target>
+
 </project>
