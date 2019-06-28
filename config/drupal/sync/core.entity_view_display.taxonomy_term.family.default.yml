@@ -1,0 +1,38 @@
+uuid: b4dfe609-5f15-4ece-86fb-adf78c163fdd
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.family.field_family_code
+    - field.field.taxonomy_term.family.field_family_name
+    - taxonomy.vocabulary.family
+  module:
+    - text
+id: taxonomy_term.family.default
+targetEntityType: taxonomy_term
+bundle: family
+mode: default
+content:
+  description:
+    label: hidden
+    type: text_default
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_family_code:
+    weight: 1
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_family_name:
+    weight: 2
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+hidden:
+  langcode: true

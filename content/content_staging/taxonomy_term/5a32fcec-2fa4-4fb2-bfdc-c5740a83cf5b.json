@@ -1,0 +1,102 @@
+{
+    "_links": {
+        "self": {
+            "href": "http:\/\/default\/taxonomy\/term\/13?_format=hal_json"
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/family"
+        },
+        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/family\/parent": [
+            {
+                "href": "http:\/\/default\/taxonomy\/term\/11?_format=hal_json"
+            }
+        ]
+    },
+    "tid": [
+        {
+            "value": 13
+        }
+    ],
+    "uuid": [
+        {
+            "value": "5a32fcec-2fa4-4fb2-bfdc-c5740a83cf5b"
+        }
+    ],
+    "revision_id": [
+        {
+            "value": 13
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "vid": [
+        {
+            "target_id": "family"
+        }
+    ],
+    "revision_created": [
+        {
+            "value": "2019-06-28T14:13:53+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "status": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "name": [
+        {
+            "value": "Remote transfer switches",
+            "lang": "en"
+        }
+    ],
+    "weight": [
+        {
+            "value": 1
+        }
+    ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/family\/parent": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/taxonomy\/term\/11?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/family"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "70ddbfaf-6d15-4dc4-8d0f-dd23a5ce334e"
+                    }
+                ]
+            }
+        ]
+    },
+    "changed": [
+        {
+            "value": "2019-06-28T14:18:23+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "revision_translation_affected": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ]
+}
