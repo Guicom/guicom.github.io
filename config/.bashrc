@@ -3,6 +3,11 @@
     . /usr/share/bash-completion/bash_completion
 
 alias ll='ls -al'
+alias phing='./vendor/bin/phing'
+alias export_content="drush dcder --folder='../content/content'"
+alias export_content_staging="drush dcder --folder='../content/content'"
+alias import_content="drush dcdi --folder='../content/content_staging'"
+alias import_content_staging="drush dcdi --folder='../content/content_staging'"
 
 function xdebug() {
   xdb_usage() { echo "usage xdebug: on|off" 1>&2; }

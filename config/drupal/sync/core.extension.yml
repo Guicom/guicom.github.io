@@ -26,6 +26,8 @@ module:
   ctools: 0
   datetime: 0
   dblog: 0
+  default_content: 0
+  default_content_deploy: 0
   drush_language: 0
   ds_extras: 0
   dynamic_page_cache: 0
@@ -42,6 +44,7 @@ module:
   gdpr_fields: 0
   gdpr_tasks: 0
   google_analytics: 0
+  hal: 0
   help: 0
   history: 0
   hotjar: 0
@@ -61,6 +64,7 @@ module:
   recaptcha: 0
   responsive_image: 0
   search: 0
+  serialization: 0
   shortcut: 0
   simple_megamenu: 0
   system: 0

@@ -27,3 +27,8 @@ db.deploy.import = FALSE
 # Database reference
 # -------------------
 db.file.ref = database.sql.gz
+
+# Content folders
+# ----------------
+content.staging.folder = ../content/content_staging
+content.folder = ../content/content
