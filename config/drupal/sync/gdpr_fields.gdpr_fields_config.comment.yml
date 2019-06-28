@@ -1,0 +1,31 @@
+uuid: 21ddf327-207f-4b26-a9b1-6e116a04a36e
+langcode: en
+status: true
+dependencies: {  }
+id: comment
+filenames:
+  comment: comment
+bundles:
+  comment:
+    mail:
+      bundle: comment
+      name: mail
+      entity_type_id: comment
+      rtf: remove
+      rta: inc
+      enabled: true
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: comment
+    name:
+      bundle: comment
+      name: name
+      entity_type_id: comment
+      rtf: remove
+      rta: inc
+      enabled: true
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: comment
