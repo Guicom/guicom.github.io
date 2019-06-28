@@ -272,6 +272,14 @@
           <param>${multisite.new.machine_name}</param>
         </drush>
         <drush
+          command="cr"
+          assume="yes"
+          root="${website.drupal.dir}"
+          verbose="${drush.verbose}"
+          uri="${multisite.new.uri}"
+        >
+        </drush>
+        <drush
           command="config:set"
           assume="yes"
           root="${website.drupal.dir}"
