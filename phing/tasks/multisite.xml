@@ -15,6 +15,8 @@
         <phingcall target="multisite:install-site" />
         <phingcall target="multisite:import-config" />
         <phingcall target="multisite:create-site-alias" />
+        <phingcall target="multisite:create-config-split" />
+        <phingcall target="multisite:create-child-theme" />
       </then>
     </if>
   </target>
@@ -210,6 +212,78 @@
     >
       <param>${multisite.new.machine_name}</param>
     </drush>
+  </target>
+
+  <target name="multisite:create-child-theme">
+    <if>
+      <not>
+        <isset property="multisite.new.locale" />
+      </not>
+      <then>
+        <propertyprompt propertyName="multisite.new.locale" promptText="Locale of the theme to create." defaultValue="fr" />
+      </then>
+    </if>
+    <if>
+      <not>
+        <isset property="multisite.new.machine_name" />
+      </not>
+      <then>
+        <propertyprompt propertyName="multisite.new.machine_name" promptText="Machine name of the theme to create." defaultValue="socomec_${multisite.new.locale}" />
+      </then>
+    </if>
+    <if>
+      <not>
+        <isset property="multisite.new.uri" />
+      </not>
+      <then>
+        <propertyprompt propertyName="multisite.new.uri" promptText="URI of the site where theme will be activated." defaultValue="socomec.${multisite.new.locale}.loc" />
+      </then>
+    </if>
+    <mkdir dir="${website.drupal.dir}/themes/custom/${multisite.new.machine_name}" />
+    <if>
+      <available file="${website.drupal.dir}/themes/custom/socomec/socomec.info.yml"
+                 property="multisite.new.theme_info" />
+      <then>
+        <copy file="${website.drupal.dir}/themes/custom/socomec/socomec.info.yml"
+              tofile="${website.drupal.dir}/themes/custom/${multisite.new.machine_name}/${multisite.new.machine_name}.info.yml" />
+      </then>
+    </if>
+    <if>
+      <available file="${website.drupal.dir}/themes/custom/${multisite.new.machine_name}/${multisite.new.machine_name}.info.yml"
+                 property="multisite.${multisite.new.locale}_theme_info" />
+      <then>
+        <replaceregexp
+          file="${website.drupal.dir}/themes/custom/${multisite.new.machine_name}/${multisite.new.machine_name}.info.yml"
+          match="bootstrap_barrio"
+          replace="socomec"
+        />
+        <replaceregexp
+          file="${website.drupal.dir}/themes/custom/${multisite.new.machine_name}/${multisite.new.machine_name}.info.yml"
+          match="socomec"
+          replace="${multisite.new.machine_name}"
+        />
+        <drush
+          command="theme:enable"
+          assume="yes"
+          root="${website.drupal.dir}"
+          verbose="${drush.verbose}"
+          uri="${multisite.new.uri}"
+        >
+          <param>${multisite.new.machine_name}</param>
+        </drush>
+        <drush
+          command="config:set"
+          assume="yes"
+          root="${website.drupal.dir}"
+          verbose="${drush.verbose}"
+          uri="${multisite.new.uri}"
+        >
+          <param>system.theme</param>
+          <param>default</param>
+          <param>${multiste.new.machine_name}</param>
+        </drush>
+      </then>
+    </if>
   </target>
 
 </project>
