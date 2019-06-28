@@ -1,0 +1,20 @@
+uuid: 240d0589-a66c-4f5a-8ce2-fa9e263ba6f0
+langcode: en
+status: true
+dependencies: {  }
+id: taxonomy_term
+filenames:
+  family: ''
+bundles:
+  family:
+    field_family_code:
+      bundle: family
+      name: field_family_code
+      entity_type_id: taxonomy_term
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''

@@ -1,0 +1,8 @@
+uuid: 55ca3c1e-52e0-4abc-871c-36d111e70418
+langcode: en
+status: true
+dependencies: {  }
+name: Family
+vid: family
+description: ''
+weight: 0

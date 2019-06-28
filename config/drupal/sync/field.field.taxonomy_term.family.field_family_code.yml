@@ -1,0 +1,21 @@
+uuid: ce8f5368-c059-41e8-89f6-51d8f21d5d99
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_family_code
+    - taxonomy.vocabulary.family
+  module:
+    - text
+id: taxonomy_term.family.field_family_code
+field_name: field_family_code
+entity_type: taxonomy_term
+bundle: family
+label: 'Family Code'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text
