@@ -14,6 +14,8 @@
 /web/sites/*/settings.local.php
 /phing/build.properties.local
 /config/drupal/settings.local.php
+/config/drupal/*/settings.local.php
+/config/drupal/*/services.local.yml
 
 # Ignore Drupal's file directory
 /web/sites/*/files/
