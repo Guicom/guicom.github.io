@@ -83,7 +83,14 @@
         <propertyprompt propertyName="multisite.new.human_name" promptText="Name of the site to create." defaultValue="Socomec ${multisite.new.country}" />
       </then>
     </if>
-    <propertyprompt propertyName="multisite.new.db_created" promptText="Please confirm that a database named ${multisite.new.machine_name} exists (yes/no)"  defaultValue="yes" />
+    <if>
+      <not>
+        <equals arg1="${multisite.new.db_created}" arg2="yes" />
+      </not>
+      <then>
+        <propertyprompt propertyName="multisite.new.db_created" promptText="Please confirm that a database named ${multisite.new.machine_name} exists (yes/no)"  defaultValue="yes" />
+      </then>
+    </if>
     <if>
       <equals arg1="${multisite.new.db_created}" arg2="yes" />
       <then>
@@ -249,8 +256,20 @@
       </then>
     </if>
     <if>
-      <available file="${website.drupal.dir}/themes/custom/${multisite.new.machine_name}/${multisite.new.machine_name}.info.yml"
+      <available file="${website.drupal.dir}/themes/custom/socomec/socomec.libraries.yml"
+                 property="multisite.new.theme_libraries" />
+      <then>
+        <copy file="${website.drupal.dir}/themes/custom/socomec/socomec.libraries.yml"
+              tofile="${website.drupal.dir}/themes/custom/${multisite.new.machine_name}/${multisite.new.machine_name}.libraries.yml" />
+      </then>
+    </if>
+    <if>
+      <and>
+        <available file="${website.drupal.dir}/themes/custom/${multisite.new.machine_name}/${multisite.new.machine_name}.info.yml"
+                   property="multisite.${multisite.new.locale}_theme_libraries" />
+        <available file="${website.drupal.dir}/themes/custom/${multisite.new.machine_name}/${multisite.new.machine_name}.libraries.yml"
                  property="multisite.${multisite.new.locale}_theme_info" />
+      </and>
       <then>
         <replaceregexp
           file="${website.drupal.dir}/themes/custom/${multisite.new.machine_name}/${multisite.new.machine_name}.info.yml"
@@ -288,7 +307,7 @@
         >
           <param>system.theme</param>
           <param>default</param>
-          <param>${multiste.new.machine_name}</param>
+          <param>${multisite.new.machine_name}</param>
         </drush>
       </then>
     </if>

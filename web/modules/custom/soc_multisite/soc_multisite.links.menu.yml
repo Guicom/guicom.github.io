@@ -1,8 +1,0 @@
-soc_multisite.create_site_form:
-  title: 'Créer un site'
-  route_name: soc_multisite.create_site_form
-  parent: soc_core.config
-  description: 'Créer un site'
-  position: left
-  weight: 0
-

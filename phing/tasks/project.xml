@@ -112,6 +112,7 @@
     </target>
 
     <target name="project:remove-unwanted-config" description="Remove unwanted configs">
+      <!--
         <echo>Remove FR config file</echo>
         <if>
             <available file="${website.config.path}/sync/language.entity.fr.yml" />
@@ -127,6 +128,7 @@
                 <delete file="${website.config.path}/sync/language.entity.en.yml" />
             </then>
         </if>
+        -->
 
         <echo>Remove cache config file</echo>
         <if>

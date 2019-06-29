@@ -1,6 +1,6 @@
 name: Socomec Multisite
 type: module
-description: Generate sites from Drupal admin
+description: Generate sites from Phing
 core: 8.x
 package: Socomec
 dependencies[]: config_split
