@@ -1,4 +1,4 @@
-<project name="multisite" default="translate">
+<project name="multisite" default="generate-site">
 
   <target name="multisite:generate-site">
     <propertyprompt propertyName="multisite.new.locale" promptText="Locale of the site to create." defaultValue="fr" />
