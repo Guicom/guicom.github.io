@@ -1,0 +1,28 @@
+uuid: 88a45df8-0648-4809-8566-198e65eb4be9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.gdpr_task.gdpr_remove.removal_log
+    - gdpr_tasks.gdpr_task_type.gdpr_remove
+_core:
+  default_config_hash: uUI0xJtk9opH_qK7vdV3me6E3pxbZb9MAnNDAFVnCng
+id: gdpr_task.gdpr_remove.default
+targetEntityType: gdpr_task
+bundle: gdpr_remove
+mode: default
+content:
+  langcode:
+    type: language_select
+    weight: 2
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+hidden:
+  notes: true
+  processed_by: true
+  removal_log: true
+  requested_by: true
+  status: true
+  user_id: true

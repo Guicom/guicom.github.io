@@ -1,0 +1,1 @@
+The folder is dedicated for prod content like taxonomy terms, menu item, or RGPD content.

@@ -1,0 +1,20 @@
+uuid: fb441bda-a0d0-436b-a1fd-a0d9ccf24389
+langcode: en
+status: true
+dependencies:
+  module:
+    - message
+_core:
+  default_config_hash: EB4GL9joxeKMT_PZNUF87FbAUHANh91a2-mf8QvjdmI
+id: message.agreed
+field_name: agreed
+entity_type: message
+type: boolean
+settings: {  }
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
