@@ -273,13 +273,13 @@
       <then>
         <replaceregexp
           file="${website.drupal.dir}/themes/custom/${multisite.new.machine_name}/${multisite.new.machine_name}.info.yml"
-          match="bootstrap_barrio"
-          replace="socomec"
+          match="name: socomec"
+          replace="name: ${multisite.new.machine_name}"
         />
         <replaceregexp
           file="${website.drupal.dir}/themes/custom/${multisite.new.machine_name}/${multisite.new.machine_name}.info.yml"
-          match="socomec"
-          replace="${multisite.new.machine_name}"
+          match="bootstrap_barrio"
+          replace="socomec"
         />
         <drush
           command="theme:enable"
