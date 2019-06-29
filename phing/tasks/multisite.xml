@@ -211,11 +211,20 @@
         <propertyprompt propertyName="multisite.new.machine_name" promptText="Machine name of the site to create." defaultValue="socomec_${multisite.new.locale}" />
       </then>
     </if>
+    <if>
+      <not>
+        <isset property="multisite.new.uri" />
+      </not>
+      <then>
+        <propertyprompt propertyName="multisite.new.uri" promptText="URI of the site to create." defaultValue="socomec.${multisite.new.locale}.loc" />
+      </then>
+    </if>
     <drush
       command="soc_multisite:generate_config_split"
       assume="yes"
       root="${website.drupal.dir}"
       verbose="${drush.verbose}"
+      uri="${multisite.new.uri}"
     >
       <param>${multisite.new.machine_name}</param>
     </drush>
