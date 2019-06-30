@@ -7,16 +7,22 @@
     <propertyprompt propertyName="multisite.new.machine_name" promptText="Machine name of the site to create." defaultValue="socomec_${multisite.new.locale}" />
     <propertyprompt propertyName="multisite.new.uri" promptText="URI of the site to create." defaultValue="socomec.${multisite.new.locale}.loc" />
     <propertyprompt propertyName="multisite.new.alias" promptText="Name of the alias to create." defaultValue="${multisite.new.locale}" />
-    <propertyprompt propertyName="multisite.new.db_created" promptText="Please confirm that a database named ${multisite.new.machine_name} exists (yes/no)"  defaultValue="yes" />
+    <propertyprompt propertyName="multisite.new.import_existing_site" promptText="Import existing site from code (yes/no)" defaultValue="no" />
+    <propertyprompt propertyName="multisite.new.db_created" promptText="Please confirm that a database named ${multisite.new.machine_name} exists (yes/no)" defaultValue="yes" />
     <if>
       <equals arg1="${multisite.new.db_created}" arg2="yes" />
       <then>
         <phingcall target="multisite:prepare-site" />
         <phingcall target="multisite:install-site" />
         <phingcall target="multisite:import-config" />
-        <phingcall target="multisite:create-site-alias" />
-        <phingcall target="multisite:create-config-split" />
-        <phingcall target="multisite:create-child-theme" />
+        <if>
+          <equals arg1="${multisite.new.import_existing_site}" arg2="no" />
+          <then>
+            <phingcall target="multisite:create-site-alias" />
+            <phingcall target="multisite:create-config-split" />
+            <phingcall target="multisite:create-child-theme" />
+          </then>
+        </if>
       </then>
     </if>
   </target>
@@ -174,8 +180,14 @@
       </then>
     </if>
     <if>
-      <available file="${project.basedir}/drush/sites/com.site.yml"
+      <and>
+        <available file="${project.basedir}/drush/sites/com.site.yml"
         property="multisite.default_drush_alias" />
+        <not>
+          <available file="${project.basedir}/drush/sites/${multisite.new.alias}.site.yml"
+          property="multisie.existing_drush_alias" />
+        </not>
+      </and>
       <then>
         <copy file="${project.basedir}/drush/sites/com.site.yml"
           tofile="${project.basedir}/drush/sites/${multisite.new.alias}.site.yml" />
