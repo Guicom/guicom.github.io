@@ -16,6 +16,8 @@
 /config/drupal/settings.local.php
 /config/drupal/*/settings.local.php
 /config/drupal/*/services.local.yml
+!/config/drupal/template/settings.local.php
+!/config/drupal/template/services.local.yml
 
 # Ignore Drupal's file directory
 /web/sites/*/files/
