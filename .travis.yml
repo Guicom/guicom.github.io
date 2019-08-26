@@ -41,3 +41,6 @@ script:
   - ./../vendor/bin/phpunit -c core --testsuite unit --exclude-group Composer,DependencyInjection,PageCache,Setup
   - ./../vendor/bin/drush
   - if [[ $RELEASE = stable ]]; then ./../vendor/bin/drupal; fi;
+
+notifications:
+  slack: socomec-workspace:H34cVgjqM6BY4CdzpNurN5Zs
