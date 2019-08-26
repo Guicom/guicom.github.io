@@ -158,7 +158,7 @@
       <param>"uuid"</param>
       <param>0af06ffc-9b65-4d85-9658-4120d6f51796</param>
     </drush>
-    <!--<phingcall target="multisite-language:sync-lang-uuid" />-->
+    <phingcall target="multisite-language:sync-lang-uuid" />
     <drush
       command="config:import"
       assume="yes"

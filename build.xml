@@ -44,7 +44,7 @@
     <import file="phing/tasks/project.xml" optional="true"/>
     <import file="phing/tasks/gulp-socomec.xml" optional="true"/>
     <import file="phing/tasks/multisite.xml" optional="true"/>
-    <!--<import file="phing/tasks/multisite-language.xml" optional="true"/>-->
+    <import file="phing/tasks/multisite-language.xml" optional="true"/>
     <import file="phing/tasks/content.xml" optional="true"/>
 
     <!-- import drush tasks -->
