@@ -74,6 +74,14 @@
     </if>
     <if>
       <not>
+        <isset property="multisite.new.machine_name" />
+      </not>
+      <then>
+        <propertyprompt propertyName="multisite.new.machine_name" promptText="Machine name of the site to create." defaultValue="socomec_${multisite.new.locale}" />
+      </then>
+    </if>
+    <if>
+      <not>
         <isset property="multisite.new.uri" />
       </not>
       <then>
