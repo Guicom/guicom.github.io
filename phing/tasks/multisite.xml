@@ -285,20 +285,8 @@
       </then>
     </if>
     <if>
-      <available file="${website.drupal.dir}/themes/custom/socomec/socomec.libraries.yml"
-                 property="multisite.new.theme_libraries" />
-      <then>
-        <copy file="${website.drupal.dir}/themes/custom/socomec/socomec.libraries.yml"
-              tofile="${website.drupal.dir}/themes/custom/${multisite.new.machine_name}/${multisite.new.machine_name}.libraries.yml" />
-      </then>
-    </if>
-    <if>
-      <and>
-        <available file="${website.drupal.dir}/themes/custom/${multisite.new.machine_name}/${multisite.new.machine_name}.info.yml"
-                   property="multisite.${multisite.new.locale}_theme_libraries" />
-        <available file="${website.drupal.dir}/themes/custom/${multisite.new.machine_name}/${multisite.new.machine_name}.libraries.yml"
+      <available file="${website.drupal.dir}/themes/custom/${multisite.new.machine_name}/${multisite.new.machine_name}.info.yml"
                  property="multisite.${multisite.new.locale}_theme_info" />
-      </and>
       <then>
         <replaceregexp
           file="${website.drupal.dir}/themes/custom/${multisite.new.machine_name}/${multisite.new.machine_name}.info.yml"
@@ -307,8 +295,33 @@
         />
         <replaceregexp
           file="${website.drupal.dir}/themes/custom/${multisite.new.machine_name}/${multisite.new.machine_name}.info.yml"
-          match="bootstrap_barrio"
-          replace="socomec"
+          match="base theme: bootstrap_barrio"
+          replace="base theme: socomec"
+        />
+        <replaceregexp
+          file="${website.drupal.dir}/themes/custom/${multisite.new.machine_name}/${multisite.new.machine_name}.info.yml"
+          match="libraries:"
+          replace=""
+        />
+        <replaceregexp
+          file="${website.drupal.dir}/themes/custom/${multisite.new.machine_name}/${multisite.new.machine_name}.info.yml"
+          match="  - socomec/global-styling"
+          replace=""
+        />
+        <replaceregexp
+          file="${website.drupal.dir}/themes/custom/${multisite.new.machine_name}/${multisite.new.machine_name}.info.yml"
+          match="libraries-override:"
+          replace=""
+        />
+        <replaceregexp
+          file="${website.drupal.dir}/themes/custom/${multisite.new.machine_name}/${multisite.new.machine_name}.info.yml"
+          match="  bootstrap_barrio/global-styling: false"
+          replace=""
+        />
+        <replaceregexp
+          file="${website.drupal.dir}/themes/custom/${multisite.new.machine_name}/${multisite.new.machine_name}.info.yml"
+          match="logo: 'logo-socomec.png'"
+          replace=""
         />
         <drush
           command="theme:enable"
