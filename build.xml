@@ -29,6 +29,7 @@
     <import file="vendor/actency/foundation/phing/tasks/encryption.xml"/>
     <import file="vendor/actency/foundation/phing/tasks/gulp.xml"/>
     <import file="vendor/actency/foundation/phing/tasks/install.xml"/>
+    <import file="vendor/actency/foundation/phing/tasks/lang-uuid.xml"/>
     <import file="vendor/actency/foundation/phing/tasks/maintenance-mode.xml"/>
     <import file="vendor/actency/foundation/phing/tasks/modules.xml"/>
     <import file="vendor/actency/foundation/phing/tasks/rewrite-drushrc-php.xml"/>
