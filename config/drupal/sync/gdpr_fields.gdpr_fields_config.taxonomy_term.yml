@@ -5,11 +5,24 @@ dependencies: {  }
 id: taxonomy_term
 filenames:
   family: ''
+  label: ''
 bundles:
   family:
     field_family_code:
       bundle: family
       name: field_family_code
+      entity_type_id: taxonomy_term
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+  label:
+    field_image:
+      bundle: label
+      name: field_image
       entity_type_id: taxonomy_term
       rtf: 'no'
       rta: 'no'
