@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "099b6a49aecca79a393c8f5477a507ec",
+    "content-hash": "4bd9e1b18de3d9a1c690c77ed2ff9abf",
     "packages": [
         {
-            "name": "actency/phing",
-            "version": "dev-master",
+            "name": "actency/foundation",
+            "version": "8.1.0",
             "source": {
                 "type": "git",
-                "url": "git@gitlab.com:actency/phing.git",
-                "reference": "fe95d5a4314acb73054d28ba04fefd71ef0dfef1"
+                "url": "https://gitlab.com/actency/utils/drupal/foundation.git",
+                "reference": "d4fc81bb1fb03c1e5037774af1b7d6fcfc25cd10"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://gitlab.com/api/v4/projects/actency%2Fphing/repository/archive.zip?sha=fe95d5a4314acb73054d28ba04fefd71ef0dfef1",
-                "reference": "fe95d5a4314acb73054d28ba04fefd71ef0dfef1",
+                "url": "https://gitlab.com/api/v4/projects/actency%2Futils%2Fdrupal%2Ffoundation/repository/archive.zip?sha=d4fc81bb1fb03c1e5037774af1b7d6fcfc25cd10",
+                "reference": "d4fc81bb1fb03c1e5037774af1b7d6fcfc25cd10",
                 "shasum": ""
             },
             "require": {
@@ -34,7 +34,7 @@
                     "DrupalProject\\composer\\ActencyScriptHandler::createRequiredFiles"
                 ]
             },
-            "time": "2019-06-24T07:08:43+00:00"
+            "time": "2019-08-08T13:37:11+00:00"
         },
         {
             "name": "alchemy/zippy",
@@ -3420,6 +3420,9 @@
                     "services": {
                         "drush.services.yml": "^9"
                     }
+                },
+                "patches_applied": {
+                    "Add folder argument on drush dcdi dcde": "https://www.drupal.org/files/issues/2019-06-14/3061417-9.patch"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -8687,7 +8690,7 @@
             "version": "8.3.4",
             "source": {
                 "type": "git",
-                "url": "https://git.drupal.org/project/coder.git",
+                "url": "https://git.drupalcode.org/project/coder.git",
                 "reference": "0a274321f4930f186d9f246783f0b4d743501cf8"
             },
             "require": {
@@ -10708,7 +10711,6 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "actency/phing": 20,
         "drupal/default_content_deploy": 20,
         "drupal/drush_language": 5,
         "drupal/gdpr": 15,

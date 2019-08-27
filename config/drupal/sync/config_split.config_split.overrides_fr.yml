@@ -1,0 +1,15 @@
+uuid: 752642bf-8994-4453-98ce-4c87b4b72760
+langcode: en
+status: false
+dependencies: {  }
+id: overrides_fr
+label: overrides_fr
+description: 'Overrides for socomec_fr site.'
+folder: ../config/drupal/socomec_fr/overrides
+module: {  }
+theme: {  }
+blacklist: {  }
+graylist: {  }
+graylist_dependents: true
+graylist_skip_equal: true
+weight: 0

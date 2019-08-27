@@ -1,0 +1,98 @@
+<project name="multisite-language" default="multisite-sync-lang-uuid">
+
+  <!-- Set the site uuid". -->
+  <target name="multisite-language:set-lang-uuid">
+    <if>
+      <isset property="multisite.new.locale" />
+      <then>
+        <echo msg="Default langcode = ${lang.code}" />
+        <echo msg="Current langcode = ${multisite.new.locale}" />
+        <echo msg="Site UUID = ${lang.uuid}" />
+        <if>
+          <isset property="lang.uuid" />
+          <then>
+            <drush
+              command="config-set"
+              assume="yes"
+              root="${website.drupal.dir}"
+              bin="${drush.bin}"
+              verbose="${drush.verbose}"
+              uri="${multisite.new.uri}"
+            >
+              <param>"language.entity.${multisite.new.locale}"</param>
+              <param>"uuid"</param>
+              <param>${lang.uuid}</param>
+            </drush>
+          </then>
+        </if>
+      </then>
+      <else>
+        <fail msg="multisite.new.locale property not defined. Must be defined to sync for instance." />
+      </else>
+    </if>
+  </target>
+
+  <!-- Synchronize lang-UUID -->
+  <target name="multisite-language:sync-lang-uuid" depends="multisite-language:read-lang-uuid">
+    <phingcall target="multisite-language:set-lang-uuid" />
+  </target>
+
+  <!-- Detect the default language from language.entity.[xyz].yml where [xyz is the default language]. -->
+  <!-- An issue occur only for non-english default languages, but we perform it everywhere for simplicity reasons. -->
+  <!-- For more details see : https://www.drupal.org/project/drupal/issues/2856021 -->
+  <target name="multisite-language:read-lang-uuid">
+    <if>
+      <isset property="multisite.new.locale" />
+      <then>
+        <if>
+          <isset property="conf" />
+          <then>
+            <!-- Retrieving default language -->
+            <exec command="grep 'default_langcode:' ${project.basedir}/config/drupal/${conf}/system.site.yml | tail -n 1" outputProperty="langCode" />
+            <property name="langCode" value="default_langcode: ${langCode}" />
+            <exec command="echo ${langCode} | sed s/default_langcode:\ //g" outputProperty="lang.code" />
+            <echo msg="Retrieving default language: ${lang.code}" />
+
+            <!-- if file doesnt exists we copy it
+            <if>
+              <not>
+                <available file="${project.basedir}/config/drupal/${conf}/language.entity.${multisite.new.locale}.yml" type="file"/>
+              </not>
+              <then>
+                <copy file="${project.basedir}/config/drupal/default/lang/language.entity.${multisite.new.locale}.yml"
+                      tofile="${project.basedir}/config/drupal/${conf}/language.entity.${multisite.new.locale}.yml" />
+              </then>
+            </if> -->
+
+            <!-- Retrieving stored UUID -->
+            <exec command="grep 'uuid:' ${project.basedir}/config/drupal/${conf}/language.entity.und.yml | tail -n 1" outputProperty="langId" />
+            <property name="langId" value="uuid: ${langId}" />
+            <exec command="echo ${langId} | sed s/uuid:\ //g" outputProperty="lang.uuid" />
+            <echo msg="Retrieving stored UUID: ${lang.uuid}" />
+
+            <!-- we exit if the uuid is not found -->
+            <if>
+              <equals arg1="${lang.code}" arg2=""/>
+              <then>
+                <fail msg="Unable to retrieve the default langcode."/>
+              </then>
+            </if>
+            <if>
+              <equals arg1="${lang.uuid}" arg2=""/>
+              <then>
+                <fail msg="Unable to retrieve the lang UUID."/>
+              </then>
+            </if>
+          </then>
+          <else>
+            <fail msg="conf or lang.uuid property not defined. Must be defined to sync for instance." />
+          </else>
+        </if>
+      </then>
+      <else>
+        <fail msg="multisite.new.locale property not defined. Must be defined to sync for instance." />
+      </else>
+    </if>
+  </target>
+
+</project>

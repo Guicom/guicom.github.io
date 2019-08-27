@@ -1,0 +1,3 @@
+dev:
+  root: /var/www/html/web
+  uri: http://socomec.us.loc

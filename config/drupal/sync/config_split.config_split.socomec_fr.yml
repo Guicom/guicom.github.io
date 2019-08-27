@@ -1,0 +1,16 @@
+uuid: 46b390bb-e552-4d65-9c6a-f44b9586f58c
+langcode: en
+status: false
+dependencies: {  }
+id: socomec_fr
+label: socomec_fr
+description: 'Changes for socomec_fr site.'
+folder: ../config/drupal/socomec_fr/sync
+module: {  }
+theme: {  }
+blacklist: {  }
+graylist:
+  - system.site
+graylist_dependents: true
+graylist_skip_equal: true
+weight: 0
