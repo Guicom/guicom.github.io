@@ -21,9 +21,10 @@
 !/config/drupal/template/services.local.yml
 
 # Ignore sensitive information
-/web/sites/*/files/
+/web/sites/**/files/*
 /data/**/files/private
 /data/db
+!/web/sites/**/files/label/
 
 # Ignore sites.php
 /web/sites/sites.php
