@@ -1,0 +1,19 @@
+uuid: 7eb5c6e0-e0b1-40a1-9efa-d89de78162c5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_document_promo_summary
+    - paragraphs.paragraphs_type.premium_content_promotion
+id: paragraph.premium_content_promotion.field_document_promo_summary
+field_name: field_document_promo_summary
+entity_type: paragraph
+bundle: premium_content_promotion
+label: 'Document promo summary'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

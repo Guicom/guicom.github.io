@@ -1,0 +1,31 @@
+uuid: ffd22973-6a75-4c1c-962a-5a963797ae18
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_faq
+    - node.type.product
+    - paragraphs.paragraphs_type.product_faq
+  module:
+    - entity_reference_revisions
+id: node.product.field_faq
+field_name: field_faq
+entity_type: node
+bundle: product
+label: FAQ
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      product_faq: product_faq
+    target_bundles_drag_drop:
+      product_faq:
+        enabled: true
+        weight: 2
+field_type: entity_reference_revisions

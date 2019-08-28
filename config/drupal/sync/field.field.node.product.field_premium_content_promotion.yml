@@ -1,0 +1,34 @@
+uuid: 483a1b87-72d3-4416-b1d0-e6194efed9e6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_premium_content_promotion
+    - node.type.product
+    - paragraphs.paragraphs_type.premium_content_promotion
+  module:
+    - entity_reference_revisions
+id: node.product.field_premium_content_promotion
+field_name: field_premium_content_promotion
+entity_type: node
+bundle: product
+label: 'Premium content promotion'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      premium_content_promotion: premium_content_promotion
+    target_bundles_drag_drop:
+      premium_content_promotion:
+        enabled: true
+        weight: 3
+      product_faq:
+        weight: 4
+        enabled: false
+field_type: entity_reference_revisions

@@ -1,0 +1,11 @@
+uuid: a5e8109a-cadb-4acb-ad0d-3a2f163b3a5b
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.strong_points
+id: taxonomy_term.strong_points
+target_entity_type_id: taxonomy_term
+target_bundle: strong_points
+default_langcode: site_default
+language_alterable: false

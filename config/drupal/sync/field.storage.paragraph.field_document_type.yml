@@ -1,0 +1,30 @@
+uuid: 477ddb84-34c7-441d-b50b-dc4128d4294c
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+id: paragraph.field_document_type
+field_name: field_document_type
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: case_study
+      label: 'Case study'
+    -
+      value: technical_note
+      label: 'Technical note'
+    -
+      value: 'white paper'
+      label: 'White paper'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

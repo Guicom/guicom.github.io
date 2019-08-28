@@ -1,0 +1,85 @@
+{
+    "_links": {
+        "self": {
+            "href": "http:\/\/default\/aliquip-at-caecus-euismod-lobortis-si-utinam-utrum.?_format=hal_json"
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/media\/remote_video"
+        },
+        "http:\/\/drupal.org\/rest\/relation\/media\/remote_video\/revision_user": [
+            {
+                "href": "http:\/\/default\/user\/1?_format=hal_json"
+            }
+        ]
+    },
+    "mid": [
+        {
+            "value": 1
+        }
+    ],
+    "uuid": [
+        {
+            "value": "32a15f49-948d-4415-864b-4dbad6d57009"
+        }
+    ],
+    "vid": [
+        {
+            "value": 1
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "bundle": [
+        {
+            "target_id": "remote_video"
+        }
+    ],
+    "revision_created": [
+        {
+            "value": "2019-08-28T11:30:13+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/media\/remote_video\/revision_user": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/user\/1?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "105117c5-54ec-4ae0-a9e0-8a79db8f6d70"
+                    }
+                ]
+            }
+        ]
+    },
+    "revision_log_message": [
+        {
+            "value": "Aptent cogo illum inhibeo natu tego ut valetudo verto. Antehabeo diam quis. Adipiscing iaceo importunus luctus magna quia ratis typicus ullamcorper vereor. Abigo brevitas dolor exputo incassum modo pecus te verto.\n\nBene decet facilisis illum ratis similis uxor vel. Capto erat esse et feugiat illum molior tincidunt. Letalis natu pala praemitto refoveo secundum sit. Dignissim exerci in inhibeo lucidus melior pecus plaga pneum vulpes. Abdo consectetuer laoreet oppeto populus quadrum si tum venio. Dolor eros hendrerit minim mos nostrud quae sit uxor. Aliquam duis esse ideo jumentum proprius sagaciter sudo volutpat.\n\nInterdico letalis probo quia refoveo typicus venio. Ex feugiat ideo neo olim quae typicus validus vindico. Conventio esse genitus saepius torqueo. Comis commodo hendrerit saluto torqueo vulputate. Dolore eum natu. Acsi antehabeo iusto lobortis modo natu pala pneum quadrum vicis. Elit illum suscipit. Abdo saepius veniam. Aptent at valetudo. Capto et eum gilvus haero incassum nisl rusticus venio. Abbas et gravis hos iaceo melior nisl nunc velit vulpes.\n\nCui euismod gemino interdico lucidus occuro pala pecus utinam virtus. Augue genitus inhibeo. Facilisis hos proprius te. Abdo causa nunc oppeto paulatim quibus quidne refoveo sit vereor.\n\nAt magna usitas. Consectetuer exerci iaceo macto nostrud. Eu euismod gemino hendrerit letalis lucidus nimis plaga pneum quadrum. Acsi ad iriure si singularis valetudo. Damnum macto nulla sit. Accumsan commoveo eu. Augue enim facilisi sino. Commoveo gemino macto quis. Camur duis feugiat paratus saepius sino. Defui ea fere hendrerit illum in torqueo typicus vereor.\n\nDecet jus tation typicus. Autem caecus luctus minim modo nobis nulla paratus. Accumsan augue duis luptatum praesent premo. Aliquam distineo duis melior molior natu nulla oppeto sagaciter vero.\n\nConsectetuer huic lobortis torqueo vicis. Letalis minim nostrud. Appellatio bene esca paulatim vulputate. Amet camur interdico occuro refero uxor. Ille populus qui. Ad antehabeo facilisis immitto jumentum nutus oppeto.\n\nAt caecus dignissim lucidus nobis nutus tation usitas verto virtus. Abluo ad augue huic ille incassum nisl probo scisco. Amet cui mauris modo ratis rusticus suscipit utinam.\n\nCogo commoveo eligo gilvus gravis ullamcorper vindico. Luctus natu occuro. Accumsan consequat conventio eros exerci importunus loquor premo sino tamen. Abbas distineo elit facilisis gilvus obruo suscipit velit. Eros eu pagus plaga. Blandit ea genitus haero letalis lucidus odio valde. Blandit camur capto exputo gilvus nobis oppeto pala proprius venio. Abluo adipiscing esca iriure quia valde wisi ymo.\n\nGravis imputo iusto lobortis obruo populus vero. Eum genitus loquor nutus secundum tation te. Ideo pneum vicis. Abbas populus tamen. Appellatio laoreet mos ullamcorper ut valetudo venio. Abico aliquip aptent commoveo elit esse melior minim tum.\n\nDolore obruo vicis. Augue esse gravis in incassum jus os persto probo. Brevitas erat ex lobortis persto. Esse facilisis feugiat iaceo letalis nobis nunc quae rusticus verto.\n\nAbigo erat iaceo modo natu nobis saepius tincidunt vero. Conventio exputo ideo immitto pneum ut. Augue dolore erat melior neque proprius ymo. Brevitas letalis populus torqueo. Iusto olim valde venio. Eum meus refero sed tincidunt valde virtus wisi. Conventio cui duis enim jus neo typicus usitas validus. Comis distineo gravis meus.\n\n"
+        }
+    ],
+    "path": [
+        {
+            "alias": "\/aliquip-at-caecus-euismod-lobortis-si-utinam-utrum.",
+            "pid": 3,
+            "langcode": "en",
+            "lang": "en"
+        }
+    ],
+    "field_media_oembed_video": [
+        {
+            "value": "shochaslikesweprumagutropronefrusos",
+            "lang": "en"
+        }
+    ]
+}

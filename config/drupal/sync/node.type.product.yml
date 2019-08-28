@@ -1,0 +1,17 @@
+uuid: 4fc46bb2-6a2b-4882-83bb-9967303027ac
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: Product
+type: product
+description: 'Socomec product.'
+help: ''
+new_revision: true
+preview_mode: 0
+display_submitted: false

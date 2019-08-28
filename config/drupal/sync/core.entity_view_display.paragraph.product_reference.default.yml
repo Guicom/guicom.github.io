@@ -1,0 +1,23 @@
+uuid: b1580be2-e6bc-46f7-b8ff-2a58a3808942
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.product_reference.field_new
+    - paragraphs.paragraphs_type.product_reference
+id: paragraph.product_reference.default
+targetEntityType: paragraph
+bundle: product_reference
+mode: default
+content:
+  field_new:
+    weight: 0
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+    region: content
+hidden: {  }

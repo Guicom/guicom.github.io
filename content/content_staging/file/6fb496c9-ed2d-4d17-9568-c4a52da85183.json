@@ -1,0 +1,87 @@
+{
+    "_links": {
+        "self": {
+            "href": "http:\/\/default\/sites\/default\/files\/product\/pictures\/in_situ\/2019-08\/generateImage_J8rkKn.gif"
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/file\/file"
+        },
+        "http:\/\/drupal.org\/rest\/relation\/file\/file\/uid": [
+            {
+                "href": "http:\/\/default\/user\/1?_format=hal_json"
+            }
+        ]
+    },
+    "fid": [
+        {
+            "value": 4
+        }
+    ],
+    "uuid": [
+        {
+            "value": "6fb496c9-ed2d-4d17-9568-c4a52da85183"
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en"
+        }
+    ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/file\/file\/uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/user\/1?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "105117c5-54ec-4ae0-a9e0-8a79db8f6d70"
+                    }
+                ]
+            }
+        ]
+    },
+    "filename": [
+        {
+            "value": "generateImage_J8rkKn.gif"
+        }
+    ],
+    "uri": [
+        {
+            "value": "public:\/\/product\/pictures\/in_situ\/2019-08\/generateImage_J8rkKn.gif",
+            "url": "\/sites\/default\/files\/product\/pictures\/in_situ\/2019-08\/generateImage_J8rkKn.gif"
+        }
+    ],
+    "filemime": [
+        {
+            "value": "image\/gif"
+        }
+    ],
+    "filesize": [
+        {
+            "value": 2748
+        }
+    ],
+    "status": [
+        {
+            "value": true
+        }
+    ],
+    "created": [
+        {
+            "value": "2019-08-28T11:30:13+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "changed": [
+        {
+            "value": "2019-08-28T11:30:13+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ]
+}

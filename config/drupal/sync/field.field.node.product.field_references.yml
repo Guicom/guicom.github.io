@@ -1,0 +1,37 @@
+uuid: 4493b96c-d0e6-4490-940d-c3df22b66c20
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_references
+    - node.type.product
+    - paragraphs.paragraphs_type.product_reference
+  module:
+    - entity_reference_revisions
+id: node.product.field_references
+field_name: field_references
+entity_type: node
+bundle: product
+label: References
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      product_reference: product_reference
+    target_bundles_drag_drop:
+      product_reference:
+        enabled: true
+        weight: 4
+      premium_content_promotion:
+        weight: 5
+        enabled: false
+      product_faq:
+        weight: 6
+        enabled: false
+field_type: entity_reference_revisions

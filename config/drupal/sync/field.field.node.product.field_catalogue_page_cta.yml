@@ -1,0 +1,23 @@
+uuid: 9f5a6af8-1732-41ef-be8d-74f479e5fcdb
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_catalogue_page_cta
+    - node.type.product
+  module:
+    - link
+id: node.product.field_catalogue_page_cta
+field_name: field_catalogue_page_cta
+entity_type: node
+bundle: product
+label: 'Catalogue page CTA'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 2
+field_type: link
