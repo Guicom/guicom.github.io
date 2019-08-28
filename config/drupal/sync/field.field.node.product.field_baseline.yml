@@ -1,0 +1,19 @@
+uuid: 93baad2a-bc7d-4008-a5b5-9553f3ae9ce4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_baseline
+    - node.type.product
+id: node.product.field_baseline
+field_name: field_baseline
+entity_type: node
+bundle: product
+label: Baseline
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

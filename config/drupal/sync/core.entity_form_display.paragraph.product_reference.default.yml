@@ -1,0 +1,22 @@
+uuid: 39dbcb49-2c33-4721-8536-ba435ed0721f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.product_reference.field_new
+    - paragraphs.paragraphs_type.product_reference
+id: paragraph.product_reference.default
+targetEntityType: paragraph
+bundle: product_reference
+mode: default
+content:
+  field_new:
+    weight: 0
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+hidden:
+  created: true
+  status: true

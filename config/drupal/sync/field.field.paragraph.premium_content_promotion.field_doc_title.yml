@@ -1,0 +1,19 @@
+uuid: 3a98f27d-bac7-43b8-9b0c-e27a48767411
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_doc_title
+    - paragraphs.paragraphs_type.premium_content_promotion
+id: paragraph.premium_content_promotion.field_doc_title
+field_name: field_doc_title
+entity_type: paragraph
+bundle: premium_content_promotion
+label: 'Document title'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

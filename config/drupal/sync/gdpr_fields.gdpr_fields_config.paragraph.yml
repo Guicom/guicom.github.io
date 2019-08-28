@@ -1,0 +1,112 @@
+uuid: 14f1a2b7-cfc2-482a-8015-ed2d1035e314
+langcode: en
+status: true
+dependencies: {  }
+id: paragraph
+filenames:
+  product_faq: ''
+  premium_content_promotion: ''
+  product_reference: ''
+bundles:
+  product_faq:
+    field_question:
+      bundle: product_faq
+      name: field_question
+      entity_type_id: paragraph
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_answer:
+      bundle: product_faq
+      name: field_answer
+      entity_type_id: paragraph
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+  premium_content_promotion:
+    field_cover_image:
+      bundle: premium_content_promotion
+      name: field_cover_image
+      entity_type_id: paragraph
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_doc_title:
+      bundle: premium_content_promotion
+      name: field_doc_title
+      entity_type_id: paragraph
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_document_type:
+      bundle: premium_content_promotion
+      name: field_document_type
+      entity_type_id: paragraph
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_client:
+      bundle: premium_content_promotion
+      name: field_client
+      entity_type_id: paragraph
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: clear_anonymizer
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_document_promo_summary:
+      bundle: premium_content_promotion
+      name: field_document_promo_summary
+      entity_type_id: paragraph
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_cta:
+      bundle: premium_content_promotion
+      name: field_cta
+      entity_type_id: paragraph
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+  product_reference:
+    field_new:
+      bundle: product_reference
+      name: field_new
+      entity_type_id: paragraph
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''

@@ -1,0 +1,9 @@
+uuid: 18d9111f-ef70-4ea2-b97d-9584b57262aa
+langcode: en
+status: true
+dependencies: {  }
+id: product_faq
+label: 'Product FAQ'
+icon_uuid: null
+description: ''
+behavior_plugins: {  }

@@ -1,0 +1,9 @@
+uuid: 8e68a1b6-6ddc-4579-97ad-9a2db3296abe
+langcode: en
+status: true
+dependencies: {  }
+id: premium_content_promotion
+label: 'Premium content promotion'
+icon_uuid: null
+description: ''
+behavior_plugins: {  }

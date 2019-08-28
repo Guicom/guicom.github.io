@@ -1,0 +1,21 @@
+uuid: 00da4429-3c0d-42f5-ae89-6639240234e9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_document_type
+    - paragraphs.paragraphs_type.premium_content_promotion
+  module:
+    - options
+id: paragraph.premium_content_promotion.field_document_type
+field_name: field_document_type
+entity_type: paragraph
+bundle: premium_content_promotion
+label: 'Document type'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string
