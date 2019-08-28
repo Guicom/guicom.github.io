@@ -23,8 +23,6 @@ display:
             items_per_page_options_all_label: '- Tout -'
             offset_label: Décalage
       fields:
-        comment_bulk_form:
-          action_title: Action
         subject:
           label: Objet
           separator: ', '
@@ -83,8 +81,6 @@ display:
           expose:
             label: Langue
       fields:
-        comment_bulk_form:
-          action_title: Action
         subject:
           label: Objet
           separator: ', '

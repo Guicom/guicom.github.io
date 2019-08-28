@@ -34,7 +34,6 @@ display:
           label: État
           settings:
             format_custom_false: Temporaire
-            format_custom_true: Permanent
         created:
           label: 'Date de transfert'
         changed:
