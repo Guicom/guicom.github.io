@@ -23,8 +23,6 @@ display:
       fields:
         nothing:
           admin_label: Icône
-        wid:
-          label: WID
         severity:
           label: Importance
         type:
@@ -33,8 +31,6 @@ display:
           label: Date
         message:
           label: Message
-          alter:
-            alt: '{{ message }}'
         name:
           label: Utilisateur
           separator: ', '
