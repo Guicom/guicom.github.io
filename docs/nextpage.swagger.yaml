@@ -1,0 +1,200 @@
+swagger: "2.0"
+info:
+  title: "nextPage API"
+  description: "This is the documentation for the nextPage RESTFUL API"
+  version: "1.0.0"
+host: "socomec.nextpage.fr"
+basePath: "/"
+schemes:
+  - "http"
+consumes:
+  - application/json
+produces:
+  - application/json
+securityDefinitions:
+  ApiKeyAuth:
+    type: apiKey
+    in: header
+    name: ApiToken
+paths:
+  /api/auth:
+    post:
+      tags:
+        - "Authentication"
+      summary: Returns an authentication token.
+      description: "Authentication request to retrieve a token with a lifetime of two hours using a nextPage Username and a Password."
+      parameters:
+        - in: body
+          name: user
+          description: The user credentials.
+          schema:
+            type: object
+            required:
+              - Username
+              - Password
+            properties:
+              Username:
+                type: string
+              Password:
+                type: string
+      responses:
+        200:
+          description: "OK"
+          schema:
+            $ref: '#/definitions/ApiToken'
+        401:
+          description: "Authentication failed"
+  /api/sdk-ext/element/ElementsAndLinks:
+    post:
+      security:
+        - ApiKeyAuth: []
+      tags:
+        - "Elements"
+      summary: Get the values of the characteristics of an element.
+      description: ""
+      parameters:
+        - in: body
+          name: ElementsAndLinksParams
+          required: true
+          schema:
+            $ref: '#/definitions/ElementsAndLinksParams'
+      responses:
+        200:
+          description: "OK"
+          schema:
+            $ref: '#/definitions/ElementsAndLinkstDTO'
+        401:
+          description: "Invalid token"
+        404:
+          description: "Unauthorized access"
+definitions:
+  ApiToken:
+    type: string
+    example: "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJGZhYi1jZWYzOTA0NjYwYmQi"
+  ElementsAndLinksParams:
+    type: object
+    properties:
+      ElementsExtIDs:
+        type: array
+        items:
+          type: string
+        description: "List of identifiers of the starting elements for which we want to retrieve the characteristic values and related elements."
+      Paths:
+        type: array
+        items:
+          type: string
+      ContextID:
+        type: integer
+      LangID:
+        type: integer
+      DCExtIDs:
+        type: array
+        items:
+          type: string
+  ElementsAndLinkstDTO:
+    type: object
+    properties:
+      Warnings:
+        type: array
+        items:
+          type: string
+      Errors:
+        type: array
+        items:
+          type: string
+      ElementType:
+        $ref: '#/definitions/ElementType'
+      Results:
+        $ref: '#/definitions/ElementsAndLinkstResultDTO'
+  ElementsAndLinkstResultDTO:
+    type: object
+    properties:
+      ResultsExtIDs:
+        type:
+          array
+        items:
+          type: string
+      Elements:
+        type: object
+        properties:
+          ID:
+            $ref: '#/definitions/NPElementDTO'
+  NPElementDTO:
+    type: object
+    properties:
+      ID:
+        type: integer
+      ExtID:
+        type: string
+      ElementType:
+        $ref: '#/definitions/ElementType'
+      Access:
+        type: integer
+      ParentExtID:
+        type: string
+      ParentID:
+        type: integer
+      Parent:
+        type: object
+      Ordre:
+        type: integer
+      Label:
+        type: string
+      Inf:
+        type: number
+        format: double
+      Sup:
+        type: number
+        format: double
+      Values:
+        type: array
+        items:
+          $ref: '#/definitions/NPCaracValeurDTO'
+      Action:
+        type: object
+      getStatusID:
+        type: integer
+  NPCaracValeurDTO:
+    type: object
+    properties:
+      ElementID:
+        type: integer
+      ElementExtID:
+        type: string
+      DicoCaracID:
+        type: integer
+      DicoCaracExtID:
+        type: string
+      TypeValue:
+        $ref: '#/definitions/NPCaracValeurTypeValue'
+      LangID:
+        type: integer
+      ContextID:
+        type: integer
+      Access:
+        type: integer
+  NPCaracValeurTypeValue:
+    type: object
+  ElementType:
+    type: integer
+    enum:
+      - 1
+      - 2
+      - 3
+      - 50
+      - 101
+      - 102
+      - 103
+      - 201
+      - 202
+    description: >
+      values:
+       * `1` - Family
+       * `2` - Product
+       * `3` - Reference
+       * `50` - Notification
+       * `101` - ChannelDirectory
+       * `102` - Channel
+       * `103` - ChannelNode
+       * `201` - MediaDirectory
+       * `202` - Media
