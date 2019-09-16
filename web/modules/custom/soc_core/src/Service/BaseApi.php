@@ -42,6 +42,10 @@ class BaseApi {
     // Upload bug tips. We sent the header and then the body.
     curl_setopt($handle, CURLOPT_HTTPHEADER, ["Expect:"]);
 
+    if ($format === 'json') {
+      $params['_format'] = 'json';
+    }
+
     $tries = 0;
     do {
       switch ($method) {
