@@ -44,6 +44,28 @@ paths:
             $ref: '#/definitions/ApiToken'
         401:
           description: "Authentication failed"
+  /api/sdk-ext/dicocarac/GetAll/{LangID}:
+    get:
+      security:
+        - ApiKeyAuth: []
+      tags:
+        - "Elements"
+      summary: Get the elements of a product type.
+      description: ""
+      parameters:
+        - in: path
+          name: LangID
+          required: true
+          type: integer
+      responses:
+        200:
+          description: "OK"
+          schema:
+            $ref: '#/definitions/DicoCaracsDTO'
+        401:
+          description: "Invalid token"
+        404:
+          description: "Unauthorized access"
   /api/sdk-ext/element/ElementsAndLinks:
     post:
       security:
@@ -244,6 +266,107 @@ definitions:
        * `103` - ChannelNode
        * `201` - MediaDirectory
        * `202` - Media
+  DicoCaracsDTO:
+    type: object
+    properties:
+      Results:
+        type: array
+        items:
+          $ref: '#/definitions/DicoCaracsResultsDTO'
+      Warnings:
+        type: array
+        items:
+          type: object
+      Errors:
+        type: array
+        items:
+          type: object
+  DicoCaracsResultsDTO:
+    type: object
+    properties:
+      Caracs:
+        type: array
+        items:
+          $ref: '#/definitions/DicoCaracJSONDTO'
+  DicoCaracJSONDTO:
+    type: object
+    properties:
+      Rank:
+        type: integer
+      ID:
+        type: integer
+      ExtID:
+        type: string
+      Access:
+        type: object
+      TypeCarac:
+        type: string
+      ElType:
+        type: object
+      TypeCode:
+        type: string
+      LangCode:
+        type: string
+      DossierDicoCaracID:
+        type: integer
+      DossierDicoCaracOrder:
+        type: integer
+      LibelleDossier:
+        type: string
+      Name:
+        type: string
+      SecondaryName:
+        type: string
+      PublicationName:
+        type: string
+      Unite:
+        type: string
+      Required:
+        type: string
+      Editable:
+        type: string
+      Translatable:
+        type: string
+      Order:
+        type: integer
+      MinValue:
+        type: integer
+      MaxValue:
+        type: integer
+      MaxLength:
+        type: integer
+      Value:
+        type: string
+      Description:
+        type: string
+      Destination:
+        type: string
+      CalculationFormula:
+        type: string
+      UnicityValue:
+        type: boolean
+      InputMask:
+        type: string
+      FillRates:
+        type: array
+        items:
+          type: object
+      Values:
+        type: array
+        items:
+          type: object
+      ElementLinkID:
+        type: integer
+      ElementLinkExtID:
+        type: string
+      ReflexiveCharID:
+        type: integer
+      ReflexiveCharExtID:
+        type: string
+      PathFileSystem:
+        type: string
+      Cardinality:
+        type: integer
   DescendantsAndLinksParams:
     type: object
     properties:
