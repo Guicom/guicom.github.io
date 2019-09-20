@@ -1,0 +1,19 @@
+uuid: 900f4ce7-569b-4b87-8dad-967e7774cc31
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_baseline
+    - paragraphs.paragraphs_type.hero_paragraph
+id: paragraph.hero_paragraph.field_baseline
+field_name: field_baseline
+entity_type: paragraph
+bundle: hero_paragraph
+label: Baseline
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
