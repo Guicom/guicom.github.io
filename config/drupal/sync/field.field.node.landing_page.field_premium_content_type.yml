@@ -1,0 +1,29 @@
+uuid: 69e091ea-b3ce-48b2-b654-c76724ec9c35
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_premium_content_type
+    - node.type.landing_page
+    - taxonomy.vocabulary.premium_content_type
+id: node.landing_page.field_premium_content_type
+field_name: field_premium_content_type
+entity_type: node
+bundle: landing_page
+label: 'Premium content type'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      premium_content_type: premium_content_type
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

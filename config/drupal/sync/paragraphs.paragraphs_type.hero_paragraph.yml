@@ -1,0 +1,9 @@
+uuid: 7459003a-490d-478c-8f1a-d7fa6aaf9e6b
+langcode: en
+status: true
+dependencies: {  }
+id: hero_paragraph
+label: 'Hero Paragraph'
+icon_uuid: null
+description: 'Highlighting area'
+behavior_plugins: {  }

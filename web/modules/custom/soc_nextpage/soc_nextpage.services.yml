@@ -1,0 +1,6 @@
+services:
+  soc_nextpage.nextpage_api:
+    class: Drupal\soc_nextpage\Service\NextpageApi
+  soc_nextpage.nextpage_base_api:
+    class: Drupal\soc_nextpage\Service\NextpageBaseApi
+    arguments: ['@config.factory', '@tempstore.shared']

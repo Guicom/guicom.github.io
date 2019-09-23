@@ -1,0 +1,9 @@
+# Admin / config routes
+
+soc_core.config:
+  title: 'Socomec'
+  route_name: soc_core.config
+  parent: system.admin_config
+  description: 'Configure Socomec'
+  position: left
+  weight: -20
