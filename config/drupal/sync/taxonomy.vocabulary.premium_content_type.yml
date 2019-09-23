@@ -1,0 +1,8 @@
+uuid: a7605e2e-a90b-4e64-bd64-98ec6abd5fd3
+langcode: en
+status: true
+dependencies: {  }
+name: 'Premium content type'
+vid: premium_content_type
+description: ''
+weight: 0
