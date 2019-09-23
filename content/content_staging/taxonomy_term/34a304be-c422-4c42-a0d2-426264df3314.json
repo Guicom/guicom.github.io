@@ -34,8 +34,8 @@
     ],
     "langcode": [
         {
-            "value": "und",
-            "lang": "und"
+            "value": "en",
+            "lang": "en"
         }
     ],
     "vid": [
@@ -94,8 +94,8 @@
         {
             "alias": "\/camur-dolus-hendrerit-inhibeo.",
             "pid": 2,
-            "langcode": "und",
-            "lang": "und"
+            "langcode": "en",
+            "lang": "en"
         }
     ]
 }
