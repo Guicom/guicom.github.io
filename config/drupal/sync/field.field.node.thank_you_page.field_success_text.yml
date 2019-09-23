@@ -1,0 +1,21 @@
+uuid: 992bfae0-bafd-41f1-9799-5b5e82119736
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_success_text
+    - node.type.thank_you_page
+  module:
+    - text
+id: node.thank_you_page.field_success_text
+field_name: field_success_text
+entity_type: node
+bundle: thank_you_page
+label: 'Success text'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

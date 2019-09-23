@@ -1,0 +1,19 @@
+uuid: dd0f64c9-0b11-4be5-ac23-64a836baf7f8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_conditional
+    - node.type.thank_you_page
+id: node.thank_you_page.field_conditional
+field_name: field_conditional
+entity_type: node
+bundle: thank_you_page
+label: CTA
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

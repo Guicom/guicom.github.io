@@ -1,0 +1,27 @@
+uuid: d2f19e88-e7b2-4361-9cad-592579ee4ab8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_thumbnail
+    - node.type.thank_you_page
+  module:
+    - file
+id: node.thank_you_page.field_thumbnail
+field_name: field_thumbnail
+entity_type: node
+bundle: thank_you_page
+label: Thumbnail
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  file_directory: '[date:custom:Y]-[date:custom:m]'
+  file_extensions: txt
+  max_filesize: ''
+  description_field: false
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: file
