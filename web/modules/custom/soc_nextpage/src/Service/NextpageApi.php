@@ -18,8 +18,18 @@ class NextpageApi extends NextpageBaseApi implements NextpageApiInterface {
     // TODO: Implement ElementsByCharTemplate() method.
   }
 
+  /**
+   * @return array|mixed
+   */
   public function characteristicsDictionary() {
-    // TODO: Implement CharacteristicsDictionary() method.
+    $langId = 1;
+    $results = [];
+    try {
+      $results = $this->call('/api/sdk-ext/dicocarac/GetAll/' . $langId, NULL, 'GET');
+    } catch (\Exception $e) {
+      \Drupal::logger('soc_nextpage')->error($e->getMessage());
+    }
+    return $results;
   }
 
 }

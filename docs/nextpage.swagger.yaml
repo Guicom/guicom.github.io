@@ -50,7 +50,7 @@ paths:
         - ApiKeyAuth: []
       tags:
         - "Elements"
-      summary: Get the elements of a product type.
+      summary: Get the characteristics dictionary in a given language.
       description: ""
       parameters:
         - in: path
