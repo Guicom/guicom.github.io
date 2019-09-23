@@ -1,0 +1,8 @@
+# Admin / config menu links
+
+soc_nextpage.nextpage_ws_settings:
+  title: 'nextPage settings'
+  route_name: soc_nextpage.nextpage_ws_settings
+  parent: soc_core.config
+  description: 'Configure nextPage WS settings.'
+  weight: 0

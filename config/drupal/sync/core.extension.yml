@@ -70,7 +70,9 @@ module:
   serialization: 0
   shortcut: 0
   simple_megamenu: 0
+  soc_core: 0
   soc_multisite: 0
+  soc_nextpage: 0
   system: 0
   taxonomy: 0
   text: 0
