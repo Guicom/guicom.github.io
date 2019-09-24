@@ -1,0 +1,25 @@
+uuid: 92785752-314c-46a4-b4a0-7e511ed6e0fd
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.header
+  module:
+    - system
+  theme:
+    - socomec
+id: header
+theme: socomec
+region: top_header
+weight: 0
+provider: null
+plugin: 'system_menu_block:header'
+settings:
+  id: 'system_menu_block:header'
+  label: Header
+  provider: system
+  label_display: '0'
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility: {  }
