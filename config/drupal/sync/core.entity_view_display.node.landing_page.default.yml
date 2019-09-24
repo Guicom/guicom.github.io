@@ -3,17 +3,33 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.landing_page.field_form_url
     - field.field.node.landing_page.field_hero_paragraph
+    - field.field.node.landing_page.field_metatags
     - field.field.node.landing_page.field_premium_content_type
     - node.type.landing_page
   module:
     - entity_reference_revisions
+    - link
+    - metatag
     - user
 id: node.landing_page.default
 targetEntityType: node
 bundle: landing_page
 mode: default
 content:
+  field_form_url:
+    weight: 104
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
   field_hero_paragraph:
     type: entity_reference_revisions_entity_view
     weight: 101
@@ -22,6 +38,13 @@ content:
       view_mode: default
       link: ''
     third_party_settings: {  }
+    region: content
+  field_metatags:
+    weight: 103
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: metatag_empty_formatter
     region: content
   field_premium_content_type:
     weight: 102
