@@ -82,4 +82,5 @@ content:
     region: content
 hidden:
   addtoany: true
+  field_title: true
   langcode: true
