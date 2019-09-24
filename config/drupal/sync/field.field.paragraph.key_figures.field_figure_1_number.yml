@@ -1,0 +1,19 @@
+uuid: 482a7e06-4290-42af-958d-3b5c77f71a3f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_figure_1_number
+    - paragraphs.paragraphs_type.key_figures
+id: paragraph.key_figures.field_figure_1_number
+field_name: field_figure_1_number
+entity_type: paragraph
+bundle: key_figures
+label: 'Figure 1 - Number'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

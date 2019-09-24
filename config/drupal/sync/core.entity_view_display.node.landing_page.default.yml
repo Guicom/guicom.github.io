@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.node.landing_page.field_form_url
     - field.field.node.landing_page.field_hero_paragraph
+    - field.field.node.landing_page.field_key_figures
     - field.field.node.landing_page.field_metatags
     - field.field.node.landing_page.field_premium_content_type
     - node.type.landing_page
@@ -39,6 +40,15 @@ content:
       link: ''
     third_party_settings: {  }
     region: content
+  field_key_figures:
+    type: entity_reference_revisions_entity_view
+    weight: 105
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
   field_metatags:
     weight: 103
     label: above
@@ -62,3 +72,4 @@ content:
 hidden:
   addtoany: true
   langcode: true
+  layout_builder__layout: true

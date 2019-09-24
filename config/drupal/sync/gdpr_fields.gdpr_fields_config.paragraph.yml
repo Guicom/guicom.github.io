@@ -8,6 +8,8 @@ filenames:
   premium_content_promotion: ''
   product_reference: ''
   hero_paragraph: ''
+  key_figures: ''
+  key_figure: ''
 bundles:
   product_faq:
     field_question:
@@ -164,6 +166,206 @@ bundles:
       rta: 'no'
       enabled: false
       anonymizer: clear_anonymizer
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+  key_figures:
+    field_number:
+      bundle: key_figures
+      name: field_number
+      entity_type_id: paragraph
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_text:
+      bundle: key_figures
+      name: field_text
+      entity_type_id: paragraph
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_figures:
+      bundle: key_figures
+      name: field_figures
+      entity_type_id: paragraph
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_figure_1_number:
+      bundle: key_figures
+      name: field_figure_1_number
+      entity_type_id: paragraph
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_figure_1_text_line_1:
+      bundle: key_figures
+      name: field_figure_1_text_line_1
+      entity_type_id: paragraph
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_figure_1_text_line_2:
+      bundle: key_figures
+      name: field_figure_1_text_line_2
+      entity_type_id: paragraph
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_figure_2_number:
+      bundle: key_figures
+      name: field_figure_2_number
+      entity_type_id: paragraph
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_figure_2_text_line_1:
+      bundle: key_figures
+      name: field_figure_2_text_line_1
+      entity_type_id: paragraph
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_figure_2_text_line_2:
+      bundle: key_figures
+      name: field_figure_2_text_line_2
+      entity_type_id: paragraph
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_figure_3_number:
+      bundle: key_figures
+      name: field_figure_3_number
+      entity_type_id: paragraph
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_figure_3_text_line_1:
+      bundle: key_figures
+      name: field_figure_3_text_line_1
+      entity_type_id: paragraph
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_figure_3_text_line_2:
+      bundle: key_figures
+      name: field_figure_3_text_line_2
+      entity_type_id: paragraph
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_figure_4_number:
+      bundle: key_figures
+      name: field_figure_4_number
+      entity_type_id: paragraph
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_figure_4_text_line_1:
+      bundle: key_figures
+      name: field_figure_4_text_line_1
+      entity_type_id: paragraph
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_figure_4_text_line_2:
+      bundle: key_figures
+      name: field_figure_4_text_line_2
+      entity_type_id: paragraph
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+  key_figure:
+    field_figure:
+      bundle: key_figure
+      name: field_figure
+      entity_type_id: paragraph
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_line_1:
+      bundle: key_figure
+      name: field_line_1
+      entity_type_id: paragraph
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_line_2:
+      bundle: key_figure
+      name: field_line_2
+      entity_type_id: paragraph
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
       notes: ''
       relationship: 0
       sars_filename: ''
