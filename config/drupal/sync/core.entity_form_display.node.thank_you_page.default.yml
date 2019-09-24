@@ -10,7 +10,6 @@ dependencies:
     - field.field.node.thank_you_page.field_success_text
     - field.field.node.thank_you_page.field_thank_you_text
     - field.field.node.thank_you_page.field_thumbnail
-    - field.field.node.thank_you_page.field_title
     - node.type.thank_you_page
   module:
     - file
@@ -41,7 +40,28 @@ content:
     settings:
       size: 60
       placeholder: ''
-    third_party_settings: {  }
+    third_party_settings:
+      conditional_fields:
+        f550680e-2f2b-4bc6-9063-9c96dba8cdff:
+          dependee: field_file
+          settings:
+            state: visible
+            condition: value
+            grouping: AND
+            values_set: 1
+            value: ''
+            values: {  }
+            value_form:
+              -
+                fids: {  }
+                display: '1'
+                description: ''
+                upload: ''
+            effect: show
+            effect_options: {  }
+            selector: ''
+          entity_type: node
+          bundle: thank_you_page
     type: string_textfield
     region: content
   field_file:
@@ -77,19 +97,13 @@ content:
     type: string_textfield
     region: content
   field_thumbnail:
-    weight: 124
+    weight: 130
     settings:
-      progress_indicator: throbber
-    third_party_settings: {  }
-    type: file_generic
-    region: content
-  field_title:
-    weight: 122
-    settings:
+      match_operator: CONTAINS
       size: 60
       placeholder: ''
     third_party_settings: {  }
-    type: string_textfield
+    type: entity_reference_autocomplete
     region: content
   langcode:
     type: language_select
