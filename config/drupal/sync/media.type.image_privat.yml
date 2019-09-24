@@ -1,0 +1,13 @@
+uuid: 3309cb1c-ab6d-49ce-b5be-b431f908dbb5
+langcode: en
+status: false
+dependencies: {  }
+id: image_privat
+label: 'Image Privat'
+description: ''
+source: image
+queue_thumbnail_downloads: false
+new_revision: false
+source_configuration:
+  source_field: field_media_image_1
+field_map: {  }
