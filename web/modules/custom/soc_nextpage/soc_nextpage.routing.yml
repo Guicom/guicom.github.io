@@ -1,0 +1,9 @@
+# Admin / config routes
+
+soc_nextpage.nextpage_ws_settings:
+  path: '/admin/config/socomec/nextpage'
+  defaults:
+    _form: '\Drupal\soc_nextpage\Form\NextpageApiSettingsForm'
+    _title: 'Socomec'
+  requirements:
+    _permission: 'access administration pages'

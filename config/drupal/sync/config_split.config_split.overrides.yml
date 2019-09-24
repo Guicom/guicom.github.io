@@ -11,6 +11,7 @@ theme: {  }
 blacklist: {  }
 graylist:
   - dblog.settings
+  - soc_nextpage.nextpage_ws
   - system.cron
   - system.file
   - system.logging

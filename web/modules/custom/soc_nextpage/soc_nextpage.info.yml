@@ -1,0 +1,7 @@
+name: Socomec Nextpage API
+type: module
+description: Nextpage API
+core: 8.x
+package: Socomec
+dependencies:
+  - soc_core
