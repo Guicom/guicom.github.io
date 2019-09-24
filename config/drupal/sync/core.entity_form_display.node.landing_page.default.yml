@@ -3,11 +3,13 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.landing_page.field_form_url
     - field.field.node.landing_page.field_hero_paragraph
     - field.field.node.landing_page.field_metatags
     - field.field.node.landing_page.field_premium_content_type
     - node.type.landing_page
   module:
+    - link
     - metatag
     - paragraphs
     - path
@@ -22,6 +24,14 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_form_url:
+    weight: 27
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
   field_hero_paragraph:
     type: entity_reference_paragraphs
     weight: 2
