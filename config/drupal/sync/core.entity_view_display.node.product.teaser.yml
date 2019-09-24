@@ -29,4 +29,25 @@ content:
     region: content
 hidden:
   addtoany: true
+  field_advantages: true
+  field_applications: true
+  field_baseline: true
+  field_catalogue_page_cta: true
+  field_complementary_info: true
+  field_faq: true
+  field_function: true
+  field_in_situ_picture: true
+  field_main_picture: true
+  field_new: true
+  field_pre_sales_cta: true
+  field_premium_content_promotion: true
+  field_quotation_cta: true
+  field_references: true
+  field_secondary_function: true
+  field_secondary_pictures: true
+  field_standards_certifications: true
+  field_store_locator_cta: true
+  field_strong_points: true
+  field_tools: true
+  field_video: true
   langcode: true

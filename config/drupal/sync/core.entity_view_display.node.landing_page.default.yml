@@ -4,10 +4,12 @@ status: true
 dependencies:
   config:
     - field.field.node.landing_page.field_hero_paragraph
+    - field.field.node.landing_page.field_metatags
     - field.field.node.landing_page.field_premium_content_type
     - node.type.landing_page
   module:
     - entity_reference_revisions
+    - metatag
     - user
 id: node.landing_page.default
 targetEntityType: node
@@ -22,6 +24,13 @@ content:
       view_mode: default
       link: ''
     third_party_settings: {  }
+    region: content
+  field_metatags:
+    weight: 103
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: metatag_empty_formatter
     region: content
   field_premium_content_type:
     weight: 102
