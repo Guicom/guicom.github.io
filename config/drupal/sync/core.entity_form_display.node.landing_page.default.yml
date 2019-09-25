@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.node.landing_page.field_form_url
     - field.field.node.landing_page.field_hero_paragraph
+    - field.field.node.landing_page.field_key_figures
     - field.field.node.landing_page.field_metatags
     - field.field.node.landing_page.field_premium_content_type
     - node.type.landing_page
@@ -35,6 +36,18 @@ content:
   field_hero_paragraph:
     type: entity_reference_paragraphs
     weight: 2
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+    region: content
+  field_key_figures:
+    type: entity_reference_paragraphs
+    weight: 28
     settings:
       title: Paragraph
       title_plural: Paragraphs
