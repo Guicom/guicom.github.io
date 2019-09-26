@@ -1,0 +1,9 @@
+uuid: 19048abb-119a-4c26-a258-957740c3909c
+langcode: en
+status: true
+dependencies: {  }
+id: model_text
+label: 'Model - Text'
+icon_uuid: null
+description: ''
+behavior_plugins: {  }
