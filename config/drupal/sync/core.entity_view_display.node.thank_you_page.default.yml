@@ -10,7 +10,6 @@ dependencies:
     - field.field.node.thank_you_page.field_success_text
     - field.field.node.thank_you_page.field_thank_you_text
     - field.field.node.thank_you_page.field_thumbnail
-    - field.field.node.thank_you_page.field_title
     - node.type.thank_you_page
   module:
     - file
@@ -68,20 +67,13 @@ content:
     type: string
     region: content
   field_thumbnail:
-    weight: 104
+    type: entity_reference_entity_view
+    weight: 110
     label: above
     settings:
-      use_description_as_link_text: true
+      view_mode: default
+      link: false
     third_party_settings: {  }
-    type: file_default
-    region: content
-  field_title:
-    weight: 102
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    type: string
     region: content
   links:
     weight: 100
@@ -90,4 +82,5 @@ content:
     region: content
 hidden:
   addtoany: true
+  field_title: true
   langcode: true

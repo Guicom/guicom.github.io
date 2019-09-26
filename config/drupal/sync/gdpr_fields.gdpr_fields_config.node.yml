@@ -259,7 +259,7 @@ bundles:
       rtf: 'no'
       rta: 'no'
       enabled: false
-      anonymizer: ''
+      anonymizer: clear_anonymizer
       notes: ''
       relationship: 0
       sars_filename: ''
@@ -321,6 +321,17 @@ bundles:
     field_conditional:
       bundle: thank_you_page
       name: field_conditional
+      entity_type_id: node
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_thumbnail_:
+      bundle: thank_you_page
+      name: field_thumbnail_
       entity_type_id: node
       rtf: 'no'
       rta: 'no'

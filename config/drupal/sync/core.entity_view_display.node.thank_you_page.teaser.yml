@@ -29,4 +29,11 @@ content:
     region: content
 hidden:
   addtoany: true
+  field_conditional: true
+  field_file: true
+  field_landing_page: true
+  field_success_text: true
+  field_thank_you_text: true
+  field_thumbnail: true
+  field_title: true
   langcode: true

@@ -1,0 +1,22 @@
+uuid: 4e42f00a-b0ae-4f15-be5e-403a76252ad0
+langcode: en
+status: true
+dependencies:
+  config:
+    - media.type.image_privat
+id: media.image_privat.status
+field_name: status
+entity_type: media
+bundle: image_privat
+label: Published
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean
