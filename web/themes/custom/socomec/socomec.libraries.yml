@@ -10,3 +10,13 @@ global-styling:
   dependencies:
     - core/jquery
     - core/drupal
+
+datatables-styling:
+  versin: 1.x
+  js:
+    js/jquery.dataTables.min.js: {}
+    js/socomec.dataTables.js: {}
+  css:
+    component:
+      css/jquery.dataTables.css: {}
+
