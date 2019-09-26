@@ -10,6 +10,8 @@ filenames:
   hero_paragraph: ''
   key_figures: ''
   key_figure: ''
+  m: ''
+  model_text: ''
 bundles:
   product_faq:
     field_question:
@@ -361,6 +363,52 @@ bundles:
     field_line_2:
       bundle: key_figure
       name: field_line_2
+      entity_type_id: paragraph
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+  m:
+    field_title:
+      bundle: m
+      name: field_title
+      entity_type_id: paragraph
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_text:
+      bundle: m
+      name: field_text
+      entity_type_id: paragraph
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+  model_text:
+    field_title:
+      bundle: model_text
+      name: field_title
+      entity_type_id: paragraph
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_text:
+      bundle: model_text
+      name: field_text
       entity_type_id: paragraph
       rtf: 'no'
       rta: 'no'
