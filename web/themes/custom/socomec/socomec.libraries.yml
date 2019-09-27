@@ -12,11 +12,10 @@ global-styling:
     - core/drupal
 
 datatables-styling:
-  versin: 1.x
+  versin: VERSION
   js:
-    js/jquery.dataTables.min.js: {}
-    js/socomec.dataTables.js: {}
+    //cdn.datatables.net/w/bs4/dt-1.10.18/r-2.2.2/datatables.min.js: {}
   css:
     component:
-      css/jquery.dataTables.css: {}
+      //cdn.datatables.net/w/bs4/dt-1.10.18/r-2.2.2/datatables.min.css: {}
 

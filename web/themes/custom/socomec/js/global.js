@@ -31,4 +31,16 @@
     }
   };
 
+  /**
+   * Datatables Settings
+   * @see: https://www.datatables.net
+   */
+  Drupal.behaviors.socomec_datatables = {
+    attach: function(context, settings) {
+      $('.field table', context).once('socomec_datatables').DataTable({
+        retrieve: true,
+        responsive: true
+      });
+    }
+  };
 })(jQuery, Drupal);
