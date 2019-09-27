@@ -1,41 +1,48 @@
 {
     "_links": {
         "self": {
-            "href": "http:\/\/default\/node\/1?_format=hal_json"
+            "href": "http:\/\/default\/media\/4\/edit?_format=hal_json"
         },
         "type": {
-            "href": "http:\/\/drupal.org\/rest\/type\/node\/page"
+            "href": "http:\/\/drupal.org\/rest\/type\/media\/image"
         },
-        "http:\/\/drupal.org\/rest\/relation\/node\/page\/revision_uid": [
+        "http:\/\/drupal.org\/rest\/relation\/media\/image\/revision_user": [
             {
                 "href": "http:\/\/default\/user\/1?_format=hal_json"
             }
         ],
-        "http:\/\/drupal.org\/rest\/relation\/node\/page\/uid": [
+        "http:\/\/drupal.org\/rest\/relation\/media\/image\/uid": [
             {
                 "href": "http:\/\/default\/user\/1?_format=hal_json",
                 "lang": "en"
             }
         ],
-        "http:\/\/drupal.org\/rest\/relation\/node\/page\/field_table": [
+        "http:\/\/drupal.org\/rest\/relation\/media\/image\/thumbnail": [
             {
-                "href": ""
+                "href": "http:\/\/default\/sites\/default\/files\/2019-09\/abstract-1920x740.jpg",
+                "lang": "en"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/media\/image\/field_media_image": [
+            {
+                "href": "http:\/\/default\/sites\/default\/files\/2019-09\/abstract-1920x740.jpg",
+                "lang": "en"
             }
         ]
     },
-    "nid": [
+    "mid": [
         {
-            "value": 1
+            "value": 4
         }
     ],
     "uuid": [
         {
-            "value": "f543793b-cdd5-443e-9a6a-026994e2b060"
+            "value": "2decfde9-691b-4d51-a39b-19e4491719ec"
         }
     ],
     "vid": [
         {
-            "value": 1
+            "value": 6
         }
     ],
     "langcode": [
@@ -44,19 +51,19 @@
             "lang": "en"
         }
     ],
-    "type": [
+    "bundle": [
         {
-            "target_id": "page"
+            "target_id": "image"
         }
     ],
-    "revision_timestamp": [
+    "revision_created": [
         {
-            "value": "2019-09-26T12:11:24+00:00",
+            "value": "2019-09-27T11:32:29+00:00",
             "format": "Y-m-d\\TH:i:sP"
         }
     ],
     "_embedded": {
-        "http:\/\/drupal.org\/rest\/relation\/node\/page\/revision_uid": [
+        "http:\/\/drupal.org\/rest\/relation\/media\/image\/revision_user": [
             {
                 "_links": {
                     "self": {
@@ -73,7 +80,7 @@
                 ]
             }
         ],
-        "http:\/\/drupal.org\/rest\/relation\/node\/page\/uid": [
+        "http:\/\/drupal.org\/rest\/relation\/media\/image\/uid": [
             {
                 "_links": {
                     "self": {
@@ -91,22 +98,40 @@
                 "lang": "en"
             }
         ],
-        "http:\/\/drupal.org\/rest\/relation\/node\/page\/field_table": [
+        "http:\/\/drupal.org\/rest\/relation\/media\/image\/thumbnail": [
             {
                 "_links": {
                     "self": {
-                        "href": ""
+                        "href": "http:\/\/default\/sites\/default\/files\/2019-09\/abstract-1920x740.jpg"
                     },
                     "type": {
-                        "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/model_text"
+                        "href": "http:\/\/drupal.org\/rest\/type\/file\/file"
                     }
                 },
                 "uuid": [
                     {
-                        "value": "4ab1d41b-b0d2-4fe3-9f15-f40405c69b1f"
+                        "value": "c4eac5c7-00fd-4874-babb-dc67a529d9cb"
                     }
                 ],
-                "target_revision_id": "1"
+                "lang": "en"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/media\/image\/field_media_image": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/sites\/default\/files\/2019-09\/abstract-1920x740.jpg"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/file\/file"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "c4eac5c7-00fd-4874-babb-dc67a529d9cb"
+                    }
+                ],
+                "lang": "en"
             }
         ]
     },
@@ -116,35 +141,24 @@
             "lang": "en"
         }
     ],
-    "title": [
+    "name": [
         {
-            "value": "Table Exemple",
+            "value": "abstract-1920x740.jpg",
             "lang": "en"
         }
     ],
     "created": [
         {
-            "value": "2019-09-26T12:07:47+00:00",
+            "value": "2019-09-27T11:32:14+00:00",
             "lang": "en",
             "format": "Y-m-d\\TH:i:sP"
         }
     ],
     "changed": [
         {
-            "value": "2019-09-26T12:11:24+00:00",
+            "value": "2019-09-27T11:32:29+00:00",
             "lang": "en",
             "format": "Y-m-d\\TH:i:sP"
-        }
-    ],
-    "promote": [
-        {
-            "value": false
-        }
-    ],
-    "sticky": [
-        {
-            "value": false,
-            "lang": "en"
         }
     ],
     "default_langcode": [
@@ -162,8 +176,8 @@
     "metatag": [
         {
             "value": {
-                "title": "Table Exemple | Socomec",
-                "canonical_url": "http:\/\/default\/node\/1"
+                "title": "| Socomec",
+                "canonical_url": "http:\/\/default\/node"
             }
         }
     ]
