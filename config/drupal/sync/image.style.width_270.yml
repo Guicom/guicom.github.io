@@ -12,4 +12,4 @@ effects:
     data:
       width: 270
       height: null
-      upscale: true
+      upscale: false

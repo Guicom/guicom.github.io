@@ -11,6 +11,8 @@
     .view-hero-block{
       .socomec-hero-background{
         background: linear-gradient(26.93deg, #00519D 0%, rgba(0,81,157,0.8) 100%);
+        background-repeat: no-repeat;
+        background-size: cover;
         height: 740px;
         .hero-thumbnail{
           padding:45px 0px;
