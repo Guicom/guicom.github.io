@@ -1,5 +1,15 @@
 /* MIXINS */
 
+@mixin block-title($with-line: false) {
+  color: $blue;
+  font-family: $font-roboto;
+  font-size: 48px;
+  font-weight: lighter;
+  @if $with-line == true {
+    &::after {}
+  }
+}
+
 //
 // Alternate buttons
 //

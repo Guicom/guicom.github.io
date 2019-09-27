@@ -1,0 +1,39 @@
+.paragraph--type--key-figures {
+
+  align-items: center;
+  border-top: 2px solid $yellow;
+  border-bottom: 2px solid $yellow;
+  display: flex;
+  justify-content: space-around;
+  margin: 40px 0 66px;
+  padding: 20px 0 10px;
+
+  .field {
+    flex-basis: 25%;
+    position: relative;
+    &::after {
+      background-color: $blue_lighter;
+      height: 60px;
+      position: absolute;
+      margin-top: -30px;
+      right: 0;
+      top: 50%;
+      width: 1px;
+    }
+  }
+
+  [class^=field--name-field-figure-1-text]
+  .field__label {
+    color: $blue_light;
+    font-family: $font-roboto;
+    font-size: 48px;
+    font-weight: bolder;
+  }
+
+  .field__item {
+    color: $blue;
+    font-family: $font-poppins;
+    font-size: 12px;
+  }
+
+}
