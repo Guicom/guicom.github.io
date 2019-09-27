@@ -17,7 +17,11 @@ classes:
     - col-lg-10
     - col-lg-11
     - col-lg-12
-  field: {  }
+  field:
+    - background-left-grey
+    - background-right-grey
+    - background-left-yellow
+    - background-right-yellow
 use_field_names: true
 _core:
   default_config_hash: xfB0qOeoAomOThclNNokdKTrVwXLcXz13SU3-4a5-FY
