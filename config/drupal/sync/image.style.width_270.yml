@@ -1,0 +1,15 @@
+uuid: b057f18e-efda-473e-afbe-8e1ded30742f
+langcode: en
+status: true
+dependencies: {  }
+name: width_270
+label: 'Width 270'
+effects:
+  908f945e-3636-4c07-97cb-30e4d36638e7:
+    uuid: 908f945e-3636-4c07-97cb-30e4d36638e7
+    id: image_scale
+    weight: 1
+    data:
+      width: 270
+      height: null
+      upscale: true

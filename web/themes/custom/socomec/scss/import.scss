@@ -13,3 +13,8 @@
 @import "typography";
 // mixins
 @import "mixins";
+
+/* IMPORTS SOCOMEC STYLES OVERRIDE */
+// Blocks
+@import "./socomec_components/blocks/hero";
+@import "./socomec_components/header";
