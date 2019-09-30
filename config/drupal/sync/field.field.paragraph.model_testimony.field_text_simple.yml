@@ -1,0 +1,19 @@
+uuid: 3be2ed44-caa8-4322-a75c-a8c860cfc876
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_text_simple
+    - paragraphs.paragraphs_type.model_testimony
+id: paragraph.model_testimony.field_text_simple
+field_name: field_text_simple
+entity_type: paragraph
+bundle: model_testimony
+label: 'Text Simple'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

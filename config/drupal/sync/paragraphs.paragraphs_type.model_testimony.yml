@@ -1,0 +1,9 @@
+uuid: c212d096-1591-405b-b03d-ccd6dc12cf3c
+langcode: en
+status: true
+dependencies: {  }
+id: model_testimony
+label: 'Model - Testimony'
+icon_uuid: null
+description: ''
+behavior_plugins: {  }

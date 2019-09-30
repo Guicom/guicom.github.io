@@ -1,0 +1,21 @@
+uuid: 0a74fde7-c1cb-44bc-8d33-cf0e7da71c6b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_fonction
+    - paragraphs.paragraphs_type.model_testimony
+  module:
+    - text
+id: paragraph.model_testimony.field_fonction
+field_name: field_fonction
+entity_type: paragraph
+bundle: model_testimony
+label: Fonction
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

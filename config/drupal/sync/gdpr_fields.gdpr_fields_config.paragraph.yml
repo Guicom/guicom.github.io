@@ -12,6 +12,7 @@ filenames:
   key_figure: ''
   m: ''
   model_text: ''
+  model_testimony: ''
 bundles:
   product_faq:
     field_question:
@@ -409,6 +410,73 @@ bundles:
     field_text:
       bundle: model_text
       name: field_text
+      entity_type_id: paragraph
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+  model_testimony:
+    field_image_1:
+      bundle: model_testimony
+      name: field_image_1
+      entity_type_id: paragraph
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: clear_anonymizer
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_image_2:
+      bundle: model_testimony
+      name: field_image_2
+      entity_type_id: paragraph
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_nom:
+      bundle: model_testimony
+      name: field_nom
+      entity_type_id: paragraph
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_fonction:
+      bundle: model_testimony
+      name: field_fonction
+      entity_type_id: paragraph
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_company:
+      bundle: model_testimony
+      name: field_company
+      entity_type_id: paragraph
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_text_simple:
+      bundle: model_testimony
+      name: field_text_simple
       entity_type_id: paragraph
       rtf: 'no'
       rta: 'no'

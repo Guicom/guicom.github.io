@@ -1,0 +1,68 @@
+uuid: f74ca4db-46dc-483d-a1a4-7015974b0d0f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.model_testimony.field_company
+    - field.field.paragraph.model_testimony.field_fonction
+    - field.field.paragraph.model_testimony.field_image_1
+    - field.field.paragraph.model_testimony.field_image_2
+    - field.field.paragraph.model_testimony.field_nom
+    - field.field.paragraph.model_testimony.field_text_simple
+    - paragraphs.paragraphs_type.model_testimony
+  module:
+    - text
+id: paragraph.model_testimony.default
+targetEntityType: paragraph
+bundle: model_testimony
+mode: default
+content:
+  field_company:
+    weight: 4
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_fonction:
+    weight: 3
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_image_1:
+    type: entity_reference_entity_view
+    weight: 0
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    region: content
+  field_image_2:
+    type: entity_reference_entity_view
+    weight: 1
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    region: content
+  field_nom:
+    weight: 2
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_text_simple:
+    weight: 5
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+hidden: {  }
