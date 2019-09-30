@@ -1,0 +1,7 @@
+uuid: 85ad4a49-acf1-4021-8a6d-f9867ab0be40
+langcode: en
+status: true
+dependencies: {  }
+id: node__landing_page
+label: 'Content: Landing page - Premium'
+tags: {  }

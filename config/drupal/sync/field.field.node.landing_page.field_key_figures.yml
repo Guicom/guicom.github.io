@@ -1,0 +1,46 @@
+uuid: 8a15d293-c500-45b2-85d8-48a97baeadb8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_key_figures
+    - node.type.landing_page
+    - paragraphs.paragraphs_type.key_figures
+  module:
+    - entity_reference_revisions
+id: node.landing_page.field_key_figures
+field_name: field_key_figures
+entity_type: node
+bundle: landing_page
+label: 'Key figures'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      key_figures: key_figures
+    target_bundles_drag_drop:
+      key_figure:
+        weight: 7
+        enabled: false
+      hero_paragraph:
+        weight: 8
+        enabled: false
+      key_figures:
+        enabled: true
+        weight: 9
+      premium_content_promotion:
+        weight: 10
+        enabled: false
+      product_faq:
+        weight: 11
+        enabled: false
+      product_reference:
+        weight: 12
+        enabled: false
+field_type: entity_reference_revisions

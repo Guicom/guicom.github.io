@@ -1,0 +1,9 @@
+uuid: ef14fb7f-42c1-4a22-b253-0805e6490a97
+langcode: en
+status: true
+dependencies: {  }
+id: model_text
+label: 'Model - Text'
+icon_uuid: null
+description: ''
+behavior_plugins: {  }
