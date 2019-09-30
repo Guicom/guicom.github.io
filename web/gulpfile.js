@@ -10,6 +10,7 @@ let gulp = require('gulp'),
 const paths = {
   scss: {
     src: 'themes/custom/socomec/scss/style.scss',
+    pardot: 'themes/custom/socomec/scss/pardot.scss',
     dest: 'themes/custom/socomec/css',
     watch: 'themes/custom/socomec/scss/**/*.scss',
     bootstrap: 'node_modules/bootstrap/scss/bootstrap.scss'
@@ -24,7 +25,7 @@ const paths = {
 
 // Compile sass into CSS & auto-inject into browsers
 function styles () {
-  return gulp.src([paths.scss.bootstrap, paths.scss.src])
+  return gulp.src([paths.scss.bootstrap, paths.scss.src, paths.scss.pardot])
     .pipe(sourcemaps.init())
     .pipe(sass().on('error', sass.logError))
     .pipe(postcss([autoprefixer({

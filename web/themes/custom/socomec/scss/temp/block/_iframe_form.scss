@@ -1,0 +1,38 @@
+.field--name-field-form-url {
+  background: #FFCC00;
+  position: relative;
+  margin-bottom: 30px;
+  &:after {
+    right: -999em;
+    background: #FFCC00;
+    content: '';
+    display: block;
+    position: absolute;
+    width: 999em;
+    top: 0;
+    bottom: 0;
+  }
+
+  .conteneur {
+    height: calc(100% - 2px);
+  }
+}
+
+#block-socomec-content {
+  .layout__region--first {
+    @include make-col(8);
+  }
+
+  .layout__region--second {
+    @include make-col(4);
+  }
+}
+
+body {
+  overflow-x: hidden;
+}
+
+iframe {
+  width: 1px;
+  min-width: 100%;
+}
