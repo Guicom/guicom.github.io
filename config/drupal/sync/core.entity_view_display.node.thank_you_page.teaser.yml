@@ -31,6 +31,7 @@ hidden:
   field_file: true
   field_landing_page: true
   field_private_file: true
+  field_private_image: true
   field_success_text: true
   field_thank_you_text: true
   field_thumbnail: true
