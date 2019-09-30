@@ -6,11 +6,6 @@
         "type": {
             "href": "http:\/\/drupal.org\/rest\/type\/media\/image"
         },
-        "http:\/\/drupal.org\/rest\/relation\/media\/image\/revision_user": [
-            {
-                "href": "http:\/\/default\/user\/1?_format=hal_json"
-            }
-        ],
         "http:\/\/drupal.org\/rest\/relation\/media\/image\/uid": [
             {
                 "href": "http:\/\/default\/user\/1?_format=hal_json",
@@ -19,13 +14,7 @@
         ],
         "http:\/\/drupal.org\/rest\/relation\/media\/image\/thumbnail": [
             {
-                "href": "http:\/\/default\/sites\/default\/files\/2019-09\/test-270x280-img.png",
-                "lang": "en"
-            }
-        ],
-        "http:\/\/drupal.org\/rest\/relation\/media\/image\/field_media_image": [
-            {
-                "href": "http:\/\/default\/sites\/default\/files\/2019-09\/test-270x280-img.png",
+                "href": "http:\/\/default\/sites\/default\/files\/media-icons\/generic\/no-thumbnail.png",
                 "lang": "en"
             }
         ]
@@ -58,28 +47,17 @@
     ],
     "revision_created": [
         {
-            "value": "2019-09-20T13:31:52+00:00",
+            "value": "2019-09-27T15:51:07+00:00",
             "format": "Y-m-d\\TH:i:sP"
         }
     ],
+    "status": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
     "_embedded": {
-        "http:\/\/drupal.org\/rest\/relation\/media\/image\/revision_user": [
-            {
-                "_links": {
-                    "self": {
-                        "href": "http:\/\/default\/user\/1?_format=hal_json"
-                    },
-                    "type": {
-                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
-                    }
-                },
-                "uuid": [
-                    {
-                        "value": "313b842f-c03e-4600-92be-3e8311f08850"
-                    }
-                ]
-            }
-        ],
         "http:\/\/drupal.org\/rest\/relation\/media\/image\/uid": [
             {
                 "_links": {
@@ -92,7 +70,7 @@
                 },
                 "uuid": [
                     {
-                        "value": "313b842f-c03e-4600-92be-3e8311f08850"
+                        "value": "e3c07b99-99e8-4dfe-99f8-beae64a48247"
                     }
                 ],
                 "lang": "en"
@@ -102,7 +80,7 @@
             {
                 "_links": {
                     "self": {
-                        "href": "http:\/\/default\/sites\/default\/files\/2019-09\/test-270x280-img.png"
+                        "href": "http:\/\/default\/sites\/default\/files\/media-icons\/generic\/no-thumbnail.png"
                     },
                     "type": {
                         "href": "http:\/\/drupal.org\/rest\/type\/file\/file"
@@ -110,37 +88,13 @@
                 },
                 "uuid": [
                     {
-                        "value": "17edf097-72d6-41e3-b712-d30b806ef0af"
-                    }
-                ],
-                "lang": "en"
-            }
-        ],
-        "http:\/\/drupal.org\/rest\/relation\/media\/image\/field_media_image": [
-            {
-                "_links": {
-                    "self": {
-                        "href": "http:\/\/default\/sites\/default\/files\/2019-09\/test-270x280-img.png"
-                    },
-                    "type": {
-                        "href": "http:\/\/drupal.org\/rest\/type\/file\/file"
-                    }
-                },
-                "uuid": [
-                    {
-                        "value": "17edf097-72d6-41e3-b712-d30b806ef0af"
+                        "value": "67284d6c-ee5c-4b38-a61c-4e14c367a232"
                     }
                 ],
                 "lang": "en"
             }
         ]
     },
-    "status": [
-        {
-            "value": true,
-            "lang": "en"
-        }
-    ],
     "name": [
         {
             "value": "test-270x280-img.png",
@@ -171,6 +125,14 @@
         {
             "value": true,
             "lang": "en"
+        }
+    ],
+    "metatag": [
+        {
+            "value": {
+                "title": "| Socomec",
+                "canonical_url": "http:\/\/default\/node"
+            }
         }
     ]
 }
