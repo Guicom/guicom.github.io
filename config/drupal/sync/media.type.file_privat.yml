@@ -1,0 +1,13 @@
+uuid: 028cf405-1a90-4eb3-aae6-1c366a59bb8f
+langcode: en
+status: false
+dependencies: {  }
+id: file_privat
+label: 'File Privat'
+description: ''
+source: file
+queue_thumbnail_downloads: false
+new_revision: false
+source_configuration:
+  source_field: field_media_file_1
+field_map: {  }

@@ -1,12 +1,12 @@
-uuid: dd0f64c9-0b11-4be5-ac23-64a836baf7f8
+uuid: e541a1dd-8bbc-4301-b0f3-2cf16d4b3805
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_conditional
+    - field.storage.node.field_cta
     - node.type.thank_you_page
-id: node.thank_you_page.field_conditional
-field_name: field_conditional
+id: node.thank_you_page.field_cta
+field_name: field_cta
 entity_type: node
 bundle: thank_you_page
 label: CTA
