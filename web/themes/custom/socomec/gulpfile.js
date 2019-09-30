@@ -10,6 +10,7 @@ let gulp = require('gulp'),
 const paths = {
   scss: {
     src: './scss/style.scss',
+    ckeditor: './scss/ckeditor.scss',
     dest: './css',
     watch: './scss/**/*.scss',
     bootstrap: './node_modules/bootstrap/scss/bootstrap.scss'
@@ -24,7 +25,7 @@ const paths = {
 
 // Compile sass into CSS & auto-inject into browsers
 function styles () {
-  return gulp.src([paths.scss.bootstrap, paths.scss.src])
+  return gulp.src([paths.scss.bootstrap, paths.scss.src, paths.scss.ckeditor])
     .pipe(sourcemaps.init())
     .pipe(sass().on('error', sass.logError))
     .pipe(postcss([autoprefixer({

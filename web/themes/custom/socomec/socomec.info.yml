@@ -6,8 +6,7 @@ description: 'SASS starter kit for a Bootstrap Barrio SubTheme.'
 base theme: bootstrap_barrio
 
 ckeditor_stylesheets:
-  - css/ckeditor_style.css?v1
-
+  - css/ckeditor.css?v=10
 libraries:
   - socomec/global-styling
 libraries-override:
