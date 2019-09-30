@@ -3,10 +3,10 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.thank_you_page.body
-    - field.field.node.thank_you_page.field_conditional
+    - field.field.node.thank_you_page.field_cta
     - field.field.node.thank_you_page.field_file
     - field.field.node.thank_you_page.field_landing_page
+    - field.field.node.thank_you_page.field_private_file
     - field.field.node.thank_you_page.field_success_text
     - field.field.node.thank_you_page.field_thank_you_text
     - field.field.node.thank_you_page.field_thumbnail
@@ -20,33 +20,24 @@ targetEntityType: node
 bundle: thank_you_page
 mode: default
 content:
-  body:
-    type: text_textarea_with_summary
-    weight: 121
-    settings:
-      rows: 9
-      summary_rows: 3
-      placeholder: ''
-    third_party_settings: {  }
-    region: content
   created:
     type: datetime_timestamp
-    weight: 10
+    weight: 2
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_conditional:
-    weight: 129
+  field_cta:
+    weight: 13
     settings:
       size: 60
       placeholder: ''
     third_party_settings:
       conditional_fields:
-        f550680e-2f2b-4bc6-9063-9c96dba8cdff:
+        ba428598-c379-495e-a65f-c9affa0da76b:
           dependee: field_file
           settings:
             state: visible
-            condition: value
+            condition: '!empty'
             grouping: AND
             values_set: 1
             value: ''
@@ -65,14 +56,23 @@ content:
     type: string_textfield
     region: content
   field_file:
-    weight: 128
+    weight: 10
     settings:
       progress_indicator: throbber
     third_party_settings: {  }
     type: file_generic
     region: content
   field_landing_page:
-    weight: 123
+    weight: 7
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_private_file:
+    weight: 12
     settings:
       match_operator: CONTAINS
       size: 60
@@ -81,7 +81,7 @@ content:
     type: entity_reference_autocomplete
     region: content
   field_success_text:
-    weight: 126
+    weight: 8
     settings:
       rows: 5
       placeholder: ''
@@ -89,7 +89,7 @@ content:
     type: text_textarea
     region: content
   field_thank_you_text:
-    weight: 127
+    weight: 9
     settings:
       size: 60
       placeholder: ''
@@ -97,7 +97,7 @@ content:
     type: string_textfield
     region: content
   field_thumbnail:
-    weight: 130
+    weight: 11
     settings:
       match_operator: CONTAINS
       size: 60
@@ -107,14 +107,14 @@ content:
     region: content
   langcode:
     type: language_select
-    weight: 2
+    weight: 0
     region: content
     settings:
       include_locked: true
     third_party_settings: {  }
   path:
     type: path
-    weight: 30
+    weight: 5
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -122,34 +122,26 @@ content:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 15
+    weight: 3
     region: content
     third_party_settings: {  }
   status:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 120
+    weight: 6
     region: content
     third_party_settings: {  }
   sticky:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 16
+    weight: 4
     region: content
-    third_party_settings: {  }
-  title:
-    type: string_textfield
-    weight: -5
-    region: content
-    settings:
-      size: 60
-      placeholder: ''
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 5
+    weight: 1
     settings:
       match_operator: CONTAINS
       size: 60
@@ -158,3 +150,4 @@ content:
     third_party_settings: {  }
 hidden:
   field_title: true
+  title: true
