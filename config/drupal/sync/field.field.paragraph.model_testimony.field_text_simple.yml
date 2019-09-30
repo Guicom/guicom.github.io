@@ -9,7 +9,7 @@ id: paragraph.model_testimony.field_text_simple
 field_name: field_text_simple
 entity_type: paragraph
 bundle: model_testimony
-label: 'Text Simple'
+label: Description
 description: ''
 required: true
 translatable: false

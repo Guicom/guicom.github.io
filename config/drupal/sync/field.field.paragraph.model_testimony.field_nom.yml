@@ -9,7 +9,7 @@ id: paragraph.model_testimony.field_nom
 field_name: field_nom
 entity_type: paragraph
 bundle: model_testimony
-label: Nom
+label: Name
 description: ''
 required: true
 translatable: false

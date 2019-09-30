@@ -4,37 +4,27 @@ status: true
 dependencies:
   config:
     - field.field.paragraph.model_testimony.field_company
-    - field.field.paragraph.model_testimony.field_fonction
     - field.field.paragraph.model_testimony.field_image_1
     - field.field.paragraph.model_testimony.field_image_2
     - field.field.paragraph.model_testimony.field_nom
+    - field.field.paragraph.model_testimony.field_position
     - field.field.paragraph.model_testimony.field_text_simple
     - paragraphs.paragraphs_type.model_testimony
-  module:
-    - text
 id: paragraph.model_testimony.default
 targetEntityType: paragraph
 bundle: model_testimony
 mode: default
 content:
   field_company:
-    weight: 4
+    weight: 0
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
     type: string_textfield
     region: content
-  field_fonction:
-    weight: 3
-    settings:
-      rows: 5
-      placeholder: ''
-    third_party_settings: {  }
-    type: text_textarea
-    region: content
   field_image_1:
-    weight: 0
+    weight: 4
     settings:
       match_operator: CONTAINS
       size: 60
@@ -53,6 +43,14 @@ content:
     region: content
   field_nom:
     weight: 2
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_position:
+    weight: 3
     settings:
       size: 60
       placeholder: ''
