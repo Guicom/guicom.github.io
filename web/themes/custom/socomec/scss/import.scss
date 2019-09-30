@@ -2,14 +2,18 @@
 
 //@import url(font-awesome.min.css);
 // variables
-@import "variables";
+@import "utility/variables";
+
 //bootstrap
 @import "../../../../node_modules/bootstrap/scss/bootstrap";
-//material design bootstrap
-//@import "../node_modules/mdbootstrap/scss/mdb";
+
 // barrio
 @import "barrio";
-// typography
-@import "typography";
-// mixins
-@import "mixins";
+
+// Utility
+@import "utility/mixins";
+@import "utility/typography";
+
+// Components
+@import "components/field/key-figure";
+@import "components/paragraph/key-figure";
