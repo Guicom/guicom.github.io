@@ -7,6 +7,49 @@
 
 use Drupal\Core\Form\FormStateInterface;
 
+function redirectToFront(){
+  $response = new Symfony\Component\HttpFoundation\RedirectResponse(\Drupal\Core\Url::fromRoute('<front>')->toString());
+  $response->send();
+  Drupal::getContainer()->get('entity.manager')->getViewBuilder('node')->resetCache();
+}
+
+/**
+ * @param $variables
+ */
+function socomec_preprocess_page(&$variables) {
+  /** @var \Drupal\node\Entity\Node $node */
+  $node = \Drupal::routeMatch()->getParameter('node');
+  if ($node) {
+    $type = $node->getType();
+  } else {
+    $type = null;
+  }
+  // Check if we are in lunding page
+  if(!is_null($type) && strcmp($type, 'landing_page') == 0) {
+    // Creating Cookies$
+    $cookie_name = "thankyoupage";
+    $cookie_value = [
+      'nId' => $node->id()
+    ];
+    setcookie($cookie_name, serialize($cookie_value), time() + (60*15)); // 15 = min
+  }
+  else if(!is_null($type) && strcmp($type, 'thank_you_page') == 0) {
+
+    // Check if cookies exist
+    if(isset($_COOKIE['thankyoupage'])) {
+      $cookie = unserialize($_COOKIE['thankyoupage']);
+      $landing_nid = $node->get('field_landing_page')->getString();
+
+      if(strcmp($cookie['nId'], $landing_nid) != 0) {
+        redirectToFront();
+      }
+    }
+    else{
+      redirectToFront();
+    }
+  }
+}
+
 /**
  * Implements hook_form_system_theme_settings_alter() for settings form.
  *
