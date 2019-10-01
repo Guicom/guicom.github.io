@@ -136,6 +136,7 @@ form.form {
     display: flex;
     min-height: 60px;
     align-items: center;
+    padding-left: 17px;
 
     label.field-label {
       order: 2;
@@ -262,4 +263,51 @@ form.form {
   opacity: 1;
   -webkit-transform: scale(1);
   transform: scale(1);
+}
+
+[type="checkbox"]:checked,
+[type="checkbox"]:not(:checked) {
+  position: absolute;
+  left: -9999px;
+}
+[type="checkbox"]:checked + label,
+[type="checkbox"]:not(:checked) + label
+{
+  position: relative;
+  padding-left: 28px;
+  cursor: pointer;
+  line-height: 20px;
+  display: inline-block;
+  color: #666;
+}
+
+
+[type="checkbox"] + label:after {
+  content: '';
+  background-image: url('../images/picto/form/Checkbox-empty.svg');
+  transition: all ease-in 0.2s;
+  position: absolute;
+  left: -25px;
+  top: 7px;
+  width: 18px;
+  height: 18px;
+  background-size: cover;
+  z-index: 0;
+}
+
+[type="checkbox"]:checked + label:before {
+  content: '';
+  background-image: url('../images/picto/form/Checkbox.svg');
+  transition: all ease-in 0.2s;
+  position: absolute;
+  left: -25px;
+  top: 7px;
+  width: 18px;
+  height: 18px;
+  background-size: cover;
+  z-index: 1;
+}
+[type="checkbox"]:not(:checked) + label:after {
+  transition: all ease-in 0.2s;
+  z-index: 2;
 }
