@@ -14,7 +14,6 @@
     $('.pd-checkbox').each(function () {
       var input = $(this).find('input');
       $(this).prepend(input);
-      //$(input).insertBefore(this);
     });
   });
 })();
