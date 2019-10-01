@@ -20,3 +20,9 @@ Then, run ``/vendor/bin/phing install``
 ## Theme :
 
 The Socomec theme is a subtheme of Barrio.
+
+## GULP INSTALLATION
+In web folder run :
+
+sudo npm install --global gulp-cli
+sudo npm install --no-bin-link
