@@ -183,12 +183,5 @@
                 "canonical_url": "http:\/\/default\/node\/3"
             }
         }
-    ],
-    "field_form_url": [
-        {
-            "uri": "http:\/\/example.com",
-            "title": "",
-            "options": []
-        }
     ]
 }
