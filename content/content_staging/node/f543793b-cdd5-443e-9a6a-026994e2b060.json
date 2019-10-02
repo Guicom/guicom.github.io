@@ -1,0 +1,170 @@
+{
+    "_links": {
+        "self": {
+            "href": "http:\/\/default\/node\/1?_format=hal_json"
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/node\/page"
+        },
+        "http:\/\/drupal.org\/rest\/relation\/node\/page\/revision_uid": [
+            {
+                "href": "http:\/\/default\/user\/1?_format=hal_json"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/page\/uid": [
+            {
+                "href": "http:\/\/default\/user\/1?_format=hal_json",
+                "lang": "en"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/page\/field_table": [
+            {
+                "href": ""
+            }
+        ]
+    },
+    "nid": [
+        {
+            "value": 1
+        }
+    ],
+    "uuid": [
+        {
+            "value": "f543793b-cdd5-443e-9a6a-026994e2b060"
+        }
+    ],
+    "vid": [
+        {
+            "value": 1
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "type": [
+        {
+            "target_id": "page"
+        }
+    ],
+    "revision_timestamp": [
+        {
+            "value": "2019-09-26T12:11:24+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/node\/page\/revision_uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/user\/1?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "d0c6d55d-2be5-4d29-9659-24a4c5e8b034"
+                    }
+                ]
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/page\/uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/user\/1?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "d0c6d55d-2be5-4d29-9659-24a4c5e8b034"
+                    }
+                ],
+                "lang": "en"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/page\/field_table": [
+            {
+                "_links": {
+                    "self": {
+                        "href": ""
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/model_text"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "4ab1d41b-b0d2-4fe3-9f15-f40405c69b1f"
+                    }
+                ],
+                "target_revision_id": "1"
+            }
+        ]
+    },
+    "status": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "title": [
+        {
+            "value": "Table Exemple",
+            "lang": "en"
+        }
+    ],
+    "created": [
+        {
+            "value": "2019-09-26T12:07:47+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "changed": [
+        {
+            "value": "2019-09-26T12:11:24+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "promote": [
+        {
+            "value": false
+        }
+    ],
+    "sticky": [
+        {
+            "value": false,
+            "lang": "en"
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "revision_translation_affected": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "metatag": [
+        {
+            "value": {
+                "title": "Table Exemple | Socomec",
+                "canonical_url": "http:\/\/default\/node\/1"
+            }
+        }
+    ]
+}

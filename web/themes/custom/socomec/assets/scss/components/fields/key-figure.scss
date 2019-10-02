@@ -1,0 +1,7 @@
+.field--name-field-key-figures {
+
+  > .field__label {
+    @include block-title();
+  }
+
+}

@@ -1,6 +1,14 @@
 display:
   default:
     display_options:
+      exposed_form:
+        options:
+          reset_button_label: Réinitialiser
       fields:
         filename:
           label: Nom
+  page_2:
+    display_options:
+      fields:
+        entity_label:
+          label: Entité
