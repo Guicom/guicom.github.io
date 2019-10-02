@@ -10,7 +10,7 @@ id: paragraph.video_embed.field_video_embed_video
 field_name: field_video_embed_video
 entity_type: paragraph
 bundle: video_embed
-label: Vidéo
+label: Video
 description: ''
 required: false
 translatable: false
