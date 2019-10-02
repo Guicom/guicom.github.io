@@ -1,0 +1,46 @@
+.paragraph--type--model-testimony{
+  font-family: $font-roboto;
+}
+
+.paragraph--type--model-testimony .avatar img, .paragraph--type--model-testimony .avatar {
+  height: 100px;
+  width: 100px;
+  background-color: #00519D;
+}
+
+.paragraph--type--model-testimony .avatar{
+  overflow: hidden;
+}
+
+.paragraph--type--model-testimony .infotext {
+  margin-left: 30px;
+}
+
+.paragraph--type--model-testimony .infoblock>div{
+  display: inline-block;
+  vertical-align: top;
+}
+.paragraph--type--model-testimony .infodescription{
+  background-color: #CFDAEE;
+}
+.paragraph--type--model-testimony .infos-ou-quote{
+  height: 90px;	width: 610px;	color: #000000;	font-family: $font-roboto;	font-size: 20px;	font-weight: 300;	line-height: 30px;
+  margin-top: 30px; margin-bottom: 60px; display: inline-block;
+}
+
+.paragraph--type--model-testimony  .clipped img{height: 80px;	width: 101px;}
+
+.paragraph--type--model-testimony .ingenieur-electricie {	height: 50px;	width: 260px;	color: #4A4A47;	font-family: $font-roboto;	font-size: 16px;	line-height: 25px;}
+
+.paragraph--type--model-testimony .client-thierry-osw {	height: 25px;
+  width: 163px;
+  color: #000000;
+  font-family: $font-roboto;;
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 25px;
+  margin-top: 13px;}
+
+.paragraph--type--model-testimony .client-thierry-osw>div {
+  display: inline-block;
+}
