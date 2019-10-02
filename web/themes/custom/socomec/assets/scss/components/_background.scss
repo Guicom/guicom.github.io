@@ -1,0 +1,69 @@
+/* ------------------ Background ------------------ */
+// Position header with hero region.
+.background-left-grey {
+    background-color: $lighter-grey;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.background-left-grey:before {
+    left: -999em;
+    background-color: $lighter-grey;
+    content: '';
+    display: block;
+    position: absolute;
+    width: 999em;
+    top: 0;
+    bottom: 0;
+}
+
+.background-right-grey {
+    background-color: $lighter-grey;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.background-right-grey:before {
+    right: -999em;
+    background-color: $lighter-grey;
+    content: '';
+    display: block;
+    position: absolute;
+    width: 999em;
+    top: 0;
+    bottom: 0;
+}
+
+.background-left-yellow {
+    background-color: $yellow;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.background-left-yellow:before {
+    left: -999em;
+    background-color: $yellow;
+    content: '';
+    display: block;
+    position: absolute;
+    width: 999em;
+    top: 0;
+    bottom: 0;
+}
+
+.background-right-yellow {
+    background-color: $yellow;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.background-right-yellow:before {
+    right: -999em;
+    background-color: $yellow;
+    content: '';
+    display: block;
+    position: absolute;
+    width: 999em;
+    top: 0;
+    bottom: 0;
+}

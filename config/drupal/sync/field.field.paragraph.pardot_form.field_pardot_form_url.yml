@@ -1,0 +1,23 @@
+uuid: 5b80f886-c831-452d-bb95-f8d4509aa023
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_pardot_form_url
+    - paragraphs.paragraphs_type.pardot_form
+  module:
+    - link
+id: paragraph.pardot_form.field_pardot_form_url
+field_name: field_pardot_form_url
+entity_type: paragraph
+bundle: pardot_form
+label: Form
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 16
+  title: 0
+field_type: link
