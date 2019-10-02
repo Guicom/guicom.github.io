@@ -3,8 +3,25 @@ field_template: false
 ft-default: default
 ft-show-colon: false
 classes:
-  region: {  }
-  field: {  }
+  region:
+    - row
+    - col-lg-1
+    - col-lg-2
+    - col-lg-3
+    - col-lg-4
+    - col-lg-5
+    - col-lg-6
+    - col-lg-7
+    - col-lg-8
+    - col-lg-9
+    - col-lg-10
+    - col-lg-11
+    - col-lg-12
+  field:
+    - background-left-grey
+    - background-right-grey
+    - background-left-yellow
+    - background-right-yellow
 use_field_names: true
 _core:
   default_config_hash: xfB0qOeoAomOThclNNokdKTrVwXLcXz13SU3-4a5-FY
