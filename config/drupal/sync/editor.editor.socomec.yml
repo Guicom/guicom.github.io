@@ -55,7 +55,10 @@ settings:
           name: Media
           items:
             - Blockquote
+            - '-'
             - DrupalImage
+            - '-'
+            - DrupalFontAwesome
         -
           name: Format
           items:

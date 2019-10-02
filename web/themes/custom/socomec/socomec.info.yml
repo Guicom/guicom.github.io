@@ -6,7 +6,9 @@ description: 'SASS starter kit for a Bootstrap Barrio SubTheme.'
 base theme: bootstrap_barrio
 
 ckeditor_stylesheets:
-  - css/ckeditor.css?v=10
+  - https://fonts.googleapis.com/css?family=Roboto|Roboto
+  - https://fonts.googleapis.com/css?family=Poppins|Poppins
+  - css/ckeditor.css?v2
 libraries:
   - socomec/global-styling
   - socomec/iframe-resize
