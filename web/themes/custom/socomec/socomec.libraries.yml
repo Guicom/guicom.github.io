@@ -1,15 +1,19 @@
 global-styling:
   version: VERSION
-  js: 
-    js/popper.min.js: {}
-    js/bootstrap.min.js: {}
-    js/global.js: {}
+  js:
+    assets/js/popper.min.js: {}
+    assets/js/bootstrap.min.js: {}
+    assets/js/global.js: {}
   css:
     component:
-      css/style.css: {}
+      assets/css/style.css: {}
   dependencies:
     - core/jquery
     - core/drupal
+
+iframe-resize:
+  js:
+    assets/libraries/iframe-resizer/js/iframeResizer.min.js: {}
 # Fonts
 roboto:
   version: VERSION

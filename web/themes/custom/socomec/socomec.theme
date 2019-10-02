@@ -32,6 +32,20 @@ function socomec_form_system_theme_settings_alter(&$form, FormStateInterface $fo
 }
 
 /**
+ * Implements hook_theme_suggestions_field_alter().
+ */
+function socomec_theme_suggestions_field_alter(&$suggestions, array $variables) {
+  $element = $variables['element'];
+  
+  $suggestions[] = 'field__' . $element['#entity_type'] . '__' .
+    $element['#field_name'] . '__' . $element['#bundle'] . '__' .
+    $element['#view_mode'];
+  
+  $suggestions[] = 'field__' . $element['#entity_type'] . '__' .
+    $element['#field_name'] . '__' . $element['#view_mode'];
+}
+
+/**
  * Implements hook_theme_suggestions_HOOK_alter() for node templates.
  */
 function socomec_theme_suggestions_page_alter(array &$suggestions, array $variables) {

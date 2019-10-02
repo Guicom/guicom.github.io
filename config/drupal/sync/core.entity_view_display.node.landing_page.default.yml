@@ -4,15 +4,15 @@ status: true
 dependencies:
   config:
     - field.field.node.landing_page.field_body
-    - field.field.node.landing_page.field_form_url
     - field.field.node.landing_page.field_hero_paragraph
     - field.field.node.landing_page.field_key_figures
     - field.field.node.landing_page.field_metatags
+    - field.field.node.landing_page.field_pardot_form
     - field.field.node.landing_page.field_premium_content_type
     - node.type.landing_page
   module:
     - ds
-    - link
+    - entity_reference_revisions
     - user
 third_party_settings:
   ds:
@@ -37,32 +37,21 @@ third_party_settings:
           right:
             col-lg-4: col-lg-4
     regions:
-      left:
-        - node_title
       right:
-        - field_form_url
-    fields:
-      node_title:
-        plugin_id: node_title
-        weight: 0
-        label: hidden
-        formatter: default
+        - field_pardot_form
 id: node.landing_page.default
 targetEntityType: node
 bundle: landing_page
 mode: default
 content:
-  field_form_url:
-    weight: 1
-    label: above
+  field_pardot_form:
+    type: entity_reference_revisions_entity_view
+    weight: 0
+    label: hidden
     settings:
-      trim_length: 80
-      url_only: false
-      url_plain: false
-      rel: ''
-      target: ''
+      view_mode: default
+      link: ''
     third_party_settings: {  }
-    type: link
     region: right
 hidden:
   addtoany: true

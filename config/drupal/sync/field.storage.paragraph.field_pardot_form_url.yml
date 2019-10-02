@@ -1,13 +1,13 @@
-uuid: f5172073-9c4f-4ccd-afc4-0552150f6fdb
+uuid: af34b72d-e18d-46c7-805b-56d782c7494f
 langcode: en
 status: true
 dependencies:
   module:
     - link
-    - node
-id: node.field_form_url
-field_name: field_form_url
-entity_type: node
+    - paragraphs
+id: paragraph.field_pardot_form_url
+field_name: field_pardot_form_url
+entity_type: paragraph
 type: link
 settings: {  }
 module: link

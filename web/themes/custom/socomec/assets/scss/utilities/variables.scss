@@ -1,5 +1,26 @@
 /* VARIABLES */
 
+//Project colors
+$yellow: #FFCC00;
+$red: #EE060B;
+$blue: #004F9F;
+$white: #fff;
+$black: #000;
+
+$blue_light: #0070C0;
+$blue_lighter: #CFDAEE;
+$blue_lighter_alt: #B9CBE5;
+
+// FONTS-FAMILY.
+$font-roboto: 'Roboto', Arial, Verdana, sans-serif;
+$font-poppins: 'Poppins', Arial, Verdana, sans-serif;
+
+$lighter-grey: #CFDAEE;
+$light-grey: #F2F3F3;
+$mid-grey: #C8C8C8;
+$dark-grey: #777772;
+$darker-grey: #4A4A47;
+
 // colors
 $primary-shade: #A8CF45;
 $primary-light: lighten($primary-shade, 37%);
@@ -8,8 +29,6 @@ $accent-shade: #0079C0;
 $accent-light: lighten($accent-shade, 37%);
 $accent-dark: darken($accent-shade, 12%);
 // Reassign color vars to semantic color scheme
-$red: #dc3545;
-$yellow: #ffc107;
 $green: #28a745;
 $cyan: #17a2b8;
 $gray-100: #f8f9fa !default;

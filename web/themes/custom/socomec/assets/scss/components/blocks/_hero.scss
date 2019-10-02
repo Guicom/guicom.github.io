@@ -6,23 +6,22 @@
 // Theming hero block
 #block-views-block-hero-block-block-1{
   .col-auto{
-    padding-right: 0px;
-    padding-left: 0px;
+    padding-right: 0;
+    padding-left: 0;
     .view-hero-block{
       .socomec-hero-background{
-        background: linear-gradient(26.93deg, #00519D 0%, rgba(0,81,157,0.8) 100%);
-        background-repeat: no-repeat;
+        background: linear-gradient(26.93deg, #00519D 0%, rgba(0, 81, 157, 0.8) 100%) no-repeat;
         background-size: cover;
         height: 740px;
         .hero-thumbnail{
-          padding:45px 0px;
+          padding:45px 0;
           text-align: center;
           img{
             max-width: 100%;
           }
         }
         .hero-content{
-          padding:62px 0px 0px 0px;
+          padding:62px 0 0 0;
           .case-study {
             color: #FFFFFF;
             font-family: 'Roboto', sans-serif;
@@ -55,4 +54,3 @@
     }
   }
 }
-

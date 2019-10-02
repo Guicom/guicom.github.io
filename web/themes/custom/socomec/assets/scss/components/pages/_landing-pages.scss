@@ -1,0 +1,8 @@
+body {
+  &.node--type-landing-page {
+    .tabs {
+      position: absolute;
+      z-index: 2;
+    }
+  }
+}

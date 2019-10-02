@@ -9,22 +9,23 @@ let gulp = require('gulp'),
 
 const paths = {
   scss: {
-    src: 'themes/custom/socomec/scss/style.scss',
-    dest: 'themes/custom/socomec/css',
-    watch: 'themes/custom/socomec/scss/**/*.scss',
+    src: 'themes/custom/socomec/assets/scss/style.scss',
+    pardot: 'themes/custom/socomec/assets/scss/pardot.scss',
+    dest: 'themes/custom/socomec/assets/css',
+    watch: 'themes/custom/socomec/assets/scss/**/*.scss',
     bootstrap: 'node_modules/bootstrap/scss/bootstrap.scss'
   },
   js: {
     bootstrap: 'node_modules/bootstrap/dist/js/bootstrap.min.js',
     jquery: 'node_modules/jquery/dist/jquery.min.js',
     popper: 'node_modules/popper.js/dist/umd/popper.min.js',
-    dest: 'themes/custom/socomec/js'
+    dest: 'themes/custom/socomec/assets/js'
   }
 }
 
 // Compile sass into CSS & auto-inject into browsers
 function styles () {
-  return gulp.src([paths.scss.bootstrap, paths.scss.src])
+  return gulp.src([paths.scss.bootstrap, paths.scss.src, paths.scss.pardot])
     .pipe(sourcemaps.init())
     .pipe(sass().on('error', sass.logError))
     .pipe(postcss([autoprefixer({
@@ -41,25 +42,16 @@ function styles () {
     })]))
     .pipe(sourcemaps.write())
     .pipe(gulp.dest(paths.scss.dest))
-    .pipe(cleanCss())
-    .pipe(rename({ suffix: '.min' }))
-    .pipe(gulp.dest(paths.scss.dest))
-    .pipe(browserSync.stream())
 }
 
 // Move the javascript files into our js folder
 function js () {
   return gulp.src([paths.js.bootstrap, paths.js.jquery, paths.js.popper])
     .pipe(gulp.dest(paths.js.dest))
-    .pipe(browserSync.stream())
 }
 
 // Static Server + watching scss/html files
 function serve () {
-  browserSync.init({
-    proxy: 'http://yourdomain.com',
-  })
-
   gulp.watch([paths.scss.watch, paths.scss.bootstrap], styles).on('change', browserSync.reload)
 }
 
