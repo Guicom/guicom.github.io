@@ -2,21 +2,27 @@
 
 //@import url(font-awesome.min.css);
 // variables
-@import "utility/variables";
-
+@import "utilities/variables";
 //bootstrap
-@import "../../../../node_modules/bootstrap/scss/bootstrap";
-
+@import "../../../../../node_modules/bootstrap/scss/bootstrap";
+//material design bootstrap
+//@import "../node_modules/mdbootstrap/scss/mdb";
 // barrio
-@import "barrio";
+@import "barrio_components/barrio";
+// typography
+@import "utilities/typography";
+// mixins
+@import "utilities/mixins";
+// ckeditor
+@import "ckeditor-table";
 
-// Utility
-@import "utility/mixins";
-@import "utility/typography";
 
-// Components
-@import "components/field/key-figure";
-@import "components/paragraph/key-figure";
-
-// Add in ckeditor.scss... To do Refactoring...
-@import "ckeditor-table.scss";
+/* IMPORTS SOCOMEC STYLES OVERRIDE */
+// Blocks
+@import "components/blocks/hero";
+@import "components/blocks/iframe_form";
+@import "components/fields/key-figure";
+@import "components/pages/landing-pages";
+@import "components/paragraphs/key-figure";
+@import "components/header";
+@import "components/background";

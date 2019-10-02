@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="16" height="16" viewBox="0 0 16 16">
+  <defs>
+    <rect id="checkbox-a" width="14" height="14" x="1" y="1"/>
+    <filter id="checkbox-b" width="142.9%" height="142.9%" x="-21.4%" y="-21.4%" filterUnits="objectBoundingBox">
+      <feGaussianBlur in="SourceAlpha" result="shadowBlurInner1" stdDeviation="2.5"/>
+      <feOffset dy="1" in="shadowBlurInner1" result="shadowOffsetInner1"/>
+      <feComposite in="shadowOffsetInner1" in2="SourceAlpha" k2="-1" k3="1" operator="arithmetic" result="shadowInnerInner1"/>
+      <feColorMatrix in="shadowInnerInner1" values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.2 0"/>
+    </filter>
+  </defs>
+  <g fill="none" fill-rule="evenodd">
+    <use fill="#F2F3F3" xlink:href="#checkbox-a"/>
+    <use fill="#000" filter="url(#checkbox-b)" xlink:href="#checkbox-a"/>
+    <path fill="#4CAFE4" d="M13.4113769,5.56692505 L7.34350588,11.3224182 C7.09936525,11.5664367 6.70373534,11.5664367 6.45959472,11.3224182 L2.58862306,7.13882446 C2.34448244,6.8948059 2.34448244,6.49905393 2.58862306,6.2550354 C2.83264159,6.01089477 3.22839356,6.01089477 3.47241213,6.2550354 L6.90148925,9.99661255 L12.5274658,4.6830139 C12.7716064,4.43899537 13.1673584,4.43899537 13.4113769,4.6830139 C13.6555176,4.92715452 13.6555176,5.32290649 13.4113769,5.56692505 Z"/>
+    <path fill="#004F9F" d="M1.875,0 L14.125,0 C15.1605339,0 16,0.839466094 16,1.875 L16,14.125 C16,15.1605339 15.1605339,16 14.125,16 L1.875,16 C0.839466094,16 0,15.1605339 0,14.125 L0,1.875 C0,0.839466094 0.839466094,0 1.875,0 Z M1.875,1.25 C1.52982203,1.25 1.25,1.52982203 1.25,1.875 L1.25,14.125 C1.25,14.470178 1.52982203,14.75 1.875,14.75 L14.125,14.75 C14.470178,14.75 14.75,14.470178 14.75,14.125 L14.75,1.875 C14.75,1.52982203 14.470178,1.25 14.125,1.25 L1.875,1.25 Z"/>
+  </g>
+</svg>

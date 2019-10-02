@@ -19,9 +19,11 @@ content:
     region: content
 hidden:
   addtoany: true
+  field_body: true
   field_form_url: true
   field_hero_paragraph: true
   field_key_figures: true
   field_metatags: true
+  field_pardot_form: true
   field_premium_content_type: true
   langcode: true
