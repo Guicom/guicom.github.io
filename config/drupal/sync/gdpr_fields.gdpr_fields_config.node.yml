@@ -285,6 +285,17 @@ bundles:
       notes: ''
       relationship: 0
       sars_filename: ''
+    field_pardot_form:
+      bundle: landing_page
+      name: field_pardot_form
+      entity_type_id: node
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: date_anonymizer
+      notes: ''
+      relationship: 0
+      sars_filename: ''
   page:
     field_table:
       bundle: page

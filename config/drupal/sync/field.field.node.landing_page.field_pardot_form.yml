@@ -1,0 +1,49 @@
+uuid: 07e214d7-5bf5-4c52-98d7-3562b0aa3ffb
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_pardot_form
+    - node.type.landing_page
+    - paragraphs.paragraphs_type.pardot_form
+  module:
+    - entity_reference_revisions
+id: node.landing_page.field_pardot_form
+field_name: field_pardot_form
+entity_type: node
+bundle: landing_page
+label: 'Pardot form'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      pardot_form: pardot_form
+    target_bundles_drag_drop:
+      hero_paragraph:
+        weight: 7
+        enabled: false
+      pardot_form:
+        enabled: true
+        weight: 8
+      key_figures:
+        weight: 8
+        enabled: false
+      model_text:
+        weight: 9
+        enabled: false
+      premium_content_promotion:
+        weight: 10
+        enabled: false
+      product_faq:
+        weight: 11
+        enabled: false
+      product_reference:
+        weight: 12
+        enabled: false
+field_type: entity_reference_revisions

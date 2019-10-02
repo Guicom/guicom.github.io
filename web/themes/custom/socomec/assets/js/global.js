@@ -28,6 +28,19 @@
         position = scroll;
       });
 
+      var iframes = iFrameResize({
+        log: false,
+        onResized: function(messageData) {
+          $('#iframe-container').height(messageData.height + 'px');
+          console.log(messageData.height);
+        },
+      }, '#pardot-iframe');
+
+      //console.log($('#pardot-iframe').height());
+
+
+
+
     }
   };
 

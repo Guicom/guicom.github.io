@@ -12,6 +12,9 @@ filenames:
   key_figure: ''
   m: ''
   model_text: ''
+  model_testimony: ''
+  pardot_form: ''
+  video_embed: ''
 bundles:
   product_faq:
     field_question:
@@ -414,6 +417,152 @@ bundles:
       rta: 'no'
       enabled: false
       anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+  model_testimony:
+    field_image_1:
+      bundle: model_testimony
+      name: field_image_1
+      entity_type_id: paragraph
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: clear_anonymizer
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_image_2:
+      bundle: model_testimony
+      name: field_image_2
+      entity_type_id: paragraph
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: clear_anonymizer
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_nom:
+      bundle: model_testimony
+      name: field_nom
+      entity_type_id: paragraph
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: clear_anonymizer
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_fonction:
+      bundle: model_testimony
+      name: field_fonction
+      entity_type_id: paragraph
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_company:
+      bundle: model_testimony
+      name: field_company
+      entity_type_id: paragraph
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_text_simple:
+      bundle: model_testimony
+      name: field_text_simple
+      entity_type_id: paragraph
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: clear_anonymizer
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_position:
+      bundle: model_testimony
+      name: field_position
+      entity_type_id: paragraph
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+  pardot_form:
+    field_pardot_form_url:
+      bundle: pardot_form
+      name: field_pardot_form_url
+      entity_type_id: paragraph
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_js_script:
+      bundle: pardot_form
+      name: field_js_script
+      entity_type_id: paragraph
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_pardot_privacy_policy:
+      bundle: pardot_form
+      name: field_pardot_privacy_policy
+      entity_type_id: paragraph
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+  video_embed:
+    field_video_embed_title:
+      bundle: video_embed
+      name: field_video_embed_title
+      entity_type_id: paragraph
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_video_embed_url:
+      bundle: video_embed
+      name: field_video_embed_url
+      entity_type_id: paragraph
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_video_embed_video:
+      bundle: video_embed
+      name: field_video_embed_video
+      entity_type_id: paragraph
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: clear_anonymizer
       notes: ''
       relationship: 0
       sars_filename: ''

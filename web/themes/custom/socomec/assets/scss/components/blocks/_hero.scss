@@ -1,0 +1,58 @@
+/**
+ * @file
+ * Styles for custom block hero.
+ */
+
+// Theming hero block
+#block-views-block-hero-block-block-1{
+  .col-auto{
+    padding-right: 0px;
+    padding-left: 0px;
+    .view-hero-block{
+      .socomec-hero-background{
+        background: linear-gradient(26.93deg, #00519D 0%, rgba(0,81,157,0.8) 100%);
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 740px;
+        .hero-thumbnail{
+          padding:45px 0px;
+          text-align: center;
+          img{
+            max-width: 100%;
+          }
+        }
+        .hero-content{
+          padding:62px 0px 0px 0px;
+          .case-study {
+            color: $white;
+            font-family: 'Roboto', sans-serif;
+            font-size: 20px;
+            font-weight: 900;
+            line-height: 30px;
+          }
+          .comment-garantir-la {
+            color: $white;
+            font-family: 'Roboto', sans-serif;
+            font-size: 48px;
+            font-weight: 300;
+            line-height: 60px;
+          }
+          .disponibilite-de-l-e {
+            color: $yellow;
+            font-family: 'Roboto', sans-serif;
+            font-size: 24px;
+            font-weight: 900;
+            line-height: 30px;
+          }
+          .client-hopitaux-un {
+            color: $mid-grey;
+            font-family: 'Roboto', sans-serif;
+            font-size: 16px;
+            line-height: 25px;
+          }
+        }
+      }
+    }
+  }
+}
+
