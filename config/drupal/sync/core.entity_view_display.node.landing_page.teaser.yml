@@ -24,5 +24,6 @@ hidden:
   field_hero_paragraph: true
   field_key_figures: true
   field_metatags: true
+  field_pardot_form: true
   field_premium_content_type: true
   langcode: true
