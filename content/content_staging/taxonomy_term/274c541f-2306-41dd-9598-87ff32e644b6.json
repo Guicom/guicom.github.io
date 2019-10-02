@@ -82,5 +82,13 @@
             "value": true,
             "lang": "en"
         }
+    ],
+    "metatag": [
+        {
+            "value": {
+                "title": "Replay webinar | Socomec",
+                "canonical_url": "http:\/\/default\/taxonomy\/term\/3"
+            }
+        }
     ]
 }

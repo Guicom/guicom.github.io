@@ -1,12 +1,12 @@
 global-styling:
   version: VERSION
-  js: 
-    js/popper.min.js: {}
-    js/bootstrap.min.js: {}
-    js/global.js: {}
+  js:
+    assets/js/popper.min.js: {}
+    assets/js/bootstrap.min.js: {}
+    assets/js/global.js: {}
   css:
     component:
-      css/style.css: {}
+      assets/css/style.css: {}
   dependencies:
     - core/jquery
     - core/drupal
@@ -19,3 +19,18 @@ datatables-styling:
     component:
       //cdn.datatables.net/w/bs4/dt-1.10.18/r-2.2.2/datatables.min.css: {}
 
+iframe-resize:
+  js:
+    assets/libraries/iframe-resizer/js/iframeResizer.min.js: {}
+
+# Fonts
+roboto:
+  version: VERSION
+  css:
+    component:
+      //fonts.googleapis.com/css?family=Roboto|Roboto:100,200,300,400,500,600,700,800,900,1000: {}
+poppins:
+  version: VERSION
+  css:
+    component:
+      //fonts.googleapis.com/css?family=Poppins|Poppins:100,200,300,400,500,600,700,800,900,1000: {}

@@ -1,0 +1,28 @@
+uuid: 873d7b36-e493-4add-b057-54be5a2bbbfe
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_image_1
+    - media.type.image
+    - paragraphs.paragraphs_type.model_testimony
+id: paragraph.model_testimony.field_image_1
+field_name: field_image_1
+entity_type: paragraph
+bundle: model_testimony
+label: Photo
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference
