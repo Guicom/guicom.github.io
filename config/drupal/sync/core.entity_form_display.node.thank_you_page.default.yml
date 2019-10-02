@@ -13,7 +13,6 @@ dependencies:
     - field.field.node.thank_you_page.field_thumbnail
     - node.type.thank_you_page
   module:
-    - file
     - path
     - text
 id: node.thank_you_page.default
@@ -57,11 +56,13 @@ content:
     type: string_textfield
     region: content
   field_file:
-    weight: 10
+    weight: 27
     settings:
-      progress_indicator: throbber
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
-    type: file_generic
+    type: entity_reference_autocomplete
     region: content
   field_landing_page:
     weight: 7

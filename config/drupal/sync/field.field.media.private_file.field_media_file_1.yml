@@ -1,16 +1,16 @@
-uuid: 43d9fee6-5d56-4971-a4dd-a042e75fcc57
+uuid: 86d88e95-58fd-41da-9aa5-504281abed5f
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.media.field_media_file_1
-    - media.type.file_privat
+    - media.type.private_file
   module:
     - file
-id: media.file_privat.field_media_file_1
+id: media.private_file.field_media_file_1
 field_name: field_media_file_1
 entity_type: media
-bundle: file_privat
+bundle: private_file
 label: File
 description: ''
 required: true

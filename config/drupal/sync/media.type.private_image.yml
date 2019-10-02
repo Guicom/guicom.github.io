@@ -1,9 +1,9 @@
-uuid: 3309cb1c-ab6d-49ce-b5be-b431f908dbb5
+uuid: ab72814b-78b8-4738-bf64-a0afc42177dd
 langcode: en
 status: false
 dependencies: {  }
-id: image_privat
-label: 'Image Privat'
+id: private_image
+label: 'Private Image'
 description: ''
 source: image
 queue_thumbnail_downloads: false

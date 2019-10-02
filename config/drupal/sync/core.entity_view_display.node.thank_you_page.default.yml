@@ -13,7 +13,6 @@ dependencies:
     - field.field.node.thank_you_page.field_thumbnail
     - node.type.thank_you_page
   module:
-    - file
     - text
     - user
 id: node.thank_you_page.default
@@ -30,12 +29,13 @@ content:
     type: string
     region: content
   field_file:
-    weight: 108
+    type: entity_reference_entity_view
+    weight: 114
     label: above
     settings:
-      use_description_as_link_text: true
+      view_mode: default
+      link: false
     third_party_settings: {  }
-    type: file_default
     region: content
   field_landing_page:
     weight: 103

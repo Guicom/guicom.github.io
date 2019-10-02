@@ -5,9 +5,9 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.thank_you_page.field_cta
-    - field.field.node.thank_you_page.field_file
     - field.field.node.thank_you_page.field_landing_page
     - field.field.node.thank_you_page.field_private_file
+    - field.field.node.thank_you_page.field_private_image
     - field.field.node.thank_you_page.field_success_text
     - field.field.node.thank_you_page.field_thank_you_text
     - field.field.node.thank_you_page.field_thumbnail
@@ -28,9 +28,9 @@ hidden:
   addtoany: true
   field_conditional: true
   field_cta: true
-  field_file: true
   field_landing_page: true
   field_private_file: true
+  field_private_image: true
   field_success_text: true
   field_thank_you_text: true
   field_thumbnail: true

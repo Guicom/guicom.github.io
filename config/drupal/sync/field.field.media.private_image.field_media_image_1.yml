@@ -1,16 +1,16 @@
-uuid: 53a1be76-4275-48d0-9424-ad158df3d920
+uuid: 03bdf3c8-3f03-43af-a294-559bd7b04c95
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.media.field_media_image_1
-    - media.type.image_privat
+    - media.type.private_image
   module:
     - image
-id: media.image_privat.field_media_image_1
+id: media.private_image.field_media_image_1
 field_name: field_media_image_1
 entity_type: media
-bundle: image_privat
+bundle: private_image
 label: Image
 description: ''
 required: true

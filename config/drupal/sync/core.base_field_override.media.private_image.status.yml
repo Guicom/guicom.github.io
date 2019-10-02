@@ -1,13 +1,13 @@
-uuid: 4e42f00a-b0ae-4f15-be5e-403a76252ad0
+uuid: a231b3b4-393f-4f44-b518-99522982bc76
 langcode: en
 status: true
 dependencies:
   config:
-    - media.type.image_privat
-id: media.image_privat.status
+    - media.type.private_image
+id: media.private_image.status
 field_name: status
 entity_type: media
-bundle: image_privat
+bundle: private_image
 label: Published
 description: ''
 required: false

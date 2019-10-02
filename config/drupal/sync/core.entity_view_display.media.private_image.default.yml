@@ -1,17 +1,17 @@
-uuid: 42204b4c-8891-48fc-a5ec-9ae3bba0cbd2
+uuid: 1bb7603b-696e-4de1-8523-7e7cdac3966b
 langcode: en
 status: true
 dependencies:
   config:
-    - field.field.media.image_privat.field_media_image_1
+    - field.field.media.private_image.field_media_image_1
     - image.style.thumbnail
-    - media.type.image_privat
+    - media.type.private_image
   module:
     - image
     - user
-id: media.image_privat.default
+id: media.private_image.default
 targetEntityType: media
-bundle: image_privat
+bundle: private_image
 mode: default
 content:
   created:

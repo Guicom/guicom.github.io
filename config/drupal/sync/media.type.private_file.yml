@@ -1,9 +1,9 @@
-uuid: 028cf405-1a90-4eb3-aae6-1c366a59bb8f
+uuid: b7f6999b-f96d-4a60-8443-be8ed00363d0
 langcode: en
 status: false
 dependencies: {  }
-id: file_privat
-label: 'File Privat'
+id: private_file
+label: 'Private File'
 description: ''
 source: file
 queue_thumbnail_downloads: false

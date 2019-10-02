@@ -1,11 +1,11 @@
-uuid: 5098e76b-aa91-462f-81e7-95665e48de08
+uuid: 9eb7048c-591e-4e7c-9341-f012d128c2b3
 langcode: en
 status: true
 dependencies:
   config:
-    - media.type.file_privat
-id: media.file_privat
+    - media.type.private_image
+id: media.private_image
 target_entity_type_id: media
-target_bundle: file_privat
+target_bundle: private_image
 default_langcode: site_default
 language_alterable: false

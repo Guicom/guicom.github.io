@@ -4,7 +4,7 @@ status: true
 dependencies:
   config:
     - field.storage.node.field_private_image
-    - media.type.file_privat
+    - media.type.private_file
     - node.type.thank_you_page
 id: node.thank_you_page.field_private_image
 field_name: field_private_image
@@ -20,9 +20,9 @@ settings:
   handler: 'default:media'
   handler_settings:
     target_bundles:
-      file_privat: file_privat
+      private_file: private_file
     sort:
       field: _none
     auto_create: false
-    auto_create_bundle: file_privat
+    auto_create_bundle: private_file
 field_type: entity_reference
