@@ -1,0 +1,21 @@
+/* IMPORTS */
+
+//@import url(font-awesome.min.css);
+// variables
+@import "utilities/variables";
+//bootstrap
+@import "../../../../../node_modules/bootstrap/scss/bootstrap";
+//material design bootstrap
+//@import "../node_modules/mdbootstrap/scss/mdb";
+// barrio
+@import "barrio_components/barrio";
+// typography
+@import "utilities/typography";
+// mixins
+@import "utilities/mixins";
+
+/* IMPORTS SOCOMEC STYLES OVERRIDE */
+// Blocks
+@import "./components/blocks/hero";
+@import "./components/header";
+@import "./components/background";
