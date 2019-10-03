@@ -8,7 +8,7 @@ id: node.thank_you_page.title
 field_name: title
 entity_type: node
 bundle: thank_you_page
-label: 'Thank you page'
+label: Title
 description: ''
 required: true
 translatable: true

@@ -6,8 +6,6 @@ dependencies:
     - field.field.node.thank_you_page.field_cta
     - field.field.node.thank_you_page.field_file
     - field.field.node.thank_you_page.field_landing_page
-    - field.field.node.thank_you_page.field_private_file
-    - field.field.node.thank_you_page.field_private_image
     - field.field.node.thank_you_page.field_success_text
     - field.field.node.thank_you_page.field_thank_you_text
     - field.field.node.thank_you_page.field_thumbnail
@@ -44,24 +42,6 @@ content:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
-    region: content
-  field_private_file:
-    type: entity_reference_entity_view
-    weight: 111
-    label: above
-    settings:
-      view_mode: default
-      link: false
-    third_party_settings: {  }
-    region: content
-  field_private_image:
-    type: entity_reference_entity_view
-    weight: 113
-    label: above
-    settings:
-      view_mode: default
-      link: false
-    third_party_settings: {  }
     region: content
   field_success_text:
     weight: 106

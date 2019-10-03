@@ -1,5 +1,5 @@
 status: 2
-pattern: '[node:title]'
+pattern: '[node:field_landing_page:entity:title]'
 escape: false
 dependencies:
   config:
