@@ -2,6 +2,8 @@ uuid: bc18a3bc-65cf-4640-a6ae-7e7b5dc84168
 langcode: en
 status: true
 dependencies:
+  module:
+    - ctools
   theme:
     - socomec
 _core:
@@ -17,4 +19,11 @@ settings:
   label: 'Page title'
   provider: core
   label_display: '0'
-visibility: {  }
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    bundles:
+      landing_page: landing_page
+    negate: true
+    context_mapping:
+      node: '@node.node_route_context:node'

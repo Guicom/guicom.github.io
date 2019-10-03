@@ -1,0 +1,19 @@
+uuid: 2e1ebdc5-c0b2-4e8a-bb68-4c128e36cdfb
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_figure_3_number
+    - paragraphs.paragraphs_type.key_figures
+id: paragraph.key_figures.field_figure_3_number
+field_name: field_figure_3_number
+entity_type: paragraph
+bundle: key_figures
+label: 'Figure 3 - Number'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

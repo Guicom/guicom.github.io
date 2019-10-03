@@ -6,6 +6,7 @@ id: node
 filenames:
   product: ''
   landing_page: ''
+  page: ''
 bundles:
   product:
     field_complementary_info:
@@ -259,6 +260,51 @@ bundles:
       rta: 'no'
       enabled: false
       anonymizer: clear_anonymizer
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_form_url:
+      bundle: landing_page
+      name: field_form_url
+      entity_type_id: node
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: clear_anonymizer
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_key_figures:
+      bundle: landing_page
+      name: field_key_figures
+      entity_type_id: node
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_pardot_form:
+      bundle: landing_page
+      name: field_pardot_form
+      entity_type_id: node
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: date_anonymizer
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+  page:
+    field_table:
+      bundle: page
+      name: field_table
+      entity_type_id: node
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
       notes: ''
       relationship: 0
       sars_filename: ''

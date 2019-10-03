@@ -8,49 +8,13 @@
         },
         "http:\/\/drupal.org\/rest\/relation\/node\/product\/revision_uid": [
             {
-                "href": "http:\/\/default\/user\/0?_format=hal_json"
+                "href": "http:\/\/default\/user\/1?_format=hal_json"
             }
         ],
         "http:\/\/drupal.org\/rest\/relation\/node\/product\/uid": [
             {
-                "href": "http:\/\/default\/user\/0?_format=hal_json",
+                "href": "http:\/\/default\/user\/1?_format=hal_json",
                 "lang": "en"
-            }
-        ],
-        "http:\/\/drupal.org\/rest\/relation\/node\/product\/field_in_situ_picture": [
-            {
-                "href": "http:\/\/default\/sites\/default\/files\/product\/pictures\/in_situ\/2019-08\/generateImage_91anhj.gif"
-            }
-        ],
-        "http:\/\/drupal.org\/rest\/relation\/node\/product\/field_main_picture": [
-            {
-                "href": "http:\/\/default\/sites\/default\/files\/product\/pictures\/main\/2019-08\/generateImage_0EJmUz.png"
-            }
-        ],
-        "http:\/\/drupal.org\/rest\/relation\/node\/product\/field_secondary_pictures": [
-            {
-                "href": "http:\/\/default\/sites\/default\/files\/product\/pictures\/secondary\/2019-08\/generateImage_brOeBQ.jpg"
-            }
-        ],
-        "http:\/\/drupal.org\/rest\/relation\/node\/product\/field_standards_certifications": [
-            {
-                "href": "http:\/\/default\/taxonomy\/term\/1?_format=hal_json"
-            }
-        ],
-        "http:\/\/drupal.org\/rest\/relation\/node\/product\/field_strong_points": [
-            {
-                "href": "http:\/\/default\/camur-dolus-hendrerit-inhibeo.?_format=hal_json"
-            },
-            {
-                "href": "http:\/\/default\/ea-natu-pagus-validus.?_format=hal_json"
-            },
-            {
-                "href": "http:\/\/default\/camur-dolus-hendrerit-inhibeo.?_format=hal_json"
-            }
-        ],
-        "http:\/\/drupal.org\/rest\/relation\/node\/product\/field_video": [
-            {
-                "href": "http:\/\/default\/aliquip-at-caecus-euismod-lobortis-si-utinam-utrum.?_format=hal_json"
             }
         ]
     },
@@ -91,7 +55,7 @@
             {
                 "_links": {
                     "self": {
-                        "href": "http:\/\/default\/user\/0?_format=hal_json"
+                        "href": "http:\/\/default\/user\/1?_format=hal_json"
                     },
                     "type": {
                         "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
@@ -99,7 +63,7 @@
                 },
                 "uuid": [
                     {
-                        "value": "3500b6f5-8f68-4bc6-b0b1-fb61995c3ca0"
+                        "value": "d0c6d55d-2be5-4d29-9659-24a4c5e8b034"
                     }
                 ]
             }
@@ -108,7 +72,7 @@
             {
                 "_links": {
                     "self": {
-                        "href": "http:\/\/default\/user\/0?_format=hal_json"
+                        "href": "http:\/\/default\/user\/1?_format=hal_json"
                     },
                     "type": {
                         "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
@@ -116,142 +80,10 @@
                 },
                 "uuid": [
                     {
-                        "value": "3500b6f5-8f68-4bc6-b0b1-fb61995c3ca0"
+                        "value": "d0c6d55d-2be5-4d29-9659-24a4c5e8b034"
                     }
                 ],
                 "lang": "en"
-            }
-        ],
-        "http:\/\/drupal.org\/rest\/relation\/node\/product\/field_in_situ_picture": [
-            {
-                "_links": {
-                    "self": {
-                        "href": "http:\/\/default\/sites\/default\/files\/product\/pictures\/in_situ\/2019-08\/generateImage_91anhj.gif"
-                    },
-                    "type": {
-                        "href": "http:\/\/drupal.org\/rest\/type\/file\/file"
-                    }
-                },
-                "uuid": [
-                    {
-                        "value": "acf13d35-158f-4be2-ba19-1d96badd97f5"
-                    }
-                ]
-            }
-        ],
-        "http:\/\/drupal.org\/rest\/relation\/node\/product\/field_main_picture": [
-            {
-                "_links": {
-                    "self": {
-                        "href": "http:\/\/default\/sites\/default\/files\/product\/pictures\/main\/2019-08\/generateImage_0EJmUz.png"
-                    },
-                    "type": {
-                        "href": "http:\/\/drupal.org\/rest\/type\/file\/file"
-                    }
-                },
-                "uuid": [
-                    {
-                        "value": "a975f61e-11f6-4e35-bd33-0c923f0b0be9"
-                    }
-                ]
-            }
-        ],
-        "http:\/\/drupal.org\/rest\/relation\/node\/product\/field_secondary_pictures": [
-            {
-                "_links": {
-                    "self": {
-                        "href": "http:\/\/default\/sites\/default\/files\/product\/pictures\/secondary\/2019-08\/generateImage_brOeBQ.jpg"
-                    },
-                    "type": {
-                        "href": "http:\/\/drupal.org\/rest\/type\/file\/file"
-                    }
-                },
-                "uuid": [
-                    {
-                        "value": "d105b9ff-8c9a-4ec8-855f-b7c8eac672b0"
-                    }
-                ]
-            }
-        ],
-        "http:\/\/drupal.org\/rest\/relation\/node\/product\/field_standards_certifications": [
-            {
-                "_links": {
-                    "self": {
-                        "href": "http:\/\/default\/taxonomy\/term\/1?_format=hal_json"
-                    },
-                    "type": {
-                        "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/label"
-                    }
-                },
-                "uuid": [
-                    {
-                        "value": "6b504c73-fcd6-49c8-9965-df410d3b930d"
-                    }
-                ]
-            }
-        ],
-        "http:\/\/drupal.org\/rest\/relation\/node\/product\/field_strong_points": [
-            {
-                "_links": {
-                    "self": {
-                        "href": "http:\/\/default\/camur-dolus-hendrerit-inhibeo.?_format=hal_json"
-                    },
-                    "type": {
-                        "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/strong_points"
-                    }
-                },
-                "uuid": [
-                    {
-                        "value": "34a304be-c422-4c42-a0d2-426264df3314"
-                    }
-                ]
-            },
-            {
-                "_links": {
-                    "self": {
-                        "href": "http:\/\/default\/ea-natu-pagus-validus.?_format=hal_json"
-                    },
-                    "type": {
-                        "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/strong_points"
-                    }
-                },
-                "uuid": [
-                    {
-                        "value": "3c709839-104f-4b0c-8b32-988d1fc06ed8"
-                    }
-                ]
-            },
-            {
-                "_links": {
-                    "self": {
-                        "href": "http:\/\/default\/camur-dolus-hendrerit-inhibeo.?_format=hal_json"
-                    },
-                    "type": {
-                        "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/strong_points"
-                    }
-                },
-                "uuid": [
-                    {
-                        "value": "34a304be-c422-4c42-a0d2-426264df3314"
-                    }
-                ]
-            }
-        ],
-        "http:\/\/drupal.org\/rest\/relation\/node\/product\/field_video": [
-            {
-                "_links": {
-                    "self": {
-                        "href": "http:\/\/default\/aliquip-at-caecus-euismod-lobortis-si-utinam-utrum.?_format=hal_json"
-                    },
-                    "type": {
-                        "href": "http:\/\/drupal.org\/rest\/type\/media\/remote_video"
-                    }
-                },
-                "uuid": [
-                    {
-                        "value": "32a15f49-948d-4415-864b-4dbad6d57009"
-                    }
-                ]
             }
         ]
     },
@@ -303,6 +135,15 @@
         {
             "value": true,
             "lang": "en"
+        }
+    ],
+    "metatag": [
+        {
+            "value": {
+                "title": "Cogo Iriure Usitas Vindico | Socomec",
+                "canonical_url": "http:\/\/default\/node\/2",
+                "description": "Bene jus letalis nimis praemitto sudo ut. Amet antehabeo appellatio caecus euismod exerci populus similis valde. Aliquam fere importunus luptatum mauris paratus patria persto vindico. Cogo distineo feugiat ibidem iustum tation venio vulpes. Autem cogo pecus verto. Ideo interdico modo quae virtus.\nEnim iaceo iusto loquor olim. Luptatum nibh nutus. Comis in iriure lenis molior quidne. Accumsan aliquip dolor humo interdico luptatum modo pneum sino vulpes. Neque qui quidne. Abbas abico dolore loquor nostrud proprius roto vulpes. Feugiat secundum sit.\nBlandit conventio ex gilvus ibidem molior velit vulpes. Autem caecus eros gemino ille neque odio pertineo si vulputate. Causa cogo damnum gemino ille ludus macto paulatim proprius suscipit.\nBlandit in nibh probo. Abbas letalis utrum. Duis ex imputo interdico ludus natu nimis quidne roto usitas. Exerci haero humo pagus scisco turpis veniam volutpat. Brevitas ratis similis tego ulciscor. Brevitas cui distineo et mauris nisl sed ut volutpat. Abluo blandit capto defui iaceo minim nimis suscipere. Ad distineo dolore plaga usitas.\nAbbas augue ille letalis odio similis suscipere tamen. Interdico praesent ut validus. Ex quae si te utrum vero virtus. Caecus haero huic nobis paratus refoveo ullamcorper. Immitto in quidem secundum ullamcorper ymo. Augue duis ea iaceo nisl obruo si velit vereor.\nElit enim exputo jus molior neo nulla sit validus vicis. Brevitas ea ibidem in neo nibh nulla os tation torqueo. Abico aptent duis jus persto similis tincidunt torqueo virtus. Ad aliquip camur iriure qui suscipere veniam. Abluo gilvus humo inhibeo mos persto turpis wisi.\nAliquam exerci feugiat molior paulatim utinam vereor. Dolore gilvus haero incassum letalis nisl sagaciter vereor. Abdo ad commoveo decet et euismod interdico letalis nisl. Distineo ibidem iustum nimis pagus pecus. Cui molior valetudo. Adipiscing amet comis damnum duis letalis lobortis luptatum si vindico.\nAdipiscing camur consequat inhibeo metuo modo paulatim ut. Abbas eum secundum voco. Abbas damnum duis eros et jus nibh obruo si. Duis ille nunc pertineo refero torqueo. Abico nunc sudo validus. Dolor erat jumentum oppeto praemitto premo veniam. Facilisis hos ille laoreet modo saluto suscipere verto.\nBene blandit et modo sudo. Cogo facilisi immitto luptatum metuo neo nunc olim pecus ut. Ad mauris meus paratus te. Acsi blandit feugiat olim probo.\nAmet interdico molior si veniam. Diam exputo melior nisl vicis ymo. Decet diam dolore et eum odio paulatim populus singularis vereor. Elit oppeto scisco. Neque nimis nulla turpis. Aliquam camur haero incassum nulla oppeto pagus praemitto.\nIllum nimis patria populus tincidunt turpis venio. Nostrud occuro vulputate. Abico camur laoreet nisl nostrud sagaciter similis ut validus venio. Conventio dolus metuo qui ratis roto saluto ullamcorper vindico voco. Conventio defui ea elit hendrerit valetudo. Abico causa comis enim ex quae quia torqueo utinam vel. Nunc tation validus virtus. Aliquip nulla quis velit.\nAd damnum proprius quia saepius validus. Defui esse eu fere utrum zelus. Commodo eum oppeto refoveo si tamen turpis veniam wisi. Amet aptent esse iriure lenis molior ut."
+            }
         }
     ],
     "body": [

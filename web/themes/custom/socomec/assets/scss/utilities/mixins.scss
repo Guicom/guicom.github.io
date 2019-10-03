@@ -1,0 +1,29 @@
+/* MIXINS */
+
+@mixin block-title($with-line: false) {
+  color: $blue;
+  font-family: $font-roboto;
+  font-size: 48px;
+  font-weight: lighter;
+  margin: 40px 0 20px;
+  @if $with-line == true {
+    &::after {}
+  }
+}
+
+//
+// Alternate buttons
+//
+@each $color,
+$value in $theme-colors {
+    .btn-#{$color} a {
+        @include button-variant($value, $value);
+    }
+}
+
+@each $color,
+$value in $theme-colors {
+    .btn-outline-#{$color} a {
+        @include button-outline-variant($value);
+    }
+}
