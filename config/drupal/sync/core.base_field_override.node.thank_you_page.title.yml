@@ -1,0 +1,18 @@
+uuid: b0507823-9ead-4dae-afd4-f70c298b84c8
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.thank_you_page
+id: node.thank_you_page.title
+field_name: title
+entity_type: node
+bundle: thank_you_page
+label: Title
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

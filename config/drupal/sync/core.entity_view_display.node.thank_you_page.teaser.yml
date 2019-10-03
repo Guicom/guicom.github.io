@@ -1,0 +1,36 @@
+uuid: 7bd910cc-a6ba-45a0-b45b-bbbdfe8d34ac
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.thank_you_page.field_cta
+    - field.field.node.thank_you_page.field_file
+    - field.field.node.thank_you_page.field_landing_page
+    - field.field.node.thank_you_page.field_success_text
+    - field.field.node.thank_you_page.field_thank_you_text
+    - field.field.node.thank_you_page.field_thumbnail
+    - node.type.thank_you_page
+  module:
+    - user
+id: node.thank_you_page.teaser
+targetEntityType: node
+bundle: thank_you_page
+mode: teaser
+content:
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  addtoany: true
+  field_conditional: true
+  field_cta: true
+  field_file: true
+  field_landing_page: true
+  field_success_text: true
+  field_thank_you_text: true
+  field_thumbnail: true
+  field_title: true
+  langcode: true

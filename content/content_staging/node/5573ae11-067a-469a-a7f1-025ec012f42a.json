@@ -26,11 +26,6 @@
             {
                 "href": ""
             }
-        ],
-        "http:\/\/drupal.org\/rest\/relation\/node\/landing_page\/field_premium_content_type": [
-            {
-                "href": "http:\/\/default\/taxonomy\/term\/3?_format=hal_json"
-            }
         ]
     },
     "nid": [
@@ -78,7 +73,7 @@
                 },
                 "uuid": [
                     {
-                        "value": "e3c07b99-99e8-4dfe-99f8-beae64a48247"
+                        "value": "502ca242-45f0-4d16-adbd-6adb6d85ef16"
                     }
                 ]
             }
@@ -95,7 +90,7 @@
                 },
                 "uuid": [
                     {
-                        "value": "e3c07b99-99e8-4dfe-99f8-beae64a48247"
+                        "value": "502ca242-45f0-4d16-adbd-6adb6d85ef16"
                     }
                 ],
                 "lang": "en"
@@ -135,23 +130,6 @@
                     }
                 ],
                 "target_revision_id": "17"
-            }
-        ],
-        "http:\/\/drupal.org\/rest\/relation\/node\/landing_page\/field_premium_content_type": [
-            {
-                "_links": {
-                    "self": {
-                        "href": "http:\/\/default\/taxonomy\/term\/3?_format=hal_json"
-                    },
-                    "type": {
-                        "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/premium_content_type"
-                    }
-                },
-                "uuid": [
-                    {
-                        "value": "274c541f-2306-41dd-9598-87ff32e644b6"
-                    }
-                ]
             }
         ]
     },
@@ -199,19 +177,18 @@
             "lang": "en"
         }
     ],
+    "revision_translation_affected": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
     "metatag": [
         {
             "value": {
                 "title": "sdcsdcsdc | Socomec",
                 "canonical_url": "http:\/\/default\/node\/3"
             }
-        }
-    ],
-    "field_form_url": [
-        {
-            "uri": "http:\/\/example.com",
-            "title": "",
-            "options": []
         }
     ]
 }

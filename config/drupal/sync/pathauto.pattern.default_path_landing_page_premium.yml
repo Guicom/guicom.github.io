@@ -1,0 +1,22 @@
+uuid: 7a84bf2e-cd58-4835-a7d2-9a6c1340ed71
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: default_path_landing_page_premium
+label: 'Default path : Landing page - Premium'
+type: 'canonical_entities:node'
+pattern: '[node:content-type]/[node:field_premium_content_type]/[node:title]'
+selection_criteria:
+  8ccb7c45-4516-49cd-8a30-40095c5aa7a5:
+    id: node_type
+    bundles:
+      landing_page: landing_page
+    negate: false
+    context_mapping:
+      node: node
+    uuid: 8ccb7c45-4516-49cd-8a30-40095c5aa7a5
+selection_logic: and
+weight: -5
+relationships: {  }

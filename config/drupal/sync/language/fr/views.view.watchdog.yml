@@ -1,0 +1,19 @@
+display:
+  default:
+    display_options:
+      exposed_form:
+        options:
+          reset_button_label: Réinitialiser
+      fields:
+        type:
+          label: Type
+        timestamp:
+          label: Date
+        name:
+          label: Utilisateur
+        link:
+          label: Actions
+      filters:
+        type:
+          expose:
+            label: Type
