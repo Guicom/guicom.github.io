@@ -1,5 +1,9 @@
 /* ------------------ Header ------------------ */
 
+#navbar-top {
+    padding: 0 1rem;
+}
+
 #navbar-top.navbar-dark .nav-link:hover,
 #navbar-top.navbar-dark .nav-link:focus {
     color: rgba(255, 255, 255, 0.75);
@@ -35,55 +39,5 @@
     .navbar-toggleable-xs.collapse.in .navbar-nav .nav-item {
         margin-left: 0;
         float: none;
-    }
-}
-
-// Position header with hero region.
-#header{
-    background-color: lightgrey;
-    #navbar-top{
-        z-index: 1;
-        height: 59px;
-        padding-left: 0;
-        padding-right: 0;
-        &:after {
-            content: "";
-            height: 1px;
-            opacity: 0.1;
-            width: 100%;
-            background-color: #FFFFFF;
-            margin: 0 auto;
-        }
-        a{
-            color: #FFFFFF;
-            font-family: 'Poppins';
-            font-size: 12px;
-            font-weight: 600;
-            letter-spacing: 1px;
-            line-height: 20px;
-            text-align: center;
-        }
-    }
-    #navbar-main{
-        z-index: 1;
-        padding: 0 1rem;
-        .navbar-brand{
-            padding-top: 10px;
-            padding-bottom: 20px;
-        }
-    }
-    #navbar-top + .region-hero{
-        z-index:0;
-        margin-top:-59px;
-        .socomec-hero-background{
-            padding-top:59px;
-        }
-    }
-    #navbar-top + #navbar-main + .region-hero{
-        z-index:0;
-        margin-top:-130px;
-        .socomec-hero-background{
-            padding-top:130px;
-        }
     }
 }

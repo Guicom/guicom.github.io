@@ -31,6 +31,10 @@ function socomec_form_system_theme_settings_alter(&$form, FormStateInterface $fo
   );
 }
 
+function socomec_preprocess_paragraph(&$variables){
+  $variables['#attached']['library'][] =  'socomec/datatables-styling';
+}
+
 /**
  * Implements hook_theme_suggestions_field_alter().
  */
