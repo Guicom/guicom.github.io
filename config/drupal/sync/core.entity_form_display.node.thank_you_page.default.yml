@@ -6,14 +6,11 @@ dependencies:
     - field.field.node.thank_you_page.field_cta
     - field.field.node.thank_you_page.field_file
     - field.field.node.thank_you_page.field_landing_page
-    - field.field.node.thank_you_page.field_private_file
-    - field.field.node.thank_you_page.field_private_image
     - field.field.node.thank_you_page.field_success_text
     - field.field.node.thank_you_page.field_thank_you_text
     - field.field.node.thank_you_page.field_thumbnail
     - node.type.thank_you_page
   module:
-    - file
     - path
     - text
 id: node.thank_you_page.default
@@ -28,7 +25,7 @@ content:
     settings: {  }
     third_party_settings: {  }
   field_cta:
-    weight: 13
+    weight: 12
     settings:
       size: 60
       placeholder: ''
@@ -57,32 +54,16 @@ content:
     type: string_textfield
     region: content
   field_file:
-    weight: 10
+    weight: 11
     settings:
-      progress_indicator: throbber
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
-    type: file_generic
+    type: entity_reference_autocomplete
     region: content
   field_landing_page:
     weight: 7
-    settings:
-      match_operator: CONTAINS
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-    type: entity_reference_autocomplete
-    region: content
-  field_private_file:
-    weight: 12
-    settings:
-      match_operator: CONTAINS
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-    type: entity_reference_autocomplete
-    region: content
-  field_private_image:
-    weight: 26
     settings:
       match_operator: CONTAINS
       size: 60
@@ -107,7 +88,7 @@ content:
     type: string_textfield
     region: content
   field_thumbnail:
-    weight: 11
+    weight: 10
     settings:
       match_operator: CONTAINS
       size: 60

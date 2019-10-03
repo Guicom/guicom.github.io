@@ -4,7 +4,7 @@ status: true
 dependencies:
   config:
     - field.storage.node.field_thumbnail
-    - media.type.image_privat
+    - media.type.private_image
     - node.type.thank_you_page
 id: node.thank_you_page.field_thumbnail
 field_name: field_thumbnail
@@ -20,7 +20,7 @@ settings:
   handler: 'default:media'
   handler_settings:
     target_bundles:
-      image_privat: image_privat
+      private_image: private_image
     sort:
       field: _none
     auto_create: false

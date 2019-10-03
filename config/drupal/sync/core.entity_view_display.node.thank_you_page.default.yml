@@ -6,14 +6,11 @@ dependencies:
     - field.field.node.thank_you_page.field_cta
     - field.field.node.thank_you_page.field_file
     - field.field.node.thank_you_page.field_landing_page
-    - field.field.node.thank_you_page.field_private_file
-    - field.field.node.thank_you_page.field_private_image
     - field.field.node.thank_you_page.field_success_text
     - field.field.node.thank_you_page.field_thank_you_text
     - field.field.node.thank_you_page.field_thumbnail
     - node.type.thank_you_page
   module:
-    - file
     - text
     - user
 id: node.thank_you_page.default
@@ -30,12 +27,13 @@ content:
     type: string
     region: content
   field_file:
-    weight: 108
+    type: entity_reference_entity_view
+    weight: 114
     label: above
     settings:
-      use_description_as_link_text: true
+      view_mode: default
+      link: false
     third_party_settings: {  }
-    type: file_default
     region: content
   field_landing_page:
     weight: 103
@@ -44,24 +42,6 @@ content:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
-    region: content
-  field_private_file:
-    type: entity_reference_entity_view
-    weight: 111
-    label: above
-    settings:
-      view_mode: default
-      link: false
-    third_party_settings: {  }
-    region: content
-  field_private_image:
-    type: entity_reference_entity_view
-    weight: 113
-    label: above
-    settings:
-      view_mode: default
-      link: false
-    third_party_settings: {  }
     region: content
   field_success_text:
     weight: 106
@@ -96,3 +76,4 @@ hidden:
   addtoany: true
   field_title: true
   langcode: true
+  layout_builder__layout: true
