@@ -28,6 +28,7 @@ hidden:
   addtoany: true
   field_conditional: true
   field_cta: true
+  field_file: true
   field_landing_page: true
   field_private_file: true
   field_private_image: true
