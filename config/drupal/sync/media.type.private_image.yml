@@ -1,6 +1,6 @@
 uuid: ab72814b-78b8-4738-bf64-a0afc42177dd
 langcode: en
-status: false
+status: true
 dependencies: {  }
 id: private_image
 label: 'Private Image'

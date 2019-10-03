@@ -1,6 +1,6 @@
 uuid: b7f6999b-f96d-4a60-8443-be8ed00363d0
 langcode: en
-status: false
+status: true
 dependencies: {  }
 id: private_file
 label: 'Private File'

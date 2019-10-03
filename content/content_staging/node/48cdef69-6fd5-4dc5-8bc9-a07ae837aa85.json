@@ -1,0 +1,225 @@
+{
+    "_links": {
+        "self": {
+            "href": "http:\/\/default\/node\/4?_format=hal_json"
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/node\/thank_you_page"
+        },
+        "http:\/\/drupal.org\/rest\/relation\/node\/thank_you_page\/revision_uid": [
+            {
+                "href": "http:\/\/default\/user\/1?_format=hal_json"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/thank_you_page\/uid": [
+            {
+                "href": "http:\/\/default\/user\/1?_format=hal_json",
+                "lang": "en"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/thank_you_page\/field_file": [
+            {
+                "href": "http:\/\/default\/media\/7\/edit?_format=hal_json"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/thank_you_page\/field_landing_page": [
+            {
+                "href": "http:\/\/default\/node\/3?_format=hal_json"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/thank_you_page\/field_thumbnail": [
+            {
+                "href": "http:\/\/default\/media\/6\/edit?_format=hal_json"
+            }
+        ]
+    },
+    "nid": [
+        {
+            "value": 4
+        }
+    ],
+    "uuid": [
+        {
+            "value": "48cdef69-6fd5-4dc5-8bc9-a07ae837aa85"
+        }
+    ],
+    "vid": [
+        {
+            "value": 11
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "type": [
+        {
+            "target_id": "thank_you_page"
+        }
+    ],
+    "revision_timestamp": [
+        {
+            "value": "2019-10-03T12:38:47+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/node\/thank_you_page\/revision_uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/user\/1?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "502ca242-45f0-4d16-adbd-6adb6d85ef16"
+                    }
+                ]
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/thank_you_page\/uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/user\/1?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "502ca242-45f0-4d16-adbd-6adb6d85ef16"
+                    }
+                ],
+                "lang": "en"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/thank_you_page\/field_file": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/media\/7\/edit?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/media\/private_file"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "edb4e87b-0010-4375-89ee-ae55ba7bbd34"
+                    }
+                ]
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/thank_you_page\/field_landing_page": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/node\/3?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/node\/landing_page"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "5573ae11-067a-469a-a7f1-025ec012f42a"
+                    }
+                ]
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/thank_you_page\/field_thumbnail": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/media\/6\/edit?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/media\/private_image"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "ae83937a-ba78-4ddf-8c44-09d25bd24e0f"
+                    }
+                ]
+            }
+        ]
+    },
+    "status": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "title": [
+        {
+            "value": "sdcsdcsdc",
+            "lang": "en"
+        }
+    ],
+    "created": [
+        {
+            "value": "2019-10-03T12:29:44+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "changed": [
+        {
+            "value": "2019-10-03T12:38:47+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "promote": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "sticky": [
+        {
+            "value": false,
+            "lang": "en"
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "metatag": [
+        {
+            "value": {
+                "title": "sdcsdcsdc | Socomec",
+                "canonical_url": "http:\/\/default\/node\/4"
+            }
+        }
+    ],
+    "field_cta": [
+        {
+            "value": "Download"
+        }
+    ],
+    "field_success_text": [
+        {
+            "value": "<p>Success text Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ultricies.<\/p>\r\n",
+            "format": "basic_html",
+            "processed": "<p>Success text Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ultricies.<\/p>"
+        }
+    ],
+    "field_thank_you_text": [
+        {
+            "value": "Lorem ipsum dolor sit amet"
+        }
+    ]
+}
