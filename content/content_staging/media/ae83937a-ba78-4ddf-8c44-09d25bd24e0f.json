@@ -1,0 +1,162 @@
+{
+    "_links": {
+        "self": {
+            "href": "http:\/\/default\/media\/6\/edit?_format=hal_json"
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/media\/private_image"
+        },
+        "http:\/\/drupal.org\/rest\/relation\/media\/private_image\/uid": [
+            {
+                "href": "http:\/\/default\/user\/1?_format=hal_json",
+                "lang": "en"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/media\/private_image\/thumbnail": [
+            {
+                "href": "http:\/\/default\/system\/files\/2019-10\/34665210-Rubber-stamp-with-word-example-inside-vector-illustration-Stock-Vector.jpg",
+                "lang": "en"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/media\/private_image\/field_media_image_1": [
+            {
+                "href": "http:\/\/default\/system\/files\/2019-10\/34665210-Rubber-stamp-with-word-example-inside-vector-illustration-Stock-Vector.jpg",
+                "lang": "en"
+            }
+        ]
+    },
+    "mid": [
+        {
+            "value": 6
+        }
+    ],
+    "uuid": [
+        {
+            "value": "ae83937a-ba78-4ddf-8c44-09d25bd24e0f"
+        }
+    ],
+    "vid": [
+        {
+            "value": 8
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "bundle": [
+        {
+            "target_id": "private_image"
+        }
+    ],
+    "revision_created": [
+        {
+            "value": "2019-10-03T12:31:29+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "status": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/media\/private_image\/uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/user\/1?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "502ca242-45f0-4d16-adbd-6adb6d85ef16"
+                    }
+                ],
+                "lang": "en"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/media\/private_image\/thumbnail": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/system\/files\/2019-10\/34665210-Rubber-stamp-with-word-example-inside-vector-illustration-Stock-Vector.jpg"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/file\/file"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "cc9aae99-2a78-4e37-b99a-909f51614a93"
+                    }
+                ],
+                "lang": "en"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/media\/private_image\/field_media_image_1": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/system\/files\/2019-10\/34665210-Rubber-stamp-with-word-example-inside-vector-illustration-Stock-Vector.jpg"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/file\/file"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "cc9aae99-2a78-4e37-b99a-909f51614a93"
+                    }
+                ],
+                "lang": "en"
+            }
+        ]
+    },
+    "name": [
+        {
+            "value": "Example image",
+            "lang": "en"
+        }
+    ],
+    "created": [
+        {
+            "value": "2019-10-03T12:31:02+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "changed": [
+        {
+            "value": "2019-10-03T12:31:29+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "revision_translation_affected": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "metatag": [
+        {
+            "value": {
+                "title": "| Socomec",
+                "canonical_url": "http:\/\/default\/node"
+            }
+        }
+    ]
+}
