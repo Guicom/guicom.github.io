@@ -1,0 +1,178 @@
+/*
+ Theming Wysiwig Ckeditor elements
+*/
+span,
+div,
+p,
+ul li,
+ol li{
+  color: #4A4A47;
+  font-family: $font-roboto;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 25px;
+  margin: 0 0 10px 0;
+}
+
+h3{
+  color: #004F9F;
+  font-family: $font-roboto;
+  font-size: 24px;
+  font-weight: 300;
+  line-height: 30px;
+  margin: 0 0 10px 0;
+}
+
+h4{
+  color: #000000;
+  font-family: $font-roboto;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 25px;
+  margin: 0 0 10px 0;
+}
+h5{
+  color: #000000;
+  font-family: $font-roboto;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 25px;
+  margin: 0 0 10px 0;
+}
+h6{
+  color: #000000;
+  font-family: $font-roboto;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 25px;
+  margin: 0 0 10px 0;
+}
+
+b,
+strong {
+  font-weight: 700;
+}
+
+a{
+  color: #004F9F;
+  font-family: $font-roboto;
+  font-size: 16px;
+  line-height: 25px;
+  text-decoration: underline;
+  &.custom-cke-link-elaborate,
+  &.custom-cke-link-cta-1,
+  &.custom-cke-link-cta-2,
+  &.custom-cke-link-cta-3,
+  &.custom-cke-link-cta-4{
+    color: #004F9F;
+    font-family: $font-poppins;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    line-height: 20px;
+    display: inline-block;
+    text-decoration: none;
+  }
+  &.custom-cke-link-cta-1,
+  &.custom-cke-link-cta-2,
+  &.custom-cke-link-cta-3,
+  &.custom-cke-link-cta-4{
+    padding: 15px 30px;
+  }
+  &.custom-cke-link-elaborate{
+    &:before{
+      content: '';
+      height: 20px;
+      width: 20px;
+      display: inline-block;
+      content: '';
+      -webkit-mask: url(../images/ckeditor/chevron-right-circle.svg) no-repeat 50% 50%;
+      mask: url(../images/ckeditor/chevron-right-circle.svg) no-repeat 50% 50%;
+      -webkit-mask-size: cover;
+      mask-size: cover;
+      background-color: #CFDAEE;
+      line-height: 1px;
+      vertical-align: middle;
+      margin-right: 5px;
+      margin-top: -2px;
+    }
+  }
+  &.custom-cke-link-cta-1{
+    background-color: #FFCC00;
+    &:before{
+      content: '';
+      height: 20px;
+      width: 20px;
+      display: inline-block;
+      content: '';
+      -webkit-mask: url(../images/ckeditor/download.svg) no-repeat 50% 50%;
+      mask: url(../images/ckeditor/download.svg) no-repeat 50% 50%;
+      -webkit-mask-size: cover;
+      mask-size: cover;
+      background-color: #004F9F;
+      line-height: 1px;
+      vertical-align: middle;
+      margin-right: 5px;
+      margin-top: -2px;
+    }
+  }
+  &.custom-cke-link-cta-2{
+    color: #FFFFFF;
+    background-color: #0070C0;
+    &:before{
+      content: '';
+      height: 20px;
+      width: 20px;
+      display: inline-block;
+      content: '';
+      -webkit-mask: url(../images/ckeditor/Quicklook.svg) no-repeat 50% 50%;
+      mask: url(../images/ckeditor/Quicklook.svg) no-repeat 50% 50%;
+      -webkit-mask-size: cover;
+      mask-size: cover;
+      background-color: #ffffff;
+      line-height: 1px;
+      vertical-align: middle;
+      margin-right: 5px;
+      margin-top: -2px;
+    }
+  }
+  &.custom-cke-link-cta-3{
+    background-color: #CFDAEE;
+    &:before{
+      content: '';
+      height: 20px;
+      width: 20px;
+      display: inline-block;
+      content: '';
+      -webkit-mask: url(../images/ckeditor/Quicklook.svg) no-repeat 50% 50%;
+      mask: url(../images/ckeditor/Quicklook.svg) no-repeat 50% 50%;
+      -webkit-mask-size: cover;
+      mask-size: cover;
+      background-color: #004F9F;
+      line-height: 1px;
+      vertical-align: middle;
+      margin-right: 5px;
+      margin-top: -2px;
+    }
+  }
+  &.custom-cke-link-cta-4{
+    padding: 14px 29px;
+    border:solid 1px #CFDAEE;
+    &:before{
+      content: '';
+      height: 20px;
+      width: 20px;
+      display: inline-block;
+      content: '';
+      -webkit-mask: url(../images/ckeditor/Quicklook.svg) no-repeat 50% 50%;
+      mask: url(../images/ckeditor/Quicklook.svg) no-repeat 50% 50%;
+      -webkit-mask-size: cover;
+      mask-size: cover;
+      background-color: #004F9F;
+      line-height: 1px;
+      vertical-align: middle;
+      margin-right: 5px;
+      margin-top: -2px;
+    }
+  }
+}
