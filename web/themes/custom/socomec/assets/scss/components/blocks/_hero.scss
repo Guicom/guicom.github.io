@@ -4,7 +4,8 @@
  */
 
 // Theming hero block
-#block-views-block-hero-block-block-1{
+#block-views-block-hero-block-block-1,
+#block-views-block-hero-block-block-2 {
   .col-auto{
     padding-right: 0px;
     padding-left: 0px;
@@ -22,33 +23,66 @@
           }
         }
         .hero-content{
-          padding:62px 0px 0px 0px;
-          .case-study {
+          padding: 35px 0 0 0;
+          .premium-label {
             color: $white;
-            font-family: 'Roboto', sans-serif;
+            font-family: $font-roboto, sans-serif;
             font-size: 20px;
             font-weight: 900;
             line-height: 30px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
           }
-          .comment-garantir-la {
+          .title-hero {
             color: $white;
-            font-family: 'Roboto', sans-serif;
+            font-family: $font-roboto;
             font-size: 48px;
             font-weight: 300;
             line-height: 60px;
           }
-          .disponibilite-de-l-e {
+          .thx-text,
+          .lp-baseline {
             color: $yellow;
-            font-family: 'Roboto', sans-serif;
+            font-family: $font-roboto;
             font-size: 24px;
             font-weight: 900;
             line-height: 30px;
+            margin-bottom: 20px;
           }
-          .client-hopitaux-un {
+          .lp-client-name {
             color: $mid-grey;
-            font-family: 'Roboto', sans-serif;
+            font-family: $font-roboto;
             font-size: 16px;
             line-height: 25px;
+          }
+
+          .succces-text {
+            color: $white;
+            font-family: $font-roboto;
+            font-size: 16px;
+            line-height: 25px;
+            margin-bottom: 60px;
+          }
+
+          .download-file {
+            margin-top: 20px;
+            background: $yellow;
+            font-family: $font-poppins;
+            display: flex;
+            height: 60px;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            color: $blue;
+            align-items: center;
+            justify-content: center;
+
+            svg {
+              width: 20px;
+              height: 20px;
+              fill: $blue;
+              margin-right: 10px;
+            }
           }
         }
       }

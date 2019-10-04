@@ -36,7 +36,9 @@ third_party_settings:
             col-lg-8: col-lg-8
           right:
             col-lg-4: col-lg-4
-    regions: {  }
+    regions:
+      right:
+        - field_pardot_form
 id: node.landing_page.default
 targetEntityType: node
 bundle: landing_page
@@ -45,12 +47,12 @@ content:
   field_pardot_form:
     type: entity_reference_revisions_entity_view
     weight: 0
+    region: right
     label: hidden
     settings:
       view_mode: default
       link: ''
     third_party_settings: {  }
-    region: right
 hidden:
   addtoany: true
   field_body: true
