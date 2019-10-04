@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "61fdc0b9e596add98f34c83877ea5cd1",
+    "content-hash": "9d336448091058611543e71cdc9c2a8a",
     "packages": [
         {
             "name": "actency/foundation",
@@ -2308,6 +2308,57 @@
             "support": {
                 "source": "http://cgit.drupalcode.org/admin_toolbar",
                 "issues": "https://www.drupal.org/project/issues/admin_toolbar"
+            }
+        },
+        {
+            "name": "drupal/allow_iframed_site",
+            "version": "2.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/allow_iframed_site.git",
+                "reference": "8.x-2.0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/allow_iframed_site-8.x-2.0.zip",
+                "reference": "8.x-2.0",
+                "shasum": "50aec9fa57f62690c71bf9e09a7786ef9a00b3f3"
+            },
+            "require": {
+                "drupal/core": "~8.0"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-2.x": "2.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-2.0",
+                    "datestamp": "1558066384",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "AndyD328",
+                    "homepage": "https://www.drupal.org/user/2261214"
+                },
+                {
+                    "name": "SKAUGHT",
+                    "homepage": "https://www.drupal.org/user/297907"
+                }
+            ],
+            "description": "Watch out for clickjacking...",
+            "homepage": "https://www.drupal.org/project/allow_iframed_site",
+            "support": {
+                "source": "https://git.drupalcode.org/project/allow_iframed_site"
             }
         },
         {
@@ -10852,7 +10903,10 @@
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
-        "php": ">=5.6"
+        "php": ">=7.2",
+        "ext-simplexml": "^7.1",
+        "ext-curl": "^7.1",
+        "ext-json": "^1.5"
     },
     "platform-dev": []
 }
