@@ -69,4 +69,33 @@
       }
     }
   }
+  @include media-breakpoint-down(lg) {
+    .col-auto{
+      .view-hero-block{
+        .socomec-hero-background{
+          .hero-thumbnail{
+            padding:5px 10px 20px 10px;
+            img{
+              max-width: 100%;
+              width: auto;
+              height: 280px;
+            }
+          }
+          .hero-content{
+            padding:5px 10px 0 10px;
+            .case-study {
+              margin-bottom: 0.5rem;
+            }
+            .comment-garantir-la {
+              font-size: 34px;
+            }
+            .disponibilite-de-l-e {
+            }
+            .client-hopitaux-un {
+            }
+          }
+        }
+      }
+    }
+  }
 }
