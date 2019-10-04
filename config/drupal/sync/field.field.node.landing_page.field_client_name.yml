@@ -1,14 +1,14 @@
-uuid: 7290b4f8-9bd1-4808-ab45-bb6fe1a083e2
+uuid: 87273233-2090-4b59-825f-677df210a05e
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.paragraph.field_client_name
-    - paragraphs.paragraphs_type.hero_paragraph
-id: paragraph.hero_paragraph.field_client_name
+    - field.storage.node.field_client_name
+    - node.type.landing_page
+id: node.landing_page.field_client_name
 field_name: field_client_name
-entity_type: paragraph
-bundle: hero_paragraph
+entity_type: node
+bundle: landing_page
 label: 'Client name'
 description: ''
 required: false
