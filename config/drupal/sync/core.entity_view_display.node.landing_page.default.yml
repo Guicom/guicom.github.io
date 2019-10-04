@@ -36,9 +36,7 @@ third_party_settings:
             col-lg-8: col-lg-8
           right:
             col-lg-4: col-lg-4
-    regions:
-      right:
-        - field_pardot_form
+    regions: {  }
 id: node.landing_page.default
 targetEntityType: node
 bundle: landing_page

@@ -1,0 +1,19 @@
+uuid: 0557811d-e1e5-47bd-ad6d-4828c9bc0598
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_thank_you_text
+    - node.type.thank_you_page
+id: node.thank_you_page.field_thank_you_text
+field_name: field_thank_you_text
+entity_type: node
+bundle: thank_you_page
+label: 'Thank you text'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,11 @@
+uuid: 7d4df807-bba9-4102-81db-a7b067642eff
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.thank_you_page
+id: node.thank_you_page
+target_entity_type_id: node
+target_bundle: thank_you_page
+default_langcode: site_default
+language_alterable: false

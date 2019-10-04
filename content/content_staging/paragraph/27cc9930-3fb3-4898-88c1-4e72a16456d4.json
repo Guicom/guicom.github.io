@@ -5,12 +5,7 @@
         },
         "type": {
             "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/hero_paragraph"
-        },
-        "http:\/\/drupal.org\/rest\/relation\/paragraph\/hero_paragraph\/field_thumbnail": [
-            {
-                "href": "http:\/\/default\/media\/1\/edit?_format=hal_json"
-            }
-        ]
+        }
     },
     "id": [
         {
@@ -77,28 +72,15 @@
             "lang": "en"
         }
     ],
+    "revision_translation_affected": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
     "field_baseline": [
         {
             "value": "sdcsdcsdc"
         }
-    ],
-    "_embedded": {
-        "http:\/\/drupal.org\/rest\/relation\/paragraph\/hero_paragraph\/field_thumbnail": [
-            {
-                "_links": {
-                    "self": {
-                        "href": "http:\/\/default\/media\/1\/edit?_format=hal_json"
-                    },
-                    "type": {
-                        "href": "http:\/\/drupal.org\/rest\/type\/media\/image"
-                    }
-                },
-                "uuid": [
-                    {
-                        "value": "e09fa5fd-0877-437b-82d2-c091e4f35c47"
-                    }
-                ]
-            }
-        ]
-    }
+    ]
 }
