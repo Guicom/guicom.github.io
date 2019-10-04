@@ -17,12 +17,6 @@
                 "href": "http:\/\/default\/sites\/default\/files\/media-icons\/generic\/generic.png",
                 "lang": "en"
             }
-        ],
-        "http:\/\/drupal.org\/rest\/relation\/media\/private_file\/field_media_file_1": [
-            {
-                "href": "http:\/\/default\/system\/files\/2019-10\/Test1.pdf",
-                "lang": "en"
-            }
         ]
     },
     "mid": [
@@ -53,7 +47,7 @@
     ],
     "revision_created": [
         {
-            "value": "2019-10-03T12:32:17+00:00",
+            "value": "2019-10-04T12:48:54+00:00",
             "format": "Y-m-d\\TH:i:sP"
         }
     ],
@@ -76,7 +70,7 @@
                 },
                 "uuid": [
                     {
-                        "value": "502ca242-45f0-4d16-adbd-6adb6d85ef16"
+                        "value": "c4eae9b1-df9f-4b0d-b155-c9dbeaa1780b"
                     }
                 ],
                 "lang": "en"
@@ -94,25 +88,7 @@
                 },
                 "uuid": [
                     {
-                        "value": "b69d694c-306c-490a-b349-e19c67f97056"
-                    }
-                ],
-                "lang": "en"
-            }
-        ],
-        "http:\/\/drupal.org\/rest\/relation\/media\/private_file\/field_media_file_1": [
-            {
-                "_links": {
-                    "self": {
-                        "href": "http:\/\/default\/system\/files\/2019-10\/Test1.pdf"
-                    },
-                    "type": {
-                        "href": "http:\/\/drupal.org\/rest\/type\/file\/file"
-                    }
-                },
-                "uuid": [
-                    {
-                        "value": "7b8c903b-4239-4980-a311-37c7d83b1179"
+                        "value": "307a5dee-bf65-4b88-9ca4-971073423e61"
                     }
                 ],
                 "lang": "en"

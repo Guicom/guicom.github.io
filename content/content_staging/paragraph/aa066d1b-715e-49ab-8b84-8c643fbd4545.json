@@ -1,0 +1,95 @@
+{
+    "_links": {
+        "self": {
+            "href": ""
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/pardot_form"
+        }
+    },
+    "id": [
+        {
+            "value": 2
+        }
+    ],
+    "uuid": [
+        {
+            "value": "aa066d1b-715e-49ab-8b84-8c643fbd4545"
+        }
+    ],
+    "revision_id": [
+        {
+            "value": 2
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "type": [
+        {
+            "target_id": "pardot_form"
+        }
+    ],
+    "status": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "created": [
+        {
+            "value": "2019-10-04T11:24:25+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "parent_id": [
+        {
+            "value": "1"
+        }
+    ],
+    "parent_type": [
+        {
+            "value": "node"
+        }
+    ],
+    "parent_field_name": [
+        {
+            "value": "field_pardot_form"
+        }
+    ],
+    "behavior_settings": [
+        {
+            "value": []
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "revision_translation_affected": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "field_pardot_form_url": [
+        {
+            "uri": "http:\/\/example.com",
+            "title": "",
+            "options": []
+        }
+    ],
+    "field_pardot_privacy_policy": [
+        {
+            "value": "<p>*We're committed to your privacy. Socomec uses the information you provide to us to contact you about our relevant content, events and products. You may unsubscribe from these communications at any time. For more information, check out our&nbsp;<a href=\"http:\/\/www.socomec.com\/privacy-policy_en.html\">Privacy Policy<\/a><\/p>\r\n",
+            "format": "basic_html",
+            "processed": "<p>*We're committed to your privacy. Socomec uses the information you provide to us to contact you about our relevant content, events and products. You may unsubscribe from these communications at any time. For more information, check out our\u00a0<a href=\"http:\/\/www.socomec.com\/privacy-policy_en.html\">Privacy Policy<\/a><\/p>"
+        }
+    ]
+}
