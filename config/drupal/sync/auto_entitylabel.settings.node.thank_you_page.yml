@@ -1,0 +1,6 @@
+status: 2
+pattern: '[node:field_landing_page:entity:title]'
+escape: false
+dependencies:
+  config:
+    - node.type.thank_you_page

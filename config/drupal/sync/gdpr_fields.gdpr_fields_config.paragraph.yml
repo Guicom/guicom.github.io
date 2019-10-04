@@ -14,6 +14,7 @@ filenames:
   model_text: ''
   model_testimony: ''
   pardot_form: ''
+  video_embed: ''
 bundles:
   product_faq:
     field_question:
@@ -528,6 +529,40 @@ bundles:
       rta: 'no'
       enabled: false
       anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+  video_embed:
+    field_video_embed_title:
+      bundle: video_embed
+      name: field_video_embed_title
+      entity_type_id: paragraph
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_video_embed_url:
+      bundle: video_embed
+      name: field_video_embed_url
+      entity_type_id: paragraph
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_video_embed_video:
+      bundle: video_embed
+      name: field_video_embed_video
+      entity_type_id: paragraph
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: clear_anonymizer
       notes: ''
       relationship: 0
       sars_filename: ''

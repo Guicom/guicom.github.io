@@ -11,9 +11,18 @@ global-styling:
     - core/jquery
     - core/drupal
 
+datatables-styling:
+  version: VERSION
+  js:
+    //cdn.datatables.net/w/bs4/dt-1.10.18/r-2.2.2/datatables.min.js: {}
+  css:
+    component:
+      //cdn.datatables.net/w/bs4/dt-1.10.18/r-2.2.2/datatables.min.css: {}
+
 iframe-resize:
   js:
     assets/libraries/iframe-resizer/js/iframeResizer.min.js: {}
+
 # Fonts
 roboto:
   version: VERSION

@@ -32,6 +32,10 @@ function socomec_form_system_theme_settings_alter(&$form, FormStateInterface $fo
   );
 }
 
+function socomec_preprocess_paragraph(&$variables){
+  $variables['#attached']['library'][] =  'socomec/datatables-styling';
+}
+
 /**
  * Implements hook_theme_suggestions_field_alter().
  */
@@ -81,8 +85,8 @@ function socomec_preprocess_views_view(&$variables) {
           return;
         }
         $file_url = file_create_url($file->getFileUri());
-        $variables['background_image'] = (!empty($file_url))?$file_url:null;
       }
+      $variables['background_image'] = (!empty($file_url))?$file_url:null;
     }
   }
 }

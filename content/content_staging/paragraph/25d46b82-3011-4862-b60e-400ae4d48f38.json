@@ -90,11 +90,6 @@
             "options": []
         }
     ],
-    "field_doc_title": [
-        {
-            "value": "sdcsdcsdcsdcsdc"
-        }
-    ],
     "field_document_promo_summary": [
         {
             "value": "sdcsdcsdcsdcdc, sdcsdsscsc,  sdc sdc sd csdcdc."
@@ -103,6 +98,11 @@
     "field_document_type": [
         {
             "value": "case_study"
+        }
+    ],
+    "field_doc_title": [
+        {
+            "value": "sdcsdcsdcsdcsdc"
         }
     ]
 }

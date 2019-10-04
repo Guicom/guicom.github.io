@@ -35,7 +35,7 @@
     ],
     "vid": [
         {
-            "value": 1
+            "value": 2
         }
     ],
     "langcode": [
@@ -51,7 +51,7 @@
     ],
     "revision_timestamp": [
         {
-            "value": "2019-09-26T12:11:24+00:00",
+            "value": "2019-09-26T13:35:59+00:00",
             "format": "Y-m-d\\TH:i:sP"
         }
     ],
@@ -106,7 +106,7 @@
                         "value": "4ab1d41b-b0d2-4fe3-9f15-f40405c69b1f"
                     }
                 ],
-                "target_revision_id": "1"
+                "target_revision_id": "2"
             }
         ]
     },
@@ -131,7 +131,7 @@
     ],
     "changed": [
         {
-            "value": "2019-09-26T12:11:24+00:00",
+            "value": "2019-09-26T13:35:59+00:00",
             "lang": "en",
             "format": "Y-m-d\\TH:i:sP"
         }
@@ -148,12 +148,6 @@
         }
     ],
     "default_langcode": [
-        {
-            "value": true,
-            "lang": "en"
-        }
-    ],
-    "revision_translation_affected": [
         {
             "value": true,
             "lang": "en"

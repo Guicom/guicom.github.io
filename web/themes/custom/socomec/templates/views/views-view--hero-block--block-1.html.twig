@@ -62,7 +62,7 @@
   {% endif %}
 
   {% if rows %}
-    {% if background_image %}
+    {% if background_image is defined %}
       <div class="view-content socomec-hero-background" style="background-image:linear-gradient(26.93deg, #00519D 0%, rgba(0,81,157,0.8) 100%), url( {{ background_image }} )">
         {{ rows }}
       </div>

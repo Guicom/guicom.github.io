@@ -28,6 +28,22 @@
             font-size: 20px;
             font-weight: 900;
             line-height: 30px;
+            &:after{
+              content: '';
+              width: 60px;
+              height: 8px;
+              display: inline-block;
+              content: '';
+              -webkit-mask: url(../images/wave.svg) no-repeat 50% 50%;
+              mask: url(../images/wave.svg) no-repeat 50% 50%;
+              -webkit-mask-size: cover;
+              mask-size: cover;
+              background-color: #FFCC00;
+              line-height: 1px;
+              vertical-align: middle;
+              margin-left: 5px;
+              margin-top: -2px;
+            }
           }
           .comment-garantir-la {
             color: #FFFFFF;
