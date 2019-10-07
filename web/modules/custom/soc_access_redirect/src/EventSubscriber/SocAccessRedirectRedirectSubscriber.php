@@ -58,19 +58,25 @@ class SocAccessRedirectRedirectSubscriber implements EventSubscriberInterface {
 
     // get current node
     $node = $request->attributes->get('node');
+    $is_redirect = false;
     if(!empty($node->get('field_landing_page')->getValue()[0]['target_id'])){
       // get landing_page id
       $field_landing_page_id = $node->get('field_landing_page')->getValue()[0]['target_id'];
       // get landing_page_visited cookie and compare with landing page id
-      $cookie = $request->cookies->get('soc_landing_page_visited');
-      if(empty($cookie) || $cookie != $field_landing_page_id){
-        $redirect_url = Url::fromRoute('entity.node.canonical', ['node' => $field_landing_page_id]);
-        // This is where you set the destination.
-        $response = new RedirectResponse($redirect_url->toString(), 301);
-        $event->setResponse($response);
+      $cookies = $request->cookies->get('soc_landing_page_visited');
+      if(!empty($cookies)){
+        $cookies = unserialize($cookies);
+        if (!in_array($field_landing_page_id, $cookies)) {
+          $redirect_url = Url::fromRoute('entity.node.canonical', ['node' => $field_landing_page_id]);
+          // This is where you set the destination.
+          $response = new RedirectResponse($redirect_url->toString(), 301);
+          $event->setResponse($response);
+          $is_redirect = true;
+        }
       }
     }
-    else{
+
+    if($is_redirect === false && empty($field_landing_page_id)){
       $redirect_url = Url::fromRoute('<front>');
       $response = new RedirectResponse($redirect_url->toString(), 301);
       $event->setResponse($response);
@@ -99,7 +105,18 @@ class SocAccessRedirectRedirectSubscriber implements EventSubscriberInterface {
     if ($request->attributes->get('node')->getType() === 'landing_page') {
       $response = $event->getResponse();
       if ($response) {
-        $cookie = new Cookie('soc_landing_page_visited', $request->attributes->get('node')->id());
+        $cookies = $request->cookies->get('soc_landing_page_visited');
+        if(empty($cookies)){
+          $item = [$request->attributes->get('node')->id()];
+          $cookie = new Cookie('soc_landing_page_visited', serialize($item));
+        }
+        else{
+          $items = unserialize($cookies);
+          if (!in_array($request->attributes->get('node')->id(), $items)) {
+            $items[] = $request->attributes->get('node')->id();
+          }
+          $cookie = new Cookie('soc_landing_page_visited', serialize($items));
+        }
         $response->headers->setCookie($cookie);
         $event->setResponse($response);
       }
@@ -116,19 +133,31 @@ class SocAccessRedirectRedirectSubscriber implements EventSubscriberInterface {
       // get landing_page id
       $field_landing_page_id = $node->get('field_landing_page')->getValue()[0]['target_id'];
       // get landing_page_visited cookie and compare with landing page id
-      $cookie = $request->cookies->get('soc_landing_page_visited');
-      if(!empty($cookie) && $cookie === $field_landing_page_id){
-        if(!empty($node->get('field_file')->getValue()[0]['target_id'])){
-          $field_file_id = $node->get('field_file')->getValue()[0]['target_id'];
-        }
-        if(!empty($field_file_id)){
-          $response = $event->getResponse();
-
-          if ($response) {
-            $cookie = new Cookie('soc_private_media_access', $request->attributes->get('node')
-              ->id());
-            $response->headers->setCookie($cookie);
-            $event->setResponse($response);
+      $cookies = $request->cookies->get('soc_landing_page_visited');
+      if(!empty($cookies)){
+        $cookies = unserialize($cookies);
+        if (in_array($field_landing_page_id, $cookies)) {
+          if(!empty($node->get('field_file')->getValue()[0]['target_id'])){
+            $field_file_id = $node->get('field_file')->getValue()[0]['target_id'];
+          }
+          if(!empty($field_file_id)){
+            $response = $event->getResponse();
+            if ($response) {
+              $cookies = $request->cookies->get('soc_private_media_access');
+              if(empty($cookies)){
+                $item = [$field_file_id];
+                $cookie = new Cookie('soc_private_media_access', serialize($item));
+              }
+              else{
+                $items = unserialize($cookies);
+                if (!in_array($field_file_id, $items)) {
+                  $items[] = $field_file_id;
+                }
+                $cookie = new Cookie('soc_private_media_access', serialize($items));
+              }
+              $response->headers->setCookie($cookie);
+              $event->setResponse($response);
+            }
           }
         }
       }
