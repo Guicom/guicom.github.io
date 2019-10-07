@@ -3,9 +3,9 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.storage.node.field_client_name
     - field.storage.node.field_cta
     - field.storage.node.field_file
-    - field.storage.node.field_client_name
     - field.storage.node.field_premium_content_type
     - field.storage.node.field_success_text
     - field.storage.node.field_thank_you_text
@@ -774,30 +774,30 @@ display:
           plugin_id: field
         field_client_name:
           id: field_client_name
-          table: paragraph__field_client_name
+          table: node__field_client_name
           field: field_client_name
-          relationship: field_hero_paragraph
+          relationship: none
           group_type: group
           admin_label: ''
           label: ''
           exclude: false
           alter:
             alter_text: false
-            text: '<p class="client-hopitaux-un">{{ field_client_name }} </p>'
+            text: ''
             make_link: false
             path: ''
             absolute: false
             external: false
             replace_spaces: false
             path_case: none
-            trim_whitespace: true
+            trim_whitespace: false
             alt: ''
             rel: ''
             link_class: ''
             prefix: ''
             suffix: ''
             target: ''
-            nl2br: true
+            nl2br: false
             max_length: 0
             word_boundary: true
             ellipsis: true
