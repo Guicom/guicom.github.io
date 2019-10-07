@@ -49,6 +49,7 @@
         "drupal/eu_cookie_compliance": "^1.6",
         "drupal/gdpr": "^2.0@alpha",
         "drupal/google_analytics": "^3.0",
+        "drupal/hook_event_dispatcher": "^1.25",
         "drupal/hotjar": "^1.5",
         "drupal/metatag": "^1.8",
         "drupal/paragraphs": "^1.8",
