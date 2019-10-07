@@ -1,46 +1,99 @@
 .paragraph--type--model-testimony{
   font-family: $font-roboto;
-}
 
-.paragraph--type--model-testimony .avatar img, .paragraph--type--model-testimony .avatar {
-  height: 100px;
-  width: 100px;
-  background-color: #00519D;
-}
+  .infoblock {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    @include media-breakpoint-down(sm) {
+      flex-wrap: wrap;
+    }
 
-.paragraph--type--model-testimony .avatar{
-  overflow: hidden;
-}
+    .avatar {
+      display: flex;
+      align-items: center;
+      @include media-breakpoint-down(sm) {
+        width: 100%;
+        justify-content: center;
+      }
+      .field {
+        margin-bottom: 0;
+      }
+      img {
+        height: auto;
+        width: 100px;
+        background-color: $blue;
+      }
+    }
 
-.paragraph--type--model-testimony .infotext {
-  margin-left: 30px;
-}
+    .infotext {
+      width: round(percentage(4/7));
+      padding-left: 30px;
+      @include media-breakpoint-down(sm) {
+        padding-left: 0;
+      }
 
-.paragraph--type--model-testimony .infoblock>div{
-  display: inline-block;
-  vertical-align: top;
-}
-.paragraph--type--model-testimony .infodescription{
-  background-color: #CFDAEE;
-}
-.paragraph--type--model-testimony .infos-ou-quote{
-  height: 90px;	width: 610px;	color: #000000;	font-family: $font-roboto;	font-size: 20px;	font-weight: 300;	line-height: 30px;
-  margin-top: 30px; margin-bottom: 60px; display: inline-block;
-}
+      .client-name {
+        color: $black;
+        font-family: $font-roboto;
+        font-size: 16px;
+        font-weight: bold;
+        line-height: 25px;
+        margin-top: 13px;
+      }
 
-.paragraph--type--model-testimony  .clipped img{height: 80px;	width: 101px;}
+      .client-position {
+        width: 260px;
+        color: $darker-grey;
+        font-family: $font-roboto;
+        font-size: 16px;
+        line-height: 25px;
+      }
+    }
 
-.paragraph--type--model-testimony .ingenieur-electricie {	height: 50px;	width: 260px;	color: #4A4A47;	font-family: $font-roboto;	font-size: 16px;	line-height: 25px;}
+    .field--name-field-image-2 {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: round(percentage(2/7));
+      margin-bottom: 0;
+      img {
+        height: auto;
+        width: 60px;
+      }
+    }
+  }
 
-.paragraph--type--model-testimony .client-thierry-osw {	height: 25px;
-  width: 163px;
-  color: #000000;
-  font-family: $font-roboto;;
-  font-size: 16px;
-  font-weight: bold;
-  line-height: 25px;
-  margin-top: 13px;}
+  .infodescription{
+    background-color: $lighter-grey;
+    padding: 30px 30px 100px 30px;
+    .text-testimony{
+      color: $black;
+      font-family: $font-roboto;
+      font-size: 20px;
+      font-weight: 300;
+      line-height: 30px;
+      text-align: left;
+    }
+    &:before {
+      left: -999em;
+      background: $lighter-grey;
+      content: '';
+      display: block;
+      position: absolute;
+      width: 999em;
+      top: 0;
+      bottom: 0;
+      @include media-breakpoint-down(lg) {
+        display: none;
+      }
+    }
+  }
 
-.paragraph--type--model-testimony .client-thierry-osw>div {
-  display: inline-block;
+
+
+
+
+
+
 }
