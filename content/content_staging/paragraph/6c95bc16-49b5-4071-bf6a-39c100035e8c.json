@@ -6,30 +6,25 @@
         "type": {
             "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/hero_paragraph"
         },
-        "http:\/\/drupal.org\/rest\/relation\/paragraph\/hero_paragraph\/field_background_image": [
-            {
-                "href": "http:\/\/default\/media\/4\/edit?_format=hal_json"
-            }
-        ],
         "http:\/\/drupal.org\/rest\/relation\/paragraph\/hero_paragraph\/field_thumbnail": [
             {
-                "href": "http:\/\/default\/media\/5\/edit?_format=hal_json"
+                "href": "http:\/\/default\/media\/1\/edit?_format=hal_json"
             }
         ]
     },
     "id": [
         {
-            "value": 4
+            "value": 1
         }
     ],
     "uuid": [
         {
-            "value": "28642369-fc82-4855-a64a-18d63bae82a1"
+            "value": "6c95bc16-49b5-4071-bf6a-39c100035e8c"
         }
     ],
     "revision_id": [
         {
-            "value": 8
+            "value": 1
         }
     ],
     "langcode": [
@@ -51,14 +46,14 @@
     ],
     "created": [
         {
-            "value": "2019-09-27T10:04:27+00:00",
+            "value": "2019-10-04T11:24:25+00:00",
             "lang": "en",
             "format": "Y-m-d\\TH:i:sP"
         }
     ],
     "parent_id": [
         {
-            "value": "3"
+            "value": "1"
         }
     ],
     "parent_type": [
@@ -88,45 +83,28 @@
             "lang": "en"
         }
     ],
-    "_embedded": {
-        "http:\/\/drupal.org\/rest\/relation\/paragraph\/hero_paragraph\/field_background_image": [
-            {
-                "_links": {
-                    "self": {
-                        "href": "http:\/\/default\/media\/4\/edit?_format=hal_json"
-                    },
-                    "type": {
-                        "href": "http:\/\/drupal.org\/rest\/type\/media\/image"
-                    }
-                },
-                "uuid": [
-                    {
-                        "value": "2decfde9-691b-4d51-a39b-19e4491719ec"
-                    }
-                ]
-            }
-        ],
-        "http:\/\/drupal.org\/rest\/relation\/paragraph\/hero_paragraph\/field_thumbnail": [
-            {
-                "_links": {
-                    "self": {
-                        "href": "http:\/\/default\/media\/5\/edit?_format=hal_json"
-                    },
-                    "type": {
-                        "href": "http:\/\/drupal.org\/rest\/type\/media\/image"
-                    }
-                },
-                "uuid": [
-                    {
-                        "value": "699bc0fa-b1ee-4813-998b-8b9eaddf7f2d"
-                    }
-                ]
-            }
-        ]
-    },
     "field_baseline": [
         {
             "value": "Landing page - Premium Baseline"
         }
-    ]
+    ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/paragraph\/hero_paragraph\/field_thumbnail": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/media\/1\/edit?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/media\/image"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "b72c84ef-3125-4bb2-8bd0-c178fae4eb92"
+                    }
+                ]
+            }
+        ]
+    }
 }

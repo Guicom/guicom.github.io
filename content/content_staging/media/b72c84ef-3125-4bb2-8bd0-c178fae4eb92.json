@@ -1,46 +1,48 @@
 {
     "_links": {
         "self": {
-            "href": "http:\/\/default\/node\/3?_format=hal_json"
+            "href": "http:\/\/default\/media\/1\/edit?_format=hal_json"
         },
         "type": {
-            "href": "http:\/\/drupal.org\/rest\/type\/node\/landing_page"
+            "href": "http:\/\/drupal.org\/rest\/type\/media\/image"
         },
-        "http:\/\/drupal.org\/rest\/relation\/node\/landing_page\/revision_uid": [
+        "http:\/\/drupal.org\/rest\/relation\/media\/image\/revision_user": [
             {
                 "href": "http:\/\/default\/user\/1?_format=hal_json"
             }
         ],
-        "http:\/\/drupal.org\/rest\/relation\/node\/landing_page\/uid": [
+        "http:\/\/drupal.org\/rest\/relation\/media\/image\/uid": [
             {
                 "href": "http:\/\/default\/user\/1?_format=hal_json",
                 "lang": "en"
             }
         ],
-        "http:\/\/drupal.org\/rest\/relation\/node\/landing_page\/field_hero_paragraph": [
+        "http:\/\/drupal.org\/rest\/relation\/media\/image\/thumbnail": [
             {
-                "href": ""
+                "href": "http:\/\/default\/sites\/default\/files\/2019-10\/test-270x280-img_0.png",
+                "lang": "en"
             }
         ],
-        "http:\/\/drupal.org\/rest\/relation\/node\/landing_page\/field_key_figures": [
+        "http:\/\/drupal.org\/rest\/relation\/media\/image\/field_media_image": [
             {
-                "href": ""
+                "href": "http:\/\/default\/sites\/default\/files\/2019-10\/test-270x280-img_0.png",
+                "lang": "en"
             }
         ]
     },
-    "nid": [
+    "mid": [
         {
-            "value": 3
+            "value": 1
         }
     ],
     "uuid": [
         {
-            "value": "5573ae11-067a-469a-a7f1-025ec012f42a"
+            "value": "b72c84ef-3125-4bb2-8bd0-c178fae4eb92"
         }
     ],
     "vid": [
         {
-            "value": 9
+            "value": 1
         }
     ],
     "langcode": [
@@ -49,19 +51,19 @@
             "lang": "en"
         }
     ],
-    "type": [
+    "bundle": [
         {
-            "target_id": "landing_page"
+            "target_id": "image"
         }
     ],
-    "revision_timestamp": [
+    "revision_created": [
         {
-            "value": "2019-09-30T12:47:10+00:00",
+            "value": "2019-10-04T11:24:01+00:00",
             "format": "Y-m-d\\TH:i:sP"
         }
     ],
     "_embedded": {
-        "http:\/\/drupal.org\/rest\/relation\/node\/landing_page\/revision_uid": [
+        "http:\/\/drupal.org\/rest\/relation\/media\/image\/revision_user": [
             {
                 "_links": {
                     "self": {
@@ -73,12 +75,12 @@
                 },
                 "uuid": [
                     {
-                        "value": "502ca242-45f0-4d16-adbd-6adb6d85ef16"
+                        "value": "c4eae9b1-df9f-4b0d-b155-c9dbeaa1780b"
                     }
                 ]
             }
         ],
-        "http:\/\/drupal.org\/rest\/relation\/node\/landing_page\/uid": [
+        "http:\/\/drupal.org\/rest\/relation\/media\/image\/uid": [
             {
                 "_links": {
                     "self": {
@@ -90,46 +92,46 @@
                 },
                 "uuid": [
                     {
-                        "value": "502ca242-45f0-4d16-adbd-6adb6d85ef16"
+                        "value": "c4eae9b1-df9f-4b0d-b155-c9dbeaa1780b"
                     }
                 ],
                 "lang": "en"
             }
         ],
-        "http:\/\/drupal.org\/rest\/relation\/node\/landing_page\/field_hero_paragraph": [
+        "http:\/\/drupal.org\/rest\/relation\/media\/image\/thumbnail": [
             {
                 "_links": {
                     "self": {
-                        "href": ""
+                        "href": "http:\/\/default\/sites\/default\/files\/2019-10\/test-270x280-img_0.png"
                     },
                     "type": {
-                        "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/hero_paragraph"
+                        "href": "http:\/\/drupal.org\/rest\/type\/file\/file"
                     }
                 },
                 "uuid": [
                     {
-                        "value": "27cc9930-3fb3-4898-88c1-4e72a16456d4"
+                        "value": "8bd11127-0649-44fb-b040-72e1d9e0183f"
                     }
                 ],
-                "target_revision_id": "16"
+                "lang": "en"
             }
         ],
-        "http:\/\/drupal.org\/rest\/relation\/node\/landing_page\/field_key_figures": [
+        "http:\/\/drupal.org\/rest\/relation\/media\/image\/field_media_image": [
             {
                 "_links": {
                     "self": {
-                        "href": ""
+                        "href": "http:\/\/default\/sites\/default\/files\/2019-10\/test-270x280-img_0.png"
                     },
                     "type": {
-                        "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/key_figures"
+                        "href": "http:\/\/drupal.org\/rest\/type\/file\/file"
                     }
                 },
                 "uuid": [
                     {
-                        "value": "431b0dd7-8d29-4a0d-be8c-2c781b0a836a"
+                        "value": "8bd11127-0649-44fb-b040-72e1d9e0183f"
                     }
                 ],
-                "target_revision_id": "17"
+                "lang": "en"
             }
         ]
     },
@@ -139,36 +141,24 @@
             "lang": "en"
         }
     ],
-    "title": [
+    "name": [
         {
-            "value": "sdcsdcsdc",
+            "value": "test-270x280-img_0.png",
             "lang": "en"
         }
     ],
     "created": [
         {
-            "value": "2019-09-27T15:52:18+00:00",
+            "value": "2019-10-04T11:23:48+00:00",
             "lang": "en",
             "format": "Y-m-d\\TH:i:sP"
         }
     ],
     "changed": [
         {
-            "value": "2019-09-30T12:47:10+00:00",
+            "value": "2019-10-04T11:24:01+00:00",
             "lang": "en",
             "format": "Y-m-d\\TH:i:sP"
-        }
-    ],
-    "promote": [
-        {
-            "value": false,
-            "lang": "en"
-        }
-    ],
-    "sticky": [
-        {
-            "value": false,
-            "lang": "en"
         }
     ],
     "default_langcode": [
@@ -186,8 +176,8 @@
     "metatag": [
         {
             "value": {
-                "title": "sdcsdcsdc | Socomec",
-                "canonical_url": "http:\/\/default\/node\/3"
+                "title": "| Socomec",
+                "canonical_url": "http:\/\/default\/node"
             }
         }
     ]

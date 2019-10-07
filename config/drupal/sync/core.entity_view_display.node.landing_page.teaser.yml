@@ -20,6 +20,7 @@ content:
 hidden:
   addtoany: true
   field_body: true
+  field_client_name: true
   field_form_url: true
   field_hero_paragraph: true
   field_key_figures: true

@@ -4,32 +4,27 @@
             "href": ""
         },
         "type": {
-            "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/hero_paragraph"
+            "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/model_testimony"
         },
-        "http:\/\/drupal.org\/rest\/relation\/paragraph\/hero_paragraph\/field_background_image": [
+        "http:\/\/drupal.org\/rest\/relation\/paragraph\/model_testimony\/field_image_1": [
             {
                 "href": "http:\/\/default\/media\/4\/edit?_format=hal_json"
-            }
-        ],
-        "http:\/\/drupal.org\/rest\/relation\/paragraph\/hero_paragraph\/field_thumbnail": [
-            {
-                "href": "http:\/\/default\/media\/5\/edit?_format=hal_json"
             }
         ]
     },
     "id": [
         {
-            "value": 4
+            "value": 10
         }
     ],
     "uuid": [
         {
-            "value": "28642369-fc82-4855-a64a-18d63bae82a1"
+            "value": "90e59b0e-842d-4b58-a053-62425b756fe8"
         }
     ],
     "revision_id": [
         {
-            "value": 8
+            "value": 34
         }
     ],
     "langcode": [
@@ -40,7 +35,7 @@
     ],
     "type": [
         {
-            "target_id": "hero_paragraph"
+            "target_id": "model_testimony"
         }
     ],
     "status": [
@@ -51,7 +46,7 @@
     ],
     "created": [
         {
-            "value": "2019-09-27T10:04:27+00:00",
+            "value": "2019-10-07T11:25:07+00:00",
             "lang": "en",
             "format": "Y-m-d\\TH:i:sP"
         }
@@ -68,7 +63,7 @@
     ],
     "parent_field_name": [
         {
-            "value": "field_hero_paragraph"
+            "value": "field_body"
         }
     ],
     "behavior_settings": [
@@ -88,8 +83,13 @@
             "lang": "en"
         }
     ],
+    "field_company": [
+        {
+            "value": "Socomec"
+        }
+    ],
     "_embedded": {
-        "http:\/\/drupal.org\/rest\/relation\/paragraph\/hero_paragraph\/field_background_image": [
+        "http:\/\/drupal.org\/rest\/relation\/paragraph\/model_testimony\/field_image_1": [
             {
                 "_links": {
                     "self": {
@@ -105,28 +105,21 @@
                     }
                 ]
             }
-        ],
-        "http:\/\/drupal.org\/rest\/relation\/paragraph\/hero_paragraph\/field_thumbnail": [
-            {
-                "_links": {
-                    "self": {
-                        "href": "http:\/\/default\/media\/5\/edit?_format=hal_json"
-                    },
-                    "type": {
-                        "href": "http:\/\/drupal.org\/rest\/type\/media\/image"
-                    }
-                },
-                "uuid": [
-                    {
-                        "value": "699bc0fa-b1ee-4813-998b-8b9eaddf7f2d"
-                    }
-                ]
-            }
         ]
     },
-    "field_baseline": [
+    "field_nom": [
         {
-            "value": "Landing page - Premium Baseline"
+            "value": "Jean Dupont"
+        }
+    ],
+    "field_position": [
+        {
+            "value": "CTO"
+        }
+    ],
+    "field_text_simple": [
+        {
+            "value": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
         }
     ]
 }

@@ -8,28 +8,28 @@
         },
         "http:\/\/drupal.org\/rest\/relation\/paragraph\/hero_paragraph\/field_background_image": [
             {
-                "href": "http:\/\/default\/media\/4\/edit?_format=hal_json"
+                "href": "http:\/\/default\/media\/8\/edit?_format=hal_json"
             }
         ],
         "http:\/\/drupal.org\/rest\/relation\/paragraph\/hero_paragraph\/field_thumbnail": [
             {
-                "href": "http:\/\/default\/media\/5\/edit?_format=hal_json"
+                "href": "http:\/\/default\/media\/8\/edit?_format=hal_json"
             }
         ]
     },
     "id": [
         {
-            "value": 4
+            "value": 7
         }
     ],
     "uuid": [
         {
-            "value": "28642369-fc82-4855-a64a-18d63bae82a1"
+            "value": "3abcdf4e-c59d-486e-aa74-b33952f4cc52"
         }
     ],
     "revision_id": [
         {
-            "value": 8
+            "value": 35
         }
     ],
     "langcode": [
@@ -51,7 +51,7 @@
     ],
     "created": [
         {
-            "value": "2019-09-27T10:04:27+00:00",
+            "value": "2019-10-07T11:11:03+00:00",
             "lang": "en",
             "format": "Y-m-d\\TH:i:sP"
         }
@@ -82,18 +82,12 @@
             "lang": "en"
         }
     ],
-    "revision_translation_affected": [
-        {
-            "value": true,
-            "lang": "en"
-        }
-    ],
     "_embedded": {
         "http:\/\/drupal.org\/rest\/relation\/paragraph\/hero_paragraph\/field_background_image": [
             {
                 "_links": {
                     "self": {
-                        "href": "http:\/\/default\/media\/4\/edit?_format=hal_json"
+                        "href": "http:\/\/default\/media\/8\/edit?_format=hal_json"
                     },
                     "type": {
                         "href": "http:\/\/drupal.org\/rest\/type\/media\/image"
@@ -101,7 +95,7 @@
                 },
                 "uuid": [
                     {
-                        "value": "2decfde9-691b-4d51-a39b-19e4491719ec"
+                        "value": "eec486b0-126e-45f9-ab89-f3fbc10ecf3f"
                     }
                 ]
             }
@@ -110,7 +104,7 @@
             {
                 "_links": {
                     "self": {
-                        "href": "http:\/\/default\/media\/5\/edit?_format=hal_json"
+                        "href": "http:\/\/default\/media\/8\/edit?_format=hal_json"
                     },
                     "type": {
                         "href": "http:\/\/drupal.org\/rest\/type\/media\/image"
@@ -118,7 +112,7 @@
                 },
                 "uuid": [
                     {
-                        "value": "699bc0fa-b1ee-4813-998b-8b9eaddf7f2d"
+                        "value": "eec486b0-126e-45f9-ab89-f3fbc10ecf3f"
                     }
                 ]
             }
@@ -126,7 +120,7 @@
     },
     "field_baseline": [
         {
-            "value": "Landing page - Premium Baseline"
+            "value": "Disponibilit\u00e9 de l\u2019\u00e9nergie des \u00e9tablissements de sant\u00e9"
         }
     ]
 }

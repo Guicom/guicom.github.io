@@ -8,7 +8,7 @@
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\media\Entity\Media;
 use Drupal\file\Entity\File;
-use Drupal\paragraphs\entity\Paragraph;
+use Drupal\paragraphs\Entity\Paragraph;
 
 /**
  * Implements hook_form_system_theme_settings_alter() for settings form.
@@ -91,18 +91,22 @@ function socomec_preprocess_views_view(&$variables) {
     $rows = $variables['rows'][0]['#rows'];
     $hero_paragraph_id = $rows[0]['#row']->paragraphs_item_field_data_node__field_hero_paragraph_id;
     if(!empty($hero_paragraph_id)){
+      /** @var Drupal\paragraphs\Entity\Paragraph $paragraph */
       $paragraph = Paragraph::load($hero_paragraph_id);
       if(empty($paragraph)){
         return;
       }
-      $field_background_image_id = $paragraph->field_background_image->target_id;
-      $media = Media::load($field_background_image_id);
-      $fid = $media->getSource()->getSourceFieldValue($media);
-      $file = File::load($fid);
-      if(empty($file)){
-        return;
+      if ($paragraph->hasField('field_background_image')
+        && !empty($paragraph->get('field_background_image')->getValue())) {
+        $field_background_image_id = $paragraph->get('field_background_image')->first()->getValue()['target_id'];
+        $media = Media::load($field_background_image_id);
+        $fid = $media->getSource()->getSourceFieldValue($media);
+        $file = File::load($fid);
+        if(empty($file)){
+          return;
+        }
+        $file_url = file_create_url($file->getFileUri());
       }
-      $file_url = file_create_url($file->getFileUri());
       $variables['background_image'] = (!empty($file_url))?$file_url:null;
     }
   }

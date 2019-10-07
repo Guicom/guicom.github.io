@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.storage.node.field_client_name
     - field.storage.node.field_cta
     - field.storage.node.field_file
     - field.storage.node.field_premium_content_type
@@ -10,7 +11,6 @@ dependencies:
     - field.storage.node.field_thank_you_text
     - field.storage.node.field_thumbnail
     - field.storage.paragraph.field_baseline
-    - field.storage.paragraph.field_client_name
     - field.storage.paragraph.field_thumbnail
     - image.style.width_270
   module:
@@ -331,16 +331,16 @@ display:
           plugin_id: field
         field_client_name:
           id: field_client_name
-          table: paragraph__field_client_name
+          table: node__field_client_name
           field: field_client_name
-          relationship: field_hero_paragraph
+          relationship: none
           group_type: group
           admin_label: ''
           label: ''
           exclude: true
           alter:
             alter_text: true
-            text: '<p class="client-hopitaux-un">{{ field_client_name }} </p>'
+            text: '<p class="client-hopitaux-un">CLIENT: {{ field_client_name }} </p>'
             make_link: false
             path: ''
             absolute: false
@@ -505,9 +505,9 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       tags:
+        - 'config:field.storage.node.field_client_name'
         - 'config:field.storage.node.field_premium_content_type'
         - 'config:field.storage.paragraph.field_baseline'
-        - 'config:field.storage.paragraph.field_client_name'
         - 'config:field.storage.paragraph.field_thumbnail'
   block_1:
     display_plugin: block
@@ -774,30 +774,30 @@ display:
           plugin_id: field
         field_client_name:
           id: field_client_name
-          table: paragraph__field_client_name
+          table: node__field_client_name
           field: field_client_name
-          relationship: field_hero_paragraph
+          relationship: none
           group_type: group
           admin_label: ''
           label: ''
           exclude: false
           alter:
             alter_text: false
-            text: '<p class="client-hopitaux-un">{{ field_client_name }} </p>'
+            text: ''
             make_link: false
             path: ''
             absolute: false
             external: false
             replace_spaces: false
             path_case: none
-            trim_whitespace: true
+            trim_whitespace: false
             alt: ''
             rel: ''
             link_class: ''
             prefix: ''
             suffix: ''
             target: ''
-            nl2br: true
+            nl2br: false
             max_length: 0
             word_boundary: true
             ellipsis: true
@@ -846,9 +846,9 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       tags:
+        - 'config:field.storage.node.field_client_name'
         - 'config:field.storage.node.field_premium_content_type'
         - 'config:field.storage.paragraph.field_baseline'
-        - 'config:field.storage.paragraph.field_client_name'
         - 'config:field.storage.paragraph.field_thumbnail'
   block_2:
     display_plugin: block
