@@ -49,9 +49,10 @@ content:
   field_body:
     type: paragraph_summary
     weight: 0
-    region: left
-    label: above
-    settings: {  }
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
     third_party_settings: {  }
   field_pardot_form:
     type: paragraph_summary
