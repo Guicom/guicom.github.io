@@ -33,9 +33,9 @@ stages:
     - pip install docker-compose
     - cp ${CI_PROJECT_DIR}/docker-compose.example.gitlab-ci.yml ${CI_PROJECT_DIR}/docker-compose.yml
     - docker-compose up -d
-    - docker-compose exec web bash -c "cd /var/www/html/ && composer install"
-    - docker-compose exec web bash -c "cd /var/www/html/tests/behat && composer install"
-    - docker-compose exec web bash -c "cd /var/www/html/ && ./vendor/bin/phing install"
+    - docker-compose exec -T web bash -c "cd /var/www/html/ && composer install"
+    - docker-compose exec -T web bash -c "cd /var/www/html/tests/behat && composer install"
+    - docker-compose exec -T web bash -c "cd /var/www/html/ && ./vendor/bin/phing install"
 
 # Behat tests from tests/ folder.
 behat_tests:
@@ -43,4 +43,4 @@ behat_tests:
   extends:
     - .build_project
   script:
-    - docker-compose exec web bash -c "cd /var/www/html/tests/behat && ./bin/behat"
+    - docker-compose exec -T web bash -c "cd /var/www/html/tests/behat && ./bin/behat"
