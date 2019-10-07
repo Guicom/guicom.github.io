@@ -4,22 +4,22 @@
             "href": ""
         },
         "type": {
-            "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/premium_content_promotion"
+            "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/key_figures"
         }
     },
     "id": [
         {
-            "value": 2
+            "value": 6
         }
     ],
     "uuid": [
         {
-            "value": "25d46b82-3011-4862-b60e-400ae4d48f38"
+            "value": "2d486ca5-709d-4774-a7c0-6b980c4c1da7"
         }
     ],
     "revision_id": [
         {
-            "value": 2
+            "value": 33
         }
     ],
     "langcode": [
@@ -30,7 +30,7 @@
     ],
     "type": [
         {
-            "target_id": "premium_content_promotion"
+            "target_id": "key_figures"
         }
     ],
     "status": [
@@ -41,14 +41,14 @@
     ],
     "created": [
         {
-            "value": "2019-08-28T11:45:32+00:00",
+            "value": "2019-10-07T11:15:12+00:00",
             "lang": "en",
             "format": "Y-m-d\\TH:i:sP"
         }
     ],
     "parent_id": [
         {
-            "value": "1"
+            "value": "3"
         }
     ],
     "parent_type": [
@@ -58,7 +58,7 @@
     ],
     "parent_field_name": [
         {
-            "value": "field_premium_content_promotion"
+            "value": "field_body"
         }
     ],
     "behavior_settings": [
@@ -72,37 +72,44 @@
             "lang": "en"
         }
     ],
-    "revision_translation_affected": [
+    "field_figure_1_number": [
         {
-            "value": true,
-            "lang": "en"
+            "value": "\u20ac 150 M"
         }
     ],
-    "field_client": [
+    "field_figure_1_text_line_1": [
         {
-            "value": "sdcsdcsdc"
+            "value": "Total"
         }
     ],
-    "field_cta": [
+    "field_figure_1_text_line_2": [
         {
-            "uri": "https:\/\/www.lipsum.com",
-            "title": "Read case study",
-            "options": []
+            "value": "investment"
         }
     ],
-    "field_doc_title": [
+    "field_figure_2_number": [
         {
-            "value": "sdcsdcsdcsdcsdc"
+            "value": "39"
         }
     ],
-    "field_document_promo_summary": [
+    "field_figure_2_text_line_1": [
         {
-            "value": "sdcsdcsdcsdcdc, sdcsdsscsc,  sdc sdc sd csdcdc."
+            "value": "equiped"
         }
     ],
-    "field_document_type": [
+    "field_figure_2_text_line_2": [
         {
-            "value": "case_study"
+            "value": "blocks"
+        }
+    ],
+    "field_figure_3_number": [
+        {
+            "value": "100%"
+        }
+    ],
+    "field_figure_3_text_line_1": [
+        {
+            "value": "stability"
         }
     ]
 }

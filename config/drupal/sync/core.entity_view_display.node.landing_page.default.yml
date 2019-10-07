@@ -12,7 +12,7 @@ dependencies:
     - node.type.landing_page
   module:
     - ds
-    - paragraphs
+    - entity_reference_revisions
     - user
 third_party_settings:
   ds:
@@ -47,19 +47,22 @@ bundle: landing_page
 mode: default
 content:
   field_body:
-    type: paragraph_summary
+    type: entity_reference_revisions_entity_view
     weight: 0
     label: hidden
     settings:
       view_mode: default
       link: ''
     third_party_settings: {  }
+    region: left
   field_pardot_form:
-    type: paragraph_summary
+    type: entity_reference_revisions_entity_view
     weight: 1
     region: right
     label: hidden
-    settings: {  }
+    settings:
+      view_mode: default
+      link: ''
     third_party_settings: {  }
 hidden:
   addtoany: true

@@ -6,11 +6,6 @@
         "type": {
             "href": "http:\/\/drupal.org\/rest\/type\/media\/image"
         },
-        "http:\/\/drupal.org\/rest\/relation\/media\/image\/revision_user": [
-            {
-                "href": "http:\/\/default\/user\/1?_format=hal_json"
-            }
-        ],
         "http:\/\/drupal.org\/rest\/relation\/media\/image\/uid": [
             {
                 "href": "http:\/\/default\/user\/1?_format=hal_json",
@@ -19,13 +14,7 @@
         ],
         "http:\/\/drupal.org\/rest\/relation\/media\/image\/thumbnail": [
             {
-                "href": "http:\/\/default\/sites\/default\/files\/2019-09\/abstract-1920x740.jpg",
-                "lang": "en"
-            }
-        ],
-        "http:\/\/drupal.org\/rest\/relation\/media\/image\/field_media_image": [
-            {
-                "href": "http:\/\/default\/sites\/default\/files\/2019-09\/abstract-1920x740.jpg",
+                "href": "http:\/\/default\/sites\/default\/files\/media-icons\/generic\/no-thumbnail.png",
                 "lang": "en"
             }
         ]
@@ -58,28 +47,17 @@
     ],
     "revision_created": [
         {
-            "value": "2019-09-27T11:32:29+00:00",
+            "value": "2019-10-07T11:09:10+00:00",
             "format": "Y-m-d\\TH:i:sP"
         }
     ],
+    "status": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
     "_embedded": {
-        "http:\/\/drupal.org\/rest\/relation\/media\/image\/revision_user": [
-            {
-                "_links": {
-                    "self": {
-                        "href": "http:\/\/default\/user\/1?_format=hal_json"
-                    },
-                    "type": {
-                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
-                    }
-                },
-                "uuid": [
-                    {
-                        "value": "d0c6d55d-2be5-4d29-9659-24a4c5e8b034"
-                    }
-                ]
-            }
-        ],
         "http:\/\/drupal.org\/rest\/relation\/media\/image\/uid": [
             {
                 "_links": {
@@ -92,7 +70,7 @@
                 },
                 "uuid": [
                     {
-                        "value": "d0c6d55d-2be5-4d29-9659-24a4c5e8b034"
+                        "value": "456afe30-2c52-4a53-a0c1-60a6fef11eb4"
                     }
                 ],
                 "lang": "en"
@@ -102,7 +80,7 @@
             {
                 "_links": {
                     "self": {
-                        "href": "http:\/\/default\/sites\/default\/files\/2019-09\/abstract-1920x740.jpg"
+                        "href": "http:\/\/default\/sites\/default\/files\/media-icons\/generic\/no-thumbnail.png"
                     },
                     "type": {
                         "href": "http:\/\/drupal.org\/rest\/type\/file\/file"
@@ -110,37 +88,13 @@
                 },
                 "uuid": [
                     {
-                        "value": "c4eac5c7-00fd-4874-babb-dc67a529d9cb"
-                    }
-                ],
-                "lang": "en"
-            }
-        ],
-        "http:\/\/drupal.org\/rest\/relation\/media\/image\/field_media_image": [
-            {
-                "_links": {
-                    "self": {
-                        "href": "http:\/\/default\/sites\/default\/files\/2019-09\/abstract-1920x740.jpg"
-                    },
-                    "type": {
-                        "href": "http:\/\/drupal.org\/rest\/type\/file\/file"
-                    }
-                },
-                "uuid": [
-                    {
-                        "value": "c4eac5c7-00fd-4874-babb-dc67a529d9cb"
+                        "value": "7c55f342-247f-46fb-9455-392af08bdb9f"
                     }
                 ],
                 "lang": "en"
             }
         ]
     },
-    "status": [
-        {
-            "value": true,
-            "lang": "en"
-        }
-    ],
     "name": [
         {
             "value": "abstract-1920x740.jpg",

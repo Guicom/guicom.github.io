@@ -49,6 +49,12 @@
             "format": "Y-m-d\\TH:i:sP"
         }
     ],
+    "name": [
+      {
+        "value": "Test",
+        "lang": "en"
+      }
+    ],
     "_embedded": {
         "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/strong_points\/revision_user": [
             {
