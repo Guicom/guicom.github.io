@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.thank_you_page.field_body
     - field.field.node.thank_you_page.field_cta
     - field.field.node.thank_you_page.field_file
     - field.field.node.thank_you_page.field_landing_page
@@ -11,6 +12,7 @@ dependencies:
     - field.field.node.thank_you_page.field_thumbnail
     - node.type.thank_you_page
   module:
+    - paragraphs
     - path
     - text
 id: node.thank_you_page.default
@@ -24,6 +26,18 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_body:
+    weight: 26
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+    type: entity_reference_paragraphs
+    region: content
   field_cta:
     weight: 12
     settings:
