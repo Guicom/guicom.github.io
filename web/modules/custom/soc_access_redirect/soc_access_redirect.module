@@ -56,7 +56,7 @@ function soc_access_redirect_file_access(EntityInterface  $entity, $operation, A
           }
         }
       }
-      
+
       if($access_test === false){
         $access = AccessResult::forbidden();
       }
