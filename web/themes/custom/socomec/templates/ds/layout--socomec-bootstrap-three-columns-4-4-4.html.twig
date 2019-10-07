@@ -1,0 +1,38 @@
+{#
+/**
+ * @file
+ * Display Suite Socomec bootstrap three columns 4/4/4.
+ *
+ * Available variables:
+ * - outer_wrapper: outer wrapper element
+ * - first_wrapper: wrapper element around first region
+ * - second_wrapper: wrapper element around second region
+ * - third_wrapper: wrapper element around third region
+ * - attributes: layout attributes
+ * - first_attributes: attributes for first region
+ * - second_attributes: attributes for second region
+ * - third_attributes: attributes for third region
+ * - first: content of first region
+ * - second: content of second region
+ * - third: content of third region
+ */
+#}
+
+<{{ outer_wrapper }}{{ attributes.addClass('row', 'clearfix', 'custom-socomec-layout' , 'custom-socomec-layout-4-4-4') }}>
+
+  {{ title_suffix.contextual_links }}
+
+  <{{ first_wrapper }}{{ first_attributes.addClass('col-lg-4', 'custom-socomec-layout-left') }}>
+    {{ first }}
+  </{{ first_wrapper }}>
+
+  <{{ second_wrapper }}{{ second_attributes.addClass('col-lg-4', 'custom-socomec-layout-center') }}>
+    {{ second }}
+  </{{ second_wrapper }}>
+
+  <{{ third_wrapper }}{{ third_attributes.addClass('col-lg-4', 'custom-socomec-layout-right') }}>
+    {{ third }}
+  </{{ third_wrapper }}>
+
+</{{ outer_wrapper }}>
+
