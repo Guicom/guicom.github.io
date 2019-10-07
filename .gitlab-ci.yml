@@ -33,6 +33,7 @@ stages:
     - pip install docker-compose
     - cp ${CI_PROJECT_DIR}/docker-compose.example.gitlab-ci.yml ${CI_PROJECT_DIR}/docker-compose.yml
     - cp ${CI_PROJECT_DIR}/phing/example.build.properties.local ${CI_PROJECT_DIR}/phing/build.properties.local
+    - cp ${CI_PROJECT_DIR}/tests/behat/behat.example.yml ${CI_PROJECT_DIR}/tests/behat/behat.local.yml
     - docker-compose up -d
     - docker-compose exec -T web bash -c "cd /var/www/html/ && composer install"
     - docker-compose exec -T web bash -c "cd /var/www/html/tests/behat && composer install"
