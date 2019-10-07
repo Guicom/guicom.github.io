@@ -6,6 +6,9 @@
  */
 
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\media\Entity\Media;
+use Drupal\file\Entity\File;
+use Drupal\paragraphs\entity\Paragraph;
 
 /**
  * Implements hook_form_system_theme_settings_alter() for settings form.
@@ -61,27 +64,62 @@ function socomec_theme_suggestions_page_alter(array &$suggestions, array $variab
 }
 
 /**
+  * Implements hook_theme_suggestions_HOOK_alter().
+  */
+function socomec_theme_suggestions_views_view_fields_alter(array &$suggestions, array $variables) {
+  // Suggestions for custom views_view bundles.
+  if (!empty($variables['view'])) {
+    $view = $variables['view'];
+    if (!empty($view->id()) && !empty($view->getDisplay()->getPluginId())) {
+      $id = $view->id();
+      $display = $view->current_display;
+      $hook = $variables['theme_hook_original'];
+      array_splice($suggestions, 1, 0, $hook . '__' . $id . '__' . $display);
+    }
+  }
+}
+
+
+/**
  * Implements template_preprocess_views_view() for hero view.
  */
 function socomec_preprocess_views_view(&$variables) {
   $id = $variables['id'];
   $display_id = $variables['display_id'];
   // Apply background image for hero paragraph view block
-  if((!empty($id) && $id == 'hero_block') && (!empty($display_id) && $display_id == 'block_1')) {
+  if ((!empty($id) && $id == 'hero_block') && ($display_id == 'block_1' || $display_id == 'block_2')) {
     $rows = $variables['rows'][0]['#rows'];
     $hero_paragraph_id = $rows[0]['#row']->paragraphs_item_field_data_node__field_hero_paragraph_id;
     if(!empty($hero_paragraph_id)){
-      $paragraph = Drupal\paragraphs\entity\Paragraph::load($hero_paragraph_id);
+      $paragraph = Paragraph::load($hero_paragraph_id);
       if(empty($paragraph)){
         return;
       }
       $field_background_image_id = $paragraph->field_background_image->target_id;
-      $file = \Drupal\file\Entity\File::load($field_background_image_id);
+      $media = Media::load($field_background_image_id);
+      $fid = $media->getSource()->getSourceFieldValue($media);
+      $file = File::load($fid);
       if(empty($file)){
         return;
       }
       $file_url = file_create_url($file->getFileUri());
       $variables['background_image'] = (!empty($file_url))?$file_url:null;
     }
+  }
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function socomec_preprocess_views_view_fields__hero_block__block_2(&$variables) {
+  $mid = $variables["row"]->_entity->get('field_file')->getString();
+  $media = Media::load($mid);
+  $fid = $media->getSource()->getSourceFieldValue($media);
+  if ($fid != NULL) {
+    $file = File::load($fid);
+    if(empty($file)){
+      return;
+    }
+    $variables['file_url'] = file_create_url($file->getFileUri());
   }
 }
