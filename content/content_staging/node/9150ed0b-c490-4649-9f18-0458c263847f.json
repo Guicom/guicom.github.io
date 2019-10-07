@@ -1,0 +1,229 @@
+{
+    "_links": {
+        "self": {
+            "href": "http:\/\/default\/landing-page-premium\/case-study\/landing-page-premium?_format=hal_json"
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/node\/landing_page"
+        },
+        "http:\/\/drupal.org\/rest\/relation\/node\/landing_page\/revision_uid": [
+            {
+                "href": "http:\/\/default\/user\/1?_format=hal_json"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/landing_page\/uid": [
+            {
+                "href": "http:\/\/default\/user\/1?_format=hal_json",
+                "lang": "en"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/landing_page\/field_pardot_form": [
+            {
+                "href": ""
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/landing_page\/field_hero_paragraph": [
+            {
+                "href": ""
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/landing_page\/field_premium_content_type": [
+            {
+                "href": "http:\/\/default\/taxonomy\/term\/1?_format=hal_json"
+            }
+        ]
+    },
+    "nid": [
+        {
+            "value": 1
+        }
+    ],
+    "uuid": [
+        {
+            "value": "9150ed0b-c490-4649-9f18-0458c263847f"
+        }
+    ],
+    "vid": [
+        {
+            "value": 1
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "type": [
+        {
+            "target_id": "landing_page"
+        }
+    ],
+    "revision_timestamp": [
+        {
+            "value": "2019-10-04T11:24:25+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/node\/landing_page\/revision_uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/user\/1?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "c4eae9b1-df9f-4b0d-b155-c9dbeaa1780b"
+                    }
+                ]
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/landing_page\/uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/user\/1?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "c4eae9b1-df9f-4b0d-b155-c9dbeaa1780b"
+                    }
+                ],
+                "lang": "en"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/landing_page\/field_pardot_form": [
+            {
+                "_links": {
+                    "self": {
+                        "href": ""
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/pardot_form"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "aa066d1b-715e-49ab-8b84-8c643fbd4545"
+                    }
+                ],
+                "target_revision_id": "2"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/landing_page\/field_hero_paragraph": [
+            {
+                "_links": {
+                    "self": {
+                        "href": ""
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/hero_paragraph"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "6c95bc16-49b5-4071-bf6a-39c100035e8c"
+                    }
+                ],
+                "target_revision_id": "1"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/landing_page\/field_premium_content_type": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/taxonomy\/term\/1?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/premium_content_type"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "52aa0ae4-f05f-4305-9346-39f8759b910d"
+                    }
+                ]
+            }
+        ]
+    },
+    "status": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "title": [
+        {
+            "value": "Landing page - Premium",
+            "lang": "en"
+        }
+    ],
+    "created": [
+        {
+            "value": "2019-10-04T11:23:14+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "changed": [
+        {
+            "value": "2019-10-04T11:24:25+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "promote": [
+        {
+            "value": false,
+            "lang": "en"
+        }
+    ],
+    "sticky": [
+        {
+            "value": false,
+            "lang": "en"
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "revision_translation_affected": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "metatag": [
+        {
+            "value": {
+                "title": "Landing page - Premium | Socomec",
+                "canonical_url": "http:\/\/default\/landing-page-premium\/case-study\/landing-page-premium"
+            }
+        }
+    ],
+    "path": [
+        {
+            "alias": "\/landing-page-premium\/case-study\/landing-page-premium",
+            "pid": 1,
+            "langcode": "en",
+            "lang": "en"
+        }
+    ],
+    "field_client_name": [
+        {
+            "value": "John Doe"
+        }
+    ]
+}

@@ -4,8 +4,8 @@ status: true
 dependencies:
   config:
     - field.field.node.landing_page.field_body
+    - field.field.node.landing_page.field_client_name
     - field.field.node.landing_page.field_hero_paragraph
-    - field.field.node.landing_page.field_key_figures
     - field.field.node.landing_page.field_metatags
     - field.field.node.landing_page.field_pardot_form
     - field.field.node.landing_page.field_premium_content_type
@@ -36,13 +36,17 @@ third_party_settings:
             col-lg-8: col-lg-8
           right:
             col-lg-4: col-lg-4
-    regions: {  }
+    regions:
+      left:
+        - field_body
+      right:
+        - field_pardot_form
 id: node.landing_page.default
 targetEntityType: node
 bundle: landing_page
 mode: default
 content:
-  field_pardot_form:
+  field_body:
     type: entity_reference_revisions_entity_view
     weight: 0
     label: hidden
@@ -50,12 +54,20 @@ content:
       view_mode: default
       link: ''
     third_party_settings: {  }
+    region: left
+  field_pardot_form:
+    type: entity_reference_revisions_entity_view
+    weight: 1
     region: right
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
 hidden:
   addtoany: true
-  field_body: true
+  field_client_name: true
   field_hero_paragraph: true
-  field_key_figures: true
   field_metatags: true
   field_premium_content_type: true
   langcode: true

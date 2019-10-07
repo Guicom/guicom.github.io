@@ -1,0 +1,33 @@
+uuid: fcad53cf-6b5b-4b1f-93bb-311dfcfe2f04
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.hero_block
+  module:
+    - ctools
+    - views
+  theme:
+    - socomec
+id: views_block__hero_block_block_2
+theme: socomec
+region: hero
+weight: 0
+provider: null
+plugin: 'views_block:hero_block-block_2'
+settings:
+  id: 'views_block:hero_block-block_2'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+  items_per_page: none
+  context_mapping: {  }
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    bundles:
+      thank_you_page: thank_you_page
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'

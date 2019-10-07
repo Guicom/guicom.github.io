@@ -4,55 +4,132 @@
  */
 
 // Theming hero block
-#block-views-block-hero-block-block-1{
+#block-views-block-hero-block-block-1,
+#block-views-block-hero-block-block-2 {
   .col-auto{
-    padding-right: 0px;
-    padding-left: 0px;
+    padding-right: 0;
+    padding-left: 0;
     .view-hero-block{
       .socomec-hero-background{
-        background: linear-gradient(26.93deg, #00519D 0%, rgba(0,81,157,0.8) 100%);
-        background-repeat: no-repeat;
+        background: linear-gradient(26.93deg, #00519D 0%, rgba(0, 81, 157, 0.8) 100%) no-repeat;
         background-size: cover;
         height: 740px;
         .hero-thumbnail{
-          padding:45px 0px;
+          padding:45px 0;
           text-align: center;
           img{
             max-width: 100%;
           }
         }
         .hero-content{
-          padding:62px 0px 0px 0px;
-          .case-study {
+          padding: 35px 0 0 0;
+          .premium-label {
             color: $white;
-            font-family: 'Roboto', sans-serif;
+            font-family: $font-roboto, sans-serif;
             font-size: 20px;
             font-weight: 900;
             line-height: 30px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            &:after{
+              content: '';
+              width: 60px;
+              height: 8px;
+              display: inline-block;
+              content: '';
+              -webkit-mask: url(../images/wave.svg) no-repeat 50% 50%;
+              mask: url(../images/wave.svg) no-repeat 50% 50%;
+              -webkit-mask-size: cover;
+              mask-size: cover;
+              background-color: #FFCC00;
+              line-height: 1px;
+              vertical-align: middle;
+              margin-left: 5px;
+              margin-top: -2px;
+            }
           }
-          .comment-garantir-la {
+          .title-hero {
             color: $white;
-            font-family: 'Roboto', sans-serif;
+            font-family: $font-roboto;
             font-size: 48px;
             font-weight: 300;
             line-height: 60px;
           }
-          .disponibilite-de-l-e {
+          .thx-text,
+          .lp-baseline {
             color: $yellow;
-            font-family: 'Roboto', sans-serif;
+            font-family: $font-roboto;
             font-size: 24px;
             font-weight: 900;
             line-height: 30px;
+            margin-bottom: 20px;
           }
-          .client-hopitaux-un {
+          .lp-client-name {
             color: $mid-grey;
-            font-family: 'Roboto', sans-serif;
+            font-family: $font-roboto;
             font-size: 16px;
             line-height: 25px;
+          }
+
+          .succces-text {
+            color: $white;
+            font-family: $font-roboto;
+            font-size: 16px;
+            line-height: 25px;
+            margin-bottom: 60px;
+          }
+
+          .download-file {
+            margin-top: 20px;
+            background: $yellow;
+            font-family: $font-poppins;
+            display: flex;
+            height: 60px;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            color: $blue;
+            align-items: center;
+            justify-content: center;
+
+            svg {
+              width: 20px;
+              height: 20px;
+              fill: $blue;
+              margin-right: 10px;
+            }
+          }
+        }
+      }
+    }
+  }
+  @include media-breakpoint-down(lg) {
+    .col-auto{
+      .view-hero-block{
+        .socomec-hero-background{
+          .hero-thumbnail{
+            padding:5px 10px 20px 10px;
+            img{
+              max-width: 100%;
+              width: auto;
+              height: 280px;
+            }
+          }
+          .hero-content{
+            padding:5px 10px 0 10px;
+            .case-study {
+              margin-bottom: 0.5rem;
+            }
+            .comment-garantir-la {
+              font-size: 34px;
+            }
+            .disponibilite-de-l-e {
+            }
+            .client-hopitaux-un {
+            }
           }
         }
       }
     }
   }
 }
-

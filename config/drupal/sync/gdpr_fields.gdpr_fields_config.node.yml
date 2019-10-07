@@ -419,6 +419,17 @@ bundles:
       notes: ''
       relationship: 0
       sars_filename: ''
+    field_body:
+      bundle: landing_page
+      name: field_body
+      entity_type_id: node
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
   page:
     field_table:
       bundle: page
