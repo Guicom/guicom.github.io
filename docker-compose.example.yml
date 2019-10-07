@@ -102,3 +102,11 @@ services:
     image: actency/docker-tika-server
     ports:
       - "9998:9998"
+
+  browser:
+    image: selenium/standalone-chrome:3.14.0-europium
+    ports:
+      - "4444:4444"
+    shm_size: 2G
+    links:
+      - web

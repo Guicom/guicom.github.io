@@ -54,3 +54,11 @@ services:
     ports:
       - "1025:1025"
       - "8025:8025"
+
+  browser:
+    image: selenium/standalone-chrome:3.14.0-europium
+    ports:
+      - "4444:4444"
+    shm_size: 2G
+    links:
+      - web

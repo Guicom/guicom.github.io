@@ -1,0 +1,96 @@
+default:
+  suites:
+    default:
+      contexts:
+        - FeatureContext
+        - ScreenshotContext
+        - SessionContext
+        - Drupal\DrupalExtension\Context\ConfigContext
+        - Drupal\DrupalExtension\Context\DrupalContext
+        - Drupal\DrupalExtension\Context\MinkContext
+        - Drupal\DrupalExtension\Context\MarkupContext
+        - Drupal\DrupalExtension\Context\MessageContext
+        - Drupal\DrupalExtension\Context\DrushContext
+  extensions:
+#    Lakion\Behat\MinkDebugExtension:
+#      directory: /tmp
+#      screenshot: true
+    Behat\MinkExtension:
+      goutte: ~
+      browser_name: 'chrome'
+      javascript_session: selenium2
+      selenium2:
+        wd_host:  http://browser:4444/wd/hub
+      base_url: http://web
+    Drupal\DrupalExtension:
+      api_driver: "drupal"
+      drupal:
+        drupal_root: "web"
+      drush:
+        root: "web"
+      region_map:
+        header: "#navbar"
+        main menu: "#block-main-menu"
+        highlighted: ".region-highlighted"
+        content header: ".region-header"
+        content: ".region-content"
+        sidebar second: ".region-sidebar-second"
+        footer: ".region-footer"
+        footer bottom: ".region-footer-bottom"
+      selectors:
+        success_message_selector: '.alert-success'
+        error_message_selector: '.alert-danger'
+      text:
+        password_field: "pass"
+        username_field: "name"
+        log_in: "Se connecter"
+
+travis:
+  suites:
+    default:
+      contexts:
+      - FeatureContext
+      - ScreenshotContext
+      - SessionContext
+      - Drupal\DrupalExtension\Context\ConfigContext
+      - Drupal\DrupalExtension\Context\DrupalContext
+      - Drupal\DrupalExtension\Context\MinkContext
+      - Drupal\DrupalExtension\Context\MarkupContext
+      - Drupal\DrupalExtension\Context\MessageContext
+      - Drupal\DrupalExtension\Context\DrushContext
+  extensions:
+    Behat\MinkExtension:
+      goutte: ~
+      browser_name: 'chrome'
+      javascript_session: selenium2
+      selenium2:
+        wd_host:  http://localhost:4444/wd/hub
+        capabilities:
+          chrome:
+            switches:
+            - "--headless"
+            - "--disable-gpu"
+            - "--no-sandbox"
+      base_url: http://127.0.0.1:8080
+    Drupal\DrupalExtension:
+      api_driver: "drupal"
+      drupal:
+        drupal_root: "web"
+      drush:
+        root: "web"
+      region_map:
+        header: "#navbar"
+        main menu: "#block-main-menu"
+        highlighted: ".region-highlighted"
+        content header: ".region-header"
+        content: ".region-content"
+        sidebar second: ".region-sidebar-second"
+        footer: ".region-footer"
+        footer bottom: ".region-footer-bottom"
+      selectors:
+        success_message_selector: '.alert-success'
+        error_message_selector: '.alert-danger'
+      text:
+        password_field: "pass"
+        username_field: "name"
+        log_in: "Se connecter"

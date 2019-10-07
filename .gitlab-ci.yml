@@ -32,6 +32,7 @@ stages:
     - apk add --no-cache py-pip python-dev libffi-dev openssl-dev gcc libc-dev make
     - pip install docker-compose
     - cp ${CI_PROJECT_DIR}/docker-compose.example.gitlab-ci.yml ${CI_PROJECT_DIR}/docker-compose.yml
+    - cp ${CI_PROJECT_DIR}/phing/example.build.properties.local ${CI_PROJECT_DIR}/phing/build.properties.local
     - docker-compose up -d
     - docker-compose exec -T web bash -c "cd /var/www/html/ && composer install"
     - docker-compose exec -T web bash -c "cd /var/www/html/tests/behat && composer install"
@@ -43,4 +44,4 @@ behat_tests:
   extends:
     - .build_project
   script:
-    - docker-compose exec -T web bash -c "cd /var/www/html/tests/behat && ./bin/behat"
+    - docker-compose exec -T web bash -c "cd /var/www/html && ./vendor/bin/phing behat:run -Dbehat.bin=tests/behat/bin/behat"
