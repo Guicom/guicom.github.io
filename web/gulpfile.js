@@ -11,6 +11,7 @@ const paths = {
   scss: {
     src: 'themes/custom/socomec/assets/scss/style.scss',
     pardot: 'themes/custom/socomec/assets/scss/pardot.scss',
+    ckeditor: 'themes/custom/socomec/assets/scss/ckeditor.scss',
     dest: 'themes/custom/socomec/assets/css',
     watch: 'themes/custom/socomec/assets/scss/**/*.scss',
     bootstrap: 'node_modules/bootstrap/scss/bootstrap.scss'
@@ -25,7 +26,7 @@ const paths = {
 
 // Compile sass into CSS & auto-inject into browsers
 function styles () {
-  return gulp.src([paths.scss.bootstrap, paths.scss.src, paths.scss.pardot])
+  return gulp.src([paths.scss.bootstrap, paths.scss.src, paths.scss.pardot, paths.scss.ckeditor])
     .pipe(sourcemaps.init())
     .pipe(sass().on('error', sass.logError))
     .pipe(postcss([autoprefixer({
