@@ -137,6 +137,9 @@
         "patches": {
             "drupal/default_content_deploy": {
                 "Add folder argument on drush dcdi dcde": "https://www.drupal.org/files/issues/2019-06-14/3061417-9.patch"
+            },
+            "actency/foundation": {
+                "language UUID patch": "https://gitlab.com/actency/utils/drupal/foundation/merge_requests/2.diff"
             }
         }
     }
