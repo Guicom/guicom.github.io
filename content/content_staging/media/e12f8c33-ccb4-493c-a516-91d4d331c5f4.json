@@ -1,7 +1,7 @@
 {
     "_links": {
         "self": {
-            "href": "http:\/\/default\/media\/3\/edit?_format=hal_json"
+            "href": "http:\/\/default\/media\/9\/edit?_format=hal_json"
         },
         "type": {
             "href": "http:\/\/drupal.org\/rest\/type\/media\/image"
@@ -19,30 +19,30 @@
         ],
         "http:\/\/drupal.org\/rest\/relation\/media\/image\/thumbnail": [
             {
-                "href": "http:\/\/default\/sites\/default\/files\/2019-09\/test-1920x740-img_1.png",
+                "href": "",
                 "lang": "en"
             }
         ],
         "http:\/\/drupal.org\/rest\/relation\/media\/image\/field_media_image": [
             {
-                "href": "http:\/\/default\/sites\/default\/files\/2019-09\/test-1920x740-img_1.png",
+                "href": "",
                 "lang": "en"
             }
         ]
     },
     "mid": [
         {
-            "value": 3
+            "value": 9
         }
     ],
     "uuid": [
         {
-            "value": "477a1361-c6fa-445f-bef4-d7242304db40"
+            "value": "e12f8c33-ccb4-493c-a516-91d4d331c5f4"
         }
     ],
     "vid": [
         {
-            "value": 3
+            "value": 12
         }
     ],
     "langcode": [
@@ -58,7 +58,7 @@
     ],
     "revision_created": [
         {
-            "value": "2019-09-20T14:33:16+00:00",
+            "value": "2019-10-08T14:35:03+00:00",
             "format": "Y-m-d\\TH:i:sP"
         }
     ],
@@ -75,7 +75,7 @@
                 },
                 "uuid": [
                     {
-                        "value": "313b842f-c03e-4600-92be-3e8311f08850"
+                        "value": "fb94e047-66d0-45a3-bce6-5e939a925965"
                     }
                 ]
             }
@@ -92,7 +92,7 @@
                 },
                 "uuid": [
                     {
-                        "value": "313b842f-c03e-4600-92be-3e8311f08850"
+                        "value": "fb94e047-66d0-45a3-bce6-5e939a925965"
                     }
                 ],
                 "lang": "en"
@@ -102,7 +102,7 @@
             {
                 "_links": {
                     "self": {
-                        "href": "http:\/\/default\/sites\/default\/files\/2019-09\/test-1920x740-img_1.png"
+                        "href": ""
                     },
                     "type": {
                         "href": "http:\/\/drupal.org\/rest\/type\/file\/file"
@@ -110,17 +110,21 @@
                 },
                 "uuid": [
                     {
-                        "value": "69e395c1-3123-466b-b118-4e59dc21a374"
+                        "value": "087f8162-95a1-4334-b8d9-49bea77492c2"
                     }
                 ],
-                "lang": "en"
+                "lang": "en",
+                "alt": "Example",
+                "title": null,
+                "width": "1300",
+                "height": "775"
             }
         ],
         "http:\/\/drupal.org\/rest\/relation\/media\/image\/field_media_image": [
             {
                 "_links": {
                     "self": {
-                        "href": "http:\/\/default\/sites\/default\/files\/2019-09\/test-1920x740-img_1.png"
+                        "href": ""
                     },
                     "type": {
                         "href": "http:\/\/drupal.org\/rest\/type\/file\/file"
@@ -128,10 +132,14 @@
                 },
                 "uuid": [
                     {
-                        "value": "69e395c1-3123-466b-b118-4e59dc21a374"
+                        "value": "087f8162-95a1-4334-b8d9-49bea77492c2"
                     }
                 ],
-                "lang": "en"
+                "lang": "en",
+                "alt": "Example",
+                "title": "",
+                "width": "1300",
+                "height": "775"
             }
         ]
     },
@@ -143,20 +151,20 @@
     ],
     "name": [
         {
-            "value": "test-1920x740-img_1.png",
+            "value": "34665210-Rubber-stamp-with-word-example-inside-vector-illustration-Stock-Vector_3.jpg",
             "lang": "en"
         }
     ],
     "created": [
         {
-            "value": "2019-09-20T14:33:03+00:00",
+            "value": "2019-10-08T14:34:51+00:00",
             "lang": "en",
             "format": "Y-m-d\\TH:i:sP"
         }
     ],
     "changed": [
         {
-            "value": "2019-09-20T14:33:16+00:00",
+            "value": "2019-10-08T14:35:03+00:00",
             "lang": "en",
             "format": "Y-m-d\\TH:i:sP"
         }
@@ -171,6 +179,14 @@
         {
             "value": true,
             "lang": "en"
+        }
+    ],
+    "metatag": [
+        {
+            "value": {
+                "title": "| Socomec",
+                "canonical_url": "http:\/\/default\/node"
+            }
         }
     ]
 }
