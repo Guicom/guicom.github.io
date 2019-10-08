@@ -14,7 +14,13 @@
         ],
         "http:\/\/drupal.org\/rest\/relation\/media\/private_image\/thumbnail": [
             {
-                "href": "http:\/\/default\/sites\/default\/files\/media-icons\/generic\/no-thumbnail.png",
+                "href": "",
+                "lang": "en"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/media\/private_image\/field_media_image_1": [
+            {
+                "href": "",
                 "lang": "en"
             }
         ]
@@ -47,7 +53,7 @@
     ],
     "revision_created": [
         {
-            "value": "2019-10-07T11:09:10+00:00",
+            "value": "2019-10-08T14:17:56+00:00",
             "format": "Y-m-d\\TH:i:sP"
         }
     ],
@@ -70,7 +76,7 @@
                 },
                 "uuid": [
                     {
-                        "value": "456afe30-2c52-4a53-a0c1-60a6fef11eb4"
+                        "value": "fb94e047-66d0-45a3-bce6-5e939a925965"
                     }
                 ],
                 "lang": "en"
@@ -80,7 +86,7 @@
             {
                 "_links": {
                     "self": {
-                        "href": "http:\/\/default\/sites\/default\/files\/media-icons\/generic\/no-thumbnail.png"
+                        "href": ""
                     },
                     "type": {
                         "href": "http:\/\/drupal.org\/rest\/type\/file\/file"
@@ -88,16 +94,42 @@
                 },
                 "uuid": [
                     {
-                        "value": "7c55f342-247f-46fb-9455-392af08bdb9f"
+                        "value": "acfb4bb8-9118-4043-bf46-1e02fa5dd006"
                     }
                 ],
-                "lang": "en"
+                "lang": "en",
+                "alt": "Example",
+                "title": null,
+                "width": "180",
+                "height": "180"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/media\/private_image\/field_media_image_1": [
+            {
+                "_links": {
+                    "self": {
+                        "href": ""
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/file\/file"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "acfb4bb8-9118-4043-bf46-1e02fa5dd006"
+                    }
+                ],
+                "lang": "en",
+                "alt": "Example",
+                "title": "",
+                "width": "1300",
+                "height": "775"
             }
         ]
     },
     "name": [
         {
-            "value": "Example image",
+            "value": "Example private image",
             "lang": "en"
         }
     ],
@@ -110,7 +142,7 @@
     ],
     "changed": [
         {
-            "value": "2019-10-03T12:31:29+00:00",
+            "value": "2019-10-08T14:34:47+00:00",
             "lang": "en",
             "format": "Y-m-d\\TH:i:sP"
         }

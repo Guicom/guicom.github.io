@@ -1,0 +1,24 @@
+{#
+/**
+ * @file
+ * Display Suite Socomec bootstrap one column 12.
+ *
+ * Available variables:
+ * - outer_wrapper: outer wrapper element
+ * - first_wrapper: wrapper element around first region
+ * - attributes: layout attributes
+ * - first_attributes: attributes for first region
+ * - first: content of first region
+ */
+#}
+
+<{{ outer_wrapper }}{{ attributes.addClass('row', 'clearfix', 'custom-socomec-layout', 'custom-socomec-layout-12') }}>
+
+  {{ title_suffix.contextual_links }}
+
+  <{{ first_wrapper }}{{ first_attributes.addClass('col-lg-12', 'custom-socomec-layout-one-column') }}>
+    {{ first }}
+  </{{ first_wrapper }}>
+
+</{{ outer_wrapper }}>
+
