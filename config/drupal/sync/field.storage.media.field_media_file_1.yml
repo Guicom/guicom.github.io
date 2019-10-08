@@ -1,4 +1,4 @@
-uuid: 469f5406-e676-4e55-bd90-67e5934d1b41
+uuid: 5fef3415-07ee-4b7f-b323-ef4b02bed9db
 langcode: en
 status: true
 dependencies:
@@ -10,10 +10,10 @@ field_name: field_media_file_1
 entity_type: media
 type: file
 settings:
-  target_type: file
   display_field: false
   display_default: false
-  uri_scheme: public
+  uri_scheme: private
+  target_type: file
 module: file
 locked: false
 cardinality: 1

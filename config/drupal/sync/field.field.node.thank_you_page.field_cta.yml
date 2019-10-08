@@ -9,7 +9,7 @@ id: node.thank_you_page.field_cta
 field_name: field_cta
 entity_type: node
 bundle: thank_you_page
-label: CTA
+label: 'CTA text'
 description: ''
 required: false
 translatable: false

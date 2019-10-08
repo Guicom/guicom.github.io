@@ -1,0 +1,24 @@
+uuid: e40e1b69-8375-4e24-9806-b67fe47fab26
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_pardot_privacy_policy
+    - paragraphs.paragraphs_type.pardot_form
+  module:
+    - text
+id: paragraph.pardot_form.field_pardot_privacy_policy
+field_name: field_pardot_privacy_policy
+entity_type: paragraph
+bundle: pardot_form
+label: 'Privacy policy'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: "<p>*We're committed to your privacy. Socomec uses the information you provide to us to contact you about our relevant content, events and products. You may unsubscribe from these communications at any time. For more information, check out our&nbsp;<a href=\"http://www.socomec.com/privacy-policy_en.html\">Privacy Policy</a></p>\r\n"
+    format: basic_html
+default_value_callback: ''
+settings: {  }
+field_type: text_long

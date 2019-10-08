@@ -5,12 +5,20 @@ description: 'SASS starter kit for a Bootstrap Barrio SubTheme.'
 # core: 8.x
 base theme: bootstrap_barrio
 
+ckeditor_stylesheets:
+  - https://fonts.googleapis.com/css?family=Roboto|Roboto:300,400,700,900
+  - https://fonts.googleapis.com/css?family=Poppins|Poppins:600
+  - assets/css/ckeditor.css?v4
 libraries:
   - socomec/global-styling
+  - socomec/iframe-resize
+  - socomec/roboto
+  - socomec/poppins
 libraries-override:
   bootstrap_barrio/global-styling: false
 regions:
   top_header: 'Top Header'
+  hero: 'Hero'
   top_header_form: "Top Header Form"
   header: Header
   header_form: "Header Form"

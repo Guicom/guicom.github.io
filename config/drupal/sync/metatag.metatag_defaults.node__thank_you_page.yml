@@ -1,0 +1,8 @@
+uuid: 569b7314-2cb4-426e-afcc-45e76809e6ed
+langcode: en
+status: true
+dependencies: {  }
+id: node__thank_you_page
+label: 'Content: Thank you page'
+tags:
+  robots: 'noindex, nofollow, noarchive'
