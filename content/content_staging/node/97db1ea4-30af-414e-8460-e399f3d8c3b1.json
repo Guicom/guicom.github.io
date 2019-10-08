@@ -1,7 +1,7 @@
 {
     "_links": {
         "self": {
-            "href": "http:\/\/default\/landing-page-premium\/comment-garantir-la-continuite-dalimentation-des-blocs-operatoires?_format=hal_json"
+            "href": "http:\/\/default\/landing-page-premium\/whitepaper\/comment-garantir-la-continuite-dalimentation-des-blocs-operatoires?_format=hal_json"
         },
         "type": {
             "href": "http:\/\/drupal.org\/rest\/type\/node\/landing_page"
@@ -37,6 +37,11 @@
             {
                 "href": ""
             }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/landing_page\/field_premium_content_type": [
+            {
+                "href": "http:\/\/default\/taxonomy\/term\/2?_format=hal_json"
+            }
         ]
     },
     "nid": [
@@ -51,7 +56,7 @@
     ],
     "vid": [
         {
-            "value": 15
+            "value": 21
         }
     ],
     "langcode": [
@@ -67,7 +72,7 @@
     ],
     "revision_timestamp": [
         {
-            "value": "2019-10-07T11:26:31+00:00",
+            "value": "2019-10-08T14:35:54+00:00",
             "format": "Y-m-d\\TH:i:sP"
         }
     ],
@@ -84,7 +89,7 @@
                 },
                 "uuid": [
                     {
-                        "value": "9b5d78f1-2187-4e03-83cc-e0a145807ccf"
+                        "value": "fb94e047-66d0-45a3-bce6-5e939a925965"
                     }
                 ]
             }
@@ -101,7 +106,7 @@
                 },
                 "uuid": [
                     {
-                        "value": "9b5d78f1-2187-4e03-83cc-e0a145807ccf"
+                        "value": "fb94e047-66d0-45a3-bce6-5e939a925965"
                     }
                 ],
                 "lang": "en"
@@ -122,7 +127,7 @@
                         "value": "e9f821d9-ec89-4bee-9601-f69cb2321dcf"
                     }
                 ],
-                "target_revision_id": "32"
+                "target_revision_id": "42"
             },
             {
                 "_links": {
@@ -138,7 +143,7 @@
                         "value": "2d486ca5-709d-4774-a7c0-6b980c4c1da7"
                     }
                 ],
-                "target_revision_id": "33"
+                "target_revision_id": "43"
             },
             {
                 "_links": {
@@ -154,7 +159,7 @@
                         "value": "90e59b0e-842d-4b58-a053-62425b756fe8"
                     }
                 ],
-                "target_revision_id": "34"
+                "target_revision_id": "44"
             }
         ],
         "http:\/\/drupal.org\/rest\/relation\/node\/landing_page\/field_hero_paragraph": [
@@ -172,7 +177,7 @@
                         "value": "3abcdf4e-c59d-486e-aa74-b33952f4cc52"
                     }
                 ],
-                "target_revision_id": "35"
+                "target_revision_id": "45"
             }
         ],
         "http:\/\/drupal.org\/rest\/relation\/node\/landing_page\/field_pardot_form": [
@@ -190,7 +195,24 @@
                         "value": "64c709e6-ce22-4552-858e-7de5e787ba84"
                     }
                 ],
-                "target_revision_id": "36"
+                "target_revision_id": "46"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/landing_page\/field_premium_content_type": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/taxonomy\/term\/2?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/premium_content_type"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "4e08d14e-e6b8-4aa5-a62e-baf9656ee817"
+                    }
+                ]
             }
         ]
     },
@@ -215,7 +237,7 @@
     ],
     "changed": [
         {
-            "value": "2019-10-07T11:26:31+00:00",
+            "value": "2019-10-08T14:35:54+00:00",
             "lang": "en",
             "format": "Y-m-d\\TH:i:sP"
         }
@@ -238,24 +260,18 @@
             "lang": "en"
         }
     ],
-    "revision_translation_affected": [
-        {
-            "value": true,
-            "lang": "en"
-        }
-    ],
     "metatag": [
         {
             "value": {
                 "title": "Comment  garantir la continuit\u00e9 d\u2019alimentation des blocs op\u00e9ratoires | Socomec",
-                "canonical_url": "http:\/\/default\/landing-page-premium\/comment-garantir-la-continuite-dalimentation-des-blocs-operatoires"
+                "canonical_url": "http:\/\/default\/landing-page-premium\/whitepaper\/comment-garantir-la-continuite-dalimentation-des-blocs-operatoires"
             }
         }
     ],
     "path": [
         {
-            "alias": "\/landing-page-premium\/comment-garantir-la-continuite-dalimentation-des-blocs-operatoires",
-            "pid": 5,
+            "alias": "\/landing-page-premium\/whitepaper\/comment-garantir-la-continuite-dalimentation-des-blocs-operatoires",
+            "pid": 3,
             "langcode": "en",
             "lang": "en"
         }
