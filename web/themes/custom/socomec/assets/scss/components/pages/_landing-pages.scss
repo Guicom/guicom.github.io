@@ -4,5 +4,15 @@ body {
       position: absolute;
       z-index: 2;
     }
+    .group-left {
+      @include media-breakpoint-down(lg) {
+        order: 2;
+      }
+    }
+    .group-right {
+      @include media-breakpoint-down(lg) {
+        order: 1;
+      }
+    }
   }
 }

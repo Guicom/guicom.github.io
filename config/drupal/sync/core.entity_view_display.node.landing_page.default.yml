@@ -33,9 +33,9 @@ third_party_settings:
           layout_class:
             row: row
           left:
-            col-lg-8: col-lg-8
+            col-lg-7: col-lg-7
           right:
-            col-lg-4: col-lg-4
+            'col-lg-4 ml-auto': 'col-lg-4 ml-auto'
     regions:
       left:
         - field_body

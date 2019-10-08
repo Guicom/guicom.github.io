@@ -17,6 +17,18 @@ classes:
     - col-lg-10
     - col-lg-11
     - col-lg-12
+    - 'col-lg-1 ml-auto'
+    - 'col-lg-2 ml-auto'
+    - 'col-lg-3 ml-auto'
+    - 'col-lg-4 ml-auto'
+    - 'col-lg-5 ml-auto'
+    - 'col-lg-6 ml-auto'
+    - 'col-lg-7 ml-auto'
+    - 'col-lg-8 ml-auto'
+    - 'col-lg-9 ml-auto'
+    - 'col-lg-10 ml-auto'
+    - 'col-lg-11 ml-auto'
+    - 'col-lg-12 ml-auto'
   field:
     - background-left-grey
     - background-right-grey
