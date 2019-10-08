@@ -1,0 +1,64 @@
+bootstrap_socomec_one_column_12:
+  label: Socomec Bootstrap one column - 12
+  category: Socomec
+  template: templates/ds/layout--socomec-bootstrap-one-column-12
+  class: '\Drupal\ds\Plugin\DsLayout'
+  regions:
+    first:
+      label: Content
+bootstrap_socomec_two_columns_6_6:
+  label: Socomec Bootstrap two columns - 6/6
+  category: Socomec
+  template: templates/ds/layout--socomec-bootstrap-two-columns-6-6
+  class: '\Drupal\ds\Plugin\DsLayout'
+  regions:
+    first:
+      label: Left
+    second:
+      label: Right
+bootstrap_socomec_two_columns_4_8:
+  label: Socomec Bootstrap two columns - 4/8
+  category: Socomec
+  template: templates/ds/layout--socomec-bootstrap-two-columns-4-8
+  class: '\Drupal\ds\Plugin\DsLayout'
+  regions:
+    first:
+      label: Left
+    second:
+      label: Right
+bootstrap_socomec_two_columns_8_4:
+  label: Socomec Bootstrap two columns - 8/4
+  category: Socomec
+  template: templates/ds/layout--socomec-bootstrap-two-columns-8-4
+  class: '\Drupal\ds\Plugin\DsLayout'
+  regions:
+    first:
+      label: Left
+    second:
+      label: Right
+bootstrap_socomec_three_columns_4_4_4:
+  label: Socomec Bootstrap three columns - 4/4/4
+  category: Socomec
+  template: templates/ds/layout--socomec-bootstrap-three-columns-4-4-4
+  class: '\Drupal\ds\Plugin\DsLayout'
+  regions:
+    first:
+      label: Left
+    second:
+      label: Center
+    third:
+      label: Right
+bootstrap_socomec_four_columns_3_3_3_3:
+  label: Socomec Bootstrap three columns - 3/3/3/3
+  category: Socomec
+  template: templates/ds/layout--socomec-bootstrap-four-columns-3-3-3-3
+  class: '\Drupal\ds\Plugin\DsLayout'
+  regions:
+    first:
+      label: Left
+    second:
+      label: Center left
+    third:
+      label: Center right
+    fourth:
+      label: Right
