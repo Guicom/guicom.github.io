@@ -13,12 +13,18 @@
       .socomec-hero-background{
         background: linear-gradient(26.93deg, #00519D 0%, rgba(0, 81, 157, 0.8) 100%) no-repeat;
         background-size: cover;
-        height: 740px;
+        height: auto;
+        padding-bottom: 80px;
+        @include media-breakpoint-down(sm) {
+          padding-bottom: 40px;
+        }
         .hero-thumbnail{
           padding:45px 0;
           text-align: center;
           img{
             max-width: 100%;
+            width: 270px;
+            height: auto;
           }
         }
         .hero-content{
