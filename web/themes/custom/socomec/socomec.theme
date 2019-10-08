@@ -117,14 +117,17 @@ function socomec_preprocess_views_view(&$variables) {
  */
 function socomec_preprocess_views_view_fields__hero_block__block_2(&$variables) {
   $mid = $variables["row"]->_entity->get('field_file')->getString();
-  $media = Media::load($mid);
-  $fid = $media->getSource()->getSourceFieldValue($media);
-  if ($fid != NULL) {
-    $file = File::load($fid);
-    if(empty($file)){
-      return;
+  
+  if (isset($mid) && !empty($mid)) {
+    $media = Media::load($mid);
+    $fid = $media->getSource()->getSourceFieldValue($media);
+    if ($fid != NULL) {
+      $file = File::load($fid);
+      if(empty($file)){
+        return;
+      }
+      $variables['file_url'] = file_create_url($file->getFileUri());
     }
-    $variables['file_url'] = file_create_url($file->getFileUri());
   }
 }
 
