@@ -4,10 +4,11 @@
  * @file
  * Contains \Drupal\my_module\EventSubscriber\MyModuleRedirectSubscriber
  */
- 
+
 namespace Drupal\soc_access_redirect\EventSubscriber;
 
 use Drupal\Core\Url;
+use Drupal\node\Entity\Node;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpKernel\Event\FilterResponseEvent;
@@ -17,7 +18,7 @@ use Symfony\Component\HttpFoundation\Cookie;
 
 
 class SocAccessRedirectRedirectSubscriber implements EventSubscriberInterface {
- 
+
   /**
    * {@inheritdoc}
    */
@@ -27,11 +28,11 @@ class SocAccessRedirectRedirectSubscriber implements EventSubscriberInterface {
     // this an array of method names
     return([
       KernelEvents::REQUEST => [
-        ['redirectSocContent'],
+        ['redirectSocContent', 1],
       ],
       KernelEvents::RESPONSE => [
-        ['setCookie'],
-      ]
+        ['setCookie', 2],
+      ],
     ]);
   }
 
@@ -40,6 +41,7 @@ class SocAccessRedirectRedirectSubscriber implements EventSubscriberInterface {
    *
    * @param GetResponseEvent $event
    * @return void
+   * @throws \Exception
    */
   public function redirectSocContent(GetResponseEvent $event) {
     $request = $event->getRequest();
@@ -47,39 +49,40 @@ class SocAccessRedirectRedirectSubscriber implements EventSubscriberInterface {
     // This is necessary because this also gets called on
     // node sub-tabs such as "edit", "revisions", etc.  This
     // prevents those pages from redirected.
-    if ($request->attributes->get('_route') !== 'entity.node.canonical') {
-      return;
-    }
-
-    // Only redirect a certain content type.
-    if ($request->attributes->get('node')->getType() !== 'thank_you_page') {
-      return;
-    }
 
     // get current node
+    /** @var Node $node */
     $node = $request->attributes->get('node');
-    $is_redirect = false;
-    if(!empty($node->get('field_landing_page')->getValue()[0]['target_id'])){
-      // get landing_page id
-      $field_landing_page_id = $node->get('field_landing_page')->getValue()[0]['target_id'];
-      // get landing_page_visited cookie and compare with landing page id
-      $cookies = $request->cookies->get('soc_landing_page_visited');
-      if(!empty($cookies)){
-        $cookies = unserialize($cookies);
-        if (!in_array($field_landing_page_id, $cookies)) {
-          $redirect_url = Url::fromRoute('entity.node.canonical', ['node' => $field_landing_page_id]);
-          // This is where you set the destination.
-          $response = new RedirectResponse($redirect_url->toString(), 301);
-          $event->setResponse($response);
-          $is_redirect = true;
-        }
-      }
-    }
 
-    if($is_redirect === false && empty($field_landing_page_id)){
-      $redirect_url = Url::fromRoute('<front>');
-      $response = new RedirectResponse($redirect_url->toString(), 301);
-      $event->setResponse($response);
+    // check if we are in node
+    // Check if we are in content type thank_you_page
+    if(!is_null($node) && strcmp($node->getType(),'thank_you_page') == 0) {
+      // check if node have landing page
+      if(!empty($field_landing_page_id = $node->get('field_landing_page')->target_id)) {
+         // Check if we are cookies 'soc_landing_page_visited'
+        /** @var Cookie $cookies */
+        $cookies = $request->cookies->get('soc_landing_page_visited');
+        if(!empty($cookies)) {
+          // Get values of cookie
+          $cookies = unserialize($cookies);
+          if(in_array($field_landing_page_id, $cookies)) {
+            return;
+          }
+        }
+        $redirect_url = Url::fromRoute('entity.node.canonical', ['node' => $field_landing_page_id]);
+        // This is where you set the destination.
+        $response = new RedirectResponse($redirect_url->toString(), 301);
+        $response->expire();
+        $event->setResponse($response);
+        \Drupal::service('page_cache_kill_switch')->trigger();
+      }
+      else{
+        $redirect_url = Url::fromRoute('<front>');
+        $response = new RedirectResponse($redirect_url->toString(), 301);
+        $response->expire();
+        $event->setResponse($response);
+        \Drupal::service('page_cache_kill_switch')->trigger();
+      }
     }
   }
 
