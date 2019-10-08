@@ -363,6 +363,17 @@ bundles:
       notes: ''
       relationship: 0
       sars_filename: ''
+    field_body:
+      bundle: thank_you_page
+      name: field_body
+      entity_type_id: node
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: clear_anonymizer
+      notes: ''
+      relationship: 0
+      sars_filename: ''
   landing_page:
     field_hero_paragraph:
       bundle: landing_page

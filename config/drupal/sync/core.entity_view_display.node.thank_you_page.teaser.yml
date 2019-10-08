@@ -25,6 +25,7 @@ content:
     region: content
 hidden:
   addtoany: true
+  field_body: true
   field_conditional: true
   field_cta: true
   field_file: true

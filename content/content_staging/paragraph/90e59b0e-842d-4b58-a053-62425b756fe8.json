@@ -8,7 +8,7 @@
         },
         "http:\/\/drupal.org\/rest\/relation\/paragraph\/model_testimony\/field_image_1": [
             {
-                "href": "http:\/\/default\/media\/4\/edit?_format=hal_json"
+                "href": "http:\/\/default\/media\/9\/edit?_format=hal_json"
             }
         ]
     },
@@ -24,7 +24,7 @@
     ],
     "revision_id": [
         {
-            "value": 34
+            "value": 49
         }
     ],
     "langcode": [
@@ -77,12 +77,6 @@
             "lang": "en"
         }
     ],
-    "revision_translation_affected": [
-        {
-            "value": true,
-            "lang": "en"
-        }
-    ],
     "field_company": [
         {
             "value": "Socomec"
@@ -93,7 +87,7 @@
             {
                 "_links": {
                     "self": {
-                        "href": "http:\/\/default\/media\/4\/edit?_format=hal_json"
+                        "href": "http:\/\/default\/media\/9\/edit?_format=hal_json"
                     },
                     "type": {
                         "href": "http:\/\/drupal.org\/rest\/type\/media\/image"
@@ -101,7 +95,7 @@
                 },
                 "uuid": [
                     {
-                        "value": "2decfde9-691b-4d51-a39b-19e4491719ec"
+                        "value": "e12f8c33-ccb4-493c-a516-91d4d331c5f4"
                     }
                 ]
             }
