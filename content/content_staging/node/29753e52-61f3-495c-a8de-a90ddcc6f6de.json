@@ -1,7 +1,7 @@
 {
     "_links": {
         "self": {
-            "href": "http:\/\/default\/node\/1?_format=hal_json"
+            "href": "http:\/\/default\/landing-page-premium\/landing-page-premium-test?_format=hal_json"
         },
         "type": {
             "href": "http:\/\/drupal.org\/rest\/type\/node\/landing_page"
@@ -20,11 +20,6 @@
         "http:\/\/drupal.org\/rest\/relation\/node\/landing_page\/field_hero_paragraph": [
             {
                 "href": ""
-            }
-        ],
-        "http:\/\/drupal.org\/rest\/relation\/node\/landing_page\/field_premium_content_type": [
-            {
-                "href": "http:\/\/default\/taxonomy\/term\/1?_format=hal_json"
             }
         ]
     },
@@ -73,7 +68,7 @@
                 },
                 "uuid": [
                     {
-                        "value": "313b842f-c03e-4600-92be-3e8311f08850"
+                        "value": "9b5d78f1-2187-4e03-83cc-e0a145807ccf"
                     }
                 ]
             }
@@ -90,7 +85,7 @@
                 },
                 "uuid": [
                     {
-                        "value": "313b842f-c03e-4600-92be-3e8311f08850"
+                        "value": "9b5d78f1-2187-4e03-83cc-e0a145807ccf"
                     }
                 ],
                 "lang": "en"
@@ -112,23 +107,6 @@
                     }
                 ],
                 "target_revision_id": "3"
-            }
-        ],
-        "http:\/\/drupal.org\/rest\/relation\/node\/landing_page\/field_premium_content_type": [
-            {
-                "_links": {
-                    "self": {
-                        "href": "http:\/\/default\/taxonomy\/term\/1?_format=hal_json"
-                    },
-                    "type": {
-                        "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/premium_content_type"
-                    }
-                },
-                "uuid": [
-                    {
-                        "value": "7b061279-e144-40b8-9cf1-9bea0bdf40a7"
-                    }
-                ]
             }
         ]
     },
@@ -179,6 +157,22 @@
     "revision_translation_affected": [
         {
             "value": true,
+            "lang": "en"
+        }
+    ],
+    "metatag": [
+        {
+            "value": {
+                "title": "Landing page - Premium TEST | Socomec",
+                "canonical_url": "http:\/\/default\/landing-page-premium\/landing-page-premium-test"
+            }
+        }
+    ],
+    "path": [
+        {
+            "alias": "\/landing-page-premium\/landing-page-premium-test",
+            "pid": 4,
+            "langcode": "en",
             "lang": "en"
         }
     ]

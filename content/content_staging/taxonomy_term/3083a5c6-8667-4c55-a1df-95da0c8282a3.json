@@ -82,5 +82,13 @@
             "value": true,
             "lang": "en"
         }
+    ],
+    "metatag": [
+        {
+            "value": {
+                "title": "Metering, monitoring & power quality | Socomec",
+                "canonical_url": "http:\/\/default\/taxonomy\/term\/1"
+            }
+        }
     ]
 }

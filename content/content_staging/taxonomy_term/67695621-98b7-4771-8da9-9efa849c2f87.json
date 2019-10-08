@@ -82,5 +82,13 @@
             "value": true,
             "lang": "en"
         }
+    ],
+    "metatag": [
+        {
+            "value": {
+                "title": "Power Factor correction systems | Socomec",
+                "canonical_url": "http:\/\/default\/taxonomy\/term\/6"
+            }
+        }
     ]
 }

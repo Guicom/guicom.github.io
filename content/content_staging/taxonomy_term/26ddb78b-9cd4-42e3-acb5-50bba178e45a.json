@@ -98,5 +98,13 @@
             "value": true,
             "lang": "en"
         }
+    ],
+    "metatag": [
+        {
+            "value": {
+                "title": "Manual transfer switches | Socomec",
+                "canonical_url": "http:\/\/default\/taxonomy\/term\/12"
+            }
+        }
     ]
 }

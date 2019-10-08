@@ -72,6 +72,12 @@
             "lang": "en"
         }
     ],
+    "revision_translation_affected": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
     "field_figure_1_number": [
         {
             "value": "\u20ac 150 M"

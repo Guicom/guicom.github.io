@@ -24,7 +24,7 @@
         ],
         "http:\/\/drupal.org\/rest\/relation\/node\/thank_you_page\/field_landing_page": [
             {
-                "href": "http:\/\/default\/landing-page-premium\/whitepaper\/comment-garantir-la-continuite-dalimentation-des-blocs-operatoires?_format=hal_json"
+                "href": "http:\/\/default\/landing-page-premium\/comment-garantir-la-continuite-dalimentation-des-blocs-operatoires?_format=hal_json"
             }
         ],
         "http:\/\/drupal.org\/rest\/relation\/node\/thank_you_page\/field_thumbnail": [
@@ -78,7 +78,7 @@
                 },
                 "uuid": [
                     {
-                        "value": "456afe30-2c52-4a53-a0c1-60a6fef11eb4"
+                        "value": "9b5d78f1-2187-4e03-83cc-e0a145807ccf"
                     }
                 ]
             }
@@ -95,7 +95,7 @@
                 },
                 "uuid": [
                     {
-                        "value": "456afe30-2c52-4a53-a0c1-60a6fef11eb4"
+                        "value": "9b5d78f1-2187-4e03-83cc-e0a145807ccf"
                     }
                 ],
                 "lang": "en"
@@ -122,7 +122,7 @@
             {
                 "_links": {
                     "self": {
-                        "href": "http:\/\/default\/landing-page-premium\/whitepaper\/comment-garantir-la-continuite-dalimentation-des-blocs-operatoires?_format=hal_json"
+                        "href": "http:\/\/default\/landing-page-premium\/comment-garantir-la-continuite-dalimentation-des-blocs-operatoires?_format=hal_json"
                     },
                     "type": {
                         "href": "http:\/\/drupal.org\/rest\/type\/node\/landing_page"
