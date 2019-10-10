@@ -47,4 +47,4 @@ docker-compose.override.yml
 docker-sync.yml
 
 #ignore compiled files
-/web/themes/custom/socomec/assets/css/**.css
+/web/themes/custom/*/assets/css/*.css
