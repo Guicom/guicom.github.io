@@ -1,0 +1,57 @@
+image: docker:stable
+
+services:
+  - docker:dind
+
+variables:
+  # For non-Kubernetes executors, we use tcp://docker:2375/
+  DOCKER_HOST: tcp://docker:2375/
+  # When using dind, it's wise to use the overlayfs driver for
+  # improved performance.
+  DOCKER_DRIVER: overlay2
+  DOCKER_IMAGE_BUILD_PATH: docker_image
+
+stages:
+  #  - build
+  - tests
+
+cache: &global_cache
+  key: ${CI_JOB_NAME}
+  paths:
+    - vendor
+    - web/node_modules
+
+.build_project: &build_project
+  artifacts:
+    paths:
+      - "${DOCKER_IMAGE_BUILD_PATH}/"
+  variables:
+    # No spaces.
+    MINK_DRIVER_ARGS_WEBDRIVER: '["chrome",{"browserName":"chrome","chromeOptions":{"args":["--whitelisted-ips","--disable-gpu","--headless","--no-sandbox","--window-size=1920,1080"]}},"http://localhost:4444/wd/hub"]'
+    APACHE_RUN_USER: "www-data"
+    APACHE_RUN_GROUP: "www-data"
+    # Selenium extra options, see
+    # https://github.com/SeleniumHQ/docker-selenium#se_opts-selenium-configuration-options
+    SE_OPTS: ""
+  before_script:
+    - mkdir -p "${DOCKER_IMAGE_BUILD_PATH}/"
+    - apk add --no-cache py-pip python-dev libffi-dev openssl-dev gcc libc-dev make
+    - pip install docker-compose
+    - cp ${CI_PROJECT_DIR}/docker-compose.example.gitlab-ci.yml ${CI_PROJECT_DIR}/docker-compose.yml
+    - cp ${CI_PROJECT_DIR}/phing/example.build.properties.local ${CI_PROJECT_DIR}/phing/build.properties.local
+    - cp ${CI_PROJECT_DIR}/tests/behat/behat.example.yml ${CI_PROJECT_DIR}/tests/behat/behat.local.yml
+    - docker-compose up -d
+    - docker-compose exec -u web -T web bash -c "cd /var/www/html/ && composer install"
+    - docker-compose exec -u web -T web bash -c "cd /var/www/html/tests/behat && composer install"
+    - docker-compose exec -u web -T web bash -c "cd /var/www/html/ && ./vendor/bin/phing install"
+
+# Behat tests from tests/ folder.
+behat_tests:
+  stage: tests
+  cache:
+    # inherit all global cache settings
+    <<: *global_cache
+  extends:
+    - .build_project
+  script:
+    - docker-compose exec -u web -T web bash -c "cd /var/www/html && ./vendor/bin/phing behat:run -Dbehat.bin=tests/behat/bin/behat"
