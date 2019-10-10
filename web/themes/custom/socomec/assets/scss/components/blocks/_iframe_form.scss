@@ -3,6 +3,9 @@
   position: relative;
   margin-bottom: 40px;
   margin-top: -80px;
+  @include media-breakpoint-down(lg) {
+    margin-top: 0;
+  }
   &:after {
     right: -999em;
     background: $yellow;
@@ -12,6 +15,9 @@
     width: 999em;
     top: 0;
     bottom: 0;
+    @include media-breakpoint-down(md) {
+      display: none;
+    }
   }
 
   .ancher-button a {
@@ -55,6 +61,8 @@
   a {
     color: #4A4A47;
     text-decoration: underline;
+    font-size: 12px ;
+    line-height: 20px;
   }
 }
 
@@ -63,4 +71,5 @@
 iframe {
   width: 1px;
   min-width: 100%;
+  border: none;
 }

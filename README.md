@@ -2,27 +2,80 @@
 
 ## Installation :
 
-``git clone git@gitlab.com:actency/socomec.git``
+### 1. Clone the project into your workspace directory
 
-copy/paste docker-composer.exemple.yml
+```
+git@gitlab.com:actency/prod/socomec/socomec.com.git
+```
 
-Manage your docker-sync.yml configuration if you are on Mac OS system.
+### 2. Navigate to the project directory
 
-copy/paste phing/exemple.build.proprieties.local to phing/build.proprieties.local.
+```
+cd socomec
+```
 
-run ``docker-compose up -d``
+### 3. Create your docker-compose file
 
-From the web container run ``composer install``
+```
+cp docker-compose-example.yml docker-compose.yml
+```
 
-Then, run ``/vendor/bin/phing install``
+### 4. Customize your docker-compose file
 
+You should at least check and maybe adjust the volumes paths for the web container.
+
+### 5. Initialize the containers
+
+```
+docker-compose up -d
+```
+
+### 6. Log into your web container
+
+#### 6.1. Get the container name:
+
+```
+docker ps | grep web
+```
+
+The name should look like `socomec_web_1`
+
+#### 6.2. Log into the container:
+
+```
+docker exec -it socomec_web_1 bash
+```
+
+Replace `socomec_web_1` with your container name.
+
+### 7. Navigate to the project root
+
+```
+cd /var/www/html
+```
+
+### 8. Install project dependencies
+
+```
+composer install
+```
+
+### 9. Install Drupal
+
+```
+./vendor/bin/phing install
+```
+
+## Gulp setup
+
+From the `web` folder, run :
+
+```
+sudo npm install --global gulp-cli
+sudo npm install --no-bin-link
+gulp
+```
 
 ## Theme :
 
 The Socomec theme is a subtheme of Barrio.
-
-## GULP INSTALLATION
-In web folder run :
-
-sudo npm install --global gulp-cli
-sudo npm install --no-bin-link

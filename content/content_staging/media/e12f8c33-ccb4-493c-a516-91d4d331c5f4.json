@@ -1,24 +1,29 @@
 {
     "_links": {
         "self": {
-            "href": "http:\/\/default\/media\/7\/edit?_format=hal_json"
+            "href": "http:\/\/default\/media\/9\/edit?_format=hal_json"
         },
         "type": {
-            "href": "http:\/\/drupal.org\/rest\/type\/media\/private_file"
+            "href": "http:\/\/drupal.org\/rest\/type\/media\/image"
         },
-        "http:\/\/drupal.org\/rest\/relation\/media\/private_file\/uid": [
+        "http:\/\/drupal.org\/rest\/relation\/media\/image\/revision_user": [
+            {
+                "href": "http:\/\/default\/user\/1?_format=hal_json"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/media\/image\/uid": [
             {
                 "href": "http:\/\/default\/user\/1?_format=hal_json",
                 "lang": "en"
             }
         ],
-        "http:\/\/drupal.org\/rest\/relation\/media\/private_file\/thumbnail": [
+        "http:\/\/drupal.org\/rest\/relation\/media\/image\/thumbnail": [
             {
                 "href": "",
                 "lang": "en"
             }
         ],
-        "http:\/\/drupal.org\/rest\/relation\/media\/private_file\/field_media_file_1": [
+        "http:\/\/drupal.org\/rest\/relation\/media\/image\/field_media_image": [
             {
                 "href": "",
                 "lang": "en"
@@ -27,17 +32,17 @@
     },
     "mid": [
         {
-            "value": 7
+            "value": 9
         }
     ],
     "uuid": [
         {
-            "value": "edb4e87b-0010-4375-89ee-ae55ba7bbd34"
+            "value": "e12f8c33-ccb4-493c-a516-91d4d331c5f4"
         }
     ],
     "vid": [
         {
-            "value": 9
+            "value": 12
         }
     ],
     "langcode": [
@@ -48,23 +53,34 @@
     ],
     "bundle": [
         {
-            "target_id": "private_file"
+            "target_id": "image"
         }
     ],
     "revision_created": [
         {
-            "value": "2019-10-08T14:17:56+00:00",
+            "value": "2019-10-08T14:35:03+00:00",
             "format": "Y-m-d\\TH:i:sP"
         }
     ],
-    "status": [
-        {
-            "value": true,
-            "lang": "en"
-        }
-    ],
     "_embedded": {
-        "http:\/\/drupal.org\/rest\/relation\/media\/private_file\/uid": [
+        "http:\/\/drupal.org\/rest\/relation\/media\/image\/revision_user": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/user\/1?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "fb94e047-66d0-45a3-bce6-5e939a925965"
+                    }
+                ]
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/media\/image\/uid": [
             {
                 "_links": {
                     "self": {
@@ -82,7 +98,7 @@
                 "lang": "en"
             }
         ],
-        "http:\/\/drupal.org\/rest\/relation\/media\/private_file\/thumbnail": [
+        "http:\/\/drupal.org\/rest\/relation\/media\/image\/thumbnail": [
             {
                 "_links": {
                     "self": {
@@ -94,17 +110,17 @@
                 },
                 "uuid": [
                     {
-                        "value": "f1ba3871-c9aa-479f-b8dd-50887e407686"
+                        "value": "087f8162-95a1-4334-b8d9-49bea77492c2"
                     }
                 ],
                 "lang": "en",
-                "alt": "",
+                "alt": "Example",
                 "title": null,
-                "width": "180",
-                "height": "180"
+                "width": "1300",
+                "height": "775"
             }
         ],
-        "http:\/\/drupal.org\/rest\/relation\/media\/private_file\/field_media_file_1": [
+        "http:\/\/drupal.org\/rest\/relation\/media\/image\/field_media_image": [
             {
                 "_links": {
                     "self": {
@@ -116,31 +132,39 @@
                 },
                 "uuid": [
                     {
-                        "value": "e53d0892-89f8-4853-bf7f-fb5ef93dfa34"
+                        "value": "087f8162-95a1-4334-b8d9-49bea77492c2"
                     }
                 ],
                 "lang": "en",
-                "display": "1",
-                "description": ""
+                "alt": "Example",
+                "title": "",
+                "width": "1300",
+                "height": "775"
             }
         ]
     },
+    "status": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
     "name": [
         {
-            "value": "Example file",
+            "value": "34665210-Rubber-stamp-with-word-example-inside-vector-illustration-Stock-Vector_3.jpg",
             "lang": "en"
         }
     ],
     "created": [
         {
-            "value": "2019-10-03T12:31:54+00:00",
+            "value": "2019-10-08T14:34:51+00:00",
             "lang": "en",
             "format": "Y-m-d\\TH:i:sP"
         }
     ],
     "changed": [
         {
-            "value": "2019-10-08T14:27:00+00:00",
+            "value": "2019-10-08T14:35:03+00:00",
             "lang": "en",
             "format": "Y-m-d\\TH:i:sP"
         }

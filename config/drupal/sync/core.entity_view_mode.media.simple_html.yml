@@ -1,0 +1,10 @@
+uuid: 340aedec-5a07-4f9d-9980-d3b70063963c
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.simple_html
+label: 'simple html'
+targetEntityType: media
+cache: true

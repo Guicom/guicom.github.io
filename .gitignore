@@ -45,3 +45,9 @@
 docker-compose.yml
 docker-compose.override.yml
 docker-sync.yml
+
+# Ignore compiled files
+/web/themes/custom/*/assets/css/*.css
+
+# Ignore SQL files
+*.sql
