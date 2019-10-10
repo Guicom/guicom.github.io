@@ -8,12 +8,12 @@
         },
         "http:\/\/drupal.org\/rest\/relation\/paragraph\/hero_paragraph\/field_background_image": [
             {
-                "href": "http:\/\/default\/media\/8\/edit?_format=hal_json"
+                "href": "http:\/\/default\/media\/9\/edit?_format=hal_json"
             }
         ],
         "http:\/\/drupal.org\/rest\/relation\/paragraph\/hero_paragraph\/field_thumbnail": [
             {
-                "href": "http:\/\/default\/media\/8\/edit?_format=hal_json"
+                "href": "http:\/\/default\/media\/9\/edit?_format=hal_json"
             }
         ]
     },
@@ -29,7 +29,7 @@
     ],
     "revision_id": [
         {
-            "value": 35
+            "value": 50
         }
     ],
     "langcode": [
@@ -82,12 +82,18 @@
             "lang": "en"
         }
     ],
+    "revision_translation_affected": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
     "_embedded": {
         "http:\/\/drupal.org\/rest\/relation\/paragraph\/hero_paragraph\/field_background_image": [
             {
                 "_links": {
                     "self": {
-                        "href": "http:\/\/default\/media\/8\/edit?_format=hal_json"
+                        "href": "http:\/\/default\/media\/9\/edit?_format=hal_json"
                     },
                     "type": {
                         "href": "http:\/\/drupal.org\/rest\/type\/media\/image"
@@ -95,7 +101,7 @@
                 },
                 "uuid": [
                     {
-                        "value": "eec486b0-126e-45f9-ab89-f3fbc10ecf3f"
+                        "value": "e12f8c33-ccb4-493c-a516-91d4d331c5f4"
                     }
                 ]
             }
@@ -104,7 +110,7 @@
             {
                 "_links": {
                     "self": {
-                        "href": "http:\/\/default\/media\/8\/edit?_format=hal_json"
+                        "href": "http:\/\/default\/media\/9\/edit?_format=hal_json"
                     },
                     "type": {
                         "href": "http:\/\/drupal.org\/rest\/type\/media\/image"
@@ -112,7 +118,7 @@
                 },
                 "uuid": [
                     {
-                        "value": "eec486b0-126e-45f9-ab89-f3fbc10ecf3f"
+                        "value": "e12f8c33-ccb4-493c-a516-91d4d331c5f4"
                     }
                 ]
             }

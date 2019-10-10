@@ -1,0 +1,40 @@
+{%
+  set classes = [
+  'paragraph',
+  'paragraph--type--' ~ paragraph.bundle|clean_class,
+  view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
+  not paragraph.isPublished() ? 'paragraph--unpublished'
+]
+%}
+{% block paragraph %}
+  <div{{ attributes.addClass(classes) }}>
+    {% block content %}
+
+      <div class="col-sm-12 text-right">
+        <div class="row">
+          <div class="infoblock">
+            <div class="avatar">
+              {{ content.field_image_1 }}
+            </div>
+            <div class="infotext text-left">
+              <div class="client-name">{{ content.field_nom }}</div>
+              <div class="client-position">
+                <div>{{ content.field_position }}</div>
+                <div>{{ content.field_company }}</div>
+              </div>
+            </div>
+            {{ content.field_image_2 }}
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-12 infodescription text-right">
+        <div class="row">
+          <div class="text-testimony">
+            {{ content.field_text_simple }}
+          </div>
+        </div>
+      </div>
+    {% endblock %}
+  </div>
+{% endblock paragraph %}
