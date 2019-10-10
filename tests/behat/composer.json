@@ -1,0 +1,12 @@
+{
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "require": {
+    "drupal/drupal-extension": "^4.0",
+    "guzzlehttp/guzzle" : "^6.3",
+    "behat/mink": "^1.7"
+  },
+  "config": {
+    "bin-dir": "bin/"
+  }
+}

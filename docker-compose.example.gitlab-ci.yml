@@ -6,16 +6,14 @@ services:
     image: actency/docker-apache-php:7.2
     ports:
       - "80:80"
-      #- "9001:9000"
     environment:
       - SERVERNAME=socomec.com.loc
       - SERVERALIAS=socomec.com.loc
       - DOCUMENTROOT=web
       - DRUSH_VERSION=9
     volumes:
-      - /home/docker/projets/socomec/:/var/www/html
-      - /home/docker/projets/socomec/:/var/www/.ssh/
-      - /home/docker/projets/socomec/config/.bashrc:/var/www/.bashrc
+      - /builds/actency/prod/socomec/socomec.com/:/var/www/html
+      - /builds/actency/prod/socomec/socomec.com/config/.bashrc:/var/www/.bashrc
     links:
       - database:mysql
       - mailhog
