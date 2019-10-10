@@ -37,7 +37,9 @@
 <div class="container">
   <div class="row">
     <div class="hero-thumbnail col-md-5">
-      {{ fields.field_thumbnail.content }}
+      <div class="thumbnail-wrapper">
+        {{ fields.field_thumbnail.content }}
+      </div>
     </div>
     <div class="hero-content col-md-7">
       <p class="premium-label">{% spaceless %}{{ fields.field_premium_content_type.content }}{% endspaceless %}</p>
