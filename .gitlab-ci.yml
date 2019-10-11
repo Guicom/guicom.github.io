@@ -5,6 +5,7 @@ services:
 
 variables:
   # For non-Kubernetes executors, we use tcp://docker:2375/
+  # Provoque un changement dans la branche
   DOCKER_HOST: tcp://docker:2375/
   # When using dind, it's wise to use the overlayfs driver for
   # improved performance.
