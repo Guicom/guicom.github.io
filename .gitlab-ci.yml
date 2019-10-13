@@ -50,9 +50,9 @@ cache: &global_cache
 # SonarQube Runner
 sonarqube:
   stage: sonarqube
-  image: gitlab/gitlab-runner:latest
+  image: mercuriete/sonar-scanner
   script:
-    - gitlab-sonar-scanner -Dsonar.gitlab.url=https://gitlab.com -Dsonar.gitlab.commit_sha=$CI_COMMIT_REF -Dsonar.gitlab.ref_name=$CI_COMMIT_REF_NAME -Dsonar.gitlab.project_id=$CI_PROJECT_ID -Dsonar.login=$SONARQUBE_ACCESS_KEY -Dsonar.gitlab.user_token=$GITLAB_ACCESS_KEY
+    - sonar-scanner -Dsonar.gitlab.url=https://gitlab.com -Dsonar.gitlab.commit_sha=$CI_COMMIT_REF -Dsonar.gitlab.ref_name=$CI_COMMIT_REF_NAME -Dsonar.gitlab.project_id=$CI_PROJECT_ID -Dsonar.login=$SONARQUBE_ACCESS_KEY -Dsonar.gitlab.user_token=$GITLAB_ACCESS_KEY
 
 # Behat tests from tests/ folder.
 behat_tests:
