@@ -6,7 +6,8 @@ services:
 variables:
   # For non-Kubernetes executors, we use tcp://docker:2375/
   # Provoque un changement dans la branche
-  DOCKER_HOST: tcp://docker:2375/
+  “ DOCKER_HOST: tcp://docker:2375/
+  DOCKER_HOST: "${HOSTNAME}-docker"
   # When using dind, it's wise to use the overlayfs driver for
   # improved performance.
   DOCKER_DRIVER: overlay2
@@ -50,11 +51,12 @@ cache: &global_cache
 # SonarQube Runner
 sonarqube:
   stage: sonarqube
-  image: mercuriete/sonar-scanner
-  before_script:
-    - env
+  image: ciricihq/gitlab-sonar-scanner
+  variables:
+    SONAR_URL: http://sonarqube.actency.fr
+    SONAR_ANALYSIS_MODE: preview
   script:
-    - sonar-scanner -Dsonar.gitlab.disable_proxy=true -Dsonar.gitlab.ignore_certificate=true -Dsonar.gitlab.url=https://gitlab.com -Dsonar.gitlab.commit_sha=$CI_COMMIT_REF -Dsonar.gitlab.ref_name=$CI_COMMIT_REF_NAME -Dsonar.gitlab.project_id=$CI_PROJECT_ID -Dsonar.login=$SONARQUBE_ACCESS_KEY -Dsonar.gitlab.user_token=$GITLAB_ACCESS_KEY
+    - gitlab-sonar-scanner -Dsonar.gitlab.ref_name=$CI_COMMIT_REF_NAME -Dsonar.gitlab.project_id=$CI_PROJECT_ID -Dsonar.login=$SONARQUBE_ACCESS_KEY -Dsonar.gitlab.user_token=$GITLAB_ACCESS_KEY
 
 # Behat tests from tests/ folder.
 behat_tests:
