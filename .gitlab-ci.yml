@@ -51,6 +51,8 @@ cache: &global_cache
 sonarqube:
   stage: sonarqube
   image: mercuriete/sonar-scanner
+  before_script:
+    - env
   script:
     - sonar-scanner -Dsonar.gitlab.disable_proxy=true -Dsonar.gitlab.ignore_certificate=true -Dsonar.gitlab.url=https://gitlab.com -Dsonar.gitlab.commit_sha=$CI_COMMIT_REF -Dsonar.gitlab.ref_name=$CI_COMMIT_REF_NAME -Dsonar.gitlab.project_id=$CI_PROJECT_ID -Dsonar.login=$SONARQUBE_ACCESS_KEY -Dsonar.gitlab.user_token=$GITLAB_ACCESS_KEY
 
