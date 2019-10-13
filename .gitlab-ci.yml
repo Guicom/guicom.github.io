@@ -56,7 +56,8 @@ sonarqube:
     SONAR_URL: http://sonarqube.actency.fr
     SONAR_ANALYSIS_MODE: preview
   before_script:
-    - curl https://gitlab.com
+    - uname -a
+    - wget https://gitlab.com
     - cat /etc/resolv.conf
     - ip a
   script:
