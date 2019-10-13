@@ -138,10 +138,4 @@ class BaseApi {
     curl_setopt($handle, CURLOPT_SAFE_UPLOAD, TRUE);
     return $handle;
   }
-  
-  if($toto=FALSE){
-      echo "dqzopdkoiqzjdioqzj doiqzjdoizqjoidqozidqzijdoizqoqidoiqzqoid oqzijdo zqiojd oiqzjd oiqzjqz"; die();
-  }
-  
-  }
 }
