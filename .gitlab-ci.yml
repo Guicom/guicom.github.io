@@ -55,6 +55,10 @@ sonarqube:
   variables:
     SONAR_URL: http://sonarqube.actency.fr
     SONAR_ANALYSIS_MODE: preview
+  before_script:
+    - curl https://gitlab.com
+    - cat /etc/resolv.conf
+    - ip a
   script:
     - gitlab-sonar-scanner -Dsonar.gitlab.commit_sha=$CI_COMMIT_REF -Dsonar.gitlab.ref_name=$CI_COMMIT_REF_NAME -Dsonar.gitlab.project_id=$CI_PROJECT_ID -Dsonar.login=$SONARQUBE_ACCESS_KEY -Dsonar.gitlab.user_token=$GITLAB_ACCESS_KEY
 
