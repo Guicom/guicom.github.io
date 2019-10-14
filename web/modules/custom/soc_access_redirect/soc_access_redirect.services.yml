@@ -1,0 +1,5 @@
+services:
+  soc_access_redirect.redirectSocContent:
+    class: Drupal\soc_access_redirect\EventSubscriber\SocAccessRedirectRedirectSubscriber
+    tags:
+      - { name: event_subscriber }
