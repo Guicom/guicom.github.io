@@ -5,7 +5,9 @@ services:
 
 variables:
   # For non-Kubernetes executors, we use tcp://docker:2375/
+  # Provoque un changement dans la branche
   DOCKER_HOST: tcp://docker:2375/
+  # DOCKER_HOST: "${HOSTNAME}-docker"
   # When using dind, it's wise to use the overlayfs driver for
   # improved performance.
   DOCKER_DRIVER: overlay2
@@ -13,7 +15,8 @@ variables:
 
 stages:
   #  - build
-  - tests
+  - sonarqube
+  - behat
 
 cache: &global_cache
   key: ${CI_JOB_NAME}
@@ -45,9 +48,19 @@ cache: &global_cache
     - docker-compose exec -u web -T web bash -c "cd /var/www/html/tests/behat && composer install"
     - docker-compose exec -u web -T web bash -c "cd /var/www/html/ && ./vendor/bin/phing install"
 
+# SonarQube Runner
+sonarqube:
+  stage: sonarqube
+  image: ciricihq/gitlab-sonar-scanner
+  variables:
+    SONAR_URL: http://sonarqube.actency.fr
+    SONAR_ANALYSIS_MODE: preview
+  script:
+    - gitlab-sonar-scanner -Dsonar.gitlab.ref_name=$CI_COMMIT_REF_NAME -Dsonar.gitlab.project_id=$CI_PROJECT_ID -Dsonar.login=$SONARQUBE_ACCESS_KEY -Dsonar.gitlab.user_token=$GITLAB_ACCESS_KEY
+
 # Behat tests from tests/ folder.
-behat_tests:
-  stage: tests
+behat:
+  stage: behat
   cache:
     # inherit all global cache settings
     <<: *global_cache
