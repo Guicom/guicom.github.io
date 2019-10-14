@@ -32,21 +32,21 @@ function soc_access_redirect_node_view_alter(array &$build, Drupal\Core\Entity\E
  */
 function soc_access_redirect_file_access(EntityInterface  $entity, $operation, AccountInterface $account) {
   $access = AccessResult::neutral();
-  if($operation === 'download'){
+  if ($operation === 'download'){
     // Get fid
     $fid = $entity->id();
-    if(!empty($fid)){
+    if (!empty($fid)){
       $file = \Drupal\file\Entity\File::load($fid);
     }
-    if(!empty($file)) {
+    if (!empty($file)) {
       $references = file_get_file_references($file);
     }
 
     $ids = [];
     // get ids of media reference by fid
-    if(!empty($references)) {
+    if (!empty($references)) {
       foreach ($references as $reference) {
-        if(isset($reference['media'])) {
+        if (isset($reference['media'])) {
           foreach ($reference['media'] as $media) {
             $ids[] = $media->id();
           }
@@ -54,29 +54,29 @@ function soc_access_redirect_file_access(EntityInterface  $entity, $operation, A
       }
     }
     // Request on noeuds with associated media id
-    $nb_resultats = 0;
-    if(!empty($ids)) {
+    $resultsCount = 0;
+    if (!empty($ids)) {
       $query = \Drupal::entityQuery('node');
       $query->condition('type', 'thank_you_page');
       $query->condition('field_file', $ids, 'IN');
-      $nb_resultats = $query->count()->execute();
+      $resultsCount = $query->count()->execute();
     }
 
 
     // If result compare media id with requested media id.
-    if($nb_resultats > 0){
+    if ($resultsCount > 0){
       $cookies = \Drupal::request()->cookies->all();
-      $access_test = false;
-      if(!empty($cookies['soc_private_media_access'])){
-        $soc_private_media_access = unserialize($cookies['soc_private_media_access']);
+      $accessTest = false;
+      if (!empty($cookies['soc_private_media_access'])){
+        $socPrivateMediaAccess = unserialize($cookies['soc_private_media_access']);
         foreach ($ids as $id){
-          if (in_array($id, $soc_private_media_access)) {
-            $access_test = true;
+          if (in_array($id, $socPrivateMediaAccess)) {
+            $accessTest = true;
           }
         }
       }
 
-      if($access_test === false){
+      if ($accessTest === false){
         $access = AccessResult::forbidden();
       }
     }
