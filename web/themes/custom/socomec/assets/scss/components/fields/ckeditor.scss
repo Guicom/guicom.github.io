@@ -16,6 +16,10 @@ ol li{
   margin: 0 0 10px 0;
 }
 
+img{
+  margin:1rem;
+}
+
 h3{
   color: #004F9F;
   font-family: $font-roboto;
@@ -180,6 +184,7 @@ a{
 }
 
 table{
+  width: 100%;
   border: none;
   color: #4A4A47;
   font-family: Roboto;

@@ -1,7 +1,0 @@
-label: 'Terme de taxonomie'
-display:
-  default:
-    display_options:
-      exposed_form:
-        options:
-          reset_button_label: Réinitialiser
