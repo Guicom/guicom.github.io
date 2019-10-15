@@ -7,3 +7,13 @@ soc_nextpage.nextpage_ws_settings:
     _title: 'Socomec'
   requirements:
     _permission: 'access administration pages'
+
+# Tests
+
+soc_nextpage.test_get_token:
+  path: '/test/nextpage/token'
+  defaults:
+    _controller: '\Drupal\soc_nextpage\Controller\Test::getToken'
+    _title: 'Socomec'
+  requirements:
+    _permission: 'access administration pages'

@@ -51,7 +51,18 @@ class BaseApi {
       switch ($method) {
         case 'POST':
           curl_setopt($handle, CURLOPT_POST, TRUE);
-          curl_setopt($handle, CURLOPT_POSTFIELDS, $params);
+          if ($format === 'json') {
+            $body = json_encode($params['body']);
+            curl_setopt($handle, CURLOPT_POSTFIELDS, $body);
+            curl_setopt($handle, CURLOPT_HTTPHEADER, [
+                'Content-Type: application/json',
+                'Content-Length: ' . strlen($body)
+              ]
+            );
+          }
+          else {
+            curl_setopt($handle, CURLOPT_POSTFIELDS, $params);
+          }
           break;
         case 'PUT':
           curl_setopt($handle, CURLOPT_CUSTOMREQUEST, 'PUT');

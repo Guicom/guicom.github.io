@@ -4,8 +4,6 @@ namespace Drupal\soc_nextpage;
 
 interface NextpageApiInterface {
 
-  const AUTH_URI = '/api/auth';
-
   /**
    * Get current API token.
    *

@@ -17,7 +17,7 @@ class NextpageApiSettingsForm extends ConfigFormBase {
   const WS_SETTINGS_KEY = 'soc_nextpage.nextpage_ws';
 
   const DEFAULT_BASE_URL = 'http://socomec-dummies.actency.fr/';
-  const DEFAULT_USER = 'admin';
+  const DEFAULT_USERNAME = 'admin';
 
   /**
    * {@inheritdoc}
@@ -59,12 +59,12 @@ class NextpageApiSettingsForm extends ConfigFormBase {
       '#title'          => $this->t('Authentication'),
     ];
 
-    $form['auth']['user'] = [
+    $form['auth']['username'] = [
       '#type'           => 'textfield',
-      '#title'          => $this->t('User'),
-      '#description'    => $this->t('The user to use to request nextPage.'),
-      '#default_value'  => $config->get('user') ??
-        Settings::get('soc_nextpage_user', self::DEFAULT_USER),
+      '#title'          => $this->t('Username'),
+      '#description'    => $this->t('The username to use to request nextPage.'),
+      '#default_value'  => $config->get('username') ??
+        Settings::get('soc_nextpage_username', self::DEFAULT_USERNAME),
     ];
 
     $form['auth']['password'] = [
@@ -84,7 +84,7 @@ class NextpageApiSettingsForm extends ConfigFormBase {
   public function submitForm(array &$form, FormStateInterface $form_state) {
     foreach ([
                'base_url',
-               'user',
+               'username',
                'password',] as $configKey) {
       $this->configFactory->getEditable(self::WS_SETTINGS_KEY)
         ->set($configKey, $form_state->getValue($configKey))
