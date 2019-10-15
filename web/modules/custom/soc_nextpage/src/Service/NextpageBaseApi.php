@@ -165,9 +165,15 @@ class NextpageBaseApi extends BaseApi {
             \Drupal::logger('soc_nextpage')->error($e->getMessage());
           }
         }
+        // everything is ok, use the current token
+        else {
+          $token = $this->getApiToken();
+        }
       }
       if (strlen($token)) {
-        curl_setopt($handle, CURLOPT_HTTPHEADER, ['ApiToken: ' . $token]);
+        $headers = $this->getHeaders();
+        $headers[] = 'ApiToken: ' . $token;
+        $this->setHeaders($headers);
       }
     }
     return $handle;
@@ -186,8 +192,7 @@ class NextpageBaseApi extends BaseApi {
         'Password' => $this->getPassword(),
       ],
     ];
-    $url = $this->getBaseUrl() . self::AUTH_URI;
-    if (!$token = parent::call($url, $params, 'POST', 'json', FALSE)) {
+    if (!$token = parent::call(self::AUTH_URI, $params, 'POST', 'json', FALSE)) {
       throw new InvalidTokenException('Unable to generate valid token.');
     }
     $this->setApiToken($token);

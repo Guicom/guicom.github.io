@@ -10,10 +10,16 @@ class Test {
   /** @var \Drupal\soc_nextpage\Service\NextpageApi $ws */
   public $nextPageApi;
 
+  /**
+   * Test constructor.
+   */
   public function __construct() {
     $this->nextPageApi = \Drupal::service('soc_nextpage.nextpage_api');
   }
 
+  /**
+   * @return array
+   */
   public function getToken() {
     try {
       $token = $this->nextPageApi->generateApiToken();
@@ -22,6 +28,23 @@ class Test {
     return [
       '#markup' => $token,
     ];
+  }
+
+  /**
+   * @param int $langId
+   *
+   * @return array
+   */
+  public function characteristicsDictionary($langId = 1) {
+    $characteristics = $this->nextPageApi->characteristicsDictionary($langId);
+    kint($characteristics);
+    return [];
+  }
+
+  public function elementsAndLinks() {
+    $characteristics = $this->nextPageApi->elementsAndLinks(['P_000517']);
+    kint($characteristics);
+    return [];
   }
 
 }

@@ -17,3 +17,19 @@ soc_nextpage.test_get_token:
     _title: 'Socomec'
   requirements:
     _permission: 'access administration pages'
+
+soc_nextpage.test_characteristics:
+  path: '/test/nextpage/characteristics'
+  defaults:
+    _controller: '\Drupal\soc_nextpage\Controller\Test::characteristicsDictionary'
+    _title: 'Socomec'
+  requirements:
+    _permission: 'access administration pages'
+
+soc_nextpage.test_element:
+  path: '/test/nextpage/element'
+  defaults:
+    _controller: '\Drupal\soc_nextpage\Controller\Test::elementsAndLinks'
+    _title: 'Socomec'
+  requirements:
+    _permission: 'access administration pages'

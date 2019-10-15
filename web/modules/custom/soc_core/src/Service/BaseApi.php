@@ -17,6 +17,8 @@ class BaseApi {
   protected $user;
   protected $password;
 
+  protected $headers;
+
   /**
    * Constructor.
    */
@@ -24,9 +26,23 @@ class BaseApi {
   }
 
   /**
+   * @param mixed $headers
+   */
+  public function setHeaders($headers): void {
+    $this->headers = $headers;
+  }
+
+  /**
+   * @return mixed
+   */
+  public function getHeaders() {
+    return $this->headers;
+  }
+
+  /**
    * Proceed an API call.
    *
-   * @param string $url
+   * @param string $uri
    * @param array|null $params
    * @param string $method
    * @param string $format
@@ -35,12 +51,15 @@ class BaseApi {
    *
    * @return mixed
    */
-  protected function call($url, $params = NULL, $method = 'POST', $format = 'json',
+  protected function call($uri, $params = NULL, $method = 'POST', $format = 'json',
                           $auth = TRUE, $max_tries = 5) {
     $handle = $this->prepareCall($params, $method, $format, $auth);
-    curl_setopt($handle, CURLOPT_URL, $url);
+    $url = $this->getBaseUrl() . $uri;
+      curl_setopt($handle, CURLOPT_URL, $url);
     // Upload bug tips. We sent the header and then the body.
-    curl_setopt($handle, CURLOPT_HTTPHEADER, ["Expect:"]);
+    $headers = $this->getHeaders();
+    $headers[] = "Expect:";
+    $this->setHeaders($headers);
 
     if ($format === 'json') {
       $params['_format'] = 'json';
@@ -52,13 +71,17 @@ class BaseApi {
         case 'POST':
           curl_setopt($handle, CURLOPT_POST, TRUE);
           if ($format === 'json') {
-            $body = json_encode($params['body']);
+            if (is_array($params['body'])) {
+              $body = json_encode($params['body']);
+            }
+            elseif (is_string($params['body'])) {
+              $body = $params['body'];
+            }
             curl_setopt($handle, CURLOPT_POSTFIELDS, $body);
-            curl_setopt($handle, CURLOPT_HTTPHEADER, [
-                'Content-Type: application/json',
-                'Content-Length: ' . strlen($body)
-              ]
-            );
+            $headers = $this->getHeaders();
+            $headers[] = 'Content-Type: application/json';
+            $headers[] = 'Content-Length: ' . strlen($body);
+            $this->setHeaders($headers);
           }
           else {
             curl_setopt($handle, CURLOPT_POSTFIELDS, $params);
@@ -75,6 +98,8 @@ class BaseApi {
         default:
           break;
       }
+
+      curl_setopt($handle, CURLOPT_HTTPHEADER, $this->getHeaders());
 
       $res = curl_exec($handle);
       $code = curl_getinfo($handle, CURLINFO_HTTP_CODE);
@@ -111,7 +136,7 @@ class BaseApi {
         break;
     }
     if (null === $res) {
-      $message = "failed to decode $res as json";
+      $message = "Failed to decode response as JSON.";
       \Drupal::logger('soc_core')->error($message);
       return false;
     }
