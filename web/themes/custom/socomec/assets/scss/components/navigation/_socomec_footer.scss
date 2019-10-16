@@ -1,0 +1,21 @@
+/**
+ * @file
+ * Styles for socomec footer.
+ */
+
+// Theming hero block
+#block-socomec-footer{
+  margin: 0.8rem 0;
+  ul{
+    li{
+      a{
+        color: #777772;
+        font-family: $font-roboto;
+        font-size: 12px;
+        line-height: 20px;
+        font-weight: 400;
+        padding: 0.5rem 1.2rem;
+      }
+    }
+  }
+}
