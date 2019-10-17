@@ -1,0 +1,18 @@
+uuid: 328520ed-9990-4352-b866-044e1925d291
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.product_reference
+id: paragraph.product_reference.created
+field_name: created
+entity_type: paragraph
+bundle: product_reference
+label: 'Authored on'
+description: 'The time that the Paragraph was created.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: created

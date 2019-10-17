@@ -1,0 +1,11 @@
+uuid: 3454ba3d-18ff-47c6-b509-1ec48a574451
+langcode: en
+status: true
+dependencies:
+  config:
+    - message.template.consent_agreement_accepted
+id: message.consent_agreement_accepted
+target_entity_type_id: message
+target_bundle: consent_agreement_accepted
+default_langcode: site_default
+language_alterable: false

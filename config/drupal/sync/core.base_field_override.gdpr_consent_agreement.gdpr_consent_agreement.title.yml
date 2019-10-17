@@ -1,0 +1,18 @@
+uuid: d89846b0-4a9f-4290-838f-3f55c5f6dae8
+langcode: en
+status: true
+dependencies:
+  module:
+    - gdpr_consent
+id: gdpr_consent_agreement.gdpr_consent_agreement.title
+field_name: title
+entity_type: gdpr_consent_agreement
+bundle: gdpr_consent_agreement
+label: Title
+description: 'Agreement title.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
