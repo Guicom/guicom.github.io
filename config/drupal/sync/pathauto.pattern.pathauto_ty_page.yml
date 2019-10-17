@@ -5,18 +5,18 @@ dependencies:
   module:
     - node
 id: pathauto_ty_page
-label: 'Pathauto TY page'
+label: 'Pathauto Thank You page'
 type: 'canonical_entities:node'
-pattern: '[node:content-type]/[current-page:page-number][current-page:title]'
+pattern: '[node:title]/thank-you'
 selection_criteria:
-  4e3ad612-5940-4c1a-8690-f04c6ca00705:
+  ac978900-ecbd-4828-9c72-3b1fb36dc648:
     id: node_type
     bundles:
       thank_you_page: thank_you_page
     negate: false
     context_mapping:
       node: node
-    uuid: 4e3ad612-5940-4c1a-8690-f04c6ca00705
+    uuid: ac978900-ecbd-4828-9c72-3b1fb36dc648
 selection_logic: and
 weight: -5
 relationships: {  }
