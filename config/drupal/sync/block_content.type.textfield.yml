@@ -1,0 +1,8 @@
+uuid: a8af4a66-8c40-4e27-88ca-e2ab1903d8dd
+langcode: en
+status: true
+dependencies: {  }
+id: textfield
+label: 'Textfield block'
+revision: 1
+description: ''

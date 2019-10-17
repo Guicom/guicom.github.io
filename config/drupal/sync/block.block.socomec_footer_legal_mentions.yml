@@ -1,0 +1,25 @@
+uuid: a0a39562-2818-4c54-9ada-6899e03eecd7
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.footer-legal-mentions
+  module:
+    - system
+  theme:
+    - socomec
+id: socomec_footer_legal_mentions
+theme: socomec
+region: footer_fifth
+weight: -6
+provider: null
+plugin: 'system_menu_block:footer-legal-mentions'
+settings:
+  id: 'system_menu_block:footer-legal-mentions'
+  label: 'Footer - Legal mentions'
+  provider: system
+  label_display: '0'
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility: {  }

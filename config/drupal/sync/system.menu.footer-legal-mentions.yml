@@ -1,0 +1,8 @@
+uuid: 36e43cf2-c2e7-441a-b4e1-753ecc6b6b44
+langcode: en
+status: true
+dependencies: {  }
+id: footer-legal-mentions
+label: 'Footer - Legal mentions'
+description: ''
+locked: false

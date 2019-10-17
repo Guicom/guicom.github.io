@@ -1,0 +1,25 @@
+uuid: b6a54a63-ad13-4ccb-b54d-1fdca2ccce07
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:textfield:4396368f-b51c-4348-a79e-7cd52a85d79a'
+  module:
+    - block_content
+  theme:
+    - socomec
+id: copyright
+theme: socomec
+region: footer_fifth
+weight: -5
+provider: null
+plugin: 'block_content:4396368f-b51c-4348-a79e-7cd52a85d79a'
+settings:
+  id: 'block_content:4396368f-b51c-4348-a79e-7cd52a85d79a'
+  label: Copyright
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }
