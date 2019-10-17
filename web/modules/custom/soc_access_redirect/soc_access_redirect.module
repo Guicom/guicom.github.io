@@ -22,7 +22,7 @@ use Drupal\Core\Session\AccountInterface;
  */
 function soc_access_redirect_file_access(EntityInterface  $entity, $operation, AccountInterface $account) {
   $access = AccessResult::neutral();
-  if (strcmp($operation,'download') === 0) {
+  if (strcmp($operation, 'download') === 0) {
     // Get fid
     $fid = $entity->id();
     if (!empty($fid)) {
@@ -43,6 +43,7 @@ function soc_access_redirect_file_access(EntityInterface  $entity, $operation, A
         }
       }
     }
+
     // Request on noeuds with associated media id
     $results_count = 0;
     if (!empty($ids)) {
@@ -51,7 +52,6 @@ function soc_access_redirect_file_access(EntityInterface  $entity, $operation, A
       $query->condition('field_file', $ids, 'IN');
       $results_count = $query->count()->execute();
     }
-
 
     // If result compare media id with requested media id.
     if ($results_count > 0) {
@@ -88,9 +88,9 @@ function soc_access_redirect_file_access(EntityInterface  $entity, $operation, A
  */
 function soc_access_redirect_block_access(Block $block, $operation, AccountInterface $account) {
   // If operation is view
-  if (strcmp($operation,'view') === 0) {
+  if (strcmp($operation, 'view') === 0) {
     // If block id is socomec_footer
-    if (strcmp($block->id(),'socomec_footer') === 0) {
+    if (strcmp($block->id(), 'socomec_footer') === 0) {
       // Load node
       $node = Drupal::routeMatch()->getParameter('node');
       // If node is instance of NodeInterface
@@ -102,7 +102,7 @@ function soc_access_redirect_block_access(Block $block, $operation, AccountInter
             // Get field_footer_version field value
             $footer_version = $node->get('field_footer_version')->getValue();
             // If $footer_version is not empty and if value is equal to short change Access to forbidden
-            if (!empty($footer_version[0]['value']) && strcmp($footer_version[0]['value'],'short') === 0) {
+            if (!empty($footer_version[0]['value']) && strcmp($footer_version[0]['value'], 'short') === 0) {
               return AccessResult::forbidden();
             }
           }
