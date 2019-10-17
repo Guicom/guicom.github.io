@@ -1,0 +1,22 @@
+uuid: 27fb70b5-ee59-4e1d-8b14-1bc611d9e16b
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.model_testimony
+id: paragraph.model_testimony.status
+field_name: status
+entity_type: paragraph
+bundle: model_testimony
+label: Published
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean
