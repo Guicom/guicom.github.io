@@ -1,0 +1,81 @@
+<?php
+
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Url;
+use Drupal\soc_core\Model\ContentType;
+
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function soc_core_form_alter(&$form, FormStateInterface &$form_state, $form_id) {
+
+  // Check if we are in Add  new node ContentType::CT_TY_P
+  if(!is_null(\Drupal::request()->attributes->get('node_type'))) {
+    $nodeType = \Drupal::request()->attributes->get('node_type')->id();
+    $route = \Drupal::request()->attributes->get('_route');
+    // We check if we are parameters for creating
+    if(strcmp($nodeType, ContentType::CT_TY_P) == 0 && strcmp($route, 'node.add') == 0) {
+
+      if(!is_null(\Drupal::request()->get('nidLp'))) {
+
+        \Drupal::service('cache.render')->invalidateAll();
+
+        // Get target Landing Page
+        $nidLp = \Drupal::request()->get('nidLp');
+        $form['field_landing_page']['widget'][0]['target_id']['#default_value'] = \Drupal\node\Entity\Node::load($nidLp);
+
+        // Get title of Landing page
+        $title = \Drupal::request()->get('title');
+        $form['title']['widget'][0]['value']['#default_value'] = $title;
+
+        // We load Media Type
+        $thumbnailId = \Drupal::request()->get('thumbnail');
+        $form['field_thumbnail']['widget'][0]['target_id']['#default_value'] = Drupal\media\Entity\Media::load($thumbnailId);
+      }
+    }
+  }
+}
+
+/**
+ * Implements hook_menu_local_tasks_alter().
+ * Add tab with custom title and link only to pages of a selected content type
+ */
+function soc_core_menu_local_tasks_alter(&$data, $route_name) {
+
+  // check if node have type landing_page
+  $node = \Drupal::routeMatch()->getParameter('node');
+  if ($node instanceof \Drupal\node\NodeInterface) {
+    // You can get nid and anything else you need from the node object.
+    if(strcmp($node->getType(), 'landing_page') == 0) {
+      // Add a tab linking to node/add to all pages.
+
+      /** @var Array $nids */
+      $nids = \Drupal::service('soc_core.ty.to.landing')->getAllThankYouPageFromLundingPage($node);
+      $title = t('Ajouter Thank you Page');
+      $thumbnailId = \Drupal\node\Entity\Node::load(4)->get('field_thumbnail')->target_id;
+
+      $url  = Url::fromRoute('node.add', ['node_type' => ContentType::CT_TY_P, 'nidLp'=>$node->id(), 'title' => $node->get('title')->value, 'thumbnail' => $thumbnailId]);
+      $attr_title = t('Aucun Thank you page lie a Lunding page');
+
+      if(!empty($nids)) {
+        $title = t('Editer Thank you Page');
+        $url = Url::fromRoute('entity.node.edit_form', ['node' => current($nids)]);
+        $attr_title = t('Editer Thank you page');
+      }
+
+      $data['tabs'][0]['node.add_page'] = [
+        '#theme' => 'menu_local_task',
+        '#link' => [
+          'title' => $title,
+          'url' => $url,
+          'localized_options' => [
+            'attributes' => [
+              'title' => $attr_title,
+            ],
+          ],
+        ],
+      ];
+    }
+  }
+}

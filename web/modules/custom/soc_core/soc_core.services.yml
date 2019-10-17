@@ -1,3 +1,5 @@
 services:
   soc_core.base_api:
     class: Drupal\soc_core\Service\BaseApi
+  soc_core.ty.to.landing:
+     class: Drupal\soc_core\Service\BaseApi
