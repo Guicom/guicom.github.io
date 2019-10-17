@@ -1,7 +1,7 @@
 {
     "_links": {
         "self": {
-            "href": "http:\/\/default\/admin\/structure\/menu\/item\/1\/edit?_format=hal_json"
+            "href": "http:\/\/default\/admin\/structure\/menu\/item\/29\/edit?_format=hal_json"
         },
         "type": {
             "href": "http:\/\/drupal.org\/rest\/type\/menu_link_content\/menu_link_content"
@@ -15,17 +15,17 @@
     },
     "id": [
         {
-            "value": 1
+            "value": 29
         }
     ],
     "uuid": [
         {
-            "value": "a8f98142-078d-45fc-b033-16aa3c9d03fd"
+            "value": "d29642f6-4342-4a0d-9dfd-a06085d7fc21"
         }
     ],
     "revision_id": [
         {
-            "value": 1
+            "value": 29
         }
     ],
     "langcode": [
@@ -41,7 +41,7 @@
     ],
     "revision_created": [
         {
-            "value": "2019-09-23T10:05:48+00:00",
+            "value": "2019-10-17T12:08:34+00:00",
             "format": "Y-m-d\\TH:i:sP"
         }
     ],
@@ -52,13 +52,13 @@
     ],
     "title": [
         {
-            "value": "SOLUTIONS",
+            "value": "Terms of use",
             "lang": "en"
         }
     ],
     "menu_name": [
         {
-            "value": "header"
+            "value": "footer-legal-mentions"
         }
     ],
     "link": [
@@ -80,7 +80,7 @@
     ],
     "weight": [
         {
-            "value": -50
+            "value": -49
         }
     ],
     "expanded": [
@@ -90,7 +90,7 @@
     ],
     "changed": [
         {
-            "value": "2019-09-23T10:07:28+00:00",
+            "value": "2019-10-17T12:09:48+00:00",
             "lang": "en",
             "format": "Y-m-d\\TH:i:sP"
         }
@@ -147,7 +147,7 @@
     ],
     "content_translation_created": [
         {
-            "value": "2019-10-17T11:17:37+00:00",
+            "value": "2019-10-17T12:08:34+00:00",
             "lang": "en",
             "format": "Y-m-d\\TH:i:sP"
         }

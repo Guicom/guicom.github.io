@@ -1,0 +1,20 @@
+uuid: 0ab93d11-4eab-4538-817a-24bcb91be1fa
+langcode: en
+status: true
+dependencies: {  }
+id: block_content
+filenames:
+  textfield: ''
+bundles:
+  textfield:
+    field_text:
+      bundle: textfield
+      name: field_text
+      entity_type_id: block_content
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
