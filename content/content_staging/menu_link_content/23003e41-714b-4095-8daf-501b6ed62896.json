@@ -46,7 +46,7 @@
     ],
     "title": [
         {
-            "value": "Terms of use",
+            "value": "Market & applications",
             "lang": "en"
         }
     ],
@@ -79,12 +79,12 @@
     ],
     "expanded": [
         {
-            "value": false
+            "value": true
         }
     ],
     "changed": [
         {
-            "value": "2019-10-16T08:25:51+00:00",
+            "value": "2019-10-17T09:03:01+00:00",
             "lang": "en",
             "format": "Y-m-d\\TH:i:sP"
         }
@@ -96,6 +96,24 @@
         }
     ],
     "revision_translation_affected": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "content_translation_source": [
+        {
+            "value": "und",
+            "lang": "en"
+        }
+    ],
+    "content_translation_outdated": [
+        {
+            "value": false,
+            "lang": "en"
+        }
+    ],
+    "content_translation_status": [
         {
             "value": true,
             "lang": "en"

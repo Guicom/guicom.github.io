@@ -1,0 +1,17 @@
+uuid: 8e64bbf7-8384-405e-a4ca-4fa6acd1d9be
+langcode: en
+status: true
+dependencies:
+  module:
+    - content_translation
+    - gdpr_consent
+third_party_settings:
+  content_translation:
+    enabled: false
+    bundle_settings:
+      untranslatable_fields_hide: '0'
+id: gdpr_consent_agreement.gdpr_consent_agreement
+target_entity_type_id: gdpr_consent_agreement
+target_bundle: gdpr_consent_agreement
+default_langcode: site_default
+language_alterable: false

@@ -1,0 +1,18 @@
+uuid: d6e96a76-985a-45fa-9350-c74f2d04e3dd
+langcode: en
+status: true
+dependencies:
+  module:
+    - gdpr_consent
+id: gdpr_consent_agreement.gdpr_consent_agreement.notes
+field_name: notes
+entity_type: gdpr_consent_agreement
+bundle: gdpr_consent_agreement
+label: Notes
+description: 'This should contain the rationale behind the agreement.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

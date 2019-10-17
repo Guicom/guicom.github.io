@@ -1,0 +1,20 @@
+uuid: 8f08558c-cf2b-44ee-b0fb-9ca466f5d64e
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.thank_you_page
+  module:
+    - path
+id: node.thank_you_page.path
+field_name: path
+entity_type: node
+bundle: thank_you_page
+label: 'URL alias'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: path

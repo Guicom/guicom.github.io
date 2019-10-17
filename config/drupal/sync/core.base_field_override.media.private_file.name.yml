@@ -1,0 +1,20 @@
+uuid: eafc0528-be8f-4c4a-9755-6ba80f1222a0
+langcode: en
+status: true
+dependencies:
+  config:
+    - media.type.private_file
+id: media.private_file.name
+field_name: name
+entity_type: media
+bundle: private_file
+label: Name
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: ''
+default_value_callback: ''
+settings: {  }
+field_type: string
