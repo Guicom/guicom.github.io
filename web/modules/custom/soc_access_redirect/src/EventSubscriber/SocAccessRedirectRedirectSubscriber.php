@@ -74,14 +74,12 @@ class SocAccessRedirectRedirectSubscriber implements EventSubscriberInterface {
         $response = new RedirectResponse($redirect_url->toString(), 301);
         $response->expire();
         $event->setResponse($response);
-        \Drupal::service('page_cache_kill_switch')->trigger();
       }
       else{
         $redirect_url = Url::fromRoute('<front>');
         $response = new RedirectResponse($redirect_url->toString(), 301);
         $response->expire();
         $event->setResponse($response);
-        \Drupal::service('page_cache_kill_switch')->trigger();
       }
     }
   }
