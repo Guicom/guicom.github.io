@@ -37,6 +37,7 @@ module:
   ds_extras: 0
   dynamic_page_cache: 0
   editor: 0
+  editor_advanced_link: 0
   entity: 0
   entity_reference_revisions: 0
   field: 0
