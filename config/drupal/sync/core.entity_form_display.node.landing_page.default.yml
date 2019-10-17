@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.node.landing_page.field_body
     - field.field.node.landing_page.field_client_name
+    - field.field.node.landing_page.field_footer_version
     - field.field.node.landing_page.field_hero_paragraph
     - field.field.node.landing_page.field_metatags
     - field.field.node.landing_page.field_pardot_form
@@ -44,6 +45,12 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: string_textfield
+    region: content
+  field_footer_version:
+    weight: 51
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
     region: content
   field_hero_paragraph:
     type: entity_reference_paragraphs
