@@ -97,14 +97,18 @@ class NextpageBaseApi extends BaseApi {
   }
 
   /**
-   * @return string
+   * Get stored API token.
+   *
+   * @return string|null
    */
-  public function getApiToken(): string {
+  public function getApiToken() {
     return $this->apiToken ?? $this->tempStore->get('api_token');
   }
 
   /**
    * @param string $apiToken
+   *
+   * @throws \Exception
    */
   public function setApiToken(string $apiToken): void {
     $this->apiToken = $apiToken;

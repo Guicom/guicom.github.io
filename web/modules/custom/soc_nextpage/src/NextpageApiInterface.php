@@ -7,9 +7,9 @@ interface NextpageApiInterface {
   /**
    * Get current API token.
    *
-   * @return string
+   * @return string|null
    */
-  public function getApiToken(): string;
+  public function getApiToken();
 
   /**
    * Check an API token validity.
