@@ -22,7 +22,7 @@ interface NextpageApiInterface {
 
   public function descendantsAndLinks($extIds, $onlyOneLevel, $paths, $dcExtIds);
 
-  public function elementsByCharTemplate();
+  public function elementsByCharTemplate($charTemplateExtID, $paths);
 
   public function characteristicsDictionary();
 

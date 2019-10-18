@@ -53,4 +53,10 @@ class Test {
     return [];
   }
 
+  public function elementsByCharTemplate() {
+    $descendants = $this->nextPageApi->elementsByCharTemplate(['FNiveau2_CODE_FAMILLE_3_066']);
+    kint($descendants);
+    return [];
+  }
+
 }

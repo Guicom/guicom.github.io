@@ -31,7 +31,7 @@ class NextpageApi extends NextpageBaseApi implements NextpageApiInterface {
     } catch (\Exception $e) {
       \Drupal::logger('soc_nextpage')->error($e->getMessage());
     }
-    return $results;
+    return $this->returnResults($results);
   }
 
   /**
@@ -61,15 +61,33 @@ class NextpageApi extends NextpageBaseApi implements NextpageApiInterface {
     } catch (\Exception $e) {
       \Drupal::logger('soc_nextpage')->error($e->getMessage());
     }
-    return $results;
+    return $this->returnResults($results);
   }
 
   /**
    * Get elements by product type.
    *
+   * @param $charTemplateExtID
+   * @param array $paths
+   *
+   * @return array|mixed
    */
-  public function elementsByCharTemplate() {
-    // TODO: Implement ElementsByCharTemplate() method.
+  public function elementsByCharTemplate($charTemplateExtID, $paths = []) {
+    $endpoints = $this->getEndpoints();
+    $results = [];
+    try {
+      $results = $this->call($endpoints['elementsbychartemplate'], [
+        'body' => json_encode([
+          'CharTemplateExtID' => $charTemplateExtID,
+          'Paths' => $paths,
+          'ContextID' => $this->getContextId(),
+          'LangID' => $this->getLanguageId(),
+        ]),
+      ]);
+    } catch (\Exception $e) {
+      \Drupal::logger('soc_nextpage')->error($e->getMessage());
+    }
+    return $this->returnResults($results);
   }
 
   /**
@@ -86,7 +104,31 @@ class NextpageApi extends NextpageBaseApi implements NextpageApiInterface {
     } catch (\Exception $e) {
       \Drupal::logger('soc_nextpage')->error($e->getMessage());
     }
-    return $results;
+    return $this->returnResults($results);
+  }
+
+  /**
+   * Error management.
+   *
+   * @param $results
+   *
+   * @return mixed
+   */
+  protected function returnResults($results) {
+    if (sizeof($results->Results->ResultsExtIDs)) {
+      return $results->Results;
+    }
+    elseif (sizeof($results->Warnings)) {
+      foreach ($results->Warnings as $warning) {
+        \Drupal::logger('soc_nextpage')->warning($warning->Message);
+      }
+    }
+    elseif (sizeof($results->Errors)) {
+      foreach ($results->Errors as $error) {
+        \Drupal::logger('soc_nextpage')->error($error->Message);
+      }
+    }
+    return [];
   }
 
 }
