@@ -5,6 +5,8 @@ dependencies: {  }
 id: block_content
 filenames:
   textfield: ''
+  url: ''
+  link: ''
 bundles:
   textfield:
     field_text:
@@ -14,7 +16,31 @@ bundles:
       rtf: 'no'
       rta: 'no'
       enabled: false
+      anonymizer: clear_anonymizer
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+  url:
+    field_link:
+      bundle: url
+      name: field_link
+      entity_type_id: block_content
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
       anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+  link:
+    field_link:
+      bundle: link
+      name: field_link
+      entity_type_id: block_content
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: clear_anonymizer
       notes: ''
       relationship: 0
       sars_filename: ''

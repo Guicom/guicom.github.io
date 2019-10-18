@@ -5,4 +5,4 @@ dependencies: {  }
 id: textfield
 label: 'Textfield block'
 revision: 1
-description: ''
+description: 'A basic block contains a title and a textfield  255 characters.'
