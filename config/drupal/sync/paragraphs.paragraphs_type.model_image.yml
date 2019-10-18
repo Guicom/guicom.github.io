@@ -1,9 +1,9 @@
-uuid: 695f64e7-53c5-4792-8772-20b9605e2cca
+uuid: 7067d9bf-ffa7-4d20-bf3a-b270e43aa161
 langcode: en
 status: true
 dependencies: {  }
-id: key_figures
-label: 'Model - Key figures'
+id: model_image
+label: 'Model - Image'
 icon_uuid: null
 description: ''
 behavior_plugins: {  }

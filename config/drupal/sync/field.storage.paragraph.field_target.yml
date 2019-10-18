@@ -1,0 +1,27 @@
+uuid: cd6f492b-6e4d-49f9-8086-597bb871fa44
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+id: paragraph.field_target
+field_name: field_target
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: '0'
+      label: Default
+    -
+      value: '1'
+      label: Blank
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
