@@ -1,0 +1,20 @@
+uuid: dcf0b13a-6eff-45fe-97cc-63638a276428
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.family
+  module:
+    - text
+id: taxonomy_term.family.description
+field_name: description
+entity_type: taxonomy_term
+bundle: family
+label: Description
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

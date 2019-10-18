@@ -1,0 +1,18 @@
+uuid: e65b6919-62ac-40c2-88fe-cf2caf46812c
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.strong_points
+id: taxonomy_term.strong_points.changed
+field_name: changed
+entity_type: taxonomy_term
+bundle: strong_points
+label: Changed
+description: 'The time that the term was last edited.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: changed

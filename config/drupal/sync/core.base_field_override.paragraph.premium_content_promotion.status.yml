@@ -1,0 +1,22 @@
+uuid: 617dbe92-8b56-4ab1-8e07-295f7559b45d
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.premium_content_promotion
+id: paragraph.premium_content_promotion.status
+field_name: status
+entity_type: paragraph
+bundle: premium_content_promotion
+label: Published
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

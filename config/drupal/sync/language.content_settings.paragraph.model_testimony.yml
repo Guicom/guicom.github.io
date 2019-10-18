@@ -1,0 +1,18 @@
+uuid: d2f5a9b2-bee6-4b04-be6e-9327301d5f83
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.model_testimony
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: false
+    bundle_settings:
+      untranslatable_fields_hide: '0'
+id: paragraph.model_testimony
+target_entity_type_id: paragraph
+target_bundle: model_testimony
+default_langcode: site_default
+language_alterable: false
