@@ -49,6 +49,9 @@ class SocAccessRedirectRedirectSubscriber implements EventSubscriberInterface {
     // This is necessary because this also gets called on
     // node sub-tabs such as "edit", "revisions", etc.  This
     // prevents those pages from redirected.
+    if ($request->attributes->get('_route') !== 'entity.node.canonical') {
+      return;
+    }
 
     // get current node
     /** @var Node $node */
