@@ -147,7 +147,7 @@ class BaseApi {
    * @param Node $node
    * @return array|int|null
    */
-  public function getAllThankYouPageFromLundingPage($node) {
+  public function getAllThankYouPageFromLandingPage($node) {
     if(strcmp($node->getType(), ContentType::CT_LANDING) == 0 ) {
       return \Drupal::entityQuery('node')
         ->condition('type', ContentType::CT_TY_P)

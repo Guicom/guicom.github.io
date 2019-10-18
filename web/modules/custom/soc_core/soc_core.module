@@ -51,8 +51,8 @@ function soc_core_menu_local_tasks_alter(&$data, $route_name) {
       // Add a tab linking to node/add to all pages.
 
       /** @var Array $nids */
-      $nids = \Drupal::service('soc_core.ty.to.landing')->getAllThankYouPageFromLundingPage($node);
-      $title = t('Ajouter Thank you Page');
+      $nids = \Drupal::service('soc_core.base_api')->getAllThankYouPageFromLandingPage($node);
+      $title = t('Save and create thank you page');
       $thumbnail_id = \Drupal\node\Entity\Node::load(4)->get('field_thumbnail')->target_id;
 
       $url  = Url::fromRoute('node.add', [
@@ -61,7 +61,7 @@ function soc_core_menu_local_tasks_alter(&$data, $route_name) {
         'title' => $node->get('title')->value,
         'thumbnail' => $thumbnail_id
       ]);
-      $attr_title = t('Aucun Thank you page lie a Lunding page');
+      $attr_title = t('Aucun Thank you page lie a Landing page');
 
       if (!empty($nids)) {
         $title = t('Editer Thank you Page');
