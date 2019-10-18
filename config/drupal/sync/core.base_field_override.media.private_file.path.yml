@@ -1,0 +1,20 @@
+uuid: a8fe0484-0d7d-4347-85e7-e1b3262679a9
+langcode: en
+status: true
+dependencies:
+  config:
+    - media.type.private_file
+  module:
+    - path
+id: media.private_file.path
+field_name: path
+entity_type: media
+bundle: private_file
+label: 'URL alias'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: path

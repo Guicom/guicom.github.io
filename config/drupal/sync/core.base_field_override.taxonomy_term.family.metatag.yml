@@ -1,0 +1,18 @@
+uuid: 73d63bc4-36de-4b66-a24f-f5e8f8d15297
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.family
+id: taxonomy_term.family.metatag
+field_name: metatag
+entity_type: taxonomy_term
+bundle: family
+label: Metatags
+description: 'The meta tags for the entity.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: map

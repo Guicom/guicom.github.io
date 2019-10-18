@@ -1,0 +1,161 @@
+{
+    "_links": {
+        "self": {
+            "href": "http:\/\/default\/block\/3?_format=hal_json"
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/block_content\/link"
+        },
+        "http:\/\/drupal.org\/rest\/relation\/block_content\/link\/revision_user": [
+            {
+                "href": "http:\/\/default\/user\/1?_format=hal_json"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/block_content\/link\/content_translation_uid": [
+            {
+                "href": "http:\/\/default\/user\/1?_format=hal_json",
+                "lang": "en"
+            }
+        ]
+    },
+    "id": [
+        {
+            "value": 3
+        }
+    ],
+    "uuid": [
+        {
+            "value": "cd83bf6d-f525-4456-b1a8-20f8b374f3b2"
+        }
+    ],
+    "revision_id": [
+        {
+            "value": 5
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "type": [
+        {
+            "target_id": "link"
+        }
+    ],
+    "revision_created": [
+        {
+            "value": "2019-10-17T14:25:43+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/block_content\/link\/revision_user": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/user\/1?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "d2a496bb-146b-4600-bf9c-4b67e24b3d4b"
+                    }
+                ]
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/block_content\/link\/content_translation_uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/user\/1?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "d2a496bb-146b-4600-bf9c-4b67e24b3d4b"
+                    }
+                ],
+                "lang": "en"
+            }
+        ]
+    },
+    "status": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "info": [
+        {
+            "value": "Pardot newsletter",
+            "lang": "en"
+        }
+    ],
+    "changed": [
+        {
+            "value": "2019-10-17T14:25:43+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "reusable": [
+        {
+            "value": true
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "revision_translation_affected": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "content_translation_source": [
+        {
+            "value": "und",
+            "lang": "en"
+        }
+    ],
+    "content_translation_outdated": [
+        {
+            "value": false,
+            "lang": "en"
+        }
+    ],
+    "content_translation_created": [
+        {
+            "value": "2019-10-17T14:25:43+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "metatag": [
+        {
+            "value": {
+                "title": "| Socomec",
+                "canonical_url": "http:\/\/default\/node"
+            }
+        }
+    ],
+    "field_link": [
+        {
+            "uri": "https:\/\/go.socomec.com\/l\/86922\/2019-10-15\/67j4ls",
+            "title": "",
+            "options": [],
+            "lang": "en"
+        }
+    ]
+}

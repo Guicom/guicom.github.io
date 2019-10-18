@@ -1,0 +1,22 @@
+uuid: 9007169b-8883-423f-a86c-c0f5c21e8a76
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.thank_you_page
+id: node.thank_you_page.sticky
+field_name: sticky
+entity_type: node
+bundle: thank_you_page
+label: 'Sticky at top of lists'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

@@ -1,0 +1,22 @@
+uuid: 6bf83a67-57b7-4577-9c99-47974cc74ec4
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.pardot_form
+id: paragraph.pardot_form.status
+field_name: status
+entity_type: paragraph
+bundle: pardot_form
+label: Published
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

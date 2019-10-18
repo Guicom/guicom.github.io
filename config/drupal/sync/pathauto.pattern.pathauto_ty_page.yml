@@ -1,0 +1,22 @@
+uuid: c6c0abb8-7207-4455-9486-de9474e90ee1
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: pathauto_ty_page
+label: 'Pathauto Thank You page'
+type: 'canonical_entities:node'
+pattern: '[node:title]/thank-you'
+selection_criteria:
+  ac978900-ecbd-4828-9c72-3b1fb36dc648:
+    id: node_type
+    bundles:
+      thank_you_page: thank_you_page
+    negate: false
+    context_mapping:
+      node: node
+    uuid: ac978900-ecbd-4828-9c72-3b1fb36dc648
+selection_logic: and
+weight: -5
+relationships: {  }
