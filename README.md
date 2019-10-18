@@ -79,3 +79,13 @@ gulp
 ## Theme :
 
 The Socomec theme is a subtheme of Barrio.
+
+## Pardot Form :
+Pardot form style & js are manage throw a specfics github project.
+For install 
+* go to web/themes/custom/socomec/assets
+* git clone git@github.com:Guicom/guicom.github.io.git pardot-assets
+
+A specific task is added into defaut gulp watch in order to compile css files.
+Each modificatioono must be push on master branch.
+
