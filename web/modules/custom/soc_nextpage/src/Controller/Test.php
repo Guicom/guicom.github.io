@@ -36,14 +36,20 @@ class Test {
    * @return array
    */
   public function characteristicsDictionary($langId = 1) {
-    $characteristics = $this->nextPageApi->characteristicsDictionary($langId);
+    $characteristics = $this->nextPageApi->characteristicsDictionary();
     kint($characteristics);
     return [];
   }
 
   public function elementsAndLinks() {
-    $characteristics = $this->nextPageApi->elementsAndLinks(['P_000517']);
-    kint($characteristics);
+    $elements = $this->nextPageApi->elementsAndLinks(['P_000517']);
+    kint($elements);
+    return [];
+  }
+
+  public function descendantsAndLinks() {
+    $descendants = $this->nextPageApi->descendantsAndLinks(['FNiveau2_CODE_FAMILLE_3_066']);
+    kint($descendants);
     return [];
   }
 

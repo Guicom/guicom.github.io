@@ -22,11 +22,20 @@ class NextpageBaseApi extends BaseApi {
   /** @var string $password */
   protected $password;
 
+  /** @var string $contextId */
+  protected $contextId;
+
+  /** @var string $languageId */
+  protected $languageId;
+
   /** @var string $apiToken */
   protected $apiToken;
 
   /** @var string $apiTokenExpiration */
   protected $apiTokenExpiration;
+
+  /** @var array $endpoints */
+  protected $endpoints;
 
   /** @var \Drupal\Core\TempStore\SharedTempStore $tempStore */
   protected $tempStore;
@@ -48,61 +57,22 @@ class NextpageBaseApi extends BaseApi {
     $baseUrl = $config->get('base_url') ?? Settings::get('nextpage_base_url');
     $user = $config->get('username') ?? Settings::get('nextpage_username');
     $password = $config->get('password') ?? Settings::get('nextpage_password');
+    $contextId = $config->get('context_id') ?? '1';
+    $languageId = $config->get('language_id') ?? '1';
+    $endpoints = [
+      'token' => $config->get('endpoint_token') ?? 'api/auth',
+      'dicocarac' => $config->get('endpoint_dicocarac') ?? 'api/sdk-debug/dicocarac/GetAll',
+      'elementsandlinks' => $config->get('endpoint_elementsandlinks') ?? 'api/sdk-ext/element/ElementsAndLinks',
+      'descendantsandlinks' => $config->get('endpoint_descendantsandlinks') ?? 'api/sdk-ext/element/DescendantsAndLinks',
+      'elementsbychartemplate' => $config->get('endpoint_elementsbychartemplate') ?? 'api/sdk-ext/element/ElementsByCharTemplate',
+    ];
 
     $this->setBaseUrl($baseUrl);
     $this->setUserName($user);
     $this->setPassword($password);
-  }
-
-  /**
-   * @return string
-   */
-  public function getBaseUrl(): string {
-    return $this->baseUrl;
-  }
-
-  /**
-   * @param string $baseUrl
-   */
-  public function setBaseUrl(string $baseUrl): void {
-    $this->baseUrl = $baseUrl;
-  }
-
-  /**
-   * @return string
-   */
-  public function getUserName(): string {
-    return $this->userName;
-  }
-
-  /**
-   * @param string $userName
-   */
-  public function setUserName(string $userName): void {
-    $this->userName = $userName;
-  }
-
-  /**
-   * @return string
-   */
-  public function getPassword(): string {
-    return $this->password;
-  }
-
-  /**
-   * @param string $password
-   */
-  public function setPassword(string $password): void {
-    $this->password = $password;
-  }
-
-  /**
-   * Get stored API token.
-   *
-   * @return string|null
-   */
-  public function getApiToken() {
-    return $this->apiToken ?? $this->tempStore->get('api_token');
+    $this->setContextId($contextId);
+    $this->setLanguageId($languageId);
+    $this->setEndpoints($endpoints);
   }
 
   /**
@@ -201,6 +171,99 @@ class NextpageBaseApi extends BaseApi {
     }
     $this->setApiToken($token);
     return $token;
+  }
+
+  /**
+   * @return string
+   */
+  public function getBaseUrl(): string {
+    return $this->baseUrl;
+  }
+
+  /**
+   * @param string $baseUrl
+   */
+  public function setBaseUrl(string $baseUrl): void {
+    $this->baseUrl = $baseUrl;
+  }
+
+  /**
+   * @return string
+   */
+  public function getUserName(): string {
+    return $this->userName;
+  }
+
+  /**
+   * @param string $userName
+   */
+  public function setUserName(string $userName): void {
+    $this->userName = $userName;
+  }
+
+  /**
+   * @return string
+   */
+  public function getPassword(): string {
+    return $this->password;
+  }
+
+  /**
+   * @param string $password
+   */
+  public function setPassword(string $password): void {
+    $this->password = $password;
+  }
+
+  /**
+   * Get stored API token.
+   *
+   * @return string|null
+   */
+  public function getApiToken() {
+    return $this->apiToken ?? $this->tempStore->get('api_token');
+  }
+
+  /**
+   * @return string
+   */
+  public function getContextId(): string {
+    return $this->contextId;
+  }
+
+  /**
+   * @param string $contextId
+   */
+  public function setContextId(string $contextId): void {
+    $this->contextId = $contextId;
+  }
+
+  /**
+   * @return string
+   */
+  public function getLanguageId(): string {
+    return $this->languageId;
+  }
+
+  /**
+   * @param string $languageId
+   */
+  public function setLanguageId(string $languageId): void {
+    $this->languageId = $languageId;
+  }
+
+  /**
+   * @return array
+   */
+  public function getEndpoints(): array {
+    return $this->endpoints;
+  }
+
+  /**
+   * @param array $endpoints
+   */
+  public function setEndpoints(array $endpoints) {
+    $this->endpoints = $endpoints;
   }
 
 }

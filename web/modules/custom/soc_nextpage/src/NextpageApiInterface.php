@@ -18,9 +18,9 @@ interface NextpageApiInterface {
    */
   public function generateApiToken(): string;
 
-  public function elementsAndLinks($extIds, $contextId, $langId);
+  public function elementsAndLinks($extIds, $paths, $dcExtIds);
 
-  public function descendantsAndLinks();
+  public function descendantsAndLinks($extIds, $onlyOneLevel, $paths, $dcExtIds);
 
   public function elementsByCharTemplate();
 

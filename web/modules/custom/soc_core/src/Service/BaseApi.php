@@ -54,6 +54,10 @@ class BaseApi {
   protected function call($uri, $params = NULL, $method = 'POST', $format = 'json',
                           $auth = TRUE, $max_tries = 5) {
     $handle = $this->prepareCall($params, $method, $format, $auth);
+    // Add leading slash if omitted
+    if (substr($uri, 0, 1) !== '/') {
+      $uri = '/' . $uri;
+    }
     $url = $this->getBaseUrl() . $uri;
       curl_setopt($handle, CURLOPT_URL, $url);
     // Upload bug tips. We sent the header and then the body.

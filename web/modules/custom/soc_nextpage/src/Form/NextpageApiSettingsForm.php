@@ -42,7 +42,8 @@ class NextpageApiSettingsForm extends ConfigFormBase {
     $config = $this->config(self::WS_SETTINGS_KEY);
 
     $form['global'] = [
-      '#type'           => 'fieldset',
+      '#type'           => 'details',
+      '#open'           => TRUE,
       '#title'          => $this->t('Global'),
     ];
 
@@ -55,7 +56,8 @@ class NextpageApiSettingsForm extends ConfigFormBase {
     ];
 
     $form['auth'] = [
-      '#type'           => 'fieldset',
+      '#type'           => 'details',
+      '#open'           => TRUE,
       '#title'          => $this->t('Authentication'),
     ];
 
@@ -75,6 +77,67 @@ class NextpageApiSettingsForm extends ConfigFormBase {
         Settings::get('soc_nextpage_password', ''),
     ];
 
+    $form['context'] = [
+      '#type'           => 'details',
+      '#open'           => FALSE,
+      '#title'          => $this->t('Context'),
+    ];
+
+    $form['context']['context_id'] = [
+      '#type'           => 'textfield',
+      '#title'          => $this->t('Context ID'),
+      '#description'    => $this->t('The context ID to use to request nextPage.'),
+      '#default_value'  => $config->get('context_id') ?? '1',
+    ];
+
+    $form['context']['language_id'] = [
+      '#type'           => 'textfield',
+      '#title'          => $this->t('Language ID'),
+      '#description'    => $this->t('The language ID to use to request nextPage.'),
+      '#default_value'  => $config->get('language_id') ?? '1',
+    ];
+
+    $form['endpoints'] = [
+      '#type'           => 'details',
+      '#open'           => FALSE,
+      '#title'          => $this->t('Endpoints'),
+    ];
+
+    $form['endpoints']['token'] = [
+      '#type'           => 'textfield',
+      '#title'          => $this->t('Auth'),
+      '#description'    => $this->t('Get a token.'),
+      '#default_value'  => $config->get('endpoint_token') ?? 'api/auth',
+    ];
+
+    $form['endpoints']['dicocarac'] = [
+      '#type'           => 'textfield',
+      '#title'          => $this->t('GetAll'),
+      '#description'    => $this->t('Get the characteristics dictionary.'),
+      '#default_value'  => $config->get('endpoint_dicocarac') ?? 'api/sdk-debug/dicocarac/GetAll',
+    ];
+
+    $form['endpoints']['elementsandlinks'] = [
+      '#type'           => 'textfield',
+      '#title'          => $this->t('ElementsAndLinks'),
+      '#description'    => $this->t('Get an element and its characteristics.'),
+      '#default_value'  => $config->get('endpoint_elementsandlinks') ?? 'api/sdk-ext/element/ElementsAndLinks',
+    ];
+
+    $form['endpoints']['descendantsandlinks'] = [
+      '#type'           => 'textfield',
+      '#title'          => $this->t('DescendantsAndLinks'),
+      '#description'    => $this->t('Get an hierarchy.'),
+      '#default_value'  => $config->get('endpoint_descendantsandlinks') ?? 'api/sdk-ext/element/DescendantsAndLinks',
+    ];
+
+    $form['endpoints']['elementsbychartemplate'] = [
+      '#type'           => 'textfield',
+      '#title'          => $this->t('ElementsByCharTemplate'),
+      '#description'    => $this->t('Get elements by product type.'),
+      '#default_value'  => $config->get('endpoint_elementsbychartemplate') ?? 'api/sdk-ext/element/ElementsByCharTemplate',
+    ];
+
     return parent::buildForm($form, $form_state);
   }
 
@@ -85,7 +148,14 @@ class NextpageApiSettingsForm extends ConfigFormBase {
     foreach ([
                'base_url',
                'username',
-               'password',] as $configKey) {
+               'password',
+               'context_id',
+               'language_id',
+               'endpoint_token',
+               'endpoint_dicocarac',
+               'endpoint_elementsandlinks',
+               'endpoint_descendantsandlinks',
+               'endpoint_elementsbychartemplate',] as $configKey) {
       $this->configFactory->getEditable(self::WS_SETTINGS_KEY)
         ->set($configKey, $form_state->getValue($configKey))
         ->save();

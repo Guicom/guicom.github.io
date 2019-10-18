@@ -33,3 +33,11 @@ soc_nextpage.test_element:
     _title: 'Socomec'
   requirements:
     _permission: 'access administration pages'
+
+soc_nextpage.test_decendants:
+  path: '/test/nextpage/descendants'
+  defaults:
+    _controller: '\Drupal\soc_nextpage\Controller\Test::descendantsAndLinks'
+    _title: 'Socomec'
+  requirements:
+    _permission: 'access administration pages'
