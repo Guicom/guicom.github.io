@@ -59,9 +59,9 @@ module:
   language: 0
   layout_discovery: 0
   link: 0
-  link_attributes: 0
   locale: 0
   media: 0
+  menu_link_attributes: 0
   menu_ui: 0
   message: 0
   metatag: 0

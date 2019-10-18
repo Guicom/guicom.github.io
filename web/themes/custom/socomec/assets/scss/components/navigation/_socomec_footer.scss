@@ -4,7 +4,8 @@
  */
 
 // Theming hero block
-#block-socomec-footer{
+#block-socomec-footer,
+#block-socomec-footer-legal-mentions{
   margin: 0.8rem 0;
   ul{
     li{
@@ -17,5 +18,22 @@
         padding: 0.5rem 1.2rem;
       }
     }
+  }
+}
+
+
+#block-copyright{
+  margin-top: 0.8rem;
+  margin-right: 0;
+  margin-left: auto;
+  margin-bottom: 0.8rem;
+  color: #777772;
+  font-family: $font-roboto;
+  font-size: 12px;
+  line-height: 20px;
+  font-weight: 400;
+  padding: 0.5rem 1.2rem;
+  .content{
+    padding:0;
   }
 }
