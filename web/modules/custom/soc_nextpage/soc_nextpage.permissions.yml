@@ -1,0 +1,3 @@
+manage nextpage settings:
+  title: 'Manage nextPage API settings'
+  restrict access: true
