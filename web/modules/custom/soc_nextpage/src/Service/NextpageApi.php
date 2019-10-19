@@ -115,7 +115,7 @@ class NextpageApi extends NextpageBaseApi implements NextpageApiInterface {
    * @return mixed
    */
   protected function returnResults($results) {
-    if (sizeof($results->Results->ResultsExtIDs)) {
+    if (sizeof($results->Results->ResultsExtIDs) || sizeof($results->Results->Caracs)) {
       return $results->Results;
     }
     elseif (sizeof($results->Warnings)) {
