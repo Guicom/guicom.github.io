@@ -103,35 +103,35 @@ class NextpageApiSettingsForm extends ConfigFormBase {
       '#title'          => $this->t('Endpoints'),
     ];
 
-    $form['endpoints']['token'] = [
+    $form['endpoints']['endpoint_token'] = [
       '#type'           => 'textfield',
       '#title'          => $this->t('Auth'),
       '#description'    => $this->t('Get a token.'),
       '#default_value'  => $config->get('endpoint_token') ?? 'api/auth',
     ];
 
-    $form['endpoints']['dicocarac'] = [
+    $form['endpoints']['endpoint_dicocarac'] = [
       '#type'           => 'textfield',
       '#title'          => $this->t('GetAll'),
       '#description'    => $this->t('Get the characteristics dictionary.'),
       '#default_value'  => $config->get('endpoint_dicocarac') ?? 'api/sdk-debug/dicocarac/GetAll',
     ];
 
-    $form['endpoints']['elementsandlinks'] = [
+    $form['endpoints']['endpoint_elementsandlinks'] = [
       '#type'           => 'textfield',
       '#title'          => $this->t('ElementsAndLinks'),
       '#description'    => $this->t('Get an element and its characteristics.'),
       '#default_value'  => $config->get('endpoint_elementsandlinks') ?? 'api/sdk-ext/element/ElementsAndLinks',
     ];
 
-    $form['endpoints']['descendantsandlinks'] = [
+    $form['endpoints']['endpoint_descendantsandlinks'] = [
       '#type'           => 'textfield',
       '#title'          => $this->t('DescendantsAndLinks'),
       '#description'    => $this->t('Get an hierarchy.'),
       '#default_value'  => $config->get('endpoint_descendantsandlinks') ?? 'api/sdk-ext/element/DescendantsAndLinks',
     ];
 
-    $form['endpoints']['elementsbychartemplate'] = [
+    $form['endpoints']['endpoint_elementsbychartemplate'] = [
       '#type'           => 'textfield',
       '#title'          => $this->t('ElementsByCharTemplate'),
       '#description'    => $this->t('Get elements by product type.'),
