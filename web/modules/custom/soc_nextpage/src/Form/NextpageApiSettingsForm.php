@@ -5,6 +5,7 @@ namespace Drupal\soc_nextpage\Form;
 use Drupal\Core\Form\ConfigFormBase;
 use Drupal\Core\Form\FormStateInterface;
 
+use Drupal\Core\Link;
 use Drupal\Core\Site\Settings;
 
 /**
@@ -106,35 +107,65 @@ class NextpageApiSettingsForm extends ConfigFormBase {
     $form['endpoints']['endpoint_token'] = [
       '#type'           => 'textfield',
       '#title'          => $this->t('Auth'),
-      '#description'    => $this->t('Get a token.'),
+      '#description'    => $this->t('Get a token.') . ' ' . Link::createFromRoute('Test',
+          'soc_nextpage.test_get_token', [], [
+            'attributes' => [
+              'target' => '_blank',
+            ],
+          ]
+          )->toString(),
       '#default_value'  => $config->get('endpoint_token') ?? 'api/auth',
     ];
 
     $form['endpoints']['endpoint_dicocarac'] = [
       '#type'           => 'textfield',
       '#title'          => $this->t('GetAll'),
-      '#description'    => $this->t('Get the characteristics dictionary.'),
+      '#description'    => $this->t('Get the characteristics dictionary.') . ' ' . Link::createFromRoute('Test',
+          'soc_nextpage.test_characteristics', [], [
+            'attributes' => [
+              'target' => '_blank',
+            ],
+          ]
+        )->toString(),
       '#default_value'  => $config->get('endpoint_dicocarac') ?? 'api/sdk-debug/dicocarac/GetAll',
     ];
 
     $form['endpoints']['endpoint_elementsandlinks'] = [
       '#type'           => 'textfield',
       '#title'          => $this->t('ElementsAndLinks'),
-      '#description'    => $this->t('Get an element and its characteristics.'),
+      '#description'    => $this->t('Get an element and its characteristics.') . ' ' . Link::createFromRoute('Test',
+          'soc_nextpage.test_element', [], [
+            'attributes' => [
+              'target' => '_blank',
+            ],
+          ]
+        )->toString(),
       '#default_value'  => $config->get('endpoint_elementsandlinks') ?? 'api/sdk-ext/element/ElementsAndLinks',
     ];
 
     $form['endpoints']['endpoint_descendantsandlinks'] = [
       '#type'           => 'textfield',
       '#title'          => $this->t('DescendantsAndLinks'),
-      '#description'    => $this->t('Get an hierarchy.'),
+      '#description'    => $this->t('Get an hierarchy.') . ' ' . Link::createFromRoute('Test',
+          'soc_nextpage.test_descendants', [], [
+            'attributes' => [
+              'target' => '_blank',
+            ],
+          ]
+        )->toString(),
       '#default_value'  => $config->get('endpoint_descendantsandlinks') ?? 'api/sdk-ext/element/DescendantsAndLinks',
     ];
 
     $form['endpoints']['endpoint_elementsbychartemplate'] = [
       '#type'           => 'textfield',
       '#title'          => $this->t('ElementsByCharTemplate'),
-      '#description'    => $this->t('Get elements by product type.'),
+      '#description'    => $this->t('Get elements by product type.') . ' ' . Link::createFromRoute('Test',
+          'soc_nextpage.test_elements_by_char_template', [], [
+            'attributes' => [
+              'target' => '_blank',
+            ],
+          ]
+        )->toString(),
       '#default_value'  => $config->get('endpoint_elementsbychartemplate') ?? 'api/sdk-ext/element/ElementsByCharTemplate',
     ];
 
