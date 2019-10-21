@@ -10,6 +10,7 @@ dependencies:
     - paragraphs.paragraphs_type.model_image
     - paragraphs.paragraphs_type.model_testimony
     - paragraphs.paragraphs_type.model_text
+    - paragraphs.paragraphs_type.video_embed
   module:
     - entity_reference_revisions
 id: node.landing_page.field_body
@@ -32,6 +33,7 @@ settings:
       model_cta: model_cta
       model_testimony: model_testimony
       model_text: model_text
+      video_embed: video_embed
     target_bundles_drag_drop:
       hero_paragraph:
         weight: 5
@@ -64,6 +66,6 @@ settings:
         weight: 14
         enabled: false
       video_embed:
+        enabled: true
         weight: 18
-        enabled: false
 field_type: entity_reference_revisions
