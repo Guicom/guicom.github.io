@@ -17,7 +17,7 @@ ol li{
 }
 
 h3{
-  color: #004F9F;
+  color: $blue;
   font-family: $font-roboto;
   font-size: 24px;
   font-weight: 300;
@@ -26,7 +26,7 @@ h3{
 }
 
 h4{
-  color: #000000;
+  color: $black;
   font-family: $font-roboto;
   font-size: 16px;
   font-weight: 700;
@@ -34,7 +34,7 @@ h4{
   margin: 0 0 10px 0;
 }
 h5{
-  color: #000000;
+  color: $black;
   font-family: $font-roboto;
   font-size: 14px;
   font-weight: 700;
@@ -42,7 +42,7 @@ h5{
   margin: 0 0 10px 0;
 }
 h6{
-  color: #000000;
+  color: $black;
   font-family: $font-roboto;
   font-size: 12px;
   font-weight: 700;
@@ -56,7 +56,7 @@ strong {
 }
 
 a{
-  color: #004F9F;
+  color: $blue;
   font-family: $font-roboto;
   font-size: 16px;
   line-height: 25px;
@@ -66,7 +66,7 @@ a{
   &.custom-cke-link-cta-2,
   &.custom-cke-link-cta-3,
   &.custom-cke-link-cta-4{
-    color: #004F9F;
+    color: $blue;
     font-family: $font-poppins;
     font-size: 12px;
     font-weight: 600;
@@ -92,7 +92,7 @@ a{
       mask: url(../images/ckeditor/chevron-right-circle.svg) no-repeat 50% 50%;
       -webkit-mask-size: cover;
       mask-size: cover;
-      background-color: #CFDAEE;
+      background-color: $blue_lighter;
       line-height: 1px;
       vertical-align: middle;
       margin-right: 5px;
@@ -100,7 +100,7 @@ a{
     }
   }
   &.custom-cke-link-cta-1{
-    background-color: #FFCC00;
+    background-color: $yellow;
     &:before{
       content: '';
       height: 20px;
@@ -111,7 +111,7 @@ a{
       mask: url(../images/ckeditor/download.svg) no-repeat 50% 50%;
       -webkit-mask-size: cover;
       mask-size: cover;
-      background-color: #004F9F;
+      background-color: $blue;
       line-height: 1px;
       vertical-align: middle;
       margin-right: 5px;
@@ -119,8 +119,8 @@ a{
     }
   }
   &.custom-cke-link-cta-2{
-    color: #FFFFFF;
-    background-color: #0070C0;
+    color: $white;
+    background-color: $blue_light;
     &:before{
       content: '';
       height: 20px;
@@ -131,7 +131,7 @@ a{
       mask: url(../images/ckeditor/Quicklook.svg) no-repeat 50% 50%;
       -webkit-mask-size: cover;
       mask-size: cover;
-      background-color: #ffffff;
+      background-color: $white;
       line-height: 1px;
       vertical-align: middle;
       margin-right: 5px;
@@ -139,7 +139,7 @@ a{
     }
   }
   &.custom-cke-link-cta-3{
-    background-color: #CFDAEE;
+    background-color: $blue_lighter;
     &:before{
       content: '';
       height: 20px;
@@ -150,7 +150,7 @@ a{
       mask: url(../images/ckeditor/Quicklook.svg) no-repeat 50% 50%;
       -webkit-mask-size: cover;
       mask-size: cover;
-      background-color: #004F9F;
+      background-color: $blue;
       line-height: 1px;
       vertical-align: middle;
       margin-right: 5px;
@@ -159,7 +159,7 @@ a{
   }
   &.custom-cke-link-cta-4{
     padding: 14px 29px;
-    border:solid 1px #CFDAEE;
+    border:solid 1px $blue_lighter;
     &:before{
       content: '';
       height: 20px;
@@ -170,7 +170,7 @@ a{
       mask: url(../images/ckeditor/Quicklook.svg) no-repeat 50% 50%;
       -webkit-mask-size: cover;
       mask-size: cover;
-      background-color: #004F9F;
+      background-color: $blue;
       line-height: 1px;
       vertical-align: middle;
       margin-right: 5px;
@@ -191,21 +191,21 @@ table{
     &:nth-child(odd) {
       background-color: #F0EFEF;
       th{
-        background-color: #b9cbe5;
+        background-color: $blue_lighter_alt;
       }
     }
     &:nth-child(even) {
-      background-color: #FFFFFF;
+      background-color: $white;
 
       th{
-        background-color: #cfdaee;
+        background-color: $blue_lighter;
       }
     }
   }
   th{
     border: none;
     border-bottom:1px #c0cfdf solid;
-    color: #004F9F;
+    color: $blue;
     font-family: Roboto;
     font-size: 16px;
     font-weight: 700;

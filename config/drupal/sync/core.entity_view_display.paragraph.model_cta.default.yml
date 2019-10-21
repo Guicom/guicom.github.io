@@ -1,0 +1,54 @@
+uuid: df4d84ed-ad45-4ee1-b02c-0a804cbf34fa
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.model_cta.field_cta
+    - field.field.paragraph.model_cta.field_cta_color_list
+    - field.field.paragraph.model_cta.field_font_awesome_icon
+    - field.field.paragraph.model_cta.field_target
+    - paragraphs.paragraphs_type.model_cta
+  module:
+    - fontawesome
+    - link
+    - options
+id: paragraph.model_cta.default
+targetEntityType: paragraph
+bundle: model_cta
+mode: default
+content:
+  field_cta:
+    weight: 0
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+  field_cta_color_list:
+    weight: 1
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_font_awesome_icon:
+    weight: 2
+    label: hidden
+    settings:
+      layers: false
+    third_party_settings: {  }
+    type: fontawesome_icon_formatter
+    region: content
+  field_target:
+    weight: 3
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+hidden: {  }
