@@ -4,14 +4,12 @@ namespace Drupal\soc_nextpage;
 
 interface NextpageApiInterface {
 
-  const AUTH_URI = '/api/auth';
-
   /**
    * Get current API token.
    *
-   * @return string
+   * @return string|null
    */
-  public function getApiToken(): string;
+  public function getApiToken();
 
   /**
    * Check an API token validity.
@@ -20,11 +18,11 @@ interface NextpageApiInterface {
    */
   public function generateApiToken(): string;
 
-  public function elementsAndLinks();
+  public function elementsAndLinks($extIds, $paths, $dcExtIds);
 
-  public function descendantsAndLinks();
+  public function descendantsAndLinks($extIds, $onlyOneLevel, $paths, $dcExtIds);
 
-  public function elementsByCharTemplate();
+  public function elementsByCharTemplate($charTemplateExtID, $paths);
 
   public function characteristicsDictionary();
 
