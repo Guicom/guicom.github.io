@@ -1,0 +1,29 @@
+.paragraph--type--model-cta {
+  text-align: center;
+  .socomec-cta-btn{
+    padding: 15px 30px;
+    color: $blue;
+    font-family: $font-poppins;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    line-height: 20px;
+    display: inline-block;
+    text-decoration: none;
+    border:solid 1px $blue_lighter;
+    &.cta-blue-light{
+      background-color: $blue_light;
+      color:$white;
+      border:solid 1px $blue_light;
+    }
+    &.cta-blue-lighter{
+      background-color: $blue_lighter;
+      color:$blue;
+    }
+    &.cta-yellow{
+      background-color: $yellow;
+      color:$blue;
+      border:solid 1px $yellow;
+    }
+  }
+}
