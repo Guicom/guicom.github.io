@@ -17,39 +17,47 @@ settings:
         -
           name: Formatting
           items:
+            - '-'
+            - Styles
+            - '-'
             - Bold
             - Italic
+            - Underline
+            - Strike
+            - Superscript
+            - Subscript
+            - '-'
+            - '-'
+            - RemoveFormat
+            - '-'
+            - JustifyLeft
+            - JustifyCenter
+            - JustifyRight
+            - JustifyBlock
+            - '-'
         -
           name: Linking
           items:
             - DrupalLink
             - DrupalUnlink
         -
-          name: Lists
-          items:
-            - BulletedList
-            - NumberedList
-        -
           name: Media
           items:
             - Blockquote
-            - DrupalImage
         -
           name: 'Block Formatting'
           items:
-            - Format
-        -
-          name: Tools
-          items:
-            - Source
+            - Language
   plugins:
+    language:
+      language_list: un
     stylescombo:
-      styles: ''
+      styles: "p|Paragraph\r\nh3.custom-cke-title-3|Title h3\r\nh4.custom-cke-title-4|Title h4\r\nh5.custom-cke-title-5|Title h5\r\nh6.custom-cke-title-6|Title h6\r\na.custom-cke-link-elaborate|Elaborate link\r\na.custom-cke-link-cta-1|Link cta 1\r\na.custom-cke-link-cta-2|Link cta 2\r\na.custom-cke-link-cta-3|Link cta 3\r\na.custom-cke-link-cta-4|Link cta 4"
 image_upload:
   status: true
   scheme: public
   directory: inline-images
   max_size: ''
   max_dimensions:
-    width: 0
-    height: 0
+    width: null
+    height: null
