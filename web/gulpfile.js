@@ -11,7 +11,7 @@ const paths = {
   scss: {
     src: 'themes/custom/socomec/assets/scss/style.scss',
     pardot: 'themes/custom/socomec/assets/scss/pardot.scss',
-    pardotdest: 'themes/custom/socomec/assets/guicom.github.io',
+    pardotdest: 'themes/custom/socomec/assets/pardot-assets',
     ckeditor: 'themes/custom/socomec/assets/scss/ckeditor.scss',
     dest: 'themes/custom/socomec/assets/css',
     watch: 'themes/custom/socomec/assets/scss/**/*.scss',
@@ -46,7 +46,7 @@ function styles () {
     .pipe(gulp.dest(paths.scss.dest))
 }
 
-function pardot () {
+function pardotcss () {
   return gulp.src([paths.scss.pardot])
     .pipe(sourcemaps.init())
     .pipe(sass().on('error', sass.logError))
@@ -77,7 +77,9 @@ function serve () {
   gulp.watch([paths.scss.watch, paths.scss.bootstrap], styles).on('change', browserSync.reload)
 }
 
-const build = gulp.series(styles, gulp.parallel(js, serve, pardot))
+const build = gulp.series(styles, gulp.parallel(js, serve))
+
+gulp.task('pardot', gulp.series(pardotcss));
 
 exports.styles = styles
 exports.js = js
