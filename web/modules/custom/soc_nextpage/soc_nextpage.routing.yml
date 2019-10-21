@@ -6,4 +6,46 @@ soc_nextpage.nextpage_ws_settings:
     _form: '\Drupal\soc_nextpage\Form\NextpageApiSettingsForm'
     _title: 'Socomec'
   requirements:
-    _permission: 'access administration pages'
+    _permission: 'manage nextpage settings'
+
+# Tests
+
+soc_nextpage.test_get_token:
+  path: '/test/nextpage/token'
+  defaults:
+    _controller: '\Drupal\soc_nextpage\Controller\Test::getToken'
+    _title: 'Socomec'
+  requirements:
+    _permission: 'manage nextpage settings'
+
+soc_nextpage.test_characteristics:
+  path: '/test/nextpage/characteristics'
+  defaults:
+    _controller: '\Drupal\soc_nextpage\Controller\Test::characteristicsDictionary'
+    _title: 'Socomec'
+  requirements:
+    _permission: 'manage nextpage settings'
+
+soc_nextpage.test_element:
+  path: '/test/nextpage/element'
+  defaults:
+    _controller: '\Drupal\soc_nextpage\Controller\Test::elementsAndLinks'
+    _title: 'Socomec'
+  requirements:
+    _permission: 'manage nextpage settings'
+
+soc_nextpage.test_descendants:
+  path: '/test/nextpage/descendants'
+  defaults:
+    _controller: '\Drupal\soc_nextpage\Controller\Test::descendantsAndLinks'
+    _title: 'Socomec'
+  requirements:
+    _permission: 'manage nextpage settings'
+
+soc_nextpage.test_elements_by_char_template:
+  path: '/test/nextpage/elementsbychartemplate'
+  defaults:
+    _controller: '\Drupal\soc_nextpage\Controller\Test::elementsByCharTemplate'
+    _title: 'Socomec'
+  requirements:
+    _permission: 'manage nextpage settings'

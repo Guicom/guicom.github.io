@@ -1,0 +1,8 @@
+uuid: 35d39852-ecc9-4624-a51a-f05dd1ed2f63
+langcode: en
+status: true
+dependencies: {  }
+id: link
+label: 'Link block'
+revision: 1
+description: 'A basic block contains a title and a link.'

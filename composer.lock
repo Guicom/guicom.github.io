@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "dbeee0649e1ae715b22ba146f8b33d9c",
+    "content-hash": "9e007dc0529472fc11e903daa474ff8e",
     "packages": [
         {
             "name": "actency/foundation",
@@ -4485,21 +4485,21 @@
             }
         },
         {
-            "name": "drupal/link_attributes",
-            "version": "1.9.0",
+            "name": "drupal/menu_link_attributes",
+            "version": "1.0.0",
             "source": {
                 "type": "git",
-                "url": "https://git.drupalcode.org/project/link_attributes.git",
-                "reference": "8.x-1.9"
+                "url": "https://git.drupalcode.org/project/menu_link_attributes.git",
+                "reference": "8.x-1.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/link_attributes-8.x-1.9.zip",
-                "reference": "8.x-1.9",
-                "shasum": "efbfc869c2e0b13b1bd5c9ff01dd51d3f2a6b755"
+                "url": "https://ftp.drupal.org/files/projects/menu_link_attributes-8.x-1.0.zip",
+                "reference": "8.x-1.0",
+                "shasum": "6386cc2fcd7ae0d17d2a82d690866028b132055c"
             },
             "require": {
-                "drupal/core": "^8.4"
+                "drupal/core": "*"
             },
             "type": "drupal-module",
             "extra": {
@@ -4507,8 +4507,8 @@
                     "dev-1.x": "1.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-1.9",
-                    "datestamp": "1564012686",
+                    "version": "8.x-1.0",
+                    "datestamp": "1507195827",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -4517,18 +4517,22 @@
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
             "license": [
-                "GPL-2.0-or-later"
+                "GPL-2.0+"
             ],
             "authors": [
                 {
-                    "name": "larowlan",
-                    "homepage": "https://www.drupal.org/user/395439"
+                    "name": "yannickoo",
+                    "homepage": "https://www.drupal.org/user/531118"
                 }
             ],
-            "description": "Provides a widget to allow settings of link attributes for menu links.",
-            "homepage": "https://www.drupal.org/project/link_attributes",
+            "description": "Allows you to add attributes to menu links.",
+            "homepage": "http://drupal.org/project/menu_link_attributes",
+            "keywords": [
+                "Drupal"
+            ],
             "support": {
-                "source": "https://git.drupalcode.org/project/link_attributes"
+                "source": "http://cgit.drupalcode.org/menu_link_attributes",
+                "issues": "http://drupal.org/project/issues/menu_link_attributes"
             }
         },
         {
@@ -4638,6 +4642,9 @@
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
                     }
+                },
+                "patches_applied": {
+                    "Add hreflang to Metatag": "https://www.drupal.org/files/issues/2018-09-06/2956982-6.patch"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",

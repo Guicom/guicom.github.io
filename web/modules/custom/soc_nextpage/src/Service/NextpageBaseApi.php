@@ -14,7 +14,7 @@ class NextpageBaseApi extends BaseApi {
   const AUTH_URI = '/api/auth';
 
   /** @var string $baseUrl */
-  protected $baseUrl;
+  public $baseUrl;
 
   /** @var string $config */
   protected $userName;
@@ -22,11 +22,20 @@ class NextpageBaseApi extends BaseApi {
   /** @var string $password */
   protected $password;
 
+  /** @var string $contextId */
+  protected $contextId;
+
+  /** @var string $languageId */
+  protected $languageId;
+
   /** @var string $apiToken */
   protected $apiToken;
 
   /** @var string $apiTokenExpiration */
   protected $apiTokenExpiration;
+
+  /** @var array $endpoints */
+  protected $endpoints;
 
   /** @var \Drupal\Core\TempStore\SharedTempStore $tempStore */
   protected $tempStore;
@@ -43,15 +52,125 @@ class NextpageBaseApi extends BaseApi {
 
     $this->tempStore = $sharedTempStoreFactory->get('soc_nextpage');
 
-    $config = $configFactory->getEditable('soc_nextpage.config');
+    $config = $configFactory->getEditable('soc_nextpage.nextpage_ws');
 
     $baseUrl = $config->get('base_url') ?? Settings::get('nextpage_base_url');
     $user = $config->get('username') ?? Settings::get('nextpage_username');
     $password = $config->get('password') ?? Settings::get('nextpage_password');
+    $contextId = $config->get('context_id') ?? '1';
+    $languageId = $config->get('language_id') ?? '1';
+    $endpoints = [
+      'token' => $config->get('endpoint_token') ?? 'api/auth',
+      'dicocarac' => $config->get('endpoint_dicocarac') ?? 'api/sdk-debug/dicocarac/GetAll',
+      'elementsandlinks' => $config->get('endpoint_elementsandlinks') ?? 'api/sdk-ext/element/ElementsAndLinks',
+      'descendantsandlinks' => $config->get('endpoint_descendantsandlinks') ?? 'api/sdk-ext/element/DescendantsAndLinks',
+      'elementsbychartemplate' => $config->get('endpoint_elementsbychartemplate') ?? 'api/sdk-ext/element/ElementsByCharTemplate',
+    ];
 
     $this->setBaseUrl($baseUrl);
     $this->setUserName($user);
     $this->setPassword($password);
+    $this->setContextId($contextId);
+    $this->setLanguageId($languageId);
+    $this->setEndpoints($endpoints);
+  }
+
+  /**
+   * @param string $apiToken
+   *
+   * @throws \Exception
+   */
+  public function setApiToken(string $apiToken): void {
+    $this->apiToken = $apiToken;
+    try {
+      $this->tempStore->set('api_token', $apiToken);
+      $dateTime = new \DateTimeImmutable();
+      $expiration = $dateTime->modify('+2 hours');
+      $this->setApiTokenExpiration($expiration->getTimestamp());
+    } catch (TempStoreException $e) {
+      \Drupal::logger('soc_nextpage')->error($e->getMessage());
+    }
+  }
+
+  /**
+   * @return int
+   */
+  public function getApiTokenExpiration(): int {
+    return $this->apiTokenExpiration ?? $this->tempStore->get('api_token_expiration');
+  }
+
+  /**
+   * @param int $apiTokenExpiration
+   */
+  public function setApiTokenExpiration(int $apiTokenExpiration): void {
+    $this->apiTokenExpiration = $apiTokenExpiration;
+    try {
+      $this->tempStore->set('api_token_expiration', $apiTokenExpiration);
+    } catch (TempStoreException $e) {
+      \Drupal::logger('soc_nextpage')->error($e->getMessage());
+    }
+  }
+
+  /**
+   * @inheritdoc
+   */
+  public function prepareCall($params = NULL,
+                              $method = 'POST',
+                              $format = 'json',
+                              $auth = TRUE) {
+    $handle = Parent::prepareCall($params, $method, $format, $auth);
+    // if request needs authentication
+    if ($auth === TRUE) {
+      $token = '';
+      // if there is no token, generate one
+      if (!strlen($this->getApiToken())) {
+        try {
+          $token = $this->generateApiToken();
+        } catch (InvalidTokenException $e) {
+          \Drupal::logger('soc_nextpage')->error($e->getMessage());
+        }
+      }
+      else {
+        // if token is expired, generate one
+        if (time() > $this->getApiTokenExpiration()) {
+          try {
+            $token = $this->generateApiToken();
+          } catch (InvalidTokenException $e) {
+            \Drupal::logger('soc_nextpage')->error($e->getMessage());
+          }
+        }
+        // everything is ok, use the current token
+        else {
+          $token = $this->getApiToken();
+        }
+      }
+      if (strlen($token)) {
+        $headers = $this->getHeaders();
+        $headers[] = 'ApiToken: ' . $token;
+        $this->setHeaders($headers);
+      }
+    }
+    return $handle;
+  }
+
+  /**
+   * Get a nextPage token.
+   *
+   * @return string
+   * @throws \Drupal\soc_nextpage\Exception\InvalidTokenException
+   */
+  public function generateApiToken(): string {
+    $params = [
+      'body' => [
+        'Username' => $this->getUserName(),
+        'Password' => $this->getPassword(),
+      ],
+    ];
+    if (!$token = parent::call(self::AUTH_URI, $params, 'POST', 'json', FALSE)) {
+      throw new InvalidTokenException('Unable to generate valid token.');
+    }
+    $this->setApiToken($token);
+    return $token;
   }
 
   /**
@@ -97,97 +216,54 @@ class NextpageBaseApi extends BaseApi {
   }
 
   /**
-   * @return string
+   * Get stored API token.
+   *
+   * @return string|null
    */
-  public function getApiToken(): string {
+  public function getApiToken() {
     return $this->apiToken ?? $this->tempStore->get('api_token');
   }
 
   /**
-   * @param string $apiToken
-   */
-  public function setApiToken(string $apiToken): void {
-    $this->apiToken = $apiToken;
-    try {
-      $this->tempStore->set('api_token', $apiToken);
-    } catch (TempStoreException $e) {
-      \Drupal::logger('soc_nextpage')->error($e->getMessage());
-    }
-  }
-
-  /**
-   * @return int
-   */
-  public function getApiTokenExpiration(): int {
-    return $this->apiTokenExpiration ?? $this->tempStore->get('api_token_expiration');
-  }
-
-  /**
-   * @param int $apiTokenExpiration
-   */
-  public function setApiTokenExpiration(string $apiTokenExpiration): void {
-    $this->apiTokenExpiration = $apiTokenExpiration;
-    try {
-      $this->tempStore->set('api_token_expiration', $apiTokenExpiration);
-    } catch (TempStoreException $e) {
-      \Drupal::logger('soc_nextpage')->error($e->getMessage());
-    }
-  }
-
-  /**
-   * @inheritdoc
-   */
-  public function prepareCall($params = NULL,
-                              $method = 'POST',
-                              $format = 'json',
-                              $auth = TRUE) {
-    $handle = Parent::prepareCall($params, $method, $format, $auth);
-    // if request needs authentication
-    if ($auth === TRUE) {
-      $token = '';
-      // if there is no token, generate one
-      if (!strlen($this->getApiToken())) {
-        try {
-          $token = $this->generateApiToken();
-        } catch (InvalidTokenException $e) {
-          \Drupal::logger('soc_nextpage')->error($e->getMessage());
-        }
-      }
-      else {
-        // if token is expired, generate one
-        if (time() > $this->getApiTokenExpiration()) {
-          try {
-            $token = $this->generateApiToken();
-          } catch (InvalidTokenException $e) {
-            \Drupal::logger('soc_nextpage')->error($e->getMessage());
-          }
-        }
-      }
-      if (strlen($token)) {
-        curl_setopt($handle, CURLOPT_HTTPHEADER, ['ApiToken: ' . $token]);
-      }
-    }
-    return $handle;
-  }
-
-  /**
-   * Get a nextPage token.
-   *
    * @return string
-   * @throws \Drupal\soc_nextpage\Exception\InvalidTokenException
    */
-  public function generateApiToken(): string {
-    $params = [
-      'Username' => $this->getUserName(),
-      'Password' => $this->getPassword(),
-    ];
-    $url = $this->getBaseUrl() . self::AUTH_URI;
-    if (!$tokenCall = parent::call($url, $params, 'POST', 'json', FALSE)) {
-      throw new InvalidTokenException('Unable to generate valid token.');
-    }
-    $token = '';
-    $this->setApiToken($token);
-    return $token;
+  public function getContextId(): string {
+    return $this->contextId;
+  }
+
+  /**
+   * @param string $contextId
+   */
+  public function setContextId(string $contextId): void {
+    $this->contextId = $contextId;
+  }
+
+  /**
+   * @return string
+   */
+  public function getLanguageId(): string {
+    return $this->languageId;
+  }
+
+  /**
+   * @param string $languageId
+   */
+  public function setLanguageId(string $languageId): void {
+    $this->languageId = $languageId;
+  }
+
+  /**
+   * @return array
+   */
+  public function getEndpoints(): array {
+    return $this->endpoints;
+  }
+
+  /**
+   * @param array $endpoints
+   */
+  public function setEndpoints(array $endpoints) {
+    $this->endpoints = $endpoints;
   }
 
 }
