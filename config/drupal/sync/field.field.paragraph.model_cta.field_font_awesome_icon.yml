@@ -1,0 +1,21 @@
+uuid: 1b6c5f69-af1b-4469-a8aa-9157854a9b05
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_font_awesome_icon
+    - paragraphs.paragraphs_type.model_cta
+  module:
+    - fontawesome
+id: paragraph.model_cta.field_font_awesome_icon
+field_name: field_font_awesome_icon
+entity_type: paragraph
+bundle: model_cta
+label: 'Font awesome icon'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: fontawesome_icon
