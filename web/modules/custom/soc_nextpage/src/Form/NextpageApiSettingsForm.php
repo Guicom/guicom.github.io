@@ -5,6 +5,7 @@ namespace Drupal\soc_nextpage\Form;
 use Drupal\Core\Form\ConfigFormBase;
 use Drupal\Core\Form\FormStateInterface;
 
+use Drupal\Core\Link;
 use Drupal\Core\Site\Settings;
 
 /**
@@ -17,7 +18,7 @@ class NextpageApiSettingsForm extends ConfigFormBase {
   const WS_SETTINGS_KEY = 'soc_nextpage.nextpage_ws';
 
   const DEFAULT_BASE_URL = 'http://socomec-dummies.actency.fr/';
-  const DEFAULT_USER = 'admin';
+  const DEFAULT_USERNAME = 'admin';
 
   /**
    * {@inheritdoc}
@@ -42,7 +43,8 @@ class NextpageApiSettingsForm extends ConfigFormBase {
     $config = $this->config(self::WS_SETTINGS_KEY);
 
     $form['global'] = [
-      '#type'           => 'fieldset',
+      '#type'           => 'details',
+      '#open'           => TRUE,
       '#title'          => $this->t('Global'),
     ];
 
@@ -55,16 +57,17 @@ class NextpageApiSettingsForm extends ConfigFormBase {
     ];
 
     $form['auth'] = [
-      '#type'           => 'fieldset',
+      '#type'           => 'details',
+      '#open'           => TRUE,
       '#title'          => $this->t('Authentication'),
     ];
 
-    $form['auth']['user'] = [
+    $form['auth']['username'] = [
       '#type'           => 'textfield',
-      '#title'          => $this->t('User'),
-      '#description'    => $this->t('The user to use to request nextPage.'),
-      '#default_value'  => $config->get('user') ??
-        Settings::get('soc_nextpage_user', self::DEFAULT_USER),
+      '#title'          => $this->t('Username'),
+      '#description'    => $this->t('The username to use to request nextPage.'),
+      '#default_value'  => $config->get('username') ??
+        Settings::get('soc_nextpage_username', self::DEFAULT_USERNAME),
     ];
 
     $form['auth']['password'] = [
@@ -73,6 +76,97 @@ class NextpageApiSettingsForm extends ConfigFormBase {
       '#description'    => $this->t('The password to use to request nextPage.'),
       '#default_value'  => $config->get('password') ??
         Settings::get('soc_nextpage_password', ''),
+    ];
+
+    $form['context'] = [
+      '#type'           => 'details',
+      '#open'           => FALSE,
+      '#title'          => $this->t('Context'),
+    ];
+
+    $form['context']['context_id'] = [
+      '#type'           => 'textfield',
+      '#title'          => $this->t('Context ID'),
+      '#description'    => $this->t('The context ID to use to request nextPage.'),
+      '#default_value'  => $config->get('context_id') ?? '1',
+    ];
+
+    $form['context']['language_id'] = [
+      '#type'           => 'textfield',
+      '#title'          => $this->t('Language ID'),
+      '#description'    => $this->t('The language ID to use to request nextPage.'),
+      '#default_value'  => $config->get('language_id') ?? '1',
+    ];
+
+    $form['endpoints'] = [
+      '#type'           => 'details',
+      '#open'           => FALSE,
+      '#title'          => $this->t('Endpoints'),
+    ];
+
+    $form['endpoints']['endpoint_token'] = [
+      '#type'           => 'textfield',
+      '#title'          => $this->t('Auth'),
+      '#description'    => $this->t('Get a token.') . ' ' . Link::createFromRoute('Test',
+          'soc_nextpage.test_get_token', [], [
+            'attributes' => [
+              'target' => '_blank',
+            ],
+          ]
+          )->toString(),
+      '#default_value'  => $config->get('endpoint_token') ?? 'api/auth',
+    ];
+
+    $form['endpoints']['endpoint_dicocarac'] = [
+      '#type'           => 'textfield',
+      '#title'          => $this->t('GetAll'),
+      '#description'    => $this->t('Get the characteristics dictionary.') . ' ' . Link::createFromRoute('Test',
+          'soc_nextpage.test_characteristics', [], [
+            'attributes' => [
+              'target' => '_blank',
+            ],
+          ]
+        )->toString(),
+      '#default_value'  => $config->get('endpoint_dicocarac') ?? 'api/sdk-debug/dicocarac/GetAll',
+    ];
+
+    $form['endpoints']['endpoint_elementsandlinks'] = [
+      '#type'           => 'textfield',
+      '#title'          => $this->t('ElementsAndLinks'),
+      '#description'    => $this->t('Get an element and its characteristics.') . ' ' . Link::createFromRoute('Test',
+          'soc_nextpage.test_element', [], [
+            'attributes' => [
+              'target' => '_blank',
+            ],
+          ]
+        )->toString(),
+      '#default_value'  => $config->get('endpoint_elementsandlinks') ?? 'api/sdk-ext/element/ElementsAndLinks',
+    ];
+
+    $form['endpoints']['endpoint_descendantsandlinks'] = [
+      '#type'           => 'textfield',
+      '#title'          => $this->t('DescendantsAndLinks'),
+      '#description'    => $this->t('Get an hierarchy.') . ' ' . Link::createFromRoute('Test',
+          'soc_nextpage.test_descendants', [], [
+            'attributes' => [
+              'target' => '_blank',
+            ],
+          ]
+        )->toString(),
+      '#default_value'  => $config->get('endpoint_descendantsandlinks') ?? 'api/sdk-ext/element/DescendantsAndLinks',
+    ];
+
+    $form['endpoints']['endpoint_elementsbychartemplate'] = [
+      '#type'           => 'textfield',
+      '#title'          => $this->t('ElementsByCharTemplate'),
+      '#description'    => $this->t('Get elements by product type.') . ' ' . Link::createFromRoute('Test',
+          'soc_nextpage.test_elements_by_char_template', [], [
+            'attributes' => [
+              'target' => '_blank',
+            ],
+          ]
+        )->toString(),
+      '#default_value'  => $config->get('endpoint_elementsbychartemplate') ?? 'api/sdk-ext/element/ElementsByCharTemplate',
     ];
 
     return parent::buildForm($form, $form_state);
@@ -84,8 +178,15 @@ class NextpageApiSettingsForm extends ConfigFormBase {
   public function submitForm(array &$form, FormStateInterface $form_state) {
     foreach ([
                'base_url',
-               'user',
-               'password',] as $configKey) {
+               'username',
+               'password',
+               'context_id',
+               'language_id',
+               'endpoint_token',
+               'endpoint_dicocarac',
+               'endpoint_elementsandlinks',
+               'endpoint_descendantsandlinks',
+               'endpoint_elementsbychartemplate',] as $configKey) {
       $this->configFactory->getEditable(self::WS_SETTINGS_KEY)
         ->set($configKey, $form_state->getValue($configKey))
         ->save();
