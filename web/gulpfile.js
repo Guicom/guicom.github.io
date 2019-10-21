@@ -11,6 +11,7 @@ const paths = {
   scss: {
     src: 'themes/custom/socomec/assets/scss/style.scss',
     pardot: 'themes/custom/socomec/assets/scss/pardot.scss',
+    pardotdest: 'themes/custom/socomec/assets/guicom.github.io',
     ckeditor: 'themes/custom/socomec/assets/scss/ckeditor.scss',
     dest: 'themes/custom/socomec/assets/css',
     watch: 'themes/custom/socomec/assets/scss/**/*.scss',
@@ -26,7 +27,7 @@ const paths = {
 
 // Compile sass into CSS & auto-inject into browsers
 function styles () {
-  return gulp.src([paths.scss.bootstrap, paths.scss.src, paths.scss.pardot, paths.scss.ckeditor])
+  return gulp.src([paths.scss.bootstrap, paths.scss.src,paths.scss.ckeditor])
     .pipe(sourcemaps.init())
     .pipe(sass().on('error', sass.logError))
     .pipe(postcss([autoprefixer({
@@ -45,6 +46,26 @@ function styles () {
     .pipe(gulp.dest(paths.scss.dest))
 }
 
+function pardot () {
+  return gulp.src([paths.scss.pardot])
+    .pipe(sourcemaps.init())
+    .pipe(sass().on('error', sass.logError))
+    .pipe(postcss([autoprefixer({
+      browsers: [
+        'Chrome >= 35',
+        'Firefox >= 38',
+        'Edge >= 12',
+        'Explorer >= 10',
+        'iOS >= 8',
+        'Safari >= 8',
+        'Android 2.3',
+        'Android >= 4',
+        'Opera >= 12']
+    })]))
+    .pipe(sourcemaps.write())
+    .pipe(gulp.dest(paths.scss.pardotdest))
+}
+
 // Move the javascript files into our js folder
 function js () {
   return gulp.src([paths.js.bootstrap, paths.js.jquery, paths.js.popper])
@@ -56,7 +77,7 @@ function serve () {
   gulp.watch([paths.scss.watch, paths.scss.bootstrap], styles).on('change', browserSync.reload)
 }
 
-const build = gulp.series(styles, gulp.parallel(js, serve))
+const build = gulp.series(styles, gulp.parallel(js, serve, pardot))
 
 exports.styles = styles
 exports.js = js
