@@ -86,6 +86,5 @@ For install
 * go to web/themes/custom/socomec/assets
 * git clone git@github.com:Guicom/guicom.github.io.git pardot-assets
 
-A specific task is added into defaut gulp watch in order to compile css files.
-Each modificatioono must be push on master branch.
+To compile CSS you must launch `gulp pardot` 
 
