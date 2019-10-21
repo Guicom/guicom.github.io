@@ -146,6 +146,9 @@
             },
             "actency/foundation": {
                 "language UUID patch": "https://gitlab.com/actency/utils/drupal/foundation/merge_requests/2.diff"
+            },
+            "drupal/core": {
+                "Media library causes validation errors when it is used in a required field of a nested form": "https://www.drupal.org/files/issues/2019-09-28/3003150-92.patch"
             }
         }
     }
