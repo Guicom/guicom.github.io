@@ -78,7 +78,7 @@ class SocAccessRedirectRedirectSubscriber implements EventSubscriberInterface {
         $response->expire();
         $event->setResponse($response);
       }
-      else{
+      else {
         $redirect_url = Url::fromRoute('<front>');
         $response = new RedirectResponse($redirect_url->toString(), 301);
         $response->expire();
