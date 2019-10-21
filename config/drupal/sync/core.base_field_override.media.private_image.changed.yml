@@ -1,0 +1,18 @@
+uuid: c83ec5db-822c-4e2e-8f2d-2ec448ca3799
+langcode: en
+status: true
+dependencies:
+  config:
+    - media.type.private_image
+id: media.private_image.changed
+field_name: changed
+entity_type: media
+bundle: private_image
+label: Changed
+description: 'The time the media item was last edited.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: changed

@@ -1,0 +1,20 @@
+uuid: bf548b60-7cd5-48b6-bf46-96ca1bc46faf
+langcode: en
+status: true
+dependencies:
+  module:
+    - gdpr_consent
+id: gdpr_consent_agreement.gdpr_consent_agreement.user_id
+field_name: user_id
+entity_type: gdpr_consent_agreement
+bundle: gdpr_consent_agreement
+label: 'Authored by'
+description: 'The user ID of author of the Consent Agreement entity.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: default
+  handler_settings: {  }
+field_type: entity_reference

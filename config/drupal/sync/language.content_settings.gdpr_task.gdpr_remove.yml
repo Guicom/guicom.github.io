@@ -1,0 +1,11 @@
+uuid: 23320051-e0be-44c7-9d49-d5af14959660
+langcode: en
+status: true
+dependencies:
+  config:
+    - gdpr_tasks.gdpr_task_type.gdpr_remove
+id: gdpr_task.gdpr_remove
+target_entity_type_id: gdpr_task
+target_bundle: gdpr_remove
+default_langcode: site_default
+language_alterable: false

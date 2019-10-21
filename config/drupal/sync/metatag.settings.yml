@@ -1,0 +1,8 @@
+entity_type_groups:
+  node:
+    landing_page:
+      basic: basic
+      hreflang: hreflang
+    thank_you_page:
+      basic: basic
+      hreflang: hreflang

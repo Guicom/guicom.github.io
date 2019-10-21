@@ -1,0 +1,20 @@
+uuid: 1d36441a-8c96-4849-b073-bc2060090b17
+langcode: en
+status: true
+dependencies:
+  config:
+    - media.type.private_image
+id: media.private_image.name
+field_name: name
+entity_type: media
+bundle: private_image
+label: Name
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: ''
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -49,6 +49,9 @@ class SocAccessRedirectRedirectSubscriber implements EventSubscriberInterface {
     // This is necessary because this also gets called on
     // node sub-tabs such as "edit", "revisions", etc.  This
     // prevents those pages from redirected.
+    if ($request->attributes->get('_route') !== 'entity.node.canonical') {
+      return;
+    }
 
     // get current node
     /** @var Node $node */
@@ -74,14 +77,12 @@ class SocAccessRedirectRedirectSubscriber implements EventSubscriberInterface {
         $response = new RedirectResponse($redirect_url->toString(), 301);
         $response->expire();
         $event->setResponse($response);
-        \Drupal::service('page_cache_kill_switch')->trigger();
       }
       else{
         $redirect_url = Url::fromRoute('<front>');
         $response = new RedirectResponse($redirect_url->toString(), 301);
         $response->expire();
         $event->setResponse($response);
-        \Drupal::service('page_cache_kill_switch')->trigger();
       }
     }
   }
