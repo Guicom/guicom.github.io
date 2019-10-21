@@ -1,0 +1,10 @@
+# Admin / config routes
+
+soc_multisite.privacy_policy:
+  path: '/admin/config/socomec/privacy_policy'
+  defaults:
+    _form: '\Drupal\soc_multisite\Form\PrivacyPolicySettingsForm'
+    _title: 'Socomec'
+  requirements:
+    _permission: 'manage privacy policy multicity'
+

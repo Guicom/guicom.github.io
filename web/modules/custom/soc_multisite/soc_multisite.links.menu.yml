@@ -1,0 +1,9 @@
+# Admin / config menu links
+
+soc_multisite.privacy_policy:
+  title: 'Privacy policy'
+  route_name: soc_multisite.privacy_policy
+  parent: soc_core.config
+  description: 'Configure Privacy Policy'
+  weight: 0
+
