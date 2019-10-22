@@ -579,6 +579,17 @@ bundles:
       notes: ''
       relationship: 0
       sars_filename: ''
+    field_title:
+      bundle: video_embed
+      name: field_title
+      entity_type_id: paragraph
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
   model_image:
     field_image:
       bundle: model_image
