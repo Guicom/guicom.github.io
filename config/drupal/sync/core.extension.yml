@@ -67,6 +67,7 @@ module:
   message: 0
   metatag: 0
   metatag_hreflang: 0
+  metatag_open_graph: 0
   node: 0
   options: 0
   page_cache: 0
@@ -81,6 +82,7 @@ module:
   shortcut: 0
   simple_megamenu: 0
   soc_access_redirect: 0
+  soc_addtoany: 0
   soc_core: 0
   soc_iframe_redirect: 0
   soc_multisite: 0

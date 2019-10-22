@@ -1,0 +1,15 @@
+uuid: 1adb135f-1df0-4532-a957-3e625228145c
+langcode: en
+status: true
+dependencies: {  }
+name: og_image_600x315
+label: 'og:image 600x315'
+effects:
+  c7aaf4c6-bed0-4e31-a8c8-d325f9faac20:
+    uuid: c7aaf4c6-bed0-4e31-a8c8-d325f9faac20
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 600
+      height: 315
+      anchor: center-center
