@@ -1,0 +1,7 @@
+name: Socomec Pardot
+type: module
+description: Pardot integration
+core: 8.x
+package: Socomec
+dependencies:
+  - soc_core

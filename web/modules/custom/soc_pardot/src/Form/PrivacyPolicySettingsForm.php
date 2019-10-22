@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\soc_multisite\Form;
+namespace Drupal\soc_pardot\Form;
 
 use Drupal\Core\Form\ConfigFormBase;
 use Drupal\Core\Form\FormStateInterface;
@@ -8,7 +8,7 @@ use Drupal\Core\Form\FormStateInterface;
 class PrivacyPolicySettingsForm extends ConfigFormBase {
 
   /** @var string  */
-  const WS_SETTINGS_KEY = 'soc_multisite.privacy_policy';
+  const PARDOT_SETTINGS_KEY = 'soc_pardot.privacy_policy';
 
   /**
    * Gets the configuration names that will be editable.
@@ -19,7 +19,7 @@ class PrivacyPolicySettingsForm extends ConfigFormBase {
    */
   protected function getEditableConfigNames() {
     return [
-      self::WS_SETTINGS_KEY,
+      self::PARDOT_SETTINGS_KEY,
     ];
   }
 
@@ -34,22 +34,24 @@ class PrivacyPolicySettingsForm extends ConfigFormBase {
    *   The unique string identifying the form.
    */
   public function getFormId() {
-    return str_replace('.', '_', self::WS_SETTINGS_KEY);
+    return str_replace('.', '_', self::PARDOT_SETTINGS_KEY);
   }
 
   public function buildForm(array $form, FormStateInterface $form_state) {
-    $config = $this->config(self::WS_SETTINGS_KEY);
+    $config = $this->config(self::PARDOT_SETTINGS_KEY);
 
     $form['privacy_policy'] = [
-      '#type'           => 'container',
-      '#title'          => $this->t('Default Message'),
+      '#type'           => 'details',
+      '#open'           => TRUE,
+      '#title'          => $this->t('Privacy policy default text'),
     ];
 
     $form['privacy_policy']['text_default'] = [
-      '#type'           => 'textarea',
+      '#type'           => 'text_format',
       '#title'          => $this->t('Text Privacy Policy'),
       '#description'    => $this->t('Privacy Policy Default Text'),
-      '#default_value'  => empty($config->get('text_default')) !=true ? t($config->get('text_default')):'',
+      '#format'        => empty($config->get('text_default')['format']) != true ? $config->get('text_default')['format']: 'socomec',
+      '#default_value'  => empty($config->get('text_default')['value']) != true ? $config->get('text_default')['value'] : '',
     ];
 
     return parent::buildForm($form, $form_state);
@@ -59,10 +61,8 @@ class PrivacyPolicySettingsForm extends ConfigFormBase {
    * {@inheritdoc}
    */
   public function submitForm(array &$form, FormStateInterface $form_state) {
-    foreach ([
-               'text_default',
-             ] as $configKey) {
-      $this->configFactory->getEditable(self::WS_SETTINGS_KEY)
+    foreach (['text_default'] as $configKey) {
+      $this->configFactory->getEditable(self::PARDOT_SETTINGS_KEY)
         ->set($configKey, $form_state->getValue($configKey))
         ->save();
     }

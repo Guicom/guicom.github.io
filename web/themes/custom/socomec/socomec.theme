@@ -36,19 +36,6 @@ function socomec_form_system_theme_settings_alter(&$form, FormStateInterface $fo
 
 function socomec_preprocess_paragraph(&$variables){
   $variables['#attached']['library'][] =  'socomec/datatables-styling';
-
-  // Check if paragraph exist
-  if(isset($variables['paragraph'])) {
-    /** @var Paragraph $paragraph */
-    $paragraph = $variables['paragraph'];
-    if($paragraph->hasField('field_pardot_privacy_policy')) {
-      $text = $paragraph->get('field_pardot_privacy_policy')->value;
-      if(strlen($text) == 0) {
-        $privacyPolicyDefaultText = \Drupal::config(\Drupal\soc_multisite\Form\PrivacyPolicySettingsForm::WS_SETTINGS_KEY)->get('text_default');
-        $paragraph->set('field_pardot_privacy_policy', $privacyPolicyDefaultText)->save();
-      }
-    }
-  }
 }
 
 /**

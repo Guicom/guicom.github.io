@@ -528,7 +528,7 @@ bundles:
       rtf: 'no'
       rta: 'no'
       enabled: false
-      anonymizer: ''
+      anonymizer: date_anonymizer
       notes: ''
       relationship: 0
       sars_filename: ''

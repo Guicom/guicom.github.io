@@ -1,0 +1,9 @@
+# Admin / config routes
+
+soc_pardot.privacy_policy:
+  path: '/admin/config/socomec/privacy_policy'
+  defaults:
+    _form: '\Drupal\soc_pardot\Form\PrivacyPolicySettingsForm'
+    _title: 'Socomec'
+  requirements:
+    _permission: 'manage pardot privacy policy'

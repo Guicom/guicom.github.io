@@ -1,0 +1,10 @@
+soc_pardot.privacy_policy:
+  type: config_object
+  label: 'Pardot privacy policy configuration'
+  mapping:
+    text_default:
+      label: 'Text Privacy Policy'
+      type: text_format
+    language:
+      type: string
+      label: 'Language code'

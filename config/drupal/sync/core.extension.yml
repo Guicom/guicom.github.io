@@ -84,6 +84,7 @@ module:
   soc_iframe_redirect: 0
   soc_multisite: 0
   soc_nextpage: 0
+  soc_pardot: 0
   system: 0
   taxonomy: 0
   text: 0
