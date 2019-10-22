@@ -1,0 +1,56 @@
+<?php
+
+/**
+ * @file
+ * Handle AddToAny integration.
+ */
+
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
+use Drupal\Core\Render\Markup;
+use Drupal\Core\Url;
+use Drupal\Component\Utility\UrlHelper;
+use Drupal\node\Entity\Node;
+use Drupal\addtoany\Form\AddToAnySettingsForm;
+
+/**
+ * Implements hook_theme().
+ */
+function soc_addtoany_theme() {
+  return [
+    'soc_floating_addtoany_block' => [
+      'variables' => [
+        'addtoany_html' => FALSE,
+        'link_url' => FALSE,
+        'link_title' => FALSE,
+        'buttons_size' => FALSE,
+        'button_setting' => FALSE,
+        'button_image' => FALSE,
+        'universal_button_placement' => FALSE,
+        'entity_type' => '',
+        'bundle' => '',
+      ],
+    ],
+  ];
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK().
+ */
+function soc_addtoany_theme_suggestions_soc_floating_addtoany_block(array $variables) {
+  $suggestion = 'soc_floating_addtoany_block.module__';
+  $suggestions = [];
+
+  if (!empty($variables['entity_type'])) {
+    $suggestion .= $variables['entity_type'];
+    $suggestions[] = $suggestion;
+  }
+
+  if (!empty($variables['entity_type']) && !empty($variables['bundle'])) {
+    $suggestion .= '__' . $variables['bundle'];
+    $suggestions[] = $suggestion;
+  }
+
+  return $suggestions;
+}
+
