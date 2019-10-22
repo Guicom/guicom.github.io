@@ -15,6 +15,8 @@ filenames:
   model_testimony: ''
   pardot_form: ''
   video_embed: ''
+  model_image: ''
+  model_cta: ''
 bundles:
   product_faq:
     field_question:
@@ -498,6 +500,17 @@ bundles:
       notes: ''
       relationship: 0
       sars_filename: ''
+    field_text:
+      bundle: model_testimony
+      name: field_text
+      entity_type_id: paragraph
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: clear_anonymizer
+      notes: ''
+      relationship: 0
+      sars_filename: ''
   pardot_form:
     field_pardot_form_url:
       bundle: pardot_form
@@ -563,6 +576,107 @@ bundles:
       rta: 'no'
       enabled: false
       anonymizer: clear_anonymizer
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_title:
+      bundle: video_embed
+      name: field_title
+      entity_type_id: paragraph
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+  model_image:
+    field_image:
+      bundle: model_image
+      name: field_image
+      entity_type_id: paragraph
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_title:
+      bundle: model_image
+      name: field_title
+      entity_type_id: paragraph
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_legend:
+      bundle: model_image
+      name: field_legend
+      entity_type_id: paragraph
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_link:
+      bundle: model_image
+      name: field_link
+      entity_type_id: paragraph
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_target:
+      bundle: model_image
+      name: field_target
+      entity_type_id: paragraph
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+  model_cta:
+    field_cta:
+      bundle: model_cta
+      name: field_cta
+      entity_type_id: paragraph
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_font_awesome_icon:
+      bundle: model_cta
+      name: field_font_awesome_icon
+      entity_type_id: paragraph
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_target:
+      bundle: model_cta
+      name: field_target
+      entity_type_id: paragraph
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
       notes: ''
       relationship: 0
       sars_filename: ''

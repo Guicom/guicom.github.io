@@ -1,18 +1,18 @@
-uuid: ba8ed47c-0cd1-4c3e-9822-4ea6455b58c7
+uuid: 34d8656c-a82d-403c-a84e-3356ad14d1ed
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.paragraph.field_video_embed_title
+    - field.storage.paragraph.field_title
     - paragraphs.paragraphs_type.video_embed
-id: paragraph.video_embed.field_video_embed_title
-field_name: field_video_embed_title
+id: paragraph.video_embed.field_title
+field_name: field_title
 entity_type: paragraph
 bundle: video_embed
 label: Title
 description: ''
 required: false
-translatable: false
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings: {  }

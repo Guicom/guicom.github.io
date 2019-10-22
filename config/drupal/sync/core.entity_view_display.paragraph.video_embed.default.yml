@@ -3,7 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.paragraph.video_embed.field_video_embed_title
+    - field.field.paragraph.video_embed.field_title
     - field.field.paragraph.video_embed.field_video_embed_video
     - paragraphs.paragraphs_type.video_embed
 id: paragraph.video_embed.default
@@ -11,9 +11,9 @@ targetEntityType: paragraph
 bundle: video_embed
 mode: default
 content:
-  field_video_embed_title:
+  field_title:
     weight: 0
-    label: above
+    label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
@@ -22,7 +22,7 @@ content:
   field_video_embed_video:
     type: entity_reference_entity_view
     weight: 1
-    label: above
+    label: hidden
     settings:
       view_mode: default
       link: false

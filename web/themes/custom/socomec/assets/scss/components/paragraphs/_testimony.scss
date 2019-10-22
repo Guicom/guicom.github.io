@@ -73,11 +73,17 @@
     background-color: $lighter-grey;
     padding: 30px 30px 100px 30px;
     .text-testimony{
-      color: $black;
-      font-family: $font-roboto;
-      font-size: 20px;
-      font-weight: 300;
-      line-height: 30px;
+      .text-formatted {
+        span,
+        div,
+        p,
+        ul li,
+        ol li{
+          font-size: 20px;
+          font-weight: 300;
+          line-height: 30px;
+        }
+      }
       text-align: left;
     }
     &:before {
@@ -94,11 +100,4 @@
       }
     }
   }
-
-
-
-
-
-
-
 }

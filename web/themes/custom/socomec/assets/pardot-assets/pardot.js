@@ -16,5 +16,8 @@
       $(this).prepend(input);
     });
   });
+  $(window).on('load', function() {
+    $('body').show();
+  });
 })();
 

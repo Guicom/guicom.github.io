@@ -1,0 +1,19 @@
+uuid: 9825d827-ec62-48d2-b7fc-fa91d0cce32a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_legend
+    - paragraphs.paragraphs_type.model_image
+id: paragraph.model_image.field_legend
+field_name: field_legend
+entity_type: paragraph
+bundle: model_image
+label: Legend
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

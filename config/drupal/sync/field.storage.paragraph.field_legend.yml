@@ -1,16 +1,14 @@
-uuid: 63062b47-babb-45ac-9e40-28229ebb79ac
+uuid: a4409c14-5832-4b01-92b8-563bd16df722
 langcode: en
 status: true
 dependencies:
   module:
     - paragraphs
-id: paragraph.field_video_embed_title
-field_name: field_video_embed_title
+id: paragraph.field_legend
+field_name: field_legend
 entity_type: paragraph
-type: string
+type: string_long
 settings:
-  max_length: 255
-  is_ascii: false
   case_sensitive: false
 module: core
 locked: false
