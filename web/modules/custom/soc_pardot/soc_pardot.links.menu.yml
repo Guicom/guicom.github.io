@@ -1,0 +1,9 @@
+# Admin / config menu links
+
+soc_pardot.privacy_policy:
+  title: 'Pardot privacy policy'
+  route_name: soc_pardot.privacy_policy
+  parent: soc_core.config
+  description: 'Configure Pardot privacy policy'
+  weight: 0
+

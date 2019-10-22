@@ -1,8 +1,0 @@
-uuid: 226aa822-bcfe-4b2a-ac5a-a91f70e3ab2c
-langcode: en
-status: true
-dependencies: {  }
-name: 'Strong points'
-vid: strong_points
-description: 'Product strong points'
-weight: 0

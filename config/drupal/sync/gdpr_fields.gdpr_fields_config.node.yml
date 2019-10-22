@@ -8,6 +8,7 @@ filenames:
   thank_you_page: ''
   landing_page: ''
   page: ''
+  product_reference: ''
 bundles:
   product:
     field_complementary_info:
@@ -94,7 +95,7 @@ bundles:
       rtf: 'no'
       rta: 'no'
       enabled: false
-      anonymizer: ''
+      anonymizer: date_anonymizer
       notes: ''
       relationship: 0
       sars_filename: ''
@@ -233,6 +234,39 @@ bundles:
     field_references:
       bundle: product
       name: field_references
+      entity_type_id: node
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_product_references:
+      bundle: product
+      name: field_product_references
+      entity_type_id: node
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_json_product_data:
+      bundle: product
+      name: field_json_product_data
+      entity_type_id: node
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_long_description:
+      bundle: product
+      name: field_long_description
       entity_type_id: node
       rtf: 'no'
       rta: 'no'
@@ -456,6 +490,18 @@ bundles:
     field_table:
       bundle: page
       name: field_table
+      entity_type_id: node
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+  product_reference:
+    field_json:
+      bundle: product_reference
+      name: field_json
       entity_type_id: node
       rtf: 'no'
       rta: 'no'

@@ -1,16 +1,14 @@
-uuid: c9b8c2ac-940e-4d52-8577-dd740c55451a
+uuid: 6d2964fc-631e-451b-8470-13a48a4849b8
 langcode: en
 status: true
 dependencies:
   module:
-    - node
-id: node.field_complementary_info
-field_name: field_complementary_info
-entity_type: node
-type: string
+    - paragraphs
+id: paragraph.field_json_reference_data
+field_name: field_json_reference_data
+entity_type: paragraph
+type: string_long
 settings:
-  max_length: 65
-  is_ascii: false
   case_sensitive: false
 module: core
 locked: false

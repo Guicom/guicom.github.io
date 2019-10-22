@@ -120,6 +120,17 @@ bundles:
       notes: ''
       relationship: 0
       sars_filename: ''
+    field_json_reference_data:
+      bundle: product_reference
+      name: field_json_reference_data
+      entity_type_id: paragraph
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
   hero_paragraph:
     field_premium_content_type:
       bundle: hero_paragraph
@@ -541,7 +552,7 @@ bundles:
       rtf: 'no'
       rta: 'no'
       enabled: false
-      anonymizer: ''
+      anonymizer: date_anonymizer
       notes: ''
       relationship: 0
       sars_filename: ''

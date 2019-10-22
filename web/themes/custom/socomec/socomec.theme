@@ -82,11 +82,11 @@ function socomec_preprocess_paragraph(&$variables){
  */
 function socomec_theme_suggestions_field_alter(&$suggestions, array $variables) {
   $element = $variables['element'];
-  
+
   $suggestions[] = 'field__' . $element['#entity_type'] . '__' .
     $element['#field_name'] . '__' . $element['#bundle'] . '__' .
     $element['#view_mode'];
-  
+
   $suggestions[] = 'field__' . $element['#entity_type'] . '__' .
     $element['#field_name'] . '__' . $element['#view_mode'];
 }
@@ -156,7 +156,7 @@ function socomec_preprocess_views_view(&$variables) {
  */
 function socomec_preprocess_views_view_fields__hero_block__block_2(&$variables) {
   $mid = $variables["row"]->_entity->get('field_file')->getString();
-  
+
   if (isset($mid) && !empty($mid)) {
     $media = Media::load($mid);
     $fid = $media->getSource()->getSourceFieldValue($media);
