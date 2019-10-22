@@ -1,16 +1,15 @@
-uuid: 2f84c9d0-35a3-4a64-9c5d-b26431bc7115
+uuid: c439564a-af3e-4fa4-974a-e726e91c792c
 langcode: en
 status: true
 dependencies:
   module:
-    - media
     - node
-id: node.field_video
-field_name: field_video
+id: node.field_json_product_data
+field_name: field_json_product_data
 entity_type: node
-type: entity_reference
+type: string_long
 settings:
-  target_type: media
+  case_sensitive: false
 module: core
 locked: false
 cardinality: 1
