@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * Implements hook_entity_presave().
+ */
+function soc_pardot_entity_presave(Drupal\Core\Entity\EntityInterface $entity) {
+  switch ($entity->bundle()) {
+    case 'pardot_form':
+      // Check if privacy policy field is set.
+      if (empty($entity->get('field_pardot_privacy_policy')->getValue())) {
+        $entity->set('field_pardot_privacy_policy', \Drupal::config('soc_pardot.privacy_policy')->get('text_default'));
+      }
+      break;
+  }
+}
