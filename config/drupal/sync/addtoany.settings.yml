@@ -1,14 +1,27 @@
 buttons_size: 32
-additional_html: "<a class=\"a2a_button_facebook\"></a>\n<a class=\"a2a_button_twitter\"></a>\n<a class=\"a2a_button_google_plus\"></a>\n"
+additional_html: "<a class=\"a2a_button_facebook\"></a>\r\n<a class=\"a2a_button_linkedin\"></a>\r\n<a class=\"a2a_button_twitter\"></a>\r\n<a class=\"a2a_button_xing\"></a>\r\n<a class=\"a2a_button_copy_link\"></a>\r\n"
 additional_css: ''
 additional_js: ''
 universal_button: default
 custom_universal_button: ''
-universal_button_placement: before
+universal_button_placement: after
 no_3p: false
 entities:
   media: 1
   node: 1
   comment: 1
+  block_content: 0
+  content_moderation_state: 0
+  file: 0
+  gdpr_consent_agreement: 0
+  gdpr_task: 0
+  message: 0
+  redirect: 0
+  shortcut: 0
+  simple_mega_menu: 0
+  taxonomy_term: 0
+  user: 0
+  menu_link_content: 0
+  paragraph: 0
 _core:
   default_config_hash: 9YPlBuinIKLe5jVEf-aIhZvKFn77i18yD4CrNR0BbVQ
