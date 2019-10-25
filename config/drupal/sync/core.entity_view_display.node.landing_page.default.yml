@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.node.landing_page.field_body
     - field.field.node.landing_page.field_client_name
+    - field.field.node.landing_page.field_footer_version
     - field.field.node.landing_page.field_hero_paragraph
     - field.field.node.landing_page.field_metatags
     - field.field.node.landing_page.field_pardot_form
@@ -38,6 +39,7 @@ third_party_settings:
             'col-lg-4 ml-auto': 'col-lg-4 ml-auto'
     regions:
       left:
+        - addtoany
         - field_body
       right:
         - field_pardot_form
@@ -46,9 +48,14 @@ targetEntityType: node
 bundle: landing_page
 mode: default
 content:
+  addtoany:
+    weight: 0
+    region: left
+    settings: {  }
+    third_party_settings: {  }
   field_body:
     type: entity_reference_revisions_entity_view
-    weight: 0
+    weight: 1
     label: hidden
     settings:
       view_mode: default
@@ -57,7 +64,7 @@ content:
     region: left
   field_pardot_form:
     type: entity_reference_revisions_entity_view
-    weight: 1
+    weight: 2
     region: right
     label: hidden
     settings:
@@ -65,8 +72,8 @@ content:
       link: ''
     third_party_settings: {  }
 hidden:
-  addtoany: true
   field_client_name: true
+  field_footer_version: true
   field_hero_paragraph: true
   field_metatags: true
   field_premium_content_type: true

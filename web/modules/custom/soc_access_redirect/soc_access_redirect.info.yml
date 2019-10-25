@@ -1,5 +1,5 @@
 name: Socomec access and redirect
 type: module
-description:  Access thank you page
+description:  Manage custom access and custom redirect.
 core: 8.x
 package: Socomec

@@ -1,0 +1,21 @@
+uuid: 0cfb8ca8-a2e8-411e-8367-fd6e03b50f47
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_cta_color_list
+    - paragraphs.paragraphs_type.model_cta
+  module:
+    - options
+id: paragraph.model_cta.field_cta_color_list
+field_name: field_cta_color_list
+entity_type: paragraph
+bundle: model_cta
+label: 'CTA color list'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

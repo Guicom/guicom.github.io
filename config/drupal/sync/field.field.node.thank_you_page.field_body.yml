@@ -6,8 +6,11 @@ dependencies:
     - field.storage.node.field_body
     - node.type.thank_you_page
     - paragraphs.paragraphs_type.key_figures
+    - paragraphs.paragraphs_type.model_cta
+    - paragraphs.paragraphs_type.model_image
     - paragraphs.paragraphs_type.model_testimony
     - paragraphs.paragraphs_type.model_text
+    - paragraphs.paragraphs_type.video_embed
   module:
     - entity_reference_revisions
 id: node.thank_you_page.field_body
@@ -28,6 +31,9 @@ settings:
       key_figures: key_figures
       model_testimony: model_testimony
       model_text: model_text
+      model_cta: model_cta
+      model_image: model_image
+      video_embed: video_embed
     target_bundles_drag_drop:
       hero_paragraph:
         weight: 10
@@ -41,9 +47,15 @@ settings:
       model_text:
         enabled: true
         weight: 13
+      model_cta:
+        enabled: true
+        weight: 14
       pardot_form:
         weight: 14
         enabled: false
+      model_image:
+        enabled: true
+        weight: 15
       premium_content_promotion:
         weight: 15
         enabled: false
@@ -54,6 +66,6 @@ settings:
         weight: 17
         enabled: false
       video_embed:
+        enabled: true
         weight: 18
-        enabled: false
 field_type: entity_reference_revisions

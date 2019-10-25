@@ -1,0 +1,19 @@
+uuid: 6d2964fc-631e-451b-8470-13a48a4849b8
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+id: paragraph.field_json_reference_data
+field_name: field_json_reference_data
+entity_type: paragraph
+type: string_long
+settings:
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -12,6 +12,7 @@ dependencies:
     - field.field.node.thank_you_page.field_thumbnail
     - node.type.thank_you_page
   module:
+    - media_library
     - paragraphs
     - path
     - text
@@ -70,11 +71,9 @@ content:
   field_file:
     weight: 5
     settings:
-      match_operator: CONTAINS
-      size: 60
-      placeholder: ''
+      media_types: {  }
     third_party_settings: {  }
-    type: entity_reference_autocomplete
+    type: media_library_widget
     region: content
   field_landing_page:
     weight: 1
@@ -104,11 +103,9 @@ content:
   field_thumbnail:
     weight: 2
     settings:
-      match_operator: CONTAINS
-      size: 60
-      placeholder: ''
+      media_types: {  }
     third_party_settings: {  }
-    type: entity_reference_autocomplete
+    type: media_library_widget
     region: content
   langcode:
     type: language_select
@@ -154,7 +151,7 @@ content:
     region: content
     third_party_settings: {  }
   url_redirects:
-    weight: 14
+    weight: 50
     region: content
     settings: {  }
     third_party_settings: {  }

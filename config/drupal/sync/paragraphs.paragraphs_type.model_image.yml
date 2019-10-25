@@ -1,0 +1,9 @@
+uuid: 7067d9bf-ffa7-4d20-bf3a-b270e43aa161
+langcode: en
+status: true
+dependencies: {  }
+id: model_image
+label: 'Model - Image'
+icon_uuid: null
+description: ''
+behavior_plugins: {  }

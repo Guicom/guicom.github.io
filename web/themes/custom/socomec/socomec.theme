@@ -34,8 +34,47 @@ function socomec_form_system_theme_settings_alter(&$form, FormStateInterface $fo
   );
 }
 
+/**
+ * Implements template_preprocess_paragraph().
+ *
+ * @param array $variables
+ *   An associative array containing:
+ *   - elements: An array of elements to display in view mode.
+ *   - paragraph: The paragraph object.
+ *   - view_mode: View mode; e.g., 'full', 'teaser'...
+ */
 function socomec_preprocess_paragraph(&$variables){
-  $variables['#attached']['library'][] =  'socomec/datatables-styling';
+  $paragraph = $variables['elements']['#paragraph'];
+  $bundle = $paragraph->bundle();
+  // if paragraph is model_cta
+  if ( strcmp($bundle, 'model_cta') === 0) {
+    if ($paragraph->hasField('field_cta_color_list')) {
+      $field_cta_color_list = (!empty($paragraph->get('field_cta_color_list')->getValue()))?$paragraph->get('field_cta_color_list')->getValue():null;
+      if (!empty($field_cta_color_list[0]['value'])) {
+        $variables['cta_class'] = $field_cta_color_list[0]['value'];
+      }
+    }
+    if ($paragraph->hasField('field_cta')) {
+      $field_cta = (!empty($paragraph->get('field_cta')->getValue()))?$paragraph->get('field_cta')->getValue():null;
+      if (!empty($field_cta[0]['uri'])) {
+        $variables['cta_url'] = $field_cta[0]['uri'];
+      }
+      if (!empty($field_cta[0]['title'])) {
+        $variables['cta_title'] = $field_cta[0]['title'];
+      }
+      elseif($field_cta[0]['uri']){
+        $variables['cta_title'] = $field_cta[0]['uri'];
+      }
+    }
+    if ($paragraph->hasField('field_target')) {
+      $field_target = (!empty($paragraph->get('field_target')->getValue()))?$paragraph->get('field_target')->getValue():null;
+      if (!empty($field_target[0]['value']) && strcmp($field_target[0]['value'], 1) === 0) {
+        $variables['cta_target'] = '_blank';
+      }
+
+    }
+  }
+
 }
 
 /**
@@ -43,11 +82,11 @@ function socomec_preprocess_paragraph(&$variables){
  */
 function socomec_theme_suggestions_field_alter(&$suggestions, array $variables) {
   $element = $variables['element'];
-  
+
   $suggestions[] = 'field__' . $element['#entity_type'] . '__' .
     $element['#field_name'] . '__' . $element['#bundle'] . '__' .
     $element['#view_mode'];
-  
+
   $suggestions[] = 'field__' . $element['#entity_type'] . '__' .
     $element['#field_name'] . '__' . $element['#view_mode'];
 }
@@ -117,7 +156,7 @@ function socomec_preprocess_views_view(&$variables) {
  */
 function socomec_preprocess_views_view_fields__hero_block__block_2(&$variables) {
   $mid = $variables["row"]->_entity->get('field_file')->getString();
-  
+
   if (isset($mid) && !empty($mid)) {
     $media = Media::load($mid);
     $fid = $media->getSource()->getSourceFieldValue($media);
