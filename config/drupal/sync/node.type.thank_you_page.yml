@@ -14,5 +14,5 @@ type: thank_you_page
 description: 'Thank you page SOCOMEC '
 help: ''
 new_revision: true
-preview_mode: 1
+preview_mode: 0
 display_submitted: true
