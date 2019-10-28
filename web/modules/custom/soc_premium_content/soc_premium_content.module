@@ -96,7 +96,7 @@ function soc_premium_content_form_node_landing_page_edit_form_alter(&$form, Form
     if (!empty($nids)) {
       $title = t('Save and Edit @type', ['@type' => 'Thank You Page']);
     }
-    else{
+    else {
       $title = t('Save and Create @type', ['@type' => 'Thank You Page']);
     }
 
