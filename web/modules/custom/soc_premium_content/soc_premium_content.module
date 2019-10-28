@@ -67,8 +67,8 @@ function _soc_premium_content_node_landing_page_form_submit(array $form, FormSta
       ];
 
       // Get field thumbnail
-      $id_pargraph = $node->get('field_hero_paragraph')->target_id;
-      $paragraph = Paragraph::load($id_pargraph);
+      $id_paragraph = $node->get('field_hero_paragraph')->target_id;
+      $paragraph = Paragraph::load($id_paragraph);
       $field_thumbnail = $paragraph->get('field_thumbnail')->target_id;
       if (!empty($field_thumbnail)) {
         $media_entity = Media::load($field_thumbnail);
