@@ -5,9 +5,6 @@
 
 namespace Drupal\soc_core\Service;
 
-use Drupal\node\Entity\Node;
-use Drupal\soc_core\Model\ContentType;
-
 /**
  * Class BaseApi
  *

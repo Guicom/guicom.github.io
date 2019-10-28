@@ -1,22 +1,21 @@
 <?php
-
-
-namespace Drupal\soc_core\Service;
-
+/**
+ * Get thank you page associate to current landing page.
+ */
+namespace Drupal\soc_premium_content\Service;
 
 use Drupal\node\Entity\Node;
-use Drupal\soc_core\Model\ContentType;
 
-class Soc_node {
+class SocPremiumContentNode {
   /**
    * Get all Thank You Page with reference to Landing Page
    * @param Node $node
    * @return array|int|null
    */
   public function getAllThankYouPageFromLandingPage($node) {
-    if (strcmp($node->getType(), ContentType::CT_LANDING) == 0) {
+    if (strcmp($node->getType(), 'landing_page') === 0) {
       return \Drupal::entityQuery('node')
-        ->condition('type', ContentType::CT_TY_P)
+        ->condition('type', 'thank_you_page')
         ->condition('field_landing_page', $node->id())
         ->execute()
         ;

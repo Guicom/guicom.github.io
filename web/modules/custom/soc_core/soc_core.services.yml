@@ -1,6 +1,3 @@
 services:
   soc_core.base_api:
     class: Drupal\soc_core\Service\BaseApi
-
-  soc_core.node_api:
-    class: Drupal\soc_core\Service\Soc_node
