@@ -90,13 +90,13 @@ services:
 
   # solr container - actency images
   solr:
-    # actency/docker-solr available tags: latest, 6.2, 6.1, 6.0, 5.5, 5.4, 5.3, 5.2, 5.1, 5.0, 4.10, 3.6
-    image: actency/docker-solr:6.2
+    image: wodby/solr
     ports:
       - "8080:8983"
-    volumes:
-      - ./config/solr:/opt/solr/server/solr/collection1/conf
-
+    environment:
+      - SOLR_DEFAULT_CONFIG_SET=search_api_solr_8.x-3.2
+      # Run this commande after build container docker
+      # docker exec socomec_solr_1 make create core=collection1 -f /usr/local/bin/actions.mk
   # Tika server container - actency images
   tika:
     image: actency/docker-tika-server
