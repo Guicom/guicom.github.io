@@ -1,0 +1,5 @@
+name: Socomec Premium content
+type: module
+description: 'Soc Add custom settings and custom submit for editing child Thank you page from parent Premium content'
+package: Socomec
+core: '8.x'
