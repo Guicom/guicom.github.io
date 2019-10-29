@@ -13,5 +13,5 @@ type: landing_page
 description: 'This page is for promoting premium content.'
 help: ''
 new_revision: true
-preview_mode: 1
+preview_mode: 0
 display_submitted: true
