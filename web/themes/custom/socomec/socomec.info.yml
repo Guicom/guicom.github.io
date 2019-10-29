@@ -8,7 +8,7 @@ base theme: bootstrap_barrio
 ckeditor_stylesheets:
   - https://fonts.googleapis.com/css?family=Roboto|Roboto:300,400,700,900
   - https://fonts.googleapis.com/css?family=Poppins|Poppins:600
-  - assets/css/ckeditor.css?v4
+  - assets/css/ckeditor.css?v6
 libraries:
   - socomec/global-styling
   - socomec/iframe-resize

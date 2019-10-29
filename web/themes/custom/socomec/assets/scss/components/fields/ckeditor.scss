@@ -228,7 +228,10 @@ table{
   }
 }
 
+.cke_widget_image,
 img{
+  display: block;
+  margin-bottom:1rem;
   &.align-left{
     margin-top:0;
     margin-left:0;
