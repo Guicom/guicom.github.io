@@ -232,6 +232,8 @@ table{
 img{
   display: block;
   margin-bottom:1rem;
+  max-width: 100%;
+  height: auto;
   &.align-left{
     margin-top:0;
     margin-left:0;
