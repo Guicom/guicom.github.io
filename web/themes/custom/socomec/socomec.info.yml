@@ -11,6 +11,7 @@ ckeditor_stylesheets:
   - assets/css/ckeditor.css?v4
 libraries:
   - socomec/global-styling
+  - socomec/datatables-styling
   - socomec/iframe-resize
   - socomec/roboto
   - socomec/poppins
