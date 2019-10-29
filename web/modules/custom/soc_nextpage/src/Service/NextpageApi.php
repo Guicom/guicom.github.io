@@ -29,7 +29,7 @@ class NextpageApi extends NextpageBaseApi implements NextpageApiInterface {
         ]),
       ]);
     } catch (\Exception $e) {
-      \Drupal::logger('soc_nextpage')->error($e->getMessage());
+      $this->logger->error($e->getMessage());
     }
     return $this->returnResults($results);
   }
@@ -44,7 +44,7 @@ class NextpageApi extends NextpageBaseApi implements NextpageApiInterface {
    *
    * @return array|mixed
    */
-  public function descendantsAndLinks($extIds, $onlyOneLevel = TRUE, $paths = [], $dcExtIds = []) {
+  public function descendantsAndLinks(array $extIds, $onlyOneLevel = FALSE, $paths = [], $dcExtIds = []) {
     $endpoints = $this->getEndpoints();
     $results = [];
     try {
@@ -59,7 +59,7 @@ class NextpageApi extends NextpageBaseApi implements NextpageApiInterface {
         ]),
       ]);
     } catch (\Exception $e) {
-      \Drupal::logger('soc_nextpage')->error($e->getMessage());
+      $this->logger->error($e->getMessage());
     }
     return $this->returnResults($results);
   }
@@ -85,7 +85,7 @@ class NextpageApi extends NextpageBaseApi implements NextpageApiInterface {
         ]),
       ]);
     } catch (\Exception $e) {
-      \Drupal::logger('soc_nextpage')->error($e->getMessage());
+      $this->logger->error($e->getMessage());
     }
     return $this->returnResults($results);
   }
@@ -98,13 +98,18 @@ class NextpageApi extends NextpageBaseApi implements NextpageApiInterface {
   public function characteristicsDictionary() {
     $endpoints = $this->getEndpoints();
     $results = [];
+    $dictionary = [];
     try {
       $results = $this->call($endpoints['dicocarac'] . '/' . $this->getLanguageId(),
         NULL, 'GET');
+      // Build dictionary using extid for easer search.
+      foreach ($results->Results->Caracs as $carac) {
+        $dictionary[$carac->ExtID] = $carac;
+      }
     } catch (\Exception $e) {
-      \Drupal::logger('soc_nextpage')->error($e->getMessage());
+      $this->logger->error($e->getMessage());
     }
-    return $this->returnResults($results);
+    return $dictionary;
   }
 
   /**
@@ -115,17 +120,17 @@ class NextpageApi extends NextpageBaseApi implements NextpageApiInterface {
    * @return mixed
    */
   protected function returnResults($results) {
-    if (sizeof($results->Results->ResultsExtIDs) || sizeof($results->Results->Caracs)) {
+    if (isset($results->Results) && sizeof($results->Results->ResultsExtIDs) || sizeof($results->Results->Caracs)) {
       return $results->Results;
     }
     elseif (sizeof($results->Warnings)) {
       foreach ($results->Warnings as $warning) {
-        \Drupal::logger('soc_nextpage')->warning($warning->Message);
+        $this->logger->warning($warning->Message);
       }
     }
     elseif (sizeof($results->Errors)) {
       foreach ($results->Errors as $error) {
-        \Drupal::logger('soc_nextpage')->error($error->Message);
+        $this->logger->error($error->Message);
       }
     }
     return [];

@@ -5,6 +5,8 @@
 
 namespace Drupal\soc_core\Service;
 
+use Drupal\Core\Logger\LoggerChannelFactoryInterface;
+
 /**
  * Class BaseApi
  *
@@ -15,14 +17,25 @@ class BaseApi {
   public $baseUrl;
 
   protected $user;
+  
   protected $password;
 
   protected $headers;
-
+  
+  /**
+   * The soc_core logging channel.
+   *
+   * @var \Drupal\Core\Logger\LoggerChannelInterface
+   */
+  protected $logger;
+  
   /**
    * Constructor.
+   *
+   * @param \Drupal\Core\Logger\LoggerChannelFactoryInterface $channelFactory
    */
-  public function __construct() {
+  public function __construct(LoggerChannelFactoryInterface $channelFactory) {
+    $this->logger = $channelFactory->get('soc_core');
   }
 
   /**
@@ -54,15 +67,12 @@ class BaseApi {
   protected function call($uri, $params = NULL, $method = 'POST', $format = 'json',
                           $auth = TRUE, $max_tries = 5) {
     $handle = $this->prepareCall($params, $method, $format, $auth);
-    // Add leading slash if omitted
-    if (substr($uri, 0, 1) !== '/') {
-      $uri = '/' . $uri;
-    }
+   
     $url = $this->getBaseUrl() . $uri;
-      curl_setopt($handle, CURLOPT_URL, $url);
+    $curl = curl_setopt($handle, CURLOPT_URL, $url);
     // Upload bug tips. We sent the header and then the body.
     $headers = $this->getHeaders();
-    $headers[] = "Expect:";
+    //$headers[] = "Expect:";
     $this->setHeaders($headers);
 
     if ($format === 'json') {
@@ -73,7 +83,7 @@ class BaseApi {
     do {
       switch ($method) {
         case 'POST':
-          curl_setopt($handle, CURLOPT_POST, TRUE);
+          $curl = curl_setopt($handle, CURLOPT_POST, TRUE);
           if ($format === 'json') {
             if (is_array($params['body'])) {
               $body = json_encode($params['body']);
@@ -81,29 +91,48 @@ class BaseApi {
             elseif (is_string($params['body'])) {
               $body = $params['body'];
             }
-            curl_setopt($handle, CURLOPT_POSTFIELDS, $body);
+            $curl = curl_setopt($handle, CURLOPT_POSTFIELDS, $body);
             $headers = $this->getHeaders();
             $headers[] = 'Content-Type: application/json';
             $headers[] = 'Content-Length: ' . strlen($body);
             $this->setHeaders($headers);
           }
           else {
-            curl_setopt($handle, CURLOPT_POSTFIELDS, $params);
+            $curl = curl_setopt($handle, CURLOPT_POSTFIELDS, $params);
           }
           break;
         case 'PUT':
-          curl_setopt($handle, CURLOPT_CUSTOMREQUEST, 'PUT');
-          curl_setopt($handle, CURLOPT_POSTFIELDS, $params);
+          $curl = curl_setopt($handle, CURLOPT_CUSTOMREQUEST, 'PUT');
+          $curl = curl_setopt($handle, CURLOPT_POSTFIELDS, $params);
           break;
         case 'DELETE':
-          curl_setopt($handle, CURLOPT_CUSTOMREQUEST, 'DELETE');
+          $curl = curl_setopt($handle, CURLOPT_CUSTOMREQUEST, 'DELETE');
           break;
         case 'GET':
+          //curl_setopt($handle);
+          if ($format === 'json') {
+            $body = '';
+            if (isset($params['body']) && is_array($params['body'])) {
+              $body = json_encode($params['body']);
+            }
+            elseif (isset($params['body']) && is_string($params['body'])) {
+              $body = $params['body'];
+            }
+            $curl = curl_setopt($handle, CURLOPT_POSTFIELDS, $body);
+            $curl = curl_setopt($handle, CURLOPT_HTTPGET, TRUE);
+            $headers = $this->getHeaders();
+            $headers[] = 'Content-Type: application/json';
+            $this->setHeaders($headers);
+            //$this->setHeaders($headers);
+          }
+          else {
+            curl_setopt($handle, CURLOPT_POSTFIELDS, $params);
+          }
         default:
           break;
       }
-
-      curl_setopt($handle, CURLOPT_HTTPHEADER, $this->getHeaders());
+      $headers = $this->getHeaders();
+      $curl = curl_setopt($handle, CURLOPT_HTTPHEADER, $this->getHeaders());
 
       $res = curl_exec($handle);
       $code = curl_getinfo($handle, CURLINFO_HTTP_CODE);
@@ -114,19 +143,19 @@ class BaseApi {
       sleep(1);
     } while ($tries < $max_tries);
 
-    curl_close($handle);
-
     if (FALSE === $res) {
       $message = "$method $url failed (cURL code " . curl_errno($handle) . "): "
         . htmlspecialchars(curl_error($handle));
-      \Drupal::logger('soc_core')->error($message);
+      $this->logger->error($message);
       return false;
     }
     if (NULL === $res) {
       $message = "$method $url failed: " . error_get_last();
-      \Drupal::logger('soc_core')->error($message);
+      $this->logger->error($message);
       return false;
     }
+  
+    curl_close($handle);
 
     switch ($format) {
       case 'json':
@@ -141,7 +170,7 @@ class BaseApi {
     }
     if (null === $res) {
       $message = "Failed to decode response as JSON.";
-      \Drupal::logger('soc_core')->error($message);
+      $this->logger->error($message);
       return false;
     }
     return $res;
