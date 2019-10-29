@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.paragraph.pardot_form.field_pardot_cta_text
     - field.field.paragraph.pardot_form.field_pardot_form_url
     - field.field.paragraph.pardot_form.field_pardot_privacy_policy
     - paragraphs.paragraphs_type.pardot_form
@@ -14,6 +15,14 @@ targetEntityType: paragraph
 bundle: pardot_form
 mode: default
 content:
+  field_pardot_cta_text:
+    weight: 3
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
   field_pardot_form_url:
     weight: 0
     settings:
