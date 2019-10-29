@@ -84,7 +84,7 @@ function socomec_preprocess_field(&$variables) {
     case 'field_pardot_form_url':
       $val = $variables["element"]["#object"]->field_pardot_cta_text->value;
       $variables['cta_text'] = $variables["element"]["#object"]->field_pardot_cta_text->value
-        ? $variables["element"]["#object"]->field_pardot_cta_text->value : t('Downlaod');
+        ? $variables["element"]["#object"]->field_pardot_cta_text->value : t('Download');
       break;
   }
 }
