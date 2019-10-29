@@ -88,6 +88,7 @@ module:
   soc_multisite: 0
   soc_nextpage: 0
   soc_pardot: 0
+  soc_premium_content: 0
   system: 0
   taxonomy: 0
   text: 0

@@ -1,0 +1,124 @@
+<?php
+
+/**
+ * @file
+ * Handle AddToAny integration.
+ */
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Url;
+use Drupal\paragraphs\Entity\Paragraph;
+use Drupal\node\Entity\Node;
+use Drupal\media\Entity\Media;
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ * Node creation
+ * $form_id == node_thank_you_page_add_form
+ *
+ * @param $form
+ * @param \Drupal\Core\Form\FormStateInterface $form_state
+ * @param $form_id
+ *
+ */
+function soc_premium_content_form_node_landing_page_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  $title = t('Save and Create @type', ['@type' => 'Thank You Page']);
+
+  // Get existing submit actions
+  $submit = $form['actions']['submit']['#submit'];
+  // Add custom submit actions
+  $submit[] = '_soc_premium_content_node_landing_page_form_submit';
+  // Create form submit
+  $form['actions']['button_thank_you_page'] = [
+    '#type' => 'submit',
+    '#submit' => $submit,
+    '#weight' => 99,
+    '#value' => $title,
+    '#attributes' => ['class' => ['button--primary']]
+  ];
+}
+
+/**
+ * Custom form submit handler for button_thank_you_page
+ *
+ * @param array $form
+ * @param \Drupal\Core\Form\FormStateInterface $form_state
+ *
+ * @return \Drupal\Core\Form\FormStateInterface
+ * @throws \Drupal\Core\Entity\EntityStorageException
+ */
+function _soc_premium_content_node_landing_page_form_submit(array $form, FormStateInterface $form_state) {
+  // Get Form Object
+  $object = $form_state->getFormObject();
+  // Get node
+  $node = Node::load($object->getEntity()->id());
+  if (!empty($node)) {
+    /** @var Array $nids */
+    $nids = \Drupal::service('soc_premium_content.soc_premium_content_node')->getAllThankYouPageFromLandingPage($node);
+    if (!empty($nids)) {
+      $url = Url::fromRoute('entity.node.edit_form', ['node' => current($nids)]);
+    } else {
+      // prepare new thank you page node
+      $node_tmp = [
+        'type'        => 'thank_you_page',
+        'title'       => $node->getTitle(),
+        'field_landing_page' => [
+          'target_id' => $node->id(),
+        ]
+      ];
+
+      // Get field thumbnail
+      $id_paragraph = $node->get('field_hero_paragraph')->target_id;
+      $paragraph = Paragraph::load($id_paragraph);
+      $field_thumbnail = $paragraph->get('field_thumbnail')->target_id;
+      if (!empty($field_thumbnail)) {
+        $media_entity = Media::load($field_thumbnail);
+        if (!empty($media_entity)) {
+          $node_tmp['field_thumbnail']['target_id'] = $media_entity->id();
+        }
+      }
+      $new_node = Node::create($node_tmp);
+      $new_node->save();
+      $url = Url::fromRoute('entity.node.edit_form', ['node' => $new_node->id()]);
+    }
+
+    return $form_state->setRedirectUrl($url);
+  }
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ * $form_id == node_landing_page_edit_form
+ *
+ * @param $form
+ * @param \Drupal\Core\Form\FormStateInterface $form_state
+ * @param $form_id
+ *
+ */
+function soc_premium_content_form_node_landing_page_edit_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  if (!is_null($node = Drupal::request()->attributes->get('node'))) {
+    /** @var Array $nids */
+    $nids = \Drupal::service('soc_premium_content.soc_premium_content_node')->getAllThankYouPageFromLandingPage($node);
+
+    // Define title btn.
+    if (!empty($nids)) {
+      $title = t('Save and Edit @type', ['@type' => 'Thank You Page']);
+    }
+    else {
+      $title = t('Save and Create @type', ['@type' => 'Thank You Page']);
+    }
+
+    // Get existing submit actions
+    $submit = $form['actions']['submit']['#submit'];
+    // Add custom submit actions
+    $submit[] = '_soc_premium_content_node_landing_page_form_submit';
+
+    // Create form submit
+    $form['actions']['button_thank_you_page'] = [
+      '#type' => 'submit',
+      '#submit' => $submit,
+      '#weight' => 99,
+      '#value' => $title,
+      '#attributes' => ['class' => ['button--primary']]
+    ];
+  }
+}
