@@ -90,7 +90,7 @@ services:
 
   # solr container - actency images
   solr:
-    image: wodby/solr
+    image: wodby/solr:8-4.0.4
     ports:
       - "8080:8983"
     environment:
