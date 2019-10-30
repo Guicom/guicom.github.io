@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.paragraph.pardot_form.field_pardot_cta_text
     - field.field.paragraph.pardot_form.field_pardot_form_url
     - field.field.paragraph.pardot_form.field_pardot_privacy_policy
     - paragraphs.paragraphs_type.pardot_form
@@ -27,10 +28,11 @@ content:
     type: link
     region: content
   field_pardot_privacy_policy:
-    weight: 2
+    weight: 1
     label: hidden
     settings: {  }
     third_party_settings: {  }
     type: text_default
     region: content
-hidden: {  }
+hidden:
+  field_pardot_cta_text: true
