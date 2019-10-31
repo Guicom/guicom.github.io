@@ -18,7 +18,7 @@ name: SOCOMEC
 description: ''
 backend: search_api_solr
 backend_config:
-  connector: solr_cloud
+  connector: standard
   connector_config:
     scheme: http
     host: solr
@@ -34,8 +34,6 @@ backend_config:
     http_method: AUTO
     jmx: false
     solr_install_dir: ../../..
-    checkpoints_collection: ''
-    stats_cache: org.apache.solr.search.stats.LRUStatsCache
   disabled_field_types: {  }
   rows: 10
   retrieve_data: false
