@@ -5,10 +5,12 @@
  * Functions to support theming in the SASS Starterkit subtheme.
  */
 
+use Drupal\Core\Config\Config;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\media\Entity\Media;
 use Drupal\file\Entity\File;
 use Drupal\paragraphs\Entity\Paragraph;
+use Drupal\soc_pardot\Form\PrivacyPolicySettingsForm;
 
 /**
  * Implements hook_form_system_theme_settings_alter() for settings form.
@@ -82,9 +84,17 @@ function socomec_preprocess_paragraph(&$variables){
 function socomec_preprocess_field(&$variables) {
   switch ($variables["field_name"]) {
     case 'field_pardot_form_url':
-      $val = $variables["element"]["#object"]->field_pardot_cta_text->value;
+      // Add CTA text on ancher button.
       $variables['cta_text'] = $variables["element"]["#object"]->field_pardot_cta_text->value
         ? $variables["element"]["#object"]->field_pardot_cta_text->value : t('Download');
+      
+      // Manage legal.
+      if (empty($variables["element"]["#object"]->field_pardot_privacy_policy->value)) {
+        $variables['legal_mentions'] = \Drupal::config(PrivacyPolicySettingsForm::PARDOT_SETTINGS_KEY)->get('text_default')['value'];
+      }
+      else {
+        $variables['legal_mentions'] = $variables["element"]["#object"]->field_pardot_privacy_policy->value;
+      }
       break;
   }
 }
