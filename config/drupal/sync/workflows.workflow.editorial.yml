@@ -64,6 +64,7 @@ type_settings:
       to: published
       weight: -1
       from:
+        - draft
         - pending_review
         - published
     submit_for_review:

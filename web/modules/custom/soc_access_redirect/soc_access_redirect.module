@@ -90,7 +90,7 @@ function soc_access_redirect_block_access(Block $block, $operation, AccountInter
   // If operation is view
   if (strcmp($operation, 'view') === 0) {
     // If block id is socomec_footer
-    if (strcmp($block->id(), 'socomec_footer') === 0) {
+    if (strcmp($block->id(), 'socomec_footer') === 0 || strcmp($block->id(), 'socomec_pardot_newsletter') === 0) {
       // Load node
       $node = Drupal::routeMatch()->getParameter('node');
       // If node is instance of NodeInterface

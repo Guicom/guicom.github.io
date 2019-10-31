@@ -556,6 +556,17 @@ bundles:
       notes: ''
       relationship: 0
       sars_filename: ''
+    field_pardot_cta_text:
+      bundle: pardot_form
+      name: field_pardot_cta_text
+      entity_type_id: paragraph
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
   video_embed:
     field_video_embed_title:
       bundle: video_embed
