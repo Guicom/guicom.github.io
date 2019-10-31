@@ -90,13 +90,12 @@ services:
 
   # solr container - actency images
   solr:
-    image: wodby/solr:8-4.0.4
+    build: ./docker/solr
+    command:
+      - solr-precreate
+      - collection1
     ports:
       - "8080:8983"
-    environment:
-      - SOLR_DEFAULT_CONFIG_SET=search_api_solr_8.x-3.2
-      # Run this commande after build container docker
-      # docker exec socomec_solr_1 make create core=collection1 -f /usr/local/bin/actions.mk
   # Tika server container - actency images
   tika:
     image: actency/docker-tika-server
