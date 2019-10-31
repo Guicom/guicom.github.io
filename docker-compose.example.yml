@@ -14,7 +14,7 @@ services:
       - DRUSH_VERSION=9
     volumes:
       - /home/docker/projets/socomec/:/var/www/html
-      - /home/docker/projets/socomec/:/var/www/.ssh/
+      - /home/docker/.ssh/:/var/www/.ssh/
       - /home/docker/projets/socomec/config/.bashrc:/var/www/.bashrc
     links:
       - database:mysql
@@ -96,6 +96,7 @@ services:
       - collection1
     ports:
       - "8080:8983"
+
   # Tika server container - actency images
   tika:
     image: actency/docker-tika-server
