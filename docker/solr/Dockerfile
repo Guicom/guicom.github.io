@@ -89,7 +89,6 @@ RUN set -e; \
   { command -v gpgconf && gpgconf --kill all || :; } && \
   rm -r "$GNUPGHOME"
 
-#COPY --chown=solr:solr scripts /opt/docker-solr/scripts
 COPY scripts /opt/docker-solr/scripts
 RUN chown -R solr:solr /opt/docker-solr/scripts
 

@@ -94,6 +94,8 @@ services:
       - collection1
     ports:
       - "8080:8983"
+    volumes:
+      - ./config/solr/:/opt/solr/server/solr/collection1/conf/
 
   # Tika server container - actency images
   tika:
