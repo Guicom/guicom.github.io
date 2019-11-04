@@ -88,12 +88,14 @@ services:
 
   # solr container - actency images
   solr:
-    # actency/docker-solr available tags: latest, 6.2, 6.1, 6.0, 5.5, 5.4, 5.3, 5.2, 5.1, 5.0, 4.10, 3.6
-    image: actency/docker-solr:6.2
+    build: ./docker/solr
+    command:
+      - solr-precreate
+      - collection1
     ports:
       - "8080:8983"
     volumes:
-      - ./config/solr:/opt/solr/server/solr/collection1/conf
+      - ./config/solr/:/opt/solr/server/solr/collection1/conf/
 
   # Tika server container - actency images
   tika:
