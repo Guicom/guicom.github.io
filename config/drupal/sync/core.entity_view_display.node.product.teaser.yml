@@ -28,3 +28,4 @@ hidden:
   field_new: true
   field_references: true
   langcode: true
+  search_api_excerpt: true

@@ -29,3 +29,4 @@ content:
 hidden:
   field_pardot_cta_text: true
   field_pardot_privacy_policy: true
+  search_api_excerpt: true
