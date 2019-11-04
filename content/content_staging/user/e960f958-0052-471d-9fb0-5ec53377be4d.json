@@ -1,0 +1,96 @@
+{
+    "_links": {
+        "self": {
+            "href": "http:\/\/default\/user\/6?_format=hal_json"
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+        }
+    },
+    "uid": [
+        {
+            "value": 6
+        }
+    ],
+    "uuid": [
+        {
+            "value": "e960f958-0052-471d-9fb0-5ec53377be4d"
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "preferred_langcode": [
+        {
+            "value": "en"
+        }
+    ],
+    "preferred_admin_langcode": [
+        {
+            "value": "en"
+        }
+    ],
+    "name": [
+        {
+            "value": "fabien.wachenheim@socomec.com"
+        }
+    ],
+    "mail": [
+        {
+            "value": "fabien.wachenheim@socomec.com"
+        }
+    ],
+    "timezone": [
+        {
+            "value": "Europe\/Paris"
+        }
+    ],
+    "status": [
+        {
+            "value": true
+        }
+    ],
+    "created": [
+        {
+            "value": "2019-11-04T15:49:08+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "changed": [
+        {
+            "value": "2019-11-04T15:49:08+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "access": [
+        {
+            "value": "1970-01-01T00:00:00+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "login": [
+        {
+            "value": "1970-01-01T00:00:00+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "init": [
+        {
+            "value": "fabien.wachenheim@socomec.com"
+        }
+    ],
+    "roles": [
+        {
+            "target_id": "administrator"
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ]
+}
