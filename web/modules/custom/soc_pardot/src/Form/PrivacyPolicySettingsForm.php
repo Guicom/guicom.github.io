@@ -78,12 +78,19 @@ class PrivacyPolicySettingsForm extends ConfigFormBase {
         '#title'          => $lang->getName(),
       ];
   
+      // Default value.
+      $d_value = empty($config->get('text_default_' . $lang->getId())['format'])
+      != true ? $config->get('text_default_' . $lang->getId())['format']: 'socomec';
+      // Default format.
+      $d_format = empty($config->get('text_default_' . $lang->getId())['value'])
+      != true ? $config->get('text_default_' . $lang->getId())['value'] : '';
+      
       $form['langue_' . $lang->getId()]['privacy_policy_' . $lang->getId()]['text_default_' . $lang->getId()] = [
         '#type'           => 'text_format',
         '#title'          => $this->t('Text Privacy Policy'),
         '#description'    => $this->t('Privacy Policy Default Text'),
-        '#format'        => empty($config->get('text_default_' . $lang->getId())['format']) != true ? $config->get('text_default_' . $lang->getId())['format']: 'socomec',
-        '#default_value'  => empty($config->get('text_default_' . $lang->getId())['value']) != true ? $config->get('text_default_' . $lang->getId())['value'] : '',
+        '#format'        => $d_value,
+        '#default_value'  => $d_format,
       ];
     }
     
