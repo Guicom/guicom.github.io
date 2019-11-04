@@ -1,0 +1,78 @@
+uuid: c7987a4a-0d36-473e-9bca-970b37effc76
+langcode: en
+status: true
+dependencies:
+  config:
+    - filter.format.socomec
+  module:
+    - ckeditor
+format: socomec
+editor: ckeditor
+settings:
+  toolbar:
+    rows:
+      -
+        -
+          name: Tools
+          items:
+            - Source
+            - '-'
+            - ShowBlocks
+        -
+          name: Formatting
+          items:
+            - Styles
+            - '-'
+            - Bold
+            - Italic
+            - Underline
+            - Strike
+            - RemoveFormat
+            - Subscript
+            - Superscript
+            - '-'
+            - JustifyLeft
+            - JustifyCenter
+            - JustifyRight
+            - JustifyBlock
+            - '-'
+            - Outdent
+            - Indent
+            - '-'
+            - Table
+            - '-'
+        -
+          name: Links
+          items:
+            - DrupalLink
+            - DrupalUnlink
+        -
+          name: Lists
+          items:
+            - BulletedList
+            - NumberedList
+        -
+          name: Media
+          items:
+            - Blockquote
+            - '-'
+            - DrupalImage
+            - '-'
+            - DrupalFontAwesome
+        -
+          name: Format
+          items:
+            - Language
+  plugins:
+    language:
+      language_list: un
+    stylescombo:
+      styles: "h3.custom-cke-title-3|Title h3\r\nh4.custom-cke-title-4|Title h4\r\nh5.custom-cke-title-5|Title h5\r\nh6.custom-cke-title-6|Title h6\r\na.custom-cke-link-elaborate|Elaborate link\r\na.custom-cke-link-cta-1|Link cta 1\r\na.custom-cke-link-cta-2|Link cta 2\r\na.custom-cke-link-cta-3|Link cta 3\r\na.custom-cke-link-cta-4|Link cta 4"
+image_upload:
+  status: true
+  scheme: public
+  directory: inline-images
+  max_size: ''
+  max_dimensions:
+    width: null
+    height: null

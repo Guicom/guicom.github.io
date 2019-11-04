@@ -1,5 +1,5 @@
 uuid: 0af06ffc-9b65-4d85-9658-4120d6f51796
-name: 'Drush Site-Install'
+name: Socomec
 mail: admin@example.com
 slogan: ''
 page:
@@ -12,3 +12,4 @@ langcode: en
 default_langcode: en
 _core:
   default_config_hash: yTxtFqBHnEWxQswuWvkjE8mKw2t8oKuCL1q8KnfHuGE
+mail_notification: ''

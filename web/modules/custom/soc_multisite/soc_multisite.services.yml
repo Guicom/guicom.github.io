@@ -1,0 +1,3 @@
+services:
+    soc_multisite.handler:
+        class: Drupal\soc_multisite\Service\MultisiteHandler

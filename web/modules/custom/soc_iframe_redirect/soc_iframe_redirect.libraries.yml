@@ -1,0 +1,6 @@
+iframe_redirect:
+  version: 1.x
+  js:
+    js/iframe_redirect.js: {header: true}
+  dependencies:
+    - core/jquery

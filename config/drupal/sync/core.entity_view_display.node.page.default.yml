@@ -4,8 +4,10 @@ status: true
 dependencies:
   config:
     - field.field.node.page.body
+    - field.field.node.page.field_table
     - node.type.page
   module:
+    - entity_reference_revisions
     - text
     - user
 _core:
@@ -15,6 +17,11 @@ targetEntityType: node
 bundle: page
 mode: default
 content:
+  addtoany:
+    weight: 101
+    settings: {  }
+    third_party_settings: {  }
+    region: content
   body:
     label: hidden
     type: text_default
@@ -22,7 +29,17 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_table:
+    type: entity_reference_revisions_entity_view
+    weight: 102
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
   links:
     weight: 101
     region: content
-hidden: {  }
+hidden:
+  langcode: true

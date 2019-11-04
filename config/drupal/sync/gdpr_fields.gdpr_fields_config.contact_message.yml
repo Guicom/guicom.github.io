@@ -1,0 +1,55 @@
+uuid: 9213dd3b-4256-4447-92f1-0988f9563ddf
+langcode: en
+status: true
+dependencies: {  }
+id: contact_message
+filenames:
+  feedback: contact_message
+  personal: contact_message
+bundles:
+  feedback:
+    mail:
+      bundle: feedback
+      name: mail
+      entity_type_id: contact_message
+      rtf: remove
+      rta: inc
+      enabled: true
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: contact_message
+    name:
+      bundle: feedback
+      name: name
+      entity_type_id: contact_message
+      rtf: remove
+      rta: inc
+      enabled: true
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: contact_message
+  personal:
+    mail:
+      bundle: personal
+      name: mail
+      entity_type_id: contact_message
+      rtf: remove
+      rta: inc
+      enabled: true
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: contact_message
+    name:
+      bundle: personal
+      name: name
+      entity_type_id: contact_message
+      rtf: remove
+      rta: inc
+      enabled: true
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: contact_message

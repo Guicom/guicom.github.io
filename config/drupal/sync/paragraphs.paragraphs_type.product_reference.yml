@@ -1,0 +1,9 @@
+uuid: 57b603de-83c9-4cd5-a400-1f8435f5fe96
+langcode: en
+status: true
+dependencies: {  }
+id: product_reference
+label: 'Product reference'
+icon_uuid: null
+description: ''
+behavior_plugins: {  }

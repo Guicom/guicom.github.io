@@ -1,0 +1,17 @@
+uuid: e7c43c8c-d2d1-408c-9b61-9cb301be4957
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: 'Landing page - Premium'
+type: landing_page
+description: 'This page is for promoting premium content.'
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: true

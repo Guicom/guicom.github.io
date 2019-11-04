@@ -1,6 +1,6 @@
 {
-    "name": "drupal-composer/drupal-project",
-    "description": "Project template for Drupal 8 projects with composer",
+    "name": "actency/socomec",
+    "description": "Drupal 8 multisite",
     "type": "project",
     "license": "GPL-2.0-or-later",
     "authors": [
@@ -9,29 +9,55 @@
             "role": ""
         }
     ],
-    "repositories": [
-        {
+    "repositories": {
+        "0": {
             "type": "composer",
             "url": "https://packages.drupal.org/8"
         },
-        {
+        "actency/foundation": {
             "type": "vcs",
-            "url": "git@gitlab.com:actency/phing.git"
+            "url": "https://gitlab.com/actency/utils/drupal/foundation.git"
         },
-        {
-            "_comment": "The PhingDrushTask module does not currently have a D8 release and is not available on https://packages.drupal.org/8. See https://www.drupal.org/node/2817131.",
+        "drupal/phingdrushtask": {
             "type": "vcs",
             "url": "https://git.drupal.org/project/phingdrushtask.git"
         }
-    ],
+    },
     "require": {
-        "php": ">=5.6",
-        "actency/phing": "dev-master",
+        "php": ">=7.2",
+        "ext-SimpleXML": "^7.1",
+        "ext-curl": "^7.1",
+        "ext-json": "^1.5",
+        "actency/foundation": "^8.1",
         "composer/installers": "^1.2",
         "cweagans/composer-patches": "^1.6.5",
         "drupal-composer/drupal-scaffold": "^2.5",
+        "drupal/abjs": "^1.2",
+        "drupal/addtoany": "^1.12",
+        "drupal/admin_toolbar": "^1.27",
+        "drupal/allow_iframed_site": "^2.0",
+        "drupal/auto_entitylabel": "^3.0@beta",
+        "drupal/bootstrap_sass": "^1.9",
+        "drupal/conditional_fields": "^1.0@alpha",
+        "drupal/config_ignore": "^2.1",
+        "drupal/config_split": "^1.4",
         "drupal/console": "^1.0.2",
         "drupal/core": "^8.7.0",
+        "drupal/default_content_deploy": "1.x-dev",
+        "drupal/drush_language": "^1.0@RC",
+        "drupal/ds": "^3.3",
+        "drupal/eu_cookie_compliance": "^1.6",
+        "drupal/fontawesome": "^2.14",
+        "drupal/gdpr": "^2.0@alpha",
+        "drupal/google_analytics": "^3.0",
+        "drupal/hook_event_dispatcher": "^1.25",
+        "drupal/hotjar": "^1.5",
+        "drupal/metatag": "^1.8",
+        "drupal/paragraphs": "^1.8",
+        "drupal/pathauto": "^1.4",
+        "drupal/recaptcha": "^2.4",
+        "drupal/redirect": "^1.3",
+        "drupal/simple_megamenu": "^1.0@beta",
         "drush/drush": "^9.0.0",
         "vlucas/phpdotenv": "^2.4",
         "webflo/drupal-finder": "^1.0.0",
@@ -39,6 +65,7 @@
         "zaporylie/composer-drupal-optimizations": "^1.0"
     },
     "require-dev": {
+        "drupal/devel": "^2.1",
         "webflo/drupal-core-require-dev": "^8.7.0"
     },
     "conflict": {
@@ -53,7 +80,9 @@
         "classmap": [
             "scripts/composer/ScriptHandler.php"
         ],
-        "files": ["load.environment.php"]
+        "files": [
+            "load.environment.php"
+        ]
     },
     "scripts": {
         "pre-install-cmd": [
@@ -75,12 +104,24 @@
             "drupal/core": "-p2"
         },
         "installer-paths": {
-            "web/core": ["type:drupal-core"],
-            "web/libraries/{$name}": ["type:drupal-library"],
-            "web/modules/contrib/{$name}": ["type:drupal-module"],
-            "web/profiles/contrib/{$name}": ["type:drupal-profile"],
-            "web/themes/contrib/{$name}": ["type:drupal-theme"],
-            "drush/Commands/{$name}": ["type:drupal-drush"]
+            "web/core": [
+                "type:drupal-core"
+            ],
+            "web/libraries/{$name}": [
+                "type:drupal-library"
+            ],
+            "web/modules/contrib/{$name}": [
+                "type:drupal-module"
+            ],
+            "web/profiles/contrib/{$name}": [
+                "type:drupal-profile"
+            ],
+            "web/themes/contrib/{$name}": [
+                "type:drupal-theme"
+            ],
+            "drush/Commands/{$name}": [
+                "type:drupal-drush"
+            ]
         },
         "drupal-scaffold": {
             "initial": {
@@ -90,8 +131,13 @@
         },
         "merge-plugin": {
             "include": [
-                "vendor/actency/phing/composer.json"
+                "vendor/actency/foundation/composer.json"
             ]
+        },
+        "patches": {
+            "drupal/default_content_deploy": {
+                "Add folder argument on drush dcdi dcde": "https://www.drupal.org/files/issues/2019-06-14/3061417-9.patch"
+            }
         }
     }
 }

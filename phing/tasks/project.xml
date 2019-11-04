@@ -23,18 +23,13 @@
     <target name="project:pre-drupal-config-import">
         <echo>Project Pre-Drupal Config Import</echo>
         <phingcall target="project:remove-unwanted-config" />
-        <!-- <phingcall target="project:default-language-en" description="Tips to install LDAP correctly"/>-->
     </target>
 
     <target name="project:post-install">
         <echo>Project Post-Install</echo>
         <!-- Gulp install -->
-        <phingcall target="gulp:install" />
-
-        <!-- theme installation -->
-        <!-- <phingcall target="theme:init" /> -->
-
-        <phingcall target="gulp:css" />
+        <phingcall target="gulp-socomec:install" />
+        <phingcall target="gulp-socomec:install" />
 
     </target>
 
@@ -48,8 +43,6 @@
 
         <phingcall target="project:updates" />
 
-        <!-- Gulp build -->
-        <phingcall target="gulp:build" />
     </target>
 
     <target name="project:post-drupal-config-import">
@@ -118,29 +111,8 @@
     </target>
 
     <target name="project:remove-unwanted-config" description="Remove unwanted configs">
-        <echo>Remove FR config file</echo>
-        <if>
-            <available file="${website.config.path}/sync/language.entity.fr.yml" />
-            <then>
-                <delete file="${website.config.path}/sync/language.entity.fr.yml" />
-            </then>
-        </if>
-
-        <echo>Remove EN config file</echo>
-        <if>
-            <available file="${website.config.path}/sync/language.entity.en.yml" />
-            <then>
-                <delete file="${website.config.path}/sync/language.entity.en.yml" />
-            </then>
-        </if>
-
-        <echo>Remove cache config file</echo>
-        <if>
-            <available file="${website.config.path}/sync/cache.default.yml" />
-            <then>
-                <delete file="${website.config.path}/sync/cache.default.yml" />
-            </then>
-        </if>
+      <!-- This task is left empty, it should only trigger project related tasks. -->
+      <!-- @todo: Create a check to a project specific task. -->
     </target>
 
     <target name="project:temp-fixes" description="Proceed to various temporary fixes">

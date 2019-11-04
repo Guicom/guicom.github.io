@@ -1,0 +1,22 @@
+uuid: 9355ee2c-5e36-46a5-a313-03bd42661961
+langcode: en
+status: true
+dependencies:
+  config:
+    - media.type.private_file
+id: media.private_file.status
+field_name: status
+entity_type: media
+bundle: private_file
+label: Published
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

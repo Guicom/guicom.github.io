@@ -1,0 +1,9 @@
+# Admin / config routes
+
+soc_core.config:
+  path: '/admin/config/socomec'
+  defaults:
+    _controller: '\Drupal\system\Controller\SystemController::systemAdminMenuBlockPage'
+    _title: 'Socomec'
+  requirements:
+    _permission: 'access administration pages'

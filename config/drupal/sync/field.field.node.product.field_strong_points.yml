@@ -1,0 +1,29 @@
+uuid: a02e19de-c0e7-4be3-b76c-9a7b5902429f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_strong_points
+    - node.type.product
+    - taxonomy.vocabulary.strong_points
+id: node.product.field_strong_points
+field_name: field_strong_points
+entity_type: node
+bundle: product
+label: 'Strong points'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      strong_points: strong_points
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

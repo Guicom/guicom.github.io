@@ -1,0 +1,19 @@
+uuid: 4d9a340d-0f21-4dcb-8760-4dce2f86cbc0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_client
+    - paragraphs.paragraphs_type.premium_content_promotion
+id: paragraph.premium_content_promotion.field_client
+field_name: field_client
+entity_type: paragraph
+bundle: premium_content_promotion
+label: Client
+description: 'Only for case studies.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,63 @@
+uuid: 9548a958-925a-4ddf-b7f1-1b0cc6b9a89d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.landing_page.field_body
+    - field.field.node.landing_page.field_hero_paragraph
+    - field.field.node.landing_page.field_key_figures
+    - field.field.node.landing_page.field_metatags
+    - field.field.node.landing_page.field_pardot_form
+    - field.field.node.landing_page.field_premium_content_type
+    - node.type.landing_page
+  module:
+    - ds
+    - entity_reference_revisions
+    - user
+third_party_settings:
+  ds:
+    layout:
+      id: ds_2col
+      library: ds/ds_2col
+      disable_css: true
+      entity_classes: all_classes
+      settings:
+        wrappers:
+          left: div
+          right: div
+        outer_wrapper: div
+        attributes: ''
+        link_attribute: ''
+        link_custom: ''
+        classes:
+          layout_class:
+            row: row
+          left:
+            col-lg-8: col-lg-8
+          right:
+            col-lg-4: col-lg-4
+    regions: {  }
+id: node.landing_page.default
+targetEntityType: node
+bundle: landing_page
+mode: default
+content:
+  field_pardot_form:
+    type: entity_reference_revisions_entity_view
+    weight: 0
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: right
+hidden:
+  addtoany: true
+  field_body: true
+  field_hero_paragraph: true
+  field_key_figures: true
+  field_metatags: true
+  field_premium_content_type: true
+  langcode: true
+  layout_builder__layout: true
+  links: true

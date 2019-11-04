@@ -1,0 +1,66 @@
+.field--name-field-pardot-form-url {
+  background: $yellow;
+  position: relative;
+  margin-bottom: 40px;
+  margin-top: -80px;
+  &:after {
+    right: -999em;
+    background: $yellow;
+    content: '';
+    display: block;
+    position: absolute;
+    width: 999em;
+    top: 0;
+    bottom: 0;
+  }
+
+  .ancher-button a {
+    display: flex;
+    height: 80px;
+    color: $blue;
+    align-items: center;
+    justify-content: center;
+
+    svg {
+      width: 20px;
+      height: 20px;
+      fill: $blue;
+      margin-right: 10px;
+    }
+  }
+
+  .conteneur {
+    height: calc(100% - 2px);
+  }
+}
+
+#block-socomec-content {
+  .layout__region--first {
+    @include make-col(8);
+  }
+
+  .layout__region--second {
+    @include make-col(4);
+  }
+}
+
+.field--name-field-pardot-privacy-policy {
+  margin-bottom: 30px;
+  p, span {
+    color: #4A4A47;
+    font-family: 'Roboto';
+    font-size: 12px ;
+    line-height: 20px;
+  }
+  a {
+    color: #4A4A47;
+    text-decoration: underline;
+  }
+}
+
+
+
+iframe {
+  width: 1px;
+  min-width: 100%;
+}

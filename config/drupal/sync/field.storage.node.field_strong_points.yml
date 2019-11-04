@@ -1,0 +1,20 @@
+uuid: 12e708be-57eb-4d33-865d-64bc6a9415d6
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - taxonomy
+id: node.field_strong_points
+field_name: field_strong_points
+entity_type: node
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
