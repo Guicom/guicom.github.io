@@ -8,9 +8,6 @@ text_default_en:
 text_default_fr:
   value: ''
   format: socomec
-text_default_af:
-  value: ''
-  format: socomec
 submit: 'Save configuration'
 form_build_id: form-eYczvU90QoW1yVU3fAmyL-ew7mgQaYkrnEq_VbpdQCc
 form_token: iCcEn_NLaugNGE-ubwzVEnH45s48cYWxFLyDgixiJrg
