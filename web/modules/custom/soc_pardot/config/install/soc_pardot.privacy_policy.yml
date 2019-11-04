@@ -1,4 +1,4 @@
 langcode: en
-text_default:
-  value: "<p>*We're committed to your privacy. Socomec uses the information you provide to us to contact you about our relevant content, events and products. You may unsubscribe from these communications at any time. For more information, check out our&nbsp;Privacy Policy</p>"
+text_default_en:
+  value: "<p>*We're committed to your privacy. Socomec uses the information you provide to us to contact you about our relevant content, events and products. You may unsubscribe from these communications at any time. For more information, check out our&nbsp;<a href="http://www.socomec.com/privacy-policy_en.html">Privacy Policy</a></p>"
   format: 'socomec'

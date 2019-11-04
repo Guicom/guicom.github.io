@@ -6,7 +6,8 @@ id: overrides
 label: overrides
 description: 'Changes who have to remain in their environment.'
 folder: ../config/drupal/overrides
-module: {  }
+module:
+  soc_pardot: 0
 theme: {  }
 blacklist: {  }
 graylist:

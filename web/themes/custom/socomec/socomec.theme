@@ -7,6 +7,7 @@
 
 use Drupal\Core\Config\Config;
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Language\LanguageManager;
 use Drupal\media\Entity\Media;
 use Drupal\file\Entity\File;
 use Drupal\paragraphs\Entity\Paragraph;
@@ -88,9 +89,10 @@ function socomec_preprocess_field(&$variables) {
       $variables['cta_text'] = $variables["element"]["#object"]->field_pardot_cta_text->value
         ? $variables["element"]["#object"]->field_pardot_cta_text->value : t('Download');
       
-      // Manage legal.
+      // Manage privacy policy.
       if (empty($variables["element"]["#object"]->field_pardot_privacy_policy->value)) {
-        $variables['legal_mentions'] = \Drupal::config(PrivacyPolicySettingsForm::PARDOT_SETTINGS_KEY)->get('text_default')['value'];
+        $lang_id = \Drupal::languageManager()->getCurrentLanguage()->getId();
+        $variables['legal_mentions'] = \Drupal::config(PrivacyPolicySettingsForm::PARDOT_SETTINGS_KEY)->get('text_default_' . $lang_id)['value'];
       }
       else {
         $variables['legal_mentions'] = $variables["element"]["#object"]->field_pardot_privacy_policy->value;
