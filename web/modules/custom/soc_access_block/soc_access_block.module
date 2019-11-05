@@ -1,0 +1,47 @@
+<?php
+
+/**
+ * @file
+ * Contains prae_core.module.
+ */
+
+use Drupal\block\Entity\Block;
+use Drupal\node\NodeInterface;
+use Drupal\Core\Access\AccessResult;
+use Drupal\Core\Session\AccountInterface;
+
+/**
+ * Implements hook_block_access().
+ *
+ * @param \Drupal\block\Entity\Block $block
+ * @param $operation
+ * @param \Drupal\Core\Session\AccountInterface $account
+ *
+ * @return \Drupal\Core\Access\AccessResult|\Drupal\Core\Access\AccessResultNeutral
+ */
+function soc_access_block_block_access(Block $block, $operation, AccountInterface $account) {
+  // If operation is view
+  if (strcmp($operation, 'view') === 0) {
+    // If block id is socomec_footer
+    if (strcmp($block->id(), 'socomec_footer') === 0 || strcmp($block->id(), 'socomec_pardot_newsletter') === 0) {
+      // Load node
+      $node = Drupal::routeMatch()->getParameter('node');
+      // If node is instance of NodeInterface
+      if ($node instanceof NodeInterface) {
+        // If node has field_footer_version
+        if ($node->hasField('field_footer_version')) {
+          // If field_footer_version is not empty
+          if (!$node->get('field_footer_version')->isEmpty()) {
+            // Get field_footer_version field value
+            $footer_version = $node->get('field_footer_version')->getValue();
+            // If $footer_version is not empty and if value is equal to short change Access to forbidden
+            if (!empty($footer_version[0]['value']) && strcmp($footer_version[0]['value'], 'short') === 0) {
+              return AccessResult::forbidden();
+            }
+          }
+        }
+      }
+    }
+  }
+  return AccessResult::neutral();
+}
