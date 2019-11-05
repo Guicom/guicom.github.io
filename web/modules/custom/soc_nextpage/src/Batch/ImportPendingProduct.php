@@ -19,7 +19,7 @@ class ImportPendingProduct {
       case 1:
         // @TODO : Implement familly manager
         break;
-      // Product case.
+      // Product & reference case.
       case 2:
       case 3:
         $product = new ProductManager();
