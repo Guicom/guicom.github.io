@@ -9,9 +9,6 @@
           $(this).parent().removeClass('filled');
         }
       });
-      $(this).focus(function() {
-        $(this).parent().addClass('focused');
-      });
       $(this).focus(function(){
         $(this).parent().addClass('focused');
       }).blur(function(){
@@ -25,6 +22,7 @@
     });
 
     $("select").change(function(){
+      // 866572 is default empty choice.
       if ( $(this).val() && $(this).val() != "866572" ) {
         $(this).parent().addClass('filled');
       }
