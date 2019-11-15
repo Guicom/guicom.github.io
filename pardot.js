@@ -23,15 +23,6 @@
       var input = $(this).find('input');
       $(this).prepend(input);
     });
-
-    $("select").change(function(){
-      if ( $(this).val() && $(this).val() != "866572" ) {
-        $(this).parent().addClass('filled');
-      }
-      if( $(this).val() == "No" ) {
-        $(this).parent().removeClass('filled');
-      }
-    });
   });
   $(window).on('load', function() {
     $('body').show();
