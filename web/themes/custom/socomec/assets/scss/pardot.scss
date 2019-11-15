@@ -24,6 +24,20 @@ form.form {
   margin: 22px 22px 120px 22px;
   padding: 0;
   p.form-field:not(.pd-radio):not(.pd-checkbox) {
+    input:-webkit-autofill,
+    input:-webkit-autofill:hover,
+    input:-webkit-autofill:focus,
+    textarea:-webkit-autofill,
+    textarea:-webkit-autofill:hover,
+    textarea:-webkit-autofill:focus,
+    select:-webkit-autofill,
+    select:-webkit-autofill:hover,
+    select:-webkit-autofill:focus{
+      border:none;
+      -webkit-text-fill-color: $blue;
+      -webkit-box-shadow: none;
+      transition: background-color 5000s ease-in-out 0s;
+    }
     margin: 0;
     padding: 0;
     background-color: $light-grey;
@@ -56,8 +70,12 @@ form.form {
         outline: none;
       }
     }
-
     &.filled {
+      label.field-label {
+        color: $dark-grey;
+      }
+    }
+    &.focused {
       border-top-color:  $blue;
       background-color: $white;
       background-image: linear-gradient(180deg, rgba(76,175,228,0.1) 0%, rgba(12,132,135,0) 100%);
