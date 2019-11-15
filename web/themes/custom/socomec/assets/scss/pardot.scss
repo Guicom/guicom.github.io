@@ -21,7 +21,7 @@ p {
   line-height: 25px;
 }
 form.form {
-  margin: 22px 22px 120px 22px;
+  margin: 22px 22px 0px 22px;
   padding: 0;
   p.form-field:not(.pd-radio):not(.pd-checkbox) {
     input:-webkit-autofill,
@@ -190,14 +190,17 @@ form.form {
   }
 
   p.submit {
-    padding: 0;
+    display: flex;
+    align-items: center;
+    margin: 60px -30px 0 -30px;
+   /* padding: 0;
     display: flex;
     margin: 60px -30px 0 -30px;
     position: absolute;
     left: 0;
     right: 0;
     bottom: 0;
-    align-items: center;
+    align-items: center;*/
     input {
       background-color: #0070C0;
       height: 60px;
