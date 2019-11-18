@@ -1,0 +1,9 @@
+uuid: ff3463d7-5d6f-48e4-8619-120c7d9bfa79
+langcode: en
+status: true
+dependencies: {  }
+id: content_hub
+label: 'Content hub'
+url: 'http://contenthub.loc:81'
+basic_auth_username: admin
+basic_auth_password: admin
