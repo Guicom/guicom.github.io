@@ -3,7 +3,7 @@ services:
   # web with xdebug - actency images
   web:
     # @see https://github.com/Actency/docker-apache-php
-    image: actency/docker-apache-php:7.2
+    build: ./docker/web
     ports:
       - "80:80"
     environment:
