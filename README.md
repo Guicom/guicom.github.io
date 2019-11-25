@@ -66,12 +66,6 @@ composer install
 ./vendor/bin/phing install
 ```
 
-### 10. Install search_api_solr
-```
-web/modules/contrib/search_api_solr/INSTALL.md
-
-```
-
 ## Gulp setup
 
 From the `web` folder, run :
