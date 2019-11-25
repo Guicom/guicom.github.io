@@ -4,6 +4,6 @@ status: true
 dependencies: {  }
 id: content_hub
 label: 'Content hub'
-url: 'http://contenthub.loc:81'
-basic_auth_username: admin
-basic_auth_password: admin
+url: 'http://contenthub.loc'
+basic_auth_username: entityshare
+basic_auth_password: entityshare

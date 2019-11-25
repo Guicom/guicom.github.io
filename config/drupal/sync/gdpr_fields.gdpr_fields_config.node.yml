@@ -9,6 +9,7 @@ filenames:
   landing_page: ''
   page: ''
   product_reference: ''
+  article: ''
 bundles:
   product:
     field_complementary_info:
@@ -507,6 +508,18 @@ bundles:
       rta: 'no'
       enabled: false
       anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+  article:
+    field_country:
+      bundle: article
+      name: field_country
+      entity_type_id: node
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: clear_anonymizer
       notes: ''
       relationship: 0
       sars_filename: ''
