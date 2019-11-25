@@ -6,13 +6,13 @@ id: overrides
 label: overrides
 description: 'Changes who have to remain in their environment.'
 folder: ../config/drupal/overrides
-module:
-  soc_pardot: 0
+module: {  }
 theme: {  }
 blacklist: {  }
 graylist:
   - dblog.settings
   - soc_nextpage.nextpage_ws
+  - soc_pardot.privacy_policy
   - system.cron
   - system.file
   - system.logging
