@@ -26,7 +26,10 @@
     color: $blue;
     align-items: center;
     justify-content: center;
-
+    font-family: $font-poppins;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 12px;
     svg {
       width: 20px;
       height: 20px;

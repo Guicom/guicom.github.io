@@ -66,14 +66,6 @@ composer install
 ./vendor/bin/phing install
 ```
 
-## Create solr core
-
-From outside your containers, run :
-
-```
-docker exec socomec_solr_1 make create core=collection1 -f /usr/local/bin/actions.mk
-```
-
 ## Gulp setup
 
 From the `web` folder, run :
