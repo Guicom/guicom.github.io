@@ -9,7 +9,6 @@ dependencies:
     - paragraphs.paragraphs_type.pardot_form
   module:
     - link
-    - text
 id: paragraph.pardot_form.default
 targetEntityType: paragraph
 bundle: pardot_form
@@ -27,13 +26,7 @@ content:
     third_party_settings: {  }
     type: link
     region: content
-  field_pardot_privacy_policy:
-    weight: 1
-    label: hidden
-    settings: {  }
-    third_party_settings: {  }
-    type: text_default
-    region: content
 hidden:
   field_pardot_cta_text: true
+  field_pardot_privacy_policy: true
   search_api_excerpt: true

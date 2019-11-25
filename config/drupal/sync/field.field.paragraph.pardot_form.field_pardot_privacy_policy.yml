@@ -12,7 +12,7 @@ field_name: field_pardot_privacy_policy
 entity_type: paragraph
 bundle: pardot_form
 label: 'Privacy policy'
-description: ''
+description: 'Leave this field blank if you want to display the general website privacy policy configurable <a href="/admin/config/socomec/privacy_policy" target="_blank">Here</a>'
 required: false
 translatable: false
 default_value: {  }
