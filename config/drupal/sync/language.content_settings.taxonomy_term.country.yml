@@ -1,9 +1,16 @@
-uuid: d27af917-40c6-4444-9480-c47ed21a510c
+uuid: 0f7f9846-aca9-49f9-afe3-4f38617737ad
 langcode: en
 status: true
 dependencies:
   config:
     - taxonomy.vocabulary.country
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+    bundle_settings:
+      untranslatable_fields_hide: '0'
 id: taxonomy_term.country
 target_entity_type_id: taxonomy_term
 target_bundle: country

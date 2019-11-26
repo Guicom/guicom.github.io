@@ -4,15 +4,23 @@ display:
       exposed_form:
         options:
           submit_button: Filtrer
+          reset_button_label: Réinitialiser
+          exposed_sorts_label: 'Trier par'
       fields:
+        title:
+          label: Titre
         status:
           label: État
         operations:
           label: Actions
       filters:
+        title:
+          expose:
+            label: Titre
         status:
           expose:
             label: État
         langcode:
           expose:
             label: Langue
+    display_title: Maître

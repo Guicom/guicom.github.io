@@ -3,7 +3,6 @@ langcode: en
 status: true
 dependencies:
   config:
-    - node.type.article
     - node.type.landing_page
     - node.type.thank_you_page
   module:
@@ -77,7 +76,6 @@ type_settings:
       weight: -2
   entity_types:
     node:
-      - article
       - landing_page
       - thank_you_page
   default_moderation_state: draft

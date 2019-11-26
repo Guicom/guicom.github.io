@@ -487,6 +487,17 @@ bundles:
       notes: ''
       relationship: 0
       sars_filename: ''
+    field_cta:
+      bundle: landing_page
+      name: field_cta
+      entity_type_id: node
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
   page:
     field_table:
       bundle: page
@@ -512,6 +523,17 @@ bundles:
       relationship: 0
       sars_filename: ''
   article:
+    body:
+      bundle: article
+      name: body
+      entity_type_id: node
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
     field_country:
       bundle: article
       name: field_country
@@ -520,6 +542,28 @@ bundles:
       rta: 'no'
       enabled: false
       anonymizer: clear_anonymizer
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_image:
+      bundle: article
+      name: field_image
+      entity_type_id: node
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_tags:
+      bundle: article
+      name: field_tags
+      entity_type_id: node
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
       notes: ''
       relationship: 0
       sars_filename: ''
