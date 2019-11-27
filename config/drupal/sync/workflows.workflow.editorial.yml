@@ -78,4 +78,5 @@ type_settings:
     node:
       - landing_page
       - thank_you_page
+      - article
   default_moderation_state: draft
