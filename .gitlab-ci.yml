@@ -51,6 +51,8 @@ cache: &global_cache
 # SonarQube Runner
 sonarqube:
   stage: sonarqube
+  tags:
+    - actency
   image: ciricihq/gitlab-sonar-scanner
   variables:
     SONAR_URL: http://sonarqube.actency.fr
@@ -61,6 +63,8 @@ sonarqube:
 # Behat tests from tests/ folder.
 behat:
   stage: behat
+  tags:
+    - actency
   cache:
     # inherit all global cache settings
     <<: *global_cache
