@@ -5,7 +5,12 @@ dependencies:
   config:
     - field.storage.node.field_body
     - node.type.landing_page
-    - paragraphs.paragraphs_type.premium_content_promotion
+    - paragraphs.paragraphs_type.key_figures
+    - paragraphs.paragraphs_type.model_cta
+    - paragraphs.paragraphs_type.model_image
+    - paragraphs.paragraphs_type.model_testimony
+    - paragraphs.paragraphs_type.model_text
+    - paragraphs.paragraphs_type.video_embed
   module:
     - entity_reference_revisions
 id: node.landing_page.field_body
@@ -23,18 +28,44 @@ settings:
   handler_settings:
     negate: 0
     target_bundles:
-      premium_content_promotion: premium_content_promotion
+      key_figures: key_figures
+      model_image: model_image
+      model_cta: model_cta
+      model_testimony: model_testimony
+      model_text: model_text
+      video_embed: video_embed
     target_bundles_drag_drop:
       hero_paragraph:
         weight: 5
         enabled: false
       premium_content_promotion:
-        enabled: true
         weight: 6
+        enabled: false
       product_faq:
         weight: 7
         enabled: false
       product_reference:
         weight: 8
         enabled: false
+      key_figures:
+        enabled: true
+        weight: 11
+      model_image:
+        enabled: true
+        weight: 11
+      model_cta:
+        enabled: true
+        weight: 12
+      model_testimony:
+        enabled: true
+        weight: 12
+      model_text:
+        enabled: true
+        weight: 13
+      pardot_form:
+        weight: 14
+        enabled: false
+      video_embed:
+        enabled: true
+        weight: 18
 field_type: entity_reference_revisions

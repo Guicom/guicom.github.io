@@ -14,7 +14,7 @@ services:
       - DRUSH_VERSION=9
     volumes:
       - /home/docker/projets/socomec/:/var/www/html
-      - /home/docker/projets/socomec/:/var/www/.ssh/
+      - /home/docker/.ssh/:/var/www/.ssh/
       - /home/docker/projets/socomec/config/.bashrc:/var/www/.bashrc
     links:
       - database:mysql
@@ -90,15 +90,22 @@ services:
 
   # solr container - actency images
   solr:
-    # actency/docker-solr available tags: latest, 6.2, 6.1, 6.0, 5.5, 5.4, 5.3, 5.2, 5.1, 5.0, 4.10, 3.6
-    image: actency/docker-solr:6.2
+    image: actency/docker-solr:7.7.2
     ports:
       - "8080:8983"
     volumes:
-      - ./config/solr:/opt/solr/server/solr/collection1/conf
+      - ./config/solr/:/opt/solr/server/solr/collection1/conf/
 
   # Tika server container - actency images
   tika:
     image: actency/docker-tika-server
     ports:
       - "9998:9998"
+
+  browser:
+    image: selenium/standalone-chrome:3.14.0-europium
+    ports:
+      - "4444:4444"
+    shm_size: 2G
+    links:
+      - web

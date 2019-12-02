@@ -1,7 +1,7 @@
 <project name="content" default="content">
     <!-- Export Interface -->
     <target name="content-export">
-        <input propertyName="export.content" validArgs="node,node_type,block_content,block_content_type,taxonomy_term,taxonomy_term_type,menu_link_content,menu_link_content_type" message="->Socomec ">What do you want to export ?</input>
+        <input propertyName="export.content" validArgs="node,node_type,block_content,block_content_type,taxonomy_term,taxonomy_term_type,menu_link_content,menu_link_content_type,user" message="->Socomec ">What do you want to export ?</input>
         <if>
             <equals arg1="${export.content}" arg2="node"/>
             <then>
@@ -56,6 +56,13 @@
                 <then>
                     <phingcall target="content-export:menu-type" />
                 </then>
+            </elseif>
+
+            <elseif>
+              <equals arg1="${export.content}" arg2="user"/>
+              <then>
+                <phingcall target="content-export:all-user" />
+              </then>
             </elseif>
 
         </if>
@@ -292,5 +299,29 @@
             <param>--folder=${content.folder}</param>
         </drush>
     </target>
+
+    <!-- Export all users -->
+    <target name="content-export:all-user">
+    <input propertyName="export.type.path" validArgs="y,n" message="->Socomec ">Export test users ?</input>
+    <if>
+      <equals arg1="${export.type.path}" arg2="y"/>
+      <then>
+        <property name="export.type" value="${content.staging.folder}" />
+        <echo message="${export.type}" />
+      </then>
+      <else>
+        <property name="export.type" value="${content.folder}" />
+      </else>
+    </if>
+    <drush
+      command="dcder"
+      assume="yes"
+      root="${website.drupal.dir}"
+      verbose="${drush.verbose}">
+
+      <param>--folder=${export.type}</param>
+      <param>user</param>
+    </drush>
+  </target>
 
 </project>

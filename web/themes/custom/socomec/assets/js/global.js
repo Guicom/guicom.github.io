@@ -32,15 +32,8 @@
         log: false,
         onResized: function(messageData) {
           $('#iframe-container').height(messageData.height + 'px');
-          console.log(messageData.height);
         },
       }, '#pardot-iframe');
-
-      //console.log($('#pardot-iframe').height());
-
-
-
-
     }
   };
 
@@ -50,9 +43,19 @@
    */
   Drupal.behaviors.socomec_datatables = {
     attach: function(context, settings) {
-      $('.field table', context).once('socomec_datatables').DataTable({
-        retrieve: true,
-        responsive: true
+      $( ".field table" ).each(function() {
+        if($( this ).children( "thead").length > 0){
+          if(!$( this ).hasClass('dataTable')){
+            $(this).DataTable({
+              retrieve:   true,
+              responsive: true,
+              paging:     false,
+              ordering:   false,
+              info:       false,
+              searching:  false
+            });
+          }
+        }
       });
     }
   };

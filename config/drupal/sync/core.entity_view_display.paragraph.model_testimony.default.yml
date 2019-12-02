@@ -8,8 +8,10 @@ dependencies:
     - field.field.paragraph.model_testimony.field_image_2
     - field.field.paragraph.model_testimony.field_nom
     - field.field.paragraph.model_testimony.field_position
-    - field.field.paragraph.model_testimony.field_text_simple
+    - field.field.paragraph.model_testimony.field_text
     - paragraphs.paragraphs_type.model_testimony
+  module:
+    - text
 id: paragraph.model_testimony.default
 targetEntityType: paragraph
 bundle: model_testimony
@@ -28,7 +30,7 @@ content:
     weight: 0
     label: hidden
     settings:
-      view_mode: default
+      view_mode: simple_html
       link: false
     third_party_settings: {  }
     region: content
@@ -37,7 +39,7 @@ content:
     weight: 1
     label: hidden
     settings:
-      view_mode: default
+      view_mode: simple_html
       link: false
     third_party_settings: {  }
     region: content
@@ -57,11 +59,12 @@ content:
     third_party_settings: {  }
     type: string
     region: content
-  field_text_simple:
-    weight: 5
+  field_text:
+    weight: 7
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    type: basic_string
+    type: text_default
     region: content
-hidden: {  }
+hidden:
+  search_api_excerpt: true

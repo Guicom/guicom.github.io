@@ -1,0 +1,8 @@
+name: Socomec AddToAny Floating Block
+type: module
+description: 'Soc add custom block floating to addtoany'
+package: Socomec
+dependencies:
+  - drupal:addtoany
+  - block
+core: '8.x'

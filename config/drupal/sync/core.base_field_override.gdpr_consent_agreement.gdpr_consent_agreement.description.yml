@@ -1,0 +1,18 @@
+uuid: 64563800-6012-4e7f-bfe1-40714d827df1
+langcode: en
+status: true
+dependencies:
+  module:
+    - gdpr_consent
+id: gdpr_consent_agreement.gdpr_consent_agreement.description
+field_name: description
+entity_type: gdpr_consent_agreement
+bundle: gdpr_consent_agreement
+label: Description
+description: 'Text displayed to the user on the form'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

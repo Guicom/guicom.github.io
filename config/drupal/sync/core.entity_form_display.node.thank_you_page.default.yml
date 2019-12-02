@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.thank_you_page.field_body
     - field.field.node.thank_you_page.field_cta
     - field.field.node.thank_you_page.field_file
     - field.field.node.thank_you_page.field_landing_page
@@ -11,6 +12,8 @@ dependencies:
     - field.field.node.thank_you_page.field_thumbnail
     - node.type.thank_you_page
   module:
+    - media_library
+    - paragraphs
     - path
     - text
 id: node.thank_you_page.default
@@ -20,12 +23,24 @@ mode: default
 content:
   created:
     type: datetime_timestamp
-    weight: 2
+    weight: 9
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_body:
+    weight: 7
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: closed
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: _none
+    third_party_settings: {  }
+    type: entity_reference_paragraphs
+    region: content
   field_cta:
-    weight: 12
+    weight: 6
     settings:
       size: 60
       placeholder: ''
@@ -54,16 +69,14 @@ content:
     type: string_textfield
     region: content
   field_file:
-    weight: 11
+    weight: 5
     settings:
-      match_operator: CONTAINS
-      size: 60
-      placeholder: ''
+      media_types: {  }
     third_party_settings: {  }
-    type: entity_reference_autocomplete
+    type: media_library_widget
     region: content
   field_landing_page:
-    weight: 7
+    weight: 1
     settings:
       match_operator: CONTAINS
       size: 60
@@ -72,7 +85,7 @@ content:
     type: entity_reference_autocomplete
     region: content
   field_success_text:
-    weight: 8
+    weight: 4
     settings:
       rows: 5
       placeholder: ''
@@ -80,7 +93,7 @@ content:
     type: text_textarea
     region: content
   field_thank_you_text:
-    weight: 9
+    weight: 3
     settings:
       size: 60
       placeholder: ''
@@ -88,13 +101,11 @@ content:
     type: string_textfield
     region: content
   field_thumbnail:
-    weight: 10
+    weight: 2
     settings:
-      match_operator: CONTAINS
-      size: 60
-      placeholder: ''
+      media_types: {  }
     third_party_settings: {  }
-    type: entity_reference_autocomplete
+    type: media_library_widget
     region: content
   langcode:
     type: language_select
@@ -105,7 +116,7 @@ content:
     third_party_settings: {  }
   path:
     type: path
-    weight: 5
+    weight: 12
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -113,31 +124,36 @@ content:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 3
+    weight: 10
     region: content
     third_party_settings: {  }
   status:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 6
+    weight: 13
     region: content
     third_party_settings: {  }
   sticky:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 4
+    weight: 11
     region: content
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 1
+    weight: 8
     settings:
       match_operator: CONTAINS
       size: 60
       placeholder: ''
     region: content
+    third_party_settings: {  }
+  url_redirects:
+    weight: 50
+    region: content
+    settings: {  }
     third_party_settings: {  }
 hidden:
   field_title: true

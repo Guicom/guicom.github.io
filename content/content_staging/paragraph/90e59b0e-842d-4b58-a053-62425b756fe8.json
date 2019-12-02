@@ -1,0 +1,119 @@
+{
+    "_links": {
+        "self": {
+            "href": ""
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/model_testimony"
+        },
+        "http:\/\/drupal.org\/rest\/relation\/paragraph\/model_testimony\/field_image_1": [
+            {
+                "href": "http:\/\/default\/media\/9\/edit?_format=hal_json"
+            }
+        ]
+    },
+    "id": [
+        {
+            "value": 10
+        }
+    ],
+    "uuid": [
+        {
+            "value": "90e59b0e-842d-4b58-a053-62425b756fe8"
+        }
+    ],
+    "revision_id": [
+        {
+            "value": 49
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "type": [
+        {
+            "target_id": "model_testimony"
+        }
+    ],
+    "status": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "created": [
+        {
+            "value": "2019-10-07T11:25:07+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "parent_id": [
+        {
+            "value": "3"
+        }
+    ],
+    "parent_type": [
+        {
+            "value": "node"
+        }
+    ],
+    "parent_field_name": [
+        {
+            "value": "field_body"
+        }
+    ],
+    "behavior_settings": [
+        {
+            "value": []
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "field_company": [
+        {
+            "value": "Socomec"
+        }
+    ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/paragraph\/model_testimony\/field_image_1": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/media\/9\/edit?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/media\/image"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "e12f8c33-ccb4-493c-a516-91d4d331c5f4"
+                    }
+                ]
+            }
+        ]
+    },
+    "field_nom": [
+        {
+            "value": "Jean Dupont"
+        }
+    ],
+    "field_position": [
+        {
+            "value": "CTO"
+        }
+    ],
+    "field_text": [
+        {
+            "value": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+        }
+    ]
+}

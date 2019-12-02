@@ -1,0 +1,23 @@
+uuid: 9740ef28-9f4f-4609-a6a7-5dc35dd1a7a7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_footer_version
+    - node.type.landing_page
+  module:
+    - options
+id: node.landing_page.field_footer_version
+field_name: field_footer_version
+entity_type: node
+bundle: landing_page
+label: 'Footer version'
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: standard
+default_value_callback: ''
+settings: {  }
+field_type: list_string

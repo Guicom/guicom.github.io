@@ -1,0 +1,14 @@
+.paragraph--type--model-image{
+  img{
+    max-width: 100%;
+    height: auto;
+  }
+  .field--name-field-legend{
+    margin: 0.5rem 0;
+    color: #4A4A47;
+    font-family: $font-roboto;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 25px;
+  }
+}

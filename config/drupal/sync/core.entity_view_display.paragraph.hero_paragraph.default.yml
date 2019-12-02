@@ -5,7 +5,6 @@ dependencies:
   config:
     - field.field.paragraph.hero_paragraph.field_background_image
     - field.field.paragraph.hero_paragraph.field_baseline
-    - field.field.paragraph.hero_paragraph.field_client_name
     - field.field.paragraph.hero_paragraph.field_thumbnail
     - paragraphs.paragraphs_type.hero_paragraph
 id: paragraph.hero_paragraph.default
@@ -30,14 +29,6 @@ content:
     third_party_settings: {  }
     type: string
     region: content
-  field_client_name:
-    weight: 3
-    label: hidden
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    type: string
-    region: content
   field_thumbnail:
     type: entity_reference_entity_view
     weight: 1
@@ -47,4 +38,5 @@ content:
       link: false
     third_party_settings: {  }
     region: content
-hidden: {  }
+hidden:
+  search_api_excerpt: true

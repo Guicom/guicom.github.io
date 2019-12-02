@@ -1,0 +1,103 @@
+.paragraph--type--model-testimony{
+  font-family: $font-roboto;
+
+  .infoblock {
+    display: flex;
+    /*justify-content: space-between;*/
+    width: 100%;
+    @include media-breakpoint-down(sm) {
+      flex-wrap: wrap;
+    }
+
+    .avatar {
+      display: flex;
+      align-items: center;
+      @include media-breakpoint-down(sm) {
+        justify-content: center;
+        order: 1;
+      }
+      .field {
+        margin-bottom: 0;
+        align-self: flex-end;
+      }
+      img {
+        height: auto;
+        width: 100px;
+        background-color: $blue;
+      }
+    }
+
+    .infotext {
+      padding-left: 30px;
+      align-self: center;
+      @include media-breakpoint-down(sm) {
+        padding-left: 0;
+        order: 3;
+        width: 100%;
+      }
+
+      .client-name {
+        color: $black;
+        font-family: $font-roboto;
+        font-size: 16px;
+        font-weight: bold;
+        line-height: 25px;
+      }
+
+      .client-position {
+        color: $darker-grey;
+        font-family: $font-roboto;
+        font-size: 16px;
+        line-height: 25px;
+      }
+    }
+
+    .field--name-field-image-2 {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      /*width: round(percentage(2/7));*/
+      flex:1;
+      margin-bottom: 0;
+      @include media-breakpoint-down(sm) {
+        order: 2;
+      }
+      img {
+        height: auto;
+        width: 60px;
+      }
+    }
+  }
+
+  .infodescription{
+    background-color: $lighter-grey;
+    padding: 30px 30px 100px 30px;
+    .text-testimony{
+      .text-formatted {
+        span,
+        div,
+        p,
+        ul li,
+        ol li{
+          font-size: 20px;
+          font-weight: 300;
+          line-height: 30px;
+        }
+      }
+      text-align: left;
+    }
+    &:before {
+      left: -999em;
+      background: $lighter-grey;
+      content: '';
+      display: block;
+      position: absolute;
+      width: 999em;
+      top: 0;
+      bottom: 0;
+      @include media-breakpoint-down(lg) {
+        display: none;
+      }
+    }
+  }
+}

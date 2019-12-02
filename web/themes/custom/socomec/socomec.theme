@@ -5,7 +5,13 @@
  * Functions to support theming in the SASS Starterkit subtheme.
  */
 
+use Drupal\Core\Config\Config;
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Language\LanguageManager;
+use Drupal\media\Entity\Media;
+use Drupal\file\Entity\File;
+use Drupal\paragraphs\Entity\Paragraph;
+use Drupal\soc_pardot\Form\PrivacyPolicySettingsForm;
 
 /**
  * Implements hook_form_system_theme_settings_alter() for settings form.
@@ -31,8 +37,68 @@ function socomec_form_system_theme_settings_alter(&$form, FormStateInterface $fo
   );
 }
 
+/**
+ * Implements template_preprocess_paragraph().
+ *
+ * @param array $variables
+ *   An associative array containing:
+ *   - elements: An array of elements to display in view mode.
+ *   - paragraph: The paragraph object.
+ *   - view_mode: View mode; e.g., 'full', 'teaser'...
+ */
 function socomec_preprocess_paragraph(&$variables){
-  $variables['#attached']['library'][] =  'socomec/datatables-styling';
+  $paragraph = $variables['elements']['#paragraph'];
+  $bundle = $paragraph->bundle();
+  // if paragraph is model_cta
+  if ( strcmp($bundle, 'model_cta') === 0) {
+    if ($paragraph->hasField('field_cta_color_list')) {
+      $field_cta_color_list = (!empty($paragraph->get('field_cta_color_list')->getValue()))?$paragraph->get('field_cta_color_list')->getValue():null;
+      if (!empty($field_cta_color_list[0]['value'])) {
+        $variables['cta_class'] = $field_cta_color_list[0]['value'];
+      }
+    }
+    if ($paragraph->hasField('field_cta')) {
+      $field_cta = (!empty($paragraph->get('field_cta')->getValue()))?$paragraph->get('field_cta')->getValue():null;
+      if (!empty($field_cta[0]['uri'])) {
+        $variables['cta_url'] = $field_cta[0]['uri'];
+      }
+      if (!empty($field_cta[0]['title'])) {
+        $variables['cta_title'] = $field_cta[0]['title'];
+      }
+      elseif($field_cta[0]['uri']){
+        $variables['cta_title'] = $field_cta[0]['uri'];
+      }
+    }
+    if ($paragraph->hasField('field_target')) {
+      $field_target = (!empty($paragraph->get('field_target')->getValue()))?$paragraph->get('field_target')->getValue():null;
+      if (!empty($field_target[0]['value']) && strcmp($field_target[0]['value'], 1) === 0) {
+        $variables['cta_target'] = '_blank';
+      }
+
+    }
+  }
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function socomec_preprocess_field(&$variables) {
+  switch ($variables["field_name"]) {
+    case 'field_pardot_form_url':
+      // Add CTA text on ancher button.
+      $variables['cta_text'] = $variables["element"]["#object"]->field_pardot_cta_text->value
+        ? $variables["element"]["#object"]->field_pardot_cta_text->value : t('Download');
+      
+      // Manage privacy policy.
+      if (empty($variables["element"]["#object"]->field_pardot_privacy_policy->value)) {
+        $lang_id = \Drupal::languageManager()->getCurrentLanguage()->getId();
+        $variables['legal_mentions'] = \Drupal::config(PrivacyPolicySettingsForm::PARDOT_SETTINGS_KEY)->get('text_default_' . $lang_id)['value'];
+      }
+      else {
+        $variables['legal_mentions'] = $variables["element"]["#object"]->field_pardot_privacy_policy->value;
+      }
+      break;
+  }
 }
 
 /**
@@ -40,11 +106,11 @@ function socomec_preprocess_paragraph(&$variables){
  */
 function socomec_theme_suggestions_field_alter(&$suggestions, array $variables) {
   $element = $variables['element'];
-  
+
   $suggestions[] = 'field__' . $element['#entity_type'] . '__' .
     $element['#field_name'] . '__' . $element['#bundle'] . '__' .
     $element['#view_mode'];
-  
+
   $suggestions[] = 'field__' . $element['#entity_type'] . '__' .
     $element['#field_name'] . '__' . $element['#view_mode'];
 }
@@ -61,27 +127,85 @@ function socomec_theme_suggestions_page_alter(array &$suggestions, array $variab
 }
 
 /**
+  * Implements hook_theme_suggestions_HOOK_alter().
+  */
+function socomec_theme_suggestions_views_view_fields_alter(array &$suggestions, array $variables) {
+  // Suggestions for custom views_view bundles.
+  if (!empty($variables['view'])) {
+    $view = $variables['view'];
+    if (!empty($view->id()) && !empty($view->getDisplay()->getPluginId())) {
+      $id = $view->id();
+      $display = $view->current_display;
+      $hook = $variables['theme_hook_original'];
+      array_splice($suggestions, 1, 0, $hook . '__' . $id . '__' . $display);
+    }
+  }
+}
+
+
+/**
  * Implements template_preprocess_views_view() for hero view.
  */
 function socomec_preprocess_views_view(&$variables) {
   $id = $variables['id'];
   $display_id = $variables['display_id'];
   // Apply background image for hero paragraph view block
-  if((!empty($id) && $id == 'hero_block') && (!empty($display_id) && $display_id == 'block_1')) {
+  if ((!empty($id) && $id == 'hero_block') && ($display_id == 'block_1' || $display_id == 'block_2')) {
     $rows = $variables['rows'][0]['#rows'];
     $hero_paragraph_id = $rows[0]['#row']->paragraphs_item_field_data_node__field_hero_paragraph_id;
     if(!empty($hero_paragraph_id)){
-      $paragraph = Drupal\paragraphs\entity\Paragraph::load($hero_paragraph_id);
+      /** @var Drupal\paragraphs\Entity\Paragraph $paragraph */
+      $paragraph = Paragraph::load($hero_paragraph_id);
       if(empty($paragraph)){
         return;
       }
-      $field_background_image_id = $paragraph->field_background_image->target_id;
-      $file = \Drupal\file\Entity\File::load($field_background_image_id);
+      if ($paragraph->hasField('field_background_image')
+        && !empty($paragraph->get('field_background_image')->getValue())) {
+        $field_background_image_id = $paragraph->get('field_background_image')->first()->getValue()['target_id'];
+        $media = Media::load($field_background_image_id);
+        $fid = $media->getSource()->getSourceFieldValue($media);
+        $file = File::load($fid);
+        if(empty($file)){
+          return;
+        }
+        $file_url = file_create_url($file->getFileUri());
+      }
+      $variables['background_image'] = (!empty($file_url))?$file_url:null;
+    }
+  }
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function socomec_preprocess_views_view_fields__hero_block__block_2(&$variables) {
+  $mid = $variables["row"]->_entity->get('field_file')->getString();
+
+  if (isset($mid) && !empty($mid)) {
+    $media = Media::load($mid);
+    $fid = $media->getSource()->getSourceFieldValue($media);
+    if ($fid != NULL) {
+      $file = File::load($fid);
       if(empty($file)){
         return;
       }
-      $file_url = file_create_url($file->getFileUri());
-      $variables['background_image'] = (!empty($file_url))?$file_url:null;
+      $variables['file_url'] = file_create_url($file->getFileUri());
+    }
+  }
+}
+
+/**
+ * Implements hook_preprocess_media().
+ */
+function socomec_preprocess_media(array &$variables) {
+  if ($variables["view_mode"] == 'simple_html' && $variables["media"]->bundle() == 'image') {
+    $variables['content']['url'] = $variables['content']['field_media_image'][0]['#markup'];
+    $properties = $variables["media"]->field_media_image->getValue();
+    if (isset($properties[0]["alt"])) {
+      $variables['content']['alt'] = $properties[0]["alt"];
+    }
+    if (isset($properties[0]["title"])) {
+      $variables['content']['title_image'] = $properties[0]["title"];
     }
   }
 }

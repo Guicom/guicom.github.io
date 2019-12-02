@@ -1,0 +1,25 @@
+uuid: 13219492-5280-4ec0-b624-0bd2f7619688
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:link:cd83bf6d-f525-4456-b1a8-20f8b374f3b2'
+  module:
+    - block_content
+  theme:
+    - socomec
+id: socomec_pardot_newsletter
+theme: socomec
+region: footer_third
+weight: 0
+provider: null
+plugin: 'block_content:cd83bf6d-f525-4456-b1a8-20f8b374f3b2'
+settings:
+  id: 'block_content:cd83bf6d-f525-4456-b1a8-20f8b374f3b2'
+  label: 'Pardot newsletter'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

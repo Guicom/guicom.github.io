@@ -1,0 +1,18 @@
+uuid: fce5def8-cc80-4ad3-9749-b9c7bedc12cd
+langcode: en
+status: true
+dependencies:
+  config:
+    - media.type.private_file
+id: media.private_file.metatag
+field_name: metatag
+entity_type: media
+bundle: private_file
+label: Metatags
+description: 'The meta tags for the entity.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: map

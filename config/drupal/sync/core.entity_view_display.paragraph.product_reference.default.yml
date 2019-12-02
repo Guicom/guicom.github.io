@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.paragraph.product_reference.field_json_reference_data
     - field.field.paragraph.product_reference.field_new
     - paragraphs.paragraphs_type.product_reference
 id: paragraph.product_reference.default
@@ -10,6 +11,13 @@ targetEntityType: paragraph
 bundle: product_reference
 mode: default
 content:
+  field_json_reference_data:
+    weight: 1
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
   field_new:
     weight: 0
     label: above
@@ -20,4 +28,5 @@ content:
     third_party_settings: {  }
     type: boolean
     region: content
-hidden: {  }
+hidden:
+  search_api_excerpt: true

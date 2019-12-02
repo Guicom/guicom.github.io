@@ -21,6 +21,9 @@
 !/config/drupal/template/settings.local.php
 !/config/drupal/template/services.local.yml
 
+# Ignore overrides config
+/config/drupal/overrides
+
 # Ignore sensitive information
 /web/sites/**/files/*
 /data/**/files/private
@@ -45,3 +48,9 @@
 docker-compose.yml
 docker-compose.override.yml
 docker-sync.yml
+
+# Ignore compiled files
+/web/themes/custom/*/assets/css/*.css
+
+# Ignore SQL files
+*.sql

@@ -2,6 +2,9 @@ uuid: 1b8d2a92-ceec-4cd1-b2b9-35018503481c
 langcode: en
 status: true
 dependencies:
+  config:
+    - node.type.landing_page
+    - node.type.thank_you_page
   module:
     - content_moderation
 _core:
@@ -56,12 +59,12 @@ type_settings:
       weight: -3
       from:
         - draft
-        - published
     publish:
       label: Publish
       to: published
       weight: -1
       from:
+        - draft
         - pending_review
         - published
     submit_for_review:
@@ -71,5 +74,8 @@ type_settings:
         - draft
       to: pending_review
       weight: -2
-  entity_types: {  }
+  entity_types:
+    node:
+      - landing_page
+      - thank_you_page
   default_moderation_state: draft

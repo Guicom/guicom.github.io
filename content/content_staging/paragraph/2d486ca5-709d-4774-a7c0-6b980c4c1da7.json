@@ -1,0 +1,115 @@
+{
+    "_links": {
+        "self": {
+            "href": ""
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/key_figures"
+        }
+    },
+    "id": [
+        {
+            "value": 6
+        }
+    ],
+    "uuid": [
+        {
+            "value": "2d486ca5-709d-4774-a7c0-6b980c4c1da7"
+        }
+    ],
+    "revision_id": [
+        {
+            "value": 48
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "type": [
+        {
+            "target_id": "key_figures"
+        }
+    ],
+    "status": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "created": [
+        {
+            "value": "2019-10-07T11:15:12+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "parent_id": [
+        {
+            "value": "3"
+        }
+    ],
+    "parent_type": [
+        {
+            "value": "node"
+        }
+    ],
+    "parent_field_name": [
+        {
+            "value": "field_body"
+        }
+    ],
+    "behavior_settings": [
+        {
+            "value": []
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "field_figure_1_number": [
+        {
+            "value": "\u20ac 150 M"
+        }
+    ],
+    "field_figure_1_text_line_1": [
+        {
+            "value": "Total"
+        }
+    ],
+    "field_figure_1_text_line_2": [
+        {
+            "value": "investment"
+        }
+    ],
+    "field_figure_2_number": [
+        {
+            "value": "39"
+        }
+    ],
+    "field_figure_2_text_line_1": [
+        {
+            "value": "equiped"
+        }
+    ],
+    "field_figure_2_text_line_2": [
+        {
+            "value": "blocks"
+        }
+    ],
+    "field_figure_3_number": [
+        {
+            "value": "100%"
+        }
+    ],
+    "field_figure_3_text_line_1": [
+        {
+            "value": "stability"
+        }
+    ]
+}

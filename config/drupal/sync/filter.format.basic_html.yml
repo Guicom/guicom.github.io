@@ -16,7 +16,7 @@ filters:
     status: true
     weight: -10
     settings:
-      allowed_html: '<a href hreflang> <em> <strong> <cite> <blockquote cite> <code> <ul type> <ol start type> <li> <dl> <dt> <dd> <h2 id> <h3 id> <h4 id> <h5 id> <h6 id> <p> <br> <span> <img src alt height width data-entity-type data-entity-uuid data-align data-caption>'
+      allowed_html: '<em> <strong> <cite> <blockquote cite> <code> <ul type> <ol start type> <li> <dl> <dt> <dd> <h2 id> <p> <br> <img src alt height width data-entity-type data-entity-uuid data-align data-caption> <a href hreflang class="custom-cke-link-elaborate custom-cke-link-cta-1 custom-cke-link-cta-2 custom-cke-link-cta-3 custom-cke-link-cta-4" target> <u> <s> <sup> <sub> <h3 id class="custom-cke-title-3"> <h4 id class="custom-cke-title-4"> <h5 id class="custom-cke-title-5"> <h6 id class="custom-cke-title-6"> <span lang dir>'
       filter_html_help: false
       filter_html_nofollow: false
   filter_align:

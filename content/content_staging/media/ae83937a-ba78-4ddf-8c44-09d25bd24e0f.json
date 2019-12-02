@@ -14,13 +14,13 @@
         ],
         "http:\/\/drupal.org\/rest\/relation\/media\/private_image\/thumbnail": [
             {
-                "href": "http:\/\/default\/system\/files\/2019-10\/34665210-Rubber-stamp-with-word-example-inside-vector-illustration-Stock-Vector.jpg",
+                "href": "",
                 "lang": "en"
             }
         ],
         "http:\/\/drupal.org\/rest\/relation\/media\/private_image\/field_media_image_1": [
             {
-                "href": "http:\/\/default\/system\/files\/2019-10\/34665210-Rubber-stamp-with-word-example-inside-vector-illustration-Stock-Vector.jpg",
+                "href": "",
                 "lang": "en"
             }
         ]
@@ -53,7 +53,7 @@
     ],
     "revision_created": [
         {
-            "value": "2019-10-03T12:31:29+00:00",
+            "value": "2019-10-08T14:17:56+00:00",
             "format": "Y-m-d\\TH:i:sP"
         }
     ],
@@ -76,7 +76,7 @@
                 },
                 "uuid": [
                     {
-                        "value": "502ca242-45f0-4d16-adbd-6adb6d85ef16"
+                        "value": "fb94e047-66d0-45a3-bce6-5e939a925965"
                     }
                 ],
                 "lang": "en"
@@ -86,7 +86,7 @@
             {
                 "_links": {
                     "self": {
-                        "href": "http:\/\/default\/system\/files\/2019-10\/34665210-Rubber-stamp-with-word-example-inside-vector-illustration-Stock-Vector.jpg"
+                        "href": ""
                     },
                     "type": {
                         "href": "http:\/\/drupal.org\/rest\/type\/file\/file"
@@ -94,17 +94,21 @@
                 },
                 "uuid": [
                     {
-                        "value": "cc9aae99-2a78-4e37-b99a-909f51614a93"
+                        "value": "acfb4bb8-9118-4043-bf46-1e02fa5dd006"
                     }
                 ],
-                "lang": "en"
+                "lang": "en",
+                "alt": "Example",
+                "title": null,
+                "width": "180",
+                "height": "180"
             }
         ],
         "http:\/\/drupal.org\/rest\/relation\/media\/private_image\/field_media_image_1": [
             {
                 "_links": {
                     "self": {
-                        "href": "http:\/\/default\/system\/files\/2019-10\/34665210-Rubber-stamp-with-word-example-inside-vector-illustration-Stock-Vector.jpg"
+                        "href": ""
                     },
                     "type": {
                         "href": "http:\/\/drupal.org\/rest\/type\/file\/file"
@@ -112,16 +116,20 @@
                 },
                 "uuid": [
                     {
-                        "value": "cc9aae99-2a78-4e37-b99a-909f51614a93"
+                        "value": "acfb4bb8-9118-4043-bf46-1e02fa5dd006"
                     }
                 ],
-                "lang": "en"
+                "lang": "en",
+                "alt": "Example",
+                "title": "",
+                "width": "1300",
+                "height": "775"
             }
         ]
     },
     "name": [
         {
-            "value": "Example image",
+            "value": "Example private image",
             "lang": "en"
         }
     ],
@@ -134,7 +142,7 @@
     ],
     "changed": [
         {
-            "value": "2019-10-03T12:31:29+00:00",
+            "value": "2019-10-08T14:34:47+00:00",
             "lang": "en",
             "format": "Y-m-d\\TH:i:sP"
         }

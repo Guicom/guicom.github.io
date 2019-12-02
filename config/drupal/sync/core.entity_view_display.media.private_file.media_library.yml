@@ -1,0 +1,33 @@
+uuid: 7a037c98-1409-4c96-b3e4-74973eef9166
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.media.media_library
+    - field.field.media.private_file.field_media_file_1
+    - image.style.medium
+    - media.type.private_file
+  module:
+    - image
+id: media.private_file.media_library
+targetEntityType: media
+bundle: private_file
+mode: media_library
+content:
+  thumbnail:
+    type: image
+    label: hidden
+    settings:
+      image_style: medium
+      image_link: ''
+    weight: 0
+    third_party_settings: {  }
+    region: content
+hidden:
+  addtoany: true
+  created: true
+  field_media_file_1: true
+  langcode: true
+  name: true
+  search_api_excerpt: true
+  uid: true

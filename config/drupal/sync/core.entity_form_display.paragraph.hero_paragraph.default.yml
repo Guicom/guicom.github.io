@@ -5,9 +5,10 @@ dependencies:
   config:
     - field.field.paragraph.hero_paragraph.field_background_image
     - field.field.paragraph.hero_paragraph.field_baseline
-    - field.field.paragraph.hero_paragraph.field_client_name
     - field.field.paragraph.hero_paragraph.field_thumbnail
     - paragraphs.paragraphs_type.hero_paragraph
+  module:
+    - media_library
 id: paragraph.hero_paragraph.default
 targetEntityType: paragraph
 bundle: hero_paragraph
@@ -16,11 +17,9 @@ content:
   field_background_image:
     weight: 4
     settings:
-      match_operator: CONTAINS
-      size: 60
-      placeholder: ''
+      media_types: {  }
     third_party_settings: {  }
-    type: entity_reference_autocomplete
+    type: media_library_widget
     region: content
   field_baseline:
     weight: 1
@@ -30,22 +29,12 @@ content:
     third_party_settings: {  }
     type: string_textfield
     region: content
-  field_client_name:
-    weight: 2
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-    type: string_textfield
-    region: content
   field_thumbnail:
     weight: 3
     settings:
-      match_operator: CONTAINS
-      size: 60
-      placeholder: ''
+      media_types: {  }
     third_party_settings: {  }
-    type: entity_reference_autocomplete
+    type: media_library_widget
     region: content
 hidden:
   created: true

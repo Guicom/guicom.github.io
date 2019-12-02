@@ -1,0 +1,3 @@
+services:
+  soc_premium_content.soc_premium_content_node:
+    class: Drupal\soc_premium_content\Service\SocPremiumContentNode

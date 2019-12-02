@@ -5,4 +5,15 @@ dependencies: {  }
 id: node__thank_you_page
 label: 'Content: Thank you page'
 tags:
+  content_language: '[node:field_landing_page:entity:langcode]'
+  image_src: '[node:field_landing_page:entity:field_hero_paragraph:entity:field_thumbnail:entity:field_media_image:og_image_600x315:url]'
   robots: 'noindex, nofollow, noarchive'
+  title: '[node:field_landing_page:entity:title]'
+  og_image: '[node:field_landing_page:entity:field_hero_paragraph:entity:field_thumbnail:entity:field_media_image:og_image_600x315:url]'
+  og_image_alt: '[node:field_landing_page:entity:field_hero_paragraph:entity:field_thumbnail:entity:field_media_image:alt]'
+  og_image_height: '[node:field_landing_page:entity:field_hero_paragraph:entity:field_thumbnail:entity:field_media_image:og_image_600x315:height]'
+  og_image_type: '[node:field_landing_page:entity:field_hero_paragraph:entity:field_thumbnail:entity:field_media_image:mimetype]'
+  og_image_width: '[node:field_landing_page:entity:field_hero_paragraph:entity:field_thumbnail:entity:field_media_image:og_image_600x315:width]'
+  og_site_name: '[site:name]'
+  og_title: '[node:field_landing_page:entity:title]'
+  og_updated_time: '[node:field_landing_page:entity:changed:short]'

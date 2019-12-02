@@ -8,6 +8,7 @@ filenames:
   thank_you_page: ''
   landing_page: ''
   page: ''
+  product_reference: ''
 bundles:
   product:
     field_complementary_info:
@@ -94,7 +95,7 @@ bundles:
       rtf: 'no'
       rta: 'no'
       enabled: false
-      anonymizer: ''
+      anonymizer: date_anonymizer
       notes: ''
       relationship: 0
       sars_filename: ''
@@ -241,6 +242,39 @@ bundles:
       notes: ''
       relationship: 0
       sars_filename: ''
+    field_product_references:
+      bundle: product
+      name: field_product_references
+      entity_type_id: node
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_json_product_data:
+      bundle: product
+      name: field_json_product_data
+      entity_type_id: node
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_long_description:
+      bundle: product
+      name: field_long_description
+      entity_type_id: node
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
   thank_you_page:
     field_title:
       bundle: thank_you_page
@@ -363,6 +397,17 @@ bundles:
       notes: ''
       relationship: 0
       sars_filename: ''
+    field_body:
+      bundle: thank_you_page
+      name: field_body
+      entity_type_id: node
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: clear_anonymizer
+      notes: ''
+      relationship: 0
+      sars_filename: ''
   landing_page:
     field_hero_paragraph:
       bundle: landing_page
@@ -419,10 +464,55 @@ bundles:
       notes: ''
       relationship: 0
       sars_filename: ''
+    field_body:
+      bundle: landing_page
+      name: field_body
+      entity_type_id: node
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: clear_anonymizer
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_footer_version:
+      bundle: landing_page
+      name: field_footer_version
+      entity_type_id: node
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_cta:
+      bundle: landing_page
+      name: field_cta
+      entity_type_id: node
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
   page:
     field_table:
       bundle: page
       name: field_table
+      entity_type_id: node
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+  product_reference:
+    field_json:
+      bundle: product_reference
+      name: field_json
       entity_type_id: node
       rtf: 'no'
       rta: 'no'

@@ -35,3 +35,4 @@ content:
 hidden:
   field_table: true
   langcode: true
+  search_api_excerpt: true
