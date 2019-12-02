@@ -21,6 +21,9 @@
 !/config/drupal/template/settings.local.php
 !/config/drupal/template/services.local.yml
 
+# Ignore overrides config
+/config/drupal/overrides
+
 # Ignore sensitive information
 /web/sites/**/files/*
 /data/**/files/private
