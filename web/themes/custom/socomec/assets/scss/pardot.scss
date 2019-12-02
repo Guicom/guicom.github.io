@@ -274,6 +274,15 @@ form.form {
   background-size: cover;
 }
 
+// MS Edge Browser CSS
+@supports (-ms-ime-align:auto)  {
+  [type="radio"]:not(:checked) + label:before,
+  [type="radio"]:checked + label:before {
+    width: 20px;
+    height: 20px;
+  }
+}
+
 [type="checkbox"]:checked,
 [type="checkbox"]:not(:checked) {
   position: absolute;
