@@ -90,10 +90,7 @@ services:
 
   # solr container - actency images
   solr:
-    build: ./docker/solr
-    command:
-      - solr-precreate
-      - collection1
+    image: actency/docker-solr:7.7.2
     ports:
       - "8080:8983"
     volumes:
