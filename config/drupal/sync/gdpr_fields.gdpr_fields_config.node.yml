@@ -352,6 +352,39 @@ bundles:
       notes: ''
       relationship: 0
       sars_filename: ''
+    field_product_standard_label:
+      bundle: product
+      name: field_product_standard_label
+      entity_type_id: node
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_product_application_title:
+      bundle: product
+      name: field_product_application_title
+      entity_type_id: node
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_product_reference:
+      bundle: product
+      name: field_product_reference
+      entity_type_id: node
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
   thank_you_page:
     field_title:
       bundle: thank_you_page
@@ -645,6 +678,61 @@ bundles:
     field_reference_picture:
       bundle: product_reference
       name: field_reference_picture
+      entity_type_id: node
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_reference_ref:
+      bundle: product_reference
+      name: field_reference_ref
+      entity_type_id: node
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_dc_r_erp_dimension_unit:
+      bundle: product_reference
+      name: field_dc_r_erp_dimension_unit
+      entity_type_id: node
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_dc_r_erp_weight:
+      bundle: product_reference
+      name: field_dc_r_erp_weight
+      entity_type_id: node
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_nombre_de_pole:
+      bundle: product_reference
+      name: field_nombre_de_pole
+      entity_type_id: node
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_format_de_boitier:
+      bundle: product_reference
+      name: field_format_de_boitier
       entity_type_id: node
       rtf: 'no'
       rta: 'no'

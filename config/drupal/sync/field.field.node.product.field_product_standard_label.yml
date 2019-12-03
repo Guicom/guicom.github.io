@@ -1,0 +1,29 @@
+uuid: 4775308b-6735-4e89-95b1-313803005286
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_product_standard_label
+    - node.type.product
+    - taxonomy.vocabulary.product_label
+id: node.product.field_product_standard_label
+field_name: field_product_standard_label
+entity_type: node
+bundle: product
+label: 'Standard Label'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      product_label: product_label
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

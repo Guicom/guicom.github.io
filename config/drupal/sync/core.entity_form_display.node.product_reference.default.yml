@@ -3,11 +3,16 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.product_reference.field_dc_r_erp_dimension_unit
+    - field.field.node.product_reference.field_dc_r_erp_weight
+    - field.field.node.product_reference.field_format_de_boitier
     - field.field.node.product_reference.field_json_product_data
+    - field.field.node.product_reference.field_nombre_de_pole
     - field.field.node.product_reference.field_product_status
     - field.field.node.product_reference.field_reference_extid
     - field.field.node.product_reference.field_reference_name
     - field.field.node.product_reference.field_reference_picture
+    - field.field.node.product_reference.field_reference_ref
     - node.type.product_reference
   module:
     - content_moderation
@@ -24,6 +29,31 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_dc_r_erp_dimension_unit:
+    weight: 127
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_dc_r_erp_weight:
+    weight: 128
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_format_de_boitier:
+    weight: 130
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
   field_json_product_data:
     weight: 122
     settings:
@@ -31,6 +61,14 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: string_textarea
+    region: content
+  field_nombre_de_pole:
+    weight: 129
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
     region: content
   field_product_status:
     weight: 123
@@ -63,6 +101,14 @@ content:
     settings:
       media_types: {  }
     third_party_settings: {  }
+    region: content
+  field_reference_ref:
+    weight: 126
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
     region: content
   langcode:
     type: language_select
