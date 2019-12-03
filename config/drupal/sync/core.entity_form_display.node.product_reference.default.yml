@@ -1,92 +1,72 @@
-uuid: f3b25514-68f2-4b49-9aae-47111ca6c88c
+uuid: a5ffb9cd-8fe8-468c-b0fc-001d2c2afcec
 langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.product.field_json_product_data
-    - field.field.node.product.field_product_advantage_text
-    - field.field.node.product.field_product_extid
-    - field.field.node.product.field_product_pictures
-    - field.field.node.product.field_product_status
-    - field.field.node.product.field_product_teaser
-    - field.field.node.product.field_protection_level
-    - node.type.product
+    - field.field.node.product_reference.field_json_product_data
+    - field.field.node.product_reference.field_product_status
+    - field.field.node.product_reference.field_reference_extid
+    - field.field.node.product_reference.field_reference_name
+    - field.field.node.product_reference.field_reference_picture
+    - node.type.product_reference
   module:
     - content_moderation
     - media_library
     - path
-    - text
-id: node.product.default
+id: node.product_reference.default
 targetEntityType: node
-bundle: product
+bundle: product_reference
 mode: default
 content:
   created:
     type: datetime_timestamp
-    weight: 6
+    weight: 10
     region: content
     settings: {  }
     third_party_settings: {  }
   field_json_product_data:
-    weight: 3
+    weight: 122
     settings:
       rows: 5
       placeholder: ''
     third_party_settings: {  }
     type: string_textarea
     region: content
-  field_product_advantage_text:
-    weight: 107
+  field_product_status:
+    weight: 123
     settings:
-      rows: 5
+      match_operator: CONTAINS
+      size: 60
       placeholder: ''
     third_party_settings: {  }
-    type: text_textarea
+    type: entity_reference_autocomplete
     region: content
-  field_product_extid:
-    weight: 105
+  field_reference_extid:
+    weight: 121
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
     type: string_textfield
     region: content
-  field_product_pictures:
+  field_reference_name:
+    weight: 124
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_reference_picture:
     type: media_library_widget
-    weight: 102
+    weight: 125
     settings:
       media_types: {  }
     third_party_settings: {  }
     region: content
-  field_product_status:
-    weight: 106
-    settings:
-      match_operator: CONTAINS
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-    type: entity_reference_autocomplete
-    region: content
-  field_product_teaser:
-    weight: 101
-    settings:
-      rows: 5
-      placeholder: ''
-    third_party_settings: {  }
-    type: string_textarea
-    region: content
-  field_protection_level:
-    weight: 103
-    settings:
-      match_operator: CONTAINS
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-    type: entity_reference_autocomplete
-    region: content
   langcode:
     type: language_select
-    weight: 4
+    weight: 2
     region: content
     settings:
       include_locked: true
@@ -99,7 +79,7 @@ content:
     third_party_settings: {  }
   path:
     type: path
-    weight: 9
+    weight: 30
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -107,26 +87,26 @@ content:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 7
+    weight: 15
     region: content
     third_party_settings: {  }
   status:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 11
+    weight: 120
     region: content
     third_party_settings: {  }
   sticky:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 8
+    weight: 16
     region: content
     third_party_settings: {  }
   title:
     type: string_textfield
-    weight: 0
+    weight: -5
     region: content
     settings:
       size: 60
@@ -142,8 +122,8 @@ content:
     region: content
     third_party_settings: {  }
   url_redirects:
-    weight: 10
-    region: content
+    weight: 50
     settings: {  }
     third_party_settings: {  }
+    region: content
 hidden: {  }

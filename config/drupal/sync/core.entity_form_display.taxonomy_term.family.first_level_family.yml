@@ -1,8 +1,9 @@
-uuid: 64caade3-8d07-41d8-b40a-9e846e089e66
+uuid: 0fa46016-4a69-4822-96e9-83e1282c676c
 langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_form_mode.taxonomy_term.first_level_family
     - field.field.taxonomy_term.family.field_family_extid
     - field.field.taxonomy_term.family.field_family_first_multiline
     - field.field.taxonomy_term.family.field_family_image
@@ -14,10 +15,10 @@ dependencies:
     - paragraphs
     - path
     - text
-id: taxonomy_term.family.default
+id: taxonomy_term.family.first_level_family
 targetEntityType: taxonomy_term
 bundle: family
-mode: default
+mode: first_level_family
 content:
   description:
     type: text_textarea
@@ -28,13 +29,13 @@ content:
       rows: 5
     third_party_settings: {  }
   field_family_extid:
+    type: string_textfield
     weight: 6
+    region: content
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-    type: string_textfield
-    region: content
   field_family_first_multiline:
     type: entity_reference_paragraphs
     weight: 4

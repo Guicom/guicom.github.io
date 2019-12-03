@@ -3,10 +3,14 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.taxonomy_term.family.field_family_code
-    - field.field.taxonomy_term.family.field_family_name
+    - field.field.taxonomy_term.family.field_family_extid
+    - field.field.taxonomy_term.family.field_family_first_multiline
+    - field.field.taxonomy_term.family.field_family_image
+    - field.field.taxonomy_term.family.field_family_second_multiline
+    - field.field.taxonomy_term.family.field_family_sub_title
     - taxonomy.vocabulary.family
   module:
+    - entity_reference_revisions
     - text
 id: taxonomy_term.family.default
 targetEntityType: taxonomy_term
@@ -20,19 +24,48 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_family_code:
-    weight: 1
+  field_family_extid:
+    weight: 8
     label: above
-    settings: {  }
+    settings:
+      link_to_entity: false
     third_party_settings: {  }
-    type: text_default
+    type: string
     region: content
-  field_family_name:
-    weight: 2
+  field_family_first_multiline:
+    type: entity_reference_revisions_entity_view
+    weight: 6
     label: above
-    settings: {  }
+    settings:
+      view_mode: default
+      link: ''
     third_party_settings: {  }
-    type: text_default
+    region: content
+  field_family_image:
+    type: entity_reference_entity_view
+    weight: 5
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    region: content
+  field_family_second_multiline:
+    type: entity_reference_revisions_entity_view
+    weight: 7
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+  field_family_sub_title:
+    weight: 3
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
     region: content
 hidden:
   langcode: true

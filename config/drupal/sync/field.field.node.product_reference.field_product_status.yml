@@ -1,0 +1,29 @@
+uuid: 106f2fe6-eb3d-4ba2-b8f2-5c90370ba76d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_product_status
+    - node.type.product_reference
+    - taxonomy.vocabulary.product_status
+id: node.product_reference.field_product_status
+field_name: field_product_status
+entity_type: node
+bundle: product_reference
+label: Status
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      product_status: product_status
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

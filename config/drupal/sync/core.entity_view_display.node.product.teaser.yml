@@ -5,9 +5,12 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.product.field_json_product_data
-    - field.field.node.product.field_main_picture
-    - field.field.node.product.field_new
-    - field.field.node.product.field_references
+    - field.field.node.product.field_product_advantage_text
+    - field.field.node.product.field_product_extid
+    - field.field.node.product.field_product_pictures
+    - field.field.node.product.field_product_status
+    - field.field.node.product.field_product_teaser
+    - field.field.node.product.field_protection_level
     - node.type.product
   module:
     - user
@@ -24,8 +27,11 @@ content:
 hidden:
   addtoany: true
   field_json_product_data: true
-  field_main_picture: true
-  field_new: true
-  field_references: true
+  field_product_advantage_text: true
+  field_product_extid: true
+  field_product_pictures: true
+  field_product_status: true
+  field_product_teaser: true
+  field_protection_level: true
   langcode: true
   search_api_excerpt: true
