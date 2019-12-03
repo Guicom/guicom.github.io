@@ -19,5 +19,15 @@ content:
     region: content
 hidden:
   addtoany: true
+  field_dc_r_erp_dimension_unit: true
+  field_dc_r_erp_weight: true
+  field_format_de_boitier: true
+  field_json_product_data: true
+  field_nombre_de_pole: true
+  field_product_status: true
+  field_reference_extid: true
+  field_reference_name: true
+  field_reference_picture: true
+  field_reference_ref: true
   langcode: true
   search_api_excerpt: true

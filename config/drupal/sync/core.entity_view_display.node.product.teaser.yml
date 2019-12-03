@@ -30,6 +30,8 @@ hidden:
   field_product_advantage_text: true
   field_product_extid: true
   field_product_pictures: true
+  field_product_reference: true
+  field_product_standard_label: true
   field_product_status: true
   field_product_teaser: true
   field_protection_level: true

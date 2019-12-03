@@ -385,6 +385,17 @@ bundles:
       notes: ''
       relationship: 0
       sars_filename: ''
+    field_product_family:
+      bundle: product
+      name: field_product_family
+      entity_type_id: node
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
   thank_you_page:
     field_title:
       bundle: thank_you_page

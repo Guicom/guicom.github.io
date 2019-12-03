@@ -6,6 +6,7 @@ dependencies:
     - field.field.node.product.field_json_product_data
     - field.field.node.product.field_product_advantage_text
     - field.field.node.product.field_product_extid
+    - field.field.node.product.field_product_family
     - field.field.node.product.field_product_pictures
     - field.field.node.product.field_product_reference
     - field.field.node.product.field_product_standard_label
@@ -52,6 +53,12 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: string_textfield
+    region: content
+  field_product_family:
+    weight: 110
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
     region: content
   field_product_pictures:
     type: media_library_widget
