@@ -1,0 +1,8 @@
+uuid: d50131c3-a23a-4808-9d74-b0fd12173611
+langcode: en
+status: true
+dependencies: {  }
+id: tool_promotion
+label: 'Tool promotion'
+revision: 1
+description: 'Block used to promote a tool.'

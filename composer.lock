@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "148fa07904f776d08362d6824f7fbc9d",
+    "content-hash": "ca1ee3768e87e97af148cc55ff917b95",
     "packages": [
         {
             "name": "actency/foundation",
@@ -4491,6 +4491,53 @@
             "homepage": "https://www.drupal.org/project/hotjar",
             "support": {
                 "source": "https://git.drupalcode.org/project/hotjar"
+            }
+        },
+        {
+            "name": "drupal/link_target",
+            "version": "1.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/link_target.git",
+                "reference": "8.x-1.2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/link_target-8.x-1.2.zip",
+                "reference": "8.x-1.2",
+                "shasum": "0594f15da7752cce4a01fdd9af7e2d56efebf707"
+            },
+            "require": {
+                "drupal/core": "*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-1.x": "1.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-1.2",
+                    "datestamp": "1500901442",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Project has not opted into security advisory coverage!"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "JacobFrancke",
+                    "homepage": "https://www.drupal.org/user/3267792"
+                }
+            ],
+            "description": "Provide a widget for Link field type which permits to choose target.",
+            "homepage": "https://www.drupal.org/project/link_target",
+            "support": {
+                "source": "https://git.drupalcode.org/project/link_target"
             }
         },
         {
@@ -11914,6 +11961,11 @@
         {
             "name": "webflo/drupal-core-require-dev",
             "version": "8.7.8",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/webflo/drupal-core-require-dev.git",
+                "reference": "593123300b3cf9974fa0742282af90fa72ac06fc"
+            },
             "require": {
                 "behat/mink": "1.7.x-dev",
                 "behat/mink-goutte-driver": "^1.2",

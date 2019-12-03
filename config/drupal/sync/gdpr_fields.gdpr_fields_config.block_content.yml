@@ -7,6 +7,7 @@ filenames:
   textfield: ''
   url: ''
   link: ''
+  tool_promotion: ''
 bundles:
   textfield:
     field_text:
@@ -41,6 +42,62 @@ bundles:
       rta: 'no'
       enabled: false
       anonymizer: clear_anonymizer
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+  tool_promotion:
+    field_title:
+      bundle: tool_promotion
+      name: field_title
+      entity_type_id: block_content
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_description:
+      bundle: tool_promotion
+      name: field_description
+      entity_type_id: block_content
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: clear_anonymizer
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_main_image:
+      bundle: tool_promotion
+      name: field_main_image
+      entity_type_id: block_content
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_background_image:
+      bundle: tool_promotion
+      name: field_background_image
+      entity_type_id: block_content
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_lien:
+      bundle: tool_promotion
+      name: field_lien
+      entity_type_id: block_content
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
       notes: ''
       relationship: 0
       sars_filename: ''
