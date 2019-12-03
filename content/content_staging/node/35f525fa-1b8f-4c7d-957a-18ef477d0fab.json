@@ -1,0 +1,217 @@
+{
+    "_links": {
+        "self": {
+            "href": "http:\/\/default\/node\/13?_format=hal_json"
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/node\/product_reference"
+        },
+        "http:\/\/drupal.org\/rest\/relation\/node\/product_reference\/revision_uid": [
+            {
+                "href": "http:\/\/default\/user\/1?_format=hal_json"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/product_reference\/uid": [
+            {
+                "href": "http:\/\/default\/user\/1?_format=hal_json",
+                "lang": "en"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/product_reference\/field_format_de_boitier": [
+            {
+                "href": "http:\/\/default\/taxonomy\/term\/17?_format=hal_json"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/product_reference\/field_reference_picture": [
+            {
+                "href": "http:\/\/default\/media\/12\/edit?_format=hal_json"
+            }
+        ]
+    },
+    "nid": [
+        {
+            "value": 13
+        }
+    ],
+    "uuid": [
+        {
+            "value": "35f525fa-1b8f-4c7d-957a-18ef477d0fab"
+        }
+    ],
+    "vid": [
+        {
+            "value": 24
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "type": [
+        {
+            "target_id": "product_reference"
+        }
+    ],
+    "revision_timestamp": [
+        {
+            "value": "2019-12-03T13:06:08+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/node\/product_reference\/revision_uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/user\/1?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "410a2cc0-3549-482c-b9ae-095d85b1acdd"
+                    }
+                ]
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/product_reference\/uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/user\/1?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "410a2cc0-3549-482c-b9ae-095d85b1acdd"
+                    }
+                ],
+                "lang": "en"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/product_reference\/field_format_de_boitier": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/taxonomy\/term\/17?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/format_de_boitier"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "587813f1-ca79-4f70-af98-198df6b32392"
+                    }
+                ]
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/product_reference\/field_reference_picture": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/media\/12\/edit?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/media\/product_image"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "236014a6-9378-42c7-8d84-47c596bc6222"
+                    }
+                ]
+            }
+        ]
+    },
+    "status": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "title": [
+        {
+            "value": "22003016-SIRCO MV 3X160A",
+            "lang": "en"
+        }
+    ],
+    "created": [
+        {
+            "value": "2019-12-03T12:59:57+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "changed": [
+        {
+            "value": "2019-12-03T13:06:08+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "promote": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "sticky": [
+        {
+            "value": false,
+            "lang": "en"
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "revision_translation_affected": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "metatag": [
+        {
+            "value": {
+                "title": "22003016-SIRCO MV 3X160A | Socomec",
+                "canonical_url": "http:\/\/default\/node\/13"
+            }
+        }
+    ],
+    "field_dc_r_erp_dimension_unit": [
+        {
+            "value": "MMT"
+        }
+    ],
+    "field_dc_r_erp_weight": [
+        {
+            "value": "0,82"
+        }
+    ],
+    "field_nombre_de_pole": [
+        {
+            "value": "2"
+        }
+    ],
+    "field_reference_extid": [
+        {
+            "value": "R_22003016"
+        }
+    ],
+    "field_reference_ref": [
+        {
+            "value": "22003016"
+        }
+    ]
+}

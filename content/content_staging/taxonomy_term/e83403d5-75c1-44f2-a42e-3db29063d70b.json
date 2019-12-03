@@ -1,0 +1,116 @@
+{
+    "_links": {
+        "self": {
+            "href": "http:\/\/default\/taxonomy\/term\/9?_format=hal_json"
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/family"
+        },
+        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/family\/parent": [
+            {
+                "href": "http:\/\/default\/taxonomy\/term\/7?_format=hal_json"
+            }
+        ]
+    },
+    "tid": [
+        {
+            "value": 9
+        }
+    ],
+    "uuid": [
+        {
+            "value": "e83403d5-75c1-44f2-a42e-3db29063d70b"
+        }
+    ],
+    "revision_id": [
+        {
+            "value": 9
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "vid": [
+        {
+            "target_id": "family"
+        }
+    ],
+    "revision_created": [
+        {
+            "value": "2019-12-02T13:14:21+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "status": [
+        {
+            "value": true
+        }
+    ],
+    "name": [
+        {
+            "value": "ON & OFF GRID MODULAR INDOOR"
+        }
+    ],
+    "description": [
+        {
+            "value": "<p>Socomec\u2019s three-phase UPS solutions protect data centres, mission-critical IT and light industrial applications where shutdown could jeopardize business operations; they provide a reliable power supply, preventing power outages and disturbances that can lead to loss of service, reduced productivity, equipment damage or safety problems.<br \/>\r\nOur three-phase UPS &nbsp;are best in class in terms of efficiency, reliability, flexibility and serviceability; they are the ideal solution for an uninterrupted supply, providing business continuity without compromise.<\/p>\r\n",
+            "format": "socomec",
+            "processed": "<p>Socomec\u2019s three-phase UPS solutions protect data centres, mission-critical IT and light industrial applications where shutdown could jeopardize business operations; they provide a reliable power supply, preventing power outages and disturbances that can lead to loss of service, reduced productivity, equipment damage or safety problems.\nOur three-phase UPS \u00a0are best in class in terms of efficiency, reliability, flexibility and serviceability; they are the ideal solution for an uninterrupted supply, providing business continuity without compromise.<\/p>"
+        }
+    ],
+    "weight": [
+        {
+            "value": 0
+        }
+    ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/family\/parent": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/taxonomy\/term\/7?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/family"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "868352ea-0c8b-495c-b756-750eaa3298b5"
+                    }
+                ]
+            }
+        ]
+    },
+    "changed": [
+        {
+            "value": "2019-12-02T13:39:44+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "revision_translation_affected": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "field_family_extid": [
+        {
+            "value": "FNiveau2_ON_OFF_GRID_MODULAR_INDOOR"
+        }
+    ],
+    "field_family_sub_title": [
+        {
+            "value": "TRANSFER SWITCHING EQUIPMENT FOR SOURCE CHANGE-OVER APPLICATIONS"
+        }
+    ]
+}
