@@ -1,0 +1,76 @@
+uuid: e56db690-47e9-416e-a1ec-007dcbc58e13
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_form_mode.taxonomy_term.last_level_family
+    - field.field.taxonomy_term.family.field_family_extid
+    - field.field.taxonomy_term.family.field_family_first_multiline
+    - field.field.taxonomy_term.family.field_family_image
+    - field.field.taxonomy_term.family.field_family_second_multiline
+    - field.field.taxonomy_term.family.field_family_sub_title
+    - taxonomy.vocabulary.family
+  module:
+    - media_library
+    - path
+    - text
+id: taxonomy_term.family.last_level_family
+targetEntityType: taxonomy_term
+bundle: family
+mode: last_level_family
+content:
+  description:
+    type: text_textarea
+    weight: 2
+    region: content
+    settings:
+      placeholder: ''
+      rows: 5
+    third_party_settings: {  }
+  field_family_extid:
+    type: string_textfield
+    weight: 4
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_family_image:
+    type: media_library_widget
+    weight: 3
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+    region: content
+  field_family_sub_title:
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  langcode:
+    type: language_select
+    weight: 5
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+  name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 6
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_family_first_multiline: true
+  field_family_second_multiline: true

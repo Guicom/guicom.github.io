@@ -4,15 +4,21 @@ status: true
 dependencies:
   config:
     - field.field.node.product.field_json_product_data
-    - field.field.node.product.field_main_picture
-    - field.field.node.product.field_new
-    - field.field.node.product.field_references
-    - image.style.thumbnail
+    - field.field.node.product.field_product_advantage_text
+    - field.field.node.product.field_product_extid
+    - field.field.node.product.field_product_family
+    - field.field.node.product.field_product_pictures
+    - field.field.node.product.field_product_reference
+    - field.field.node.product.field_product_standard_label
+    - field.field.node.product.field_product_status
+    - field.field.node.product.field_product_teaser
+    - field.field.node.product.field_protection_level
     - node.type.product
   module:
-    - image
-    - paragraphs
+    - content_moderation
+    - media_library
     - path
+    - text
 id: node.product.default
 targetEntityType: node
 bundle: product
@@ -32,32 +38,78 @@ content:
     third_party_settings: {  }
     type: string_textarea
     region: content
-  field_main_picture:
-    weight: 1
+  field_product_advantage_text:
+    weight: 107
     settings:
-      progress_indicator: throbber
-      preview_image_style: thumbnail
+      rows: 5
+      placeholder: ''
     third_party_settings: {  }
-    type: image_image
+    type: text_textarea
     region: content
-  field_new:
-    weight: 12
+  field_product_extid:
+    weight: 105
     settings:
-      display_label: true
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
-    type: boolean_checkbox
+    type: string_textfield
     region: content
-  field_references:
-    type: entity_reference_paragraphs
-    weight: 2
-    settings:
-      title: Paragraph
-      title_plural: Paragraphs
-      edit_mode: closed
-      add_mode: dropdown
-      form_display_mode: default
-      default_paragraph_type: product_reference
+  field_product_family:
+    weight: 110
+    settings: {  }
     third_party_settings: {  }
+    type: options_select
+    region: content
+  field_product_pictures:
+    type: media_library_widget
+    weight: 102
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+    region: content
+  field_product_reference:
+    weight: 109
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_product_standard_label:
+    weight: 108
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_product_status:
+    weight: 106
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_product_teaser:
+    weight: 101
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+    region: content
+  field_protection_level:
+    weight: 103
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
     region: content
   langcode:
     type: language_select
@@ -65,6 +117,12 @@ content:
     region: content
     settings:
       include_locked: true
+    third_party_settings: {  }
+  moderation_state:
+    type: moderation_state_default
+    weight: 100
+    settings: {  }
+    region: content
     third_party_settings: {  }
   path:
     type: path

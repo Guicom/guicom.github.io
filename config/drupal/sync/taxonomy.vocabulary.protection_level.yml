@@ -1,0 +1,8 @@
+uuid: 333394c7-a203-4e59-b84c-e76b762c1f1d
+langcode: en
+status: true
+dependencies: {  }
+name: 'Protection Level'
+vid: protection_level
+description: ''
+weight: 0

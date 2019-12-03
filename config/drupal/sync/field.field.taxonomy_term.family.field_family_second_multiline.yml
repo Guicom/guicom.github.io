@@ -1,0 +1,69 @@
+uuid: b30e69a6-18c9-48eb-b95d-04a7e46207ee
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_family_second_multiline
+    - paragraphs.paragraphs_type.key_figures
+    - paragraphs.paragraphs_type.model_image
+    - paragraphs.paragraphs_type.model_testimony
+    - paragraphs.paragraphs_type.model_text
+    - paragraphs.paragraphs_type.video_embed
+    - taxonomy.vocabulary.family
+  module:
+    - entity_reference_revisions
+id: taxonomy_term.family.field_family_second_multiline
+field_name: field_family_second_multiline
+entity_type: taxonomy_term
+bundle: family
+label: 'Second multiline'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      key_figures: key_figures
+      model_image: model_image
+      model_testimony: model_testimony
+      model_text: model_text
+      video_embed: video_embed
+    target_bundles_drag_drop:
+      hero_paragraph:
+        weight: 12
+        enabled: false
+      key_figures:
+        enabled: true
+        weight: 13
+      model_cta:
+        weight: 14
+        enabled: false
+      model_image:
+        enabled: true
+        weight: 15
+      model_testimony:
+        enabled: true
+        weight: 16
+      model_text:
+        enabled: true
+        weight: 17
+      pardot_form:
+        weight: 18
+        enabled: false
+      premium_content_promotion:
+        weight: 19
+        enabled: false
+      product_faq:
+        weight: 20
+        enabled: false
+      product_reference:
+        weight: 21
+        enabled: false
+      video_embed:
+        enabled: true
+        weight: 22
+field_type: entity_reference_revisions

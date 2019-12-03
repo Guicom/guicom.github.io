@@ -1,0 +1,10 @@
+uuid: c811628f-4a6a-4cc6-ab1d-c75fd179b244
+langcode: en
+status: true
+dependencies:
+  module:
+    - taxonomy
+id: taxonomy_term.first_level_family
+label: 'First level family'
+targetEntityType: taxonomy_term
+cache: true

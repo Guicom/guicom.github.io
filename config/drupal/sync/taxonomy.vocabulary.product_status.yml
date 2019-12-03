@@ -1,0 +1,8 @@
+uuid: e8c547af-012c-48d1-9d40-e3f87c9db58e
+langcode: en
+status: true
+dependencies: {  }
+name: 'Product Status'
+vid: product_status
+description: ''
+weight: 0

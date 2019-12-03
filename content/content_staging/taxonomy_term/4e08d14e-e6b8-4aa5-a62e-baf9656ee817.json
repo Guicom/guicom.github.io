@@ -44,14 +44,12 @@
     ],
     "status": [
         {
-            "value": true,
-            "lang": "en"
+            "value": true
         }
     ],
     "name": [
         {
-            "value": "Whitepaper",
-            "lang": "en"
+            "value": "Whitepaper"
         }
     ],
     "weight": [
@@ -67,7 +65,6 @@
     "changed": [
         {
             "value": "2019-10-04T11:22:41+00:00",
-            "lang": "en",
             "format": "Y-m-d\\TH:i:sP"
         }
     ],
@@ -81,14 +78,6 @@
         {
             "value": true,
             "lang": "en"
-        }
-    ],
-    "metatag": [
-        {
-            "value": {
-                "title": "Whitepaper | Socomec",
-                "canonical_url": "http:\/\/default\/taxonomy\/term\/2"
-            }
         }
     ]
 }

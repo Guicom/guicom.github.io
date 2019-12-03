@@ -35,14 +35,12 @@
     ],
     "status": [
         {
-            "value": true,
-            "lang": "en"
+            "value": true
         }
     ],
     "created": [
         {
             "value": "2019-10-07T11:18:20+00:00",
-            "lang": "en",
             "format": "Y-m-d\\TH:i:sP"
         }
     ],
@@ -72,11 +70,17 @@
             "lang": "en"
         }
     ],
+    "revision_translation_affected": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
     "field_text": [
         {
             "value": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eget accumsan velit, eget mattis lectus. Sed pellentesque felis metus, ut mollis erat vulputate quis. Aliquam tincidunt turpis sit amet tortor malesuada, et venenatis purus iaculis. Curabitur a massa sed odio consequat vestibulum at sit amet lacus. Fusce facilisis ipsum et metus finibus, quis ultricies ligula mattis. Nulla non massa nec ex dapibus iaculis vitae sed quam. Sed dui libero, posuere non orci at, dignissim ultricies elit. Integer tristique felis dui, at vehicula ex accumsan id. Vestibulum varius quam eget orci varius, ac ullamcorper justo accumsan. Nam vitae mi velit. Sed suscipit malesuada odio id posuere. Mauris sit amet elit congue neque porta ornare eget sit amet elit. Cras in ornare mauris. Curabitur sit amet ante nulla. Nulla facilisi.<\/p>\r\n",
             "format": "socomec",
-            "processed": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eget accumsan velit, eget mattis lectus. Sed pellentesque felis metus, ut mollis erat vulputate quis. Aliquam tincidunt turpis sit amet tortor malesuada, et venenatis purus iaculis. Curabitur a massa sed odio consequat vestibulum at sit amet lacus. Fusce facilisis ipsum et metus finibus, quis ultricies ligula mattis. Nulla non massa nec ex dapibus iaculis vitae sed quam. Sed dui libero, posuere non orci at, dignissim ultricies elit. Integer tristique felis dui, at vehicula ex accumsan id. Vestibulum varius quam eget orci varius, ac ullamcorper justo accumsan. Nam vitae mi velit. Sed suscipit malesuada odio id posuere. Mauris sit amet elit congue neque porta ornare eget sit amet elit. Cras in ornare mauris. Curabitur sit amet ante nulla. Nulla facilisi.<\/p>\n"
+            "processed": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eget accumsan velit, eget mattis lectus. Sed pellentesque felis metus, ut mollis erat vulputate quis. Aliquam tincidunt turpis sit amet tortor malesuada, et venenatis purus iaculis. Curabitur a massa sed odio consequat vestibulum at sit amet lacus. Fusce facilisis ipsum et metus finibus, quis ultricies ligula mattis. Nulla non massa nec ex dapibus iaculis vitae sed quam. Sed dui libero, posuere non orci at, dignissim ultricies elit. Integer tristique felis dui, at vehicula ex accumsan id. Vestibulum varius quam eget orci varius, ac ullamcorper justo accumsan. Nam vitae mi velit. Sed suscipit malesuada odio id posuere. Mauris sit amet elit congue neque porta ornare eget sit amet elit. Cras in ornare mauris. Curabitur sit amet ante nulla. Nulla facilisi.<\/p>"
         }
     ],
     "field_title": [

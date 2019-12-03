@@ -1,0 +1,8 @@
+uuid: d6019982-63f0-4cc9-b3fe-561e98ea9316
+langcode: en
+status: true
+dependencies: {  }
+name: 'Format de boitier'
+vid: format_de_boitier
+description: ''
+weight: 0

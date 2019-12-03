@@ -1,6 +1,6 @@
-base_url: 'http://socomec.com.loc:88/'
-username: admin
-password: ''
+base_url: 'https://preprod-socomec.nextpage.fr/'
+username: ACY
+password: actency2019!
 context_id: '1'
 language_id: '1'
 endpoint_token: api/auth
