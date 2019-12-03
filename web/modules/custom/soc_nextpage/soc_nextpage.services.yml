@@ -2,7 +2,11 @@ services:
   soc_nextpage.nextpage_api:
     class: Drupal\soc_nextpage\Service\NextpageApi
     arguments:
-      ['@config.factory', '@tempstore.shared']
+      ['@logger.factory', '@config.factory', '@tempstore.shared']
   soc_nextpage.nextpage_base_api:
     class: Drupal\soc_nextpage\Service\NextpageBaseApi
+    parent: soc_core.base_api
     arguments: ['@config.factory', '@tempstore.shared']
+  soc_nextpage.nextpage_product_manager:
+    class:  Drupal\soc_nextpage\Service\Manager\ProductManager
+    arguments: ['@entity_type.manager']

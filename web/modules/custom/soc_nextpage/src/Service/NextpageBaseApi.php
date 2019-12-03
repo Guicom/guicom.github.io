@@ -3,6 +3,7 @@
 namespace Drupal\soc_nextpage\Service;
 
 use Drupal\Core\Config\ConfigFactoryInterface;
+use Drupal\Core\Logger\LoggerChannelFactoryInterface;
 use Drupal\Core\Site\Settings;
 use Drupal\Core\TempStore\SharedTempStoreFactory;
 use Drupal\Core\TempStore\TempStoreException;
@@ -39,17 +40,20 @@ class NextpageBaseApi extends BaseApi {
 
   /** @var \Drupal\Core\TempStore\SharedTempStore $tempStore */
   protected $tempStore;
-
+  
   /**
    * Constructor.
    *
+   * @param \Drupal\Core\Logger\LoggerChannelFactoryInterface $channelFactory
    * @param \Drupal\Core\Config\ConfigFactoryInterface $configFactory
    * @param \Drupal\Core\TempStore\SharedTempStoreFactory $sharedTempStoreFactory
    */
-  public function __construct(ConfigFactoryInterface $configFactory,
+  public function __construct(LoggerChannelFactoryInterface $channelFactory,
+                              ConfigFactoryInterface $configFactory,
                               SharedTempStoreFactory $sharedTempStoreFactory) {
-    parent::__construct();
-
+    parent::__construct($channelFactory);
+  
+    $this->logger = $channelFactory->get('soc_nextpage');
     $this->tempStore = $sharedTempStoreFactory->get('soc_nextpage');
 
     $config = $configFactory->getEditable('soc_nextpage.nextpage_ws');
@@ -73,6 +77,7 @@ class NextpageBaseApi extends BaseApi {
     $this->setContextId($contextId);
     $this->setLanguageId($languageId);
     $this->setEndpoints($endpoints);
+    
   }
 
   /**
