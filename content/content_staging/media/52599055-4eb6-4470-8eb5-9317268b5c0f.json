@@ -53,7 +53,7 @@
     ],
     "revision_created": [
         {
-            "value": "2019-12-02T14:41:52+00:00",
+            "value": "2019-12-03T13:59:45+00:00",
             "format": "Y-m-d\\TH:i:sP"
         }
     ],
@@ -76,7 +76,7 @@
                 },
                 "uuid": [
                     {
-                        "value": "410a2cc0-3549-482c-b9ae-095d85b1acdd"
+                        "value": "36fca19b-5586-4bb3-a1b7-0ff353b21876"
                     }
                 ],
                 "lang": "en"
@@ -94,14 +94,14 @@
                 },
                 "uuid": [
                     {
-                        "value": "e85fc582-87aa-4c91-8090-b6ead57ecb71"
+                        "value": "3263cb8f-4e82-438e-8327-77cd0ce2eba1"
                     }
                 ],
                 "lang": "en",
                 "alt": "Sircm 032",
                 "title": null,
-                "width": "543",
-                "height": "800"
+                "width": "180",
+                "height": "180"
             }
         ],
         "http:\/\/drupal.org\/rest\/relation\/media\/product_image\/field_media_image_2": [
@@ -116,7 +116,7 @@
                 },
                 "uuid": [
                     {
-                        "value": "e85fc582-87aa-4c91-8090-b6ead57ecb71"
+                        "value": "3263cb8f-4e82-438e-8327-77cd0ce2eba1"
                     }
                 ],
                 "lang": "en",
@@ -142,7 +142,7 @@
     ],
     "changed": [
         {
-            "value": "2019-12-02T14:41:52+00:00",
+            "value": "2019-12-03T14:02:20+00:00",
             "lang": "en",
             "format": "Y-m-d\\TH:i:sP"
         }

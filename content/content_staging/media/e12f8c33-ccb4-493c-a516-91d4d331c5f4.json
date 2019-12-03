@@ -6,27 +6,19 @@
         "type": {
             "href": "http:\/\/drupal.org\/rest\/type\/media\/image"
         },
-        "http:\/\/drupal.org\/rest\/relation\/media\/image\/revision_user": [
+        "http:\/\/drupal.org\/rest\/relation\/media\/image\/uid": [
             {
                 "href": "http:\/\/default\/user\/1?_format=hal_json"
             }
         ],
-        "http:\/\/drupal.org\/rest\/relation\/media\/image\/uid": [
-            {
-                "href": "http:\/\/default\/user\/1?_format=hal_json",
-                "lang": "en"
-            }
-        ],
         "http:\/\/drupal.org\/rest\/relation\/media\/image\/thumbnail": [
             {
-                "href": "",
-                "lang": "en"
+                "href": ""
             }
         ],
         "http:\/\/drupal.org\/rest\/relation\/media\/image\/field_media_image": [
             {
-                "href": "",
-                "lang": "en"
+                "href": ""
             }
         ]
     },
@@ -58,28 +50,16 @@
     ],
     "revision_created": [
         {
-            "value": "2019-10-08T14:35:03+00:00",
+            "value": "2019-12-03T13:51:40+00:00",
             "format": "Y-m-d\\TH:i:sP"
         }
     ],
+    "status": [
+        {
+            "value": true
+        }
+    ],
     "_embedded": {
-        "http:\/\/drupal.org\/rest\/relation\/media\/image\/revision_user": [
-            {
-                "_links": {
-                    "self": {
-                        "href": "http:\/\/default\/user\/1?_format=hal_json"
-                    },
-                    "type": {
-                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
-                    }
-                },
-                "uuid": [
-                    {
-                        "value": "fb94e047-66d0-45a3-bce6-5e939a925965"
-                    }
-                ]
-            }
-        ],
         "http:\/\/drupal.org\/rest\/relation\/media\/image\/uid": [
             {
                 "_links": {
@@ -92,10 +72,9 @@
                 },
                 "uuid": [
                     {
-                        "value": "fb94e047-66d0-45a3-bce6-5e939a925965"
+                        "value": "36fca19b-5586-4bb3-a1b7-0ff353b21876"
                     }
-                ],
-                "lang": "en"
+                ]
             }
         ],
         "http:\/\/drupal.org\/rest\/relation\/media\/image\/thumbnail": [
@@ -113,7 +92,6 @@
                         "value": "087f8162-95a1-4334-b8d9-49bea77492c2"
                     }
                 ],
-                "lang": "en",
                 "alt": "Example",
                 "title": null,
                 "width": "1300",
@@ -135,7 +113,6 @@
                         "value": "087f8162-95a1-4334-b8d9-49bea77492c2"
                     }
                 ],
-                "lang": "en",
                 "alt": "Example",
                 "title": "",
                 "width": "1300",
@@ -143,29 +120,20 @@
             }
         ]
     },
-    "status": [
-        {
-            "value": true,
-            "lang": "en"
-        }
-    ],
     "name": [
         {
-            "value": "34665210-Rubber-stamp-with-word-example-inside-vector-illustration-Stock-Vector_3.jpg",
-            "lang": "en"
+            "value": "34665210-Rubber-stamp-with-word-example-inside-vector-illustration-Stock-Vector_3.jpg"
         }
     ],
     "created": [
         {
             "value": "2019-10-08T14:34:51+00:00",
-            "lang": "en",
             "format": "Y-m-d\\TH:i:sP"
         }
     ],
     "changed": [
         {
             "value": "2019-10-08T14:35:03+00:00",
-            "lang": "en",
             "format": "Y-m-d\\TH:i:sP"
         }
     ],
@@ -179,14 +147,6 @@
         {
             "value": true,
             "lang": "en"
-        }
-    ],
-    "metatag": [
-        {
-            "value": {
-                "title": "| Socomec",
-                "canonical_url": "http:\/\/default\/node"
-            }
         }
     ]
 }

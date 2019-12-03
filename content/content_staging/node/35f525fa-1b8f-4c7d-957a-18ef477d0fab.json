@@ -21,11 +21,6 @@
             {
                 "href": "http:\/\/default\/taxonomy\/term\/17?_format=hal_json"
             }
-        ],
-        "http:\/\/drupal.org\/rest\/relation\/node\/product_reference\/field_reference_picture": [
-            {
-                "href": "http:\/\/default\/media\/12\/edit?_format=hal_json"
-            }
         ]
     },
     "nid": [
@@ -73,7 +68,7 @@
                 },
                 "uuid": [
                     {
-                        "value": "410a2cc0-3549-482c-b9ae-095d85b1acdd"
+                        "value": "36fca19b-5586-4bb3-a1b7-0ff353b21876"
                     }
                 ]
             }
@@ -90,7 +85,7 @@
                 },
                 "uuid": [
                     {
-                        "value": "410a2cc0-3549-482c-b9ae-095d85b1acdd"
+                        "value": "36fca19b-5586-4bb3-a1b7-0ff353b21876"
                     }
                 ],
                 "lang": "en"
@@ -109,23 +104,6 @@
                 "uuid": [
                     {
                         "value": "587813f1-ca79-4f70-af98-198df6b32392"
-                    }
-                ]
-            }
-        ],
-        "http:\/\/drupal.org\/rest\/relation\/node\/product_reference\/field_reference_picture": [
-            {
-                "_links": {
-                    "self": {
-                        "href": "http:\/\/default\/media\/12\/edit?_format=hal_json"
-                    },
-                    "type": {
-                        "href": "http:\/\/drupal.org\/rest\/type\/media\/product_image"
-                    }
-                },
-                "uuid": [
-                    {
-                        "value": "236014a6-9378-42c7-8d84-47c596bc6222"
                     }
                 ]
             }

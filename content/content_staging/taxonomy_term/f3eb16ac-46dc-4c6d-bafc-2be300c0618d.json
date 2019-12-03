@@ -1,28 +1,28 @@
 {
     "_links": {
         "self": {
-            "href": "http:\/\/default\/taxonomy\/term\/2?_format=hal_json"
+            "href": "http:\/\/default\/taxonomy\/term\/20?_format=hal_json"
         },
         "type": {
-            "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/premium_content_type"
+            "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/protection_level"
         },
-        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/premium_content_type\/parent": [
+        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/protection_level\/parent": [
             null
         ]
     },
     "tid": [
         {
-            "value": 2
+            "value": 20
         }
     ],
     "uuid": [
         {
-            "value": "4e08d14e-e6b8-4aa5-a62e-baf9656ee817"
+            "value": "f3eb16ac-46dc-4c6d-bafc-2be300c0618d"
         }
     ],
     "revision_id": [
         {
-            "value": 2
+            "value": 20
         }
     ],
     "langcode": [
@@ -33,23 +33,25 @@
     ],
     "vid": [
         {
-            "target_id": "premium_content_type"
+            "target_id": "protection_level"
         }
     ],
     "revision_created": [
         {
-            "value": "2019-10-04T11:22:41+00:00",
+            "value": "2019-12-03T14:05:44+00:00",
             "format": "Y-m-d\\TH:i:sP"
         }
     ],
     "status": [
         {
-            "value": true
+            "value": true,
+            "lang": "en"
         }
     ],
     "name": [
         {
-            "value": "Whitepaper"
+            "value": "Ultimate",
+            "lang": "en"
         }
     ],
     "weight": [
@@ -58,13 +60,14 @@
         }
     ],
     "_embedded": {
-        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/premium_content_type\/parent": [
+        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/protection_level\/parent": [
             null
         ]
     },
     "changed": [
         {
-            "value": "2019-10-04T11:22:41+00:00",
+            "value": "2019-12-03T14:05:44+00:00",
+            "lang": "en",
             "format": "Y-m-d\\TH:i:sP"
         }
     ],
@@ -78,6 +81,14 @@
         {
             "value": true,
             "lang": "en"
+        }
+    ],
+    "metatag": [
+        {
+            "value": {
+                "title": "Ultimate | Socomec",
+                "canonical_url": "http:\/\/default\/taxonomy\/term\/20"
+            }
         }
     ]
 }
