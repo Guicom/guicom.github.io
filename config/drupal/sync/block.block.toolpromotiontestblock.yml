@@ -1,0 +1,31 @@
+uuid: f30269f7-fcc4-4f76-8f1f-014b9068f1d0
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:tool_promotion:f0c55cf7-9165-45ed-abd1-f17c4876cfad'
+  module:
+    - block_content
+    - system
+  theme:
+    - socomec
+id: toolpromotiontestblock
+theme: socomec
+region: content
+weight: -3
+provider: null
+plugin: 'block_content:f0c55cf7-9165-45ed-abd1-f17c4876cfad'
+settings:
+  id: 'block_content:f0c55cf7-9165-45ed-abd1-f17c4876cfad'
+  label: 'Tool promotion test block'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    pages: '<front>'
+    negate: false
+    context_mapping: {  }

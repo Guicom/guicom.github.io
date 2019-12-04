@@ -9,8 +9,10 @@ dependencies:
     - field.field.block_content.tool_promotion.field_lien
     - field.field.block_content.tool_promotion.field_main_image
     - field.field.block_content.tool_promotion.field_title
+    - image.style.max_325x325
   module:
     - link
+    - media
     - text
 id: block_content.tool_promotion.default
 targetEntityType: block_content
@@ -18,12 +20,12 @@ bundle: tool_promotion
 mode: default
 content:
   field_background_image:
-    type: entity_reference_entity_view
+    type: media_thumbnail
     weight: 3
     label: hidden
     settings:
-      view_mode: default
-      link: false
+      image_style: max_325x325
+      image_link: ''
     third_party_settings: {  }
     region: content
   field_description:
@@ -47,12 +49,12 @@ content:
     type: link
     region: content
   field_main_image:
-    type: entity_reference_entity_view
+    type: media_thumbnail
     weight: 2
     label: hidden
     settings:
-      view_mode: default
-      link: false
+      image_style: max_325x325
+      image_link: ''
     third_party_settings: {  }
     region: content
   field_title:
