@@ -16,6 +16,31 @@
                 "href": "http:\/\/default\/user\/1?_format=hal_json"
             }
         ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/product\/field_background_hero_block": [
+            {
+                "href": "http:\/\/default\/media\/17\/edit?_format=hal_json"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/product\/field_product_cta_1": [
+            {
+                "href": ""
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/product\/field_product_cta_2": [
+            {
+                "href": ""
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/product\/field_product_cta_3": [
+            {
+                "href": ""
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/product\/field_product_cta_4": [
+            {
+                "href": ""
+            }
+        ],
         "http:\/\/drupal.org\/rest\/relation\/node\/product\/field_product_family": [
             {
                 "href": "http:\/\/default\/taxonomy\/term\/12?_format=hal_json"
@@ -23,10 +48,25 @@
         ],
         "http:\/\/drupal.org\/rest\/relation\/node\/product\/field_product_pictures": [
             {
+                "href": "http:\/\/default\/media\/23\/edit?_format=hal_json"
+            },
+            {
+                "href": "http:\/\/default\/media\/22\/edit?_format=hal_json"
+            },
+            {
                 "href": "http:\/\/default\/media\/11\/edit?_format=hal_json"
             },
             {
                 "href": "http:\/\/default\/media\/10\/edit?_format=hal_json"
+            },
+            {
+                "href": "http:\/\/default\/media\/1\/edit?_format=hal_json"
+            },
+            {
+                "href": "http:\/\/default\/media\/4\/edit?_format=hal_json"
+            },
+            {
+                "href": "http:\/\/default\/media\/3\/edit?_format=hal_json"
             }
         ],
         "http:\/\/drupal.org\/rest\/relation\/node\/product\/field_product_standard_label": [
@@ -61,7 +101,7 @@
     ],
     "vid": [
         {
-            "value": 31
+            "value": 43
         }
     ],
     "langcode": [
@@ -77,7 +117,7 @@
     ],
     "revision_timestamp": [
         {
-            "value": "2019-12-03T14:10:08+00:00",
+            "value": "2019-12-06T16:07:07+00:00",
             "format": "Y-m-d\\TH:i:sP"
         }
     ],
@@ -94,7 +134,7 @@
                 },
                 "uuid": [
                     {
-                        "value": "36fca19b-5586-4bb3-a1b7-0ff353b21876"
+                        "value": "cdedc391-f198-4343-b22e-baa99056ee85"
                     }
                 ]
             }
@@ -111,9 +151,98 @@
                 },
                 "uuid": [
                     {
-                        "value": "36fca19b-5586-4bb3-a1b7-0ff353b21876"
+                        "value": "cdedc391-f198-4343-b22e-baa99056ee85"
                     }
                 ]
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/product\/field_background_hero_block": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/media\/17\/edit?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/media\/image"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "72fe5a74-1089-4a42-bbf6-7adc3b1f1937"
+                    }
+                ]
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/product\/field_product_cta_1": [
+            {
+                "_links": {
+                    "self": {
+                        "href": ""
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/link"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "bff07d87-15f7-4612-bc51-5e35a2301a73"
+                    }
+                ],
+                "target_revision_id": "85"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/product\/field_product_cta_2": [
+            {
+                "_links": {
+                    "self": {
+                        "href": ""
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/link"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "c3e23bab-5fd4-4799-81b3-398f7c9eb936"
+                    }
+                ],
+                "target_revision_id": "86"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/product\/field_product_cta_3": [
+            {
+                "_links": {
+                    "self": {
+                        "href": ""
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/link"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "1fdc9869-fa70-406a-920b-08cd75e2fc5a"
+                    }
+                ],
+                "target_revision_id": "87"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/product\/field_product_cta_4": [
+            {
+                "_links": {
+                    "self": {
+                        "href": ""
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/link"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "7ead3cd8-8918-4529-8215-a6df919d44f6"
+                    }
+                ],
+                "target_revision_id": "88"
             }
         ],
         "http:\/\/drupal.org\/rest\/relation\/node\/product\/field_product_family": [
@@ -134,6 +263,36 @@
             }
         ],
         "http:\/\/drupal.org\/rest\/relation\/node\/product\/field_product_pictures": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/media\/23\/edit?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/media\/product_image"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "d46ee6a7-7fef-4293-8ec3-68e843c84951"
+                    }
+                ]
+            },
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/media\/22\/edit?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/media\/product_image"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "575e2adb-b1d6-4d70-9648-0c1a581ca846"
+                    }
+                ]
+            },
             {
                 "_links": {
                     "self": {
@@ -161,6 +320,51 @@
                 "uuid": [
                     {
                         "value": "5da1c693-caea-4d3a-a00d-1decdb1dcef5"
+                    }
+                ]
+            },
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/media\/1\/edit?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/media\/product_image"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "1868ce6f-c3dd-4d64-9384-7f02a117fd3b"
+                    }
+                ]
+            },
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/media\/4\/edit?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/media\/product_image"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "3602ccf0-2342-424c-8bb9-626992a41ba0"
+                    }
+                ]
+            },
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/media\/3\/edit?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/media\/product_image"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "52599055-4eb6-4470-8eb5-9317268b5c0f"
                     }
                 ]
             }
@@ -251,7 +455,7 @@
     ],
     "changed": [
         {
-            "value": "2019-12-03T14:10:08+00:00",
+            "value": "2019-12-06T16:07:07+00:00",
             "format": "Y-m-d\\TH:i:sP"
         }
     ],
@@ -279,7 +483,7 @@
     ],
     "field_json_product_data": [
         {
-            "value": "{\r\n  \"Marketing\": {\r\n    \"group_name\": \"Marketing\",\r\n    \"value\": {\r\n      \"DC_P_ADDITIONAL_CHARACTERISTICS\": {\r\n        \"id\": \"DC_P_ADDITIONAL_CHARACTERISTICS\",\r\n        \"type\": \"TXTLONG\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_P_ADVANTAGE_1_TEXT\": {\r\n        \"id\": \"DC_P_ADVANTAGE_1_TEXT\",\r\n        \"type\": \"TXTLONG\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_P_ADVANTAGE_1_TITLE\": {\r\n        \"id\": \"DC_P_ADVANTAGE_1_TITLE\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"Visible double breaking\"\r\n      },\r\n      \"DC_P_ADVANTAGE_2_TEXT\": {\r\n        \"id\": \"DC_P_ADVANTAGE_2_TEXT\",\r\n        \"type\": \"TXTLONG\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_P_ADVANTAGE_2_TITLE\": {\r\n        \"id\": \"DC_P_ADVANTAGE_2_TITLE\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"Connection capacity\"\r\n      },\r\n      \"DC_P_ADVANTAGE_3_TEXT\": {\r\n        \"id\": \"DC_P_ADVANTAGE_3_TEXT\",\r\n        \"type\": \"TXTLONG\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_P_ADVANTAGE_3_TITLE\": {\r\n        \"id\": \"DC_P_ADVANTAGE_3_TITLE\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"DIN-rail mounting\"\r\n      },\r\n      \"DC_P_ADVANTAGE_4_TEXT\": {\r\n        \"id\": \"DC_P_ADVANTAGE_4_TEXT\",\r\n        \"type\": \"TXTLONG\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_P_ADVANTAGE_4_TITLE\": {\r\n        \"id\": \"DC_P_ADVANTAGE_4_TITLE\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_P_ADVANTAGE_5_TEXT\": {\r\n        \"id\": \"DC_P_ADVANTAGE_5_TEXT\",\r\n        \"type\": \"TXTLONG\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_P_ADVANTAGE_5_TITLE\": {\r\n        \"id\": \"DC_P_ADVANTAGE_5_TITLE\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_P_ADVANTAGE_6_TEXT\": {\r\n        \"id\": \"DC_P_ADVANTAGE_6_TEXT\",\r\n        \"type\": \"TXTLONG\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_P_ADVANTAGE_6_TITLE\": {\r\n        \"id\": \"DC_P_ADVANTAGE_6_TITLE\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_P_ADVANTAGE_7_TEXT\": {\r\n        \"id\": \"DC_P_ADVANTAGE_7_TEXT\",\r\n        \"type\": \"TXTLONG\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_P_ADVANTAGE_7_TITLE\": {\r\n        \"id\": \"DC_P_ADVANTAGE_7_TITLE\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_P_ADVANTAGE_8_TEXT\": {\r\n        \"id\": \"DC_P_ADVANTAGE_8_TEXT\",\r\n        \"type\": \"TXTLONG\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_P_ADVANTAGE_8_TITLE\": {\r\n        \"id\": \"DC_P_ADVANTAGE_8_TITLE\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_P_APPLICATIONS\": {\r\n        \"id\": \"DC_P_APPLICATIONS\",\r\n        \"type\": \"TXTLONG\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_P_ASSOCIATED_SERVICES\": {\r\n        \"id\": \"DC_P_ASSOCIATED_SERVICES\",\r\n        \"type\": \"CHOIX\",\r\n        \"value\": \"Consultancy, Deployment and training, Prevention and service operations, Measurement and analysis, Optimisation\"\r\n      },\r\n      \"DC_P_ASSORTMENT_WIDTH\": {\r\n        \"id\": \"DC_P_ASSORTMENT_WIDTH\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_P_FUNCTIONS\": {\r\n        \"id\": \"DC_P_FUNCTIONS\",\r\n        \"type\": \"TXTLONG\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_P_GENERAL_CHARACTERISTICS\": {\r\n        \"id\": \"DC_P_GENERAL_CHARACTERISTICS\",\r\n        \"type\": \"TXTLONG\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_P_GENERAL_CHARACTERISTICS_TABLE\": {\r\n        \"id\": \"DC_P_GENERAL_CHARACTERISTICS_TABLE\",\r\n        \"type\": \"TAB\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_P_LONG_DESCRIPTION\": {\r\n        \"id\": \"DC_P_LONG_DESCRIPTION\",\r\n        \"type\": \"TXTLONG\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_P_MARKET_SEGMENT\": {\r\n        \"id\": \"DC_P_MARKET_SEGMENT\",\r\n        \"type\": \"CHOIX\",\r\n        \"value\": []\r\n      },\r\n      \"DC_P_PRODUCT_MAIN_PICTURE\": {\r\n        \"id\": \"DC_P_PRODUCT_MAIN_PICTURE\",\r\n        \"type\": \"IMG\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_P_PRODUCT_MAIN_PICTURE_TITLE\": {\r\n        \"id\": \"DC_P_PRODUCT_MAIN_PICTURE_TITLE\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_P_PRODUCT_MARKETING_GROUP\": {\r\n        \"id\": \"DC_P_PRODUCT_MARKETING_GROUP\",\r\n        \"type\": \"LISTE\",\r\n        \"value\": []\r\n      },\r\n      \"DC_P_PRODUCT_NAME\": {\r\n        \"id\": \"DC_P_PRODUCT_NAME\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_P_PRODUCT_SHORT_DESCRIPTION\": {\r\n        \"id\": \"DC_P_PRODUCT_SHORT_DESCRIPTION\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_P_UNIQUE_VALUE_PROPOSAL\": {\r\n        \"id\": \"DC_P_UNIQUE_VALUE_PROPOSAL\",\r\n        \"type\": \"TXTLONG\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_R_LONG_DESCRIPTION\": {\r\n        \"id\": \"DC_R_LONG_DESCRIPTION\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"SIRCO VM are manually operated modular multipolar load break switches.\"\r\n      },\r\n      \"DC_P_PRODUCT_MAIN_PICTURE_LINK\": {\r\n        \"id\": \"DC_P_PRODUCT_MAIN_PICTURE_LINK\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_P_PRODUCT_CATEGORY\": {\r\n        \"id\": \"DC_P_PRODUCT_CATEGORY\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_P_SOFTWARE_FEATURES\": {\r\n        \"id\": \"DC_P_SOFTWARE_FEATURES\",\r\n        \"type\": \"TXTLONG\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_P_SYSTEM_OR_PRODUCT_OPTIONS\": {\r\n        \"id\": \"DC_P_SYSTEM_OR_PRODUCT_OPTIONS\",\r\n        \"type\": \"TXTLONG\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_P_COMMUNICATION_OPTIONS\": {\r\n        \"id\": \"DC_P_COMMUNICATION_OPTIONS\",\r\n        \"type\": \"TXTLONG\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_P_PRODUCT_MAIN_PICTURE_NAME\": {\r\n        \"id\": \"DC_P_PRODUCT_MAIN_PICTURE_NAME\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      }\r\n    }\r\n  },\r\n  \"Docs\": {\r\n    \"group_name\": \"Docs\",\r\n    \"value\": {\r\n      \"DC_P_BROCHURE_LINK_TITLE\": {\r\n        \"id\": \"DC_P_BROCHURE_LINK_TITLE\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_P_CATALOG_PAGES_LINK_TITLE\": {\r\n        \"id\": \"DC_P_CATALOG_PAGES_LINK_TITLE\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_P_INSTRUCTION_MANUAL_LINK_TITLE\": {\r\n        \"id\": \"DC_P_INSTRUCTION_MANUAL_LINK_TITLE\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_P_QUICK_START_LINK_TITLE\": {\r\n        \"id\": \"DC_P_QUICK_START_LINK_TITLE\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_P_CATALOG_PAGES_LINK\": {\r\n        \"id\": \"DC_P_CATALOG_PAGES_LINK\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_P_INSTRUCTION_MANUAL_LINK\": {\r\n        \"id\": \"DC_P_INSTRUCTION_MANUAL_LINK\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_P_QUICKLINK\": {\r\n        \"id\": \"DC_P_QUICKLINK\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_P_BROCHURE_LINK\": {\r\n        \"id\": \"DC_P_BROCHURE_LINK\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      }\r\n    }\r\n  },\r\n  \"Technical\": {\r\n    \"group_name\": \"Technical\",\r\n    \"value\": {\r\n      \"DC_P_CONFORMITY_TO_STANDARDS_IEC_TEXT\": {\r\n        \"id\": \"DC_P_CONFORMITY_TO_STANDARDS_IEC_TEXT\",\r\n        \"type\": \"TXTLONG\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_P_CONFORMITY_TO_STANDARDS_UL_TEXT\": {\r\n        \"id\": \"DC_P_CONFORMITY_TO_STANDARDS_UL_TEXT\",\r\n        \"type\": \"TXTLONG\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_P_IEC_UL_CCC\": {\r\n        \"id\": \"DC_P_IEC_UL_CCC\",\r\n        \"type\": \"CHOIX\",\r\n        \"value\": []\r\n      },\r\n      \"DC_P_CONFORMITY_TO_STANDARDS_CCC_TEXT\": {\r\n        \"id\": \"DC_P_CONFORMITY_TO_STANDARDS_CCC_TEXT\",\r\n        \"type\": \"TXTLONG\",\r\n        \"value\": \"\"\r\n      }\r\n    }\r\n  },\r\n  \"M\u00e9dias\": {\r\n    \"group_name\": \"M\u00e9dias\",\r\n    \"value\": {\r\n      \"DC_P_EXPLODED_VIEW\": {\r\n        \"id\": \"DC_P_EXPLODED_VIEW\",\r\n        \"type\": \"IMG\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_P_EXPLODED_VIEW_LINK_TITLE\": {\r\n        \"id\": \"DC_P_EXPLODED_VIEW_LINK_TITLE\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_P_PRODUCT_MAIN_PICTURE_2\": {\r\n        \"id\": \"DC_P_PRODUCT_MAIN_PICTURE_2\",\r\n        \"type\": \"IMG\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_P_PRODUCT_MAIN_PICTURE_2_TITLE\": {\r\n        \"id\": \"DC_P_PRODUCT_MAIN_PICTURE_2_TITLE\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_R_REFERENCE_CAD_LINK\": {\r\n        \"id\": \"DC_R_REFERENCE_CAD_LINK\",\r\n        \"type\": \"TXTHTML\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_R_REFERENCE_CAD_LINK_TITLE\": {\r\n        \"id\": \"DC_R_REFERENCE_CAD_LINK_TITLE\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_R_REFERENCE_PRIME_PICTURE\": {\r\n        \"id\": \"DC_R_REFERENCE_PRIME_PICTURE\",\r\n        \"type\": \"IMG\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_R_REFERENCE_PRIME_PICTURE_LINK\": {\r\n        \"id\": \"DC_R_REFERENCE_PRIME_PICTURE_LINK\",\r\n        \"type\": \"TXTHTML\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_R_REFERENCE_PRIME_PICTURE_TITLE\": {\r\n        \"id\": \"DC_R_REFERENCE_PRIME_PICTURE_TITLE\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_P_PRODUCT_MAIN_PICTURE_2_LINK\": {\r\n        \"id\": \"DC_P_PRODUCT_MAIN_PICTURE_2_LINK\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_P_EXPLODED_VIEW_LINK\": {\r\n        \"id\": \"DC_P_EXPLODED_VIEW_LINK\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_P_EXPLODED_VIEW_NAME\": {\r\n        \"id\": \"DC_P_EXPLODED_VIEW_NAME\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_P_PRODUCT_MAIN_PICTURE_2_NAME\": {\r\n        \"id\": \"DC_P_PRODUCT_MAIN_PICTURE_2_NAME\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_R_REFERENCE_PRIME_PICTURE_NAME\": {\r\n        \"id\": \"DC_R_REFERENCE_PRIME_PICTURE_NAME\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      }\r\n    }\r\n  },\r\n  \"Videos\": {\r\n    \"group_name\": \"Videos\",\r\n    \"value\": {\r\n      \"DC_P_VIDEO_PROMOTIONAL_LINK_TITLE\": {\r\n        \"id\": \"DC_P_VIDEO_PROMOTIONAL_LINK_TITLE\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_P_VIDEO_TESTIMONIES_LINK_TITLE\": {\r\n        \"id\": \"DC_P_VIDEO_TESTIMONIES_LINK_TITLE\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_P_VIDEO_TUTORIAL_LINK_TITLE\": {\r\n        \"id\": \"DC_P_VIDEO_TUTORIAL_LINK_TITLE\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_P_VIDEO_TUTORIAL_LINK\": {\r\n        \"id\": \"DC_P_VIDEO_TUTORIAL_LINK\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_P_VIDEO_PROMOTIONAL_LINK\": {\r\n        \"id\": \"DC_P_VIDEO_PROMOTIONAL_LINK\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_VIDEO_TESTIMONIAL_LINK\": {\r\n        \"id\": \"DC_VIDEO_TESTIMONIAL_LINK\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      }\r\n    }\r\n  },\r\n  \"ERP\": {\r\n    \"group_name\": \"ERP\",\r\n    \"value\": {\r\n      \"DC_R_ERP_BA\": {\r\n        \"id\": \"DC_R_ERP_BA\",\r\n        \"type\": \"CHOIX\",\r\n        \"value\": []\r\n      },\r\n      \"DC_R_ERP_BAAN30\": {\r\n        \"id\": \"DC_R_ERP_BAAN30\",\r\n        \"type\": \"TXTLONG\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_R_ERP_BAN_DATE\": {\r\n        \"id\": \"DC_R_ERP_BAN_DATE\",\r\n        \"type\": \"DATE\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_R_ERP_COUNTRY\": {\r\n        \"id\": \"DC_R_ERP_COUNTRY\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_R_ERP_COUNTRY_OF_ORIGIN\": {\r\n        \"id\": \"DC_R_ERP_COUNTRY_OF_ORIGIN\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_R_ERP_CREATION_DATE\": {\r\n        \"id\": \"DC_R_ERP_CREATION_DATE\",\r\n        \"type\": \"DATE\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_R_ERP_CUSTOMS_NUMBER\": {\r\n        \"id\": \"DC_R_ERP_CUSTOMS_NUMBER\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_R_ERP_DEPTH\": {\r\n        \"id\": \"DC_R_ERP_DEPTH\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_R_ERP_DIMENSION_UNIT\": {\r\n        \"id\": \"DC_R_ERP_DIMENSION_UNIT\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_R_ERP_EC_CATALOG\": {\r\n        \"id\": \"DC_R_ERP_EC_CATALOG\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_R_ERP_EFFECTIVE_DATE\": {\r\n        \"id\": \"DC_R_ERP_EFFECTIVE_DATE\",\r\n        \"type\": \"DATE\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_R_ERP_FAMILY_CODE_1\": {\r\n        \"id\": \"DC_R_ERP_FAMILY_CODE_1\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_R_ERP_FAMILY_CODE_2\": {\r\n        \"id\": \"DC_R_ERP_FAMILY_CODE_2\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_R_ERP_FAMILY_CODE_3\": {\r\n        \"id\": \"DC_R_ERP_FAMILY_CODE_3\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_R_ERP_GTIN\": {\r\n        \"id\": \"DC_R_ERP_GTIN\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_R_ERP_HEIGHT\": {\r\n        \"id\": \"DC_R_ERP_HEIGHT\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_R_ERP_INVOICE_DESCRIPTION\": {\r\n        \"id\": \"DC_R_ERP_INVOICE_DESCRIPTION\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_R_ERP_L1_CODE\": {\r\n        \"id\": \"DC_R_ERP_L1_CODE\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_R_ERP_L1_DESCRIPTION\": {\r\n        \"id\": \"DC_R_ERP_L1_DESCRIPTION\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_R_ERP_L2_CODE\": {\r\n        \"id\": \"DC_R_ERP_L2_CODE\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_R_ERP_L2_DESCRIPTION\": {\r\n        \"id\": \"DC_R_ERP_L2_DESCRIPTION\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_R_ERP_L3_CODE\": {\r\n        \"id\": \"DC_R_ERP_L3_CODE\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_R_ERP_L3_DESCRIPTION\": {\r\n        \"id\": \"DC_R_ERP_L3_DESCRIPTION\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_R_ERP_MINIMUM_ORDER_QUANTITY\": {\r\n        \"id\": \"DC_R_ERP_MINIMUM_ORDER_QUANTITY\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_R_ERP_MODEL_CODE\": {\r\n        \"id\": \"DC_R_ERP_MODEL_CODE\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_R_ERP_MODEL_LABEL\": {\r\n        \"id\": \"DC_R_ERP_MODEL_LABEL\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_R_ERP_OBSOLETE_DATE\": {\r\n        \"id\": \"DC_R_ERP_OBSOLETE_DATE\",\r\n        \"type\": \"DATE\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_R_ERP_ORDER_UNIT\": {\r\n        \"id\": \"DC_R_ERP_ORDER_UNIT\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_R_ERP_PACKING_UNIT\": {\r\n        \"id\": \"DC_R_ERP_PACKING_UNIT\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_R_ERP_PRICE_GROUP_CODE\": {\r\n        \"id\": \"DC_R_ERP_PRICE_GROUP_CODE\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_R_ERP_PRICE_GROUP_LABEL\": {\r\n        \"id\": \"DC_R_ERP_PRICE_GROUP_LABEL\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_R_ERP_PRODUCT_CODE\": {\r\n        \"id\": \"DC_R_ERP_PRODUCT_CODE\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_R_ERP_RANGE_CODE\": {\r\n        \"id\": \"DC_R_ERP_RANGE_CODE\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_R_ERP_RANGE_LABEL\": {\r\n        \"id\": \"DC_R_ERP_RANGE_LABEL\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_R_ERP_REFERENCE_TYPE\": {\r\n        \"id\": \"DC_R_ERP_REFERENCE_TYPE\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_R_ERP_SIGNAL_CODE\": {\r\n        \"id\": \"DC_R_ERP_SIGNAL_CODE\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_R_ERP_SIGNAL_CODE_LABEL\": {\r\n        \"id\": \"DC_R_ERP_SIGNAL_CODE_LABEL\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_R_ERP_STOCK\": {\r\n        \"id\": \"DC_R_ERP_STOCK\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_R_ERP_TECHNICAL_PRODUCT_TYPE\": {\r\n        \"id\": \"DC_R_ERP_TECHNICAL_PRODUCT_TYPE\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_R_ERP_TYPE_OF_MARKETER\": {\r\n        \"id\": \"DC_R_ERP_TYPE_OF_MARKETER\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_R_ERP_UNIT_OF_WEIGHT\": {\r\n        \"id\": \"DC_R_ERP_UNIT_OF_WEIGHT\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_R_ERP_WEIGHT\": {\r\n        \"id\": \"DC_R_ERP_WEIGHT\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_R_ERP_WIDTH\": {\r\n        \"id\": \"DC_R_ERP_WIDTH\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_R_ERP_COUNTRY_COMMERCIALISATION_TYPE\": {\r\n        \"id\": \"DC_R_ERP_COUNTRY_COMMERCIALISATION_TYPE\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      }\r\n    }\r\n  },\r\n  \"Syst\u00e8me\": {\r\n    \"group_name\": \"Syst\u00e8me\",\r\n    \"value\": {\r\n      \"ProductFillRate_GLOBAL\": {\r\n        \"id\": \"ProductFillRate_GLOBAL\",\r\n        \"type\": \"NUM\",\r\n        \"value\": \"1\"\r\n      },\r\n      \"ReferenceFillRate_GLOBAL\": {\r\n        \"id\": \"ReferenceFillRate_GLOBAL\",\r\n        \"type\": \"NUM\",\r\n        \"value\": \"\"\r\n      },\r\n      \"ProductFillRate_WEB\": {\r\n        \"id\": \"ProductFillRate_WEB\",\r\n        \"type\": \"NUM\",\r\n        \"value\": \"\"\r\n      },\r\n      \"ReferenceFillRate_WEB\": {\r\n        \"id\": \"ReferenceFillRate_WEB\",\r\n        \"type\": \"NUM\",\r\n        \"value\": \"\"\r\n      },\r\n      \"ProductFillRate_WEBMIN\": {\r\n        \"id\": \"ProductFillRate_WEBMIN\",\r\n        \"type\": \"NUM\",\r\n        \"value\": \"\"\r\n      },\r\n      \"ReferenceFillRate_WEBMIN\": {\r\n        \"id\": \"ReferenceFillRate_WEBMIN\",\r\n        \"type\": \"NUM\",\r\n        \"value\": \"\"\r\n      },\r\n      \"ProductFillRate_PAPIER\": {\r\n        \"id\": \"ProductFillRate_PAPIER\",\r\n        \"type\": \"NUM\",\r\n        \"value\": \"\"\r\n      },\r\n      \"ReferenceFillRate_PAPIER\": {\r\n        \"id\": \"ReferenceFillRate_PAPIER\",\r\n        \"type\": \"NUM\",\r\n        \"value\": \"\"\r\n      },\r\n      \"ProductFillRate_INIT\": {\r\n        \"id\": \"ProductFillRate_INIT\",\r\n        \"type\": \"NUM\",\r\n        \"value\": \"\"\r\n      }\r\n    }\r\n  },\r\n  \"TEST ECKERT\": {\r\n    \"group_name\": \"TEST ECKERT\",\r\n    \"value\": {\r\n      \"DC_R_ACCESSORIES_REF_TO_REF\": {\r\n        \"id\": \"DC_R_ACCESSORIES_REF_TO_REF\",\r\n        \"type\": \"LIENRR\",\r\n        \"value\": \"\"\r\n      }\r\n    }\r\n  },\r\n  \"Responsable produit\": {\r\n    \"group_name\": \"Responsable produit\",\r\n    \"value\": {\r\n      \"DC_P_RP\": {\r\n        \"id\": \"DC_P_RP\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_P_RPTRIGRAME\": {\r\n        \"id\": \"DC_P_RPTRIGRAME\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_P_RPMAIL\": {\r\n        \"id\": \"DC_P_RPMAIL\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_R_RPTRIGRAME\": {\r\n        \"id\": \"DC_R_RPTRIGRAME\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_R_RPMAIL\": {\r\n        \"id\": \"DC_R_RPMAIL\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_R_RP\": {\r\n        \"id\": \"DC_R_RP\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      }\r\n    }\r\n  },\r\n  \"Phase initialisation\": {\r\n    \"group_name\": \"Phase initialisation\",\r\n    \"value\": {\r\n      \"DC_P_STATUTINITIALISATION\": {\r\n        \"id\": \"DC_P_STATUTINITIALISATION\",\r\n        \"type\": \"LISTE\",\r\n        \"value\": []\r\n      },\r\n      \"DC_R_PAGECATALOGUEPDF1\": {\r\n        \"id\": \"DC_R_PAGECATALOGUEPDF1\",\r\n        \"type\": \"FICHPDF\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_P_REMARQUESINITIALISATION\": {\r\n        \"id\": \"DC_P_REMARQUESINITIALISATION\",\r\n        \"type\": \"TXTLONG\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_P_RESPONSABLESAISIEINITIALISATION\": {\r\n        \"id\": \"DC_P_RESPONSABLESAISIEINITIALISATION\",\r\n        \"type\": \"LISTE\",\r\n        \"value\": []\r\n      },\r\n      \"DC_P_PRIORITEINITIALISATION\": {\r\n        \"id\": \"DC_P_PRIORITEINITIALISATION\",\r\n        \"type\": \"LISTE\",\r\n        \"value\": []\r\n      },\r\n      \"DC_P_PAGECATALOGUEPDF1\": {\r\n        \"id\": \"DC_P_PAGECATALOGUEPDF1\",\r\n        \"type\": \"FICHPDF\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_R_STATUTINITIALISATION2\": {\r\n        \"id\": \"DC_R_STATUTINITIALISATION2\",\r\n        \"type\": \"LISTE\",\r\n        \"value\": []\r\n      },\r\n      \"DC_P_CATALOGUEFRINITIALISATION\": {\r\n        \"id\": \"DC_P_CATALOGUEFRINITIALISATION\",\r\n        \"type\": \"CHOIX\",\r\n        \"value\": []\r\n      }\r\n    }\r\n  },\r\n  \"Workflow\": {\r\n    \"group_name\": \"Workflow\",\r\n    \"value\": {\r\n      \"wfTask_emails_W2\": {\r\n        \"id\": \"wfTask_emails_W2\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      }\r\n    }\r\n  },\r\n  \"SYSTEM\": {\r\n    \"group_name\": \"SYSTEM\",\r\n    \"value\": {\r\n      \"##ProductLabel\": {\r\n        \"id\": \"##ProductLabel\",\r\n        \"type\": \"SYSLABEL\",\r\n        \"value\": \"SUNSYS PCS\u00b2 IM TR CE\"\r\n      }\r\n    }\r\n  }\r\n}"
+            "value": "{\r\n  \"Marketing\": {\r\n    \"group_name\": \"Marketing\",\r\n    \"value\": {\r\n      \"DC_P_ADDITIONAL_CHARACTERISTICS\": {\r\n        \"id\": \"DC_P_ADDITIONAL_CHARACTERISTICS\",\r\n        \"type\": \"TXTLONG\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_P_ADVANTAGE_1_TEXT\": {\r\n        \"id\": \"DC_P_ADVANTAGE_1_TEXT\",\r\n        \"type\": \"TXTLONG\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_P_ADVANTAGE_1_TITLE\": {\r\n        \"id\": \"DC_P_ADVANTAGE_1_TITLE\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"Visible double breaking\"\r\n      },\r\n      \"DC_P_ADVANTAGE_2_TEXT\": {\r\n        \"id\": \"DC_P_ADVANTAGE_2_TEXT\",\r\n        \"type\": \"TXTLONG\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_P_ADVANTAGE_2_TITLE\": {\r\n        \"id\": \"DC_P_ADVANTAGE_2_TITLE\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"Connection capacity\"\r\n      },\r\n      \"DC_P_ADVANTAGE_3_TEXT\": {\r\n        \"id\": \"DC_P_ADVANTAGE_3_TEXT\",\r\n        \"type\": \"TXTLONG\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_P_ADVANTAGE_3_TITLE\": {\r\n        \"id\": \"DC_P_ADVANTAGE_3_TITLE\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"DIN-rail mounting\"\r\n      },\r\n      \"DC_P_ADVANTAGE_4_TEXT\": {\r\n        \"id\": \"DC_P_ADVANTAGE_4_TEXT\",\r\n        \"type\": \"TXTLONG\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_P_ADVANTAGE_4_TITLE\": {\r\n        \"id\": \"DC_P_ADVANTAGE_4_TITLE\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_P_ADVANTAGE_5_TEXT\": {\r\n        \"id\": \"DC_P_ADVANTAGE_5_TEXT\",\r\n        \"type\": \"TXTLONG\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_P_ADVANTAGE_5_TITLE\": {\r\n        \"id\": \"DC_P_ADVANTAGE_5_TITLE\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_P_ADVANTAGE_6_TEXT\": {\r\n        \"id\": \"DC_P_ADVANTAGE_6_TEXT\",\r\n        \"type\": \"TXTLONG\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_P_ADVANTAGE_6_TITLE\": {\r\n        \"id\": \"DC_P_ADVANTAGE_6_TITLE\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_P_ADVANTAGE_7_TEXT\": {\r\n        \"id\": \"DC_P_ADVANTAGE_7_TEXT\",\r\n        \"type\": \"TXTLONG\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_P_ADVANTAGE_7_TITLE\": {\r\n        \"id\": \"DC_P_ADVANTAGE_7_TITLE\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_P_ADVANTAGE_8_TEXT\": {\r\n        \"id\": \"DC_P_ADVANTAGE_8_TEXT\",\r\n        \"type\": \"TXTLONG\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_P_ADVANTAGE_8_TITLE\": {\r\n        \"id\": \"DC_P_ADVANTAGE_8_TITLE\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_P_APPLICATIONS\": {\r\n        \"id\": \"DC_P_APPLICATIONS\",\r\n        \"type\": \"TXTLONG\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_P_ASSOCIATED_SERVICES\": {\r\n        \"id\": \"DC_P_ASSOCIATED_SERVICES\",\r\n        \"type\": \"CHOIX\",\r\n        \"value\": \"Consultancy, Deployment and training, Prevention and service operations, Measurement and analysis, Optimisation\"\r\n      },\r\n      \"DC_P_ASSORTMENT_WIDTH\": {\r\n        \"id\": \"DC_P_ASSORTMENT_WIDTH\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_P_FUNCTIONS\": {\r\n        \"id\": \"DC_P_FUNCTIONS\",\r\n        \"type\": \"TXTLONG\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_P_GENERAL_CHARACTERISTICS\": {\r\n        \"id\": \"DC_P_GENERAL_CHARACTERISTICS\",\r\n        \"type\": \"TXTLONG\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_P_GENERAL_CHARACTERISTICS_TABLE\": {\r\n        \"id\": \"DC_P_GENERAL_CHARACTERISTICS_TABLE\",\r\n        \"type\": \"TAB\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_P_LONG_DESCRIPTION\": {\r\n        \"id\": \"DC_P_LONG_DESCRIPTION\",\r\n        \"type\": \"TXTLONG\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_P_MARKET_SEGMENT\": {\r\n        \"id\": \"DC_P_MARKET_SEGMENT\",\r\n        \"type\": \"CHOIX\",\r\n        \"value\": []\r\n      },\r\n      \"DC_P_PRODUCT_MAIN_PICTURE\": {\r\n        \"id\": \"DC_P_PRODUCT_MAIN_PICTURE\",\r\n        \"type\": \"IMG\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_P_PRODUCT_MAIN_PICTURE_TITLE\": {\r\n        \"id\": \"DC_P_PRODUCT_MAIN_PICTURE_TITLE\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_P_PRODUCT_MARKETING_GROUP\": {\r\n        \"id\": \"DC_P_PRODUCT_MARKETING_GROUP\",\r\n        \"type\": \"LISTE\",\r\n        \"value\": []\r\n      },\r\n      \"DC_P_PRODUCT_NAME\": {\r\n        \"id\": \"DC_P_PRODUCT_NAME\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_P_PRODUCT_SHORT_DESCRIPTION\": {\r\n        \"id\": \"DC_P_PRODUCT_SHORT_DESCRIPTION\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      },\r\n\"DC_R_PAGECATALOGUEPDF1\": {\r\n        \"id\": \"DC_R_PAGECATALOGUEPDF1\",\r\n        \"type\": \"FICHPDF\",\r\n        \"value\": \"sites\/default\/files\/styles\/thumbnail\/public\/2019-12\/sircm_099.png\"\r\n      },\r\n      \"DC_P_UNIQUE_VALUE_PROPOSAL\": {\r\n        \"id\": \"DC_P_UNIQUE_VALUE_PROPOSAL\",\r\n        \"type\": \"TXTLONG\",\r\n        \"value\": \"Compact switches that make and break power circuits on and off and provide safety isolation. (Baseline)\"\r\n      },\r\n      \"DC_R_LONG_DESCRIPTION\": {\r\n        \"id\": \"DC_R_LONG_DESCRIPTION\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"SIRCO VM are manually operated modular multipolar load break switches.\"\r\n      },\r\n      \"DC_P_PRODUCT_MAIN_PICTURE_LINK\": {\r\n        \"id\": \"DC_P_PRODUCT_MAIN_PICTURE_LINK\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_P_PRODUCT_CATEGORY\": {\r\n        \"id\": \"DC_P_PRODUCT_CATEGORY\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_P_SOFTWARE_FEATURES\": {\r\n        \"id\": \"DC_P_SOFTWARE_FEATURES\",\r\n        \"type\": \"TXTLONG\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_P_SYSTEM_OR_PRODUCT_OPTIONS\": {\r\n        \"id\": \"DC_P_SYSTEM_OR_PRODUCT_OPTIONS\",\r\n        \"type\": \"TXTLONG\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_P_COMMUNICATION_OPTIONS\": {\r\n        \"id\": \"DC_P_COMMUNICATION_OPTIONS\",\r\n        \"type\": \"TXTLONG\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_P_PRODUCT_MAIN_PICTURE_NAME\": {\r\n        \"id\": \"DC_P_PRODUCT_MAIN_PICTURE_NAME\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      }\r\n    }\r\n  },\r\n  \"Docs\": {\r\n    \"group_name\": \"Docs\",\r\n    \"value\": {\r\n      \"DC_P_BROCHURE_LINK_TITLE\": {\r\n        \"id\": \"DC_P_BROCHURE_LINK_TITLE\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_P_CATALOG_PAGES_LINK_TITLE\": {\r\n        \"id\": \"DC_P_CATALOG_PAGES_LINK_TITLE\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_P_INSTRUCTION_MANUAL_LINK_TITLE\": {\r\n        \"id\": \"DC_P_INSTRUCTION_MANUAL_LINK_TITLE\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_P_QUICK_START_LINK_TITLE\": {\r\n        \"id\": \"DC_P_QUICK_START_LINK_TITLE\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_P_CATALOG_PAGES_LINK\": {\r\n        \"id\": \"DC_P_CATALOG_PAGES_LINK\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_P_INSTRUCTION_MANUAL_LINK\": {\r\n        \"id\": \"DC_P_INSTRUCTION_MANUAL_LINK\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_P_QUICKLINK\": {\r\n        \"id\": \"DC_P_QUICKLINK\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_P_BROCHURE_LINK\": {\r\n        \"id\": \"DC_P_BROCHURE_LINK\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      }\r\n    }\r\n  },\r\n  \"Technical\": {\r\n    \"group_name\": \"Technical\",\r\n    \"value\": {\r\n      \"DC_P_CONFORMITY_TO_STANDARDS_IEC_TEXT\": {\r\n        \"id\": \"DC_P_CONFORMITY_TO_STANDARDS_IEC_TEXT\",\r\n        \"type\": \"TXTLONG\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_P_CONFORMITY_TO_STANDARDS_UL_TEXT\": {\r\n        \"id\": \"DC_P_CONFORMITY_TO_STANDARDS_UL_TEXT\",\r\n        \"type\": \"TXTLONG\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_P_IEC_UL_CCC\": {\r\n        \"id\": \"DC_P_IEC_UL_CCC\",\r\n        \"type\": \"CHOIX\",\r\n        \"value\": []\r\n      },\r\n      \"DC_P_CONFORMITY_TO_STANDARDS_CCC_TEXT\": {\r\n        \"id\": \"DC_P_CONFORMITY_TO_STANDARDS_CCC_TEXT\",\r\n        \"type\": \"TXTLONG\",\r\n        \"value\": \"\"\r\n      }\r\n    }\r\n  },\r\n  \"M\u00e9dias\": {\r\n    \"group_name\": \"M\u00e9dias\",\r\n    \"value\": {\r\n      \"DC_P_EXPLODED_VIEW\": {\r\n        \"id\": \"DC_P_EXPLODED_VIEW\",\r\n        \"type\": \"IMG\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_P_EXPLODED_VIEW_LINK_TITLE\": {\r\n        \"id\": \"DC_P_EXPLODED_VIEW_LINK_TITLE\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_P_PRODUCT_MAIN_PICTURE_2\": {\r\n        \"id\": \"DC_P_PRODUCT_MAIN_PICTURE_2\",\r\n        \"type\": \"IMG\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_P_PRODUCT_MAIN_PICTURE_2_TITLE\": {\r\n        \"id\": \"DC_P_PRODUCT_MAIN_PICTURE_2_TITLE\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_R_REFERENCE_CAD_LINK\": {\r\n        \"id\": \"DC_R_REFERENCE_CAD_LINK\",\r\n        \"type\": \"TXTHTML\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_R_REFERENCE_CAD_LINK_TITLE\": {\r\n        \"id\": \"DC_R_REFERENCE_CAD_LINK_TITLE\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_R_REFERENCE_PRIME_PICTURE\": {\r\n        \"id\": \"DC_R_REFERENCE_PRIME_PICTURE\",\r\n        \"type\": \"IMG\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_R_REFERENCE_PRIME_PICTURE_LINK\": {\r\n        \"id\": \"DC_R_REFERENCE_PRIME_PICTURE_LINK\",\r\n        \"type\": \"TXTHTML\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_R_REFERENCE_PRIME_PICTURE_TITLE\": {\r\n        \"id\": \"DC_R_REFERENCE_PRIME_PICTURE_TITLE\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_P_PRODUCT_MAIN_PICTURE_2_LINK\": {\r\n        \"id\": \"DC_P_PRODUCT_MAIN_PICTURE_2_LINK\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_P_EXPLODED_VIEW_LINK\": {\r\n        \"id\": \"DC_P_EXPLODED_VIEW_LINK\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_P_EXPLODED_VIEW_NAME\": {\r\n        \"id\": \"DC_P_EXPLODED_VIEW_NAME\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_P_PRODUCT_MAIN_PICTURE_2_NAME\": {\r\n        \"id\": \"DC_P_PRODUCT_MAIN_PICTURE_2_NAME\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_R_REFERENCE_PRIME_PICTURE_NAME\": {\r\n        \"id\": \"DC_R_REFERENCE_PRIME_PICTURE_NAME\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      }\r\n    }\r\n  },\r\n  \"Videos\": {\r\n    \"group_name\": \"Videos\",\r\n    \"value\": {\r\n      \"DC_P_VIDEO_PROMOTIONAL_LINK_TITLE\": {\r\n        \"id\": \"DC_P_VIDEO_PROMOTIONAL_LINK_TITLE\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_P_VIDEO_TESTIMONIES_LINK_TITLE\": {\r\n        \"id\": \"DC_P_VIDEO_TESTIMONIES_LINK_TITLE\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_P_VIDEO_TUTORIAL_LINK_TITLE\": {\r\n        \"id\": \"DC_P_VIDEO_TUTORIAL_LINK_TITLE\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_P_VIDEO_TUTORIAL_LINK\": {\r\n        \"id\": \"DC_P_VIDEO_TUTORIAL_LINK\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_P_VIDEO_PROMOTIONAL_LINK\": {\r\n        \"id\": \"DC_P_VIDEO_PROMOTIONAL_LINK\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_VIDEO_TESTIMONIAL_LINK\": {\r\n        \"id\": \"DC_VIDEO_TESTIMONIAL_LINK\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      }\r\n    }\r\n  },\r\n  \"ERP\": {\r\n    \"group_name\": \"ERP\",\r\n    \"value\": {\r\n      \"DC_R_ERP_BA\": {\r\n        \"id\": \"DC_R_ERP_BA\",\r\n        \"type\": \"CHOIX\",\r\n        \"value\": []\r\n      },\r\n      \"DC_R_ERP_BAAN30\": {\r\n        \"id\": \"DC_R_ERP_BAAN30\",\r\n        \"type\": \"TXTLONG\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_R_ERP_BAN_DATE\": {\r\n        \"id\": \"DC_R_ERP_BAN_DATE\",\r\n        \"type\": \"DATE\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_R_ERP_COUNTRY\": {\r\n        \"id\": \"DC_R_ERP_COUNTRY\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_R_ERP_COUNTRY_OF_ORIGIN\": {\r\n        \"id\": \"DC_R_ERP_COUNTRY_OF_ORIGIN\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_R_ERP_CREATION_DATE\": {\r\n        \"id\": \"DC_R_ERP_CREATION_DATE\",\r\n        \"type\": \"DATE\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_R_ERP_CUSTOMS_NUMBER\": {\r\n        \"id\": \"DC_R_ERP_CUSTOMS_NUMBER\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_R_ERP_DEPTH\": {\r\n        \"id\": \"DC_R_ERP_DEPTH\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_R_ERP_DIMENSION_UNIT\": {\r\n        \"id\": \"DC_R_ERP_DIMENSION_UNIT\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_R_ERP_EC_CATALOG\": {\r\n        \"id\": \"DC_R_ERP_EC_CATALOG\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_R_ERP_EFFECTIVE_DATE\": {\r\n        \"id\": \"DC_R_ERP_EFFECTIVE_DATE\",\r\n        \"type\": \"DATE\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_R_ERP_FAMILY_CODE_1\": {\r\n        \"id\": \"DC_R_ERP_FAMILY_CODE_1\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_R_ERP_FAMILY_CODE_2\": {\r\n        \"id\": \"DC_R_ERP_FAMILY_CODE_2\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_R_ERP_FAMILY_CODE_3\": {\r\n        \"id\": \"DC_R_ERP_FAMILY_CODE_3\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_R_ERP_GTIN\": {\r\n        \"id\": \"DC_R_ERP_GTIN\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_R_ERP_HEIGHT\": {\r\n        \"id\": \"DC_R_ERP_HEIGHT\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_R_ERP_INVOICE_DESCRIPTION\": {\r\n        \"id\": \"DC_R_ERP_INVOICE_DESCRIPTION\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_R_ERP_L1_CODE\": {\r\n        \"id\": \"DC_R_ERP_L1_CODE\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_R_ERP_L1_DESCRIPTION\": {\r\n        \"id\": \"DC_R_ERP_L1_DESCRIPTION\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_R_ERP_L2_CODE\": {\r\n        \"id\": \"DC_R_ERP_L2_CODE\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_R_ERP_L2_DESCRIPTION\": {\r\n        \"id\": \"DC_R_ERP_L2_DESCRIPTION\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_R_ERP_L3_CODE\": {\r\n        \"id\": \"DC_R_ERP_L3_CODE\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_R_ERP_L3_DESCRIPTION\": {\r\n        \"id\": \"DC_R_ERP_L3_DESCRIPTION\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_R_ERP_MINIMUM_ORDER_QUANTITY\": {\r\n        \"id\": \"DC_R_ERP_MINIMUM_ORDER_QUANTITY\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_R_ERP_MODEL_CODE\": {\r\n        \"id\": \"DC_R_ERP_MODEL_CODE\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_R_ERP_MODEL_LABEL\": {\r\n        \"id\": \"DC_R_ERP_MODEL_LABEL\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_R_ERP_OBSOLETE_DATE\": {\r\n        \"id\": \"DC_R_ERP_OBSOLETE_DATE\",\r\n        \"type\": \"DATE\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_R_ERP_ORDER_UNIT\": {\r\n        \"id\": \"DC_R_ERP_ORDER_UNIT\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_R_ERP_PACKING_UNIT\": {\r\n        \"id\": \"DC_R_ERP_PACKING_UNIT\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_R_ERP_PRICE_GROUP_CODE\": {\r\n        \"id\": \"DC_R_ERP_PRICE_GROUP_CODE\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_R_ERP_PRICE_GROUP_LABEL\": {\r\n        \"id\": \"DC_R_ERP_PRICE_GROUP_LABEL\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_R_ERP_PRODUCT_CODE\": {\r\n        \"id\": \"DC_R_ERP_PRODUCT_CODE\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_R_ERP_RANGE_CODE\": {\r\n        \"id\": \"DC_R_ERP_RANGE_CODE\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_R_ERP_RANGE_LABEL\": {\r\n        \"id\": \"DC_R_ERP_RANGE_LABEL\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_R_ERP_REFERENCE_TYPE\": {\r\n        \"id\": \"DC_R_ERP_REFERENCE_TYPE\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_R_ERP_SIGNAL_CODE\": {\r\n        \"id\": \"DC_R_ERP_SIGNAL_CODE\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_R_ERP_SIGNAL_CODE_LABEL\": {\r\n        \"id\": \"DC_R_ERP_SIGNAL_CODE_LABEL\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_R_ERP_STOCK\": {\r\n        \"id\": \"DC_R_ERP_STOCK\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_R_ERP_TECHNICAL_PRODUCT_TYPE\": {\r\n        \"id\": \"DC_R_ERP_TECHNICAL_PRODUCT_TYPE\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_R_ERP_TYPE_OF_MARKETER\": {\r\n        \"id\": \"DC_R_ERP_TYPE_OF_MARKETER\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_R_ERP_UNIT_OF_WEIGHT\": {\r\n        \"id\": \"DC_R_ERP_UNIT_OF_WEIGHT\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_R_ERP_WEIGHT\": {\r\n        \"id\": \"DC_R_ERP_WEIGHT\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_R_ERP_WIDTH\": {\r\n        \"id\": \"DC_R_ERP_WIDTH\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_R_ERP_COUNTRY_COMMERCIALISATION_TYPE\": {\r\n        \"id\": \"DC_R_ERP_COUNTRY_COMMERCIALISATION_TYPE\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      }\r\n    }\r\n  },\r\n  \"Syst\u00e8me\": {\r\n    \"group_name\": \"Syst\u00e8me\",\r\n    \"value\": {\r\n      \"ProductFillRate_GLOBAL\": {\r\n        \"id\": \"ProductFillRate_GLOBAL\",\r\n        \"type\": \"NUM\",\r\n        \"value\": \"1\"\r\n      },\r\n      \"ReferenceFillRate_GLOBAL\": {\r\n        \"id\": \"ReferenceFillRate_GLOBAL\",\r\n        \"type\": \"NUM\",\r\n        \"value\": \"\"\r\n      },\r\n      \"ProductFillRate_WEB\": {\r\n        \"id\": \"ProductFillRate_WEB\",\r\n        \"type\": \"NUM\",\r\n        \"value\": \"\"\r\n      },\r\n      \"ReferenceFillRate_WEB\": {\r\n        \"id\": \"ReferenceFillRate_WEB\",\r\n        \"type\": \"NUM\",\r\n        \"value\": \"\"\r\n      },\r\n      \"ProductFillRate_WEBMIN\": {\r\n        \"id\": \"ProductFillRate_WEBMIN\",\r\n        \"type\": \"NUM\",\r\n        \"value\": \"\"\r\n      },\r\n      \"ReferenceFillRate_WEBMIN\": {\r\n        \"id\": \"ReferenceFillRate_WEBMIN\",\r\n        \"type\": \"NUM\",\r\n        \"value\": \"\"\r\n      },\r\n      \"ProductFillRate_PAPIER\": {\r\n        \"id\": \"ProductFillRate_PAPIER\",\r\n        \"type\": \"NUM\",\r\n        \"value\": \"\"\r\n      },\r\n      \"ReferenceFillRate_PAPIER\": {\r\n        \"id\": \"ReferenceFillRate_PAPIER\",\r\n        \"type\": \"NUM\",\r\n        \"value\": \"\"\r\n      },\r\n      \"ProductFillRate_INIT\": {\r\n        \"id\": \"ProductFillRate_INIT\",\r\n        \"type\": \"NUM\",\r\n        \"value\": \"\"\r\n      }\r\n    }\r\n  },\r\n  \"TEST ECKERT\": {\r\n    \"group_name\": \"TEST ECKERT\",\r\n    \"value\": {\r\n      \"DC_R_ACCESSORIES_REF_TO_REF\": {\r\n        \"id\": \"DC_R_ACCESSORIES_REF_TO_REF\",\r\n        \"type\": \"LIENRR\",\r\n        \"value\": \"\"\r\n      }\r\n    }\r\n  },\r\n  \"Responsable produit\": {\r\n    \"group_name\": \"Responsable produit\",\r\n    \"value\": {\r\n      \"DC_P_RP\": {\r\n        \"id\": \"DC_P_RP\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_P_RPTRIGRAME\": {\r\n        \"id\": \"DC_P_RPTRIGRAME\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_P_RPMAIL\": {\r\n        \"id\": \"DC_P_RPMAIL\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_R_RPTRIGRAME\": {\r\n        \"id\": \"DC_R_RPTRIGRAME\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_R_RPMAIL\": {\r\n        \"id\": \"DC_R_RPMAIL\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_R_RP\": {\r\n        \"id\": \"DC_R_RP\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      }\r\n    }\r\n  },\r\n  \"Phase initialisation\": {\r\n    \"group_name\": \"Phase initialisation\",\r\n    \"value\": {\r\n      \"DC_P_STATUTINITIALISATION\": {\r\n        \"id\": \"DC_P_STATUTINITIALISATION\",\r\n        \"type\": \"LISTE\",\r\n        \"value\": []\r\n      },\r\n      \"DC_R_PAGECATALOGUEPDF1\": {\r\n        \"id\": \"DC_R_PAGECATALOGUEPDF1\",\r\n        \"type\": \"FICHPDF\",\r\n        \"value\": \"sites\/default\/files\/styles\/thumbnail\/public\/2019-12\/sircm_099.png\"\r\n      },\r\n      \"DC_P_REMARQUESINITIALISATION\": {\r\n        \"id\": \"DC_P_REMARQUESINITIALISATION\",\r\n        \"type\": \"TXTLONG\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_P_RESPONSABLESAISIEINITIALISATION\": {\r\n        \"id\": \"DC_P_RESPONSABLESAISIEINITIALISATION\",\r\n        \"type\": \"LISTE\",\r\n        \"value\": []\r\n      },\r\n      \"DC_P_PRIORITEINITIALISATION\": {\r\n        \"id\": \"DC_P_PRIORITEINITIALISATION\",\r\n        \"type\": \"LISTE\",\r\n        \"value\": []\r\n      },\r\n      \"DC_P_PAGECATALOGUEPDF1\": {\r\n        \"id\": \"DC_P_PAGECATALOGUEPDF1\",\r\n        \"type\": \"FICHPDF\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_R_STATUTINITIALISATION2\": {\r\n        \"id\": \"DC_R_STATUTINITIALISATION2\",\r\n        \"type\": \"LISTE\",\r\n        \"value\": []\r\n      },\r\n      \"DC_P_CATALOGUEFRINITIALISATION\": {\r\n        \"id\": \"DC_P_CATALOGUEFRINITIALISATION\",\r\n        \"type\": \"CHOIX\",\r\n        \"value\": []\r\n      }\r\n    }\r\n  },\r\n  \"Workflow\": {\r\n    \"group_name\": \"Workflow\",\r\n    \"value\": {\r\n      \"wfTask_emails_W2\": {\r\n        \"id\": \"wfTask_emails_W2\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      }\r\n    }\r\n  },\r\n  \"SYSTEM\": {\r\n    \"group_name\": \"SYSTEM\",\r\n    \"value\": {\r\n      \"##ProductLabel\": {\r\n        \"id\": \"##ProductLabel\",\r\n        \"type\": \"SYSLABEL\",\r\n        \"value\": \"SUNSYS PCS\u00b2 IM TR CE\"\r\n      }\r\n    }\r\n  }\r\n}"
         }
     ],
     "field_product_advantage_text": [
@@ -296,7 +500,7 @@
     ],
     "field_product_teaser": [
         {
-            "value": "Load break switches for power distribution\r\nSIRCO VM\r\n32 to 250 A"
+            "value": "Load break switches for power distribution SIRCO VM - 32 to 250 A"
         }
     ]
 }
