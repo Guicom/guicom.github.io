@@ -176,7 +176,7 @@ function socomec_preprocess_views_view(&$variables) {
 }
 
 /**
- * Implements hook_preprocess_HOOK().
+ * Implements template_preprocess_HOOK().
  */
 function socomec_preprocess_views_view_fields__hero_block__block_2(&$variables) {
   $mid = $variables["row"]->_entity->get('field_file')->getString();
@@ -195,7 +195,7 @@ function socomec_preprocess_views_view_fields__hero_block__block_2(&$variables) 
 }
 
 /**
- * Implements hook_preprocess_media().
+ * Implements template_preprocess_media().
  */
 function socomec_preprocess_media(array &$variables) {
   if ($variables["view_mode"] == 'simple_html' && $variables["media"]->bundle() == 'image') {
@@ -206,6 +206,37 @@ function socomec_preprocess_media(array &$variables) {
     }
     if (isset($properties[0]["title"])) {
       $variables['content']['title_image'] = $properties[0]["title"];
+    }
+  }
+}
+
+/**
+ * Implements template_preprocess_block().
+ */
+function socomec_preprocess_block(&$variables) {
+  if ($uuid = $variables["elements"]["#derivative_plugin_id"]) {
+    $block = \Drupal::service('entity.repository')->loadEntityByUuid('block_content', $uuid);
+    if ($block) {
+      $block_type = $block->bundle();
+      switch ($block_type) {
+        case 'tool_promotion':
+          // Add background image
+          if ($block->hasField('field_background_image')
+            && !empty($block->get('field_background_image')->getValue())) {
+            $field_background_image_id = $block->get('field_background_image')->first()->getValue()['target_id'];
+            $media = Media::load($field_background_image_id);
+            $fid = $media->getSource()->getSourceFieldValue($media);
+            $file = File::load($fid);
+            if(empty($file)){
+              return;
+            }
+            $file_url = file_create_url($file->getFileUri());
+          }
+          $variables['background_image'] = (!empty($file_url))?$file_url:null;
+          break;
+        default:
+          break;
+      }
     }
   }
 }

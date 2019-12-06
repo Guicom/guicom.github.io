@@ -39,15 +39,13 @@
     'col-md-3',
   ]
 %}
-<div{{ attributes.addClass(classes) }}>
-  {{ title_prefix }}
-  {% if label %}
-    <h2{{ title_attributes }}>{{ label }}</h2>
-  {% endif %}
-  {{ title_suffix }}
+<div{{ attributes.addClass(classes) }} {% if background_image is not empty %}style="background-image:linear-gradient(26.93deg, #00519D 0%, rgba(0,81,157,0.8) 100%), url( {{ background_image }} )"{% endif %}>
   {% block content %}
-    <div{{ content_attributes.addClass('content') }}>
-      {{ content }}
+    <div class="hero-content">
+      {{ content.field_title }}
+      <div class="description">{{ content.field_description }}</div>
+      <div class="image">{{ content.field_main_image[0] }}</div>
+      <div class="link">{{ content.field_lien }}</div>
     </div>
   {% endblock %}
 </div>

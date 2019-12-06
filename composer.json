@@ -64,6 +64,7 @@
         "drupal/search_api": "^1.14",
         "drupal/search_api_solr": "^3.7",
         "drupal/simple_megamenu": "^1.0@beta",
+        "drupal/twig_tweak": "^2.4",
         "drush/drush": "^9.0.0",
         "symfony/event-dispatcher": "4.3.4 as 3.4.99",
         "vlucas/phpdotenv": "^2.4",
