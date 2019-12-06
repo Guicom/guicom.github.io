@@ -396,6 +396,83 @@ bundles:
       notes: ''
       relationship: 0
       sars_filename: ''
+    field_background_hero_block:
+      bundle: product
+      name: field_background_hero_block
+      entity_type_id: node
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_product_cta:
+      bundle: product
+      name: field_product_cta
+      entity_type_id: node
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_sd:
+      bundle: product
+      name: field_sd
+      entity_type_id: node
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_product_cta_1:
+      bundle: product
+      name: field_product_cta_1
+      entity_type_id: node
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_product_cta_2:
+      bundle: product
+      name: field_product_cta_2
+      entity_type_id: node
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_product_cta_3:
+      bundle: product
+      name: field_product_cta_3
+      entity_type_id: node
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_product_cta_4:
+      bundle: product
+      name: field_product_cta_4
+      entity_type_id: node
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
   thank_you_page:
     field_title:
       bundle: thank_you_page

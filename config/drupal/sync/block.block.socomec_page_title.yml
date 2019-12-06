@@ -24,6 +24,7 @@ visibility:
     id: 'entity_bundle:node'
     bundles:
       landing_page: landing_page
+      product: product
       thank_you_page: thank_you_page
     negate: true
     context_mapping:

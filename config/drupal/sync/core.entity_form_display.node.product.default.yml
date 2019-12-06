@@ -3,8 +3,13 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.product.field_background_hero_block
     - field.field.node.product.field_json_product_data
     - field.field.node.product.field_product_advantage_text
+    - field.field.node.product.field_product_cta_1
+    - field.field.node.product.field_product_cta_2
+    - field.field.node.product.field_product_cta_3
+    - field.field.node.product.field_product_cta_4
     - field.field.node.product.field_product_extid
     - field.field.node.product.field_product_family
     - field.field.node.product.field_product_pictures
@@ -17,6 +22,7 @@ dependencies:
   module:
     - content_moderation
     - media_library
+    - paragraphs
     - path
     - text
 id: node.product.default
@@ -30,6 +36,13 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_background_hero_block:
+    type: media_library_widget
+    weight: 111
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+    region: content
   field_json_product_data:
     weight: 3
     settings:
@@ -45,6 +58,54 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: text_textarea
+    region: content
+  field_product_cta_1:
+    type: entity_reference_paragraphs
+    weight: 113
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+    region: content
+  field_product_cta_2:
+    type: entity_reference_paragraphs
+    weight: 114
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+    region: content
+  field_product_cta_3:
+    type: entity_reference_paragraphs
+    weight: 115
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+    region: content
+  field_product_cta_4:
+    type: entity_reference_paragraphs
+    weight: 116
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
     region: content
   field_product_extid:
     weight: 105

@@ -1,0 +1,25 @@
+uuid: c777a89d-8d29-4d81-8de5-0b5bf6fb05fc
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_link_paragraph
+    - paragraphs.paragraphs_type.link
+id: paragraph.link.field_link_paragraph
+field_name: field_link_paragraph
+entity_type: paragraph
+bundle: link
+label: 'Link paragraph'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: views
+  handler_settings:
+    view:
+      view_name: paragraphs_library_entity_reference
+      display_name: entity_reference_1
+      arguments: {  }
+field_type: entity_reference

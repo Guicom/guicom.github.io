@@ -1,0 +1,195 @@
+body.node--type-product {
+  // Made edit button  sticky
+  nav.tabs {
+    position: fixed;
+    background: rgba(255, 255, 255, 0.7);
+    z-index: 1;
+    ul.nav.nav-tabs.primary {
+      display: flex;
+      flex-flow: column;
+    }
+  }
+
+  header {
+    height: 550px;
+    display: flex;
+    flex-flow: column;
+    margin-bottom: 60px;
+  }
+  .hero-block {
+    z-index: 0;
+    margin-top: 20px;
+    flex-grow: 1;
+
+    .container {
+      height: 100%;
+
+      .row {
+        height: 100%;
+      }
+    }
+
+    .product-image {
+      display: flex;
+      .product-main-picture {
+        order: 2;
+        a {
+          display: block;
+          img {
+            position: absolute;
+            margin-top: 50px;
+          }
+        }
+      }
+      .product-thumbnail-picture {
+        order: 1;
+        display: flex;
+        flex-flow: column;
+        justify-content: space-evenly;
+        padding-top: 70px;
+        margin-right: 30px;
+
+        img {
+          border-radius: 50%;
+          background: $blue_lighter;
+        }
+      }
+    }
+
+    .proouct-info {
+      position: relative;
+    }
+
+    .product-title {
+      display: block;
+      color: $white;
+      font-family: $font-poppins;
+      font-size: 72px;
+      font-weight: 200;
+      line-height: 90px;
+    }
+
+    .product-subtitle {
+      display: block;
+      color: $yellow;
+      font-family: $font-poppins;
+      font-size: 18px;
+      font-weight: 600;
+      line-height: 30px;
+      margin-bottom: 20px;
+    }
+
+    .product-baseline {
+      color: $white;
+      font-family: $font-roboto;
+      font-size: 24px;
+      font-weight: 300;
+      line-height: 30px;
+      margin-bottom: 20px;
+    }
+
+    .product-pdf {
+      color: $turquoize;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      line-height: 20px;
+      font-family: $font-poppins;
+      display: flex;
+      height: 60px;
+      text-transform: uppercase;
+
+      svg {
+        width: 20px;
+        height: 20px;
+        fill: $turquoize;
+        margin-right: 10px;
+      }
+    }
+
+    .product-cta-wrapper {
+      display: flex;
+      flex-direction: row;
+      height: 60px;
+      align-items: center;
+      justify-content: flex-end;
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      left: 0;
+
+      img {
+        margin-right: 5px;
+      }
+
+      .cta-simple {
+        a {
+          padding: 0 12px;
+          text-transform: uppercase;
+          color: $white;
+          font-family: $font-poppins;
+          font-size: 12px;
+          font-weight: 500;
+          letter-spacing: 1px;
+          line-height: 20px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+      }
+
+      .cta-blue {
+        a {
+          padding: 0 12px;
+          text-transform: uppercase;
+          height: 60px;
+          width: 197px;
+          background: $blue_light;
+          color: $white;
+          font-family: $font-poppins;
+          font-size: 14px;
+          font-weight: 500;
+          letter-spacing: 1px;
+          line-height: 16px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+      }
+
+      .cta-yellow {
+        a {
+          padding: 0 12px;
+          text-transform: uppercase;
+          height: 60px;
+          width: 166px;
+          background: $yellow;
+          color: $blue;
+          font-family: $font-poppins;
+          font-size: 14px;
+          font-weight: 500;
+          letter-spacing: 1px;
+          line-height: 16px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+      }
+      //reset
+      .field--type-entity-reference {
+        margin: 0;
+      }
+    }
+  }
+
+  // Fresco
+  .fr-window {
+    background: $white;
+  }
+  .fr-content-background {
+    background: $white;
+    box-shadow: none;
+  }
+
+
+}

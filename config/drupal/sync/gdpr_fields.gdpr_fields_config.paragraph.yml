@@ -17,6 +17,7 @@ filenames:
   video_embed: ''
   model_image: ''
   model_cta: ''
+  link: ''
 bundles:
   product_faq:
     field_question:
@@ -699,6 +700,62 @@ bundles:
       rta: 'no'
       enabled: false
       anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+  link:
+    field_link_title:
+      bundle: link
+      name: field_link_title
+      entity_type_id: paragraph
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_link_link:
+      bundle: link
+      name: field_link_link
+      entity_type_id: paragraph
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_link_paragraph:
+      bundle: link
+      name: field_link_paragraph
+      entity_type_id: paragraph
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: date_anonymizer
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_link_icon:
+      bundle: link
+      name: field_link_icon
+      entity_type_id: paragraph
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_link_target:
+      bundle: link
+      name: field_link_target
+      entity_type_id: paragraph
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: date_anonymizer
       notes: ''
       relationship: 0
       sars_filename: ''

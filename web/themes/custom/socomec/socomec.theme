@@ -37,6 +37,10 @@ function socomec_form_system_theme_settings_alter(&$form, FormStateInterface $fo
   );
 }
 
+function socomec_preprocess_node(&$variables) {
+  $test = 1;
+}
+
 /**
  * Implements template_preprocess_paragraph().
  *
@@ -88,7 +92,7 @@ function socomec_preprocess_field(&$variables) {
       // Add CTA text on ancher button.
       $variables['cta_text'] = $variables["element"]["#object"]->field_pardot_cta_text->value
         ? $variables["element"]["#object"]->field_pardot_cta_text->value : t('Download');
-      
+
       // Manage privacy policy.
       if (empty($variables["element"]["#object"]->field_pardot_privacy_policy->value)) {
         $lang_id = \Drupal::languageManager()->getCurrentLanguage()->getId();
@@ -101,6 +105,9 @@ function socomec_preprocess_field(&$variables) {
   }
 }
 
+function socomec_preprocess_image_formatter(&$variables) {
+  $test = 1;
+}
 /**
  * Implements hook_theme_suggestions_field_alter().
  */

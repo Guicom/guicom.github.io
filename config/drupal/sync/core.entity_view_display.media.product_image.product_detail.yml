@@ -1,0 +1,39 @@
+uuid: 291e6060-4d83-45fe-9aa4-05db4c9f99c6
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.media.product_detail
+    - field.field.media.product_image.field_media_image_2
+    - media.type.product_image
+  module:
+    - ds
+    - image
+id: media.product_image.product_detail
+targetEntityType: media
+bundle: product_image
+mode: product_detail
+content:
+  field_media_image_2:
+    weight: 0
+    label: hidden
+    settings:
+      image_style: ''
+    third_party_settings:
+      ds:
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
+    type: image_url
+    region: content
+hidden:
+  addtoany: true
+  created: true
+  langcode: true
+  name: true
+  search_api_excerpt: true
+  thumbnail: true
+  uid: true

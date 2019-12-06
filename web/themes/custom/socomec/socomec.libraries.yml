@@ -23,6 +23,13 @@ iframe-resize:
   js:
     assets/libraries/iframe-resizer/js/iframeResizer.min.js: {}
 
+fresco:
+  css:
+    component:
+      assets/libraries/fresco/dist/css/fresco.css: {}
+  js:
+    assets/libraries/fresco/dist/js/fresco.min.js: {}
+
 # Fonts
 roboto:
   version: VERSION
@@ -33,4 +40,4 @@ poppins:
   version: VERSION
   css:
     component:
-      //fonts.googleapis.com/css?family=Poppins|Poppins:600: {}
+      //fonts.googleapis.com/css?family=Poppins|Poppins:300,400,700,900: {}
