@@ -1,0 +1,15 @@
+uuid: 2de6034a-6c2f-42a6-b56b-9fae39ea84a5
+langcode: en
+status: true
+dependencies: {  }
+name: product_detail
+label: 'Product detail'
+effects:
+  9b07913d-29e4-4fb6-b4bb-a8d95ed809e6:
+    uuid: 9b07913d-29e4-4fb6-b4bb-a8d95ed809e6
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 310
+      height: 370
+      anchor: center-center

@@ -1,0 +1,15 @@
+{{ attach_library('socomec/fresco') }}
+<div class="product-main-picture">
+  <a href="{{ items.0.content | render | striptags | trim  }}" class="fresco" data-fresco-group="product_galerie">
+    {{ drupal_image(items.0.content['#media'].field_media_image_2.value.0.target_id, 'product_detail') }}
+  </a>
+</div>
+<div class="product-thumbnail-picture">
+  {% for key, item in items %}
+    {%  if key > 0 and key < 5 %}
+      <a href="{{ item.content | render | striptags | trim  }}" class="fresco" data-fresco-group="product_galerie">
+        {{ drupal_image(item.content['#media'].field_media_image_2.value.0.target_id, 'product_thumbnail') }}
+      </a>
+    {% endif %}
+  {% endfor %}
+</div>

@@ -1,0 +1,148 @@
+{
+    "_links": {
+        "self": {
+            "href": "http:\/\/default\/admin\/content\/paragraphs\/2?_format=hal_json"
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/paragraphs_library_item\/paragraphs_library_item"
+        },
+        "http:\/\/drupal.org\/rest\/relation\/paragraphs_library_item\/paragraphs_library_item\/revision_uid": [
+            {
+                "href": "http:\/\/default\/user\/1?_format=hal_json"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/paragraphs_library_item\/paragraphs_library_item\/paragraphs": [
+            {
+                "href": ""
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/paragraphs_library_item\/paragraphs_library_item\/uid": [
+            {
+                "href": "http:\/\/default\/user\/1?_format=hal_json",
+                "lang": "en"
+            }
+        ]
+    },
+    "id": [
+        {
+            "value": 2
+        }
+    ],
+    "uuid": [
+        {
+            "value": "fa82b4dc-6b43-4091-8136-c1cb94dd3687"
+        }
+    ],
+    "revision_id": [
+        {
+            "value": 14
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "revision_created": [
+        {
+            "value": "2019-12-06T17:23:54+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/paragraphs_library_item\/paragraphs_library_item\/revision_uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/user\/1?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "cdedc391-f198-4343-b22e-baa99056ee85"
+                    }
+                ]
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/paragraphs_library_item\/paragraphs_library_item\/paragraphs": [
+            {
+                "_links": {
+                    "self": {
+                        "href": ""
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/link"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "3441b766-45ca-46bc-b4c4-c21961949692"
+                    }
+                ],
+                "target_revision_id": "93"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/paragraphs_library_item\/paragraphs_library_item\/uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/user\/1?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "cdedc391-f198-4343-b22e-baa99056ee85"
+                    }
+                ],
+                "lang": "en"
+            }
+        ]
+    },
+    "status": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "label": [
+        {
+            "value": "Ask an expert",
+            "lang": "en"
+        }
+    ],
+    "created": [
+        {
+            "value": "2019-12-06T09:18:32+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "changed": [
+        {
+            "value": "2019-12-06T17:23:54+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "metatag": [
+        {
+            "value": {
+                "title": "| Socomec",
+                "canonical_url": "http:\/\/default\/node"
+            }
+        }
+    ]
+}

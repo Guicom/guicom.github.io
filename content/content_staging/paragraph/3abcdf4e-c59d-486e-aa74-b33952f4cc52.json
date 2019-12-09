@@ -5,17 +5,7 @@
         },
         "type": {
             "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/hero_paragraph"
-        },
-        "http:\/\/drupal.org\/rest\/relation\/paragraph\/hero_paragraph\/field_background_image": [
-            {
-                "href": "http:\/\/default\/media\/9\/edit?_format=hal_json"
-            }
-        ],
-        "http:\/\/drupal.org\/rest\/relation\/paragraph\/hero_paragraph\/field_thumbnail": [
-            {
-                "href": "http:\/\/default\/media\/9\/edit?_format=hal_json"
-            }
-        ]
+        }
     },
     "id": [
         {
@@ -86,42 +76,6 @@
             "lang": "en"
         }
     ],
-    "_embedded": {
-        "http:\/\/drupal.org\/rest\/relation\/paragraph\/hero_paragraph\/field_background_image": [
-            {
-                "_links": {
-                    "self": {
-                        "href": "http:\/\/default\/media\/9\/edit?_format=hal_json"
-                    },
-                    "type": {
-                        "href": "http:\/\/drupal.org\/rest\/type\/media\/image"
-                    }
-                },
-                "uuid": [
-                    {
-                        "value": "e12f8c33-ccb4-493c-a516-91d4d331c5f4"
-                    }
-                ]
-            }
-        ],
-        "http:\/\/drupal.org\/rest\/relation\/paragraph\/hero_paragraph\/field_thumbnail": [
-            {
-                "_links": {
-                    "self": {
-                        "href": "http:\/\/default\/media\/9\/edit?_format=hal_json"
-                    },
-                    "type": {
-                        "href": "http:\/\/drupal.org\/rest\/type\/media\/image"
-                    }
-                },
-                "uuid": [
-                    {
-                        "value": "e12f8c33-ccb4-493c-a516-91d4d331c5f4"
-                    }
-                ]
-            }
-        ]
-    },
     "field_baseline": [
         {
             "value": "Disponibilit\u00e9 de l\u2019\u00e9nergie des \u00e9tablissements de sant\u00e9"

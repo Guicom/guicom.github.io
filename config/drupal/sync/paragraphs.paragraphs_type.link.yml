@@ -1,0 +1,14 @@
+uuid: dae8881c-8fdb-49e0-9d96-440e6f6c4cbe
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs_library
+third_party_settings:
+  paragraphs_library:
+    allow_library_conversion: true
+id: link
+label: Link
+icon_uuid: null
+description: 'Reusable link paragraph'
+behavior_plugins: {  }

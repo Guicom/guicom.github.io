@@ -8,5 +8,10 @@ services:
     parent: soc_core.base_api
     arguments: ['@config.factory', '@tempstore.shared']
   soc_nextpage.nextpage_product_manager:
-    class:  Drupal\soc_nextpage\Service\Manager\ProductManager
+    class: Drupal\soc_nextpage\Service\Manager\ProductManager
     arguments: ['@entity_type.manager']
+  soc_nextpage.twig.extension:
+    arguments: ['@renderer']
+    class: Drupal\soc_nextpage\TwigExtension\GetJsonElement
+    tags:
+      - { name: twig.extension}

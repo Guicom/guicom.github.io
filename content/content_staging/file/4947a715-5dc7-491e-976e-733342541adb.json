@@ -1,0 +1,92 @@
+{
+    "_links": {
+        "self": {
+            "href": ""
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/file\/file"
+        },
+        "http:\/\/drupal.org\/rest\/relation\/file\/file\/uid": [
+            {
+                "href": "http:\/\/default\/user\/1?_format=hal_json"
+            }
+        ]
+    },
+    "fid": [
+        {
+            "value": 20
+        }
+    ],
+    "uuid": [
+        {
+            "value": "4947a715-5dc7-491e-976e-733342541adb"
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en"
+        }
+    ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/file\/file\/uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/user\/1?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "cdedc391-f198-4343-b22e-baa99056ee85"
+                    }
+                ]
+            }
+        ]
+    },
+    "filename": [
+        {
+            "value": "chat-ask.svg"
+        }
+    ],
+    "uri": [
+        {
+            "value": "public:\/\/2019-12\/chat-ask.svg",
+            "url": "\/sites\/default\/files\/2019-12\/chat-ask.svg"
+        }
+    ],
+    "filemime": [
+        {
+            "value": "image\/svg+xml"
+        }
+    ],
+    "filesize": [
+        {
+            "value": 2734
+        }
+    ],
+    "status": [
+        {
+            "value": true
+        }
+    ],
+    "created": [
+        {
+            "value": "2019-12-06T09:34:59+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "changed": [
+        {
+            "value": "2019-12-06T09:35:03+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "data": [
+        {
+            "value": "PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iMjFweCIgaGVpZ2h0PSIyMHB4IiB2aWV3Qm94PSIwIDAgMjEgMjAiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+CiAgICA8IS0tIEdlbmVyYXRvcjogc2tldGNodG9vbCA2MC4xICgxMDEwMTApIC0gaHR0cHM6Ly9za2V0Y2guY29tIC0tPgogICAgPHRpdGxlPjRCQTEzQjc4LUUwOTctNEE2Mi04MkIyLUQyNTRDMjgwQzY0MTwvdGl0bGU+CiAgICA8ZGVzYz5DcmVhdGVkIHdpdGggc2tldGNodG9vbC48L2Rlc2M+CiAgICA8ZyBpZD0iQXNzZXQtQXJ0Ym9hcmQtUGFnZSIgc3Ryb2tlPSJub25lIiBzdHJva2Utd2lkdGg9IjEiIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+CiAgICAgICAgPGcgaWQ9InVpL01lZGl1bS9iYWctcHVyY2hhc2UtdWkvTWVkaXVtL2NoYXQtYXNrIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgwLjUwMjQzNSwgMC4wMDAwMDApIj4KICAgICAgICAgICAgPHBhdGggZD0iTTEwLDAuMDM5MDYyNSBDNS4yNjEwOTM3NSwwLjAzOTA2MjUgMS40MDYyNSwzLjc5ODU1NDU5IDEuNDA2MjUsOC40NzA3NDE5OCBDMS40MDYyNSwxMS4xNTE2MDEzIDIuNjk2MTMyODEsMTMuNjUxOTUyOCA0Ljg3ODA4NTk0LDE1LjI0MTYwMTIgTDQuODc4MDg1OTQsMTkuMjU3ODEyIEM0Ljg3ODA4NTk0LDE5LjU2Nzg5MDEgNS4wNjE0NDUzMSwxOS44NDg1OTMzIDUuMzQ1MzUxNTYsMTkuOTczMTYzNiBDNS42Mjc1NzgxMywyMC4wOTcxMDg5IDUuOTU4Nzg5MDYsMjAuMDQzODI3NiA2LjE4ODIwMzEzLDE5LjgzMjgxMiBMOS4zOTY5NTMxMywxNi44ODE0NDQ5IEM5LjU5ODkwNjI1LDE2Ljg5NTMxMjEgOS44MDA2NjQwNiwxNi45MDIzNDMzIDEwLDE2LjkwMjM0MzMgQzE0LjczODkwNjMsMTYuOTAyMzQzMyAxOC41OTM3NSwxMy4xNDI4NTEyIDE4LjU5Mzc1LDguNDcwNjYzODYgQzE4LjU5Mzc1LDMuNzk0MTQwNTMgMTQuNzM0NzY1NiwwLjAzOTA2MjUgMTAsMC4wMzkwNjI1IFogTTEwLDE1LjMzOTg4MjggQzkuNzM4Nzg5MDYsMTUuMzM5ODgyOCA5LjQ3MjAzMTI1LDE1LjMyNTE5NTMgOS4yMDcxMDkzNywxNS4yOTYyMTA5IEM4Ljk4MzAwNzgxLDE1LjI3MTQ0NTMgOC43NTkyMTg3NSwxNS4zNDUxNTYyIDguNTkzMjQyMTksMTUuNDk3ODEyNSBMNi40NDA1ODU5NCwxNy40Nzc3NzM0IEw2LjQ0MDU4NTk0LDE0LjgzMjIyNjYgQzYuNDQwNTg1OTQsMTQuNTY4OTA2MiA2LjMwNzkyOTY5LDE0LjMyMzI4MTIgNi4wODc2OTUzMSwxNC4xNzg4NjcyIEM0LjEzNDY4NzUsMTIuODk4NDM3NSAyLjk2ODc1LDEwLjc2NDU3MDMgMi45Njg3NSw4LjQ3MDc0MjE4IEMyLjk2ODc1LDQuNjgzMDQ2ODcgNi4xMjI5Mjk2OSwxLjYwMTU2MjUgMTAsMS42MDE1NjI1IEMxMy44NzcwNzAzLDEuNjAxNTYyNSAxNy4wMzEyNSw0LjY4MzA0Njg3IDE3LjAzMTI1LDguNDcwNzQyMTggQzE3LjAzMTI1LDEyLjI1ODM1OTQgMTMuODc3MDMxMiwxNS4zMzk4ODI4IDEwLDE1LjMzOTg4MjggWiIgaWQ9IkNvbWJpbmVkLVNoYXBlIiBmaWxsPSIjRkZGRkZGIj48L3BhdGg+CiAgICAgICAgICAgIDxwYXRoIGQ9Ik05LjYwOTM3NSwxMS40NTE1NjI2IEMxMC4xOTE4NjI4LDExLjQ1MTU2MjYgMTAuNjY0MDYyNSwxMS45MjM3NjIzIDEwLjY2NDA2MjUsMTIuNTA2MjUwMSBDMTAuNjY0MDYyNSwxMy4wODg3MzggMTAuMTkxODYyOCwxMy41NjA5Mzc2IDkuNjA5Mzc1LDEzLjU2MDkzNzYgQzkuMDI2ODg3MTgsMTMuNTYwOTM3NiA4LjU1NDY4NzUsMTMuMDg4NzM4IDguNTU0Njg3NSwxMi41MDYyNTAxIEM4LjU1NDY4NzUsMTEuOTIzNzYyMyA5LjAyNjg4NzE4LDExLjQ1MTU2MjYgOS42MDkzNzUsMTEuNDUxNTYyNiBaIE0xMC4zOTA2MjUsMy45MDE0NDUyNyBDMTEuODk4MzU5NCwzLjkwMTQ0NTI3IDEzLjEyNSw1LjEyODA4NTg5IDEzLjEyNSw2LjYzNTgyMDI2IEMxMy4xMjUsOC4xNDM1OTM2OSAxMS44OTgzNTk0LDkuMzcwMTk1MjUgMTAuMzkwNjI1LDkuMzcwMTk1MjUgTDEwLjM5MDYyNSw5LjM3MDE5NTI1IEwxMC4zOTA2MjUsOS43MTM2NzE4MSBDMTAuMzkwNjI1LDEwLjE0NTE1NjIgMTAuMDQwODU5NCwxMC40OTQ5MjE4IDkuNjA5Mzc1LDEwLjQ5NDkyMTggQzkuMTc3ODkwNjIsMTAuNDk0OTIxOCA4LjgyODEyNSwxMC4xNDUxNTYyIDguODI4MTI1LDkuNzEzNjcxODEgTDguODI4MTI1LDkuNzEzNjcxODEgTDguODI4MTI1LDguNTg4OTQ1MjUgQzguODI4MTI1LDguMTU3NDYwODggOS4xNzc4OTA2Miw3LjgwNzY5NTI1IDkuNjA5Mzc1LDcuODA3Njk1MjUgTDkuNjA5Mzc1LDcuODA3Njk1MjUgTDEwLjM5MDYyNSw3LjgwNzY5NTI1IEMxMS4wMzY3OTY5LDcuODA3Njk1MjUgMTEuNTYyNSw3LjI4MTk5MjEzIDExLjU2MjUsNi42MzU4MjAyNiBDMTEuNTYyNSw1Ljk4OTY0ODM5IDExLjAzNjc5NjksNS40NjM5NDUyNiAxMC4zOTA2MjUsNS40NjM5NDUyNiBMMTAuMzkwNjI1LDUuNDYzOTQ1MjYgTDcuNjU2MjUsNS40NjM5NDUyNiBDNy4yMjQ3NjU2Miw1LjQ2Mzk0NTI2IDYuODc1LDUuMTE0MTc5NjQgNi44NzUsNC42ODI2OTUyNyBDNi44NzUsNC4yNTEyMTA4OSA3LjIyNDc2NTYyLDMuOTAxNDQ1MjcgNy42NTYyNSwzLjkwMTQ0NTI3IEw3LjY1NjI1LDMuOTAxNDQ1MjcgWiIgaWQ9Ij8iIGZpbGw9IiNGRkNDMDAiPjwvcGF0aD4KICAgICAgICA8L2c+CiAgICA8L2c+Cjwvc3ZnPg=="
+        }
+    ]
+}
