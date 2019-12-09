@@ -1,16 +1,16 @@
-uuid: 4775308b-6735-4e89-95b1-313803005286
+uuid: 1b3b89df-1c06-4cf0-ac20-5e227d21a84c
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_product_standard_label
-    - node.type.product
+    - field.storage.paragraph.field_label
+    - paragraphs.paragraphs_type.standard_label
     - taxonomy.vocabulary.product_label
-id: node.product.field_product_standard_label
-field_name: field_product_standard_label
-entity_type: node
-bundle: product
-label: 'Standard Label'
+id: paragraph.standard_label.field_label
+field_name: field_label
+entity_type: paragraph
+bundle: standard_label
+label: Label
 description: ''
 required: false
 translatable: false
