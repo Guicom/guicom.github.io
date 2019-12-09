@@ -1,5 +1,5 @@
 {% if content.field_standard_label_tooltip.0 %}
-  <div class="product-standar-label" data-toggle="tooltip" data-html="true" title="{{ content.field_standard_label_tooltip }}">
+  <div class="product-standar-label" data-toggle="tooltip" data-html="true" title="{{ content.field_standard_label_tooltip  | render | striptags | trim}}">
     {{ content.field_label }}
   </div>
 {% else %}
