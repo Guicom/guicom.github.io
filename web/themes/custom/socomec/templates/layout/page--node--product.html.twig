@@ -100,7 +100,7 @@
               <div{{ content_attributes }}>
                 <section class="section">
                   <a id="main-content" tabindex="-1"></a>
-{#                  {{ page.content }}#}
+                  {% if tool_promotion is not empty %}{{ tool_promotion }}{% endif %}
                 </section>
               </div>
             {% if page.sidebar_first %}

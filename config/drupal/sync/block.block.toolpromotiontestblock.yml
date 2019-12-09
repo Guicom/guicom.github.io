@@ -6,7 +6,7 @@ dependencies:
     - 'block_content:tool_promotion:f0c55cf7-9165-45ed-abd1-f17c4876cfad'
   module:
     - block_content
-    - system
+    - ctools
   theme:
     - socomec
 id: toolpromotiontestblock
@@ -24,8 +24,10 @@ settings:
   info: ''
   view_mode: full
 visibility:
-  request_path:
-    id: request_path
-    pages: '<front>'
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    bundles:
+      product: product
     negate: false
-    context_mapping: {  }
+    context_mapping:
+      node: '@node.node_route_context:node'

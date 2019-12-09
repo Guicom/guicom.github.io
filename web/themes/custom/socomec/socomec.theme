@@ -5,6 +5,7 @@
  * Functions to support theming in the SASS Starterkit subtheme.
  */
 
+use Drupal\block_content\Entity\BlockContent;
 use Drupal\Core\Config\Config;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Language\LanguageManager;
@@ -244,6 +245,37 @@ function socomec_preprocess_block(&$variables) {
         default:
           break;
       }
+    }
+  }
+}
+
+function socomec_preprocess_page(&$variables) {
+  /** @var \Drupal\node\Entity\Node $node */
+  if ($node = \Drupal::routeMatch()->getParameter('node')) {
+    switch ($node->bundle()) {
+      case 'product':
+        // get product ancestors
+        $tid = $node->get('field_product_family')->target_id;
+        $ancestors = \Drupal::service('entity_type.manager')
+          ->getStorage("taxonomy_term")->loadAllParents($tid);
+        // check if any ancestor has a teaser to display
+        foreach ($ancestors as $term) {
+          $teasersQuery = \Drupal::entityQuery('block_content');
+          $teasersQuery->condition('type', 'tool_promotion');
+          $teasersQuery->condition('field_tool_promotion_families', $term->id());
+          $teasersIds = $teasersQuery->execute();
+          if ($teasers = BlockContent::loadMultiple($teasersIds)) {
+            $teaser = reset($teasers);
+            $teaserInstances = $teaser->getInstances();
+            $block = reset($teaserInstances);
+            $variables['tool_promotion'] = \Drupal::entityTypeManager()->
+              getViewBuilder('block')->view($block);
+            break;
+          }
+        }
+        break;
+      default:
+        break;
     }
   }
 }
