@@ -39,6 +39,7 @@ module:
   editor_advanced_link: 0
   entity: 0
   entity_reference_revisions: 0
+  entity_usage: 0
   field: 0
   field_ui: 0
   file: 0
@@ -58,6 +59,7 @@ module:
   image: 0
   language: 0
   layout_discovery: 0
+  libraries: 0
   link: 0
   locale: 0
   media: 0
@@ -71,6 +73,7 @@ module:
   node: 0
   options: 0
   page_cache: 0
+  paragraphs_library: 0
   path: 0
   quickedit: 0
   rdf: 0
@@ -91,12 +94,14 @@ module:
   soc_nextpage: 0
   soc_pardot: 0
   soc_premium_content: 0
+  svg_image: 0
   system: 0
   taxonomy: 0
   text: 0
   token: 0
   toolbar: 0
   tour: 0
+  twig_tweak: 0
   user: 0
   views_ui: 0
   workflows: 0

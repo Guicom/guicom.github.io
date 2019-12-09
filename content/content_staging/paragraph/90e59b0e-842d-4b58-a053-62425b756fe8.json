@@ -5,12 +5,7 @@
         },
         "type": {
             "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/model_testimony"
-        },
-        "http:\/\/drupal.org\/rest\/relation\/paragraph\/model_testimony\/field_image_1": [
-            {
-                "href": "http:\/\/default\/media\/9\/edit?_format=hal_json"
-            }
-        ]
+        }
     },
     "id": [
         {
@@ -86,25 +81,6 @@
             "value": "Socomec"
         }
     ],
-    "_embedded": {
-        "http:\/\/drupal.org\/rest\/relation\/paragraph\/model_testimony\/field_image_1": [
-            {
-                "_links": {
-                    "self": {
-                        "href": "http:\/\/default\/media\/9\/edit?_format=hal_json"
-                    },
-                    "type": {
-                        "href": "http:\/\/drupal.org\/rest\/type\/media\/image"
-                    }
-                },
-                "uuid": [
-                    {
-                        "value": "e12f8c33-ccb4-493c-a516-91d4d331c5f4"
-                    }
-                ]
-            }
-        ]
-    },
     "field_nom": [
         {
             "value": "Jean Dupont"

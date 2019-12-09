@@ -1,0 +1,15 @@
+uuid: 63a7f0bb-9f8a-428e-a07b-aadcd397deed
+langcode: en
+status: true
+dependencies: {  }
+name: product_thumbnail
+label: 'Product thumbnail'
+effects:
+  1fe0cd41-3181-4050-ab57-0ea0e6d58493:
+    uuid: 1fe0cd41-3181-4050-ab57-0ea0e6d58493
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 50
+      height: 50
+      anchor: center-center

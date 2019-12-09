@@ -1,0 +1,10 @@
+uuid: 3b18da7b-a145-42c5-a911-6894d34d1a08
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.product_detail
+label: 'Product detail'
+targetEntityType: media
+cache: true

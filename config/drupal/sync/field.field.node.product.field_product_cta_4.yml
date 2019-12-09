@@ -1,0 +1,64 @@
+uuid: 8d009d78-a3c2-446f-9f49-c99cf20c9e86
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_product_cta_4
+    - node.type.product
+    - paragraphs.paragraphs_type.link
+  module:
+    - entity_reference_revisions
+id: node.product.field_product_cta_4
+field_name: field_product_cta_4
+entity_type: node
+bundle: product
+label: 'CTA 4'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      link: link
+    target_bundles_drag_drop:
+      from_library:
+        weight: 13
+        enabled: false
+      hero_paragraph:
+        weight: 14
+        enabled: false
+      key_figures:
+        weight: 15
+        enabled: false
+      link:
+        enabled: true
+        weight: 16
+      model_cta:
+        weight: 17
+        enabled: false
+      model_image:
+        weight: 18
+        enabled: false
+      model_testimony:
+        weight: 19
+        enabled: false
+      model_text:
+        weight: 20
+        enabled: false
+      pardot_form:
+        weight: 21
+        enabled: false
+      premium_content_promotion:
+        weight: 22
+        enabled: false
+      product_faq:
+        weight: 23
+        enabled: false
+      video_embed:
+        weight: 24
+        enabled: false
+field_type: entity_reference_revisions

@@ -29,6 +29,7 @@ hidden:
   field_json_product_data: true
   field_product_advantage_text: true
   field_product_extid: true
+  field_product_family: true
   field_product_pictures: true
   field_product_reference: true
   field_product_standard_label: true

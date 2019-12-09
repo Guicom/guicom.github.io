@@ -1,0 +1,20 @@
+uuid: d2eff7e9-65b5-43e5-a17b-82b9297515a2
+langcode: en
+status: true
+dependencies: {  }
+id: media
+filenames:
+  icone: ''
+bundles:
+  icone:
+    field_media_image:
+      bundle: icone
+      name: field_media_image
+      entity_type_id: media
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
