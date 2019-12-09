@@ -11,7 +11,7 @@ id: block_content.tool_promotion.field_lien
 field_name: field_lien
 entity_type: block_content
 bundle: tool_promotion
-label: Lien
+label: Link
 description: ''
 required: true
 translatable: true

@@ -3,6 +3,6 @@ langcode: en
 status: true
 dependencies: {  }
 id: tool_promotion
-label: 'Tool promotion'
+label: 'Tool promotion block'
 revision: 1
 description: 'Block used to promote a tool.'

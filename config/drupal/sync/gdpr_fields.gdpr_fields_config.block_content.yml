@@ -97,6 +97,17 @@ bundles:
       rtf: 'no'
       rta: 'no'
       enabled: false
+      anonymizer: clear_anonymizer
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_tool_promotion_families:
+      bundle: tool_promotion
+      name: field_tool_promotion_families
+      entity_type_id: block_content
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
       anonymizer: ''
       notes: ''
       relationship: 0
