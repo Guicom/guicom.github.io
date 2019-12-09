@@ -15,6 +15,9 @@ body.node--type-product {
     display: flex;
     flex-flow: column;
     margin-bottom: 60px;
+    @include media-breakpoint-down(md) {
+      height: auto;
+    }
   }
   .hero-block {
     z-index: 0;
@@ -23,6 +26,7 @@ body.node--type-product {
 
     .container {
       height: 100%;
+      position: relative;
 
       .row {
         height: 100%;
@@ -31,13 +35,26 @@ body.node--type-product {
 
     .product-image {
       display: flex;
+      @include media-breakpoint-down(md) {
+        justify-content: center;
+        order: 2;
+      }
+      @include media-breakpoint-down(xs) {
+        flex-wrap: wrap;
+      }
       .product-main-picture {
         order: 2;
+        @include media-breakpoint-down(xs) {
+          order: 1;
+        }
         a {
           display: block;
           img {
             position: absolute;
             margin-top: 50px;
+            @include media-breakpoint-down(md) {
+              position: relative;
+            }
           }
         }
       }
@@ -48,16 +65,27 @@ body.node--type-product {
         justify-content: space-evenly;
         padding-top: 70px;
         margin-right: 30px;
+        @include media-breakpoint-down(xs) {
+          order: 2;
+          flex-flow: row;
+        }
 
         img {
           border-radius: 50%;
           background: $blue_lighter;
+          @include media-breakpoint-down(xs) {
+            margin: 0 5px;
+          }
         }
       }
     }
 
     .proouct-info {
       position: relative;
+      @include media-breakpoint-down(md) {
+        order: 2;
+        position: initial;
+      }
     }
 
     .product-title {
@@ -117,13 +145,26 @@ body.node--type-product {
       bottom: 0;
       right: 0;
       left: 0;
+      @include media-breakpoint-down(md) {
+        order: 3;
+        position: relative;
+        height: 120px;
+      }
+      @include media-breakpoint-down(xs) {
+        margin-top: 30px;
+        flex-wrap: wrap;
+      }
 
       img {
         margin-right: 5px;
       }
 
       .cta-simple {
+        @include media-breakpoint-down(xs) {
+          width: 50%;
+        }
         a {
+          height: 60px;
           padding: 0 12px;
           text-transform: uppercase;
           color: $white;
@@ -139,11 +180,15 @@ body.node--type-product {
       }
 
       .cta-blue {
+        width: 197px;
+        @include media-breakpoint-down(xs) {
+          width: 50%;
+        }
         a {
           padding: 0 12px;
           text-transform: uppercase;
           height: 60px;
-          width: 197px;
+          width: 100%;
           background: $blue_light;
           color: $white;
           font-family: $font-poppins;
@@ -158,11 +203,15 @@ body.node--type-product {
       }
 
       .cta-yellow {
+        width: 166px;
+        @include media-breakpoint-down(xs) {
+          width: 50%;
+        }
         a {
           padding: 0 12px;
           text-transform: uppercase;
           height: 60px;
-          width: 166px;
+          width: 100%;
           background: $yellow;
           color: $blue;
           font-family: $font-poppins;
@@ -190,6 +239,4 @@ body.node--type-product {
     background: $white;
     box-shadow: none;
   }
-
-
 }
