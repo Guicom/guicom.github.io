@@ -98,8 +98,23 @@
             <section class="section-light" id="product-info-section">
               <div class="container">
                 <div class="row">
-                  <div class="strong-points col-md-4">
-                    {% include '@socomec/layout/product/strong-points.html.twig' %}
+                  <aside class="product-navigation"></aside>
+                  <div class="col-md-9">
+                    <div class="row">
+                      <div class="strong-points col-md-5">
+                        {% include '@socomec/layout/product/strong-points.html.twig' %}
+                      </div>
+                      <div class="product-function col-md-7">
+                        <h3 class="h3-blue">{{ 'Function' |t }}</h3>
+                        <p>{{ drupal_field('field_json_product_data', 'node') | getfield('DC_P_LONG_DESCRIPTION') }}</p>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="product-services col-md-12">
+                        <h3 class="h3-blue">{{ 'Services' |t }}</h3>
+                        <p>{{ drupal_field('field_json_product_data', 'node') | getfield('DC_P_ASSOCIATED_SERVICES') }}</p>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>

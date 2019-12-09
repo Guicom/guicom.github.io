@@ -260,6 +260,17 @@ body.node--type-product {
     }
   }
 
+  .product-function,
+  .product-services {
+    p {
+      color: $darker-grey;
+      font-family: $font-roboto;
+      font-size: 20px;
+      font-weight: 300;
+      line-height: 30px;
+    }
+  }
+
   // Advantage section
   .advantage-wrapper {
     .field--name-field-product-advantage-text {
