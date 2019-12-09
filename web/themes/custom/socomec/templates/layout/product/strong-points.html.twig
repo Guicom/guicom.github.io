@@ -1,0 +1,25 @@
+{%
+set fields = [
+  'DC_P_ADVANTAGE_1_TITLE',
+  'DC_P_ADVANTAGE_2_TITLE',
+  'DC_P_ADVANTAGE_3_TITLE',
+  'DC_P_ADVANTAGE_4_TITLE',
+  'DC_P_ADVANTAGE_4_TITLE',
+  'DC_P_ADVANTAGE_6_TITLE',
+  'DC_P_ADVANTAGE_7_TITLE',
+  'DC_P_ADVANTAGE_8_TITLE'
+]
+%}
+<h3 class="h3-blue">{{ 'Strong Points' |t }}</h3>
+<ul>
+  {% for field in fields %}
+    {% if drupal_field('field_json_product_data', 'node') | getfield(field) %}
+      <li>
+        {% include '/themes/custom/socomec/assets/images/picto/ui/plus-disc.svg' %}
+        <a href="#{{ field }}">
+          {{ drupal_field('field_json_product_data', 'node') | getfield(field) }}
+        </a>
+      </li>
+    {% endif %}
+  {% endfor %}
+</ul>
