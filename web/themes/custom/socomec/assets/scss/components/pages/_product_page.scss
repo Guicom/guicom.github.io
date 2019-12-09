@@ -271,6 +271,65 @@ body.node--type-product {
     }
   }
 
+  .field--name-field-standard-label {
+    display: flex;
+    > .field__item {
+      margin-right: 30px;
+    }
+  }
+
+  .vocabulary-protection-level {
+    .protection-title {
+      display: flex;
+      align-items: center;
+
+      .field--name-field-label-icon {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid $yellow;
+        width: 70px;
+        min-width: 70px;
+        height: 70px;
+        border-radius: 50%;
+        margin-right: 30px;
+        margin-bottom: 0;
+      }
+
+      .protection-name {
+        .field--name-name {
+          color: $blue;
+          font-family: $font-poppins;
+          font-size: 18px;
+          font-weight: 600;
+          line-height: 30px;
+          text-transform: uppercase;
+        }
+        .field--name-field-protection-sub-title {
+          color: $blue;
+          font-family: $font-poppins;
+          font-size: 12px;
+          font-weight: 600;
+          letter-spacing: 0.5px;
+          line-height: 20px;
+        }
+      }
+    }
+
+    .content {
+      .field--name-description {
+        p {
+          color: $dark-grey;
+          font-family: $font-roboto;
+          font-size: 20px;
+          font-weight: 300;
+          line-height: 30px;
+        }
+      }
+    }
+  }
+
+
   // Advantage section
   .advantage-wrapper {
     .field--name-field-product-advantage-text {

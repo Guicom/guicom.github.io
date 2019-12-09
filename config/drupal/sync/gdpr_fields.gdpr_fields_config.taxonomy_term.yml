@@ -7,6 +7,7 @@ filenames:
   family: ''
   label: ''
   product_label: ''
+  protection_level: ''
 bundles:
   family:
     field_family_code:
@@ -102,6 +103,29 @@ bundles:
     field_label_icon:
       bundle: product_label
       name: field_label_icon
+      entity_type_id: taxonomy_term
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+  protection_level:
+    field_label_icon:
+      bundle: protection_level
+      name: field_label_icon
+      entity_type_id: taxonomy_term
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_protection_sub_title:
+      bundle: protection_level
+      name: field_protection_sub_title
       entity_type_id: taxonomy_term
       rtf: 'no'
       rta: 'no'

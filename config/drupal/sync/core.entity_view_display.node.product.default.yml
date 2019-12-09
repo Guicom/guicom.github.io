@@ -45,7 +45,6 @@ third_party_settings:
       ds_content:
         - field_product_family
         - field_product_pictures
-        - field_product_standard_label
         - field_product_teaser
         - field_protection_level
         - field_product_advantage_text
@@ -193,9 +192,17 @@ content:
     weight: 4
     label: hidden
     settings:
-      link: true
-    third_party_settings: {  }
-    type: entity_reference_label
+      view_mode: product_page
+      link: false
+    third_party_settings:
+      ds:
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
+    type: entity_reference_entity_view
     region: ds_content
   field_standard_label:
     type: entity_reference_revisions_entity_view
