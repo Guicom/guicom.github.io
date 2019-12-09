@@ -1,0 +1,30 @@
+{%
+  set fields = [
+  ['DC_P_ADVANTAGE_1_TITLE', 'DC_P_ADVANTAGE_1_TEXT'],
+  ['DC_P_ADVANTAGE_2_TITLE', 'DC_P_ADVANTAGE_1_TEXT'],
+  ['DC_P_ADVANTAGE_3_TITLE', 'DC_P_ADVANTAGE_1_TEXT'],
+  ['DC_P_ADVANTAGE_4_TITLE', 'DC_P_ADVANTAGE_1_TEXT'],
+  ['DC_P_ADVANTAGE_4_TITLE', 'DC_P_ADVANTAGE_1_TEXT'],
+  ['DC_P_ADVANTAGE_6_TITLE', 'DC_P_ADVANTAGE_1_TEXT'],
+  ['DC_P_ADVANTAGE_7_TITLE', 'DC_P_ADVANTAGE_1_TEXT'],
+  ['DC_P_ADVANTAGE_8_TITLE', 'DC_P_ADVANTAGE_1_TEXT']
+]
+%}
+<h2 class="field--name-field-title ">{{ 'Advantages' |t }}</h2>
+{{ drupal_field('field_product_advantage_text', 'node') }}
+
+<div class="advantage-element-wrapper">
+  {% for field in fields %}
+    {% if drupal_field('field_json_product_data', 'node') | getfield(field.0) %}
+      <div class="advantage-element col-md-6">
+        <div class="row">
+          <h3 id="{{ field.0 }}" class="h3-blue">
+            {{ drupal_field('field_json_product_data', 'node') | getfield(field.0) }}
+          </h3>
+          <p>{{ drupal_field('field_json_product_data', 'node') | getfield(field.1) }}</p>
+        </div>
+      </div>
+    {% endif %}
+  {% endfor %}
+</div>
+

@@ -92,35 +92,39 @@
         </div>
       {% endblock %}
     {% endif %}
-    <div id="main-wrapper" class="layout-main-wrapper clearfix">
+    <main id="main-wrapper" class="layout-main-wrapper clearfix">
       {% block content %}
-        <div id="main" class="container-fluid">
-          {{ page.breadcrumb }}
-          <div class="row row-offcanvas row-offcanvas-left clearfix">
-              <div{{ content_attributes }}>
-                <section class="section">
-                  <a id="main-content" tabindex="-1"></a>
-{#                  {{ page.content }}#}
-                </section>
+        <article id="main" class="container-fluid">
+            <section class="section-light" id="product-info-section">
+              <div class="container">
+                <div class="row">
+                  <div class="strong-points col-md-4">
+                    {% include '@socomec/layout/product/strong-points.html.twig' %}
+                  </div>
+                </div>
               </div>
-            {% if page.sidebar_first %}
-              <div{{ sidebar_first_attributes }}>
-                <aside class="section" role="complementary">
-                  {{ page.sidebar_first }}
-                </aside>
+            </section>
+          <section class="section-grey-light" id="product-reference-section">
+            <div class="container">
+              <div class="row">
+                <div class="advantage-wrapper col-md-9">
+                  <h2 class="field--name-field-title ">{{ 'References' |t }}</h2>
+                </div>
               </div>
-            {% endif %}
-            {% if page.sidebar_second %}
-              <div{{ sidebar_second_attributes }}>
-                <aside class="section" role="complementary">
-                  {{ page.sidebar_second }}
-                </aside>
+            </div>
+          </section>
+            <section class="section-light" id="product-avantage-section">
+              <div class="container">
+                <div class="row">
+                  <div class="advantage-wrapper col-md-9">
+                    {% include '@socomec/layout/product/applications.html.twig' %}
+                  </div>
+                </div>
               </div>
-            {% endif %}
-          </div>
-        </div>
+            </section>
+        </article>
       {% endblock %}
-    </div>
+    </main>
     {% if page.featured_bottom_first or page.featured_bottom_second or page.featured_bottom_third %}
       <div class="featured-bottom">
         <aside class="{{ container }} clearfix" role="complementary">
