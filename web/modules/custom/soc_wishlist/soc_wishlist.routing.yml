@@ -1,0 +1,17 @@
+soc_wishlist.edit_wishlist:
+  path: '/my-wishlist'
+  defaults:
+    _form: '\Drupal\soc_wishlist\Form\WishlistEditForm'
+    _title: 'My wishlist'
+  requirements:
+    _permission: 'edit own wishlist'
+
+soc_wishlist.add_item:
+  path: '/wishlist/add/{extid}'
+  defaults:
+    _controller: '\Drupal\soc_wishlist\Controller\WishlistController::addItemAction'
+
+soc_wishlist.remove_item:
+  path: '/wishlist/remove/{extid}'
+  defaults:
+    _controller: '\Drupal\soc_wishlist\Controller\WishlistController::removeItemAction'

@@ -1,0 +1,3 @@
+services:
+  soc_wishlist.wishlist_manager:
+    class: Drupal\soc_wishlist\Service\Manager\WishlistManager
