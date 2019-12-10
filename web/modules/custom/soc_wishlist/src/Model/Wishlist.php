@@ -4,7 +4,21 @@ namespace Drupal\soc_wishlist\Model;
 
 class Wishlist {
 
-  /** @var $references */
-  protected $references;
+  /** @var $items */
+  protected $items;
+
+  /**
+   * @return mixed
+   */
+  public function getItems() {
+    return $this->items;
+  }
+
+  /**
+   * @param mixed $items
+   */
+  public function setItems($items): void {
+    $this->items = $items;
+  }
 
 }
