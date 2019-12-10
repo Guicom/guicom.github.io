@@ -4,6 +4,7 @@ namespace Drupal\soc_wishlist\Form;
 
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\node\Entity\Node;
 use Drupal\soc_wishlist\Service\Manager\WishlistManager;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
@@ -56,7 +57,76 @@ class WishlistEditForm extends FormBase {
    *   The form structure.
    */
   public function buildForm(array $form, FormStateInterface $form_state) {
-    // TODO: Implement buildForm() method.
+    // Get data from cookies.
+    $data = [
+      'R_22004110' => [
+        'extid' => 'R_22004110',
+        'quantity' => 1,
+      ],
+      'R_22003110' => [
+        'extid' => 'R_22003110',
+        'quantity' => 3,
+      ],
+      'R_22004016' => [
+        'extid' => 'R_22004016',
+        'quantity' => 2,
+      ],
+    ];
+
+    // Load items.
+    $itemsQuery = \Drupal::entityQuery('node');
+    $itemsQuery->condition('type', 'product_reference');
+    $itemsQuery->condition('field_reference_extid', array_keys($data), 'IN');
+    $itemsResults = $itemsQuery->execute();
+    $items = Node::loadMultiple($itemsResults);
+
+    // Set header.
+    $header = [
+      'picture' => t('Picture'),
+      'reference' => t('Reference'),
+      'description' => t('Description'),
+      'quantity' => t('Quantity'),
+    ];
+
+    // Initialize an empty array.
+    $options = [];
+    foreach ($items as $result) {
+      if ($result instanceof Node) {
+        $extId = $result->get('field_reference_extid')->value;
+        $options[$result->id()] = [
+          'picture' => $result->get('field_reference_picture')->target_id,
+          'reference' => $result->get('field_reference_ref')->value,
+          'description' => $result->getTitle(),
+          'quantity' => [
+            'data' => [
+              '#type' => 'number',
+              '#title' => 'Quantity',
+              '#title_display' => 'invisible',
+              '#value' => $data[$extId]['quantity'],
+              '#name' => 'quantity[' . $extId . ']',
+              '#size' => 2,
+            ],
+          ],
+        ];
+      }
+    }
+
+    // Create fields.
+    $form['items'] = [
+      '#type' => 'tableselect',
+      '#header' => $header,
+      '#options' => $options,
+      '#empty' => t('No items found!'),
+      '#prefix' => '<div>',
+      '#suffix' => '</div>',
+    ];
+    $form['submit'] = [
+      '#type' => 'submit',
+      '#value' => t('Remove selected'),
+    ];
+
+    // Return form.
+    return $form;
   }
 
   /**
@@ -68,6 +138,6 @@ class WishlistEditForm extends FormBase {
    *   The current state of the form.
    */
   public function submitForm(array &$form, FormStateInterface $form_state) {
-    // TODO: Implement submitForm() method.
+    $test = true;
   }
 }
