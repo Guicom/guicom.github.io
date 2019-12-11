@@ -10,8 +10,12 @@ soc_wishlist.add_item:
   path: '/wishlist/add/{extid}'
   defaults:
     _controller: '\Drupal\soc_wishlist\Controller\WishlistController::addItemAction'
+  requirements:
+    _permission: 'edit own wishlist'
 
 soc_wishlist.remove_item:
   path: '/wishlist/remove/{extid}'
   defaults:
     _controller: '\Drupal\soc_wishlist\Controller\WishlistController::removeItemAction'
+  requirements:
+    _permission: 'edit own wishlist'

@@ -4,6 +4,7 @@ namespace Drupal\soc_wishlist\Form;
 
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Messenger\MessengerInterface;
 use Drupal\node\Entity\Node;
 use Drupal\soc_wishlist\Service\Manager\WishlistManager;
 use Symfony\Component\DependencyInjection\ContainerInterface;
@@ -14,12 +15,20 @@ class WishlistEditForm extends FormBase {
   private $wishlistManager;
 
   /**
+   * The Messenger service.
+   *
+   * @var \Drupal\Core\Messenger\MessengerInterface
+   */
+  protected $messenger;
+
+  /**
    * WishlistController constructor.
    *
    * @param \Drupal\soc_wishlist\Service\Manager\WishlistManager $wishlistManager
    */
-  public function __construct(WishlistManager $wishlistManager) {
+  public function __construct(WishlistManager $wishlistManager, MessengerInterface $messenger) {
     $this->wishlistManager = $wishlistManager;
+    $this->messenger = $messenger;
   }
 
   /**
@@ -27,7 +36,8 @@ class WishlistEditForm extends FormBase {
    */
   public static function create(ContainerInterface $container) {
     return new static(
-      $container->get('soc_wishlist.wishlist_manager')
+      $container->get('soc_wishlist.wishlist_manager'),
+      $container->get('messenger')
     );
   }
 
@@ -57,7 +67,7 @@ class WishlistEditForm extends FormBase {
    *   The form structure.
    */
   public function buildForm(array $form, FormStateInterface $form_state) {
-    // Get data from cookies.
+    // Get data from cookie.
     $data = [
       'R_22004110' => [
         'extid' => 'R_22004110',
@@ -72,6 +82,7 @@ class WishlistEditForm extends FormBase {
         'quantity' => 2,
       ],
     ];
+    $data = $this->wishlistManager->loadSavedItems();
 
     // Load items.
     $itemsQuery = \Drupal::entityQuery('node');
@@ -88,7 +99,7 @@ class WishlistEditForm extends FormBase {
       'quantity' => t('Quantity'),
     ];
 
-    // Initialize an empty array.
+    // Prepare tableselect field.
     $options = [];
     foreach ($items as $result) {
       if ($result instanceof Node) {

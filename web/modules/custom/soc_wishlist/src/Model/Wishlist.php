@@ -10,8 +10,8 @@ class Wishlist {
   /**
    * @return mixed
    */
-  public function getItems() {
-    return $this->items;
+  public function getItems():array {
+    return $this->items ?? [];
   }
 
   /**
