@@ -1,0 +1,18 @@
+uuid: 38a29294-1253-4779-a173-10f258edd895
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+name: 'Optional related content'
+type: optional_related_content
+description: ''
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: true

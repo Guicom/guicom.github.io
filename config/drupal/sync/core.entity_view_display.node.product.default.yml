@@ -12,6 +12,8 @@ dependencies:
     - field.field.node.product.field_product_cta_4
     - field.field.node.product.field_product_extid
     - field.field.node.product.field_product_family
+    - field.field.node.product.field_product_orc_content
+    - field.field.node.product.field_product_orc_title
     - field.field.node.product.field_product_pictures
     - field.field.node.product.field_product_reference
     - field.field.node.product.field_product_status
@@ -58,6 +60,8 @@ third_party_settings:
         - field_product_cta_3
         - field_product_cta_4
         - field_standard_label
+        - field_product_orc_title
+        - field_product_orc_content
     fields:
       node_post_date:
         plugin_id: node_post_date
@@ -151,6 +155,29 @@ content:
     settings:
       link: true
     third_party_settings: {  }
+  field_product_orc_content:
+    weight: 18
+    label: hidden
+    settings:
+      view_mode: teaser
+      link: false
+    third_party_settings:
+      ds:
+        ds_limit: ''
+        ft:
+          id: reset
+          settings:
+            lb: ''
+    type: entity_reference_entity_view
+    region: ds_content
+  field_product_orc_title:
+    weight: 17
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: ds_content
   field_product_pictures:
     type: entity_reference_entity_view
     weight: 1

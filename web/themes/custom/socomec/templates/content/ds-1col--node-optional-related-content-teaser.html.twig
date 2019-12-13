@@ -1,0 +1,17 @@
+{% if content.field_orc_link.0 %}
+  {% set url = content.field_orc_link %}
+{% else %}
+  {% set url = path('entity.node.canonical', {'node': node.id}) %}
+{% endif %}
+<div class="col-md-6 col-sm-12">
+  <div class="orc-bg-image" style="background-image: linear-gradient(90deg, rgba(0,112,192,0) 0%, #0070C0 100%), url('{{ content.field_orc_picture | render | striptags | trim  }}')">
+    <a href="{{ url  | render | striptags | trim}}" {% if content.field_orc_target.0 %} target="{{ content.field_orc_target |render|striptags|trim }}"{% endif %}>
+      <span class="yellow-circle">
+         {% include '/themes/custom/socomec/assets/images/picto/ui/arrow-right-light.svg' %}
+      </span>
+    </a>
+  </div>
+  <div class="col-sm-7 orc-text">
+    {{ content.field_orc_text }}
+  </div>
+</div>

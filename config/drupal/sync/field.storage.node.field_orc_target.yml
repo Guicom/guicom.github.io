@@ -1,0 +1,27 @@
+uuid: 44ef9e45-11c5-416c-bfd8-6d1665a62583
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - options
+id: node.field_orc_target
+field_name: field_orc_target
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: _self
+      label: _self
+    -
+      value: _blank
+      label: _blank
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

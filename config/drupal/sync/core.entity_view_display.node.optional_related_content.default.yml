@@ -1,0 +1,58 @@
+uuid: eb890514-b5e9-4313-b93b-37a5c34a657c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.optional_related_content.field_orc_link
+    - field.field.node.optional_related_content.field_orc_picture
+    - field.field.node.optional_related_content.field_orc_target
+    - field.field.node.optional_related_content.field_orc_text
+    - node.type.optional_related_content
+  module:
+    - options
+    - user
+id: node.optional_related_content.default
+targetEntityType: node
+bundle: optional_related_content
+mode: default
+content:
+  field_orc_link:
+    weight: 103
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_orc_picture:
+    type: entity_reference_entity_view
+    weight: 104
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    region: content
+  field_orc_target:
+    weight: 105
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_orc_text:
+    weight: 106
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  addtoany: true
+  langcode: true
+  search_api_excerpt: true

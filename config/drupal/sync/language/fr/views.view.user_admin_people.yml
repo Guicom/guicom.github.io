@@ -8,6 +8,8 @@ display:
       fields:
         status:
           label: État
+        operations:
+          label: Actions
       filters:
         status:
           group_info:

@@ -19,6 +19,7 @@ filenames:
   model_cta: ''
   link: ''
   standard_label: ''
+  optional_related_content: ''
 bundles:
   product_faq:
     field_question:
@@ -775,6 +776,18 @@ bundles:
     field_standard_label_tooltip:
       bundle: standard_label
       name: field_standard_label_tooltip
+      entity_type_id: paragraph
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+  optional_related_content:
+    field_orc_content:
+      bundle: optional_related_content
+      name: field_orc_content
       entity_type_id: paragraph
       rtf: 'no'
       rta: 'no'

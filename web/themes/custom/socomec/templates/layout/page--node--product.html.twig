@@ -140,15 +140,27 @@
               </div>
             </div>
           </section>
-            <section class="section-light" id="product-avantage-section">
-              <div class="container">
-                <div class="row">
-                  <div class="advantage-wrapper col-md-9">
-                    {% include '@socomec/layout/product/applications.html.twig' %}
+          <section class="section-light" id="product-avantage-section">
+            <div class="container">
+              <div class="row">
+                <div class="advantage-wrapper col-md-9">
+                  {% include '@socomec/layout/product/applications.html.twig' %}
+                </div>
+              </div>
+            </div>
+          </section>
+          <section class="section-light" id="product-orc-section">
+            <div class="container">
+              <div class="row">
+                <div class="advantage-wrapper col-md-12">
+                  <h2 class="field--name-field-title ">{{ drupal_field('field_product_orc_title', 'node') }}</h2>
+                  <div class="row">
+                    {{ drupal_field('field_product_orc_content', 'node') }}
                   </div>
                 </div>
               </div>
-            </section>
+            </div>
+          </section>
         </article>
       {% endblock %}
     </main>
