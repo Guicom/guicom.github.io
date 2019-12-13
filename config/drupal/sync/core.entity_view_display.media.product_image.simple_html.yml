@@ -1,36 +1,45 @@
-uuid: 5a7d99f2-49c5-48de-abc0-a3f9415f5497
+uuid: 0d44df21-bc6e-468e-87d9-2f697d586fd7
 langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.media.simple_html
     - field.field.media.product_image.field_media_image_2
-    - image.style.thumbnail
+    - image.style.210x210
     - media.type.product_image
   module:
+    - ds
     - svg_image
-id: media.product_image.default
+id: media.product_image.simple_html
 targetEntityType: media
 bundle: product_image
-mode: default
+mode: simple_html
 content:
-  thumbnail:
+  field_media_image_2:
     type: image
     weight: 0
     region: content
     label: hidden
     settings:
-      image_style: thumbnail
+      image_style: 210x210
       image_link: ''
+      svg_render_as_image: '1'
       svg_attributes:
         width: ''
         height: ''
-      svg_render_as_image: true
-    third_party_settings: {  }
+    third_party_settings:
+      ds:
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
 hidden:
   addtoany: true
   created: true
-  field_media_image_2: true
   langcode: true
   name: true
   search_api_excerpt: true
+  thumbnail: true
   uid: true

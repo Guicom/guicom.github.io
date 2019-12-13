@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.product.field_associated_products
     - field.field.node.product.field_background_hero_block
     - field.field.node.product.field_json_product_data
     - field.field.node.product.field_product_advantage_text
@@ -62,6 +63,7 @@ third_party_settings:
         - field_standard_label
         - field_product_orc_title
         - field_product_orc_content
+        - field_associated_products
     fields:
       node_post_date:
         plugin_id: node_post_date
@@ -88,6 +90,23 @@ targetEntityType: node
 bundle: product
 mode: default
 content:
+  field_associated_products:
+    weight: 19
+    label: hidden
+    settings:
+      view_mode: teaser
+      link: false
+    third_party_settings:
+      ds:
+        ds_limit: ''
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
+    type: entity_reference_entity_view
+    region: ds_content
   field_background_hero_block:
     type: entity_reference_entity_view
     weight: 7

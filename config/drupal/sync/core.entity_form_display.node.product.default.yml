@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.product.field_associated_products
     - field.field.node.product.field_background_hero_block
     - field.field.node.product.field_json_product_data
     - field.field.node.product.field_product_advantage_text
@@ -73,7 +74,7 @@ third_party_settings:
         - field_product_cta_3
         - field_product_cta_4
       parent_name: group_webmastering
-      weight: 8
+      weight: 9
       format_type: tab
       format_settings:
         label: CTA
@@ -101,6 +102,7 @@ third_party_settings:
         - field_product_advantage_text
         - field_background_hero_block
         - group_op
+        - group_associated_products
         - group_cta
       parent_name: group_tabs
       weight: 11
@@ -126,6 +128,19 @@ third_party_settings:
         description: ''
         required_fields: true
       label: 'Optional related content'
+    group_associated_products:
+      children:
+        - field_associated_products
+      parent_name: group_webmastering
+      weight: 8
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+      label: 'Associated products'
 id: node.product.default
 targetEntityType: node
 bundle: product
@@ -137,6 +152,15 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_associated_products:
+    weight: 28
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
   field_background_hero_block:
     type: media_library_widget
     weight: 6
@@ -302,7 +326,7 @@ content:
     region: content
   langcode:
     type: language_select
-    weight: 2
+    weight: 1
     region: content
     settings:
       include_locked: true

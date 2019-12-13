@@ -536,6 +536,15 @@ body.node--type-product {
     }
   }
 
+  // Associeted products
+  #product-associate-section {
+    position: relative;
+    .product-associate-section-inner {
+      background-color: orange;
+      @include right-overflow();
+    }
+  }
+
   // Fresco
   .fr-window {
     background: $white;
@@ -559,6 +568,12 @@ body.node--type-product {
   &.active {
     &:before {
       background: url("../images/picto/ui/bookmark-star.svg") no-repeat center center $white;
+    }
+  }
+
+  &.blue {
+    &:before {
+      background: url("../images/picto/ui/bookmark-star-blue.svg") no-repeat center center;
     }
   }
 }

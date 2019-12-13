@@ -15,6 +15,20 @@
   transition: all 0.3s ease-out;
 }
 
+@mixin right-overflow-calc($width) {
+  width: calc(((100vw - #{map-get($container-max-widths, $width)}) / 2 + #{map-get($container-max-widths, $width)}) + #{$grid-gutter-width}/2);
+  margin-left: calc((100vw - ((100vw - #{map-get($container-max-widths, $width)}) / 2 + #{map-get($container-max-widths, $width)})) + #{$grid-gutter-width});
+}
+@mixin right-overflow() {
+  @include media-breakpoint-up(md) {
+    @include right-overflow-calc(lg);
+  }
+  @include media-breakpoint-up(lg) {
+    @include right-overflow-calc(xl);
+  }
+}
+
+
 //
 // Alternate buttons
 //

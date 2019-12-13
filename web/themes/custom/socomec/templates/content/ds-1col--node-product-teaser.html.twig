@@ -1,0 +1,12 @@
+<div class="col-md-3 col-sm-12">
+  <div class="product-teaser-wrapper">
+    {{ content.field_product_pictures }}
+    <h3 class="product-teaser-title">{{ content.title }}</h3>
+    {{ content.field_product_teaser }}
+    <div class="product-teaser-links">
+      <span class="add-to-cart blue"></span>
+      <span class="see-more-eye"></span>
+    </div>
+    <a class="parent-overlap" href="{{ path('entity.node.canonical', {'node': node.id}) | render | striptags | trim }}"></a>
+  </div>
+</div>

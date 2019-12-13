@@ -163,6 +163,18 @@
               </div>
             </div>
           </section>
+          <section class="section-grey-light" id="product-associate-section">
+            <div class="product-associate-section-inner">
+              <h2 class="field--name-field-title ">{{ 'Associated products' |t }}</h2>
+              <div class="container">
+                <div class="row">
+                  <div class="advantage-wrapper col-md-12">
+                    {{ drupal_field('field_associated_products', 'node') }}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
         </article>
       {% endblock %}
     </main>
