@@ -10,6 +10,9 @@ class ProductReferenceTable {
 
   /**
    * @param $field
+   *
+   * @return array
+   *   return table header
    */
   public function buildTable($field) {
     $rows = [];
@@ -44,6 +47,12 @@ class ProductReferenceTable {
     ];
   }
 
+  /**
+   * @param $items
+   *
+   * @return array
+   *   return table header
+   */
   public function getHeader($items) {
     $header = [];
     foreach ($items as $key => $item) {
@@ -59,6 +68,10 @@ class ProductReferenceTable {
     return $header;
   }
 
+  /**
+   * @return \Drupal\Component\Render\FormattableMarkup
+   *   Formatted html
+   */
   public function getCartLink() {
     return new FormattableMarkup("<span class='add-to-cart'></span>", []);
   }
