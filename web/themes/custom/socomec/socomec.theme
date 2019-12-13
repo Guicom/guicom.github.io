@@ -102,12 +102,15 @@ function socomec_preprocess_field(&$variables) {
         $variables['legal_mentions'] = $variables["element"]["#object"]->field_pardot_privacy_policy->value;
       }
       break;
+
+    case 'field_product_reference':
+      $table = Drupal::service('soc_nextpage.product_reference_table');
+      $variables['render_table'] = $table->buildTable($variables);
+      break;
   }
 }
 
-function socomec_preprocess_image_formatter(&$variables) {
-  $test = 1;
-}
+
 /**
  * Implements hook_theme_suggestions_field_alter().
  */
