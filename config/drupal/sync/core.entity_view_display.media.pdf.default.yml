@@ -4,57 +4,27 @@ status: true
 dependencies:
   config:
     - field.field.media.pdf.field_media_file
-    - image.style.thumbnail
     - media.type.pdf
   module:
     - file
-    - svg_image
-    - user
 id: media.pdf.default
 targetEntityType: media
 bundle: pdf
 mode: default
 content:
-  created:
-    label: hidden
-    type: timestamp
-    weight: 0
-    region: content
-    settings:
-      date_format: medium
-      custom_date_format: ''
-      timezone: ''
-    third_party_settings: {  }
   field_media_file:
-    weight: 6
-    label: above
+    weight: 0
+    label: hidden
     settings:
       use_description_as_link_text: true
     third_party_settings: {  }
     type: file_default
     region: content
-  thumbnail:
-    type: image
-    weight: 5
-    label: hidden
-    settings:
-      image_style: thumbnail
-      svg_attributes:
-        width: ''
-        height: ''
-      svg_render_as_image: true
-      image_link: ''
-    region: content
-    third_party_settings: {  }
-  uid:
-    label: hidden
-    type: author
-    weight: 0
-    region: content
-    settings: {  }
-    third_party_settings: {  }
 hidden:
   addtoany: true
+  created: true
   langcode: true
   name: true
   search_api_excerpt: true
+  thumbnail: true
+  uid: true

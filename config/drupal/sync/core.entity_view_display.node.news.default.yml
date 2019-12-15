@@ -3,20 +3,144 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.news.field_body
+    - field.field.node.news.field_media_image
+    - field.field.node.news.field_model_pdf
+    - field.field.node.news.field_news_audience
+    - field.field.node.news.field_news_mommentum
+    - field.field.node.news.field_news_theme
+    - field.field.node.news.field_news_type
+    - field.field.node.news.field_product_reference
+    - field.field.node.news.field_teaser
     - node.type.news
   module:
+    - ds
+    - entity_reference_revisions
+    - text
     - user
+third_party_settings:
+  ds:
+    layout:
+      id: bootstrap_socomec_one_column_12
+      library: null
+      disable_css: false
+      entity_classes: all_classes
+      settings:
+        wrappers:
+          first: div
+        outer_wrapper: div
+        attributes: ''
+        link_attribute: ''
+        link_custom: ''
+        classes:
+          layout_class: {  }
+          first: {  }
+    regions:
+      first:
+        - node_post_date
+        - field_media_image
+        - field_news_theme
+        - field_news_type
+        - field_news_audience
+        - field_news_mommentum
+        - field_teaser
+        - field_body
+        - field_product_reference
+        - field_model_pdf
+    fields:
+      node_post_date:
+        plugin_id: node_post_date
+        weight: 0
+        label: hidden
+        formatter: ds_post_date_long
 id: node.news.default
 targetEntityType: node
 bundle: news
 mode: default
 content:
-  links:
-    weight: 100
+  field_body:
+    weight: 7
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    type: entity_reference_revisions_entity_view
+    region: first
+  field_media_image:
+    type: entity_reference_entity_view
+    weight: 1
+    label: hidden
+    settings:
+      view_mode: bootstrap_breakpoint
+      link: false
+    third_party_settings:
+      ds:
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
+    region: first
+  field_model_pdf:
+    type: entity_reference_revisions_entity_view
+    weight: 9
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: first
+  field_news_audience:
+    weight: 4
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: first
+  field_news_mommentum:
+    weight: 5
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: first
+  field_news_theme:
+    weight: 2
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: first
+  field_news_type:
+    weight: 3
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: first
+  field_product_reference:
+    weight: 8
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: first
+  field_teaser:
+    weight: 6
+    label: hidden
     settings: {  }
     third_party_settings: {  }
-    region: content
+    type: text_default
+    region: first
 hidden:
   addtoany: true
   langcode: true
+  links: true
   search_api_excerpt: true

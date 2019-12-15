@@ -78,7 +78,27 @@ function socomec_preprocess_paragraph(&$variables){
       if (!empty($field_target[0]['value']) && strcmp($field_target[0]['value'], 1) === 0) {
         $variables['cta_target'] = '_blank';
       }
+    }
+  }
 
+  // if paragraph is model_cta_pdf
+  if ( strcmp($bundle, 'model_cta_pdf') === 0) {
+    // Alter name file.
+    if ($paragraph->hasField('field_cta_text')) {
+      $field_cta_text = (!empty($paragraph->get('field_cta_text')->getValue()))?$paragraph->get('field_cta_text')->getValue():null;
+      if (!empty($field_cta_text[0]['value'])) {
+        $field_media_pdf = (!empty($paragraph->get('field_media_pdf')->getValue()))?$paragraph->get('field_media_pdf')->getValue():null;
+        if (!empty($field_cta_text[0]['value'])) {
+          $media = Media::load($field_media_pdf[0]['target_id']);
+          $fid = $media->getSource()->getSourceFieldValue($media);
+          if (!empty($fid)) {
+            $file = File::load($fid);
+            if (!empty($file)) {
+              $file->setFilename($field_cta_text[0]['value']);
+            }
+          }
+        }
+      }
     }
   }
 }
@@ -213,6 +233,46 @@ function socomec_preprocess_media(array &$variables) {
     }
     if (isset($properties[0]["title"])) {
       $variables['content']['title_image'] = $properties[0]["title"];
+    }
+  }
+}
+
+/**
+ * Implements theme_preprocess_image().
+ *
+ * @param $vars
+ */
+function socomec_preprocess_image(&$vars) {
+  // List of image style parse for add bootstrap responsive image class.
+  $image_style_name = [
+    'max_width_1140',
+    'max_width_960',
+    'max_width_720',
+    'max_width_540',
+  ];
+
+  // Add img-fluid class to listed style
+  if (!empty($vars['style_name'])) {
+    if (in_array($vars['style_name'], $image_style_name)) {
+      $vars['attributes']['class'][] = 'img-fluid';
+    }
+  }
+}
+
+/**
+ * Implements template_responsive_image_formatter().
+ *
+ * @param $variables
+ */
+function socomec_preprocess_responsive_image_formatter(&$variables) {
+  $responsive_image_style_name = [
+    'bootstrap_breakpoint',
+  ];
+
+  // Add img-fluid class to listed responsive style
+  if (!empty($variables['responsive_image_style_id'])) {
+    if (in_array($variables['responsive_image_style_id'], $responsive_image_style_name)) {
+      $variables['responsive_image']['#attributes']['class'][] = 'img-fluid';
     }
   }
 }
