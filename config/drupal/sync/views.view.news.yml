@@ -331,6 +331,9 @@ display:
           plugin_id: view
       defaults:
         header: false
+        cache: false
+      cache:
+        type: none
     cache_metadata:
       max-age: -1
       contexts:

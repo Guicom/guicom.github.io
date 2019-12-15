@@ -1,0 +1,5 @@
+name: Socomec Views News
+type: module
+description:  Alter views news
+core: 8.x
+package: Socomec

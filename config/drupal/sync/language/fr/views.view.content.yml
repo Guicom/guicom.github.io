@@ -4,24 +4,7 @@ display:
       fields:
         title:
           label: Titre
-        status:
-          label: État
-          settings:
-            format_custom_true: Publié
-            format_custom_false: 'Non publié'
       filters:
         title:
           expose:
             label: Titre
-        status:
-          expose:
-            label: État
-          group_info:
-            group_items:
-              1:
-                title: Publié
-              2:
-                title: 'Non publié'
-        langcode:
-          expose:
-            label: Langue
