@@ -26,8 +26,13 @@ content:
     region: content
 hidden:
   addtoany: true
+  field_background_hero_block: true
   field_json_product_data: true
   field_product_advantage_text: true
+  field_product_cta_1: true
+  field_product_cta_2: true
+  field_product_cta_3: true
+  field_product_cta_4: true
   field_product_extid: true
   field_product_family: true
   field_product_pictures: true

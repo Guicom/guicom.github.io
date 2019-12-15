@@ -1,0 +1,16 @@
+uuid: 88689a18-e341-40e0-abd6-f36557a988ba
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.news_mommentum
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+id: taxonomy_term.news_mommentum
+target_entity_type_id: taxonomy_term
+target_bundle: news_mommentum
+default_langcode: site_default
+language_alterable: true
