@@ -41,8 +41,6 @@ third_party_settings:
         - field_media_image
         - field_news_theme
         - field_news_type
-        - field_news_audience
-        - field_news_mommentum
         - field_teaser
         - field_body
         - field_product_reference
@@ -52,14 +50,14 @@ third_party_settings:
         plugin_id: node_post_date
         weight: 0
         label: hidden
-        formatter: ds_post_date_long
+        formatter: ds_post_date_short
 id: node.news.default
 targetEntityType: node
 bundle: news
 mode: default
 content:
   field_body:
-    weight: 7
+    weight: 5
     label: hidden
     settings:
       view_mode: default
@@ -85,28 +83,12 @@ content:
     region: first
   field_model_pdf:
     type: entity_reference_revisions_entity_view
-    weight: 9
+    weight: 7
     label: hidden
     settings:
       view_mode: default
       link: ''
     third_party_settings: {  }
-    region: first
-  field_news_audience:
-    weight: 4
-    label: hidden
-    settings:
-      link: true
-    third_party_settings: {  }
-    type: entity_reference_label
-    region: first
-  field_news_mommentum:
-    weight: 5
-    label: hidden
-    settings:
-      link: true
-    third_party_settings: {  }
-    type: entity_reference_label
     region: first
   field_news_theme:
     weight: 2
@@ -125,7 +107,7 @@ content:
     type: entity_reference_label
     region: first
   field_product_reference:
-    weight: 8
+    weight: 6
     label: hidden
     settings:
       link: true
@@ -133,7 +115,7 @@ content:
     type: entity_reference_label
     region: first
   field_teaser:
-    weight: 6
+    weight: 4
     label: hidden
     settings: {  }
     third_party_settings: {  }
@@ -141,6 +123,8 @@ content:
     region: first
 hidden:
   addtoany: true
+  field_news_audience: true
+  field_news_mommentum: true
   langcode: true
   links: true
   search_api_excerpt: true

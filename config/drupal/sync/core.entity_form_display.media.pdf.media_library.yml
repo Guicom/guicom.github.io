@@ -10,7 +10,12 @@ id: media.pdf.media_library
 targetEntityType: media
 bundle: pdf
 mode: media_library
-content: {  }
+content:
+  translation:
+    weight: 10
+    settings: {  }
+    third_party_settings: {  }
+    region: content
 hidden:
   created: true
   field_media_file: true
