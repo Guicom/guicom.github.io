@@ -1,0 +1,29 @@
+uuid: d8be8e4d-13ca-40b2-9cf8-9912d6044f6b
+langcode: en
+status: true
+dependencies:
+  config:
+    - facets.facet.news_theme_taxonomy_term_name
+  module:
+    - facets
+    - system
+  theme:
+    - socomec
+id: newsthemetaxonomytermname
+theme: socomec
+region: content
+weight: -4
+provider: null
+plugin: 'facet_block:news_theme_taxonomy_term_name'
+settings:
+  id: 'facet_block:news_theme_taxonomy_term_name'
+  label: 'News Theme'
+  provider: facets
+  label_display: visible
+  block_id: newsthemetaxonomytermname
+visibility:
+  request_path:
+    id: request_path
+    pages: /news
+    negate: false
+    context_mapping: {  }
