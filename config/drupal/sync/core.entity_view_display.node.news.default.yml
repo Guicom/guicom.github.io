@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.node.news.field_body
     - field.field.node.news.field_media_image
+    - field.field.node.news.field_metatags
     - field.field.node.news.field_model_pdf
     - field.field.node.news.field_news_audience
     - field.field.node.news.field_news_mommentum
@@ -16,6 +17,7 @@ dependencies:
   module:
     - ds
     - entity_reference_revisions
+    - metatag
     - text
     - user
 third_party_settings:
@@ -81,6 +83,13 @@ content:
             lb-col: false
             classes: {  }
     region: first
+  field_metatags:
+    weight: 8
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: metatag_empty_formatter
+    region: content
   field_model_pdf:
     type: entity_reference_revisions_entity_view
     weight: 7
