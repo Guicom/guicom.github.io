@@ -1,0 +1,33 @@
+uuid: ea7fc5c1-6f4f-4f1d-bf33-058345fa8966
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.model_cta_pdf.field_cta_text
+    - field.field.paragraph.model_cta_pdf.field_media_pdf
+    - paragraphs.paragraphs_type.model_cta_pdf
+  module:
+    - text
+id: paragraph.model_cta_pdf.default
+targetEntityType: paragraph
+bundle: model_cta_pdf
+mode: default
+content:
+  field_cta_text:
+    weight: 0
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_media_pdf:
+    type: entity_reference_entity_view
+    weight: 1
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    region: content
+hidden:
+  search_api_excerpt: true

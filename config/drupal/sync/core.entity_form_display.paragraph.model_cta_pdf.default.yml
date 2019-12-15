@@ -1,0 +1,34 @@
+uuid: 82c2ab86-8307-4df2-9b80-f5c4e3ba4378
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.model_cta_pdf.field_cta_text
+    - field.field.paragraph.model_cta_pdf.field_media_pdf
+    - paragraphs.paragraphs_type.model_cta_pdf
+  module:
+    - media_library
+    - text
+id: paragraph.model_cta_pdf.default
+targetEntityType: paragraph
+bundle: model_cta_pdf
+mode: default
+content:
+  field_cta_text:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textfield
+    region: content
+  field_media_pdf:
+    type: media_library_widget
+    weight: 1
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  created: true
+  status: true
