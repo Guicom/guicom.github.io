@@ -1,0 +1,22 @@
+uuid: 13801378-5223-47af-830b-9d8ce4174381
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.news
+  module:
+    - user
+id: node.news.default
+targetEntityType: node
+bundle: news
+mode: default
+content:
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  addtoany: true
+  langcode: true
+  search_api_excerpt: true
