@@ -16,18 +16,24 @@
 }
 
 @mixin right-overflow-calc($width) {
-  width: calc(((100vw - #{map-get($container-max-widths, $width)}) / 2 + #{map-get($container-max-widths, $width)}) + #{$grid-gutter-width}/2);
-  margin-left: calc((100vw - ((100vw - #{map-get($container-max-widths, $width)}) / 2 + #{map-get($container-max-widths, $width)})) + #{$grid-gutter-width});
+  width: calc(((100vw - #{map-get($container-max-widths, $width)}) / 2 + #{map-get($container-max-widths, $width)}) - #{$grid-gutter-width}/2);
+  margin-left: calc((100vw - ((100vw - #{map-get($container-max-widths, $width)}) / 2 + #{map-get($container-max-widths, $width)})) + #{$grid-gutter-width} / 2);
 }
+
 @mixin right-overflow() {
-  @include media-breakpoint-up(md) {
+  @include media-breakpoint-up(lg) {
     @include right-overflow-calc(lg);
   }
-  @include media-breakpoint-up(lg) {
+  @include media-breakpoint-up(xl) {
     @include right-overflow-calc(xl);
   }
 }
 
+@mixin custom-breakpoint-down($widht) {
+  @media screen and (max-width: $widht) {
+    @content;
+  }
+}
 
 //
 // Alternate buttons

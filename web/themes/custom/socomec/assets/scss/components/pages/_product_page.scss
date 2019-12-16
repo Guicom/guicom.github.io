@@ -540,8 +540,81 @@ body.node--type-product {
   #product-associate-section {
     position: relative;
     .product-associate-section-inner {
-      background-color: orange;
+      @include custom-breakpoint-down(584px) {
+        padding: 0 15px;
+      }
       @include right-overflow();
+
+      .related-product-wrapper {
+        display: flex;
+        margin-top: 35px;
+        .product-intro {
+          width: calc(((#{map-get($container-max-widths, xl)} / 12) * 3) - (#{$grid-gutter-width}/2));
+          max-width: calc(((#{map-get($container-max-widths, xl)} / 12) * 3) - (#{$grid-gutter-width}/2));
+          flex: 0 0 calc(((#{map-get($container-max-widths, xl)} / 12) * 3) - (#{$grid-gutter-width}/2));
+          margin-right: calc(#{$grid-gutter-width}/2);
+          @include custom-breakpoint-down(584px) {
+            width: 100%;
+            max-width: 100%;
+            flex: 0 0 100%;
+          }
+          p {
+            color: $dark-grey;
+            font-family: $font-roboto;
+            font-size: 24px;
+            font-weight: 300;
+            line-height: 30px;
+            text-align: right;
+            @include custom-breakpoint-down(584px) {
+              text-align: left;
+            }
+          }
+        }
+
+        .product-wrapper {
+          flex-grow: 1;
+          display: flex;
+
+          @include custom-breakpoint-down(1879px) {
+            .product-item {
+              &:nth-child(4) {
+                display: none;
+              }
+            }
+          }
+          @include custom-breakpoint-down(1259px) {
+            .product-item {
+              &:nth-child(3) {
+                display: none;
+              }
+            }
+          }
+          @include custom-breakpoint-down(884px) {
+            .product-item {
+              &:nth-child(2) {
+                display: none;
+              }
+            }
+          }
+          @include custom-breakpoint-down(584px) {
+            flex-direction: column;
+            align-items: center;
+            .product-item {
+              &:nth-child(2),
+              &:nth-child(4),
+              &:nth-child(3) {
+                display: block;
+              }
+            }
+          }
+
+          .product-item {
+            width: calc(((#{map-get($container-max-widths, xl)} / 12) * 3) + (#{$grid-gutter-width}/2));
+            max-width: calc(((#{map-get($container-max-widths, xl)} / 12) * 3) + (#{$grid-gutter-width}/2));
+            flex: 0 0 calc(((#{map-get($container-max-widths, xl)} / 12) * 3) + (#{$grid-gutter-width}/2));
+          }
+        }
+      }
     }
   }
 
