@@ -506,6 +506,14 @@ body.node--type-product {
       .assistance-block-inner {
         width: calc((#{$column-width} * 7) - (#{$grid-gutter-width}));
       }
+      h3 {
+        color: $blue_light;
+        font-family: $font-roboto;
+        font-size: 24px;
+        font-weight: 300;
+        line-height: 30px;
+        margin-bottom: 40px;
+      }
       .assistance-left-block {
         padding: 100px 0;
         justify-content: flex-end;
@@ -517,7 +525,7 @@ body.node--type-product {
           padding-right: calc((#{$column-width} * 2));
 
           .field--name-field-br-icon {
-            @include rounded-icon(100px, $blue);
+            @include rounded-icon(100px, $blue_light);
             margin-bottom: 40px;
           }
 
@@ -542,6 +550,10 @@ body.node--type-product {
           padding-left: $column-width;
           padding-right: $column-width;
 
+          h3 {
+            color: $blue;
+          }
+
           .field--name-field-ba-icon {
             @include rounded-icon(100px, $blue);
             margin-bottom: 40px;
@@ -554,14 +566,6 @@ body.node--type-product {
             }
           }
         }
-      }
-      h3 {
-        color: $blue_light;
-        font-family: $font-roboto;
-        font-size: 24px;
-        font-weight: 300;
-        line-height: 30px;
-        margin-bottom: 40px;
       }
       .field--name-field-br-text,
       .field--name-field-ba-text {
