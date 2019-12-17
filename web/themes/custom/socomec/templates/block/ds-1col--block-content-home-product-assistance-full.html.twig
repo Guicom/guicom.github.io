@@ -1,0 +1,18 @@
+<div class="assistance-blocks">
+  <div class="assistance-left-block assistance-block-item" style="background-image: url('{{ content.field_background_image | render | striptags | trim  }}')">
+    <div class="assistance-block-inner">
+      {{ content.field_br_icon }}
+      <h3>{{ content.field_br_title }}</h3>
+      {{ content.field_br_text }}
+      {{ content.field_br_link }}
+    </div>
+  </div>
+  <div class="assistance-right-block">
+    <div class="assistance-block-inner">
+      {{ content.field_ba_icon }}
+      <h3>{{ content.field_ba_title }}</h3>
+      {{ content.field_ba_text }}
+      {{ content.field_ba_link }}
+    </div>
+  </div>
+</div>

@@ -134,3 +134,14 @@ bundles:
       notes: ''
       relationship: 0
       sars_filename: ''
+    field_background_image:
+      bundle: home_product_assistance
+      name: field_background_image
+      entity_type_id: block_content
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''

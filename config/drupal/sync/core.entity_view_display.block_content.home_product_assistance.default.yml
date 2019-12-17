@@ -8,6 +8,7 @@ dependencies:
     - field.field.block_content.home_product_assistance.field_ba_link
     - field.field.block_content.home_product_assistance.field_ba_text
     - field.field.block_content.home_product_assistance.field_ba_title
+    - field.field.block_content.home_product_assistance.field_background_image
     - field.field.block_content.home_product_assistance.field_br_icon
     - field.field.block_content.home_product_assistance.field_br_link
     - field.field.block_content.home_product_assistance.field_br_text
@@ -43,6 +44,7 @@ third_party_settings:
         - field_ba_title
         - field_ba_text
         - field_ba_link
+        - field_background_image
 id: block_content.home_product_assistance.default
 targetEntityType: block_content
 bundle: home_product_assistance
@@ -53,9 +55,16 @@ content:
     weight: 4
     label: hidden
     settings:
-      view_mode: default
+      view_mode: simple_html
       link: false
-    third_party_settings: {  }
+    third_party_settings:
+      ds:
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
     region: ds_content
   field_ba_link:
     type: entity_reference_revisions_entity_view
@@ -78,8 +87,27 @@ content:
     label: hidden
     settings:
       link_to_entity: false
-    third_party_settings: {  }
+    third_party_settings:
+      ds:
+        ft:
+          id: reset
+          settings:
+            lb: ''
     type: string
+    region: ds_content
+  field_background_image:
+    type: entity_reference_entity_view
+    weight: 8
+    label: hidden
+    settings:
+      view_mode: background_image
+      link: false
+    third_party_settings:
+      ds:
+        ft:
+          id: reset
+          settings:
+            lb: ''
     region: ds_content
   field_br_icon:
     type: entity_reference_entity_view
@@ -118,7 +146,12 @@ content:
     label: hidden
     settings:
       link_to_entity: false
-    third_party_settings: {  }
+    third_party_settings:
+      ds:
+        ft:
+          id: reset
+          settings:
+            lb: ''
     type: string
     region: ds_content
 hidden:

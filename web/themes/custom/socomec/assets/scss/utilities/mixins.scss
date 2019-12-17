@@ -1,5 +1,6 @@
 /* MIXINS */
 
+// STYLES MIXIN
 @mixin block-title($with-line: false) {
   color: $blue;
   font-family: $font-roboto;
@@ -11,10 +12,41 @@
   }
 }
 
+@mixin rounded-icon($size, $color){
+  border: 1px solid $color;
+  width: $size;
+  height: $size;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin button-icon($background, $color) {
+  background: $background;
+  color: $color;
+  font-family: $font-poppins;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  line-height: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 22px;
+  img {
+    margin-right: 15px;
+  }
+  &:hover {
+    text-decoration: none;
+  }
+}
+
 @mixin transition-socomec {
   transition: all 0.3s ease-out;
 }
 
+// LAYOUT MIXIN
 @mixin right-overflow-calc($width) {
   width: calc(((100vw - #{map-get($container-max-widths, $width)}) / 2 + #{map-get($container-max-widths, $width)}) - #{$grid-gutter-width}/2);
   margin-left: calc((100vw - ((100vw - #{map-get($container-max-widths, $width)}) / 2 + #{map-get($container-max-widths, $width)})) + #{$grid-gutter-width} / 2);
@@ -27,6 +59,19 @@
   @include media-breakpoint-up(xl) {
     @include right-overflow-calc(xl);
   }
+}
+
+// Function & mixin to get relative column width
+@function absolute-width-column($breakpoint) {
+ @return (map-get($container-max-widths, $breakpoint) / 12)
+}
+@function calc-column-width($nbr, $breakpoint) {
+  @return (absolute-width-column($breakpoint) * $nbr) + ($grid-gutter-width / 2)
+}
+@mixin getfullwidthcolumn($nbr, $breakpoint) {
+  width: calc-column-width($nbr, $breakpoint);
+  max-width: calc-column-width($nbr, $breakpoint);
+  flex-basis: calc-column-width($nbr, $breakpoint);
 }
 
 @mixin custom-breakpoint-down($widht) {

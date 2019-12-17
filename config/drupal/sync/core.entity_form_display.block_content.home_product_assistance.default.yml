@@ -8,6 +8,7 @@ dependencies:
     - field.field.block_content.home_product_assistance.field_ba_link
     - field.field.block_content.home_product_assistance.field_ba_text
     - field.field.block_content.home_product_assistance.field_ba_title
+    - field.field.block_content.home_product_assistance.field_background_image
     - field.field.block_content.home_product_assistance.field_br_icon
     - field.field.block_content.home_product_assistance.field_br_link
     - field.field.block_content.home_product_assistance.field_br_text
@@ -37,6 +38,7 @@ third_party_settings:
         - field_br_title
         - field_br_text
         - field_br_link
+        - field_background_image
       parent_name: group_tabs
       weight: 3
       format_type: tab
@@ -102,6 +104,13 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: string_textfield
+    region: content
+  field_background_image:
+    type: media_library_widget
+    weight: 9
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
     region: content
   field_br_icon:
     type: media_library_widget

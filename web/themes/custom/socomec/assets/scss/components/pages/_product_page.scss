@@ -489,6 +489,92 @@ body.node--type-product {
     }
   }
 
+  // Assistance
+  $column-width : absolute-width-column(xl);
+
+  #assistance-section {
+    .assistance-blocks {
+      position: relative;
+      width: 100vw;
+    }
+    .large-content {
+
+      .assistance-block-item {
+        width: calc((#{$column-width} + (100vw / 2)) - (#{$grid-gutter-width}/2));
+        display: flex;
+      }
+      .assistance-block-inner {
+        width: calc((#{$column-width} * 7) - (#{$grid-gutter-width}));
+      }
+      .assistance-left-block {
+        padding: 100px 0;
+        justify-content: flex-end;
+        background-position: center;
+        background-size: auto;
+        .assistance-block-inner {
+          width: calc((#{$column-width} * 7) - (#{$grid-gutter-width}));
+          padding-left: $column-width;
+          padding-right: calc((#{$column-width} * 2));
+
+          .field--name-field-br-icon {
+            @include rounded-icon(100px, $blue);
+            margin-bottom: 40px;
+          }
+
+          .paragraph--type-link {
+            display: flex;
+            a {
+              @include button-icon($yellow, $blue);
+            }
+          }
+        }
+      }
+      .assistance-right-block {
+        justify-content: flex-start;
+        background: $yellow;
+        position: absolute;
+        top: 80px;
+        right: 0px;
+        left: calc((100vw / 2) + (#{$grid-gutter-width}/2));
+        padding: 100px 0 80px;
+        .assistance-block-inner {
+          width: calc((#{$column-width} * 6) - (#{$grid-gutter-width}));
+          padding-left: $column-width;
+          padding-right: $column-width;
+
+          .field--name-field-ba-icon {
+            @include rounded-icon(100px, $blue);
+            margin-bottom: 40px;
+          }
+
+          .paragraph--type-link {
+            display: flex;
+            a {
+              @include button-icon($blue, $white);
+            }
+          }
+        }
+      }
+      h3 {
+        color: $blue_light;
+        font-family: $font-roboto;
+        font-size: 24px;
+        font-weight: 300;
+        line-height: 30px;
+        margin-bottom: 40px;
+      }
+      .field--name-field-br-text,
+      .field--name-field-ba-text {
+        color: $darker-grey;
+        font-family: $font-roboto;
+        font-size: 20px;
+        font-weight: 300;
+        line-height: 30px;
+        margin-bottom: 40px;
+      }
+    }
+  }
+
   //Optional related content
   #product-orc-section {
     margin: 60px 0;
@@ -609,9 +695,7 @@ body.node--type-product {
           }
 
           .product-item {
-            width: calc(((#{map-get($container-max-widths, xl)} / 12) * 3) + (#{$grid-gutter-width}/2));
-            max-width: calc(((#{map-get($container-max-widths, xl)} / 12) * 3) + (#{$grid-gutter-width}/2));
-            flex: 0 0 calc(((#{map-get($container-max-widths, xl)} / 12) * 3) + (#{$grid-gutter-width}/2));
+            @include getfullwidthcolumn(3, xl);
           }
         }
       }
