@@ -16,11 +16,11 @@
         "info": false,
         "sPaginationType":"simple_numbers",
         "iDisplayLength": 4,
-        "decimal": ",",
-        "thousands": ".",
         language: {
           search: "_INPUT_",
-          searchPlaceholder: Drupal.t("Search, Filter...")
+          searchPlaceholder: Drupal.t("Search, Filter..."),
+          "decimal": ",",
+          "thousands": "."
         },
         initComplete: function () {
           this.api().columns().every( function () {
@@ -40,7 +40,9 @@
               } );
 
             column.data().unique().sort().each( function ( d, j ) {
-              select.append( '<option value="'+d+'">'+d+'</option>' )
+              var StrippedString = d.replace(/(<([^>]+)>)/ig,"");
+              console.log(StrippedString);
+              select.append( '<option value="'+ StrippedString +'">'+ StrippedString +'</option>' )
             } );
           } );
         },
