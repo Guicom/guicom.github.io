@@ -1,0 +1,19 @@
+uuid: 2623a8a8-b08f-4f0a-b970-5b11427a98fa
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.home_product_assistance
+    - field.storage.block_content.field_ba_title
+id: block_content.home_product_assistance.field_ba_title
+field_name: field_ba_title
+entity_type: block_content
+bundle: home_product_assistance
+label: 'Ba Title'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

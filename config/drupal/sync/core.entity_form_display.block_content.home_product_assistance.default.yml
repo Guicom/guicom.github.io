@@ -1,0 +1,156 @@
+uuid: 9e15fa20-63a6-4996-94b5-e330ec26d32a
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.home_product_assistance
+    - field.field.block_content.home_product_assistance.field_ba_icon
+    - field.field.block_content.home_product_assistance.field_ba_link
+    - field.field.block_content.home_product_assistance.field_ba_text
+    - field.field.block_content.home_product_assistance.field_ba_title
+    - field.field.block_content.home_product_assistance.field_br_icon
+    - field.field.block_content.home_product_assistance.field_br_link
+    - field.field.block_content.home_product_assistance.field_br_text
+    - field.field.block_content.home_product_assistance.field_br_title
+  module:
+    - field_group
+    - media_library
+    - paragraphs
+    - text
+third_party_settings:
+  field_group:
+    group_tabs:
+      children:
+        - group_ressource_block
+        - group_assistance_block
+      parent_name: ''
+      weight: 1
+      format_type: tabs
+      format_settings:
+        id: ''
+        classes: ''
+        direction: horizontal
+      label: tabs
+    group_ressource_block:
+      children:
+        - field_br_icon
+        - field_br_title
+        - field_br_text
+        - field_br_link
+      parent_name: group_tabs
+      weight: 3
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        formatter: open
+        description: ''
+        required_fields: true
+      label: 'Ressource block'
+    group_assistance_block:
+      children:
+        - field_ba_icon
+        - field_ba_title
+        - field_ba_text
+        - field_ba_link
+      parent_name: group_tabs
+      weight: 4
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+      label: 'Assistance Block'
+id: block_content.home_product_assistance.default
+targetEntityType: block_content
+bundle: home_product_assistance
+mode: default
+content:
+  field_ba_icon:
+    type: media_library_widget
+    weight: 9
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+    region: content
+  field_ba_link:
+    type: entity_reference_paragraphs
+    weight: 12
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+    region: content
+  field_ba_text:
+    weight: 11
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  field_ba_title:
+    weight: 10
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_br_icon:
+    type: media_library_widget
+    weight: 5
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+    region: content
+  field_br_link:
+    type: entity_reference_paragraphs
+    weight: 8
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: closed
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: link
+    third_party_settings: {  }
+    region: content
+  field_br_text:
+    weight: 7
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  field_br_title:
+    weight: 6
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  info:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  langcode:
+    type: language_select
+    weight: 2
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+hidden: {  }
