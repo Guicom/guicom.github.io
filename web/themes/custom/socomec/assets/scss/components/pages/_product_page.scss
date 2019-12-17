@@ -490,21 +490,37 @@ body.node--type-product {
   }
 
   // Assistance
-  $column-width : absolute-width-column(xl);
+  $column-width-xl : absolute-width-column(xl);
+  $column-width-lg : absolute-width-column(lg);
+  $column-width-md : absolute-width-column(md);
+
 
   #assistance-section {
     .assistance-blocks {
       position: relative;
       width: 100vw;
+      @include media-breakpoint-down(md) {
+        display: flex;
+        flex-direction: column;
+      }
     }
     .large-content {
-
       .assistance-block-item {
-        width: calc((#{$column-width} + (100vw / 2)) - (#{$grid-gutter-width}/2));
-        display: flex;
-      }
-      .assistance-block-inner {
-        width: calc((#{$column-width} * 7) - (#{$grid-gutter-width}));
+        @include media-breakpoint-up(xl) {
+          width: calc((#{$column-width-xl} + (100vw / 2)) - (#{$grid-gutter-width}/2));
+          display: flex;
+        }
+        @include media-breakpoint-down(xl) {
+          width: calc((#{$column-width-lg} + (100vw / 2)) - (#{$grid-gutter-width}/2));
+          display: flex;
+        }
+        @include media-breakpoint-down(lg) {
+          width: calc((#{$column-width-md} + (100vw / 2)) - (#{$grid-gutter-width}/2));
+          display: flex;
+        }
+        @include media-breakpoint-down(md) {
+          width: 100%;
+        }
       }
       h3 {
         color: $blue_light;
@@ -518,11 +534,30 @@ body.node--type-product {
         padding: 100px 0;
         justify-content: flex-end;
         background-position: center;
-        background-size: auto;
+        background-size: cover;
+        @include media-breakpoint-down(md) {
+          padding: 50px 0;
+        }
         .assistance-block-inner {
-          width: calc((#{$column-width} * 7) - (#{$grid-gutter-width}));
-          padding-left: $column-width;
-          padding-right: calc((#{$column-width} * 2));
+          @include media-breakpoint-up(xl) {
+            width: calc((#{$column-width-xl} * 7) - (#{$grid-gutter-width}));
+            padding-left: $column-width-xl;
+            padding-right: calc((#{$column-width-xl} * 2));
+          }
+          @include media-breakpoint-down(xl) {
+            width: calc((#{$column-width-lg} * 7) - (#{$grid-gutter-width}));
+            padding-left: $column-width-lg;
+            padding-right: calc((#{$column-width-lg} * 2));
+          }
+          @include media-breakpoint-down(lg) {
+            width: calc((#{$column-width-md} * 7) - (#{$grid-gutter-width}));
+            padding-left: $grid-gutter-width;
+            padding-right: $column-width-lg;
+          }
+          @include media-breakpoint-down(md) {
+            width: 100%;
+            padding: $grid-gutter-width;
+          }
 
           .field--name-field-br-icon {
             @include rounded-icon(100px, $blue_light);
@@ -542,13 +577,36 @@ body.node--type-product {
         background: $yellow;
         position: absolute;
         top: 80px;
-        right: 0px;
+        right: 0;
         left: calc((100vw / 2) + (#{$grid-gutter-width}/2));
         padding: 100px 0 80px;
+        @include media-breakpoint-down(md) {
+          position: relative;
+          left: initial;
+          right: initial;
+          top: initial;
+          padding: 50px 0;
+        }
         .assistance-block-inner {
-          width: calc((#{$column-width} * 6) - (#{$grid-gutter-width}));
-          padding-left: $column-width;
-          padding-right: $column-width;
+          @include media-breakpoint-up(xl) {
+            width: calc((#{$column-width-xl} * 6) - (#{$grid-gutter-width}));
+            padding-left: $column-width-xl;
+            padding-right: calc((#{$column-width-xl} * 2));
+          }
+          @include media-breakpoint-down(xl) {
+            width: calc((#{$column-width-lg} * 6) - (#{$grid-gutter-width}));
+            padding-left: $column-width-lg;
+            padding-right: calc((#{$column-width-lg} * 2));
+          }
+          @include media-breakpoint-down(lg) {
+            width: calc((#{$column-width-md} * 6) - (#{$grid-gutter-width}));
+            padding-left: $grid-gutter-width;
+            padding-right: $column-width-lg;
+          }
+          @include media-breakpoint-down(md) {
+            width: 100%;
+            padding: $grid-gutter-width;
+          }
 
           h3 {
             color: $blue;
