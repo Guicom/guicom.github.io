@@ -490,6 +490,19 @@ body.node--type-product {
   }
 
   // Multiline
+  // Standard style
+
+  .field--name-field-product-multiline {
+    > .field__item {
+      > div:not(.paragraph--type-content) {
+        @include make-container-max-widths();
+        margin-right: auto;
+        margin-left: auto;
+        padding-right: 15px;
+        padding-left: 15px;
+      }
+    }
+  }
   // Hero style
   .product-content-related {
     .product-content-related-wrapper {
