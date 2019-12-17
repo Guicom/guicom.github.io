@@ -13,6 +13,7 @@ dependencies:
     - field.field.node.product.field_product_cta_4
     - field.field.node.product.field_product_extid
     - field.field.node.product.field_product_family
+    - field.field.node.product.field_product_multiline
     - field.field.node.product.field_product_orc_content
     - field.field.node.product.field_product_orc_title
     - field.field.node.product.field_product_pictures
@@ -74,7 +75,7 @@ third_party_settings:
         - field_product_cta_3
         - field_product_cta_4
       parent_name: group_webmastering
-      weight: 9
+      weight: 10
       format_type: tab
       format_settings:
         label: CTA
@@ -101,6 +102,7 @@ third_party_settings:
       children:
         - field_product_advantage_text
         - field_background_hero_block
+        - field_product_multiline
         - group_op
         - group_associated_products
         - group_cta
@@ -119,7 +121,7 @@ third_party_settings:
         - field_product_orc_title
         - field_product_orc_content
       parent_name: group_webmastering
-      weight: 7
+      weight: 8
       format_type: tab
       format_settings:
         id: ''
@@ -132,7 +134,7 @@ third_party_settings:
       children:
         - field_associated_products
       parent_name: group_webmastering
-      weight: 8
+      weight: 9
       format_type: tab
       format_settings:
         id: ''
@@ -246,6 +248,18 @@ content:
     third_party_settings: {  }
     type: options_select
     region: content
+  field_product_multiline:
+    type: entity_reference_paragraphs
+    weight: 7
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: closed
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: _none
+    third_party_settings: {  }
+    region: content
   field_product_orc_content:
     weight: 27
     settings:
@@ -326,7 +340,7 @@ content:
     region: content
   langcode:
     type: language_select
-    weight: 1
+    weight: 2
     region: content
     settings:
       include_locked: true

@@ -489,6 +489,81 @@ body.node--type-product {
     }
   }
 
+  // Multiline
+  // Hero style
+  .product-content-related {
+    .product-content-related-wrapper {
+      width: 100%;
+      padding: 70px 0;
+
+      .row {
+        align-items: center;
+      }
+      .hero-thumbnail {
+        display: flex;
+        justify-content: center;
+        .thumbnail-wrapper {
+          background: rgba(76, 175, 228, 0.5);
+          width: 471px;
+          height: 471px;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          img {
+            width: 270px;
+            height: auto;
+          }
+        }
+      }
+      .hero-content {
+        .field--name-field-title {
+          color: $white;
+          margin-bottom: 40px;
+        }
+
+        .field--name-title {
+          color: $yellow;
+          font-family: $font-poppins;
+          font-size: 18px;
+          font-weight: 600;
+          line-height: 30px;
+          display: block;
+        }
+
+        .field--name-field-client-name {
+          color: $white;
+          font-family: $font-poppins;
+          font-size: 18px;
+          font-weight: 600;
+          line-height: 30px;
+          margin-bottom: 20px;
+        }
+
+        .product-content-related-baseline {
+          color: $white;
+          font-family: $font-roboto;
+          font-size: 16px;
+          line-height: 25px;
+          margin-bottom: 25px;
+        }
+
+        .product-content-link {
+          display: flex;
+          .field--name-field-pardot-cta-text {
+            color: $white;
+            font-family: $font-poppins;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            line-height: 20px;
+            margin-left: 15px;
+          }
+        }
+      }
+    }
+  }
+
   // Assistance
   $column-width-xl : absolute-width-column(xl);
   $column-width-lg : absolute-width-column(lg);
@@ -591,12 +666,12 @@ body.node--type-product {
           @include media-breakpoint-up(xl) {
             width: calc((#{$column-width-xl} * 6) - (#{$grid-gutter-width}));
             padding-left: $column-width-xl;
-            padding-right: calc((#{$column-width-xl} * 2));
+            padding-right: calc((#{$column-width-xl} * 1));
           }
           @include media-breakpoint-down(xl) {
             width: calc((#{$column-width-lg} * 6) - (#{$grid-gutter-width}));
             padding-left: $column-width-lg;
-            padding-right: calc((#{$column-width-lg} * 2));
+            padding-right: calc((#{$column-width-lg} * 1));
           }
           @include media-breakpoint-down(lg) {
             width: calc((#{$column-width-md} * 6) - (#{$grid-gutter-width}));

@@ -13,6 +13,7 @@ dependencies:
     - field.field.node.product.field_product_cta_4
     - field.field.node.product.field_product_extid
     - field.field.node.product.field_product_family
+    - field.field.node.product.field_product_multiline
     - field.field.node.product.field_product_orc_content
     - field.field.node.product.field_product_orc_title
     - field.field.node.product.field_product_pictures
@@ -64,6 +65,7 @@ third_party_settings:
         - field_product_orc_title
         - field_product_orc_content
         - field_associated_products
+        - field_product_multiline
     fields:
       node_post_date:
         plugin_id: node_post_date
@@ -172,6 +174,15 @@ content:
     settings:
       link: true
     third_party_settings: {  }
+  field_product_multiline:
+    type: entity_reference_revisions_entity_view
+    weight: 20
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: ds_content
   field_product_orc_content:
     weight: 18
     label: hidden

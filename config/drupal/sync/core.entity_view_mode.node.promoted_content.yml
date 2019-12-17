@@ -1,0 +1,10 @@
+uuid: 74b31f44-aa76-4194-ba67-d766441ca64f
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.promoted_content
+label: 'Promoted content'
+targetEntityType: node
+cache: true

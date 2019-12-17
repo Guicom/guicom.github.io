@@ -4,27 +4,27 @@
             "href": ""
         },
         "type": {
-            "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/link"
+            "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/content"
         },
-        "http:\/\/drupal.org\/rest\/relation\/paragraph\/link\/field_link_paragraph": [
+        "http:\/\/drupal.org\/rest\/relation\/paragraph\/content\/field_content": [
             {
-                "href": "http:\/\/default\/admin\/content\/paragraphs\/5?_format=hal_json"
+                "href": "http:\/\/default\/landing-page-premium\/whitepaper\/comment-garantir-la-continuite-dalimentation-des-blocs-operatoires?_format=hal_json"
             }
         ]
     },
     "id": [
         {
-            "value": 27
+            "value": 33
         }
     ],
     "uuid": [
         {
-            "value": "7ead3cd8-8918-4529-8215-a6df919d44f6"
+            "value": "4dfc13a1-7179-491f-a2e7-bf37576c78b4"
         }
     ],
     "revision_id": [
         {
-            "value": 153
+            "value": 154
         }
     ],
     "langcode": [
@@ -35,7 +35,7 @@
     ],
     "type": [
         {
-            "target_id": "link"
+            "target_id": "content"
         }
     ],
     "status": [
@@ -46,7 +46,7 @@
     ],
     "created": [
         {
-            "value": "2019-12-06T10:08:03+00:00",
+            "value": "2019-12-17T13:15:08+00:00",
             "lang": "en",
             "format": "Y-m-d\\TH:i:sP"
         }
@@ -63,7 +63,7 @@
     ],
     "parent_field_name": [
         {
-            "value": "field_product_cta_4"
+            "value": "field_product_multiline"
         }
     ],
     "behavior_settings": [
@@ -77,20 +77,26 @@
             "lang": "en"
         }
     ],
+    "revision_translation_affected": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
     "_embedded": {
-        "http:\/\/drupal.org\/rest\/relation\/paragraph\/link\/field_link_paragraph": [
+        "http:\/\/drupal.org\/rest\/relation\/paragraph\/content\/field_content": [
             {
                 "_links": {
                     "self": {
-                        "href": "http:\/\/default\/admin\/content\/paragraphs\/5?_format=hal_json"
+                        "href": "http:\/\/default\/landing-page-premium\/whitepaper\/comment-garantir-la-continuite-dalimentation-des-blocs-operatoires?_format=hal_json"
                     },
                     "type": {
-                        "href": "http:\/\/drupal.org\/rest\/type\/paragraphs_library_item\/paragraphs_library_item"
+                        "href": "http:\/\/drupal.org\/rest\/type\/node\/landing_page"
                     }
                 },
                 "uuid": [
                     {
-                        "value": "0bed844c-c88c-4688-8c46-06ce4b40bea5"
+                        "value": "97db1ea4-30af-414e-8460-e399f3d8c3b1"
                     }
                 ]
             }
