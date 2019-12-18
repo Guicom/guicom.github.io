@@ -10,6 +10,7 @@ dependencies:
     - field.field.node.product_reference.field_nombre_de_pole
     - field.field.node.product_reference.field_product_status
     - field.field.node.product_reference.field_reference_extid
+    - field.field.node.product_reference.field_reference_json_table
     - field.field.node.product_reference.field_reference_name
     - field.field.node.product_reference.field_reference_picture
     - field.field.node.product_reference.field_reference_ref
@@ -76,6 +77,13 @@ content:
     third_party_settings: {  }
     type: string
     region: content
+  field_reference_json_table:
+    weight: 111
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
   field_reference_name:
     weight: 104
     label: above
@@ -103,9 +111,9 @@ content:
     region: content
   links:
     weight: 100
+    region: content
     settings: {  }
     third_party_settings: {  }
-    region: content
 hidden:
   addtoany: true
   langcode: true

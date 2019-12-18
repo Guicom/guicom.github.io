@@ -45,7 +45,7 @@
     ],
     "vid": [
         {
-            "value": 25
+            "value": 55
         }
     ],
     "langcode": [
@@ -61,7 +61,7 @@
     ],
     "revision_timestamp": [
         {
-            "value": "2019-12-03T13:06:22+00:00",
+            "value": "2019-12-12T14:14:23+00:00",
             "format": "Y-m-d\\TH:i:sP"
         }
     ],
@@ -174,7 +174,7 @@
     ],
     "changed": [
         {
-            "value": "2019-12-03T13:06:22+00:00",
+            "value": "2019-12-12T14:14:23+00:00",
             "lang": "en",
             "format": "Y-m-d\\TH:i:sP"
         }
@@ -229,6 +229,11 @@
     "field_reference_extid": [
         {
             "value": "R_22003110"
+        }
+    ],
+    "field_reference_json_table": [
+        {
+            "value": "{\r\n  \"Name\": \"22003110-SIRCO MV 3X100A\",\r\n  \"Reference\": \"22003110\",\r\n  \"WEIGHT\": \"0,837\",\r\n  \"Nombre de p\u00f4le\": \"1 P\",\r\n  \"Format de boitier\": \"Format de boitier A\",\r\n\"Test champs vide\": \"\"\r\n}"
         }
     ],
     "field_reference_ref": [

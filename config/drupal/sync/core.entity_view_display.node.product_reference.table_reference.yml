@@ -1,0 +1,53 @@
+uuid: 0fb1a733-2a66-426f-8415-241346dbec6d
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.table_reference
+    - field.field.node.product_reference.field_dc_r_erp_dimension_unit
+    - field.field.node.product_reference.field_dc_r_erp_weight
+    - field.field.node.product_reference.field_format_de_boitier
+    - field.field.node.product_reference.field_json_product_data
+    - field.field.node.product_reference.field_nombre_de_pole
+    - field.field.node.product_reference.field_product_status
+    - field.field.node.product_reference.field_reference_extid
+    - field.field.node.product_reference.field_reference_json_table
+    - field.field.node.product_reference.field_reference_name
+    - field.field.node.product_reference.field_reference_picture
+    - field.field.node.product_reference.field_reference_ref
+    - node.type.product_reference
+  module:
+    - ds
+    - user
+id: node.product_reference.table_reference
+targetEntityType: node
+bundle: product_reference
+mode: table_reference
+content:
+  field_reference_json_table:
+    weight: 0
+    label: hidden
+    settings: {  }
+    third_party_settings:
+      ds:
+        ft:
+          id: reset
+          settings:
+            lb: ''
+    type: basic_string
+    region: content
+hidden:
+  addtoany: true
+  field_dc_r_erp_dimension_unit: true
+  field_dc_r_erp_weight: true
+  field_format_de_boitier: true
+  field_json_product_data: true
+  field_nombre_de_pole: true
+  field_product_status: true
+  field_reference_extid: true
+  field_reference_name: true
+  field_reference_picture: true
+  field_reference_ref: true
+  langcode: true
+  links: true
+  search_api_excerpt: true

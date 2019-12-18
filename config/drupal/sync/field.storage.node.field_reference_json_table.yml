@@ -1,0 +1,19 @@
+uuid: f3a6934a-936f-4aee-b659-38c3e553e118
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_reference_json_table
+field_name: field_reference_json_table
+entity_type: node
+type: string_long
+settings:
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
