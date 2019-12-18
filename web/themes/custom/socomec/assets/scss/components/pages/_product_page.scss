@@ -245,10 +245,12 @@ body.node--type-product {
       list-style: none;
       li {
         display: flex;
-        align-items: center;
+        align-items: baseline;
         margin-bottom: 10px;
         svg {
           margin-right: 5px;
+          flex-basis: 16px;
+          min-width: 16px;
         }
         a {
           color: $darker-grey;
