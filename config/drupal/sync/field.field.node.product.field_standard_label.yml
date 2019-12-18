@@ -1,0 +1,67 @@
+uuid: af80c485-ed0b-4293-b2da-f3eb120e94aa
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_standard_label
+    - node.type.product
+    - paragraphs.paragraphs_type.standard_label
+  module:
+    - entity_reference_revisions
+id: node.product.field_standard_label
+field_name: field_standard_label
+entity_type: node
+bundle: product
+label: 'Standard label'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      standard_label: standard_label
+    target_bundles_drag_drop:
+      standard_label:
+        enabled: true
+        weight: 14
+      from_library:
+        weight: 15
+        enabled: false
+      hero_paragraph:
+        weight: 16
+        enabled: false
+      key_figures:
+        weight: 17
+        enabled: false
+      link:
+        weight: 18
+        enabled: false
+      model_cta:
+        weight: 19
+        enabled: false
+      model_image:
+        weight: 20
+        enabled: false
+      model_testimony:
+        weight: 21
+        enabled: false
+      model_text:
+        weight: 22
+        enabled: false
+      pardot_form:
+        weight: 23
+        enabled: false
+      premium_content_promotion:
+        weight: 24
+        enabled: false
+      product_faq:
+        weight: 25
+        enabled: false
+      video_embed:
+        weight: 26
+        enabled: false
+field_type: entity_reference_revisions

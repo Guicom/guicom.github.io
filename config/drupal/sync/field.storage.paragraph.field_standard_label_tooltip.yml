@@ -1,0 +1,19 @@
+uuid: f181d28a-2fc7-4a0a-923b-0992e65e72a8
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+id: paragraph.field_standard_label_tooltip
+field_name: field_standard_label_tooltip
+entity_type: paragraph
+type: string_long
+settings:
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

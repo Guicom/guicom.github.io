@@ -4,27 +4,27 @@
             "href": ""
         },
         "type": {
-            "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/link"
+            "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/standard_label"
         },
-        "http:\/\/drupal.org\/rest\/relation\/paragraph\/link\/field_link_paragraph": [
+        "http:\/\/drupal.org\/rest\/relation\/paragraph\/standard_label\/field_label": [
             {
-                "href": "http:\/\/default\/admin\/content\/paragraphs\/4?_format=hal_json"
+                "href": "http:\/\/default\/taxonomy\/term\/14?_format=hal_json"
             }
         ]
     },
     "id": [
         {
-            "value": 26
+            "value": 28
         }
     ],
     "uuid": [
         {
-            "value": "1fdc9869-fa70-406a-920b-08cd75e2fc5a"
+            "value": "99faba6a-beb0-454d-8c53-00e60ef45916"
         }
     ],
     "revision_id": [
         {
-            "value": 104
+            "value": 106
         }
     ],
     "langcode": [
@@ -35,7 +35,7 @@
     ],
     "type": [
         {
-            "target_id": "link"
+            "target_id": "standard_label"
         }
     ],
     "status": [
@@ -46,7 +46,7 @@
     ],
     "created": [
         {
-            "value": "2019-12-06T10:07:56+00:00",
+            "value": "2019-12-09T13:45:23+00:00",
             "lang": "en",
             "format": "Y-m-d\\TH:i:sP"
         }
@@ -63,7 +63,7 @@
     ],
     "parent_field_name": [
         {
-            "value": "field_product_cta_3"
+            "value": "field_standard_label"
         }
     ],
     "behavior_settings": [
@@ -77,23 +77,34 @@
             "lang": "en"
         }
     ],
+    "revision_translation_affected": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
     "_embedded": {
-        "http:\/\/drupal.org\/rest\/relation\/paragraph\/link\/field_link_paragraph": [
+        "http:\/\/drupal.org\/rest\/relation\/paragraph\/standard_label\/field_label": [
             {
                 "_links": {
                     "self": {
-                        "href": "http:\/\/default\/admin\/content\/paragraphs\/4?_format=hal_json"
+                        "href": "http:\/\/default\/taxonomy\/term\/14?_format=hal_json"
                     },
                     "type": {
-                        "href": "http:\/\/drupal.org\/rest\/type\/paragraphs_library_item\/paragraphs_library_item"
+                        "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/product_label"
                     }
                 },
                 "uuid": [
                     {
-                        "value": "cdd03917-cf86-4166-97e9-7e4782c7fe65"
+                        "value": "195a88c2-aa40-4c76-871e-9724e68ccc0f"
                     }
                 ]
             }
         ]
-    }
+    },
+    "field_standard_label_tooltip": [
+        {
+            "value": "UL 98, Guide WHTY file E201138"
+        }
+    ]
 }
