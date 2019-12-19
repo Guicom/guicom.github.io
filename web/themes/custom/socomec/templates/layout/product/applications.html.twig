@@ -10,23 +10,38 @@
   ['DC_P_ADVANTAGE_8_TITLE', 'DC_P_ADVANTAGE_1_TEXT']
 ]
 %}
-<h2 class="field--name-field-title ">{{ 'Advantages' |t }}</h2>
-{{ drupal_field('field_product_advantage_text', 'node') }}
+<div class="advantage-wrapper col-md-8">
+  <h2 class="field--name-field-title ">{{ 'Advantages' |t }}</h2>
+  {{ drupal_field('field_product_advantage_text', 'node') }}
 
-<div class="advantage-element-wrapper">
-  {% for field in fields %}
-    {% if drupal_field('field_json_product_data', 'node') | getfield(field.0) %}
-      <div class="advantage-element col-md-6">
-        <div class="row">
-          <h3 id="{{ field.0 }}" class="h3-blue">
-            {{ drupal_field('field_json_product_data', 'node') | getfield(field.0) }}
-          </h3>
-          {% if drupal_field('field_json_product_data', 'node') | getfield(field.1) %}
-            <p>{{ drupal_field('field_json_product_data', 'node') | getfield(field.1) }}</p>
-          {% endif %}
+  <div class="advantage-element-wrapper">
+    {% for field in fields %}
+      {% if drupal_field('field_json_product_data', 'node') | getfield(field.0) %}
+        <div class="advantage-element col-md-6">
+          <div class="row">
+            <h3 id="{{ field.0 }}" class="h3-blue">
+              {{ drupal_field('field_json_product_data', 'node') | getfield(field.0) }}
+            </h3>
+            {% if drupal_field('field_json_product_data', 'node') | getfield(field.1) %}
+              <p>{{ drupal_field('field_json_product_data', 'node') | getfield(field.1) }}</p>
+            {% endif %}
+          </div>
         </div>
-      </div>
-    {% endif %}
-  {% endfor %}
-</div>
+      {% endif %}
+    {% endfor %}
 
+  </div>
+</div>
+<div class="application-element col-md-3 ml-auto">
+  <div class="row">
+    <div class="applications-wrapper">
+      <h2>{{ drupal_field('field_product_application_label', 'node') }}</h2>
+      <ul>
+        {% for advantage in  drupal_field('field_json_product_data', 'node') | getfield('DC_P_APPLICATIONS') %}
+          <li>{% include '/themes/custom/socomec/assets/images/picto/ui/chevron-right-circle-white.svg' %} {{ advantage }}</li>
+        {% endfor %}
+      </ul>
+      {{ drupal_field('field_product_application_link', 'node') }}
+    </div>
+  </div>
+</div>

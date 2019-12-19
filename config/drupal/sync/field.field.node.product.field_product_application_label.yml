@@ -1,0 +1,21 @@
+uuid: 0a9c12b7-968a-4416-aa66-e6f03934b250
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_product_application_label
+    - node.type.product
+id: node.product.field_product_application_label
+field_name: field_product_application_label
+entity_type: node
+bundle: product
+label: 'Application label'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: Applications
+default_value_callback: ''
+settings: {  }
+field_type: string

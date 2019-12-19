@@ -145,25 +145,24 @@
             <section class="section-grey-light" id="product-reference-section">
               <div class="container">
                 <div class="row">
-                    <div class="advantage-wrapper col-md-12">
-                      <h2 class="field--name-field-title ">{{ 'References' |t }}</h2>
-                      {{ drupal_field('field_product_reference', 'node') }}
-                    </div>
-                  </div>
-              </div>
-            </section>
-          {% endif %}
-          {% if drupal_field('field_json_product_data', 'node') | getfield('DC_P_ADVANTAGE_1_TITLE') or drupal_field('field_json_product_data', 'node') | getfield('DC_P_ADVANTAGE_1_TEXT') %}
-            <section class="section-light" id="product-avantage-section">
-              <div class="container">
-                <div class="row">
-                  <div class="advantage-wrapper col-md-9">
-                    {% include '@socomec/layout/product/applications.html.twig' %}
+                  <div class="product-reference-wrapper col-md-12">
+                    <h2 class="field--name-field-title ">{{ 'References' |t }}</h2>
+                    {{ drupal_field('field_product_reference', 'node') }}
                   </div>
                 </div>
               </div>
             </section>
           {% endif %}
+
+          <section class="section-light" id="product-avantage-section">
+            <div class="container">
+              <div class="row">
+
+                {% include '@socomec/layout/product/applications.html.twig' %}
+              </div>
+            </div>
+          </section>
+
           {% if drupal_field('field_product_multiline', 'node')[0] %}
             <section class="section-light" id="product-multiline-section">
               {{ drupal_field('field_product_multiline', 'node') }}

@@ -388,6 +388,60 @@ body.node--type-product {
     }
   }
 
+  // Applications
+  .application-element {
+    .applications-wrapper {
+      background: $blue_light;
+      position: relative;
+      padding: 30px;
+      @include left-overflow-color($blue_light);
+
+      h2 {
+        color: $yellow;
+        font-family: $font-roboto;
+        font-size: 32px;
+        font-weight: 300;
+        line-height: 40px;
+        margin-bottom: 30px;
+      }
+
+      ul {
+        list-style: none;
+        padding: 0;
+        margin-bottom: 40px;
+        li {
+          svg {
+            margin-right: 5px;
+          }
+          color: $white;
+          font-family: $font-poppins;
+          font-size: 12px;
+          font-weight: 600;
+          letter-spacing: 0.5px;
+          line-height: 20px;
+          margin-bottom: 15px;
+        }
+      }
+
+      a {
+        color: $yellow;
+        font-family: $font-poppins;
+        font-size: 12px;
+        font-weight: 600;
+        letter-spacing: 1px;
+        line-height: 20px;
+        display: flex;
+        align-items: center;
+        text-transform: uppercase;
+
+        img {
+          margin-right: 10px;
+        }
+      }
+    }
+  }
+
+
   // Reference
   #product-reference-table {
     visibility: hidden;
