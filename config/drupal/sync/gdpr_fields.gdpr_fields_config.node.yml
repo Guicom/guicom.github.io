@@ -551,6 +551,17 @@ bundles:
       notes: ''
       relationship: 0
       sars_filename: ''
+    field_multiline_anchor_name:
+      bundle: product
+      name: field_multiline_anchor_name
+      entity_type_id: node
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
   thank_you_page:
     field_title:
       bundle: thank_you_page

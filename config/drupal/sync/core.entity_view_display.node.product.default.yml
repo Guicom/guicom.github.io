@@ -6,6 +6,7 @@ dependencies:
     - field.field.node.product.field_associated_products
     - field.field.node.product.field_background_hero_block
     - field.field.node.product.field_json_product_data
+    - field.field.node.product.field_multiline_anchor_name
     - field.field.node.product.field_product_advantage_text
     - field.field.node.product.field_product_cta_1
     - field.field.node.product.field_product_cta_2
@@ -66,6 +67,7 @@ third_party_settings:
         - field_product_orc_content
         - field_associated_products
         - field_product_multiline
+        - field_multiline_anchor_name
     fields:
       node_post_date:
         plugin_id: node_post_date
@@ -123,6 +125,19 @@ content:
     label: above
     settings: {  }
     third_party_settings: {  }
+  field_multiline_anchor_name:
+    weight: 21
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings:
+      ds:
+        ft:
+          id: reset
+          settings:
+            lb: ''
+    type: string
+    region: ds_content
   field_product_advantage_text:
     weight: 5
     label: hidden
@@ -203,7 +218,12 @@ content:
     label: hidden
     settings:
       link_to_entity: false
-    third_party_settings: {  }
+    third_party_settings:
+      ds:
+        ft:
+          id: reset
+          settings:
+            lb: ''
     type: string
     region: ds_content
   field_product_pictures:

@@ -94,93 +94,115 @@
     {% endif %}
     <main id="main-wrapper" class="layout-main-wrapper clearfix">
       {% block content %}
+        <aside class="product-navigation position-sticky sticky-top">
+          {% include '@socomec/layout/product/navigation.html.twig' %}
+        </aside>
         <article id="main" class="container-fluid">
-            <section class="section-light" id="product-info-section">
-              <div class="container">
-                <div class="row">
-                  <aside class="product-navigation"></aside>
-                  <div class="col-md-9">
-                    <div class="row">
-                      <div class="strong-points col-md-5">
-                        {% include '@socomec/layout/product/strong-points.html.twig' %}
-                      </div>
+          <section class="section-light" id="product-info-section">
+            <div class="container">
+              <div class="row">
+                <aside class="product-navigation"></aside>
+                <div class="col-md-9">
+                  <div class="row">
+                    <div class="strong-points col-md-5">
+                      {% include '@socomec/layout/product/strong-points.html.twig' %}
+                    </div>
+                    {% if drupal_field('field_json_product_data', 'node') | getfield('DC_P_LONG_DESCRIPTION') %}
                       <div class="product-function col-md-6">
                         <h3 class="h3-blue">{{ 'Function' |t }}</h3>
                         <p>{{ drupal_field('field_json_product_data', 'node') | getfield('DC_P_LONG_DESCRIPTION') }}</p>
                       </div>
-                    </div>
-                    <div class="row">
+                    {% endif %}
+                  </div>
+                  <div class="row">
+                    {% if drupal_field('field_standard_label', 'node')[0] %}
                       <div class="product-services col-md-11">
                         <h3 class="h3-blue">{{ 'Standards' |t }}</h3>
                         {{ drupal_field('field_standard_label', 'node') }}
                       </div>
-                    </div>
-                    <div class="row">
+                    {% endif %}
+                  </div>
+                  <div class="row">
+                    {% if drupal_field('field_json_product_data', 'node') | getfield('DC_P_ASSOCIATED_SERVICES') %}
                       <div class="product-services col-md-11">
                         <h3 class="h3-blue">{{ 'Services' |t }}</h3>
                         <p>{{ drupal_field('field_json_product_data', 'node') | getfield('DC_P_ASSOCIATED_SERVICES') }}</p>
                       </div>
-                    </div>
+                    {% endif %}
                   </div>
-                  <div class="col-md-3">
+                </div>
+                <div class="col-md-3">
+                  {% if drupal_field('field_protection_level', 'node')[0] %}
                     <div class="row">
                       {{ drupal_field('field_protection_level', 'node') }}
+                    </div>
+                  {% endif %}
+                </div>
+              </div>
+            </div>
+          </section>
+          {% if drupal_field('field_product_reference', 'node')[0] %}
+            <section class="section-grey-light" id="product-reference-section">
+              <div class="container">
+                <div class="row">
+                    <div class="advantage-wrapper col-md-12">
+                      <h2 class="field--name-field-title ">{{ 'References' |t }}</h2>
+                      {{ drupal_field('field_product_reference', 'node') }}
+                    </div>
+                  </div>
+              </div>
+            </section>
+          {% endif %}
+          {% if drupal_field('field_json_product_data', 'node') | getfield('DC_P_ADVANTAGE_1_TITLE') or drupal_field('field_json_product_data', 'node') | getfield('DC_P_ADVANTAGE_1_TEXT') %}
+            <section class="section-light" id="product-avantage-section">
+              <div class="container">
+                <div class="row">
+                  <div class="advantage-wrapper col-md-9">
+                    {% include '@socomec/layout/product/applications.html.twig' %}
+                  </div>
+                </div>
+              </div>
+            </section>
+          {% endif %}
+          {% if drupal_field('field_product_multiline', 'node')[0] %}
+            <section class="section-light" id="product-multiline-section">
+              {{ drupal_field('field_product_multiline', 'node') }}
+            </section>
+          {%  endif %}
+        </article>
+        <article class="container-fluid">
+          {% if drupal_entity('block','homeproductassistance')[0] %}
+            <section class="section-light" id="assistance-section">
+              <div class="container">
+                <div class="row">
+                  <div class="advantage-wrapper col-md-12">
+                    <h2 class="field--name-field-title ">{{ 'Assistance' | t }}</h2>
+                  </div>
+                </div>
+              </div>
+              <div class="large-content row">
+                {{ drupal_entity('block','homeproductassistance') }}
+              </div>
+            </section>
+          {% endif %}
+          {% if drupal_field('field_product_orc_content', 'node')[0] %}
+            <section class="section-light" id="product-orc-section">
+              <div class="container">
+                <div class="row">
+                  <div class="advantage-wrapper col-md-12">
+                    <h2 class="field--name-field-title ">{{ drupal_field('field_product_orc_title', 'node') }}</h2>
+                    <div class="row">
+                      {{ drupal_field('field_product_orc_content', 'node') }}
                     </div>
                   </div>
                 </div>
               </div>
             </section>
-          <section class="section-grey-light" id="product-reference-section">
-            <div class="container">
-              <div class="row">
-                <div class="advantage-wrapper col-md-12">
-                  <h2 class="field--name-field-title ">{{ 'References' |t }}</h2>
-                  {{ drupal_field('field_product_reference', 'node') }}
-                </div>
-              </div>
-            </div>
-          </section>
-          <section class="section-light" id="product-avantage-section">
-            <div class="container">
-              <div class="row">
-                <div class="advantage-wrapper col-md-9">
-                  {% include '@socomec/layout/product/applications.html.twig' %}
-                </div>
-              </div>
-            </div>
-          </section>
-          <section class="section-light" id="product-multiline-section">
-            {{ drupal_field('field_product_multiline', 'node') }}
-          </section>
-        </article>
-        <article class="container-fluid">
-          <section class="section-light" id="assistance-section">
-            <div class="container">
-              <div class="row">
-                <div class="advantage-wrapper col-md-12">
-                  <h2 class="field--name-field-title ">{{ 'Assistance' | t }}</h2>
-                </div>
-              </div>
-            </div>
-            <div class="large-content row">
-              {{ drupal_entity('block','homeproductassistance') }}
-            </div>
-          </section>
-          <section class="section-light" id="product-orc-section">
-            <div class="container">
-              <div class="row">
-                <div class="advantage-wrapper col-md-12">
-                  <h2 class="field--name-field-title ">{{ drupal_field('field_product_orc_title', 'node') }}</h2>
-                  <div class="row">
-                    {{ drupal_field('field_product_orc_content', 'node') }}
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
-          <section class="section-grey-light" id="product-associate-section">
-            <div class="product-associate-section-inner">
-              <h2 class="field--name-field-title ">{{ 'Associated products' |t }}</h2>
+          {% endif %}
+          {%  if drupal_field('field_associated_products', 'node')[0] %}
+            <section class="section-grey-light" id="product-associate-section">
+              <div class="product-associate-section-inner">
+                <h2 class="field--name-field-title ">{{ 'Associated products' |t }}</h2>
                 <div class="related-product-wrapper col-md-12">
                   <div class="row">
                     <div class="product-intro">
@@ -194,8 +216,9 @@
                     </div>
                   </div>
                 </div>
-            </div>
-          </section>
+              </div>
+            </section>
+          {%  endif %}
         </article>
       {% endblock %}
     </main>

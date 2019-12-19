@@ -6,6 +6,7 @@ dependencies:
     - field.field.node.product.field_associated_products
     - field.field.node.product.field_background_hero_block
     - field.field.node.product.field_json_product_data
+    - field.field.node.product.field_multiline_anchor_name
     - field.field.node.product.field_product_advantage_text
     - field.field.node.product.field_product_cta_1
     - field.field.node.product.field_product_cta_2
@@ -102,7 +103,7 @@ third_party_settings:
       children:
         - field_product_advantage_text
         - field_background_hero_block
-        - field_product_multiline
+        - group_multiline
         - group_op
         - group_associated_products
         - group_cta
@@ -143,6 +144,20 @@ third_party_settings:
         description: ''
         required_fields: true
       label: 'Associated products'
+    group_multiline:
+      children:
+        - field_multiline_anchor_name
+        - field_product_multiline
+      parent_name: group_webmastering
+      weight: 7
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+      label: Multiline
 id: node.product.default
 targetEntityType: node
 bundle: product
@@ -178,6 +193,14 @@ content:
     third_party_settings: {  }
     type: string_textarea
     region: content
+  field_multiline_anchor_name:
+    weight: 8
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
   field_product_advantage_text:
     weight: 5
     settings:
@@ -200,7 +223,7 @@ content:
     region: content
   field_product_cta_2:
     type: entity_reference_paragraphs
-    weight: 9
+    weight: 10
     settings:
       title: Paragraph
       title_plural: Paragraphs
@@ -212,7 +235,7 @@ content:
     region: content
   field_product_cta_3:
     type: entity_reference_paragraphs
-    weight: 10
+    weight: 11
     settings:
       title: Paragraph
       title_plural: Paragraphs
@@ -224,7 +247,7 @@ content:
     region: content
   field_product_cta_4:
     type: entity_reference_paragraphs
-    weight: 11
+    weight: 12
     settings:
       title: Paragraph
       title_plural: Paragraphs
@@ -250,7 +273,7 @@ content:
     region: content
   field_product_multiline:
     type: entity_reference_paragraphs
-    weight: 7
+    weight: 9
     settings:
       title: Paragraph
       title_plural: Paragraphs
