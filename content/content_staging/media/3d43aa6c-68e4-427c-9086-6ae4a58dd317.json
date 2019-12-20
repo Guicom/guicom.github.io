@@ -1,7 +1,7 @@
 {
     "_links": {
         "self": {
-            "href": "http:\/\/default\/media\/5\/edit?_format=hal_json"
+            "href": "http:\/\/default\/media\/18\/edit?_format=hal_json"
         },
         "type": {
             "href": "http:\/\/drupal.org\/rest\/type\/media\/product_image"
@@ -27,17 +27,17 @@
     },
     "mid": [
         {
-            "value": 5
+            "value": 18
         }
     ],
     "uuid": [
         {
-            "value": "3730773d-ee4c-4372-9655-3f85773cc5a5"
+            "value": "3d43aa6c-68e4-427c-9086-6ae4a58dd317"
         }
     ],
     "vid": [
         {
-            "value": 5
+            "value": 18
         }
     ],
     "langcode": [
@@ -53,7 +53,7 @@
     ],
     "revision_created": [
         {
-            "value": "2019-12-03T15:40:26+00:00",
+            "value": "2019-12-06T16:58:08+00:00",
             "format": "Y-m-d\\TH:i:sP"
         }
     ],
@@ -76,7 +76,7 @@
                 },
                 "uuid": [
                     {
-                        "value": "d1cc969e-8191-4599-8f02-811902173a0d"
+                        "value": "6b256efb-5a0c-49c4-840f-f07357926f07"
                     }
                 ],
                 "lang": "en"
@@ -94,13 +94,13 @@
                 },
                 "uuid": [
                     {
-                        "value": "4920cfaf-4a67-46d4-8abf-3c2ad526d594"
+                        "value": "ae9f3698-8e37-4ad0-95a7-28778043b37c"
                     }
                 ],
                 "lang": "en",
-                "alt": "Sircm 132",
+                "alt": "SIRCO M",
                 "title": null,
-                "width": "635",
+                "width": "543",
                 "height": "800"
             }
         ],
@@ -116,33 +116,33 @@
                 },
                 "uuid": [
                     {
-                        "value": "4920cfaf-4a67-46d4-8abf-3c2ad526d594"
+                        "value": "ae9f3698-8e37-4ad0-95a7-28778043b37c"
                     }
                 ],
                 "lang": "en",
-                "alt": "Sircm 132",
+                "alt": "SIRCO M",
                 "title": "",
-                "width": "635",
+                "width": "543",
                 "height": "800"
             }
         ]
     },
     "name": [
         {
-            "value": "Sircm 132",
+            "value": "output-onlinepngtools.png",
             "lang": "en"
         }
     ],
     "created": [
         {
-            "value": "2019-12-02T14:42:27+00:00",
+            "value": "2019-12-06T16:40:48+00:00",
             "lang": "en",
             "format": "Y-m-d\\TH:i:sP"
         }
     ],
     "changed": [
         {
-            "value": "2019-12-02T14:42:40+00:00",
+            "value": "2019-12-06T16:40:48+00:00",
             "lang": "en",
             "format": "Y-m-d\\TH:i:sP"
         }

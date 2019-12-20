@@ -1,43 +1,40 @@
 {
     "_links": {
         "self": {
-            "href": "http:\/\/default\/media\/5\/edit?_format=hal_json"
+            "href": "http:\/\/default\/media\/17\/edit?_format=hal_json"
         },
         "type": {
-            "href": "http:\/\/drupal.org\/rest\/type\/media\/product_image"
+            "href": "http:\/\/drupal.org\/rest\/type\/media\/image"
         },
-        "http:\/\/drupal.org\/rest\/relation\/media\/product_image\/uid": [
+        "http:\/\/drupal.org\/rest\/relation\/media\/image\/uid": [
             {
-                "href": "http:\/\/default\/user\/1?_format=hal_json",
-                "lang": "en"
+                "href": "http:\/\/default\/user\/1?_format=hal_json"
             }
         ],
-        "http:\/\/drupal.org\/rest\/relation\/media\/product_image\/thumbnail": [
+        "http:\/\/drupal.org\/rest\/relation\/media\/image\/thumbnail": [
             {
-                "href": "",
-                "lang": "en"
+                "href": ""
             }
         ],
-        "http:\/\/drupal.org\/rest\/relation\/media\/product_image\/field_media_image_2": [
+        "http:\/\/drupal.org\/rest\/relation\/media\/image\/field_media_image": [
             {
-                "href": "",
-                "lang": "en"
+                "href": ""
             }
         ]
     },
     "mid": [
         {
-            "value": 5
+            "value": 17
         }
     ],
     "uuid": [
         {
-            "value": "3730773d-ee4c-4372-9655-3f85773cc5a5"
+            "value": "2d9c2530-f892-4e97-a1ff-7af591fadf21"
         }
     ],
     "vid": [
         {
-            "value": 5
+            "value": 17
         }
     ],
     "langcode": [
@@ -48,23 +45,22 @@
     ],
     "bundle": [
         {
-            "target_id": "product_image"
+            "target_id": "image"
         }
     ],
     "revision_created": [
         {
-            "value": "2019-12-03T15:40:26+00:00",
+            "value": "2019-12-06T14:27:24+00:00",
             "format": "Y-m-d\\TH:i:sP"
         }
     ],
     "status": [
         {
-            "value": true,
-            "lang": "en"
+            "value": true
         }
     ],
     "_embedded": {
-        "http:\/\/drupal.org\/rest\/relation\/media\/product_image\/uid": [
+        "http:\/\/drupal.org\/rest\/relation\/media\/image\/uid": [
             {
                 "_links": {
                     "self": {
@@ -76,13 +72,12 @@
                 },
                 "uuid": [
                     {
-                        "value": "d1cc969e-8191-4599-8f02-811902173a0d"
+                        "value": "6b256efb-5a0c-49c4-840f-f07357926f07"
                     }
-                ],
-                "lang": "en"
+                ]
             }
         ],
-        "http:\/\/drupal.org\/rest\/relation\/media\/product_image\/thumbnail": [
+        "http:\/\/drupal.org\/rest\/relation\/media\/image\/thumbnail": [
             {
                 "_links": {
                     "self": {
@@ -94,17 +89,16 @@
                 },
                 "uuid": [
                     {
-                        "value": "4920cfaf-4a67-46d4-8abf-3c2ad526d594"
+                        "value": "c2ab4524-1747-401b-97bb-4d9afd58495b"
                     }
                 ],
-                "lang": "en",
-                "alt": "Sircm 132",
+                "alt": "Example",
                 "title": null,
-                "width": "635",
-                "height": "800"
+                "width": "1300",
+                "height": "775"
             }
         ],
-        "http:\/\/drupal.org\/rest\/relation\/media\/product_image\/field_media_image_2": [
+        "http:\/\/drupal.org\/rest\/relation\/media\/image\/field_media_image": [
             {
                 "_links": {
                     "self": {
@@ -116,34 +110,30 @@
                 },
                 "uuid": [
                     {
-                        "value": "4920cfaf-4a67-46d4-8abf-3c2ad526d594"
+                        "value": "c2ab4524-1747-401b-97bb-4d9afd58495b"
                     }
                 ],
-                "lang": "en",
-                "alt": "Sircm 132",
+                "alt": "Example",
                 "title": "",
-                "width": "635",
-                "height": "800"
+                "width": "1300",
+                "height": "775"
             }
         ]
     },
     "name": [
         {
-            "value": "Sircm 132",
-            "lang": "en"
+            "value": "34665210-Rubber-stamp-with-word-example-inside-vector-illustration-Stock-Vector.jpg"
         }
     ],
     "created": [
         {
-            "value": "2019-12-02T14:42:27+00:00",
-            "lang": "en",
+            "value": "2019-12-06T14:27:13+00:00",
             "format": "Y-m-d\\TH:i:sP"
         }
     ],
     "changed": [
         {
-            "value": "2019-12-02T14:42:40+00:00",
-            "lang": "en",
+            "value": "2019-12-06T14:27:13+00:00",
             "format": "Y-m-d\\TH:i:sP"
         }
     ],
@@ -157,14 +147,6 @@
         {
             "value": true,
             "lang": "en"
-        }
-    ],
-    "metatag": [
-        {
-            "value": {
-                "title": "| Socomec",
-                "canonical_url": "http:\/\/default\/node"
-            }
         }
     ]
 }

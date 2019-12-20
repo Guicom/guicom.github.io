@@ -1,19 +1,19 @@
-uuid: 81f4ce53-352a-4298-a65b-30c6395ef796
+uuid: aafd9e13-ad7c-4f8d-af9e-87e8af25ea0c
 langcode: en
 status: true
 dependencies:
   module:
     - block_content
-    - media
-id: block_content.field_background_image
-field_name: field_background_image
+    - taxonomy
+id: block_content.field_tool_promotion_families
+field_name: field_tool_promotion_families
 entity_type: block_content
 type: entity_reference
 settings:
-  target_type: media
+  target_type: taxonomy_term
 module: core
 locked: false
-cardinality: 1
+cardinality: -1
 translatable: true
 indexes: {  }
 persist_with_no_fields: false
