@@ -16,7 +16,7 @@ class ProductReferenceTable {
    */
   public function buildTable($field) {
     $rows = [];
-    $header = $this->getHeader($field["items"] );
+    $header = $this->getHeader($field["items"]);
 
     foreach ($field["items"] as $key => $item) {
       $json = $item["content"]["#node"]->get('field_reference_json_table')->getValue();

@@ -1,0 +1,15 @@
+uuid: 67cb5448-ef20-4cf4-8224-fb5956c1482e
+langcode: en
+status: true
+dependencies: {  }
+name: 210x210
+label: 210x210
+effects:
+  c0446143-8c52-4bc5-877f-df631689e608:
+    uuid: c0446143-8c52-4bc5-877f-df631689e608
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 210
+      height: 210
+      anchor: center-center

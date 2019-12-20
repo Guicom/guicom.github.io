@@ -5,7 +5,17 @@
         },
         "type": {
             "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/hero_paragraph"
-        }
+        },
+        "http:\/\/drupal.org\/rest\/relation\/paragraph\/hero_paragraph\/field_background_image": [
+            {
+                "href": "http:\/\/default\/media\/17\/edit?_format=hal_json"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/paragraph\/hero_paragraph\/field_thumbnail": [
+            {
+                "href": "http:\/\/default\/media\/35\/edit?_format=hal_json"
+            }
+        ]
     },
     "id": [
         {
@@ -19,7 +29,7 @@
     ],
     "revision_id": [
         {
-            "value": 50
+            "value": 164
         }
     ],
     "langcode": [
@@ -76,6 +86,42 @@
             "lang": "en"
         }
     ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/paragraph\/hero_paragraph\/field_background_image": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/media\/17\/edit?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/media\/image"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "72fe5a74-1089-4a42-bbf6-7adc3b1f1937"
+                    }
+                ]
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/paragraph\/hero_paragraph\/field_thumbnail": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/media\/35\/edit?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/media\/image"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "c90678e0-5fa8-46f0-a75a-a1570dcc766c"
+                    }
+                ]
+            }
+        ]
+    },
     "field_baseline": [
         {
             "value": "Disponibilit\u00e9 de l\u2019\u00e9nergie des \u00e9tablissements de sant\u00e9"
