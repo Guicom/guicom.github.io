@@ -4622,6 +4622,7 @@
             }
         },
         {
+<<<<<<< HEAD
             "name": "drupal/link_target",
             "version": "1.2.0",
             "source": {
@@ -4669,6 +4670,8 @@
             }
         },
         {
+=======
+>>>>>>> 5443330b0cf42e4110a75cfe9bdb29fc5142c1d3
             "name": "drupal/menu_link_attributes",
             "version": "1.0.0",
             "source": {

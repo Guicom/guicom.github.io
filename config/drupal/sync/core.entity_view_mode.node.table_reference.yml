@@ -1,0 +1,10 @@
+uuid: 32dca7c2-e360-4df7-99ba-6d1f03ce4ba2
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.table_reference
+label: 'Table reference'
+targetEntityType: node
+cache: true

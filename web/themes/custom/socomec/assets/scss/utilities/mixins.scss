@@ -11,6 +11,10 @@
   }
 }
 
+@mixin transition-socomec {
+  transition: all 0.3s ease-out;
+}
+
 //
 // Alternate buttons
 //

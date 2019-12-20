@@ -14,10 +14,10 @@ dependencies:
     - field.field.node.product.field_product_family
     - field.field.node.product.field_product_pictures
     - field.field.node.product.field_product_reference
-    - field.field.node.product.field_product_standard_label
     - field.field.node.product.field_product_status
     - field.field.node.product.field_product_teaser
     - field.field.node.product.field_protection_level
+    - field.field.node.product.field_standard_label
     - node.type.product
   module:
     - ds
@@ -45,7 +45,6 @@ third_party_settings:
       ds_content:
         - field_product_family
         - field_product_pictures
-        - field_product_standard_label
         - field_product_teaser
         - field_protection_level
         - field_product_advantage_text
@@ -58,6 +57,7 @@ third_party_settings:
         - field_product_cta_2
         - field_product_cta_3
         - field_product_cta_4
+        - field_standard_label
     fields:
       node_post_date:
         plugin_id: node_post_date
@@ -172,17 +172,19 @@ content:
     weight: 6
     label: hidden
     settings:
-      link: true
-    third_party_settings: {  }
-    type: entity_reference_label
+      view_mode: table_reference
+      link: false
+    third_party_settings:
+      ds:
+        ds_limit: ''
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
+    type: entity_reference_entity_view
     region: ds_content
-  field_product_standard_label:
-    type: entity_reference_entity_id
-    weight: 2
-    region: ds_content
-    label: above
-    settings: {  }
-    third_party_settings: {  }
   field_product_teaser:
     weight: 3
     label: hidden
@@ -199,9 +201,26 @@ content:
     weight: 4
     label: hidden
     settings:
-      link: true
+      view_mode: product_page
+      link: false
+    third_party_settings:
+      ds:
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
+    type: entity_reference_entity_view
+    region: ds_content
+  field_standard_label:
+    type: entity_reference_revisions_entity_view
+    weight: 16
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
     third_party_settings: {  }
-    type: entity_reference_label
     region: ds_content
 hidden:
   addtoany: true
