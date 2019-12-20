@@ -7,6 +7,7 @@ filenames:
   textfield: ''
   url: ''
   link: ''
+  home_product_assistance: ''
 bundles:
   textfield:
     field_text:
@@ -41,6 +42,106 @@ bundles:
       rta: 'no'
       enabled: false
       anonymizer: clear_anonymizer
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+  home_product_assistance:
+    field_br_icon:
+      bundle: home_product_assistance
+      name: field_br_icon
+      entity_type_id: block_content
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_br_title:
+      bundle: home_product_assistance
+      name: field_br_title
+      entity_type_id: block_content
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_br_text:
+      bundle: home_product_assistance
+      name: field_br_text
+      entity_type_id: block_content
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_br_link:
+      bundle: home_product_assistance
+      name: field_br_link
+      entity_type_id: block_content
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_ba_icon:
+      bundle: home_product_assistance
+      name: field_ba_icon
+      entity_type_id: block_content
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_ba_title:
+      bundle: home_product_assistance
+      name: field_ba_title
+      entity_type_id: block_content
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_ba_text:
+      bundle: home_product_assistance
+      name: field_ba_text
+      entity_type_id: block_content
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_ba_link:
+      bundle: home_product_assistance
+      name: field_ba_link
+      entity_type_id: block_content
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_background_image:
+      bundle: home_product_assistance
+      name: field_background_image
+      entity_type_id: block_content
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
       notes: ''
       relationship: 0
       sars_filename: ''

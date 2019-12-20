@@ -14,6 +14,8 @@ display:
           settings:
             format_custom_true: Publié
             format_custom_false: 'Non publié'
+        operations:
+          label: Actions
       filters:
         bundle:
           expose:

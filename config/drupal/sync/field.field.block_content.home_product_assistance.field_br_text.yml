@@ -1,0 +1,21 @@
+uuid: b51a499e-55a6-4e96-a86e-fdbdded3bd50
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.home_product_assistance
+    - field.storage.block_content.field_br_text
+  module:
+    - text
+id: block_content.home_product_assistance.field_br_text
+field_name: field_br_text
+entity_type: block_content
+bundle: home_product_assistance
+label: Text
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

@@ -9,6 +9,7 @@ filenames:
   landing_page: ''
   page: ''
   product_reference: ''
+  optional_related_content: ''
 bundles:
   product:
     field_complementary_info:
@@ -484,6 +485,83 @@ bundles:
       notes: ''
       relationship: 0
       sars_filename: ''
+    field_optional_related_content_t:
+      bundle: product
+      name: field_optional_related_content_t
+      entity_type_id: node
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_product_orc_title:
+      bundle: product
+      name: field_product_orc_title
+      entity_type_id: node
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_product_orc_content:
+      bundle: product
+      name: field_product_orc_content
+      entity_type_id: node
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_product_orc:
+      bundle: product
+      name: field_product_orc
+      entity_type_id: node
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_associated_products:
+      bundle: product
+      name: field_associated_products
+      entity_type_id: node
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_product_multiline:
+      bundle: product
+      name: field_product_multiline
+      entity_type_id: node
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_multiline_anchor_name:
+      bundle: product
+      name: field_multiline_anchor_name
+      entity_type_id: node
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
   thank_you_page:
     field_title:
       bundle: thank_you_page
@@ -843,6 +921,62 @@ bundles:
     field_reference_json_table:
       bundle: product_reference
       name: field_reference_json_table
+      entity_type_id: node
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+  optional_related_content:
+    field_orc_image:
+      bundle: optional_related_content
+      name: field_orc_image
+      entity_type_id: node
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_orc_link:
+      bundle: optional_related_content
+      name: field_orc_link
+      entity_type_id: node
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: date_anonymizer
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_orc_picture:
+      bundle: optional_related_content
+      name: field_orc_picture
+      entity_type_id: node
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: date_anonymizer
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_orc_target:
+      bundle: optional_related_content
+      name: field_orc_target
+      entity_type_id: node
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: date_anonymizer
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_orc_text:
+      bundle: optional_related_content
+      name: field_orc_text
       entity_type_id: node
       rtf: 'no'
       rta: 'no'

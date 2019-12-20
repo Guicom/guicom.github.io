@@ -26,7 +26,7 @@
           this.api().columns().every( function () {
             var column = this;
             var colheader = this.header();
-            var colname = $(colheader).text().trim()
+            var colname = $(colheader).text().trim();
             var select = $('<select><option value="">' + colname + '</option></select>')
               .appendTo( $(column.footer()).empty() )
               .on( 'change', function () {
