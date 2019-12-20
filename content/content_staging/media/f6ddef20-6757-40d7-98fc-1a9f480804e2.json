@@ -1,41 +1,43 @@
 {
     "_links": {
         "self": {
-            "href": "http:\/\/default\/admin\/content\/paragraphs\/4?_format=hal_json"
+            "href": "http:\/\/default\/media\/37\/edit?_format=hal_json"
         },
         "type": {
-            "href": "http:\/\/drupal.org\/rest\/type\/paragraphs_library_item\/paragraphs_library_item"
+            "href": "http:\/\/drupal.org\/rest\/type\/media\/icone"
         },
-        "http:\/\/drupal.org\/rest\/relation\/paragraphs_library_item\/paragraphs_library_item\/revision_uid": [
-            {
-                "href": "http:\/\/default\/user\/1?_format=hal_json"
-            }
-        ],
-        "http:\/\/drupal.org\/rest\/relation\/paragraphs_library_item\/paragraphs_library_item\/paragraphs": [
-            {
-                "href": ""
-            }
-        ],
-        "http:\/\/drupal.org\/rest\/relation\/paragraphs_library_item\/paragraphs_library_item\/uid": [
+        "http:\/\/drupal.org\/rest\/relation\/media\/icone\/uid": [
             {
                 "href": "http:\/\/default\/user\/1?_format=hal_json",
                 "lang": "en"
             }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/media\/icone\/thumbnail": [
+            {
+                "href": "",
+                "lang": "en"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/media\/icone\/field_media_image": [
+            {
+                "href": "",
+                "lang": "en"
+            }
         ]
     },
-    "id": [
+    "mid": [
         {
-            "value": 4
+            "value": 37
         }
     ],
     "uuid": [
         {
-            "value": "cdd03917-cf86-4166-97e9-7e4782c7fe65"
+            "value": "f6ddef20-6757-40d7-98fc-1a9f480804e2"
         }
     ],
-    "revision_id": [
+    "vid": [
         {
-            "value": 11
+            "value": 37
         }
     ],
     "langcode": [
@@ -44,49 +46,25 @@
             "lang": "en"
         }
     ],
+    "bundle": [
+        {
+            "target_id": "icone"
+        }
+    ],
     "revision_created": [
         {
-            "value": "2019-12-06T17:21:02+00:00",
+            "value": "2019-12-20T13:19:49+00:00",
             "format": "Y-m-d\\TH:i:sP"
         }
     ],
+    "status": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
     "_embedded": {
-        "http:\/\/drupal.org\/rest\/relation\/paragraphs_library_item\/paragraphs_library_item\/revision_uid": [
-            {
-                "_links": {
-                    "self": {
-                        "href": "http:\/\/default\/user\/1?_format=hal_json"
-                    },
-                    "type": {
-                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
-                    }
-                },
-                "uuid": [
-                    {
-                        "value": "ff04b414-c8d9-40cf-a98a-339bb1732c79"
-                    }
-                ]
-            }
-        ],
-        "http:\/\/drupal.org\/rest\/relation\/paragraphs_library_item\/paragraphs_library_item\/paragraphs": [
-            {
-                "_links": {
-                    "self": {
-                        "href": ""
-                    },
-                    "type": {
-                        "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/link"
-                    }
-                },
-                "uuid": [
-                    {
-                        "value": "10690444-8c05-4c30-ada1-a154f217bef4"
-                    }
-                ],
-                "target_revision_id": "90"
-            }
-        ],
-        "http:\/\/drupal.org\/rest\/relation\/paragraphs_library_item\/paragraphs_library_item\/uid": [
+        "http:\/\/drupal.org\/rest\/relation\/media\/icone\/uid": [
             {
                 "_links": {
                     "self": {
@@ -103,30 +81,68 @@
                 ],
                 "lang": "en"
             }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/media\/icone\/thumbnail": [
+            {
+                "_links": {
+                    "self": {
+                        "href": ""
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/file\/file"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "07c6a98b-7247-4d2c-94ce-9026f06faf3a"
+                    }
+                ],
+                "lang": "en",
+                "alt": "Big-line-circle.svg",
+                "title": null,
+                "width": null,
+                "height": null
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/media\/icone\/field_media_image": [
+            {
+                "_links": {
+                    "self": {
+                        "href": ""
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/file\/file"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "07c6a98b-7247-4d2c-94ce-9026f06faf3a"
+                    }
+                ],
+                "lang": "en",
+                "alt": "Big-line-circle.svg",
+                "title": "",
+                "width": "50",
+                "height": "50"
+            }
         ]
     },
-    "status": [
+    "name": [
         {
-            "value": true,
-            "lang": "en"
-        }
-    ],
-    "label": [
-        {
-            "value": "Ask for pricing",
+            "value": "Big-line-circle.svg",
             "lang": "en"
         }
     ],
     "created": [
         {
-            "value": "2019-12-06T09:20:26+00:00",
+            "value": "2019-12-20T13:19:45+00:00",
             "lang": "en",
             "format": "Y-m-d\\TH:i:sP"
         }
     ],
     "changed": [
         {
-            "value": "2019-12-06T17:21:02+00:00",
+            "value": "2019-12-20T13:19:45+00:00",
             "lang": "en",
             "format": "Y-m-d\\TH:i:sP"
         }

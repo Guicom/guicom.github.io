@@ -46,17 +46,14 @@ bundles:
       notes: ''
       relationship: 0
       sars_filename: ''
-<<<<<<< HEAD
   tool_promotion:
     field_title:
       bundle: tool_promotion
       name: field_title
-=======
   home_product_assistance:
     field_br_icon:
       bundle: home_product_assistance
       name: field_br_icon
->>>>>>> 5e0d5d84c1230e2c339a3355483c9155e17ff786
       entity_type_id: block_content
       rtf: 'no'
       rta: 'no'
@@ -65,20 +62,16 @@ bundles:
       notes: ''
       relationship: 0
       sars_filename: ''
-<<<<<<< HEAD
     field_description:
       bundle: tool_promotion
       name: field_description
-=======
     field_br_title:
       bundle: home_product_assistance
       name: field_br_title
->>>>>>> 5e0d5d84c1230e2c339a3355483c9155e17ff786
       entity_type_id: block_content
       rtf: 'no'
       rta: 'no'
       enabled: false
-<<<<<<< HEAD
       anonymizer: clear_anonymizer
       notes: ''
       relationship: 0
@@ -86,7 +79,6 @@ bundles:
     field_main_image:
       bundle: tool_promotion
       name: field_main_image
-=======
       anonymizer: ''
       notes: ''
       relationship: 0
@@ -94,7 +86,6 @@ bundles:
     field_br_text:
       bundle: home_product_assistance
       name: field_br_text
->>>>>>> 5e0d5d84c1230e2c339a3355483c9155e17ff786
       entity_type_id: block_content
       rtf: 'no'
       rta: 'no'
@@ -103,11 +94,17 @@ bundles:
       notes: ''
       relationship: 0
       sars_filename: ''
-<<<<<<< HEAD
     field_background_image:
-      bundle: tool_promotion
+      bundle: home_product_assistance
       name: field_background_image
-=======
+      entity_type_id: block_content
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
     field_br_link:
       bundle: home_product_assistance
       name: field_br_link
@@ -133,7 +130,6 @@ bundles:
     field_ba_title:
       bundle: home_product_assistance
       name: field_ba_title
->>>>>>> 5e0d5d84c1230e2c339a3355483c9155e17ff786
       entity_type_id: block_content
       rtf: 'no'
       rta: 'no'
@@ -142,20 +138,16 @@ bundles:
       notes: ''
       relationship: 0
       sars_filename: ''
-<<<<<<< HEAD
     field_lien:
       bundle: tool_promotion
       name: field_lien
-=======
     field_ba_text:
       bundle: home_product_assistance
       name: field_ba_text
->>>>>>> 5e0d5d84c1230e2c339a3355483c9155e17ff786
       entity_type_id: block_content
       rtf: 'no'
       rta: 'no'
       enabled: false
-<<<<<<< HEAD
       anonymizer: clear_anonymizer
       notes: ''
       relationship: 0
@@ -163,7 +155,6 @@ bundles:
     field_tool_promotion_families:
       bundle: tool_promotion
       name: field_tool_promotion_families
-=======
       anonymizer: ''
       notes: ''
       relationship: 0
@@ -171,18 +162,6 @@ bundles:
     field_ba_link:
       bundle: home_product_assistance
       name: field_ba_link
-      entity_type_id: block_content
-      rtf: 'no'
-      rta: 'no'
-      enabled: false
-      anonymizer: ''
-      notes: ''
-      relationship: 0
-      sars_filename: ''
-    field_background_image:
-      bundle: home_product_assistance
-      name: field_background_image
->>>>>>> 5e0d5d84c1230e2c339a3355483c9155e17ff786
       entity_type_id: block_content
       rtf: 'no'
       rta: 'no'

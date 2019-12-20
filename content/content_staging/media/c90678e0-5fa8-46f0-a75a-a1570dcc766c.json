@@ -15,11 +15,6 @@
             {
                 "href": ""
             }
-        ],
-        "http:\/\/drupal.org\/rest\/relation\/media\/image\/field_media_image": [
-            {
-                "href": ""
-            }
         ]
     },
     "mid": [
@@ -50,7 +45,7 @@
     ],
     "revision_created": [
         {
-            "value": "2019-12-17T13:56:24+00:00",
+            "value": "2019-12-20T12:40:31+00:00",
             "format": "Y-m-d\\TH:i:sP"
         }
     ],
@@ -72,7 +67,7 @@
                 },
                 "uuid": [
                     {
-                        "value": "cdedc391-f198-4343-b22e-baa99056ee85"
+                        "value": "ff04b414-c8d9-40cf-a98a-339bb1732c79"
                     }
                 ]
             }
@@ -89,34 +84,13 @@
                 },
                 "uuid": [
                     {
-                        "value": "07bfadae-9842-4bb6-85c7-73ca54dcdbe6"
+                        "value": "6e942a42-9638-41ea-bcd5-8d07cb541251"
                     }
                 ],
-                "alt": "df",
+                "alt": null,
                 "title": null,
-                "width": "658",
-                "height": "704"
-            }
-        ],
-        "http:\/\/drupal.org\/rest\/relation\/media\/image\/field_media_image": [
-            {
-                "_links": {
-                    "self": {
-                        "href": ""
-                    },
-                    "type": {
-                        "href": "http:\/\/drupal.org\/rest\/type\/file\/file"
-                    }
-                },
-                "uuid": [
-                    {
-                        "value": "07bfadae-9842-4bb6-85c7-73ca54dcdbe6"
-                    }
-                ],
-                "alt": "df",
-                "title": "",
-                "width": "658",
-                "height": "704"
+                "width": "180",
+                "height": "180"
             }
         ]
     },

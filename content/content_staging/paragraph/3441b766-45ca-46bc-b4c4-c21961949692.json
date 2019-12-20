@@ -5,12 +5,7 @@
         },
         "type": {
             "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/link"
-        },
-        "http:\/\/drupal.org\/rest\/relation\/paragraph\/link\/field_link_icon": [
-            {
-                "href": "http:\/\/default\/media\/18\/edit?_format=hal_json"
-            }
-        ]
+        }
     },
     "id": [
         {
@@ -83,25 +78,6 @@
             "lang": "en"
         }
     ],
-    "_embedded": {
-        "http:\/\/drupal.org\/rest\/relation\/paragraph\/link\/field_link_icon": [
-            {
-                "_links": {
-                    "self": {
-                        "href": "http:\/\/default\/media\/18\/edit?_format=hal_json"
-                    },
-                    "type": {
-                        "href": "http:\/\/drupal.org\/rest\/type\/media\/icone"
-                    }
-                },
-                "uuid": [
-                    {
-                        "value": "8f70a9d6-1840-4ca9-8f0a-9b0bfeec266b"
-                    }
-                ]
-            }
-        ]
-    },
     "field_link_link": [
         {
             "value": "http:\/\/www.google.fr"

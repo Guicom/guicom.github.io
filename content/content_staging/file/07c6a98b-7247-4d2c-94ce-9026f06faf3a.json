@@ -1,0 +1,92 @@
+{
+    "_links": {
+        "self": {
+            "href": ""
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/file\/file"
+        },
+        "http:\/\/drupal.org\/rest\/relation\/file\/file\/uid": [
+            {
+                "href": "http:\/\/default\/user\/1?_format=hal_json"
+            }
+        ]
+    },
+    "fid": [
+        {
+            "value": 39
+        }
+    ],
+    "uuid": [
+        {
+            "value": "07c6a98b-7247-4d2c-94ce-9026f06faf3a"
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en"
+        }
+    ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/file\/file\/uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/user\/1?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "ff04b414-c8d9-40cf-a98a-339bb1732c79"
+                    }
+                ]
+            }
+        ]
+    },
+    "filename": [
+        {
+            "value": "Big-line-circle.svg"
+        }
+    ],
+    "uri": [
+        {
+            "value": "public:\/\/2019-12\/Big-line-circle_0.svg",
+            "url": "\/sites\/default\/files\/2019-12\/Big-line-circle_0.svg"
+        }
+    ],
+    "filemime": [
+        {
+            "value": "image\/svg+xml"
+        }
+    ],
+    "filesize": [
+        {
+            "value": 1880
+        }
+    ],
+    "status": [
+        {
+            "value": true
+        }
+    ],
+    "created": [
+        {
+            "value": "2019-12-20T13:19:45+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "changed": [
+        {
+            "value": "2019-12-20T13:19:49+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "data": [
+        {
+            "value": "PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iNTBweCIgaGVpZ2h0PSI1MHB4IiB2aWV3Qm94PSIwIDAgNTAgNTAiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+CiAgICA8IS0tIEdlbmVyYXRvcjogc2tldGNodG9vbCA2MS4xICgxMDEwMTApIC0gaHR0cHM6Ly9za2V0Y2guY29tIC0tPgogICAgPHRpdGxlPkJGQjVCNTFCLUU0MDYtNEUyMi05OUZDLTU2NDZFRDZBRkU5RjwvdGl0bGU+CiAgICA8ZGVzYz5DcmVhdGVkIHdpdGggc2tldGNodG9vbC48L2Rlc2M+CiAgICA8ZyBpZD0iQXNzZXQtQXJ0Ym9hcmQtUGFnZSIgc3Ryb2tlPSJub25lIiBzdHJva2Utd2lkdGg9IjEiIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+CiAgICAgICAgPGcgaWQ9IuKegS0v4pieLUJ1dHRvbnMvT3RoZXItY3RhL0JpZy1saW5lLWNpcmNsZSI+CiAgICAgICAgICAgIDxjaXJjbGUgaWQ9Ik92YWwiIHN0cm9rZT0iI0ZGQ0MwMCIgY3g9IjI1IiBjeT0iMjUiIHI9IjI0LjUiPjwvY2lyY2xlPgogICAgICAgICAgICA8ZyBpZD0idWkvVGhpbi9hcnJvdy1yaWdodC1saWdodCIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTIuNTAwMDAwLCAxMi41MDAwMDApIiBmaWxsPSIjRkZDQzAwIj4KICAgICAgICAgICAgICAgIDxwYXRoIGQ9Ik0yMi45NzU5NTI3LDEyLjc5NTQxODQgTDE3LjIyNDkxMjQsMTguNTQ2NDU4OCBDMTcuMTQ4NjM4MSwxOC42MjI3MzMxIDE3LjA0ODY2ODUsMTguNjYwODcwMiAxNi45NDg2OTg4LDE4LjY2MDg3MDIgQzE2Ljg0ODcyOTEsMTguNjYwODcwMiAxNi43NDg3NTk1LDE4LjYyMjczMzEgMTYuNjcyNDg1MiwxOC41NDY0NTg4IEMxNi41OTYyMTA5LDE4LjQ3MDE4NDUgMTYuNTU4MDczOCwxOC4zNzAyMTQ4IDE2LjU1ODA3MzgsMTguMjcwMjQ1MiBDMTYuNTU4MDczOCwxOC4xNzAyNzU1IDE2LjU5NjIxMDksMTguMDcwMzA1OSAxNi42NzI0ODUyLDE3Ljk5NDAzMTYgTDIxLjc3NTg5MTMsMTIuODkwNjI1NCBMMi4wNTA3ODEyNSwxMi44OTA2MjU0IEMxLjk0MjkxMzE0LDEyLjg5MDYyNTQgMS44NDUyNTY4OSwxMi44NDY5MDMyIDEuNzc0NTY3NjYsMTIuNzc2MjE0IEMxLjcwMzg3ODQ0LDEyLjcwNTUyNDcgMS42NjAxNTYyNSwxMi42MDc4Njg1IDEuNjYwMTU2MjUsMTIuNTAwMDAwNCBDMS42NjAxNTYyNSwxMi4zOTIxMzIzIDEuNzAzODc4NDQsMTIuMjk0NDc2IDEuNzc0NTY3NjYsMTIuMjIzNzg2OCBDMS44NDUyNTY4OSwxMi4xNTMwOTc2IDEuOTQyOTEzMTQsMTIuMTA5Mzc1NCAyLjA1MDc4MTI1LDEyLjEwOTM3NTQgTDIxLjc0ODE2MSwxMi4xMDkzNzU0IEwxNi42NzI0ODUyLDcuMDMzNjk5NDcgQzE2LjU5NjIxMDksNi45NTc0MjUxOSAxNi41NTgwNzM4LDYuODU3NDU1NTQgMTYuNTU4MDczOCw2Ljc1NzQ4NTg4IEMxNi41NTgwNzM4LDYuNjU3NTE2MjIgMTYuNTk2MjEwOSw2LjU1NzU0NjU2IDE2LjY3MjQ4NTIsNi40ODEyNzIyOCBDMTYuNzQ4NzU5NSw2LjQwNDk5ODAxIDE2Ljg0ODcyOTEsNi4zNjY4NjA4NyAxNi45NDg2OTg4LDYuMzY2ODYwODcgQzE3LjA0ODY2ODUsNi4zNjY4NjA4NyAxNy4xNDg2MzgxLDYuNDA0OTk4MDEgMTcuMjI0OTEyNCw2LjQ4MTI3MjI4IEwyMi45NzU5NTI3LDEyLjIzMjMxMjcgQzIzLjA1MzMxNTEsMTIuMzA5Njc1MSAyMy4wOTE0NDI2LDEyLjQxMTQxNCAyMy4wOTAzNjQsMTIuNTEyODA0MyBDMjMuMDkxNDQyNywxMi42MTYzMTcgMjMuMDUzMzE1MSwxMi43MTgwNTU5IDIyLjk3NTk1MjcsMTIuNzk1NDE4NCBaIiBpZD0iUGF0aCI+PC9wYXRoPgogICAgICAgICAgICA8L2c+CiAgICAgICAgPC9nPgogICAgPC9nPgo8L3N2Zz4="
+        }
+    ]
+}

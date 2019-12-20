@@ -10,7 +10,21 @@
   font-weight: lighter;
   margin: 40px 0 20px;
   @if $with-line == true {
-    &::after {}
+    position: relative;
+    display: inline-flex;
+    &:after {
+      content: '';
+      height: 2px;
+      width: 60px;
+      bottom: 0;
+      right: -30px;
+      background: $yellow;
+      display: block;
+      position: absolute;
+      @include media-breakpoint-down(sm) {
+        right: 0;
+      }
+    }
   }
 }
 
