@@ -41,7 +41,6 @@
 
             column.data().unique().sort().each( function ( d, j ) {
               var StrippedString = d.replace(/(<([^>]+)>)/ig,"");
-              console.log(StrippedString);
               select.append( '<option value="'+ StrippedString +'">'+ StrippedString +'</option>' )
             } );
           } );
