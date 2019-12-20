@@ -20,7 +20,7 @@ body.node--type-product {
     }
   }
   .hero-block {
-    z-index: 0;
+    z-index: 1021;
     margin-top: 20px;
     flex-grow: 1;
 
@@ -242,6 +242,7 @@ body.node--type-product {
   // Navigation
 
   .product-navigation {
+    background: $white;
     margin-bottom: 45px;
     .row {
       align-items: center;
@@ -393,8 +394,11 @@ body.node--type-product {
     .applications-wrapper {
       background: $blue_light;
       position: relative;
-      padding: 30px;
-      @include left-overflow-color($blue_light);
+      padding: 30px 15px 30px 30px;
+      @include right-overflow-color($blue_light);
+      @include media-breakpoint-down(md) {
+        width: 100%;
+      }
 
       h2 {
         color: $yellow;
@@ -410,8 +414,9 @@ body.node--type-product {
         padding: 0;
         margin-bottom: 40px;
         li {
+          display: flex;
           svg {
-            margin-right: 5px;
+            margin-right: 10px;
           }
           color: $white;
           font-family: $font-poppins;
@@ -433,6 +438,9 @@ body.node--type-product {
         display: flex;
         align-items: center;
         text-transform: uppercase;
+        &:hover {
+          text-decoration: none;
+        }
 
         img {
           margin-right: 10px;
@@ -602,10 +610,17 @@ body.node--type-product {
 
       .row {
         align-items: center;
+        flex-wrap: wrap;
+        @include media-breakpoint-down(md) {
+          justify-content: center;
+        }
       }
       .hero-thumbnail {
         display: flex;
         justify-content: center;
+        flex-basis: 471px;
+        min-width: 471px;
+        max-width: 471px;
         .thumbnail-wrapper {
           background: rgba(76, 175, 228, 0.5);
           width: 471px;

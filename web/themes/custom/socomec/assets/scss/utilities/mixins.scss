@@ -66,17 +66,34 @@
   }
 }
 
-//Overflow left oustide container with color
-@mixin left-overflow-color($color) {
+//Overflow right oustide container with color
+
+@function side-width($breakpoint) {
+  @return calc(((100vw - #{map-get($container-max-widths, $breakpoint)}) / 2) + #{$grid-gutter-width}/2 )
+}
+@function side-width-negative($breakpoint) {
+  @return calc(((#{map-get($container-max-widths, $breakpoint)} - 100vw ) / 2) - #{$grid-gutter-width}/2 )
+}
+@mixin right-overflow-color($color) {
   &:after {
-    right: -999em;
     background: $color;
     content: '';
     display: block;
     position: absolute;
-    width: 999em;
     top: 0;
     bottom: 0;
+    @include media-breakpoint-down(xl) {
+      right: side-width-negative(xl);
+      width: side-width(xl);
+    }
+    @include media-breakpoint-down(lg) {
+       right: side-width-negative(lg);
+       width: side-width(lg);
+    }
+    @include media-breakpoint-down(md) {
+      right: side-width-negative(md);
+      width: side-width(md);
+    }
     @include media-breakpoint-down(md) {
       display: none;
     }

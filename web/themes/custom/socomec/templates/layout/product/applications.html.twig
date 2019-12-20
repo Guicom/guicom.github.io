@@ -10,7 +10,7 @@
   ['DC_P_ADVANTAGE_8_TITLE', 'DC_P_ADVANTAGE_1_TEXT']
 ]
 %}
-<div class="advantage-wrapper col-md-8">
+<div class="advantage-wrapper col-lg-8">
   <h2 class="field--name-field-title ">{{ 'Advantages' |t }}</h2>
   {{ drupal_field('field_product_advantage_text', 'node') }}
 
@@ -32,8 +32,8 @@
 
   </div>
 </div>
-<div class="application-element col-md-3 ml-auto">
-  <div class="row">
+{%  if drupal_field('field_product_application_label', 'node')[0] %}
+  <div class="application-element col-lg-3 lg-auto">
     <div class="applications-wrapper">
       <h2>{{ drupal_field('field_product_application_label', 'node') }}</h2>
       <ul>
@@ -44,4 +44,4 @@
       {{ drupal_field('field_product_application_link', 'node') }}
     </div>
   </div>
-</div>
+{% endif %}

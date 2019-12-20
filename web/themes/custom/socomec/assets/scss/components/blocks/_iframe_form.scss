@@ -6,7 +6,7 @@
   @include media-breakpoint-down(lg) {
     margin-top: 0;
   }
-  @include left-overflow-color($yellow);
+  @include right-overflow-color($yellow);
 
   .ancher-button a {
     display: flex;
