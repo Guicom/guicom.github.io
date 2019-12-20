@@ -137,10 +137,25 @@
                       {{ drupal_field('field_protection_level', 'node') }}
                     </div>
                   {% endif %}
+                    <div class="row">
+                      {% if tool_promotion is not empty %}{{ tool_promotion }}{% endif %}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+          {% if drupal_field('field_protection_level', 'node')[0] %}
+          <section class="section-grey-light" id="product-reference-section">
+            <div class="container">
+              <div class="row">
+                <div class="advantage-wrapper col-md-12">
+                  <h2 class="field--name-field-title ">{{ 'References' |t }}</h2>
+                  {{ drupal_field('field_product_reference', 'node') }}
                 </div>
               </div>
             </div>
           </section>
+          {% endif %}
           {% if drupal_field('field_product_reference', 'node')[0] %}
             <section class="section-grey-light" id="product-reference-section">
               <div class="container">
