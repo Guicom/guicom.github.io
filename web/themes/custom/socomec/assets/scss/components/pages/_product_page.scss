@@ -20,7 +20,7 @@ body.node--type-product {
     }
   }
   .hero-block {
-    z-index: 0;
+    z-index: 1021;
     margin-top: 20px;
     flex-grow: 1;
 
@@ -242,6 +242,7 @@ body.node--type-product {
   // Navigation
 
   .product-navigation {
+    background: $white;
     margin-bottom: 45px;
     .row {
       align-items: center;
@@ -387,6 +388,67 @@ body.node--type-product {
       }
     }
   }
+
+  // Applications
+  .application-element {
+    .applications-wrapper {
+      background: $blue_light;
+      position: relative;
+      padding: 30px 15px 30px 30px;
+      @include right-overflow-color($blue_light);
+      @include media-breakpoint-down(md) {
+        width: 100%;
+      }
+
+      h2 {
+        color: $yellow;
+        font-family: $font-roboto;
+        font-size: 32px;
+        font-weight: 300;
+        line-height: 40px;
+        margin-bottom: 30px;
+      }
+
+      ul {
+        list-style: none;
+        padding: 0;
+        margin-bottom: 40px;
+        li {
+          display: flex;
+          svg {
+            margin-right: 10px;
+          }
+          color: $white;
+          font-family: $font-poppins;
+          font-size: 12px;
+          font-weight: 600;
+          letter-spacing: 0.5px;
+          line-height: 20px;
+          margin-bottom: 15px;
+        }
+      }
+
+      a {
+        color: $yellow;
+        font-family: $font-poppins;
+        font-size: 12px;
+        font-weight: 600;
+        letter-spacing: 1px;
+        line-height: 20px;
+        display: flex;
+        align-items: center;
+        text-transform: uppercase;
+        &:hover {
+          text-decoration: none;
+        }
+
+        img {
+          margin-right: 10px;
+        }
+      }
+    }
+  }
+
 
   // Reference
   #product-reference-table {
@@ -548,10 +610,17 @@ body.node--type-product {
 
       .row {
         align-items: center;
+        flex-wrap: wrap;
+        @include media-breakpoint-down(md) {
+          justify-content: center;
+        }
       }
       .hero-thumbnail {
         display: flex;
         justify-content: center;
+        flex-basis: 471px;
+        min-width: 471px;
+        max-width: 471px;
         .thumbnail-wrapper {
           background: rgba(76, 175, 228, 0.5);
           width: 471px;

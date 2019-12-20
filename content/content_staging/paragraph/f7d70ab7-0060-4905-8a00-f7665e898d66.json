@@ -6,25 +6,25 @@
         "type": {
             "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/link"
         },
-        "http:\/\/drupal.org\/rest\/relation\/paragraph\/link\/field_link_paragraph": [
+        "http:\/\/drupal.org\/rest\/relation\/paragraph\/link\/field_link_icon": [
             {
-                "href": "http:\/\/default\/admin\/content\/paragraphs\/4?_format=hal_json"
+                "href": "http:\/\/default\/media\/36\/edit?_format=hal_json"
             }
         ]
     },
     "id": [
         {
-            "value": 26
+            "value": 35
         }
     ],
     "uuid": [
         {
-            "value": "1fdc9869-fa70-406a-920b-08cd75e2fc5a"
+            "value": "f7d70ab7-0060-4905-8a00-f7665e898d66"
         }
     ],
     "revision_id": [
         {
-            "value": 220
+            "value": 217
         }
     ],
     "langcode": [
@@ -46,7 +46,7 @@
     ],
     "created": [
         {
-            "value": "2019-12-06T10:07:56+00:00",
+            "value": "2019-12-19T09:56:15+00:00",
             "lang": "en",
             "format": "Y-m-d\\TH:i:sP"
         }
@@ -63,7 +63,7 @@
     ],
     "parent_field_name": [
         {
-            "value": "field_product_cta_3"
+            "value": "field_product_application_link"
         }
     ],
     "behavior_settings": [
@@ -78,22 +78,37 @@
         }
     ],
     "_embedded": {
-        "http:\/\/drupal.org\/rest\/relation\/paragraph\/link\/field_link_paragraph": [
+        "http:\/\/drupal.org\/rest\/relation\/paragraph\/link\/field_link_icon": [
             {
                 "_links": {
                     "self": {
-                        "href": "http:\/\/default\/admin\/content\/paragraphs\/4?_format=hal_json"
+                        "href": "http:\/\/default\/media\/36\/edit?_format=hal_json"
                     },
                     "type": {
-                        "href": "http:\/\/drupal.org\/rest\/type\/paragraphs_library_item\/paragraphs_library_item"
+                        "href": "http:\/\/drupal.org\/rest\/type\/media\/icone"
                     }
                 },
                 "uuid": [
                     {
-                        "value": "cdd03917-cf86-4166-97e9-7e4782c7fe65"
+                        "value": "6ee583cd-e0d7-41b9-a3ef-528475fa073a"
                     }
                 ]
             }
         ]
-    }
+    },
+    "field_link_link": [
+        {
+            "value": "http:\/\/www.socomec.us"
+        }
+    ],
+    "field_link_target": [
+        {
+            "value": "_blank"
+        }
+    ],
+    "field_link_title": [
+        {
+            "value": "Discover all our applications"
+        }
+    ]
 }
