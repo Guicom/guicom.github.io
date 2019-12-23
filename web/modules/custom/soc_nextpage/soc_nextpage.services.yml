@@ -15,3 +15,6 @@ services:
     class: Drupal\soc_nextpage\TwigExtension\GetJsonElement
     tags:
       - { name: twig.extension}
+  soc_nextpage.product_reference_table:
+    arguments: ['@renderer']
+    class: Drupal\soc_nextpage\Service\ProductReferenceTable

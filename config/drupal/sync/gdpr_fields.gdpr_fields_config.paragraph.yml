@@ -18,6 +18,9 @@ filenames:
   model_image: ''
   model_cta: ''
   link: ''
+  standard_label: ''
+  optional_related_content: ''
+  content: ''
 bundles:
   product_faq:
     field_question:
@@ -756,6 +759,53 @@ bundles:
       rta: 'no'
       enabled: false
       anonymizer: date_anonymizer
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+  standard_label:
+    field_label:
+      bundle: standard_label
+      name: field_label
+      entity_type_id: paragraph
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_standard_label_tooltip:
+      bundle: standard_label
+      name: field_standard_label_tooltip
+      entity_type_id: paragraph
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+  optional_related_content:
+    field_orc_content:
+      bundle: optional_related_content
+      name: field_orc_content
+      entity_type_id: paragraph
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+  content:
+    field_content:
+      bundle: content
+      name: field_content
+      entity_type_id: paragraph
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
       notes: ''
       relationship: 0
       sars_filename: ''

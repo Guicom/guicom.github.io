@@ -21,7 +21,9 @@
           <h3 id="{{ field.0 }}" class="h3-blue">
             {{ drupal_field('field_json_product_data', 'node') | getfield(field.0) }}
           </h3>
-          <p>{{ drupal_field('field_json_product_data', 'node') | getfield(field.1) }}</p>
+          {% if drupal_field('field_json_product_data', 'node') | getfield(field.1) %}
+            <p>{{ drupal_field('field_json_product_data', 'node') | getfield(field.1) }}</p>
+          {% endif %}
         </div>
       </div>
     {% endif %}

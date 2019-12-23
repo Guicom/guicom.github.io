@@ -1,0 +1,20 @@
+uuid: 53fb44f4-a20a-4b9b-9d22-ba8c6c73199b
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_content
+    - media
+id: block_content.field_ba_icon
+field_name: field_ba_icon
+entity_type: block_content
+type: entity_reference
+settings:
+  target_type: media
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

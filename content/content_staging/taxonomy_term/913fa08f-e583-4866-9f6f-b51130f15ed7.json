@@ -8,6 +8,12 @@
         },
         "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/protection_level\/parent": [
             null
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/protection_level\/field_label_icon": [
+            {
+                "href": "http:\/\/default\/media\/27\/edit?_format=hal_json",
+                "lang": "en"
+            }
         ]
     },
     "tid": [
@@ -54,6 +60,14 @@
             "lang": "en"
         }
     ],
+    "description": [
+        {
+            "value": "<p>Reliable and cost effective protection to <strong>assure operational continuity<\/strong><\/p>\r\n",
+            "format": "socomec",
+            "processed": "<p>Reliable and cost effective protection to <strong>assure operational continuity<\/strong><\/p>",
+            "lang": "en"
+        }
+    ],
     "weight": [
         {
             "value": 0
@@ -62,11 +76,29 @@
     "_embedded": {
         "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/protection_level\/parent": [
             null
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/protection_level\/field_label_icon": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/media\/27\/edit?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/media\/icone"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "c8c442f3-b83f-48f1-9180-83e73ea19196"
+                    }
+                ],
+                "lang": "en"
+            }
         ]
     },
     "changed": [
         {
-            "value": "2019-12-02T10:37:01+00:00",
+            "value": "2019-12-09T14:17:48+00:00",
             "lang": "en",
             "format": "Y-m-d\\TH:i:sP"
         }
@@ -87,8 +119,14 @@
         {
             "value": {
                 "title": "Prime | Socomec",
-                "canonical_url": "http:\/\/default\/taxonomy\/term\/1"
+                "canonical_url": "http:\/\/default\/taxonomy\/term\/1",
+                "description": "Reliable and cost effective protection to assure operational continuity"
             }
+        }
+    ],
+    "field_protection_sub_title": [
+        {
+            "value": "Trustworthy power"
         }
     ]
 }

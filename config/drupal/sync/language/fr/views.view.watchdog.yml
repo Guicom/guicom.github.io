@@ -8,6 +8,8 @@ display:
       fields:
         type:
           label: Type
+        link:
+          label: Actions
       filters:
         type:
           expose:
