@@ -1,13 +1,21 @@
 display:
   default:
     display_options:
+      pager:
+        options:
+          expose:
+            items_per_page_label: 'Éléments par page'
       fields:
         label:
           label: Étiquette
         type:
           label: Type
+        langcode:
+          label: Langue
         id:
           label: 'Identifiant (ID)'
+        operations:
+          label: Actions
       filters:
         label:
           expose:

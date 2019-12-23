@@ -1,0 +1,28 @@
+uuid: cdd8e4ea-d80f-4ee7-a819-ecbb00f3d8e7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_orc_picture
+    - media.type.image
+    - node.type.optional_related_content
+id: node.optional_related_content.field_orc_picture
+field_name: field_orc_picture
+entity_type: node
+bundle: optional_related_content
+label: Picture
+description: 'Ratio expected : 570px / 220px'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

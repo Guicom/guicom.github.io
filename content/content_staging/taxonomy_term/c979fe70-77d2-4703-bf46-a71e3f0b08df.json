@@ -8,6 +8,11 @@
         },
         "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/product_label\/parent": [
             null
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/product_label\/field_label_icon": [
+            {
+                "href": "http:\/\/default\/media\/24\/edit?_format=hal_json"
+            }
         ]
     },
     "tid": [
@@ -62,11 +67,28 @@
     "_embedded": {
         "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/product_label\/parent": [
             null
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/product_label\/field_label_icon": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/media\/24\/edit?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/media\/icone"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "2a595560-1803-4dfc-9cd6-b9d64347e505"
+                    }
+                ]
+            }
         ]
     },
     "changed": [
         {
-            "value": "2019-12-03T10:49:52+00:00",
+            "value": "2019-12-09T12:55:22+00:00",
             "lang": "en",
             "format": "Y-m-d\\TH:i:sP"
         }

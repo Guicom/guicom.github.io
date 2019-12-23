@@ -1,0 +1,28 @@
+uuid: 9c4208bb-ffa1-473d-9d0b-59bde9db6f5e
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.home_product_assistance
+    - field.storage.block_content.field_br_icon
+    - media.type.icone
+id: block_content.home_product_assistance.field_br_icon
+field_name: field_br_icon
+entity_type: block_content
+bundle: home_product_assistance
+label: Icon
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      icone: icone
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

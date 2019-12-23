@@ -3,28 +3,178 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.product.field_associated_products
     - field.field.node.product.field_background_hero_block
     - field.field.node.product.field_json_product_data
+    - field.field.node.product.field_multiline_anchor_name
     - field.field.node.product.field_product_advantage_text
+    - field.field.node.product.field_product_application_label
+    - field.field.node.product.field_product_application_link
     - field.field.node.product.field_product_cta_1
     - field.field.node.product.field_product_cta_2
     - field.field.node.product.field_product_cta_3
     - field.field.node.product.field_product_cta_4
     - field.field.node.product.field_product_extid
     - field.field.node.product.field_product_family
+    - field.field.node.product.field_product_multiline
+    - field.field.node.product.field_product_orc_content
+    - field.field.node.product.field_product_orc_title
     - field.field.node.product.field_product_pictures
     - field.field.node.product.field_product_reference
-    - field.field.node.product.field_product_standard_label
     - field.field.node.product.field_product_status
     - field.field.node.product.field_product_teaser
     - field.field.node.product.field_protection_level
+    - field.field.node.product.field_standard_label
     - node.type.product
   module:
     - content_moderation
+    - field_group
+    - inline_entity_form
     - media_library
     - paragraphs
     - path
     - text
+third_party_settings:
+  field_group:
+    group_tabs:
+      children:
+        - group_pim_content
+        - group_references
+        - group_webmastering
+      parent_name: ''
+      weight: 0
+      format_type: tabs
+      format_settings:
+        id: ''
+        classes: ''
+        direction: horizontal
+      label: Tabs
+    group_pim_content:
+      children:
+        - field_json_product_data
+        - title
+        - field_product_teaser
+        - field_product_pictures
+        - field_protection_level
+        - field_standard_label
+        - field_product_extid
+        - field_product_family
+        - field_product_status
+      parent_name: group_tabs
+      weight: 9
+      format_type: tab
+      format_settings:
+        label: 'Pim content'
+        formatter: open
+        description: ''
+        required_fields: true
+        id: ''
+        classes: ''
+      label: 'Pim content'
+    group_cta:
+      children:
+        - field_product_cta_1
+        - field_product_cta_2
+        - field_product_cta_3
+        - field_product_cta_4
+      parent_name: group_webmastering
+      weight: 10
+      format_type: tab
+      format_settings:
+        label: CTA
+        formatter: closed
+        description: ''
+        required_fields: true
+        id: ''
+        classes: ''
+      label: CTA
+    group_references:
+      children:
+        - field_product_reference
+      parent_name: group_tabs
+      weight: 10
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        formatter: open
+        description: ''
+        required_fields: true
+      label: References
+    group_webmastering:
+      children:
+        - field_product_advantage_text
+        - field_background_hero_block
+        - group_multiline
+        - group_op
+        - group_associated_products
+        - group_cta
+        - group_application
+      parent_name: group_tabs
+      weight: 11
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        formatter: open
+        description: ''
+        required_fields: true
+      label: Webmastering
+    group_op:
+      children:
+        - field_product_orc_title
+        - field_product_orc_content
+      parent_name: group_webmastering
+      weight: 8
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+      label: 'Optional related content'
+    group_associated_products:
+      children:
+        - field_associated_products
+      parent_name: group_webmastering
+      weight: 9
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+      label: 'Associated products'
+    group_multiline:
+      children:
+        - field_multiline_anchor_name
+        - field_product_multiline
+      parent_name: group_webmastering
+      weight: 7
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+      label: Multiline
+    group_application:
+      children:
+        - field_product_application_label
+        - field_product_application_link
+      parent_name: group_webmastering
+      weight: 10
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+      label: Application
 id: node.product.default
 targetEntityType: node
 bundle: product
@@ -32,36 +182,73 @@ mode: default
 content:
   created:
     type: datetime_timestamp
-    weight: 6
+    weight: 5
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_associated_products:
+    weight: 28
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
   field_background_hero_block:
     type: media_library_widget
-    weight: 111
+    weight: 6
     settings:
       media_types: {  }
     third_party_settings: {  }
     region: content
   field_json_product_data:
-    weight: 3
+    weight: 2
     settings:
       rows: 5
       placeholder: ''
     third_party_settings: {  }
     type: string_textarea
     region: content
+  field_multiline_anchor_name:
+    weight: 8
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
   field_product_advantage_text:
-    weight: 107
+    weight: 5
     settings:
       rows: 5
       placeholder: ''
     third_party_settings: {  }
     type: text_textarea
     region: content
+  field_product_application_label:
+    weight: 29
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_product_application_link:
+    type: entity_reference_paragraphs
+    weight: 30
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+    region: content
   field_product_cta_1:
     type: entity_reference_paragraphs
-    weight: 113
+    weight: 8
     settings:
       title: Paragraph
       title_plural: Paragraphs
@@ -73,7 +260,7 @@ content:
     region: content
   field_product_cta_2:
     type: entity_reference_paragraphs
-    weight: 114
+    weight: 10
     settings:
       title: Paragraph
       title_plural: Paragraphs
@@ -85,7 +272,7 @@ content:
     region: content
   field_product_cta_3:
     type: entity_reference_paragraphs
-    weight: 115
+    weight: 11
     settings:
       title: Paragraph
       title_plural: Paragraphs
@@ -97,7 +284,7 @@ content:
     region: content
   field_product_cta_4:
     type: entity_reference_paragraphs
-    weight: 116
+    weight: 12
     settings:
       title: Paragraph
       title_plural: Paragraphs
@@ -108,7 +295,7 @@ content:
     third_party_settings: {  }
     region: content
   field_product_extid:
-    weight: 105
+    weight: 8
     settings:
       size: 60
       placeholder: ''
@@ -116,29 +303,56 @@ content:
     type: string_textfield
     region: content
   field_product_family:
-    weight: 110
+    weight: 9
     settings: {  }
     third_party_settings: {  }
     type: options_select
     region: content
+  field_product_multiline:
+    type: entity_reference_paragraphs
+    weight: 9
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: closed
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: _none
+    third_party_settings: {  }
+    region: content
+  field_product_orc_content:
+    weight: 27
+    settings:
+      form_mode: default
+      label_singular: ''
+      label_plural: ''
+      collapsible: true
+      allow_new: true
+      allow_existing: true
+      match_operator: CONTAINS
+      override_labels: false
+      collapsed: false
+      allow_duplicate: false
+    third_party_settings: {  }
+    type: inline_entity_form_complex
+    region: content
+  field_product_orc_title:
+    weight: 26
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
   field_product_pictures:
     type: media_library_widget
-    weight: 102
+    weight: 5
     settings:
       media_types: {  }
     third_party_settings: {  }
     region: content
   field_product_reference:
-    weight: 109
-    settings:
-      match_operator: CONTAINS
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-    type: entity_reference_autocomplete
-    region: content
-  field_product_standard_label:
-    weight: 108
+    weight: 2
     settings:
       match_operator: CONTAINS
       size: 60
@@ -147,7 +361,7 @@ content:
     type: entity_reference_autocomplete
     region: content
   field_product_status:
-    weight: 106
+    weight: 10
     settings:
       match_operator: CONTAINS
       size: 60
@@ -156,7 +370,7 @@ content:
     type: entity_reference_autocomplete
     region: content
   field_product_teaser:
-    weight: 101
+    weight: 4
     settings:
       rows: 5
       placeholder: ''
@@ -164,7 +378,7 @@ content:
     type: string_textarea
     region: content
   field_protection_level:
-    weight: 103
+    weight: 6
     settings:
       match_operator: CONTAINS
       size: 60
@@ -172,22 +386,34 @@ content:
     third_party_settings: {  }
     type: entity_reference_autocomplete
     region: content
+  field_standard_label:
+    type: entity_reference_paragraphs
+    weight: 7
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+    region: content
   langcode:
     type: language_select
-    weight: 4
+    weight: 2
     region: content
     settings:
       include_locked: true
     third_party_settings: {  }
   moderation_state:
     type: moderation_state_default
-    weight: 100
+    weight: 3
     settings: {  }
     region: content
     third_party_settings: {  }
   path:
     type: path
-    weight: 9
+    weight: 8
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -195,26 +421,26 @@ content:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 7
+    weight: 6
     region: content
     third_party_settings: {  }
   status:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 11
+    weight: 10
     region: content
     third_party_settings: {  }
   sticky:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 8
+    weight: 7
     region: content
     third_party_settings: {  }
   title:
     type: string_textfield
-    weight: 0
+    weight: 3
     region: content
     settings:
       size: 60
@@ -222,7 +448,7 @@ content:
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 5
+    weight: 4
     settings:
       match_operator: CONTAINS
       size: 60
@@ -230,7 +456,7 @@ content:
     region: content
     third_party_settings: {  }
   url_redirects:
-    weight: 10
+    weight: 9
     region: content
     settings: {  }
     third_party_settings: {  }

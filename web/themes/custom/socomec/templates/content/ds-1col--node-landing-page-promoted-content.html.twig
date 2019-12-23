@@ -1,0 +1,24 @@
+<div class="product-content-related">
+  <div class="row">
+    <div class="product-content-related-wrapper" style="background-image: linear-gradient(26.93deg, #00519D 0%, rgba(0,81,157,0.8) 100%), url('{{ drupal_field('field_background_image', 'paragraph', content.field_hero_paragraph[0]['#paragraph'].id(), 'simple_html')  | render | striptags | trim }}')">
+      <div class="container">
+        <div class="row">
+          <div class="hero-thumbnail col-md-7">
+            <div class="thumbnail-wrapper">
+              {{ drupal_field('field_thumbnail', 'paragraph', content.field_hero_paragraph[0]['#paragraph'].id(), 'simple_html') }}
+            </div>
+          </div>
+          <div class="hero-content col-md-5">
+            <h2 class="field--name-field-title ">{% spaceless %}{{ content.field_premium_content_type  }}{% endspaceless %}</h2>
+            {{ content.title }}
+            {{ content.field_client_name }}
+            <p class="product-content-related-baseline">{{ drupal_field('field_baseline', 'paragraph', content.field_hero_paragraph[0]['#paragraph'].id(), 'simple_html') }}</p>
+            <a class="product-content-link" href="{{ path('entity.node.canonical', {'node': node.id}) | render | striptags | trim }}">
+              {% include '/themes/custom/socomec/assets/images/picto/ui/chevron-right-circle-white-yellow.svg' %} {{ drupal_field('field_pardot_cta_text', 'paragraph', content.field_pardot_form[0]['#paragraph'].id()) }}
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

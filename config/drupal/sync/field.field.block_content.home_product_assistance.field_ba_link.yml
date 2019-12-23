@@ -1,0 +1,67 @@
+uuid: ec02f221-8df1-421b-9891-477ff8763dbe
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.home_product_assistance
+    - field.storage.block_content.field_ba_link
+    - paragraphs.paragraphs_type.link
+  module:
+    - entity_reference_revisions
+id: block_content.home_product_assistance.field_ba_link
+field_name: field_ba_link
+entity_type: block_content
+bundle: home_product_assistance
+label: 'Ba Link'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      link: link
+    target_bundles_drag_drop:
+      from_library:
+        weight: 14
+        enabled: false
+      hero_paragraph:
+        weight: 15
+        enabled: false
+      key_figures:
+        weight: 16
+        enabled: false
+      link:
+        enabled: true
+        weight: 17
+      model_cta:
+        weight: 18
+        enabled: false
+      model_image:
+        weight: 19
+        enabled: false
+      model_testimony:
+        weight: 20
+        enabled: false
+      model_text:
+        weight: 21
+        enabled: false
+      pardot_form:
+        weight: 22
+        enabled: false
+      premium_content_promotion:
+        weight: 23
+        enabled: false
+      product_faq:
+        weight: 24
+        enabled: false
+      standard_label:
+        weight: 25
+        enabled: false
+      video_embed:
+        weight: 26
+        enabled: false
+field_type: entity_reference_revisions

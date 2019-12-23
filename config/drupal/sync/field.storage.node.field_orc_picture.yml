@@ -1,19 +1,19 @@
-uuid: 049ead7e-858b-46bd-8947-eb5dd97329f9
+uuid: f8894990-9650-404b-a282-041b36fef50a
 langcode: en
 status: true
 dependencies:
   module:
+    - media
     - node
-    - taxonomy
-id: node.field_product_standard_label
-field_name: field_product_standard_label
+id: node.field_orc_picture
+field_name: field_orc_picture
 entity_type: node
 type: entity_reference
 settings:
-  target_type: taxonomy_term
+  target_type: media
 module: core
 locked: false
-cardinality: -1
+cardinality: 1
 translatable: true
 indexes: {  }
 persist_with_no_fields: false

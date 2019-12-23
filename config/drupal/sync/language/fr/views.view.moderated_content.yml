@@ -4,6 +4,8 @@ display:
       fields:
         title:
           label: Titre
+        operations:
+          label: Actions
       filters:
         title:
           expose:

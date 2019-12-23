@@ -1,9 +1,15 @@
 display:
   default:
     display_options:
+      pager:
+        options:
+          expose:
+            items_per_page_label: 'Éléments par page'
       fields:
         type:
           label: Type
+        link:
+          label: Actions
         timestamp:
           label: Date
       filters:

@@ -1,0 +1,104 @@
+{
+    "_links": {
+        "self": {
+            "href": ""
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/standard_label"
+        },
+        "http:\/\/drupal.org\/rest\/relation\/paragraph\/standard_label\/field_label": [
+            {
+                "href": "http:\/\/default\/taxonomy\/term\/14?_format=hal_json"
+            }
+        ]
+    },
+    "id": [
+        {
+            "value": 28
+        }
+    ],
+    "uuid": [
+        {
+            "value": "99faba6a-beb0-454d-8c53-00e60ef45916"
+        }
+    ],
+    "revision_id": [
+        {
+            "value": 223
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "type": [
+        {
+            "target_id": "standard_label"
+        }
+    ],
+    "status": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "created": [
+        {
+            "value": "2019-12-09T13:45:23+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "parent_id": [
+        {
+            "value": "10"
+        }
+    ],
+    "parent_type": [
+        {
+            "value": "node"
+        }
+    ],
+    "parent_field_name": [
+        {
+            "value": "field_standard_label"
+        }
+    ],
+    "behavior_settings": [
+        {
+            "value": []
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/paragraph\/standard_label\/field_label": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/taxonomy\/term\/14?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/product_label"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "195a88c2-aa40-4c76-871e-9724e68ccc0f"
+                    }
+                ]
+            }
+        ]
+    },
+    "field_standard_label_tooltip": [
+        {
+            "value": "UL 98, Guide WHTY file E201138"
+        }
+    ]
+}

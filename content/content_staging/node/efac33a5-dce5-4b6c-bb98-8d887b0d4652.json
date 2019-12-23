@@ -40,7 +40,7 @@
     ],
     "vid": [
         {
-            "value": 21
+            "value": 57
         }
     ],
     "langcode": [
@@ -56,7 +56,7 @@
     ],
     "revision_timestamp": [
         {
-            "value": "2019-12-03T13:05:26+00:00",
+            "value": "2019-12-12T14:15:08+00:00",
             "format": "Y-m-d\\TH:i:sP"
         }
     ],
@@ -152,7 +152,7 @@
     ],
     "changed": [
         {
-            "value": "2019-12-03T13:05:26+00:00",
+            "value": "2019-12-12T14:15:08+00:00",
             "lang": "en",
             "format": "Y-m-d\\TH:i:sP"
         }
@@ -207,6 +207,11 @@
     "field_reference_extid": [
         {
             "value": "R_22004016"
+        }
+    ],
+    "field_reference_json_table": [
+        {
+            "value": "{\r\n  \"Name\": \"22004016-SIRCO MV 4X160A\",\r\n  \"Reference\": \"22004016\",\r\n  \"WEIGHT\": \"165\",\r\n  \"Nombre de p\u00f4le\": \"2 P\",\r\n  \"Format de boitier\": \"Format de boitier A\",\r\n  \"Test champs vide\": \"\"\r\n}"
         }
     ],
     "field_reference_ref": [

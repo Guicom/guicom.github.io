@@ -1,0 +1,51 @@
+uuid: 8040fd03-1fe1-4453-9325-1c9ec2eaeb14
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.taxonomy_term.product_page
+    - field.field.taxonomy_term.protection_level.field_label_icon
+    - field.field.taxonomy_term.protection_level.field_protection_sub_title
+    - taxonomy.vocabulary.protection_level
+  module:
+    - ds
+    - text
+id: taxonomy_term.protection_level.product_page
+targetEntityType: taxonomy_term
+bundle: protection_level
+mode: product_page
+content:
+  description:
+    type: text_default
+    weight: 3
+    region: content
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+  field_label_icon:
+    type: entity_reference_entity_view
+    weight: 0
+    region: content
+    label: hidden
+    settings:
+      view_mode: simple_html
+      link: false
+    third_party_settings:
+      ds:
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
+  field_protection_sub_title:
+    type: string
+    weight: 2
+    region: content
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+hidden:
+  langcode: true
+  search_api_excerpt: true

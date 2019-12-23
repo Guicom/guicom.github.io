@@ -6,19 +6,7 @@
   @include media-breakpoint-down(lg) {
     margin-top: 0;
   }
-  &:after {
-    right: -999em;
-    background: $yellow;
-    content: '';
-    display: block;
-    position: absolute;
-    width: 999em;
-    top: 0;
-    bottom: 0;
-    @include media-breakpoint-down(md) {
-      display: none;
-    }
-  }
+  @include right-overflow-color($yellow);
 
   .ancher-button a {
     display: flex;

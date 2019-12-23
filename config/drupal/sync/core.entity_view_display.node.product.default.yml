@@ -3,21 +3,28 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.product.field_associated_products
     - field.field.node.product.field_background_hero_block
     - field.field.node.product.field_json_product_data
+    - field.field.node.product.field_multiline_anchor_name
     - field.field.node.product.field_product_advantage_text
+    - field.field.node.product.field_product_application_label
+    - field.field.node.product.field_product_application_link
     - field.field.node.product.field_product_cta_1
     - field.field.node.product.field_product_cta_2
     - field.field.node.product.field_product_cta_3
     - field.field.node.product.field_product_cta_4
     - field.field.node.product.field_product_extid
     - field.field.node.product.field_product_family
+    - field.field.node.product.field_product_multiline
+    - field.field.node.product.field_product_orc_content
+    - field.field.node.product.field_product_orc_title
     - field.field.node.product.field_product_pictures
     - field.field.node.product.field_product_reference
-    - field.field.node.product.field_product_standard_label
     - field.field.node.product.field_product_status
     - field.field.node.product.field_product_teaser
     - field.field.node.product.field_protection_level
+    - field.field.node.product.field_standard_label
     - node.type.product
   module:
     - ds
@@ -45,7 +52,6 @@ third_party_settings:
       ds_content:
         - field_product_family
         - field_product_pictures
-        - field_product_standard_label
         - field_product_teaser
         - field_protection_level
         - field_product_advantage_text
@@ -58,6 +64,14 @@ third_party_settings:
         - field_product_cta_2
         - field_product_cta_3
         - field_product_cta_4
+        - field_standard_label
+        - field_product_orc_title
+        - field_product_orc_content
+        - field_associated_products
+        - field_product_multiline
+        - field_multiline_anchor_name
+        - field_product_application_label
+        - field_product_application_link
     fields:
       node_post_date:
         plugin_id: node_post_date
@@ -84,6 +98,21 @@ targetEntityType: node
 bundle: product
 mode: default
 content:
+  field_associated_products:
+    weight: 19
+    label: hidden
+    settings:
+      view_mode: teaser
+      link: false
+    third_party_settings:
+      ds:
+        ds_limit: ''
+        ft:
+          id: reset
+          settings:
+            lb: ''
+    type: entity_reference_entity_view
+    region: ds_content
   field_background_hero_block:
     type: entity_reference_entity_view
     weight: 7
@@ -100,12 +129,47 @@ content:
     label: above
     settings: {  }
     third_party_settings: {  }
+  field_multiline_anchor_name:
+    weight: 21
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings:
+      ds:
+        ft:
+          id: reset
+          settings:
+            lb: ''
+    type: string
+    region: ds_content
   field_product_advantage_text:
     weight: 5
     label: hidden
     settings: {  }
     third_party_settings: {  }
     type: text_default
+    region: ds_content
+  field_product_application_label:
+    weight: 22
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings:
+      ds:
+        ft:
+          id: reset
+          settings:
+            lb: ''
+    type: string
+    region: ds_content
+  field_product_application_link:
+    type: entity_reference_revisions_entity_view
+    weight: 23
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
     region: ds_content
   field_product_cta_1:
     type: entity_reference_revisions_entity_view
@@ -151,6 +215,43 @@ content:
     settings:
       link: true
     third_party_settings: {  }
+  field_product_multiline:
+    type: entity_reference_revisions_entity_view
+    weight: 20
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: ds_content
+  field_product_orc_content:
+    weight: 18
+    label: hidden
+    settings:
+      view_mode: teaser
+      link: false
+    third_party_settings:
+      ds:
+        ds_limit: ''
+        ft:
+          id: reset
+          settings:
+            lb: ''
+    type: entity_reference_entity_view
+    region: ds_content
+  field_product_orc_title:
+    weight: 17
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings:
+      ds:
+        ft:
+          id: reset
+          settings:
+            lb: ''
+    type: string
+    region: ds_content
   field_product_pictures:
     type: entity_reference_entity_view
     weight: 1
@@ -172,17 +273,19 @@ content:
     weight: 6
     label: hidden
     settings:
-      link: true
-    third_party_settings: {  }
-    type: entity_reference_label
+      view_mode: table_reference
+      link: false
+    third_party_settings:
+      ds:
+        ds_limit: ''
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
+    type: entity_reference_entity_view
     region: ds_content
-  field_product_standard_label:
-    type: entity_reference_entity_id
-    weight: 2
-    region: ds_content
-    label: above
-    settings: {  }
-    third_party_settings: {  }
   field_product_teaser:
     weight: 3
     label: hidden
@@ -199,9 +302,26 @@ content:
     weight: 4
     label: hidden
     settings:
-      link: true
+      view_mode: product_page
+      link: false
+    third_party_settings:
+      ds:
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
+    type: entity_reference_entity_view
+    region: ds_content
+  field_standard_label:
+    type: entity_reference_revisions_entity_view
+    weight: 16
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
     third_party_settings: {  }
-    type: entity_reference_label
     region: ds_content
 hidden:
   addtoany: true

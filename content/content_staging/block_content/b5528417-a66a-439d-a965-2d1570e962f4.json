@@ -1,0 +1,289 @@
+{
+    "_links": {
+        "self": {
+            "href": "http:\/\/default\/block\/4?_format=hal_json"
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/block_content\/home_product_assistance"
+        },
+        "http:\/\/drupal.org\/rest\/relation\/block_content\/home_product_assistance\/revision_user": [
+            {
+                "href": "http:\/\/default\/user\/1?_format=hal_json"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/block_content\/home_product_assistance\/content_translation_uid": [
+            {
+                "href": "http:\/\/default\/user\/1?_format=hal_json",
+                "lang": "en"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/block_content\/home_product_assistance\/field_background_image": [
+            {
+                "href": "http:\/\/default\/media\/34\/edit?_format=hal_json"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/block_content\/home_product_assistance\/field_ba_icon": [
+            {
+                "href": "http:\/\/default\/media\/32\/edit?_format=hal_json"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/block_content\/home_product_assistance\/field_ba_link": [
+            {
+                "href": ""
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/block_content\/home_product_assistance\/field_br_icon": [
+            {
+                "href": "http:\/\/default\/media\/30\/edit?_format=hal_json"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/block_content\/home_product_assistance\/field_br_link": [
+            {
+                "href": ""
+            }
+        ]
+    },
+    "id": [
+        {
+            "value": 4
+        }
+    ],
+    "uuid": [
+        {
+            "value": "b5528417-a66a-439d-a965-2d1570e962f4"
+        }
+    ],
+    "revision_id": [
+        {
+            "value": 8
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "type": [
+        {
+            "target_id": "home_product_assistance"
+        }
+    ],
+    "revision_created": [
+        {
+            "value": "2019-12-17T08:35:24+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/block_content\/home_product_assistance\/revision_user": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/user\/1?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "cdedc391-f198-4343-b22e-baa99056ee85"
+                    }
+                ]
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/block_content\/home_product_assistance\/content_translation_uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/user\/1?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "cdedc391-f198-4343-b22e-baa99056ee85"
+                    }
+                ],
+                "lang": "en"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/block_content\/home_product_assistance\/field_background_image": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/media\/34\/edit?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/media\/image"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "48d78949-ea4d-4bea-870d-d115256684ae"
+                    }
+                ]
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/block_content\/home_product_assistance\/field_ba_icon": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/media\/32\/edit?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/media\/icone"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "b712d991-4a35-491a-9972-60589b6a96f7"
+                    }
+                ]
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/block_content\/home_product_assistance\/field_ba_link": [
+            {
+                "_links": {
+                    "self": {
+                        "href": ""
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/link"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "ed93d7f4-4bd5-44e0-a490-06259223fc76"
+                    }
+                ],
+                "target_revision_id": "148"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/block_content\/home_product_assistance\/field_br_icon": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/media\/30\/edit?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/media\/icone"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "d0a014c3-23b8-4486-90eb-97cdd3c47cc2"
+                    }
+                ]
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/block_content\/home_product_assistance\/field_br_link": [
+            {
+                "_links": {
+                    "self": {
+                        "href": ""
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/link"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "b2449b67-43da-4124-bd06-6e3bb15da90c"
+                    }
+                ],
+                "target_revision_id": "149"
+            }
+        ]
+    },
+    "status": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "info": [
+        {
+            "value": "Home Product Assistance",
+            "lang": "en"
+        }
+    ],
+    "changed": [
+        {
+            "value": "2019-12-17T08:35:24+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "reusable": [
+        {
+            "value": true
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "revision_translation_affected": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "content_translation_source": [
+        {
+            "value": "und",
+            "lang": "en"
+        }
+    ],
+    "content_translation_outdated": [
+        {
+            "value": false,
+            "lang": "en"
+        }
+    ],
+    "content_translation_created": [
+        {
+            "value": "2019-12-16T16:55:06+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "metatag": [
+        {
+            "value": {
+                "title": "| Socomec",
+                "canonical_url": "http:\/\/default\/node"
+            }
+        }
+    ],
+    "field_ba_text": [
+        {
+            "value": "<p>Browse our FAQs to easily find answer, submit a Support Request...<\/p>\r\n",
+            "format": "socomec",
+            "processed": "<p>Browse our FAQs to easily find answer, submit a Support Request...<\/p>"
+        }
+    ],
+    "field_ba_title": [
+        {
+            "value": "Questions? We Can help !"
+        }
+    ],
+    "field_br_text": [
+        {
+            "value": "<p>Access product catalogs, operating instructions, technical documents, CAD files, &nbsp;and more.<\/p>\r\n",
+            "format": "socomec",
+            "processed": "<p>Access product catalogs, operating instructions, technical documents, CAD files, \u00a0and more.<\/p>"
+        }
+    ],
+    "field_br_title": [
+        {
+            "value": "Looking for product ressources ? "
+        }
+    ]
+}

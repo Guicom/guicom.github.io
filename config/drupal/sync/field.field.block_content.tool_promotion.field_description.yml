@@ -1,0 +1,21 @@
+uuid: 92164571-3099-46bd-8e3c-75e56bc3d5c3
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.tool_promotion
+    - field.storage.block_content.field_description
+  module:
+    - text
+id: block_content.tool_promotion.field_description
+field_name: field_description
+entity_type: block_content
+bundle: tool_promotion
+label: Description
+description: 'Warning: if the text is too long, it will be cropped.'
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long
