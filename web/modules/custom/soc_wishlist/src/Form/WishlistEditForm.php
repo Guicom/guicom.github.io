@@ -5,6 +5,8 @@ namespace Drupal\soc_wishlist\Form;
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Messenger\MessengerInterface;
+use Drupal\Core\Render\Element\RenderElement;
+use Drupal\Core\Render\Element\Tableselect;
 use Drupal\node\Entity\Node;
 use Drupal\soc_core\Service\MediaApi;
 use Drupal\soc_wishlist\Service\Manager\WishlistManager;
@@ -139,6 +141,17 @@ class WishlistEditForm extends FormBase {
               '#value' => $data[$extId]['quantity'],
               '#name' => 'quantity[' . $extId . ']',
               '#size' => 2,
+              '#prefix' => '<span id="wishlist_quantity_' . $extId . '">',
+              '#suffix' => '</span>',
+              '#ajax' => [
+                'callback' => [$this, 'updateQuantity'],
+                'event' => 'change',
+                'wrapper' => 'wishlist_quantity_' . $extId,
+                'progress' => [
+                  'type' => 'throbber',
+                  'message' => $this->t('Updating quantity...'),
+                ],
+              ],
             ],
           ],
         ];
@@ -153,10 +166,18 @@ class WishlistEditForm extends FormBase {
       '#empty' => t('No items found!'),
       '#prefix' => '<div>',
       '#suffix' => '</div>',
+      '#process' => [
+        '::processTable',
+        [Tableselect::class, 'processTableselect']
+      ]
     ];
     $form['submit'] = [
       '#type' => 'submit',
       '#value' => t('Remove selected'),
+      '#ajax' => [
+        'wrapper' => 'test',
+        'callback' => [static::class, 'updateQuantity'],
+      ],
     ];
 
     // Return form.
@@ -174,4 +195,23 @@ class WishlistEditForm extends FormBase {
   public function submitForm(array &$form, FormStateInterface $form_state) {
     $test = true;
   }
+
+  public function processTable(&$element, FormStateInterface $form_state, &$complete_form) {
+    foreach (array_keys($element['#options']) as $option) {
+      foreach (array_keys($element['#options'][$option]) as $col) {
+        if (is_array($element['#options'][$option][$col]) && isset($element['#options'][$option][$col]['data'])) {
+          $element['#options'][$option][$col]['data']['#name'] = implode('-', [$element['#name'], $option, $col]);
+          $element['#options'][$option][$col]['data']['#id'] = implode('-', [$element['#id'], $option, $col]);
+          $element['#options'][$option][$col]['data'] = RenderElement::preRenderAjaxForm($element['#options'][$option][$col]['data']);
+        }
+      }
+    }
+    return $element;
+  }
+
+  public function updateQuantity(array &$form, FormStateInterface $form_state) {
+
+    return $form['output'];
+  }
+
 }
