@@ -2,5 +2,5 @@ services:
   soc_core.base_api:
     class: Drupal\soc_core\Service\BaseApi
     arguments: ['@logger.factory']
-  prae_core.cache_handler:
+  soc_core.cache_handler:
     class: Drupal\soc_core\Service\Cache\CacheHandler
