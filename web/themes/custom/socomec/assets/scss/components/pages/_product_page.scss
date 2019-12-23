@@ -1,14 +1,4 @@
 body.node--type-product {
-  // Made edit button  sticky
-  nav.tabs {
-    position: fixed;
-    background: rgba(255, 255, 255, 0.7);
-    z-index: 1;
-    ul.nav.nav-tabs.primary {
-      display: flex;
-      flex-flow: column;
-    }
-  }
 
   h2.field--name-field-title {
     @include block-title(true);

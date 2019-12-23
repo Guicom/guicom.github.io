@@ -10,6 +10,16 @@
             {
                 "href": "http:\/\/default\/taxonomy\/term\/7?_format=hal_json"
             }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/family\/field_background_image": [
+            {
+                "href": "http:\/\/default\/media\/28\/edit?_format=hal_json"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/family\/field_family_image": [
+            {
+                "href": "http:\/\/default\/media\/18\/edit?_format=hal_json"
+            }
         ]
     },
     "tid": [
@@ -83,11 +93,45 @@
                     }
                 ]
             }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/family\/field_background_image": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/media\/28\/edit?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/media\/image"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "d16e2fba-561a-48ed-a9f1-d935af3f5d00"
+                    }
+                ]
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/family\/field_family_image": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/media\/18\/edit?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/media\/product_image"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "3d43aa6c-68e4-427c-9086-6ae4a58dd317"
+                    }
+                ]
+            }
         ]
     },
     "changed": [
         {
-            "value": "2019-12-02T13:39:44+00:00",
+            "value": "2019-12-23T09:14:13+00:00",
             "format": "Y-m-d\\TH:i:sP"
         }
     ],

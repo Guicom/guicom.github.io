@@ -1,0 +1,15 @@
+uuid: 0c327185-d1d7-43a6-a047-502d7a954622
+langcode: en
+status: true
+dependencies: {  }
+name: 450x
+label: 450x
+effects:
+  f3ab3056-6ae5-4546-a7f6-5ab6a66734b7:
+    uuid: f3ab3056-6ae5-4546-a7f6-5ab6a66734b7
+    id: image_scale
+    weight: 1
+    data:
+      width: 450
+      height: null
+      upscale: false

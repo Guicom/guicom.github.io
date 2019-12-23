@@ -113,6 +113,31 @@
     }
   }
 }
+@mixin left-overflow-color($color) {
+  &:after {
+    background: $color;
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    @include media-breakpoint-down(xl) {
+      left: side-width-negative(xl);
+      width: side-width(xl);
+    }
+    @include media-breakpoint-down(lg) {
+      left: side-width-negative(lg);
+      width: side-width(lg);
+    }
+    @include media-breakpoint-down(md) {
+      left: side-width-negative(md);
+      width: side-width(md);
+    }
+    @include media-breakpoint-down(md) {
+      display: none;
+    }
+  }
+}
 
 //
 // Function & mixin to get relative column width

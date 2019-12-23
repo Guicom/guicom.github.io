@@ -1,0 +1,10 @@
+uuid: 7af213fb-c887-408b-abd7-e7b883b52602
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.family_display
+label: 'Family display'
+targetEntityType: media
+cache: true
