@@ -10,7 +10,9 @@ body.taxonomy-family {
     @include block-title(true);
   }
   header {
-    margin-bottom: 180px;
+    @include media-breakpoint-up(lg) {
+      margin-bottom: 180px;
+    }
     .hero-block {
       position: relative;
       h1 {
