@@ -37,24 +37,31 @@ body.taxonomy-family {
       .family-image {
         position: relative;
         img {
-          max-height: 450px;
-          width: auto;
-          position: absolute;
+          @include media-breakpoint-up(lg) {
+            position: absolute;
+            
+          }
+          position: relative;
           transform: translateX(-50%);
           left: 50%;
+          max-height: 450px;
+          width: auto;
         }
       }
 
       .family-baseline-wrapper {
         position: relative;
         .family-baseline-inner {
+          @include media-breakpoint-up(lg) {
+            position: absolute;
+            transform: translateY(-45%);
+            padding: 40px 40px 60px 0;
+          }
           background: $yellow;
-          padding: 40px 40px 60px 0;
-          position: absolute;
+          padding: 40px 40px 60px 40px;
           min-height: 300px;
           display: flex;
           align-items: center;
-          transform: translateY(-45%);
           @include left-overflow-color($yellow);
           .family-baseline {
             p {
