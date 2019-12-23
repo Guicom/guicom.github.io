@@ -39,7 +39,7 @@ body.taxonomy-family {
         img {
           @include media-breakpoint-up(lg) {
             position: absolute;
-            
+
           }
           position: relative;
           transform: translateX(-50%);

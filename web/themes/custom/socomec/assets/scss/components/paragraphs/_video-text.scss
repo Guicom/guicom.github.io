@@ -1,4 +1,5 @@
-.paragraph--type-video-text {
+.paragraph--type-video-text,
+.paragraph--type--video-embed {
   @include make-row();
   .group-left {
     padding-left: calc(#{$grid-gutter-width} / 2);
@@ -9,5 +10,10 @@
     padding-left: calc(#{$grid-gutter-width} / 2);
     padding-right: calc(#{$grid-gutter-width} / 2);
     @include make-col(8)
+  }
+
+  .field--name-field-video-embed-video,
+  .field--name-field-media-oembed-video {
+    width: 100%;
   }
 }
