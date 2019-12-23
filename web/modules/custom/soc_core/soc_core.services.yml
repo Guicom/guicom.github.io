@@ -2,5 +2,7 @@ services:
   soc_core.base_api:
     class: Drupal\soc_core\Service\BaseApi
     arguments: ['@logger.factory']
+  soc_core.media_api:
+    class: Drupal\soc_core\Service\MediaApi
   soc_core.cache_handler:
     class: Drupal\soc_core\Service\Cache\CacheHandler

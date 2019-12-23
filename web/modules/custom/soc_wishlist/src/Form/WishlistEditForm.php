@@ -6,6 +6,7 @@ use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Messenger\MessengerInterface;
 use Drupal\node\Entity\Node;
+use Drupal\soc_core\Service\MediaApi;
 use Drupal\soc_wishlist\Service\Manager\WishlistManager;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
@@ -22,13 +23,23 @@ class WishlistEditForm extends FormBase {
   protected $messenger;
 
   /**
+   * The Media API.
+   *
+   * @var \Drupal\soc_core\Service\MediaApi
+   */
+  protected $mediaApi;
+
+  /**
    * WishlistController constructor.
    *
    * @param \Drupal\soc_wishlist\Service\Manager\WishlistManager $wishlistManager
    */
-  public function __construct(WishlistManager $wishlistManager, MessengerInterface $messenger) {
+  public function __construct(WishlistManager $wishlistManager,
+                              MessengerInterface $messenger,
+                              MediaApi $mediaApi) {
     $this->wishlistManager = $wishlistManager;
     $this->messenger = $messenger;
+    $this->mediaApi = $mediaApi;
   }
 
   /**
@@ -37,7 +48,8 @@ class WishlistEditForm extends FormBase {
   public static function create(ContainerInterface $container) {
     return new static(
       $container->get('soc_wishlist.wishlist_manager'),
-      $container->get('messenger')
+      $container->get('messenger'),
+      $container->get('soc_core.media_api')
     );
   }
 
@@ -107,8 +119,16 @@ class WishlistEditForm extends FormBase {
     foreach ($items as $result) {
       if ($result instanceof Node) {
         $extId = $result->get('field_reference_extid')->value;
+        $mediaId = $result->get('field_reference_picture')->target_id;
+        $picture = $this->mediaApi->getFileUriFromMediaId($mediaId);
         $options[$result->id()] = [
-          'picture' => $result->get('field_reference_picture')->target_id,
+          'picture' => [
+            'data' => [
+              '#theme' => 'image_style',
+              '#style_name' => 'thumbnail',
+              '#uri' => $picture,
+            ],
+          ],
           'reference' => $result->get('field_reference_ref')->value,
           'description' => $result->getTitle(),
           'quantity' => [
