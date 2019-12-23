@@ -85,11 +85,14 @@ class WishlistEditForm extends FormBase {
     $data = $this->wishlistManager->loadSavedItems();
 
     // Load items.
-    $itemsQuery = \Drupal::entityQuery('node');
-    $itemsQuery->condition('type', 'product_reference');
-    $itemsQuery->condition('field_reference_extid', array_keys($data), 'IN');
-    $itemsResults = $itemsQuery->execute();
-    $items = Node::loadMultiple($itemsResults);
+    $items = [];
+    if (sizeof($data)) {
+      $itemsQuery = \Drupal::entityQuery('node');
+      $itemsQuery->condition('type', 'product_reference');
+      $itemsQuery->condition('field_reference_extid', array_keys($data), 'IN');
+      $itemsResults = $itemsQuery->execute();
+      $items = Node::loadMultiple($itemsResults);
+    }
 
     // Set header.
     $header = [
