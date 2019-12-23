@@ -1,0 +1,13 @@
+.paragraph--type-video-text {
+  @include make-row();
+  .group-left {
+    padding-left: calc(#{$grid-gutter-width} / 2);
+    padding-right: calc(#{$grid-gutter-width} / 2);
+    @include make-col(4);
+  }
+  .group-right {
+    padding-left: calc(#{$grid-gutter-width} / 2);
+    padding-right: calc(#{$grid-gutter-width} / 2);
+    @include make-col(8)
+  }
+}

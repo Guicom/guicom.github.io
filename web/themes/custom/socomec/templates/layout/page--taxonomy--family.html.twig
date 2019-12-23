@@ -94,6 +94,31 @@
     {% endif %}
     <main id="main-wrapper" class="layout-main-wrapper clearfix">
       {% block content %}
+        <article class="family-article">
+          <section class="multiline-wrapper">
+            <div class="container">
+              <div class="row">
+                {{ drupal_field('field_family_first_multiline', 'taxonomy_term') }}
+              </div>
+            </div>
+          </section>
+          <section class="section-grey-light" id="product-reference-section">
+            <div class="container">
+              <div class="row">
+                <div class="product-reference-wrapper col-md-12">
+                  <h2 class="field--name-field-title">{{ 'Product' |t }}</h2>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section class="multiline-wrapper">
+            <div class="container">
+              <div class="row">
+                {{ drupal_field('field_family_second_multiline', 'taxonomy_term') }}
+              </div>
+            </div>
+          </section>
+        </article>
       {% endblock %}
     </main>
     {% if page.featured_bottom_first or page.featured_bottom_second or page.featured_bottom_third %}
