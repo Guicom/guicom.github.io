@@ -35,6 +35,8 @@ class WishlistEditForm extends FormBase {
    * WishlistController constructor.
    *
    * @param \Drupal\soc_wishlist\Service\Manager\WishlistManager $wishlistManager
+   * @param \Drupal\Core\Messenger\MessengerInterface $messenger
+   * @param \Drupal\soc_core\Service\MediaApi $mediaApi
    */
   public function __construct(WishlistManager $wishlistManager,
                               MessengerInterface $messenger,
@@ -113,7 +115,7 @@ class WishlistEditForm extends FormBase {
         $extId = $result['node']->get('field_reference_extid')->value;
         $mediaId = $result['node']->get('field_reference_picture')->target_id;
         $picture = $this->mediaApi->getFileUriFromMediaId($mediaId);
-        $options[$result['node']->id()] = [
+        $options[$extId] = [
           'picture' => [
             'data' => [
               '#theme' => 'image_style',
@@ -130,6 +132,9 @@ class WishlistEditForm extends FormBase {
               '#title_display' => 'invisible',
               '#value' => $result['quantity'],
               '#name' => 'quantity[' . $extId . ']',
+              '#attributes' => [
+                'data-extid' => $extId,
+              ],
               '#size' => 2,
               '#prefix' => '<span id="wishlist_quantity_' . $extId . '">',
               '#suffix' => '</span>',
@@ -207,8 +212,24 @@ class WishlistEditForm extends FormBase {
   }
 
   public function updateQuantity(array &$form, FormStateInterface $form_state) {
-
-    return $form['output'];
+    /** @var \Drupal\soc_wishlist\Service\Manager\WishlistManager $wishlistManager */
+    $wishlistManager = \Drupal::service('soc_wishlist.wishlist_manager');
+    $userInput = $form_state->getUserInput();
+    if (isset($userInput['items']) && sizeof($userInput['items'])) {
+      $wishlistManager->loadSavedItems();
+      $items = $userInput['items'];
+      foreach ($items as $extId => $null) {
+        if (array_key_exists('items-' . $extId . '-quantity', $userInput)) {
+          $wishlistManager->setQuantity($extId, $userInput['items-' . $extId . '-quantity']);
+        }
+      }
+      try {
+        $wishlistManager->updateCookie();
+      } catch (\Exception $e) {
+        $this->messenger->addError($e->getMessage());
+      }
+      return $form['output'];
+    }
   }
 
 }

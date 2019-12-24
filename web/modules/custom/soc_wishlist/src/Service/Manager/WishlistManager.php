@@ -104,7 +104,7 @@ class WishlistManager {
    * @return bool
    */
   public function setQuantity($extid, $quantity):bool {
-    if (is_int($quantity) === TRUE) {
+    if (is_numeric($quantity) === TRUE) {
       $items = $this->wishlist->getItems();
       if (array_key_exists($extid, $items)) {
         $items[$extid]['quantity'] = $quantity;
