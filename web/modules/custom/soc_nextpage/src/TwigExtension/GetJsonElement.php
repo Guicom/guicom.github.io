@@ -25,6 +25,7 @@ class GetJsonElement extends \Twig_Extension {
    * Replaces all numbers from the string.
    */
   public static function getFieldData($string, $extid) {
+    // ['Main incoming load break', 'Distribution load break','Machine control','Local safety load break']
     $json_value = json_decode($string[0]["#context"]["value"]);
     $data = NULL;
     if (isset($json_value->Marketing->value->{$extid})) {

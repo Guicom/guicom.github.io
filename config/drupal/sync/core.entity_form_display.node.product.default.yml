@@ -8,6 +8,8 @@ dependencies:
     - field.field.node.product.field_json_product_data
     - field.field.node.product.field_multiline_anchor_name
     - field.field.node.product.field_product_advantage_text
+    - field.field.node.product.field_product_application_label
+    - field.field.node.product.field_product_application_link
     - field.field.node.product.field_product_cta_1
     - field.field.node.product.field_product_cta_2
     - field.field.node.product.field_product_cta_3
@@ -107,6 +109,7 @@ third_party_settings:
         - group_op
         - group_associated_products
         - group_cta
+        - group_application
       parent_name: group_tabs
       weight: 11
       format_type: tab
@@ -158,6 +161,20 @@ third_party_settings:
         description: ''
         required_fields: true
       label: Multiline
+    group_application:
+      children:
+        - field_product_application_label
+        - field_product_application_link
+      parent_name: group_webmastering
+      weight: 10
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+      label: Application
 id: node.product.default
 targetEntityType: node
 bundle: product
@@ -208,6 +225,26 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: text_textarea
+    region: content
+  field_product_application_label:
+    weight: 29
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_product_application_link:
+    type: entity_reference_paragraphs
+    weight: 30
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
     region: content
   field_product_cta_1:
     type: entity_reference_paragraphs

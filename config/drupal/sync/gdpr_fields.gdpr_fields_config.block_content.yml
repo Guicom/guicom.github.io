@@ -7,6 +7,7 @@ filenames:
   textfield: ''
   url: ''
   link: ''
+  tool_promotion: ''
   home_product_assistance: ''
 bundles:
   textfield:
@@ -45,6 +46,10 @@ bundles:
       notes: ''
       relationship: 0
       sars_filename: ''
+  tool_promotion:
+    field_title:
+      bundle: tool_promotion
+      name: field_title
   home_product_assistance:
     field_br_icon:
       bundle: home_product_assistance
@@ -57,6 +62,9 @@ bundles:
       notes: ''
       relationship: 0
       sars_filename: ''
+    field_description:
+      bundle: tool_promotion
+      name: field_description
     field_br_title:
       bundle: home_product_assistance
       name: field_br_title
@@ -64,6 +72,13 @@ bundles:
       rtf: 'no'
       rta: 'no'
       enabled: false
+      anonymizer: clear_anonymizer
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_main_image:
+      bundle: tool_promotion
+      name: field_main_image
       anonymizer: ''
       notes: ''
       relationship: 0
@@ -79,6 +94,9 @@ bundles:
       notes: ''
       relationship: 0
       sars_filename: ''
+    field_background_image:
+      bundle: tool_promotion
+      name: field_background_image
     field_br_link:
       bundle: home_product_assistance
       name: field_br_link
@@ -112,6 +130,9 @@ bundles:
       notes: ''
       relationship: 0
       sars_filename: ''
+    field_lien:
+      bundle: tool_promotion
+      name: field_lien
     field_ba_text:
       bundle: home_product_assistance
       name: field_ba_text
@@ -119,6 +140,13 @@ bundles:
       rtf: 'no'
       rta: 'no'
       enabled: false
+      anonymizer: clear_anonymizer
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_tool_promotion_families:
+      bundle: tool_promotion
+      name: field_tool_promotion_families
       anonymizer: ''
       notes: ''
       relationship: 0

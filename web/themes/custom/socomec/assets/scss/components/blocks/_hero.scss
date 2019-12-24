@@ -3,6 +3,34 @@
  * Styles for custom block hero.
  */
 
+@mixin socomec-hero-background {
+  background: linear-gradient(26.93deg, #00519D 0%, rgba(0, 81, 157, 0.8) 100%) no-repeat;
+  background-size: cover;
+  height: auto;
+  padding-bottom: 80px;
+  @include media-breakpoint-down(sm) {
+    padding-bottom: 40px;
+  }
+  .hero-content{
+    .title-hero {
+      color: $white;
+      font-family: $font-roboto;
+      font-size: 48px;
+      font-weight: 300;
+      line-height: 60px;
+    }
+  }
+  .hero-thumbnail {
+    padding: 45px 0;
+    text-align: center;
+    img {
+      max-width: 100%;
+      width: 270px;
+      height: auto;
+    }
+  }
+}
+
 // Theming hero block
 #block-views-block-hero-block-block-1,
 #block-views-block-hero-block-block-2 {
@@ -11,22 +39,7 @@
     padding-left: 0;
     .view-hero-block{
       .socomec-hero-background{
-        background: linear-gradient(26.93deg, #00519D 0%, rgba(0, 81, 157, 0.8) 100%) no-repeat;
-        background-size: cover;
-        height: auto;
-        padding-bottom: 80px;
-        @include media-breakpoint-down(sm) {
-          padding-bottom: 40px;
-        }
-        .hero-thumbnail{
-          padding:45px 0;
-          text-align: center;
-          img{
-            max-width: 100%;
-            width: 270px;
-            height: auto;
-          }
-        }
+        @include socomec-hero-background;
         .hero-content{
           padding: 35px 0 0 0;
           .premium-label {
@@ -53,13 +66,6 @@
               margin-left: 5px;
               margin-top: -2px;
             }
-          }
-          .title-hero {
-            color: $white;
-            font-family: $font-roboto;
-            font-size: 48px;
-            font-weight: 300;
-            line-height: 60px;
           }
           .thx-text,
           .lp-baseline {

@@ -1,6 +1,8 @@
 /* MIXINS */
 
+//
 // STYLES MIXIN
+//
 @mixin block-title($with-line: false) {
   color: $blue;
   font-family: $font-roboto;
@@ -46,12 +48,15 @@
   transition: all 0.3s ease-out;
 }
 
+//
 // LAYOUT MIXIN
+//
 @mixin right-overflow-calc($width) {
   width: calc(((100vw - #{map-get($container-max-widths, $width)}) / 2 + #{map-get($container-max-widths, $width)}) - #{$grid-gutter-width}/2);
   margin-left: calc((100vw - ((100vw - #{map-get($container-max-widths, $width)}) / 2 + #{map-get($container-max-widths, $width)})) + #{$grid-gutter-width} / 2);
 }
 
+//Overflow oustide container with content
 @mixin right-overflow() {
   @include media-breakpoint-up(lg) {
     @include right-overflow-calc(lg);
@@ -61,7 +66,43 @@
   }
 }
 
+//Overflow right oustide container with color
+
+@function side-width($breakpoint) {
+  @return calc(((100vw - #{map-get($container-max-widths, $breakpoint)}) / 2) + #{$grid-gutter-width}/2 )
+}
+@function side-width-negative($breakpoint) {
+  @return calc(((#{map-get($container-max-widths, $breakpoint)} - 100vw ) / 2) - #{$grid-gutter-width}/2 )
+}
+@mixin right-overflow-color($color) {
+  &:after {
+    background: $color;
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    @include media-breakpoint-down(xl) {
+      right: side-width-negative(xl);
+      width: side-width(xl);
+    }
+    @include media-breakpoint-down(lg) {
+       right: side-width-negative(lg);
+       width: side-width(lg);
+    }
+    @include media-breakpoint-down(md) {
+      right: side-width-negative(md);
+      width: side-width(md);
+    }
+    @include media-breakpoint-down(md) {
+      display: none;
+    }
+  }
+}
+
+//
 // Function & mixin to get relative column width
+//
 @function absolute-width-column($breakpoint) {
  @return (map-get($container-max-widths, $breakpoint) / 12)
 }
@@ -74,6 +115,9 @@
   flex-basis: calc-column-width($nbr, $breakpoint);
 }
 
+//
+// Responsive
+//
 @mixin custom-breakpoint-down($widht) {
   @media screen and (max-width: $widht) {
     @content;

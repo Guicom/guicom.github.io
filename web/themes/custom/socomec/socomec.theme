@@ -5,6 +5,7 @@
  * Functions to support theming in the SASS Starterkit subtheme.
  */
 
+use Drupal\block_content\Entity\BlockContent;
 use Drupal\Core\Config\Config;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Language\LanguageManager;
@@ -199,7 +200,7 @@ function socomec_preprocess_views_view(&$variables) {
 }
 
 /**
- * Implements hook_preprocess_HOOK().
+ * Implements template_preprocess_HOOK().
  */
 function socomec_preprocess_views_view_fields__hero_block__block_2(&$variables) {
   $mid = $variables["row"]->_entity->get('field_file')->getString();
@@ -218,7 +219,7 @@ function socomec_preprocess_views_view_fields__hero_block__block_2(&$variables) 
 }
 
 /**
- * Implements hook_preprocess_media().
+ * Implements template_preprocess_media().
  */
 function socomec_preprocess_media(array &$variables) {
   if ($variables["view_mode"] == 'simple_html' && $variables["media"]->bundle() == 'image') {
@@ -229,6 +230,68 @@ function socomec_preprocess_media(array &$variables) {
     }
     if (isset($properties[0]["title"])) {
       $variables['content']['title_image'] = $properties[0]["title"];
+    }
+  }
+}
+
+/**
+ * Implements template_preprocess_block().
+ */
+function socomec_preprocess_block(&$variables) {
+  if ($uuid = $variables["elements"]["#derivative_plugin_id"]) {
+    $block = \Drupal::service('entity.repository')->loadEntityByUuid('block_content', $uuid);
+    if ($block) {
+      $block_type = $block->bundle();
+      switch ($block_type) {
+        case 'tool_promotion':
+          // Add background image
+          if ($block->hasField('field_background_image')
+            && !empty($block->get('field_background_image')->getValue())) {
+            $field_background_image_id = $block->get('field_background_image')->first()->getValue()['target_id'];
+            $media = Media::load($field_background_image_id);
+            $fid = $media->getSource()->getSourceFieldValue($media);
+            $file = File::load($fid);
+            if(empty($file)){
+              return;
+            }
+            $file_url = file_create_url($file->getFileUri());
+          }
+          $variables['background_image'] = (!empty($file_url))?$file_url:null;
+          break;
+        default:
+          break;
+      }
+    }
+  }
+}
+
+function socomec_preprocess_page(&$variables) {
+  /** @var \Drupal\node\Entity\Node $node */
+  if ($node = \Drupal::routeMatch()->getParameter('node')) {
+    switch ($node->bundle()) {
+      case 'product':
+        // get product ancestors
+        $tid = $node->get('field_product_family')->target_id;
+        $ancestors = \Drupal::service('entity_type.manager')
+          ->getStorage("taxonomy_term")->loadAllParents($tid);
+        // check if any ancestor has a teaser to display
+        foreach ($ancestors as $term) {
+          $teasersQuery = \Drupal::entityQuery('block_content');
+          $teasersQuery->condition('type', 'tool_promotion');
+          $teasersQuery->condition('field_tool_promotion_families', $term->id());
+          $teasersIds = $teasersQuery->execute();
+          if ($teasers = BlockContent::loadMultiple($teasersIds)) {
+            $teaser = reset($teasers);
+            $teaserInstances = $teaser->getInstances();
+            $block = reset($teaserInstances);
+            $variables['tool_promotion'] = \Drupal::entityTypeManager()->
+              getViewBuilder('block')->view($block);
+            break;
+          }
+        }
+        break;
+      default:
+        break;
     }
   }
 }
