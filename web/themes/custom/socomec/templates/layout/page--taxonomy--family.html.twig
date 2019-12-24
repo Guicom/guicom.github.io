@@ -106,9 +106,14 @@
             <div class="container">
               <div class="row">
                 <div class="product-reference-wrapper col-md-12">
-                  <h2 class="field--name-field-title">{{ 'All' |t }} {{ drupal_field('name', 'taxonomy_term') }}</h2>
+                  <h2 class="field--name-field-title">{{ 'All' |t }}&nbsp;{{ drupal_field('name', 'taxonomy_term') }}</h2>
                   <div class="row">
                     <aside class="col-md-3">
+                      <div class="facets-title">{{ 'Filter by' |t }}</div>
+                      <div class="contextual-family block-facets-ajax">
+                        <div class="facet-title ">{{ 'Category' | t }}</div>
+                        {{ drupal_entity('block', 'contextualfamily') }}
+                      </div>
                       {{ drupal_entity('block', 'protectionlevel') }}
                     </aside>
                     <div class="col-md-9">

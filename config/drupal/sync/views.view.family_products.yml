@@ -203,7 +203,7 @@ display:
           specify_validation: true
           validate:
             type: 'entity:taxonomy_term'
-            fail: 'not found'
+            fail: ignore
           validate_options:
             bundles:
               family: family
