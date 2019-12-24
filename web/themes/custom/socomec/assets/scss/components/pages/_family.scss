@@ -77,4 +77,12 @@ body.taxonomy-family {
       }
     }
   }
+
+  .view-family-products {
+    .product-wrapper {
+      display: flex;
+      margin-top: 35px;
+      width: 100%;
+    }
+  }
 }
