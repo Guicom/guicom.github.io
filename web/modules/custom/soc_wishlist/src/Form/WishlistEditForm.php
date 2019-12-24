@@ -82,14 +82,7 @@ class WishlistEditForm extends FormBase {
         'quantity' => 2,
       ],
     ];
-    $data = $this->wishlistManager->loadSavedItems();
-
-    // Load items.
-    $itemsQuery = \Drupal::entityQuery('node');
-    $itemsQuery->condition('type', 'product_reference');
-    $itemsQuery->condition('field_reference_extid', array_keys($data), 'IN');
-    $itemsResults = $itemsQuery->execute();
-    $items = Node::loadMultiple($itemsResults);
+    $items = $this->wishlistManager->loadSavedItems();
 
     // Set header.
     $header = [
@@ -102,18 +95,18 @@ class WishlistEditForm extends FormBase {
     // Prepare tableselect field.
     $options = [];
     foreach ($items as $result) {
-      if ($result instanceof Node) {
-        $extId = $result->get('field_reference_extid')->value;
-        $options[$result->id()] = [
-          'picture' => $result->get('field_reference_picture')->target_id,
-          'reference' => $result->get('field_reference_ref')->value,
-          'description' => $result->getTitle(),
+      if ($result['node'] instanceof Node) {
+        $extId = $result['node']->get('field_reference_extid')->value;
+        $options[$result['node']->id()] = [
+          'picture' => $result['node']->get('field_reference_picture')->target_id,
+          'reference' => $result['node']->get('field_reference_ref')->value,
+          'description' => $result['node']->getTitle(),
           'quantity' => [
             'data' => [
               '#type' => 'number',
               '#title' => 'Quantity',
               '#title_display' => 'invisible',
-              '#value' => $data[$extId]['quantity'],
+              '#value' => $result['quantity'],
               '#name' => 'quantity[' . $extId . ']',
               '#size' => 2,
             ],
@@ -131,6 +124,13 @@ class WishlistEditForm extends FormBase {
       '#prefix' => '<div>',
       '#suffix' => '</div>',
     ];
+
+    // Link
+    $form['links'] = [
+      '#type' => 'item',
+      '#markup' => '<a href="/wishlist/export/cssv">CSV</a> | <a href="/wishlist/export/xls">XLS</a> | <a href="/wishlist/export/xlsx">XLSX</a> | <a href="/wishlist/export/pdf">PDF</a>',
+    ];
+
     $form['submit'] = [
       '#type' => 'submit',
       '#value' => t('Remove selected'),

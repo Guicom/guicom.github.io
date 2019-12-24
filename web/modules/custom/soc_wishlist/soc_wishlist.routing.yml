@@ -19,3 +19,10 @@ soc_wishlist.remove_item:
     _controller: '\Drupal\soc_wishlist\Controller\WishlistController::removeItemAction'
   requirements:
     _permission: 'edit own wishlist'
+
+soc_wishlist.export:
+  path: '/wishlist/export/{type}'
+  defaults:
+    _controller: '\Drupal\soc_wishlist\Controller\WishlistController::export'
+  requirements:
+    _permission: 'edit own wishlist'

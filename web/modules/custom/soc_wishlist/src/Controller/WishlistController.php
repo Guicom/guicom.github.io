@@ -4,6 +4,7 @@ namespace Drupal\soc_wishlist\Controller;
 
 use Drupal\Core\Controller\ControllerBase;
 use Drupal\Core\Messenger\MessengerInterface;
+use Drupal\soc_wishlist\Service\Manager\WishlistExport;
 use Drupal\soc_wishlist\Service\Manager\WishlistManager;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
@@ -74,4 +75,30 @@ class WishlistController extends ControllerBase {
     return [];
   }
 
+  /**
+   * Export datas
+   * @param string $extid
+   *
+   * @return array
+   */
+  public function export(string $type) {
+    $types = [
+      'csv',
+      'xls',
+      'xlsx',
+      'pdf'
+    ];
+
+    if (in_array($type, $types)) {
+      $export = new WishlistExport($this->wishlistManager, $type);
+      $return = $export->export();
+      if ($return) {
+        return $export->export();
+      }
+      $this->messenger->addError(t('wishlist is empty'));
+      return '';
+    }
+    $this->messenger->addError(t('Unknown type'));
+    return '';
+  }
 }
