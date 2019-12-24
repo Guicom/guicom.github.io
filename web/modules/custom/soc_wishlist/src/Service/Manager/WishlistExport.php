@@ -75,27 +75,23 @@ class WishlistExport {
     $response->headers->set('Expires', '0');
     $response->headers->set('Content-type', 'text/csv');
     $response->headers->set('Content-Disposition', 'attachment; filename=' . self::WISHLIST_FILENAME . '.csv');
-    //instead of writing down to a file we write to the output stream
-    $csv_data = fopen('php://output', 'w');
 
-    //form header
-    fputcsv($csv_data, ['reference', 'description', 'quantity'], ';');
+    $csvData = [
+      implode(';', ['reference', 'description', 'quantity']),
+    ];
 
     //write data in the CSV format
     foreach ($items as $item) {
       if ($item['node'] instanceof Node) {
-        fputcsv($csv_data, [
+        $csvData[] = implode(';', [
           $item['node']->get('field_reference_ref')->value,
           $item['node']->getTitle(),
           $item['quantity']
-        ], ';');
+        ]);
       }
     }
 
-    //close the stream
-    fclose($csv_data);
-
-    $content = ob_get_clean();
+    $content = implode(PHP_EOL, $csvData);
     $response->setContent($content);
     return $response;
   }
