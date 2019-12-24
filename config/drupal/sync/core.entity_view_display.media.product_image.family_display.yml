@@ -1,0 +1,43 @@
+uuid: fc4dc0ce-7c92-4f10-b9c5-5d3e1c12a2bc
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.media.family_display
+    - field.field.media.product_image.field_media_image_2
+    - image.style.450x
+    - media.type.product_image
+  module:
+    - ds
+    - svg_image
+id: media.product_image.family_display
+targetEntityType: media
+bundle: product_image
+mode: family_display
+content:
+  field_media_image_2:
+    type: image
+    weight: 0
+    region: content
+    label: hidden
+    settings:
+      image_style: 450x
+      image_link: ''
+      svg_render_as_image: '1'
+      svg_attributes:
+        width: ''
+        height: ''
+    third_party_settings:
+      ds:
+        ft:
+          id: reset
+          settings:
+            lb: ''
+hidden:
+  addtoany: true
+  created: true
+  langcode: true
+  name: true
+  search_api_excerpt: true
+  thumbnail: true
+  uid: true

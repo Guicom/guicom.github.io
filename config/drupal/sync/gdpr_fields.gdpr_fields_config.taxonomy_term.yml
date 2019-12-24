@@ -50,7 +50,7 @@ bundles:
       rtf: 'no'
       rta: 'no'
       enabled: false
-      anonymizer: ''
+      anonymizer: date_anonymizer
       notes: ''
       relationship: 0
       sars_filename: ''
@@ -79,6 +79,17 @@ bundles:
     field_family_extid:
       bundle: family
       name: field_family_extid
+      entity_type_id: taxonomy_term
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_background_image:
+      bundle: family
+      name: field_background_image
       entity_type_id: taxonomy_term
       rtf: 'no'
       rta: 'no'

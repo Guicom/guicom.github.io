@@ -1,0 +1,20 @@
+<div class="hero-block" >
+  <div class="container">
+    <div class="row">
+      <div class="family-info col-lg-6 col-md-12">
+        <h1>
+          <span class="family-title">{{ drupal_field('name', 'taxonomy_term') }}</span>
+          <span class="family-subtitle">{{ drupal_field('field_family_sub_title', 'taxonomy_term') }}</span>
+        </h1>
+      </div>
+      <div class="family-image col-lg-6 col-md-12">
+        {{ drupal_field('field_family_image', 'taxonomy_term') }}
+      </div>
+      <div class="family-baseline-wrapper col-lg-6 col-md-12">
+        <div class="family-baseline-inner">
+          <h2 class="family-baseline">{{ drupal_field('description', 'taxonomy_term') }}</h2>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
