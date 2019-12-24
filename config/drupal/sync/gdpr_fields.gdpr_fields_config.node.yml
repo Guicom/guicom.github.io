@@ -584,6 +584,28 @@ bundles:
       notes: ''
       relationship: 0
       sars_filename: ''
+    field_family_first_level:
+      bundle: product
+      name: field_family_first_level
+      entity_type_id: node
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_family_second_level:
+      bundle: product
+      name: field_family_second_level
+      entity_type_id: node
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
   thank_you_page:
     field_title:
       bundle: thank_you_page

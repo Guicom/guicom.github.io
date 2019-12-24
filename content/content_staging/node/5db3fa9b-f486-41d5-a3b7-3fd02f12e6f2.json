@@ -30,6 +30,16 @@
                 "href": "http:\/\/default\/node\/10?_format=hal_json"
             }
         ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/product\/field_family_first_level": [
+            {
+                "href": "http:\/\/default\/taxonomy\/term\/6?_format=hal_json"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/product\/field_family_second_level": [
+            {
+                "href": "http:\/\/default\/taxonomy\/term\/7?_format=hal_json"
+            }
+        ],
         "http:\/\/drupal.org\/rest\/relation\/node\/product\/field_product_application_link": [
             {
                 "href": ""
@@ -151,7 +161,7 @@
     ],
     "vid": [
         {
-            "value": 83
+            "value": 85
         }
     ],
     "langcode": [
@@ -167,7 +177,7 @@
     ],
     "revision_timestamp": [
         {
-            "value": "2019-12-24T09:12:35+00:00",
+            "value": "2019-12-24T15:45:47+00:00",
             "format": "Y-m-d\\TH:i:sP"
         }
     ],
@@ -268,6 +278,40 @@
                 ]
             }
         ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/product\/field_family_first_level": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/taxonomy\/term\/6?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/family"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "59b4df63-c1cc-49ae-81ba-1cd80dcd280b"
+                    }
+                ]
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/product\/field_family_second_level": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/taxonomy\/term\/7?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/family"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "868352ea-0c8b-495c-b756-750eaa3298b5"
+                    }
+                ]
+            }
+        ],
         "http:\/\/drupal.org\/rest\/relation\/node\/product\/field_product_application_link": [
             {
                 "_links": {
@@ -283,7 +327,7 @@
                         "value": "f7d70ab7-0060-4905-8a00-f7665e898d66"
                     }
                 ],
-                "target_revision_id": "259"
+                "target_revision_id": "299"
             }
         ],
         "http:\/\/drupal.org\/rest\/relation\/node\/product\/field_product_cta_1": [
@@ -301,7 +345,7 @@
                         "value": "bff07d87-15f7-4612-bc51-5e35a2301a73"
                     }
                 ],
-                "target_revision_id": "260"
+                "target_revision_id": "300"
             }
         ],
         "http:\/\/drupal.org\/rest\/relation\/node\/product\/field_product_cta_2": [
@@ -319,7 +363,7 @@
                         "value": "c3e23bab-5fd4-4799-81b3-398f7c9eb936"
                     }
                 ],
-                "target_revision_id": "261"
+                "target_revision_id": "301"
             }
         ],
         "http:\/\/drupal.org\/rest\/relation\/node\/product\/field_product_cta_3": [
@@ -337,7 +381,7 @@
                         "value": "1fdc9869-fa70-406a-920b-08cd75e2fc5a"
                     }
                 ],
-                "target_revision_id": "262"
+                "target_revision_id": "302"
             }
         ],
         "http:\/\/drupal.org\/rest\/relation\/node\/product\/field_product_cta_4": [
@@ -355,7 +399,7 @@
                         "value": "7ead3cd8-8918-4529-8215-a6df919d44f6"
                     }
                 ],
-                "target_revision_id": "263"
+                "target_revision_id": "303"
             }
         ],
         "http:\/\/drupal.org\/rest\/relation\/node\/product\/field_product_family": [
@@ -390,7 +434,7 @@
                         "value": "4dfc13a1-7179-491f-a2e7-bf37576c78b4"
                     }
                 ],
-                "target_revision_id": "264"
+                "target_revision_id": "304"
             }
         ],
         "http:\/\/drupal.org\/rest\/relation\/node\/product\/field_product_orc_content": [
@@ -674,7 +718,7 @@
                         "value": "99faba6a-beb0-454d-8c53-00e60ef45916"
                     }
                 ],
-                "target_revision_id": "265"
+                "target_revision_id": "305"
             },
             {
                 "_links": {
@@ -690,7 +734,7 @@
                         "value": "9b0a6bf9-aece-495f-862c-4ad4ee43d031"
                     }
                 ],
-                "target_revision_id": "266"
+                "target_revision_id": "306"
             },
             {
                 "_links": {
@@ -706,7 +750,7 @@
                         "value": "e20ca51c-e38a-43eb-8cf1-10ee2f90f2e9"
                     }
                 ],
-                "target_revision_id": "267"
+                "target_revision_id": "307"
             }
         ]
     },
@@ -728,7 +772,7 @@
     ],
     "changed": [
         {
-            "value": "2019-12-24T09:12:35+00:00",
+            "value": "2019-12-24T15:45:47+00:00",
             "format": "Y-m-d\\TH:i:sP"
         }
     ],

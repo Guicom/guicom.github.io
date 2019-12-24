@@ -9,6 +9,8 @@ dependencies:
     - search_api
   config:
     - field.storage.node.field_product_family
+    - field.storage.node.field_family_first_level
+    - field.storage.node.field_family_second_level
     - field.storage.node.field_json_product_data
     - field.storage.node.field_protection_level
     - search_api.server.socomec
@@ -55,6 +57,22 @@ name: Product
 description: ''
 read_only: false
 field_settings:
+  field_family_first_level:
+    label: 'Family first level'
+    datasource_id: 'entity:node'
+    property_path: field_family_first_level
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_family_first_level
+  field_family_second_level:
+    label: 'Family second level'
+    datasource_id: 'entity:node'
+    property_path: field_family_second_level
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_family_second_level
   field_json_product_data:
     label: Json
     datasource_id: 'entity:node'
