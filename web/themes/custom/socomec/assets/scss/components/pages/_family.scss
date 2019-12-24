@@ -1,6 +1,18 @@
 body.taxonomy-family {
+
+  // Global Section style
+  .section-grey-light {
+    background-color: $grey-blue;
+    padding: 40px 0 80px;
+    margin: 0 -15px;
+  }
+  h2.field--name-field-title {
+    @include block-title(true);
+  }
   header {
-    margin-bottom: 180px;
+    @include media-breakpoint-up(lg) {
+      margin-bottom: 180px;
+    }
     .hero-block {
       position: relative;
       h1 {
@@ -29,7 +41,7 @@ body.taxonomy-family {
         img {
           @include media-breakpoint-up(lg) {
             position: absolute;
-            
+
           }
           position: relative;
           transform: translateX(-50%);
