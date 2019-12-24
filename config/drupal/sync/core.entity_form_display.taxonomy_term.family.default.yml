@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.taxonomy_term.family.field_background_image
     - field.field.taxonomy_term.family.field_family_extid
     - field.field.taxonomy_term.family.field_family_first_multiline
     - field.field.taxonomy_term.family.field_family_image
@@ -27,6 +28,13 @@ content:
       placeholder: ''
       rows: 5
     third_party_settings: {  }
+  field_background_image:
+    type: media_library_widget
+    weight: 9
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+    region: content
   field_family_extid:
     weight: 6
     settings:
@@ -41,10 +49,10 @@ content:
     settings:
       title: Paragraph
       title_plural: Paragraphs
-      edit_mode: open
+      edit_mode: closed
       add_mode: dropdown
       form_display_mode: default
-      default_paragraph_type: ''
+      default_paragraph_type: _none
     third_party_settings: {  }
     region: content
   field_family_image:
@@ -60,10 +68,10 @@ content:
     settings:
       title: Paragraph
       title_plural: Paragraphs
-      edit_mode: open
+      edit_mode: closed
       add_mode: dropdown
       form_display_mode: default
-      default_paragraph_type: ''
+      default_paragraph_type: _none
     third_party_settings: {  }
     region: content
   field_family_sub_title:

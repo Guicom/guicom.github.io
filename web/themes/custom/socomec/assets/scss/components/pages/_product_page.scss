@@ -1,13 +1,7 @@
 body.node--type-product {
-  // Made edit button  sticky
-  nav.tabs {
-    position: fixed;
-    background: rgba(255, 255, 255, 0.7);
-    z-index: 1;
-    ul.nav.nav-tabs.primary {
-      display: flex;
-      flex-flow: column;
-    }
+
+  h2.field--name-field-title {
+    @include block-title(true);
   }
 
   header {
@@ -316,6 +310,9 @@ body.node--type-product {
     }
   }
 
+  .product-right-info {
+    justify-content: space-between;
+  }
   .vocabulary-protection-level {
     .protection-title {
       display: flex;
@@ -369,10 +366,18 @@ body.node--type-product {
 
 
   // Advantage section
+  #product-avantage-section {
+    .field--name-field-title {
+      margin-top: 80px;
+    }
+  }
   .advantage-wrapper {
+    margin-bottom: 110px;
     .field--name-field-product-advantage-text {
-      font-size: 20px;
-      margin-bottom: 60px;
+      p {
+        font-size: 20px;
+        margin-bottom: 60px;
+      }
     }
 
     .advantage-element-wrapper {
@@ -623,8 +628,8 @@ body.node--type-product {
         max-width: 471px;
         .thumbnail-wrapper {
           background: rgba(76, 175, 228, 0.5);
-          width: 471px;
-          height: 471px;
+          width: 441px;
+          height: 441px;
           border-radius: 50%;
           display: flex;
           align-items: center;

@@ -56,9 +56,9 @@
     ],
     "description": [
         {
-            "value": "<p>Socomec\u2019s three-phase UPS solutions protect data centres, mission-critical IT and light industrial applications where shutdown could jeopardize business operations; they provide a reliable power supply, preventing power outages and disturbances that can lead to loss of service, reduced productivity, equipment damage or safety problems.<br \/>\r\nOur three-phase UPS &nbsp;are best in class in terms of efficiency, reliability, flexibility and serviceability; they are the ideal solution for an uninterrupted supply, providing business continuity without compromise.<\/p>\r\n",
+            "value": "<p>Socomec\u2019s three-phase UPS solutions protect data centres, mission-critical IT<\/p>\r\n",
             "format": "socomec",
-            "processed": "<p>Socomec\u2019s three-phase UPS solutions protect data centres, mission-critical IT and light industrial applications where shutdown could jeopardize business operations; they provide a reliable power supply, preventing power outages and disturbances that can lead to loss of service, reduced productivity, equipment damage or safety problems.\nOur three-phase UPS \u00a0are best in class in terms of efficiency, reliability, flexibility and serviceability; they are the ideal solution for an uninterrupted supply, providing business continuity without compromise.<\/p>"
+            "processed": "<p>Socomec\u2019s three-phase UPS solutions protect data centres, mission-critical IT<\/p>"
         }
     ],
     "weight": [
@@ -87,7 +87,7 @@
     },
     "changed": [
         {
-            "value": "2019-12-02T13:39:44+00:00",
+            "value": "2019-12-23T10:23:29+00:00",
             "format": "Y-m-d\\TH:i:sP"
         }
     ],

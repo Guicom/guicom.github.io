@@ -96,13 +96,17 @@ hidden:
   field_associated_products: true
   field_background_hero_block: true
   field_json_product_data: true
+  field_multiline_anchor_name: true
   field_product_advantage_text: true
+  field_product_application_label: true
+  field_product_application_link: true
   field_product_cta_1: true
   field_product_cta_2: true
   field_product_cta_3: true
   field_product_cta_4: true
   field_product_extid: true
   field_product_family: true
+  field_product_multiline: true
   field_product_orc_content: true
   field_product_orc_title: true
   field_product_reference: true

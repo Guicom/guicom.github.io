@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.storage.taxonomy_term.field_family_image
     - media.type.image
+    - media.type.product_image
     - taxonomy.vocabulary.family
 id: taxonomy_term.family.field_family_image
 field_name: field_family_image
@@ -21,8 +22,9 @@ settings:
   handler_settings:
     target_bundles:
       image: image
+      product_image: product_image
     sort:
       field: _none
     auto_create: false
-    auto_create_bundle: ''
+    auto_create_bundle: image
 field_type: entity_reference

@@ -1,0 +1,14 @@
+body.node--type-product,
+body.taxonomy-family {
+  // Made edit button  sticky
+  nav.tabs {
+    position: fixed;
+    background: rgba(255, 255, 255, 0.7);
+    z-index: 1;
+
+    ul.nav.nav-tabs.primary {
+      display: flex;
+      flex-flow: column;
+    }
+  }
+}

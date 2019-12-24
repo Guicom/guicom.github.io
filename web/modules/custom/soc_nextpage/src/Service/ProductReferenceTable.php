@@ -33,13 +33,14 @@ class ProductReferenceTable {
       $rows[$key]['select'] = $this->getCartLink();
     }
 
+    $footer = $header;
     $header['select'] = t('Select');
     $lib['library'][] = 'soc_nextpage/product-datatable';
     return [
       '#type' => 'table',
       '#header' => $header,
       '#rows' => $rows,
-      '#footer' => [$header],
+      '#footer' => [$footer],
       '#attached' => $lib,
       '#attributes' => [
         'id' => 'product-reference-table'

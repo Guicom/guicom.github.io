@@ -8,7 +8,7 @@
         },
         "http:\/\/drupal.org\/rest\/relation\/paragraph\/link\/field_link_icon": [
             {
-                "href": "http:\/\/default\/media\/36\/edit?_format=hal_json"
+                "href": "http:\/\/default\/media\/37\/edit?_format=hal_json"
             }
         ]
     },
@@ -24,7 +24,7 @@
     ],
     "revision_id": [
         {
-            "value": 217
+            "value": 239
         }
     ],
     "langcode": [
@@ -77,12 +77,18 @@
             "lang": "en"
         }
     ],
+    "revision_translation_affected": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
     "_embedded": {
         "http:\/\/drupal.org\/rest\/relation\/paragraph\/link\/field_link_icon": [
             {
                 "_links": {
                     "self": {
-                        "href": "http:\/\/default\/media\/36\/edit?_format=hal_json"
+                        "href": "http:\/\/default\/media\/37\/edit?_format=hal_json"
                     },
                     "type": {
                         "href": "http:\/\/drupal.org\/rest\/type\/media\/icone"
@@ -90,7 +96,7 @@
                 },
                 "uuid": [
                     {
-                        "value": "6ee583cd-e0d7-41b9-a3ef-528475fa073a"
+                        "value": "f6ddef20-6757-40d7-98fc-1a9f480804e2"
                     }
                 ]
             }

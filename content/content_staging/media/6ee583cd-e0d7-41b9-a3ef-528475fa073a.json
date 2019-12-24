@@ -17,12 +17,6 @@
                 "href": "",
                 "lang": "en"
             }
-        ],
-        "http:\/\/drupal.org\/rest\/relation\/media\/icone\/field_media_image": [
-            {
-                "href": "",
-                "lang": "en"
-            }
         ]
     },
     "mid": [
@@ -53,7 +47,7 @@
     ],
     "revision_created": [
         {
-            "value": "2019-12-19T09:56:48+00:00",
+            "value": "2019-12-20T15:46:25+00:00",
             "format": "Y-m-d\\TH:i:sP"
         }
     ],
@@ -76,7 +70,7 @@
                 },
                 "uuid": [
                     {
-                        "value": "cdedc391-f198-4343-b22e-baa99056ee85"
+                        "value": "39080102-237a-48b7-89a2-efb1cbf5b248"
                     }
                 ],
                 "lang": "en"
@@ -94,36 +88,14 @@
                 },
                 "uuid": [
                     {
-                        "value": "5ba38c79-1c16-41a4-a06b-aad78741ce70"
+                        "value": "257325b0-40b8-45fc-a921-9ec65ff23ca5"
                     }
                 ],
                 "lang": "en",
-                "alt": "Big-line-circle.svg",
+                "alt": null,
                 "title": null,
-                "width": null,
-                "height": null
-            }
-        ],
-        "http:\/\/drupal.org\/rest\/relation\/media\/icone\/field_media_image": [
-            {
-                "_links": {
-                    "self": {
-                        "href": ""
-                    },
-                    "type": {
-                        "href": "http:\/\/drupal.org\/rest\/type\/file\/file"
-                    }
-                },
-                "uuid": [
-                    {
-                        "value": "5ba38c79-1c16-41a4-a06b-aad78741ce70"
-                    }
-                ],
-                "lang": "en",
-                "alt": "Big-line-circle.svg",
-                "title": "",
-                "width": "50",
-                "height": "50"
+                "width": "180",
+                "height": "180"
             }
         ]
     },
