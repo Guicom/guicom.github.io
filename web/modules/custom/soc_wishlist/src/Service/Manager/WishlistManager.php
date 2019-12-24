@@ -2,6 +2,7 @@
 
 namespace Drupal\soc_wishlist\Service\Manager;
 
+use Drupal\node\Entity\Node;
 use Drupal\soc_wishlist\Model\Wishlist;
 
 class WishlistManager {
@@ -123,7 +124,26 @@ class WishlistManager {
     if (isset($_COOKIE[$this->getCookieName()])) {
       $wishlist = $_COOKIE[$this->getCookieName()];
       $this->wishlist->setItems(json_decode($wishlist, TRUE));
-      return $this->wishlist->getItems();
+      // Load items.
+      $datas = $this->wishlist->getItems();
+      if (!empty($datas)) {
+        $itemsQuery = \Drupal::entityQuery('node');
+        $itemsQuery->condition('type', 'product_reference');
+        $itemsQuery->condition('field_reference_extid', array_keys($datas), 'IN');
+        $itemsResults = $itemsQuery->execute();
+        $items = Node::loadMultiple($itemsResults);
+        $preparedItems = [];
+        foreach ($items as $item) {
+          $preparedItems[$datas[$item->get('field_reference_extid')->value]['extid']] =  [
+            'node' => $item,
+            'extid' => $datas[$item->get('field_reference_extid')->value]['extid'],
+            'quantity' => $datas[$item->get('field_reference_extid')->value]['quantity']
+          ];
+        }
+      }
+      if (!empty($preparedItems)) {
+        return $preparedItems;
+      }
     }
     return [];
   }

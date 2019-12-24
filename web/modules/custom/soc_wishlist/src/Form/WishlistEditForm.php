@@ -96,17 +96,7 @@ class WishlistEditForm extends FormBase {
         'quantity' => 2,
       ],
     ];
-    $data = $this->wishlistManager->loadSavedItems();
-
-    // Load items.
-    $items = [];
-    if (sizeof($data)) {
-      $itemsQuery = \Drupal::entityQuery('node');
-      $itemsQuery->condition('type', 'product_reference');
-      $itemsQuery->condition('field_reference_extid', array_keys($data), 'IN');
-      $itemsResults = $itemsQuery->execute();
-      $items = Node::loadMultiple($itemsResults);
-    }
+    $items = $this->wishlistManager->loadSavedItems();
 
     // Set header.
     $header = [
@@ -119,11 +109,11 @@ class WishlistEditForm extends FormBase {
     // Prepare tableselect field.
     $options = [];
     foreach ($items as $result) {
-      if ($result instanceof Node) {
-        $extId = $result->get('field_reference_extid')->value;
-        $mediaId = $result->get('field_reference_picture')->target_id;
+      if ($result['node'] instanceof Node) {
+        $extId = $result['node']->get('field_reference_extid')->value;
+        $mediaId = $result['node']->get('field_reference_picture')->target_id;
         $picture = $this->mediaApi->getFileUriFromMediaId($mediaId);
-        $options[$result->id()] = [
+        $options[$result['node']->id()] = [
           'picture' => [
             'data' => [
               '#theme' => 'image_style',
@@ -131,14 +121,14 @@ class WishlistEditForm extends FormBase {
               '#uri' => $picture,
             ],
           ],
-          'reference' => $result->get('field_reference_ref')->value,
-          'description' => $result->getTitle(),
+          'reference' => $result['node']->get('field_reference_ref')->value,
+          'description' => $result['node']->getTitle(),
           'quantity' => [
             'data' => [
               '#type' => 'number',
               '#title' => 'Quantity',
               '#title_display' => 'invisible',
-              '#value' => $data[$extId]['quantity'],
+              '#value' => $result['quantity'],
               '#name' => 'quantity[' . $extId . ']',
               '#size' => 2,
               '#prefix' => '<span id="wishlist_quantity_' . $extId . '">',
@@ -171,6 +161,13 @@ class WishlistEditForm extends FormBase {
         [Tableselect::class, 'processTableselect']
       ]
     ];
+
+    // Link
+    $form['links'] = [
+      '#type' => 'item',
+      '#markup' => '<a href="/wishlist/export/csv">CSV</a> | <a href="/wishlist/export/xls">XLS</a> | <a href="/wishlist/export/xlsx">XLSX</a> | <a href="/wishlist/export/pdf">PDF</a>',
+    ];
+
     $form['submit'] = [
       '#type' => 'submit',
       '#value' => t('Remove selected'),
