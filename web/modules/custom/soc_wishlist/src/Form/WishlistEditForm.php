@@ -128,7 +128,7 @@ class WishlistEditForm extends FormBase {
     // Link
     $form['links'] = [
       '#type' => 'item',
-      '#markup' => '<a href="/wishlist/export/cssv">CSV</a> | <a href="/wishlist/export/xls">XLS</a> | <a href="/wishlist/export/xlsx">XLSX</a> | <a href="/wishlist/export/pdf">PDF</a>',
+      '#markup' => '<a href="/wishlist/export/csv">CSV</a> | <a href="/wishlist/export/xls">XLS</a> | <a href="/wishlist/export/xlsx">XLSX</a> | <a href="/wishlist/export/pdf">PDF</a>',
     ];
 
     $form['submit'] = [
