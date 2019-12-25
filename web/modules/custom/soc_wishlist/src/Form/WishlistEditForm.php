@@ -2,6 +2,7 @@
 
 namespace Drupal\soc_wishlist\Form;
 
+use Drupal\Core\Ajax\AjaxResponse;
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Messenger\MessengerInterface;
@@ -83,21 +84,6 @@ class WishlistEditForm extends FormBase {
    *   The form structure.
    */
   public function buildForm(array $form, FormStateInterface $form_state) {
-    // Get data from cookie.
-    $data = [
-      'R_22004110' => [
-        'extid' => 'R_22004110',
-        'quantity' => 1,
-      ],
-      'R_22003110' => [
-        'extid' => 'R_22003110',
-        'quantity' => 3,
-      ],
-      'R_22004016' => [
-        'extid' => 'R_22004016',
-        'quantity' => 2,
-      ],
-    ];
     $items = $this->wishlistManager->loadSavedItems();
 
     // Set header.
@@ -139,7 +125,7 @@ class WishlistEditForm extends FormBase {
               '#prefix' => '<span id="wishlist_quantity_' . $extId . '">',
               '#suffix' => '</span>',
               '#ajax' => [
-                'callback' => [$this, 'updateQuantity'],
+                'callback' => [$this, 'updateItems'],
                 'event' => 'change',
                 'wrapper' => 'wishlist_quantity_' . $extId,
                 'progress' => [
@@ -153,8 +139,16 @@ class WishlistEditForm extends FormBase {
       }
     }
 
+    // Form wrapper for AJAX
+    $form['wrapper'] = [
+      '#type' => 'container',
+      '#attributes' => [
+        'id' => 'wishlist_form_wrapper',
+      ],
+    ];
+
     // Create fields.
-    $form['items'] = [
+    $form['wrapper']['items'] = [
       '#type' => 'tableselect',
       '#header' => $header,
       '#options' => $options,
@@ -168,17 +162,17 @@ class WishlistEditForm extends FormBase {
     ];
 
     // Link
-    $form['links'] = [
+    $form['wrapper']['links'] = [
       '#type' => 'item',
       '#markup' => '<a href="/wishlist/export/csv">CSV</a> | <a href="/wishlist/export/xls">XLS</a> | <a href="/wishlist/export/xlsx">XLSX</a> | <a href="/wishlist/export/pdf">PDF</a>',
     ];
 
-    $form['submit'] = [
+    $form['wrapper']['submit'] = [
       '#type' => 'submit',
       '#value' => t('Remove selected'),
       '#ajax' => [
-        'wrapper' => 'test',
-        'callback' => [static::class, 'updateQuantity'],
+        'callback' => [static::class, 'updateItems'],
+        'wrapper' => 'wishlist_form_wrapper',
       ],
     ];
 
@@ -193,9 +187,10 @@ class WishlistEditForm extends FormBase {
    *   An associative array containing the structure of the form.
    * @param \Drupal\Core\Form\FormStateInterface $form_state
    *   The current state of the form.
+   *
+   * @return array
    */
   public function submitForm(array &$form, FormStateInterface $form_state) {
-    $test = true;
   }
 
   public function processTable(&$element, FormStateInterface $form_state, &$complete_form) {
@@ -211,16 +206,36 @@ class WishlistEditForm extends FormBase {
     return $element;
   }
 
-  public function updateQuantity(array &$form, FormStateInterface $form_state) {
+  /**
+   * @param array $form
+   * @param \Drupal\Core\Form\FormStateInterface $form_state
+   *
+   * @return mixed
+   */
+  public function updateItems(array &$form, FormStateInterface $form_state) {
+    $response = new AjaxResponse();
+
     /** @var \Drupal\soc_wishlist\Service\Manager\WishlistManager $wishlistManager */
     $wishlistManager = \Drupal::service('soc_wishlist.wishlist_manager');
     $userInput = $form_state->getUserInput();
     if (isset($userInput['items']) && sizeof($userInput['items'])) {
       $wishlistManager->loadSavedItems();
       $items = $userInput['items'];
-      foreach ($items as $extId => $null) {
+      foreach ($items as $extId => $selected) {
         if (array_key_exists('items-' . $extId . '-quantity', $userInput)) {
-          $wishlistManager->setQuantity($extId, $userInput['items-' . $extId . '-quantity']);
+          $quantity = $userInput['items-' . $extId . '-quantity'];
+          if (is_numeric($quantity)) {
+            if ($quantity > 0) {
+              $wishlistManager->setQuantity($extId, $quantity);
+            }
+            else {
+              $wishlistManager->remove($extId);
+            }
+          }
+        }
+        if ($extId === $selected) {
+          $wishlistManager->remove($extId);
+          $deletedItems[] = $extId;
         }
       }
       try {
@@ -228,8 +243,18 @@ class WishlistEditForm extends FormBase {
       } catch (\Exception $e) {
         $this->messenger->addError($e->getMessage());
       }
-      return $form['output'];
     }
+
+    if (sizeof($deletedItems)) {
+      foreach ($deletedItems as $deletedItem) {
+        $this->messenger->addStatus($this->t('Reference %extid has been deleted.', ['%extid' => $deletedItem]));
+        if (array_key_exists($extId, $form['items'])) {
+          unset($form['items'][$extId]);
+        }
+      }
+    }
+
+    return $response;
   }
 
 }
