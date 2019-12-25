@@ -3,6 +3,7 @@
 namespace Drupal\soc_wishlist\Form;
 
 use Drupal\Core\Ajax\AjaxResponse;
+use Drupal\Core\Ajax\InvokeCommand;
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Messenger\MessengerInterface;
@@ -162,12 +163,12 @@ class WishlistEditForm extends FormBase {
     ];
 
     // Link
-    $form['wrapper']['links'] = [
+    $form['links'] = [
       '#type' => 'item',
       '#markup' => '<a href="/wishlist/export/csv">CSV</a> | <a href="/wishlist/export/xls">XLS</a> | <a href="/wishlist/export/xlsx">XLSX</a> | <a href="/wishlist/export/pdf">PDF</a>',
     ];
 
-    $form['wrapper']['submit'] = [
+    $form['submit'] = [
       '#type' => 'submit',
       '#value' => t('Remove selected'),
       '#ajax' => [
@@ -195,6 +196,7 @@ class WishlistEditForm extends FormBase {
 
   public function processTable(&$element, FormStateInterface $form_state, &$complete_form) {
     foreach (array_keys($element['#options']) as $option) {
+      $element['#options'][$option]['#attributes']['id'] = 'item_line_' . $option;
       foreach (array_keys($element['#options'][$option]) as $col) {
         if (is_array($element['#options'][$option][$col]) && isset($element['#options'][$option][$col]['data'])) {
           $element['#options'][$option][$col]['data']['#name'] = implode('-', [$element['#name'], $option, $col]);
@@ -230,6 +232,7 @@ class WishlistEditForm extends FormBase {
             }
             else {
               $wishlistManager->remove($extId);
+              $response->addCommand(new InvokeCommand('#item_line_'.$extId, 'hide'));
             }
           }
         }
@@ -247,10 +250,7 @@ class WishlistEditForm extends FormBase {
 
     if (sizeof($deletedItems)) {
       foreach ($deletedItems as $deletedItem) {
-        $this->messenger->addStatus($this->t('Reference %extid has been deleted.', ['%extid' => $deletedItem]));
-        if (array_key_exists($extId, $form['items'])) {
-          unset($form['items'][$extId]);
-        }
+        $response->addCommand(new InvokeCommand('#item_line_'.$deletedItem, 'hide'));
       }
     }
 
