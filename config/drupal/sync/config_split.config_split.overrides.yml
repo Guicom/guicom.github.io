@@ -13,6 +13,7 @@ graylist:
   - dblog.settings
   - soc_nextpage.nextpage_ws
   - soc_pardot.privacy_policy
+  - soc_wishlist.settings
   - system.cron
   - system.file
   - system.logging

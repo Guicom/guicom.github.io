@@ -1,0 +1,9 @@
+uuid: a6100b56-916a-43e2-bb28-6f8b3457a64c
+langcode: en
+status: true
+dependencies: {  }
+id: model_cta_pdf
+label: 'Model - CTA PDF'
+icon_uuid: null
+description: 'CTA PDF paragraph page.'
+behavior_plugins: {  }

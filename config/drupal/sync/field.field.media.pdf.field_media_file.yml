@@ -1,0 +1,27 @@
+uuid: bc8828c8-663f-4c34-8585-01cecfc78145
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_media_file
+    - media.type.pdf
+  module:
+    - file
+id: media.pdf.field_media_file
+field_name: field_media_file
+entity_type: media
+bundle: pdf
+label: File
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  file_directory: 'pdf/[date:custom:Y]-[date:custom:m]'
+  file_extensions: pdf
+  max_filesize: ''
+  description_field: true
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: file

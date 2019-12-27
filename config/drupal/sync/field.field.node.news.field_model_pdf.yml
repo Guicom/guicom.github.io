@@ -1,0 +1,67 @@
+uuid: ed5da43e-4d00-4f02-819b-9bb3c468c6a7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_model_pdf
+    - node.type.news
+    - paragraphs.paragraphs_type.model_cta_pdf
+  module:
+    - entity_reference_revisions
+id: node.news.field_model_pdf
+field_name: field_model_pdf
+entity_type: node
+bundle: news
+label: 'News PDF'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      model_cta_pdf: model_cta_pdf
+    target_bundles_drag_drop:
+      from_library:
+        weight: 14
+        enabled: false
+      hero_paragraph:
+        weight: 15
+        enabled: false
+      key_figures:
+        weight: 16
+        enabled: false
+      link:
+        weight: 17
+        enabled: false
+      model_cta:
+        weight: 18
+        enabled: false
+      model_cta_pdf:
+        enabled: true
+        weight: 19
+      model_image:
+        weight: 20
+        enabled: false
+      model_testimony:
+        weight: 21
+        enabled: false
+      model_text:
+        weight: 22
+        enabled: false
+      pardot_form:
+        weight: 23
+        enabled: false
+      premium_content_promotion:
+        weight: 24
+        enabled: false
+      product_faq:
+        weight: 25
+        enabled: false
+      video_embed:
+        weight: 26
+        enabled: false
+field_type: entity_reference_revisions

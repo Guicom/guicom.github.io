@@ -72,5 +72,6 @@ content:
     settings: {  }
     third_party_settings: {  }
 hidden:
+  field_background_image: true
   field_family_first_multiline: true
   field_family_second_multiline: true
