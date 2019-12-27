@@ -10,8 +10,8 @@ dependencies:
     - socomec
 id: protectionlevel
 theme: socomec
-region: content
-weight: 0
+region: facets
+weight: -8
 provider: null
 plugin: 'facet_block:protectionlevel'
 settings:

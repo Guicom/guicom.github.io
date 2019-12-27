@@ -31,6 +31,7 @@ regions:
   featured_top: 'Featured top'
   breadcrumb: Breadcrumb
   content: Content
+  facets: 'Facets'
   sidebar_first: 'Sidebar first'
   sidebar_second: 'Sidebar second'
   featured_bottom_first: 'Featured bottom first'

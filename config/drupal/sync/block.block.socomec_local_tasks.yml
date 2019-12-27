@@ -9,7 +9,7 @@ _core:
 id: socomec_local_tasks
 theme: socomec
 region: content
-weight: -7
+weight: -9
 provider: null
 plugin: local_tasks_block
 settings:

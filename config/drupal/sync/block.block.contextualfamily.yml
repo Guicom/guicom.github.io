@@ -8,8 +8,8 @@ dependencies:
     - socomec
 id: contextualfamily
 theme: socomec
-region: content
-weight: 0
+region: facets
+weight: -9
 provider: null
 plugin: contextual_family
 settings:
