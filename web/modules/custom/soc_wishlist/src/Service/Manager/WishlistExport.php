@@ -2,17 +2,13 @@
 
 namespace Drupal\soc_wishlist\Service\Manager;
 
+use Drupal\Core\Config\ConfigFactoryInterface;
 use Drupal\node\Entity\Node;
-use Drupal\soc_wishlist\Service\Manager\WishlistManager;
 use Drupal\soc_wishlist\Service\WishlistTCPDF;
+use PhpOffice\PhpSpreadsheet\Writer\Exception;
 use Symfony\Component\HttpFoundation\Response;
 use PhpOffice\PhpSpreadsheet\Spreadsheet;
 use PhpOffice\PhpSpreadsheet\IOFactory;
-use PhpOffice\PhpSpreadsheet\Style\Fill;
-use PhpOffice\PhpSpreadsheet\Cell\DataType;
-use PhpOffice\PhpSpreadsheet\Style\Alignment;
-use PhpOffice\PhpSpreadsheet\Style\Border;
-use TCPDF;
 
 class WishlistExport {
 
@@ -29,12 +25,20 @@ class WishlistExport {
 
   /** @var $fpdf */
   protected $fpdf;
+
+  /** @var $settings */
+  protected $settings;
+
   /**
    * WishlistExport constructor.
+   *
+   * @param \Drupal\soc_wishlist\Service\Manager\WishlistManager $wishlistManager
+   * @param \Drupal\Core\Config\ConfigFactoryInterface $configFactory
    */
-  public function __construct(WishlistManager $wishlistManager, string $type) {
+  public function __construct(WishlistManager $wishlistManager,
+                              ConfigFactoryInterface $configFactory) {
     $this->wishlistManager = $wishlistManager;
-    $this->type = $type;
+    $this->settings = $configFactory->getEditable('soc_wishlist.settings');
   }
 
   /**
@@ -43,18 +47,30 @@ class WishlistExport {
   public function export() {
     $items = $this->wishlistManager->loadSavedItems();
     if (!empty($items)) {
-      switch ($this->type) {
+      switch ($this->getType()) {
         case 'csv':
           return $this->exportCSV($items);
           break;
         case 'xls':
-          return $this->exportXLS($items);
+          try {
+            return $this->exportXLS($items);
+          } catch (Exception $e) {
+          } catch (\PhpOffice\PhpSpreadsheet\Exception $e) {
+          }
           break;
         case 'xlsx':
-          return $this->exportXLSX($items);
+          try {
+            return $this->exportXLSX($items);
+          } catch (Exception $e) {
+          } catch (\PhpOffice\PhpSpreadsheet\Exception $e) {
+          }
           break;
         case 'pdf':
-          return $this->exportPDF($items);
+          try {
+            return $this->exportPDF($items);
+          } catch (Exception $e) {
+          } catch (\PhpOffice\PhpSpreadsheet\Exception $e) {
+          }
           break;
       }
     }
@@ -277,7 +293,7 @@ class WishlistExport {
 
     $pdf->AddPage();
     $pdf->SetFont('helveticaI', '', 12);
-    $text = '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean tortor lacus, cursus vitae vehicula eu, tempus non libero. Maecenas tincidunt pretium sem, quis mattis ipsum euismod in. Curabitur mollis magna at blandit suscipit. Donec congue dolor ac hendrerit iaculis. Mauris ligula diam, tincidunt nec ligula sed, aliquet tempor justo. Aenean ac finibus massa. Phasellus ultrices rhoncus dui euismod placerat. Mauris in ornare dolor, sed iaculis sapien. Nulla scelerisque mauris non imperdiet pharetra. Nulla ut purus interdum, malesuada urna et, fringilla tellus. Vestibulum luctus sagittis rhoncus. Curabitur facilisis egestas felis ac egestas. Sed porttitor interdum lectus sed rhoncus. Integer maximus, massa eget facilisis tincidunt, lectus odio condimentum velit, ut dignissim nisl nunc et nibh. Etiam congue neque ac egestas auctor. Sed venenatis ut dui eget dapibus.</p>';
+    $text = $this->settings->get('pdf_disclaimer');
     $pdf->writeHTML($text, true, false, false, false, 'J');
     $pdf->Ln(10);
 
@@ -286,9 +302,9 @@ class WishlistExport {
 
     $tbl = '<table cellspacing="0" cellpadding="1" border="1">';
     $tbl .= '<tr>';
-    $tbl .= '<th>reference</th>';
-    $tbl .= '<th>description</th>';
-    $tbl .= '<th>quantity</th>';
+    $tbl .= '<th>' . t('Reference') . '</th>';
+    $tbl .= '<th>' . t('Description') . '</th>';
+    $tbl .= '<th>' . t('Quantity') . '</th>';
     $tbl .= '</tr>';
     foreach($items as $item) {
       $tbl .= '<tr>';
@@ -304,6 +320,20 @@ class WishlistExport {
     $response->setContent($pdf->Output('S'));
     ob_end_flush();
     return $response;
+  }
+
+  /**
+   * @return mixed
+   */
+  public function getType() {
+    return $this->type;
+  }
+
+  /**
+   * @param mixed $type
+   */
+  public function setType($type): void {
+    $this->type = $type;
   }
 }
 

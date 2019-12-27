@@ -26,3 +26,12 @@ soc_wishlist.export:
     _controller: '\Drupal\soc_wishlist\Controller\WishlistController::export'
   requirements:
     _permission: 'edit own wishlist'
+
+
+soc_wishlist.settings_form:
+  path: '/admin/config/socomec/wishlist/settings'
+  defaults:
+    _form: '\Drupal\soc_wishlist\Form\WishlistSettingsForm'
+    _title: 'Wishlist settings'
+  requirements:
+    _permission: 'manage wishlist settings'

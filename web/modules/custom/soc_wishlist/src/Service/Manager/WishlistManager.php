@@ -2,6 +2,7 @@
 
 namespace Drupal\soc_wishlist\Service\Manager;
 
+use Drupal\Core\Config\ConfigFactoryInterface;
 use Drupal\node\Entity\Node;
 use Drupal\soc_wishlist\Model\Wishlist;
 
@@ -13,12 +14,18 @@ class WishlistManager {
   /** @var $cookie_name */
   protected $cookie_name;
 
+  /** @var $settings */
+  protected $settings;
+
   /**
    * WishlistManager constructor.
+   *
+   * @param \Drupal\Core\Config\ConfigFactoryInterface $configFactory
    */
-  public function __construct() {
+  public function __construct(ConfigFactoryInterface $configFactory) {
     $this->wishlist = new Wishlist();
     $this->cookie_name = 'socomec_wishlist';
+    $this->settings = $configFactory->getEditable('soc_wishlist.settings');
   }
 
   /**
@@ -119,6 +126,7 @@ class WishlistManager {
    * Load wishlist from cookie.
    *
    * @return array
+   * @throws \Exception
    */
   public function loadSavedItems() {
     if (isset($_COOKIE[$this->getCookieName()])) {
@@ -145,7 +153,7 @@ class WishlistManager {
         return $preparedItems;
       }
     }
-    return [];
+    throw new \Exception('Whishlist is empty.');
   }
 
   /**
@@ -154,7 +162,8 @@ class WishlistManager {
   public function updateCookie() {
     $name = $this->getCookieName();
     $value = json_encode($this->wishlist->getItems());
-    $expire = time() + (3600 * 24 * 60); // now + 60 days
+    $expireDays = $this->settings->get('cookie_lifetime_days');
+    $expire = time() + (3600 * 24 * $expireDays); // now + X days
     $path = '/';
     $domain = \Drupal::request()->getHost();
     if (!setcookie($name, $value, $expire, $path, $domain)) {

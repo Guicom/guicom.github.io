@@ -1,3 +1,6 @@
 edit own wishlist:
   title: 'Edit my wishlist'
   restrict access: true
+manage wishlist settings:
+  title: 'Manage wishlist settings'
+  restrict access: true
