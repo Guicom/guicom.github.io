@@ -153,7 +153,7 @@ class WishlistManager {
         return $preparedItems;
       }
     }
-    throw new \Exception('Whishlist is empty.');
+    return [];
   }
 
   /**

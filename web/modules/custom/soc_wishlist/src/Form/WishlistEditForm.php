@@ -180,6 +180,8 @@ class WishlistEditForm extends FormBase {
     // Confirm before deleting
     $confirmRemoveClass = 'confirm-remove';
     $form['submit']['#attributes']['class'][] = $confirmRemoveClass;
+    $form['#attached']['library'][] = 'core/drupal.ajax';
+    $form['#attached']['library'][] = 'core/drupal.dialog.ajax';
     $form['#attached']['library'][] = 'soc_wishlist/ajax-confirm';
     $form['#attached']['drupalSettings']['ajaxConfirm'][$confirmRemoveClass] = [
       'title' => $this->t('Confirm element removal'),
