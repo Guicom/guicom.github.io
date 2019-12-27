@@ -162,12 +162,6 @@ class WishlistEditForm extends FormBase {
       ]
     ];
 
-    // Link
-    $form['links'] = [
-      '#type' => 'item',
-      '#markup' => '<a href="/wishlist/export/csv">CSV</a> | <a href="/wishlist/export/xls">XLS</a> | <a href="/wishlist/export/xlsx">XLSX</a> | <a href="/wishlist/export/pdf">PDF</a>',
-    ];
-
     $form['submit'] = [
       '#type' => 'submit',
       '#value' => t('Remove selected'),
@@ -175,6 +169,19 @@ class WishlistEditForm extends FormBase {
         'callback' => [static::class, 'updateItems'],
         'wrapper' => 'wishlist_form_wrapper',
       ],
+    ];
+
+    // Link
+    $downloadLinks = '
+    <div class="btn-group btn-group-sm align-right" role="group" aria-label="Export whishlist">
+      <span class="btn">Export as </span>
+      <a class="btn btn-secondary" href="/wishlist/export/csv">CSV</a>
+      <a class="btn btn-secondary" href="/wishlist/export/xls">XLS</a> 
+      <a class="btn btn-secondary" href="/wishlist/export/xlsx">XLSX</a> 
+      <a class="btn btn-secondary" href="/wishlist/export/pdf">PDF</a>
+    </div>';
+    $form['links'] = [
+      '#markup' => $downloadLinks,
     ];
 
     // Confirm before deleting
