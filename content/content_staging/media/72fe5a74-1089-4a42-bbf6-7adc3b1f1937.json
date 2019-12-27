@@ -6,11 +6,6 @@
         "type": {
             "href": "http:\/\/drupal.org\/rest\/type\/media\/image"
         },
-        "http:\/\/drupal.org\/rest\/relation\/media\/image\/revision_user": [
-            {
-                "href": "http:\/\/default\/user\/1?_format=hal_json"
-            }
-        ],
         "http:\/\/drupal.org\/rest\/relation\/media\/image\/uid": [
             {
                 "href": "http:\/\/default\/user\/1?_format=hal_json"
@@ -55,28 +50,16 @@
     ],
     "revision_created": [
         {
-            "value": "2019-12-05T13:37:47+00:00",
+            "value": "2019-12-15T22:49:15+00:00",
             "format": "Y-m-d\\TH:i:sP"
         }
     ],
+    "status": [
+        {
+            "value": true
+        }
+    ],
     "_embedded": {
-        "http:\/\/drupal.org\/rest\/relation\/media\/image\/revision_user": [
-            {
-                "_links": {
-                    "self": {
-                        "href": "http:\/\/default\/user\/1?_format=hal_json"
-                    },
-                    "type": {
-                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
-                    }
-                },
-                "uuid": [
-                    {
-                        "value": "cdedc391-f198-4343-b22e-baa99056ee85"
-                    }
-                ]
-            }
-        ],
         "http:\/\/drupal.org\/rest\/relation\/media\/image\/uid": [
             {
                 "_links": {
@@ -89,7 +72,7 @@
                 },
                 "uuid": [
                     {
-                        "value": "cdedc391-f198-4343-b22e-baa99056ee85"
+                        "value": "6c042f13-453e-49fa-b4b7-4e6d3599d522"
                     }
                 ]
             }
@@ -137,11 +120,6 @@
             }
         ]
     },
-    "status": [
-        {
-            "value": true
-        }
-    ],
     "name": [
         {
             "value": "salle-serveur.jpg"
@@ -168,6 +146,18 @@
     "revision_translation_affected": [
         {
             "value": true,
+            "lang": "en"
+        }
+    ],
+    "content_translation_source": [
+        {
+            "value": "und",
+            "lang": "en"
+        }
+    ],
+    "content_translation_outdated": [
+        {
+            "value": false,
             "lang": "en"
         }
     ]

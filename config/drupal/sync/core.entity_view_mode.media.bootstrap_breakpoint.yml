@@ -1,0 +1,10 @@
+uuid: 22438fc0-a6d0-4981-9844-2a26723ff0ab
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.bootstrap_breakpoint
+label: 'Bootstrap breakpoint'
+targetEntityType: media
+cache: true

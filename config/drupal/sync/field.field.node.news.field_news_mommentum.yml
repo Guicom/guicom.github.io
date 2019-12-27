@@ -1,0 +1,29 @@
+uuid: 70f65e70-5152-422e-a5ff-728c993574cc
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_news_mommentum
+    - node.type.news
+    - taxonomy.vocabulary.news_mommentum
+id: node.news.field_news_mommentum
+field_name: field_news_mommentum
+entity_type: node
+bundle: news
+label: 'News Mommentum'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      news_mommentum: news_mommentum
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

@@ -1,0 +1,19 @@
+uuid: 48b40522-2b1f-496c-8e12-d290fbf2af4b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_cta_text
+    - paragraphs.paragraphs_type.model_cta_pdf
+id: paragraph.model_cta_pdf.field_cta_text
+field_name: field_cta_text
+entity_type: paragraph
+bundle: model_cta_pdf
+label: 'CTA Text'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

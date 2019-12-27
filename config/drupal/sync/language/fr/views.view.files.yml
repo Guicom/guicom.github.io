@@ -1,27 +1,6 @@
 display:
   default:
     display_options:
-      pager:
-        options:
-          expose:
-            items_per_page_label: 'Éléments par page'
       fields:
         filename:
           label: Nom
-        status:
-          label: État
-        count:
-          label: 'Utilisé dans'
-      filters:
-        status:
-          expose:
-            label: État
-  page_2:
-    display_options:
-      pager:
-        options:
-          expose:
-            items_per_page_label: 'Éléments par page'
-      fields:
-        entity_label:
-          label: Entité

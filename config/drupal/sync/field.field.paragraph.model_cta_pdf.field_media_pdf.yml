@@ -1,0 +1,28 @@
+uuid: 90e7aa47-15a6-4cb7-b84c-229d8ca5223a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_media_pdf
+    - media.type.pdf
+    - paragraphs.paragraphs_type.model_cta_pdf
+id: paragraph.model_cta_pdf.field_media_pdf
+field_name: field_media_pdf
+entity_type: paragraph
+bundle: model_cta_pdf
+label: 'Media PDF'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      pdf: pdf
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference
