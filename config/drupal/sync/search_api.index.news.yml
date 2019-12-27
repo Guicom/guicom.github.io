@@ -1,0 +1,222 @@
+uuid: c7482c09-b59c-45de-8318-35a6a21b4653
+langcode: en
+status: true
+dependencies:
+  module:
+    - search_api_solr
+    - node
+    - taxonomy
+    - search_api
+  config:
+    - field.storage.node.field_news_audience
+    - field.storage.node.field_body
+    - field.storage.node.field_news_mommentum
+    - field.storage.node.field_teaser
+    - field.storage.node.field_news_theme
+    - field.storage.node.field_news_type
+    - search_api.server.socomec
+third_party_settings:
+  search_api_solr:
+    finalize: false
+    commit_before_finalize: false
+    commit_after_finalize: false
+    multilingual:
+      limit_to_content_language: false
+      include_language_independent: true
+    highlighter:
+      maxAnalyzedChars: 51200
+      fragmenter: gap
+      regex:
+        slop: 0.5
+        pattern: blank
+        maxAnalyzedChars: 10000
+      usePhraseHighlighter: true
+      highlightMultiTerm: true
+      preserveMulti: false
+      highlight:
+        mergeContiguous: false
+        requireFieldMatch: false
+        snippets: 3
+        fragsize: 0
+    mlt:
+      mintf: 1
+      mindf: 1
+      maxdf: 0
+      maxdfpct: 0
+      minwl: 0
+      maxwl: 0
+      maxqt: 100
+      maxntp: 2000
+      boost: false
+      interestingTerms: none
+    advanced:
+      index_prefix: ''
+      collection: ''
+      timezone: ''
+id: news
+name: News
+description: ''
+read_only: false
+field_settings:
+  changed:
+    label: Changed
+    datasource_id: 'entity:node'
+    property_path: changed
+    type: date
+    dependencies:
+      module:
+        - node
+  created:
+    label: 'Authored on'
+    datasource_id: 'entity:node'
+    property_path: created
+    type: date
+    dependencies:
+      module:
+        - node
+  field_body:
+    label: 'News Content'
+    datasource_id: 'entity:node'
+    property_path: field_body
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_body
+  field_teaser:
+    label: 'News teaser'
+    datasource_id: 'entity:node'
+    property_path: field_teaser
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_teaser
+  name_news_audience:
+    label: 'News Audience » Taxonomy term » Name'
+    datasource_id: 'entity:node'
+    property_path: 'field_news_audience:entity:name'
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_news_audience
+      module:
+        - taxonomy
+        - taxonomy
+  name_news_mommentum:
+    label: 'News Mommentum » Taxonomy term » Name'
+    datasource_id: 'entity:node'
+    property_path: 'field_news_mommentum:entity:name'
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_news_mommentum
+      module:
+        - taxonomy
+        - taxonomy
+  name_news_theme:
+    label: 'News Theme » Taxonomy term » Name'
+    datasource_id: 'entity:node'
+    property_path: 'field_news_theme:entity:name'
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_news_theme
+      module:
+        - taxonomy
+        - taxonomy
+  name_news_type:
+    label: 'News Type » Taxonomy term » Name'
+    datasource_id: 'entity:node'
+    property_path: 'field_news_type:entity:name'
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_news_type
+      module:
+        - taxonomy
+        - taxonomy
+  nid:
+    label: ID
+    datasource_id: 'entity:node'
+    property_path: nid
+    type: integer
+    dependencies:
+      module:
+        - node
+  node_grants:
+    label: 'Node access information'
+    property_path: search_api_node_grants
+    type: string
+    indexed_locked: true
+    type_locked: true
+    hidden: true
+  promote:
+    label: 'Promoted to front page'
+    datasource_id: 'entity:node'
+    property_path: promote
+    type: boolean
+    dependencies:
+      module:
+        - node
+  status:
+    label: status
+    datasource_id: 'entity:node'
+    property_path: status
+    type: boolean
+    indexed_locked: true
+    type_locked: true
+    dependencies:
+      module:
+        - node
+  sticky:
+    label: 'Sticky at top of lists'
+    datasource_id: 'entity:node'
+    property_path: sticky
+    type: boolean
+    dependencies:
+      module:
+        - node
+  title:
+    label: Title
+    datasource_id: 'entity:node'
+    property_path: title
+    type: text
+    dependencies:
+      module:
+        - node
+  uid:
+    label: uid
+    datasource_id: 'entity:node'
+    property_path: uid
+    type: integer
+    indexed_locked: true
+    type_locked: true
+    dependencies:
+      module:
+        - node
+datasource_settings:
+  'entity:node':
+    bundles:
+      default: false
+      selected:
+        - news
+    languages:
+      default: true
+      selected: {  }
+processor_settings:
+  add_url: {  }
+  aggregated_field: {  }
+  content_access:
+    weights:
+      preprocess_query: -30
+  entity_status: {  }
+  rendered_item: {  }
+  solr_date_range:
+    weights:
+      preprocess_index: 0
+tracker_settings:
+  default:
+    indexing_order: fifo
+options:
+  index_directly: true
+  cron_limit: 50
+server: socomec

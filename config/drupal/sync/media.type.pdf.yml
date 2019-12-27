@@ -1,0 +1,14 @@
+uuid: 385d2744-ae5c-4e7c-b851-d87b64b6c4a7
+langcode: en
+status: true
+dependencies: {  }
+id: pdf
+label: Pdf
+description: 'Media pdf only.'
+source: file
+queue_thumbnail_downloads: false
+new_revision: false
+source_configuration:
+  source_field: field_media_file
+field_map:
+  name: name
