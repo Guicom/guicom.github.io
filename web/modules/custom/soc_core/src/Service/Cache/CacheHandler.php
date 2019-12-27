@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\prae_core\Service\Cache;
+namespace Drupal\soc_core\Service\Cache;
 
 use Drupal\Core\Cache\Cache;
 
