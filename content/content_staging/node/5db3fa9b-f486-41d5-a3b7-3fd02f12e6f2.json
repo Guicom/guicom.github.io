@@ -25,9 +25,6 @@
             },
             {
                 "href": "http:\/\/default\/node\/9?_format=hal_json"
-            },
-            {
-                "href": "http:\/\/default\/node\/10?_format=hal_json"
             }
         ],
         "http:\/\/drupal.org\/rest\/relation\/node\/product\/field_product_application_link": [
@@ -57,7 +54,7 @@
         ],
         "http:\/\/drupal.org\/rest\/relation\/node\/product\/field_product_family": [
             {
-                "href": "http:\/\/default\/taxonomy\/term\/12?_format=hal_json"
+                "href": "http:\/\/default\/taxonomy\/term\/9?_format=hal_json"
             }
         ],
         "http:\/\/drupal.org\/rest\/relation\/node\/product\/field_product_multiline": [
@@ -151,7 +148,7 @@
     ],
     "vid": [
         {
-            "value": 79
+            "value": 80
         }
     ],
     "langcode": [
@@ -167,7 +164,7 @@
     ],
     "revision_timestamp": [
         {
-            "value": "2019-12-20T13:19:52+00:00",
+            "value": "2019-12-24T07:49:58+00:00",
             "format": "Y-m-d\\TH:i:sP"
         }
     ],
@@ -184,7 +181,7 @@
                 },
                 "uuid": [
                     {
-                        "value": "ff04b414-c8d9-40cf-a98a-339bb1732c79"
+                        "value": "39080102-237a-48b7-89a2-efb1cbf5b248"
                     }
                 ]
             }
@@ -201,7 +198,7 @@
                 },
                 "uuid": [
                     {
-                        "value": "ff04b414-c8d9-40cf-a98a-339bb1732c79"
+                        "value": "39080102-237a-48b7-89a2-efb1cbf5b248"
                     }
                 ]
             }
@@ -251,21 +248,6 @@
                         "value": "c41aec05-937f-439f-9bb5-6aeecce0efc5"
                     }
                 ]
-            },
-            {
-                "_links": {
-                    "self": {
-                        "href": "http:\/\/default\/node\/10?_format=hal_json"
-                    },
-                    "type": {
-                        "href": "http:\/\/drupal.org\/rest\/type\/node\/product"
-                    }
-                },
-                "uuid": [
-                    {
-                        "value": "5db3fa9b-f486-41d5-a3b7-3fd02f12e6f2"
-                    }
-                ]
             }
         ],
         "http:\/\/drupal.org\/rest\/relation\/node\/product\/field_product_application_link": [
@@ -283,7 +265,7 @@
                         "value": "f7d70ab7-0060-4905-8a00-f7665e898d66"
                     }
                 ],
-                "target_revision_id": "239"
+                "target_revision_id": "250"
             }
         ],
         "http:\/\/drupal.org\/rest\/relation\/node\/product\/field_product_cta_1": [
@@ -301,7 +283,7 @@
                         "value": "bff07d87-15f7-4612-bc51-5e35a2301a73"
                     }
                 ],
-                "target_revision_id": "240"
+                "target_revision_id": "251"
             }
         ],
         "http:\/\/drupal.org\/rest\/relation\/node\/product\/field_product_cta_2": [
@@ -319,7 +301,7 @@
                         "value": "c3e23bab-5fd4-4799-81b3-398f7c9eb936"
                     }
                 ],
-                "target_revision_id": "241"
+                "target_revision_id": "252"
             }
         ],
         "http:\/\/drupal.org\/rest\/relation\/node\/product\/field_product_cta_3": [
@@ -337,7 +319,7 @@
                         "value": "1fdc9869-fa70-406a-920b-08cd75e2fc5a"
                     }
                 ],
-                "target_revision_id": "242"
+                "target_revision_id": "253"
             }
         ],
         "http:\/\/drupal.org\/rest\/relation\/node\/product\/field_product_cta_4": [
@@ -355,14 +337,14 @@
                         "value": "7ead3cd8-8918-4529-8215-a6df919d44f6"
                     }
                 ],
-                "target_revision_id": "243"
+                "target_revision_id": "254"
             }
         ],
         "http:\/\/drupal.org\/rest\/relation\/node\/product\/field_product_family": [
             {
                 "_links": {
                     "self": {
-                        "href": "http:\/\/default\/taxonomy\/term\/12?_format=hal_json"
+                        "href": "http:\/\/default\/taxonomy\/term\/9?_format=hal_json"
                     },
                     "type": {
                         "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/family"
@@ -370,7 +352,7 @@
                 },
                 "uuid": [
                     {
-                        "value": "886aadf6-ff86-46f1-8eee-3228a434cc3a"
+                        "value": "e83403d5-75c1-44f2-a42e-3db29063d70b"
                     }
                 ]
             }
@@ -390,7 +372,7 @@
                         "value": "4dfc13a1-7179-491f-a2e7-bf37576c78b4"
                     }
                 ],
-                "target_revision_id": "244"
+                "target_revision_id": "255"
             }
         ],
         "http:\/\/drupal.org\/rest\/relation\/node\/product\/field_product_orc_content": [
@@ -674,7 +656,7 @@
                         "value": "99faba6a-beb0-454d-8c53-00e60ef45916"
                     }
                 ],
-                "target_revision_id": "245"
+                "target_revision_id": "256"
             },
             {
                 "_links": {
@@ -690,7 +672,7 @@
                         "value": "9b0a6bf9-aece-495f-862c-4ad4ee43d031"
                     }
                 ],
-                "target_revision_id": "246"
+                "target_revision_id": "257"
             },
             {
                 "_links": {
@@ -706,7 +688,7 @@
                         "value": "e20ca51c-e38a-43eb-8cf1-10ee2f90f2e9"
                     }
                 ],
-                "target_revision_id": "247"
+                "target_revision_id": "258"
             }
         ]
     },
@@ -728,7 +710,7 @@
     ],
     "changed": [
         {
-            "value": "2019-12-20T13:19:52+00:00",
+            "value": "2019-12-24T07:49:58+00:00",
             "format": "Y-m-d\\TH:i:sP"
         }
     ],
@@ -743,6 +725,12 @@
         }
     ],
     "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "revision_translation_affected": [
         {
             "value": true,
             "lang": "en"
