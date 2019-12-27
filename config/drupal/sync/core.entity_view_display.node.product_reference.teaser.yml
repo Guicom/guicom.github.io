@@ -26,6 +26,7 @@ hidden:
   field_nombre_de_pole: true
   field_product_status: true
   field_reference_extid: true
+  field_reference_json_table: true
   field_reference_name: true
   field_reference_picture: true
   field_reference_ref: true

@@ -100,6 +100,7 @@ module:
   soc_pardot: 0
   soc_premium_content: 0
   soc_views_news: 0
+  soc_wishlist: 0
   svg_image: 0
   system: 0
   taxonomy: 0

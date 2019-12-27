@@ -16,11 +16,6 @@
                 "href": "http:\/\/default\/user\/1?_format=hal_json",
                 "lang": "en"
             }
-        ],
-        "http:\/\/drupal.org\/rest\/relation\/node\/optional_related_content\/field_orc_picture": [
-            {
-                "href": "http:\/\/default\/media\/17\/edit?_format=hal_json"
-            }
         ]
     },
     "nid": [
@@ -68,7 +63,7 @@
                 },
                 "uuid": [
                     {
-                        "value": "cdedc391-f198-4343-b22e-baa99056ee85"
+                        "value": "ff04b414-c8d9-40cf-a98a-339bb1732c79"
                     }
                 ]
             }
@@ -85,27 +80,10 @@
                 },
                 "uuid": [
                     {
-                        "value": "cdedc391-f198-4343-b22e-baa99056ee85"
+                        "value": "ff04b414-c8d9-40cf-a98a-339bb1732c79"
                     }
                 ],
                 "lang": "en"
-            }
-        ],
-        "http:\/\/drupal.org\/rest\/relation\/node\/optional_related_content\/field_orc_picture": [
-            {
-                "_links": {
-                    "self": {
-                        "href": "http:\/\/default\/media\/17\/edit?_format=hal_json"
-                    },
-                    "type": {
-                        "href": "http:\/\/drupal.org\/rest\/type\/media\/image"
-                    }
-                },
-                "uuid": [
-                    {
-                        "value": "72fe5a74-1089-4a42-bbf6-7adc3b1f1937"
-                    }
-                ]
             }
         ]
     },

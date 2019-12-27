@@ -101,7 +101,6 @@
           <section class="section-light" id="product-info-section">
             <div class="container">
               <div class="row">
-                <aside class="product-navigation"></aside>
                 <div class="col-md-9">
                   <div class="row">
                     <div class="strong-points col-md-5">
@@ -131,7 +130,7 @@
                     {% endif %}
                   </div>
                 </div>
-                <div class="col-md-3">
+                <div class="col-md-3 product-right-info">
                   {% if drupal_field('field_protection_level', 'node')[0] %}
                     <div class="row">
                       {{ drupal_field('field_protection_level', 'node') }}
@@ -144,24 +143,12 @@
                 </div>
               </div>
             </section>
-          {% if drupal_field('field_protection_level', 'node')[0] %}
-          <section class="section-grey-light" id="product-reference-section">
-            <div class="container">
-              <div class="row">
-                <div class="advantage-wrapper col-md-12">
-                  <h2 class="field--name-field-title ">{{ 'References' |t }}</h2>
-                  {{ drupal_field('field_product_reference', 'node') }}
-                </div>
-              </div>
-            </div>
-          </section>
-          {% endif %}
           {% if drupal_field('field_product_reference', 'node')[0] %}
             <section class="section-grey-light" id="product-reference-section">
               <div class="container">
                 <div class="row">
                   <div class="product-reference-wrapper col-md-12">
-                    <h2 class="field--name-field-title ">{{ 'References' |t }}</h2>
+                    <h2 class="field--name-field-title">{{ 'References' |t }}</h2>
                     {{ drupal_field('field_product_reference', 'node') }}
                   </div>
                 </div>

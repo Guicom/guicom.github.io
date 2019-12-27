@@ -1,0 +1,80 @@
+body.taxonomy-family {
+
+  // Global Section style
+  .section-grey-light {
+    background-color: $grey-blue;
+    padding: 40px 0 80px;
+    margin: 0 -15px;
+  }
+  h2.field--name-field-title {
+    @include block-title(true);
+  }
+  header {
+    @include media-breakpoint-up(lg) {
+      margin-bottom: 180px;
+    }
+    .hero-block {
+      position: relative;
+      h1 {
+        margin-bottom: 180px;
+        .family-title {
+          color: $white;
+          font-family: $font-roboto;
+          font-size: 48px;
+          font-weight: 300;
+          line-height: 60px;
+          text-transform: uppercase;
+        }
+
+        .family-subtitle {
+          color: $yellow;
+          font-family: $font-poppins;
+          font-size: 18px;
+          font-weight: 600;
+          line-height: 30px;
+          text-transform: uppercase;
+        }
+      }
+
+      .family-image {
+        position: relative;
+        img {
+          @include media-breakpoint-up(lg) {
+            position: absolute;
+
+          }
+          position: relative;
+          transform: translateX(-50%);
+          left: 50%;
+          max-height: 450px;
+          width: auto;
+        }
+      }
+
+      .family-baseline-wrapper {
+        position: relative;
+        .family-baseline-inner {
+          @include media-breakpoint-up(lg) {
+            position: absolute;
+            transform: translateY(-45%);
+            padding: 40px 40px 60px 0;
+          }
+          background: $yellow;
+          padding: 40px 40px 60px 40px;
+          min-height: 300px;
+          display: flex;
+          align-items: center;
+          @include left-overflow-color($yellow);
+          .family-baseline {
+            p {
+              color: $darker-grey;
+              font-family: $font-roboto;
+              font-size: 16px;
+              line-height: 25px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

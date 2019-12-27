@@ -1,0 +1,30 @@
+.paragraph--type-video-text,
+.paragraph--type--video-embed {
+  @include make-row();
+  .group-left {
+    padding-left: calc(#{$grid-gutter-width} / 2);
+    padding-right: calc(#{$grid-gutter-width} / 2);
+    @include make-col(4);
+    @include media-breakpoint-down(lg) {
+      @include make-col(12);
+    }
+  }
+  .group-right {
+    padding-left: calc(#{$grid-gutter-width} / 2);
+    padding-right: calc(#{$grid-gutter-width} / 2);
+    @include make-col(8);
+    @include media-breakpoint-down(lg) {
+      @include make-col(12);
+    }
+  }
+
+  .field--name-field-video-embed-video,
+  .field--name-field-media-oembed-video {
+    width: 100%;
+  }
+}
+
+.paragraph--type--video-embed {
+  padding-left: calc(#{$grid-gutter-width} / 2);
+  padding-right: calc(#{$grid-gutter-width} / 2);
+}

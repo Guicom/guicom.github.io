@@ -22,6 +22,7 @@ filenames:
   optional_related_content: ''
   content: ''
   model_cta_pdf: ''
+  video_text: ''
 bundles:
   product_faq:
     field_question:
@@ -802,6 +803,40 @@ bundles:
     field_content:
       bundle: content
       name: field_content
+      entity_type_id: paragraph
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+  video_text:
+    field_video_embed_video:
+      bundle: video_text
+      name: field_video_embed_video
+      entity_type_id: paragraph
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_title:
+      bundle: video_text
+      name: field_title
+      entity_type_id: paragraph
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_text:
+      bundle: video_text
+      name: field_text
       entity_type_id: paragraph
       rtf: 'no'
       rta: 'no'
