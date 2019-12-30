@@ -1,0 +1,22 @@
+uuid: 59927a5e-0d6d-49e8-a6c3-91fc2d46e7b2
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: pathauto_product_reference
+label: 'Pathauto Product reference'
+type: 'canonical_entities:node'
+pattern: '[node:title]'
+selection_criteria:
+  fb9823c7-07e0-4c2f-b56b-aa24cc4f613f:
+    id: node_type
+    bundles:
+      product_reference: product_reference
+    negate: false
+    context_mapping:
+      node: node
+    uuid: fb9823c7-07e0-4c2f-b56b-aa24cc4f613f
+selection_logic: and
+weight: -5
+relationships: {  }
