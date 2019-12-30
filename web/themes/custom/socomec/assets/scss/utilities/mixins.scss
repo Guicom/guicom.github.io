@@ -151,7 +151,7 @@
 @mixin getfullwidthcolumn($nbr, $breakpoint) {
   width: calc-column-width($nbr, $breakpoint);
   max-width: calc-column-width($nbr, $breakpoint);
-  flex-basis: calc-column-width($nbr, $breakpoint);
+  flex: 0 0 calc-column-width($nbr, $breakpoint);
 }
 
 //

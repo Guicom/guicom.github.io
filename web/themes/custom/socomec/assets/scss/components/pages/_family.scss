@@ -82,13 +82,33 @@ body.taxonomy-family {
   }
 
   #product-reference-section {
+    .container {
+      @include media-breakpoint-down(md) {
+        padding-left: 30px;
+      }
+    }
+    .product-div-wrapper {
+      width: 100%;
+    }
     .view-family-products {
       .product-wrapper {
         padding: 0;
         display: flex;
-        width: 100%;
         margin-left: -15px;
         list-style: none;
+        flex-wrap: wrap;
+        @include media-breakpoint-down(md) {
+          justify-content: center;
+        }
+
+        li:nth-child(3n+3) {
+          .product-item {
+            width: calc(#{calc-column-width(3, xl)} - 15px);
+            max-width: calc(#{calc-column-width(3, xl)} - 15px);
+            flex: 0 0 calc(#{calc-column-width(3, xl)} - 15px);
+            padding-right: 0;
+          }
+        }
       }
     }
   }
