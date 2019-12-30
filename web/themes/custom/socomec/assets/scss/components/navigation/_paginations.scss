@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 ul.pagination {
   align-items: center;
   .previous,
@@ -113,62 +112,3 @@ ul.pagination {
     }
   }
 }
-=======
-ul.pagination {
-  .previous,
-  .next {
-    position: relative;
-    a {
-      visibility: hidden;
-    }
-    &:after {
-      visibility: visible;
-      content: '';
-      display: block;
-      height: 20px;
-      width: 20px;
-      position: absolute;
-      right: 0;
-      bottom: 0;
-    }
-  }
-  .previous {
-    &:after {
-      background: url("../images/picto/ui/chevron-left-circle.svg") no-repeat center center;
-    }
-  }
-  .next {
-    &:after {
-      background: url("../images/picto/ui/chevron-right-circle.svg") no-repeat center center;
-    }
-  }
-
-  .page-item {
-    margin: 0 8px;
-    a {
-      height: 20px;
-      width: 20px;
-      background: none;
-      color: $dark-grey;
-      font-size: 12px;
-      line-height: 20px;
-      font-family: $font-roboto;
-      border: none;
-      padding: 0;
-      text-align: center;
-    }
-    &.active {
-      a {
-        background: $white;
-        border: none;
-        color: $blue;
-      }
-    }
-    a {
-      &:focus {
-        box-shadow: none;
-      }
-    }
-  }
-}
->>>>>>> bc9f6a758d03f8c4d6cab8cceaf697c85a5045d6
