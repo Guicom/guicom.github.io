@@ -1,0 +1,23 @@
+uuid: 16a06ac8-788f-4373-a2cb-a63ffbb94a95
+langcode: en
+status: true
+dependencies:
+  config:
+    - facets.facet.protectionlevel
+  module:
+    - facets
+  theme:
+    - socomec
+id: protectionlevel
+theme: socomec
+region: content
+weight: 0
+provider: null
+plugin: 'facet_block:protectionlevel'
+settings:
+  id: 'facet_block:protectionlevel'
+  label: 'Protection level'
+  provider: facets
+  label_display: visible
+  block_id: protectionlevel
+visibility: {  }

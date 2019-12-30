@@ -66,11 +66,14 @@ display:
             last: 'Last »'
           quantity: 9
       style:
-        type: default
+        type: html_list
         options:
           row_class: ''
           default_row_class: true
           uses_fields: false
+          type: ul
+          wrapper_class: product-div-wrapper
+          class: product-wrapper
       row:
         type: search_api
         options:
@@ -227,6 +230,10 @@ display:
     position: 1
     display_options:
       display_extenders: {  }
+      cache:
+        type: none
+      defaults:
+        cache: false
     cache_metadata:
       max-age: -1
       contexts:

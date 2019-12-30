@@ -78,11 +78,16 @@ body.taxonomy-family {
     }
   }
 
-  .view-family-products {
-    .product-wrapper {
-      display: flex;
-      margin-top: 35px;
-      width: 100%;
+  #product-reference-section {
+    .view-family-products {
+      .product-wrapper {
+        padding: 0;
+        display: flex;
+        width: 100%;
+        margin-left: -15px;
+        list-style: none;
+      }
     }
   }
+
 }

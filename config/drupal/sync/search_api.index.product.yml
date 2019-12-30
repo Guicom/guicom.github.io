@@ -4,11 +4,13 @@ status: true
 dependencies:
   module:
     - search_api_solr
+    - taxonomy
     - node
     - search_api
   config:
     - field.storage.node.field_product_family
     - field.storage.node.field_json_product_data
+    - field.storage.node.field_protection_level
     - search_api.server.socomec
 third_party_settings:
   search_api_solr:
@@ -69,6 +71,25 @@ field_settings:
     dependencies:
       config:
         - field.storage.node.field_product_family
+  field_protection_level:
+    label: 'Protection level'
+    datasource_id: 'entity:node'
+    property_path: field_protection_level
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_protection_level
+  name:
+    label: 'Protection level » Taxonomy term » Name'
+    datasource_id: 'entity:node'
+    property_path: 'field_protection_level:entity:name'
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_protection_level
+      module:
+        - taxonomy
+        - taxonomy
   node_grants:
     label: 'Node access information'
     property_path: search_api_node_grants

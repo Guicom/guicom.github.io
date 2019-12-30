@@ -146,7 +146,7 @@
  @return (map-get($container-max-widths, $breakpoint) / 12)
 }
 @function calc-column-width($nbr, $breakpoint) {
-  @return (absolute-width-column($breakpoint) * $nbr) + ($grid-gutter-width / 2)
+  @return (absolute-width-column($breakpoint) * $nbr)
 }
 @mixin getfullwidthcolumn($nbr, $breakpoint) {
   width: calc-column-width($nbr, $breakpoint);

@@ -106,8 +106,15 @@
             <div class="container">
               <div class="row">
                 <div class="product-reference-wrapper col-md-12">
-                  <h2 class="field--name-field-title">{{ 'Product' |t }}</h2>
-                  {{ drupal_view('family_products', 'block_1') }}
+                  <h2 class="field--name-field-title">{{ 'All' |t }} {{ drupal_field('name', 'taxonomy_term') }}</h2>
+                  <div class="row">
+                    <aside class="col-md-3">
+                      {{ drupal_entity('block', 'protectionlevel') }}
+                    </aside>
+                    <div class="col-md-9">
+                      {{ drupal_view('family_products', 'block_1') }}
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
