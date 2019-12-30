@@ -1,28 +1,12 @@
 display:
   default:
     display_options:
-      pager:
-        options:
-          expose:
-            items_per_page_label: 'Éléments par page'
       filters:
-        status:
-          group_info:
-            label: Publié
-            group_items:
-              1:
-                title: Publié
-              2:
-                title: 'Non publié'
         name:
           expose:
             label: Nom
-      title: Média
-  page:
-    display_options:
-      menu:
-        title: Média
   widget:
+    display_title: Widget
     display_options:
       filters:
         name:

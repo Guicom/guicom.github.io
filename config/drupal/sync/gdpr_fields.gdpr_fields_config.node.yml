@@ -10,6 +10,7 @@ filenames:
   page: ''
   product_reference: ''
   optional_related_content: ''
+  news: ''
 bundles:
   product:
     field_complementary_info:
@@ -1021,6 +1022,128 @@ bundles:
     field_orc_text:
       bundle: optional_related_content
       name: field_orc_text
+      entity_type_id: node
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+  news:
+    field_body:
+      bundle: news
+      name: field_body
+      entity_type_id: node
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_news_audience:
+      bundle: news
+      name: field_news_audience
+      entity_type_id: node
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: clear_anonymizer
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_news_mommentum:
+      bundle: news
+      name: field_news_mommentum
+      entity_type_id: node
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: clear_anonymizer
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_news_pdf:
+      bundle: news
+      name: field_news_pdf
+      entity_type_id: node
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_media_image:
+      bundle: news
+      name: field_media_image
+      entity_type_id: node
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_product_reference:
+      bundle: news
+      name: field_product_reference
+      entity_type_id: node
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_teaser:
+      bundle: news
+      name: field_teaser
+      entity_type_id: node
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: clear_anonymizer
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_news_theme:
+      bundle: news
+      name: field_news_theme
+      entity_type_id: node
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: clear_anonymizer
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_news_type:
+      bundle: news
+      name: field_news_type
+      entity_type_id: node
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: clear_anonymizer
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_model_pdf:
+      bundle: news
+      name: field_model_pdf
+      entity_type_id: node
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_metatags:
+      bundle: news
+      name: field_metatags
       entity_type_id: node
       rtf: 'no'
       rta: 'no'

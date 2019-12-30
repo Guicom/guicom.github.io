@@ -1,0 +1,24 @@
+uuid: 72c984bb-e50e-47cc-9f7d-2c07e3a1ad03
+langcode: en
+status: true
+dependencies: {  }
+id: node__news
+label: 'Content: News'
+tags:
+  content_language: '[node:langcode]'
+  description: '[node:field_teaser:summary]'
+  image_src: '[node:field_media_image:entity:field_media_image:og_image_600x315:url]'
+  robots: 'index, follow'
+  title: '[node:title]'
+  og_description: '[node:field_teaser:summary]'
+  og_image: '[node:field_media_image:entity:field_media_image:og_image_600x315:url]'
+  og_image_alt: '[node:field_news_picture:entity:field_media_image:alt]'
+  og_image_height: '[node:field_media_image:entity:field_media_image:og_image_600x315:height]'
+  og_image_type: '[node:field_media_image:entity:field_media_image:og_image_600x315:mimetype]'
+  og_image_url: '[node:field_media_image:entity:field_media_image:og_image_600x315:url]'
+  og_image_width: '[node:field_media_image:entity:field_media_image:og_image_600x315:width]'
+  og_site_name: '[site:name]'
+  og_title: '[node:title]'
+  og_type: '[node:content-type]'
+  og_updated_time: '[node:changed]'
+  og_url: '[node:url]'

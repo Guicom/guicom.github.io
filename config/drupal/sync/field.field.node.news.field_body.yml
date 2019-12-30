@@ -1,0 +1,75 @@
+uuid: 14fd28dc-d79a-4c87-adcd-6aee41f78a31
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_body
+    - node.type.news
+    - paragraphs.paragraphs_type.key_figures
+    - paragraphs.paragraphs_type.model_cta
+    - paragraphs.paragraphs_type.model_image
+    - paragraphs.paragraphs_type.model_testimony
+    - paragraphs.paragraphs_type.model_text
+  module:
+    - entity_reference_revisions
+id: node.news.field_body
+field_name: field_body
+entity_type: node
+bundle: news
+label: 'News Content'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      key_figures: key_figures
+      model_cta: model_cta
+      model_image: model_image
+      model_testimony: model_testimony
+      model_text: model_text
+    target_bundles_drag_drop:
+      from_library:
+        weight: 14
+        enabled: false
+      hero_paragraph:
+        weight: 15
+        enabled: false
+      key_figures:
+        enabled: true
+        weight: 16
+      link:
+        weight: 17
+        enabled: false
+      model_cta:
+        enabled: true
+        weight: 18
+      model_cta_pdf:
+        weight: 19
+        enabled: false
+      model_image:
+        enabled: true
+        weight: 20
+      model_testimony:
+        enabled: true
+        weight: 21
+      model_text:
+        enabled: true
+        weight: 22
+      pardot_form:
+        weight: 23
+        enabled: false
+      premium_content_promotion:
+        weight: 24
+        enabled: false
+      product_faq:
+        weight: 25
+        enabled: false
+      video_embed:
+        weight: 26
+        enabled: false
+field_type: entity_reference_revisions
