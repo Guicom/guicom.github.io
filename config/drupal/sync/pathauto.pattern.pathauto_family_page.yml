@@ -1,0 +1,23 @@
+uuid: 4a838a74-5a53-462c-92bd-33fd6b62ccd9
+langcode: en
+status: true
+dependencies:
+  module:
+    - ctools
+    - taxonomy
+id: pathauto_family_page
+label: 'Pathauto Family page'
+type: 'canonical_entities:taxonomy_term'
+pattern: '[term:parents:join-path]/[term:name]'
+selection_criteria:
+  2e6af6d4-1d5b-45ed-844e-46c85e372384:
+    id: 'entity_bundle:taxonomy_term'
+    bundles:
+      family: family
+    negate: false
+    context_mapping:
+      taxonomy_term: taxonomy_term
+    uuid: 2e6af6d4-1d5b-45ed-844e-46c85e372384
+selection_logic: and
+weight: -5
+relationships: {  }
