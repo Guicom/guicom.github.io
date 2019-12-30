@@ -95,6 +95,8 @@ hidden:
   addtoany: true
   field_associated_products: true
   field_background_hero_block: true
+  field_family_first_level: true
+  field_family_second_level: true
   field_json_product_data: true
   field_multiline_anchor_name: true
   field_product_advantage_text: true

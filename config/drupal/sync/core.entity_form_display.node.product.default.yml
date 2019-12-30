@@ -5,8 +5,6 @@ dependencies:
   config:
     - field.field.node.product.field_associated_products
     - field.field.node.product.field_background_hero_block
-    - field.field.node.product.field_family_first_level
-    - field.field.node.product.field_family_second_level
     - field.field.node.product.field_json_product_data
     - field.field.node.product.field_multiline_anchor_name
     - field.field.node.product.field_product_advantage_text
@@ -206,18 +204,6 @@ content:
       media_types: {  }
     third_party_settings: {  }
     region: content
-  field_family_first_level:
-    weight: 10
-    settings: {  }
-    third_party_settings: {  }
-    type: options_select
-    region: content
-  field_family_second_level:
-    weight: 11
-    settings: {  }
-    third_party_settings: {  }
-    type: options_select
-    region: content
   field_json_product_data:
     weight: 2
     settings:
@@ -322,7 +308,7 @@ content:
     weight: 12
     settings: {  }
     third_party_settings: {  }
-    type: options_select
+    type: options_buttons
     region: content
   field_product_multiline:
     type: entity_reference_paragraphs

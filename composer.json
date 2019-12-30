@@ -73,7 +73,6 @@
         "drupal/simple_megamenu": "^1.0@beta",
         "drupal/svg_image": "^1.9",
         "drupal/twig_tweak": "^2.4",
-        "drupal/views_contextual_filters_or": "^1.1",
         "drush/drush": "^9.0.0",
         "symfony/event-dispatcher": "4.3.4 as 3.4.99",
         "vlucas/phpdotenv": "^2.4",
