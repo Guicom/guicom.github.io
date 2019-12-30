@@ -154,7 +154,8 @@
         },
         "patches": {
             "drupal/default_content_deploy": {
-                "Add folder argument on drush dcdi dcde": "https://www.drupal.org/files/issues/2019-06-14/3061417-9.patch"
+                "Add folder argument on drush dcdi dcde": "https://www.drupal.org/files/issues/2019-06-14/3061417-9.patch",
+                "Undesired revision_id value": "https://www.drupal.org/files/issues/2019-10-02/2999955-6-do-not-update-revision-id-if-not-necessary.patch"
             },
             "drupal/metatag": {
                 "Add hreflang to Metatag": "https://www.drupal.org/files/issues/2018-09-06/2956982-6.patch"
