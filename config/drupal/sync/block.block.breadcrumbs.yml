@@ -3,7 +3,6 @@ langcode: en
 status: true
 dependencies:
   module:
-    - ctools
     - system
   theme:
     - socomec
@@ -18,11 +17,4 @@ settings:
   label: Breadcrumbs
   provider: system
   label_display: '0'
-visibility:
-  'entity_bundle:node':
-    id: 'entity_bundle:node'
-    bundles:
-      product: product
-    negate: false
-    context_mapping:
-      node: '@node.node_route_context:node'
+visibility: {  }

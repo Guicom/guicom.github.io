@@ -11,8 +11,9 @@ class MediaApi {
     if ($media = Media::load($media_id)) {
       /** @var \Drupal\media\MediaSourceInterface $mediaSource */
       if ($mediaSource = $media->getSource()) {
-        $fid = $mediaSource->getSourceFieldValue($media);
-        return $fid;
+        if ($fid = $mediaSource->getSourceFieldValue($media)) {
+          return $fid;
+        }
       }
     }
     return FALSE;
