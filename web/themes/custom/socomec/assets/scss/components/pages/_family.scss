@@ -15,7 +15,10 @@ body.taxonomy-family {
     .hero-block {
       position: relative;
       h1 {
-        margin-bottom: 180px;
+        margin-bottom: 40px;
+        @include media-breakpoint-up(lg) {
+          margin-bottom: 180px;
+        }
         .family-title {
           color: $white;
           font-family: $font-roboto;
