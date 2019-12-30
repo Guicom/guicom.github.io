@@ -284,14 +284,17 @@ function socomec_preprocess_block(&$variables) {
           // Add background image
           if ($block->hasField('field_background_image')
             && !empty($block->get('field_background_image')->getValue())) {
-            $field_background_image_id = $block->get('field_background_image')->first()->getValue()['target_id'];
+            $field_background_image_id = $block->get('field_background_image')
+              ->first()
+              ->getValue()['target_id'];
             $mediaApi = \Drupal::service('soc_core.media_api');
-            $fid = $mediaApi->getFileIdFromMediaId($field_background_image_id);
-            if ($file = File::load($fid)) {
-              if(empty($file)){
-                return;
+            if ($fid = $mediaApi->getFileIdFromMediaId($field_background_image_id)) {
+              if ($file = File::load($fid)) {
+                if (empty($file)) {
+                  return;
+                }
+                $file_url = file_create_url($file->getFileUri());
               }
-              $file_url = file_create_url($file->getFileUri());
             }
           }
           $variables['background_image'] = $file_url ?? null;
