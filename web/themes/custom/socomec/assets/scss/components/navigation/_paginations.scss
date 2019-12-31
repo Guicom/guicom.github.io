@@ -1,9 +1,11 @@
 ul.pagination {
+  align-items: center;
   .previous,
-  .next {
+  .next{
     position: relative;
     a {
       visibility: hidden;
+      padding: 0;
     }
     &:after {
       visibility: visible;
@@ -14,22 +16,26 @@ ul.pagination {
       position: absolute;
       right: 0;
       bottom: 0;
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: cover;
     }
   }
   .previous {
     &:after {
-      background: url("../images/picto/ui/chevron-left-circle.svg") no-repeat center center;
+      background-image: url("../images/picto/ui/chevron-left-circle.svg");
     }
   }
-  .next {
+  .next{
     &:after {
-      background: url("../images/picto/ui/chevron-right-circle.svg") no-repeat center center;
+      background-image: url("../images/picto/ui/chevron-right-circle.svg");
     }
   }
 
   .page-item {
     margin: 0 8px;
-    a {
+    a,
+    span {
       height: 20px;
       width: 20px;
       background: none;
@@ -39,18 +45,69 @@ ul.pagination {
       font-family: $font-roboto;
       border: none;
       padding: 0;
-      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
     &.active {
-      a {
+      a,
+      span {
         background: $white;
         border: none;
         color: $blue;
       }
     }
-    a {
+    a,
+    span {
       &:focus {
         box-shadow: none;
+      }
+    }
+  }
+  &.pagination-big {
+    justify-content: center;
+    .page-item {
+      margin: 0 4px;
+      &.previous,
+      &.next {
+        width: 50px;
+        height: 50px;
+        &:after {
+          display: none;
+        }
+        a {
+          height: 50px;
+          width: 50px;
+          &:after {
+            visibility: visible;
+            content: '';
+            display: block;
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 50px;
+            width: 50px;
+            background-image: url("../images/picto/ui/Big-chevron-thin.svg");
+          }
+        }
+      }
+      &.next {
+        a {
+          &:after {
+            transform: rotate(180deg);
+          }
+        }
+      }
+
+      a,
+      span {
+        font-family: $font-poppins;
+        font-weight: 600;
+        height: 40px;
+        width: 40px;
       }
     }
   }

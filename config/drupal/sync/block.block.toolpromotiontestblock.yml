@@ -2,17 +2,14 @@ uuid: f30269f7-fcc4-4f76-8f1f-014b9068f1d0
 langcode: en
 status: true
 dependencies:
-  content:
-    - 'block_content:tool_promotion:f0c55cf7-9165-45ed-abd1-f17c4876cfad'
   module:
-    - block_content
     - ctools
   theme:
     - socomec
 id: toolpromotiontestblock
 theme: socomec
 region: content
-weight: -3
+weight: -5
 provider: null
 plugin: 'block_content:f0c55cf7-9165-45ed-abd1-f17c4876cfad'
 settings:

@@ -18,6 +18,12 @@
         ],
         "http:\/\/drupal.org\/rest\/relation\/node\/product\/field_product_family": [
             {
+                "href": "http:\/\/default\/taxonomy\/term\/6?_format=hal_json"
+            },
+            {
+                "href": "http:\/\/default\/taxonomy\/term\/7?_format=hal_json"
+            },
+            {
                 "href": "http:\/\/default\/taxonomy\/term\/9?_format=hal_json"
             }
         ],
@@ -76,7 +82,7 @@
     ],
     "vid": [
         {
-            "value": 82
+            "value": 87
         }
     ],
     "langcode": [
@@ -92,7 +98,7 @@
     ],
     "revision_timestamp": [
         {
-            "value": "2019-12-24T09:08:16+00:00",
+            "value": "2019-12-30T09:43:53+00:00",
             "format": "Y-m-d\\TH:i:sP"
         }
     ],
@@ -109,7 +115,7 @@
                 },
                 "uuid": [
                     {
-                        "value": "39080102-237a-48b7-89a2-efb1cbf5b248"
+                        "value": "b1622487-76b3-4e8b-baad-13e0ffc0059e"
                     }
                 ]
             }
@@ -126,12 +132,42 @@
                 },
                 "uuid": [
                     {
-                        "value": "39080102-237a-48b7-89a2-efb1cbf5b248"
+                        "value": "b1622487-76b3-4e8b-baad-13e0ffc0059e"
                     }
                 ]
             }
         ],
         "http:\/\/drupal.org\/rest\/relation\/node\/product\/field_product_family": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/taxonomy\/term\/6?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/family"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "59b4df63-c1cc-49ae-81ba-1cd80dcd280b"
+                    }
+                ]
+            },
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/taxonomy\/term\/7?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/family"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "868352ea-0c8b-495c-b756-750eaa3298b5"
+                    }
+                ]
+            },
             {
                 "_links": {
                     "self": {
@@ -341,7 +377,7 @@
     ],
     "changed": [
         {
-            "value": "2019-12-24T09:08:16+00:00",
+            "value": "2019-12-30T09:43:53+00:00",
             "format": "Y-m-d\\TH:i:sP"
         }
     ],

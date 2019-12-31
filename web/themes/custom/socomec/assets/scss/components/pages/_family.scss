@@ -4,7 +4,6 @@ body.taxonomy-family {
   .section-grey-light {
     background-color: $grey-blue;
     padding: 40px 0 80px;
-    margin: 0 -15px;
   }
   h2.field--name-field-title {
     @include block-title(true);

@@ -1,4 +1,13 @@
+.facets-title {
+  color: $dark-grey;
+  font-family: $font-roboto;
+  font-size: 24px;
+  font-weight: 300;
+  line-height: 30px;
+  margin-bottom: 20px;
+}
 .block-facets-ajax {
+  margin-bottom: 40px;
   .facet-title {
     color: $black;
     font-family: $font-poppins;
@@ -25,6 +34,20 @@
       }
       [type="checkbox"]:checked + label {
         color: $blue_light;
+      }
+    }
+  }
+
+  &.contextual-family {
+    ul {
+      li {
+        color: $blue;
+        font-family: $font-roboto;
+        font-size: 16px;
+        line-height: 25px;
+        a {
+          color: $darker-grey;
+        }
       }
     }
   }

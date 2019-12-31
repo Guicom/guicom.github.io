@@ -58,8 +58,10 @@ third_party_settings:
         - field_protection_level
         - field_standard_label
         - field_product_extid
-        - field_product_family
         - field_product_status
+        - field_family_first_level
+        - field_family_second_level
+        - field_product_family
       parent_name: group_tabs
       weight: 9
       format_type: tab
@@ -108,8 +110,8 @@ third_party_settings:
         - group_multiline
         - group_op
         - group_associated_products
-        - group_cta
         - group_application
+        - group_cta
       parent_name: group_tabs
       weight: 11
       format_type: tab
@@ -303,10 +305,10 @@ content:
     type: string_textfield
     region: content
   field_product_family:
-    weight: 9
+    weight: 12
     settings: {  }
     third_party_settings: {  }
-    type: options_select
+    type: options_buttons
     region: content
   field_product_multiline:
     type: entity_reference_paragraphs
@@ -361,7 +363,7 @@ content:
     type: entity_reference_autocomplete
     region: content
   field_product_status:
-    weight: 10
+    weight: 9
     settings:
       match_operator: CONTAINS
       size: 60

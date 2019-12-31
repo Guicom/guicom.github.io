@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ee8730aa3b1a087ded4dad6fd60d4367",
+    "content-hash": "1285645ab58e18e5d35d2badf8f6b2bb",
     "packages": [
         {
             "name": "actency/foundation",
