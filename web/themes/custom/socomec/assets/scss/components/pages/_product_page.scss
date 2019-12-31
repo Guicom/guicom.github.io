@@ -140,6 +140,10 @@ body.node--type-product {
       bottom: 0;
       right: 0;
       left: 0;
+      @include media-breakpoint-up(md) {
+        width: 80%;
+        left: 20%;
+      }
       @include media-breakpoint-down(md) {
         order: 3;
         position: relative;
