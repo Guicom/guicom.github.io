@@ -15,6 +15,33 @@ class FeatureContext extends RawDrupalContext {
    */
   protected $output;
 
+
+  /**
+   * Switches focus to an iframe.
+   *
+   * @Given /^I switch (?:away from|to) the iframe "([^"]*)"$/
+   * @param string $iframe_name
+   */
+  public function iSwitchToTheIframe($iframe_name) {
+    if ($iframe_name) {
+      $this->getSession()->switchToIFrame($iframe_name);
+    } else {
+      $this->getSession()->switchToIFrame();
+    }
+  }
+
+  /**
+   * @When /^I check the "([^"]*)" radio button$/
+   */
+  public function iCheckTheRadioButton($radioLabel) {
+    $radioButton = $this->getSession()->getPage()->findField($radioLabel);
+    if (null === $radioButton) {
+      throw new Exception("Cannot find radio button ".$radioLabel);
+    }
+    $value = $radioButton->getAttribute("value");
+    $this->getSession()->getDriver()->click($radioButton->getXPath());
+  }
+
   /**
    * @Then /^I want to see the URL$/
    *

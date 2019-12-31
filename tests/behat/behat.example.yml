@@ -17,6 +17,12 @@ default:
       browser_name: 'chrome'
       javascript_session: selenium2
       selenium2:
+        capabilities:
+          browser: "chrome"
+          version: "*"
+          extra_capabilities:
+            chromeOptions:
+              w3c: false
         wd_host:  http://browser:4444/wd/hub
       base_url: http://web
     Drupal\DrupalExtension:
