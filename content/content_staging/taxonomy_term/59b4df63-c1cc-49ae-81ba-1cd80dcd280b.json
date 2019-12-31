@@ -1,13 +1,39 @@
 {
     "_links": {
         "self": {
-            "href": "http:\/\/default\/taxonomy\/term\/6?_format=hal_json"
+            "href": "http:\/\/default\/energy-storage-solution?_format=hal_json"
         },
         "type": {
             "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/family"
         },
         "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/family\/parent": [
             null
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/family\/content_translation_uid": [
+            {
+                "href": "http:\/\/default\/user\/1?_format=hal_json",
+                "lang": "en"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/family\/field_background_image": [
+            {
+                "href": "http:\/\/default\/media\/17\/edit?_format=hal_json"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/family\/field_family_first_multiline": [
+            {
+                "href": ""
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/family\/field_family_image": [
+            {
+                "href": "http:\/\/default\/media\/18\/edit?_format=hal_json"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/family\/field_family_second_multiline": [
+            {
+                "href": ""
+            }
         ]
     },
     "tid": [
@@ -67,11 +93,99 @@
     "_embedded": {
         "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/family\/parent": [
             null
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/family\/content_translation_uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/user\/1?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "674a5a4f-b63e-4035-b0b3-2959ebf4041c"
+                    }
+                ],
+                "lang": "en"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/family\/field_background_image": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/media\/17\/edit?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/media\/image"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "72fe5a74-1089-4a42-bbf6-7adc3b1f1937"
+                    }
+                ]
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/family\/field_family_first_multiline": [
+            {
+                "_links": {
+                    "self": {
+                        "href": ""
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/model_text"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "3eff2d47-136d-41b9-8f06-7edd4e2879d0"
+                    }
+                ],
+                "target_revision_id": "314"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/family\/field_family_image": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/media\/18\/edit?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/media\/product_image"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "3d43aa6c-68e4-427c-9086-6ae4a58dd317"
+                    }
+                ]
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/family\/field_family_second_multiline": [
+            {
+                "_links": {
+                    "self": {
+                        "href": ""
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/model_text"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "069ccc80-8217-42df-b152-5dd4540bb5d7"
+                    }
+                ],
+                "target_revision_id": "315"
+            }
         ]
     },
     "changed": [
         {
-            "value": "2019-12-24T14:53:42+00:00",
+            "value": "2019-12-31T08:55:20+00:00",
             "format": "Y-m-d\\TH:i:sP"
         }
     ],
@@ -85,6 +199,25 @@
         {
             "value": true,
             "lang": "en"
+        }
+    ],
+    "content_translation_source": [
+        {
+            "value": "und",
+            "lang": "en"
+        }
+    ],
+    "content_translation_outdated": [
+        {
+            "value": false,
+            "lang": "en"
+        }
+    ],
+    "content_translation_created": [
+        {
+            "value": "2019-12-31T08:45:20+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
         }
     ],
     "field_family_extid": [

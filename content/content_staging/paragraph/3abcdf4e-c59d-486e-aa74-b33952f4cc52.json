@@ -8,7 +8,7 @@
         },
         "http:\/\/drupal.org\/rest\/relation\/paragraph\/hero_paragraph\/field_thumbnail": [
             {
-                "href": "http:\/\/default\/media\/35\/edit?_format=hal_json"
+                "href": "http:\/\/default\/media\/28\/edit?_format=hal_json"
             }
         ]
     },
@@ -24,7 +24,7 @@
     ],
     "revision_id": [
         {
-            "value": 228
+            "value": 328
         }
     ],
     "langcode": [
@@ -91,7 +91,7 @@
             {
                 "_links": {
                     "self": {
-                        "href": "http:\/\/default\/media\/35\/edit?_format=hal_json"
+                        "href": "http:\/\/default\/media\/28\/edit?_format=hal_json"
                     },
                     "type": {
                         "href": "http:\/\/drupal.org\/rest\/type\/media\/image"
@@ -99,7 +99,7 @@
                 },
                 "uuid": [
                     {
-                        "value": "c90678e0-5fa8-46f0-a75a-a1570dcc766c"
+                        "value": "d16e2fba-561a-48ed-a9f1-d935af3f5d00"
                     }
                 ]
             }
