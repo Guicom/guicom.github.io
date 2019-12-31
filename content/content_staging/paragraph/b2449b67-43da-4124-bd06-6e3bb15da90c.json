@@ -77,6 +77,12 @@
             "lang": "en"
         }
     ],
+    "revision_translation_affected": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
     "_embedded": {
         "http:\/\/drupal.org\/rest\/relation\/paragraph\/link\/field_link_icon": [
             {
