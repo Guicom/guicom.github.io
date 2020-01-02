@@ -1,0 +1,19 @@
+ol {
+  &.breadcrumb {
+    padding-left: 0;
+    .breadcrumb-item {
+      a {
+        color: $white;
+        font-family: $font-roboto;
+        font-size: 12px;
+        line-height: 20px;
+      }
+      + .breadcrumb-item {
+        &:before {
+          content: '\B7';
+          color: $white;
+        }
+      }
+    }
+  }
+}
