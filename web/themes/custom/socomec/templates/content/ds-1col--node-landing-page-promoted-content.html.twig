@@ -14,7 +14,8 @@
             {{ content.field_client_name }}
             <p class="product-content-related-baseline">{{ drupal_field('field_baseline', 'paragraph', content.field_hero_paragraph[0]['#paragraph'].id(), 'simple_html') }}</p>
             <a class="product-content-link" href="{{ path('entity.node.canonical', {'node': node.id}) | render | striptags | trim }}">
-              {% include '/themes/custom/socomec/assets/images/picto/ui/chevron-right-circle-white-yellow.svg' %} {{ drupal_field('field_pardot_cta_text', 'paragraph', content.field_pardot_form[0]['#paragraph'].id()) }}
+              {% include '/themes/custom/socomec/assets/images/picto/ui/chevron-right-circle-white-yellow.svg' %}
+              {{ drupal_field('field_pardot_cta_text', 'paragraph', content.field_pardot_form[0]['#paragraph'].id(), 'simple_html') }}
             </a>
           </div>
         </div>
