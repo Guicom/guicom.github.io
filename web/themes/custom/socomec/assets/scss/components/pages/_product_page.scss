@@ -140,6 +140,10 @@ body.node--type-product {
       bottom: 0;
       right: 0;
       left: 0;
+      @include media-breakpoint-up(md) {
+        width: 80%;
+        left: 20%;
+      }
       @include media-breakpoint-down(md) {
         order: 3;
         position: relative;
@@ -238,6 +242,7 @@ body.node--type-product {
   .product-navigation {
     background: $white;
     margin-bottom: 45px;
+    text-transform: uppercase;
     .row {
       align-items: center;
       justify-content: flex-end;
@@ -298,6 +303,7 @@ body.node--type-product {
   }
 
   .product-function,
+  .product-standards,
   .product-services {
     p {
       color: $darker-grey;
@@ -306,6 +312,10 @@ body.node--type-product {
       font-weight: 300;
       line-height: 30px;
     }
+  }
+
+  .product-services {
+    margin-bottom: 100px;
   }
 
   .field--name-field-standard-label {

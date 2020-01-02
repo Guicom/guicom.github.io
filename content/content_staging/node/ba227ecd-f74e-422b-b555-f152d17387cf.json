@@ -1,40 +1,41 @@
 {
     "_links": {
         "self": {
-            "href": "http:\/\/default\/comment-garantir-la-continuite-dalimentation-des-blocs-operatoires\/thank-you?_format=hal_json"
+            "href": "http:\/\/default\/node\/21?_format=hal_json"
         },
         "type": {
-            "href": "http:\/\/drupal.org\/rest\/type\/node\/thank_you_page"
+            "href": "http:\/\/drupal.org\/rest\/type\/node\/optional_related_content"
         },
-        "http:\/\/drupal.org\/rest\/relation\/node\/thank_you_page\/revision_uid": [
+        "http:\/\/drupal.org\/rest\/relation\/node\/optional_related_content\/revision_uid": [
             {
                 "href": "http:\/\/default\/user\/1?_format=hal_json"
             }
         ],
-        "http:\/\/drupal.org\/rest\/relation\/node\/thank_you_page\/uid": [
+        "http:\/\/drupal.org\/rest\/relation\/node\/optional_related_content\/uid": [
             {
-                "href": "http:\/\/default\/user\/1?_format=hal_json"
+                "href": "http:\/\/default\/user\/1?_format=hal_json",
+                "lang": "en"
             }
         ],
-        "http:\/\/drupal.org\/rest\/relation\/node\/thank_you_page\/field_landing_page": [
+        "http:\/\/drupal.org\/rest\/relation\/node\/optional_related_content\/field_orc_picture": [
             {
-                "href": "http:\/\/default\/landing-page-premium\/whitepaper\/comment-garantir-la-continuite-dalimentation-des-blocs-operatoires?_format=hal_json"
+                "href": "http:\/\/default\/media\/29\/edit?_format=hal_json"
             }
         ]
     },
     "nid": [
         {
-            "value": 4
+            "value": 21
         }
     ],
     "uuid": [
         {
-            "value": "48cdef69-6fd5-4dc5-8bc9-a07ae837aa85"
+            "value": "ba227ecd-f74e-422b-b555-f152d17387cf"
         }
     ],
     "vid": [
         {
-            "value": 20
+            "value": 93
         }
     ],
     "langcode": [
@@ -45,17 +46,17 @@
     ],
     "type": [
         {
-            "target_id": "thank_you_page"
+            "target_id": "optional_related_content"
         }
     ],
     "revision_timestamp": [
         {
-            "value": "2019-10-08T14:31:49+00:00",
+            "value": "2019-12-31T10:33:21+00:00",
             "format": "Y-m-d\\TH:i:sP"
         }
     ],
     "_embedded": {
-        "http:\/\/drupal.org\/rest\/relation\/node\/thank_you_page\/revision_uid": [
+        "http:\/\/drupal.org\/rest\/relation\/node\/optional_related_content\/revision_uid": [
             {
                 "_links": {
                     "self": {
@@ -72,7 +73,7 @@
                 ]
             }
         ],
-        "http:\/\/drupal.org\/rest\/relation\/node\/thank_you_page\/uid": [
+        "http:\/\/drupal.org\/rest\/relation\/node\/optional_related_content\/uid": [
             {
                 "_links": {
                     "self": {
@@ -86,22 +87,23 @@
                     {
                         "value": "674a5a4f-b63e-4035-b0b3-2959ebf4041c"
                     }
-                ]
+                ],
+                "lang": "en"
             }
         ],
-        "http:\/\/drupal.org\/rest\/relation\/node\/thank_you_page\/field_landing_page": [
+        "http:\/\/drupal.org\/rest\/relation\/node\/optional_related_content\/field_orc_picture": [
             {
                 "_links": {
                     "self": {
-                        "href": "http:\/\/default\/landing-page-premium\/whitepaper\/comment-garantir-la-continuite-dalimentation-des-blocs-operatoires?_format=hal_json"
+                        "href": "http:\/\/default\/media\/29\/edit?_format=hal_json"
                     },
                     "type": {
-                        "href": "http:\/\/drupal.org\/rest\/type\/node\/landing_page"
+                        "href": "http:\/\/drupal.org\/rest\/type\/media\/image"
                     }
                 },
                 "uuid": [
                     {
-                        "value": "97db1ea4-30af-414e-8460-e399f3d8c3b1"
+                        "value": "ab9c48b1-f28d-4bcb-9d93-bd39e49e0890"
                     }
                 ]
             }
@@ -109,34 +111,40 @@
     },
     "status": [
         {
-            "value": false
+            "value": true,
+            "lang": "en"
         }
     ],
     "title": [
         {
-            "value": "Comment garantir la continuit\u00e9 d\u2019alimentation des blocs op\u00e9ratoires"
+            "value": "Test",
+            "lang": "en"
         }
     ],
     "created": [
         {
-            "value": "2019-10-03T12:29:44+00:00",
+            "value": "2019-12-31T10:33:21+00:00",
+            "lang": "en",
             "format": "Y-m-d\\TH:i:sP"
         }
     ],
     "changed": [
         {
-            "value": "2019-10-08T14:31:49+00:00",
+            "value": "2019-12-31T10:33:21+00:00",
+            "lang": "en",
             "format": "Y-m-d\\TH:i:sP"
         }
     ],
     "promote": [
         {
-            "value": true
+            "value": true,
+            "lang": "en"
         }
     ],
     "sticky": [
         {
-            "value": false
+            "value": false,
+            "lang": "en"
         }
     ],
     "default_langcode": [
@@ -148,12 +156,6 @@
     "revision_translation_affected": [
         {
             "value": true,
-            "lang": "en"
-        }
-    ],
-    "moderation_state": [
-        {
-            "value": "draft",
             "lang": "en"
         }
     ],
@@ -169,21 +171,22 @@
             "lang": "en"
         }
     ],
-    "field_cta": [
+    "metatag": [
         {
-            "value": "Download"
+            "value": {
+                "title": "Test | Socomec",
+                "canonical_url": "http:\/\/default\/node\/21"
+            }
         }
     ],
-    "field_success_text": [
+    "field_orc_target": [
         {
-            "value": "<p>Vous pouvez consulter l'\u00e9tude de cas d\u00e8s maintenant ou bien plus tard. Un lien de t\u00e9l\u00e9chargement vous a \u00e9t\u00e9 envoy\u00e9e par email.<\/p>\r\n",
-            "format": "basic_html",
-            "processed": "<p>Vous pouvez consulter l'\u00e9tude de cas d\u00e8s maintenant ou bien plus tard. Un lien de t\u00e9l\u00e9chargement vous a \u00e9t\u00e9 envoy\u00e9e par email.<\/p>"
+            "value": "_self"
         }
     ],
-    "field_thank_you_text": [
+    "field_orc_text": [
         {
-            "value": "Merci de votre int\u00e9r\u00eat"
+            "value": "scssdcsdsdsdsdsc"
         }
     ]
 }

@@ -4,22 +4,22 @@
             "href": ""
         },
         "type": {
-            "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/model_cta_pdf"
+            "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/model_text"
         }
     },
     "id": [
         {
-            "value": 28
+            "value": 39
         }
     ],
     "uuid": [
         {
-            "value": "378a3115-ae20-4577-9313-1576d3726842"
+            "value": "069ccc80-8217-42df-b152-5dd4540bb5d7"
         }
     ],
     "revision_id": [
         {
-            "value": 101
+            "value": 315
         }
     ],
     "langcode": [
@@ -30,35 +30,33 @@
     ],
     "type": [
         {
-            "target_id": "model_cta_pdf"
+            "target_id": "model_text"
         }
     ],
     "status": [
         {
-            "value": true,
-            "lang": "en"
+            "value": true
         }
     ],
     "created": [
         {
-            "value": "2019-12-15T22:52:01+00:00",
-            "lang": "en",
+            "value": "2019-12-31T08:54:16+00:00",
             "format": "Y-m-d\\TH:i:sP"
         }
     ],
     "parent_id": [
         {
-            "value": "18"
+            "value": "6"
         }
     ],
     "parent_type": [
         {
-            "value": "node"
+            "value": "taxonomy_term"
         }
     ],
     "parent_field_name": [
         {
-            "value": "field_model_pdf"
+            "value": "field_family_second_multiline"
         }
     ],
     "behavior_settings": [
@@ -78,9 +76,16 @@
             "lang": "en"
         }
     ],
-    "field_cta_text": [
+    "field_text": [
         {
-            "value": "Dummy"
+            "value": "<p class=\"label\">Second multiline<\/p>\r\n",
+            "format": "socomec",
+            "processed": "<p class=\"label\">Second multiline<\/p>"
+        }
+    ],
+    "field_title": [
+        {
+            "value": "Second multiline"
         }
     ]
 }

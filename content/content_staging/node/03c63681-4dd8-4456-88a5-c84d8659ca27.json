@@ -1,7 +1,7 @@
 {
     "_links": {
         "self": {
-            "href": "http:\/\/default\/node\/11?_format=hal_json"
+            "href": "http:\/\/default\/energy-storage-solution\/sirco-ul?_format=hal_json"
         },
         "type": {
             "href": "http:\/\/drupal.org\/rest\/type\/node\/product"
@@ -18,13 +18,13 @@
         ],
         "http:\/\/drupal.org\/rest\/relation\/node\/product\/field_product_family": [
             {
-                "href": "http:\/\/default\/taxonomy\/term\/6?_format=hal_json"
+                "href": "http:\/\/default\/energy-storage-solution?_format=hal_json"
             },
             {
-                "href": "http:\/\/default\/taxonomy\/term\/7?_format=hal_json"
+                "href": "http:\/\/default\/energy-storage-solution\/storage-converters?_format=hal_json"
             },
             {
-                "href": "http:\/\/default\/taxonomy\/term\/8?_format=hal_json"
+                "href": "http:\/\/default\/energy-storage-solution\/storage-converters\/grid-modular-indoor-0?_format=hal_json"
             }
         ],
         "http:\/\/drupal.org\/rest\/relation\/node\/product\/field_product_pictures": [
@@ -89,7 +89,7 @@
                 },
                 "uuid": [
                     {
-                        "value": "b1622487-76b3-4e8b-baad-13e0ffc0059e"
+                        "value": "674a5a4f-b63e-4035-b0b3-2959ebf4041c"
                     }
                 ]
             }
@@ -106,7 +106,7 @@
                 },
                 "uuid": [
                     {
-                        "value": "b1622487-76b3-4e8b-baad-13e0ffc0059e"
+                        "value": "674a5a4f-b63e-4035-b0b3-2959ebf4041c"
                     }
                 ]
             }
@@ -115,7 +115,7 @@
             {
                 "_links": {
                     "self": {
-                        "href": "http:\/\/default\/taxonomy\/term\/6?_format=hal_json"
+                        "href": "http:\/\/default\/energy-storage-solution?_format=hal_json"
                     },
                     "type": {
                         "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/family"
@@ -130,7 +130,7 @@
             {
                 "_links": {
                     "self": {
-                        "href": "http:\/\/default\/taxonomy\/term\/7?_format=hal_json"
+                        "href": "http:\/\/default\/energy-storage-solution\/storage-converters?_format=hal_json"
                     },
                     "type": {
                         "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/family"
@@ -145,7 +145,7 @@
             {
                 "_links": {
                     "self": {
-                        "href": "http:\/\/default\/taxonomy\/term\/8?_format=hal_json"
+                        "href": "http:\/\/default\/energy-storage-solution\/storage-converters\/grid-modular-indoor-0?_format=hal_json"
                     },
                     "type": {
                         "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/family"
@@ -252,6 +252,18 @@
     "revision_translation_affected": [
         {
             "value": true,
+            "lang": "en"
+        }
+    ],
+    "content_translation_source": [
+        {
+            "value": "und",
+            "lang": "en"
+        }
+    ],
+    "content_translation_outdated": [
+        {
+            "value": false,
             "lang": "en"
         }
     ],

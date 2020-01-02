@@ -14,6 +14,7 @@
     }
     .description {
       .text-formatted {
+        margin: 0 $grid-gutter-width;
         p, span, div, ul li, ol li {
           color: $white;
           font: $font-poppins;
