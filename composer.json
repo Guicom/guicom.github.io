@@ -164,6 +164,9 @@
             },
             "drupal/core": {
                 "Media library causes validation errors when it is used in a required field of a nested form": "https://www.drupal.org/files/issues/2019-09-28/3003150-92.patch"
+            },
+            "drupal/search_api": {
+                "Search_api plugin not exists after updating 8.1.13 to 8.1.14": "https://www.drupal.org/files/issues/2019-08-27/3071591-9.patch"
             }
         }
     }
