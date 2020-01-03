@@ -1,5 +1,4 @@
 Feature: Premium Content
-  @api @cit @javascript
   In order to test out premium contents
 
   Scenario: Thank you page
