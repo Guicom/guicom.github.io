@@ -7,6 +7,7 @@ body.taxonomy-family {
   }
   h2.field--name-field-title {
     @include block-title(true);
+    margin-bottom: 40px;
   }
   header {
     @include media-breakpoint-up(lg) {

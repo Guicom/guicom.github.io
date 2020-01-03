@@ -1,7 +1,7 @@
 {
     "_links": {
         "self": {
-            "href": "http:\/\/default\/node\/17?_format=hal_json"
+            "href": "http:\/\/default\/22004110-sirco-mv-4x100a?_format=hal_json"
         },
         "type": {
             "href": "http:\/\/drupal.org\/rest\/type\/node\/product_reference"
@@ -73,7 +73,7 @@
                 },
                 "uuid": [
                     {
-                        "value": "b1622487-76b3-4e8b-baad-13e0ffc0059e"
+                        "value": "674a5a4f-b63e-4035-b0b3-2959ebf4041c"
                     }
                 ]
             }
@@ -90,7 +90,7 @@
                 },
                 "uuid": [
                     {
-                        "value": "b1622487-76b3-4e8b-baad-13e0ffc0059e"
+                        "value": "674a5a4f-b63e-4035-b0b3-2959ebf4041c"
                     }
                 ],
                 "lang": "en"
@@ -181,12 +181,32 @@
             "lang": "en"
         }
     ],
+    "content_translation_source": [
+        {
+            "value": "und",
+            "lang": "en"
+        }
+    ],
+    "content_translation_outdated": [
+        {
+            "value": false,
+            "lang": "en"
+        }
+    ],
     "metatag": [
         {
             "value": {
                 "title": "22004110-SIRCO MV 4X100A | Socomec",
-                "canonical_url": "http:\/\/default\/node\/17"
+                "canonical_url": "http:\/\/default\/22004110-sirco-mv-4x100a"
             }
+        }
+    ],
+    "path": [
+        {
+            "alias": "\/22004110-sirco-mv-4x100a",
+            "pid": 19,
+            "langcode": "en",
+            "lang": "en"
         }
     ],
     "field_dc_r_erp_dimension_unit": [

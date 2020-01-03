@@ -43,7 +43,7 @@ regions:
   footer_fourth: 'Footer fourth'
   footer_fifth: 'Footer fifth'
 
-logo: 'logo-socomec.png'
+logo: 'logo-socomec.svg'
 
 # Information added by Drupal.org packaging script on 2019-02-25
 version: '8.x-1.9'

@@ -69,7 +69,7 @@
 #}
 <div id="page-wrapper">
   <div id="page">
-    <header id="header" class="header" role="banner" aria-label="{{ 'Site header'|t}}" style="background-image: linear-gradient(26.93deg, #00519D 0%, rgba(0,81,157,0.8) 100%), url('{{ drupal_field('field_background_hero_block', 'node') | render | striptags | trim  }}')">
+    <header id="header" class="header" role="banner" aria-label="{{ 'Site header'|t}}" style="background-image: linear-gradient(324.68deg, #00519D 0%, rgba(0,81,157,0.8) 100%), url('{{ drupal_field('field_background_hero_block', 'node') | render | striptags | trim  }}')">
       {% block head %}
         {% include '@socomec/includes/header.html.twig' %}
       {% endblock %}
@@ -115,7 +115,7 @@
                   </div>
                   <div class="row">
                     {% if drupal_field('field_standard_label', 'node')[0] %}
-                      <div class="product-services col-md-11">
+                      <div class="product-standards col-md-11">
                         <h3 class="h3-blue">{{ 'Standards' |t }}</h3>
                         {{ drupal_field('field_standard_label', 'node') }}
                       </div>
@@ -171,11 +171,11 @@
           {%  endif %}
         </article>
         <article class="container-fluid">
-          {% if drupal_entity('block','homeproductassistance')[0] %}
+          {% if drupal_entity('block','homeproductassistance') %}
             <section class="section-light" id="assistance-section">
               <div class="container">
                 <div class="row">
-                  <div class="advantage-wrapper col-md-12">
+                  <div class="assistance-wrapper col-md-12">
                     <h2 class="field--name-field-title ">{{ 'Assistance' | t }}</h2>
                   </div>
                 </div>

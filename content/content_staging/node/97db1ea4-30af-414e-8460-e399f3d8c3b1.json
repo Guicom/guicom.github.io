@@ -52,7 +52,7 @@
     ],
     "vid": [
         {
-            "value": 77
+            "value": 91
         }
     ],
     "langcode": [
@@ -68,7 +68,7 @@
     ],
     "revision_timestamp": [
         {
-            "value": "2019-12-19T10:59:53+00:00",
+            "value": "2019-12-31T08:59:57+00:00",
             "format": "Y-m-d\\TH:i:sP"
         }
     ],
@@ -85,7 +85,7 @@
                 },
                 "uuid": [
                     {
-                        "value": "b1622487-76b3-4e8b-baad-13e0ffc0059e"
+                        "value": "674a5a4f-b63e-4035-b0b3-2959ebf4041c"
                     }
                 ]
             }
@@ -102,7 +102,7 @@
                 },
                 "uuid": [
                     {
-                        "value": "b1622487-76b3-4e8b-baad-13e0ffc0059e"
+                        "value": "674a5a4f-b63e-4035-b0b3-2959ebf4041c"
                     }
                 ]
             }
@@ -122,7 +122,7 @@
                         "value": "e9f821d9-ec89-4bee-9601-f69cb2321dcf"
                     }
                 ],
-                "target_revision_id": "226"
+                "target_revision_id": "326"
             },
             {
                 "_links": {
@@ -138,7 +138,7 @@
                         "value": "2d486ca5-709d-4774-a7c0-6b980c4c1da7"
                     }
                 ],
-                "target_revision_id": "227"
+                "target_revision_id": "327"
             }
         ],
         "http:\/\/drupal.org\/rest\/relation\/node\/landing_page\/field_hero_paragraph": [
@@ -156,7 +156,7 @@
                         "value": "3abcdf4e-c59d-486e-aa74-b33952f4cc52"
                     }
                 ],
-                "target_revision_id": "228"
+                "target_revision_id": "328"
             }
         ],
         "http:\/\/drupal.org\/rest\/relation\/node\/landing_page\/field_pardot_form": [
@@ -174,7 +174,7 @@
                         "value": "64c709e6-ce22-4552-858e-7de5e787ba84"
                     }
                 ],
-                "target_revision_id": "229"
+                "target_revision_id": "329"
             }
         ],
         "http:\/\/drupal.org\/rest\/relation\/node\/landing_page\/field_premium_content_type": [
@@ -213,7 +213,7 @@
     ],
     "changed": [
         {
-            "value": "2019-12-19T10:59:53+00:00",
+            "value": "2019-12-31T08:59:57+00:00",
             "format": "Y-m-d\\TH:i:sP"
         }
     ],
@@ -242,6 +242,18 @@
     "moderation_state": [
         {
             "value": "published",
+            "lang": "en"
+        }
+    ],
+    "content_translation_source": [
+        {
+            "value": "und",
+            "lang": "en"
+        }
+    ],
+    "content_translation_outdated": [
+        {
+            "value": false,
             "lang": "en"
         }
     ],
