@@ -28,15 +28,15 @@
           autoOpen: true,
           width: 'auto',
           resizable: false,
-          buttons: [
-            {
+          buttons: {
+            'button_confirm': {
               text: Drupal.t('Yes'),
               click: function () {
                 $(this).dialog('close');
                 defer.resolve('yes');
               }
             },
-            {
+            'button_reject': {
               text: Drupal.t('No'),
               click: function () {
                 $(this).dialog('close');
@@ -44,7 +44,7 @@
               },
               primary: true
             }
-          ],
+          },
           close: function (event, ui) {
             $(this).remove();
           }
