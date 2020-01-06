@@ -1,0 +1,13 @@
+<?php
+
+use Drupal\Core\Form\FormStateInterface;
+
+/**
+ * Implements hook_form_alter().
+ */
+function soc_wishlist_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  // Disable cache on wishlist form.
+  if (strcmp($form_id, 'soc_wishlist_wishlist_edit_form') == 0) {
+    \Drupal::service('page_cache_kill_switch')->trigger();
+  }
+}
