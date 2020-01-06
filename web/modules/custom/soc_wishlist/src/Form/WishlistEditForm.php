@@ -241,6 +241,8 @@ class WishlistEditForm extends FormBase {
   public function updateItems(array &$form, FormStateInterface $form_state) {
     $response = new AjaxResponse();
 
+    $deletedItems = [];
+
     /** @var \Drupal\soc_wishlist\Service\Manager\WishlistManager $wishlistManager */
     $wishlistManager = \Drupal::service('soc_wishlist.wishlist_manager');
     $userInput = $form_state->getUserInput();
