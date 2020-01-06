@@ -4,10 +4,12 @@ namespace Drupal\soc_wishlist\Form;
 
 use Drupal\Core\Ajax\AjaxResponse;
 use Drupal\Core\Ajax\InvokeCommand;
+use Drupal\Core\Ajax\PrependCommand;
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Messenger\MessengerInterface;
 use Drupal\Core\Render\Element\RenderElement;
+use Drupal\Core\Render\Element\StatusMessages;
 use Drupal\Core\Render\Element\Tableselect;
 use Drupal\node\Entity\Node;
 use Drupal\soc_core\Service\MediaApi;
@@ -255,6 +257,7 @@ class WishlistEditForm extends FormBase {
             else {
               $wishlistManager->remove($extId);
               $response->addCommand(new InvokeCommand('#item_line_'.$extId, 'hide'));
+              $deletedItems[] = $extId;
             }
           }
         }
@@ -274,6 +277,13 @@ class WishlistEditForm extends FormBase {
       foreach ($deletedItems as $deletedItem) {
         $response->addCommand(new InvokeCommand('#item_line_'.$deletedItem, 'hide'));
       }
+      $count = sizeof($deletedItems);
+      $messageSingular = "@count item deleted.";
+      $messagePlural = "@count items deleted.";
+      $message = \Drupal::translation()->formatPlural($count, $messageSingular, $messagePlural);
+      \Drupal::service('messenger')->addStatus($message);
+      $messages = \Drupal::service('renderer')->renderRoot(StatusMessages::renderMessages());
+      $response->addCommand(new PrependCommand('#wishlist_form_wrapper', $messages));
     }
 
     return $response;
