@@ -5,6 +5,8 @@ soc_wishlist.edit_wishlist:
     _title: 'My wishlist'
   requirements:
     _permission: 'edit own wishlist'
+  options:
+    no_cache: TRUE
 
 soc_wishlist.add_item:
   path: '/wishlist/add/{extid}'
@@ -12,6 +14,8 @@ soc_wishlist.add_item:
     _controller: '\Drupal\soc_wishlist\Controller\WishlistController::addItemAction'
   requirements:
     _permission: 'edit own wishlist'
+  options:
+    no_cache: TRUE
 
 soc_wishlist.remove_item:
   path: '/wishlist/remove/{extid}'
@@ -19,6 +23,8 @@ soc_wishlist.remove_item:
     _controller: '\Drupal\soc_wishlist\Controller\WishlistController::removeItemAction'
   requirements:
     _permission: 'edit own wishlist'
+  options:
+    no_cache: TRUE
 
 soc_wishlist.export:
   path: '/wishlist/export/{type}'
