@@ -3,7 +3,13 @@ langcode: en
 status: true
 dependencies:
   config:
+    - node.type.article
     - node.type.landing_page
+    - node.type.news
+    - node.type.optional_related_content
+    - node.type.page
+    - node.type.product
+    - node.type.product_reference
     - node.type.thank_you_page
   module:
     - content_moderation
@@ -27,7 +33,7 @@ type_settings:
     pending_review:
       published: false
       default_revision: false
-      label: 'Pending review'
+      label: Ready
       weight: -1
     published:
       label: Published
@@ -64,7 +70,6 @@ type_settings:
       to: published
       weight: -1
       from:
-        - draft
         - pending_review
         - published
     submit_for_review:
@@ -76,6 +81,12 @@ type_settings:
       weight: -2
   entity_types:
     node:
+      - article
       - landing_page
+      - news
+      - optional_related_content
+      - page
+      - product
+      - product_reference
       - thank_you_page
   default_moderation_state: draft
