@@ -44,11 +44,12 @@ type_settings:
     archive:
       label: Archive
       from:
+        - pending_review
         - published
       to: archived
       weight: 0
     archived_draft:
-      label: 'Restore to Draft'
+      label: 'Restore Draft'
       from:
         - archived
       to: draft
@@ -65,18 +66,21 @@ type_settings:
       weight: -3
       from:
         - draft
+        - pending_review
+        - published
     publish:
       label: Publish
       to: published
       weight: -1
       from:
+        - draft
         - pending_review
         - published
     submit_for_review:
-      label: 'Submit for review'
+      label: 'Set to Ready'
       from:
-        - archived
         - draft
+        - published
       to: pending_review
       weight: -2
   entity_types:
