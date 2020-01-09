@@ -6,7 +6,7 @@ Feature: Moderation acces
   Scenario: Test of access to the administration page of the moderation states of a content by the administer
     Given users:
       | name          | mail                     | roles         | password |
-      | admin_sofiene | sofiene.chaari@gmail.com | administrator | admin    |
+      | admin_sofiene | sofienaari@gmail.com | administrator | admin    |
     And I am logged in as "admin_sofiene"
     And I visit "/admin/config/workflow/workflows"
     Then I should see the text "Workflows"
