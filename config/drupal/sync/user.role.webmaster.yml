@@ -99,6 +99,7 @@ permissions:
   - 'delete page revisions'
   - 'delete product revisions'
   - 'delete thank_you_page revisions'
+  - 'display eu cookie compliance popup'
   - 'edit any article content'
   - 'edit any audio media'
   - 'edit any checklistapi checklist'

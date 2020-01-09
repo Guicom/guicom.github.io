@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ee8730aa3b1a087ded4dad6fd60d4367",
+    "content-hash": "c281d4d1e9c519edfcde50cf4ad9285b",
     "packages": [
         {
             "name": "actency/foundation",
@@ -4088,17 +4088,17 @@
         },
         {
             "name": "drupal/eu_cookie_compliance",
-            "version": "1.6.0",
+            "version": "1.8.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/eu-cookie-compliance.git",
-                "reference": "8.x-1.6"
+                "reference": "8.x-1.8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/eu_cookie_compliance-8.x-1.6.zip",
-                "reference": "8.x-1.6",
-                "shasum": "20d5332748e4262fb0059444d605d05533921dd9"
+                "url": "https://ftp.drupal.org/files/projects/eu_cookie_compliance-8.x-1.8.zip",
+                "reference": "8.x-1.8",
+                "shasum": "f4b5c48d0d4347c414b91eaa59acad88707b5907"
             },
             "require": {
                 "drupal/core": "*"
