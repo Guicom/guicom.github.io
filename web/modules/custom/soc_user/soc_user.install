@@ -7,9 +7,9 @@ use Drupal\Core\Session\AccountInterface;
  * Auto-create new admin account
  */
 function soc_user_install() {
-  $username = 'admin_socomec';
-  $email = 'admin_socomec@socomec.com';
-  $password = 'admin_socomec12!';
+  $username = \Drupal\Core\Site\Settings::get('admin_username');
+  $email = \Drupal\Core\Site\Settings::get('admin_email');
+  $password = \Drupal\Core\Site\Settings::get('admin_password');
   $user = \Drupal::entityTypeManager()->getStorage('user')->loadByProperties([
     'name' => $username,
   ]);
