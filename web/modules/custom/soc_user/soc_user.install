@@ -1,0 +1,45 @@
+<?php
+
+use Drupal\Core\Session\AccountInterface;
+
+/**
+ * Implements hook_install
+ * Auto-create ne admin account
+ */
+function soc_user_install() {
+  $username = 'admin_socomec';
+  $email = 'admin_socomec@socomec.com';
+  $password = 'admin_socomec12!';
+  $user = \Drupal::entityTypeManager()->getStorage('user')->loadByProperties([
+    'name' => $username,
+  ]);
+  if ($user) {
+    \Drupal::logger(__FUNCTION__)
+      ->notice("an account with username $username already exist");
+  }
+  else {
+    $user = \Drupal::entityTypeManager()->getStorage('user')->loadByProperties([
+      'mail' => $email,
+    ]);
+    if ($user) {
+      \Drupal::logger(__FUNCTION__)
+        ->notice("an account with email $email already exist");
+    }
+    else {
+      $user = \Drupal\user\Entity\User::create([
+        'langcode' => \Drupal::languageManager()->getDefaultLanguage()->getId(),
+        'preferred_langcode' => \Drupal::languageManager()
+          ->getDefaultLanguage()
+          ->getId(),
+        'name' => $username,
+        'mail' => $email,
+        'status' => 1,
+        'pass' => $password,
+        'roles' => [AccountInterface::AUTHENTICATED_ROLE, 'administrator'],
+      ]);
+      $user->save();
+      \Drupal::logger(__FUNCTION__)
+        ->info("A new admin account ($username/$password) has been created");
+    }
+  }
+}
