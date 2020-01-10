@@ -7,6 +7,7 @@ label: Contributor
 weight: 5
 is_admin: null
 permissions:
+  - 'access content overview'
   - 'create event content'
   - 'create landing_page content'
   - 'create news content'
@@ -40,5 +41,14 @@ permissions:
   - 'revert product revisions'
   - 'revert product_reference revisions'
   - 'update any tool_promotion block content'
+  - 'use editorial transition archive'
+  - 'use editorial transition archived_draft'
+  - 'use editorial transition archived_published'
+  - 'use editorial transition create_new_draft'
+  - 'use editorial transition publish'
+  - 'use editorial transition submit_for_review'
+  - 'view any unpublished content'
+  - 'view latest version'
   - 'view product revisions'
   - 'view product_reference revisions'
+  - 'view the administration theme'
