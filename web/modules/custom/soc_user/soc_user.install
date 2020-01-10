@@ -4,7 +4,7 @@ use Drupal\Core\Session\AccountInterface;
 
 /**
  * Implements hook_install
- * Auto-create ne admin account
+ * Auto-create new admin account
  */
 function soc_user_install() {
   $username = 'admin_socomec';
