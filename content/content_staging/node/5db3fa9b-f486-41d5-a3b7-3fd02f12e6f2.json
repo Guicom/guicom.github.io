@@ -1,0 +1,809 @@
+{
+    "_links": {
+        "self": {
+            "href": "http:\/\/default\/energy-storage-solution\/sirco-vm?_format=hal_json"
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/node\/product"
+        },
+        "http:\/\/drupal.org\/rest\/relation\/node\/product\/revision_uid": [
+            {
+                "href": "http:\/\/default\/user\/1?_format=hal_json"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/product\/uid": [
+            {
+                "href": "http:\/\/default\/user\/1?_format=hal_json"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/product\/field_associated_products": [
+            {
+                "href": "http:\/\/default\/energy-storage-solution\/sirco-mv?_format=hal_json"
+            },
+            {
+                "href": "http:\/\/default\/energy-storage-solution\/sirco-ul?_format=hal_json"
+            },
+            {
+                "href": "http:\/\/default\/energy-storage-solution\/sirco-mv?_format=hal_json"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/product\/field_background_hero_block": [
+            {
+                "href": "http:\/\/default\/media\/17\/edit?_format=hal_json"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/product\/field_product_application_link": [
+            {
+                "href": ""
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/product\/field_product_cta_1": [
+            {
+                "href": ""
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/product\/field_product_cta_2": [
+            {
+                "href": ""
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/product\/field_product_cta_3": [
+            {
+                "href": ""
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/product\/field_product_cta_4": [
+            {
+                "href": ""
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/product\/field_product_family": [
+            {
+                "href": "http:\/\/default\/energy-storage-solution?_format=hal_json"
+            },
+            {
+                "href": "http:\/\/default\/energy-storage-solution\/storage-converters?_format=hal_json"
+            },
+            {
+                "href": "http:\/\/default\/energy-storage-solution\/storage-converters\/grid-modular-indoor?_format=hal_json"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/product\/field_product_multiline": [
+            {
+                "href": ""
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/product\/field_product_orc_content": [
+            {
+                "href": "http:\/\/default\/node\/21?_format=hal_json"
+            },
+            {
+                "href": "http:\/\/default\/node\/22?_format=hal_json"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/product\/field_product_pictures": [
+            {
+                "href": "http:\/\/default\/media\/23\/edit?_format=hal_json"
+            },
+            {
+                "href": "http:\/\/default\/media\/22\/edit?_format=hal_json"
+            },
+            {
+                "href": "http:\/\/default\/media\/11\/edit?_format=hal_json"
+            },
+            {
+                "href": "http:\/\/default\/media\/10\/edit?_format=hal_json"
+            },
+            {
+                "href": "http:\/\/default\/media\/1\/edit?_format=hal_json"
+            },
+            {
+                "href": "http:\/\/default\/media\/4\/edit?_format=hal_json"
+            },
+            {
+                "href": "http:\/\/default\/media\/3\/edit?_format=hal_json"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/product\/field_product_reference": [
+            {
+                "href": "http:\/\/default\/22004016-sirco-mv-4x160a?_format=hal_json"
+            },
+            {
+                "href": "http:\/\/default\/22003110-sirco-mv-3x100a-0?_format=hal_json"
+            },
+            {
+                "href": "http:\/\/default\/22003016-sirco-mv-3x160a?_format=hal_json"
+            },
+            {
+                "href": "http:\/\/default\/22003110-sirco-mv-3x100a?_format=hal_json"
+            },
+            {
+                "href": "http:\/\/default\/22004110-sirco-mv-4x100a?_format=hal_json"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/product\/field_product_status": [
+            {
+                "href": "http:\/\/default\/taxonomy\/term\/4?_format=hal_json",
+                "lang": "en"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/product\/field_protection_level": [
+            {
+                "href": "http:\/\/default\/taxonomy\/term\/1?_format=hal_json"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/product\/field_standard_label": [
+            {
+                "href": ""
+            },
+            {
+                "href": ""
+            }
+        ]
+    },
+    "nid": [
+        {
+            "value": 10
+        }
+    ],
+    "uuid": [
+        {
+            "value": "5db3fa9b-f486-41d5-a3b7-3fd02f12e6f2"
+        }
+    ],
+    "vid": [
+        {
+            "value": 98
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "type": [
+        {
+            "target_id": "product"
+        }
+    ],
+    "revision_timestamp": [
+        {
+            "value": "2019-12-31T15:03:00+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/node\/product\/revision_uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/user\/1?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "674a5a4f-b63e-4035-b0b3-2959ebf4041c"
+                    }
+                ]
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/product\/uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/user\/1?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "674a5a4f-b63e-4035-b0b3-2959ebf4041c"
+                    }
+                ]
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/product\/field_associated_products": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/energy-storage-solution\/sirco-mv?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/node\/product"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "c41aec05-937f-439f-9bb5-6aeecce0efc5"
+                    }
+                ]
+            },
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/energy-storage-solution\/sirco-ul?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/node\/product"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "03c63681-4dd8-4456-88a5-c84d8659ca27"
+                    }
+                ]
+            },
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/energy-storage-solution\/sirco-mv?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/node\/product"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "c41aec05-937f-439f-9bb5-6aeecce0efc5"
+                    }
+                ]
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/product\/field_background_hero_block": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/media\/17\/edit?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/media\/image"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "72fe5a74-1089-4a42-bbf6-7adc3b1f1937"
+                    }
+                ]
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/product\/field_product_application_link": [
+            {
+                "_links": {
+                    "self": {
+                        "href": ""
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/link"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "f7d70ab7-0060-4905-8a00-f7665e898d66"
+                    }
+                ],
+                "target_revision_id": "356"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/product\/field_product_cta_1": [
+            {
+                "_links": {
+                    "self": {
+                        "href": ""
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/link"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "bff07d87-15f7-4612-bc51-5e35a2301a73"
+                    }
+                ],
+                "target_revision_id": "357"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/product\/field_product_cta_2": [
+            {
+                "_links": {
+                    "self": {
+                        "href": ""
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/link"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "c3e23bab-5fd4-4799-81b3-398f7c9eb936"
+                    }
+                ],
+                "target_revision_id": "358"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/product\/field_product_cta_3": [
+            {
+                "_links": {
+                    "self": {
+                        "href": ""
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/link"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "1fdc9869-fa70-406a-920b-08cd75e2fc5a"
+                    }
+                ],
+                "target_revision_id": "359"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/product\/field_product_cta_4": [
+            {
+                "_links": {
+                    "self": {
+                        "href": ""
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/link"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "7ead3cd8-8918-4529-8215-a6df919d44f6"
+                    }
+                ],
+                "target_revision_id": "360"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/product\/field_product_family": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/energy-storage-solution?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/family"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "59b4df63-c1cc-49ae-81ba-1cd80dcd280b"
+                    }
+                ]
+            },
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/energy-storage-solution\/storage-converters?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/family"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "868352ea-0c8b-495c-b756-750eaa3298b5"
+                    }
+                ]
+            },
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/energy-storage-solution\/storage-converters\/grid-modular-indoor?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/family"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "e83403d5-75c1-44f2-a42e-3db29063d70b"
+                    }
+                ]
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/product\/field_product_multiline": [
+            {
+                "_links": {
+                    "self": {
+                        "href": ""
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/content"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "4dfc13a1-7179-491f-a2e7-bf37576c78b4"
+                    }
+                ],
+                "target_revision_id": "361"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/product\/field_product_orc_content": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/node\/21?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/node\/optional_related_content"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "ba227ecd-f74e-422b-b555-f152d17387cf"
+                    }
+                ]
+            },
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/node\/22?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/node\/optional_related_content"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "88df9162-1e0b-4d58-bbbb-9254009bc254"
+                    }
+                ]
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/product\/field_product_pictures": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/media\/23\/edit?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/media\/product_image"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "d46ee6a7-7fef-4293-8ec3-68e843c84951"
+                    }
+                ]
+            },
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/media\/22\/edit?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/media\/product_image"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "575e2adb-b1d6-4d70-9648-0c1a581ca846"
+                    }
+                ]
+            },
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/media\/11\/edit?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/media\/product_image"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "61cd18d5-21d5-40f1-90f7-85dd04115606"
+                    }
+                ]
+            },
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/media\/10\/edit?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/media\/product_image"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "5da1c693-caea-4d3a-a00d-1decdb1dcef5"
+                    }
+                ]
+            },
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/media\/1\/edit?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/media\/product_image"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "1868ce6f-c3dd-4d64-9384-7f02a117fd3b"
+                    }
+                ]
+            },
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/media\/4\/edit?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/media\/product_image"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "3602ccf0-2342-424c-8bb9-626992a41ba0"
+                    }
+                ]
+            },
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/media\/3\/edit?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/media\/product_image"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "52599055-4eb6-4470-8eb5-9317268b5c0f"
+                    }
+                ]
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/product\/field_product_reference": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/22004016-sirco-mv-4x160a?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/node\/product_reference"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "efac33a5-dce5-4b6c-bb98-8d887b0d4652"
+                    }
+                ]
+            },
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/22003110-sirco-mv-3x100a-0?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/node\/product_reference"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "6e773308-0b38-4d0d-85d6-c27f89d49dc6"
+                    }
+                ]
+            },
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/22003016-sirco-mv-3x160a?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/node\/product_reference"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "35f525fa-1b8f-4c7d-957a-18ef477d0fab"
+                    }
+                ]
+            },
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/22003110-sirco-mv-3x100a?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/node\/product_reference"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "5da91ae3-3cfa-4e4c-afdc-b66f5cb40d07"
+                    }
+                ]
+            },
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/22004110-sirco-mv-4x100a?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/node\/product_reference"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "9c8070c6-fc6a-421b-9a78-95feca15b91e"
+                    }
+                ]
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/product\/field_product_status": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/taxonomy\/term\/4?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/product_status"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "30470729-88ad-4325-b93d-454c8f1cb5dd"
+                    }
+                ],
+                "lang": "en"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/product\/field_protection_level": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/taxonomy\/term\/1?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/protection_level"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "913fa08f-e583-4866-9f6f-b51130f15ed7"
+                    }
+                ]
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/product\/field_standard_label": [
+            {
+                "_links": {
+                    "self": {
+                        "href": ""
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/standard_label"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "0723e120-cdf8-4f91-b8e4-c8a8135dca57"
+                    }
+                ],
+                "target_revision_id": "362"
+            },
+            {
+                "_links": {
+                    "self": {
+                        "href": ""
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/standard_label"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "c8a529b6-74f8-4151-9b6e-0ca5f69b6ce4"
+                    }
+                ],
+                "target_revision_id": "363"
+            }
+        ]
+    },
+    "status": [
+        {
+            "value": true
+        }
+    ],
+    "title": [
+        {
+            "value": "SIRCO VM"
+        }
+    ],
+    "created": [
+        {
+            "value": "2019-12-03T10:59:57+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "changed": [
+        {
+            "value": "2019-12-31T15:03:00+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "promote": [
+        {
+            "value": false
+        }
+    ],
+    "sticky": [
+        {
+            "value": false
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "revision_translation_affected": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "content_translation_source": [
+        {
+            "value": "und",
+            "lang": "en"
+        }
+    ],
+    "content_translation_outdated": [
+        {
+            "value": false,
+            "lang": "en"
+        }
+    ],
+    "field_json_product_data": [
+        {
+            "value": "{\r\n  \"Marketing\": {\r\n    \"group_name\": \"Marketing\",\r\n    \"value\": {\r\n      \"DC_P_ADDITIONAL_CHARACTERISTICS\": {\r\n        \"id\": \"DC_P_ADDITIONAL_CHARACTERISTICS\",\r\n        \"type\": \"TXTLONG\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_P_ADVANTAGE_1_TEXT\": {\r\n        \"id\": \"DC_P_ADVANTAGE_1_TEXT\",\r\n        \"type\": \"TXTLONG\",\r\n        \"value\": \"Vestibulum malesuada ante pretium erat scelerisque iaculis. Ut accumsan nisl in lacus aliquet, non condimentum eros interdum. Praesent ullamcorper urna ut porttitor tristique. Proin facilisis blandit felis non porttitor. In elementum luctus quam vel lobortis. Nulla non blandit lectus, ut egestas diam. Cras et felis viverra, fringilla tellus eu, consequat arcu.\"\r\n      },\r\n      \"DC_P_ADVANTAGE_1_TITLE\": {\r\n        \"id\": \"DC_P_ADVANTAGE_1_TITLE\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"Visible double breaking\"\r\n      },\r\n      \"DC_P_ADVANTAGE_2_TEXT\": {\r\n        \"id\": \"DC_P_ADVANTAGE_2_TEXT\",\r\n        \"type\": \"TXTLONG\",\r\n        \"value\": \"Nam venenatis sed massa interdum aliquam. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Pellentesque et bibendum augue, quis suscipit dolor. Aliquam placerat eget sapien molestie volutpat. In urna sapien, sagittis et iaculis.\"\r\n      },\r\n      \"DC_P_ADVANTAGE_2_TITLE\": {\r\n        \"id\": \"DC_P_ADVANTAGE_2_TITLE\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"Connection capacity\"\r\n      },\r\n      \"DC_P_ADVANTAGE_3_TEXT\": {\r\n        \"id\": \"DC_P_ADVANTAGE_3_TEXT\",\r\n        \"type\": \"TXTLONG\",\r\n        \"value\": \"Vestibulum malesuada ante pretium erat scelerisque iaculis. Ut accumsan nisl in lacus aliquet, non condimentum eros interdum. Praesent ullamcorper urna ut porttitor tristique. Proin facilisis blandit felis non porttitor. In elementum luctus quam vel lobortis. Nulla non blandit lectus, ut egestas diam.\"\r\n      },\r\n      \"DC_P_ADVANTAGE_3_TITLE\": {\r\n        \"id\": \"DC_P_ADVANTAGE_3_TITLE\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"DIN-rail mounting\"\r\n      },\r\n      \"DC_P_ADVANTAGE_4_TEXT\": {\r\n        \"id\": \"DC_P_ADVANTAGE_4_TEXT\",\r\n        \"type\": \"TXTLONG\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_P_ADVANTAGE_4_TITLE\": {\r\n        \"id\": \"DC_P_ADVANTAGE_4_TITLE\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_P_ADVANTAGE_5_TEXT\": {\r\n        \"id\": \"DC_P_ADVANTAGE_5_TEXT\",\r\n        \"type\": \"TXTLONG\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_P_ADVANTAGE_5_TITLE\": {\r\n        \"id\": \"DC_P_ADVANTAGE_5_TITLE\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_P_ADVANTAGE_6_TEXT\": {\r\n        \"id\": \"DC_P_ADVANTAGE_6_TEXT\",\r\n        \"type\": \"TXTLONG\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_P_ADVANTAGE_6_TITLE\": {\r\n        \"id\": \"DC_P_ADVANTAGE_6_TITLE\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_P_ADVANTAGE_7_TEXT\": {\r\n        \"id\": \"DC_P_ADVANTAGE_7_TEXT\",\r\n        \"type\": \"TXTLONG\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_P_ADVANTAGE_7_TITLE\": {\r\n        \"id\": \"DC_P_ADVANTAGE_7_TITLE\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_P_ADVANTAGE_8_TEXT\": {\r\n        \"id\": \"DC_P_ADVANTAGE_8_TEXT\",\r\n        \"type\": \"TXTLONG\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_P_ADVANTAGE_8_TITLE\": {\r\n        \"id\": \"DC_P_ADVANTAGE_8_TITLE\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_P_APPLICATIONS\": {\r\n        \"id\": \"DC_P_APPLICATIONS\",\r\n        \"type\": \"TXTLONG\",\r\n        \"value\": [\"Main incoming load break\", \"Distribution load break\",\"Machine control\",\"Local safety load break\"]\r\n      },\r\n      \"DC_P_ASSOCIATED_SERVICES\": {\r\n        \"id\": \"DC_P_ASSOCIATED_SERVICES\",\r\n        \"type\": \"CHOIX\",\r\n        \"value\": \"Consultancy, Deployment and training, Prevention and service operations, Measurement and analysis, Optimisation\"\r\n      },\r\n      \"DC_P_ASSORTMENT_WIDTH\": {\r\n        \"id\": \"DC_P_ASSORTMENT_WIDTH\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_P_FUNCTIONS\": {\r\n        \"id\": \"DC_P_FUNCTIONS\",\r\n        \"type\": \"TXTLONG\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_P_GENERAL_CHARACTERISTICS\": {\r\n        \"id\": \"DC_P_GENERAL_CHARACTERISTICS\",\r\n        \"type\": \"TXTLONG\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_P_GENERAL_CHARACTERISTICS_TABLE\": {\r\n        \"id\": \"DC_P_GENERAL_CHARACTERISTICS_TABLE\",\r\n        \"type\": \"TAB\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_P_LONG_DESCRIPTION\": {\r\n        \"id\": \"DC_P_LONG_DESCRIPTION\",\r\n        \"type\": \"TXTLONG\",\r\n        \"value\": \"SIRCO M non-fusible disconnect switches is a compact switch. It  make and break under on and off load conditions and provide safe isolation. These switches are extremely durable and are tested and approved for use in the most demanding applications. (Function)\"\r\n      },\r\n      \"DC_P_MARKET_SEGMENT\": {\r\n        \"id\": \"DC_P_MARKET_SEGMENT\",\r\n        \"type\": \"CHOIX\",\r\n        \"value\": []\r\n      },\r\n      \"DC_P_PRODUCT_MAIN_PICTURE\": {\r\n        \"id\": \"DC_P_PRODUCT_MAIN_PICTURE\",\r\n        \"type\": \"IMG\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_P_PRODUCT_MAIN_PICTURE_TITLE\": {\r\n        \"id\": \"DC_P_PRODUCT_MAIN_PICTURE_TITLE\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_P_PRODUCT_MARKETING_GROUP\": {\r\n        \"id\": \"DC_P_PRODUCT_MARKETING_GROUP\",\r\n        \"type\": \"LISTE\",\r\n        \"value\": []\r\n      },\r\n      \"DC_P_PRODUCT_NAME\": {\r\n        \"id\": \"DC_P_PRODUCT_NAME\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"SIRCO MV\"\r\n      },\r\n      \"DC_P_PRODUCT_SHORT_DESCRIPTION\": {\r\n        \"id\": \"DC_P_PRODUCT_SHORT_DESCRIPTION\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      },\r\n\"DC_R_PAGECATALOGUEPDF1\": {\r\n        \"id\": \"DC_R_PAGECATALOGUEPDF1\",\r\n        \"type\": \"FICHPDF\",\r\n        \"value\": \"sites\/default\/files\/styles\/thumbnail\/public\/2019-12\/sircm_099.png\"\r\n      },\r\n      \"DC_P_UNIQUE_VALUE_PROPOSAL\": {\r\n        \"id\": \"DC_P_UNIQUE_VALUE_PROPOSAL\",\r\n        \"type\": \"TXTLONG\",\r\n        \"value\": \"Compact switches that make and break power circuits on and off and provide safety isolation. (Baseline)\"\r\n      },\r\n      \"DC_R_LONG_DESCRIPTION\": {\r\n        \"id\": \"DC_R_LONG_DESCRIPTION\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"SIRCO VM are manually operated modular multipolar load break switches.\"\r\n      },\r\n      \"DC_P_PRODUCT_MAIN_PICTURE_LINK\": {\r\n        \"id\": \"DC_P_PRODUCT_MAIN_PICTURE_LINK\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_P_PRODUCT_CATEGORY\": {\r\n        \"id\": \"DC_P_PRODUCT_CATEGORY\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_P_SOFTWARE_FEATURES\": {\r\n        \"id\": \"DC_P_SOFTWARE_FEATURES\",\r\n        \"type\": \"TXTLONG\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_P_SYSTEM_OR_PRODUCT_OPTIONS\": {\r\n        \"id\": \"DC_P_SYSTEM_OR_PRODUCT_OPTIONS\",\r\n        \"type\": \"TXTLONG\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_P_COMMUNICATION_OPTIONS\": {\r\n        \"id\": \"DC_P_COMMUNICATION_OPTIONS\",\r\n        \"type\": \"TXTLONG\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_P_PRODUCT_MAIN_PICTURE_NAME\": {\r\n        \"id\": \"DC_P_PRODUCT_MAIN_PICTURE_NAME\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      }\r\n    }\r\n  },\r\n  \"Docs\": {\r\n    \"group_name\": \"Docs\",\r\n    \"value\": {\r\n      \"DC_P_BROCHURE_LINK_TITLE\": {\r\n        \"id\": \"DC_P_BROCHURE_LINK_TITLE\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_P_CATALOG_PAGES_LINK_TITLE\": {\r\n        \"id\": \"DC_P_CATALOG_PAGES_LINK_TITLE\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_P_INSTRUCTION_MANUAL_LINK_TITLE\": {\r\n        \"id\": \"DC_P_INSTRUCTION_MANUAL_LINK_TITLE\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_P_QUICK_START_LINK_TITLE\": {\r\n        \"id\": \"DC_P_QUICK_START_LINK_TITLE\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_P_CATALOG_PAGES_LINK\": {\r\n        \"id\": \"DC_P_CATALOG_PAGES_LINK\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_P_INSTRUCTION_MANUAL_LINK\": {\r\n        \"id\": \"DC_P_INSTRUCTION_MANUAL_LINK\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_P_QUICKLINK\": {\r\n        \"id\": \"DC_P_QUICKLINK\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_P_BROCHURE_LINK\": {\r\n        \"id\": \"DC_P_BROCHURE_LINK\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      }\r\n    }\r\n  },\r\n  \"Technical\": {\r\n    \"group_name\": \"Technical\",\r\n    \"value\": {\r\n      \"DC_P_CONFORMITY_TO_STANDARDS_IEC_TEXT\": {\r\n        \"id\": \"DC_P_CONFORMITY_TO_STANDARDS_IEC_TEXT\",\r\n        \"type\": \"TXTLONG\",\r\n        \"value\": \"sdsc\"\r\n      },\r\n      \"DC_P_CONFORMITY_TO_STANDARDS_UL_TEXT\": {\r\n        \"id\": \"DC_P_CONFORMITY_TO_STANDARDS_UL_TEXT\",\r\n        \"type\": \"TXTLONG\",\r\n        \"value\": \"sdsd\"\r\n      },\r\n      \"DC_P_IEC_UL_CCC\": {\r\n        \"id\": \"DC_P_IEC_UL_CCC\",\r\n        \"type\": \"CHOIX\",\r\n        \"value\": []\r\n      },\r\n      \"DC_P_CONFORMITY_TO_STANDARDS_CCC_TEXT\": {\r\n        \"id\": \"DC_P_CONFORMITY_TO_STANDARDS_CCC_TEXT\",\r\n        \"type\": \"TXTLONG\",\r\n        \"value\": \"\"\r\n      }\r\n    }\r\n  },\r\n  \"M\u00e9dias\": {\r\n    \"group_name\": \"M\u00e9dias\",\r\n    \"value\": {\r\n      \"DC_P_EXPLODED_VIEW\": {\r\n        \"id\": \"DC_P_EXPLODED_VIEW\",\r\n        \"type\": \"IMG\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_P_EXPLODED_VIEW_LINK_TITLE\": {\r\n        \"id\": \"DC_P_EXPLODED_VIEW_LINK_TITLE\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_P_PRODUCT_MAIN_PICTURE_2\": {\r\n        \"id\": \"DC_P_PRODUCT_MAIN_PICTURE_2\",\r\n        \"type\": \"IMG\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_P_PRODUCT_MAIN_PICTURE_2_TITLE\": {\r\n        \"id\": \"DC_P_PRODUCT_MAIN_PICTURE_2_TITLE\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_R_REFERENCE_CAD_LINK\": {\r\n        \"id\": \"DC_R_REFERENCE_CAD_LINK\",\r\n        \"type\": \"TXTHTML\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_R_REFERENCE_CAD_LINK_TITLE\": {\r\n        \"id\": \"DC_R_REFERENCE_CAD_LINK_TITLE\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_R_REFERENCE_PRIME_PICTURE\": {\r\n        \"id\": \"DC_R_REFERENCE_PRIME_PICTURE\",\r\n        \"type\": \"IMG\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_R_REFERENCE_PRIME_PICTURE_LINK\": {\r\n        \"id\": \"DC_R_REFERENCE_PRIME_PICTURE_LINK\",\r\n        \"type\": \"TXTHTML\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_R_REFERENCE_PRIME_PICTURE_TITLE\": {\r\n        \"id\": \"DC_R_REFERENCE_PRIME_PICTURE_TITLE\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_P_PRODUCT_MAIN_PICTURE_2_LINK\": {\r\n        \"id\": \"DC_P_PRODUCT_MAIN_PICTURE_2_LINK\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_P_EXPLODED_VIEW_LINK\": {\r\n        \"id\": \"DC_P_EXPLODED_VIEW_LINK\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_P_EXPLODED_VIEW_NAME\": {\r\n        \"id\": \"DC_P_EXPLODED_VIEW_NAME\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_P_PRODUCT_MAIN_PICTURE_2_NAME\": {\r\n        \"id\": \"DC_P_PRODUCT_MAIN_PICTURE_2_NAME\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_R_REFERENCE_PRIME_PICTURE_NAME\": {\r\n        \"id\": \"DC_R_REFERENCE_PRIME_PICTURE_NAME\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      }\r\n    }\r\n  },\r\n  \"Videos\": {\r\n    \"group_name\": \"Videos\",\r\n    \"value\": {\r\n      \"DC_P_VIDEO_PROMOTIONAL_LINK_TITLE\": {\r\n        \"id\": \"DC_P_VIDEO_PROMOTIONAL_LINK_TITLE\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_P_VIDEO_TESTIMONIES_LINK_TITLE\": {\r\n        \"id\": \"DC_P_VIDEO_TESTIMONIES_LINK_TITLE\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_P_VIDEO_TUTORIAL_LINK_TITLE\": {\r\n        \"id\": \"DC_P_VIDEO_TUTORIAL_LINK_TITLE\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_P_VIDEO_TUTORIAL_LINK\": {\r\n        \"id\": \"DC_P_VIDEO_TUTORIAL_LINK\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_P_VIDEO_PROMOTIONAL_LINK\": {\r\n        \"id\": \"DC_P_VIDEO_PROMOTIONAL_LINK\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_VIDEO_TESTIMONIAL_LINK\": {\r\n        \"id\": \"DC_VIDEO_TESTIMONIAL_LINK\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      }\r\n    }\r\n  },\r\n  \"ERP\": {\r\n    \"group_name\": \"ERP\",\r\n    \"value\": {\r\n      \"DC_R_ERP_BA\": {\r\n        \"id\": \"DC_R_ERP_BA\",\r\n        \"type\": \"CHOIX\",\r\n        \"value\": []\r\n      },\r\n      \"DC_R_ERP_BAAN30\": {\r\n        \"id\": \"DC_R_ERP_BAAN30\",\r\n        \"type\": \"TXTLONG\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_R_ERP_BAN_DATE\": {\r\n        \"id\": \"DC_R_ERP_BAN_DATE\",\r\n        \"type\": \"DATE\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_R_ERP_COUNTRY\": {\r\n        \"id\": \"DC_R_ERP_COUNTRY\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_R_ERP_COUNTRY_OF_ORIGIN\": {\r\n        \"id\": \"DC_R_ERP_COUNTRY_OF_ORIGIN\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_R_ERP_CREATION_DATE\": {\r\n        \"id\": \"DC_R_ERP_CREATION_DATE\",\r\n        \"type\": \"DATE\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_R_ERP_CUSTOMS_NUMBER\": {\r\n        \"id\": \"DC_R_ERP_CUSTOMS_NUMBER\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_R_ERP_DEPTH\": {\r\n        \"id\": \"DC_R_ERP_DEPTH\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_R_ERP_DIMENSION_UNIT\": {\r\n        \"id\": \"DC_R_ERP_DIMENSION_UNIT\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_R_ERP_EC_CATALOG\": {\r\n        \"id\": \"DC_R_ERP_EC_CATALOG\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_R_ERP_EFFECTIVE_DATE\": {\r\n        \"id\": \"DC_R_ERP_EFFECTIVE_DATE\",\r\n        \"type\": \"DATE\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_R_ERP_FAMILY_CODE_1\": {\r\n        \"id\": \"DC_R_ERP_FAMILY_CODE_1\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_R_ERP_FAMILY_CODE_2\": {\r\n        \"id\": \"DC_R_ERP_FAMILY_CODE_2\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_R_ERP_FAMILY_CODE_3\": {\r\n        \"id\": \"DC_R_ERP_FAMILY_CODE_3\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_R_ERP_GTIN\": {\r\n        \"id\": \"DC_R_ERP_GTIN\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_R_ERP_HEIGHT\": {\r\n        \"id\": \"DC_R_ERP_HEIGHT\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_R_ERP_INVOICE_DESCRIPTION\": {\r\n        \"id\": \"DC_R_ERP_INVOICE_DESCRIPTION\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_R_ERP_L1_CODE\": {\r\n        \"id\": \"DC_R_ERP_L1_CODE\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_R_ERP_L1_DESCRIPTION\": {\r\n        \"id\": \"DC_R_ERP_L1_DESCRIPTION\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_R_ERP_L2_CODE\": {\r\n        \"id\": \"DC_R_ERP_L2_CODE\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_R_ERP_L2_DESCRIPTION\": {\r\n        \"id\": \"DC_R_ERP_L2_DESCRIPTION\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_R_ERP_L3_CODE\": {\r\n        \"id\": \"DC_R_ERP_L3_CODE\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_R_ERP_L3_DESCRIPTION\": {\r\n        \"id\": \"DC_R_ERP_L3_DESCRIPTION\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_R_ERP_MINIMUM_ORDER_QUANTITY\": {\r\n        \"id\": \"DC_R_ERP_MINIMUM_ORDER_QUANTITY\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_R_ERP_MODEL_CODE\": {\r\n        \"id\": \"DC_R_ERP_MODEL_CODE\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_R_ERP_MODEL_LABEL\": {\r\n        \"id\": \"DC_R_ERP_MODEL_LABEL\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_R_ERP_OBSOLETE_DATE\": {\r\n        \"id\": \"DC_R_ERP_OBSOLETE_DATE\",\r\n        \"type\": \"DATE\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_R_ERP_ORDER_UNIT\": {\r\n        \"id\": \"DC_R_ERP_ORDER_UNIT\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_R_ERP_PACKING_UNIT\": {\r\n        \"id\": \"DC_R_ERP_PACKING_UNIT\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_R_ERP_PRICE_GROUP_CODE\": {\r\n        \"id\": \"DC_R_ERP_PRICE_GROUP_CODE\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_R_ERP_PRICE_GROUP_LABEL\": {\r\n        \"id\": \"DC_R_ERP_PRICE_GROUP_LABEL\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_R_ERP_PRODUCT_CODE\": {\r\n        \"id\": \"DC_R_ERP_PRODUCT_CODE\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_R_ERP_RANGE_CODE\": {\r\n        \"id\": \"DC_R_ERP_RANGE_CODE\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_R_ERP_RANGE_LABEL\": {\r\n        \"id\": \"DC_R_ERP_RANGE_LABEL\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_R_ERP_REFERENCE_TYPE\": {\r\n        \"id\": \"DC_R_ERP_REFERENCE_TYPE\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_R_ERP_SIGNAL_CODE\": {\r\n        \"id\": \"DC_R_ERP_SIGNAL_CODE\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_R_ERP_SIGNAL_CODE_LABEL\": {\r\n        \"id\": \"DC_R_ERP_SIGNAL_CODE_LABEL\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_R_ERP_STOCK\": {\r\n        \"id\": \"DC_R_ERP_STOCK\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_R_ERP_TECHNICAL_PRODUCT_TYPE\": {\r\n        \"id\": \"DC_R_ERP_TECHNICAL_PRODUCT_TYPE\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_R_ERP_TYPE_OF_MARKETER\": {\r\n        \"id\": \"DC_R_ERP_TYPE_OF_MARKETER\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_R_ERP_UNIT_OF_WEIGHT\": {\r\n        \"id\": \"DC_R_ERP_UNIT_OF_WEIGHT\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_R_ERP_WEIGHT\": {\r\n        \"id\": \"DC_R_ERP_WEIGHT\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_R_ERP_WIDTH\": {\r\n        \"id\": \"DC_R_ERP_WIDTH\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_R_ERP_COUNTRY_COMMERCIALISATION_TYPE\": {\r\n        \"id\": \"DC_R_ERP_COUNTRY_COMMERCIALISATION_TYPE\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      }\r\n    }\r\n  },\r\n  \"Syst\u00e8me\": {\r\n    \"group_name\": \"Syst\u00e8me\",\r\n    \"value\": {\r\n      \"ProductFillRate_GLOBAL\": {\r\n        \"id\": \"ProductFillRate_GLOBAL\",\r\n        \"type\": \"NUM\",\r\n        \"value\": \"1\"\r\n      },\r\n      \"ReferenceFillRate_GLOBAL\": {\r\n        \"id\": \"ReferenceFillRate_GLOBAL\",\r\n        \"type\": \"NUM\",\r\n        \"value\": \"\"\r\n      },\r\n      \"ProductFillRate_WEB\": {\r\n        \"id\": \"ProductFillRate_WEB\",\r\n        \"type\": \"NUM\",\r\n        \"value\": \"\"\r\n      },\r\n      \"ReferenceFillRate_WEB\": {\r\n        \"id\": \"ReferenceFillRate_WEB\",\r\n        \"type\": \"NUM\",\r\n        \"value\": \"\"\r\n      },\r\n      \"ProductFillRate_WEBMIN\": {\r\n        \"id\": \"ProductFillRate_WEBMIN\",\r\n        \"type\": \"NUM\",\r\n        \"value\": \"\"\r\n      },\r\n      \"ReferenceFillRate_WEBMIN\": {\r\n        \"id\": \"ReferenceFillRate_WEBMIN\",\r\n        \"type\": \"NUM\",\r\n        \"value\": \"\"\r\n      },\r\n      \"ProductFillRate_PAPIER\": {\r\n        \"id\": \"ProductFillRate_PAPIER\",\r\n        \"type\": \"NUM\",\r\n        \"value\": \"\"\r\n      },\r\n      \"ReferenceFillRate_PAPIER\": {\r\n        \"id\": \"ReferenceFillRate_PAPIER\",\r\n        \"type\": \"NUM\",\r\n        \"value\": \"\"\r\n      },\r\n      \"ProductFillRate_INIT\": {\r\n        \"id\": \"ProductFillRate_INIT\",\r\n        \"type\": \"NUM\",\r\n        \"value\": \"\"\r\n      }\r\n    }\r\n  },\r\n  \"TEST ECKERT\": {\r\n    \"group_name\": \"TEST ECKERT\",\r\n    \"value\": {\r\n      \"DC_R_ACCESSORIES_REF_TO_REF\": {\r\n        \"id\": \"DC_R_ACCESSORIES_REF_TO_REF\",\r\n        \"type\": \"LIENRR\",\r\n        \"value\": \"\"\r\n      }\r\n    }\r\n  },\r\n  \"Responsable produit\": {\r\n    \"group_name\": \"Responsable produit\",\r\n    \"value\": {\r\n      \"DC_P_RP\": {\r\n        \"id\": \"DC_P_RP\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_P_RPTRIGRAME\": {\r\n        \"id\": \"DC_P_RPTRIGRAME\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_P_RPMAIL\": {\r\n        \"id\": \"DC_P_RPMAIL\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_R_RPTRIGRAME\": {\r\n        \"id\": \"DC_R_RPTRIGRAME\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_R_RPMAIL\": {\r\n        \"id\": \"DC_R_RPMAIL\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_R_RP\": {\r\n        \"id\": \"DC_R_RP\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      }\r\n    }\r\n  },\r\n  \"Phase initialisation\": {\r\n    \"group_name\": \"Phase initialisation\",\r\n    \"value\": {\r\n      \"DC_P_STATUTINITIALISATION\": {\r\n        \"id\": \"DC_P_STATUTINITIALISATION\",\r\n        \"type\": \"LISTE\",\r\n        \"value\": []\r\n      },\r\n      \"DC_R_PAGECATALOGUEPDF1\": {\r\n        \"id\": \"DC_R_PAGECATALOGUEPDF1\",\r\n        \"type\": \"FICHPDF\",\r\n        \"value\": \"sites\/default\/files\/styles\/thumbnail\/public\/2019-12\/sircm_099.png\"\r\n      },\r\n      \"DC_P_REMARQUESINITIALISATION\": {\r\n        \"id\": \"DC_P_REMARQUESINITIALISATION\",\r\n        \"type\": \"TXTLONG\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_P_RESPONSABLESAISIEINITIALISATION\": {\r\n        \"id\": \"DC_P_RESPONSABLESAISIEINITIALISATION\",\r\n        \"type\": \"LISTE\",\r\n        \"value\": []\r\n      },\r\n      \"DC_P_PRIORITEINITIALISATION\": {\r\n        \"id\": \"DC_P_PRIORITEINITIALISATION\",\r\n        \"type\": \"LISTE\",\r\n        \"value\": []\r\n      },\r\n      \"DC_P_PAGECATALOGUEPDF1\": {\r\n        \"id\": \"DC_P_PAGECATALOGUEPDF1\",\r\n        \"type\": \"FICHPDF\",\r\n        \"value\": \"\"\r\n      },\r\n      \"DC_R_STATUTINITIALISATION2\": {\r\n        \"id\": \"DC_R_STATUTINITIALISATION2\",\r\n        \"type\": \"LISTE\",\r\n        \"value\": []\r\n      },\r\n      \"DC_P_CATALOGUEFRINITIALISATION\": {\r\n        \"id\": \"DC_P_CATALOGUEFRINITIALISATION\",\r\n        \"type\": \"CHOIX\",\r\n        \"value\": []\r\n      }\r\n    }\r\n  },\r\n  \"Workflow\": {\r\n    \"group_name\": \"Workflow\",\r\n    \"value\": {\r\n      \"wfTask_emails_W2\": {\r\n        \"id\": \"wfTask_emails_W2\",\r\n        \"type\": \"TXT\",\r\n        \"value\": \"\"\r\n      }\r\n    }\r\n  },\r\n  \"SYSTEM\": {\r\n    \"group_name\": \"SYSTEM\",\r\n    \"value\": {\r\n      \"##ProductLabel\": {\r\n        \"id\": \"##ProductLabel\",\r\n        \"type\": \"SYSLABEL\",\r\n        \"value\": \"SUNSYS PCS\u00b2 IM TR CE\"\r\n      }\r\n    }\r\n  }\r\n}"
+        }
+    ],
+    "field_multiline_anchor_name": [
+        {
+            "value": "Whitepaper"
+        }
+    ],
+    "field_product_advantage_text": [
+        {
+            "value": "<p>I consisting of greatest slope of the lightning stroke to define a more. Michael faraday's invention of the concept of the earth is the vector direction. Electrochemistry has always been an interconnection of chemical reactions has a much more. The field was allowed through an electric charge of the lightning stroke to.<\/p>\r\n",
+            "format": "socomec",
+            "processed": "<p>I consisting of greatest slope of the lightning stroke to define a more. Michael faraday's invention of the concept of the earth is the vector direction. Electrochemistry has always been an interconnection of chemical reactions has a much more. The field was allowed through an electric charge of the lightning stroke to.<\/p>"
+        }
+    ],
+    "field_product_application_label": [
+        {
+            "value": "Applications"
+        }
+    ],
+    "field_product_extid": [
+        {
+            "value": "P_000222"
+        }
+    ],
+    "field_product_orc_title": [
+        {
+            "value": "Services"
+        }
+    ],
+    "field_product_teaser": [
+        {
+            "value": "Load break switches for power distribution SIRCO VM - 32 to 250 A"
+        }
+    ]
+}

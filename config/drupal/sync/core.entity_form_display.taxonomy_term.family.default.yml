@@ -3,10 +3,16 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.taxonomy_term.family.field_family_code
-    - field.field.taxonomy_term.family.field_family_name
+    - field.field.taxonomy_term.family.field_background_image
+    - field.field.taxonomy_term.family.field_family_extid
+    - field.field.taxonomy_term.family.field_family_first_multiline
+    - field.field.taxonomy_term.family.field_family_image
+    - field.field.taxonomy_term.family.field_family_second_multiline
+    - field.field.taxonomy_term.family.field_family_sub_title
     - taxonomy.vocabulary.family
   module:
+    - media_library
+    - paragraphs
     - path
     - text
 id: taxonomy_term.family.default
@@ -15,39 +21,77 @@ bundle: family
 mode: default
 content:
   description:
-    type: text_textfield
-    weight: 0
+    type: text_textarea
+    weight: 2
     region: content
     settings:
-      size: 60
       placeholder: ''
+      rows: 5
     third_party_settings: {  }
-  field_family_code:
-    weight: 31
+  field_background_image:
+    type: media_library_widget
+    weight: 9
     settings:
-      size: 60
-      placeholder: ''
+      media_types: {  }
     third_party_settings: {  }
-    type: text_textfield
     region: content
-  field_family_name:
-    weight: 32
+  field_family_extid:
+    weight: 6
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-    type: text_textfield
+    type: string_textfield
+    region: content
+  field_family_first_multiline:
+    type: entity_reference_paragraphs
+    weight: 4
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: closed
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: _none
+    third_party_settings: {  }
+    region: content
+  field_family_image:
+    type: media_library_widget
+    weight: 3
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+    region: content
+  field_family_second_multiline:
+    type: entity_reference_paragraphs
+    weight: 5
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: closed
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: _none
+    third_party_settings: {  }
+    region: content
+  field_family_sub_title:
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
     region: content
   langcode:
     type: language_select
-    weight: 2
+    weight: 7
     region: content
     settings:
       include_locked: true
     third_party_settings: {  }
   name:
     type: string_textfield
-    weight: -5
+    weight: 0
     region: content
     settings:
       size: 60
@@ -55,7 +99,7 @@ content:
     third_party_settings: {  }
   path:
     type: path
-    weight: 30
+    weight: 8
     region: content
     settings: {  }
     third_party_settings: {  }

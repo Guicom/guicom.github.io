@@ -2,7 +2,19 @@ services:
   soc_nextpage.nextpage_api:
     class: Drupal\soc_nextpage\Service\NextpageApi
     arguments:
-      ['@config.factory', '@tempstore.shared']
+      ['@logger.factory', '@config.factory', '@tempstore.shared']
   soc_nextpage.nextpage_base_api:
     class: Drupal\soc_nextpage\Service\NextpageBaseApi
+    parent: soc_core.base_api
     arguments: ['@config.factory', '@tempstore.shared']
+  soc_nextpage.nextpage_product_manager:
+    class: Drupal\soc_nextpage\Service\Manager\ProductManager
+    arguments: ['@entity_type.manager']
+  soc_nextpage.twig.extension:
+    arguments: ['@renderer']
+    class: Drupal\soc_nextpage\TwigExtension\GetJsonElement
+    tags:
+      - { name: twig.extension}
+  soc_nextpage.product_reference_table:
+    arguments: ['@renderer']
+    class: Drupal\soc_nextpage\Service\ProductReferenceTable

@@ -1,0 +1,8 @@
+uuid: 435220d4-9abb-4f41-919a-7dc94815eecc
+langcode: en
+status: true
+dependencies: {  }
+name: 'Product Label'
+vid: product_label
+description: ''
+weight: 0

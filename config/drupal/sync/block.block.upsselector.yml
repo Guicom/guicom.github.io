@@ -1,0 +1,33 @@
+uuid: b9ccaf68-db95-4775-b111-2f9bc9209802
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:tool_promotion:5f5100cf-81e9-48e1-8dcb-bf8b9eadc512'
+  module:
+    - block_content
+    - ctools
+  theme:
+    - socomec
+id: upsselector
+theme: socomec
+region: content
+weight: 0
+provider: null
+plugin: 'block_content:5f5100cf-81e9-48e1-8dcb-bf8b9eadc512'
+settings:
+  id: 'block_content:5f5100cf-81e9-48e1-8dcb-bf8b9eadc512'
+  label: 'UPS Selector'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    bundles:
+      product: product
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'

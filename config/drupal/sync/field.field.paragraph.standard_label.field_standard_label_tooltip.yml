@@ -1,0 +1,19 @@
+uuid: 76661e3e-7dac-4747-a780-77f7b1fcd5d1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_standard_label_tooltip
+    - paragraphs.paragraphs_type.standard_label
+id: paragraph.standard_label.field_standard_label_tooltip
+field_name: field_standard_label_tooltip
+entity_type: paragraph
+bundle: standard_label
+label: Tooltip
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

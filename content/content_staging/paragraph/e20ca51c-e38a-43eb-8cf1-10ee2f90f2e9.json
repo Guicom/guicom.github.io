@@ -1,0 +1,99 @@
+{
+    "_links": {
+        "self": {
+            "href": ""
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/standard_label"
+        },
+        "http:\/\/drupal.org\/rest\/relation\/paragraph\/standard_label\/field_label": [
+            {
+                "href": "http:\/\/default\/taxonomy\/term\/16?_format=hal_json"
+            }
+        ]
+    },
+    "id": [
+        {
+            "value": 30
+        }
+    ],
+    "uuid": [
+        {
+            "value": "e20ca51c-e38a-43eb-8cf1-10ee2f90f2e9"
+        }
+    ],
+    "revision_id": [
+        {
+            "value": 316
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "type": [
+        {
+            "target_id": "standard_label"
+        }
+    ],
+    "status": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "created": [
+        {
+            "value": "2019-12-09T13:46:54+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "parent_id": [
+        {
+            "value": "10"
+        }
+    ],
+    "parent_type": [
+        {
+            "value": "node"
+        }
+    ],
+    "parent_field_name": [
+        {
+            "value": "field_standard_label"
+        }
+    ],
+    "behavior_settings": [
+        {
+            "value": []
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/paragraph\/standard_label\/field_label": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/taxonomy\/term\/16?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/product_label"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "c979fe70-77d2-4703-bf46-a71e3f0b08df"
+                    }
+                ]
+            }
+        ]
+    }
+}

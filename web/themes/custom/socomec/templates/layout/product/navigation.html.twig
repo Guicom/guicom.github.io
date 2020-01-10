@@ -1,0 +1,39 @@
+<div class="container">
+  <div class="row">
+    <div class="nav-static item">
+      {{ 'Jump to' | t }}
+      {% include '/themes/custom/socomec/assets/images/picto/ui/jump.svg' %}
+    </div>
+    {% if drupal_field('field_product_reference', 'node')[0] %}
+      <div class="product-nav-item">
+        <a href="#product-reference-section">{{ 'References' | t }}</a>
+      </div>
+    {%  endif %}
+    {% if drupal_field('field_json_product_data', 'node') | getfield('DC_P_ADVANTAGE_1_TITLE') or drupal_field('field_json_product_data', 'node') | getfield('DC_P_ADVANTAGE_1_TEXT') %}
+      <div class="product-nav-item">
+        <a href="#product-advantage-section">{{ 'Advantages' |t }}</a>
+      </div>
+    {%  endif %}
+    {% if drupal_field('field_product_multiline', 'node')[0] %}
+      <div class="product-nav-item">
+        <a href="#product-multiline-section">{{ drupal_field('field_multiline_anchor_name', 'node') }}</a>
+      </div>
+    {% endif %}
+    {% if drupal_entity('block','homeproductassistance')[0] %}
+      <div class="product-nav-item">
+        <a href="#assistance-section">{{ 'Assistance' |t }}</a>
+      </div>
+    {% endif %}
+    {% if drupal_field('field_product_orc_content', 'node')[0] %}
+      <div class="product-nav-item">
+        <a href="#product-orc-section">{{ drupal_field('field_product_orc_title', 'node') }}</a>
+      </div>
+    {% endif %}
+    {%  if drupal_field('field_associated_products', 'node')[0] %}
+      <div class="product-nav-item">
+        <a href="#pproduct-associate-section">{{ 'Associated products' | t }}</a>
+      </div>
+    {% endif %}
+  </div>
+</div>
+

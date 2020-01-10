@@ -1,0 +1,43 @@
+soc_wishlist.edit_wishlist:
+  path: '/my-wishlist'
+  defaults:
+    _form: '\Drupal\soc_wishlist\Form\WishlistEditForm'
+    _title: 'My wishlist'
+  requirements:
+    _permission: 'edit own wishlist'
+  options:
+    no_cache: TRUE
+
+soc_wishlist.add_item:
+  path: '/wishlist/add/{extid}'
+  defaults:
+    _controller: '\Drupal\soc_wishlist\Controller\WishlistController::addItemAction'
+  requirements:
+    _permission: 'edit own wishlist'
+  options:
+    no_cache: TRUE
+
+soc_wishlist.remove_item:
+  path: '/wishlist/remove/{extid}'
+  defaults:
+    _controller: '\Drupal\soc_wishlist\Controller\WishlistController::removeItemAction'
+  requirements:
+    _permission: 'edit own wishlist'
+  options:
+    no_cache: TRUE
+
+soc_wishlist.export:
+  path: '/wishlist/export/{type}'
+  defaults:
+    _controller: '\Drupal\soc_wishlist\Controller\WishlistController::export'
+  requirements:
+    _permission: 'edit own wishlist'
+
+
+soc_wishlist.settings_form:
+  path: '/admin/config/socomec/wishlist/settings'
+  defaults:
+    _form: '\Drupal\soc_wishlist\Form\WishlistSettingsForm'
+    _title: 'Wishlist settings'
+  requirements:
+    _permission: 'manage wishlist settings'

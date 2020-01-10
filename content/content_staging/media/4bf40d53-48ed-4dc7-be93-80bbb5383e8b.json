@@ -1,0 +1,170 @@
+{
+    "_links": {
+        "self": {
+            "href": "http:\/\/default\/media\/33\/edit?_format=hal_json"
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/media\/icone"
+        },
+        "http:\/\/drupal.org\/rest\/relation\/media\/icone\/uid": [
+            {
+                "href": "http:\/\/default\/user\/1?_format=hal_json",
+                "lang": "en"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/media\/icone\/thumbnail": [
+            {
+                "href": "",
+                "lang": "en"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/media\/icone\/field_media_image": [
+            {
+                "href": "",
+                "lang": "en"
+            }
+        ]
+    },
+    "mid": [
+        {
+            "value": 33
+        }
+    ],
+    "uuid": [
+        {
+            "value": "4bf40d53-48ed-4dc7-be93-80bbb5383e8b"
+        }
+    ],
+    "vid": [
+        {
+            "value": 33
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "bundle": [
+        {
+            "target_id": "icone"
+        }
+    ],
+    "revision_created": [
+        {
+            "value": "2019-12-20T15:46:25+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "status": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/media\/icone\/uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/user\/1?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "39080102-237a-48b7-89a2-efb1cbf5b248"
+                    }
+                ],
+                "lang": "en"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/media\/icone\/thumbnail": [
+            {
+                "_links": {
+                    "self": {
+                        "href": ""
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/file\/file"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "6949fe7a-5338-431e-acd2-aa415411a5b3"
+                    }
+                ],
+                "lang": "en",
+                "alt": "chevron-right-circle",
+                "title": null,
+                "width": null,
+                "height": null
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/media\/icone\/field_media_image": [
+            {
+                "_links": {
+                    "self": {
+                        "href": ""
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/file\/file"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "6949fe7a-5338-431e-acd2-aa415411a5b3"
+                    }
+                ],
+                "lang": "en",
+                "alt": "chevron-right-circle",
+                "title": "",
+                "width": "20",
+                "height": "20"
+            }
+        ]
+    },
+    "name": [
+        {
+            "value": "chevron-right-circle (1).svg",
+            "lang": "en"
+        }
+    ],
+    "created": [
+        {
+            "value": "2019-12-16T16:58:39+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "changed": [
+        {
+            "value": "2019-12-16T16:58:39+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "revision_translation_affected": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "metatag": [
+        {
+            "value": {
+                "title": "| Socomec",
+                "canonical_url": "http:\/\/default\/node"
+            }
+        }
+    ]
+}

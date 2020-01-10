@@ -1,0 +1,92 @@
+{
+    "_links": {
+        "self": {
+            "href": ""
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/file\/file"
+        },
+        "http:\/\/drupal.org\/rest\/relation\/file\/file\/uid": [
+            {
+                "href": "http:\/\/default\/user\/1?_format=hal_json"
+            }
+        ]
+    },
+    "fid": [
+        {
+            "value": 35
+        }
+    ],
+    "uuid": [
+        {
+            "value": "6949fe7a-5338-431e-acd2-aa415411a5b3"
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en"
+        }
+    ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/file\/file\/uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/user\/1?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "39080102-237a-48b7-89a2-efb1cbf5b248"
+                    }
+                ]
+            }
+        ]
+    },
+    "filename": [
+        {
+            "value": "chevron-right-circle (1).svg"
+        }
+    ],
+    "uri": [
+        {
+            "value": "public:\/\/2019-12\/chevron-right-circle (1).svg",
+            "url": "\/sites\/default\/files\/2019-12\/chevron-right-circle%20%281%29.svg"
+        }
+    ],
+    "filemime": [
+        {
+            "value": "image\/svg+xml"
+        }
+    ],
+    "filesize": [
+        {
+            "value": 1759
+        }
+    ],
+    "status": [
+        {
+            "value": true
+        }
+    ],
+    "created": [
+        {
+            "value": "2019-12-16T16:58:39+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "changed": [
+        {
+            "value": "2019-12-16T16:58:44+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "data": [
+        {
+            "value": "PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iMjBweCIgaGVpZ2h0PSIyMHB4IiB2aWV3Qm94PSIwIDAgMjAgMjAiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+CiAgICA8IS0tIEdlbmVyYXRvcjogc2tldGNodG9vbCA2MC4xICgxMDEwMTApIC0gaHR0cHM6Ly9za2V0Y2guY29tIC0tPgogICAgPHRpdGxlPkQ0Q0MyNDhDLUJFOEYtNDc0OC1CMkY1LTBBN0IwRjhFMTNFQTwvdGl0bGU+CiAgICA8ZGVzYz5DcmVhdGVkIHdpdGggc2tldGNodG9vbC48L2Rlc2M+CiAgICA8ZyBpZD0iQXNzZXQtQXJ0Ym9hcmQtUGFnZSIgc3Ryb2tlPSJub25lIiBzdHJva2Utd2lkdGg9IjEiIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+CiAgICAgICAgPGcgaWQ9InVpL01lZGl1bS9iYWctcHVyY2hhc2UtdWkvTWVkaXVtL2NoZXZyb24tcmlnaHQtY2lyY2xlIiBmaWxsPSIjRkZGRkZGIj4KICAgICAgICAgICAgPHBhdGggZD0iTTcuNzQzNjMyNTksMTQuOTEyNzgxOCBDNy44ODAwMTI2NCwxNS4wNDkwNTIzIDguMDUwNDg3NzIsMTUuMTE3MTg3NSA4LjIzODAxMDMsMTUuMTE3MTg3NSBDOC40MDg0ODUzNywxNS4xMTcxODc1IDguNTk2MDA3OTUsMTUuMDQ5MDUyMyA4LjczMjM4ODAxLDE0LjkxMjc4MTggTDEzLjIzMjkyOTksMTAuNDE1ODU1NSBDMTMuMzY5MzEsMTAuMjc5NTg1IDEzLjQzNzUsMTAuMTA5MjQ2OSAxMy40Mzc1LDkuOTIxODc1IEMxMy40Mzc1LDkuNzM0NTAzMDcgMTMuMzY5MzEsOS41NjQxNjQ5NiAxMy4yMzI5Mjk5LDkuNDI3ODk0NDcgTDguNzMyMzg4MDEsNC45MzA5NjgyNCBDOC40NTk2Mjc4OSw0LjY1ODQyNzI1IDguMDE2MzkyNyw0LjY1ODQyNzI1IDcuNzQzNjMyNTksNC45MzA5NjgyNCBDNy40NzA4NzI0Nyw1LjIwMzUwOTIyIDcuNDcwODcyNDcsNS42NDYzODgzMiA3Ljc0MzYzMjU5LDUuOTE4OTI5MyBMMTEuNzQ5Nzk2OCw5LjkyMTg3NSBMNy43NDM2MzI1OSwxMy45MjQ4MjA3IEM3LjQ3MDg3MjQ3LDE0LjE5NzM2MTcgNy40NzA4NzI0NywxNC42NDAyNDA4IDcuNzQzNjMyNTksMTQuOTEyNzgxOCBMNy43NDM2MzI1OSwxNC45MTI3ODE4IFoiIGlkPSJjaGV2cm9uIj48L3BhdGg+CiAgICAgICAgICAgIDxwYXRoIGQ9Ik0xMCwxOS45MjE4NzUgQzE1LjQ2NDcxNiwxOS45MjE4NzUgMTkuOTIxODc1LDE1LjQ4MTc5MzIgMTkuOTIxODc1LDEwIEMxOS45MjE4NzUsNC41MTgyMDY3NiAxNS40NjQ3MTYsMC4wNzgxMjUgMTAsMC4wNzgxMjUgQzQuNTM1MjgzOTksMC4wNzgxMjUgMC4wNzgxMjUsNC41MzUyODM5OSAwLjA3ODEyNSwxMCBDMC4wNzgxMjUsMTUuNDY0NzE2IDQuNTM1MjgzOTksMTkuOTIxODc1IDEwLDE5LjkyMTg3NSBaIE05Ljk5OTk5OTg1LDEuNDc4NDU4NDkgQzE0LjY5NjI0MDEsMS40Nzg0NTg0OSAxOC41MjE1NDEyLDUuMzAzNzU5NjIgMTguNTIxNTQxMiw5Ljk5OTk5OTg1IEMxOC41MjE1NDEyLDE0LjY5NjI0MDEgMTQuNjk2MjQwMSwxOC41MjE1NDEyIDkuOTk5OTk5ODUsMTguNTIxNTQxMiBDNS4zMDM3NTk2MiwxOC41MjE1NDEyIDEuNDc4NDU4NDksMTQuNjk2MjQwMSAxLjQ3ODQ1ODQ5LDkuOTk5OTk5ODUgQzEuNDc4NDU4NDksNS4zMDM3NTk2MiA1LjMwMzc1OTYyLDEuNDc4NDU4NDkgOS45OTk5OTk4NSwxLjQ3ODQ1ODQ5IFoiIGlkPSJjaXJjbGUiPjwvcGF0aD4KICAgICAgICA8L2c+CiAgICA8L2c+Cjwvc3ZnPg=="
+        }
+    ]
+}

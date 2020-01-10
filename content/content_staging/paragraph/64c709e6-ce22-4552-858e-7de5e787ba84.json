@@ -19,7 +19,7 @@
     ],
     "revision_id": [
         {
-            "value": 51
+            "value": 329
         }
     ],
     "langcode": [
@@ -35,14 +35,12 @@
     ],
     "status": [
         {
-            "value": true,
-            "lang": "en"
+            "value": true
         }
     ],
     "created": [
         {
             "value": "2019-10-07T11:16:32+00:00",
-            "lang": "en",
             "format": "Y-m-d\\TH:i:sP"
         }
     ],
@@ -70,6 +68,17 @@
         {
             "value": true,
             "lang": "en"
+        }
+    ],
+    "revision_translation_affected": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "field_pardot_cta_text": [
+        {
+            "value": "Download this content"
         }
     ],
     "field_pardot_form_url": [

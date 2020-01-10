@@ -1,12 +1,20 @@
 # Admin / config routes
 
 soc_nextpage.nextpage_ws_settings:
-  path: '/admin/config/socomec/nextpage'
+  path: '/admin/config/socomec/nextpage/configuration'
   defaults:
     _form: '\Drupal\soc_nextpage\Form\NextpageApiSettingsForm'
     _title: 'Socomec'
   requirements:
     _permission: 'manage nextpage settings'
+
+soc_nextpage.synchro_page:
+  path: '/admin/config/socomec/nextpage/synchronisation'
+  defaults:
+    _form: '\Drupal\soc_nextpage\Form\NextPageSynchroForm'
+    _title: 'Socomec'
+  requirements:
+    _permission: 'Synchronize PIM'
 
 # Tests
 

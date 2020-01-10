@@ -4,28 +4,118 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
+    - field.field.node.product.field_associated_products
+    - field.field.node.product.field_background_hero_block
     - field.field.node.product.field_json_product_data
-    - field.field.node.product.field_main_picture
-    - field.field.node.product.field_new
-    - field.field.node.product.field_references
+    - field.field.node.product.field_product_advantage_text
+    - field.field.node.product.field_product_cta_1
+    - field.field.node.product.field_product_cta_2
+    - field.field.node.product.field_product_cta_3
+    - field.field.node.product.field_product_cta_4
+    - field.field.node.product.field_product_extid
+    - field.field.node.product.field_product_family
+    - field.field.node.product.field_product_orc_content
+    - field.field.node.product.field_product_orc_title
+    - field.field.node.product.field_product_pictures
+    - field.field.node.product.field_product_reference
+    - field.field.node.product.field_product_status
+    - field.field.node.product.field_product_teaser
+    - field.field.node.product.field_protection_level
+    - field.field.node.product.field_standard_label
     - node.type.product
   module:
+    - ds
     - user
+third_party_settings:
+  ds:
+    layout:
+      id: ds_1col
+      library: null
+      disable_css: false
+      entity_classes: all_classes
+      settings:
+        wrappers:
+          ds_content: div
+        outer_wrapper: div
+        attributes: ''
+        link_attribute: ''
+        link_custom: ''
+        classes:
+          layout_class: {  }
+          ds_content: {  }
+    regions:
+      ds_content:
+        - field_product_pictures
+        - node_title
+        - field_product_teaser
+    fields:
+      node_title:
+        plugin_id: node_title
+        weight: 1
+        label: hidden
+        formatter: default
+        settings:
+          wrapper: h3
+          class: ''
+          link: false
+        ft:
+          id: reset
+          settings:
+            lb: ''
 id: node.product.teaser
 targetEntityType: node
 bundle: product
 mode: teaser
 content:
-  links:
-    weight: 100
+  field_product_pictures:
+    type: entity_reference_entity_view
+    weight: 0
+    region: ds_content
+    label: hidden
+    settings:
+      view_mode: simple_html
+      link: false
+    third_party_settings:
+      ds:
+        ds_limit: '1'
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
+  field_product_teaser:
+    type: basic_string
+    weight: 2
+    region: ds_content
+    label: hidden
     settings: {  }
     third_party_settings: {  }
-    region: content
 hidden:
   addtoany: true
+  field_associated_products: true
+  field_background_hero_block: true
+  field_family_first_level: true
+  field_family_second_level: true
   field_json_product_data: true
-  field_main_picture: true
-  field_new: true
-  field_references: true
+  field_multiline_anchor_name: true
+  field_product_advantage_text: true
+  field_product_application_label: true
+  field_product_application_link: true
+  field_product_cta_1: true
+  field_product_cta_2: true
+  field_product_cta_3: true
+  field_product_cta_4: true
+  field_product_extid: true
+  field_product_family: true
+  field_product_multiline: true
+  field_product_orc_content: true
+  field_product_orc_title: true
+  field_product_reference: true
+  field_product_standard_label: true
+  field_product_status: true
+  field_protection_level: true
+  field_standard_label: true
   langcode: true
+  links: true
   search_api_excerpt: true

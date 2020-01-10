@@ -1,307 +1,314 @@
 <project name="content" default="content">
-    <!-- Export Interface -->
-    <target name="content-export">
-        <input propertyName="export.content" validArgs="node,node_type,block_content,block_content_type,taxonomy_term,taxonomy_term_type,menu_link_content,menu_link_content_type,user" message="->Socomec ">What do you want to export ?</input>
-        <if>
-            <equals arg1="${export.content}" arg2="node"/>
-            <then>
-                <phingcall target="content-export:all-node" />
-            </then>
+  <!-- Export Interface -->
+  <target name="content-export">
+    <input propertyName="export.content" validArgs="node,node_type,block_content,block_content_type,taxonomy_term,taxonomy_term_type,menu_link_content,menu_link_content_type,user,media" message="->Socomec ">What do you want to export ?</input>
+    <if>
+      <equals arg1="${export.content}" arg2="node"/>
+      <then>
+        <phingcall target="content-export:all-node" />
+      </then>
 
-            <elseif>
-            <equals arg1="${export.content}" arg2="node_type"/>
-            <then>
-                <phingcall target="content-export:node-type" />
-            </then>
-            </elseif>
+      <elseif>
+        <equals arg1="${export.content}" arg2="node_type"/>
+        <then>
+          <phingcall target="content-export:node-type" />
+        </then>
+      </elseif>
 
-            <elseif>
-                <equals arg1="${export.content}" arg2="block_content"/>
-                <then>
-                    <phingcall target="content-export:all-block" />
-                </then>
-            </elseif>
+      <elseif>
+        <equals arg1="${export.content}" arg2="block_content"/>
+        <then>
+          <phingcall target="content-export:all-block" />
+        </then>
+      </elseif>
 
-            <elseif>
-                <equals arg1="${export.content}" arg2="block_content_type"/>
-                <then>
-                    <phingcall target="content-export:block-type" />
-                </then>
-            </elseif>
+      <elseif>
+        <equals arg1="${export.content}" arg2="block_content_type"/>
+        <then>
+          <phingcall target="content-export:block-type" />
+        </then>
+      </elseif>
 
-            <elseif>
-                <equals arg1="${export.content}" arg2="taxonomy_term"/>
-                <then>
-                    <phingcall target="content-export:all-taxonomy" />
-                </then>
-            </elseif>
+      <elseif>
+        <equals arg1="${export.content}" arg2="taxonomy_term"/>
+        <then>
+          <phingcall target="content-export:all-taxonomy" />
+        </then>
+      </elseif>
 
-            <elseif>
-                <equals arg1="${export.content}" arg2="taxonomy_term_type"/>
-                <then>
-                    <phingcall target="content-export:taxonomy-type" />
-                </then>
-            </elseif>
+      <elseif>
+        <equals arg1="${export.content}" arg2="taxonomy_term_type"/>
+        <then>
+          <phingcall target="content-export:taxonomy-type" />
+        </then>
+      </elseif>
 
 
-            <elseif>
-                <equals arg1="${export.content}" arg2="menu_link_content"/>
-                <then>
-                    <phingcall target="content-export:all-menu" />
-                </then>
-            </elseif>
+      <elseif>
+        <equals arg1="${export.content}" arg2="menu_link_content"/>
+        <then>
+          <phingcall target="content-export:all-menu" />
+        </then>
+      </elseif>
 
-            <elseif>
-                <equals arg1="${export.content}" arg2="menu_link_content_type"/>
-                <then>
-                    <phingcall target="content-export:menu-type" />
-                </then>
-            </elseif>
+      <elseif>
+        <equals arg1="${export.content}" arg2="menu_link_content_type"/>
+        <then>
+          <phingcall target="content-export:menu-type" />
+        </then>
+      </elseif>
 
-            <elseif>
-              <equals arg1="${export.content}" arg2="user"/>
-              <then>
-                <phingcall target="content-export:all-user" />
-              </then>
-            </elseif>
+      <elseif>
+        <equals arg1="${export.content}" arg2="user"/>
+        <then>
+          <phingcall target="content-export:all-user" />
+        </then>
+      </elseif>
 
-        </if>
-    </target>
+      <elseif>
+        <equals arg1="${export.content}" arg2="media"/>
+        <then>
+          <phingcall target="content-export:all-media" />
+        </then>
+      </elseif>
 
-    <!-- Export All Nodes -->
-    <target name="content-export:all-node">
-        <input propertyName="export.type.path" validArgs="y,n" message="->Socomec ">Export test content ?</input>
-        <if>
-            <equals arg1="${export.type.path}" arg2="y"/>
-            <then>
-                <property name="export.type" value="${content.staging.folder}" />
-            </then>
-            <else>
-                <property name="export.type" value="${content.folder}" />
-            </else>
-        </if>
+    </if>
+  </target>
 
-        <drush
-                command="dcder"
-                assume="yes"
-                root="${website.drupal.dir}"
-                verbose="${drush.verbose}">
+  <!-- Export All Nodes -->
+  <target name="content-export:all-node">
+    <input propertyName="export.type.path" validArgs="y,n" message="->Socomec ">Export test content ?</input>
+    <if>
+      <equals arg1="${export.type.path}" arg2="y"/>
+      <then>
+        <property name="export.type" value="${content.staging.folder}" />
+      </then>
+      <else>
+        <property name="export.type" value="${content.folder}" />
+      </else>
+    </if>
 
-            <param>--folder=${export.type}</param>
-            <param>node</param>
-        </drush>
-    </target>
-    <!-- Export Nodes Bundle -->
-    <target name="content-export:node-type">
-        <input propertyName="export.type.path" validArgs="y,n" message="->Socomec ">Export test content ?</input>
-        <if>
-            <equals arg1="${export.type.path}" arg2="y"/>
-            <then>
-                <property name="export.type" value="${content.staging.folder}" />
-            </then>
-            <else>
-                <property name="export.type" value="${content.folder}" />
-            </else>
-        </if>
-        <input propertyName="node.type" validArgs="article,basic_page" message="->Socomec ">What node bundle would you export ?</input>
-        <drush
-                command="dcder"
-                assume="yes"
-                root="${website.drupal.dir}"
-                verbose="${drush.verbose}">
+    <drush
+      command="dcder"
+      assume="yes"
+      root="${website.drupal.dir}"
+      verbose="${drush.verbose}">
 
-            <param>--folder=${export.type}</param>
-            <param>node</param>
-            <param>--bundle=${node.type}</param>
-        </drush>
-    </target>
+      <param>--folder=${export.type}</param>
+      <param>node</param>
+    </drush>
+  </target>
+  <!-- Export Nodes Bundle -->
+  <target name="content-export:node-type">
+    <input propertyName="export.type.path" validArgs="y,n" message="->Socomec ">Export test content ?</input>
+    <if>
+      <equals arg1="${export.type.path}" arg2="y"/>
+      <then>
+        <property name="export.type" value="${content.staging.folder}" />
+      </then>
+      <else>
+        <property name="export.type" value="${content.folder}" />
+      </else>
+    </if>
+    <input propertyName="node.type" validArgs="article,basic_page,news" message="->Socomec ">What node bundle would you export ?</input>
+    <drush
+      command="dcder"
+      assume="yes"
+      root="${website.drupal.dir}"
+      verbose="${drush.verbose}">
 
-    <!-- Export all Block content -->
-    <target name="content-export:all-block">
-        <input propertyName="export.type.path" validArgs="y,n" message="->Socomec ">Export test content ?</input>
-        <if>
-            <equals arg1="${export.type.path}" arg2="y"/>
-            <then>
-                <property name="export.type" value="${content.staging.folder}" />
-            </then>
-            <else>
-                <property name="export.type" value="${content.folder}" />
-            </else>
-        </if>
-        <drush
-                command="dcder"
-                assume="yes"
-                root="${website.drupal.dir}"
-                verbose="${drush.verbose}">
+      <param>--folder=${export.type}</param>
+      <param>node</param>
+      <param>--bundle=${node.type}</param>
+    </drush>
+  </target>
 
-            <param>--folder=${export.type}</param>
-            <param>block_content</param>
-        </drush>
-    </target>
-    <!-- Export block content bundle -->
-    <target name="content-export:block-type">
-        <input propertyName="export.type.path" validArgs="y,n" message="->Socomec ">Export test content ?</input>
-        <if>
-            <equals arg1="${export.type.path}" arg2="y"/>
-            <then>
-                <property name="export.type" value="${content.staging.folder}" />
-            </then>
-            <else>
-                <property name="export.type" value="${content.folder}" />
-            </else>
-        </if>
-        <input propertyName="block.type" validArgs="basic" message="->Socomec ">What block_content bundle would you export ?</input>
-        <drush
-                command="dcder"
-                assume="yes"
-                root="${website.drupal.dir}"
-                verbose="${drush.verbose}">
+  <!-- Export all Block content -->
+  <target name="content-export:all-block">
+    <input propertyName="export.type.path" validArgs="y,n" message="->Socomec ">Export test content ?</input>
+    <if>
+      <equals arg1="${export.type.path}" arg2="y"/>
+      <then>
+        <property name="export.type" value="${content.staging.folder}" />
+      </then>
+      <else>
+        <property name="export.type" value="${content.folder}" />
+      </else>
+    </if>
+    <drush
+      command="dcder"
+      assume="yes"
+      root="${website.drupal.dir}"
+      verbose="${drush.verbose}">
 
-            <param>--folder=${export.type}</param>
-            <param>block_content</param>
-            <param>--bundle=${block.type}</param>
-        </drush>
-    </target>
+      <param>--folder=${export.type}</param>
+      <param>block_content</param>
+    </drush>
+  </target>
+  <!-- Export block content bundle -->
+  <target name="content-export:block-type">
+    <input propertyName="export.type.path" validArgs="y,n" message="->Socomec ">Export test content ?</input>
+    <if>
+      <equals arg1="${export.type.path}" arg2="y"/>
+      <then>
+        <property name="export.type" value="${content.staging.folder}" />
+      </then>
+      <else>
+        <property name="export.type" value="${content.folder}" />
+      </else>
+    </if>
+    <input propertyName="block.type" validArgs="basic" message="->Socomec ">What block_content bundle would you export ?</input>
+    <drush
+      command="dcder"
+      assume="yes"
+      root="${website.drupal.dir}"
+      verbose="${drush.verbose}">
 
-    <!-- Export all Taxonomy term -->
-    <target name="content-export:all-taxonomy">
-        <input propertyName="export.type.path" validArgs="y,n" message="->Socomec ">Export test content ?</input>
-        <if>
-            <equals arg1="${export.type.path}" arg2="y"/>
-            <then>
-                <property name="export.type" value="${content.staging.folder}" />
-                <echo message="${export.type}" />
-            </then>
-            <else>
-                <property name="export.type" value="${content.folder}" />
-            </else>
-        </if>
-        <drush
-                command="dcder"
-                assume="yes"
-                root="${website.drupal.dir}"
-                verbose="${drush.verbose}">
+      <param>--folder=${export.type}</param>
+      <param>block_content</param>
+      <param>--bundle=${block.type}</param>
+    </drush>
+  </target>
 
-            <param>--folder=${export.type}</param>
-            <param>taxonomy_term</param>
-        </drush>
-    </target>
-    <!-- Export Vocabulary Taxonomy term -->
-    <target name="content-export:taxonomy-type">
-        <input propertyName="export.type.path" validArgs="y,n" message="->Socomec ">Export test content ?</input>
-        <if>
-            <equals arg1="${export.type.path}" arg2="y"/>
-            <then>
-                <property name="export.type" value="${content.staging.folder}" />
-            </then>
-            <else>
-                <property name="export.type" value="${content.folder}" />
-            </else>
-        </if>
-        <input propertyName="taxonomy.type" validArgs="tags" message="->Socomec ">What block_content bundle would you export ?</input>
-        <drush
-                command="dcder"
-                assume="yes"
-                root="${website.drupal.dir}"
-                verbose="${drush.verbose}">
+  <!-- Export all Taxonomy term -->
+  <target name="content-export:all-taxonomy">
+    <input propertyName="export.type.path" validArgs="y,n" message="->Socomec ">Export test content ?</input>
+    <if>
+      <equals arg1="${export.type.path}" arg2="y"/>
+      <then>
+        <property name="export.type" value="${content.staging.folder}" />
+        <echo message="${export.type}" />
+      </then>
+      <else>
+        <property name="export.type" value="${content.folder}" />
+      </else>
+    </if>
+    <drush
+      command="dcder"
+      assume="yes"
+      root="${website.drupal.dir}"
+      verbose="${drush.verbose}">
 
-            <param>--folder=${export.type}</param>
-            <param>taxonomy_term</param>
-            <param>--bundle=${taxonomy.type}</param>
-        </drush>
-    </target>
+      <param>--folder=${export.type}</param>
+      <param>taxonomy_term</param>
+    </drush>
+  </target>
+  <!-- Export Vocabulary Taxonomy term -->
+  <target name="content-export:taxonomy-type">
+    <input propertyName="export.type.path" validArgs="y,n" message="->Socomec ">Export test content ?</input>
+    <if>
+      <equals arg1="${export.type.path}" arg2="y"/>
+      <then>
+        <property name="export.type" value="${content.staging.folder}" />
+      </then>
+      <else>
+        <property name="export.type" value="${content.folder}" />
+      </else>
+    </if>
+    <input propertyName="taxonomy.type" validArgs="tags" message="->Socomec ">What block_content bundle would you export ?</input>
+    <drush
+      command="dcder"
+      assume="yes"
+      root="${website.drupal.dir}"
+      verbose="${drush.verbose}">
 
-    <!-- Export all Menu item -->
-    <target name="content-export:all-menu">
-        <input propertyName="export.type.path" validArgs="y,n" message="->Socomec ">Export test content ?</input>
-        <if>
-            <equals arg1="${export.type.path}" arg2="y"/>
-            <then>
-                <property name="export.type" value="${content.staging.folder}" />
-            </then>
-            <else>
-                <property name="export.type" value="${content.folder}" />
-            </else>
-        </if>
-        <drush
-                command="dcder"
-                assume="yes"
-                root="${website.drupal.dir}"
-                verbose="${drush.verbose}">
+      <param>--folder=${export.type}</param>
+      <param>taxonomy_term</param>
+      <param>--bundle=${taxonomy.type}</param>
+    </drush>
+  </target>
 
-            <param>--folder=${export.type}</param>
-            <param>menu_link_content</param>
-        </drush>
-    </target>
-    <!-- Export menu item type -->
-    <target name="content-export:menu-type">
-        <input propertyName="export.type.path" validArgs="y,n" message="->Socomec ">Export test content ?</input>
-        <if>
-            <equals arg1="${export.type.path}" arg2="y"/>
-            <then>
-                <property name="export.type" value="${content.staging.folder}" />
-            </then>
-            <else>
-                <property name="export.type" value="${content.folder}" />
-            </else>
-        </if>
-        <input propertyName="menu.type" validArgs="main" message="->Socomec ">What menu bundle would you export ?</input>
-        <drush
-                command="dcder"
-                assume="yes"
-                root="${website.drupal.dir}"
-                verbose="${drush.verbose}">
+  <!-- Export all Menu item -->
+  <target name="content-export:all-menu">
+    <input propertyName="export.type.path" validArgs="y,n" message="->Socomec ">Export test content ?</input>
+    <if>
+      <equals arg1="${export.type.path}" arg2="y"/>
+      <then>
+        <property name="export.type" value="${content.staging.folder}" />
+      </then>
+      <else>
+        <property name="export.type" value="${content.folder}" />
+      </else>
+    </if>
+    <drush
+      command="dcder"
+      assume="yes"
+      root="${website.drupal.dir}"
+      verbose="${drush.verbose}">
 
-            <param>--folder=${export.type}</param>
-            <param>menu_link_content</param>
-            <param>--bundle=${menu.type}</param>
-        </drush>
-    </target>
+      <param>--folder=${export.type}</param>
+      <param>menu_link_content</param>
+    </drush>
+  </target>
+  <!-- Export menu item type -->
+  <target name="content-export:menu-type">
+    <input propertyName="export.type.path" validArgs="y,n" message="->Socomec ">Export test content ?</input>
+    <if>
+      <equals arg1="${export.type.path}" arg2="y"/>
+      <then>
+        <property name="export.type" value="${content.staging.folder}" />
+      </then>
+      <else>
+        <property name="export.type" value="${content.folder}" />
+      </else>
+    </if>
+    <input propertyName="menu.type" validArgs="main" message="->Socomec ">What menu bundle would you export ?</input>
+    <drush
+      command="dcder"
+      assume="yes"
+      root="${website.drupal.dir}"
+      verbose="${drush.verbose}">
 
-    <!-- Export menu item type -->
-    <target name="content-import">
-        <input propertyName="import.type.path" validArgs="y,n" message="->Socomec ">Import test content ?</input>
-        <if>
-            <equals arg1="${import.type.path}" arg2="y"/>
-            <then>
-                <property name="import.type" value="${content.staging.folder}" />
-            </then>
-            <else>
-                <property name="import.type" value="${content.folder}" />
-            </else>
-        </if>
-        <drush
-                command="dcdi"
-                assume="yes"
-                root="${website.drupal.dir}"
-                verbose="${drush.verbose}">
+      <param>--folder=${export.type}</param>
+      <param>menu_link_content</param>
+      <param>--bundle=${menu.type}</param>
+    </drush>
+  </target>
 
-            <param>--folder=${import.type}</param>
-        </drush>
-    </target>
+  <!-- Export menu item type -->
+  <target name="content-import">
+    <input propertyName="import.type.path" validArgs="y,n" message="->Socomec ">Import test content ?</input>
+    <if>
+      <equals arg1="${import.type.path}" arg2="y"/>
+      <then>
+        <property name="import.type" value="${content.staging.folder}" />
+      </then>
+      <else>
+        <property name="import.type" value="${content.folder}" />
+      </else>
+    </if>
+    <drush
+      command="dcdi"
+      assume="yes"
+      root="${website.drupal.dir}"
+      verbose="${drush.verbose}">
 
-    <!-- Export menu item type -->
-    <target name="content-import-all">
-        <drush
-                command="dcdi"
-                assume="yes"
-                root="${website.drupal.dir}"
-                verbose="${drush.verbose}">
+      <param>--folder=${import.type}</param>
+    </drush>
+  </target>
 
-            <param>--folder=${content.staging.folder}</param>
-        </drush>
-        <drush
-                command="dcdi"
-                assume="yes"
-                root="${website.drupal.dir}"
-                verbose="${drush.verbose}">
+  <!-- Export menu item type -->
+  <target name="content-import-all">
+    <drush
+      command="dcdi"
+      assume="yes"
+      root="${website.drupal.dir}"
+      verbose="${drush.verbose}">
 
-            <param>--folder=${content.folder}</param>
-        </drush>
-    </target>
+      <param>--folder=${content.staging.folder}</param>
+    </drush>
+    <drush
+      command="dcdi"
+      assume="yes"
+      root="${website.drupal.dir}"
+      verbose="${drush.verbose}">
 
-    <!-- Export all users -->
-    <target name="content-export:all-user">
+      <param>--folder=${content.folder}</param>
+    </drush>
+  </target>
+
+  <!-- Export all users -->
+  <target name="content-export:all-user">
     <input propertyName="export.type.path" validArgs="y,n" message="->Socomec ">Export test users ?</input>
     <if>
       <equals arg1="${export.type.path}" arg2="y"/>
@@ -321,6 +328,30 @@
 
       <param>--folder=${export.type}</param>
       <param>user</param>
+    </drush>
+  </target>
+
+  <!-- Export all Taxonomy term -->
+  <target name="content-export:all-media">
+    <input propertyName="export.type.path" validArgs="y,n" message="->Socomec ">Export test content ?</input>
+    <if>
+      <equals arg1="${export.type.path}" arg2="y"/>
+      <then>
+        <property name="export.type" value="${content.staging.folder}" />
+        <echo message="${export.type}" />
+      </then>
+      <else>
+        <property name="export.type" value="${content.folder}" />
+      </else>
+    </if>
+    <drush
+      command="dcder"
+      assume="yes"
+      root="${website.drupal.dir}"
+      verbose="${drush.verbose}">
+
+      <param>--folder=${export.type}</param>
+      <param>media</param>
     </drush>
   </target>
 

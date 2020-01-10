@@ -11,7 +11,7 @@ _core:
 id: socomec_page_title
 theme: socomec
 region: content
-weight: -50
+weight: -10
 provider: null
 plugin: page_title_block
 settings:
@@ -24,6 +24,7 @@ visibility:
     id: 'entity_bundle:node'
     bundles:
       landing_page: landing_page
+      product: product
       thank_you_page: thank_you_page
     negate: true
     context_mapping:

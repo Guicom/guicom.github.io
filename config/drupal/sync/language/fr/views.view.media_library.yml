@@ -1,26 +1,12 @@
 display:
   default:
-    display_title: Maître
     display_options:
-      exposed_form:
-        options:
-          reset_button_label: Réinitialiser
-          exposed_sorts_label: 'Trier par'
-          sort_asc_label: Asc
-          sort_desc_label: Desc
-      pager:
-        options:
-          expose:
-            items_per_page_label: 'Éléments par page'
-            items_per_page_options_all_label: '- Tout -'
-            offset_label: Décalage
       filters:
         name:
           expose:
             label: Nom
-  page:
-    display_title: Page
   widget:
+    display_title: Widget
     display_options:
       filters:
         name:

@@ -17,6 +17,12 @@ filenames:
   video_embed: ''
   model_image: ''
   model_cta: ''
+  link: ''
+  standard_label: ''
+  optional_related_content: ''
+  content: ''
+  model_cta_pdf: ''
+  video_text: ''
 bundles:
   product_faq:
     field_question:
@@ -694,6 +700,166 @@ bundles:
     field_target:
       bundle: model_cta
       name: field_target
+      entity_type_id: paragraph
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+  link:
+    field_link_title:
+      bundle: link
+      name: field_link_title
+      entity_type_id: paragraph
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_link_link:
+      bundle: link
+      name: field_link_link
+      entity_type_id: paragraph
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_link_paragraph:
+      bundle: link
+      name: field_link_paragraph
+      entity_type_id: paragraph
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: date_anonymizer
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_link_icon:
+      bundle: link
+      name: field_link_icon
+      entity_type_id: paragraph
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_link_target:
+      bundle: link
+      name: field_link_target
+      entity_type_id: paragraph
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: date_anonymizer
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+  standard_label:
+    field_label:
+      bundle: standard_label
+      name: field_label
+      entity_type_id: paragraph
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_standard_label_tooltip:
+      bundle: standard_label
+      name: field_standard_label_tooltip
+      entity_type_id: paragraph
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+  optional_related_content:
+    field_orc_content:
+      bundle: optional_related_content
+      name: field_orc_content
+      entity_type_id: paragraph
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+  content:
+    field_content:
+      bundle: content
+      name: field_content
+      entity_type_id: paragraph
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+  video_text:
+    field_video_embed_video:
+      bundle: video_text
+      name: field_video_embed_video
+      entity_type_id: paragraph
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_title:
+      bundle: video_text
+      name: field_title
+      entity_type_id: paragraph
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_text:
+      bundle: video_text
+      name: field_text
+      entity_type_id: paragraph
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+  model_cta_pdf:
+    field_cta_text:
+      bundle: model_cta_pdf
+      name: field_cta_text
+      entity_type_id: paragraph
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: clear_anonymizer
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_media_pdf:
+      bundle: model_cta_pdf
+      name: field_media_pdf
       entity_type_id: paragraph
       rtf: 'no'
       rta: 'no'

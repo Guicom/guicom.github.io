@@ -23,16 +23,27 @@
 // Blocks
 @import "components/blocks/hero";
 @import "components/blocks/iframe_form";
+@import "components/blocks/tool_promotion";
+@import "components/blocks/breadcrumb";
+@import "components/blocks/product_teaser";
+@import "components/blocks/local_task";
+@import "components/blocks/facets";
 @import "components/fields/key-figure";
 @import "components/pages/landing-pages";
+@import "components/pages/product_page";
+@import "components/pages/family";
 @import "components/paragraphs/key-figure";
 @import "components/paragraphs/testimony";
 @import "components/paragraphs/text";
 @import "components/paragraphs/image";
 @import "components/paragraphs/cta";
+@import "components/paragraphs/video-text";
 @import "components/header";
 @import "components/background";
+@import "components/form";
 
 // Navigations
 @import "components/navigation/site_footer";
 @import "components/navigation/socomec_footer";
+@import "components/navigation/paginations";
+@import "components/navigation/breadcrumb";

@@ -1,0 +1,114 @@
+{
+    "_links": {
+        "self": {
+            "href": ""
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/link"
+        },
+        "http:\/\/drupal.org\/rest\/relation\/paragraph\/link\/field_link_icon": [
+            {
+                "href": "http:\/\/default\/media\/37\/edit?_format=hal_json"
+            }
+        ]
+    },
+    "id": [
+        {
+            "value": 35
+        }
+    ],
+    "uuid": [
+        {
+            "value": "f7d70ab7-0060-4905-8a00-f7665e898d66"
+        }
+    ],
+    "revision_id": [
+        {
+            "value": 356
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "type": [
+        {
+            "target_id": "link"
+        }
+    ],
+    "status": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "created": [
+        {
+            "value": "2019-12-19T09:56:15+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "parent_id": [
+        {
+            "value": "10"
+        }
+    ],
+    "parent_type": [
+        {
+            "value": "node"
+        }
+    ],
+    "parent_field_name": [
+        {
+            "value": "field_product_application_link"
+        }
+    ],
+    "behavior_settings": [
+        {
+            "value": []
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/paragraph\/link\/field_link_icon": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/media\/37\/edit?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/media\/icone"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "f6ddef20-6757-40d7-98fc-1a9f480804e2"
+                    }
+                ]
+            }
+        ]
+    },
+    "field_link_link": [
+        {
+            "value": "http:\/\/www.socomec.us"
+        }
+    ],
+    "field_link_target": [
+        {
+            "value": "_blank"
+        }
+    ],
+    "field_link_title": [
+        {
+            "value": "Discover all our applications"
+        }
+    ]
+}

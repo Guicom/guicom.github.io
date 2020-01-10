@@ -5,6 +5,7 @@
  * Functions to support theming in the SASS Starterkit subtheme.
  */
 
+use Drupal\block_content\Entity\BlockContent;
 use Drupal\Core\Config\Config;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Language\LanguageManager;
@@ -35,6 +36,10 @@ function socomec_form_system_theme_settings_alter(&$form, FormStateInterface $fo
       'bg-white' => t('White'),
       'bg-transparent' => t('Transparent'),
   );
+}
+
+function socomec_preprocess_node(&$variables) {
+  $test = 1;
 }
 
 /**
@@ -74,7 +79,27 @@ function socomec_preprocess_paragraph(&$variables){
       if (!empty($field_target[0]['value']) && strcmp($field_target[0]['value'], 1) === 0) {
         $variables['cta_target'] = '_blank';
       }
+    }
+  }
 
+  // if paragraph is model_cta_pdf
+  if ( strcmp($bundle, 'model_cta_pdf') === 0) {
+    // Alter name file.
+    if ($paragraph->hasField('field_cta_text')) {
+      $field_cta_text = (!empty($paragraph->get('field_cta_text')->getValue()))?$paragraph->get('field_cta_text')->getValue():null;
+      if (!empty($field_cta_text[0]['value'])) {
+        $field_media_pdf = (!empty($paragraph->get('field_media_pdf')->getValue()))?$paragraph->get('field_media_pdf')->getValue():null;
+        if (!empty($field_cta_text[0]['value'])) {
+          $media = Media::load($field_media_pdf[0]['target_id']);
+          $fid = $media->getSource()->getSourceFieldValue($media);
+          if (!empty($fid)) {
+            $file = File::load($fid);
+            if (!empty($file)) {
+              $file->setFilename($field_cta_text[0]['value']);
+            }
+          }
+        }
+      }
     }
   }
 }
@@ -88,7 +113,7 @@ function socomec_preprocess_field(&$variables) {
       // Add CTA text on ancher button.
       $variables['cta_text'] = $variables["element"]["#object"]->field_pardot_cta_text->value
         ? $variables["element"]["#object"]->field_pardot_cta_text->value : t('Download');
-      
+
       // Manage privacy policy.
       if (empty($variables["element"]["#object"]->field_pardot_privacy_policy->value)) {
         $lang_id = \Drupal::languageManager()->getCurrentLanguage()->getId();
@@ -97,6 +122,11 @@ function socomec_preprocess_field(&$variables) {
       else {
         $variables['legal_mentions'] = $variables["element"]["#object"]->field_pardot_privacy_policy->value;
       }
+      break;
+
+    case 'field_product_reference':
+      $table = Drupal::service('soc_nextpage.product_reference_table');
+      $variables['render_table'] = $table->buildTable($variables);
       break;
   }
 }
@@ -124,6 +154,10 @@ function socomec_theme_suggestions_page_alter(array &$suggestions, array $variab
     $suggestions[] = 'page__' . $node->bundle();
     $suggestions[] = 'page__node__' . $node->bundle();
   }
+  $term = \Drupal::routeMatch()->getParameter('taxonomy_term');
+  if ($term instanceof Drupal\taxonomy\TermInterface) {
+    $suggestions[] = 'page__taxonomy__' . $term->bundle();
+  }
 }
 
 /**
@@ -142,6 +176,43 @@ function socomec_theme_suggestions_views_view_fields_alter(array &$suggestions, 
   }
 }
 
+
+/**
+ * Implements hook_theme_suggestions_taxonomy_term_alter().
+ */
+function socomec_theme_suggestions_taxonomy_term_alter(array &$suggestions, array $variables) {
+  /** @var \Drupal\taxonomy\TermInterface $term */
+  $term = $variables['elements']['#taxonomy_term'];
+  $sanitized_view_mode = strtr($variables['elements']['#view_mode'], '.', '_');
+  // Add view mode theme suggestions.
+  $suggestions[] = 'taxonomy_term__' . $sanitized_view_mode;
+  $suggestions[] = 'taxonomy_term__' . $term->bundle() . '__' . $sanitized_view_mode;
+  $suggestions[] = 'taxonomy_term__' . $term->id() . '__' . $sanitized_view_mode;
+}
+
+/**
+ * Implements hook_theme_suggestions_block_alter().
+ */
+function socomec_theme_suggestions_block_alter(array &$suggestions, array $variables) {
+  $elements = $variables['elements'];
+  if (isset($elements['content']['#block_content'])) {
+    $bundle = $elements['content']['#block_content']->bundle();
+    if ($bundle == 'tool_promotion') {
+      $suggestions[] = 'block__tool_promotion';
+    }
+  }
+}
+/**
+ * Implements template_preprocess_html().
+ */
+function socomec_preprocess_html(&$variables) {
+  if (\Drupal::routeMatch()->getRouteName() == 'entity.taxonomy_term.canonical') {
+    // load the term entity and get the data from there
+    $term = \Drupal::routeMatch()->getParameter('taxonomy_term');
+    // Add vocabulary ono body class
+    $variables['attributes']['class'][] = 'taxonomy-' . $term->bundle();
+  }
+}
 
 /**
  * Implements template_preprocess_views_view() for hero view.
@@ -176,7 +247,7 @@ function socomec_preprocess_views_view(&$variables) {
 }
 
 /**
- * Implements hook_preprocess_HOOK().
+ * Implements template_preprocess_HOOK().
  */
 function socomec_preprocess_views_view_fields__hero_block__block_2(&$variables) {
   $mid = $variables["row"]->_entity->get('field_file')->getString();
@@ -195,17 +266,127 @@ function socomec_preprocess_views_view_fields__hero_block__block_2(&$variables) 
 }
 
 /**
- * Implements hook_preprocess_media().
+ * Implements template_preprocess_media().
  */
 function socomec_preprocess_media(array &$variables) {
   if ($variables["view_mode"] == 'simple_html' && $variables["media"]->bundle() == 'image') {
-    $variables['content']['url'] = $variables['content']['field_media_image'][0]['#markup'];
-    $properties = $variables["media"]->field_media_image->getValue();
-    if (isset($properties[0]["alt"])) {
-      $variables['content']['alt'] = $properties[0]["alt"];
+    if (isset( $variables['content']['field_media_image'][0]['#markup'])) {
+      $variables['content']['url'] = $variables['content']['field_media_image'][0]['#markup'];
+      $properties = $variables["media"]->field_media_image->getValue();
+      if (isset($properties[0]["alt"])) {
+        $variables['content']['alt'] = $properties[0]["alt"];
+      }
+      if (isset($properties[0]["title"])) {
+        $variables['content']['title_image'] = $properties[0]["title"];
+      }
     }
-    if (isset($properties[0]["title"])) {
-      $variables['content']['title_image'] = $properties[0]["title"];
+  }
+}
+
+/**
+ * Implements template_preprocess_block().
+ */
+function socomec_preprocess_block(&$variables) {
+  if ($uuid = $variables["elements"]["#derivative_plugin_id"]) {
+    $block = \Drupal::service('entity.repository')->loadEntityByUuid('block_content', $uuid);
+    if ($block) {
+      $block_type = $block->bundle();
+      switch ($block_type) {
+        case 'tool_promotion':
+          // Add background image
+          if ($block->hasField('field_background_image')
+            && !empty($block->get('field_background_image')->getValue())) {
+            $field_background_image_id = $block->get('field_background_image')
+              ->first()
+              ->getValue()['target_id'];
+            $mediaApi = \Drupal::service('soc_core.media_api');
+            if ($fid = $mediaApi->getFileIdFromMediaId($field_background_image_id)) {
+              if ($file = File::load($fid)) {
+                if (empty($file)) {
+                  return;
+                }
+                $file_url = file_create_url($file->getFileUri());
+              }
+            }
+          }
+          $variables['background_image'] = $file_url ?? null;
+          break;
+        default:
+          break;
+      }
+    }
+  }
+}
+
+function socomec_preprocess_page(&$variables) {
+  /** @var \Drupal\node\Entity\Node $node */
+  if ($node = \Drupal::routeMatch()->getParameter('node')) {
+    switch ($node->bundle()) {
+      case 'product':
+        // get product ancestors
+        $tid = $node->get('field_product_family')->target_id;
+        $ancestors = \Drupal::service('entity_type.manager')
+          ->getStorage("taxonomy_term")->loadAllParents($tid);
+        // check if any ancestor has a teaser to display
+        foreach ($ancestors as $term) {
+          $teasersQuery = \Drupal::entityQuery('block_content');
+          $teasersQuery->condition('type', 'tool_promotion');
+          $teasersQuery->condition('field_tool_promotion_families', $term->id());
+          $teasersIds = $teasersQuery->execute();
+          if ($teasers = BlockContent::loadMultiple($teasersIds)) {
+            $teaser = reset($teasers);
+            $teaserInstances = $teaser->getInstances();
+            if (sizeof($teaserInstances)) {
+              $block = reset($teaserInstances);
+              $variables['tool_promotion'] = \Drupal::entityTypeManager()->
+                getViewBuilder('block')->view($block);
+              break;
+            }
+          }
+        }
+        break;
+      default:
+        break;
+    }
+  }
+}
+
+/**
+ * Implements theme_preprocess_image().
+ *
+ * @param $vars
+ */
+function socomec_preprocess_image(&$vars) {
+  // List of image style parse for add bootstrap responsive image class.
+  $image_style_name = [
+    'max_width_1140',
+    'max_width_960',
+    'max_width_720',
+    'max_width_540',
+  ];
+
+  // Add img-fluid class to listed style
+  if (!empty($vars['style_name'])) {
+    if (in_array($vars['style_name'], $image_style_name)) {
+      $vars['attributes']['class'][] = 'img-fluid';
+    }
+  }
+}
+
+/**
+ * Implements template_responsive_image_formatter().
+ *
+ * @param $variables
+ */
+function socomec_preprocess_responsive_image_formatter(&$variables) {
+  $responsive_image_style_name = [
+    'bootstrap_breakpoint',
+  ];
+
+  // Add img-fluid class to listed responsive style
+  if (!empty($variables['responsive_image_style_id'])) {
+    if (in_array($variables['responsive_image_style_id'], $responsive_image_style_name)) {
+      $variables['responsive_image']['#attributes']['class'][] = 'img-fluid';
     }
   }
 }

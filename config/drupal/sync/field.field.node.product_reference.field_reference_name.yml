@@ -1,0 +1,19 @@
+uuid: 6a4dc697-6360-4011-b5d9-1529201fe5c9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_reference_name
+    - node.type.product_reference
+id: node.product_reference.field_reference_name
+field_name: field_reference_name
+entity_type: node
+bundle: product_reference
+label: Name
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,19 @@
+uuid: 9bc537b7-8d7c-4043-b655-7b327893eb01
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_family_sub_title
+    - taxonomy.vocabulary.family
+id: taxonomy_term.family.field_family_sub_title
+field_name: field_family_sub_title
+entity_type: taxonomy_term
+bundle: family
+label: 'Sub title'
+description: 'Maximum number of characters : 255'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

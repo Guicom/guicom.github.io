@@ -1,0 +1,59 @@
+uuid: 0dc99132-fdf3-4313-b151-e2a601d96b83
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.standard_label.field_label
+    - field.field.paragraph.standard_label.field_standard_label_tooltip
+    - paragraphs.paragraphs_type.standard_label
+  module:
+    - ds
+third_party_settings:
+  ds:
+    layout:
+      id: ds_1col
+      library: null
+      disable_css: false
+      entity_classes: all_classes
+      settings:
+        wrappers:
+          ds_content: div
+        outer_wrapper: div
+        attributes: ''
+        link_attribute: ''
+        link_custom: ''
+        classes:
+          layout_class: {  }
+          ds_content: {  }
+    regions:
+      ds_content:
+        - field_label
+        - field_standard_label_tooltip
+id: paragraph.standard_label.default
+targetEntityType: paragraph
+bundle: standard_label
+mode: default
+content:
+  field_label:
+    weight: 0
+    label: hidden
+    settings:
+      link: true
+      view_mode: default
+    third_party_settings: {  }
+    type: entity_reference_entity_view
+    region: ds_content
+  field_standard_label_tooltip:
+    type: basic_string
+    weight: 1
+    region: ds_content
+    label: hidden
+    settings: {  }
+    third_party_settings:
+      ds:
+        ft:
+          id: reset
+          settings:
+            lb: ''
+hidden:
+  search_api_excerpt: true

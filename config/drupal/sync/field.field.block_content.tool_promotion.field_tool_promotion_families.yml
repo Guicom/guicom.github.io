@@ -1,0 +1,29 @@
+uuid: 53e5e245-fedd-4f38-8d77-75e54c2efa71
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.tool_promotion
+    - field.storage.block_content.field_tool_promotion_families
+    - taxonomy.vocabulary.family
+id: block_content.tool_promotion.field_tool_promotion_families
+field_name: field_tool_promotion_families
+entity_type: block_content
+bundle: tool_promotion
+label: Families
+description: 'Select which families (and the products they contain) will display this block.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      family: family
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

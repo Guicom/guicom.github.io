@@ -1,0 +1,28 @@
+uuid: d5d2e8f5-5a80-4cdd-a00b-a938591653a2
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.home_product_assistance
+    - field.storage.block_content.field_background_image
+    - media.type.image
+id: block_content.home_product_assistance.field_background_image
+field_name: field_background_image
+entity_type: block_content
+bundle: home_product_assistance
+label: 'Background image'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

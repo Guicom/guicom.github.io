@@ -1,0 +1,10 @@
+uuid: 16ef780e-d533-4d6d-aa4b-53c9f62f4d91
+langcode: en
+status: true
+dependencies:
+  module:
+    - taxonomy
+id: taxonomy_term.product_page
+label: 'Product page'
+targetEntityType: taxonomy_term
+cache: true

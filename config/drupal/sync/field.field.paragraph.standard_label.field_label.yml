@@ -1,0 +1,29 @@
+uuid: 1b3b89df-1c06-4cf0-ac20-5e227d21a84c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_label
+    - paragraphs.paragraphs_type.standard_label
+    - taxonomy.vocabulary.product_label
+id: paragraph.standard_label.field_label
+field_name: field_label
+entity_type: paragraph
+bundle: standard_label
+label: Label
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      product_label: product_label
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

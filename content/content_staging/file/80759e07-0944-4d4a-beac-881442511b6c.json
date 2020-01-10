@@ -1,0 +1,92 @@
+{
+    "_links": {
+        "self": {
+            "href": ""
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/file\/file"
+        },
+        "http:\/\/drupal.org\/rest\/relation\/file\/file\/uid": [
+            {
+                "href": "http:\/\/default\/user\/1?_format=hal_json"
+            }
+        ]
+    },
+    "fid": [
+        {
+            "value": 21
+        }
+    ],
+    "uuid": [
+        {
+            "value": "80759e07-0944-4d4a-beac-881442511b6c"
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en"
+        }
+    ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/file\/file\/uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/user\/1?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "674a5a4f-b63e-4035-b0b3-2959ebf4041c"
+                    }
+                ]
+            }
+        ]
+    },
+    "filename": [
+        {
+            "value": "locator.svg"
+        }
+    ],
+    "uri": [
+        {
+            "value": "public:\/\/2019-12\/locator.svg",
+            "url": "\/sites\/default\/files\/2019-12\/locator.svg"
+        }
+    ],
+    "filemime": [
+        {
+            "value": "image\/svg+xml"
+        }
+    ],
+    "filesize": [
+        {
+            "value": 2787
+        }
+    ],
+    "status": [
+        {
+            "value": true
+        }
+    ],
+    "created": [
+        {
+            "value": "2019-12-06T09:35:41+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "changed": [
+        {
+            "value": "2019-12-06T09:35:46+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "data": [
+        {
+            "value": "PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iMjFweCIgaGVpZ2h0PSIyMHB4IiB2aWV3Qm94PSIwIDAgMjEgMjAiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+CiAgICA8IS0tIEdlbmVyYXRvcjogc2tldGNodG9vbCA2MC4xICgxMDEwMTApIC0gaHR0cHM6Ly9za2V0Y2guY29tIC0tPgogICAgPHRpdGxlPjZFMDhCMjIwLTRCNjItNEMyMS1BOTdELTI5MTMxNDA4MERFNTwvdGl0bGU+CiAgICA8ZGVzYz5DcmVhdGVkIHdpdGggc2tldGNodG9vbC48L2Rlc2M+CiAgICA8ZyBpZD0iQXNzZXQtQXJ0Ym9hcmQtUGFnZSIgc3Ryb2tlPSJub25lIiBzdHJva2Utd2lkdGg9IjEiIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+CiAgICAgICAgPGcgaWQ9InVpL01lZGl1bS9iYWctcHVyY2hhc2UtdWkvTWVkaXVtL2xvY2F0b3IiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDAuNTAyNDM1LCAwLjAwMDAwMCkiPgogICAgICAgICAgICA8cGF0aCBkPSJNMTkuMDUzOTM4OCwxNy4xNzI5NjYgTDE3LjE1MjU0MSwxMy4zNzAxNzA2IEMxNi44MTk1OTQyLDEyLjcwNDEyNDQgMTYuMTUwMDM4NiwxMi4yOTAzMDYxIDE1LjQwNTQwOTYsMTIuMjkwMzA2MSBMMTQuOTQyNzYzMSwxMi4yOTAzMDYxIEwxNS4wMzY0NTIxLDEyLjE5Njc2OTcgQzE3LjgyMjg1OTcsOS40MTAyMDk2NiAxNy44MjI4NTk3LDQuODc2MzY1NjggMTUuMDM2NDUyMSwyLjA4OTgwNTYgQzEyLjI0OTg5MiwtMC42OTY2MDE4NjUgNy43MTYwNDc4OSwtMC42OTY2MDE4NjUgNC45Mjk0ODc3NSwyLjA4OTgwNTYgQzIuMTQzMDgwMjIsNC44NzYzNjU2OCAyLjE0MzA4MDIyLDkuNDEwMjA5NjYgNC45Mjk0ODc3NSwxMi4xOTY3Njk3IEw1LjAyMzE3Njc0LDEyLjI5MDMwNjEgTDQuNTYwNTMwMjQsMTIuMjkwMzA2MSBDMy44MTU3NDg3NCwxMi4yOTAzMDYxIDMuMTQ2MzQ1NjQsMTIuNzA0MTI0NCAyLjgxMzI0NjI1LDEzLjM3MDE3MDYgTDAuOTEyMDAxMDkzLDE3LjE3Mjk2NiBDMC4yNjE4MjQwODUsMTguNDczMTY3NCAxLjIwODYzMTk2LDE5Ljk5OTk2MTkgMi42NTkxMzI1LDE5Ljk5OTk2MTkgTDE3LjMwNjgwNzQsMTkuOTk5OTYxOSBDMTguNzYwMzU5NywxOS45OTk5NjE5IDE5LjcwMjc0MjUsMTguNDcwNDIwOCAxOS4wNTM5Mzg4LDE3LjE3Mjk2NiBaIE02LjAzNDUyOTIsMy4xOTQ4NDcwOCBDOC4yMTE2NTMyMywxLjAxNzcyMzA5IDExLjc1Mzk4MTEsMS4wMTc3MjMwOSAxMy45MzEyNTc3LDMuMTk0ODQ3MDggQzE2LjEwODM4MTcsNS4zNzE5NzExNCAxNi4xMDgzODE3LDguOTE0NjA0MTkgMTMuOTMxMjU3NywxMS4wOTE3MjgyIEMxMy43MDIzNzU5LDExLjMyMDYxIDEwLjIxMjUzODIsMTQuODEwNDQ3NyA5Ljk4Mjg5MzQ2LDE1LjA0MDA5MjUgQzkuNzUzMjQ4NywxNC44MTA0NDc3IDYuMjYzNDExMDQsMTEuMzIwNjEgNi4wMzQ1MjkyLDExLjA5MTcyODIgQzMuODU3MjUyNiw4LjkxNDYwNDE5IDMuODU3MjUyNiw1LjM3MTk3MTE0IDYuMDM0NTI5MiwzLjE5NDg0NzA4IFogTTE3LjMwNjgwNzUsMTguNDM3MTU2NyBMMi42NTkxMzI0LDE4LjQzNzE1NjcgQzIuMzY4NDUyNDMsMTguNDM3MTU2NyAyLjE3OTcwMTIxLDE4LjEzMTUyMzEgMi4zMDk3MDYxLDE3Ljg3MTgxODUgTDQuMjEwOTUxMjgsMTQuMDY5MTc1NyBDNC4yNzc2MzIxOCwxMy45MzU4MTM5IDQuNDExNDUxNzksMTMuODUzMTExMyA0LjU2MDM3NzU4LDEzLjg1MzExMTMgTDYuNTg1ODI5MjksMTMuODUzMTExMyBMOS40MzAzNzI4NiwxNi42OTc2NTQ3IEM5LjczNTU0ODY1LDE3LjAwMjgzMDUgMTAuMjMwMjM4NiwxNy4wMDI4MzA1IDEwLjUzNTQxNDQsMTYuNjk3NjU0NyBMMTMuMzc5OTU4LDEzLjg1MzExMTMgTDE1LjQwNTQwOTcsMTMuODUzMTExMyBDMTUuNTU0MzM1NCwxMy44NTMxMTEzIDE1LjY4ODE1NTEsMTMuOTM1ODEzOSAxNS43NTQ4MzYsMTQuMDY5MTc1NyBMMTcuNjU2MjMzNywxNy44NzE4MTg1IEMxNy43ODYwODYsMTguMTMxNjc1NyAxNy41OTcxODIyLDE4LjQzNzE1NjcgMTcuMzA2ODA3NSwxOC40MzcxNTY3IFoiIGlkPSJTaGFwZSIgZmlsbD0iI0ZGRkZGRiI+PC9wYXRoPgogICAgICAgICAgICA8cGF0aCBkPSJNOS45ODI4OTM0NywzLjgzODQ2MjgzIEMxMS42ODQ4NTg4LDMuODM4NDYyODMgMTMuMDY5Mjg4Nyw1LjIyMzA0NTM3IDEzLjA2OTI4ODcsNi45MjQ4NTgxIEMxMy4wNjkyODg3LDguNjI2ODIzNDEgMTEuNjg0ODU4OCwxMC4wMTE0MDU5IDkuOTgyODkzNDcsMTAuMDExNDA1OSBDOC4yODEwODA3NCwxMC4wMTE0MDU5IDYuODk2NDk4Miw4LjYyNjgyMzQxIDYuODk2NDk4Miw2LjkyNDg1ODEgQzYuODk2NDk4Miw1LjIyMzA0NTM3IDguMjgxMDgwNzQsMy44Mzg0NjI4MyA5Ljk4Mjg5MzQ3LDMuODM4NDYyODMgWiBNOS45ODI4OTM0Nyw1LjQwMTExNTQyIEM5LjE0Mjc0NDU1LDUuNDAxMTE1NDIgOC40NTkxNTA3OSw2LjA4NDcwOTE3IDguNDU5MTUwNzksNi45MjQ4NTgxMSBDOC40NTkxNTA3OSw3Ljc2NTAwNzAyIDkuMTQyNzQ0NTUsOC40NDg2MDA3NyA5Ljk4Mjg5MzQ3LDguNDQ4NjAwNzcgQzEwLjgyMzA0MjQsOC40NDg2MDA3NyAxMS41MDY2MzYxLDcuNzY1MDA3MDIgMTEuNTA2NjM2MSw2LjkyNDg1ODExIEMxMS41MDY2MzYxLDYuMDg0NzA5MTcgMTAuODIzMDQyNCw1LjQwMTExNTQyIDkuOTgyODkzNDcsNS40MDExMTU0MiBaIiBpZD0iUmluZyIgZmlsbD0iI0ZGQ0MwMCI+PC9wYXRoPgogICAgICAgIDwvZz4KICAgIDwvZz4KPC9zdmc+"
+        }
+    ]
+}

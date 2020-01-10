@@ -13,14 +13,10 @@
         ],
         "http:\/\/drupal.org\/rest\/relation\/node\/landing_page\/uid": [
             {
-                "href": "http:\/\/default\/user\/1?_format=hal_json",
-                "lang": "en"
+                "href": "http:\/\/default\/user\/1?_format=hal_json"
             }
         ],
         "http:\/\/drupal.org\/rest\/relation\/node\/landing_page\/field_body": [
-            {
-                "href": ""
-            },
             {
                 "href": ""
             },
@@ -56,7 +52,7 @@
     ],
     "vid": [
         {
-            "value": 22
+            "value": 91
         }
     ],
     "langcode": [
@@ -72,7 +68,7 @@
     ],
     "revision_timestamp": [
         {
-            "value": "2019-10-08T14:43:02+00:00",
+            "value": "2019-12-31T08:59:57+00:00",
             "format": "Y-m-d\\TH:i:sP"
         }
     ],
@@ -89,7 +85,7 @@
                 },
                 "uuid": [
                     {
-                        "value": "fb94e047-66d0-45a3-bce6-5e939a925965"
+                        "value": "674a5a4f-b63e-4035-b0b3-2959ebf4041c"
                     }
                 ]
             }
@@ -106,10 +102,9 @@
                 },
                 "uuid": [
                     {
-                        "value": "fb94e047-66d0-45a3-bce6-5e939a925965"
+                        "value": "674a5a4f-b63e-4035-b0b3-2959ebf4041c"
                     }
-                ],
-                "lang": "en"
+                ]
             }
         ],
         "http:\/\/drupal.org\/rest\/relation\/node\/landing_page\/field_body": [
@@ -127,7 +122,7 @@
                         "value": "e9f821d9-ec89-4bee-9601-f69cb2321dcf"
                     }
                 ],
-                "target_revision_id": "47"
+                "target_revision_id": "326"
             },
             {
                 "_links": {
@@ -143,23 +138,7 @@
                         "value": "2d486ca5-709d-4774-a7c0-6b980c4c1da7"
                     }
                 ],
-                "target_revision_id": "48"
-            },
-            {
-                "_links": {
-                    "self": {
-                        "href": ""
-                    },
-                    "type": {
-                        "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/model_testimony"
-                    }
-                },
-                "uuid": [
-                    {
-                        "value": "90e59b0e-842d-4b58-a053-62425b756fe8"
-                    }
-                ],
-                "target_revision_id": "49"
+                "target_revision_id": "327"
             }
         ],
         "http:\/\/drupal.org\/rest\/relation\/node\/landing_page\/field_hero_paragraph": [
@@ -177,7 +156,7 @@
                         "value": "3abcdf4e-c59d-486e-aa74-b33952f4cc52"
                     }
                 ],
-                "target_revision_id": "50"
+                "target_revision_id": "328"
             }
         ],
         "http:\/\/drupal.org\/rest\/relation\/node\/landing_page\/field_pardot_form": [
@@ -195,7 +174,7 @@
                         "value": "64c709e6-ce22-4552-858e-7de5e787ba84"
                     }
                 ],
-                "target_revision_id": "51"
+                "target_revision_id": "329"
             }
         ],
         "http:\/\/drupal.org\/rest\/relation\/node\/landing_page\/field_premium_content_type": [
@@ -218,40 +197,34 @@
     },
     "status": [
         {
-            "value": true,
-            "lang": "en"
+            "value": true
         }
     ],
     "title": [
         {
-            "value": "Comment  garantir la continuit\u00e9 d\u2019alimentation des blocs op\u00e9ratoires",
-            "lang": "en"
+            "value": "Comment  garantir la continuit\u00e9 d\u2019alimentation des blocs op\u00e9ratoires"
         }
     ],
     "created": [
         {
             "value": "2019-09-27T10:03:42+00:00",
-            "lang": "en",
             "format": "Y-m-d\\TH:i:sP"
         }
     ],
     "changed": [
         {
-            "value": "2019-10-08T14:43:02+00:00",
-            "lang": "en",
+            "value": "2019-12-31T08:59:57+00:00",
             "format": "Y-m-d\\TH:i:sP"
         }
     ],
     "promote": [
         {
-            "value": false,
-            "lang": "en"
+            "value": false
         }
     ],
     "sticky": [
         {
-            "value": false,
-            "lang": "en"
+            "value": false
         }
     ],
     "default_langcode": [
@@ -260,25 +233,38 @@
             "lang": "en"
         }
     ],
-    "metatag": [
+    "revision_translation_affected": [
         {
-            "value": {
-                "title": "Comment  garantir la continuit\u00e9 d\u2019alimentation des blocs op\u00e9ratoires | Socomec",
-                "canonical_url": "http:\/\/default\/landing-page-premium\/whitepaper\/comment-garantir-la-continuite-dalimentation-des-blocs-operatoires"
-            }
+            "value": true,
+            "lang": "en"
         }
     ],
-    "path": [
+    "moderation_state": [
         {
-            "alias": "\/landing-page-premium\/whitepaper\/comment-garantir-la-continuite-dalimentation-des-blocs-operatoires",
-            "pid": 3,
-            "langcode": "en",
+            "value": "published",
+            "lang": "en"
+        }
+    ],
+    "content_translation_source": [
+        {
+            "value": "und",
+            "lang": "en"
+        }
+    ],
+    "content_translation_outdated": [
+        {
+            "value": false,
             "lang": "en"
         }
     ],
     "field_client_name": [
         {
             "value": "CLIENT : Hopitaux universitaires de Strasbourg"
+        }
+    ],
+    "field_footer_version": [
+        {
+            "value": "standard"
         }
     ]
 }

@@ -1,0 +1,29 @@
+uuid: 930781cf-7f2c-43d1-8ead-ff52048c9da7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_protection_level
+    - node.type.product
+    - taxonomy.vocabulary.protection_level
+id: node.product.field_protection_level
+field_name: field_protection_level
+entity_type: node
+bundle: product
+label: 'Protection level'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      protection_level: protection_level
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

@@ -1,0 +1,3 @@
+product-datatable:
+  js:
+    js/product-datatable.js: {}

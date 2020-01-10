@@ -1,0 +1,8 @@
+uuid: 1c549078-89c0-4461-b3e6-514e768f41d1
+langcode: en
+status: true
+dependencies: {  }
+id: home_product_assistance
+label: 'Home Product Assistance'
+revision: 1
+description: ''

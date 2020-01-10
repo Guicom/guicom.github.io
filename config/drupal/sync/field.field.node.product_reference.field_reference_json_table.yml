@@ -1,0 +1,19 @@
+uuid: 10026190-b4f0-4e62-9e97-1d7ac4e29438
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_reference_json_table
+    - node.type.product_reference
+id: node.product_reference.field_reference_json_table
+field_name: field_reference_json_table
+entity_type: node
+bundle: product_reference
+label: 'Json table'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long
