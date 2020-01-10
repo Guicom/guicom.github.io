@@ -64,18 +64,24 @@
 
     {% if cookie_categories %}
       <div id="eu-cookie-compliance-categories" class="eu-cookie-compliance-categories d-none">
+        <div class="eu-cookie-compliance-category-list">
         {% for key, category in cookie_categories %}
           <div class="eu-cookie-compliance-category">
-            <div>
+            <div class="eu-cookie-compliance-category-selector">
               <input type="checkbox" name="cookie-categories" id="cookie-category-{{ key }}"
                      value="{{ key }}" {% if fix_first_cookie_category and loop.first %} checked disabled{% endif %}>
-              <label for="cookie-category-{{ key }}">{{ category.label }}</label>
+              <label for="cookie-category-{{ key }}" class="d-flex">
+                <span class="category-label p-2">{{ category.label }}</span>
+                <span class="toggle-activated ml-auto p-2 d-none">{% include '/themes/custom/socomec/assets/images/picto/ui/Toggle-activated.svg' %}</span>
+                <span class="toggle-normal ml-auto p-2 d-none">{% include '/themes/custom/socomec/assets/images/picto/ui/Toggle-normal.svg' %}</span>
+              </label>
             </div>
             {% if category.description %}
               <div class="eu-cookie-compliance-category-description">{{ category.description }}</div>
             {% endif %}
           </div>
         {% endfor %}
+        </div>
         {% if save_preferences_button_label %}
           <div class="eu-cookie-compliance-categories-buttons">
             <button type="button"
