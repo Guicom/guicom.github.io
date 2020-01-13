@@ -3,7 +3,7 @@ services:
   # web with xdebug - actency images
   web:
     # @see https://github.com/Actency/docker-apache-php
-    image: actency/docker-apache-php:7.2-1.1
+    image: actency/docker-apache-php:7.2
     environment:
       - SERVERNAME=socomec.com.loc
       - SERVERALIAS=socomec.com.loc
