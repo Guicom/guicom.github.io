@@ -11,7 +11,7 @@ Feature: Premium Content
     Given I am not logged in
     When I visit "/landing-page-premium/whitepaper/comment-garantir-la-continuite-dalimentation-des-blocs-operatoires"
     And I wait 2 seconds
-    Then I click the "agree-button" element
+    Then I click the ".agree-button" element
     And I wait 2 seconds
     Then I click the ".ancher-button a" element
     Given I switch to the iframe "pardot-iframe"
