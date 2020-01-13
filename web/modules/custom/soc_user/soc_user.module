@@ -1,0 +1,32 @@
+<?php
+
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Render\Markup;
+use Drupal\user\Entity\User;
+
+/**
+ * Implements hook_form_FORM_ID_alter()
+ *
+ * @param $form
+ * @param \Drupal\Core\Form\FormStateInterface $formState
+ */
+function soc_user_form_user_login_form_alter(&$form, FormStateInterface $formState) {
+  if (\Drupal\soc_user\Helper\SocUserHelper::disableSuperAdminAccount()) {
+    $form['#validate'][] = 'disable_super_admin_authentificate_form_validate';
+  }
+}
+
+/**
+ * Disable authentification with super admin account ()
+ */
+function disable_super_admin_authentificate_form_validate($form, FormStateInterface $formState) {
+  if ($name = $formState->getValue('name')) {
+    $account = \Drupal::entityTypeManager()->getStorage('user')->loadByProperties(['name' => $name]);
+    if ($account) {
+      $account = reset($account);
+      if ($account->id() == 1 && $account->isActive()) {
+        $formState->setErrorByName('name', t('You are not allowed to log in with the super admin account'));
+      }
+    }
+  }
+}

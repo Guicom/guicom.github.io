@@ -1,0 +1,6 @@
+services:
+  soc_user.super_admin_access_page:
+    class: Drupal\soc_user\EventSubscriber\SuperAdminAccessPageEventSubscriber
+    arguments: ["@current_route_match"]
+    tags:
+      - { name: event_subscriber }
