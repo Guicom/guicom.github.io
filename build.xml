@@ -54,9 +54,9 @@
     <target
             name="install-local"
             description="Install the website and set up the local development environment."
-            depends="install"/>
+            depends="install, content-import-all"/>
     <target
             name="build-local"
             description="Rebuild the local environment."
-            depends="build"/>
+            depends="build, content-import-all"/>
 </project>
