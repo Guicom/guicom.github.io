@@ -168,6 +168,9 @@
             },
             "drupal/search_api": {
                 "Search_api plugin not exists after updating 8.1.13 to 8.1.14": "https://www.drupal.org/files/issues/2019-08-27/3071591-9.patch"
+            },
+            "drupal/google_analytics": {
+                "Google analytics eu_cookie_compliance support for 8.x-3.x": "web/modules/patches/google_analytics-eu_cookie_compliance_support-2917905-47.patch"
             }
         }
     }
