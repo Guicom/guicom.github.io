@@ -3,7 +3,13 @@ langcode: en
 status: true
 dependencies:
   config:
+    - node.type.article
     - node.type.landing_page
+    - node.type.news
+    - node.type.optional_related_content
+    - node.type.page
+    - node.type.product
+    - node.type.product_reference
     - node.type.thank_you_page
   module:
     - content_moderation
@@ -27,7 +33,7 @@ type_settings:
     pending_review:
       published: false
       default_revision: false
-      label: 'Pending review'
+      label: Ready
       weight: -1
     published:
       label: Published
@@ -38,11 +44,12 @@ type_settings:
     archive:
       label: Archive
       from:
+        - pending_review
         - published
       to: archived
       weight: 0
     archived_draft:
-      label: 'Restore to Draft'
+      label: 'Restore Draft'
       from:
         - archived
       to: draft
@@ -59,6 +66,8 @@ type_settings:
       weight: -3
       from:
         - draft
+        - pending_review
+        - published
     publish:
       label: Publish
       to: published
@@ -68,14 +77,20 @@ type_settings:
         - pending_review
         - published
     submit_for_review:
-      label: 'Submit for review'
+      label: 'Set to Ready'
       from:
-        - archived
         - draft
+        - published
       to: pending_review
       weight: -2
   entity_types:
     node:
+      - article
       - landing_page
+      - news
+      - optional_related_content
+      - page
+      - product
+      - product_reference
       - thank_you_page
   default_moderation_state: draft

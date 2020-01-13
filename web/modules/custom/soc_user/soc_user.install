@@ -43,3 +43,18 @@ function soc_user_install() {
     }
   }
 }
+
+/**
+ * Implements hook_update_N
+ * Disable super admin account
+ */
+function soc_user_update_8001() {
+  if(\Drupal\soc_user\Helper\SocUserHelper::disableSuperAdminAccount()){
+    if($account = \Drupal\user\Entity\User::load(1)){
+      if($account->isActive()){
+        $account->set('status', FALSE);
+        $account->save();
+      }
+    }
+  }
+}
