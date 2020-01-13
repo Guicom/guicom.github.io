@@ -4,6 +4,8 @@
 namespace Drupal\soc_user\Helper;
 
 
+use Drupal\Core\Site\Settings;
+
 class SocUserHelper {
 
   /**
@@ -12,6 +14,6 @@ class SocUserHelper {
    * @return bool
    */
   public static function disableSuperAdminAccount() {
-    return getenv('DISABLE_SUPER_ADMIN_ACCOUNT') == 1 ? TRUE : FALSE;
+    return Settings::get('DISABLE_SUPER_ADMIN_ACCOUNT') == 1 ? TRUE : FALSE;
   }
 }
