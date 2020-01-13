@@ -39,6 +39,7 @@
         "drupal/allow_iframed_site": "^2.0",
         "drupal/auto_entitylabel": "^3.0@beta",
         "drupal/better_normalizers": "^1.0@beta",
+        "drupal/block_content_permissions": "^1.8",
         "drupal/bootstrap_sass": "^1.9",
         "drupal/conditional_fields": "^1.0@alpha",
         "drupal/config_ignore": "^2.1",
