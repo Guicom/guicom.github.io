@@ -1,0 +1,20 @@
+uuid: de4445ba-991c-400a-b70d-8d6fedc34ac2
+langcode: en
+status: true
+dependencies:
+  module:
+    - we_megamenu
+  theme:
+    - socomec
+id: headermenu
+theme: socomec
+region: top_header
+weight: 0
+provider: null
+plugin: 'we_megamenu_block:header'
+settings:
+  id: 'we_megamenu_block:header'
+  label: 'Header - Menu'
+  provider: we_megamenu
+  label_display: '0'
+visibility: {  }

@@ -17,12 +17,6 @@
                 "href": "",
                 "lang": "en"
             }
-        ],
-        "http:\/\/drupal.org\/rest\/relation\/media\/icone\/field_media_image": [
-            {
-                "href": "",
-                "lang": "en"
-            }
         ]
     },
     "mid": [
@@ -53,7 +47,7 @@
     ],
     "revision_created": [
         {
-            "value": "2019-12-30T09:11:29+00:00",
+            "value": "2020-01-14T11:00:18+00:00",
             "format": "Y-m-d\\TH:i:sP"
         }
     ],
@@ -76,7 +70,7 @@
                 },
                 "uuid": [
                     {
-                        "value": "b1622487-76b3-4e8b-baad-13e0ffc0059e"
+                        "value": "a4b689d6-0c8d-47e2-8eca-27f5f7198ed9"
                     }
                 ],
                 "lang": "en"
@@ -94,36 +88,14 @@
                 },
                 "uuid": [
                     {
-                        "value": "20e1f8f0-9e39-4345-ab41-f88c01e3ba69"
+                        "value": "f7a1e40c-b520-42f4-973b-c358bc2238ef"
                     }
                 ],
                 "lang": "en",
-                "alt": "CCC Label",
+                "alt": null,
                 "title": null,
-                "width": null,
-                "height": null
-            }
-        ],
-        "http:\/\/drupal.org\/rest\/relation\/media\/icone\/field_media_image": [
-            {
-                "_links": {
-                    "self": {
-                        "href": ""
-                    },
-                    "type": {
-                        "href": "http:\/\/drupal.org\/rest\/type\/file\/file"
-                    }
-                },
-                "uuid": [
-                    {
-                        "value": "20e1f8f0-9e39-4345-ab41-f88c01e3ba69"
-                    }
-                ],
-                "lang": "en",
-                "alt": "CCC Label",
-                "title": "",
-                "width": "71",
-                "height": "70"
+                "width": "180",
+                "height": "180"
             }
         ]
     },
@@ -156,6 +128,18 @@
     "revision_translation_affected": [
         {
             "value": true,
+            "lang": "en"
+        }
+    ],
+    "content_translation_source": [
+        {
+            "value": "und",
+            "lang": "en"
+        }
+    ],
+    "content_translation_outdated": [
+        {
+            "value": false,
             "lang": "en"
         }
     ],

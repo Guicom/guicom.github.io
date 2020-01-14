@@ -8,6 +8,8 @@
   background-size: cover;
   height: auto;
   padding-bottom: 80px;
+  margin-top: -122px;
+  padding-top: 122px;
   @include media-breakpoint-down(sm) {
     padding-bottom: 40px;
   }

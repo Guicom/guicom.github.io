@@ -172,3 +172,8 @@ $settings['redis.connection']['host'] = 'redis';
  */
 $config['config_split.config_split.dev']['status'] = TRUE;
 $config['config_split.config_split.dev']['folder'] = "../config/drupal/dev";
+
+/**
+ * Drupal 8 MegaMenu Deploy
+ */
+$settings['we_megamenu_deploy_content'] = $app_ground . '/content/we_megamenu_content';
