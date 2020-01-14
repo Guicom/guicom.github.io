@@ -8,3 +8,4 @@ weight: 4
 is_admin: null
 permissions:
   - 'display eu cookie compliance popup'
+  - 'edit own landing_page content'
