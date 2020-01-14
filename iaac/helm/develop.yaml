@@ -1,0 +1,46 @@
+# Default values for drupal.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+namespace: develop
+
+replicaCount: 1
+
+
+
+registry:
+  name: kub_registry_name
+  location: url.to.the.registry.io
+  images:
+    drupal: image-drupal-name
+    varnish: image-varnish-name
+
+drupal:
+  environment: develop
+  version: 8
+  name: drupal-develop
+  nameOverride: ""
+  fullnameOverride: ""
+  username: admin
+  password: admin
+  ingress_hostname: url.de.lingress.soco.com
+  files_pv: drupal-develop-pv
+  service:
+    type: ClusterIP
+    port: 80
+
+mysql:
+  db: db_name
+  username: db_username
+  hostname: db_hostname
+  password: db_password
+
+redis:
+  master:
+    hostname: redis_hostname
+    port: 6379
+    password: 9SpGUsRAkd3JHKjrzG3oOtpc3pe56ahAABxta14PbMk=
+  slave:
+    hostname: redis_hostname
+    port: 6379
+    password: jVO8Wv7YYbPO386r56nBEleGUWwQe1dJRFXCaqiEhp4=

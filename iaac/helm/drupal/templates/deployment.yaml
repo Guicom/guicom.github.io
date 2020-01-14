@@ -1,0 +1,91 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Values.drupal.name }}
+  namespace: {{ .Values.namespace }}
+  labels:
+    app: {{ .Values.drupal.name }}
+    chart: {{ .Chart.Name }}-{{ .Chart.Version | replace "+" "_" }}
+    release: {{ .Release.Name }}
+    heritage: {{ .Release.Service }}
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      app: {{ .Values.drupal.name }}
+  template:
+    metadata:
+      labels:
+        app: {{ .Values.drupal.name }}
+        release: {{ .Release.Name }}
+    spec:
+      hostname: drupal
+      imagePullSecrets:
+        - name: {{ .Values.registry.name }}
+      containers:
+        - name: drupal-{{ .Chart.Name }}
+          image: {{ template "drupal.image" . }}
+          imagePullPolicy: Always
+          volumeMounts:
+            - mountPath: /var/www/html/web/sites/default/files
+              name: drupal_files_volume
+          ports:
+            - containerPort: {{ .Values.drupal.service.port }}
+          env:
+            - name: DRUPAL_TRUSTED_HOSTS
+              value: "^.+$"
+            - name: MYSQL_DATABASE
+              value: {{ .Values.mysql.db }}
+            - name: DRUPAL_USERNAME
+              value: {{ .Values.drupal.username }}
+            - name: DRUPAL_PASSWORD
+              value: {{ .Values.drupal.password }}
+            - name: MYSQL_HOSTNAME
+              value: {{ .Values.mysql.hostname }}
+            - name: MYSQL_USER
+              valueFrom:
+                secretKeyRef:
+                  name: {{ .Values.drupal.name }}-secret
+                  key: mysql-username
+            - name: MYSQL_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: {{ .Values.drupal.name }}-secret
+                  key: mysql-password
+            - name: REDIS_MASTER_HOSTNAME
+              value: {{ .Values.redis.master.hostname }}
+            - name: REDIS_MASTER_PORT
+              value: {{ .Values.redis.master.port }}
+            - name: REDIS_MASTER_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: {{ .Values.drupal.name }}-secret
+                  key: redis-master-password
+            - name: REDIS_SLAVE_HOSTNAME
+              value: {{ .Values.redis.slave.hostname }}
+            - name: REDIS_SLAVE_PORT
+              value: {{ .Values.redis.master.port }}
+            - name: REDIS_SLAVE_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: {{ .Values.drupal.name }}-secret
+                  key: redis-slave-password
+          livenessProbe:
+            tcpSocket:
+              port: {{ .Values.drupal.service.port }}
+            initialDelaySeconds: 30
+          readinessProbe:
+            tcpSocket:
+              port: {{ .Values.drupal.service.port }}
+            initialDelaySeconds: 30
+          resources:
+            # limits:
+            #   cpu: 500m
+            #   memory: "1Gi"
+            requests:
+              cpu: 10m
+              memory: "128Mi"
+      volumes:
+        - name: drupal_files_volume
+          persistentVolumeClaim:
+            claimName: {{ .Values.drupal.name }}-pvc
