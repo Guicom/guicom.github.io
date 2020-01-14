@@ -59,9 +59,9 @@ spec:
                   key: password
                   name: webfactory-mysql
             - name: REDIS_MASTER_HOSTNAME
-              value: {{ .Values.redis.master.hostname }}
+              value: {{ .Values.redis.cache.hostname }}
             - name: REDIS_MASTER_PORT
-              value: {{ .Values.redis.master.port }}
+              value: {{ .Values.redis.cache.port }}
             - name: REDIS_MASTER_PASSWORD
               valueFrom:
                 secretKeyRef:

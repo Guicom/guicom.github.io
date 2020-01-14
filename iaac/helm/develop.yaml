@@ -29,12 +29,12 @@ drupal:
     port: 80
 
 mysql:
-  hostname: db_hostname
+  hostname: mysql-master
 
 redis:
-  master:
-    hostname: redis_hostname
+  cache:
+    hostname: redis-cache
     port: 6379
-  slave:
-    hostname: redis_hostname
+  session:
+    hostname: redis-session
     port: 6379
