@@ -42,6 +42,24 @@
    * Datatables Settings
    * @see: https://www.datatables.net
    */
+  Drupal.behaviors.socomec_navigation = {
+    attach: function(context, settings) {
+      $(document).scroll(function () {
+          var position = $(document).scrollTop();
+          if (position > 1) {
+            $('.nav-wrapper').addClass('scrolled');
+          }
+          else {
+            $('.nav-wrapper').removeClass('scrolled');
+          }
+      });
+    }
+  };
+
+  /**
+   * Datatables Settings
+   * @see: https://www.datatables.net
+   */
   Drupal.behaviors.socomec_datatables = {
     attach: function(context, settings) {
       $( ".field table" ).each(function() {
