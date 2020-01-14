@@ -12,6 +12,7 @@ module:
   big_pipe: 0
   block: 0
   block_content: 0
+  block_content_permissions: 0
   breakpoint: 0
   captcha: 0
   checklistapi: 0
@@ -100,6 +101,7 @@ module:
   soc_nextpage: 0
   soc_pardot: 0
   soc_premium_content: 0
+  soc_user: 0
   soc_views_news: 0
   soc_wishlist: 0
   svg_image: 0

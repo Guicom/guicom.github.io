@@ -20,6 +20,7 @@ dependencies:
     - metatag
     - paragraphs
     - path
+    - scheduler
     - text
 id: node.news.default
 targetEntityType: node
@@ -85,19 +86,22 @@ content:
     weight: 4
     settings: {  }
     third_party_settings: {  }
-    type: options_select
+    type: options_buttons
     region: content
   field_news_mommentum:
     weight: 5
     settings: {  }
     third_party_settings: {  }
-    type: options_select
+    type: options_buttons
     region: content
   field_news_theme:
     weight: 3
-    settings: {  }
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: 'Enter the themes separated by commas.'
     third_party_settings: {  }
-    type: options_select
+    type: entity_reference_autocomplete_tags
     region: content
   field_news_type:
     weight: 2
@@ -157,9 +161,9 @@ content:
     third_party_settings: {  }
   scheduler_settings:
     weight: 20
+    region: content
     settings: {  }
     third_party_settings: {  }
-    region: content
   status:
     type: boolean_checkbox
     settings:
