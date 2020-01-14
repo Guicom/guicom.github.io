@@ -6,8 +6,9 @@ namespace: webfactory-prod
 
 registry:
   name: agc-regis-credential
+  location: socomec-web
   images:
-    drupal: socomec-web/drupal
+    drupal: drupal
     varnish: image-varnish-name
 
 drupal:
