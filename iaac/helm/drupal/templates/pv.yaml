@@ -14,5 +14,5 @@ spec:
   persistentVolumeReclaimPolicy: Retain
   storageClassName: {{ .Values.drupal.files_storage_class }}
   nfs:
-    path: /SSD_SOCOMEC_WEBFACTORY_NFS_01/SSD_SOCOMEC_WEBFACTORY_NFS_01_QTREE_01/{{ .Values.drupal.environment }}/files
+    path: /SSD_SOCOMEC_WEBFACTORY_NFS_01/SSD_SOCOMEC_WEBFACTORY_NFS_01_QTREE_01/drupal/{{ .Values.drupal.environment }}/files
     server: 10.67.68.20
