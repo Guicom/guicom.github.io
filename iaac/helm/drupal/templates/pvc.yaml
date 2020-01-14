@@ -2,11 +2,14 @@ apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
   name: {{ .Values.drupal.name }}-pvc
+  labels:
+    app: {{ .Values.drupal.name }}
+    namespace: {{ .Values.namespace }}
 spec:
   resources:
     requests:
-      storage: 5Gi
-  storageClassName: ""
+      storage: {{ .Values.drupal.files_size }}
+  storageClassName: {{ .Values.drupal.files_storage_class }}
   volumeMode: Filesystem
   volumeName: {{ .Values.drupal.files_pv }}
   accessModes:

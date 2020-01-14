@@ -2,45 +2,38 @@
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 
-namespace: develop
-
-replicaCount: 1
-
-
+namespace: webfactory-prod
 
 registry:
-  name: kub_registry_name
-  location: url.to.the.registry.io
+  name: agc-regis-credential
   images:
-    drupal: image-drupal-name
+    drupal: socomec-web/drupal
     varnish: image-varnish-name
 
 drupal:
   environment: develop
   version: 8
-  name: drupal-develop
+  name: webfactory-drupal
   nameOverride: ""
   fullnameOverride: ""
   username: admin
   password: admin
-  ingress_hostname: url.de.lingress.soco.com
+  ingress_hostname: webfactory-drupal-dev.dpk-soc-web-cl01.agoracalyce.net
   files_pv: drupal-develop-pv
+  files_storage_class: webfactory-prod-fast01
+  files_size: 5Gi
+  disk_size: 10Gi
+  replicaCount: 1
   service:
-    type: ClusterIP
     port: 80
 
 mysql:
-  db: db_name
-  username: db_username
   hostname: db_hostname
-  password: db_password
 
 redis:
   master:
     hostname: redis_hostname
     port: 6379
-    password: 9SpGUsRAkd3JHKjrzG3oOtpc3pe56ahAABxta14PbMk=
   slave:
     hostname: redis_hostname
     port: 6379
-    password: jVO8Wv7YYbPO386r56nBEleGUWwQe1dJRFXCaqiEhp4=
