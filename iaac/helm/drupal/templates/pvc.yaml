@@ -4,7 +4,7 @@ metadata:
   name: {{ .Values.drupal.name }}-pvc
   labels:
     app: {{ .Values.drupal.name }}
-    namespace: {{ .Values.namespace }}
+  namespace: {{ .Values.namespace }}
 spec:
   resources:
     requests:
