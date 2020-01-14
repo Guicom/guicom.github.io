@@ -9,7 +9,10 @@ metadata:
     release: {{ .Release.Name }}
     heritage: {{ .Release.Service }}
 spec:
-  service: {{ .Values.drupal.name }}-service
+  selector:
+    matchLabels:
+      app: {{ .Values.drupal.name }}
+  serviceName: {{ .Values.drupal.name }}-service
   replicas: {{ .Values.drupal.replicaCount }}
   updateStrategy:
     type: RollingUpdate
