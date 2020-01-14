@@ -61,7 +61,7 @@ spec:
             - name: REDIS_MASTER_HOSTNAME
               value: {{ .Values.redis.cache.hostname }}
             - name: REDIS_MASTER_PORT
-              value: {{ .Values.redis.cache.port }}
+              value: {{ .Values.redis.cache.port | quote }}
             - name: REDIS_MASTER_PASSWORD
               valueFrom:
                 secretKeyRef:
