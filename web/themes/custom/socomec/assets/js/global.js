@@ -42,6 +42,24 @@
    * Datatables Settings
    * @see: https://www.datatables.net
    */
+  Drupal.behaviors.socomec_navigation = {
+    attach: function(context, settings) {
+      $(document).scroll(function () {
+          var position = $(document).scrollTop();
+          if (position > 1) {
+            $('.nav-wrapper').addClass('scrolled');
+          }
+          else {
+            $('.nav-wrapper').removeClass('scrolled');
+          }
+      });
+    }
+  };
+
+  /**
+   * Datatables Settings
+   * @see: https://www.datatables.net
+   */
   Drupal.behaviors.socomec_datatables = {
     attach: function(context, settings) {
       $( ".field table" ).each(function() {
@@ -61,4 +79,23 @@
     }
   };
 
+  /**
+   * Eu_cookie_compliance Settings
+   */
+  Drupal.behaviors.socomec_eu_cookie_compliance = {
+    attach: function(context, settings) {
+      $(document).on('eu_cookie_compliance_popup_open', '#sliding-popup', function() {
+        $(".customize-button", context).click(function() {
+          if ($("#eu-cookie-compliance-categories").hasClass("d-none")) {
+            $("#custum-popup-header").addClass("d-none");
+            $(".customize-button").addClass("d-none");
+            $("#eu-cookie-compliance-categories").removeClass("d-none").addClass("d-bloc");
+          }
+          else{
+            $("#eu-cookie-compliance-categories").removeClass("d-bloc").addClass("d-none");
+          }
+        });
+      });
+    }
+  };
 })(jQuery, Drupal);

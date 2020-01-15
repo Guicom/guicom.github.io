@@ -1,0 +1,65 @@
+/* ------------------ Header ------------------ */
+// Position header with hero region.
+.nav-wrapper {
+  background: rgba(0, 79, 159, 0.1);
+  width: 100%;
+  position: fixed;
+  z-index: 1022;
+  height: 60px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  @include transition-socomec;
+  &.scrolled {
+    background: rgba(0, 79, 159, 1);
+    @include transition-socomec;
+  }
+  .container-nav {
+    @include right-overflow();
+    height: 60px;
+  }
+  .block-we-megamenu-blockheader {
+    .navbar {
+      padding: 0;
+      margin: 0;
+    }
+  }
+  ul {
+    &.we-mega-menu-ul {
+      border: none;
+      height: 60px;
+      li {
+        background: none;
+        border: none;
+        a,
+        span {
+          background: none;
+          color: $white;
+          font-family: $font-poppins;
+          font-size: 12px;
+          font-weight: 600;
+          letter-spacing: 1px;
+          line-height: 20px;
+          text-align: center;
+          padding: 0.5rem 1rem;
+          &:before,
+          &:after {
+            display: none;
+          }
+
+          &:hover,
+          &:focus {
+            cursor: pointer;
+            background: none;
+            color: $white;
+            font-family: $font-poppins;
+          }
+        }
+        &.dropdown-menu {
+          min-width: auto;
+        }
+      }
+    }
+  }
+
+
+
+}
