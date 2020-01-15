@@ -6,7 +6,7 @@ Feature: Premium Content
     When I am on "/comment-garantir-la-continuite-dalimentation-des-blocs-operatoires/thank-you"
     Then the response status code should be 403
 
-  @api @cit @javascript
+  @api @cit @javascript @pardot_form
   Scenario: Pardot form
     Given I am not logged in
     When I visit "/landing-page-premium/whitepaper/comment-garantir-la-continuite-dalimentation-des-blocs-operatoires"
