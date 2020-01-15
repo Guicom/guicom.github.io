@@ -1,6 +1,7 @@
 <?php
 
 use Drupal\Core\Entity\ContentEntityInterface;
+use Drupal\node\Entity\Node;
 use Drupal\views\ViewExecutable;
 use Drupal\views\Plugin\views\query\QueryPluginBase;
 use Drupal\views\Views;
@@ -35,7 +36,27 @@ function soc_views_news_views_query_alter(ViewExecutable $view, QueryPluginBase 
 function soc_views_news_entity_delete(Drupal\Core\Entity\EntityInterface $entity) {
   if ($entity instanceof ContentEntityInterface) {
     if (($entity->getEntityTypeId() === 'taxonomy_term') && ($entity->bundle() === 'news_type')) {
-      Drupal::messenger()->addMessage('custom message');
+      $ids = \Drupal::entityQuery('node')
+        ->condition('type', 'news')
+        ->condition('field_news_type', $entity->id())
+        ->execute();
+      $nodes = Node::loadMultiple($ids);
+      if (count($nodes) === 0) {
+        return;
+      }
+      $items = [];
+      /** @var \Drupal\node\Entity\Node $node */
+      foreach ($nodes as $node){
+        $items[] = $node->getTitle();
+      }
+      $renderer = \Drupal::service('renderer');
+      $content['title'] = [
+        '#type' => 'html_tag',
+        '#value' => t('News pages to be modified after deletion of this category:'),
+        '#tag' => 'h4',
+      ];
+      $content['list'] = ['#theme' => 'item_list', '#items' => $items];
+      Drupal::messenger()->addMessage($renderer->render($content));
     }
   }
 }
