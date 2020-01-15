@@ -1,0 +1,19 @@
+uuid: e14271a4-f484-4477-8cb1-cf7b5d7efd8c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_res_link_url
+    - node.type.resource
+id: node.resource.field_res_link_url
+field_name: field_res_link_url
+entity_type: node
+bundle: resource
+label: URL
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

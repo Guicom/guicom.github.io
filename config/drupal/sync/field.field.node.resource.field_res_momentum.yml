@@ -1,0 +1,29 @@
+uuid: b3177d79-2988-4385-8cc7-d8e68e2cc7ec
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_res_momentum
+    - node.type.resource
+    - taxonomy.vocabulary.news_mommentum
+id: node.resource.field_res_momentum
+field_name: field_res_momentum
+entity_type: node
+bundle: resource
+label: Momentum
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      news_mommentum: news_mommentum
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

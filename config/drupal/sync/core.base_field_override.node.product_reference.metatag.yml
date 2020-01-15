@@ -1,0 +1,18 @@
+uuid: 8a91072a-c8a7-4e0d-b19c-a38f3ae39b0c
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.product_reference
+id: node.product_reference.metatag
+field_name: metatag
+entity_type: node
+bundle: product_reference
+label: Metatags
+description: 'The meta tags for the entity.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: map

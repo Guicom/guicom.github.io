@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ffb9759fa88bb8729aa9515033231f4b",
+    "content-hash": "7ba9a4943dbd31cb461e0ee3afd7e6e8",
     "packages": [
         {
             "name": "actency/foundation",
@@ -5065,17 +5065,17 @@
         },
         {
             "name": "drupal/fontawesome",
-            "version": "2.14.0",
+            "version": "2.15.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/fontawesome.git",
-                "reference": "8.x-2.14"
+                "reference": "8.x-2.15"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/fontawesome-8.x-2.14.zip",
-                "reference": "8.x-2.14",
-                "shasum": "5bba6b1cba7450256defc36a0cbfdd70744bde1d"
+                "url": "https://ftp.drupal.org/files/projects/fontawesome-8.x-2.15.zip",
+                "reference": "8.x-2.15",
+                "shasum": "d3ee7a02ddd01c14cab44afcd6f3e55cfa3d0491"
             },
             "require": {
                 "drupal/core": "~8.0"
@@ -5086,8 +5086,8 @@
                     "dev-2.x": "2.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-2.14",
-                    "datestamp": "1564762385",
+                    "version": "8.x-2.15",
+                    "datestamp": "1578431890",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -6214,6 +6214,109 @@
             "homepage": "https://www.drupal.org/project/redirect",
             "support": {
                 "source": "https://git.drupalcode.org/project/redirect"
+            }
+        },
+        {
+            "name": "drupal/remote_stream_wrapper",
+            "version": "1.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/remote_stream_wrapper.git",
+                "reference": "8.x-1.3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/remote_stream_wrapper-8.x-1.3.zip",
+                "reference": "8.x-1.3",
+                "shasum": "4e74355901b2d28d02d61f70719d157ce565b768"
+            },
+            "require": {
+                "drupal/core": "~8.0"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-1.x": "1.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-1.3",
+                    "datestamp": "1562684596",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Dave Reid",
+                    "homepage": "https://www.drupal.org/user/53892"
+                },
+                {
+                    "name": "arthurf",
+                    "homepage": "https://www.drupal.org/user/27259"
+                },
+                {
+                    "name": "becw",
+                    "homepage": "https://www.drupal.org/user/81067"
+                }
+            ],
+            "description": "Provides the ability to use external files over HTTP",
+            "homepage": "https://www.drupal.org/project/remote_stream_wrapper",
+            "support": {
+                "source": "https://git.drupalcode.org/project/remote_stream_wrapper"
+            }
+        },
+        {
+            "name": "drupal/remote_stream_wrapper_widget",
+            "version": "1.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/remote_stream_wrapper_widget.git",
+                "reference": "8.x-1.2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/remote_stream_wrapper_widget-8.x-1.2.zip",
+                "reference": "8.x-1.2",
+                "shasum": "539803c7b5696675830928fce56cdf498471ec68"
+            },
+            "require": {
+                "drupal/core": "~8.0",
+                "drupal/remote_stream_wrapper": "*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-1.x": "1.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-1.2",
+                    "datestamp": "1559752088",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "legolasbo",
+                    "homepage": "https://www.drupal.org/user/2480548"
+                }
+            ],
+            "description": "Implements the remote stream wrapper api as a field widget.",
+            "homepage": "https://www.drupal.org/project/remote_stream_wrapper_widget",
+            "support": {
+                "source": "https://git.drupalcode.org/project/remote_stream_wrapper_widget"
             }
         },
         {
