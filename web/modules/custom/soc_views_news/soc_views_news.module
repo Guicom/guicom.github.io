@@ -1,5 +1,6 @@
 <?php
 
+use Drupal\Core\Entity\ContentEntityInterface;
 use Drupal\views\ViewExecutable;
 use Drupal\views\Plugin\views\query\QueryPluginBase;
 use Drupal\views\Views;
@@ -24,6 +25,17 @@ function soc_views_news_views_query_alter(ViewExecutable $view, QueryPluginBase 
       if (!empty($nid)) {
         $query->addCondition('nid', $nid, '<>');
       }
+    }
+  }
+}
+
+/**
+ * @param \Drupal\Core\Entity\EntityInterface $entity
+ */
+function soc_views_news_entity_delete(Drupal\Core\Entity\EntityInterface $entity) {
+  if ($entity instanceof ContentEntityInterface) {
+    if (($entity->getEntityTypeId() === 'taxonomy_term') && ($entity->bundle() === 'news_type')) {
+      Drupal::messenger()->addMessage('custom message');
     }
   }
 }
