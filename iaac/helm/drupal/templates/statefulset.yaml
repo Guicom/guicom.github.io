@@ -31,7 +31,7 @@ spec:
           imagePullPolicy: Always
           volumeMounts:
             - mountPath: /var/www/html/web/sites/default/files
-              name: drupal_files_volume
+              name: drupal-files-volume
           ports:
             - containerPort: {{ .Values.drupal.service.port }}
           env:
@@ -83,6 +83,6 @@ spec:
               cpu: "2"
               memory: 2Gi
       volumes:
-        - name: drupal_files_volume
+        - name: drupal-files-volume
           persistentVolumeClaim:
             claimName: {{ .Values.drupal.name }}-pvc
