@@ -5,12 +5,11 @@ metadata:
   labels:
     app: {{ .Values.drupal.name }}
   namespace: {{ .Values.namespace }}
+  annotations:
+    volume.beta.kubernetes.io/storage-class: {{ .Values.drupal.files_storage_class }}
 spec:
   resources:
     requests:
       storage: {{ .Values.drupal.files_size }}
-  storageClassName: {{ .Values.drupal.files_storage_class }}
-  volumeMode: Filesystem
-  volumeName: {{ .Values.drupal.files_pv }}
   accessModes:
     - ReadWriteMany
