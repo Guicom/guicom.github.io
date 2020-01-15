@@ -17,7 +17,7 @@ provider: null
 plugin: 'facet_block:news_type_taxonomy_term_name'
 settings:
   id: 'facet_block:news_type_taxonomy_term_name'
-  label: TYPES
+  label: 'News Type'
   provider: facets
   label_display: visible
   block_id: newstypetaxonomytermname
