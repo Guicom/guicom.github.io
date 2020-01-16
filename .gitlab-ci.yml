@@ -47,7 +47,7 @@ cache: &global_cache
     - cp ${CI_PROJECT_DIR}/tests/behat/behat.example.yml ${CI_PROJECT_DIR}/tests/behat/behat.local.yml
     - docker-compose up -d
     - docker-compose exec -u web -T web bash -c "cd /var/www/html/ && composer install"
-    - docker-compose exec -u web -T web bash -c "cd /var/www/html/tests/behat && composer install"
+#    - docker-compose exec -u web -T web bash -c "cd /var/www/html/tests/behat && composer install"
     - docker-compose exec -u web -T web bash -c "cd /var/www/html/ && ./vendor/bin/phing install-local"
 
 # SonarQube Runner
@@ -73,4 +73,4 @@ behat:
   extends:
     - .build_project
   script:
-    - docker-compose exec -u web -T web bash -c "cd /var/www/html && ./vendor/bin/phing behat:run -Dbehat.bin=tests/behat/bin/behat"
+    - docker-compose exec -u web -T web bash -c "cd /var/www/html && ./vendor/bin/phing behat:run"

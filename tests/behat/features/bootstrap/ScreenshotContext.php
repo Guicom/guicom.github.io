@@ -15,6 +15,7 @@ class ScreenshotContext extends RawDrupalContext {
    */
   public function resizeWindow() {
     if ($this->isJavascript()) {
+      $this->getSession()->start();
       $this->getSession()->resizeWindow(1920, 1080, 'current');
     }
   }
