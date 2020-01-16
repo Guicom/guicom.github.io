@@ -8,20 +8,17 @@
         },
         "http:\/\/drupal.org\/rest\/relation\/media\/icone\/uid": [
             {
-                "href": "http:\/\/default\/user\/1?_format=hal_json",
-                "lang": "en"
+                "href": "http:\/\/default\/user\/1?_format=hal_json"
             }
         ],
         "http:\/\/drupal.org\/rest\/relation\/media\/icone\/thumbnail": [
             {
-                "href": "",
-                "lang": "en"
+                "href": ""
             }
         ],
         "http:\/\/drupal.org\/rest\/relation\/media\/icone\/field_media_image": [
             {
-                "href": "",
-                "lang": "en"
+                "href": ""
             }
         ]
     },
@@ -53,14 +50,13 @@
     ],
     "revision_created": [
         {
-            "value": "2019-12-31T08:45:22+00:00",
+            "value": "2020-01-15T13:50:13+00:00",
             "format": "Y-m-d\\TH:i:sP"
         }
     ],
     "status": [
         {
-            "value": true,
-            "lang": "en"
+            "value": true
         }
     ],
     "_embedded": {
@@ -76,10 +72,9 @@
                 },
                 "uuid": [
                     {
-                        "value": "674a5a4f-b63e-4035-b0b3-2959ebf4041c"
+                        "value": "4046d41b-2959-4e9b-9291-076427ad1452"
                     }
-                ],
-                "lang": "en"
+                ]
             }
         ],
         "http:\/\/drupal.org\/rest\/relation\/media\/icone\/thumbnail": [
@@ -97,7 +92,6 @@
                         "value": "32dac247-e1ba-4a53-b9c7-2c2725a17221"
                     }
                 ],
-                "lang": "en",
                 "alt": "ready-to-buy",
                 "title": null,
                 "width": null,
@@ -119,7 +113,6 @@
                         "value": "32dac247-e1ba-4a53-b9c7-2c2725a17221"
                     }
                 ],
-                "lang": "en",
                 "alt": "ready-to-buy",
                 "title": "",
                 "width": "21",
@@ -129,21 +122,18 @@
     },
     "name": [
         {
-            "value": "bag-purchase.svg",
-            "lang": "en"
+            "value": "bag-purchase.svg"
         }
     ],
     "created": [
         {
             "value": "2019-12-06T09:36:50+00:00",
-            "lang": "en",
             "format": "Y-m-d\\TH:i:sP"
         }
     ],
     "changed": [
         {
             "value": "2019-12-06T09:36:50+00:00",
-            "lang": "en",
             "format": "Y-m-d\\TH:i:sP"
         }
     ],
@@ -169,14 +159,6 @@
         {
             "value": false,
             "lang": "en"
-        }
-    ],
-    "metatag": [
-        {
-            "value": {
-                "title": "| Socomec",
-                "canonical_url": "http:\/\/default\/node"
-            }
         }
     ]
 }

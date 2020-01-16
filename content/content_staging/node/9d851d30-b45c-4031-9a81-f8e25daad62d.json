@@ -1,0 +1,347 @@
+{
+    "_links": {
+        "self": {
+            "href": "http:\/\/default\/node\/23?_format=hal_json"
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/node\/resource"
+        },
+        "http:\/\/drupal.org\/rest\/relation\/node\/resource\/revision_uid": [
+            {
+                "href": "http:\/\/default\/user\/1?_format=hal_json"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/resource\/uid": [
+            {
+                "href": "http:\/\/default\/user\/1?_format=hal_json",
+                "lang": "en"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/resource\/field_res_momentum": [
+            {
+                "href": "http:\/\/default\/taxonomy\/term\/27?_format=hal_json"
+            },
+            {
+                "href": "http:\/\/default\/taxonomy\/term\/28?_format=hal_json"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/resource\/field_res_remote_file_url": [
+            {
+                "href": ""
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/resource\/field_res_resource_type": [
+            {
+                "href": "http:\/\/default\/taxonomy\/term\/55?_format=hal_json"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/resource\/field_res_segment": [
+            {
+                "href": "http:\/\/default\/taxonomy\/term\/33?_format=hal_json"
+            },
+            {
+                "href": "http:\/\/default\/taxonomy\/term\/38?_format=hal_json"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/resource\/field_res_target": [
+            {
+                "href": "http:\/\/default\/taxonomy\/term\/25?_format=hal_json"
+            },
+            {
+                "href": "http:\/\/default\/taxonomy\/term\/23?_format=hal_json"
+            }
+        ]
+    },
+    "nid": [
+        {
+            "value": 23
+        }
+    ],
+    "uuid": [
+        {
+            "value": "9d851d30-b45c-4031-9a81-f8e25daad62d"
+        }
+    ],
+    "vid": [
+        {
+            "value": 100
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "type": [
+        {
+            "target_id": "resource"
+        }
+    ],
+    "revision_timestamp": [
+        {
+            "value": "2020-01-15T16:24:15+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/node\/resource\/revision_uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/user\/1?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "4046d41b-2959-4e9b-9291-076427ad1452"
+                    }
+                ]
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/resource\/uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/user\/1?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "4046d41b-2959-4e9b-9291-076427ad1452"
+                    }
+                ],
+                "lang": "en"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/resource\/field_res_momentum": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/taxonomy\/term\/27?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/news_mommentum"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "c019521c-19b8-4b0f-845d-1f5c391a9169"
+                    }
+                ]
+            },
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/taxonomy\/term\/28?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/news_mommentum"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "895834b8-85ee-40aa-8dbb-167421940c77"
+                    }
+                ]
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/resource\/field_res_remote_file_url": [
+            {
+                "_links": {
+                    "self": {
+                        "href": ""
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/file\/file"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "9a5b84d8-edc3-4209-a043-7095e361f39e"
+                    }
+                ],
+                "display": null,
+                "description": null
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/resource\/field_res_resource_type": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/taxonomy\/term\/55?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/resource_type"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "59f4115d-372d-43ad-8b5e-e78a5d5ce0bc"
+                    }
+                ]
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/resource\/field_res_segment": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/taxonomy\/term\/33?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/news_theme"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "f54bffaf-7277-4f20-92ab-9295a06b07ed"
+                    }
+                ]
+            },
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/taxonomy\/term\/38?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/news_theme"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "dfb4a833-86be-4abd-a8c5-bac66eda3d17"
+                    }
+                ]
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/resource\/field_res_target": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/taxonomy\/term\/25?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/news_audience"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "9c186499-8a3d-4742-8c84-5048d3a85161"
+                    }
+                ]
+            },
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/taxonomy\/term\/23?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/news_audience"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "1f6b24d4-72eb-484a-b7a3-605916d385ca"
+                    }
+                ]
+            }
+        ]
+    },
+    "status": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "title": [
+        {
+            "value": "USV und L\u00f6sungen zur Versorgung kritischer Anlagen - EMEA area\u2026",
+            "lang": "en"
+        }
+    ],
+    "created": [
+        {
+            "value": "2020-01-15T14:00:10+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "changed": [
+        {
+            "value": "2020-01-15T16:24:15+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "promote": [
+        {
+            "value": false,
+            "lang": "en"
+        }
+    ],
+    "sticky": [
+        {
+            "value": false,
+            "lang": "en"
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "revision_translation_affected": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "content_translation_source": [
+        {
+            "value": "und",
+            "lang": "en"
+        }
+    ],
+    "content_translation_outdated": [
+        {
+            "value": false,
+            "lang": "en"
+        }
+    ],
+    "metatag": [
+        {
+            "value": {
+                "title": "USV und L\u00f6sungen zur Versorgung kritischer Anlagen - EMEA area\u2026 | Socomec",
+                "canonical_url": "http:\/\/default\/node\/23"
+            }
+        }
+    ],
+    "field_open_link_in_new_window": [
+        {
+            "value": false
+        }
+    ],
+    "field_res_downloadable": [
+        {
+            "value": true
+        }
+    ],
+    "field_res_original_title": [
+        {
+            "value": "USV und L\u00f6sungen zur Versorgung kritischer Anlagen - EMEA area\u2026",
+            "lang": "en"
+        }
+    ],
+    "field_res_reference": [
+        {
+            "value": "XYZ123456"
+        }
+    ]
+}
