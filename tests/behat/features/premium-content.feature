@@ -23,6 +23,6 @@ Feature: Premium Content
     And I fill in "86922_82650pi_86922_82650" with "Actency"
     And I select "France" from "86922_82652pi_86922_82652"
     And I fill in "86922_82656pi_86922_82656" with "guillaume.essoltani@actency.fr"
-    And I wait 5 seconds
-    And I click the ".submit input" element
-    And I wait 5 seconds
+#    And I click the ".submit input" element
+    And I switch to the main windows
+

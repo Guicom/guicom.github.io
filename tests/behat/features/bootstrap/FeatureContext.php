@@ -15,7 +15,14 @@ class FeatureContext extends RawDrupalContext {
    */
   protected $output;
 
-
+  /**
+   * Switches to the main window
+   *
+   * @Given /^I switch to the main windows$/
+   */
+  public function switchToWindow(){
+    $this->getSession()->switchToWindow();
+  }
   /**
    * Switches focus to an iframe.
    *

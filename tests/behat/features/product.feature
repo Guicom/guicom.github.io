@@ -3,7 +3,8 @@ Feature: Products
   In order to test out the products
 
   Scenario: Detail product
-    When I visit "energy-storage-solution/sirco-vm"
+    When I visit "/energy-storage-solution/sirco-vm"
+    Then I click the "#popup-buttons .agree-button" element
     Then I should see an "body.node--type-product" element
     Then I should see an "#product-info-section" element
     Then I should see an "#product-reference-section" element
