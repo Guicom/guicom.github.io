@@ -8,18 +8,48 @@ namespace Drupal\soc_eu_cookie_compliance\Service;
 class SocomecECC {
 
   private $config;
-  private $cookie_name;
+  private $cookieName;
+  private $cookieValue;
+  private $cookieNameCategorie;
+  private $cookieCategorieValue;
   private $categorie;
 
   public function __construct() {
     if (\Drupal::moduleHandler()->moduleExists('eu_cookie_compliance')) {
       $this->config = \Drupal::config('eu_cookie_compliance.settings');
-      $this->cookie_name = (!empty($this->config->get('cookie_name'))) ? $this->config->get('cookie_name') : 'cookie-agreed';
+      $this->cookieName = 'cookie-agreed';
+      if (!empty($this->config->get('cookie_name'))) {
+        $this->cookieName = $this->config->get('cookie_name');
+      }
+      $this->cookieNameCategorie = $this->cookieName . '-categories';
+      if (!empty($_COOKIE[$this->cookieName])) {
+        $this->cookieValue = $_COOKIE[$this->cookieName];
+      }
+      else{
+        $this->cookieValue = 0;
+      }
+      if (!empty($_COOKIE[$this->cookieNameCategorie])) {
+        $this->cookieCategorieValue = $_COOKIE[$this->cookieNameCategorie];
+      }
+      else {
+        $this->cookieCategorieValue = null;
+      }
     }
   }
 
   public function setCategorie(string $categorie) {
     $this->categorie = $categorie;
+  }
+
+  public function getCookieValue() {
+    return $this->cookieValue;
+  }
+
+  public function getCookieCategorieValue() {
+    if (!empty($this->cookieCategorieValue)) {
+      return urldecode($this->cookieCategorieValue);
+    }
+    return null;
   }
 
   /**
@@ -29,13 +59,10 @@ class SocomecECC {
    */
   public function hasAccess() {
     if (\Drupal::moduleHandler()->moduleExists('eu_cookie_compliance')) {
-      $cookie_name = (!empty($this->config->get('cookie_name'))) ? $this->config->get('cookie_name') : 'cookie-agreed';
-      if (!empty($_COOKIE[$cookie_name]) && $_COOKIE[$cookie_name] !== 0) {
+      if ($this->getCookieValue() !== 0) {
         if ($this->config->get('method') === 'categories') {
-          $cookie_name_categories = $cookie_name.'-categories';
-          if (!empty($_COOKIE[$cookie_name_categories])) {
-            $categories = $_COOKIE[$cookie_name_categories];
-            $term = urldecode($categories);
+          if (!empty($this->getCookieCategorieValue())) {
+            $term = $this->getCookieCategorieValue();
             if (strpos($term, '"'.$this->categorie.'"') !== false) {
               return true;
             }
@@ -53,9 +80,15 @@ class SocomecECC {
    */
   public function getMessage() {
     if (\Drupal::moduleHandler()->moduleExists('eu_cookie_compliance')) {
-      $cookie_categories = $this->config->get('cookie_categories');
-      $cookie_categories = $this->config->get('method') === 'categories' ? _eu_cookie_compliance_extract_category_key_label_description($cookie_categories) : FALSE;
-      return  t('Service <a href="#" class="display-ecc-popup">@service</a> must be enabled.', ['@service' => $cookie_categories[$this->categorie]['label']]);
+      $cookieCategories = $this->config->get('cookie_categories');
+      if ($this->config->get('method') === 'categories') {
+        $cookieCategories = _eu_cookie_compliance_extract_category_key_label_description($cookieCategories);
+        $service = $cookieCategories[$this->categorie]['label'];
+        return  t('Service <a href="#" class="display-ecc-popup">@service</a> must be enabled.', ['@service' => $service]);
+      }
+      else {
+        return  t('Service must be enabled <a href="#" class="display-ecc-popup">Here</a>.');
+      }
     }
   }
 }

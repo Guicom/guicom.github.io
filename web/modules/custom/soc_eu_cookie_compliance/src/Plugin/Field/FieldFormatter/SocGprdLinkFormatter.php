@@ -90,9 +90,7 @@ class SocGprdLinkFormatter extends FormatterBase {
       }
     }
 
-    $elements['#cache']['max-age'] = 0;
-    $elements['#cache']['contexts'] = [];
-    $elements['#cache']['tags'] = [];
+    $elements['#cache']['contexts'] = ['socomec_ecc_gpdr'];
 
     return $element;
   }

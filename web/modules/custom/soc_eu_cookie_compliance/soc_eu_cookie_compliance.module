@@ -17,7 +17,7 @@ function soc_eu_cookie_compliance_preprocess_block(&$variables) {
     if (!$soc_ecc_service->hasAccess()) {
       $variables['gpdr_message'] = $soc_ecc_service->getMessage();
     }
-    // $variables['#cache']['contexts'] = ['cookies.cookie-agreed-categories.value'];
+    $variables['#cache']['contexts'] = ['socomec_ecc_gpdr'];
     return $variables;
   }
 }

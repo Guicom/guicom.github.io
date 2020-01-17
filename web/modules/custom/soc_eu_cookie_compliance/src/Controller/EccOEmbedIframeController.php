@@ -1,13 +1,12 @@
 <?php
 
-use Drupal\media\Controller\OEmbedIframeController;
-
 /**
  * Alter OEmbedIframeController
  * Alter Render by RGPD access
  */
 namespace Drupal\soc_eu_cookie_compliance\Controller;
 
+use Drupal\media\Controller\OEmbedIframeController;
 use Drupal\Component\Utility\Crypt;
 use Drupal\Core\Cache\CacheableMetadata;
 use Drupal\Core\DependencyInjection\ContainerInjectionInterface;

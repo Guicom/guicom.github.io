@@ -12,3 +12,7 @@ services:
     class: Drupal\soc_eu_cookie_compliance\Routing\RouteSubscriber
     tags:
       - { name: event_subscriber }
+  cache_context.socomec_ecc_gpdr:
+    class: Drupal\soc_eu_cookie_compliance\Cache\Context\SocomecEccCacheContext
+    tags:
+      - { name: cache.context }
