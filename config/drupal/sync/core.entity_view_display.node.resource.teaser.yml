@@ -4,34 +4,93 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
+    - field.field.node.resource.field_description
+    - field.field.node.resource.field_open_link_in_new_window
+    - field.field.node.resource.field_res_application
+    - field.field.node.resource.field_res_downloadable
+    - field.field.node.resource.field_res_link_url
+    - field.field.node.resource.field_res_momentum
+    - field.field.node.resource.field_res_original_description
+    - field.field.node.resource.field_res_original_title
+    - field.field.node.resource.field_res_reference
+    - field.field.node.resource.field_res_remote_file_url
+    - field.field.node.resource.field_res_resource_type
+    - field.field.node.resource.field_res_segment
+    - field.field.node.resource.field_res_target
+    - field.field.node.resource.field_res_thumb
+    - field.field.node.resource.field_res_title
     - node.type.resource
   module:
+    - file
     - user
 id: node.resource.teaser
 targetEntityType: node
 bundle: resource
 mode: teaser
 content:
-  links:
-    weight: 100
-    settings: {  }
-    third_party_settings: {  }
+  field_open_link_in_new_window:
+    type: boolean
+    weight: 5
     region: content
+    label: hidden
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+  field_res_downloadable:
+    type: boolean
+    weight: 2
+    region: content
+    label: hidden
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+  field_res_link_url:
+    type: string
+    weight: 4
+    region: content
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  field_res_remote_file_url:
+    type: file_default
+    weight: 3
+    region: content
+    label: hidden
+    settings:
+      use_description_as_link_text: true
+    third_party_settings: {  }
+  field_res_resource_type:
+    type: entity_reference_label
+    weight: 1
+    region: content
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+  field_res_title:
+    type: string
+    weight: 0
+    region: content
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
 hidden:
   addtoany: true
   field_description: true
-  field_open_link_in_new_window: true
   field_res_application: true
-  field_res_link_url: true
   field_res_momentum: true
   field_res_original_description: true
   field_res_original_title: true
   field_res_reference: true
-  field_res_remote_file_url: true
-  field_res_resource_type: true
   field_res_segment: true
   field_res_target: true
   field_res_thumb: true
-  field_res_title: true
   langcode: true
+  links: true
   search_api_excerpt: true
