@@ -1,14 +1,14 @@
 {
     "_links": {
         "self": {
-            "href": "http:\/\/default\/power-switching-monitoring\/load-break-switch\/sirco-ac-load-break-switch?_format=hal_json"
+            "href": "http:\/\/default\/products\/power-switching-monitoring\/load-break-switch\/sirco-ac-load-break-switch?_format=hal_json"
         },
         "type": {
             "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/family"
         },
         "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/family\/parent": [
             {
-                "href": "http:\/\/default\/power-switching-monitoring\/load-break-switch?_format=hal_json"
+                "href": "http:\/\/default\/products\/power-switching-monitoring\/load-break-switch?_format=hal_json"
             }
         ]
     },
@@ -71,7 +71,7 @@
             {
                 "_links": {
                     "self": {
-                        "href": "http:\/\/default\/power-switching-monitoring\/load-break-switch?_format=hal_json"
+                        "href": "http:\/\/default\/products\/power-switching-monitoring\/load-break-switch?_format=hal_json"
                     },
                     "type": {
                         "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/family"

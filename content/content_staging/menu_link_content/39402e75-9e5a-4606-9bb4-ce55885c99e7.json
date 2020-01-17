@@ -1,31 +1,30 @@
 {
     "_links": {
         "self": {
-            "href": "http:\/\/default\/admin\/structure\/menu\/item\/2\/edit?_format=hal_json"
+            "href": "http:\/\/default\/admin\/structure\/menu\/item\/36\/edit?_format=hal_json"
         },
         "type": {
             "href": "http:\/\/drupal.org\/rest\/type\/menu_link_content\/menu_link_content"
         },
-        "http:\/\/drupal.org\/rest\/relation\/menu_link_content\/menu_link_content\/content_translation_uid": [
+        "http:\/\/drupal.org\/rest\/relation\/menu_link_content\/menu_link_content\/menu_link_content_parent_entity": [
             {
-                "href": "http:\/\/default\/user\/1?_format=hal_json",
-                "lang": "en"
+                "href": "http:\/\/default\/admin\/structure\/menu\/item\/1\/edit?_format=hal_json"
             }
         ]
     },
     "id": [
         {
-            "value": 2
+            "value": 36
         }
     ],
     "uuid": [
         {
-            "value": "8f33e3f0-dab1-43ed-beea-fdda56be16bb"
+            "value": "39402e75-9e5a-4606-9bb4-ce55885c99e7"
         }
     ],
     "revision_id": [
         {
-            "value": 2
+            "value": 36
         }
     ],
     "langcode": [
@@ -41,7 +40,7 @@
     ],
     "revision_created": [
         {
-            "value": "2019-09-23T10:06:11+00:00",
+            "value": "2020-01-13T14:03:16+00:00",
             "format": "Y-m-d\\TH:i:sP"
         }
     ],
@@ -52,7 +51,7 @@
     ],
     "title": [
         {
-            "value": "PRODUCTS",
+            "value": "Customers Stories",
             "lang": "en"
         }
     ],
@@ -63,7 +62,7 @@
     ],
     "link": [
         {
-            "uri": "internal:\/",
+            "uri": "route:<nolink>",
             "title": "",
             "options": []
         }
@@ -75,12 +74,12 @@
     ],
     "rediscover": [
         {
-            "value": true
+            "value": false
         }
     ],
     "weight": [
         {
-            "value": -49
+            "value": -45
         }
     ],
     "expanded": [
@@ -88,9 +87,14 @@
             "value": false
         }
     ],
+    "parent": [
+        {
+            "value": "menu_link_content:a8f98142-078d-45fc-b033-16aa3c9d03fd"
+        }
+    ],
     "changed": [
         {
-            "value": "2019-09-23T10:07:28+00:00",
+            "value": "2020-01-14T12:50:04+00:00",
             "lang": "en",
             "format": "Y-m-d\\TH:i:sP"
         }
@@ -119,26 +123,6 @@
             "lang": "en"
         }
     ],
-    "_embedded": {
-        "http:\/\/drupal.org\/rest\/relation\/menu_link_content\/menu_link_content\/content_translation_uid": [
-            {
-                "_links": {
-                    "self": {
-                        "href": "http:\/\/default\/user\/1?_format=hal_json"
-                    },
-                    "type": {
-                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
-                    }
-                },
-                "uuid": [
-                    {
-                        "value": "fc3438b6-4c64-4379-bd1a-a93c6f330224"
-                    }
-                ],
-                "lang": "en"
-            }
-        ]
-    },
     "content_translation_status": [
         {
             "value": true,
@@ -147,7 +131,7 @@
     ],
     "content_translation_created": [
         {
-            "value": "2019-10-17T11:17:37+00:00",
+            "value": "2020-01-13T14:03:16+00:00",
             "lang": "en",
             "format": "Y-m-d\\TH:i:sP"
         }
@@ -159,5 +143,24 @@
                 "canonical_url": "http:\/\/default\/node"
             }
         }
-    ]
+    ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/menu_link_content\/menu_link_content\/menu_link_content_parent_entity": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/admin\/structure\/menu\/item\/1\/edit?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/menu_link_content\/menu_link_content"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "a8f98142-078d-45fc-b033-16aa3c9d03fd"
+                    }
+                ]
+            }
+        ]
+    }
 }

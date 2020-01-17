@@ -63,7 +63,7 @@
     ],
     "link": [
         {
-            "uri": "internal:\/",
+            "uri": "route:<nolink>",
             "title": "",
             "options": []
         }
@@ -75,12 +75,12 @@
     ],
     "rediscover": [
         {
-            "value": true
+            "value": false
         }
     ],
     "weight": [
         {
-            "value": -48
+            "value": 4
         }
     ],
     "expanded": [
@@ -90,7 +90,7 @@
     ],
     "changed": [
         {
-            "value": "2019-09-23T10:07:28+00:00",
+            "value": "2020-01-14T13:19:39+00:00",
             "lang": "en",
             "format": "Y-m-d\\TH:i:sP"
         }
@@ -132,7 +132,7 @@
                 },
                 "uuid": [
                     {
-                        "value": "fc3438b6-4c64-4379-bd1a-a93c6f330224"
+                        "value": "06fe93b6-9de1-4303-9e76-693d6997c8d1"
                     }
                 ],
                 "lang": "en"

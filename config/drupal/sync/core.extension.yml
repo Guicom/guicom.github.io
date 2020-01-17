@@ -93,7 +93,6 @@ module:
   search_api_solr: 0
   serialization: 0
   shortcut: 0
-  simple_megamenu: 0
   soc_access_block: 0
   soc_addtoany: 0
   soc_core: 0
@@ -109,6 +108,7 @@ module:
   svg_image: 0
   system: 0
   taxonomy: 0
+  taxonomy_menu: 0
   text: 0
   token: 0
   toolbar: 0
@@ -116,6 +116,8 @@ module:
   twig_tweak: 0
   user: 0
   views_ui: 0
+  we_megamenu: 0
+  we_megamenu_deploy: 0
   workflows: 0
   ds: 1
   menu_link_content: 1
