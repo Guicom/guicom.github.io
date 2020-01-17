@@ -8,14 +8,12 @@
         },
         "http:\/\/drupal.org\/rest\/relation\/media\/icone\/uid": [
             {
-                "href": "http:\/\/default\/user\/1?_format=hal_json",
-                "lang": "en"
+                "href": "http:\/\/default\/user\/1?_format=hal_json"
             }
         ],
         "http:\/\/drupal.org\/rest\/relation\/media\/icone\/thumbnail": [
             {
-                "href": "",
-                "lang": "en"
+                "href": ""
             }
         ]
     },
@@ -47,14 +45,13 @@
     ],
     "revision_created": [
         {
-            "value": "2020-01-06T12:10:11+00:00",
+            "value": "2020-01-15T13:50:13+00:00",
             "format": "Y-m-d\\TH:i:sP"
         }
     ],
     "status": [
         {
-            "value": true,
-            "lang": "en"
+            "value": true
         }
     ],
     "_embedded": {
@@ -70,10 +67,9 @@
                 },
                 "uuid": [
                     {
-                        "value": "2c7ea9dc-ef1e-414d-923e-ec872a66cf11"
+                        "value": "4046d41b-2959-4e9b-9291-076427ad1452"
                     }
-                ],
-                "lang": "en"
+                ]
             }
         ],
         "http:\/\/drupal.org\/rest\/relation\/media\/icone\/thumbnail": [
@@ -91,7 +87,6 @@
                         "value": "81972ee0-9b5e-48c0-a204-719021405781"
                     }
                 ],
-                "lang": "en",
                 "alt": null,
                 "title": null,
                 "width": "180",
@@ -101,21 +96,18 @@
     },
     "name": [
         {
-            "value": "ccc.svg",
-            "lang": "en"
+            "value": "ccc.svg"
         }
     ],
     "created": [
         {
             "value": "2019-12-09T12:55:11+00:00",
-            "lang": "en",
             "format": "Y-m-d\\TH:i:sP"
         }
     ],
     "changed": [
         {
             "value": "2019-12-09T12:55:11+00:00",
-            "lang": "en",
             "format": "Y-m-d\\TH:i:sP"
         }
     ],
@@ -141,14 +133,6 @@
         {
             "value": false,
             "lang": "en"
-        }
-    ],
-    "metatag": [
-        {
-            "value": {
-                "title": "| Socomec",
-                "canonical_url": "http:\/\/default\/node"
-            }
         }
     ]
 }

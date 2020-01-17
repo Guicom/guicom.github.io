@@ -1,0 +1,18 @@
+uuid: 55d2b1c3-3cc8-4016-bba5-446f3b97071e
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.format_de_boitier
+id: taxonomy_term.format_de_boitier.name
+field_name: name
+entity_type: taxonomy_term
+bundle: format_de_boitier
+label: Name
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

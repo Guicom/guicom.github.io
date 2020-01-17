@@ -10,6 +10,12 @@
             {
                 "href": "http:\/\/default\/products\/power-switching-monitoring\/load-break-switch?_format=hal_json"
             }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/family\/content_translation_uid": [
+            {
+                "href": "http:\/\/default\/user\/1?_format=hal_json",
+                "lang": "en"
+            }
         ]
     },
     "tid": [
@@ -82,6 +88,24 @@
                         "value": "f50106f3-aeee-467f-9ff7-6bb437455271"
                     }
                 ]
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/family\/content_translation_uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/user\/1?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "4046d41b-2959-4e9b-9291-076427ad1452"
+                    }
+                ],
+                "lang": "en"
             }
         ]
     },

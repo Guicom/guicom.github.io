@@ -12,6 +12,9 @@ class SocomecECC {
   private $cookieNameCategorie;
   private $categorie;
 
+  /**
+   * SocomecECC constructor.
+   */
   public function __construct() {
     if (\Drupal::moduleHandler()->moduleExists('eu_cookie_compliance')) {
       $this->config = \Drupal::config('eu_cookie_compliance.settings');
@@ -23,10 +26,16 @@ class SocomecECC {
     }
   }
 
+  /**
+   * @param string $categorie
+   */
   public function setCategorie(string $categorie) {
     $this->categorie = $categorie;
   }
 
+  /**
+   * @return int|mixed
+   */
   public function getCookieValue() {
     if (!empty($_COOKIE[$this->cookieName])) {
       return $_COOKIE[$this->cookieName];
@@ -34,6 +43,9 @@ class SocomecECC {
     return 0;
   }
 
+  /**
+   * @return string|null
+   */
   public function getCookieCategorieValue() {
     if (!empty($_COOKIE[$this->cookieNameCategorie])) {
       return urldecode($_COOKIE[$this->cookieNameCategorie]);

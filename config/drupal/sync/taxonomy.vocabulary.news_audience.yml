@@ -2,7 +2,7 @@ uuid: 154f0515-386f-4f1b-9cb6-67190d81de2b
 langcode: en
 status: true
 dependencies: {  }
-name: 'News Audience'
+name: Audience
 vid: news_audience
 description: ''
 weight: 0
