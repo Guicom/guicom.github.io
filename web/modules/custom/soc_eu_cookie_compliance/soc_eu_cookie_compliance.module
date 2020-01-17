@@ -1,0 +1,9 @@
+<?php
+
+
+/**
+ * Implements hook_page_attachments().
+ */
+function soc_eu_cookie_compliance_page_attachments(array &$attachments) {
+  $attachments['#attached']['library'][] = 'soc_eu_cookie_compliance/soc_ecc';
+}
