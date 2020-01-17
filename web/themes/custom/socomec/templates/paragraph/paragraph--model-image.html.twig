@@ -68,13 +68,15 @@
             <a href="{{ content.field_link[0]["#url_title"] }}">
           {% endif %}
         {% endif %}
-        {{ content.field_image }}
+              {% if content.field_image is not empty %}
+                <figure>
+                  {{ content.field_image }}
+                  {{ content.field_legend }}
+                </figure>
+              {% endif %}
         {% if content.field_link is not empty %}
           </a>
         {% endif %}
-      {% endif %}
-      {% if content.field_legend is not empty %}
-        {{ content.field_legend }}
       {% endif %}
     {% endblock %}
   </div>
