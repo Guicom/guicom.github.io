@@ -1,0 +1,23 @@
+<?php
+/**
+ * Implements hook_page_attachments().
+ */
+function soc_eu_cookie_compliance_page_attachments(array &$attachments) {
+  $attachments['#attached']['library'][] = 'soc_eu_cookie_compliance/soc_ecc';
+}
+
+
+/**
+ * Implements hook_preprocess_block().
+ */
+function soc_eu_cookie_compliance_preprocess_block(&$variables) {
+  if (!empty($variables['elements']['#id']) && strcmp($variables['elements']['#id'], 'socomec_pardot_newsletter') === 0) {
+    $soc_ecc_service = \Drupal::service('soc_eu_cookie_compliance.soc_ecc');
+    $soc_ecc_service->setCategorie('statistics');
+    if (!$soc_ecc_service->hasAccess()) {
+      $variables['gpdr_message'] = $soc_ecc_service->getMessage();
+    }
+    // $variables['#cache']['contexts'] = ['cookies.cookie-agreed-categories.value'];
+    return $variables;
+  }
+}
