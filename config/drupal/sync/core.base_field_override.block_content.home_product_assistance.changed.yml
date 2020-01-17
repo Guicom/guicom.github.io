@@ -1,0 +1,18 @@
+uuid: 80b7b647-3ab1-4c4d-9732-22cbb9132378
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.home_product_assistance
+id: block_content.home_product_assistance.changed
+field_name: changed
+entity_type: block_content
+bundle: home_product_assistance
+label: Changed
+description: 'The time that the custom block was last edited.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: changed

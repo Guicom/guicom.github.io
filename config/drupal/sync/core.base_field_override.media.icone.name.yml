@@ -1,0 +1,20 @@
+uuid: 8f165499-fbe8-496e-ab53-2cbaea32c802
+langcode: en
+status: true
+dependencies:
+  config:
+    - media.type.icone
+id: media.icone.name
+field_name: name
+entity_type: media
+bundle: icone
+label: Name
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: ''
+default_value_callback: ''
+settings: {  }
+field_type: string

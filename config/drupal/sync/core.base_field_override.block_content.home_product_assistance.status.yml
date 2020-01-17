@@ -1,0 +1,22 @@
+uuid: 57e0bf27-8b83-4a31-ad4a-ae866a9cfab7
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.home_product_assistance
+id: block_content.home_product_assistance.status
+field_name: status
+entity_type: block_content
+bundle: home_product_assistance
+label: Published
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

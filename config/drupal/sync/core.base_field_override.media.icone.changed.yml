@@ -1,0 +1,18 @@
+uuid: db7e08ec-4422-43c3-8e77-2fde66a622cf
+langcode: en
+status: true
+dependencies:
+  config:
+    - media.type.icone
+id: media.icone.changed
+field_name: changed
+entity_type: media
+bundle: icone
+label: Changed
+description: 'The time the media item was last edited.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: changed
