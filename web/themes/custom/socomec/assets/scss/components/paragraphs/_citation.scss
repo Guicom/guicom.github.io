@@ -11,13 +11,23 @@
       font-size: 0.8em;
       color: $blue;
       font-style: normal;
+      border-left: 2px solid $blue;
+      margin-top: 1em;
+      padding-left: 1em;
+      &:before{
+        content:'';
+      }
     }
 
     p {
       font-style: italic;
+      border-left: 2px solid $yellow;
+      padding-left: 1em;
+      margin-bottom: -1em;
+      padding-bottom: 1em;
     }
 
-    border-left: 2px solid $yellow;
+    border-left: none;
   }
 }
 
