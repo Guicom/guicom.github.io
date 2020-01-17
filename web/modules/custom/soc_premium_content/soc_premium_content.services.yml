@@ -1,3 +1,6 @@
+parameters:
+  soc_premium_content.resource_vocabulary_type: "resource_type"
 services:
   soc_premium_content.soc_premium_content_node:
     class: Drupal\soc_premium_content\Service\SocPremiumContentNode
+    arguments: ["@entity_type.manager", "%soc_premium_content.resource_vocabulary_type%"]

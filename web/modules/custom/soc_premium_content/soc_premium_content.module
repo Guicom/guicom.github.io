@@ -4,11 +4,13 @@
  * @file
  * Handle AddToAny integration.
  */
+
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Url;
 use Drupal\paragraphs\Entity\Paragraph;
 use Drupal\node\Entity\Node;
 use Drupal\media\Entity\Media;
+use Drupal\node\NodeInterface;
 
 /**
  * Implements hook_form_FORM_ID_alter().
@@ -33,7 +35,7 @@ function soc_premium_content_form_node_landing_page_form_alter(&$form, FormState
     '#submit' => $submit,
     '#weight' => 99,
     '#value' => $title,
-    '#attributes' => ['class' => ['button--primary']]
+    '#attributes' => ['class' => ['button--primary']],
   ];
 }
 
@@ -53,17 +55,19 @@ function _soc_premium_content_node_landing_page_form_submit(array $form, FormSta
   $node = Node::load($object->getEntity()->id());
   if (!empty($node)) {
     /** @var Array $nids */
-    $nids = \Drupal::service('soc_premium_content.soc_premium_content_node')->getAllThankYouPageFromLandingPage($node);
+    $nids = \Drupal::service('soc_premium_content.soc_premium_content_node')
+      ->getAllThankYouPageFromLandingPage($node);
     if (!empty($nids)) {
       $url = Url::fromRoute('entity.node.edit_form', ['node' => current($nids)]);
-    } else {
+    }
+    else {
       // prepare new thank you page node
       $node_tmp = [
-        'type'        => 'thank_you_page',
-        'title'       => $node->getTitle(),
+        'type' => 'thank_you_page',
+        'title' => $node->getTitle(),
         'field_landing_page' => [
           'target_id' => $node->id(),
-        ]
+        ],
       ];
 
       // Get field thumbnail
@@ -97,7 +101,8 @@ function _soc_premium_content_node_landing_page_form_submit(array $form, FormSta
 function soc_premium_content_form_node_landing_page_edit_form_alter(&$form, FormStateInterface $form_state, $form_id) {
   if (!is_null($node = Drupal::request()->attributes->get('node'))) {
     /** @var Array $nids */
-    $nids = \Drupal::service('soc_premium_content.soc_premium_content_node')->getAllThankYouPageFromLandingPage($node);
+    $nids = \Drupal::service('soc_premium_content.soc_premium_content_node')
+      ->getAllThankYouPageFromLandingPage($node);
 
     // Define title btn.
     if (!empty($nids)) {
@@ -118,7 +123,19 @@ function soc_premium_content_form_node_landing_page_edit_form_alter(&$form, Form
       '#submit' => $submit,
       '#weight' => 99,
       '#value' => $title,
-      '#attributes' => ['class' => ['button--primary']]
+      '#attributes' => ['class' => ['button--primary']],
     ];
+  }
+}
+
+/**
+ * Implements hook_node_presave().
+ */
+function soc_premium_content_node_presave(NodeInterface $node) {
+  switch ($node->bundle()) {
+    case 'landing_page':
+      \Drupal::service('soc_premium_content.soc_premium_content_node')
+        ->autoCreateResourceFromPremiumContent($node);
+      break;
   }
 }
