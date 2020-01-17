@@ -7,22 +7,9 @@
 namespace Drupal\soc_eu_cookie_compliance\Controller;
 
 use Drupal\media\Controller\OEmbedIframeController;
-use Drupal\Component\Utility\Crypt;
-use Drupal\Core\Cache\CacheableMetadata;
-use Drupal\Core\DependencyInjection\ContainerInjectionInterface;
-use Drupal\Core\Render\HtmlResponse;
-use Drupal\Core\Render\RenderContext;
-use Drupal\Core\Render\RendererInterface;
-use Drupal\Core\Url;
-use Drupal\media\IFrameMarkup;
-use Drupal\media\IFrameUrlHelper;
-use Drupal\media\OEmbed\ResourceException;
-use Drupal\media\OEmbed\ResourceFetcherInterface;
-use Drupal\media\OEmbed\UrlResolverInterface;
-use Psr\Log\LoggerInterface;
-use Symfony\Component\DependencyInjection\ContainerInterface;
+use Drupal\soc_eu_cookie_compliance\Cache\Context\SocomecEccCacheContext;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpKernel\Exception\AccessDeniedHttpException;
+
 
 
 class EccOEmbedIframeController extends OEmbedIframeController {
@@ -51,7 +38,12 @@ class EccOEmbedIframeController extends OEmbedIframeController {
     if (!empty($gpdrMessage)) {
       // TODO alter output replace response parent by render array
       // Construct cache.
-      //$response = ['#markup' => $gpdrMessage];
+      /*$response = [
+        '#markup' => $gpdrMessage,
+        '#cache' => [
+          'contexts' => [SocomecEccCacheContext::CONTEXT_ID]
+          ]
+      ];*/
       $response = parent::render($request);
     }
     else {

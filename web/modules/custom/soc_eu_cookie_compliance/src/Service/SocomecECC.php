@@ -9,9 +9,7 @@ class SocomecECC {
 
   private $config;
   private $cookieName;
-  private $cookieValue;
   private $cookieNameCategorie;
-  private $cookieCategorieValue;
   private $categorie;
 
   public function __construct() {
@@ -22,18 +20,6 @@ class SocomecECC {
         $this->cookieName = $this->config->get('cookie_name');
       }
       $this->cookieNameCategorie = $this->cookieName . '-categories';
-      if (!empty($_COOKIE[$this->cookieName])) {
-        $this->cookieValue = $_COOKIE[$this->cookieName];
-      }
-      else{
-        $this->cookieValue = 0;
-      }
-      if (!empty($_COOKIE[$this->cookieNameCategorie])) {
-        $this->cookieCategorieValue = $_COOKIE[$this->cookieNameCategorie];
-      }
-      else {
-        $this->cookieCategorieValue = null;
-      }
     }
   }
 
@@ -42,14 +28,17 @@ class SocomecECC {
   }
 
   public function getCookieValue() {
-    return $this->cookieValue;
+    if (!empty($_COOKIE[$this->cookieName])) {
+      return $_COOKIE[$this->cookieName];
+    }
+    return 0;
   }
 
   public function getCookieCategorieValue() {
-    if (!empty($this->cookieCategorieValue)) {
-      return urldecode($this->cookieCategorieValue);
+    if (!empty($_COOKIE[$this->cookieNameCategorie])) {
+      return urldecode($_COOKIE[$this->cookieNameCategorie]);
     }
-    return null;
+    return NULL;
   }
 
   /**

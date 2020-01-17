@@ -1,4 +1,7 @@
 <?php
+
+use \Drupal\soc_eu_cookie_compliance\Cache\Context\SocomecEccCacheContext;
+
 /**
  * Implements hook_page_attachments().
  */
@@ -17,7 +20,7 @@ function soc_eu_cookie_compliance_preprocess_block(&$variables) {
     if (!$soc_ecc_service->hasAccess()) {
       $variables['gpdr_message'] = $soc_ecc_service->getMessage();
     }
-    $variables['#cache']['contexts'] = ['socomec_ecc_gpdr'];
+    $variables['#cache']['contexts'][] = SocomecEccCacheContext::CONTEXT_ID;
     return $variables;
   }
 }
