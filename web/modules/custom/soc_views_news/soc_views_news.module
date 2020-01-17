@@ -31,6 +31,8 @@ function soc_views_news_views_query_alter(ViewExecutable $view, QueryPluginBase 
 }
 
 /**
+ * Implements hook_entity_delete().
+ *
  * @param \Drupal\Core\Entity\EntityInterface $entity
  */
 function soc_views_news_entity_delete(Drupal\Core\Entity\EntityInterface $entity) {
@@ -46,7 +48,7 @@ function soc_views_news_entity_delete(Drupal\Core\Entity\EntityInterface $entity
       }
       $items = [];
       /** @var \Drupal\node\Entity\Node $node */
-      foreach ($nodes as $node){
+      foreach ($nodes as $node) {
         $items[] = $node->getTitle();
       }
       $renderer = \Drupal::service('renderer');
