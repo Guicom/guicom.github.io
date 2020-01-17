@@ -1,0 +1,18 @@
+uuid: dab5c91f-05f0-479d-ba58-a893dea39db5
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.protection_level
+id: taxonomy_term.protection_level.changed
+field_name: changed
+entity_type: taxonomy_term
+bundle: protection_level
+label: Changed
+description: 'The time that the term was last edited.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: changed

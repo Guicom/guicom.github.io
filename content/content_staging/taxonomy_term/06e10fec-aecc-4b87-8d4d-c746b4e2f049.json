@@ -8,12 +8,6 @@
         },
         "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/format_de_boitier\/parent": [
             null
-        ],
-        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/format_de_boitier\/content_translation_uid": [
-            {
-                "href": "http:\/\/default\/user\/1?_format=hal_json",
-                "lang": "en"
-            }
         ]
     },
     "tid": [
@@ -50,14 +44,12 @@
     ],
     "status": [
         {
-            "value": true,
-            "lang": "en"
+            "value": true
         }
     ],
     "name": [
         {
-            "value": "Format de boitier C",
-            "lang": "en"
+            "value": "Format de boitier C"
         }
     ],
     "weight": [
@@ -68,30 +60,11 @@
     "_embedded": {
         "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/format_de_boitier\/parent": [
             null
-        ],
-        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/format_de_boitier\/content_translation_uid": [
-            {
-                "_links": {
-                    "self": {
-                        "href": "http:\/\/default\/user\/1?_format=hal_json"
-                    },
-                    "type": {
-                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
-                    }
-                },
-                "uuid": [
-                    {
-                        "value": "2c7ea9dc-ef1e-414d-923e-ec872a66cf11"
-                    }
-                ],
-                "lang": "en"
-            }
         ]
     },
     "changed": [
         {
             "value": "2019-12-03T12:58:08+00:00",
-            "lang": "en",
             "format": "Y-m-d\\TH:i:sP"
         }
     ],
@@ -121,17 +94,9 @@
     ],
     "content_translation_created": [
         {
-            "value": "2020-01-06T12:10:09+00:00",
+            "value": "2020-01-14T11:00:17+00:00",
             "lang": "en",
             "format": "Y-m-d\\TH:i:sP"
-        }
-    ],
-    "metatag": [
-        {
-            "value": {
-                "title": "Format de boitier C | Socomec",
-                "canonical_url": "http:\/\/default\/taxonomy\/term\/19"
-            }
         }
     ]
 }

@@ -1,0 +1,20 @@
+uuid: 543bff4b-b997-4acc-8d59-139a925bd341
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.format_de_boitier
+  module:
+    - path
+id: taxonomy_term.format_de_boitier.path
+field_name: path
+entity_type: taxonomy_term
+bundle: format_de_boitier
+label: 'URL alias'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: path

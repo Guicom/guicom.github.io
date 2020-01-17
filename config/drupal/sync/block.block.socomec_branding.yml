@@ -11,7 +11,7 @@ _core:
 id: socomec_branding
 theme: socomec
 region: header
-weight: -7
+weight: -10
 provider: null
 plugin: system_branding_block
 settings:

@@ -1,0 +1,18 @@
+uuid: c0e6168c-0a22-4179-b41e-8549b1f323ae
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.protection_level
+id: taxonomy_term.protection_level.metatag
+field_name: metatag
+entity_type: taxonomy_term
+bundle: protection_level
+label: Metatags
+description: 'The meta tags for the entity.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: map

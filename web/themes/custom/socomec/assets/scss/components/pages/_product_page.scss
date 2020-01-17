@@ -5,7 +5,7 @@ body.node--type-product {
   }
 
   header {
-    height: 550px;
+    height: 490px;
     display: flex;
     flex-flow: column;
     margin-bottom: 25px;
@@ -243,6 +243,7 @@ body.node--type-product {
     background: $white;
     margin-bottom: 45px;
     text-transform: uppercase;
+    top: 60px;
     .row {
       align-items: center;
       justify-content: flex-end;
