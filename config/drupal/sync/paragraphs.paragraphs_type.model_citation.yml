@@ -5,5 +5,5 @@ dependencies: {  }
 id: model_citation
 label: 'Model - Citation'
 icon_uuid: null
-description: ''
+description: 'Blockquote and cite markups html'
 behavior_plugins: {  }
