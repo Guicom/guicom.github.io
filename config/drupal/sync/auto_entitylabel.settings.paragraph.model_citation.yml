@@ -1,0 +1,6 @@
+status: 1
+pattern: 'Citation [paragraph:field_citation_author]'
+escape: false
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.model_citation
