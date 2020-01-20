@@ -86,7 +86,7 @@ class SocPremiumContentNode {
       }
     }
     $url = Url::fromRoute('entity.node.canonical', ['node' => $node->id()], ['absolute' => TRUE]);
-    $url->toString();
+    $url = $url->toString();
     /**
      * @var Node $nodeResource
      */
