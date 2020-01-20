@@ -1,0 +1,37 @@
+uuid: 3a75f02a-455a-4d91-b3d7-709f39a3e455
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - node.type.resource
+  module:
+    - user
+id: node.resource.teaser
+targetEntityType: node
+bundle: resource
+mode: teaser
+content:
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  addtoany: true
+  field_description: true
+  field_open_link_in_new_window: true
+  field_res_application: true
+  field_res_link_url: true
+  field_res_momentum: true
+  field_res_original_description: true
+  field_res_original_title: true
+  field_res_reference: true
+  field_res_remote_file_url: true
+  field_res_resource_type: true
+  field_res_segment: true
+  field_res_target: true
+  field_res_thumb: true
+  field_res_title: true
+  langcode: true
+  search_api_excerpt: true

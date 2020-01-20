@@ -1,0 +1,436 @@
+{
+    "_links": {
+        "self": {
+            "href": "http:\/\/default\/node\/24?_format=hal_json"
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/node\/resource"
+        },
+        "http:\/\/drupal.org\/rest\/relation\/node\/resource\/revision_uid": [
+            {
+                "href": "http:\/\/default\/user\/1?_format=hal_json"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/resource\/uid": [
+            {
+                "href": "http:\/\/default\/user\/1?_format=hal_json",
+                "lang": "en"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/resource\/field_res_momentum": [
+            {
+                "href": "http:\/\/default\/taxonomy\/term\/29?_format=hal_json"
+            },
+            {
+                "href": "http:\/\/default\/taxonomy\/term\/27?_format=hal_json"
+            },
+            {
+                "href": "http:\/\/default\/taxonomy\/term\/31?_format=hal_json"
+            },
+            {
+                "href": "http:\/\/default\/taxonomy\/term\/28?_format=hal_json"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/resource\/field_res_resource_type": [
+            {
+                "href": "http:\/\/default\/taxonomy\/term\/62?_format=hal_json"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/resource\/field_res_segment": [
+            {
+                "href": "http:\/\/default\/taxonomy\/term\/45?_format=hal_json"
+            },
+            {
+                "href": "http:\/\/default\/taxonomy\/term\/46?_format=hal_json"
+            },
+            {
+                "href": "http:\/\/default\/taxonomy\/term\/35?_format=hal_json"
+            },
+            {
+                "href": "http:\/\/default\/taxonomy\/term\/36?_format=hal_json"
+            },
+            {
+                "href": "http:\/\/default\/taxonomy\/term\/37?_format=hal_json"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/resource\/field_res_target": [
+            {
+                "href": "http:\/\/default\/taxonomy\/term\/21?_format=hal_json"
+            },
+            {
+                "href": "http:\/\/default\/taxonomy\/term\/24?_format=hal_json"
+            },
+            {
+                "href": "http:\/\/default\/taxonomy\/term\/22?_format=hal_json"
+            }
+        ]
+    },
+    "nid": [
+        {
+            "value": 24
+        }
+    ],
+    "uuid": [
+        {
+            "value": "cfe62d03-70c7-4077-94af-6550815ac648"
+        }
+    ],
+    "vid": [
+        {
+            "value": 101
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "type": [
+        {
+            "target_id": "resource"
+        }
+    ],
+    "revision_timestamp": [
+        {
+            "value": "2020-01-15T16:25:49+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/node\/resource\/revision_uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/user\/1?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "4046d41b-2959-4e9b-9291-076427ad1452"
+                    }
+                ]
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/resource\/uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/user\/1?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "4046d41b-2959-4e9b-9291-076427ad1452"
+                    }
+                ],
+                "lang": "en"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/resource\/field_res_momentum": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/taxonomy\/term\/29?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/news_mommentum"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "14503eac-6ef7-4c26-a45f-5b4ce3d1599f"
+                    }
+                ]
+            },
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/taxonomy\/term\/27?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/news_mommentum"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "c019521c-19b8-4b0f-845d-1f5c391a9169"
+                    }
+                ]
+            },
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/taxonomy\/term\/31?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/news_mommentum"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "d5f32bc3-c331-4ebc-a330-a8f7042ada61"
+                    }
+                ]
+            },
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/taxonomy\/term\/28?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/news_mommentum"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "895834b8-85ee-40aa-8dbb-167421940c77"
+                    }
+                ]
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/resource\/field_res_resource_type": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/taxonomy\/term\/62?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/resource_type"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "17e2cfba-168f-404d-8f47-5ed3bf0f6942"
+                    }
+                ]
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/resource\/field_res_segment": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/taxonomy\/term\/45?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/news_theme"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "ce29a5e2-d694-45c7-985f-a9ec4556c0e2"
+                    }
+                ]
+            },
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/taxonomy\/term\/46?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/news_theme"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "bf365a22-af60-43f3-84d0-f75826b5f63e"
+                    }
+                ]
+            },
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/taxonomy\/term\/35?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/news_theme"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "bbc0c30c-6653-488a-b7a2-b25b4a5f18cc"
+                    }
+                ]
+            },
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/taxonomy\/term\/36?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/news_theme"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "0d31263d-002b-4966-8ca2-f699419d026f"
+                    }
+                ]
+            },
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/taxonomy\/term\/37?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/news_theme"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "c25c49d3-4270-4f8e-9140-36642f940b64"
+                    }
+                ]
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/resource\/field_res_target": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/taxonomy\/term\/21?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/news_audience"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "9e5a3421-d390-46d5-b85e-2874c58b1bba"
+                    }
+                ]
+            },
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/taxonomy\/term\/24?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/news_audience"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "e9dd4dd0-a3ad-41d3-9764-b17861d77161"
+                    }
+                ]
+            },
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/taxonomy\/term\/22?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/news_audience"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "d9aadd93-4d4a-4b40-a883-d956246669d7"
+                    }
+                ]
+            }
+        ]
+    },
+    "status": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "title": [
+        {
+            "value": "Comment garantir la continuit\u00e9 d\u2019alimentation des blocs op\u00e9ratoires",
+            "lang": "en"
+        }
+    ],
+    "created": [
+        {
+            "value": "2020-01-15T16:25:07+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "changed": [
+        {
+            "value": "2020-01-15T16:25:49+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "promote": [
+        {
+            "value": false,
+            "lang": "en"
+        }
+    ],
+    "sticky": [
+        {
+            "value": false,
+            "lang": "en"
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "revision_translation_affected": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "content_translation_source": [
+        {
+            "value": "und",
+            "lang": "en"
+        }
+    ],
+    "content_translation_outdated": [
+        {
+            "value": false,
+            "lang": "en"
+        }
+    ],
+    "metatag": [
+        {
+            "value": {
+                "title": "Comment garantir la continuit\u00e9 d\u2019alimentation des blocs op\u00e9ratoires | Socomec",
+                "canonical_url": "http:\/\/default\/node\/24"
+            }
+        }
+    ],
+    "field_open_link_in_new_window": [
+        {
+            "value": true
+        }
+    ],
+    "field_res_downloadable": [
+        {
+            "value": false
+        }
+    ],
+    "field_res_link_url": [
+        {
+            "value": "http:\/\/qa.socomec.actency.fr\/landing-page-premium\/whitepaper\/comment-garantir-la-continuite-dalimentation-des-blocs-operatoires"
+        }
+    ],
+    "field_res_original_title": [
+        {
+            "value": "Comment garantir la continuit\u00e9 d\u2019alimentation des blocs op\u00e9ratoires",
+            "lang": "en"
+        }
+    ],
+    "field_res_reference": [
+        {
+            "value": "TESTLP"
+        }
+    ]
+}

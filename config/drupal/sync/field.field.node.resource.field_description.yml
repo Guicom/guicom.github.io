@@ -1,0 +1,19 @@
+uuid: ca01c28e-6a45-46ba-8de6-890fd16c4426
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_description
+    - node.type.resource
+id: node.resource.field_description
+field_name: field_description
+entity_type: node
+bundle: resource
+label: Description
+description: 'Overrides the original description.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

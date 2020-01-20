@@ -1,0 +1,19 @@
+uuid: 8b09fb54-914c-4350-864d-6f51819ffbb9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_res_title
+    - node.type.resource
+id: node.resource.field_res_title
+field_name: field_res_title
+entity_type: node
+bundle: resource
+label: Title
+description: 'Overrides the original title.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

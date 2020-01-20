@@ -1,0 +1,8 @@
+uuid: 2f44ff60-d8f8-4320-bce8-4a274e5c5301
+langcode: zxx
+status: true
+dependencies: {  }
+name: 'File type'
+vid: file_type
+description: ''
+weight: 0

@@ -1,0 +1,18 @@
+uuid: 72395efa-a89a-4c42-b03b-db87a219c395
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.product_reference
+id: node.product_reference.publish_on
+field_name: publish_on
+entity_type: node
+bundle: product_reference
+label: 'Publish on'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: timestamp
