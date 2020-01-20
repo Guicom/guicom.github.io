@@ -104,6 +104,10 @@
                   <aside class="col-md-3">
                     <div class="facets-title">{{ 'Filter by' |t }}</div>
                     {{ drupal_entity('block', 'typeofresource') }}
+                    {{ drupal_entity('block', 'language') }}
+                    {% if page.sidebar_first %}
+                      {{ page.sidebar_first }}
+                    {% endif %}
                   </aside>
                   <div class="col-md-9">
                     {{ page.content }}

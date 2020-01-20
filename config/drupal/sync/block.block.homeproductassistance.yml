@@ -12,7 +12,7 @@ dependencies:
 id: homeproductassistance
 theme: socomec
 region: sidebar_first
-weight: 0
+weight: -11
 provider: null
 plugin: 'block_content:b5528417-a66a-439d-a965-2d1570e962f4'
 settings:

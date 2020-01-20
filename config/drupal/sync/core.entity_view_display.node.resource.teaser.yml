@@ -57,12 +57,11 @@ content:
       link_to_entity: false
     third_party_settings: {  }
   field_res_remote_file_url:
-    type: file_default
+    type: file_url_plain
     weight: 3
     region: content
     label: hidden
-    settings:
-      use_description_as_link_text: true
+    settings: {  }
     third_party_settings: {  }
   field_res_resource_type:
     type: entity_reference_label
