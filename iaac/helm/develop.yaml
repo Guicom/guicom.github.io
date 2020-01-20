@@ -6,7 +6,7 @@ namespace: webfactory-prod
 
 registry:
   name: agc-regis-credential
-  location: socomec-web
+  location: regis.myagora.fr/socomec-web
   images:
     drupal: drupal
     varnish: image-varnish-name
