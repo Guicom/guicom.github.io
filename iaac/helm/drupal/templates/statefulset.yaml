@@ -67,6 +67,14 @@ spec:
                 secretKeyRef:
                   name: webfactory-redis-cache
                   key: sesame
+            - name: SERVERNAME
+              value: {{ .Values.drupal.ingress_hostname }}
+            - name: SERVERALIAS
+              value: {{ .Values.drupal.ingress_hostname }}
+            - name: DOCUMENTROOT
+              value: web
+            - name: DRUSH_VERSION
+              value: "9"
           livenessProbe:
             tcpSocket:
               port: {{ .Values.drupal.service.port }}
