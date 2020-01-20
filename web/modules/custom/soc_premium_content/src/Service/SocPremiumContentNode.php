@@ -6,6 +6,7 @@
 namespace Drupal\soc_premium_content\Service;
 
 use Drupal\Core\Entity\EntityTypeManagerInterface;
+use Drupal\Core\Url;
 use Drupal\node\Entity\Node;
 
 class SocPremiumContentNode {
@@ -84,18 +85,8 @@ class SocPremiumContentNode {
         }
       }
     }
-    $url = NULL;
-    /**
-     * @var \Drupal\paragraphs\Entity\Paragraph[] $field_pardot_form
-     */
-    $field_pardot_forms = $node->get('field_pardot_form')->referencedEntities();
-    if (!empty($field_pardot_forms)) {
-      $field_pardot_form = reset($field_pardot_forms);
-      $url = $field_pardot_form->get('field_pardot_form_url')->getValue();
-      if (!empty($url[0]['uri'])) {
-        $url = $url[0]['uri'];
-      }
-    }
+    $url = Url::fromRoute('entity.node.canonical', ['node' => $node->id()], ['absolute' => TRUE]);
+    $url = $url->toString();
     /**
      * @var Node $nodeResource
      */
