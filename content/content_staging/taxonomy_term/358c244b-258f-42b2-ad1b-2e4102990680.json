@@ -1,7 +1,7 @@
 {
     "_links": {
         "self": {
-            "href": "http:\/\/default\/products\/energy-storage-solution\/storage-converters\/grid-modular-indoor?_format=hal_json"
+            "href": "http:\/\/default\/products\/energy-storage-solution\/storage-converters\/grid-modular-indoor-0?_format=hal_json"
         },
         "type": {
             "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/family"
