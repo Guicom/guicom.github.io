@@ -134,8 +134,9 @@ function soc_premium_content_form_node_landing_page_edit_form_alter(&$form, Form
 function soc_premium_content_node_presave(NodeInterface $node) {
   switch ($node->bundle()) {
     case 'landing_page':
-      \Drupal::service('soc_premium_content.soc_premium_content_node')
-        ->autoCreateResourceFromPremiumContent($node);
+      /** @var \Drupal\soc_premium_content\Service\SocPremiumContentNode $service */
+     $service = \Drupal::service('soc_premium_content.soc_premium_content_node');
+     $service->autoCreateResourceFromPremiumContent($node);
       break;
   }
 }
