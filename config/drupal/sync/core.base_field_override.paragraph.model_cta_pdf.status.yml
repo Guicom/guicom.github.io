@@ -1,0 +1,22 @@
+uuid: 12e8433c-bfa1-4cd8-924a-365a9e4d1e8f
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.model_cta_pdf
+id: paragraph.model_cta_pdf.status
+field_name: status
+entity_type: paragraph
+bundle: model_cta_pdf
+label: Published
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

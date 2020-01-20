@@ -1,0 +1,8 @@
+uuid: 07068af1-2eb3-4e68-ab22-202400de8007
+langcode: en
+status: true
+dependencies: {  }
+name: Application
+vid: application
+description: ''
+weight: 0

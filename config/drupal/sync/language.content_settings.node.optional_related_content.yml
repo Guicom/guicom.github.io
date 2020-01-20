@@ -4,6 +4,13 @@ status: true
 dependencies:
   config:
     - node.type.optional_related_content
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: false
+    bundle_settings:
+      untranslatable_fields_hide: '0'
 id: node.optional_related_content
 target_entity_type_id: node
 target_bundle: optional_related_content
