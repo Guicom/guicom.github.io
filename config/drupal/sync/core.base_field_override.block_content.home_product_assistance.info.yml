@@ -1,0 +1,18 @@
+uuid: 2567640b-13f5-46cd-8557-e02d1c8e97bb
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.home_product_assistance
+id: block_content.home_product_assistance.info
+field_name: info
+entity_type: block_content
+bundle: home_product_assistance
+label: 'Block description'
+description: 'A brief description of your block.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

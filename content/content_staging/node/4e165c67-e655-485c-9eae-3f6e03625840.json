@@ -13,8 +13,7 @@
         ],
         "http:\/\/drupal.org\/rest\/relation\/node\/optional_related_content\/uid": [
             {
-                "href": "http:\/\/default\/user\/1?_format=hal_json",
-                "lang": "en"
+                "href": "http:\/\/default\/user\/1?_format=hal_json"
             }
         ],
         "http:\/\/drupal.org\/rest\/relation\/node\/optional_related_content\/field_orc_picture": [
@@ -68,7 +67,7 @@
                 },
                 "uuid": [
                     {
-                        "value": "b1622487-76b3-4e8b-baad-13e0ffc0059e"
+                        "value": "4046d41b-2959-4e9b-9291-076427ad1452"
                     }
                 ]
             }
@@ -85,10 +84,9 @@
                 },
                 "uuid": [
                     {
-                        "value": "b1622487-76b3-4e8b-baad-13e0ffc0059e"
+                        "value": "4046d41b-2959-4e9b-9291-076427ad1452"
                     }
-                ],
-                "lang": "en"
+                ]
             }
         ],
         "http:\/\/drupal.org\/rest\/relation\/node\/optional_related_content\/field_orc_picture": [
@@ -111,40 +109,34 @@
     },
     "status": [
         {
-            "value": true,
-            "lang": "en"
+            "value": false
         }
     ],
     "title": [
         {
-            "value": "Service 2",
-            "lang": "en"
+            "value": "Service 2"
         }
     ],
     "created": [
         {
             "value": "2019-12-13T10:58:41+00:00",
-            "lang": "en",
             "format": "Y-m-d\\TH:i:sP"
         }
     ],
     "changed": [
         {
             "value": "2019-12-13T10:58:41+00:00",
-            "lang": "en",
             "format": "Y-m-d\\TH:i:sP"
         }
     ],
     "promote": [
         {
-            "value": true,
-            "lang": "en"
+            "value": true
         }
     ],
     "sticky": [
         {
-            "value": false,
-            "lang": "en"
+            "value": false
         }
     ],
     "default_langcode": [
@@ -159,12 +151,22 @@
             "lang": "en"
         }
     ],
-    "metatag": [
+    "moderation_state": [
         {
-            "value": {
-                "title": "Service 2 | Socomec",
-                "canonical_url": "http:\/\/default\/node\/19"
-            }
+            "value": "draft",
+            "lang": "en"
+        }
+    ],
+    "content_translation_source": [
+        {
+            "value": "und",
+            "lang": "en"
+        }
+    ],
+    "content_translation_outdated": [
+        {
+            "value": false,
+            "lang": "en"
         }
     ],
     "field_orc_link": [

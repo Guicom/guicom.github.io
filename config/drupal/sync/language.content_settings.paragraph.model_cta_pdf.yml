@@ -1,0 +1,18 @@
+uuid: 4fb3a444-82c6-4811-8cc0-6d4fef4b44c7
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.model_cta_pdf
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: false
+    bundle_settings:
+      untranslatable_fields_hide: '0'
+id: paragraph.model_cta_pdf
+target_entity_type_id: paragraph
+target_bundle: model_cta_pdf
+default_langcode: site_default
+language_alterable: false

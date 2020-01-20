@@ -9,6 +9,12 @@
         "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/product_label\/parent": [
             null
         ],
+        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/product_label\/content_translation_uid": [
+            {
+                "href": "http:\/\/default\/user\/1?_format=hal_json",
+                "lang": "en"
+            }
+        ],
         "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/product_label\/field_label_icon": [
             {
                 "href": "http:\/\/default\/media\/25\/edit?_format=hal_json"
@@ -49,14 +55,12 @@
     ],
     "status": [
         {
-            "value": true,
-            "lang": "en"
+            "value": true
         }
     ],
     "name": [
         {
-            "value": "IEC",
-            "lang": "en"
+            "value": "IEC"
         }
     ],
     "weight": [
@@ -67,6 +71,24 @@
     "_embedded": {
         "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/product_label\/parent": [
             null
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/product_label\/content_translation_uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/user\/1?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "4046d41b-2959-4e9b-9291-076427ad1452"
+                    }
+                ],
+                "lang": "en"
+            }
         ],
         "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/product_label\/field_label_icon": [
             {
@@ -89,7 +111,6 @@
     "changed": [
         {
             "value": "2019-12-09T12:55:43+00:00",
-            "lang": "en",
             "format": "Y-m-d\\TH:i:sP"
         }
     ],
@@ -122,14 +143,6 @@
             "value": "2019-12-31T08:45:20+00:00",
             "lang": "en",
             "format": "Y-m-d\\TH:i:sP"
-        }
-    ],
-    "metatag": [
-        {
-            "value": {
-                "title": "IEC | Socomec",
-                "canonical_url": "http:\/\/default\/taxonomy\/term\/14"
-            }
         }
     ]
 }
