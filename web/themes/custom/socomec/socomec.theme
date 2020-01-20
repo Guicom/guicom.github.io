@@ -176,7 +176,6 @@ function socomec_theme_suggestions_views_view_fields_alter(array &$suggestions, 
   }
 }
 
-
 /**
  * Implements hook_theme_suggestions_taxonomy_term_alter().
  */
@@ -202,6 +201,7 @@ function socomec_theme_suggestions_block_alter(array &$suggestions, array $varia
     }
   }
 }
+
 /**
  * Implements template_preprocess_html().
  */

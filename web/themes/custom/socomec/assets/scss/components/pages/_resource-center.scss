@@ -1,0 +1,59 @@
+body {
+  &.path-resource-center {
+    .region-hero {
+      @include socomec-hero-alt-background;
+      .row {
+        align-items: end;
+      }
+      .title-hero {
+        text-transform: uppercase;
+        margin-bottom: 45px;
+        @include socomec-hero-wave;
+        &:after {
+          margin-left: -30px;
+          margin-top: 45px;
+        }
+      }
+      .text-formatted p {
+        color: $white;
+      }
+      #block-exposedformresource-centerpage-1 {
+        label {
+          display: none;
+        }
+        .form-row {
+          position: relative;
+          margin: 0;
+          top: 38px;
+          right: 38px;
+          .form-item-query {
+
+            .form-text {
+              border-radius: 0;
+              box-shadow: 0 24px 38px 3px rgba(35,44,119,0.14), 0 9px 46px 8px rgba(0,0,0,0.07), 0 11px 15px -7px rgba(0,0,0,0.14);
+              padding: 20px 35px;
+              height: 100px;
+              width: 100%;
+            }
+          }
+          .form-actions {
+            position: absolute;
+            .form-submit {
+              background: transparent;
+              border: 0;
+              text-indent: -9999px;
+              &:before {
+                display: block;
+                content: ' ';
+                background-image: url("../images/picto/ui/search.svg");
+                background-size: 24px 24px;
+                height: 24px;
+                width: 24px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
