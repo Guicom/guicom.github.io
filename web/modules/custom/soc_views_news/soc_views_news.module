@@ -58,7 +58,7 @@ function soc_views_news_entity_delete(Drupal\Core\Entity\EntityInterface $entity
         '#tag' => 'h4',
       ];
       $content['list'] = ['#theme' => 'item_list', '#items' => $items];
-      Drupal::messenger()->addMessage($renderer->render($content));
+      \Drupal::messenger()->addMessage($renderer->render($content));
     }
   }
 }
