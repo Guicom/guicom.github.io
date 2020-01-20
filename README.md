@@ -1,3 +1,5 @@
+[![pipeline status](https://gitlab.com/actency/prod/socomec/socomec.com/badges/develop/pipeline.svg)](https://gitlab.com/actency/prod/socomec/socomec.com/commits/develop)
+
 # Socomec
 
 ## Installation :

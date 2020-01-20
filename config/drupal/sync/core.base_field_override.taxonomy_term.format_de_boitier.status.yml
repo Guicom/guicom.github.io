@@ -1,0 +1,22 @@
+uuid: 6e132e5d-6b76-471d-bfdc-23e34338d043
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.format_de_boitier
+id: taxonomy_term.format_de_boitier.status
+field_name: status
+entity_type: taxonomy_term
+bundle: format_de_boitier
+label: Published
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

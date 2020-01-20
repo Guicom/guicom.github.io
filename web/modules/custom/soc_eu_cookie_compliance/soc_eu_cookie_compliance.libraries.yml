@@ -1,0 +1,4 @@
+soc_ecc:
+  version: 1.x
+  js:
+    js/soc_ecc.js: {}

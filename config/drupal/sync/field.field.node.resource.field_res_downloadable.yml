@@ -1,0 +1,23 @@
+uuid: 8c581098-be06-4535-91d7-a78f0660dab7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_res_downloadable
+    - node.type.resource
+id: node.resource.field_res_downloadable
+field_name: field_res_downloadable
+entity_type: node
+bundle: resource
+label: 'Downloadable resource'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

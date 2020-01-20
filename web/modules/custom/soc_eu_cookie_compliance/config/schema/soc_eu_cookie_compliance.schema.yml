@@ -1,0 +1,9 @@
+# /config/schema/soc_eu_cookie_compliance.schema.yml
+
+field.formatter.settings.soc_gpdr_link:
+  type: mapping
+  label: 'Socomec GPDR format settings'
+  mapping:
+    soc_ecc_categorie:
+      type: string
+      label: 'Eu cookie compliance categorie'

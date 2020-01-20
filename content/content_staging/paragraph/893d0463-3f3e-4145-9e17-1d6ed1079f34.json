@@ -8,8 +8,7 @@
         },
         "http:\/\/drupal.org\/rest\/relation\/paragraph\/video_text\/field_video_embed_video": [
             {
-                "href": "http:\/\/default\/media\/38\/edit?_format=hal_json",
-                "lang": "en"
+                "href": "http:\/\/default\/media\/38\/edit?_format=hal_json"
             }
         ]
     },
@@ -41,14 +40,12 @@
     ],
     "status": [
         {
-            "value": true,
-            "lang": "en"
+            "value": true
         }
     ],
     "created": [
         {
             "value": "2019-12-23T10:48:13+00:00",
-            "lang": "en",
             "format": "Y-m-d\\TH:i:sP"
         }
     ],
@@ -88,14 +85,12 @@
         {
             "value": "<p><strong>Filium morte multavit si<\/strong><\/p>\r\n\r\n<p>At vero eos censes tantas res gessisse sine metu degendae praesidia firmissima filium. Ut placet, inquam tum dicere exorsus est et dolorum fuga et voluptates repudiandae.<\/p>\r\n",
             "format": "socomec",
-            "processed": "<p><strong>Filium morte multavit si<\/strong><\/p>\n<p>At vero eos censes tantas res gessisse sine metu degendae praesidia firmissima filium. Ut placet, inquam tum dicere exorsus est et dolorum fuga et voluptates repudiandae.<\/p>",
-            "lang": "en"
+            "processed": "<p><strong>Filium morte multavit si<\/strong><\/p>\n<p>At vero eos censes tantas res gessisse sine metu degendae praesidia firmissima filium. Ut placet, inquam tum dicere exorsus est et dolorum fuga et voluptates repudiandae.<\/p>"
         }
     ],
     "field_title": [
         {
-            "value": "Titre vid\u00e9o",
-            "lang": "en"
+            "value": "Titre vid\u00e9o"
         }
     ],
     "_embedded": {
@@ -113,8 +108,7 @@
                     {
                         "value": "20cfd813-b53d-4f83-bc11-d0e2ac69d6a8"
                     }
-                ],
-                "lang": "en"
+                ]
             }
         ]
     }
