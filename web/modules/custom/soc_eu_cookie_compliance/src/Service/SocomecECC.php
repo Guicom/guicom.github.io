@@ -9,8 +9,12 @@ class SocomecECC {
 
   private $config;
   private $cookieName;
+  private $cookieNameCategorie;
   private $categorie;
 
+  /**
+   * SocomecECC constructor.
+   */
   public function __construct() {
     if (\Drupal::moduleHandler()->moduleExists('eu_cookie_compliance')) {
       $this->config = \Drupal::config('eu_cookie_compliance.settings');
@@ -18,11 +22,35 @@ class SocomecECC {
       if (!empty($this->config->get('cookie_name'))) {
         $this->cookieName = $this->config->get('cookie_name');
       }
+      $this->cookieNameCategorie = $this->cookieName . '-categories';
     }
   }
 
+  /**
+   * @param string $categorie
+   */
   public function setCategorie(string $categorie) {
     $this->categorie = $categorie;
+  }
+
+  /**
+   * @return int|mixed
+   */
+  public function getCookieValue() {
+    if (!empty($_COOKIE[$this->cookieName])) {
+      return $_COOKIE[$this->cookieName];
+    }
+    return 0;
+  }
+
+  /**
+   * @return string|null
+   */
+  public function getCookieCategorieValue() {
+    if (!empty($_COOKIE[$this->cookieNameCategorie])) {
+      return urldecode($_COOKIE[$this->cookieNameCategorie]);
+    }
+    return NULL;
   }
 
   /**
@@ -32,13 +60,10 @@ class SocomecECC {
    */
   public function hasAccess() {
     if (\Drupal::moduleHandler()->moduleExists('eu_cookie_compliance')) {
-      $cookieName = $this->cookieName;
-      if (!empty($_COOKIE[$cookieName]) && $_COOKIE[$cookieName] !== 0) {
+      if ($this->getCookieValue() !== 0) {
         if ($this->config->get('method') === 'categories') {
-          $cookieNameCategories = $cookieName.'-categories';
-          if (!empty($_COOKIE[$cookieNameCategories])) {
-            $categories = $_COOKIE[$cookieNameCategories];
-            $term = urldecode($categories);
+          if (!empty($this->getCookieCategorieValue())) {
+            $term = $this->getCookieCategorieValue();
             if (strpos($term, '"'.$this->categorie.'"') !== false) {
               return true;
             }

@@ -1,8 +1,8 @@
 buttons_size: 32
-additional_html: "<a class=\"a2a_button_facebook\"></a>\r\n<a class=\"a2a_button_linkedin\"></a>\r\n<a class=\"a2a_button_twitter\"></a>\r\n<a class=\"a2a_button_xing\"></a>\r\n<a class=\"a2a_button_copy_link\"></a>\r\n"
+additional_html: "<div class=\"a2a_kit a2a_kit_size_32 a2a_vertical_style\">\r\n<a class=\"a2a_button_email share-button\">\r\n <img src=\"/themes/custom/socomec/assets/images/picto/social/mail.svg\" border=\"0\" alt=\"Email\">\r\n</a>\r\n<a class=\"a2a_button_copy_link share-button\">\r\n <img src=\"/themes/custom/socomec/assets/images/picto/social/link.svg\" border=\"0\" alt=\"Link\">\r\n</a>\r\n<a class=\"a2a_button_print share-button\">\r\n <img src=\"/themes/custom/socomec/assets/images/picto/social/print.svg\" border=\"0\" alt=\"Print\">\r\n</a>\r\n<a class=\"a2a_dd share-button\" href=\"https://www.addtoany.com/share\">\r\n <img src=\"/themes/custom/socomec/assets/images/picto/social/share.svg\" border=\"0\" alt=\"Share\">\r\n</a>\r\n</div>"
 additional_css: ''
-additional_js: ''
-universal_button: default
+additional_js: "a2a_config.num_services = 3;\r\na2a_config.prioritize = [\"facebook\", \"linkedin\", \"twitter\"];\r\na2a_config.icon_color = \"#004F9F\";"
+universal_button: none
 custom_universal_button: ''
 universal_button_placement: after
 no_3p: false
@@ -23,5 +23,7 @@ entities:
   user: 0
   menu_link_content: 0
   paragraph: 0
+  paragraphs_library_item: 0
+  search_api_task: 0
 _core:
   default_config_hash: 9YPlBuinIKLe5jVEf-aIhZvKFn77i18yD4CrNR0BbVQ
