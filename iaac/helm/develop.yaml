@@ -19,7 +19,7 @@ drupal:
   fullnameOverride: ""
   username: admin
   password: admin
-  ingress_hostname: webfactory-drupal-dev.dpk-soc-web-cl01.agoracalyce.net
+  ingress_hostname: webfactory-drupal-dev.dpk-soc-web-cl01.doobesha.org
   files_storage_class: webfactory-prod-fast01
   files_size: 5Gi
   disk_size: 10Gi
