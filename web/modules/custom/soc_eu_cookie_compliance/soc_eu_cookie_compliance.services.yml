@@ -8,3 +8,11 @@ services:
       - { name: twig.extension }
     options:
       no_cache: 'TRUE'
+  soc_eu_cookie_compliance.route_subscriber:
+    class: Drupal\soc_eu_cookie_compliance\Routing\RouteSubscriber
+    tags:
+      - { name: event_subscriber }
+  cache_context.soc_ecc_cache_context:
+    class: \Drupal\soc_eu_cookie_compliance\Cache\Context\SocomecEccCacheContext
+    tags:
+      - { name: cache.context }
