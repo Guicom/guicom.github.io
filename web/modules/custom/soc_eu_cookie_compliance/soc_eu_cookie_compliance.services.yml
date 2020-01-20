@@ -1,0 +1,10 @@
+services:
+  soc_eu_cookie_compliance.soc_ecc:
+    class: Drupal\soc_eu_cookie_compliance\Service\SocomecECC
+  soc_eu_cookie_compliance.twig_extension:
+    arguments: ['@renderer']
+    class: Drupal\soc_eu_cookie_compliance\TwigExtension\SocomecGpdrECC
+    tags:
+      - { name: twig.extension }
+    options:
+      no_cache: 'TRUE'
