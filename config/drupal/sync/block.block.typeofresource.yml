@@ -11,8 +11,8 @@ dependencies:
     - socomec
 id: typeofresource
 theme: socomec
-region: sidebar_first
-weight: 0
+region: facets
+weight: -9
 provider: null
 plugin: 'facet_block:type_of_resource'
 settings:
