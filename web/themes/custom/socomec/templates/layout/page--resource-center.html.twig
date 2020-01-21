@@ -102,9 +102,13 @@
               <div class="product-reference-wrapper col-md-12">
                 <div class="row">
                   <aside class="col-md-3">
-                    <div class="facets-title">{{ 'Filter by' |t }}</div>
-                    {{ drupal_entity('block', 'typeofresource') }}
-                    {{ drupal_entity('block', 'language') }}
+                    <div class="facets">
+                      <div class="facets-title">{{ 'Filter by' |t }}</div>
+                      <div class="facets-category">{{ 'Range' |t }}</div>
+                      <div class="facets-category">{{ 'Characteristics' |t }}</div>
+                      {{ drupal_entity('block', 'typeofresource') }}
+                      {{ drupal_entity('block', 'language') }}
+                    </div>
                     {% if page.sidebar_first %}
                       {{ page.sidebar_first }}
                     {% endif %}

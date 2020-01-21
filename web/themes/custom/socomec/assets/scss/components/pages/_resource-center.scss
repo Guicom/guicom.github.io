@@ -17,6 +17,7 @@ body {
       .text-formatted p {
         color: $white;
         margin-right: 50px;
+        font-size: 24px;
       }
       #block-exposedformresource-centerpage-1 {
         label {
@@ -62,14 +63,26 @@ body {
       }
     }
     .item-list {
+      width: 100%;
       ul {
         li {
           padding: 0;
           &:hover {
             background: $blue_lighter;
+            .node--view-mode-teaser {
+              color: #232c77;
+            }
+            .add-to-bookmarks {
+              &:before {
+                background-image: url("../images/picto/ui/bookmark-star-blue.svg");
+              }
+            }
           }
         }
       }
+    }
+    .facets {
+      margin-bottom: 120px;
     }
     .product-reference-wrapper {
       margin-top: 80px;

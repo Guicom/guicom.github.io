@@ -65,7 +65,7 @@ display:
       pager:
         type: full
         options:
-          items_per_page: 20
+          items_per_page: 2
           offset: 0
           id: 0
           total_pages: null
@@ -200,7 +200,7 @@ display:
               author: '0'
               contributor: '0'
               webmaster: '0'
-            placeholder: ''
+            placeholder: Value
           is_grouped: false
           group_info:
             label: ''
@@ -229,6 +229,7 @@ display:
       relationships: {  }
       arguments: {  }
       display_extenders: {  }
+      use_ajax: true
     cache_metadata:
       max-age: -1
       contexts:
