@@ -8,20 +8,12 @@
         },
         "http:\/\/drupal.org\/rest\/relation\/media\/icone\/uid": [
             {
-                "href": "http:\/\/default\/user\/1?_format=hal_json",
-                "lang": "en"
+                "href": "http:\/\/default\/user\/1?_format=hal_json"
             }
         ],
         "http:\/\/drupal.org\/rest\/relation\/media\/icone\/thumbnail": [
             {
-                "href": "",
-                "lang": "en"
-            }
-        ],
-        "http:\/\/drupal.org\/rest\/relation\/media\/icone\/field_media_image": [
-            {
-                "href": "",
-                "lang": "en"
+                "href": ""
             }
         ]
     },
@@ -53,14 +45,13 @@
     ],
     "revision_created": [
         {
-            "value": "2019-12-31T08:45:22+00:00",
+            "value": "2020-01-15T13:50:13+00:00",
             "format": "Y-m-d\\TH:i:sP"
         }
     ],
     "status": [
         {
-            "value": true,
-            "lang": "en"
+            "value": true
         }
     ],
     "_embedded": {
@@ -76,10 +67,9 @@
                 },
                 "uuid": [
                     {
-                        "value": "674a5a4f-b63e-4035-b0b3-2959ebf4041c"
+                        "value": "4046d41b-2959-4e9b-9291-076427ad1452"
                     }
-                ],
-                "lang": "en"
+                ]
             }
         ],
         "http:\/\/drupal.org\/rest\/relation\/media\/icone\/thumbnail": [
@@ -94,56 +84,30 @@
                 },
                 "uuid": [
                     {
-                        "value": "07c6a98b-7247-4d2c-94ce-9026f06faf3a"
+                        "value": "81972ee0-9b5e-48c0-a204-719021405781"
                     }
                 ],
-                "lang": "en",
-                "alt": "Big-line-circle.svg",
+                "alt": null,
                 "title": null,
-                "width": null,
-                "height": null
-            }
-        ],
-        "http:\/\/drupal.org\/rest\/relation\/media\/icone\/field_media_image": [
-            {
-                "_links": {
-                    "self": {
-                        "href": ""
-                    },
-                    "type": {
-                        "href": "http:\/\/drupal.org\/rest\/type\/file\/file"
-                    }
-                },
-                "uuid": [
-                    {
-                        "value": "07c6a98b-7247-4d2c-94ce-9026f06faf3a"
-                    }
-                ],
-                "lang": "en",
-                "alt": "Big-line-circle.svg",
-                "title": "",
-                "width": "50",
-                "height": "50"
+                "width": "180",
+                "height": "180"
             }
         ]
     },
     "name": [
         {
-            "value": "Big-line-circle.svg",
-            "lang": "en"
+            "value": "Big-line-circle.svg"
         }
     ],
     "created": [
         {
             "value": "2019-12-20T13:19:45+00:00",
-            "lang": "en",
             "format": "Y-m-d\\TH:i:sP"
         }
     ],
     "changed": [
         {
             "value": "2019-12-20T13:19:45+00:00",
-            "lang": "en",
             "format": "Y-m-d\\TH:i:sP"
         }
     ],
@@ -169,14 +133,6 @@
         {
             "value": false,
             "lang": "en"
-        }
-    ],
-    "metatag": [
-        {
-            "value": {
-                "title": "| Socomec",
-                "canonical_url": "http:\/\/default\/node"
-            }
         }
     ]
 }

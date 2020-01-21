@@ -73,6 +73,7 @@
       {% block head %}
         {% include '@socomec/includes/header.html.twig' %}
       {% endblock %}
+      {{ drupal_block('system_breadcrumb_block') }}
       {% include '@socomec/layout/product/hero-header.html.twig' %}
       {{ drupal_block('local_tasks_block') }}
     </header>
@@ -95,6 +96,8 @@
     <main id="main-wrapper" class="layout-main-wrapper clearfix">
       {% block content %}
         <aside class="product-navigation position-sticky sticky-top">
+          {% include '@socomec/layout/product/share.html.twig' %}
+
           {% include '@socomec/layout/product/navigation.html.twig' %}
         </aside>
         <article id="main" class="container-fluid">

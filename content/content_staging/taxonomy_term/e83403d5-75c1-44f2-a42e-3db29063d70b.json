@@ -1,14 +1,20 @@
 {
     "_links": {
         "self": {
-            "href": "http:\/\/default\/energy-storage-solution\/storage-converters\/grid-modular-indoor?_format=hal_json"
+            "href": "http:\/\/default\/products\/energy-storage-solution\/storage-converters\/grid-modular-indoor?_format=hal_json"
         },
         "type": {
             "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/family"
         },
         "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/family\/parent": [
             {
-                "href": "http:\/\/default\/energy-storage-solution\/storage-converters?_format=hal_json"
+                "href": "http:\/\/default\/products\/energy-storage-solution\/storage-converters?_format=hal_json"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/family\/content_translation_uid": [
+            {
+                "href": "http:\/\/default\/user\/1?_format=hal_json",
+                "lang": "en"
             }
         ],
         "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/family\/field_background_image": [
@@ -22,11 +28,6 @@
             },
             {
                 "href": ""
-            }
-        ],
-        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/family\/field_family_image": [
-            {
-                "href": "http:\/\/default\/media\/18\/edit?_format=hal_json"
             }
         ]
     },
@@ -89,7 +90,7 @@
             {
                 "_links": {
                     "self": {
-                        "href": "http:\/\/default\/energy-storage-solution\/storage-converters?_format=hal_json"
+                        "href": "http:\/\/default\/products\/energy-storage-solution\/storage-converters?_format=hal_json"
                     },
                     "type": {
                         "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/family"
@@ -100,6 +101,24 @@
                         "value": "868352ea-0c8b-495c-b756-750eaa3298b5"
                     }
                 ]
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/family\/content_translation_uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/user\/1?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "4046d41b-2959-4e9b-9291-076427ad1452"
+                    }
+                ],
+                "lang": "en"
             }
         ],
         "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/family\/field_background_image": [
@@ -151,23 +170,6 @@
                     }
                 ],
                 "target_revision_id": "249"
-            }
-        ],
-        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/family\/field_family_image": [
-            {
-                "_links": {
-                    "self": {
-                        "href": "http:\/\/default\/media\/18\/edit?_format=hal_json"
-                    },
-                    "type": {
-                        "href": "http:\/\/drupal.org\/rest\/type\/media\/product_image"
-                    }
-                },
-                "uuid": [
-                    {
-                        "value": "3d43aa6c-68e4-427c-9086-6ae4a58dd317"
-                    }
-                ]
             }
         ]
     },
