@@ -26,34 +26,28 @@ class ButtonDownloadResourceDisplay extends ExtraFieldDisplayBase {
   public function view(ContentEntityInterface $entity) {
 
 
-    $url = Url::fromRoute('<current>');
-
-
-    $label = '';
-    $attributes = [];
-    if ($entity->get('field_res_downloadable')
-        ->getValue()[0]['value'] === '0') {
-      // je pose un lien classique sur la page.
-      $label = "Lien classique";
-      // field field_open_link_in_new_window.
-      if ($entity->get('field_open_link_in_new_window')
-          ->getValue()[0]['value'] === '1') {
-        $attributes = ['target' => '_blank'];
+    $url = NULL;
+    $label = NULL;
+    $attributes['class'] = array('btn','btn-primary');
+    if ($entity->get('field_res_downloadable')->getValue()[0]['value'] === '0') {
+      $label = $this->t('See the link');
+      if ($entity->get('field_open_link_in_new_window')->getValue()[0]['value'] === '1') {
+        $attributes['target'] = '_blank';
       }
       if ($entity->get('field_res_link_url')->first()->getValue()) {
-        $url = Url::fromUri($entity->get('field_res_link_url')
-          ->first()
-          ->getValue()['value']);
+        $url = Url::fromUri($entity->get('field_res_link_url')->first()->getValue()['value']);
       }
-
-
+      $attributes['class'][]='is-link';
     }
     else {
       // je pose un lien de téléchargement.
-      $label = "Lien download";
-
-      var_dump($entity->get('field_res_remote_file_url')->getValue());
-      // @todo: chercher le field correspondant.
+      $label = $this->t('Download the file');
+      $id = $entity->get('field_res_remote_file_url')->first()->getValue()['target_id'];
+      /* @var \Drupal\file\FileInterface $file */
+      $file = \Drupal::entityTypeManager()->getStorage('file')->load($id);
+      $url = Url::fromUri($file->getFileUri());
+      $attributes['download'] = TRUE;
+      $attributes['class'][]='is-file';
     }
 
     $build['examples_link'] = [
