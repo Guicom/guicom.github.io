@@ -19,6 +19,7 @@ stages:
   #  - build
   - sonarqube
   - behat
+  - deploy
 
 cache: &global_cache
   key: ${CI_JOB_NAME}
@@ -95,7 +96,7 @@ behat:
     - docker-compose exec -u web -T web bash -c "cd /var/www/html && ./vendor/bin/phing behat:run -Dbehat.bin=tests/behat/bin/behat"
 
 push-web-image:
-  stage: build
+  stage: deploy
   tags:
     - actency
   cache:
