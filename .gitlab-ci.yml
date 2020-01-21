@@ -104,8 +104,6 @@ behat:
 
 push-web-image:
   stage: deploy
-  tags:
-    - actency
   cache:
     # inherit all global cache settings
     <<: *global_cache
