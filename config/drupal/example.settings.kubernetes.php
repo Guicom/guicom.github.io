@@ -153,3 +153,7 @@ $settings['admin_password'] = getenv('DRUPAL_PASSWORD');
 $settings['admin_email'] = 'admin_socomec@socomec.com';
 
 $settings['DISABLE_SUPER_ADMIN_ACCOUNT'] = 1;
+
+$config['search_api.server.socomec']['backend_config']['connector_config']['host'] = getenv('SOLR_HOST');
+$config['search_api.server.socomec']['backend_config']['connector_config']['port'] = getenv('SOLR_PORT');
+$config['search_api.server.socomec']['backend_config']['connector_config']['core'] = getenv('SOLR_COLLECTION');

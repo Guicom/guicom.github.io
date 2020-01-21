@@ -37,3 +37,8 @@ redis:
   session:
     hostname: redis-session
     port: 6379
+
+solr:
+  hostname: solr
+  port: 8983
+  collection: collection1

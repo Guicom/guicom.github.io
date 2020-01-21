@@ -10,6 +10,9 @@ services:
       - DOCUMENTROOT=web
       - DRUSH_VERSION=9
       - ENVIRONMENT=${ENVIRONMENT}
+      - SOLR_HOST=solr
+      - SOLR_PORT=8983
+      - SOLR_COLLECTION=collection1
     volumes:
       - /builds/actency/prod/socomec/socomec.com/:/var/www/html
       - /builds/actency/prod/socomec/socomec.com/config/.bashrc:/var/www/.bashrc
