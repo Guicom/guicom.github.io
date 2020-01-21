@@ -80,7 +80,7 @@ spec:
             - name: SOLR_HOST
               value: {{ .Values.solr.hostname }}
             - name: SOLR_PORT
-              value: {{ .Values.solr.port }}
+              value: {{ .Values.solr.port | quote }}
             - name: SOLR_COLLECTION
               value: {{ .Values.solr.collection }}
           livenessProbe:
