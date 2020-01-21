@@ -1,6 +1,6 @@
 Feature: Moderation acces
 
-  @api @cit @admin_moderation
+  @api @cit @admin_moderation @javascript
   Test of access to the administration page of the moderation states of a content by the administer
  # vendor/bin/phing behat:run -Dbehat.tags=admin_moderation
   Scenario: Test of access to the administration page of the moderation states of a content by the administer

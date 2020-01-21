@@ -9,11 +9,8 @@ namespace Drupal\soc_eu_cookie_compliance\Plugin\Field\FieldFormatter;
 use Drupal\Core\Field\FormatterBase;
 use Drupal\Core\Field\FieldItemListInterface;
 use Drupal\Core\Form\FormStateInterface;
-use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Drupal\Core\Url;
-use Drupal\link\LinkItemInterface;
-use Symfony\Component\DependencyInjection\ContainerInterface;
-
+use \Drupal\soc_eu_cookie_compliance\Cache\Context\SocomecEccCacheContext;
 
 /**
  * Plugin implementation of the 'soc_gpdr_link' formatter.
@@ -73,13 +70,14 @@ class SocGprdLinkFormatter extends FormatterBase {
       $link_title = $url->toString();
       $soc_ecc_service = \Drupal::service('soc_eu_cookie_compliance.soc_ecc');
       $soc_ecc_service->setCategorie($this->getSetting('soc_ecc_categorie'));
+
       $element[$delta] = [
         '#type' => 'link',
         '#title' => $link_title,
         '#options' => $url->getOptions(),
         '#cache' => [
-          'max-age' => 0
-        ]
+          'contexts' => [SocomecEccCacheContext::CONTEXT_ID]
+        ],
       ];
 
       if ($soc_ecc_service->hasAccess()) {
@@ -89,11 +87,7 @@ class SocGprdLinkFormatter extends FormatterBase {
         $element[$delta]['#message'] = $soc_ecc_service->getMessage();
       }
     }
-
-    $elements['#cache']['max-age'] = 0;
-    $elements['#cache']['contexts'] = [];
-    $elements['#cache']['tags'] = [];
-
+    $element['#cache']['contexts'] = [SocomecEccCacheContext::CONTEXT_ID];
     return $element;
   }
 }
