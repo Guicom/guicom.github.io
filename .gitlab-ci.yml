@@ -60,7 +60,6 @@ cache: &global_cache
     # No spaces.
     APACHE_RUN_USER: "www-data"
     APACHE_RUN_GROUP: "www-data"
-    ENVIRONMENT: "develop"
   before_script:
     - mkdir -p "${DOCKER_IMAGE_BUILD_PATH}/"
     - apk add --no-cache py-pip python-dev libffi-dev openssl-dev gcc libc-dev make
@@ -102,7 +101,8 @@ behat:
     refs:
       - desactive
 
-push-web-image:
+
+.push-web-image: &push-web-image
   stage: deploy
   cache:
     # inherit all global cache settings
@@ -112,3 +112,22 @@ push-web-image:
   script:
     - cd iaac && make push-web-image
   when: manual
+
+push-web-image:
+  variables:
+    ENVIRONMENT: $CI_COMMIT_REF_NAME
+  extends:
+    - .push-web-image
+  only:
+    refs:
+      - developpp
+      - recettepp
+
+push-web-image-prod:
+  variables:
+    ENVIRONMENT: "production"
+  extends:
+      - .push-web-image
+  only:
+    refs:
+      - develop
