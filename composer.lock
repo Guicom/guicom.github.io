@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "dbf57a39029321b260f1fd8f0dbc0f0c",
+    "content-hash": "38367d707df75b77097ae911cc4acae9",
     "packages": [
         {
             "name": "actency/foundation",
@@ -5373,6 +5373,9 @@
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
                     }
+                },
+                "patches_applied": {
+                    "Google analytics eu_cookie_compliance support for 8.x-3.x": "https://www.drupal.org/files/issues/2020-01-14/google_analytics-eu_cookie_compliance_support-2917905-49.patch"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
