@@ -17,14 +17,29 @@ use Drupal\views\Views;
  */
 function soc_views_news_views_query_alter(ViewExecutable $view, QueryPluginBase $query) {
   if ($view->id() === 'news' && $view->getDisplay()->display['id'] === 'page_1') {
-    $view_block = Views::getView('news');
-    $view_block->setDisplay('block_1');
-    $view_block->execute();
-    // If the view returns results...
-    if (!empty($view_block->result)) {
-      $nid = $view_block->result[0]->_object->getEntity()->nid->value;
-      if (!empty($nid)) {
-        $query->addCondition('nid', $nid, '<>');
+    $view_block = Views::getView('news_highlight');
+    if (!empty($view_block)) {
+      if ($view_block->setDisplay('block_1')) {
+        $view_block->execute();
+        // If the view returns results...
+        if (!empty($view_block->result)) {
+          $nid = $view_block->result[0]->_object->getEntity()->nid->value;
+          if (!empty($nid)) {
+            $query->addCondition('nid', $nid, '<>');
+          }
+        }
+        else {
+          $view_block = Views::getView('news_highlight');
+          if ($view_block->setDisplay('block_2')) {
+            $view_block->execute();
+            if (!empty($view_block->result)) {
+              $nid = $view_block->result[0]->_object->getEntity()->nid->value;
+              if (!empty($nid)) {
+                $query->addCondition('nid', $nid, '<>');
+              }
+            }
+          }
+        }
       }
     }
   }

@@ -11,8 +11,8 @@ dependencies:
     - socomec
 id: newstypetaxonomytermname
 theme: socomec
-region: facets
-weight: -10
+region: hidden
+weight: -9
 provider: null
 plugin: 'facet_block:news_type_taxonomy_term_name'
 settings:

@@ -153,7 +153,6 @@ function socomec_theme_suggestions_field_alter(&$suggestions, array $variables) 
 function socomec_theme_suggestions_page_alter(array &$suggestions, array $variables) {
   $node = \Drupal::routeMatch()->getParameter('node');
   if ($node instanceof \Drupal\node\NodeInterface) {
-    $suggestions[] = 'page__' . $node->bundle();
     $suggestions[] = 'page__node__' . $node->bundle();
   }
   $term = \Drupal::routeMatch()->getParameter('taxonomy_term');
