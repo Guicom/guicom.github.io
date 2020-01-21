@@ -1,16 +1,18 @@
-{% set attributes = attributes.addClass('dropdown') %}
-{% set attributes = attributes.removeClass('dropdown-menu') %}
-
 <li {{ attributes }}>
   {% if href is empty %}
     <span class="we-megamenu-nolink dropdown-toggle" data-toggle="dropdown">{{ title }}</span>
   {% else %}
-    <a class="we-mega-menu-li dropdown-toggle" title="{{ attribute(attributes, 'description') }}" href="{{ href }}" target="{{ attribute(attributes, 'data-target') }}" data-toggle="dropdown">
+    <a {{ attributes_link }} class="we-mega-menu-li {{link_class}}" title="{{ attribute(attributes, 'description') }}" href="{{ href }}" target="{{ attribute(attributes, 'data-target') }}" aria-haspopup="true" aria-expanded="false">
       {% if (attribute(attributes, 'data-icon') is defined and attribute(attributes, 'data-icon')|trim) %}
-        <i class="{{ attribute(attributes, 'data-icon') }}"></i>
+        <span class="menu-title-wrapper">
+          {{ title }}
+        </span>
+        <span class="menu-icon-wrapper">
+        {% include '/themes/custom/socomec/assets/images/picto/menu/' ~ attribute(attributes, 'data-icon') ~ '.svg' %}
+        </span>
+      {% else %}
+        {{ title }}
       {% endif %}
-
-      {{ title }}
 
       {% if (attribute(attributes, 'data-caption') is defined and attribute(attributes, 'data-caption')|trim) %}
         <span class="we-mega-menu-caption">{{ attribute(attributes, 'data-caption') }}</span>
