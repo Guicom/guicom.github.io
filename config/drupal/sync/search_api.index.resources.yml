@@ -72,6 +72,22 @@ field_settings:
       module:
         - taxonomy
         - taxonomy
+  changed:
+    label: Changed
+    datasource_id: 'entity:node'
+    property_path: changed
+    type: date
+    dependencies:
+      module:
+        - node
+  created:
+    label: 'Authored on'
+    datasource_id: 'entity:node'
+    property_path: created
+    type: date
+    dependencies:
+      module:
+        - node
   description:
     label: Description
     datasource_id: 'entity:node'
@@ -137,6 +153,22 @@ field_settings:
       module:
         - taxonomy
         - taxonomy
+  status:
+    label: Published
+    datasource_id: 'entity:node'
+    property_path: status
+    type: boolean
+    dependencies:
+      module:
+        - node
+  sticky:
+    label: 'Sticky at top of lists'
+    datasource_id: 'entity:node'
+    property_path: sticky
+    type: boolean
+    dependencies:
+      module:
+        - node
   target:
     label: Target
     datasource_id: 'entity:node'
