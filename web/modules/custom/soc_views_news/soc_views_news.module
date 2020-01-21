@@ -5,6 +5,7 @@ use Drupal\node\Entity\Node;
 use Drupal\views\ViewExecutable;
 use Drupal\views\Plugin\views\query\QueryPluginBase;
 use Drupal\views\Views;
+use Drupal\Core\Form\FormStateInterface;
 
 /**
  * Implements hook_views_query_alter().
@@ -76,4 +77,18 @@ function soc_views_news_entity_delete(Drupal\Core\Entity\EntityInterface $entity
       \Drupal::messenger()->addMessage($renderer->render($content));
     }
   }
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function soc_views_news_form_node_news_edit_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+ $form['sticky']['widget']['value']['#description'] = t('will only be displayed if a photo is attached');
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function soc_views_news_form_node_news_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  $form['sticky']['widget']['value']['#description'] = t('will only be displayed if a photo is attached');
 }
