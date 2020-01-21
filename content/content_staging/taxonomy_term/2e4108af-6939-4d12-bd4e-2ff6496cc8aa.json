@@ -54,17 +54,35 @@
     ],
     "weight": [
         {
-            "value": 2
+            "value": 12
         }
     ],
     "_embedded": {
         "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/family\/parent": [
             null
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/family\/content_translation_uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/user\/1?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "4347e6e5-d4a6-4395-8cf9-e737bab5b8f2"
+                    }
+                ],
+                "lang": "en"
+            }
         ]
     },
     "changed": [
         {
-            "value": "2020-01-14T12:30:45+00:00",
+            "value": "2020-01-17T17:38:27+00:00",
             "format": "Y-m-d\\TH:i:sP"
         }
     ],
