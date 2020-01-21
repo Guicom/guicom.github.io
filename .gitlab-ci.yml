@@ -47,9 +47,10 @@ cache: &global_cache
     - cp ${CI_PROJECT_DIR}/phing/example.build.properties.local ${CI_PROJECT_DIR}/phing/build.properties.local
     - cp ${CI_PROJECT_DIR}/tests/behat/behat.example.yml ${CI_PROJECT_DIR}/tests/behat/behat.local.yml
     - docker-compose up -d
-    - docker-compose exec -u web -T web bash -c "cd /var/www/html/ && composer install"
-    - docker-compose exec -u web -T web bash -c "cd /var/www/html/tests/behat && composer install"
-    - docker-compose exec -u web -T web bash -c "cd /var/www/html/ && ./vendor/bin/phing install"
+    - docker-compose exec -u root -T web bash -c "cd /var/www/html/ && composer install"
+    - docker-compose exec -u root -T web bash -c "cd /var/www/html/tests/behat && composer install"
+    - docker-compose exec -u root -T web bash -c "cd /var/www/html/ && ./vendor/bin/phing install"
+    - docker-compose exec -u root -T web bash -c "chown -R www-data:www-data /var/www/html/"
 
 .build_project: &build_project
   artifacts:
@@ -67,8 +68,8 @@ cache: &global_cache
     - cp ${CI_PROJECT_DIR}/docker-compose.example.gitlab-ci.yml ${CI_PROJECT_DIR}/docker-compose.yml
     - cp ${CI_PROJECT_DIR}/phing/example.build.properties.local ${CI_PROJECT_DIR}/phing/build.properties.local
     - docker-compose up -d
-    - docker-compose exec -e ENVIRONMENT=${ENVIRONMENT} -u web -T web bash -c "cd /var/www/html/ && make install"
-    - docker-compose exec -e ENVIRONMENT=${ENVIRONMENT} -u web -T web bash -c "cd /var/www/html/ && make set-kubernetes-configs"
+    - docker-compose exec -e ENVIRONMENT=${ENVIRONMENT} -u root -T web bash -c "cd /var/www/html/ && make install"
+    - docker-compose exec -e ENVIRONMENT=${ENVIRONMENT} -u root -T web bash -c "cd /var/www/html/ && make set-kubernetes-configs"
 
 # SonarQube Runner
 sonarqube:
@@ -81,6 +82,9 @@ sonarqube:
     SONAR_ANALYSIS_MODE: preview
   script:
     - gitlab-sonar-scanner -Dsonar.gitlab.ref_name=$CI_COMMIT_REF_NAME -Dsonar.gitlab.project_id=$CI_PROJECT_ID -Dsonar.login=$SONARQUBE_ACCESS_KEY -Dsonar.gitlab.user_token=$GITLAB_ACCESS_KEY
+  only:
+    refs:
+      - desactive
 
 # Behat tests from tests/ folder.
 behat:
@@ -94,6 +98,9 @@ behat:
     - .behat_build_project
   script:
     - docker-compose exec -u web -T web bash -c "cd /var/www/html && ./vendor/bin/phing behat:run -Dbehat.bin=tests/behat/bin/behat"
+  only:
+    refs:
+      - desactive
 
 push-web-image:
   stage: deploy
