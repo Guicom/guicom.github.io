@@ -114,7 +114,7 @@
   }
 }
 @mixin left-overflow-color($color) {
-  &:after {
+  &:before {
     background: $color;
     content: '';
     display: block;

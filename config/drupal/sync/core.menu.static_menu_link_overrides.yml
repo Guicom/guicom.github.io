@@ -3,7 +3,7 @@ definitions:
     weight: -50
     menu_name: header
     parent: ''
-    enabled: true
     expanded: true
+    enabled: true
 _core:
   default_config_hash: o4bYR9ZupWb3AsOIizTUG4g-nu1mdJqA59UB7QT-ifQ
