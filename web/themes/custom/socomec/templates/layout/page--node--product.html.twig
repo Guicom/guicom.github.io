@@ -96,6 +96,8 @@
     <main id="main-wrapper" class="layout-main-wrapper clearfix">
       {% block content %}
         <aside class="product-navigation position-sticky sticky-top">
+          {% include '@socomec/layout/product/share.html.twig' %}
+
           {% include '@socomec/layout/product/navigation.html.twig' %}
         </aside>
         <article id="main" class="container-fluid">

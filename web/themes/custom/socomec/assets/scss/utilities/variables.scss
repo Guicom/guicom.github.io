@@ -63,3 +63,10 @@ $comment-spacer-y: 1.25em;
 $enable-responsive-font-sizes: true;
 
 $transition02 : 0.2s;
+// Box shadow
+$box-shadow02: 0 2px 4px 0 rgba(0,0,0,0.20);
+$box-shadow04: 0 2px 4px 0 rgba(0,0,0,0.20), 0 4px 8px 0 rgba(0,0,0,0.20);
+$box-shadow08: 0 4px 8px 0 rgba(0,0,0,0.10), 0 8px 16px 0 rgba(0,0,0,0.20);
+$box-shadow16: 0 8px 16px 0 rgba(0,0,0,0.10), 0 16px 32px 0 rgba(0,0,0,0.20);
+$box-shadow64: 0 16px 32px 0 rgba(0,0,0,0.20), 0 64px 128px 0 rgba(0,0,0,0.20);
+$text-shadow:  0px 2px 4px #00000066;

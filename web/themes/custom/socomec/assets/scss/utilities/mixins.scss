@@ -207,7 +207,7 @@ Parent element must have position set to relative
   }
 }
 @mixin left-overflow-color($color) {
-  &:after {
+  &:before {
     background: $color;
     content: '';
     display: block;
