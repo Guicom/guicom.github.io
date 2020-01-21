@@ -77,6 +77,9 @@ body {
                 background-image: url("../images/picto/ui/bookmark-star-blue.svg");
               }
             }
+            .resource-download {
+              background-image: url("../images/picto/ui/chevron-right-circle.svg") !important;
+            }
           }
         }
       }
@@ -109,7 +112,17 @@ body {
           &.field--name-field-res-resource-type {
             width: 20%;
           }
-          &.field--name-extra-field-bookmark-resource {
+          &.field--name-extra-field-button-download-resource {
+            .resource-download {
+              display: block;
+              width: 20px;
+              height: 20px;
+              background-image: url("../images/picto/ui/chevron-right-circle-grey.svg");
+              text-indent: -9999px;
+            }
+          }
+          &.field--name-extra-field-bookmark-resource,
+          &.field--name-extra-field-button-download-resource {
             position: relative;
             z-index: 2;
           }

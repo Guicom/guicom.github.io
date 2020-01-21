@@ -1,11 +1,11 @@
 <?php
 
-namespace Drupal\soc_core\Plugin\ExtraField\Display;
+namespace Drupal\soc_resource_center\Plugin\ExtraField\Display;
 
 use Drupal\Core\Entity\ContentEntityInterface;
 use Drupal\Core\StringTranslation\StringTranslationTrait;
 use Drupal\Core\Url;
-use Drupal\extra_field\Plugin\ExtraFieldDisplayBase;
+use Drupal\extra_field\Plugin\ExtraFieldDisplayFormattedBase;
 
 
 /**
@@ -19,18 +19,44 @@ use Drupal\extra_field\Plugin\ExtraFieldDisplayBase;
  *   }
  * )
  */
-class ButtonDownloadResourceDisplay extends ExtraFieldDisplayBase {
+class ButtonDownloadResourceDisplay extends ExtraFieldDisplayFormattedBase {
 
   use StringTranslationTrait;
 
-  public function view(ContentEntityInterface $entity) {
+  /**
+   * {@inheritdoc}
+   */
+  public function getLabel() {
+    return $this->t('Download resource');
+  }
 
+  /**
+   * {@inheritdoc}
+   */
+  public function getLabelDisplay() {
+    return 'hidden';
+  }
 
+  /**
+   * Returns the renderable array of the field item(s).
+   *
+   * @param \Drupal\Core\Entity\ContentEntityInterface $entity
+   *   The field's host entity.
+   *
+   * @return array
+   *   A renderable array of field elements. If this contains children, the
+   *   field output will be rendered as a multiple value field with each child
+   *   as a field item.
+   * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
+   * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
+   * @throws \Drupal\Core\TypedData\Exception\MissingDataException
+   */
+  public function viewElements(ContentEntityInterface $entity) {
     $url = NULL;
     $label = NULL;
-    $attributes['class'] = array('btn','btn-primary');
+    $attributes['class'] = array('resource-download');
+    $label = $this->t('Download');
     if ($entity->get('field_res_downloadable')->getValue()[0]['value'] === '0') {
-      $label = $this->t('See the link');
       if ($entity->get('field_open_link_in_new_window')->getValue()[0]['value'] === '1') {
         $attributes['target'] = '_blank';
       }
@@ -41,7 +67,6 @@ class ButtonDownloadResourceDisplay extends ExtraFieldDisplayBase {
     }
     else {
       // je pose un lien de téléchargement.
-      $label = $this->t('Download the file');
       $id = $entity->get('field_res_remote_file_url')->first()->getValue()['target_id'];
       /* @var \Drupal\file\FileInterface $file */
       $file = \Drupal::entityTypeManager()->getStorage('file')->load($id);
@@ -56,8 +81,8 @@ class ButtonDownloadResourceDisplay extends ExtraFieldDisplayBase {
       '#url' => $url,
       '#attributes' => $attributes,
     ];
-    return $build;
+    return [
+      ['#markup' => render($build)],
+    ];
   }
-
-
 }
