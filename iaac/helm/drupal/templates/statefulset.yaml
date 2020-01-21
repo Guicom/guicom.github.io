@@ -32,6 +32,8 @@ spec:
           volumeMounts:
             - mountPath: /var/www/html/web/sites/default/files
               name: drupal-files-volume
+            - mountPath: /PRIVATE_DATA
+              name: drupal-private-files-volume
           ports:
             - containerPort: {{ .Values.drupal.service.port }}
           env:
@@ -100,3 +102,6 @@ spec:
         - name: drupal-files-volume
           persistentVolumeClaim:
             claimName: {{ .Values.drupal.name }}-pvc
+        - name: drupal-private-files-volume
+          persistentVolumeClaim:
+            claimName: {{ .Values.drupal.name }}-private-pvc

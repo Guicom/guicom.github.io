@@ -131,8 +131,8 @@ $settings['trusted_host_patterns'] = array(
 /**
  * Files configurations.
  */
-//$settings['file_public_path'] = $app_ground . '/web/sites/default/files';
-//$settings['file_private_path'] = $app_ground . '/data/files/private';
+$settings['file_public_path'] = $app_ground . '/web/sites/default/files';
+$settings['file_private_path'] = '/PRIVATE_DATA';
 
 // Redis
 $settings['redis.connection']['interface'] = 'Predis';

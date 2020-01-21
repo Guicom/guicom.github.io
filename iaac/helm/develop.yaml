@@ -22,6 +22,8 @@ drupal:
   ingress_hostname: webfactory-drupal-dev.dpk-soc-web-cl01.doobesha.org
   files_storage_class: webfactory-prod-fast01
   files_size: 5Gi
+  files_private_storage_class: webfactory-prod-fast01
+  files_private_size: 5Gi
   disk_size: 10Gi
   replicaCount: 1
   service:

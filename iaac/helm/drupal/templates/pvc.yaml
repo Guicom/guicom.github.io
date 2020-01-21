@@ -13,3 +13,21 @@ spec:
       storage: {{ .Values.drupal.files_size }}
   accessModes:
     - ReadWriteMany
+
+---
+
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: {{ .Values.drupal.name }}-private-pvc
+  labels:
+    app: {{ .Values.drupal.name }}
+  namespace: {{ .Values.namespace }}
+  annotations:
+    volume.beta.kubernetes.io/storage-class: {{ .Values.drupal.files_private_storage_class }}
+spec:
+  resources:
+    requests:
+      storage: {{ .Values.drupal.files_private_size }}
+  accessModes:
+    - ReadWriteMany
