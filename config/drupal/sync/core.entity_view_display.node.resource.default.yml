@@ -28,15 +28,20 @@ targetEntityType: node
 bundle: resource
 mode: default
 content:
+  extra_field_button_download_resource:
+    weight: 16
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   field_description:
-    weight: 102
+    weight: 2
     label: above
     settings: {  }
     third_party_settings: {  }
     type: basic_string
     region: content
   field_open_link_in_new_window:
-    weight: 110
+    weight: 8
     label: above
     settings:
       format: default
@@ -46,7 +51,7 @@ content:
     type: boolean
     region: content
   field_res_application:
-    weight: 114
+    weight: 12
     label: above
     settings:
       link: true
@@ -54,7 +59,7 @@ content:
     type: entity_reference_label
     region: content
   field_res_downloadable:
-    weight: 117
+    weight: 15
     label: above
     settings:
       format: default
@@ -64,7 +69,7 @@ content:
     type: boolean
     region: content
   field_res_link_url:
-    weight: 109
+    weight: 7
     label: above
     settings:
       link_to_entity: false
@@ -72,7 +77,7 @@ content:
     type: string
     region: content
   field_res_momentum:
-    weight: 113
+    weight: 11
     label: above
     settings:
       link: true
@@ -80,14 +85,14 @@ content:
     type: entity_reference_label
     region: content
   field_res_original_description:
-    weight: 105
+    weight: 4
     label: above
     settings: {  }
     third_party_settings: {  }
     type: basic_string
     region: content
   field_res_original_title:
-    weight: 107
+    weight: 6
     label: above
     settings:
       link_to_entity: false
@@ -95,7 +100,7 @@ content:
     type: string
     region: content
   field_res_reference:
-    weight: 101
+    weight: 1
     label: above
     settings:
       link_to_entity: false
@@ -103,7 +108,7 @@ content:
     type: string
     region: content
   field_res_remote_file_url:
-    weight: 116
+    weight: 14
     label: above
     settings:
       use_description_as_link_text: true
@@ -111,7 +116,7 @@ content:
     type: file_default
     region: content
   field_res_resource_type:
-    weight: 106
+    weight: 5
     label: above
     settings:
       link: true
@@ -119,7 +124,7 @@ content:
     type: entity_reference_label
     region: content
   field_res_segment:
-    weight: 115
+    weight: 13
     label: above
     settings:
       link: true
@@ -127,7 +132,7 @@ content:
     type: entity_reference_label
     region: content
   field_res_target:
-    weight: 112
+    weight: 10
     label: above
     settings:
       link: true
@@ -135,7 +140,7 @@ content:
     type: entity_reference_label
     region: content
   field_res_thumb:
-    weight: 111
+    weight: 9
     label: above
     settings:
       svg_attributes:
@@ -148,7 +153,7 @@ content:
     type: image
     region: content
   field_res_title:
-    weight: 104
+    weight: 3
     label: above
     settings:
       link_to_entity: false
@@ -156,10 +161,10 @@ content:
     type: string
     region: content
   links:
-    weight: 100
+    weight: 0
+    region: content
     settings: {  }
     third_party_settings: {  }
-    region: content
 hidden:
   addtoany: true
   langcode: true

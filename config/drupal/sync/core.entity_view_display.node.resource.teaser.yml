@@ -22,6 +22,7 @@ hidden:
   field_description: true
   field_open_link_in_new_window: true
   field_res_application: true
+  field_res_downloadable: true
   field_res_link_url: true
   field_res_momentum: true
   field_res_original_description: true
