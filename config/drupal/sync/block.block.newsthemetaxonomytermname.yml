@@ -11,13 +11,13 @@ dependencies:
     - socomec
 id: newsthemetaxonomytermname
 theme: socomec
-region: content
-weight: -4
+region: facets
+weight: -9
 provider: null
 plugin: 'facet_block:news_theme_taxonomy_term_name'
 settings:
   id: 'facet_block:news_theme_taxonomy_term_name'
-  label: 'News Theme'
+  label: THEMATICS
   provider: facets
   label_display: visible
   block_id: newsthemetaxonomytermname

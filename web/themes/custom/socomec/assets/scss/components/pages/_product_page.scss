@@ -1054,15 +1054,15 @@ body.node--type-product {
     height: 34px;
     width: 34px;
   }
+  &.blue,
+  &:hover{
+    &:before {
+      background: url("../images/picto/ui/bookmark-star-blue.svg") no-repeat center center;
+    }
+  }
   &.active {
     &:before {
       background: url("../images/picto/ui/bookmark-star.svg") no-repeat center center $white;
-    }
-  }
-
-  &.blue {
-    &:before {
-      background: url("../images/picto/ui/bookmark-star-blue.svg") no-repeat center center;
     }
   }
 }
