@@ -248,9 +248,12 @@ function socomec_preprocess_views_view(&$variables) {
   }
 
   if ((!empty($id) && $id == 'resource_center') && $display_id == 'page_1') {
-    if (\Drupal::request()->query->get('search_api_fulltext') === ''
-      && !\Drupal::request()->query->get('f')) {
-      $variables['hidden_count_results'] = TRUE;
+    $variables['hidden_count_results'] = TRUE;
+    $query = \Drupal::request()->query->get('query');
+    $filters = \Drupal::request()->query->get('f');
+    if (($query !== '' && !is_null($query))
+      || ($filters !== '' && !is_null($filters))) {
+      $variables['hidden_count_results'] = FALSE;
     }
   }
 }
