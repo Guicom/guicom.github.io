@@ -46,3 +46,10 @@ deploy_elasticsearch:
 deploy_drupal:
 	cd helm
 	helm install --namespace develop -f develop.yaml drupal
+
+build-web-image:
+	cd .. && docker build -t ${REGISTRY_HOSTNAME}/socomec-web/drupal:${ENVIRONMENT} -f iaac/docker/drupal/Dockerfile .
+
+push-web-image: build-web-image
+	docker login --username ${REGISTRY_USERNAME} --password ${REGISTRY_PASSWORD} ${REGISTRY_HOSTNAME}
+	docker push regis.myagora.fr/socomec-web/drupal:${ENVIRONMENT}

@@ -26,7 +26,7 @@ cache: &global_cache
     - vendor
     - web/node_modules
 
-.build_project: &build_project
+.behat_build_project: &behat_build_project
   artifacts:
     paths:
       - "${DOCKER_IMAGE_BUILD_PATH}/"
@@ -50,6 +50,25 @@ cache: &global_cache
     - docker-compose exec -u web -T web bash -c "cd /var/www/html/tests/behat && composer install"
     - docker-compose exec -u web -T web bash -c "cd /var/www/html/ && ./vendor/bin/phing install"
 
+.build_project: &build_project
+  artifacts:
+    paths:
+      - "${DOCKER_IMAGE_BUILD_PATH}/"
+  variables:
+    # No spaces.
+    APACHE_RUN_USER: "www-data"
+    APACHE_RUN_GROUP: "www-data"
+    ENVIRONMENT: "develop"
+  before_script:
+    - mkdir -p "${DOCKER_IMAGE_BUILD_PATH}/"
+    - apk add --no-cache py-pip python-dev libffi-dev openssl-dev gcc libc-dev make
+    - pip install docker-compose
+    - cp ${CI_PROJECT_DIR}/docker-compose.example.gitlab-ci.yml ${CI_PROJECT_DIR}/docker-compose.yml
+    - cp ${CI_PROJECT_DIR}/phing/example.build.properties.local ${CI_PROJECT_DIR}/phing/build.properties.local
+    - docker-compose up -d
+    - docker-compose exec -e ENVIRONMENT=${ENVIRONMENT} -u web -T web bash -c "cd /var/www/html/ && make install"
+    - docker-compose exec -e ENVIRONMENT=${ENVIRONMENT} -u web -T web bash -c "cd /var/www/html/ && make set-kubernetes-configs"
+
 # SonarQube Runner
 sonarqube:
   stage: sonarqube
@@ -71,6 +90,19 @@ behat:
     # inherit all global cache settings
     <<: *global_cache
   extends:
-    - .build_project
+    - .behat_build_project
   script:
     - docker-compose exec -u web -T web bash -c "cd /var/www/html && ./vendor/bin/phing behat:run -Dbehat.bin=tests/behat/bin/behat"
+
+push-web-image:
+  stage: build
+  tags:
+    - actency
+  cache:
+    # inherit all global cache settings
+    <<: *global_cache
+  extends:
+    - .build_project
+  script:
+    - cd iaac && make push-web-image
+  when: manual
