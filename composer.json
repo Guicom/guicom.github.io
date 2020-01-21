@@ -54,6 +54,7 @@
         "drupal/editor_advanced_link": "^1.4",
         "drupal/entity_usage": "^2.0@beta",
         "drupal/eu_cookie_compliance": "^1.6",
+        "drupal/extra_field": "^1.1",
         "drupal/facets": "^1.4",
         "drupal/facets_pretty_paths": "^1.0",
         "drupal/field_group": "^1.0",

@@ -16,6 +16,7 @@ body {
       }
       .text-formatted p {
         color: $white;
+        margin-right: 50px;
       }
       #block-exposedformresource-centerpage-1 {
         label {
@@ -27,17 +28,22 @@ body {
           top: 38px;
           right: 38px;
           .form-item-query {
-
+            width: 100%;
             .form-text {
               border-radius: 0;
               box-shadow: 0 24px 38px 3px rgba(35,44,119,0.14), 0 9px 46px 8px rgba(0,0,0,0.07), 0 11px 15px -7px rgba(0,0,0,0.14);
+              color: $dark-grey;
+              font-family: $font-roboto;
+              font-size: 20px;
+              font-weight: 400;
               padding: 20px 35px;
               height: 100px;
-              width: 100%;
             }
           }
           .form-actions {
             position: absolute;
+            right: 0;
+            top: 38px;
             .form-submit {
               background: transparent;
               border: 0;
@@ -52,6 +58,56 @@ body {
               }
             }
           }
+        }
+      }
+    }
+    .item-list {
+      ul {
+        li {
+          padding: 0;
+          &:hover {
+            background: $blue_lighter;
+          }
+        }
+      }
+    }
+    .product-reference-wrapper {
+      margin-top: 80px;
+      .intro {
+        color: $turquoize;
+        font: 300 24px $font-roboto;
+        margin-bottom: 40px;
+      }
+      .node--view-mode-teaser {
+        display: table;
+        font: 16px $font-roboto;
+        color: $darker-grey;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        position: relative;
+        .field {
+          display: table-cell;
+          vertical-align: middle;
+          padding: 10px 18px;
+          &.field--name-extra-field-resource-title {
+            width: 70%;
+          }
+          &.field--name-field-res-resource-type {
+            width: 20%;
+          }
+          &.field--name-extra-field-bookmark-resource {
+            position: relative;
+            z-index: 2;
+          }
+        }
+        a.parent-overlap {
+          position: absolute;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          z-index: 1;
         }
       }
     }

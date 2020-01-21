@@ -124,4 +124,20 @@
       });
     }
   };
+
+
+  /**
+   * Add to bookmarks button
+   */
+  Drupal.behaviors.socomec_add_to_bookmarks = {
+    attach: function (context, settings) {
+      $('.add-to-bookmarks').each(function () {
+        $(this).off('click').on('click', function (e) {
+          e.preventDefault();
+          $(this).toggleClass('active');
+        })
+      });
+    }
+  };
+
 })(jQuery, Drupal);
