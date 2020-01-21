@@ -9,6 +9,7 @@ services:
       - SERVERALIAS=socomec.com.loc
       - DOCUMENTROOT=web
       - DRUSH_VERSION=9
+      - ENVIRONMENT=${ENVIRONMENT}
     volumes:
       - /builds/actency/prod/socomec/socomec.com/:/var/www/html
       - /builds/actency/prod/socomec/socomec.com/config/.bashrc:/var/www/.bashrc

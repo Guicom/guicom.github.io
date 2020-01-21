@@ -68,8 +68,8 @@ cache: &global_cache
     - cp ${CI_PROJECT_DIR}/docker-compose.example.gitlab-ci.yml ${CI_PROJECT_DIR}/docker-compose.yml
     - cp ${CI_PROJECT_DIR}/phing/example.build.properties.local ${CI_PROJECT_DIR}/phing/build.properties.local
     - docker-compose up -d
-    - docker-compose exec -e ENVIRONMENT=${ENVIRONMENT} -u root -T web bash -c "cd /var/www/html/ && make install"
-    - docker-compose exec -e ENVIRONMENT=${ENVIRONMENT} -u root -T web bash -c "cd /var/www/html/ && make set-kubernetes-configs"
+    - docker-compose exec -u root -T web bash -c "cd /var/www/html/ && make install"
+    - docker-compose exec -u root -T web bash -c "cd /var/www/html/ && make set-kubernetes-configs"
 
 # SonarQube Runner
 sonarqube:
