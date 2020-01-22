@@ -1,0 +1,140 @@
+uuid: f3dd3143-71a6-41b4-9dca-174808a290ef
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.highlight
+    - field.field.node.resource.field_description
+    - field.field.node.resource.field_open_link_in_new_window
+    - field.field.node.resource.field_res_application
+    - field.field.node.resource.field_res_downloadable
+    - field.field.node.resource.field_res_link_url
+    - field.field.node.resource.field_res_momentum
+    - field.field.node.resource.field_res_original_description
+    - field.field.node.resource.field_res_original_title
+    - field.field.node.resource.field_res_reference
+    - field.field.node.resource.field_res_remote_file_url
+    - field.field.node.resource.field_res_resource_type
+    - field.field.node.resource.field_res_segment
+    - field.field.node.resource.field_res_target
+    - field.field.node.resource.field_res_thumb
+    - field.field.node.resource.field_res_title
+    - image.style.width_270
+    - node.type.resource
+  module:
+    - ds
+    - file
+    - svg_image
+    - user
+third_party_settings:
+  ds:
+    layout:
+      id: ds_1col
+      library: null
+      disable_css: false
+      entity_classes: all_classes
+      settings:
+        wrappers:
+          ds_content: div
+        outer_wrapper: div
+        attributes: ''
+        link_attribute: ''
+        link_custom: ''
+        classes:
+          layout_class: {  }
+          ds_content: {  }
+    regions:
+      ds_content:
+        - field_res_thumb
+        - field_res_downloadable
+        - field_res_title
+        - field_res_resource_type
+        - extra_field_bookmark_resource
+        - field_res_remote_file_url
+id: node.resource.highlight
+targetEntityType: node
+bundle: resource
+mode: highlight
+content:
+  extra_field_bookmark_resource:
+    weight: 4
+    region: ds_content
+    settings: {  }
+    third_party_settings: {  }
+  field_res_downloadable:
+    type: boolean
+    weight: 1
+    region: ds_content
+    label: hidden
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+  field_res_remote_file_url:
+    type: file_default
+    weight: 5
+    region: ds_content
+    label: hidden
+    settings:
+      use_description_as_link_text: true
+    third_party_settings: {  }
+  field_res_resource_type:
+    type: entity_reference_label
+    weight: 3
+    region: ds_content
+    label: hidden
+    settings:
+      link: false
+    third_party_settings:
+      ds:
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
+  field_res_thumb:
+    type: image
+    weight: 0
+    region: ds_content
+    label: hidden
+    settings:
+      image_style: width_270
+      image_link: ''
+      svg_render_as_image: '1'
+      svg_attributes:
+        width: ''
+        height: ''
+    third_party_settings:
+      ds:
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
+  field_res_title:
+    type: string
+    weight: 2
+    region: ds_content
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+hidden:
+  addtoany: true
+  extra_field_resource_title: true
+  field_description: true
+  field_open_link_in_new_window: true
+  field_res_application: true
+  field_res_link_url: true
+  field_res_momentum: true
+  field_res_original_description: true
+  field_res_original_title: true
+  field_res_reference: true
+  field_res_segment: true
+  field_res_target: true
+  langcode: true
+  links: true
+  search_api_excerpt: true

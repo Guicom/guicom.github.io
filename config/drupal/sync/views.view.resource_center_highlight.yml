@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.storage.node.field_res_original_title
     - search_api.index.resources
   module:
     - search_api
@@ -51,15 +52,16 @@ display:
       style:
         type: default
       row:
-        type: fields
+        type: search_api
+        options:
+          view_modes:
+            'entity:node':
+              resource: highlight
       fields:
-        application:
+        riginal_title:
+          id: riginal_title
           table: search_api_index_resources
-          field: application
-          id: application
-          entity_type: null
-          entity_field: null
-          plugin_id: search_api_field
+          field: riginal_title
           relationship: none
           group_type: group
           admin_label: ''
@@ -96,7 +98,7 @@ display:
           element_class: ''
           element_label_type: ''
           element_label_class: ''
-          element_label_colon: true
+          element_label_colon: false
           element_wrapper_type: ''
           element_wrapper_class: ''
           element_default_classes: true
@@ -106,7 +108,8 @@ display:
           hide_alter_empty: true
           click_sort_column: value
           type: string
-          settings: {  }
+          settings:
+            link_to_entity: false
           group_column: value
           group_columns: {  }
           group_rows: true
@@ -124,43 +127,8 @@ display:
             use_highlighting: false
             multi_type: separator
             multi_separator: ', '
+          plugin_id: search_api_field
       filters:
-        sticky:
-          id: sticky
-          table: search_api_index_resources
-          field: sticky
-          relationship: none
-          group_type: group
-          admin_label: ''
-          operator: '='
-          value: '1'
-          group: 1
-          exposed: false
-          expose:
-            operator_id: ''
-            label: ''
-            description: ''
-            use_operator: false
-            operator: ''
-            identifier: ''
-            required: false
-            remember: false
-            multiple: false
-            remember_roles:
-              authenticated: authenticated
-          is_grouped: false
-          group_info:
-            label: ''
-            description: ''
-            identifier: ''
-            optional: true
-            widget: select
-            multiple: false
-            remember: false
-            default_group: All
-            default_group_multiple: {  }
-            group_items: {  }
-          plugin_id: search_api_boolean
         status:
           id: status
           table: search_api_index_resources
@@ -222,7 +190,8 @@ display:
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
-      tags: {  }
+      tags:
+        - 'config:field.storage.node.field_res_original_title'
   block_1:
     display_plugin: block
     id: block_1
@@ -235,4 +204,5 @@ display:
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
-      tags: {  }
+      tags:
+        - 'config:field.storage.node.field_res_original_title'

@@ -1,0 +1,10 @@
+uuid: 0a7168af-083f-4194-a533-24a287be8a95
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.highlight
+label: Highlight
+targetEntityType: node
+cache: true
