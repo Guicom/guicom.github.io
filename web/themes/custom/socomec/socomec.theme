@@ -265,7 +265,8 @@ function socomec_preprocess_views_view(&$variables) {
 
   //Alter resource_center_highlight views
   if ((!empty($id) && $id == 'resource_center_highlight') && $display_id == 'block_1') {
-    if ($rows = $variables['rows'][0]['#rows']) {
+    if (!empty($variables['rows'][0]['#rows'])) {
+      $rows = $variables['rows'][0]['#rows'];
       if (is_array($rows)) {
         foreach ($rows as $key => $value) {
           if (is_numeric($key) && !empty($value['#node'])) {
@@ -289,7 +290,6 @@ function socomec_preprocess_views_view(&$variables) {
       }
     }
    }
-
 }
 
 /**
