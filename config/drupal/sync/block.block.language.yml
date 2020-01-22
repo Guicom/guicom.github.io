@@ -18,6 +18,6 @@ settings:
   id: 'facet_block:language'
   label: Language
   provider: facets
-  label_display: '0'
+  label_display: visible
   block_id: language
 visibility: {  }

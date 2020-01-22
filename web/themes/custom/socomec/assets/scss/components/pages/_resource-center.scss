@@ -17,6 +17,7 @@ body {
       .text-formatted p {
         color: $white;
         margin-right: 50px;
+        font-size: 24px;
       }
       #block-exposedformresource-centerpage-1 {
         label {
@@ -62,14 +63,29 @@ body {
       }
     }
     .item-list {
+      width: 100%;
       ul {
         li {
           padding: 0;
           &:hover {
             background: $blue_lighter;
+            .node--view-mode-teaser {
+              color: #232c77;
+            }
+            .add-to-bookmarks {
+              &:before {
+                background-image: url("../images/picto/ui/bookmark-star-blue.svg");
+              }
+            }
+            .resource-download {
+              background-image: url("../images/picto/ui/chevron-right-circle.svg") !important;
+            }
           }
         }
       }
+    }
+    .facets {
+      margin-bottom: 120px;
     }
     .product-reference-wrapper {
       margin-top: 80px;
@@ -96,7 +112,17 @@ body {
           &.field--name-field-res-resource-type {
             width: 20%;
           }
-          &.field--name-extra-field-bookmark-resource {
+          &.field--name-extra-field-button-download-resource {
+            .resource-download {
+              display: block;
+              width: 20px;
+              height: 20px;
+              background-image: url("../images/picto/ui/chevron-right-circle-grey.svg");
+              text-indent: -9999px;
+            }
+          }
+          &.field--name-extra-field-bookmark-resource,
+          &.field--name-extra-field-button-download-resource {
             position: relative;
             z-index: 2;
           }

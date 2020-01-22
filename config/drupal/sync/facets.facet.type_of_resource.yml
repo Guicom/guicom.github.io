@@ -9,7 +9,7 @@ dependencies:
     - search_api
 id: type_of_resource
 name: 'Type of resource'
-url_alias: type_of_resource
+url_alias: type
 weight: 0
 min_count: 1
 show_only_one_result: true
@@ -19,7 +19,7 @@ widget:
   type: dropdown
   config:
     show_numbers: false
-    default_option_label: Choose
+    default_option_label: All
 query_operator: and
 use_hierarchy: false
 expand_hierarchy: false
