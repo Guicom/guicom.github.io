@@ -69,9 +69,11 @@
       {{ attachment_before }}
     </div>
   {% endif %}
-  <div class="view-content-highlight row">
-    {{ drupal_view('resource_center_highlight', 'block_1') }}
-  </div>
+  {% if show_highlight %}
+    <div class="view-content-highlight row">
+      {{ drupal_view('resource_center_highlight', 'block_1') }}
+    </div>
+  {% endif %}
   {% if rows %}
     <div class="view-content row">
       {{ rows }}
