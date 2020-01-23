@@ -9,12 +9,6 @@
         "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/product_label\/parent": [
             null
         ],
-        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/product_label\/content_translation_uid": [
-            {
-                "href": "http:\/\/default\/user\/1?_format=hal_json",
-                "lang": "en"
-            }
-        ],
         "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/product_label\/field_label_icon": [
             {
                 "href": "http:\/\/default\/media\/26\/edit?_format=hal_json"
@@ -71,24 +65,6 @@
     "_embedded": {
         "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/product_label\/parent": [
             null
-        ],
-        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/product_label\/content_translation_uid": [
-            {
-                "_links": {
-                    "self": {
-                        "href": "http:\/\/default\/user\/1?_format=hal_json"
-                    },
-                    "type": {
-                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
-                    }
-                },
-                "uuid": [
-                    {
-                        "value": "4046d41b-2959-4e9b-9291-076427ad1452"
-                    }
-                ],
-                "lang": "en"
-            }
         ],
         "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/product_label\/field_label_icon": [
             {

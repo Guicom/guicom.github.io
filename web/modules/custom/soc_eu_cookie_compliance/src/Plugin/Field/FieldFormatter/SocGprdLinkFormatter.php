@@ -88,6 +88,7 @@ class SocGprdLinkFormatter extends FormatterBase {
       }
     }
     $element['#cache']['contexts'] = [SocomecEccCacheContext::CONTEXT_ID];
+
     return $element;
   }
 }
