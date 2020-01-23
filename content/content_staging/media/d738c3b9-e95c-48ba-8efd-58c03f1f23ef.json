@@ -1,22 +1,22 @@
 {
     "_links": {
         "self": {
-            "href": "http:\/\/default\/media\/13\/edit?_format=hal_json"
+            "href": "http:\/\/default\/media\/39\/edit?_format=hal_json"
         },
         "type": {
-            "href": "http:\/\/drupal.org\/rest\/type\/media\/product_image"
+            "href": "http:\/\/drupal.org\/rest\/type\/media\/image"
         },
-        "http:\/\/drupal.org\/rest\/relation\/media\/product_image\/uid": [
+        "http:\/\/drupal.org\/rest\/relation\/media\/image\/uid": [
             {
                 "href": "http:\/\/default\/user\/1?_format=hal_json"
             }
         ],
-        "http:\/\/drupal.org\/rest\/relation\/media\/product_image\/thumbnail": [
+        "http:\/\/drupal.org\/rest\/relation\/media\/image\/thumbnail": [
             {
                 "href": ""
             }
         ],
-        "http:\/\/drupal.org\/rest\/relation\/media\/product_image\/field_media_image_2": [
+        "http:\/\/drupal.org\/rest\/relation\/media\/image\/field_media_image": [
             {
                 "href": ""
             }
@@ -24,17 +24,17 @@
     },
     "mid": [
         {
-            "value": 13
+            "value": 39
         }
     ],
     "uuid": [
         {
-            "value": "277c28af-dae8-422d-be97-84c76df77390"
+            "value": "d738c3b9-e95c-48ba-8efd-58c03f1f23ef"
         }
     ],
     "vid": [
         {
-            "value": 13
+            "value": 39
         }
     ],
     "langcode": [
@@ -45,12 +45,12 @@
     ],
     "bundle": [
         {
-            "target_id": "product_image"
+            "target_id": "image"
         }
     ],
     "revision_created": [
         {
-            "value": "2020-01-17T10:28:04+00:00",
+            "value": "2020-01-21T16:43:20+00:00",
             "format": "Y-m-d\\TH:i:sP"
         }
     ],
@@ -60,7 +60,7 @@
         }
     ],
     "_embedded": {
-        "http:\/\/drupal.org\/rest\/relation\/media\/product_image\/uid": [
+        "http:\/\/drupal.org\/rest\/relation\/media\/image\/uid": [
             {
                 "_links": {
                     "self": {
@@ -72,12 +72,12 @@
                 },
                 "uuid": [
                     {
-                        "value": "d9b82eba-c048-4c84-b618-46c4faa05479"
+                        "value": "8f394ebf-da48-4f4b-88de-1459f49f31e4"
                     }
                 ]
             }
         ],
-        "http:\/\/drupal.org\/rest\/relation\/media\/product_image\/thumbnail": [
+        "http:\/\/drupal.org\/rest\/relation\/media\/image\/thumbnail": [
             {
                 "_links": {
                     "self": {
@@ -89,16 +89,16 @@
                 },
                 "uuid": [
                     {
-                        "value": "c177848c-2986-46d2-809a-e4ff02bbe8aa"
+                        "value": "69cab38d-3b4e-4375-8a21-8370ed075c8f"
                     }
                 ],
-                "alt": "Sirco-ac 001",
+                "alt": "test",
                 "title": null,
-                "width": "796",
-                "height": "800"
+                "width": "945",
+                "height": "560"
             }
         ],
-        "http:\/\/drupal.org\/rest\/relation\/media\/product_image\/field_media_image_2": [
+        "http:\/\/drupal.org\/rest\/relation\/media\/image\/field_media_image": [
             {
                 "_links": {
                     "self": {
@@ -110,30 +110,30 @@
                 },
                 "uuid": [
                     {
-                        "value": "c177848c-2986-46d2-809a-e4ff02bbe8aa"
+                        "value": "69cab38d-3b4e-4375-8a21-8370ed075c8f"
                     }
                 ],
-                "alt": "Sirco-ac 001",
+                "alt": "test",
                 "title": "",
-                "width": "796",
-                "height": "800"
+                "width": "945",
+                "height": "560"
             }
         ]
     },
     "name": [
         {
-            "value": "Sirco-ac 001 "
+            "value": "Hero-article-main-Img@1x.jpg"
         }
     ],
     "created": [
         {
-            "value": "2019-12-03T08:13:59+00:00",
+            "value": "2020-01-21T16:43:12+00:00",
             "format": "Y-m-d\\TH:i:sP"
         }
     ],
     "changed": [
         {
-            "value": "2019-12-03T08:14:18+00:00",
+            "value": "2020-01-21T16:43:12+00:00",
             "format": "Y-m-d\\TH:i:sP"
         }
     ],

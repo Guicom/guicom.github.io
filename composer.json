@@ -79,6 +79,7 @@
         "drupal/search_api": "^1.14",
         "drupal/search_api_autocomplete": "^1.2",
         "drupal/search_api_solr": "^3.7",
+        "drupal/smart_trim": "^1.2",
         "drupal/svg_image": "^1.9",
         "drupal/taxonomy_menu": "^3.4",
         "drupal/twig_tweak": "^2.4",
