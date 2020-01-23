@@ -10,12 +10,6 @@
             {
                 "href": "http:\/\/default\/products?_format=hal_json"
             }
-        ],
-        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/family\/content_translation_uid": [
-            {
-                "href": "http:\/\/default\/user\/1?_format=hal_json",
-                "lang": "en"
-            }
         ]
     },
     "tid": [
@@ -69,7 +63,7 @@
     ],
     "weight": [
         {
-            "value": 3
+            "value": 2
         }
     ],
     "_embedded": {
@@ -89,29 +83,11 @@
                     }
                 ]
             }
-        ],
-        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/family\/content_translation_uid": [
-            {
-                "_links": {
-                    "self": {
-                        "href": "http:\/\/default\/user\/1?_format=hal_json"
-                    },
-                    "type": {
-                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
-                    }
-                },
-                "uuid": [
-                    {
-                        "value": "4046d41b-2959-4e9b-9291-076427ad1452"
-                    }
-                ],
-                "lang": "en"
-            }
         ]
     },
     "changed": [
         {
-            "value": "2020-01-17T17:38:27+00:00",
+            "value": "2020-01-23T08:40:42+00:00",
             "format": "Y-m-d\\TH:i:sP"
         }
     ],

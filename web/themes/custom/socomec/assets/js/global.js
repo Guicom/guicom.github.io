@@ -86,6 +86,25 @@
         }
       });
 
+      $('.we-mega-menu-ul .product .subul .level-2').on("mouseover", function () {
+        var current = this;
+        var first = $('.we-mega-menu-ul .product .subul .level-2:first');
+        if (current != first[0]) {
+          $(first).removeClass('show');
+        }
+        else {
+          $(first).addClass('show');
+        }
+      });
+
+      $('.we-mega-menu-ul .product .subul .level-2').on("mouseout", function () {
+        var current = this;
+        var first = $('.we-mega-menu-ul .product .subul .level-2:first');
+        if (current != first[0]) {
+          $(first).addClass('show');
+        }
+      });
+
     }
   };
 
