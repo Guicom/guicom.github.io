@@ -1,0 +1,7 @@
+name: Socomec Eu Cookie Compliance
+type: module
+description: Add fonctionnality to Eu Cookie compliance.
+core: 8.x
+package: Socomec
+dependencies:
+  - eu_cookie_compliance

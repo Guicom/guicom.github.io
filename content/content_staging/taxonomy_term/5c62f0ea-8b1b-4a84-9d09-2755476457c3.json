@@ -49,14 +49,12 @@
     ],
     "status": [
         {
-            "value": true,
-            "lang": "en"
+            "value": true
         }
     ],
     "name": [
         {
-            "value": "UL",
-            "lang": "en"
+            "value": "UL"
         }
     ],
     "weight": [
@@ -89,7 +87,6 @@
     "changed": [
         {
             "value": "2019-12-09T12:56:05+00:00",
-            "lang": "en",
             "format": "Y-m-d\\TH:i:sP"
         }
     ],
@@ -122,14 +119,6 @@
             "value": "2019-12-31T08:45:20+00:00",
             "lang": "en",
             "format": "Y-m-d\\TH:i:sP"
-        }
-    ],
-    "metatag": [
-        {
-            "value": {
-                "title": "UL | Socomec",
-                "canonical_url": "http:\/\/default\/taxonomy\/term\/15"
-            }
         }
     ]
 }

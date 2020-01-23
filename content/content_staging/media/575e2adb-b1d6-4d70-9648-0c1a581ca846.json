@@ -8,20 +8,17 @@
         },
         "http:\/\/drupal.org\/rest\/relation\/media\/product_image\/uid": [
             {
-                "href": "http:\/\/default\/user\/1?_format=hal_json",
-                "lang": "en"
+                "href": "http:\/\/default\/user\/1?_format=hal_json"
             }
         ],
         "http:\/\/drupal.org\/rest\/relation\/media\/product_image\/thumbnail": [
             {
-                "href": "",
-                "lang": "en"
+                "href": ""
             }
         ],
         "http:\/\/drupal.org\/rest\/relation\/media\/product_image\/field_media_image_2": [
             {
-                "href": "",
-                "lang": "en"
+                "href": ""
             }
         ]
     },
@@ -53,14 +50,13 @@
     ],
     "revision_created": [
         {
-            "value": "2019-12-31T08:45:22+00:00",
+            "value": "2020-01-17T10:28:04+00:00",
             "format": "Y-m-d\\TH:i:sP"
         }
     ],
     "status": [
         {
-            "value": true,
-            "lang": "en"
+            "value": true
         }
     ],
     "_embedded": {
@@ -76,10 +72,9 @@
                 },
                 "uuid": [
                     {
-                        "value": "674a5a4f-b63e-4035-b0b3-2959ebf4041c"
+                        "value": "d9b82eba-c048-4c84-b618-46c4faa05479"
                     }
-                ],
-                "lang": "en"
+                ]
             }
         ],
         "http:\/\/drupal.org\/rest\/relation\/media\/product_image\/thumbnail": [
@@ -97,7 +92,6 @@
                         "value": "dab2a7e7-a592-4b99-8109-6faa13d8a3d7"
                     }
                 ],
-                "lang": "en",
                 "alt": "sircm_132-t",
                 "title": null,
                 "width": "635",
@@ -119,7 +113,6 @@
                         "value": "dab2a7e7-a592-4b99-8109-6faa13d8a3d7"
                     }
                 ],
-                "lang": "en",
                 "alt": "sircm_132-t",
                 "title": "",
                 "width": "635",
@@ -129,21 +122,18 @@
     },
     "name": [
         {
-            "value": "sircm_132-t.png",
-            "lang": "en"
+            "value": "sircm_132-t.png"
         }
     ],
     "created": [
         {
             "value": "2019-12-06T16:04:45+00:00",
-            "lang": "en",
             "format": "Y-m-d\\TH:i:sP"
         }
     ],
     "changed": [
         {
             "value": "2019-12-06T16:04:45+00:00",
-            "lang": "en",
             "format": "Y-m-d\\TH:i:sP"
         }
     ],
@@ -169,14 +159,6 @@
         {
             "value": false,
             "lang": "en"
-        }
-    ],
-    "metatag": [
-        {
-            "value": {
-                "title": "| Socomec",
-                "canonical_url": "http:\/\/default\/node"
-            }
         }
     ]
 }

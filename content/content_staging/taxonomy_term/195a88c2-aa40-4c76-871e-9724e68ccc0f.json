@@ -49,14 +49,12 @@
     ],
     "status": [
         {
-            "value": true,
-            "lang": "en"
+            "value": true
         }
     ],
     "name": [
         {
-            "value": "IEC",
-            "lang": "en"
+            "value": "IEC"
         }
     ],
     "weight": [
@@ -89,7 +87,6 @@
     "changed": [
         {
             "value": "2019-12-09T12:55:43+00:00",
-            "lang": "en",
             "format": "Y-m-d\\TH:i:sP"
         }
     ],
@@ -122,14 +119,6 @@
             "value": "2019-12-31T08:45:20+00:00",
             "lang": "en",
             "format": "Y-m-d\\TH:i:sP"
-        }
-    ],
-    "metatag": [
-        {
-            "value": {
-                "title": "IEC | Socomec",
-                "canonical_url": "http:\/\/default\/taxonomy\/term\/14"
-            }
         }
     ]
 }

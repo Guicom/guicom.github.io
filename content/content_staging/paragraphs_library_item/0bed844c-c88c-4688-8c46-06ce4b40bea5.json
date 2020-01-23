@@ -18,8 +18,7 @@
         ],
         "http:\/\/drupal.org\/rest\/relation\/paragraphs_library_item\/paragraphs_library_item\/uid": [
             {
-                "href": "http:\/\/default\/user\/1?_format=hal_json",
-                "lang": "en"
+                "href": "http:\/\/default\/user\/1?_format=hal_json"
             }
         ]
     },
@@ -63,7 +62,7 @@
                 },
                 "uuid": [
                     {
-                        "value": "674a5a4f-b63e-4035-b0b3-2959ebf4041c"
+                        "value": "d9b82eba-c048-4c84-b618-46c4faa05479"
                     }
                 ]
             }
@@ -98,36 +97,31 @@
                 },
                 "uuid": [
                     {
-                        "value": "674a5a4f-b63e-4035-b0b3-2959ebf4041c"
+                        "value": "d9b82eba-c048-4c84-b618-46c4faa05479"
                     }
-                ],
-                "lang": "en"
+                ]
             }
         ]
     },
     "status": [
         {
-            "value": true,
-            "lang": "en"
+            "value": true
         }
     ],
     "label": [
         {
-            "value": "Ready to buy",
-            "lang": "en"
+            "value": "Ready to buy"
         }
     ],
     "created": [
         {
             "value": "2019-12-06T09:20:41+00:00",
-            "lang": "en",
             "format": "Y-m-d\\TH:i:sP"
         }
     ],
     "changed": [
         {
             "value": "2019-12-06T17:21:23+00:00",
-            "lang": "en",
             "format": "Y-m-d\\TH:i:sP"
         }
     ],
@@ -141,14 +135,6 @@
         {
             "value": true,
             "lang": "en"
-        }
-    ],
-    "metatag": [
-        {
-            "value": {
-                "title": "| Socomec",
-                "canonical_url": "http:\/\/default\/node"
-            }
         }
     ]
 }

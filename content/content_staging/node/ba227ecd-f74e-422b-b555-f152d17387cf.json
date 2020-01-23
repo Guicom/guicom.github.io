@@ -13,8 +13,7 @@
         ],
         "http:\/\/drupal.org\/rest\/relation\/node\/optional_related_content\/uid": [
             {
-                "href": "http:\/\/default\/user\/1?_format=hal_json",
-                "lang": "en"
+                "href": "http:\/\/default\/user\/1?_format=hal_json"
             }
         ],
         "http:\/\/drupal.org\/rest\/relation\/node\/optional_related_content\/field_orc_picture": [
@@ -68,7 +67,7 @@
                 },
                 "uuid": [
                     {
-                        "value": "674a5a4f-b63e-4035-b0b3-2959ebf4041c"
+                        "value": "d9b82eba-c048-4c84-b618-46c4faa05479"
                     }
                 ]
             }
@@ -85,10 +84,9 @@
                 },
                 "uuid": [
                     {
-                        "value": "674a5a4f-b63e-4035-b0b3-2959ebf4041c"
+                        "value": "d9b82eba-c048-4c84-b618-46c4faa05479"
                     }
-                ],
-                "lang": "en"
+                ]
             }
         ],
         "http:\/\/drupal.org\/rest\/relation\/node\/optional_related_content\/field_orc_picture": [
@@ -111,40 +109,34 @@
     },
     "status": [
         {
-            "value": true,
-            "lang": "en"
+            "value": false
         }
     ],
     "title": [
         {
-            "value": "Test",
-            "lang": "en"
+            "value": "Test"
         }
     ],
     "created": [
         {
             "value": "2019-12-31T10:33:21+00:00",
-            "lang": "en",
             "format": "Y-m-d\\TH:i:sP"
         }
     ],
     "changed": [
         {
             "value": "2019-12-31T10:33:21+00:00",
-            "lang": "en",
             "format": "Y-m-d\\TH:i:sP"
         }
     ],
     "promote": [
         {
-            "value": true,
-            "lang": "en"
+            "value": true
         }
     ],
     "sticky": [
         {
-            "value": false,
-            "lang": "en"
+            "value": false
         }
     ],
     "default_langcode": [
@@ -159,6 +151,12 @@
             "lang": "en"
         }
     ],
+    "moderation_state": [
+        {
+            "value": "draft",
+            "lang": "en"
+        }
+    ],
     "content_translation_source": [
         {
             "value": "und",
@@ -169,14 +167,6 @@
         {
             "value": false,
             "lang": "en"
-        }
-    ],
-    "metatag": [
-        {
-            "value": {
-                "title": "Test | Socomec",
-                "canonical_url": "http:\/\/default\/node\/21"
-            }
         }
     ],
     "field_orc_target": [

@@ -1,0 +1,141 @@
+body {
+  &.path-resource-center {
+    .region-hero {
+      @include socomec-hero-alt-background;
+      .row {
+        align-items: end;
+      }
+      .title-hero {
+        text-transform: uppercase;
+        margin-bottom: 45px;
+        @include socomec-hero-wave;
+        &:after {
+          margin-left: -30px;
+          margin-top: 45px;
+        }
+      }
+      .text-formatted p {
+        color: $white;
+        margin-right: 50px;
+        font-size: 24px;
+      }
+      #block-exposedformresource-centerpage-1 {
+        label {
+          display: none;
+        }
+        .form-row {
+          position: relative;
+          margin: 0;
+          top: 38px;
+          right: 38px;
+          .form-item-query {
+            width: 100%;
+            .form-text {
+              border-radius: 0;
+              box-shadow: 0 24px 38px 3px rgba(35,44,119,0.14), 0 9px 46px 8px rgba(0,0,0,0.07), 0 11px 15px -7px rgba(0,0,0,0.14);
+              color: $dark-grey;
+              font-family: $font-roboto;
+              font-size: 20px;
+              font-weight: 400;
+              padding: 20px 35px;
+              height: 100px;
+            }
+          }
+          .form-actions {
+            position: absolute;
+            right: 0;
+            top: 38px;
+            .form-submit {
+              background: transparent;
+              border: 0;
+              text-indent: -9999px;
+              &:before {
+                display: block;
+                content: ' ';
+                background-image: url("../images/picto/ui/search.svg");
+                background-size: 24px 24px;
+                height: 24px;
+                width: 24px;
+              }
+            }
+          }
+        }
+      }
+    }
+    .item-list {
+      width: 100%;
+      ul {
+        li {
+          padding: 0;
+          &:hover {
+            background: $blue_lighter;
+            .node--view-mode-teaser {
+              color: #232c77;
+            }
+            .add-to-bookmarks {
+              &:before {
+                background-image: url("../images/picto/ui/bookmark-star-blue.svg");
+              }
+            }
+            .resource-download {
+              background-image: url("../images/picto/ui/chevron-right-circle.svg") !important;
+            }
+          }
+        }
+      }
+    }
+    .facets {
+      margin-bottom: 120px;
+    }
+    .product-reference-wrapper {
+      margin-top: 80px;
+      .intro {
+        color: $turquoize;
+        font: 300 24px $font-roboto;
+        margin-bottom: 40px;
+      }
+      .node--view-mode-teaser {
+        display: table;
+        font: 16px $font-roboto;
+        color: $darker-grey;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        position: relative;
+        .field {
+          display: table-cell;
+          vertical-align: middle;
+          padding: 10px 18px;
+          &.field--name-extra-field-resource-title {
+            width: 70%;
+          }
+          &.field--name-field-res-resource-type {
+            width: 20%;
+          }
+          &.field--name-extra-field-button-download-resource {
+            .resource-download {
+              display: block;
+              width: 20px;
+              height: 20px;
+              background-image: url("../images/picto/ui/chevron-right-circle-grey.svg");
+              text-indent: -9999px;
+            }
+          }
+          &.field--name-extra-field-bookmark-resource,
+          &.field--name-extra-field-button-download-resource {
+            position: relative;
+            z-index: 2;
+          }
+        }
+        a.parent-overlap {
+          position: absolute;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          z-index: 1;
+        }
+      }
+    }
+  }
+}

@@ -11,8 +11,7 @@
         ],
         "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/protection_level\/field_label_icon": [
             {
-                "href": "http:\/\/default\/media\/27\/edit?_format=hal_json",
-                "lang": "en"
+                "href": "http:\/\/default\/media\/27\/edit?_format=hal_json"
             }
         ]
     },
@@ -50,22 +49,19 @@
     ],
     "status": [
         {
-            "value": true,
-            "lang": "en"
+            "value": true
         }
     ],
     "name": [
         {
-            "value": "Superior",
-            "lang": "en"
+            "value": "Superior"
         }
     ],
     "description": [
         {
             "value": "<p>Best in class &amp; certified performance to <strong>optimise usage and Total Cost of Ownership<\/strong><\/p>\r\n",
             "format": "socomec",
-            "processed": "<p>Best in class &amp; certified performance to <strong>optimise usage and Total Cost of Ownership<\/strong><\/p>",
-            "lang": "en"
+            "processed": "<p>Best in class &amp; certified performance to <strong>optimise usage and Total Cost of Ownership<\/strong><\/p>"
         }
     ],
     "weight": [
@@ -91,15 +87,13 @@
                     {
                         "value": "c8c442f3-b83f-48f1-9180-83e73ea19196"
                     }
-                ],
-                "lang": "en"
+                ]
             }
         ]
     },
     "changed": [
         {
             "value": "2019-12-09T14:18:30+00:00",
-            "lang": "en",
             "format": "Y-m-d\\TH:i:sP"
         }
     ],
@@ -132,15 +126,6 @@
             "value": "2019-12-31T08:45:20+00:00",
             "lang": "en",
             "format": "Y-m-d\\TH:i:sP"
-        }
-    ],
-    "metatag": [
-        {
-            "value": {
-                "title": "Superior | Socomec",
-                "canonical_url": "http:\/\/default\/taxonomy\/term\/3",
-                "description": "Best in class & certified performance to optimise usage and Total Cost of Ownership"
-            }
         }
     ],
     "field_protection_sub_title": [

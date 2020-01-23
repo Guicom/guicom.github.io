@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ef677c3f5209eb3bc7684da50d65bf05",
+    "content-hash": "38367d707df75b77097ae911cc4acae9",
     "packages": [
         {
             "name": "actency/foundation",
@@ -2912,6 +2912,70 @@
             }
         },
         {
+            "name": "drupal/better_exposed_filters",
+            "version": "4.0.0-alpha1",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/better_exposed_filters.git",
+                "reference": "8.x-4.0-alpha1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/better_exposed_filters-8.x-4.0-alpha1.zip",
+                "reference": "8.x-4.0-alpha1",
+                "shasum": "d95e24390fb44bb2f6f0de515dee0b5975499fb9"
+            },
+            "require": {
+                "drupal/core": "^8 || ^9"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-4.x": "4.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-4.0-alpha1",
+                    "datestamp": "1572828784",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Alpha releases are not covered by Drupal security advisories."
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Mike Keran",
+                    "homepage": "https://www.drupal.org/u/mikeker"
+                },
+                {
+                    "name": "Martin Keereman",
+                    "homepage": "https://www.drupal.org/u/etroid"
+                },
+                {
+                    "name": "jkopel",
+                    "homepage": "https://www.drupal.org/user/66207"
+                },
+                {
+                    "name": "mikeker",
+                    "homepage": "https://www.drupal.org/user/192273"
+                },
+                {
+                    "name": "rlhawk",
+                    "homepage": "https://www.drupal.org/user/352283"
+                }
+            ],
+            "description": "Replaces the Views default single- or multi-select boxes with more advanced options.",
+            "homepage": "https://www.drupal.org/project/better_exposed_filters",
+            "support": {
+                "source": "https://git.drupalcode.org/project/better_exposed_filters",
+                "issues": "https://www.drupal.org/project/issues/better_exposed_filters"
+            }
+        },
+        {
             "name": "drupal/better_normalizers",
             "version": "1.0.0-beta3",
             "source": {
@@ -4831,6 +4895,53 @@
             }
         },
         {
+            "name": "drupal/extra_field",
+            "version": "1.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/extra_field.git",
+                "reference": "8.x-1.1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/extra_field-8.x-1.1.zip",
+                "reference": "8.x-1.1",
+                "shasum": "2eb3d2b1d398029579006630efb6ffb1bbe2dc29"
+            },
+            "require": {
+                "drupal/core": "*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-1.x": "1.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-1.1",
+                    "datestamp": "1574620384",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Sutharsan",
+                    "homepage": "https://www.drupal.org/user/73854"
+                }
+            ],
+            "description": "Provides a plugin type for extra fields that look like real fields, but do not store data.",
+            "homepage": "https://www.drupal.org/project/extra_field",
+            "support": {
+                "source": "https://git.drupalcode.org/project/extra_field"
+            }
+        },
+        {
             "name": "drupal/facets",
             "version": "1.4.0",
             "source": {
@@ -5066,17 +5177,17 @@
         },
         {
             "name": "drupal/fontawesome",
-            "version": "2.14.0",
+            "version": "2.15.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/fontawesome.git",
-                "reference": "8.x-2.14"
+                "reference": "8.x-2.15"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/fontawesome-8.x-2.14.zip",
-                "reference": "8.x-2.14",
-                "shasum": "5bba6b1cba7450256defc36a0cbfdd70744bde1d"
+                "url": "https://ftp.drupal.org/files/projects/fontawesome-8.x-2.15.zip",
+                "reference": "8.x-2.15",
+                "shasum": "d3ee7a02ddd01c14cab44afcd6f3e55cfa3d0491"
             },
             "require": {
                 "drupal/core": "~8.0"
@@ -5087,8 +5198,8 @@
                     "dev-2.x": "2.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-2.14",
-                    "datestamp": "1564762385",
+                    "version": "8.x-2.15",
+                    "datestamp": "1578431890",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -5263,6 +5374,9 @@
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
                     }
+                },
+                "patches_applied": {
+                    "Google analytics eu_cookie_compliance support for 8.x-3.x": "https://www.drupal.org/files/issues/2020-01-14/google_analytics-eu_cookie_compliance_support-2917905-49.patch"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -6218,6 +6332,109 @@
             }
         },
         {
+            "name": "drupal/remote_stream_wrapper",
+            "version": "1.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/remote_stream_wrapper.git",
+                "reference": "8.x-1.3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/remote_stream_wrapper-8.x-1.3.zip",
+                "reference": "8.x-1.3",
+                "shasum": "4e74355901b2d28d02d61f70719d157ce565b768"
+            },
+            "require": {
+                "drupal/core": "~8.0"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-1.x": "1.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-1.3",
+                    "datestamp": "1562684596",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Dave Reid",
+                    "homepage": "https://www.drupal.org/user/53892"
+                },
+                {
+                    "name": "arthurf",
+                    "homepage": "https://www.drupal.org/user/27259"
+                },
+                {
+                    "name": "becw",
+                    "homepage": "https://www.drupal.org/user/81067"
+                }
+            ],
+            "description": "Provides the ability to use external files over HTTP",
+            "homepage": "https://www.drupal.org/project/remote_stream_wrapper",
+            "support": {
+                "source": "https://git.drupalcode.org/project/remote_stream_wrapper"
+            }
+        },
+        {
+            "name": "drupal/remote_stream_wrapper_widget",
+            "version": "1.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/remote_stream_wrapper_widget.git",
+                "reference": "8.x-1.2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/remote_stream_wrapper_widget-8.x-1.2.zip",
+                "reference": "8.x-1.2",
+                "shasum": "539803c7b5696675830928fce56cdf498471ec68"
+            },
+            "require": {
+                "drupal/core": "~8.0",
+                "drupal/remote_stream_wrapper": "*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-1.x": "1.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-1.2",
+                    "datestamp": "1559752088",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "legolasbo",
+                    "homepage": "https://www.drupal.org/user/2480548"
+                }
+            ],
+            "description": "Implements the remote stream wrapper api as a field widget.",
+            "homepage": "https://www.drupal.org/project/remote_stream_wrapper_widget",
+            "support": {
+                "source": "https://git.drupalcode.org/project/remote_stream_wrapper_widget"
+            }
+        },
+        {
             "name": "drupal/scheduler",
             "version": "1.1.0",
             "source": {
@@ -6583,20 +6800,20 @@
         },
         {
             "name": "drupal/token",
-            "version": "1.5.0",
+            "version": "1.6.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/token.git",
-                "reference": "8.x-1.5"
+                "reference": "8.x-1.6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/token-8.x-1.5.zip",
-                "reference": "8.x-1.5",
-                "shasum": "6382a7e1aabbd8246f1117a26bf4916d285b401d"
+                "url": "https://ftp.drupal.org/files/projects/token-8.x-1.6.zip",
+                "reference": "8.x-1.6",
+                "shasum": "22039a3d927220609e708932ac5c501b90ca4925"
             },
             "require": {
-                "drupal/core": "^8.5"
+                "drupal/core": "^8.7.7 || ^9"
             },
             "type": "drupal-module",
             "extra": {
@@ -6604,17 +6821,22 @@
                     "dev-1.x": "1.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-1.5",
-                    "datestamp": "1537557481",
+                    "version": "8.x-1.6",
+                    "datestamp": "1577708583",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
+                    }
+                },
+                "drush": {
+                    "services": {
+                        "drush.services.yml": "^9 || ^10"
                     }
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
             "license": [
-                "GPL-2.0-or-later"
+                "GPL-2.0+"
             ],
             "authors": [
                 {
@@ -6642,7 +6864,7 @@
                     "homepage": "https://www.drupal.org/user/4420"
                 }
             ],
-            "description": "Provides a user interface for the Token API and some missing core tokens.",
+            "description": "Provides a user interface for the Token API, some missing core tokens.",
             "homepage": "https://www.drupal.org/project/token",
             "support": {
                 "source": "https://git.drupalcode.org/project/token"
@@ -13578,6 +13800,7 @@
     "minimum-stability": "dev",
     "stability-flags": {
         "drupal/auto_entitylabel": 10,
+        "drupal/better_exposed_filters": 15,
         "drupal/better_normalizers": 10,
         "drupal/conditional_fields": 15,
         "drupal/default_content_deploy": 20,

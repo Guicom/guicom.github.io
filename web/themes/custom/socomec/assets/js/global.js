@@ -53,6 +53,39 @@
             $('.nav-wrapper').removeClass('scrolled');
           }
       });
+
+      $('.we-mega-menu-ul').on('show.bs.dropdown', function () {
+        $('.nav-wrapper').addClass('open-menu');
+        $('html, body').css({
+          overflow: 'hidden'
+        });
+      });
+      $('.we-mega-menu-ul').on('hide.bs.dropdown', function () {
+        $('.nav-wrapper').removeClass('open-menu');
+        $('html, body').css({
+          overflow: 'auto'
+        });
+      });
+
+      $('.we-mega-menu-ul .product .subul .level-1').on("mouseover", function () {
+        var current = this;
+        var first = $('.we-mega-menu-ul .product .subul .level-1:first');
+        if (current != first[0]) {
+          $(first).removeClass('show');
+        }
+        else {
+          $(first).addClass('show');
+        }
+      });
+
+      $('.we-mega-menu-ul .product .subul .level-1').on("mouseout", function () {
+        var current = this;
+        var first = $('.we-mega-menu-ul .product .subul .level-1:first');
+        if (current != first[0]) {
+          $(first).addClass('show');
+        }
+      });
+
     }
   };
 
@@ -124,4 +157,20 @@
       });
     }
   };
+
+
+  /**
+   * Add to bookmarks button
+   */
+  Drupal.behaviors.socomec_add_to_bookmarks = {
+    attach: function (context, settings) {
+      $('.add-to-bookmarks').each(function () {
+        $(this).off('click').on('click', function (e) {
+          e.preventDefault();
+          $(this).toggleClass('active');
+        })
+      });
+    }
+  };
+
 })(jQuery, Drupal);

@@ -1,0 +1,29 @@
+uuid: e0ca423b-11a4-47ea-99e1-50c1c2cb414d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_res_segment
+    - node.type.resource
+    - taxonomy.vocabulary.news_theme
+id: node.resource.field_res_segment
+field_name: field_res_segment
+entity_type: node
+bundle: resource
+label: Segment
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      news_theme: news_theme
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference
