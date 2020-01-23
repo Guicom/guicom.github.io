@@ -178,7 +178,6 @@ function socomec_theme_suggestions_views_view_fields_alter(array &$suggestions, 
   }
 }
 
-
 /**
  * Implements hook_theme_suggestions_taxonomy_term_alter().
  */
@@ -204,6 +203,7 @@ function socomec_theme_suggestions_block_alter(array &$suggestions, array $varia
     }
   }
 }
+
 /**
  * Implements template_preprocess_html().
  */
@@ -246,6 +246,7 @@ function socomec_preprocess_views_view(&$variables) {
       $variables['background_image'] = (!empty($file_url))?$file_url:null;
     }
   }
+
   // Apply background color for news page without image
   if ((!empty($id) && $id == 'news') && ($display_id == 'page_1' || $display_id == 'page_1')) {
     if (!empty($variables['rows'][0]['#rows'])) {
@@ -265,7 +266,16 @@ function socomec_preprocess_views_view(&$variables) {
         }
       }
     }
+  }
 
+  if ((!empty($id) && $id == 'resource_center') && $display_id == 'page_1') {
+    $variables['hidden_count_results'] = TRUE;
+    $query = \Drupal::request()->query->get('query');
+    $filters = \Drupal::request()->query->get('f');
+    if (($query !== '' && !is_null($query))
+      || ($filters !== '' && !is_null($filters))) {
+      $variables['hidden_count_results'] = FALSE;
+    }
   }
 }
 

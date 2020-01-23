@@ -1,0 +1,128 @@
+{
+    "_links": {
+        "self": {
+            "href": "http:\/\/default\/block\/6?_format=hal_json"
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/block_content\/basic"
+        },
+        "http:\/\/drupal.org\/rest\/relation\/block_content\/basic\/content_translation_uid": [
+            {
+                "href": "http:\/\/default\/user\/1?_format=hal_json",
+                "lang": "en"
+            }
+        ]
+    },
+    "id": [
+        {
+            "value": 6
+        }
+    ],
+    "uuid": [
+        {
+            "value": "7cebec63-ded3-4521-bb4a-acb9f89dc975"
+        }
+    ],
+    "revision_id": [
+        {
+            "value": 10
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "type": [
+        {
+            "target_id": "basic"
+        }
+    ],
+    "revision_created": [
+        {
+            "value": "2020-01-17T15:43:19+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "status": [
+        {
+            "value": true
+        }
+    ],
+    "info": [
+        {
+            "value": "Resource Center Hero"
+        }
+    ],
+    "changed": [
+        {
+            "value": "2020-01-17T15:43:19+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "reusable": [
+        {
+            "value": true
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "revision_translation_affected": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "content_translation_source": [
+        {
+            "value": "und",
+            "lang": "en"
+        }
+    ],
+    "content_translation_outdated": [
+        {
+            "value": false,
+            "lang": "en"
+        }
+    ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/block_content\/basic\/content_translation_uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/user\/1?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "d9b82eba-c048-4c84-b618-46c4faa05479"
+                    }
+                ],
+                "lang": "en"
+            }
+        ]
+    },
+    "content_translation_created": [
+        {
+            "value": "2020-01-17T15:43:19+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "body": [
+        {
+            "value": "<p>Distinctively exploit optimal networks interactively, procrastinate B2B users with leading-edge intellectual.<\/p>\r\n",
+            "format": "socomec",
+            "processed": "<p>Distinctively exploit optimal networks interactively, procrastinate B2B users with leading-edge intellectual.<\/p>",
+            "summary": ""
+        }
+    ]
+}

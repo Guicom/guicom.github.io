@@ -1,0 +1,24 @@
+
+// CART / BOOKMARKS
+.add-to-cart,
+.add-to-bookmarks {
+  cursor: pointer;
+  &:before {
+    content: '';
+    background: url("../images/picto/ui/bookmark-star.svg") no-repeat center center;
+    display: block;
+    height: 34px;
+    width: 34px;
+  }
+  &.active {
+    &:before {
+      background: url("../images/picto/ui/bookmark-star.svg") no-repeat center center $white;
+    }
+  }
+
+  &.blue {
+    &:before {
+      background: url("../images/picto/ui/bookmark-star-blue.svg") no-repeat center center;
+    }
+  }
+}

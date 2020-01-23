@@ -1,0 +1,6 @@
+name: Socomec Resource Center
+type: module
+description: 'Resource center custom code.'
+core: 8.x
+dependencies:
+  - extra_field:extra_field
