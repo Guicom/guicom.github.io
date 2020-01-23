@@ -23,66 +23,60 @@ dependencies:
     - node.type.resource
   module:
     - ds
-    - file
     - svg_image
     - user
 third_party_settings:
   ds:
     layout:
-      id: ds_1col
-      library: null
+      id: layout_twocol
+      library: layout_discovery/twocol
       disable_css: false
       entity_classes: all_classes
-      settings:
-        wrappers:
-          ds_content: div
-        outer_wrapper: div
-        attributes: ''
-        link_attribute: ''
-        link_custom: ''
-        classes:
-          layout_class: {  }
-          ds_content: {  }
+      settings: {  }
     regions:
-      ds_content:
+      first:
         - field_res_thumb
-        - field_res_downloadable
-        - field_res_title
+      second:
+        - extra_field_is_download_ressource
+        - extra_field_resource_title
         - field_res_resource_type
+        - extra_field_file_type_resource
         - extra_field_bookmark_resource
-        - field_res_remote_file_url
+        - extra_field_button_download_resource
 id: node.resource.highlight
 targetEntityType: node
 bundle: resource
 mode: highlight
 content:
   extra_field_bookmark_resource:
-    weight: 4
-    region: ds_content
+    weight: 5
+    region: second
     settings: {  }
     third_party_settings: {  }
-  field_res_downloadable:
-    type: boolean
-    weight: 1
-    region: ds_content
-    label: hidden
-    settings:
-      format: default
-      format_custom_false: ''
-      format_custom_true: ''
+  extra_field_button_download_resource:
+    weight: 6
+    region: second
+    settings: {  }
     third_party_settings: {  }
-  field_res_remote_file_url:
-    type: file_default
-    weight: 5
-    region: ds_content
-    label: hidden
-    settings:
-      use_description_as_link_text: true
+  extra_field_file_type_resource:
+    weight: 4
+    region: second
+    settings: {  }
+    third_party_settings: {  }
+  extra_field_is_download_ressource:
+    weight: 1
+    region: second
+    settings: {  }
+    third_party_settings: {  }
+  extra_field_resource_title:
+    weight: 2
+    region: second
+    settings: {  }
     third_party_settings: {  }
   field_res_resource_type:
     type: entity_reference_label
     weight: 3
-    region: ds_content
+    region: second
     label: hidden
     settings:
       link: false
@@ -97,7 +91,7 @@ content:
   field_res_thumb:
     type: image
     weight: 0
-    region: ds_content
+    region: first
     label: hidden
     settings:
       image_style: width_270
@@ -114,27 +108,21 @@ content:
             lb: ''
             lb-col: false
             classes: {  }
-  field_res_title:
-    type: string
-    weight: 2
-    region: ds_content
-    label: hidden
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
 hidden:
   addtoany: true
-  extra_field_resource_title: true
   field_description: true
   field_open_link_in_new_window: true
   field_res_application: true
+  field_res_downloadable: true
   field_res_link_url: true
   field_res_momentum: true
   field_res_original_description: true
   field_res_original_title: true
   field_res_reference: true
+  field_res_remote_file_url: true
   field_res_segment: true
   field_res_target: true
+  field_res_title: true
   langcode: true
   links: true
   search_api_excerpt: true
