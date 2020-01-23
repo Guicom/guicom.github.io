@@ -35,10 +35,12 @@
 @import "components/pages/landing-pages";
 @import "components/pages/product_page";
 @import "components/pages/family";
+@import "components/pages/resource-center";
 @import "components/pages/news-page";
 @import "components/paragraphs/key-figure";
 @import "components/paragraphs/testimony";
 @import "components/paragraphs/text";
+@import "components/paragraphs/citation";
 @import "components/paragraphs/image";
 @import "components/paragraphs/cta";
 @import "components/paragraphs/video-text";
@@ -46,6 +48,7 @@
 @import "components/background";
 @import "components/form";
 @import "components/pages/views/news";
+@import "components/bookmarks";
 
 // Eu cookie compliance
 @import "components/eu-cookie-compliance";

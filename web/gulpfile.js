@@ -74,7 +74,7 @@ function js () {
 
 // Static Server + watching scss/html files
 function serve () {
-  gulp.watch([paths.scss.watch, paths.scss.bootstrap], styles).on('change', browserSync.reload)
+  gulp.watch([paths.scss.watch, paths.scss.bootstrap], {interval: 1000, usePolling: true}, gulp.series(styles));
 }
 
 const build = gulp.series(styles, gulp.parallel(js, serve));

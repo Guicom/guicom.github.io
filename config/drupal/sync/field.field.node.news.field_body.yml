@@ -6,6 +6,7 @@ dependencies:
     - field.storage.node.field_body
     - node.type.news
     - paragraphs.paragraphs_type.key_figures
+    - paragraphs.paragraphs_type.model_citation
     - paragraphs.paragraphs_type.model_cta
     - paragraphs.paragraphs_type.model_image
     - paragraphs.paragraphs_type.model_testimony
@@ -32,6 +33,7 @@ settings:
       model_image: model_image
       model_testimony: model_testimony
       model_text: model_text
+      model_citation: model_citation
     target_bundles_drag_drop:
       from_library:
         weight: 14
@@ -44,6 +46,9 @@ settings:
         weight: 16
       link:
         weight: 17
+        enabled: false
+      content:
+        weight: 18
         enabled: false
       model_cta:
         enabled: true
@@ -60,6 +65,9 @@ settings:
       model_text:
         enabled: true
         weight: 22
+      model_citation:
+        enabled: true
+        weight: 23
       pardot_form:
         weight: 23
         enabled: false
@@ -71,5 +79,11 @@ settings:
         enabled: false
       video_embed:
         weight: 26
+        enabled: false
+      standard_label:
+        weight: 32
+        enabled: false
+      video_text:
+        weight: 34
         enabled: false
 field_type: entity_reference_revisions

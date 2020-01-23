@@ -3,7 +3,10 @@
     max-width: 100%;
     height: auto;
   }
-  .field--name-field-legend{
+  a {
+    text-decoration: none ;
+  }
+  figcaption, .field--name-field-legend{
     margin: 0.5rem 0;
     color: #4A4A47;
     font-family: $font-roboto;
