@@ -1,0 +1,31 @@
+uuid: 19b3c09b-f0a3-4bef-98b2-9e531a7b8411
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:c97d069b-ed27-49c0-819a-fb4fcf408469'
+  module:
+    - block_content
+    - system
+  theme:
+    - socomec
+id: viewsnewsteaser
+theme: socomec
+region: hidden
+weight: -10
+provider: null
+plugin: 'block_content:c97d069b-ed27-49c0-819a-fb4fcf408469'
+settings:
+  id: 'block_content:c97d069b-ed27-49c0-819a-fb4fcf408469'
+  label: 'Views News Teaser'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    pages: /news
+    negate: false
+    context_mapping: {  }

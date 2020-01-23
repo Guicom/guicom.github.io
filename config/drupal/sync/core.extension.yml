@@ -94,9 +94,11 @@ module:
   scheduler: 0
   search: 0
   search_api: 0
+  search_api_autocomplete: 0
   search_api_solr: 0
   serialization: 0
   shortcut: 0
+  smart_trim: 0
   soc_access_block: 0
   soc_addtoany: 0
   soc_core: 0

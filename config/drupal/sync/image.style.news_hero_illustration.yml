@@ -1,0 +1,15 @@
+uuid: d78630f2-13c9-475f-bcda-880af9ef59b3
+langcode: en
+status: true
+dependencies: {  }
+name: news_hero_illustration
+label: news_hero_illustration
+effects:
+  3e1c87cb-28b6-40cf-879d-8756bf113f36:
+    uuid: 3e1c87cb-28b6-40cf-879d-8756bf113f36
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 945
+      height: 560
+      anchor: center-center
