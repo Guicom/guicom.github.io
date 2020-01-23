@@ -1,0 +1,23 @@
+uuid: 18a54c89-baa5-4d6b-bbe4-5f5097f698f9
+langcode: en
+status: true
+dependencies:
+  config:
+    - facets.facet.language
+  module:
+    - facets
+  theme:
+    - socomec
+id: language
+theme: socomec
+region: facets
+weight: 0
+provider: null
+plugin: 'facet_block:language'
+settings:
+  id: 'facet_block:language'
+  label: Language
+  provider: facets
+  label_display: visible
+  block_id: language
+visibility: {  }

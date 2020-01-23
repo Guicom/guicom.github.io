@@ -8,23 +8,27 @@ dependencies:
     - field.field.paragraph.pardot_form.field_pardot_privacy_policy
     - paragraphs.paragraphs_type.pardot_form
   module:
-    - link
+    - ds
+    - soc_eu_cookie_compliance
 id: paragraph.pardot_form.default
 targetEntityType: paragraph
 bundle: pardot_form
 mode: default
 content:
   field_pardot_form_url:
-    weight: 0
-    label: hidden
+    weight: 1
+    label: above
     settings:
-      trim_length: 80
-      url_only: false
-      url_plain: false
-      rel: ''
-      target: ''
-    third_party_settings: {  }
-    type: link
+      soc_ecc_categorie: statistics
+    third_party_settings:
+      ds:
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
+    type: soc_gpdr_link
     region: content
 hidden:
   field_pardot_cta_text: true

@@ -12,7 +12,6 @@ use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Url;
 use \Drupal\soc_eu_cookie_compliance\Cache\Context\SocomecEccCacheContext;
 
-
 /**
  * Plugin implementation of the 'soc_gpdr_link' formatter.
  *
@@ -89,6 +88,7 @@ class SocGprdLinkFormatter extends FormatterBase {
       }
     }
     $element['#cache']['contexts'] = [SocomecEccCacheContext::CONTEXT_ID];
+
     return $element;
   }
 }

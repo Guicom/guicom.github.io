@@ -6,16 +6,19 @@
   line-height: 30px;
   margin-bottom: 20px;
 }
+.facets-category {
+  color: $black;
+  font-family: $font-poppins;
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  line-height: 20px;
+}
 .block-facets-ajax {
   margin-bottom: 40px;
   .facet-title {
-    color: $black;
-    font-family: $font-poppins;
-    text-transform: uppercase;
-    font-size: 12px;
-    font-weight: 600;
-    letter-spacing: 1px;
-    line-height: 20px;
+    @extend .facets-category;
   }
 
   ul {

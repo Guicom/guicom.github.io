@@ -1,0 +1,41 @@
+uuid: fdd45672-3318-4904-89c6-469f0dbd2b1d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.model_citation.field_citation_author
+    - field.field.paragraph.model_citation.field_citation_author_position
+    - field.field.paragraph.model_citation.field_citation_content
+    - paragraphs.paragraphs_type.model_citation
+id: paragraph.model_citation.default
+targetEntityType: paragraph
+bundle: model_citation
+mode: default
+content:
+  field_citation_author:
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_citation_author_position:
+    weight: 2
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+    region: content
+  field_citation_content:
+    weight: 0
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+    region: content
+hidden:
+  created: true
+  status: true
