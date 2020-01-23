@@ -3,29 +3,42 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.resource_youtube.body
+    - field.field.node.resource_youtube.field_resource_link_youtube
     - node.type.resource_youtube
   module:
-    - text
+    - ds
     - user
+    - youtube
 id: node.resource_youtube.default
 targetEntityType: node
 bundle: resource_youtube
 mode: default
 content:
-  body:
+  field_resource_link_youtube:
+    weight: 0
     label: hidden
-    type: text_default
-    weight: 101
-    settings: {  }
-    third_party_settings: {  }
-    region: content
-  links:
-    weight: 100
-    settings: {  }
-    third_party_settings: {  }
+    settings:
+      youtube_size: responsive
+      youtube_width: ''
+      youtube_height: ''
+      youtube_autoplay: false
+      youtube_mute: false
+      youtube_loop: false
+      youtube_controls: false
+      youtube_autohide: false
+      youtube_iv_load_policy: false
+    third_party_settings:
+      ds:
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
+    type: youtube_video
     region: content
 hidden:
   addtoany: true
   langcode: true
+  links: true
   search_api_excerpt: true
