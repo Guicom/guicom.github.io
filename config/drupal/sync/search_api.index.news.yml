@@ -11,6 +11,7 @@ dependencies:
     - field.storage.node.field_news_audience
     - field.storage.node.field_body
     - field.storage.node.field_news_mommentum
+    - field.storage.node.field_media_image
     - field.storage.node.field_teaser
     - field.storage.node.field_news_theme
     - field.storage.node.field_news_type
@@ -82,6 +83,14 @@ field_settings:
     dependencies:
       config:
         - field.storage.node.field_body
+  field_media_image:
+    label: 'News Picture'
+    datasource_id: 'entity:node'
+    property_path: field_media_image
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_media_image
   field_teaser:
     label: 'News teaser'
     datasource_id: 'entity:node'

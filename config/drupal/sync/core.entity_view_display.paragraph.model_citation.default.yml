@@ -1,0 +1,38 @@
+uuid: 0d1106bd-3023-48f1-a40f-c896a2e127d4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.model_citation.field_citation_author
+    - field.field.paragraph.model_citation.field_citation_author_position
+    - field.field.paragraph.model_citation.field_citation_content
+    - paragraphs.paragraphs_type.model_citation
+id: paragraph.model_citation.default
+targetEntityType: paragraph
+bundle: model_citation
+mode: default
+content:
+  field_citation_author:
+    weight: 1
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_citation_author_position:
+    weight: 2
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  field_citation_content:
+    weight: 0
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+hidden:
+  search_api_excerpt: true

@@ -1,0 +1,86 @@
+{
+    "_links": {
+        "self": {
+            "href": "http:\/\/default\/user\/1?_format=hal_json"
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+        }
+    },
+    "uid": [
+        {
+            "value": 1
+        }
+    ],
+    "uuid": [
+        {
+            "value": "a8f9868a-393c-47a3-bec2-33bce61a24dd"
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "preferred_langcode": [
+        {
+            "value": "en"
+        }
+    ],
+    "name": [
+        {
+            "value": "admin"
+        }
+    ],
+    "mail": [
+        {
+            "value": "admin@example.com"
+        }
+    ],
+    "timezone": [
+        {
+            "value": "Europe\/Paris"
+        }
+    ],
+    "status": [
+        {
+            "value": true
+        }
+    ],
+    "created": [
+        {
+            "value": "2020-01-20T10:05:17+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "changed": [
+        {
+            "value": "2020-01-20T10:05:17+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "access": [
+        {
+            "value": "2020-01-21T14:01:25+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "login": [
+        {
+            "value": "2020-01-20T14:33:23+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "init": [
+        {
+            "value": "admin@example.com"
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ]
+}

@@ -87,7 +87,6 @@ class SocGprdLinkFormatter extends FormatterBase {
         $element[$delta]['#message'] = $soc_ecc_service->getMessage();
       }
     }
-
     $element['#cache']['contexts'] = [SocomecEccCacheContext::CONTEXT_ID];
 
     return $element;

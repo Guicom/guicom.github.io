@@ -10,6 +10,12 @@
             {
                 "href": "http:\/\/default\/products\/energy-storage-solution?_format=hal_json"
             }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/family\/content_translation_uid": [
+            {
+                "href": "http:\/\/default\/user\/1?_format=hal_json",
+                "lang": "en"
+            }
         ]
     },
     "tid": [
@@ -75,6 +81,24 @@
                         "value": "59b4df63-c1cc-49ae-81ba-1cd80dcd280b"
                     }
                 ]
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/family\/content_translation_uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/user\/1?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "059d0fa6-5dd6-4e1c-ace5-ef18988bb748"
+                    }
+                ],
+                "lang": "en"
             }
         ]
     },
