@@ -1,0 +1,10 @@
+uuid: f5d02b70-0127-4632-b1d7-1d2a5c840fa8
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.card_listing
+label: 'Card listing'
+targetEntityType: node
+cache: true

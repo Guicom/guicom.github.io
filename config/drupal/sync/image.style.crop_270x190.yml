@@ -1,0 +1,15 @@
+uuid: d7af83ae-eda6-4492-8f39-bbcebdf6be44
+langcode: en
+status: true
+dependencies: {  }
+name: crop_270x190
+label: 'Crop 270x190'
+effects:
+  bcb9dff6-7937-472c-961d-f27131257fbe:
+    uuid: bcb9dff6-7937-472c-961d-f27131257fbe
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 270
+      height: 190
+      anchor: center-center

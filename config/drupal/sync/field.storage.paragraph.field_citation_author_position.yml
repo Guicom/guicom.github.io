@@ -1,0 +1,19 @@
+uuid: 42d6e47c-57cb-455e-b3ee-b75693382d94
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+id: paragraph.field_citation_author_position
+field_name: field_citation_author_position
+entity_type: paragraph
+type: string_long
+settings:
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
