@@ -12,11 +12,11 @@ dependencies:
     - field.storage.node.field_description
     - field.storage.node.field_res_momentum
     - field.storage.node.field_res_original_description
+    - field.storage.node.field_res_resource_type
     - field.storage.node.field_res_original_title
     - field.storage.node.field_res_segment
     - field.storage.node.field_res_target
     - field.storage.node.field_res_title
-    - field.storage.node.field_res_resource_type
     - search_api.server.socomec
 third_party_settings:
   search_api_solr:
@@ -162,6 +162,7 @@ datasource_settings:
       default: false
       selected:
         - resource
+        - resource_youtube
     languages:
       default: true
       selected: {  }

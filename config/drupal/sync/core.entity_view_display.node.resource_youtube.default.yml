@@ -3,17 +3,46 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.resource_youtube.field_res_resource_type
     - field.field.node.resource_youtube.field_resource_link_youtube
     - node.type.resource_youtube
   module:
     - ds
     - user
     - youtube
+third_party_settings:
+  ds:
+    layout:
+      id: ds_1col
+      library: null
+      disable_css: false
+      entity_classes: all_classes
+      settings:
+        classes: {  }
+        wrappers:
+          ds_content: div
+        outer_wrapper: div
+        attributes: ''
+        link_attribute: ''
+        link_custom: ''
+    regions:
+      ds_content:
+        - field_resource_link_youtube
+        - langcode
+        - field_res_resource_type
 id: node.resource_youtube.default
 targetEntityType: node
 bundle: resource_youtube
 mode: default
 content:
+  field_res_resource_type:
+    weight: 1
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
   field_resource_link_youtube:
     weight: 0
     label: hidden
