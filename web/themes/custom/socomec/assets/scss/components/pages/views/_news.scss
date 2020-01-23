@@ -35,6 +35,8 @@
           padding-bottom: 15px;
           > div {
             background-color: $white;
+            max-width: 270px;
+            margin:0 auto;
             &.bg-blue-1{
             background-color: #232C77;
             }
