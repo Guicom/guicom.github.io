@@ -62,6 +62,99 @@
   transition: all 0.3s ease-out;
 }
 
+/**
+Use this placeholder to make an element take the full parent size
+Parent element must have position set to relative
+**/
+@mixin parent-overlap {
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  text-indent: -9999px;
+  z-index: 3;
+}
+
+@mixin underscore {
+  content: '';
+  position: absolute;
+  background-color: $yellow;
+  width: 60px;
+  height: 2px;
+  top: -$spacer;
+}
+
+@mixin offset-underscore {
+  position: relative;
+  &:before {
+    @include underscore;
+  }
+}
+
+@mixin S1($color) {
+  font-size: $font-size-h1;
+  font-family: $font-roboto;
+  color: $color;
+  line-height: 3.75rem;
+  @include media-breakpoint-down(md){
+    font-size: $font-size-h3;
+    line-height: 1rem;
+  }
+}
+
+@mixin S2($color) {
+  font-size: $font-size-h2;
+  font-family: $font-roboto;
+  color: $color;
+  @include media-breakpoint-down(md){
+    font-size: $font-size-h3;
+  }
+}
+
+@mixin back-to-button {
+  display: flex;
+  margin-bottom: $spacer;
+  color: $white;
+  font-family: $font-poppins;
+  font-weight: 600;
+  font-size: $font-size-sm;
+  text-decoration: none;
+  letter-spacing: 1px;
+  svg,
+  img{
+    margin-right: $spacer/2;
+    transform: translateX(0);
+    transition: $transition02;
+  }
+  &:hover {
+    svg {
+      transform: translateX(-3px);
+      transition: $transition02;
+    }
+  }
+}
+
+@mixin tag($color, $background) {
+  display: block;
+  padding: 1px 8px;
+  color: $color;
+  background: $background;
+  border-radius: 3px;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-family: $font-poppins;
+  font-weight: 600;
+  font-size: $font-size-xs;
+  box-shadow: 0 0 0 0 $background;
+  transition: $transition02;
+  &:hover {
+    box-shadow: 0 0 0 1px $background;
+    transition: $transition02;
+  }
+}
+
 //
 // LAYOUT MIXIN
 //
