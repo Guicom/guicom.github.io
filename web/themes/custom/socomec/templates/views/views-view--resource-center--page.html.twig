@@ -72,8 +72,10 @@
   {% if view.pager.current_page == 0 %}
     {% set view_resource_center_highlight = drupal_view('resource_center_highlight', 'block_1') %}
     {% if view_resource_center_highlight %}
-      <div class="view-content-highlight row" style="background-image: url('/{{ base_path ~ directory }}/assets/images/background-highlight-resource-center.jpg')">
-        {{ view_resource_center_highlight }}
+      <div id="background-resource-center-highlight">
+        <div class="view-content-highlight">
+          {{ view_resource_center_highlight }}
+        </div>
       </div>
     {% endif %}
   {% endif %}
