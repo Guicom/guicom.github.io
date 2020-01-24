@@ -167,5 +167,7 @@ content:
     third_party_settings: {  }
 hidden:
   addtoany: true
+  extra_field_bookmark_resource: true
+  extra_field_resource_title: true
   langcode: true
   search_api_excerpt: true
