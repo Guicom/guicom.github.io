@@ -13,6 +13,9 @@
     color: $turquoize;
     font-family: $font-roboto;
     padding-right: $spacer;
+    @include media-breakpoint-down(sm) {
+      font-size: 0.5rem;
+    }
   }
   .field--name-field-teaser {
     margin-top: 30px;
@@ -47,6 +50,9 @@
         @include back-to-button();
         margin-bottom: $spacer;
         transition: $transition02;
+        @include media-breakpoint-down(md) {
+          margin-bottom: 2rem;
+        }
       }
       h1 {
         margin-bottom: 2*$spacer;
@@ -61,6 +67,7 @@
         justify-content: space-between;
         @include media-breakpoint-down(md) {
           width: 50%;
+          align-items: center;
         }
       }
     }

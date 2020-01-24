@@ -192,4 +192,15 @@
     }
   };
 
+  /**
+   * Open mobile share menu
+   */
+  Drupal.behaviors.socomec_add_to_bookmarks = {
+    attach: function (context, settings) {
+      $('.opening-share').click(function() {
+          $('.share-menu').toggleClass('open');
+      })
+    }
+  };
+
 })(jQuery, Drupal);
