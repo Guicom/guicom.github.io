@@ -35,6 +35,11 @@
       @include media-breakpoint-down(lg) {
         @include make-container;
       }
+      &.without-img {
+        @include media-breakpoint-up(lg) {
+          @include make-container;
+        }
+      }
     }
     // LEFT SIDE
     .news-info {
@@ -95,6 +100,10 @@
           width: 100%;
           min-height: 12rem;
         }
+        &.without-img {
+          @include make-col(10);
+          @include make-col-offset(1)
+        }
       }
       .news-image {
         position: relative;
@@ -110,14 +119,21 @@
           img {
             position: absolute;
             top: 0;
-            right: 0;
+            left: 0;
             height: auto;
             @include media-breakpoint-down(md) {
               width: 50%;
               top: -3rem;
+              left: initial;
+              right: 0;
             }
           }
         }
+      }
+      &.without-img {
+        // RESETING CUSTOM CONTAINER
+        width: initial;
+        margin-left: initial;
       }
     }
   }
