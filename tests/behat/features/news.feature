@@ -16,4 +16,4 @@ Feature: News
     And I wait 2 seconds
     Then I should see "Socomec certifié ISO"
     Then I should not see "Stockage d'énergie mobile : une nouvelle solution"
-
+    Then I should see "Iterative approaches to establish a new normal that has evolved from"
