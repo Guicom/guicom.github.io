@@ -122,7 +122,6 @@
                 }
                 .level-1 {
                   @include make-col(3);
-                  margin-top: 15px;
                   @include transition-socomec;
                   background: linear-gradient(180deg, rgba(0,79,159,0) 0%, rgba(35,44,119, 0) 100%);
                   > a {
@@ -188,6 +187,7 @@
                 }
                 .level-2 {
                   padding-right: 30px;
+                  max-width: 100%;
                   > a {
                     height: 80px;
                     display: flex;
@@ -199,6 +199,8 @@
                     font-size: 12px;
                     font-weight: 600;
                     line-height: 20px;
+                    padding-right: 35px;
+                    white-space: initial;
                     @include transition-socomec;
                     &:after {
                       content: '';
@@ -357,7 +359,7 @@
                   }
                 }
                 .level-1 {
-                  padding: 30px 20px 40px;
+                  padding: 15px 20px 40px;
                   position: relative;
                   > span,
                   > a {
@@ -450,7 +452,6 @@
             // More global style
             &.level-1 {
               @include make-col(3);
-              margin-top: 15px;
               @include transition-socomec;
               background: linear-gradient(180deg, rgba(0,79,159,0) 0%, rgba(35,44,119, 0) 100%);
               &.col-6 {
