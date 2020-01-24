@@ -1,31 +1,25 @@
-uuid: 643e51dc-8186-46a3-b051-ec3cc8c16d0a
+uuid: f2e158a8-664d-4076-81af-5be48f02b219
 langcode: en
 status: true
 dependencies:
   content:
-    - 'block_content:basic:7cebec63-ded3-4521-bb4a-acb9f89dc975'
+    - 'block_content:basic:adc184e0-615a-4d05-89eb-4b523dd947b8'
   module:
     - block_content
-    - system
   theme:
     - socomec
 id: resourcecenterhero
 theme: socomec
 region: hero
-weight: -9
+weight: -11
 provider: null
-plugin: 'block_content:7cebec63-ded3-4521-bb4a-acb9f89dc975'
+plugin: 'block_content:adc184e0-615a-4d05-89eb-4b523dd947b8'
 settings:
-  id: 'block_content:7cebec63-ded3-4521-bb4a-acb9f89dc975'
-  label: 'Resource Center'
+  id: 'block_content:adc184e0-615a-4d05-89eb-4b523dd947b8'
+  label: 'Ressource center'
   provider: block_content
   label_display: visible
   status: true
   info: ''
   view_mode: full
-visibility:
-  request_path:
-    id: request_path
-    pages: /resource-center
-    negate: false
-    context_mapping: {  }
+visibility: {  }
