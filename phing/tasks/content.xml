@@ -205,7 +205,7 @@
         <property name="export.type" value="${content.folder}" />
       </else>
     </if>
-    <input propertyName="taxonomy.type" validArgs="tags" message="->Socomec ">What block_content bundle would you export ?</input>
+    <input propertyName="taxonomy.type" message="->Socomec ">What block_content bundle would you export ?</input>
     <drush
       command="dcder"
       assume="yes"
@@ -252,7 +252,7 @@
         <property name="export.type" value="${content.folder}" />
       </else>
     </if>
-    <input propertyName="menu.type" validArgs="main" message="->Socomec ">What menu bundle would you export ?</input>
+    <input propertyName="menu.type" validArgs="main, header" message="->Socomec ">What menu bundle would you export ?</input>
     <drush
       command="dcder"
       assume="yes"
