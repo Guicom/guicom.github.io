@@ -1,0 +1,181 @@
+{
+    "_links": {
+        "self": {
+            "href": "http:\/\/default\/node\/48?_format=hal_json"
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/node\/page"
+        },
+        "http:\/\/drupal.org\/rest\/relation\/node\/page\/revision_uid": [
+            {
+                "href": "http:\/\/default\/user\/1?_format=hal_json"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/page\/uid": [
+            {
+                "href": "http:\/\/default\/user\/1?_format=hal_json"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/page\/field_table": [
+            {
+                "href": ""
+            }
+        ]
+    },
+    "nid": [
+        {
+            "value": 48
+        }
+    ],
+    "uuid": [
+        {
+            "value": "5209f48f-af4a-447e-85f4-e69e4c62be79"
+        }
+    ],
+    "vid": [
+        {
+            "value": 126
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "type": [
+        {
+            "target_id": "page"
+        }
+    ],
+    "revision_timestamp": [
+        {
+            "value": "2020-01-27T12:32:26+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/node\/page\/revision_uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/user\/1?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "e9ba424b-c6d2-447e-b75d-7df49ce91a96"
+                    }
+                ]
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/page\/uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/user\/1?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "e9ba424b-c6d2-447e-b75d-7df49ce91a96"
+                    }
+                ]
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/page\/field_table": [
+            {
+                "_links": {
+                    "self": {
+                        "href": ""
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/model_text"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "8cda1fda-ff27-4d81-8c28-a196e0b16296"
+                    }
+                ],
+                "target_revision_id": "424"
+            }
+        ]
+    },
+    "status": [
+        {
+            "value": true
+        }
+    ],
+    "title": [
+        {
+            "value": "Legal mention"
+        }
+    ],
+    "created": [
+        {
+            "value": "2020-01-27T12:31:19+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "changed": [
+        {
+            "value": "2020-01-27T12:32:26+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "promote": [
+        {
+            "value": false
+        }
+    ],
+    "sticky": [
+        {
+            "value": false
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "revision_translation_affected": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "moderation_state": [
+        {
+            "value": "published",
+            "lang": "en"
+        }
+    ],
+    "content_translation_source": [
+        {
+            "value": "und",
+            "lang": "en"
+        }
+    ],
+    "content_translation_outdated": [
+        {
+            "value": false,
+            "lang": "en"
+        }
+    ],
+    "body": [
+        {
+            "value": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec aliquet lorem ultricies sollicitudin sollicitudin. Vestibulum dignissim, massa sit amet lacinia sodales, nisl augue interdum augue, vitae viverra lacus orci vitae justo. Aliquam tincidunt diam ut eleifend rhoncus. Aenean bibendum ligula velit, ac ullamcorper libero imperdiet vitae. Nunc quis varius orci. Aliquam sed ultrices dui, sed pulvinar dolor. Etiam sed nunc mauris. Aenean ultrices ipsum ut nulla egestas, eu efficitur nisl imperdiet. Suspendisse metus felis, mollis eu aliquam fringilla, pharetra quis tellus.<\/p>\r\n",
+            "format": "socomec",
+            "processed": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec aliquet lorem ultricies sollicitudin sollicitudin. Vestibulum dignissim, massa sit amet lacinia sodales, nisl augue interdum augue, vitae viverra lacus orci vitae justo. Aliquam tincidunt diam ut eleifend rhoncus. Aenean bibendum ligula velit, ac ullamcorper libero imperdiet vitae. Nunc quis varius orci. Aliquam sed ultrices dui, sed pulvinar dolor. Etiam sed nunc mauris. Aenean ultrices ipsum ut nulla egestas, eu efficitur nisl imperdiet. Suspendisse metus felis, mollis eu aliquam fringilla, pharetra quis tellus.<\/p>",
+            "summary": ""
+        }
+    ]
+}
