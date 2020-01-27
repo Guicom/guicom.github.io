@@ -45,6 +45,7 @@ third_party_settings:
         - extra_field_resource_title
         - field_res_resource_type
         - extra_field_bookmark_resource
+        - extra_field_button_download_resource
 id: node.resource.teaser
 targetEntityType: node
 bundle: resource
@@ -52,6 +53,11 @@ mode: teaser
 content:
   extra_field_bookmark_resource:
     weight: 2
+    region: ds_content
+    settings: {  }
+    third_party_settings: {  }
+  extra_field_button_download_resource:
+    weight: 3
     region: ds_content
     settings: {  }
     third_party_settings: {  }
@@ -77,6 +83,8 @@ content:
             classes: {  }
 hidden:
   addtoany: true
+  extra_field_file_type_resource: true
+  extra_field_is_download_ressource: true
   field_description: true
   field_open_link_in_new_window: true
   field_res_application: true

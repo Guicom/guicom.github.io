@@ -283,7 +283,8 @@ display:
       display_extenders: {  }
       path: resource-center
       cache:
-        type: none
+        type: search_api_tag
+        options: {  }
       defaults:
         cache: false
       exposed_block: true
