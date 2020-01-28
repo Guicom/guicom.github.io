@@ -42,6 +42,7 @@ regions:
   footer_third: 'Footer third'
   footer_fourth: 'Footer fourth'
   footer_fifth: 'Footer fifth'
+  hidden: 'Hidden blocks'
 
 logo: 'logo-socomec.svg'
 

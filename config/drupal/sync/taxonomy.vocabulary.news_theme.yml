@@ -2,7 +2,7 @@ uuid: cd7448d1-bf65-42d9-b1a8-ab43489d4c8f
 langcode: en
 status: true
 dependencies: {  }
-name: 'News Theme'
+name: Theme
 vid: news_theme
 description: ''
 weight: 0

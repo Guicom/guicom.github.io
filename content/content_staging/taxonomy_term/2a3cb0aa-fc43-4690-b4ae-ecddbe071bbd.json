@@ -8,12 +8,6 @@
         },
         "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/format_de_boitier\/parent": [
             null
-        ],
-        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/format_de_boitier\/content_translation_uid": [
-            {
-                "href": "http:\/\/default\/user\/1?_format=hal_json",
-                "lang": "en"
-            }
         ]
     },
     "tid": [
@@ -50,14 +44,12 @@
     ],
     "status": [
         {
-            "value": true,
-            "lang": "en"
+            "value": true
         }
     ],
     "name": [
         {
-            "value": "Format de boitier B",
-            "lang": "en"
+            "value": "Format de boitier B"
         }
     ],
     "weight": [
@@ -68,30 +60,11 @@
     "_embedded": {
         "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/format_de_boitier\/parent": [
             null
-        ],
-        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/format_de_boitier\/content_translation_uid": [
-            {
-                "_links": {
-                    "self": {
-                        "href": "http:\/\/default\/user\/1?_format=hal_json"
-                    },
-                    "type": {
-                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
-                    }
-                },
-                "uuid": [
-                    {
-                        "value": "674a5a4f-b63e-4035-b0b3-2959ebf4041c"
-                    }
-                ],
-                "lang": "en"
-            }
         ]
     },
     "changed": [
         {
             "value": "2019-12-03T12:58:04+00:00",
-            "lang": "en",
             "format": "Y-m-d\\TH:i:sP"
         }
     ],
@@ -124,14 +97,6 @@
             "value": "2019-12-31T08:45:20+00:00",
             "lang": "en",
             "format": "Y-m-d\\TH:i:sP"
-        }
-    ],
-    "metatag": [
-        {
-            "value": {
-                "title": "Format de boitier B | Socomec",
-                "canonical_url": "http:\/\/default\/taxonomy\/term\/18"
-            }
         }
     ]
 }

@@ -8,6 +8,8 @@
   background-size: cover;
   height: auto;
   padding-bottom: 80px;
+  margin-top: -122px;
+  padding-top: 122px;
   @include media-breakpoint-down(sm) {
     padding-bottom: 40px;
   }
@@ -31,6 +33,30 @@
   }
 }
 
+@mixin socomec-hero-alt-background {
+  @include socomec-hero-background;
+  background: linear-gradient(0deg, $turquoize 0%, $blue 100%);
+}
+
+@mixin socomec-hero-wave {
+  &:after{
+    content: '';
+    width: 60px;
+    height: 8px;
+    display: inline-block;
+    content: '';
+    -webkit-mask: url(../images/wave.svg) no-repeat 50% 50%;
+    mask: url(../images/wave.svg) no-repeat 50% 50%;
+    -webkit-mask-size: cover;
+    mask-size: cover;
+    background-color: #FFCC00;
+    line-height: 1px;
+    vertical-align: middle;
+    margin-left: 5px;
+    margin-top: -2px;
+  }
+}
+
 // Theming hero block
 #block-views-block-hero-block-block-1,
 #block-views-block-hero-block-block-2 {
@@ -50,22 +76,7 @@
             line-height: 30px;
             text-transform: uppercase;
             margin-bottom: 20px;
-            &:after{
-              content: '';
-              width: 60px;
-              height: 8px;
-              display: inline-block;
-              content: '';
-              -webkit-mask: url(../images/wave.svg) no-repeat 50% 50%;
-              mask: url(../images/wave.svg) no-repeat 50% 50%;
-              -webkit-mask-size: cover;
-              mask-size: cover;
-              background-color: #FFCC00;
-              line-height: 1px;
-              vertical-align: middle;
-              margin-left: 5px;
-              margin-top: -2px;
-            }
+            @include socomec-hero-wave;
           }
           .thx-text,
           .lp-baseline {

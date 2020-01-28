@@ -49,14 +49,12 @@
     ],
     "status": [
         {
-            "value": true,
-            "lang": "en"
+            "value": true
         }
     ],
     "name": [
         {
-            "value": "CCC",
-            "lang": "en"
+            "value": "CCC"
         }
     ],
     "weight": [
@@ -89,7 +87,6 @@
     "changed": [
         {
             "value": "2019-12-09T12:55:22+00:00",
-            "lang": "en",
             "format": "Y-m-d\\TH:i:sP"
         }
     ],
@@ -105,12 +102,23 @@
             "lang": "en"
         }
     ],
-    "metatag": [
+    "content_translation_source": [
         {
-            "value": {
-                "title": "CCC | Socomec",
-                "canonical_url": "http:\/\/default\/taxonomy\/term\/16"
-            }
+            "value": "und",
+            "lang": "en"
+        }
+    ],
+    "content_translation_outdated": [
+        {
+            "value": false,
+            "lang": "en"
+        }
+    ],
+    "content_translation_created": [
+        {
+            "value": "2020-01-14T11:00:17+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
         }
     ]
 }

@@ -1,18 +1,14 @@
 {
     "_links": {
         "self": {
-            "href": "http:\/\/default\/power-switching-monitoring?_format=hal_json"
+            "href": "http:\/\/default\/products\/power-switching-monitoring?_format=hal_json"
         },
         "type": {
             "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/family"
         },
         "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/family\/parent": [
-            null
-        ],
-        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/family\/content_translation_uid": [
             {
-                "href": "http:\/\/default\/user\/1?_format=hal_json",
-                "lang": "en"
+                "href": "http:\/\/default\/products?_format=hal_json"
             }
         ]
     },
@@ -67,35 +63,31 @@
     ],
     "weight": [
         {
-            "value": 7
+            "value": 2
         }
     ],
     "_embedded": {
         "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/family\/parent": [
-            null
-        ],
-        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/family\/content_translation_uid": [
             {
                 "_links": {
                     "self": {
-                        "href": "http:\/\/default\/user\/1?_format=hal_json"
+                        "href": "http:\/\/default\/products?_format=hal_json"
                     },
                     "type": {
-                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                        "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/family"
                     }
                 },
                 "uuid": [
                     {
-                        "value": "674a5a4f-b63e-4035-b0b3-2959ebf4041c"
+                        "value": "2e4108af-6939-4d12-bd4e-2ff6496cc8aa"
                     }
-                ],
-                "lang": "en"
+                ]
             }
         ]
     },
     "changed": [
         {
-            "value": "2019-12-03T08:25:02+00:00",
+            "value": "2020-01-23T08:40:42+00:00",
             "format": "Y-m-d\\TH:i:sP"
         }
     ],

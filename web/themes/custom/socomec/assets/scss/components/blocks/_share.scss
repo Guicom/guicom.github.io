@@ -1,0 +1,62 @@
+.share-sticky-menu {
+  position: fixed;
+  right: 0.5rem;
+  top: 50vh;
+  transform: translateY(-50%);
+  @include media-breakpoint-down(sm) {
+    transition: 0.2s;
+  }
+  .share-menu {
+    position: relative;
+    right: 0;
+    background: $white;
+    border-radius: 2rem;
+    box-shadow: $box-shadow08;
+    transition: $transition02;
+    @include media-breakpoint-down(sm) {
+      right: -3rem;
+    }
+    &.open {
+      right: 0;
+    }
+  }
+  .share-button {
+    padding: 0.6rem 0.8rem;
+    @include media-breakpoint-down(sm) {
+      padding: 0.2rem 0.4rem;
+    }
+  }
+}
+#a2apage_dropdown {
+  box-shadow: $box-shadow04;
+  border: none;
+  &.a2a_mini {
+    width: 2.625rem;
+    min-width: 2.625rem;
+    padding: 0.7rem 0;
+    border-radius: 5rem;
+  }
+  .a2apage_wide {
+    display: none;
+  }
+  .a2a_1 {
+    float: none;
+  }
+  .a2a_i {
+    width: 1.5rem
+  }
+}
+// MOBILE ONLY
+@include media-breakpoint-down(sm) {
+  .opening-share {
+    display: block;
+    position: absolute;
+    top: -2.5rem;
+    width: 2rem;
+    height: 2rem;
+    background: url("../images/picto/social/share.svg") no-repeat center center $white;
+    border-radius: 50%;
+    box-shadow: $box-shadow08;
+  }
+}
+

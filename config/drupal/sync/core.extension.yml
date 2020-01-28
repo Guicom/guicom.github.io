@@ -8,10 +8,12 @@ module:
   anonymizer: 0
   auto_entitylabel: 0
   automated_cron: 0
+  better_exposed_filters: 0
   better_normalizers: 0
   big_pipe: 0
   block: 0
   block_content: 0
+  block_content_permissions: 0
   breakpoint: 0
   captcha: 0
   checklistapi: 0
@@ -40,6 +42,7 @@ module:
   entity: 0
   entity_reference_revisions: 0
   entity_usage: 0
+  extra_field: 0
   facets: 0
   facets_pretty_paths: 0
   field: 0
@@ -85,27 +88,34 @@ module:
   rdf: 0
   recaptcha: 0
   redirect: 0
+  remote_stream_wrapper: 0
+  remote_stream_wrapper_widget: 0
   responsive_image: 0
   scheduler: 0
   search: 0
   search_api: 0
+  search_api_autocomplete: 0
   search_api_solr: 0
   serialization: 0
   shortcut: 0
-  simple_megamenu: 0
+  smart_trim: 0
   soc_access_block: 0
   soc_addtoany: 0
   soc_core: 0
+  soc_eu_cookie_compliance: 0
   soc_iframe_redirect: 0
   soc_multisite: 0
   soc_nextpage: 0
   soc_pardot: 0
   soc_premium_content: 0
+  soc_resource_center: 0
+  soc_user: 0
   soc_views_news: 0
   soc_wishlist: 0
   svg_image: 0
   system: 0
   taxonomy: 0
+  taxonomy_menu: 0
   text: 0
   token: 0
   toolbar: 0
@@ -113,6 +123,8 @@ module:
   twig_tweak: 0
   user: 0
   views_ui: 0
+  we_megamenu: 0
+  we_megamenu_deploy: 0
   workflows: 0
   ds: 1
   menu_link_content: 1

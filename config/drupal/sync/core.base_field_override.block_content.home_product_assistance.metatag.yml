@@ -1,0 +1,18 @@
+uuid: 10fe6bb6-c3e1-46a8-bf11-94d2fa3aaa41
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.home_product_assistance
+id: block_content.home_product_assistance.metatag
+field_name: metatag
+entity_type: block_content
+bundle: home_product_assistance
+label: Metatags
+description: 'The meta tags for the entity.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: map

@@ -1,0 +1,14 @@
+{% set attributes = attributes.addClass('dropdown-menu') %}
+<div class="we-mega-menu-submenu dropdown-menu">
+  <div class="submenu-bg">
+    <div class="container">
+      <div class="close-menu" style="display: none">
+        {{ 'Close' |t }}
+        {% include '/themes/custom/socomec/assets/images/picto/ui/close-circle-base.svg' %}
+      </div>
+    </div>
+  <div class="we-mega-menu-submenu-inner">
+    {{ row }}
+  </div>
+  </div>
+</div>

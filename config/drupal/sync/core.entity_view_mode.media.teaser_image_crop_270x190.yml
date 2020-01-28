@@ -1,0 +1,10 @@
+uuid: 22b5f4c5-8b62-4b6e-b970-6a7397fe51eb
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.teaser_image_crop_270x190
+label: 'Teaser image crop 270x190'
+targetEntityType: media
+cache: true

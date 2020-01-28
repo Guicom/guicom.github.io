@@ -92,6 +92,11 @@ ul.pagination {
             width: 50px;
             background-image: url("../images/picto/ui/Big-chevron-thin.svg");
           }
+          &:hover{
+            &:after {
+              background-image: url("../images/picto/ui/Big-chevron-thin-hover.svg");
+            }
+          }
         }
       }
       &.next {

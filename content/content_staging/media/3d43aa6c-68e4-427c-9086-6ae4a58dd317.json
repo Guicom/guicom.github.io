@@ -17,12 +17,6 @@
                 "href": "",
                 "lang": "en"
             }
-        ],
-        "http:\/\/drupal.org\/rest\/relation\/media\/product_image\/field_media_image_2": [
-            {
-                "href": "",
-                "lang": "en"
-            }
         ]
     },
     "mid": [
@@ -53,7 +47,7 @@
     ],
     "revision_created": [
         {
-            "value": "2019-12-31T08:45:22+00:00",
+            "value": "2020-01-06T12:10:11+00:00",
             "format": "Y-m-d\\TH:i:sP"
         }
     ],
@@ -76,7 +70,7 @@
                 },
                 "uuid": [
                     {
-                        "value": "674a5a4f-b63e-4035-b0b3-2959ebf4041c"
+                        "value": "2c7ea9dc-ef1e-414d-923e-ec872a66cf11"
                     }
                 ],
                 "lang": "en"
@@ -94,36 +88,14 @@
                 },
                 "uuid": [
                     {
-                        "value": "ae9f3698-8e37-4ad0-95a7-28778043b37c"
+                        "value": "81972ee0-9b5e-48c0-a204-719021405781"
                     }
                 ],
                 "lang": "en",
-                "alt": "SIRCO M",
+                "alt": null,
                 "title": null,
-                "width": "543",
-                "height": "800"
-            }
-        ],
-        "http:\/\/drupal.org\/rest\/relation\/media\/product_image\/field_media_image_2": [
-            {
-                "_links": {
-                    "self": {
-                        "href": ""
-                    },
-                    "type": {
-                        "href": "http:\/\/drupal.org\/rest\/type\/file\/file"
-                    }
-                },
-                "uuid": [
-                    {
-                        "value": "ae9f3698-8e37-4ad0-95a7-28778043b37c"
-                    }
-                ],
-                "lang": "en",
-                "alt": "SIRCO M",
-                "title": "",
-                "width": "543",
-                "height": "800"
+                "width": "180",
+                "height": "180"
             }
         ]
     },

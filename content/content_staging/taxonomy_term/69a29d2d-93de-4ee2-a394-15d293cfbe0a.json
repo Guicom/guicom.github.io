@@ -1,0 +1,142 @@
+{
+    "_links": {
+        "self": {
+            "href": "http:\/\/default\/products\/power-conversion\/midi-ups?_format=hal_json"
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/family"
+        },
+        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/family\/parent": [
+            {
+                "href": "http:\/\/default\/products\/power-conversion?_format=hal_json"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/family\/content_translation_uid": [
+            {
+                "href": "http:\/\/default\/user\/1?_format=hal_json",
+                "lang": "en"
+            }
+        ]
+    },
+    "tid": [
+        {
+            "value": 72
+        }
+    ],
+    "uuid": [
+        {
+            "value": "69a29d2d-93de-4ee2-a394-15d293cfbe0a"
+        }
+    ],
+    "revision_id": [
+        {
+            "value": 72
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "vid": [
+        {
+            "target_id": "family"
+        }
+    ],
+    "revision_created": [
+        {
+            "value": "2020-01-23T08:38:21+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "status": [
+        {
+            "value": true
+        }
+    ],
+    "name": [
+        {
+            "value": "Midi UPS"
+        }
+    ],
+    "weight": [
+        {
+            "value": 0
+        }
+    ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/family\/parent": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/products\/power-conversion?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/family"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "68eb7f48-4f41-4563-89d0-98078385884a"
+                    }
+                ]
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/family\/content_translation_uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/user\/1?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "059d0fa6-5dd6-4e1c-ace5-ef18988bb748"
+                    }
+                ],
+                "lang": "en"
+            }
+        ]
+    },
+    "changed": [
+        {
+            "value": "2020-01-23T08:38:21+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "revision_translation_affected": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "content_translation_source": [
+        {
+            "value": "und",
+            "lang": "en"
+        }
+    ],
+    "content_translation_outdated": [
+        {
+            "value": false,
+            "lang": "en"
+        }
+    ],
+    "content_translation_created": [
+        {
+            "value": "2020-01-23T08:38:21+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ]
+}

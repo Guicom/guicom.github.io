@@ -1,0 +1,32 @@
+<?php
+
+use Drupal\views\ViewExecutable;
+use Drupal\views\Plugin\views\query\QueryPluginBase;
+use Drupal\views\Views;
+
+/**
+ * Implements hook_views_query_alter().
+ *
+ * Alter query of resource-center page.
+ * Exclude nid on display page_1 from display block_1
+ *
+ * @param \Drupal\views\ViewExecutable $view
+ * @param \Drupal\views\Plugin\views\query\QueryPluginBase $query
+ */
+function soc_resource_center_views_query_alter(ViewExecutable $view, QueryPluginBase $query) {
+  if ($view->id() === 'resource_center' && $view->getDisplay()->display['id'] === 'page_1') {
+    $view_block = Views::getView('resource_center_highlight');
+    if (!empty($view_block)) {
+      if ($view_block->setDisplay('block_1')) {
+        $view_block->execute();
+        // If the view returns results...
+        if (!empty($view_block->result)) {
+          $nid = $view_block->result[0]->_object->getEntity()->nid->value;
+          if (!empty($nid)) {
+            $query->addCondition('nid', $nid, '<>');
+          }
+        }
+      }
+    }
+  }
+}

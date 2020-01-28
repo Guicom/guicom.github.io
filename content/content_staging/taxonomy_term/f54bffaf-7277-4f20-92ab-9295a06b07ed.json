@@ -8,12 +8,6 @@
         },
         "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/news_theme\/parent": [
             null
-        ],
-        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/news_theme\/content_translation_uid": [
-            {
-                "href": "http:\/\/default\/user\/1?_format=hal_json",
-                "lang": "en"
-            }
         ]
     },
     "tid": [
@@ -56,7 +50,7 @@
     ],
     "name": [
         {
-            "value": "Data Centers",
+            "value": "Data Centre",
             "lang": "en"
         }
     ],
@@ -68,29 +62,11 @@
     "_embedded": {
         "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/news_theme\/parent": [
             null
-        ],
-        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/news_theme\/content_translation_uid": [
-            {
-                "_links": {
-                    "self": {
-                        "href": "http:\/\/default\/user\/1?_format=hal_json"
-                    },
-                    "type": {
-                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
-                    }
-                },
-                "uuid": [
-                    {
-                        "value": "674a5a4f-b63e-4035-b0b3-2959ebf4041c"
-                    }
-                ],
-                "lang": "en"
-            }
         ]
     },
     "changed": [
         {
-            "value": "2019-12-15T22:34:36+00:00",
+            "value": "2020-01-10T10:18:29+00:00",
             "lang": "en",
             "format": "Y-m-d\\TH:i:sP"
         }
@@ -129,7 +105,7 @@
     "metatag": [
         {
             "value": {
-                "title": "Data Centers | Socomec",
+                "title": "Data Centre | Socomec",
                 "canonical_url": "http:\/\/default\/taxonomy\/term\/33"
             }
         }

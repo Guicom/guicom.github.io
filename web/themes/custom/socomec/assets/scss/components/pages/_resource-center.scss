@@ -1,0 +1,267 @@
+body {
+  &.path-resource-center {
+    .region-hero {
+      @include socomec-hero-alt-background;
+      .row {
+        align-items: end;
+      }
+      .title-hero {
+        text-transform: uppercase;
+        margin-bottom: 45px;
+        @include socomec-hero-wave;
+        &:after {
+          margin-left: -30px;
+          margin-top: 45px;
+        }
+      }
+      .text-formatted p {
+        color: $white;
+        font-size: 24px;
+      }
+      #block-exposedformresource-centerpage-1 {
+        label {
+          display: none;
+        }
+        .form-row {
+          position: relative;
+          margin: 0;
+          top: 80px;
+          right: 0;
+          .form-item-query {
+            width: 100%;
+            .form-text {
+              background-image: none;
+              border-radius: 0;
+              box-shadow: 0 24px 38px 3px rgba(35,44,119,0.14), 0 9px 46px 8px rgba(0,0,0,0.07), 0 11px 15px -7px rgba(0,0,0,0.14);
+              color: $dark-grey;
+              font-family: $font-roboto;
+              font-size: 20px;
+              font-weight: 400;
+              padding: 20px 35px;
+              height: 100px;
+              &::placeholder {
+                font-weight: 300;
+              }
+            }
+          }
+          .form-actions {
+            position: absolute;
+            right: 0;
+            top: 38px;
+            .form-submit {
+              background: transparent;
+              visibility: hidden;
+              &:before {
+                visibility: visible;
+                display: block;
+                content: ' ';
+                background-image: url("../images/picto/ui/search.svg");
+                background-size: 24px 24px;
+                height: 24px;
+                width: 24px;
+              }
+            }
+          }
+        }
+      }
+    }
+    .item-list {
+      width: 100%;
+      ul {
+        li {
+          padding: 0;
+          &:hover {
+            background: $blue_lighter;
+            .node--view-mode-teaser {
+              color: #232c77;
+            }
+            .add-to-bookmarks {
+              &:before {
+                background-image: url("../images/picto/ui/bookmark-star-blue.svg");
+              }
+            }
+            .resource-download {
+              background-image: url("../images/picto/ui/chevron-right-circle.svg") !important;
+            }
+          }
+        }
+      }
+    }
+    .facets {
+      margin-bottom: 120px;
+    }
+    .product-reference-wrapper {
+      margin-top: 80px;
+      .intro {
+        color: $turquoize;
+        font: 300 24px $font-roboto;
+        margin-bottom: 40px;
+      }
+      .node--view-mode-teaser {
+        display: table;
+        font: 16px $font-roboto;
+        color: $darker-grey;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        position: relative;
+        .field {
+          display: table-cell;
+          vertical-align: middle;
+          padding: 10px 18px;
+          &.field--name-extra-field-resource-title {
+            width: 70%;
+          }
+          &.field--name-field-res-resource-type {
+            width: 20%;
+          }
+          &.field--name-extra-field-button-download-resource {
+            .resource-download {
+              display: block;
+              width: 20px;
+              height: 20px;
+              background-image: url("../images/picto/ui/chevron-right-circle-grey.svg");
+              text-indent: -9999px;
+            }
+          }
+          &.field--name-extra-field-bookmark-resource,
+          &.field--name-extra-field-button-download-resource {
+            position: relative;
+            z-index: 2;
+          }
+        }
+        a.parent-overlap {
+          position: absolute;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          z-index: 1;
+        }
+      }
+    }
+    #background-resource-center-highlight {
+      position:relative;
+      margin: 0 -15px;
+      height: 210px;
+      overflow: hidden;
+      &:before {
+        content:"";
+        position:absolute;
+        background: linear-gradient(324.68deg, #CFDAEE 0%, rgba(207,218,238,0.8) 100%), url(/themes/custom/socomec/assets/images/background-highlight-resource-center.jpg);
+        opacity: 0.5;
+        background-repeat: no-repeat;
+        background-position: center;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left:0;
+        z-index: -2;
+      }
+      &:after {
+        content:"";
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        @include getfullwidthcolumn(7,xl);
+        transform: scaleX(-1);
+        background: linear-gradient(90deg, $turquoize 0%, rgba(0,79,159,0) 100%);
+        z-index: -1;
+      }
+      .view-content-highlight {
+        z-index: 0;
+        .views-row{
+          width: 100%;
+          .layout__region--first{
+            flex: 0 0 33.33333%;
+            max-width: 33.33333%;
+            img{
+              max-width: 150px;
+              margin: 40px 0 0 60px;
+              box-shadow: $box-shadow08;
+            }
+            @include media-breakpoint-down(md) {
+              display:none;
+            }
+          }
+          .layout__region--second{
+            padding-top: 3em;
+            flex: 0 0 66.66667%;
+            max-width: 66.66667%;
+            position: relative;
+            height: 210px;
+            @include media-breakpoint-down(md) {
+              flex: 100%;
+              max-width: 100%;
+              padding-top: 55px;
+              padding-left: 15px;
+            }
+            .field--name-extra-field-is-download-ressource{
+              color: $dark_blue;
+              font-family: $font-roboto;
+              font-size: 24px;
+              font-weight: 900;
+              line-height: 30px;
+            }
+            .field--name-extra-field-resource-title{
+              margin-right: 5em;
+              color: $dark_blue;
+              font-family: $font-roboto;
+              font-size: 32px;
+              font-weight: 300;
+              line-height: 40px;
+            }
+            .field--name-field-res-resource-type,
+            .field--name-extra-field-file-type-resource{
+              display:inline-block;
+              margin: 0 0.5em 0 0;
+              color: $darker-grey;
+              font-family: $font-roboto;
+              font-size: 16px;
+              line-height: 25px;
+            }
+            .field--name-extra-field-bookmark-resource{
+              position:absolute;
+              top: 50%;
+              right: 6.5em;
+              margin-top: -17px;
+              &:hover{
+                .add-to-bookmarks{
+                  &:before{
+                    background-image: url(../images/picto/ui/bookmark-star-blue.svg);
+                  }
+                }
+              }
+            }
+            .field--name-extra-field-button-download-resource{
+              position:absolute;
+              top: 50%;
+              right: 2.5em;
+              margin-top: -25px;
+              background-position: center center;
+              background-repeat: no-repeat;
+              -webkit-background-size: cover;
+              background-size: cover;
+              height: 50px;
+              width: 50px;
+              overflow: hidden;
+              background-image: url(../images/picto/ui/Big-chevron-thin.svg);
+              transform: rotate(180deg);
+              &:hover {
+                background-image: url(../images/picto/ui/Big-chevron-thin-hover.svg);
+              }
+              a {
+                text-indent: -9999px;
+                display: block;
+                height: 50px;
+                width: 50px;
+              }
+            }
+          }
+        }
+
+      }
+    }
+  }
+}

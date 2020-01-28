@@ -1,0 +1,85 @@
+{
+    "_links": {
+        "self": {
+            "href": ""
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/model_text"
+        }
+    },
+    "id": [
+        {
+            "value": 43
+        }
+    ],
+    "uuid": [
+        {
+            "value": "fa77b268-af64-4faf-8cd8-74b9626a1395"
+        }
+    ],
+    "revision_id": [
+        {
+            "value": 382
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "type": [
+        {
+            "target_id": "model_text"
+        }
+    ],
+    "status": [
+        {
+            "value": true
+        }
+    ],
+    "created": [
+        {
+            "value": "2020-01-21T16:43:43+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "parent_id": [
+        {
+            "value": "25"
+        }
+    ],
+    "parent_type": [
+        {
+            "value": "node"
+        }
+    ],
+    "parent_field_name": [
+        {
+            "value": "field_body"
+        }
+    ],
+    "behavior_settings": [
+        {
+            "value": []
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "field_text": [
+        {
+            "value": "<p>Globally incubate standards in e-services assertively iterate resource maximizing products after maintainable products. Iterative approaches to beta test override the table win-win survival strategies to identify. Proactively fabricate one-to-one materials via workplace diversity and empowerment bring to provide a. Dramatically maintain extensive infomediaries via extensible niches dramatically maintain clicks-and-mortar catalysts for offshoring.<\/p>\r\n",
+            "format": "socomec",
+            "processed": "<p>Globally incubate standards in e-services assertively iterate resource maximizing products after maintainable products. Iterative approaches to beta test override the table win-win survival strategies to identify. Proactively fabricate one-to-one materials via workplace diversity and empowerment bring to provide a. Dramatically maintain extensive infomediaries via extensible niches dramatically maintain clicks-and-mortar catalysts for offshoring.<\/p>"
+        }
+    ],
+    "field_title": [
+        {
+            "value": "Titre bal bla"
+        }
+    ]
+}

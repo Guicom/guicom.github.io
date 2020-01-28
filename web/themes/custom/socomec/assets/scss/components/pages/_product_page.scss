@@ -5,7 +5,7 @@ body.node--type-product {
   }
 
   header {
-    height: 550px;
+    height: 490px;
     display: flex;
     flex-flow: column;
     margin-bottom: 25px;
@@ -243,6 +243,8 @@ body.node--type-product {
     background: $white;
     margin-bottom: 45px;
     text-transform: uppercase;
+    top: 60px;
+    z-index: 1020;
     .row {
       align-items: center;
       justify-content: flex-end;
@@ -1062,5 +1064,41 @@ body.node--type-product {
     &:before {
       background: url("../images/picto/ui/bookmark-star-blue.svg") no-repeat center center;
     }
+  }
+}
+
+// CART
+.add-to-cart {
+  cursor: pointer;
+  transition: $transition02;
+  &:before {
+    content: '';
+    background: url("../images/picto/ui/bookmark-star.svg") no-repeat center center;
+    display: block;
+    height: 34px;
+    width: 34px;
+    transform: translateY(0);
+  }
+  &.blue,
+  &:hover{
+    &:before {
+      background: url("../images/picto/ui/bookmark-star-blue.svg") no-repeat center center;
+    }
+  }
+  &.active {
+    &:before {
+      background: url("../images/picto/ui/bookmark-star.svg") no-repeat center center $white;
+    }
+  }
+  &.white {
+    &:hover {
+      &:before {
+        background: url("../images/picto/ui/bookmark-star-white.svg") no-repeat center center;
+      }
+    }
+  }
+  &:hover {
+    transform: translateY(-2px);
+    transition: $transition02;
   }
 }

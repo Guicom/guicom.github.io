@@ -28,22 +28,35 @@
 @import "components/blocks/product_teaser";
 @import "components/blocks/local_task";
 @import "components/blocks/facets";
+@import "components/blocks/filter";
+@import "components/blocks/branding";
+@import "components/blocks/share";
 @import "components/fields/key-figure";
 @import "components/pages/landing-pages";
 @import "components/pages/product_page";
 @import "components/pages/family";
+@import "components/pages/resource-center";
+@import "components/pages/news-page";
+@import "components/pages/news-detail";
 @import "components/paragraphs/key-figure";
 @import "components/paragraphs/testimony";
 @import "components/paragraphs/text";
+@import "components/paragraphs/citation";
 @import "components/paragraphs/image";
 @import "components/paragraphs/cta";
 @import "components/paragraphs/video-text";
 @import "components/header";
 @import "components/background";
 @import "components/form";
+@import "components/pages/views/news";
+@import "components/bookmarks";
+
+// Eu cookie compliance
+@import "components/eu-cookie-compliance";
 
 // Navigations
 @import "components/navigation/site_footer";
 @import "components/navigation/socomec_footer";
 @import "components/navigation/paginations";
 @import "components/navigation/breadcrumb";
+@import "components/navigation/main-menu";

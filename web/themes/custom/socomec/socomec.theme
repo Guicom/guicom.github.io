@@ -9,10 +9,12 @@ use Drupal\block_content\Entity\BlockContent;
 use Drupal\Core\Config\Config;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Language\LanguageManager;
+use Drupal\Core\Template\Attribute;
 use Drupal\media\Entity\Media;
 use Drupal\file\Entity\File;
 use Drupal\paragraphs\Entity\Paragraph;
 use Drupal\soc_pardot\Form\PrivacyPolicySettingsForm;
+use Drupal\we_megamenu\WeMegaMenuBuilder;
 
 /**
  * Implements hook_form_system_theme_settings_alter() for settings form.
@@ -151,7 +153,6 @@ function socomec_theme_suggestions_field_alter(&$suggestions, array $variables) 
 function socomec_theme_suggestions_page_alter(array &$suggestions, array $variables) {
   $node = \Drupal::routeMatch()->getParameter('node');
   if ($node instanceof \Drupal\node\NodeInterface) {
-    $suggestions[] = 'page__' . $node->bundle();
     $suggestions[] = 'page__node__' . $node->bundle();
   }
   $term = \Drupal::routeMatch()->getParameter('taxonomy_term');
@@ -175,7 +176,6 @@ function socomec_theme_suggestions_views_view_fields_alter(array &$suggestions, 
     }
   }
 }
-
 
 /**
  * Implements hook_theme_suggestions_taxonomy_term_alter().
@@ -202,6 +202,7 @@ function socomec_theme_suggestions_block_alter(array &$suggestions, array $varia
     }
   }
 }
+
 /**
  * Implements template_preprocess_html().
  */
@@ -220,6 +221,7 @@ function socomec_preprocess_html(&$variables) {
 function socomec_preprocess_views_view(&$variables) {
   $id = $variables['id'];
   $display_id = $variables['display_id'];
+
   // Apply background image for hero paragraph view block
   if ((!empty($id) && $id == 'hero_block') && ($display_id == 'block_1' || $display_id == 'block_2')) {
     $rows = $variables['rows'][0]['#rows'];
@@ -242,6 +244,38 @@ function socomec_preprocess_views_view(&$variables) {
         $file_url = file_create_url($file->getFileUri());
       }
       $variables['background_image'] = (!empty($file_url))?$file_url:null;
+    }
+  }
+
+  // Apply background color for news page without image
+  if ((!empty($id) && $id == 'news') && ($display_id == 'page_1' || $display_id == 'page_1')) {
+    if (!empty($variables['rows'][0]['#rows'])) {
+      foreach ($variables['rows'][0]['#rows'] as $key => $value) {
+        if (is_numeric($key)) {
+          $variables['rows'][0]['#rows'][$key]['#background'] = 'with-img';
+          $node = $value['#node'];
+          if ($node->hasField('field_media_image') && empty($node->get('field_media_image')->getValue())) {
+            $background = [
+              'bg-blue-1',
+              'bg-blue-2',
+              'bg-blue-3',
+            ];
+            $rand = rand( 0 , 2 );
+            $variables['rows'][0]['#rows'][$key]['#background'] = 'no-img '.$background[$rand];
+          }
+        }
+      }
+    }
+  }
+
+  // Alter resource_center views
+  if ((!empty($id) && $id == 'resource_center') && $display_id == 'page_1') {
+    $variables['hidden_count_results'] = TRUE;
+    $query = \Drupal::request()->query->get('query');
+    $filters = \Drupal::request()->query->get('f');
+    if (($query !== '' && !is_null($query))
+      || ($filters !== '' && !is_null($filters))) {
+      $variables['hidden_count_results'] = FALSE;
     }
   }
 }
@@ -388,5 +422,106 @@ function socomec_preprocess_responsive_image_formatter(&$variables) {
     if (in_array($variables['responsive_image_style_id'], $responsive_image_style_name)) {
       $variables['responsive_image']['#attributes']['class'][] = 'img-fluid';
     }
+  }
+}
+
+
+/**
+ * Prepare variables for we_megamenu_li.
+ *
+ * @param array $vars
+ *   Variables are declared in theme.
+ */
+function socomec_preprocess_we_megamenu_li(&$vars) {
+  $menu_name = $vars['menu_name'];
+  $block_theme = $vars['block_theme'];
+  $data_config = WeMegaMenuBuilder::loadConfig($menu_name, $block_theme);
+  $menu_config = isset($data_config->menu_config) ? $data_config->menu_config : [];
+
+  $vars['attributes'] = new Attribute();
+  $vars['attributes']['class'] = [];
+  $vars['attributes']['class'][] = 'we-mega-menu-li';
+  $vars['attributes']['class'][] =  'level-' . $vars["item"]["level"];
+  $vars['attributes']['data-level'] = $vars['item']['level'];
+  $vars['attributes']['data-element-type'] = 'we-mega-menu-li';
+  $vars['attributes']['description'] = isset($vars['item']['description']) ? $vars['item']['description'] : '';
+  $vars['href'] = '';
+  $vars['attributes_link'] = new Attribute();
+  if ($vars["item"]["level"] == 0) {
+    $vars['attributes_link']['data-toggle'] = 'dropdown';
+    $vars['attributes_link']['role'] = 'button';
+    $vars['root'] = TRUE;
+  }
+  else {
+    $vars['root'] = FALSE;
+    if (count($vars['subtree'])) {
+      $vars['attributes']['class'][] = 'hover';
+      $vars['link_class'] = 'dropdown-toggle';
+    }
+    else {
+      $vars['link_class'] = 'dropdown-item';
+    }
+  }
+  if ($vars['item']['url'] == '<front>') {
+    $vars['attributes']['data-id'] = 'home';
+    $vars['href'] = Drupal::url('<front>');
+  }
+  else {
+    $vars['attributes']['data-id'] = !empty($vars['item']['derivativeId']) ? $vars['item']['derivativeId'] : $vars['item']['url'];
+    $vars['href'] = $vars['item']['url'];
+  }
+
+  $vars['attributes']['data-submenu'] = 0;
+  $vars['attributes']['hide-sub-when-collapse'] = 0;
+  if (isset($menu_config->{$vars['attributes']['data-id']})) {
+    $item_config = $menu_config->{$vars['attributes']['data-id']};
+    $vars['attributes']['class'][] = !empty($item_config->item_config->group) ? 'we-mega-menu-group' : '';
+    $vars['attributes']['class'][] = !empty($item_config->item_config->class) ? $item_config->item_config->class : '';
+    $vars['attributes']['class'][] = !empty($item_config->item_config->{'hide_sub_when_collapse'}) ? 'sub-hidden-collapse' : '';
+    $vars['attributes']['class'][] = !empty($item_config->item_config->{'data-alignsub'}) ? $item_config->item_config->{'data-alignsub'} : '';
+    $vars['attributes']['data-group'] = !empty($item_config->item_config->group) ? $item_config->item_config->group : 0;
+    $vars['attributes']['data-class'] = !empty($item_config->item_config->class) ? $item_config->item_config->class : '';
+    $vars['attributes']['data-icon'] = !empty($item_config->item_config->{'data-icon'}) ? $item_config->item_config->{'data-icon'} : '';
+    $vars['attributes']['data-caption'] = !empty($item_config->item_config->{'data-caption'}) ? $item_config->item_config->{'data-caption'} : '';
+    $vars['attributes']['hide-sub-when-collapse'] = !empty($item_config->item_config->{'hide_sub_when_collapse'}) ? $item_config->item_config->{'hide_sub_when_collapse'} : '';
+    $vars['attributes']['data-alignsub'] = !empty($item_config->item_config->{'data-alignsub'}) ? $item_config->item_config->{'data-alignsub'} : '';
+    $vars['attributes']['data-target'] = !empty($item_config->item_config->{'data-target'}) ? $item_config->item_config->{'data-target'} : '';
+  }
+
+  $trail = $vars['trail'];
+  $plugin_id = $vars['item']['plugin_id'];
+  if (isset($trail[$plugin_id])) {
+    $vars['attributes']['class'][] = 'active';
+    $vars['attributes']['class'][] = 'active-trail';
+    $vars['link']['attributes']['class'][] = 'active-trail';
+  }
+
+  if ($vars['subtree']) {
+    $vars['content'] = [
+      '#theme' => 'we_megamenu_submenu',
+      '#items' => $vars['subtree'],
+      '#item_config' => isset($menu_config->{$vars['attributes']['data-id']}) ? $menu_config->{$vars['attributes']['data-id']} : [],
+      '#section' => $vars['section'],
+      '#block_theme' => $vars['block_theme'],
+      '#menu_name' => $vars['menu_name'],
+      '#trail' => $vars['trail'],
+    ];
+    $vars['items'] = $vars['subtree'];
+    $vars['attributes']['data-submenu'] = 1;
+    $vars['attributes']['data-group'] = !empty($item_config->item_config->group) ? $item_config->item_config->group : 0;
+  }
+  elseif (isset($menu_config->{$vars['attributes']['data-id']}) && count($menu_config->{$vars['attributes']['data-id']}->rows_content)) {
+    $item_config = $menu_config->{$vars['attributes']['data-id']};
+    $vars['content'] = [
+      '#theme' => 'we_megamenu_submenu',
+      '#items' => $vars['subtree'],
+      '#item_config' => $item_config,
+      '#section' => $vars['section'],
+      '#block_theme' => $vars['block_theme'],
+      '#menu_name' => $vars['menu_name'],
+      '#trail' => $vars['trail'],
+    ];
+    $vars['attributes']['data-submenu'] = 1;
+    $vars['attributes']['class'][] = 'dropdown';
   }
 }

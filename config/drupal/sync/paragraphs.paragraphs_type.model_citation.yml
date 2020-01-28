@@ -1,0 +1,9 @@
+uuid: ba2d7e0f-a3ad-46c6-970e-17f7d51395ed
+langcode: en
+status: true
+dependencies: {  }
+id: model_citation
+label: 'Model - Citation'
+icon_uuid: null
+description: 'Blockquote and cite markups html'
+behavior_plugins: {  }
