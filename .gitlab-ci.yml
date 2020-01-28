@@ -104,6 +104,8 @@ behat:
 
 .push-web-image: &push-web-image
   stage: deploy
+  tags:
+    - socomec
   cache:
     # inherit all global cache settings
     <<: *global_cache
@@ -114,8 +116,6 @@ behat:
   when: manual
 
 push-web-image:
-  tags:
-    - socomec
   variables:
     ENVIRONMENT: $CI_COMMIT_REF_NAME
   extends:
