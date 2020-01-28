@@ -1,7 +1,7 @@
 image: docker:stable
 
 services:
-  - docker:stable-dind
+  - docker:18.09.7-dind
 
 variables:
   # For non-Kubernetes executors, we use tcp://docker:2375/
