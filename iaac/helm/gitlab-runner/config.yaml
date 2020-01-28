@@ -222,9 +222,9 @@ runners:
   ##
   builds:
     #cpuLimit: 200m
-    memoryLimit: 256Mi
-    cpuRequests: 100m
-  # memoryRequests: 128Mi
+    memoryLimit: 2048Mi
+    cpuRequests: 2
+    memoryRequests: 1024Mi
 
   ## Service Container specific configuration
   ##
