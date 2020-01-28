@@ -132,7 +132,7 @@ push-web-image:
 push-web-image-prod:
   variables:
     ENVIRONMENT: "production"
-    DOCKER_HOST: tcp://localhost:2376/
+    DOCKER_HOST: tcp://127.0.0.1:2375/
   extends:
       - .push-web-image
   only:
