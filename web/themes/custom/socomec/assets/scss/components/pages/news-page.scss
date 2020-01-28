@@ -15,6 +15,11 @@
         font-weight: 300;
         text-transform: uppercase;
         .news-title {
+          @include socomec-hero-wave();
+          &:after {
+            margin-left: -25px;
+            margin-top: 35px;
+          }
         }
       }
       #block-viewsnewsteaser {
@@ -70,7 +75,8 @@
         width: 100%;
         height: 100%;
         z-index: 10;
-        background: linear-gradient(47.7deg, rgba(0,81,157,0.9) 0%, rgba(0,81,157,0.8) 50%, rgba(0,81,157,0.3) 70%, rgba(0,81,157,0.2) 100%);
+        background: linear-gradient(47.7deg, rgba(0,81,157,0.9) 0%, rgba(0,81,157,0.8) 25%, rgba(0,81,157,0.3) 40%, rgba(0,81,157,0.2) 100%);
+        transition: 0.4s ease;
       }
       &:before {
         content:'';
@@ -81,9 +87,6 @@
         top: -20rem;
         left: -20rem;
         background: radial-gradient(circle, rgba(15,19,51,0.9) 0%, rgba(35,44,119,0) 45%);
-      }
-      @include media-breakpoint-down(md) {
-
       }
       .card-wrapper {
         position: relative;
@@ -150,7 +153,9 @@
         margin-bottom: $spacer;
       }
       .field--name-field-teaser {
-        margin-bottom: 5rem;
+        height: 2rem;
+        transition: 0.4s ease;
+        opacity: 0;
         @include media-breakpoint-down(md) {
           margin-bottom: 1rem;
         }
@@ -183,6 +188,18 @@
         .add-to-cart {
           position: relative;
           z-index: 50;
+        }
+      }
+      // HIGHLIGHT HOVER EFFECT
+      &:hover {
+        &:after {
+          width: 250%;
+          transition: 0.4s ease;
+        }
+        .field--name-field-teaser {
+          height: 9.5rem;
+          opacity: 1;
+          transition: 0.4s ease;
         }
       }
     }

@@ -30,6 +30,8 @@
             max-width: 270px;
             margin:0 auto;
             transition: $transition02;
+            position: relative;
+            height: 425px;
             &.bg-blue-1{
             background-color: $blue;
             }
@@ -50,11 +52,20 @@
                 }
               }
             }
-            position: relative;
-            height: 440px;
+            .field--name-field-media-image {
+              img {
+                transition: $transition02;
+              }
+            }
             &:hover{
               box-shadow: $box-shadow-card-list;
               transition: $transition02;
+              .field--name-field-media-image {
+                img {
+                  transform: scale(1.1);
+                  transition: $transition02;
+                }
+              }
             }
             .field--type-entity-reference{
               margin:0;

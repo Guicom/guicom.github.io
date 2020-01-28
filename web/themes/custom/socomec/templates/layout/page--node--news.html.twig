@@ -80,7 +80,11 @@
     <div class="news-teaser-wrapper">
       <div class="container">
         <div class="row">
+          {% if drupal_field('field_media_image', 'node')[0] %}
           <div class="news-teaser col-6">
+            {% else %}
+            <div class="news-teaser col-10 col-lg-offset-1">
+            {% endif %}
             <span class="news-subtitle">{{ drupal_field('field_teaser', 'node') }}</span>
           </div>
           {% include '@socomec/layout/news/share.html.twig' %}

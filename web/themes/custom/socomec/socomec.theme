@@ -221,6 +221,7 @@ function socomec_preprocess_html(&$variables) {
 function socomec_preprocess_views_view(&$variables) {
   $id = $variables['id'];
   $display_id = $variables['display_id'];
+
   // Apply background image for hero paragraph view block
   if ((!empty($id) && $id == 'hero_block') && ($display_id == 'block_1' || $display_id == 'block_2')) {
     $rows = $variables['rows'][0]['#rows'];
@@ -267,6 +268,7 @@ function socomec_preprocess_views_view(&$variables) {
     }
   }
 
+  // Alter resource_center views
   if ((!empty($id) && $id == 'resource_center') && $display_id == 'page_1') {
     $variables['hidden_count_results'] = TRUE;
     $query = \Drupal::request()->query->get('query');
