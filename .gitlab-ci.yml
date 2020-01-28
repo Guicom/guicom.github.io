@@ -110,18 +110,24 @@ behat:
   extends:
     - .build_project
   script:
-    - cd iaac && make push-web-image
+    - cd iaac && make build-web-image && make push-web-image
   when: manual
 
 push-web-image:
+  tags:
+    - socomec
   variables:
     ENVIRONMENT: $CI_COMMIT_REF_NAME
   extends:
     - .push-web-image
+  script:
+    - env
+    - pwd
+    - kubectl get po
   only:
     refs:
       - developpp
-      - recettepp
+      - recette
 
 push-web-image-prod:
   variables:
