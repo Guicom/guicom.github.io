@@ -101,6 +101,8 @@ behat:
 
 .push-web-image: &push-web-image
   stage: build
+  tags:
+    - actency
   cache:
     # inherit all global cache settings
     <<: *global_cache
@@ -144,7 +146,7 @@ deploy-prod:
   script:
     - helm ls --namespace ${NAMESPACE}
     - cd iaac/helm && helm upgrade --namespace ${NAMESPACE} -f ${ENVIRONMENT}.yaml ${NAMESPACE}-drupal drupal
-    - cd iaac && make wait-pod-to-be-ready && make run-drupal-update
+    - cd .. && make wait-pod-to-be-ready && make run-drupal-update
   only:
     refs:
       - feature/iaac
@@ -167,7 +169,7 @@ deploy:
   script:
     - helm ls --namespace ${NAMESPACE}
     - cd iaac/helm && helm upgrade --namespace ${NAMESPACE} -f ${ENVIRONMENT}.yaml ${NAMESPACE}-drupal drupal
-    - cd iaac && make wait-pod-to-be-ready && make run-drupal-update
+    - cd .. && make wait-pod-to-be-ready && make run-drupal-update
   only:
     refs:
       - recette
