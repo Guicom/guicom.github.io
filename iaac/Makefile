@@ -17,25 +17,25 @@ install-new-release:
 	helm upgrade --install --wait --recreate-pods --namespace=${NAMESPACE} drupal-${ENVIRONMENT} ./helm/${ENVIRONMENT}
 
 wait-pod-to-be-ready:
-	pod=$$(kubectl get po --namespace=${NAMESPACE} -l 'app=webfactory-drupal,release=${ENVIRONMENT}-drupal' -o 'jsonpath={.items[0].metadata.name}'); \
+	pod=$$(kubectl get po --namespace=${NAMESPACE} -l "app=webfactory-drupal,release=${NAMESPACE}-drupal" -o 'jsonpath={.items[0].metadata.name}'); \
 	status="False"; \
 	while [ ! "$${status}" = "True" ]; do echo "waiting for pod $${pod}" && sleep 1; \
 	status=$$(kubectl get pods --namespace=${NAMESPACE} $${pod} -o 'jsonpath={..status.conditions[?(@.type=="ContainersReady")].status}'); \
 	done
 
 run-drupal-install:
-	pod=$$(kubectl get po --namespace=${NAMESPACE} -l 'app=webfactory-drupal,release=${ENVIRONMENT}-drupal' -o 'jsonpath={.items[0].metadata.name}'); \
+	pod=$$(kubectl get po --namespace=${NAMESPACE} -l "app=webfactory-drupal,release=${NAMESPACE}-drupal" -o 'jsonpath={.items[0].metadata.name}'); \
 	kubectl exec --namespace=${NAMESPACE} $${pod} -- bash -c "cd /var/www/html && make drupal-install && make drupal-cim"
 
 run-drupal-update:
-	pod=$$(kubectl get po --namespace=${NAMESPACE} -l 'app=webfactory-drupal,release=${ENVIRONMENT}-drupal' -o 'jsonpath={.items[0].metadata.name}'); \
+	pod=$$(kubectl get po --namespace=${NAMESPACE} -l "app=webfactory-drupal,release=${NAMESPACE}-drupal" -o 'jsonpath={.items[0].metadata.name}'); \
 	kubectl exec --namespace=${NAMESPACE} $${pod} -- bash -c "cd /var/www/html && make drupal-update"
 
 sleep-10:
 	sleep 10
 
 recreate-current-pod:
-	pod=$$(kubectl get po --namespace=${NAMESPACE} -l 'app=drupal-${ENVIRONMENT},release=drupal-${ENVIRONMENT}' -o 'jsonpath={.items[0].metadata.name}'); \
+	pod=$$(kubectl get po --namespace=${NAMESPACE} -l "app=webfactory-drupal,release=${NAMESPACE}-drupal" -o 'jsonpath={.items[0].metadata.name}'); \
 	kubectl get pod $${pod} --namespace=${NAMESPACE}  -o yaml | kubectl replace --force -f -
 
 deploy_elasticsearch:
