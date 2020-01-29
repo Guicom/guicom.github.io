@@ -6,11 +6,11 @@ services:
 variables:
   # For non-Kubernetes executors, we use tcp://docker:2375/
   # Provoque un changement dans la branche
-  DOCKER_HOST: tcp://localhost:2375/
+  #DOCKER_HOST: tcp://localhost:2375/
   # DOCKER_HOST: "${HOSTNAME}-docker"
   # When using dind, it's wise to use the overlayfs driver for
   # improved performance.
-  #DOCKER_HOST: tcp://docker:2376/
+  DOCKER_HOST: tcp://docker:2376/
   DOCKER_TLS_CERTDIR: "/certs"
   DOCKER_DRIVER: overlay2
   DOCKER_IMAGE_BUILD_PATH: docker_image
@@ -145,6 +145,7 @@ deploy-web-image-prod:
     - socomec
   variables:
     ENVIRONMENT: "production"
+    DOCKER_HOST: tcp://localhost:2375/
   script:
     - helm ls --namespace webfactory-prod
     - cd iaac/helm/drupal && helm upgrade --namespace webfactory-prod -f production.yaml webfactory-prod-drupal drupal
