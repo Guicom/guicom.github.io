@@ -6,11 +6,11 @@ services:
 variables:
   # For non-Kubernetes executors, we use tcp://docker:2375/
   # Provoque un changement dans la branche
-  #DOCKER_HOST: tcp://localhost:2375/
+  DOCKER_HOST: tcp://localhost:2375/
   # DOCKER_HOST: "${HOSTNAME}-docker"
   # When using dind, it's wise to use the overlayfs driver for
   # improved performance.
-  DOCKER_HOST: tcp://docker:2376/
+  #DOCKER_HOST: tcp://docker:2376/
   DOCKER_TLS_CERTDIR: "/certs"
   DOCKER_DRIVER: overlay2
   DOCKER_IMAGE_BUILD_PATH: docker_image
@@ -105,7 +105,7 @@ behat:
 .push-web-image: &push-web-image
   stage: deploy
   tags:
-    - socomec
+    - actency
   cache:
     # inherit all global cache settings
     <<: *global_cache
@@ -132,9 +132,23 @@ push-web-image:
 push-web-image-prod:
   variables:
     ENVIRONMENT: "production"
-    DOCKER_HOST: tcp://localhost:2375/
   extends:
       - .push-web-image
+  only:
+    refs:
+      - develop
+      - feature/iaac
+
+deploy-web-image-prod:
+  stage: deploy
+  image: alpine/helm:latest
+  tags:
+    - socomec
+  variables:
+    ENVIRONMENT: "production"
+  script:
+    - helm ls || true
+    - kubectl get po
   only:
     refs:
       - develop
