@@ -16,9 +16,10 @@ variables:
   DOCKER_IMAGE_BUILD_PATH: docker_image
 
 stages:
-  #  - build
   - sonarqube
   - behat
+  - build
+  - deploy
 
 cache: &global_cache
   key: ${CI_JOB_NAME}
@@ -26,7 +27,7 @@ cache: &global_cache
     - vendor
     - web/node_modules
 
-.build_project: &build_project
+.behat_build_project: &behat_build_project
   artifacts:
     paths:
       - "${DOCKER_IMAGE_BUILD_PATH}/"
@@ -49,7 +50,25 @@ cache: &global_cache
     - docker-compose exec -u root -T web bash -c "cd /var/www/html/ && composer install"
     - docker-compose exec -u root -T web bash -c "cd /var/www/html/tests/behat && composer install"
     - docker-compose exec -u root -T web bash -c "cd /var/www/html/ && ./vendor/bin/phing install"
-    - docker-compose exec -u root -T web bash -c "chown -R www-data:www-data /var/www/html"
+    - docker-compose exec -u root -T web bash -c "chown -R www-data:www-data /var/www/html/"
+
+.build_project: &build_project
+  artifacts:
+    paths:
+      - "${DOCKER_IMAGE_BUILD_PATH}/"
+  variables:
+    # No spaces.
+    APACHE_RUN_USER: "www-data"
+    APACHE_RUN_GROUP: "www-data"
+  before_script:
+    - mkdir -p "${DOCKER_IMAGE_BUILD_PATH}/"
+    - apk add --no-cache py-pip python-dev libffi-dev openssl-dev gcc libc-dev make
+    - pip install docker-compose
+    - cp ${CI_PROJECT_DIR}/docker-compose.example.gitlab-ci.yml ${CI_PROJECT_DIR}/docker-compose.yml
+    - cp ${CI_PROJECT_DIR}/phing/example.build.properties.local ${CI_PROJECT_DIR}/phing/build.properties.local
+    - docker-compose up -d
+    - docker-compose exec -u root -T web bash -c "cd /var/www/html/ && make install"
+    - docker-compose exec -u root -T web bash -c "cd /var/www/html/ && make set-kubernetes-configs"
 
 # SonarQube Runner
 sonarqube:
@@ -72,6 +91,66 @@ behat:
     # inherit all global cache settings
     <<: *global_cache
   extends:
-    - .build_project
+    - .behat_build_project
   script:
     - docker-compose exec -u web -T web bash -c "cd /var/www/html && ./vendor/bin/phing behat:run -Dbehat.bin=tests/behat/bin/behat"
+
+.push-web-image: &push-web-image
+  stage: build
+  cache:
+    # inherit all global cache settings
+    <<: *global_cache
+  extends:
+    - .build_project
+  script:
+    - cd iaac && make push-web-image
+
+build:
+  variables:
+    ENVIRONMENT: $CI_COMMIT_REF_NAME
+  extends:
+    - .push-web-image
+  only:
+    refs:
+      - recette
+
+build-prod:
+  variables:
+    ENVIRONMENT: "production"
+  extends:
+      - .push-web-image
+  only:
+    refs:
+      - feature/iaac
+      - master
+
+deploy-prod:
+  stage: deploy
+  image: alpine/helm:latest
+  tags:
+    - socomec
+  variables:
+    ENVIRONMENT: "production"
+  script:
+    - helm ls --namespace webfactory-prod
+    - cd iaac/helm && helm upgrade --namespace webfactory-prod -f production.yaml webfactory-prod-drupal drupal
+  only:
+    refs:
+      - feature/iaac
+      - master
+  when: manual
+
+deploy:
+  stage: deploy
+  image: alpine/helm:latest
+  tags:
+    - socomec
+  variables:
+    ENVIRONMENT: $CI_COMMIT_REF_NAME
+  script:
+    - helm ls --namespace webfactory-prod
+    - cd iaac/helm && helm upgrade --namespace webfactory-prod -f ${ENVIRONMENT}.yaml webfactory-prod-drupal drupal
+  only:
+    refs:
+      - recette
+  when: manual
