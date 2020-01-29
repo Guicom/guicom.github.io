@@ -81,9 +81,6 @@ sonarqube:
     SONAR_ANALYSIS_MODE: preview
   script:
     - gitlab-sonar-scanner -Dsonar.gitlab.ref_name=$CI_COMMIT_REF_NAME -Dsonar.gitlab.project_id=$CI_PROJECT_ID -Dsonar.login=$SONARQUBE_ACCESS_KEY -Dsonar.gitlab.user_token=$GITLAB_ACCESS_KEY
-  only:
-    refs:
-      - desactive
 
 # Behat tests from tests/ folder.
 behat:
@@ -97,10 +94,6 @@ behat:
     - .behat_build_project
   script:
     - docker-compose exec -u web -T web bash -c "cd /var/www/html && ./vendor/bin/phing behat:run -Dbehat.bin=tests/behat/bin/behat"
-  only:
-    refs:
-      - desactive
-
 
 .push-web-image: &push-web-image
   stage: build
