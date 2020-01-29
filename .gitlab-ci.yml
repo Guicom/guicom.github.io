@@ -113,7 +113,6 @@ behat:
     - .build_project
   script:
     - cd iaac && make build-web-image && make push-web-image
-  when: manual
 
 push-web-image:
   variables:
@@ -147,9 +146,10 @@ deploy-web-image-prod:
   variables:
     ENVIRONMENT: "production"
   script:
-    - helm ls || true
-    - kubectl get po
+    - helm ls --namespace webfactory-prod
+    - cd iaac/helm/drupal && helm upgrade --namespace webfactory-prod -f production.yaml webfactory-prod-drupal drupal
   only:
     refs:
       - develop
       - feature/iaac
+  when: manual
