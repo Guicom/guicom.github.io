@@ -73,6 +73,7 @@
       {% block head %}
         {% include '@socomec/includes/header.html.twig' %}
       {% endblock %}
+      {{ drupal_block('system_breadcrumb_block') }}
       {% include '@socomec/layout/family/hero-header.html.twig' %}
       {{ drupal_block('local_tasks_block') }}
     </header>
