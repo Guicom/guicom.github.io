@@ -3,6 +3,7 @@ Feature: Products
   In order to test out the products
 
   Scenario: Detail product
+    Given I accept all cookies compliance
     When I visit "/energy-storage-solution/sirco-vm"
     Then I should see an "body.node--type-product" element
     Then I should see an "#product-info-section" element

@@ -16,6 +16,16 @@ class FeatureContext extends RawDrupalContext {
   protected $output;
 
   /**
+   * @Given I accept all cookies compliance
+   */
+  public function iSetCookieCompliance() {
+    $this->getSession()->setCookie("cookie-agreed", 2);
+    $categorie = urlencode('["required","statistics","preferences","targeting"]');
+    $this->getSession()->setCookie("cookie-agreed-categories", $categorie);
+  }
+
+
+  /**
    * Switches to the main window
    *
    * @Given /^I switch to the main windows$/
