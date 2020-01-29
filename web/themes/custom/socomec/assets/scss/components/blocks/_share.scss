@@ -2,6 +2,7 @@
   position: fixed;
   right: 0.5rem;
   top: 50vh;
+  z-index: 9999;
   transform: translateY(-50%);
   @include media-breakpoint-down(sm) {
     transition: 0.2s;
@@ -43,7 +44,7 @@
     float: none;
   }
   .a2a_i {
-    width: 1.5rem
+    width: 1.1rem
   }
 }
 // MOBILE ONLY

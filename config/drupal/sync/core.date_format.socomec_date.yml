@@ -5,4 +5,4 @@ dependencies: {  }
 id: socomec_date
 label: 'socomec date'
 locked: false
-pattern: 'd F Y'
+pattern: 'd, F Y'

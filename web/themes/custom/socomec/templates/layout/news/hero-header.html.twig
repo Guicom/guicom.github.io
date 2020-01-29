@@ -15,7 +15,10 @@
           <span class="news-title">{{ drupal_field('title', 'node') }}</span>
         </h1>
         <div class="news-sub-infos">
-          <span class="news-theme">{{ drupal_field('field_news_type', 'node') }}</span>
+          <div class="wrapper">
+            <span class="news-type">{{ drupal_field('field_news_type', 'node') }}</span>
+            <span class="news-theme">{{ drupal_field('field_news_theme', 'node') }}</span>
+          </div>
           <span class="news-date">{{ node.createdtime|format_date('socomec_date') }}</span>
         </div>
       </div>
