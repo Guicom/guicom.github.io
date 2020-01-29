@@ -140,7 +140,7 @@ deploy-prod:
     ENVIRONMENT: "production"
   script:
     - helm ls --namespace webfactory-prod
-    - cd iaac/helm/drupal && helm upgrade --namespace webfactory-prod -f production.yaml webfactory-prod-drupal drupal
+    - cd iaac/helm && helm upgrade --namespace webfactory-prod -f production.yaml webfactory-prod-drupal drupal
   only:
     refs:
       - feature/iaac
