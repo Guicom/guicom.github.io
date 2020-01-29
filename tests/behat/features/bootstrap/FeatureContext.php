@@ -22,6 +22,7 @@ class FeatureContext extends RawDrupalContext {
     $this->getSession()->setCookie("cookie-agreed", 2);
     $categorie = urlencode('["required","statistics","preferences","targeting"]');
     $this->getSession()->setCookie("cookie-agreed-categories", $categorie);
+    $this->getSession()->reload();
   }
 
 
