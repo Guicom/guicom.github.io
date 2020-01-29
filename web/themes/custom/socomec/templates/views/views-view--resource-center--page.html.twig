@@ -51,7 +51,7 @@
   {% else %}
     {% set count = rows | length %}
     {% if count != 0 %}
-      <h2 class="intro">{{ '@total resources found' |t({ '@total': count| number_format(0,' ',' ') }) }}</h2>
+      <h2 class="intro">{{ '@total resource(s) found' |t({ '@total': count| number_format(0,' ',' ') }) }}</h2>
     {% endif %}
   {% endif %}
   {% if header %}
