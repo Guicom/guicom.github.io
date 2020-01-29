@@ -16,9 +16,9 @@ variables:
   DOCKER_IMAGE_BUILD_PATH: docker_image
 
 stages:
-  #  - build
   - sonarqube
   - behat
+  - build
   - deploy
 
 cache: &global_cache
@@ -103,7 +103,7 @@ behat:
 
 
 .push-web-image: &push-web-image
-  stage: deploy
+  stage: build
   cache:
     # inherit all global cache settings
     <<: *global_cache
@@ -112,7 +112,7 @@ behat:
   script:
     - cd iaac && make push-web-image
 
-push-web-image:
+build:
   variables:
     ENVIRONMENT: $CI_COMMIT_REF_NAME
   extends:
@@ -121,7 +121,7 @@ push-web-image:
     refs:
       - recette
 
-push-web-image-prod:
+build-prod:
   variables:
     ENVIRONMENT: "production"
   extends:
@@ -159,6 +159,5 @@ deploy:
     - cd iaac/helm && helm upgrade --namespace webfactory-prod -f ${ENVIRONMENT}.yaml webfactory-prod-drupal drupal
   only:
     refs:
-      - feature/iaac
-      - master
+      - recette
   when: manual
