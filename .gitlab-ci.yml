@@ -16,8 +16,8 @@ variables:
   DOCKER_IMAGE_BUILD_PATH: docker_image
 
 stages:
-  - sonarqube
-  - behat
+  - code_quality
+  - functional_testing
   - build
   - deploy
 
@@ -72,7 +72,7 @@ cache: &global_cache
 
 # SonarQube Runner
 sonarqube:
-  stage: sonarqube
+  stage: code_quality
   tags:
     - actency
   image: ciricihq/gitlab-sonar-scanner
@@ -81,10 +81,12 @@ sonarqube:
     SONAR_ANALYSIS_MODE: preview
   script:
     - gitlab-sonar-scanner -Dsonar.gitlab.ref_name=$CI_COMMIT_REF_NAME -Dsonar.gitlab.project_id=$CI_PROJECT_ID -Dsonar.login=$SONARQUBE_ACCESS_KEY -Dsonar.gitlab.user_token=$GITLAB_ACCESS_KEY
+  only:
+    - merge_requests
 
 # Behat tests from tests/ folder.
 behat:
-  stage: behat
+  stage: functional_testing
   tags:
     - actency
   cache:
@@ -94,6 +96,8 @@ behat:
     - .behat_build_project
   script:
     - docker-compose exec -u web -T web bash -c "cd /var/www/html && ./vendor/bin/phing behat:run -Dbehat.bin=tests/behat/bin/behat"
+  only:
+    - merge_requests
 
 .push-web-image: &push-web-image
   stage: build
