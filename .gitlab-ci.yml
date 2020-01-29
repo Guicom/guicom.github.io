@@ -110,20 +110,15 @@ behat:
   extends:
     - .build_project
   script:
-    - cd iaac && make build-web-image && make push-web-image
+    - cd iaac && make push-web-image
 
 push-web-image:
   variables:
     ENVIRONMENT: $CI_COMMIT_REF_NAME
   extends:
     - .push-web-image
-  script:
-    - env
-    - pwd
-    - kubectl get po
   only:
     refs:
-      - developpp
       - recette
 
 push-web-image-prod:
@@ -133,10 +128,10 @@ push-web-image-prod:
       - .push-web-image
   only:
     refs:
-      - develop
       - feature/iaac
+      - master
 
-deploy-web-image-prod:
+deploy-prod:
   stage: deploy
   image: alpine/helm:latest
   tags:
@@ -148,6 +143,22 @@ deploy-web-image-prod:
     - cd iaac/helm/drupal && helm upgrade --namespace webfactory-prod -f production.yaml webfactory-prod-drupal drupal
   only:
     refs:
-      - develop
       - feature/iaac
+      - master
+  when: manual
+
+deploy:
+  stage: deploy
+  image: alpine/helm:latest
+  tags:
+    - socomec
+  variables:
+    ENVIRONMENT: $CI_COMMIT_REF_NAME
+  script:
+    - helm ls --namespace webfactory-prod
+    - cd iaac/helm && helm upgrade --namespace webfactory-prod -f ${ENVIRONMENT}.yaml webfactory-prod-drupal drupal
+  only:
+    refs:
+      - feature/iaac
+      - master
   when: manual
