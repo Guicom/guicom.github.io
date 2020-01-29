@@ -1,7 +1,7 @@
 image: docker:stable
 
 services:
-  - docker:18.09.7-dind
+  - docker:dind
 
 variables:
   # For non-Kubernetes executors, we use tcp://docker:2375/
@@ -10,7 +10,7 @@ variables:
   # DOCKER_HOST: "${HOSTNAME}-docker"
   # When using dind, it's wise to use the overlayfs driver for
   # improved performance.
-  DOCKER_HOST: tcp://docker:2375/
+  DOCKER_HOST: tcp://docker:2376/
   DOCKER_TLS_CERTDIR: "/certs"
   DOCKER_DRIVER: overlay2
   DOCKER_IMAGE_BUILD_PATH: docker_image
@@ -104,8 +104,6 @@ behat:
 
 .push-web-image: &push-web-image
   stage: deploy
-  tags:
-    - actency
   cache:
     # inherit all global cache settings
     <<: *global_cache
@@ -145,7 +143,6 @@ deploy-web-image-prod:
     - socomec
   variables:
     ENVIRONMENT: "production"
-    DOCKER_HOST: tcp://localhost:2375/
   script:
     - helm ls --namespace webfactory-prod
     - cd iaac/helm/drupal && helm upgrade --namespace webfactory-prod -f production.yaml webfactory-prod-drupal drupal
