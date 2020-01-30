@@ -67,9 +67,18 @@
  * @see html.html.twig
  */
 #}
+
+{% set field_background_image_url = '' %}
+{% set field_background_image =  drupal_field('field_background_image', 'paragraph', node.field_hero_paragraph.target_id) %}
+{% for key, image in field_background_image  %}
+  {%if image.entity %}
+      {% set field_background_image_url = image.entity.field_media_image.entity.uri.value | image_style('max_width_1140') %}
+  {% endif %}
+{% endfor %}
+
 <div id="page-wrapper">
   <div id="page">
-    <header id="header" class="header" role="banner" aria-label="{{ 'Site header'|t}}">
+    <header id="header" class="header" role="banner" aria-label="{{ 'Site header'|t}}" style="background-image: linear-gradient(324.68deg, #00519D 0%, rgba(0,81,157,0.8) 100%), url( {{ field_background_image_url  }}">
       {% block head %}
         {% include '@socomec/includes/header.html.twig' %}
       {% endblock %}
