@@ -5,7 +5,7 @@ body.node--type-product {
   }
 
   header {
-    height: 490px;
+    min-height: 490px;
     display: flex;
     flex-flow: column;
     margin-bottom: 25px;
@@ -56,12 +56,17 @@ body.node--type-product {
         order: 1;
         display: flex;
         flex-flow: column;
-        justify-content: space-evenly;
-        padding-top: 70px;
+        justify-content: start;
+        padding-top: 80px;
         margin-right: 30px;
+        a {
+          display: block;
+          margin-bottom: 15px;
+        }
         @include media-breakpoint-down(xs) {
           order: 2;
           flex-flow: row;
+          justify-content: space-evenly;
         }
 
         img {
@@ -120,6 +125,8 @@ body.node--type-product {
       font-family: $font-poppins;
       display: flex;
       height: 60px;
+      padding: 0px 0px 20px;
+      margin-bottom:60px;
       text-transform: uppercase;
 
       svg {
