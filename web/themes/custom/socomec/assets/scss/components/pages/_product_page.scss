@@ -1035,7 +1035,26 @@ body.node--type-product {
   // close  button
   .fr-window-skin-fresco.fr-window-ui-outside .fr-close-background {
     background: none;
+    background-color:transparent;
   }
+  .fr-window-skin-fresco.fr-window-ui-outside .fr-close:hover .fr-close-background {
+    background: none;
+    background-color:transparent;
+  }
+
+  .fr-window-skin-fresco.fr-window-ui-inside .fr-close-background,
+  .fr-window-skin-fresco.fr-window-ui-fullclick .fr-close-background {
+    background: none;
+    background-color:transparent;
+    filter: alpha(opacity=100);
+    opacity: 1;
+  }
+  .fr-window-skin-fresco.fr-window-ui-inside .fr-close:hover .fr-close-background,
+  .fr-window-skin-fresco.fr-window-ui-fullclick.fr-close:hover .fr-close-background {
+    background: none;
+    background-color:transparent;
+  }
+
   .fr-window-skin-fresco.fr-svg .fr-close .fr-close-icon {
     background: url('../images/picto/ui/close-white.svg') center center no-repeat $blue;
     background-size: 50%;
