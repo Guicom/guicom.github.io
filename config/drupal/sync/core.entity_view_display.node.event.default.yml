@@ -7,6 +7,7 @@ dependencies:
     - field.field.node.event.field_event_cta_download
     - field.field.node.event.field_event_cta_external_link
     - field.field.node.event.field_event_custom_audience
+    - field.field.node.event.field_event_date
     - field.field.node.event.field_event_momemtum
     - field.field.node.event.field_event_picture
     - field.field.node.event.field_event_place
@@ -16,6 +17,8 @@ dependencies:
     - field.field.node.event.field_event_type
     - node.type.event
   module:
+    - datetime_range
+    - ds
     - entity_reference_revisions
     - link
     - text
@@ -60,15 +63,32 @@ content:
     region: content
   field_event_custom_audience:
     weight: 111
-    label: above
+    label: hidden
     settings:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
     region: content
+  field_event_date:
+    weight: 115
+    label: hidden
+    settings:
+      timezone_override: ''
+      format_type: short
+      separator: '|'
+    third_party_settings:
+      ds:
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
+    type: daterange_default
+    region: content
   field_event_momemtum:
     weight: 112
-    label: above
+    label: hidden
     settings:
       link: true
     third_party_settings: {  }
