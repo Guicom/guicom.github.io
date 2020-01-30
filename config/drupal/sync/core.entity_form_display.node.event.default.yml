@@ -4,6 +4,10 @@ status: true
 dependencies:
   config:
     - field.field.node.event.field_event_content
+    - field.field.node.event.field_event_cta_download
+    - field.field.node.event.field_event_cta_external_link
+    - field.field.node.event.field_event_custom_audience
+    - field.field.node.event.field_event_momemtum
     - field.field.node.event.field_event_picture
     - field.field.node.event.field_event_place
     - field.field.node.event.field_event_product
@@ -13,6 +17,7 @@ dependencies:
     - node.type.event
   module:
     - content_moderation
+    - link_target
     - media_library
     - paragraphs
     - path
@@ -40,6 +45,36 @@ content:
       form_display_mode: default
       default_paragraph_type: ''
     third_party_settings: {  }
+    region: content
+  field_event_cta_download:
+    weight: 130
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+      link_target: ''
+    third_party_settings: {  }
+    type: link_target_field_widget
+    region: content
+  field_event_cta_external_link:
+    weight: 129
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+      link_target: ''
+    third_party_settings: {  }
+    type: link_target_field_widget
+    region: content
+  field_event_custom_audience:
+    weight: 131
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+    region: content
+  field_event_momemtum:
+    weight: 132
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
     region: content
   field_event_picture:
     type: media_library_widget

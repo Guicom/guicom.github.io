@@ -4,6 +4,10 @@ status: true
 dependencies:
   config:
     - field.field.node.event.field_event_content
+    - field.field.node.event.field_event_cta_download
+    - field.field.node.event.field_event_cta_external_link
+    - field.field.node.event.field_event_custom_audience
+    - field.field.node.event.field_event_momemtum
     - field.field.node.event.field_event_picture
     - field.field.node.event.field_event_place
     - field.field.node.event.field_event_product
@@ -13,6 +17,7 @@ dependencies:
     - node.type.event
   module:
     - entity_reference_revisions
+    - link
     - text
     - user
 id: node.event.default
@@ -28,6 +33,46 @@ content:
       view_mode: default
       link: ''
     third_party_settings: {  }
+    region: content
+  field_event_cta_download:
+    weight: 110
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+  field_event_cta_external_link:
+    weight: 109
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+  field_event_custom_audience:
+    weight: 111
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_event_momemtum:
+    weight: 112
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
     region: content
   field_event_picture:
     type: entity_reference_entity_view

@@ -1,0 +1,19 @@
+uuid: b16aea10-0468-40dd-a907-b6f5c3f7e3ff
+langcode: en
+status: true
+dependencies:
+  module:
+    - link
+    - node
+id: node.field_event_cta_download
+field_name: field_event_cta_download
+entity_type: node
+type: link
+settings: {  }
+module: link
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

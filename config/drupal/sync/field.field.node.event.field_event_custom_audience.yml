@@ -1,0 +1,29 @@
+uuid: 28f9746d-a005-4b10-9f4f-3068e092cb77
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_event_custom_audience
+    - node.type.event
+    - taxonomy.vocabulary.news_audience
+id: node.event.field_event_custom_audience
+field_name: field_event_custom_audience
+entity_type: node
+bundle: event
+label: 'Event Custom Audience'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      news_audience: news_audience
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: application
+field_type: entity_reference

@@ -1409,3 +1409,47 @@ bundles:
       notes: ''
       relationship: 0
       sars_filename: ''
+    field_event_cta_external_link:
+      bundle: event
+      name: field_event_cta_external_link
+      entity_type_id: node
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_event_cta_download:
+      bundle: event
+      name: field_event_cta_download
+      entity_type_id: node
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_event_custom_audience:
+      bundle: event
+      name: field_event_custom_audience
+      entity_type_id: node
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: date_anonymizer
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_event_momemtum:
+      bundle: event
+      name: field_event_momemtum
+      entity_type_id: node
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
