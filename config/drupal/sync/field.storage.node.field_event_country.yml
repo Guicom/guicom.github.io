@@ -11,7 +11,7 @@ entity_type: node
 type: list_string
 settings:
   allowed_values: {  }
-  allowed_values_function: 'sco_core_allowed_values_countries_function'
+  allowed_values_function: sco_core_allowed_values_countries_function
 module: options
 locked: false
 cardinality: -1

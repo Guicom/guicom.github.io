@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.storage.node.field_event_product
     - node.type.event
+    - taxonomy.vocabulary.product_label
 id: node.event.field_event_product
 field_name: field_event_product
 entity_type: node
@@ -17,5 +18,12 @@ default_value: {  }
 default_value_callback: ''
 settings:
   handler: 'default:taxonomy_term'
-  handler_settings: {  }
+  handler_settings:
+    target_bundles:
+      product_label: product_label
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
 field_type: entity_reference

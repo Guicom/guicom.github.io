@@ -1464,3 +1464,14 @@ bundles:
       notes: ''
       relationship: 0
       sars_filename: ''
+    field_event_product:
+      bundle: event
+      name: field_event_product
+      entity_type_id: node
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''

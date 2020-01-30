@@ -39,7 +39,7 @@ content:
     third_party_settings: {  }
   field_event_content:
     type: entity_reference_paragraphs
-    weight: 22
+    weight: 21
     settings:
       title: Paragraph
       title_plural: Paragraphs
@@ -50,21 +50,12 @@ content:
     third_party_settings: {  }
     region: content
   field_event_country:
-    weight: 28
+    weight: 17
     settings: {  }
     third_party_settings: {  }
     type: options_select
     region: content
   field_event_cta_download:
-    weight: 25
-    settings:
-      placeholder_url: ''
-      placeholder_title: ''
-      link_target: ''
-    third_party_settings: {  }
-    type: link_target_field_widget
-    region: content
-  field_event_cta_external_link:
     weight: 24
     settings:
       placeholder_url: ''
@@ -73,8 +64,17 @@ content:
     third_party_settings: {  }
     type: link_target_field_widget
     region: content
+  field_event_cta_external_link:
+    weight: 23
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+      link_target: ''
+    third_party_settings: {  }
+    type: link_target_field_widget
+    region: content
   field_event_custom_audience:
-    weight: 26
+    weight: 25
     settings: {  }
     third_party_settings: {  }
     type: options_buttons
@@ -86,7 +86,7 @@ content:
     type: daterange_default
     region: content
   field_event_momemtum:
-    weight: 27
+    weight: 26
     settings: {  }
     third_party_settings: {  }
     type: options_buttons
@@ -99,7 +99,7 @@ content:
     third_party_settings: {  }
     region: content
   field_event_place:
-    weight: 19
+    weight: 18
     settings:
       rows: 5
       placeholder: ''
@@ -107,13 +107,10 @@ content:
     type: string_textarea
     region: content
   field_event_product:
-    weight: 23
-    settings:
-      match_operator: CONTAINS
-      size: 60
-      placeholder: ''
+    weight: 22
+    settings: {  }
     third_party_settings: {  }
-    type: entity_reference_autocomplete
+    type: options_select
     region: content
   field_event_teaser:
     weight: 15
@@ -125,7 +122,7 @@ content:
     type: text_textarea_with_summary
     region: content
   field_event_thematic:
-    weight: 21
+    weight: 20
     settings:
       match_operator: CONTAINS
       size: 60
@@ -134,7 +131,7 @@ content:
     type: entity_reference_autocomplete
     region: content
   field_event_type:
-    weight: 20
+    weight: 19
     settings: {  }
     third_party_settings: {  }
     type: options_select
