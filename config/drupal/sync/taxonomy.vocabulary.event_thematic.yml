@@ -1,0 +1,8 @@
+uuid: 72ddf27b-ef9c-4977-bee2-0aac4ceda5c0
+langcode: en
+status: true
+dependencies: {  }
+name: 'Event thematic'
+vid: event_thematic
+description: ''
+weight: 0

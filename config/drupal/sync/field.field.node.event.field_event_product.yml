@@ -1,0 +1,21 @@
+uuid: 5b74ad54-99a8-4113-bdcd-9c2d5bfd0dc3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_event_product
+    - node.type.event
+id: node.event.field_event_product
+field_name: field_event_product
+entity_type: node
+bundle: event
+label: 'Event product'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings: {  }
+field_type: entity_reference

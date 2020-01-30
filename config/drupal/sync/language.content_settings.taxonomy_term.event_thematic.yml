@@ -1,0 +1,16 @@
+uuid: 6cd9dbac-c1ab-454d-8d61-39b3524a3b4e
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.event_thematic
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+id: taxonomy_term.event_thematic
+target_entity_type_id: taxonomy_term
+target_bundle: event_thematic
+default_langcode: site_default
+language_alterable: true

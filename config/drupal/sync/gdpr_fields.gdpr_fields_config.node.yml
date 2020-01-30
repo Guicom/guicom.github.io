@@ -12,6 +12,7 @@ filenames:
   optional_related_content: ''
   news: ''
   resource: ''
+  event: ''
 bundles:
   product:
     field_complementary_info:
@@ -1338,6 +1339,73 @@ bundles:
       rta: 'no'
       enabled: false
       anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+  event:
+    field_event_picture:
+      bundle: event
+      name: field_event_picture
+      entity_type_id: node
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: date_anonymizer
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_event_teaser:
+      bundle: event
+      name: field_event_teaser
+      entity_type_id: node
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: date_anonymizer
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_event_place:
+      bundle: event
+      name: field_event_place
+      entity_type_id: node
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: date_anonymizer
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_event_type:
+      bundle: event
+      name: field_event_type
+      entity_type_id: node
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: date_anonymizer
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_event_thematic:
+      bundle: event
+      name: field_event_thematic
+      entity_type_id: node
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: date_anonymizer
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_event_content:
+      bundle: event
+      name: field_event_content
+      entity_type_id: node
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: date_anonymizer
       notes: ''
       relationship: 0
       sars_filename: ''

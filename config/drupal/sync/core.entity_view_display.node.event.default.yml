@@ -3,9 +3,16 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.event.body
+    - field.field.node.event.field_event_content
+    - field.field.node.event.field_event_picture
+    - field.field.node.event.field_event_place
+    - field.field.node.event.field_event_product
+    - field.field.node.event.field_event_teaser
+    - field.field.node.event.field_event_thematic
+    - field.field.node.event.field_event_type
     - node.type.event
   module:
+    - entity_reference_revisions
     - text
     - user
 id: node.event.default
@@ -13,18 +20,67 @@ targetEntityType: node
 bundle: event
 mode: default
 content:
-  body:
+  field_event_content:
+    type: entity_reference_revisions_entity_view
+    weight: 107
     label: hidden
-    type: text_default
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+  field_event_picture:
+    type: entity_reference_entity_view
     weight: 101
+    label: hidden
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    region: content
+  field_event_place:
+    weight: 103
+    label: hidden
     settings: {  }
     third_party_settings: {  }
+    type: basic_string
+    region: content
+  field_event_product:
+    weight: 108
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_event_teaser:
+    weight: 102
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_event_thematic:
+    weight: 105
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_event_type:
+    weight: 104
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
     region: content
   links:
     weight: 100
+    region: content
     settings: {  }
     third_party_settings: {  }
-    region: content
 hidden:
   addtoany: true
   langcode: true
