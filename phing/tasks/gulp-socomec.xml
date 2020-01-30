@@ -8,4 +8,12 @@
     <target name="gulp-socomec:css">
         <exec command="gulp styles" dir="${website.drupal.dir}" passthru="true"/>
     </target>
+    <target name="gulp-socomec:clear-cache">
+        <drush
+                command="cr"
+                assume="yes"
+                root="${website.drupal.dir}"
+                verbose="${drush.verbose}">
+        </drush>
+    </target>
 </project>
