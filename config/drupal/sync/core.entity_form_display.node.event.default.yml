@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.event.field_event_content
+    - field.field.node.event.field_event_country
     - field.field.node.event.field_event_cta_download
     - field.field.node.event.field_event_cta_external_link
     - field.field.node.event.field_event_custom_audience
@@ -47,6 +48,12 @@ content:
       form_display_mode: default
       default_paragraph_type: ''
     third_party_settings: {  }
+    region: content
+  field_event_country:
+    weight: 28
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
     region: content
   field_event_cta_download:
     weight: 25

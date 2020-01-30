@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.event.field_event_content
+    - field.field.node.event.field_event_country
     - field.field.node.event.field_event_cta_download
     - field.field.node.event.field_event_cta_external_link
     - field.field.node.event.field_event_custom_audience
@@ -21,6 +22,7 @@ dependencies:
     - ds
     - entity_reference_revisions
     - link
+    - options
     - text
     - user
 id: node.event.default
@@ -36,6 +38,13 @@ content:
       view_mode: default
       link: ''
     third_party_settings: {  }
+    region: content
+  field_event_country:
+    weight: 116
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
     region: content
   field_event_cta_download:
     weight: 110
