@@ -4,22 +4,22 @@
             "href": ""
         },
         "type": {
-            "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/model_cta_pdf"
+            "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/model_text"
         }
     },
     "id": [
         {
-            "value": 50
+            "value": 56
         }
     ],
     "uuid": [
         {
-            "value": "5572b391-b42d-4180-98d8-405e0e438f6b"
+            "value": "1136ecd8-93f3-409b-b681-92e6a5475f09"
         }
     ],
     "revision_id": [
         {
-            "value": 389
+            "value": 387
         }
     ],
     "langcode": [
@@ -30,7 +30,7 @@
     ],
     "type": [
         {
-            "target_id": "model_cta_pdf"
+            "target_id": "model_text"
         }
     ],
     "status": [
@@ -40,7 +40,7 @@
     ],
     "created": [
         {
-            "value": "2020-01-22T07:49:29+00:00",
+            "value": "2020-01-24T14:51:09+00:00",
             "format": "Y-m-d\\TH:i:sP"
         }
     ],
@@ -56,7 +56,7 @@
     ],
     "parent_field_name": [
         {
-            "value": "field_model_pdf"
+            "value": "field_body"
         }
     ],
     "behavior_settings": [
@@ -74,6 +74,13 @@
         {
             "value": true,
             "lang": "en"
+        }
+    ],
+    "field_text": [
+        {
+            "value": "<p>test liste \u00e0 puces.<\/p>\r\n\r\n<ol>\r\n\t<li>item1<\/li>\r\n\t<li>item 2<\/li>\r\n\t<li>item 3<\/li>\r\n<\/ol>\r\n",
+            "format": "socomec",
+            "processed": "<p>test liste \u00e0 puces.<\/p>\n<ol><li>item1<\/li>\n<li>item 2<\/li>\n<li>item 3<\/li>\n<\/ol>"
         }
     ]
 }
