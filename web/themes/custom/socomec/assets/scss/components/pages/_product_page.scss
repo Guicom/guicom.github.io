@@ -811,7 +811,7 @@ body.node--type-product {
           .paragraph--type-link {
             display: flex;
             a {
-              @include button-icon($yellow, $blue);
+              @include button-icon($yellow, $blue_light);
             }
           }
         }
@@ -940,6 +940,7 @@ body.node--type-product {
       .related-product-wrapper {
         display: flex;
         margin-top: 35px;
+        float: none;
         .product-intro {
           width: calc(((#{map-get($container-max-widths, xl)} / 12) * 3) - (#{$grid-gutter-width}/2));
           max-width: calc(((#{map-get($container-max-widths, xl)} / 12) * 3) - (#{$grid-gutter-width}/2));
@@ -1002,6 +1003,7 @@ body.node--type-product {
 
           .product-item {
             @include getfullwidthcolumn(3, xl);
+            min-height: initial;
           }
         }
       }
