@@ -6,7 +6,7 @@ Test of access to the menu on "Products" menu entry
 
 Scenario: Test of access to the menu "Products" entry
 	Given I am an anonymous user
-	When  I go to "<front>"
+	When  I go to "/energy-storage-solution/sirco-vm"
   And I wait for AJAX to finish
   And I accept all cookies compliance
   And I wait 1 seconds
