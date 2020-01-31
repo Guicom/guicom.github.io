@@ -11,13 +11,13 @@ dependencies:
     - socomec
 id: newstypetaxonomytermname
 theme: socomec
-region: content
-weight: -3
+region: hidden
+weight: -9
 provider: null
 plugin: 'facet_block:news_type_taxonomy_term_name'
 settings:
   id: 'facet_block:news_type_taxonomy_term_name'
-  label: 'News Type'
+  label: TYPES
   provider: facets
   label_display: visible
   block_id: newstypetaxonomytermname

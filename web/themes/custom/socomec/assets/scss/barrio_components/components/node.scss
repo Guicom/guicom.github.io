@@ -15,6 +15,9 @@
     border-bottom: $border-width solid $border-color;
     margin-bottom: $spacer;
     padding-bottom: $spacer;
+    &:hover {
+        border-bottom: $border-width solid rgba($dark_blue,0.3);
+    }
 }
 
 .node--view-mode-teaser h2 {

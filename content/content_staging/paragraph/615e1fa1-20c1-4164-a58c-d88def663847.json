@@ -1,0 +1,91 @@
+{
+    "_links": {
+        "self": {
+            "href": ""
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/model_text"
+        }
+    },
+    "id": [
+        {
+            "value": 52
+        }
+    ],
+    "uuid": [
+        {
+            "value": "615e1fa1-20c1-4164-a58c-d88def663847"
+        }
+    ],
+    "revision_id": [
+        {
+            "value": 374
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "type": [
+        {
+            "target_id": "model_text"
+        }
+    ],
+    "status": [
+        {
+            "value": true
+        }
+    ],
+    "created": [
+        {
+            "value": "2020-01-22T14:38:43+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "parent_id": [
+        {
+            "value": "29"
+        }
+    ],
+    "parent_type": [
+        {
+            "value": "node"
+        }
+    ],
+    "parent_field_name": [
+        {
+            "value": "field_body"
+        }
+    ],
+    "behavior_settings": [
+        {
+            "value": []
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "revision_translation_affected": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "field_text": [
+        {
+            "value": "<p>The whole OPTIFILLER system sits within the confines of the sprayer\u2019s chassis for added protection and folds out for easier operator access during the filling process. A hand-held lance, which makes rinsing quick and easy to achieve, is fitted as standard.<\/p>\r\n",
+            "format": "socomec",
+            "processed": "<p>The whole OPTIFILLER system sits within the confines of the sprayer\u2019s chassis for added protection and folds out for easier operator access during the filling process. A hand-held lance, which makes rinsing quick and easy to achieve, is fitted as standard.<\/p>"
+        }
+    ],
+    "field_title": [
+        {
+            "value": "Sous-titre n2 - Donec molestie, tortor duis egestas mordor set magicum"
+        }
+    ]
+}

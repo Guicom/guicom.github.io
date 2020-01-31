@@ -1,0 +1,154 @@
+.path-news{
+  background-color: $light-grayish-blue;
+  #block-newsthemetaxonomytermname,
+  #block-newstypetaxonomytermname{
+    margin:0 10px 0 0;
+    .facet-title{
+      height: 20px;
+      color: $blue;
+      font-family: $font-poppins;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      line-height: 20px;
+      margin: 5px 10px 0 0;
+    }
+  }
+}
+
+.view-news {
+  &.view-display-id-page_1 {
+    .view-content{
+      &.row{
+        margin-right: -30px;
+        margin-left: -30px;
+        .views-row{
+          padding-top: 15px;
+          padding-bottom: 15px;
+          > div {
+            background-color: $white;
+            max-width: 270px;
+            margin:0 auto;
+            transition: $transition02;
+            position: relative;
+            height: 425px;
+            &.bg-blue-1{
+            background-color: $blue;
+            }
+            &.bg-blue-2{
+              background-color: $blue_light;
+            }
+            &.bg-blue-3{
+              background-color: $turquoize;
+            }
+            &.bg-blue-1,
+            &.bg-blue-2,
+            &.bg-blue-3 {
+              .add-to-cart {
+                &:hover {
+                  &:before {
+                    background: url("../images/picto/ui/bookmark-star-white.svg") no-repeat center center;
+                  }
+                }
+              }
+            }
+            .field--name-field-media-image {
+              img {
+                transition: $transition02;
+              }
+            }
+            &:hover{
+              box-shadow: $box-shadow-card-list;
+              transition: $transition02;
+              .field--name-field-media-image {
+                img {
+                  transform: scale(1.1);
+                  transition: $transition02;
+                }
+              }
+            }
+            .field--type-entity-reference{
+              margin:0;
+              position: relative;
+              .field__item{
+                position: relative;
+                overflow: hidden;
+                img{
+                  margin:0;
+                }
+                &:after{
+                  content: '';
+                  background: radial-gradient(circle, rgba(207,218,238,0.9) 0%, rgba(207,218,238,0) 60%);
+                  position: absolute;
+                  width: 300px;
+                  height: 300px;
+                  top:-150px;
+                  left:-150px;
+                }
+              }
+            }
+            .field--name-field-news-type{
+              position: absolute;
+              top: 1em;
+              left: 1em;
+              right: 1em;
+              height: 20px;
+              color: $blue;
+              font-family: $font-poppins;
+              font-size: 12px;
+              font-weight: 600;
+              letter-spacing: 1px;
+              line-height: 20px;
+              text-transform: uppercase;
+            }
+            .field--name-node-post-date{
+              padding:40px 20px 0 20px;
+              color: $blue;
+              font-family: $font-poppins;
+              font-size: 12px;
+              font-weight: 600;
+              letter-spacing: 0.5px;
+              line-height: 20px;
+            }
+            .field--name-node-title{
+              padding:20px 20px 0 20px;
+              color: $blue;
+              font-family: $font-roboto;
+              font-size: 20px;
+              font-weight: 300;
+              line-height: 30px;
+              height: 147px;
+              overflow: hidden;
+            }
+            .field--name-node-link{
+              a{
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                text-indent: -99999px;
+              }
+            }
+            .teaser-links{
+              margin:0 10px;
+            }
+            &.no-img{
+              .field--name-field-news-type,
+              .field--name-node-post-date,
+              .field--name-node-title{
+                color: $white;
+              }
+              .field--name-node-post-date{
+                padding:130px 20px 0 20px;
+              }
+              .field--name-node-title{
+                margin-bottom: 90px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

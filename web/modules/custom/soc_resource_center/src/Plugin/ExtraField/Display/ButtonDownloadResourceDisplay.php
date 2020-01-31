@@ -54,13 +54,15 @@ class ButtonDownloadResourceDisplay extends ExtraFieldDisplayFormattedBase {
   public function viewElements(ContentEntityInterface $entity) {
     $url = NULL;
     $label = NULL;
+    return NULL;
     $attributes['class'] = array('resource-download');
     $label = $this->t('Download');
     if ($entity->get('field_res_downloadable')->getValue()[0]['value'] === '0') {
       if ($entity->get('field_open_link_in_new_window')->getValue()[0]['value'] === '1') {
         $attributes['target'] = '_blank';
       }
-      if ($entity->get('field_res_link_url')->first()->getValue()) {
+      $field_res_link_url = $entity->get('field_res_link_url')->first();
+      if (!empty($field_res_link_url) && !empty($field_res_link_url->getValue())) {
         $url = Url::fromUri($entity->get('field_res_link_url')->first()->getValue()['value']);
       }
       $attributes['class'][]='is-link';

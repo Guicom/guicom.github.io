@@ -5,7 +5,7 @@ body.node--type-product {
   }
 
   header {
-    height: 490px;
+    min-height: 490px;
     display: flex;
     flex-flow: column;
     margin-bottom: 25px;
@@ -56,12 +56,17 @@ body.node--type-product {
         order: 1;
         display: flex;
         flex-flow: column;
-        justify-content: space-evenly;
-        padding-top: 70px;
+        justify-content: start;
+        padding-top: 80px;
         margin-right: 30px;
+        a {
+          display: block;
+          margin-bottom: 15px;
+        }
         @include media-breakpoint-down(xs) {
           order: 2;
           flex-flow: row;
+          justify-content: space-evenly;
         }
 
         img {
@@ -120,6 +125,8 @@ body.node--type-product {
       font-family: $font-poppins;
       display: flex;
       height: 60px;
+      padding: 0px 0px 20px;
+      margin-bottom:60px;
       text-transform: uppercase;
 
       svg {
@@ -244,7 +251,7 @@ body.node--type-product {
     margin-bottom: 45px;
     text-transform: uppercase;
     top: 60px;
-    z-index: 9999;
+    z-index: 1020;
     .row {
       align-items: center;
       justify-content: flex-end;
@@ -434,6 +441,7 @@ body.node--type-product {
         font-weight: 300;
         line-height: 40px;
         margin-bottom: 30px;
+        word-break: break-all;
       }
 
       ul {
@@ -804,7 +812,7 @@ body.node--type-product {
           .paragraph--type-link {
             display: flex;
             a {
-              @include button-icon($yellow, $blue);
+              @include button-icon($yellow, $blue_light);
             }
           }
         }
@@ -933,6 +941,7 @@ body.node--type-product {
       .related-product-wrapper {
         display: flex;
         margin-top: 35px;
+        float: none;
         .product-intro {
           width: calc(((#{map-get($container-max-widths, xl)} / 12) * 3) - (#{$grid-gutter-width}/2));
           max-width: calc(((#{map-get($container-max-widths, xl)} / 12) * 3) - (#{$grid-gutter-width}/2));
@@ -995,6 +1004,7 @@ body.node--type-product {
 
           .product-item {
             @include getfullwidthcolumn(3, xl);
+            min-height: initial;
           }
         }
       }
@@ -1035,11 +1045,109 @@ body.node--type-product {
   // close  button
   .fr-window-skin-fresco.fr-window-ui-outside .fr-close-background {
     background: none;
+    background-color:transparent;
   }
+  .fr-window-skin-fresco.fr-window-ui-outside .fr-close:hover .fr-close-background {
+    background: none;
+    background-color:transparent;
+  }
+
+  .fr-window-skin-fresco.fr-window-ui-inside .fr-close-background,
+  .fr-window-skin-fresco.fr-window-ui-fullclick .fr-close-background {
+    background: none;
+    background-color:transparent;
+    filter: alpha(opacity=100);
+    opacity: 1;
+  }
+  .fr-window-skin-fresco.fr-window-ui-inside .fr-close:hover .fr-close-background,
+  .fr-window-skin-fresco.fr-window-ui-fullclick.fr-close:hover .fr-close-background {
+    background: none;
+    background-color:transparent;
+  }
+
   .fr-window-skin-fresco.fr-svg .fr-close .fr-close-icon {
     background: url('../images/picto/ui/close-white.svg') center center no-repeat $blue;
     background-size: 50%;
     border-radius: 50%;
     opacity: 1;
+  }
+}
+
+// CART
+.add-to-cart {
+  cursor: pointer;
+  &:before {
+    content: '';
+    background: url("../images/picto/ui/bookmark-star.svg") no-repeat center center;
+    display: block;
+    height: 34px;
+    width: 34px;
+  }
+  &.active {
+    &:before {
+      background: url("../images/picto/ui/bookmark-star.svg") no-repeat center center $white;
+    }
+  }
+
+  &.blue {
+    &:before {
+      background: url("../images/picto/ui/bookmark-star-blue.svg") no-repeat center center;
+    }
+  }
+}
+
+// CART
+.add-to-cart {
+  cursor: pointer;
+  transition: $transition02;
+  &:before {
+    content: '';
+    background: url("../images/picto/ui/bookmark-star.svg") no-repeat center center;
+    display: block;
+    height: 34px;
+    width: 34px;
+    transform: translateY(0);
+  }
+  &.blue,
+  &:hover{
+    &:before {
+      background: url("../images/picto/ui/bookmark-star-blue.svg") no-repeat center center;
+    }
+  }
+  &.active {
+    &:before {
+      background: url("../images/picto/ui/bookmark-star.svg") no-repeat center center $white;
+    }
+  }
+  &.white {
+    &:hover {
+      &:before {
+        background: url("../images/picto/ui/bookmark-star-white.svg") no-repeat center center;
+      }
+    }
+  }
+  &:hover {
+    transform: translateY(-2px);
+    transition: $transition02;
+  }
+}
+// FAVORITE
+
+.add-to-favorite {
+  cursor: pointer;
+  transition: $transition02;
+  &:before {
+    content: '';
+    background: url("../images/picto/ui/Bom-off-graymed.svg") no-repeat center center;
+    display: block;
+    height: 34px;
+    width: 34px;
+  }
+  &:hover {
+    transition: $transition02;
+    &:before {
+      content:'';
+      background: url("../images/picto/ui/favorite.svg") no-repeat center center;
+    }
   }
 }

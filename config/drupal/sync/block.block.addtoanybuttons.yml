@@ -1,0 +1,20 @@
+uuid: d2c6dd7d-2a7b-4eb5-bfa4-533a81a6da67
+langcode: en
+status: false
+dependencies:
+  module:
+    - addtoany
+  theme:
+    - socomec
+id: addtoanybuttons
+theme: socomec
+region: content
+weight: 0
+provider: null
+plugin: addtoany_block
+settings:
+  id: addtoany_block
+  label: 'AddToAny buttons'
+  provider: addtoany
+  label_display: '0'
+visibility: {  }

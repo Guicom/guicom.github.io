@@ -757,7 +757,7 @@
     ],
     "moderation_state": [
         {
-            "value": "draft",
+            "value": "published",
             "lang": "en"
         }
     ],
@@ -808,6 +808,11 @@
     "field_product_teaser": [
         {
             "value": "Load break switches for power distribution SIRCO VM - 32 to 250 A"
+        }
+    ],
+    "moderation_state": [
+        {
+            "value": "published"
         }
     ]
 }

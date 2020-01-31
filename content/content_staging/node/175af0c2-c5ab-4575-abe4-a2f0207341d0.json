@@ -1,0 +1,353 @@
+{
+    "_links": {
+        "self": {
+            "href": "http:\/\/default\/news\/stockage-denergie-mobile-une-nouvelle-solution?_format=hal_json"
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/node\/news"
+        },
+        "http:\/\/drupal.org\/rest\/relation\/node\/news\/revision_uid": [
+            {
+                "href": "http:\/\/default\/user\/1?_format=hal_json"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/news\/uid": [
+            {
+                "href": "http:\/\/default\/user\/1?_format=hal_json",
+                "lang": "en"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/news\/field_body": [
+            {
+                "href": "",
+                "lang": "en"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/news\/field_media_image": [
+            {
+                "href": "http:\/\/default\/media\/17\/edit?_format=hal_json"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/news\/field_model_pdf": [
+            {
+                "href": ""
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/news\/field_news_audience": [
+            {
+                "href": "http:\/\/default\/taxonomy\/term\/23?_format=hal_json"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/news\/field_news_mommentum": [
+            {
+                "href": "http:\/\/default\/taxonomy\/term\/29?_format=hal_json"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/news\/field_news_theme": [
+            {
+                "href": "http:\/\/default\/taxonomy\/term\/38?_format=hal_json"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/news\/field_news_type": [
+            {
+                "href": "http:\/\/default\/taxonomy\/term\/39?_format=hal_json"
+            }
+        ]
+    },
+    "nid": [
+        {
+            "value": 26
+        }
+    ],
+    "uuid": [
+        {
+            "value": "175af0c2-c5ab-4575-abe4-a2f0207341d0"
+        }
+    ],
+    "vid": [
+        {
+            "value": 103
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "type": [
+        {
+            "target_id": "news"
+        }
+    ],
+    "revision_timestamp": [
+        {
+            "value": "2020-01-21T17:04:41+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/node\/news\/revision_uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/user\/1?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "a144a767-e637-4350-8e02-f56f96df71d8"
+                    }
+                ]
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/news\/uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/user\/1?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "a144a767-e637-4350-8e02-f56f96df71d8"
+                    }
+                ],
+                "lang": "en"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/news\/field_body": [
+            {
+                "_links": {
+                    "self": {
+                        "href": ""
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/model_text"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "d9abc9f0-1138-4642-875b-cf984d551407"
+                    }
+                ],
+                "lang": "en",
+                "target_revision_id": "366"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/news\/field_media_image": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/media\/17\/edit?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/media\/image"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "72fe5a74-1089-4a42-bbf6-7adc3b1f1937"
+                    }
+                ]
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/news\/field_model_pdf": [
+            {
+                "_links": {
+                    "self": {
+                        "href": ""
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/model_cta_pdf"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "632aecbd-8c21-4c12-a2a9-05be6ab0cad8"
+                    }
+                ],
+                "target_revision_id": "367"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/news\/field_news_audience": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/taxonomy\/term\/23?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/news_audience"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "1f6b24d4-72eb-484a-b7a3-605916d385ca"
+                    }
+                ]
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/news\/field_news_mommentum": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/taxonomy\/term\/29?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/news_mommentum"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "14503eac-6ef7-4c26-a45f-5b4ce3d1599f"
+                    }
+                ]
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/news\/field_news_theme": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/taxonomy\/term\/38?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/news_theme"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "dfb4a833-86be-4abd-a8c5-bac66eda3d17"
+                    }
+                ]
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/news\/field_news_type": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/taxonomy\/term\/39?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/news_type"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "1b590420-87b2-470b-9a92-047c2b530a0c"
+                    }
+                ]
+            }
+        ]
+    },
+    "status": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "title": [
+        {
+            "value": "Stockage d'\u00e9nergie mobile : une nouvelle solution",
+            "lang": "en"
+        }
+    ],
+    "created": [
+        {
+            "value": "2020-01-21T17:01:15+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "changed": [
+        {
+            "value": "2020-01-21T17:04:41+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "promote": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "sticky": [
+        {
+            "value": false,
+            "lang": "en"
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "revision_translation_affected": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "moderation_state": [
+        {
+            "value": "published",
+            "lang": "en"
+        }
+    ],
+    "content_translation_source": [
+        {
+            "value": "und",
+            "lang": "en"
+        }
+    ],
+    "content_translation_outdated": [
+        {
+            "value": false,
+            "lang": "en"
+        }
+    ],
+    "metatag": [
+        {
+            "value": {
+                "title": "Stockage d'\u00e9nergie mobile : une nouvelle solution",
+                "og_site_name": "Socomec",
+                "robots": "index, follow",
+                "content_language": "en",
+                "canonical_url": "http:\/\/default\/news\/stockage-denergie-mobile-une-nouvelle-solution",
+                "og_type": "News",
+                "og_url": "http:\/\/default\/news\/stockage-denergie-mobile-une-nouvelle-solution",
+                "image_src": "http:\/\/default\/sites\/default\/files\/styles\/og_image_600x315\/public\/2019-12\/salle-serveur.jpg?itok=SNOdgoVc",
+                "og_title": "Stockage d'\u00e9nergie mobile : une nouvelle solution",
+                "og_image_0": "http:\/\/default\/sites\/default\/files\/styles\/og_image_600x315\/public\/2019-12\/salle-serveur.jpg?itok=SNOdgoVc",
+                "og_image_url_0": "http:\/\/default\/sites\/default\/files\/styles\/og_image_600x315\/public\/2019-12\/salle-serveur.jpg?itok=SNOdgoVc",
+                "og_image_type": "image\/jpeg",
+                "og_image_width": "600",
+                "og_image_height": "315",
+                "og_updated_time": "Tue, 01\/21\/2020 - 18:04"
+            }
+        }
+    ],
+    "path": [
+        {
+            "alias": "\/news\/stockage-denergie-mobile-une-nouvelle-solution",
+            "pid": 25,
+            "langcode": "en",
+            "lang": "en"
+        }
+    ],
+    "field_teaser": [
+        {
+            "value": "<p>Bring to further the art customer service with compelling e-business completely synergize resource. Nanotechnology immersion to maximise the cables.<\/p>\r\n",
+            "format": "socomec",
+            "processed": "<p>Bring to further the art customer service with compelling e-business completely synergize resource. Nanotechnology immersion to maximise the cables.<\/p>",
+            "summary": ""
+        }
+    ]
+}

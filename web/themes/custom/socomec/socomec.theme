@@ -153,7 +153,6 @@ function socomec_theme_suggestions_field_alter(&$suggestions, array $variables) 
 function socomec_theme_suggestions_page_alter(array &$suggestions, array $variables) {
   $node = \Drupal::routeMatch()->getParameter('node');
   if ($node instanceof \Drupal\node\NodeInterface) {
-    $suggestions[] = 'page__' . $node->bundle();
     $suggestions[] = 'page__node__' . $node->bundle();
   }
   $term = \Drupal::routeMatch()->getParameter('taxonomy_term');
@@ -222,6 +221,7 @@ function socomec_preprocess_html(&$variables) {
 function socomec_preprocess_views_view(&$variables) {
   $id = $variables['id'];
   $display_id = $variables['display_id'];
+
   // Apply background image for hero paragraph view block
   if ((!empty($id) && $id == 'hero_block') && ($display_id == 'block_1' || $display_id == 'block_2')) {
     $rows = $variables['rows'][0]['#rows'];
@@ -247,6 +247,28 @@ function socomec_preprocess_views_view(&$variables) {
     }
   }
 
+  // Apply background color for news page without image
+  if ((!empty($id) && $id == 'news') && ($display_id == 'page_1' || $display_id == 'page_1')) {
+    if (!empty($variables['rows'][0]['#rows'])) {
+      foreach ($variables['rows'][0]['#rows'] as $key => $value) {
+        if (is_numeric($key)) {
+          $variables['rows'][0]['#rows'][$key]['#background'] = 'with-img';
+          $node = $value['#node'];
+          if ($node->hasField('field_media_image') && empty($node->get('field_media_image')->getValue())) {
+            $background = [
+              'bg-blue-1',
+              'bg-blue-2',
+              'bg-blue-3',
+            ];
+            $rand = rand( 0 , 2 );
+            $variables['rows'][0]['#rows'][$key]['#background'] = 'no-img '.$background[$rand];
+          }
+        }
+      }
+    }
+  }
+
+  // Alter resource_center views
   if ((!empty($id) && $id == 'resource_center') && $display_id == 'page_1') {
     $variables['hidden_count_results'] = TRUE;
     $query = \Drupal::request()->query->get('query');

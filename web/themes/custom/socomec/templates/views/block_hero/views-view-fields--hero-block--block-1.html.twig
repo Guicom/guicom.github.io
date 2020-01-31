@@ -31,17 +31,18 @@
  * @ingroup themeable
  */
 #}
-
-
-
+{% set class_hero_content = 'col-md-12' %}
 <div class="container">
   <div class="row">
-    <div class="hero-thumbnail col-md-5">
-      <div class="thumbnail-wrapper">
-        {{ fields.field_thumbnail.content }}
+    {% if fields.field_thumbnail.content is not empty %}
+      {% set class_hero_content = 'col-md-7' %}
+      <div class="hero-thumbnail col-md-5">
+        <div class="thumbnail-wrapper">
+          {{ fields.field_thumbnail.content }}
+        </div>
       </div>
-    </div>
-    <div class="hero-content col-md-7">
+    {% endif %}
+    <div class="hero-content {{ class_hero_content }}">
       <p class="premium-label">{% spaceless %}{{ fields.field_premium_content_type.content }}{% endspaceless %}</p>
       <h1 class="title-hero">{% spaceless %}{{ fields.title.content }}{% endspaceless %}</h1>
       <p class="lp-baseline">{% spaceless %}{{ fields.field_baseline.content }}{% endspaceless %}</p>

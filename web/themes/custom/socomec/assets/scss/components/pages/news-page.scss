@@ -1,0 +1,210 @@
+// HERO NEWS INFOS
+.path-news {
+  .hero-block {
+    // creating spacing for the news card highlight on pos absolute, take care of responsive rendering
+    margin-bottom: 14rem;
+    @include media-breakpoint-down(md) {
+      margin-bottom: 8rem;
+    }
+    .news-info {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      h1 {
+        @include S1($white);
+        font-weight: 300;
+        text-transform: uppercase;
+        .news-title {
+          @include socomec-hero-wave();
+          &:after {
+            margin-left: -25px;
+            margin-top: 35px;
+          }
+        }
+      }
+      #block-viewsnewsteaser {
+        .field--name-body {
+          margin-bottom: 2rem;
+          p {
+            @include S3($white);
+            line-height: 2rem;
+          }
+        }
+      }
+    }
+    // HERO NEWS RIGHT IMAGE
+    .news-highlight {
+      // creating spacing for the news card highlight on pos absolute, take care of responsive rendering
+      max-height: 22rem;
+      @include media-breakpoint-down(md) {
+
+      }
+      .view-news-highlight {
+        .views-row {
+          width: 100%;
+        }
+      }
+    }
+    .overlay-shadow {
+      position: relative;
+      top: 4rem;
+      transition: $transition02;
+      &:hover,
+      &:active{
+        box-shadow: $box-shadow16;
+        transition: $transition02;
+      }
+      @include media-breakpoint-down(md) {
+        top: 0rem;
+      }
+    }
+    .news-card-highlight {
+      // custom rendering image style, take care of responsive rendering
+      width: 100%;
+      height: 27.5rem;
+      position: relative;
+      overflow: hidden;
+      background-size: cover;
+      @include media-breakpoint-down(md) {
+        background-position-x: 50%;
+      }
+      &:after {
+        content: '';
+        @include parent-overlap;
+        pointer-events: none;
+        width: 100%;
+        height: 100%;
+        z-index: 10;
+        background: linear-gradient(47.7deg, rgba(0,81,157,0.9) 0%, rgba(0,81,157,0.8) 25%, rgba(0,81,157,0.3) 40%, rgba(0,81,157,0.2) 100%);
+        transition: 0.4s ease;
+      }
+      &:before {
+        content:'';
+        position: absolute;
+        z-index: 13;
+        width: 37.5rem;
+        height: 37.5rem;
+        top: -20rem;
+        left: -20rem;
+        background: radial-gradient(circle, rgba(15,19,51,0.9) 0%, rgba(35,44,119,0) 45%);
+      }
+      .card-wrapper {
+        position: relative;
+        z-index: 16;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        height: 100%;
+        padding: 0 3rem;
+        transition: 0.2s;
+        @include media-breakpoint-down(md) {
+          padding: 0 1.5rem;
+        }
+        &:before {
+          content:'';
+          position: absolute;
+          z-index: 20;
+          top: 0;
+          left: 0;
+          width: 0.125rem;
+          height: 100%;
+          background: $yellow;
+          opacity: 0;
+          transition: 0.2s;
+        }
+
+        &:hover,
+        &:active{
+          box-shadow: $box-shadow08;
+          transition: 0.2s;
+          &:before {
+            opacity: 1;
+            transition: 0.2s;
+          }
+        }
+      }
+      .field--name-field-news-type {
+        position: absolute;
+        z-index: 14;
+        top: $spacer;
+        left: $spacer;
+        font-family: $font-poppins;
+        font-size: 0.75rem;
+        font-weight: 500;
+        text-transform: uppercase;
+        color: $white;
+      }
+      .field--type-created {
+        font-family: $font-poppins;
+        font-size: 0.75rem;
+        font-weight: 500;
+        color: $white;
+        margin-bottom: 2rem;
+        @include media-breakpoint-down(md) {
+          margin-bottom: $spacer;
+        }
+      }
+      h3 {
+        font-family: $font-roboto;
+        font-size: 1.25rem;
+        line-height: 1.875rem;
+        font-weight: 300;
+        color: $white;
+        margin-bottom: $spacer;
+      }
+      .field--name-field-teaser {
+        height: 2rem;
+        transition: 0.4s ease;
+        opacity: 0;
+        @include media-breakpoint-down(md) {
+          margin-bottom: 1rem;
+        }
+        p {
+          font-family: $font-poppins;
+          font-size: 1rem;
+          line-height: 1.875rem;
+          color: $white;
+        }
+      }
+      .back-to-button {
+        @include back-to-button();
+        margin-bottom: 1.5rem;
+        transition: $transition02;
+        color: $yellow;
+        &:after {
+          content: '';
+          @include parent-overlap;
+        }
+        svg {
+          fill: $yellow;
+          g {
+            fill: $yellow;
+          }
+        }
+      }
+      .card-links {
+        display: flex;
+        justify-content: space-between;
+        .add-to-cart {
+          position: relative;
+          z-index: 50;
+        }
+      }
+      // HIGHLIGHT HOVER EFFECT
+      &:hover {
+        &:after {
+          width: 250%;
+          transition: 0.4s ease;
+        }
+        .field--name-field-teaser {
+          height: 9.5rem;
+          opacity: 1;
+          transition: 0.4s ease;
+        }
+      }
+    }
+  }
+  .site-footer {
+    margin-top: $spacer;
+  }
+}

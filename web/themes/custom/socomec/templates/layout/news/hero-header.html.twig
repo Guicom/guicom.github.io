@@ -1,0 +1,33 @@
+{% if drupal_field('field_media_image', 'node')[0] is empty %}
+  {% set class = 'without-img' %}
+{% endif %}
+
+<div class="hero-block">
+  {% if drupal_field('field_media_image', 'node')[0] is empty %}
+  <div class="container without-img">
+    {% else %}
+    <div class="mobile-container">
+    {% endif %}
+    <div {{ attributes.addClass(class, 'hero-wrapper').removeClass('mobile-container') }}>
+      <div {{ attributes.addClass(class, 'news-info').removeClass('mobile-container','hero-wrapper') }}>
+        <a class="back-to-button" href="/news">{% include '/themes/custom/socomec/assets/images/picto/ui/chevron-left-circle.svg' %}{{ 'ALL NEWS' | t }}</a>
+        <h1>
+          <span class="news-title">{{ drupal_field('title', 'node') }}</span>
+        </h1>
+        <div class="news-sub-infos">
+          <div class="wrapper">
+            <span class="news-type">{{ drupal_field('field_news_type', 'node') }}</span>
+            <span class="news-theme">{{ drupal_field('field_news_theme', 'node') }}</span>
+          </div>
+          <span class="news-date">{{ node.createdtime|format_date('socomec_date') }}</span>
+        </div>
+      </div>
+      {% if drupal_field('field_media_image', 'node')[0] %}
+      <div class="news-image">
+        {{ drupal_field('field_media_image', 'node') }}
+      </div>
+      {% endif %}
+    </div>
+
+  </div>
+</div>
