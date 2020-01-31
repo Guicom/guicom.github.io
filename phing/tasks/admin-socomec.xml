@@ -1,0 +1,13 @@
+<project name="admin-socomec" default="admin-socomec:add-role">
+    <target name="admin-socomec:add-role">
+        <drush
+                command="user-add-role"
+                assume="yes"
+                root="${website.drupal.dir}"
+                verbose="${drush.verbose}">
+
+            <param>administrator</param>
+            <param>admin_socomec</param>
+        </drush>
+    </target>
+</project>

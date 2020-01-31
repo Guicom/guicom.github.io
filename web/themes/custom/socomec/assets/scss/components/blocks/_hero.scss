@@ -66,8 +66,13 @@
     .view-hero-block{
       .socomec-hero-background{
         @include socomec-hero-background;
+        background: none;
         .hero-content{
           padding: 35px 0 0 0;
+          &.col-md-12 {
+            padding:0 15px;
+            margin:0 15px;
+          }
           .premium-label {
             color: $white;
             font-family: $font-roboto, sans-serif;

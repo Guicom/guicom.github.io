@@ -1,0 +1,12 @@
+Drupal version: {{ .Values.drupal.version }}
+Name: {{ .Values.drupal.name }}
+
+Labels:
+  app: {{ .Values.drupal.name }}
+  release: {{ .Release.Name }}
+
+Drupal URL : http://TBD
+
+# Port forwarding if needed
+  POD_NAME=$(kubectl get pod -l app={{ .Values.drupal.name }} -l release={{ .Release.Name }}  -o jsonpath="{.items[0].metadata.name}")
+  kubectl port-forward --namespace default $POD_NAME --address 0.0.0.0 9090:80

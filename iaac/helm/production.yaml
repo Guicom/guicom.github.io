@@ -1,0 +1,46 @@
+# Default values for drupal.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+namespace: webfactory-prod
+
+registry:
+  name: agc-regis-credential
+  location: regis.myagora.fr/socomec-web
+  images:
+    drupal: drupal
+    varnish: image-varnish-name
+
+drupal:
+  environment: production
+  version: 8
+  name: webfactory-drupal
+  nameOverride: ""
+  fullnameOverride: ""
+  username: admin
+  password: admin
+  ingress_hostname: webfactory-drupal-prod.dpk-soc-web-cl01.doobesha.org
+  files_storage_class: webfactory-prod-fast01
+  files_size: 5Gi
+  files_private_storage_class: webfactory-prod-fast01
+  files_private_size: 5Gi
+  disk_size: 10Gi
+  replicaCount: 1
+  service:
+    port: 80
+
+mysql:
+  hostname: mysql-master
+
+redis:
+  cache:
+    hostname: redis-cache
+    port: 6379
+  session:
+    hostname: redis-session
+    port: 6379
+
+solr:
+  hostname: solr
+  port: 8983
+  collection: collection1
