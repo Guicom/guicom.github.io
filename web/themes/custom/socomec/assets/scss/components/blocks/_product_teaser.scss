@@ -1,4 +1,5 @@
 .product-item {
+  display: flex;
   @include getfullwidthcolumn(3, xl);
   .product-teaser-wrapper {
     position: relative;
@@ -8,6 +9,7 @@
     flex-flow: column;
     align-items: center;
     margin-bottom: 15px;
+    justify-content: space-between;
 
     .product-teaser-title {
       color: $blue;
@@ -69,4 +71,11 @@
     }
   }
 }
-
+// FOR EQUAL HEIGHT
+.product-div-wrapper {
+  .product-wrapper {
+    li {
+      display: flex;
+    }
+  }
+}
