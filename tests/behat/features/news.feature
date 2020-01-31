@@ -5,10 +5,9 @@ Feature: News
  # vendor/bin/phing behat:run -Dbehat.tags=news
   Scenario: News detail
     Given I visit "/news/socomec-certifie-iso-14001-en-alsace"
-    Then I should see a "blockquote" element
-    Then I should see a ".paragraph--type--model-text ol" element
+    Then I should see a "body.node--type-news" element
 
-  @api @cit @news @javascript @wip
+  @api @cit @news @javascript
  # vendor/bin/phing behat:run -Dbehat.tags=news
   Scenario: News Landing page
     Given I visit "/news"
