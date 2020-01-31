@@ -13,12 +13,12 @@
 {%
   set col_classes = [
   drupal_field('field_product_application_link', 'node')[0] ? 'col-8',
-  not drupal_field('field_product_application_link', 'node')[0] ? 'col-12',
+  not  drupal_field('field_product_application_link', 'node')[0] ? 'col-12',
   'advantage-wrapper',
 ]
 %}
 
-<div id="product-advantage-section" {{ attributes.addClass(col_classes) }}">
+<div id="product-advantage-section" {{ attributes.addClass(col_classes) }}>
   <h2 class="field--name-field-title ">{{ 'Advantages' |t }}</h2>
   {{ drupal_field('field_product_advantage_text', 'node') }}
 
