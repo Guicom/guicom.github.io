@@ -811,7 +811,7 @@ body.node--type-product {
           .paragraph--type-link {
             display: flex;
             a {
-              @include button-icon($yellow, $blue);
+              @include button-icon($yellow, $blue_light);
             }
           }
         }
