@@ -6,7 +6,7 @@ Feature: [STICKY/SHARE] Tests Behat
 #  ticket JIRA: SOCSOB-789
   Scenario: SHARE tools
     Given I visit "/news/efficiently-unleash-cross-media-value-proposition-organically-grow"
-    And I click the ".eu-cookie-compliance-default-button" element
+    And I accept all cookies compliance
     And I wait 2 seconds
 #  Lien Mail ouvre vers outil de mail interne (comportement standard AddToAny)
     Then I should see a ".a2a_button_email.share-button" element
