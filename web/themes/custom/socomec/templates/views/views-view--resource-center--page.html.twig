@@ -72,16 +72,21 @@
       {{ attachment_before }}
     </div>
   {% endif %}
+
   {% if view.pager.current_page == 0 %}
-    {% set resource_center_highlight_view_result = drupal_view_result('resource_center_highlight', 'block_1') %}
-    {% if resource_center_highlight_view_result  is not empty %}
-      <div id="background-resource-center-highlight">
-        <div class="view-content-highlight">
-          {{ drupal_view('resource_center_highlight', 'block_1') }}
+    {% set view_exposed_input = view.getExposedInput() %}
+    {% if view_exposed_input is empty %}
+      {% set resource_center_highlight_view_result = drupal_view_result('resource_center_highlight', 'block_1') %}
+      {% if resource_center_highlight_view_result  is not empty %}
+        <div id="background-resource-center-highlight">
+          <div class="view-content-highlight">
+            {{ drupal_view('resource_center_highlight', 'block_1') }}
+          </div>
         </div>
-      </div>
+      {% endif %}
     {% endif %}
   {% endif %}
+
   {% if rows %}
     <div class="view-content row">
       {{ rows }}
