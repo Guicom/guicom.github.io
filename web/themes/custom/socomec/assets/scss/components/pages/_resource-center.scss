@@ -32,6 +32,7 @@ body {
             .form-text {
               background-image: none;
               border-radius: 0;
+              border:none;
               box-shadow: 0 24px 38px 3px rgba(35,44,119,0.14), 0 9px 46px 8px rgba(0,0,0,0.07), 0 11px 15px -7px rgba(0,0,0,0.14);
               color: $dark-grey;
               font-family: $font-roboto;
@@ -211,6 +212,8 @@ body {
               font-size: 32px;
               font-weight: 300;
               line-height: 40px;
+              max-height: 80px;
+              overflow: hidden;
             }
             .field--name-field-res-resource-type,
             .field--name-extra-field-file-type-resource{
@@ -243,7 +246,7 @@ body {
               background-repeat: no-repeat;
               -webkit-background-size: cover;
               background-size: cover;
-              height: 50px;
+              height: 49px;
               width: 50px;
               overflow: hidden;
               background-image: url(../images/picto/ui/Big-chevron-thin.svg);

@@ -10,3 +10,8 @@ set-kubernetes-configs:
 
 drupal-update:
 	./vendor/bin/phing update
+	./vendor/bin/phing content-import-all
+	./vendor/bin/phing megamenu-socomec:import
+	./vendor/bin/phing admin-socomec:add-role
+	./vendor/bin/phing gulp-socomec:css
+	./vendor/bin/phing gulp-socomec:clear-cache

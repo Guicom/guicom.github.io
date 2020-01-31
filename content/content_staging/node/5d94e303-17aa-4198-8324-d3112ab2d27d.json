@@ -1,40 +1,40 @@
 {
     "_links": {
         "self": {
-            "href": "http:\/\/default\/22003016-sirco-mv-3x160a?_format=hal_json"
+            "href": "http:\/\/default\/node\/50?_format=hal_json"
         },
         "type": {
-            "href": "http:\/\/drupal.org\/rest\/type\/node\/product_reference"
+            "href": "http:\/\/drupal.org\/rest\/type\/node\/page"
         },
-        "http:\/\/drupal.org\/rest\/relation\/node\/product_reference\/revision_uid": [
+        "http:\/\/drupal.org\/rest\/relation\/node\/page\/revision_uid": [
             {
                 "href": "http:\/\/default\/user\/1?_format=hal_json"
             }
         ],
-        "http:\/\/drupal.org\/rest\/relation\/node\/product_reference\/uid": [
+        "http:\/\/drupal.org\/rest\/relation\/node\/page\/uid": [
             {
                 "href": "http:\/\/default\/user\/1?_format=hal_json"
             }
         ],
-        "http:\/\/drupal.org\/rest\/relation\/node\/product_reference\/field_format_de_boitier": [
+        "http:\/\/drupal.org\/rest\/relation\/node\/page\/field_table": [
             {
-                "href": "http:\/\/default\/taxonomy\/term\/17?_format=hal_json"
+                "href": ""
             }
         ]
     },
     "nid": [
         {
-            "value": 13
+            "value": 50
         }
     ],
     "uuid": [
         {
-            "value": "35f525fa-1b8f-4c7d-957a-18ef477d0fab"
+            "value": "5d94e303-17aa-4198-8324-d3112ab2d27d"
         }
     ],
     "vid": [
         {
-            "value": 59
+            "value": 128
         }
     ],
     "langcode": [
@@ -45,17 +45,17 @@
     ],
     "type": [
         {
-            "target_id": "product_reference"
+            "target_id": "page"
         }
     ],
     "revision_timestamp": [
         {
-            "value": "2019-12-12T14:15:45+00:00",
+            "value": "2020-01-27T12:42:45+00:00",
             "format": "Y-m-d\\TH:i:sP"
         }
     ],
     "_embedded": {
-        "http:\/\/drupal.org\/rest\/relation\/node\/product_reference\/revision_uid": [
+        "http:\/\/drupal.org\/rest\/relation\/node\/page\/revision_uid": [
             {
                 "_links": {
                     "self": {
@@ -67,12 +67,12 @@
                 },
                 "uuid": [
                     {
-                        "value": "d9b82eba-c048-4c84-b618-46c4faa05479"
+                        "value": "e9ba424b-c6d2-447e-b75d-7df49ce91a96"
                     }
                 ]
             }
         ],
-        "http:\/\/drupal.org\/rest\/relation\/node\/product_reference\/uid": [
+        "http:\/\/drupal.org\/rest\/relation\/node\/page\/uid": [
             {
                 "_links": {
                     "self": {
@@ -84,54 +84,55 @@
                 },
                 "uuid": [
                     {
-                        "value": "d9b82eba-c048-4c84-b618-46c4faa05479"
+                        "value": "e9ba424b-c6d2-447e-b75d-7df49ce91a96"
                     }
                 ]
             }
         ],
-        "http:\/\/drupal.org\/rest\/relation\/node\/product_reference\/field_format_de_boitier": [
+        "http:\/\/drupal.org\/rest\/relation\/node\/page\/field_table": [
             {
                 "_links": {
                     "self": {
-                        "href": "http:\/\/default\/taxonomy\/term\/17?_format=hal_json"
+                        "href": ""
                     },
                     "type": {
-                        "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/format_de_boitier"
+                        "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/model_text"
                     }
                 },
                 "uuid": [
                     {
-                        "value": "587813f1-ca79-4f70-af98-198df6b32392"
+                        "value": "b4e6b542-8903-42dd-9a5a-093f466ad007"
                     }
-                ]
+                ],
+                "target_revision_id": "426"
             }
         ]
     },
     "status": [
         {
-            "value": false
+            "value": true
         }
     ],
     "title": [
         {
-            "value": "22003016-SIRCO MV 3X160A"
+            "value": "Terms and conditions"
         }
     ],
     "created": [
         {
-            "value": "2019-12-03T12:59:57+00:00",
+            "value": "2020-01-27T12:42:34+00:00",
             "format": "Y-m-d\\TH:i:sP"
         }
     ],
     "changed": [
         {
-            "value": "2019-12-12T14:15:45+00:00",
+            "value": "2020-01-27T12:42:45+00:00",
             "format": "Y-m-d\\TH:i:sP"
         }
     ],
     "promote": [
         {
-            "value": true
+            "value": false
         }
     ],
     "sticky": [
@@ -167,36 +168,6 @@
         {
             "value": false,
             "lang": "en"
-        }
-    ],
-    "field_dc_r_erp_dimension_unit": [
-        {
-            "value": "MMT"
-        }
-    ],
-    "field_dc_r_erp_weight": [
-        {
-            "value": "0,82"
-        }
-    ],
-    "field_nombre_de_pole": [
-        {
-            "value": "2"
-        }
-    ],
-    "field_reference_extid": [
-        {
-            "value": "R_22003016"
-        }
-    ],
-    "field_reference_json_table": [
-        {
-            "value": "{\r\n  \"Name\": \"22003016-SIRCO MV 3X160A\",\r\n  \"Reference\": \"22003016\",\r\n  \"WEIGHT\": \"0,82\",\r\n  \"Nombre de p\u00f4le\": \"2 P\",\r\n  \"Format de boitier\": \"Format de boitier A\",\r\n  \"Test champs vide\": \"\"\r\n}"
-        }
-    ],
-    "field_reference_ref": [
-        {
-            "value": "22003016"
         }
     ]
 }

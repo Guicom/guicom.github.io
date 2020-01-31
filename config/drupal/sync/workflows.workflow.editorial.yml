@@ -11,6 +11,7 @@ dependencies:
     - node.type.page
     - node.type.product
     - node.type.product_reference
+    - node.type.resource
     - node.type.thank_you_page
   module:
     - content_moderation
@@ -94,5 +95,6 @@ type_settings:
       - page
       - product
       - product_reference
+      - resource
       - thank_you_page
   default_moderation_state: draft

@@ -63,6 +63,11 @@
             "value": "69f1c079-856f-42bc-9daa-537afb555adc"
         }
     ],
+    "vid": [
+        {
+            "value": 126
+        }
+    ],
     "langcode": [
         {
             "value": "en",
@@ -76,7 +81,7 @@
     ],
     "revision_timestamp": [
         {
-            "value": "2020-01-21T16:30:38+00:00",
+            "value": "2020-01-30T05:52:33+00:00",
             "format": "Y-m-d\\TH:i:sP"
         }
     ],
@@ -281,7 +286,7 @@
     ],
     "changed": [
         {
-            "value": "2020-01-21T16:30:38+00:00",
+            "value": "2020-01-30T05:52:33+00:00",
             "lang": "en",
             "format": "Y-m-d\\TH:i:sP"
         }
@@ -307,6 +312,12 @@
     "revision_translation_affected": [
         {
             "value": true,
+            "lang": "en"
+        }
+    ],
+    "moderation_state": [
+        {
+            "value": "published",
             "lang": "en"
         }
     ],
