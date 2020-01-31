@@ -49,9 +49,12 @@
   {% if hidden_count_results %}
     <h2 class="intro">{{ 'More than @total resources just for you!' |t({ '@total': '60 000'}) }}</h2>
   {% else %}
-    {% set count = rows | length %}
-    {% if count != 0 %}
-      <h2 class="intro">{{ '@total resource(s) found' |t({ '@total': count| number_format(0,' ',' ') }) }}</h2>
+    {% if view.total_rows == 1 %}
+      <h2 class="intro">{{ '@total resource found' |t({ '@total': view.total_rows| number_format(0,' ',' ') }) }}</h2>
+    {% elseif view.total_rows > 1 %}
+      <h2 class="intro">{{ '@total resources found' |t({ '@total': view.total_rows| number_format(0,' ',' ') }) }}</h2>
+    {% else %}
+      <h2 class="intro">{{ 'No result found' |t }}</h2>
     {% endif %}
   {% endif %}
   {% if header %}
