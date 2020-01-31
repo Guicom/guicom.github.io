@@ -4,22 +4,22 @@
             "href": ""
         },
         "type": {
-            "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/model_cta_pdf"
+            "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/model_citation"
         }
     },
     "id": [
         {
-            "value": 50
+            "value": 57
         }
     ],
     "uuid": [
         {
-            "value": "5572b391-b42d-4180-98d8-405e0e438f6b"
+            "value": "e163f915-492c-4735-b44e-00b071bd21e3"
         }
     ],
     "revision_id": [
         {
-            "value": 389
+            "value": 388
         }
     ],
     "langcode": [
@@ -30,17 +30,19 @@
     ],
     "type": [
         {
-            "target_id": "model_cta_pdf"
+            "target_id": "model_citation"
         }
     ],
     "status": [
         {
-            "value": true
+            "value": true,
+            "lang": "en"
         }
     ],
     "created": [
         {
-            "value": "2020-01-22T07:49:29+00:00",
+            "value": "2020-01-24T14:51:32+00:00",
+            "lang": "en",
             "format": "Y-m-d\\TH:i:sP"
         }
     ],
@@ -56,7 +58,7 @@
     ],
     "parent_field_name": [
         {
-            "value": "field_model_pdf"
+            "value": "field_body"
         }
     ],
     "behavior_settings": [
@@ -74,6 +76,21 @@
         {
             "value": true,
             "lang": "en"
+        }
+    ],
+    "field_citation_author": [
+        {
+            "value": "Citation author"
+        }
+    ],
+    "field_citation_author_position": [
+        {
+            "value": "Citation author's position"
+        }
+    ],
+    "field_citation_content": [
+        {
+            "value": "citation content"
         }
     ]
 }
