@@ -32,6 +32,11 @@
             "value": "5209f48f-af4a-447e-85f4-e69e4c62be79"
         }
     ],
+    "vid": [
+        {
+            "value": 126
+        }
+    ],
     "langcode": [
         {
             "value": "en",
@@ -62,7 +67,7 @@
                 },
                 "uuid": [
                     {
-                        "value": "e9ba424b-c6d2-447e-b75d-7df49ce91a96"
+                        "value": "7bfdaa2a-7990-4449-9842-ca14d0513fbc"
                     }
                 ]
             }
@@ -79,7 +84,7 @@
                 },
                 "uuid": [
                     {
-                        "value": "e9ba424b-c6d2-447e-b75d-7df49ce91a96"
+                        "value": "7bfdaa2a-7990-4449-9842-ca14d0513fbc"
                     }
                 ]
             }
