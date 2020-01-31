@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - node.type.article
+    - node.type.event
     - node.type.landing_page
     - node.type.news
     - node.type.optional_related_content
@@ -86,6 +87,7 @@ type_settings:
   entity_types:
     node:
       - article
+      - event
       - landing_page
       - news
       - optional_related_content

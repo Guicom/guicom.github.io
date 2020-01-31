@@ -1471,6 +1471,17 @@ bundles:
       rtf: 'no'
       rta: 'no'
       enabled: false
+      anonymizer: date_anonymizer
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_event_country:
+      bundle: event
+      name: field_event_country
+      entity_type_id: node
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
       anonymizer: ''
       notes: ''
       relationship: 0

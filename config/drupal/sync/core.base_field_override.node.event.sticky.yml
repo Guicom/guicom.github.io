@@ -1,14 +1,14 @@
-uuid: 649647d8-a38b-469d-8c22-51cacc1c9418
+uuid: be18a63b-04d6-4100-abc3-87e453e0db9a
 langcode: en
 status: true
 dependencies:
   config:
     - node.type.event
-id: node.event.status
-field_name: status
+id: node.event.sticky
+field_name: sticky
 entity_type: node
 bundle: event
-label: Published
+label: 'Sticky at top of lists'
 description: ''
 required: false
 translatable: true
