@@ -34,7 +34,7 @@
     ],
     "vid": [
         {
-            "value": 127
+            "value": 131
         }
     ],
     "langcode": [
@@ -50,7 +50,7 @@
     ],
     "revision_timestamp": [
         {
-            "value": "2020-01-27T12:41:30+00:00",
+            "value": "2020-01-27T13:51:56+00:00",
             "format": "Y-m-d\\TH:i:sP"
         }
     ],
@@ -104,7 +104,7 @@
                         "value": "d3272789-d1bf-4290-8e5c-cd4a125d993a"
                     }
                 ],
-                "target_revision_id": "425"
+                "target_revision_id": "429"
             }
         ]
     },
@@ -126,7 +126,7 @@
     ],
     "changed": [
         {
-            "value": "2020-01-27T12:41:30+00:00",
+            "value": "2020-01-27T13:51:56+00:00",
             "format": "Y-m-d\\TH:i:sP"
         }
     ],
@@ -168,6 +168,14 @@
         {
             "value": false,
             "lang": "en"
+        }
+    ],
+    "body": [
+        {
+            "value": "<p>Cookies list :<\/p>\r\n\r\n<table cellpadding=\"1\" cellspacing=\"1\">\r\n\t<thead>\r\n\t\t<tr>\r\n\t\t\t<th scope=\"col\">Cookie<\/th>\r\n\t\t\t<th scope=\"col\">&nbsp;<\/th>\r\n\t\t\t<th scope=\"col\">Name<\/th>\r\n\t\t\t<th scope=\"col\">Purpose<\/th>\r\n\t\t\t<th scope=\"col\">More Information<\/th>\r\n\t\t<\/tr>\r\n\t<\/thead>\r\n\t<tbody>\r\n\t\t<tr>\r\n\t\t\t<td colspan=\"5\"><strong>Required<\/strong><\/td>\r\n\t\t<\/tr>\r\n\t\t<tr>\r\n\t\t\t<td>socomec.com<\/td>\r\n\t\t\t<td>&nbsp;<\/td>\r\n\t\t\t<td>SESScc1995d7aaf165e7f6b8dd2c42cf7c6c<\/td>\r\n\t\t\t<td>Cookie intended to identify the current user session and to allow interaction with the site. This cookie is sent to each user request to identify their session.<\/td>\r\n\t\t\t<td>&nbsp;<\/td>\r\n\t\t<\/tr>\r\n\t\t<tr>\r\n\t\t\t<td colspan=\"5\"><strong>Statistics<\/strong><\/td>\r\n\t\t<\/tr>\r\n\t\t<tr>\r\n\t\t\t<td>Google Analytics<\/td>\r\n\t\t\t<td>&nbsp;<\/td>\r\n\t\t\t<td>_ga<\/td>\r\n\t\t\t<td>Used to distinguish users.<\/td>\r\n\t\t\t<td><a href=\"https:\/\/developers.google.com\/analytics\/devguides\/collection\/analyticsjs\/cookie-usage\" target=\"_blank\">More information<\/a><\/td>\r\n\t\t<\/tr>\r\n\t\t<tr>\r\n\t\t\t<td>Google Analytics<\/td>\r\n\t\t\t<td>&nbsp;<\/td>\r\n\t\t\t<td>_gid<\/td>\r\n\t\t\t<td>Used to distinguish users.<\/td>\r\n\t\t\t<td><a href=\"https:\/\/developers.google.com\/analytics\/devguides\/collection\/analyticsjs\/cookie-usage\" target=\"_blank\">More information<\/a><\/td>\r\n\t\t<\/tr>\r\n\t\t<tr>\r\n\t\t\t<td>Google Analytics<\/td>\r\n\t\t\t<td>&nbsp;<\/td>\r\n\t\t\t<td>_gat_gtag_UA_###<br \/>\r\n\t\t\t_gat_UA-###<\/td>\r\n\t\t\t<td>This cookie name is associated with Google Universal Analytics, according to documentation it is used to throttle the request rate \u2013 limiting the collection of data on high traffic sites. It expires after 10 minutes.<\/td>\r\n\t\t\t<td><a href=\"https:\/\/developers.google.com\/analytics\/devguides\/collection\/analyticsjs\/cookie-usage\" target=\"_blank\">More information<\/a><\/td>\r\n\t\t<\/tr>\r\n\t\t<tr>\r\n\t\t\t<td colspan=\"5\"><strong>Preferences<\/strong><\/td>\r\n\t\t<\/tr>\r\n\t\t<tr>\r\n\t\t\t<td colspan=\"5\"><strong>Targeting<\/strong><\/td>\r\n\t\t<\/tr>\r\n\t<\/tbody>\r\n<\/table>\r\n\r\n<p>&nbsp;<\/p>\r\n",
+            "format": "socomec",
+            "processed": "<p>Cookies list :<\/p>\n<table cellpadding=\"1\" cellspacing=\"1\"><thead><tr><th scope=\"col\">Cookie<\/th>\n<th scope=\"col\">\u00a0<\/th>\n<th scope=\"col\">Name<\/th>\n<th scope=\"col\">Purpose<\/th>\n<th scope=\"col\">More Information<\/th>\n<\/tr><\/thead><tbody><tr><td colspan=\"5\"><strong>Required<\/strong><\/td>\n<\/tr><tr><td>socomec.com<\/td>\n<td>\u00a0<\/td>\n<td>SESScc1995d7aaf165e7f6b8dd2c42cf7c6c<\/td>\n<td>Cookie intended to identify the current user session and to allow interaction with the site. This cookie is sent to each user request to identify their session.<\/td>\n<td>\u00a0<\/td>\n<\/tr><tr><td colspan=\"5\"><strong>Statistics<\/strong><\/td>\n<\/tr><tr><td>Google Analytics<\/td>\n<td>\u00a0<\/td>\n<td>_ga<\/td>\n<td>Used to distinguish users.<\/td>\n<td><a href=\"https:\/\/developers.google.com\/analytics\/devguides\/collection\/analyticsjs\/cookie-usage\" target=\"_blank\">More information<\/a><\/td>\n<\/tr><tr><td>Google Analytics<\/td>\n<td>\u00a0<\/td>\n<td>_gid<\/td>\n<td>Used to distinguish users.<\/td>\n<td><a href=\"https:\/\/developers.google.com\/analytics\/devguides\/collection\/analyticsjs\/cookie-usage\" target=\"_blank\">More information<\/a><\/td>\n<\/tr><tr><td>Google Analytics<\/td>\n<td>\u00a0<\/td>\n<td>_gat_gtag_UA_###\n\t\t\t_gat_UA-###<\/td>\n<td>This cookie name is associated with Google Universal Analytics, according to documentation it is used to throttle the request rate \u2013 limiting the collection of data on high traffic sites. It expires after 10 minutes.<\/td>\n<td><a href=\"https:\/\/developers.google.com\/analytics\/devguides\/collection\/analyticsjs\/cookie-usage\" target=\"_blank\">More information<\/a><\/td>\n<\/tr><tr><td colspan=\"5\"><strong>Preferences<\/strong><\/td>\n<\/tr><tr><td colspan=\"5\"><strong>Targeting<\/strong><\/td>\n<\/tr><\/tbody><\/table><p>\u00a0<\/p>",
+            "summary": ""
         }
     ]
 }
