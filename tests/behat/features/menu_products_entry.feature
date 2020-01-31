@@ -8,7 +8,7 @@ Scenario: Test of access to the menu "Products" entry
 	Given I am an anonymous user
 	When  I go to "<front>"
   And I wait for AJAX to finish
-  And I click the "#popup-buttons .agree-button" element
+  And I accept all cookies compliance
   And I wait 1 seconds
   Then I should not see an "#popup-buttons .agree-button" element
   And I click the "[href='/products']" element
