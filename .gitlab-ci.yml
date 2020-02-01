@@ -47,7 +47,7 @@ cache: &global_cache
     - cp ${CI_PROJECT_DIR}/phing/example.build.properties.local ${CI_PROJECT_DIR}/phing/build.properties.local
     - cp ${CI_PROJECT_DIR}/tests/behat/behat.example.yml ${CI_PROJECT_DIR}/tests/behat/behat.local.yml
     - docker-compose up -d
-    - docker-compose exec -u web -T web bash -c "xdebug off"
+    - docker-compose exec -u root -T web bash -c "sudo sed -i 's/^\(.*xdebug\.so\)/;\1/' /usr/local/etc/php/php.ini & sudo service apache2 reload > /dev/null"
     - docker-compose exec -u root -T web bash -c "cd /var/www/html/ && composer install"
     - docker-compose exec -u root -T web bash -c "cd /var/www/html/tests/behat && composer install"
     - docker-compose exec -u root -T web bash -c "cd /var/www/html/ && ./vendor/bin/phing install-local"
