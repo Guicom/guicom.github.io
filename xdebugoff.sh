@@ -12,6 +12,5 @@ function displayError {
   echo -e "\e[7;49;31m$1\e[0m"
 }
 
-cd /usr/local/etc/php
-sed -ie "s/zend_extension/;zend_extension/g" php.ini
-sudo service apache2 reload > /dev/null
+sed -ie "s/zend_extension/;zend_extension/g" /usr/local/etc/php/php.ini
+service apache2 restart
