@@ -14,4 +14,4 @@ function displayError {
 
 cd /usr/local/etc/php
 sed -ie "s/zend_extension/;zend_extension/g" php.ini
-/etc/init.d/apache2 reload
+sudo service apache2 reload > /dev/null
