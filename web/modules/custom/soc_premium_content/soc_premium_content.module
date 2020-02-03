@@ -5,6 +5,7 @@
  * Handle AddToAny integration.
  */
 
+use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Url;
 use Drupal\paragraphs\Entity\Paragraph;
@@ -128,15 +129,41 @@ function soc_premium_content_form_node_landing_page_edit_form_alter(&$form, Form
   }
 }
 
+///**
+// * Implements hook_node_presave().
+// */
+//function soc_premium_content_node_presave(NodeInterface $node) {
+//  switch ($node->bundle()) {
+//    case 'landing_page':
+//      /** @var \Drupal\soc_premium_content\Service\SocPremiumContentNode $service */
+//     $service = \Drupal::service('soc_premium_content.soc_premium_content_node');
+//     $service->autoCreateResourceFromPremiumContent($node);
+//      break;
+//  }
+//}
+
 /**
- * Implements hook_node_presave().
+ * Implements hook_ENTITY_TYPE_insert() for node entities.
  */
-function soc_premium_content_node_presave(NodeInterface $node) {
+function soc_premium_content_node_insert(EntityInterface $node) {
   switch ($node->bundle()) {
     case 'landing_page':
       /** @var \Drupal\soc_premium_content\Service\SocPremiumContentNode $service */
-     $service = \Drupal::service('soc_premium_content.soc_premium_content_node');
-     $service->autoCreateResourceFromPremiumContent($node);
+      $service = \Drupal::service('soc_premium_content.soc_premium_content_node');
+      $service->autoCreateResourceFromPremiumContent($node);
+      break;
+  }
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_update() for node entities.
+ */
+function soc_premium_content_node_update(EntityInterface $node) {
+  switch ($node->bundle()) {
+    case 'landing_page':
+      /** @var \Drupal\soc_premium_content\Service\SocPremiumContentNode $service */
+      $service = \Drupal::service('soc_premium_content.soc_premium_content_node');
+      $service->autoCreateResourceFromPremiumContent($node);
       break;
   }
 }

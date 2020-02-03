@@ -5,6 +5,7 @@
 
 namespace Drupal\soc_premium_content\Service;
 
+use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Url;
 use Drupal\node\Entity\Node;
@@ -55,7 +56,7 @@ class SocPremiumContentNode {
    * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
    * @throws \Drupal\Core\Entity\EntityStorageException
    */
-  public function autoCreateResourceFromPremiumContent(Node $node) {
+  public function autoCreateResourceFromPremiumContent(EntityInterface $node) {
     $title = $node->getTitle();
     /**
      * @var \Drupal\taxonomy\Entity\Term[] $premiumContentTypeTermes
@@ -90,6 +91,7 @@ class SocPremiumContentNode {
     /**
      * @var Node $nodeResource
      */
+    $moderation = $node->get('moderation_state')->getValue();
     if ($nodeResource = $node->get('field_resource')->referencedEntities()) {
       $nodeResource = reset($nodeResource);
       $nodeResource->set('status', $node->isPublished())
@@ -99,6 +101,7 @@ class SocPremiumContentNode {
         ->set('field_res_link_url', $url)
         ->set('field_res_title', $title)
         ->set('field_res_original_title', $title)
+        ->set('moderation_state', $moderation[0]['value'])
         ->save();
     }
     else {
@@ -112,8 +115,10 @@ class SocPremiumContentNode {
         'field_res_title' => $title,
         'field_res_original_title' => $title,
       ]);
+      $nodeResource->set('moderation_state', $moderation[0]['value']);
       $nodeResource->save();
-      $node->set('field_resource', $nodeResource);
+      $node->set('field_resource', $nodeResource->id());
+      $node->save();
     }
   }
 }
