@@ -65,7 +65,7 @@
     ],
     "vid": [
         {
-            "value": 132
+            "value": 139
         }
     ],
     "langcode": [
@@ -81,7 +81,7 @@
     ],
     "revision_timestamp": [
         {
-            "value": "2020-01-30T05:52:33+00:00",
+            "value": "2020-02-03T14:17:03+00:00",
             "format": "Y-m-d\\TH:i:sP"
         }
     ],
@@ -98,7 +98,7 @@
                 },
                 "uuid": [
                     {
-                        "value": "7bfdaa2a-7990-4449-9842-ca14d0513fbc"
+                        "value": "7ce68e63-4eb2-4ff9-b3ba-1353868398ce"
                     }
                 ]
             }
@@ -115,7 +115,7 @@
                 },
                 "uuid": [
                     {
-                        "value": "7bfdaa2a-7990-4449-9842-ca14d0513fbc"
+                        "value": "7ce68e63-4eb2-4ff9-b3ba-1353868398ce"
                     }
                 ],
                 "lang": "en"
@@ -286,7 +286,7 @@
     ],
     "changed": [
         {
-            "value": "2020-01-30T05:52:33+00:00",
+            "value": "2020-02-03T14:17:03+00:00",
             "lang": "en",
             "format": "Y-m-d\\TH:i:sP"
         }
@@ -349,6 +349,11 @@
     "field_res_downloadable": [
         {
             "value": false
+        }
+    ],
+    "field_res_link_url": [
+        {
+            "value": "http:\/\/qa.socomec.actency.fr\/landing-page-premium\/whitepaper\/comment-garantir-la-continuite-dalimentation-des-blocs-operatoires"
         }
     ],
     "field_res_original_title": [

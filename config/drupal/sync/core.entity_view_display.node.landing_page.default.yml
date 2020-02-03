@@ -10,6 +10,7 @@ dependencies:
     - field.field.node.landing_page.field_metatags
     - field.field.node.landing_page.field_pardot_form
     - field.field.node.landing_page.field_premium_content_type
+    - field.field.node.landing_page.field_resource
     - node.type.landing_page
   module:
     - ds
@@ -43,6 +44,7 @@ third_party_settings:
         - field_body
         - addtoany
       right:
+        - field_resource
         - field_pardot_form
 id: node.landing_page.default
 targetEntityType: node
@@ -70,13 +72,21 @@ content:
     region: left
   field_pardot_form:
     type: entity_reference_revisions_entity_view
-    weight: 3
+    weight: 4
     region: right
     label: hidden
     settings:
       view_mode: default
       link: ''
     third_party_settings: {  }
+  field_resource:
+    weight: 3
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: right
 hidden:
   field_client_name: true
   field_footer_version: true
