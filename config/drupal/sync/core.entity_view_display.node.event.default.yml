@@ -18,7 +18,6 @@ dependencies:
     - field.field.node.event.field_event_type
     - node.type.event
   module:
-    - addtocalendar
     - datetime_range
     - ds
     - entity_reference_revisions
@@ -31,11 +30,6 @@ targetEntityType: node
 bundle: event
 mode: default
 content:
-  content_moderation_control:
-    weight: -20
-    region: content
-    settings: {  }
-    third_party_settings: {  }
   field_event_content:
     type: entity_reference_revisions_entity_view
     weight: 107
@@ -47,7 +41,7 @@ content:
     region: content
   field_event_country:
     weight: 116
-    label: hidden
+    label: above
     settings: {  }
     third_party_settings: {  }
     type: list_default
@@ -92,37 +86,6 @@ content:
       format_type: short
       separator: '|'
     third_party_settings:
-      addtocalendar:
-        addtocalendar_show: '1'
-        addtocalendar_settings:
-          style: blue
-          display_text: 'Add to Calendar'
-          atc_title:
-            field: title
-            tokenized: Title
-          atc_description:
-            field: token
-            tokenized: '[node:field_event_teaser:value]'
-          atc_location:
-            field: token
-            tokenized: '[node:field_event_place:value]'
-          atc_organizer:
-            field: token
-            tokenized: Socomec
-          atc_organizer_email:
-            field: token
-            tokenized: admin@example.com
-          atc_date_end:
-            field: field_event_date
-            tokenized: ''
-          atc_privacy: public
-          data_secure: auto
-          data_calendars:
-            iCalendar: iCalendar
-            'Google Calendar': 'Google Calendar'
-            'Outlook Online': 'Outlook Online'
-            'Yahoo! Calendar': 'Yahoo! Calendar'
-            Outlook: 0
       ds:
         ft:
           id: default
