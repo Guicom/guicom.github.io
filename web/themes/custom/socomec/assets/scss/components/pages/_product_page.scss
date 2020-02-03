@@ -441,6 +441,7 @@ body.node--type-product {
         font-weight: 300;
         line-height: 40px;
         margin-bottom: 30px;
+        word-break: break-all;
       }
 
       ul {
@@ -811,7 +812,7 @@ body.node--type-product {
           .paragraph--type-link {
             display: flex;
             a {
-              @include button-icon($yellow, $blue);
+              @include button-icon($yellow, $blue_light);
             }
           }
         }
@@ -940,6 +941,7 @@ body.node--type-product {
       .related-product-wrapper {
         display: flex;
         margin-top: 35px;
+        float: none;
         .product-intro {
           width: calc(((#{map-get($container-max-widths, xl)} / 12) * 3) - (#{$grid-gutter-width}/2));
           max-width: calc(((#{map-get($container-max-widths, xl)} / 12) * 3) - (#{$grid-gutter-width}/2));
@@ -1002,6 +1004,7 @@ body.node--type-product {
 
           .product-item {
             @include getfullwidthcolumn(3, xl);
+            min-height: initial;
           }
         }
       }
@@ -1126,5 +1129,25 @@ body.node--type-product {
   &:hover {
     transform: translateY(-2px);
     transition: $transition02;
+  }
+}
+// FAVORITE
+
+.add-to-favorite {
+  cursor: pointer;
+  transition: $transition02;
+  &:before {
+    content: '';
+    background: url("../images/picto/ui/Bom-off-graymed.svg") no-repeat center center;
+    display: block;
+    height: 34px;
+    width: 34px;
+  }
+  &:hover {
+    transition: $transition02;
+    &:before {
+      content:'';
+      background: url("../images/picto/ui/favorite.svg") no-repeat center center;
+    }
   }
 }

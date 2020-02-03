@@ -1,0 +1,21 @@
+uuid: 18e24b56-13ed-4a02-83e3-5176a0e0887d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_resource_link_youtube
+    - node.type.resource_youtube
+  module:
+    - youtube
+id: node.resource_youtube.field_resource_link_youtube
+field_name: field_resource_link_youtube
+entity_type: node
+bundle: resource_youtube
+label: 'Link Youtube'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: youtube

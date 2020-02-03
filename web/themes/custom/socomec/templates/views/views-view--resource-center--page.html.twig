@@ -49,9 +49,12 @@
   {% if hidden_count_results %}
     <h2 class="intro">{{ 'More than @total resources just for you!' |t({ '@total': '60 000'}) }}</h2>
   {% else %}
-    {% set count = rows | length %}
-    {% if count != 0 %}
-      <h2 class="intro">{{ '@total resource(s) found' |t({ '@total': count| number_format(0,' ',' ') }) }}</h2>
+    {% if view.total_rows == 1 %}
+      <h2 class="intro">{{ '@total resource found' |t({ '@total': view.total_rows| number_format(0,' ',' ') }) }}</h2>
+    {% elseif view.total_rows > 1 %}
+      <h2 class="intro">{{ '@total resources found' |t({ '@total': view.total_rows| number_format(0,' ',' ') }) }}</h2>
+    {% else %}
+      <h2 class="intro">{{ 'No result found' |t }}</h2>
     {% endif %}
   {% endif %}
   {% if header %}
@@ -69,16 +72,21 @@
       {{ attachment_before }}
     </div>
   {% endif %}
+
   {% if view.pager.current_page == 0 %}
-    {% set resource_center_highlight_view_result = drupal_view_result('resource_center_highlight', 'block_1') %}
-    {% if resource_center_highlight_view_result  is not empty %}
-      <div id="background-resource-center-highlight">
-        <div class="view-content-highlight">
-          {{ drupal_view('resource_center_highlight', 'block_1') }}
+    {% set view_exposed_input = view.getExposedInput() %}
+    {% if view_exposed_input is empty %}
+      {% set resource_center_highlight_view_result = drupal_view_result('resource_center_highlight', 'block_1') %}
+      {% if resource_center_highlight_view_result  is not empty %}
+        <div id="background-resource-center-highlight">
+          <div class="view-content-highlight">
+            {{ drupal_view('resource_center_highlight', 'block_1') }}
+          </div>
         </div>
-      </div>
+      {% endif %}
     {% endif %}
   {% endif %}
+
   {% if rows %}
     <div class="view-content row">
       {{ rows }}

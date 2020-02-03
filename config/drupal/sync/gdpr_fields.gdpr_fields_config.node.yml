@@ -13,6 +13,7 @@ filenames:
   news: ''
   resource: ''
   event: ''
+  resource_youtube: ''
 bundles:
   product:
     field_complementary_info:
@@ -1342,6 +1343,7 @@ bundles:
       notes: ''
       relationship: 0
       sars_filename: ''
+<<<<<<< HEAD
   event:
     field_event_picture:
       bundle: event
@@ -1456,6 +1458,12 @@ bundles:
     field_event_date:
       bundle: event
       name: field_event_date
+=======
+  resource_youtube:
+    field_resource_link_youtube:
+      bundle: resource_youtube
+      name: field_resource_link_youtube
+>>>>>>> 66e9fa88d4328be249072dd8e1b6453f1babd5a5
       entity_type_id: node
       rtf: 'no'
       rta: 'no'
@@ -1464,6 +1472,7 @@ bundles:
       notes: ''
       relationship: 0
       sars_filename: ''
+<<<<<<< HEAD
     field_event_product:
       bundle: event
       name: field_event_product
@@ -1478,6 +1487,11 @@ bundles:
     field_event_country:
       bundle: event
       name: field_event_country
+=======
+    field_res_resource_type:
+      bundle: resource_youtube
+      name: field_res_resource_type
+>>>>>>> 66e9fa88d4328be249072dd8e1b6453f1babd5a5
       entity_type_id: node
       rtf: 'no'
       rta: 'no'

@@ -74,6 +74,6 @@ class ProductReferenceTable {
    *   Formatted html
    */
   public function getCartLink() {
-    return new FormattableMarkup("<span class='add-to-cart'></span>", []);
+    return new FormattableMarkup("<span class='add-to-favorite'></span>", []);
   }
 }
