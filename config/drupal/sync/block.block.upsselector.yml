@@ -12,7 +12,7 @@ dependencies:
 id: upsselector
 theme: socomec
 region: content
-weight: 0
+weight: -6
 provider: null
 plugin: 'block_content:5f5100cf-81e9-48e1-8dcb-bf8b9eadc512'
 settings:

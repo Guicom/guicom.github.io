@@ -23,6 +23,7 @@ filenames:
   content: ''
   model_cta_pdf: ''
   video_text: ''
+  model_citation: ''
 bundles:
   product_faq:
     field_question:
@@ -865,6 +866,40 @@ bundles:
       rta: 'no'
       enabled: false
       anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+  model_citation:
+    field_citation_content:
+      bundle: model_citation
+      name: field_citation_content
+      entity_type_id: paragraph
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: date_anonymizer
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_citation_author:
+      bundle: model_citation
+      name: field_citation_author
+      entity_type_id: paragraph
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: date_anonymizer
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_citation_author_position:
+      bundle: model_citation
+      name: field_citation_author_position
+      entity_type_id: paragraph
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: date_anonymizer
       notes: ''
       relationship: 0
       sars_filename: ''

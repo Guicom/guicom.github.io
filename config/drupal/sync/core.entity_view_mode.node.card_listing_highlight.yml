@@ -1,0 +1,10 @@
+uuid: ff15edf1-66f5-4efb-883c-01cdb06aa6fd
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.card_listing_highlight
+label: 'Card listing highlight'
+targetEntityType: node
+cache: true

@@ -45,7 +45,6 @@ permissions:
   - 'use editorial transition archived_draft'
   - 'use editorial transition archived_published'
   - 'use editorial transition create_new_draft'
-  - 'use editorial transition publish'
   - 'use editorial transition submit_for_review'
   - 'view any unpublished content'
   - 'view latest version'

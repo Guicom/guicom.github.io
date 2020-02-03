@@ -72,7 +72,7 @@
                 },
                 "uuid": [
                     {
-                        "value": "4046d41b-2959-4e9b-9291-076427ad1452"
+                        "value": "d9b82eba-c048-4c84-b618-46c4faa05479"
                     }
                 ]
             }
@@ -89,7 +89,7 @@
                 },
                 "uuid": [
                     {
-                        "value": "4046d41b-2959-4e9b-9291-076427ad1452"
+                        "value": "d9b82eba-c048-4c84-b618-46c4faa05479"
                     }
                 ]
             }
@@ -175,7 +175,7 @@
     ],
     "moderation_state": [
         {
-            "value": "draft",
+            "value": "published",
             "lang": "en"
         }
     ],

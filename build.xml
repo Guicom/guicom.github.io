@@ -46,6 +46,8 @@
     <import file="phing/tasks/multisite.xml" optional="true"/>
     <import file="phing/tasks/multisite-language.xml" optional="true"/>
     <import file="phing/tasks/content.xml" optional="true"/>
+    <import file="phing/tasks/admin-socomec.xml" optional="true"/>
+    <import file="phing/tasks/megamenu-socomec.xml" optional="true"/>
 
     <!-- import drush tasks -->
     <import file="./vendor/drupal/phingdrushtask/import.xml"/>
@@ -54,9 +56,9 @@
     <target
             name="install-local"
             description="Install the website and set up the local development environment."
-            depends="install"/>
+            depends="install, content-import-all"/>
     <target
             name="build-local"
             description="Rebuild the local environment."
-            depends="build"/>
+            depends="build, content-import-all"/>
 </project>

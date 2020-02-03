@@ -1,0 +1,12 @@
+<project name="megamenu-socomec" default="megamenu-socomec">
+    <target name="megamenu-socomec:import">
+        <drush
+                command="we_megamenu_deploy:import"
+                assume="yes"
+                root="${website.drupal.dir}"
+                verbose="${drush.verbose}">
+
+            <param>--force-update</param>
+        </drush>
+    </target>
+</project>

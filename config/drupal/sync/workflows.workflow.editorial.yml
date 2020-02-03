@@ -4,12 +4,14 @@ status: true
 dependencies:
   config:
     - node.type.article
+    - node.type.event
     - node.type.landing_page
     - node.type.news
     - node.type.optional_related_content
     - node.type.page
     - node.type.product
     - node.type.product_reference
+    - node.type.resource
     - node.type.thank_you_page
   module:
     - content_moderation
@@ -86,11 +88,13 @@ type_settings:
   entity_types:
     node:
       - article
+      - event
       - landing_page
       - news
       - optional_related_content
       - page
       - product
       - product_reference
+      - resource
       - thank_you_page
   default_moderation_state: draft

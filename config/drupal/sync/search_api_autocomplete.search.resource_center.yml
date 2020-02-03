@@ -1,0 +1,31 @@
+uuid: ac7127a8-f42a-4ce1-b476-13884c7ebb68
+langcode: en
+status: true
+dependencies:
+  config:
+    - search_api.index.resources
+    - views.view.resource_center
+  module:
+    - views
+    - search_api_autocomplete
+id: resource_center
+label: 'Resource center'
+index_id: resources
+suggester_settings:
+  server:
+    fields: {  }
+suggester_weights:
+  server: 0
+suggester_limits: {  }
+search_settings:
+  'views:resource_center':
+    displays:
+      default: true
+      selected: {  }
+options:
+  limit: 10
+  min_length: 3
+  show_count: false
+  autosubmit: true
+  submit_button_selector: ':submit'
+  delay: null

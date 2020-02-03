@@ -37,5 +37,9 @@
   ]
 %}
 <div class="conteneur" id="iframe-newsletter-container">
-  <iframe class="embed-responsive-item" frameborder="none" src="{{ content.field_link[0]['#url'] }}" id="pardot-iframe-newsletter">&nbsp;</iframe>
+  {% if gpdr_message is defined %}
+    {{ gpdr_message }}
+  {% else %}
+    <iframe class="embed-responsive-item" frameborder="none" src="{{ content.field_link[0]['#url'] }}" id="pardot-iframe-newsletter">&nbsp;</iframe>
+  {% endif %}
 </div>
