@@ -1,0 +1,22 @@
+uuid: 23e4c7f2-e125-4e52-bbf5-a12d23eb8565
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.resource_youtube
+id: node.resource_youtube.promote
+field_name: promote
+entity_type: node
+bundle: resource_youtube
+label: 'Promoted to front page'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

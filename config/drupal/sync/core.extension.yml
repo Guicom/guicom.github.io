@@ -125,6 +125,7 @@ module:
   we_megamenu: 0
   we_megamenu_deploy: 0
   workflows: 0
+  youtube: 0
   ds: 1
   menu_link_content: 1
   pathauto: 1
