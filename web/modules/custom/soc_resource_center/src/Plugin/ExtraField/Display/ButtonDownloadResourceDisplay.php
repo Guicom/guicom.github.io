@@ -74,7 +74,7 @@ class ButtonDownloadResourceDisplay extends ExtraFieldDisplayFormattedBase {
           $attributes['download'] = TRUE;
           $attributes['class'][]='is-file';
         } catch (\Exception $e) {
-          \Drupal::logger('soc_resource_center')->error($e);
+          \Drupal::logger('soc_resource_center')->error($e->getMessage());
         }
       }
     }
