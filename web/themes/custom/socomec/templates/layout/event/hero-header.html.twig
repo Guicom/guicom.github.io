@@ -1,0 +1,70 @@
+<div class="hero-block">
+    <div class="mobile-container">
+    <div {{ attributes.addClass(class, 'hero-wrapper').removeClass('mobile-container') }}>
+      <div {{ attributes.addClass(class, 'event-info').removeClass('mobile-container','hero-wrapper') }}>
+        <a class="back-to-button" href="/event">{% include '/themes/custom/socomec/assets/images/picto/ui/chevron-left-circle.svg' %}{{ 'ALL EVENTS' | t }}</a>
+        <h1>
+          <span class="event-title">{{ drupal_field('title', 'node') }}</span>
+        </h1>
+        <div class="event-sub-infos">
+          <div class="wrapper">
+            <span class="event-type">{{ drupal_field('field_event_type', 'node') }}</span>
+            <span class="event-theme">{{ drupal_field('field_event_thematic', 'node') }}</span>
+          </div>
+        </div>
+      </div>
+      <div class="event-informations">
+        <div class="event-squarebox">
+          <div class="event-top">
+            {{ drupal_field('field_event_place', 'node') }}
+            {% set date_event = drupal_field('field_event_date', 'node') %}
+            {% set date_event_start = date_event[0].start_date['#attributes'].datetime %}
+            {% set date_event_end = date_event[0].end_date['#attributes'].datetime %}
+            <div class="event-date-wrapper">
+              <div class="line-date">
+                <div class="event-start">
+                  {{ date_event_start|date('M') }}.
+                  {{ date_event_start|date('d') }}
+                </div>
+                <div class="separator">
+                  •
+                </div>
+                <div class="event-end">
+                  {{ date_event_end|date('M') }}.
+                  {{ date_event_end|date('d') }}
+                </div>
+              </div>
+              <div class="line-years">
+                <div class="event-start">
+                  {{ date_event_start|date('Y') }}
+                </div>
+                <div class="separator">
+                  •
+                </div>
+                <div class="event-end">
+                  {{ date_event_end|date('Y') }}
+                </div>
+              </div>
+              <div class="line-hours">
+                <div class="event-start">
+                  {{ date_event_start|date('G:i') }}
+                </div>
+                <div class="separator">
+                  -
+                </div>
+                <div class="event-end">
+                  {{ date_event_end|date('G:i') }}
+                </div>
+              </div>
+            </div>
+          </div>
+          {{ drupal_field('field_event_picture', 'node') }}
+          <div class="bottom-link">
+            {{ date_event }}
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

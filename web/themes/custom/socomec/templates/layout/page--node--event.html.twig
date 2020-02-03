@@ -74,19 +74,19 @@
         {% include '@socomec/includes/header.html.twig' %}
       {% endblock %}
       {{ drupal_block('system_breadcrumb_block') }}
-      {% include '@socomec/layout/news/hero-header.html.twig' %}
+      {% include '@socomec/layout/event/hero-header.html.twig' %}
       {{ drupal_block('local_tasks_block') }}
     </header>
-    {% if drupal_field('field_teaser', 'node')[0] %}
-    <div class="news-teaser-wrapper">
+    {% if drupal_field('field_event_teaser', 'node')[0] %}
+    <div class="event-teaser-wrapper">
       <div class="container">
         <div class="row">
-          {% if drupal_field('field_media_image', 'node')[0] %}
-          <div class="news-teaser col-12 col-md-6">
+          {% if drupal_field('field_event_picture', 'node')[0] %}
+          <div class="event-teaser col-12 col-md-6">
             {% else %}
-            <div class="news-teaser col-12 col-md-10 offset-md-1">
+            <div class="event-teaser col-12 col-md-10 offset-md-1">
             {% endif %}
-            <span class="news-subtitle">{{ drupal_field('field_teaser', 'node') }}</span>
+            <span class="event-subtitle">{{ drupal_field('field_event_teaser', 'node') }}</span>
           </div>
           {% include '@socomec/layout/share.html.twig' %}
         </div>
@@ -113,11 +113,11 @@
     <main id="main-wrapper" class="layout-main-wrapper clearfix">
       {% block content %}
         <article id="main" class="container-fluid">
-          <section class="section-light" id="news-info-section">
+          <section class="section-light" id="event-info-section">
             <div class="container">
               <div class="row">
                 <div class="col-12 col-md-10 offset-md-1">
-                  {{ drupal_field('field_body', 'node') }}
+                  {{ drupal_field('field_event_content', 'node') }}
                 </div>
                 </div>
               </div>
