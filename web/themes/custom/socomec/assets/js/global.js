@@ -224,4 +224,17 @@
     }
   };
 
+  /**
+   * Facets bootstrap_select
+   */
+  Drupal.behaviors.socomec_facets_bootstrap_select = {
+    attach: function (context, settings) {
+      $('select.facets-dropdown').each(function () {
+        $(this).selectpicker();
+        var width = $(this).parents("div.block-facet--dropdown").find("div.facet-title").first().width();
+        $(this).siblings('.bs-placeholder').css('padding-left', width + 20 + 'px');
+      });
+    }
+  };
+
 })(jQuery, Drupal);
