@@ -545,6 +545,9 @@ body.node--type-product {
           &:hover {
             background: $lighter-grey;
           }
+          td {
+            vertical-align: middle;
+          }
           td,
           td a{
             border-bottom: 1px solid $lighter-grey;

@@ -1,0 +1,82 @@
+uuid: d8094881-772a-449d-84b7-7a6019229060
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.resource_youtube.field_res_resource_type
+    - field.field.node.resource_youtube.field_resource_link_youtube
+    - node.type.resource_youtube
+  module:
+    - ds
+    - user
+    - youtube
+third_party_settings:
+  ds:
+    layout:
+      id: ds_1col
+      library: null
+      disable_css: false
+      entity_classes: all_classes
+      settings:
+        wrappers:
+          ds_content: div
+        outer_wrapper: div
+        attributes: ''
+        link_attribute: ''
+        link_custom: ''
+        classes:
+          layout_class: {  }
+          ds_content: {  }
+    regions:
+      ds_content:
+        - field_resource_link_youtube
+        - field_res_resource_type
+id: node.resource_youtube.teaser
+targetEntityType: node
+bundle: resource_youtube
+mode: teaser
+content:
+  field_res_resource_type:
+    type: entity_reference_label
+    weight: 1
+    region: ds_content
+    label: hidden
+    settings:
+      link: false
+    third_party_settings:
+      ds:
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
+  field_resource_link_youtube:
+    type: youtube_video
+    weight: 0
+    region: ds_content
+    label: hidden
+    settings:
+      youtube_size: responsive
+      youtube_width: ''
+      youtube_height: ''
+      youtube_autoplay: false
+      youtube_mute: false
+      youtube_loop: false
+      youtube_controls: false
+      youtube_autohide: false
+      youtube_iv_load_policy: false
+    third_party_settings:
+      ds:
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
+hidden:
+  addtoany: true
+  langcode: true
+  links: true
+  search_api_excerpt: true

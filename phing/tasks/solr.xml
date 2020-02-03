@@ -1,0 +1,26 @@
+<project name="solr" default="solr:clear">
+    <target name="solr:clear">
+        <exec command="curl ${solr.scheme}://${solr.host}:${solr.port}/solr/${solr.core}/update -H 'Content-type: text/xml' --data-binary '&lt;delete&gt;&lt;query&gt;*:*&lt;/query&gt;&lt;/delete&gt;'" />
+        <exec command="curl ${solr.scheme}://${solr.host}:${solr.port}/solr/${solr.core}/update -H 'Content-type: text/xml' --data-binary '&lt;commit /&gt;'" />
+    </target>
+
+    <target name="solr:rebuild">
+        <drush
+                command="search-api-clear"
+                assume="yes"
+                root="${website.drupal.dir}"
+                verbose="${drush.verbose}">
+        </drush>
+        <drush
+                command="search-api-index"
+                assume="yes"
+                root="${website.drupal.dir}"
+                verbose="${drush.verbose}">
+        </drush>
+    </target>
+
+    <target name="solr:cr">
+        <phingcall target="solr:clear" />
+        <phingcall target="solr:rebuild" />
+    </target>
+</project>
