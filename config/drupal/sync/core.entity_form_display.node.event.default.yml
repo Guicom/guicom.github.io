@@ -17,6 +17,7 @@ dependencies:
     - field.field.node.event.field_event_thematic
     - field.field.node.event.field_event_type
     - node.type.event
+    - workflows.workflow.editorial
   module:
     - content_moderation
     - datetime_range

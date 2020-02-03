@@ -1,6 +1,7 @@
 module:
   abjs: 0
   addtoany: 0
+  addtocalendar: 0
   admin_toolbar: 0
   admin_toolbar_links_access_filter: 0
   admin_toolbar_tools: 0
