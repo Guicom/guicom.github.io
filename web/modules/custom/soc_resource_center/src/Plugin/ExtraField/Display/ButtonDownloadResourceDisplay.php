@@ -54,6 +54,7 @@ class ButtonDownloadResourceDisplay extends ExtraFieldDisplayFormattedBase {
   public function viewElements(ContentEntityInterface $entity) {
     $url = NULL;
     $label = NULL;
+    return NULL;
     $attributes['class'] = array('resource-download');
     $label = $this->t('Download');
     if ($entity->get('field_res_downloadable')->getValue()[0]['value'] === '0') {

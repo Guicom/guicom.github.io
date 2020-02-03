@@ -1,0 +1,29 @@
+uuid: e423f81b-5b64-48ca-9137-4b3b62c13a36
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_res_resource_type
+    - node.type.resource_youtube
+    - taxonomy.vocabulary.resource_type
+id: node.resource_youtube.field_res_resource_type
+field_name: field_res_resource_type
+entity_type: node
+bundle: resource_youtube
+label: 'Type of resource'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      resource_type: resource_type
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference
