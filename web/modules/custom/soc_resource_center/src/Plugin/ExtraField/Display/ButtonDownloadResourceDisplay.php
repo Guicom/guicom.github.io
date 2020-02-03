@@ -47,15 +47,12 @@ class ButtonDownloadResourceDisplay extends ExtraFieldDisplayFormattedBase {
    *   A renderable array of field elements. If this contains children, the
    *   field output will be rendered as a multiple value field with each child
    *   as a field item.
-   * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
-   * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
    * @throws \Drupal\Core\TypedData\Exception\MissingDataException
    */
   public function viewElements(ContentEntityInterface $entity) {
     $url = NULL;
     $label = NULL;
-    return NULL;
-    $attributes['class'] = array('resource-download');
+    $attributes['class'] = ['resource-download'];
     $label = $this->t('Download');
     if ($entity->get('field_res_downloadable')->getValue()[0]['value'] === '0') {
       if ($entity->get('field_open_link_in_new_window')->getValue()[0]['value'] === '1') {
@@ -69,15 +66,20 @@ class ButtonDownloadResourceDisplay extends ExtraFieldDisplayFormattedBase {
     }
     else {
       // je pose un lien de téléchargement.
-      $id = $entity->get('field_res_remote_file_url')->first()->getValue()['target_id'];
-      /* @var \Drupal\file\FileInterface $file */
-      $file = \Drupal::entityTypeManager()->getStorage('file')->load($id);
-      $url = Url::fromUri($file->getFileUri());
-      $attributes['download'] = TRUE;
-      $attributes['class'][]='is-file';
+      if ($id = $entity->get('field_res_remote_file_url')->first()->getValue()['target_id']) {
+        try {
+          /* @var \Drupal\file\FileInterface $file */
+          $file = \Drupal::entityTypeManager()->getStorage('file')->load($id);
+          $url = Url::fromUri($file->getFileUri());
+          $attributes['download'] = TRUE;
+          $attributes['class'][]='is-file';
+        } catch (\Exception $e) {
+          \Drupal::logger('soc_resource_center')->error($e);
+        }
+      }
     }
 
-    $build['examples_link'] = [
+    $build['download_link'] = [
       '#title' => $label,
       '#type' => 'link',
       '#url' => $url,
