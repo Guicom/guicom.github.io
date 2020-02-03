@@ -65,7 +65,7 @@ display:
       pager:
         type: full
         options:
-          items_per_page: 2
+          items_per_page: 30
           offset: 0
           id: 0
           total_pages: null
@@ -266,7 +266,7 @@ display:
       relationships: {  }
       arguments: {  }
       display_extenders: {  }
-      use_ajax: true
+      use_ajax: false
     cache_metadata:
       max-age: -1
       contexts:

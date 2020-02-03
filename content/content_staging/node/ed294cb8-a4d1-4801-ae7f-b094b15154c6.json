@@ -1,7 +1,7 @@
 {
     "_links": {
         "self": {
-            "href": "http:\/\/default\/news\/efficiently-unleash-cross-media-value-proposition-organically-grow-1?_format=hal_json"
+            "href": "http:\/\/default\/news\/efficiently-unleash-cross-media-value-proposition-organically-grow-2?_format=hal_json"
         },
         "type": {
             "href": "http:\/\/drupal.org\/rest\/type\/node\/news"
@@ -99,7 +99,7 @@
                 },
                 "uuid": [
                     {
-                        "value": "a144a767-e637-4350-8e02-f56f96df71d8"
+                        "value": "7ce68e63-4eb2-4ff9-b3ba-1353868398ce"
                     }
                 ]
             }
@@ -116,7 +116,7 @@
                 },
                 "uuid": [
                     {
-                        "value": "a144a767-e637-4350-8e02-f56f96df71d8"
+                        "value": "7ce68e63-4eb2-4ff9-b3ba-1353868398ce"
                     }
                 ],
                 "lang": "en"
@@ -320,13 +320,13 @@
                 "og_site_name": "Socomec",
                 "robots": "index, follow",
                 "content_language": "en",
-                "canonical_url": "http:\/\/default\/news\/efficiently-unleash-cross-media-value-proposition-organically-grow-1",
+                "canonical_url": "http:\/\/default\/news\/efficiently-unleash-cross-media-value-proposition-organically-grow-2",
                 "og_type": "News",
-                "og_url": "http:\/\/default\/news\/efficiently-unleash-cross-media-value-proposition-organically-grow-1",
-                "image_src": "http:\/\/default\/sites\/default\/files\/styles\/og_image_600x315\/public\/2020-01\/IMG%401x.jpg?itok=DEuLMB07",
+                "og_url": "http:\/\/default\/news\/efficiently-unleash-cross-media-value-proposition-organically-grow-2",
+                "image_src": "http:\/\/default\/sites\/default\/files\/styles\/og_image_600x315\/public\/2020-01\/IMG%401x.jpg?itok=PglLnLeN",
                 "og_title": "Efficiently unleash cross-media value proposition organically grow",
-                "og_image_0": "http:\/\/default\/sites\/default\/files\/styles\/og_image_600x315\/public\/2020-01\/IMG%401x.jpg?itok=DEuLMB07",
-                "og_image_url_0": "http:\/\/default\/sites\/default\/files\/styles\/og_image_600x315\/public\/2020-01\/IMG%401x.jpg?itok=DEuLMB07",
+                "og_image_0": "http:\/\/default\/sites\/default\/files\/styles\/og_image_600x315\/public\/2020-01\/IMG%401x.jpg?itok=PglLnLeN",
+                "og_image_url_0": "http:\/\/default\/sites\/default\/files\/styles\/og_image_600x315\/public\/2020-01\/IMG%401x.jpg?itok=PglLnLeN",
                 "og_image_type": "image\/jpeg",
                 "og_image_width": "600",
                 "og_image_height": "315",
@@ -336,8 +336,8 @@
     ],
     "path": [
         {
-            "alias": "\/news\/efficiently-unleash-cross-media-value-proposition-organically-grow-1",
-            "pid": 24,
+            "alias": "\/news\/efficiently-unleash-cross-media-value-proposition-organically-grow-2",
+            "pid": 25,
             "langcode": "en",
             "lang": "en"
         }
