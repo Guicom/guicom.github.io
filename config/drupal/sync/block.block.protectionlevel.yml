@@ -11,7 +11,7 @@ dependencies:
 id: protectionlevel
 theme: socomec
 region: facets
-weight: -10
+weight: -11
 provider: null
 plugin: 'facet_block:protectionlevel'
 settings:

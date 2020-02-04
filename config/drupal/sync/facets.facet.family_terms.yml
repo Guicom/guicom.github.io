@@ -1,4 +1,4 @@
-uuid: 629e9626-4a39-4293-904e-940cfaa16baa
+uuid: fb360d96-cf1b-4f71-8f36-d583eca342b4
 langcode: en
 status: true
 dependencies:
@@ -11,45 +11,45 @@ dependencies:
 third_party_settings:
   facets_pretty_paths:
     coder: taxonomy_term_coder
-id: language
-name: Language
-url_alias: resource-language
+id: family_terms
+name: 'Family terms'
+url_alias: family
 weight: 0
 min_count: 1
 show_only_one_result: true
-field_identifier: langcode
+field_identifier: field_product_family_terms
 facet_source_id: 'search_api:views_page__resource_center__page_1'
 widget:
-  type: dropdown
+  type: links
   config:
     show_numbers: false
-    default_option_label: All
-query_operator: and
-use_hierarchy: false
-expand_hierarchy: false
+    soft_limit: 0
+    soft_limit_settings:
+      show_less_label: 'Show less'
+      show_more_label: 'Show more'
+    show_reset_link: true
+    reset_text: All
+    hide_reset_when_no_selection: false
+query_operator: or
+use_hierarchy: true
+expand_hierarchy: true
 enable_parent_when_child_gets_disabled: true
 hard_limit: 0
 exclude: false
 only_visible_when_facet_source_is_visible: true
 processor_configs:
-  active_widget_order:
-    processor_id: active_widget_order
+  exclude_specified_items:
+    processor_id: exclude_specified_items
     weights:
-      sort: 20
+      build: 50
     settings:
-      sort: DESC
-  count_widget_order:
-    processor_id: count_widget_order
+      exclude: Products
+      regex: false
+  translate_entity:
+    processor_id: translate_entity
     weights:
-      sort: 30
-    settings:
-      sort: DESC
-  display_value_widget_order:
-    processor_id: display_value_widget_order
-    weights:
-      sort: 40
-    settings:
-      sort: ASC
+      build: 5
+    settings: {  }
   url_processor_handler:
     processor_id: url_processor_handler
     weights:
