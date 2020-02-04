@@ -1,15 +1,15 @@
 {
     "_links": {
         "self": {
-            "href": "http:\/\/default\/taxonomy\/term\/49?_format=hal_json"
+            "href": "http:\/\/default\/taxonomy\/term\/63?_format=hal_json"
         },
         "type": {
-            "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/news_theme"
+            "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/resource_type"
         },
-        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/news_theme\/parent": [
+        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/resource_type\/parent": [
             null
         ],
-        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/news_theme\/content_translation_uid": [
+        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/resource_type\/content_translation_uid": [
             {
                 "href": "http:\/\/default\/user\/1?_format=hal_json",
                 "lang": "en"
@@ -18,17 +18,17 @@
     },
     "tid": [
         {
-            "value": 49
+            "value": 63
         }
     ],
     "uuid": [
         {
-            "value": "778814d9-86d6-4a1a-8df6-fa6bcd66984e"
+            "value": "0bf30129-3f6d-44e8-a60d-c4b71df0f9be"
         }
     ],
     "revision_id": [
         {
-            "value": 49
+            "value": 63
         }
     ],
     "langcode": [
@@ -39,12 +39,12 @@
     ],
     "vid": [
         {
-            "target_id": "news_theme"
+            "target_id": "resource_type"
         }
     ],
     "revision_created": [
         {
-            "value": "2020-01-10T10:19:50+00:00",
+            "value": "2020-02-04T16:19:06+00:00",
             "format": "Y-m-d\\TH:i:sP"
         }
     ],
@@ -56,7 +56,7 @@
     ],
     "name": [
         {
-            "value": "Expert Services",
+            "value": "Whitepaper",
             "lang": "en"
         }
     ],
@@ -66,10 +66,10 @@
         }
     ],
     "_embedded": {
-        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/news_theme\/parent": [
+        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/resource_type\/parent": [
             null
         ],
-        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/news_theme\/content_translation_uid": [
+        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/resource_type\/content_translation_uid": [
             {
                 "_links": {
                     "self": {
@@ -90,7 +90,7 @@
     },
     "changed": [
         {
-            "value": "2020-01-10T10:19:50+00:00",
+            "value": "2020-02-04T16:19:06+00:00",
             "lang": "en",
             "format": "Y-m-d\\TH:i:sP"
         }
@@ -121,7 +121,7 @@
     ],
     "content_translation_created": [
         {
-            "value": "2020-01-10T10:19:50+00:00",
+            "value": "2020-02-04T16:19:06+00:00",
             "lang": "en",
             "format": "Y-m-d\\TH:i:sP"
         }
@@ -129,8 +129,8 @@
     "metatag": [
         {
             "value": {
-                "title": "Expert Services | Socomec",
-                "canonical_url": "http:\/\/default\/taxonomy\/term\/49"
+                "title": "Whitepaper | Socomec",
+                "canonical_url": "http:\/\/default\/taxonomy\/term\/63"
             }
         }
     ]

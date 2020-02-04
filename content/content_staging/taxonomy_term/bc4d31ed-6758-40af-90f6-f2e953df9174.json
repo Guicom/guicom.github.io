@@ -1,63 +1,63 @@
 {
     "_links": {
         "self": {
-            "href": "http:\/\/default\/taxonomy\/term\/49?_format=hal_json"
+            "href": "http:\/\/default\/taxonomy\/term\/88?_format=hal_json"
         },
         "type": {
-            "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/news_theme"
+            "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/event_type"
         },
-        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/news_theme\/parent": [
+        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/event_type\/parent": [
             null
         ],
-        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/news_theme\/content_translation_uid": [
+        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/event_type\/content_translation_uid": [
             {
                 "href": "http:\/\/default\/user\/1?_format=hal_json",
-                "lang": "en"
+                "lang": "zxx"
             }
         ]
     },
     "tid": [
         {
-            "value": 49
+            "value": 88
         }
     ],
     "uuid": [
         {
-            "value": "778814d9-86d6-4a1a-8df6-fa6bcd66984e"
+            "value": "bc4d31ed-6758-40af-90f6-f2e953df9174"
         }
     ],
     "revision_id": [
         {
-            "value": 49
+            "value": 88
         }
     ],
     "langcode": [
         {
-            "value": "en",
-            "lang": "en"
+            "value": "zxx",
+            "lang": "zxx"
         }
     ],
     "vid": [
         {
-            "target_id": "news_theme"
+            "target_id": "event_type"
         }
     ],
     "revision_created": [
         {
-            "value": "2020-01-10T10:19:50+00:00",
+            "value": "2020-02-04T16:22:20+00:00",
             "format": "Y-m-d\\TH:i:sP"
         }
     ],
     "status": [
         {
             "value": true,
-            "lang": "en"
+            "lang": "zxx"
         }
     ],
     "name": [
         {
-            "value": "Expert Services",
-            "lang": "en"
+            "value": "Seminar",
+            "lang": "zxx"
         }
     ],
     "weight": [
@@ -66,10 +66,10 @@
         }
     ],
     "_embedded": {
-        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/news_theme\/parent": [
+        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/event_type\/parent": [
             null
         ],
-        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/news_theme\/content_translation_uid": [
+        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/event_type\/content_translation_uid": [
             {
                 "_links": {
                     "self": {
@@ -84,53 +84,53 @@
                         "value": "07e50755-19d9-4b20-8680-0fd004348b53"
                     }
                 ],
-                "lang": "en"
+                "lang": "zxx"
             }
         ]
     },
     "changed": [
         {
-            "value": "2020-01-10T10:19:50+00:00",
-            "lang": "en",
+            "value": "2020-02-04T16:22:20+00:00",
+            "lang": "zxx",
             "format": "Y-m-d\\TH:i:sP"
         }
     ],
     "default_langcode": [
         {
             "value": true,
-            "lang": "en"
+            "lang": "zxx"
         }
     ],
     "revision_translation_affected": [
         {
             "value": true,
-            "lang": "en"
+            "lang": "zxx"
         }
     ],
     "content_translation_source": [
         {
             "value": "und",
-            "lang": "en"
+            "lang": "zxx"
         }
     ],
     "content_translation_outdated": [
         {
             "value": false,
-            "lang": "en"
+            "lang": "zxx"
         }
     ],
     "content_translation_created": [
         {
-            "value": "2020-01-10T10:19:50+00:00",
-            "lang": "en",
+            "value": "2020-02-04T16:22:20+00:00",
+            "lang": "zxx",
             "format": "Y-m-d\\TH:i:sP"
         }
     ],
     "metatag": [
         {
             "value": {
-                "title": "Expert Services | Socomec",
-                "canonical_url": "http:\/\/default\/taxonomy\/term\/49"
+                "title": "Seminar | Socomec",
+                "canonical_url": "http:\/\/default\/taxonomy\/term\/88"
             }
         }
     ]

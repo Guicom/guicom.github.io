@@ -10,12 +10,6 @@
             {
                 "href": "http:\/\/default\/products\/power-conversion\/midi-ups?_format=hal_json"
             }
-        ],
-        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/family\/content_translation_uid": [
-            {
-                "href": "http:\/\/default\/user\/1?_format=hal_json",
-                "lang": "en"
-            }
         ]
     },
     "tid": [
@@ -81,24 +75,6 @@
                         "value": "69a29d2d-93de-4ee2-a394-15d293cfbe0a"
                     }
                 ]
-            }
-        ],
-        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/family\/content_translation_uid": [
-            {
-                "_links": {
-                    "self": {
-                        "href": "http:\/\/default\/user\/1?_format=hal_json"
-                    },
-                    "type": {
-                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
-                    }
-                },
-                "uuid": [
-                    {
-                        "value": "059d0fa6-5dd6-4e1c-ace5-ef18988bb748"
-                    }
-                ],
-                "lang": "en"
             }
         ]
     },
