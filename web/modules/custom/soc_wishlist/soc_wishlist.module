@@ -11,3 +11,12 @@ function soc_wishlist_form_alter(&$form, FormStateInterface $form_state, $form_i
     \Drupal::service('page_cache_kill_switch')->trigger();
   }
 }
+
+/**
+ * Implements hook_element_info_alter().
+ */
+function soc_wishlist_element_info_alter(array &$types) {
+  $types['tableselect']['#pre_render'] = [
+    ['Drupal\soc_wishlist\Render\Element\TableSelect', 'preRenderTableselect']
+  ];
+}
