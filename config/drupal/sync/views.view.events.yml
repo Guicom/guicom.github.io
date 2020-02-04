@@ -358,6 +358,11 @@ display:
     display_options:
       display_extenders: {  }
       path: events
+      cache:
+        type: search_api_tag
+        options: {  }
+      defaults:
+        cache: false
     cache_metadata:
       max-age: -1
       contexts:

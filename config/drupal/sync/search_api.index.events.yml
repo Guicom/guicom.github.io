@@ -13,6 +13,7 @@ dependencies:
     - field.storage.node.field_event_custom_audience
     - field.storage.node.field_event_date
     - field.storage.node.field_event_teaser
+    - field.storage.node.field_event_type
     - search_api.server.socomec
 third_party_settings:
   search_api_solr:
@@ -121,6 +122,17 @@ field_settings:
     dependencies:
       config:
         - field.storage.node.field_event_custom_audience
+      module:
+        - taxonomy
+        - taxonomy
+  name_event_type:
+    label: 'Event Type » Taxonomy term » Name'
+    datasource_id: 'entity:node'
+    property_path: 'field_event_type:entity:name'
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_event_type
       module:
         - taxonomy
         - taxonomy
