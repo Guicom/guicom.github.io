@@ -26,40 +26,46 @@ dependencies:
 third_party_settings:
   ds:
     layout:
-      id: bootstrap_socomec_two_columns_4_8
-      library: null
+      id: layout_onecol
+      library: layout_discovery/onecol
       disable_css: false
       entity_classes: all_classes
-      settings:
-        wrappers:
-          first: div
-          second: div
-        outer_wrapper: div
-        attributes: ''
-        link_attribute: ''
-        link_custom: ''
-        classes:
-          layout_class: {  }
-          first: {  }
-          second: {  }
+      settings: {  }
     regions:
-      first:
+      content:
+        - field_event_picture
+        - field_event_type
         - node_title
         - field_event_date
-        - field_event_picture
+        - node_link
     fields:
-      node_title:
-        plugin_id: node_title
-        weight: 0
+      node_link:
+        plugin_id: node_link
+        weight: 4
         label: hidden
         formatter: default
+      node_title:
+        plugin_id: node_title
+        weight: 2
+        label: hidden
+        formatter: default
+        settings:
+          wrapper: p
+          class: ''
+          link: false
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
 id: node.event.card_listing
 targetEntityType: node
 bundle: event
 mode: card_listing
 content:
   field_event_date:
-    weight: 1
+    weight: 3
     label: hidden
     settings:
       timezone_override: ''
@@ -105,16 +111,38 @@ content:
             lb-col: false
             classes: {  }
     type: daterange_default
-    region: first
+    region: content
   field_event_picture:
     type: entity_reference_entity_view
-    weight: 2
+    weight: 0
     label: hidden
     settings:
-      view_mode: default
+      view_mode: teaser_image_crop_270x190
       link: false
-    third_party_settings: {  }
-    region: first
+    third_party_settings:
+      ds:
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
+    region: content
+  field_event_type:
+    type: entity_reference_label
+    weight: 1
+    region: content
+    label: hidden
+    settings:
+      link: false
+    third_party_settings:
+      ds:
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
 hidden:
   addtoany: true
   content_moderation_control: true
@@ -128,7 +156,6 @@ hidden:
   field_event_product: true
   field_event_teaser: true
   field_event_thematic: true
-  field_event_type: true
   langcode: true
   links: true
   search_api_excerpt: true
