@@ -1457,6 +1457,10 @@ bundles:
     field_event_date:
       bundle: event
       name: field_event_date
+  resource_youtube:
+    field_resource_link_youtube:
+      bundle: resource_youtube
+      name: field_resource_link_youtube
       entity_type_id: node
       rtf: 'no'
       rta: 'no'

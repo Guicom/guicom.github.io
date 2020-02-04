@@ -1,7 +1,7 @@
 {
     "_links": {
         "self": {
-            "href": "http:\/\/default\/news\/efficiently-unleash-cross-media-value-proposition-organically-grow-0?_format=hal_json"
+            "href": "http:\/\/default\/news\/efficiently-unleash-cross-media-value-proposition-organically-grow?_format=hal_json"
         },
         "type": {
             "href": "http:\/\/drupal.org\/rest\/type\/node\/news"
@@ -59,6 +59,11 @@
             "value": "6f0fabdc-06f6-4243-96e3-c0dfb284445e"
         }
     ],
+    "vid": [
+        {
+            "value": 133
+        }
+    ],
     "langcode": [
         {
             "value": "en",
@@ -89,7 +94,7 @@
                 },
                 "uuid": [
                     {
-                        "value": "d9b82eba-c048-4c84-b618-46c4faa05479"
+                        "value": "7ce68e63-4eb2-4ff9-b3ba-1353868398ce"
                     }
                 ]
             }
@@ -106,7 +111,7 @@
                 },
                 "uuid": [
                     {
-                        "value": "d9b82eba-c048-4c84-b618-46c4faa05479"
+                        "value": "7ce68e63-4eb2-4ff9-b3ba-1353868398ce"
                     }
                 ],
                 "lang": "en"
@@ -292,15 +297,15 @@
                 "og_site_name": "Socomec",
                 "robots": "index, follow",
                 "content_language": "en",
-                "canonical_url": "http:\/\/default\/news\/efficiently-unleash-cross-media-value-proposition-organically-grow-0",
+                "canonical_url": "http:\/\/default\/news\/efficiently-unleash-cross-media-value-proposition-organically-grow",
                 "og_type": "News",
                 "description": "Curabitur ut arcu eget ligula maximus ultrices. Pellentesque non quam quis leo tristique tincidunt. Mauris eget lacus ex. Curabitur non suscipit arcu, vel luctus enim.",
-                "og_url": "http:\/\/default\/news\/efficiently-unleash-cross-media-value-proposition-organically-grow-0",
-                "image_src": "http:\/\/default\/sites\/default\/files\/styles\/og_image_600x315\/public\/2019-12\/salle-serveur.jpg?itok=hBsHJigQ",
+                "og_url": "http:\/\/default\/news\/efficiently-unleash-cross-media-value-proposition-organically-grow",
+                "image_src": "http:\/\/default\/sites\/default\/files\/styles\/og_image_600x315\/public\/2019-12\/salle-serveur.jpg?itok=MmaJruRH",
                 "og_title": "Efficiently unleash cross-media value proposition organically grow",
                 "og_description": "Curabitur ut arcu eget ligula maximus ultrices. Pellentesque non quam quis leo tristique tincidunt. Mauris eget lacus ex. Curabitur non suscipit arcu, vel luctus enim.",
-                "og_image_0": "http:\/\/default\/sites\/default\/files\/styles\/og_image_600x315\/public\/2019-12\/salle-serveur.jpg?itok=hBsHJigQ",
-                "og_image_url_0": "http:\/\/default\/sites\/default\/files\/styles\/og_image_600x315\/public\/2019-12\/salle-serveur.jpg?itok=hBsHJigQ",
+                "og_image_0": "http:\/\/default\/sites\/default\/files\/styles\/og_image_600x315\/public\/2019-12\/salle-serveur.jpg?itok=MmaJruRH",
+                "og_image_url_0": "http:\/\/default\/sites\/default\/files\/styles\/og_image_600x315\/public\/2019-12\/salle-serveur.jpg?itok=MmaJruRH",
                 "og_image_type": "image\/jpeg",
                 "og_image_width": "600",
                 "og_image_height": "315",
@@ -310,8 +315,8 @@
     ],
     "path": [
         {
-            "alias": "\/news\/efficiently-unleash-cross-media-value-proposition-organically-grow-0",
-            "pid": 20,
+            "alias": "\/news\/efficiently-unleash-cross-media-value-proposition-organically-grow",
+            "pid": 21,
             "langcode": "en",
             "lang": "en"
         }

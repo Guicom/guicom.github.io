@@ -185,7 +185,7 @@
                 },
                 "uuid": [
                     {
-                        "value": "d9b82eba-c048-4c84-b618-46c4faa05479"
+                        "value": "7ce68e63-4eb2-4ff9-b3ba-1353868398ce"
                     }
                 ]
             }
@@ -202,7 +202,7 @@
                 },
                 "uuid": [
                     {
-                        "value": "d9b82eba-c048-4c84-b618-46c4faa05479"
+                        "value": "7ce68e63-4eb2-4ff9-b3ba-1353868398ce"
                     }
                 ]
             }
@@ -713,7 +713,7 @@
     },
     "status": [
         {
-            "value": false
+            "value": true
         }
     ],
     "title": [
@@ -808,11 +808,6 @@
     "field_product_teaser": [
         {
             "value": "Load break switches for power distribution SIRCO VM - 32 to 250 A"
-        }
-    ],
-    "moderation_state": [
-        {
-            "value": "published"
         }
     ]
 }

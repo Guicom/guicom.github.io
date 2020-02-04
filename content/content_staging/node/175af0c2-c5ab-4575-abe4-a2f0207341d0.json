@@ -99,7 +99,7 @@
                 },
                 "uuid": [
                     {
-                        "value": "a144a767-e637-4350-8e02-f56f96df71d8"
+                        "value": "7ce68e63-4eb2-4ff9-b3ba-1353868398ce"
                     }
                 ]
             }
@@ -116,7 +116,7 @@
                 },
                 "uuid": [
                     {
-                        "value": "a144a767-e637-4350-8e02-f56f96df71d8"
+                        "value": "7ce68e63-4eb2-4ff9-b3ba-1353868398ce"
                     }
                 ],
                 "lang": "en"
@@ -323,10 +323,10 @@
                 "canonical_url": "http:\/\/default\/news\/stockage-denergie-mobile-une-nouvelle-solution",
                 "og_type": "News",
                 "og_url": "http:\/\/default\/news\/stockage-denergie-mobile-une-nouvelle-solution",
-                "image_src": "http:\/\/default\/sites\/default\/files\/styles\/og_image_600x315\/public\/2019-12\/salle-serveur.jpg?itok=SNOdgoVc",
+                "image_src": "http:\/\/default\/sites\/default\/files\/styles\/og_image_600x315\/public\/2019-12\/salle-serveur.jpg?itok=MmaJruRH",
                 "og_title": "Stockage d'\u00e9nergie mobile : une nouvelle solution",
-                "og_image_0": "http:\/\/default\/sites\/default\/files\/styles\/og_image_600x315\/public\/2019-12\/salle-serveur.jpg?itok=SNOdgoVc",
-                "og_image_url_0": "http:\/\/default\/sites\/default\/files\/styles\/og_image_600x315\/public\/2019-12\/salle-serveur.jpg?itok=SNOdgoVc",
+                "og_image_0": "http:\/\/default\/sites\/default\/files\/styles\/og_image_600x315\/public\/2019-12\/salle-serveur.jpg?itok=MmaJruRH",
+                "og_image_url_0": "http:\/\/default\/sites\/default\/files\/styles\/og_image_600x315\/public\/2019-12\/salle-serveur.jpg?itok=MmaJruRH",
                 "og_image_type": "image\/jpeg",
                 "og_image_width": "600",
                 "og_image_height": "315",
@@ -337,7 +337,7 @@
     "path": [
         {
             "alias": "\/news\/stockage-denergie-mobile-une-nouvelle-solution",
-            "pid": 25,
+            "pid": 11,
             "langcode": "en",
             "lang": "en"
         }
