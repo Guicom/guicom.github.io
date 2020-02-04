@@ -193,7 +193,19 @@ display:
             group_items: {  }
           reduce_duplicates: false
           plugin_id: search_api_options
-      sorts: {  }
+      sorts:
+        field_product_new:
+          id: field_product_new
+          table: search_api_index_product
+          field: field_product_new
+          relationship: none
+          group_type: group
+          admin_label: ''
+          order: DESC
+          exposed: false
+          expose:
+            label: ''
+          plugin_id: search_api
       title: 'Family products'
       header: {  }
       footer: {  }
