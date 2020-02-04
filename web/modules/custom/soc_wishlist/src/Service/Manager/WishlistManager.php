@@ -126,7 +126,6 @@ class WishlistManager {
    * Load wishlist from cookie.
    *
    * @return array
-   * @throws \Exception
    */
   public function loadSavedItems() {
     if (isset($_COOKIE[$this->getCookieName()])) {

@@ -294,4 +294,10 @@ class WishlistEditForm extends FormBase {
     return $response;
   }
 
+  public static function getTitle() {
+    $language = \Drupal::languageManager()->getCurrentLanguage();
+    return \Drupal::config('soc_wishlist.settings')->get('page_title_' . $language->getId())
+      ?? t('My wishlist');
+  }
+
 }
