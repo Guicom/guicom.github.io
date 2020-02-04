@@ -59,6 +59,20 @@
   }
 }
 
+@mixin block-label($backgroound-color, $font-color) {
+  border-radius: 2px;
+  background-color: $backgroound-color;
+  color: $font-color;
+  font-family: $font-poppins;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  line-height: 20px;
+  text-align: center;
+  padding: 0 10px;
+  text-transform: uppercase;
+}
+
 @mixin transition-socomec {
   transition: all 0.3s ease-out;
 }

@@ -1,0 +1,54 @@
+uuid: de4874ad-a670-4450-ad06-a5a881b91174
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.scheduled_update.node__field_product_new.field_product_new
+    - scheduled_updates.scheduled_update_type.node__field_product_new
+  module:
+    - ds
+    - options
+third_party_settings:
+  ds:
+    layout:
+      id: ds_1col
+      library: null
+      disable_css: false
+      entity_classes: all_classes
+      settings:
+        wrappers:
+          ds_content: div
+        outer_wrapper: div
+        attributes: ''
+        link_attribute: ''
+        link_custom: ''
+        classes:
+          layout_class: {  }
+          ds_content: {  }
+    regions:
+      ds_content:
+        - field_product_new
+id: scheduled_update.node__field_product_new.default
+targetEntityType: scheduled_update
+bundle: node__field_product_new
+mode: default
+content:
+  field_product_new:
+    type: list_default
+    weight: 0
+    region: ds_content
+    label: hidden
+    settings: {  }
+    third_party_settings:
+      ds:
+        ft:
+          id: minimal
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
+hidden:
+  search_api_excerpt: true
+  status: true
+  update_timestamp: true
+  user_id: true
