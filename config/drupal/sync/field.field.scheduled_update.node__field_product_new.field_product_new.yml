@@ -1,0 +1,22 @@
+uuid: 347ba7c7-e729-4c79-9052-fa144f8c9b7a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.scheduled_update.field_product_new
+    - scheduled_updates.scheduled_update_type.node__field_product_new
+  module:
+    - options
+id: scheduled_update.node__field_product_new.field_product_new
+field_name: field_product_new
+entity_type: scheduled_update
+bundle: node__field_product_new
+label: New
+description: ''
+required: false
+translatable: false
+default_value:
+  - {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string
