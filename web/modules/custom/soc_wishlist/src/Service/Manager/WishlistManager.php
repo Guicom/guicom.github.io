@@ -158,6 +158,8 @@ class WishlistManager {
 
   /**
    * Update wishlist cookie.
+   *
+   * @throws \Exception
    */
   public function updateCookie() {
     $name = $this->getCookieName();
