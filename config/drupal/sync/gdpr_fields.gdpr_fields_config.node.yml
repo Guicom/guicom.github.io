@@ -1483,6 +1483,26 @@ bundles:
     field_event_country:
       bundle: event
       name: field_event_country
+      entity_type_id: node
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+  resource_youtube:
+    field_resource_link_youtube:
+      bundle: resource_youtube
+      name: field_resource_link_youtube
+      entity_type_id: node
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
     field_res_resource_type:
       bundle: resource_youtube
       name: field_res_resource_type
