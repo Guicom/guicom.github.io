@@ -1,0 +1,9 @@
+uuid: 0ce8d61a-e4d1-462c-8bc2-e928e43dc982
+langcode: en
+status: true
+dependencies: {  }
+id: standard_label
+label: 'Standard label'
+icon_uuid: null
+description: ''
+behavior_plugins: {  }

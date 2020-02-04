@@ -1,0 +1,23 @@
+uuid: 590bc49f-f687-4de0-8389-1aaa53351d57
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.tool_promotion
+    - field.storage.block_content.field_lien
+  module:
+    - link
+id: block_content.tool_promotion.field_lien
+field_name: field_lien
+entity_type: block_content
+bundle: tool_promotion
+label: Link
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 2
+field_type: link

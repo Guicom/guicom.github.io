@@ -1,0 +1,16 @@
+uuid: cc1b1c4c-23c7-47f6-abe7-6ee34546b73f
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.resource_youtube
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+id: node.resource_youtube
+target_entity_type_id: node
+target_bundle: resource_youtube
+default_langcode: site_default
+language_alterable: true

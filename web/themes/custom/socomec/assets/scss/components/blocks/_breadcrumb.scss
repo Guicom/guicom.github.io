@@ -1,0 +1,18 @@
+.block-system-breadcrumb-block {
+  padding-top: 60px;
+  position: relative;
+  z-index: 1;
+  .content {
+    @include make-container-max-widths();
+    margin-right: auto;
+    margin-left: auto;
+    padding: 0 15px;
+  }
+  ol {
+    background: none;
+    li,
+    a {
+      color: $white;
+    }
+  }
+}

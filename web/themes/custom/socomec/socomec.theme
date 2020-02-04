@@ -5,13 +5,16 @@
  * Functions to support theming in the SASS Starterkit subtheme.
  */
 
+use Drupal\block_content\Entity\BlockContent;
 use Drupal\Core\Config\Config;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Language\LanguageManager;
+use Drupal\Core\Template\Attribute;
 use Drupal\media\Entity\Media;
 use Drupal\file\Entity\File;
 use Drupal\paragraphs\Entity\Paragraph;
 use Drupal\soc_pardot\Form\PrivacyPolicySettingsForm;
+use Drupal\we_megamenu\WeMegaMenuBuilder;
 
 /**
  * Implements hook_form_system_theme_settings_alter() for settings form.
@@ -35,6 +38,10 @@ function socomec_form_system_theme_settings_alter(&$form, FormStateInterface $fo
       'bg-white' => t('White'),
       'bg-transparent' => t('Transparent'),
   );
+}
+
+function socomec_preprocess_node(&$variables) {
+  $test = 1;
 }
 
 /**
@@ -74,7 +81,27 @@ function socomec_preprocess_paragraph(&$variables){
       if (!empty($field_target[0]['value']) && strcmp($field_target[0]['value'], 1) === 0) {
         $variables['cta_target'] = '_blank';
       }
+    }
+  }
 
+  // if paragraph is model_cta_pdf
+  if ( strcmp($bundle, 'model_cta_pdf') === 0) {
+    // Alter name file.
+    if ($paragraph->hasField('field_cta_text')) {
+      $field_cta_text = (!empty($paragraph->get('field_cta_text')->getValue()))?$paragraph->get('field_cta_text')->getValue():null;
+      if (!empty($field_cta_text[0]['value'])) {
+        $field_media_pdf = (!empty($paragraph->get('field_media_pdf')->getValue()))?$paragraph->get('field_media_pdf')->getValue():null;
+        if (!empty($field_cta_text[0]['value'])) {
+          $media = Media::load($field_media_pdf[0]['target_id']);
+          $fid = $media->getSource()->getSourceFieldValue($media);
+          if (!empty($fid)) {
+            $file = File::load($fid);
+            if (!empty($file)) {
+              $file->setFilename($field_cta_text[0]['value']);
+            }
+          }
+        }
+      }
     }
   }
 }
@@ -88,7 +115,7 @@ function socomec_preprocess_field(&$variables) {
       // Add CTA text on ancher button.
       $variables['cta_text'] = $variables["element"]["#object"]->field_pardot_cta_text->value
         ? $variables["element"]["#object"]->field_pardot_cta_text->value : t('Download');
-      
+
       // Manage privacy policy.
       if (empty($variables["element"]["#object"]->field_pardot_privacy_policy->value)) {
         $lang_id = \Drupal::languageManager()->getCurrentLanguage()->getId();
@@ -97,6 +124,11 @@ function socomec_preprocess_field(&$variables) {
       else {
         $variables['legal_mentions'] = $variables["element"]["#object"]->field_pardot_privacy_policy->value;
       }
+      break;
+
+    case 'field_product_reference':
+      $table = Drupal::service('soc_nextpage.product_reference_table');
+      $variables['render_table'] = $table->buildTable($variables);
       break;
   }
 }
@@ -121,8 +153,11 @@ function socomec_theme_suggestions_field_alter(&$suggestions, array $variables) 
 function socomec_theme_suggestions_page_alter(array &$suggestions, array $variables) {
   $node = \Drupal::routeMatch()->getParameter('node');
   if ($node instanceof \Drupal\node\NodeInterface) {
-    $suggestions[] = 'page__' . $node->bundle();
     $suggestions[] = 'page__node__' . $node->bundle();
+  }
+  $term = \Drupal::routeMatch()->getParameter('taxonomy_term');
+  if ($term instanceof Drupal\taxonomy\TermInterface) {
+    $suggestions[] = 'page__taxonomy__' . $term->bundle();
   }
 }
 
@@ -142,6 +177,43 @@ function socomec_theme_suggestions_views_view_fields_alter(array &$suggestions, 
   }
 }
 
+/**
+ * Implements hook_theme_suggestions_taxonomy_term_alter().
+ */
+function socomec_theme_suggestions_taxonomy_term_alter(array &$suggestions, array $variables) {
+  /** @var \Drupal\taxonomy\TermInterface $term */
+  $term = $variables['elements']['#taxonomy_term'];
+  $sanitized_view_mode = strtr($variables['elements']['#view_mode'], '.', '_');
+  // Add view mode theme suggestions.
+  $suggestions[] = 'taxonomy_term__' . $sanitized_view_mode;
+  $suggestions[] = 'taxonomy_term__' . $term->bundle() . '__' . $sanitized_view_mode;
+  $suggestions[] = 'taxonomy_term__' . $term->id() . '__' . $sanitized_view_mode;
+}
+
+/**
+ * Implements hook_theme_suggestions_block_alter().
+ */
+function socomec_theme_suggestions_block_alter(array &$suggestions, array $variables) {
+  $elements = $variables['elements'];
+  if (isset($elements['content']['#block_content'])) {
+    $bundle = $elements['content']['#block_content']->bundle();
+    if ($bundle == 'tool_promotion') {
+      $suggestions[] = 'block__tool_promotion';
+    }
+  }
+}
+
+/**
+ * Implements template_preprocess_html().
+ */
+function socomec_preprocess_html(&$variables) {
+  if (\Drupal::routeMatch()->getRouteName() == 'entity.taxonomy_term.canonical') {
+    // load the term entity and get the data from there
+    $term = \Drupal::routeMatch()->getParameter('taxonomy_term');
+    // Add vocabulary ono body class
+    $variables['attributes']['class'][] = 'taxonomy-' . $term->bundle();
+  }
+}
 
 /**
  * Implements template_preprocess_views_view() for hero view.
@@ -149,6 +221,7 @@ function socomec_theme_suggestions_views_view_fields_alter(array &$suggestions, 
 function socomec_preprocess_views_view(&$variables) {
   $id = $variables['id'];
   $display_id = $variables['display_id'];
+
   // Apply background image for hero paragraph view block
   if ((!empty($id) && $id == 'hero_block') && ($display_id == 'block_1' || $display_id == 'block_2')) {
     $rows = $variables['rows'][0]['#rows'];
@@ -173,10 +246,42 @@ function socomec_preprocess_views_view(&$variables) {
       $variables['background_image'] = (!empty($file_url))?$file_url:null;
     }
   }
+
+  // Apply background color for news page without image
+  if ((!empty($id) && $id == 'news') && ($display_id == 'page_1' || $display_id == 'page_1')) {
+    if (!empty($variables['rows'][0]['#rows'])) {
+      foreach ($variables['rows'][0]['#rows'] as $key => $value) {
+        if (is_numeric($key)) {
+          $variables['rows'][0]['#rows'][$key]['#background'] = 'with-img';
+          $node = $value['#node'];
+          if ($node->hasField('field_media_image') && empty($node->get('field_media_image')->getValue())) {
+            $background = [
+              'bg-blue-1',
+              'bg-blue-2',
+              'bg-blue-3',
+            ];
+            $rand = rand( 0 , 2 );
+            $variables['rows'][0]['#rows'][$key]['#background'] = 'no-img '.$background[$rand];
+          }
+        }
+      }
+    }
+  }
+
+  // Alter resource_center views
+  if ((!empty($id) && $id == 'resource_center') && $display_id == 'page_1') {
+    $variables['hidden_count_results'] = TRUE;
+    $query = \Drupal::request()->query->get('query');
+    $filters = \Drupal::request()->query->get('f');
+    if (($query !== '' && !is_null($query))
+      || ($filters !== '' && !is_null($filters))) {
+      $variables['hidden_count_results'] = FALSE;
+    }
+  }
 }
 
 /**
- * Implements hook_preprocess_HOOK().
+ * Implements template_preprocess_HOOK().
  */
 function socomec_preprocess_views_view_fields__hero_block__block_2(&$variables) {
   $mid = $variables["row"]->_entity->get('field_file')->getString();
@@ -195,17 +300,228 @@ function socomec_preprocess_views_view_fields__hero_block__block_2(&$variables) 
 }
 
 /**
- * Implements hook_preprocess_media().
+ * Implements template_preprocess_media().
  */
 function socomec_preprocess_media(array &$variables) {
   if ($variables["view_mode"] == 'simple_html' && $variables["media"]->bundle() == 'image') {
-    $variables['content']['url'] = $variables['content']['field_media_image'][0]['#markup'];
-    $properties = $variables["media"]->field_media_image->getValue();
-    if (isset($properties[0]["alt"])) {
-      $variables['content']['alt'] = $properties[0]["alt"];
+    if (isset( $variables['content']['field_media_image'][0]['#markup'])) {
+      $variables['content']['url'] = $variables['content']['field_media_image'][0]['#markup'];
+      $properties = $variables["media"]->field_media_image->getValue();
+      if (isset($properties[0]["alt"])) {
+        $variables['content']['alt'] = $properties[0]["alt"];
+      }
+      if (isset($properties[0]["title"])) {
+        $variables['content']['title_image'] = $properties[0]["title"];
+      }
     }
-    if (isset($properties[0]["title"])) {
-      $variables['content']['title_image'] = $properties[0]["title"];
+  }
+}
+
+/**
+ * Implements template_preprocess_block().
+ */
+function socomec_preprocess_block(&$variables) {
+  if ($uuid = $variables["elements"]["#derivative_plugin_id"]) {
+    $block = \Drupal::service('entity.repository')->loadEntityByUuid('block_content', $uuid);
+    if ($block) {
+      $block_type = $block->bundle();
+      switch ($block_type) {
+        case 'tool_promotion':
+          // Add background image
+          if ($block->hasField('field_background_image')
+            && !empty($block->get('field_background_image')->getValue())) {
+            $field_background_image_id = $block->get('field_background_image')
+              ->first()
+              ->getValue()['target_id'];
+            $mediaApi = \Drupal::service('soc_core.media_api');
+            if ($fid = $mediaApi->getFileIdFromMediaId($field_background_image_id)) {
+              if ($file = File::load($fid)) {
+                if (empty($file)) {
+                  return;
+                }
+                $file_url = file_create_url($file->getFileUri());
+              }
+            }
+          }
+          $variables['background_image'] = $file_url ?? null;
+          break;
+        default:
+          break;
+      }
     }
+  }
+}
+
+function socomec_preprocess_page(&$variables) {
+  /** @var \Drupal\node\Entity\Node $node */
+  if ($node = \Drupal::routeMatch()->getParameter('node')) {
+    switch ($node->bundle()) {
+      case 'product':
+        // get product ancestors
+        $tid = $node->get('field_product_family')->target_id;
+        $ancestors = \Drupal::service('entity_type.manager')
+          ->getStorage("taxonomy_term")->loadAllParents($tid);
+        // check if any ancestor has a teaser to display
+        foreach ($ancestors as $term) {
+          $teasersQuery = \Drupal::entityQuery('block_content');
+          $teasersQuery->condition('type', 'tool_promotion');
+          $teasersQuery->condition('field_tool_promotion_families', $term->id());
+          $teasersIds = $teasersQuery->execute();
+          if ($teasers = BlockContent::loadMultiple($teasersIds)) {
+            $teaser = reset($teasers);
+            $teaserInstances = $teaser->getInstances();
+            if (sizeof($teaserInstances)) {
+              $block = reset($teaserInstances);
+              $variables['tool_promotion'] = \Drupal::entityTypeManager()->
+                getViewBuilder('block')->view($block);
+              break;
+            }
+          }
+        }
+        break;
+      default:
+        break;
+    }
+  }
+}
+
+/**
+ * Implements theme_preprocess_image().
+ *
+ * @param $vars
+ */
+function socomec_preprocess_image(&$vars) {
+  // List of image style parse for add bootstrap responsive image class.
+  $image_style_name = [
+    'max_width_1140',
+    'max_width_960',
+    'max_width_720',
+    'max_width_540',
+  ];
+
+  // Add img-fluid class to listed style
+  if (!empty($vars['style_name'])) {
+    if (in_array($vars['style_name'], $image_style_name)) {
+      $vars['attributes']['class'][] = 'img-fluid';
+    }
+  }
+}
+
+/**
+ * Implements template_responsive_image_formatter().
+ *
+ * @param $variables
+ */
+function socomec_preprocess_responsive_image_formatter(&$variables) {
+  $responsive_image_style_name = [
+    'bootstrap_breakpoint',
+  ];
+
+  // Add img-fluid class to listed responsive style
+  if (!empty($variables['responsive_image_style_id'])) {
+    if (in_array($variables['responsive_image_style_id'], $responsive_image_style_name)) {
+      $variables['responsive_image']['#attributes']['class'][] = 'img-fluid';
+    }
+  }
+}
+
+
+/**
+ * Prepare variables for we_megamenu_li.
+ *
+ * @param array $vars
+ *   Variables are declared in theme.
+ */
+function socomec_preprocess_we_megamenu_li(&$vars) {
+  $menu_name = $vars['menu_name'];
+  $block_theme = $vars['block_theme'];
+  $data_config = WeMegaMenuBuilder::loadConfig($menu_name, $block_theme);
+  $menu_config = isset($data_config->menu_config) ? $data_config->menu_config : [];
+
+  $vars['attributes'] = new Attribute();
+  $vars['attributes']['class'] = [];
+  $vars['attributes']['class'][] = 'we-mega-menu-li';
+  $vars['attributes']['class'][] =  'level-' . $vars["item"]["level"];
+  $vars['attributes']['data-level'] = $vars['item']['level'];
+  $vars['attributes']['data-element-type'] = 'we-mega-menu-li';
+  $vars['attributes']['description'] = isset($vars['item']['description']) ? $vars['item']['description'] : '';
+  $vars['href'] = '';
+  $vars['attributes_link'] = new Attribute();
+  if ($vars["item"]["level"] == 0) {
+    $vars['attributes_link']['data-toggle'] = 'dropdown';
+    $vars['attributes_link']['role'] = 'button';
+    $vars['root'] = TRUE;
+  }
+  else {
+    $vars['root'] = FALSE;
+    if (count($vars['subtree'])) {
+      $vars['attributes']['class'][] = 'hover';
+      $vars['link_class'] = 'dropdown-toggle';
+    }
+    else {
+      $vars['link_class'] = 'dropdown-item';
+    }
+  }
+  if ($vars['item']['url'] == '<front>') {
+    $vars['attributes']['data-id'] = 'home';
+    $vars['href'] = Drupal::url('<front>');
+  }
+  else {
+    $vars['attributes']['data-id'] = !empty($vars['item']['derivativeId']) ? $vars['item']['derivativeId'] : $vars['item']['url'];
+    $vars['href'] = $vars['item']['url'];
+  }
+
+  $vars['attributes']['data-submenu'] = 0;
+  $vars['attributes']['hide-sub-when-collapse'] = 0;
+  if (isset($menu_config->{$vars['attributes']['data-id']})) {
+    $item_config = $menu_config->{$vars['attributes']['data-id']};
+    $vars['attributes']['class'][] = !empty($item_config->item_config->group) ? 'we-mega-menu-group' : '';
+    $vars['attributes']['class'][] = !empty($item_config->item_config->class) ? $item_config->item_config->class : '';
+    $vars['attributes']['class'][] = !empty($item_config->item_config->{'hide_sub_when_collapse'}) ? 'sub-hidden-collapse' : '';
+    $vars['attributes']['class'][] = !empty($item_config->item_config->{'data-alignsub'}) ? $item_config->item_config->{'data-alignsub'} : '';
+    $vars['attributes']['data-group'] = !empty($item_config->item_config->group) ? $item_config->item_config->group : 0;
+    $vars['attributes']['data-class'] = !empty($item_config->item_config->class) ? $item_config->item_config->class : '';
+    $vars['attributes']['data-icon'] = !empty($item_config->item_config->{'data-icon'}) ? $item_config->item_config->{'data-icon'} : '';
+    $vars['attributes']['data-caption'] = !empty($item_config->item_config->{'data-caption'}) ? $item_config->item_config->{'data-caption'} : '';
+    $vars['attributes']['hide-sub-when-collapse'] = !empty($item_config->item_config->{'hide_sub_when_collapse'}) ? $item_config->item_config->{'hide_sub_when_collapse'} : '';
+    $vars['attributes']['data-alignsub'] = !empty($item_config->item_config->{'data-alignsub'}) ? $item_config->item_config->{'data-alignsub'} : '';
+    $vars['attributes']['data-target'] = !empty($item_config->item_config->{'data-target'}) ? $item_config->item_config->{'data-target'} : '';
+  }
+
+  $trail = $vars['trail'];
+  $plugin_id = $vars['item']['plugin_id'];
+  if (isset($trail[$plugin_id])) {
+    $vars['attributes']['class'][] = 'active';
+    $vars['attributes']['class'][] = 'active-trail';
+    $vars['link']['attributes']['class'][] = 'active-trail';
+  }
+
+  if ($vars['subtree']) {
+    $vars['content'] = [
+      '#theme' => 'we_megamenu_submenu',
+      '#items' => $vars['subtree'],
+      '#item_config' => isset($menu_config->{$vars['attributes']['data-id']}) ? $menu_config->{$vars['attributes']['data-id']} : [],
+      '#section' => $vars['section'],
+      '#block_theme' => $vars['block_theme'],
+      '#menu_name' => $vars['menu_name'],
+      '#trail' => $vars['trail'],
+    ];
+    $vars['items'] = $vars['subtree'];
+    $vars['attributes']['data-submenu'] = 1;
+    $vars['attributes']['data-group'] = !empty($item_config->item_config->group) ? $item_config->item_config->group : 0;
+  }
+  elseif (isset($menu_config->{$vars['attributes']['data-id']}) && count($menu_config->{$vars['attributes']['data-id']}->rows_content)) {
+    $item_config = $menu_config->{$vars['attributes']['data-id']};
+    $vars['content'] = [
+      '#theme' => 'we_megamenu_submenu',
+      '#items' => $vars['subtree'],
+      '#item_config' => $item_config,
+      '#section' => $vars['section'],
+      '#block_theme' => $vars['block_theme'],
+      '#menu_name' => $vars['menu_name'],
+      '#trail' => $vars['trail'],
+    ];
+    $vars['attributes']['data-submenu'] = 1;
+    $vars['attributes']['class'][] = 'dropdown';
   }
 }

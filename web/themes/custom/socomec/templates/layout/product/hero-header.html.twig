@@ -1,0 +1,41 @@
+<div class="hero-block">
+  <div class="container">
+    <div class="row">
+      <div class="product-image col-lg-5 col-md-12">
+        {{ drupal_field('field_product_pictures', 'node') }}
+      </div>
+      <div class="product-info col-lg-7 col-md-12">
+        <h1>
+          <span class="product-title">{{ drupal_field('title', 'node') }}</span>
+          <span class="product-subtitle">{{ drupal_field('field_product_teaser', 'node') }}</span>
+        </h1>
+        <h2 class="product-baseline">{{ drupal_field('field_json_product_data', 'node') | getfield('DC_P_UNIQUE_VALUE_PROPOSAL') }}</h2>
+        {% if drupal_field('field_json_product_data', 'node') | getfield('DC_R_PAGECATALOGUEPDF1') %}
+          <a href="{{ drupal_field('field_json_product_data', 'node') | getfield('DC_R_PAGECATALOGUEPDF1') }}" target="_blank" class="product-pdf">{% include '/themes/custom/socomec/assets/images/picto/ui/download.svg' %}{{ 'Download catalogue page' |t }}</a>
+        {% endif %}
+      </div>
+      <aside class="product-cta-wrapper">
+        {% if drupal_field('field_product_cta_1', 'node') %}
+          <div class="cta-simple">
+            {{ drupal_field('field_product_cta_1', 'node') }}
+          </div>
+        {% endif %}
+        {% if drupal_field('field_product_cta_2', 'node') %}
+          <div class="cta-simple">
+            {{ drupal_field('field_product_cta_2', 'node') }}
+          </div>
+        {% endif %}
+        {% if drupal_field('field_product_cta_3', 'node') %}
+          <div class="cta-blue">
+            {{ drupal_field('field_product_cta_3', 'node') }}
+          </div>
+        {% endif %}
+        {% if drupal_field('field_product_cta_4', 'node') %}
+          <div class="cta-yellow">
+            {{ drupal_field('field_product_cta_4', 'node') }}
+          </div>
+        {% endif %}
+      </aside>
+    </div>
+  </div>
+</div>

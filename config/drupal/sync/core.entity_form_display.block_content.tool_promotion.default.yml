@@ -1,0 +1,88 @@
+uuid: 847293d8-5123-40e8-be19-e99ed39b8293
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.tool_promotion
+    - field.field.block_content.tool_promotion.field_background_image
+    - field.field.block_content.tool_promotion.field_description
+    - field.field.block_content.tool_promotion.field_lien
+    - field.field.block_content.tool_promotion.field_main_image
+    - field.field.block_content.tool_promotion.field_title
+    - field.field.block_content.tool_promotion.field_tool_promotion_families
+  module:
+    - link_target
+    - media_library
+    - multiselect
+    - text
+id: block_content.tool_promotion.default
+targetEntityType: block_content
+bundle: tool_promotion
+mode: default
+content:
+  field_background_image:
+    type: media_library_widget
+    weight: 5
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+    region: content
+  field_description:
+    weight: 2
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  field_lien:
+    weight: 6
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+      link_target: ''
+    third_party_settings: {  }
+    type: link_target_field_widget
+    region: content
+  field_main_image:
+    type: media_library_widget
+    weight: 4
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+    region: content
+  field_title:
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_tool_promotion_families:
+    weight: 3
+    settings: {  }
+    third_party_settings: {  }
+    type: multiselect
+    region: content
+  info:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  langcode:
+    type: language_select
+    weight: 7
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+  translation:
+    weight: 8
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }

@@ -4,13 +4,15 @@ services:
   web:
     # @see https://github.com/Actency/docker-apache-php
     build: ./docker/web
-    ports:
-      - "80:80"
     environment:
       - SERVERNAME=socomec.com.loc
       - SERVERALIAS=socomec.com.loc
       - DOCUMENTROOT=web
       - DRUSH_VERSION=9
+      - ENVIRONMENT=${ENVIRONMENT}
+      - SOLR_HOST=solr
+      - SOLR_PORT=8983
+      - SOLR_COLLECTION=collection1
     volumes:
       - /builds/actency/prod/socomec/socomec.com/:/var/www/html
       - /builds/actency/prod/socomec/socomec.com/config/.bashrc:/var/www/.bashrc
@@ -31,55 +33,25 @@ services:
   database:
     # @see https://github.com/Actency/docker-mysql
     image: actency/docker-mysql:5.7
-    ports:
-      - "3306:3306"
     environment:
       - MYSQL_ROOT_PASSWORD=mysqlroot
       - MYSQL_DATABASE=socomec_com
       - MYSQL_USER=mysqlusr
       - MYSQL_PASSWORD=mysqlpwd
 
-  # phpmyadmin container - actency images
-  phpmyadmin:
-    image: actency/docker-phpmyadmin
-    ports:
-      - "8010:80"
-    environment:
-      - MYSQL_ROOT_PASSWORD=mysqlroot
-      - UPLOAD_SIZE=1G
-    links:
-      - database:mysql
-
   # mailhog container - official images
   mailhog:
     image: mailhog/mailhog
-    ports:
-      - "1025:1025"
-      - "8025:8025"
 
   # redis container - official images
   redis:
     image: redis:latest
-    ports:
-      - "6379:6739"
-
-  # phpRedisAdmin container - actency images
-  phpredisadmin:
-    image: actency/docker-phpredisadmin
-    ports:
-      - "9900:80"
-    environment:
-      - REDIS_1_HOST=redis
-    links:
-      - redis
 
   # varnish v4 container - No official image exists, using the most used one.
   varnish:
     image: million12/varnish
     volumes:
       - ./config/varnish/default.vcl:/etc/varnish/custom.vcl
-    ports:
-      - "80"
     links:
       - web:web-backend
     environment:
@@ -89,21 +61,15 @@ services:
   # solr container - actency images
   solr:
     image: actency/docker-solr:7.7.2
-    ports:
-      - "8080:8983"
     volumes:
       - ./config/solr/:/opt/solr/server/solr/collection1/conf/
 
   # Tika server container - actency images
   tika:
     image: actency/docker-tika-server
-    ports:
-      - "9998:9998"
 
   browser:
     image: selenium/standalone-chrome:3.14.0-europium
-    ports:
-      - "4444:4444"
     shm_size: 2G
     links:
       - web

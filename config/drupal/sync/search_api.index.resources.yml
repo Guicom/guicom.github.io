@@ -1,0 +1,220 @@
+uuid: 76a123ed-cf4f-4f00-9d26-f0355eb79dfa
+langcode: en
+status: true
+dependencies:
+  module:
+    - search_api_solr
+    - taxonomy
+    - node
+    - search_api
+  config:
+    - field.storage.node.field_res_application
+    - field.storage.node.field_description
+    - field.storage.node.field_res_momentum
+    - field.storage.node.field_res_original_description
+    - field.storage.node.field_res_resource_type
+    - field.storage.node.field_res_original_title
+    - field.storage.node.field_res_segment
+    - field.storage.node.field_res_target
+    - field.storage.node.field_res_title
+    - search_api.server.socomec
+third_party_settings:
+  search_api_solr:
+    finalize: false
+    commit_before_finalize: false
+    commit_after_finalize: false
+    multilingual:
+      limit_to_content_language: false
+      include_language_independent: true
+    highlighter:
+      maxAnalyzedChars: 51200
+      fragmenter: gap
+      regex:
+        slop: 0.5
+        pattern: blank
+        maxAnalyzedChars: 10000
+      usePhraseHighlighter: true
+      highlightMultiTerm: true
+      preserveMulti: false
+      highlight:
+        mergeContiguous: false
+        requireFieldMatch: false
+        snippets: 3
+        fragsize: 0
+    mlt:
+      mintf: 1
+      mindf: 1
+      maxdf: 0
+      maxdfpct: 0
+      minwl: 0
+      maxwl: 0
+      maxqt: 100
+      maxntp: 2000
+      boost: false
+      interestingTerms: none
+    advanced:
+      index_prefix: ''
+      collection: ''
+      timezone: ''
+id: resources
+name: Resources
+description: ''
+read_only: false
+field_settings:
+  application:
+    label: Application
+    datasource_id: 'entity:node'
+    property_path: 'field_res_application:entity:name'
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_res_application
+      module:
+        - taxonomy
+        - taxonomy
+  changed:
+    label: Changed
+    datasource_id: 'entity:node'
+    property_path: changed
+    type: date
+    dependencies:
+      module:
+        - node
+  created:
+    label: 'Authored on'
+    datasource_id: 'entity:node'
+    property_path: created
+    type: date
+    dependencies:
+      module:
+        - node
+  description:
+    label: Description
+    datasource_id: 'entity:node'
+    property_path: field_description
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_description
+  langcode:
+    label: Language
+    datasource_id: 'entity:node'
+    property_path: langcode
+    type: string
+    dependencies:
+      module:
+        - node
+  momentum:
+    label: Momentum
+    datasource_id: 'entity:node'
+    property_path: 'field_res_momentum:entity:name'
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_res_momentum
+      module:
+        - taxonomy
+        - taxonomy
+  nid:
+    label: ID
+    datasource_id: 'entity:node'
+    property_path: nid
+    type: integer
+    dependencies:
+      module:
+        - node
+  original_description:
+    label: 'Original description'
+    datasource_id: 'entity:node'
+    property_path: field_res_original_description
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_res_original_description
+  resource_type:
+    label: 'Type of resource'
+    datasource_id: 'entity:node'
+    property_path: 'field_res_resource_type:entity:name'
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_res_resource_type
+      module:
+        - taxonomy
+        - taxonomy
+  riginal_title:
+    label: 'Original title'
+    datasource_id: 'entity:node'
+    property_path: field_res_original_title
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_res_original_title
+  segment:
+    label: Segment
+    datasource_id: 'entity:node'
+    property_path: 'field_res_segment:entity:name'
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_res_segment
+      module:
+        - taxonomy
+        - taxonomy
+  status:
+    label: Published
+    datasource_id: 'entity:node'
+    property_path: status
+    type: boolean
+    dependencies:
+      module:
+        - node
+  sticky:
+    label: 'Sticky at top of lists'
+    datasource_id: 'entity:node'
+    property_path: sticky
+    type: boolean
+    dependencies:
+      module:
+        - node
+  target:
+    label: Target
+    datasource_id: 'entity:node'
+    property_path: 'field_res_target:entity:name'
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_res_target
+      module:
+        - taxonomy
+        - taxonomy
+  title:
+    label: Title
+    datasource_id: 'entity:node'
+    property_path: field_res_title
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_res_title
+datasource_settings:
+  'entity:node':
+    bundles:
+      default: false
+      selected:
+        - resource
+        - resource_youtube
+    languages:
+      default: true
+      selected: {  }
+processor_settings:
+  add_url: {  }
+  aggregated_field: {  }
+  rendered_item: {  }
+  solr_date_range: {  }
+tracker_settings:
+  default:
+    indexing_order: fifo
+options:
+  index_directly: true
+  cron_limit: 50
+server: socomec

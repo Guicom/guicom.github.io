@@ -1,0 +1,8 @@
+uuid: 596d56e1-29b0-4c42-a071-1ed8a89d136a
+langcode: en
+status: true
+dependencies: {  }
+id: socomec_date
+label: 'socomec date'
+locked: false
+pattern: 'd, F Y'

@@ -1,0 +1,33 @@
+uuid: c72f4f6f-2121-4043-b8fd-aa5211c81709
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:home_product_assistance:b5528417-a66a-439d-a965-2d1570e962f4'
+  module:
+    - block_content
+    - ctools
+  theme:
+    - socomec
+id: homeproductassistance
+theme: socomec
+region: sidebar_first
+weight: -11
+provider: null
+plugin: 'block_content:b5528417-a66a-439d-a965-2d1570e962f4'
+settings:
+  id: 'block_content:b5528417-a66a-439d-a965-2d1570e962f4'
+  label: 'Home Product Assistance'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    bundles:
+      product: product
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'

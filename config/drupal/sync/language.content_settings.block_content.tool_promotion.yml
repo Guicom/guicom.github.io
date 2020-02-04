@@ -1,0 +1,18 @@
+uuid: 012194ea-ceb4-4125-95bc-1254d482d632
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.tool_promotion
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+    bundle_settings:
+      untranslatable_fields_hide: '0'
+id: block_content.tool_promotion
+target_entity_type_id: block_content
+target_bundle: tool_promotion
+default_langcode: site_default
+language_alterable: false

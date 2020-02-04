@@ -3,6 +3,60 @@
  * Styles for custom block hero.
  */
 
+@mixin socomec-hero-background {
+  background: linear-gradient(26.93deg, #00519D 0%, rgba(0, 81, 157, 0.8) 100%) no-repeat;
+  background-size: cover;
+  height: auto;
+  padding-bottom: 80px;
+  margin-top: -122px;
+  padding-top: 122px;
+  @include media-breakpoint-down(sm) {
+    padding-bottom: 40px;
+  }
+  .hero-content{
+    .title-hero {
+      color: $white;
+      font-family: $font-roboto;
+      font-size: 48px;
+      font-weight: 300;
+      line-height: 60px;
+    }
+  }
+  .hero-thumbnail {
+    padding: 45px 0;
+    text-align: center;
+    img {
+      max-width: 100%;
+      width: 270px;
+      height: auto;
+    }
+  }
+}
+
+@mixin socomec-hero-alt-background {
+  @include socomec-hero-background;
+  background: linear-gradient(0deg, $turquoize 0%, $blue 100%);
+}
+
+@mixin socomec-hero-wave {
+  &:after{
+    content: '';
+    width: 60px;
+    height: 8px;
+    display: inline-block;
+    content: '';
+    -webkit-mask: url(../images/wave.svg) no-repeat 50% 50%;
+    mask: url(../images/wave.svg) no-repeat 50% 50%;
+    -webkit-mask-size: cover;
+    mask-size: cover;
+    background-color: #FFCC00;
+    line-height: 1px;
+    vertical-align: middle;
+    margin-left: 5px;
+    margin-top: -2px;
+  }
+}
+
 // Theming hero block
 #block-views-block-hero-block-block-1,
 #block-views-block-hero-block-block-2 {
@@ -11,24 +65,14 @@
     padding-left: 0;
     .view-hero-block{
       .socomec-hero-background{
-        background: linear-gradient(26.93deg, #00519D 0%, rgba(0, 81, 157, 0.8) 100%) no-repeat;
-        background-size: cover;
-        height: auto;
-        padding-bottom: 80px;
-        @include media-breakpoint-down(sm) {
-          padding-bottom: 40px;
-        }
-        .hero-thumbnail{
-          padding:45px 0;
-          text-align: center;
-          img{
-            max-width: 100%;
-            width: 270px;
-            height: auto;
-          }
-        }
+        @include socomec-hero-background;
+        background: none;
         .hero-content{
           padding: 35px 0 0 0;
+          &.col-md-12 {
+            padding:0 15px;
+            margin:0 15px;
+          }
           .premium-label {
             color: $white;
             font-family: $font-roboto, sans-serif;
@@ -37,29 +81,7 @@
             line-height: 30px;
             text-transform: uppercase;
             margin-bottom: 20px;
-            &:after{
-              content: '';
-              width: 60px;
-              height: 8px;
-              display: inline-block;
-              content: '';
-              -webkit-mask: url(../images/wave.svg) no-repeat 50% 50%;
-              mask: url(../images/wave.svg) no-repeat 50% 50%;
-              -webkit-mask-size: cover;
-              mask-size: cover;
-              background-color: #FFCC00;
-              line-height: 1px;
-              vertical-align: middle;
-              margin-left: 5px;
-              margin-top: -2px;
-            }
-          }
-          .title-hero {
-            color: $white;
-            font-family: $font-roboto;
-            font-size: 48px;
-            font-weight: 300;
-            line-height: 60px;
+            @include socomec-hero-wave;
           }
           .thx-text,
           .lp-baseline {

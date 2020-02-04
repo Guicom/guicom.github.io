@@ -8,6 +8,12 @@
         },
         "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/premium_content_type\/parent": [
             null
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/premium_content_type\/content_translation_uid": [
+            {
+                "href": "http:\/\/default\/user\/1?_format=hal_json",
+                "lang": "en"
+            }
         ]
     },
     "tid": [
@@ -44,14 +50,12 @@
     ],
     "status": [
         {
-            "value": true,
-            "lang": "en"
+            "value": true
         }
     ],
     "name": [
         {
-            "value": "Whitepaper",
-            "lang": "en"
+            "value": "Whitepaper"
         }
     ],
     "weight": [
@@ -62,12 +66,29 @@
     "_embedded": {
         "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/premium_content_type\/parent": [
             null
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/premium_content_type\/content_translation_uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/user\/1?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "7ce68e63-4eb2-4ff9-b3ba-1353868398ce"
+                    }
+                ],
+                "lang": "en"
+            }
         ]
     },
     "changed": [
         {
             "value": "2019-10-04T11:22:41+00:00",
-            "lang": "en",
             "format": "Y-m-d\\TH:i:sP"
         }
     ],
@@ -83,12 +104,23 @@
             "lang": "en"
         }
     ],
-    "metatag": [
+    "content_translation_source": [
         {
-            "value": {
-                "title": "Whitepaper | Socomec",
-                "canonical_url": "http:\/\/default\/taxonomy\/term\/2"
-            }
+            "value": "und",
+            "lang": "en"
+        }
+    ],
+    "content_translation_outdated": [
+        {
+            "value": false,
+            "lang": "en"
+        }
+    ],
+    "content_translation_created": [
+        {
+            "value": "2019-12-31T08:45:20+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
         }
     ]
 }

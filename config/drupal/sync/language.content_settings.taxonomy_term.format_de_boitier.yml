@@ -1,0 +1,18 @@
+uuid: 7dbdc40f-0c86-4e54-911c-f65e16bfa5a7
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.format_de_boitier
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: false
+    bundle_settings:
+      untranslatable_fields_hide: '0'
+id: taxonomy_term.format_de_boitier
+target_entity_type_id: taxonomy_term
+target_bundle: format_de_boitier
+default_langcode: site_default
+language_alterable: false

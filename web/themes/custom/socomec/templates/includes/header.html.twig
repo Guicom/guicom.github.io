@@ -1,0 +1,10 @@
+{% if page.secondary_menu or page.top_header or page.top_header_form or page.hero %}
+  <div class="nav-wrapper">
+    <div class="container-nav">
+      <div class="branding">
+          {{ page.header }}
+      </div>
+      {{ drupal_block('we_megamenu_block:header') }}
+    </div>
+  </div>
+{% endif %}

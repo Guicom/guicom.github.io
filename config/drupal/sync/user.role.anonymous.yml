@@ -13,6 +13,8 @@ permissions:
   - 'access content'
   - 'access site-wide contact form'
   - 'display eu cookie compliance popup'
+  - 'edit own wishlist'
   - 'search content'
+  - 'use search_api_autocomplete for resource_center'
   - 'use text format restricted_html'
   - 'view media'

@@ -1,0 +1,115 @@
+uuid: 44cadb40-1b8c-4903-ad1c-dc09539ccf25
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.optional_related_content.field_orc_link
+    - field.field.node.optional_related_content.field_orc_picture
+    - field.field.node.optional_related_content.field_orc_target
+    - field.field.node.optional_related_content.field_orc_text
+    - node.type.optional_related_content
+  module:
+    - ds
+    - options
+    - user
+third_party_settings:
+  ds:
+    layout:
+      id: ds_1col
+      library: null
+      disable_css: false
+      entity_classes: all_classes
+      settings:
+        wrappers:
+          ds_content: div
+        outer_wrapper: div
+        attributes: ''
+        link_attribute: ''
+        link_custom: ''
+        classes:
+          layout_class: {  }
+          ds_content: {  }
+    regions:
+      ds_content:
+        - field_orc_picture
+        - field_orc_target
+        - field_orc_text
+        - field_orc_link
+        - node_link
+    fields:
+      node_link:
+        plugin_id: node_link
+        weight: 4
+        label: hidden
+        formatter: default
+        settings:
+          'link text': 'Read more'
+          'link class': ''
+          wrapper: ''
+          class: ''
+        ft:
+          id: reset
+          settings:
+            lb: ''
+id: node.optional_related_content.teaser
+targetEntityType: node
+bundle: optional_related_content
+mode: teaser
+content:
+  field_orc_link:
+    type: string
+    weight: 3
+    region: ds_content
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings:
+      ds:
+        ft:
+          id: reset
+          settings:
+            lb: ''
+  field_orc_picture:
+    type: entity_reference_entity_view
+    weight: 0
+    region: ds_content
+    label: hidden
+    settings:
+      view_mode: background_image
+      link: false
+    third_party_settings:
+      ds:
+        ft:
+          id: reset
+          settings:
+            lb: ''
+  field_orc_target:
+    type: list_default
+    weight: 1
+    region: ds_content
+    label: hidden
+    settings: {  }
+    third_party_settings:
+      ds:
+        ft:
+          id: reset
+          settings:
+            lb: ''
+  field_orc_text:
+    type: basic_string
+    weight: 2
+    region: ds_content
+    label: hidden
+    settings: {  }
+    third_party_settings:
+      ds:
+        ft:
+          id: reset
+          settings:
+            lb: ''
+hidden:
+  addtoany: true
+  langcode: true
+  links: true
+  search_api_excerpt: true

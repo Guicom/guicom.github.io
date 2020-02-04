@@ -172,3 +172,19 @@ $settings['redis.connection']['host'] = 'redis';
  */
 $config['config_split.config_split.dev']['status'] = TRUE;
 $config['config_split.config_split.dev']['folder'] = "../config/drupal/dev";
+
+
+/**
+ * Drupal 8 MegaMenu Deploy
+ * drush we_megamenu_deploy:import --force-update
+ */
+$settings['we_megamenu_deploy_content'] = $app_ground . '/content/we_megamenu_content';
+
+/**
+ * @see \soc_user_install()
+ */
+$settings['admin_username'] = 'admin_socomec';
+$settings['admin_password'] = 'admin_socomec12!';
+$settings['admin_email'] = 'admin_socomec@socomec.com';
+
+$settings['DISABLE_SUPER_ADMIN_ACCOUNT'] = 1;

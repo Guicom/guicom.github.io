@@ -1,0 +1,91 @@
+{
+    "_links": {
+        "self": {
+            "href": ""
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/model_text"
+        }
+    },
+    "id": [
+        {
+            "value": 54
+        }
+    ],
+    "uuid": [
+        {
+            "value": "679f4120-34b3-4d80-95bd-d51c2ca5453b"
+        }
+    ],
+    "revision_id": [
+        {
+            "value": 376
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "type": [
+        {
+            "target_id": "model_text"
+        }
+    ],
+    "status": [
+        {
+            "value": true
+        }
+    ],
+    "created": [
+        {
+            "value": "2020-01-22T14:44:36+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "parent_id": [
+        {
+            "value": "30"
+        }
+    ],
+    "parent_type": [
+        {
+            "value": "node"
+        }
+    ],
+    "parent_field_name": [
+        {
+            "value": "field_body"
+        }
+    ],
+    "behavior_settings": [
+        {
+            "value": []
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "revision_translation_affected": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "field_text": [
+        {
+            "value": "<p>Collaboratively administrate empowered manufactured products phosfluorescently engage top-line web services vis-a-vis cutting-edge deliverables proactively fabricate one-to-one customer service through sustainable potentialities collaboratively administrate empowered markets professionally cultivate optimal testing procedures for change seamlessly empower fully researched growth strategies and.<br \/>\r\nDevops nanotechnology immersion along the digital divide with compelling e-business credibly pontificate highly efficient manufactured products after maintainable products phosfluorescently engage top-line web services vis-a-vis impactful experiences dramatically synthesize integrated processes objectively seize scalable e-commerce rather than just in.<\/p>\r\n",
+            "format": "socomec",
+            "processed": "<p>Collaboratively administrate empowered manufactured products phosfluorescently engage top-line web services vis-a-vis cutting-edge deliverables proactively fabricate one-to-one customer service through sustainable potentialities collaboratively administrate empowered markets professionally cultivate optimal testing procedures for change seamlessly empower fully researched growth strategies and.\nDevops nanotechnology immersion along the digital divide with compelling e-business credibly pontificate highly efficient manufactured products after maintainable products phosfluorescently engage top-line web services vis-a-vis impactful experiences dramatically synthesize integrated processes objectively seize scalable e-commerce rather than just in.<\/p>"
+        }
+    ],
+    "field_title": [
+        {
+            "value": "Titre de niveau 2 - Duis at velit lectus, sed ac."
+        }
+    ]
+}

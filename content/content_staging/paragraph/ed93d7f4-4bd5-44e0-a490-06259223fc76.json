@@ -1,0 +1,114 @@
+{
+    "_links": {
+        "self": {
+            "href": ""
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/link"
+        },
+        "http:\/\/drupal.org\/rest\/relation\/paragraph\/link\/field_link_icon": [
+            {
+                "href": "http:\/\/default\/media\/33\/edit?_format=hal_json"
+            }
+        ]
+    },
+    "id": [
+        {
+            "value": 31
+        }
+    ],
+    "uuid": [
+        {
+            "value": "ed93d7f4-4bd5-44e0-a490-06259223fc76"
+        }
+    ],
+    "revision_id": [
+        {
+            "value": 148
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "type": [
+        {
+            "target_id": "link"
+        }
+    ],
+    "status": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "created": [
+        {
+            "value": "2019-12-16T16:55:06+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "parent_id": [
+        {
+            "value": "4"
+        }
+    ],
+    "parent_type": [
+        {
+            "value": "block_content"
+        }
+    ],
+    "parent_field_name": [
+        {
+            "value": "field_ba_link"
+        }
+    ],
+    "behavior_settings": [
+        {
+            "value": []
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/paragraph\/link\/field_link_icon": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/media\/33\/edit?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/media\/icone"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "4bf40d53-48ed-4dc7-be93-80bbb5383e8b"
+                    }
+                ]
+            }
+        ]
+    },
+    "field_link_link": [
+        {
+            "value": "http:\/\/google.com"
+        }
+    ],
+    "field_link_target": [
+        {
+            "value": "_blank"
+        }
+    ],
+    "field_link_title": [
+        {
+            "value": "VISIT OUR HELP CENTER"
+        }
+    ]
+}

@@ -1,0 +1,70 @@
+uuid: 796b5b09-9f1b-41a5-a549-e86b028f9be2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_product_application_link
+    - node.type.product
+    - paragraphs.paragraphs_type.link
+  module:
+    - entity_reference_revisions
+id: node.product.field_product_application_link
+field_name: field_product_application_link
+entity_type: node
+bundle: product
+label: 'Application link'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      link: link
+    target_bundles_drag_drop:
+      content:
+        weight: 15
+        enabled: false
+      from_library:
+        weight: 16
+        enabled: false
+      hero_paragraph:
+        weight: 17
+        enabled: false
+      key_figures:
+        weight: 18
+        enabled: false
+      link:
+        enabled: true
+        weight: 19
+      model_cta:
+        weight: 20
+        enabled: false
+      model_image:
+        weight: 21
+        enabled: false
+      model_testimony:
+        weight: 22
+        enabled: false
+      model_text:
+        weight: 23
+        enabled: false
+      pardot_form:
+        weight: 24
+        enabled: false
+      premium_content_promotion:
+        weight: 25
+        enabled: false
+      product_faq:
+        weight: 26
+        enabled: false
+      standard_label:
+        weight: 27
+        enabled: false
+      video_embed:
+        weight: 28
+        enabled: false
+field_type: entity_reference_revisions

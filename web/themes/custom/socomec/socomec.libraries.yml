@@ -14,23 +14,30 @@ global-styling:
 datatables-styling:
   version: VERSION
   js:
-    //cdn.datatables.net/w/bs4/dt-1.10.18/r-2.2.2/datatables.min.js: {}
+    //cdn.datatables.net/w/bs4/dt-1.10.18/r-2.2.2/datatables.min.js: { type: external }
   css:
     component:
-      //cdn.datatables.net/w/bs4/dt-1.10.18/r-2.2.2/datatables.min.css: {}
+      //cdn.datatables.net/w/bs4/dt-1.10.18/r-2.2.2/datatables.min.css: { type: external }
 
 iframe-resize:
   js:
     assets/libraries/iframe-resizer/js/iframeResizer.min.js: {}
+
+fresco:
+  css:
+    component:
+      assets/libraries/fresco/dist/css/fresco.css: {}
+  js:
+    assets/libraries/fresco/dist/js/fresco.min.js: {}
 
 # Fonts
 roboto:
   version: VERSION
   css:
     component:
-      //fonts.googleapis.com/css?family=Roboto|Roboto:300,400,700,900: {}
+      //fonts.googleapis.com/css?family=Roboto|Roboto:100,300,400,500,700,900: { type: external }
 poppins:
   version: VERSION
   css:
     component:
-      //fonts.googleapis.com/css?family=Poppins|Poppins:600: {}
+      //fonts.googleapis.com/css?family=Poppins|Poppins:100,200,300,400,500,600,700,800,900: { type: external }

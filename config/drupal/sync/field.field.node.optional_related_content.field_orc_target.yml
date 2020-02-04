@@ -1,0 +1,23 @@
+uuid: da21cfc5-11fe-41b4-8f47-0faedb858fa0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_orc_target
+    - node.type.optional_related_content
+  module:
+    - options
+id: node.optional_related_content.field_orc_target
+field_name: field_orc_target
+entity_type: node
+bundle: optional_related_content
+label: Target
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: _self
+default_value_callback: ''
+settings: {  }
+field_type: list_string

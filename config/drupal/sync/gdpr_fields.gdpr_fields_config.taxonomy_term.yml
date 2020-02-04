@@ -6,6 +6,8 @@ id: taxonomy_term
 filenames:
   family: ''
   label: ''
+  product_label: ''
+  protection_level: ''
 bundles:
   family:
     field_family_code:
@@ -19,10 +21,122 @@ bundles:
       notes: ''
       relationship: 0
       sars_filename: ''
+    field_family_sub_title:
+      bundle: family
+      name: field_family_sub_title
+      entity_type_id: taxonomy_term
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_family_description:
+      bundle: family
+      name: field_family_description
+      entity_type_id: taxonomy_term
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_family_image:
+      bundle: family
+      name: field_family_image
+      entity_type_id: taxonomy_term
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: date_anonymizer
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_family_first_multiline:
+      bundle: family
+      name: field_family_first_multiline
+      entity_type_id: taxonomy_term
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: date_anonymizer
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_family_second_multiline:
+      bundle: family
+      name: field_family_second_multiline
+      entity_type_id: taxonomy_term
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: date_anonymizer
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_family_extid:
+      bundle: family
+      name: field_family_extid
+      entity_type_id: taxonomy_term
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_background_image:
+      bundle: family
+      name: field_background_image
+      entity_type_id: taxonomy_term
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
   label:
     field_image:
       bundle: label
       name: field_image
+      entity_type_id: taxonomy_term
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+  product_label:
+    field_label_icon:
+      bundle: product_label
+      name: field_label_icon
+      entity_type_id: taxonomy_term
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+  protection_level:
+    field_label_icon:
+      bundle: protection_level
+      name: field_label_icon
+      entity_type_id: taxonomy_term
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_protection_sub_title:
+      bundle: protection_level
+      name: field_protection_sub_title
       entity_type_id: taxonomy_term
       rtf: 'no'
       rta: 'no'

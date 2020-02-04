@@ -3,11 +3,51 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.taxonomy_term.family.field_family_code
-    - field.field.taxonomy_term.family.field_family_name
+    - field.field.taxonomy_term.family.field_background_image
+    - field.field.taxonomy_term.family.field_family_extid
+    - field.field.taxonomy_term.family.field_family_first_multiline
+    - field.field.taxonomy_term.family.field_family_image
+    - field.field.taxonomy_term.family.field_family_second_multiline
+    - field.field.taxonomy_term.family.field_family_sub_title
     - taxonomy.vocabulary.family
   module:
+    - ds
+    - entity_reference_revisions
     - text
+third_party_settings:
+  ds:
+    layout:
+      id: ds_1col
+      library: null
+      disable_css: false
+      entity_classes: all_classes
+      settings:
+        wrappers:
+          ds_content: div
+        outer_wrapper: div
+        attributes: ''
+        link_attribute: ''
+        link_custom: ''
+        classes:
+          layout_class: {  }
+          ds_content: {  }
+    regions:
+      ds_content:
+        - langcode
+        - description
+        - taxonomy_term_title
+        - field_family_sub_title
+        - field_family_image
+        - field_family_first_multiline
+        - field_family_second_multiline
+        - field_family_extid
+        - field_background_image
+    fields:
+      taxonomy_term_title:
+        plugin_id: taxonomy_term_title
+        weight: 0
+        label: hidden
+        formatter: default
 id: taxonomy_term.family.default
 targetEntityType: taxonomy_term
 bundle: family
@@ -17,23 +57,86 @@ content:
     label: hidden
     type: text_default
     weight: 0
-    region: content
+    region: ds_content
     settings: {  }
+    third_party_settings:
+      ds:
+        ft:
+          id: reset
+          settings:
+            lb: ''
+  field_background_image:
+    type: entity_reference_entity_view
+    weight: 9
+    label: hidden
+    settings:
+      view_mode: background_image
+      link: false
+    third_party_settings:
+      ds:
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
+    region: ds_content
+  field_family_extid:
+    weight: 8
+    label: hidden
+    settings:
+      link_to_entity: false
     third_party_settings: {  }
-  field_family_code:
-    weight: 1
+    type: string
+    region: ds_content
+  field_family_first_multiline:
+    type: entity_reference_revisions_entity_view
+    weight: 6
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: ds_content
+  field_family_image:
+    type: entity_reference_entity_view
+    weight: 5
+    label: hidden
+    settings:
+      view_mode: family_display
+      link: false
+    third_party_settings:
+      ds:
+        ft:
+          id: reset
+          settings:
+            lb: ''
+    region: ds_content
+  field_family_second_multiline:
+    type: entity_reference_revisions_entity_view
+    weight: 7
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: ds_content
+  field_family_sub_title:
+    weight: 3
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: ds_content
+  langcode:
+    type: language
+    weight: 0
+    region: ds_content
     label: above
-    settings: {  }
+    settings:
+      link_to_entity: false
+      native_language: false
     third_party_settings: {  }
-    type: text_default
-    region: content
-  field_family_name:
-    weight: 2
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    type: text_default
-    region: content
 hidden:
-  langcode: true
   search_api_excerpt: true

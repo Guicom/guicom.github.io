@@ -5,7 +5,7 @@ let gulp = require('gulp'),
   rename = require('gulp-rename'),
   postcss = require('gulp-postcss'),
   autoprefixer = require('autoprefixer'),
-  browserSync = require('browser-sync').create()
+  browserSync = require('browser-sync').create();
 
 const paths = {
   scss: {
@@ -23,7 +23,7 @@ const paths = {
     popper: 'node_modules/popper.js/dist/umd/popper.min.js',
     dest: 'themes/custom/socomec/assets/js'
   }
-}
+};
 
 // Compile sass into CSS & auto-inject into browsers
 function styles () {
@@ -74,15 +74,16 @@ function js () {
 
 // Static Server + watching scss/html files
 function serve () {
-  gulp.watch([paths.scss.watch, paths.scss.bootstrap], styles).on('change', browserSync.reload)
+  gulp.watch([paths.scss.watch, paths.scss.bootstrap], {interval: 1000, usePolling: true}, gulp.series(styles));
 }
 
-const build = gulp.series(styles, gulp.parallel(js, serve))
+const build = gulp.series(styles, gulp.parallel(js, serve));
 
 gulp.task('pardot', gulp.series(pardotcss));
 
-exports.styles = styles
-exports.js = js
-exports.serve = serve
+exports.css = styles;
+exports.styles = styles;
+exports.js = js;
+exports.serve = serve;
 
-exports.default = build
+exports.default = build;

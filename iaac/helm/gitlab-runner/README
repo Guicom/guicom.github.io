@@ -1,0 +1,9 @@
+# Initialization
+helm init
+helm repo add gitlab https://charts.gitlab.io
+
+# Lancement
+helm install --namespace actency gitlab-runner -f config.yaml gitlab/gitlab-runner
+
+# MAJ
+helm upgrade --namespace actency -f config.yaml gitlab-runner gitlab/gitlab-runner

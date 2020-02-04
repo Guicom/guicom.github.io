@@ -1,0 +1,33 @@
+uuid: 8677d736-7462-4f60-881c-fab466dfd277
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.standard_label.field_label
+    - field.field.paragraph.standard_label.field_standard_label_tooltip
+    - paragraphs.paragraphs_type.standard_label
+id: paragraph.standard_label.default
+targetEntityType: paragraph
+bundle: standard_label
+mode: default
+content:
+  field_label:
+    weight: 0
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_standard_label_tooltip:
+    weight: 1
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+    region: content
+hidden:
+  created: true
+  status: true

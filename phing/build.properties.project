@@ -3,3 +3,17 @@ website.project.name = socomec.com
 website.theme.name = socomec
 website.db.name = socomec_com
 website.locale = en
+
+behat.enabled = yes
+behat.bin = ${tests.dir}/behat/bin/behat
+behat.dir = ${tests.dir}/behat
+behat.tags = cit
+behat.config.file = ${behat.dir}/behat.local.yml
+behat.config.file.example = ${behat.dir}/behat.example.yml
+behat.config.file.local = ${behat.dir}/behat.local.yml
+behat.report.dir = ${project.basedir}/build/logs/behat
+
+solr.host = solr
+solr.port = 8989
+solr.core = collection1
+solr.scheme = http

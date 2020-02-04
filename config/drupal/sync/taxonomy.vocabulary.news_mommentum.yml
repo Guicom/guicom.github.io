@@ -1,0 +1,8 @@
+uuid: d95d9e2d-787c-4059-978e-4e59dc169896
+langcode: en
+status: true
+dependencies: {  }
+name: Momentum
+vid: news_mommentum
+description: ''
+weight: 0

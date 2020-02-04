@@ -1,24 +1,26 @@
-.field--name-field-title {
-  color: $blue;
-  font-family: $font-roboto;
-  font-size: 48px;
-  font-weight: 300;
-  line-height: 60px;
-  margin: 40px 0 20px 0;
-  display: inline-flex;
-  position: relative;
+.paragraph--type--model-text{
+  .field--name-field-title {
+    color: $blue;
+    font-family: $font-roboto;
+    font-size: 48px;
+    font-weight: 300;
+    line-height: 60px;
+    margin: 40px 0 20px 0;
+    display: inline-flex;
+    position: relative;
 
-  &:after {
-    content: '';
-    height: 2px;
-    width: 60px;
-    bottom: 0;
-    right: -30px;
-    background: $yellow;
-    display: block;
-    position: absolute;
-    @include media-breakpoint-down(sm) {
-      right: 0;
+    &:after {
+      content: '';
+      height: 2px;
+      width: 60px;
+      bottom: 0;
+      right: -30px;
+      background: $yellow;
+      display: block;
+      position: absolute;
+      @include media-breakpoint-down(sm) {
+        right: 0;
+      }
     }
   }
 }

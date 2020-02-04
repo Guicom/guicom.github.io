@@ -1,0 +1,28 @@
+uuid: 720e18d3-c7d4-447f-b911-75c31b10dbfe
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_product_orc_content
+    - node.type.optional_related_content
+    - node.type.product
+id: node.product.field_product_orc_content
+field_name: field_product_orc_content
+entity_type: node
+bundle: product
+label: 'Optional related content'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      optional_related_content: optional_related_content
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

@@ -1,0 +1,21 @@
+uuid: ff144f1e-b769-456a-9dd8-757700c4ead5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_product_advantage_text
+    - node.type.product
+  module:
+    - text
+id: node.product.field_product_advantage_text
+field_name: field_product_advantage_text
+entity_type: node
+bundle: product
+label: 'Advantage text'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

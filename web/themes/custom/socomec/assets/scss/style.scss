@@ -11,7 +11,7 @@ Description: Bootstrap 4 with Sass
 
 body {
   background: $white;
-  overflow-x: hidden;
+  //overflow-x: hidden;
 }
 
 /* COLORS
@@ -57,4 +57,20 @@ a {
 
 .slick>div {
   margin: 0 15px;
+}
+
+.hidden {
+  display: none;
+}
+
+h2.h2-blue {
+
+}
+h3.h3-blue {
+  color: $blue;
+  font-family: $font-roboto;
+  font-size: 24px;
+  font-weight: 300;
+  line-height: 30px;
+  margin-bottom: 10px;
 }

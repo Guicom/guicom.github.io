@@ -6,14 +6,9 @@
         "type": {
             "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/hero_paragraph"
         },
-        "http:\/\/drupal.org\/rest\/relation\/paragraph\/hero_paragraph\/field_background_image": [
-            {
-                "href": "http:\/\/default\/media\/9\/edit?_format=hal_json"
-            }
-        ],
         "http:\/\/drupal.org\/rest\/relation\/paragraph\/hero_paragraph\/field_thumbnail": [
             {
-                "href": "http:\/\/default\/media\/9\/edit?_format=hal_json"
+                "href": "http:\/\/default\/media\/28\/edit?_format=hal_json"
             }
         ]
     },
@@ -29,7 +24,7 @@
     ],
     "revision_id": [
         {
-            "value": 50
+            "value": 328
         }
     ],
     "langcode": [
@@ -45,14 +40,12 @@
     ],
     "status": [
         {
-            "value": true,
-            "lang": "en"
+            "value": true
         }
     ],
     "created": [
         {
             "value": "2019-10-07T11:11:03+00:00",
-            "lang": "en",
             "format": "Y-m-d\\TH:i:sP"
         }
     ],
@@ -88,45 +81,28 @@
             "lang": "en"
         }
     ],
-    "_embedded": {
-        "http:\/\/drupal.org\/rest\/relation\/paragraph\/hero_paragraph\/field_background_image": [
-            {
-                "_links": {
-                    "self": {
-                        "href": "http:\/\/default\/media\/9\/edit?_format=hal_json"
-                    },
-                    "type": {
-                        "href": "http:\/\/drupal.org\/rest\/type\/media\/image"
-                    }
-                },
-                "uuid": [
-                    {
-                        "value": "e12f8c33-ccb4-493c-a516-91d4d331c5f4"
-                    }
-                ]
-            }
-        ],
-        "http:\/\/drupal.org\/rest\/relation\/paragraph\/hero_paragraph\/field_thumbnail": [
-            {
-                "_links": {
-                    "self": {
-                        "href": "http:\/\/default\/media\/9\/edit?_format=hal_json"
-                    },
-                    "type": {
-                        "href": "http:\/\/drupal.org\/rest\/type\/media\/image"
-                    }
-                },
-                "uuid": [
-                    {
-                        "value": "e12f8c33-ccb4-493c-a516-91d4d331c5f4"
-                    }
-                ]
-            }
-        ]
-    },
     "field_baseline": [
         {
             "value": "Disponibilit\u00e9 de l\u2019\u00e9nergie des \u00e9tablissements de sant\u00e9"
         }
-    ]
+    ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/paragraph\/hero_paragraph\/field_thumbnail": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/media\/28\/edit?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/media\/image"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "d16e2fba-561a-48ed-a9f1-d935af3f5d00"
+                    }
+                ]
+            }
+        ]
+    }
 }

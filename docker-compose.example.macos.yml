@@ -12,6 +12,9 @@ services:
       - SERVERALIAS=socomec.com.loc
       - DOCUMENTROOT=web
       - DRUSH_VERSION=9
+      - SOLR_HOST=solr
+      - SOLR_PORT=8983
+      - SOLR_COLLECTION=collection1
     volumes:
       - /Users/user/Documents/Docker/Projets/socomec/:/var/www/html/:cached
       - /Users/user/.ssh/:/var/www/.ssh/:cached

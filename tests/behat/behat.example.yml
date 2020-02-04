@@ -3,8 +3,8 @@ default:
     default:
       contexts:
         - FeatureContext
-        - ScreenshotContext
         - SessionContext
+        - ScreenshotContext
         - Drupal\DrupalExtension\Context\ConfigContext
         - Drupal\DrupalExtension\Context\DrupalContext
         - Drupal\DrupalExtension\Context\MinkContext
@@ -12,11 +12,17 @@ default:
         - Drupal\DrupalExtension\Context\MessageContext
         - Drupal\DrupalExtension\Context\DrushContext
   extensions:
-    Behat\MinkExtension:
+    Drupal\MinkExtension:
       goutte: ~
       browser_name: 'chrome'
       javascript_session: selenium2
       selenium2:
+        capabilities:
+          browser: "chrome"
+          version: "*"
+          extra_capabilities:
+            chromeOptions:
+              w3c: false
         wd_host:  http://browser:4444/wd/hub
       base_url: http://web
     Drupal\DrupalExtension:

@@ -1,0 +1,58 @@
+.facets-title {
+  color: $dark-grey;
+  font-family: $font-roboto;
+  font-size: 24px;
+  font-weight: 300;
+  line-height: 30px;
+  margin-bottom: 20px;
+}
+.facets-category {
+  color: $black;
+  font-family: $font-poppins;
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  line-height: 20px;
+}
+.block-facets-ajax {
+  margin-bottom: 40px;
+  .facet-title {
+    @extend .facets-category;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+
+    li {
+      padding: 7px 0;
+      border-bottom: solid 1px $blue_lighter;
+
+      label {
+        color: $darker-grey;
+        font-family: $font-roboto;
+        font-size: 16px;
+        line-height: 25px;
+      }
+      [type="checkbox"]:checked + label {
+        color: $blue_light;
+      }
+    }
+  }
+
+  &.contextual-family {
+    ul {
+      li {
+        color: $blue;
+        font-family: $font-roboto;
+        font-size: 16px;
+        line-height: 25px;
+        a {
+          color: $darker-grey;
+          display: block;
+        }
+      }
+    }
+  }
+}

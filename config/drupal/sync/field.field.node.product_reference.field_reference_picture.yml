@@ -1,0 +1,28 @@
+uuid: 8751f80e-164c-4fa9-906b-5af5302a1748
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_reference_picture
+    - media.type.product_image
+    - node.type.product_reference
+id: node.product_reference.field_reference_picture
+field_name: field_reference_picture
+entity_type: node
+bundle: product_reference
+label: 'Reference picture'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      product_image: product_image
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

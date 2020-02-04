@@ -1,0 +1,40 @@
+uuid: 6c96d795-9ef2-4e1d-b4c9-da6282c93b42
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.paragraph.simple_html
+    - field.field.paragraph.pardot_form.field_pardot_cta_text
+    - field.field.paragraph.pardot_form.field_pardot_form_url
+    - field.field.paragraph.pardot_form.field_pardot_privacy_policy
+    - paragraphs.paragraphs_type.pardot_form
+  module:
+    - link
+id: paragraph.pardot_form.simple_html
+targetEntityType: paragraph
+bundle: pardot_form
+mode: simple_html
+content:
+  field_pardot_cta_text:
+    type: string
+    weight: 1
+    region: content
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  field_pardot_form_url:
+    weight: 0
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+hidden:
+  field_pardot_privacy_policy: true
+  search_api_excerpt: true

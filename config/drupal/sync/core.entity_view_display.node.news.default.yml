@@ -1,0 +1,153 @@
+uuid: 13801378-5223-47af-830b-9d8ce4174381
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.news.field_body
+    - field.field.node.news.field_media_image
+    - field.field.node.news.field_metatags
+    - field.field.node.news.field_model_pdf
+    - field.field.node.news.field_news_audience
+    - field.field.node.news.field_news_mommentum
+    - field.field.node.news.field_news_theme
+    - field.field.node.news.field_news_type
+    - field.field.node.news.field_product_reference
+    - field.field.node.news.field_teaser
+    - image.style.news_hero_illustration
+    - node.type.news
+  module:
+    - ds
+    - entity_reference_revisions
+    - media
+    - metatag
+    - text
+    - user
+third_party_settings:
+  ds:
+    layout:
+      id: bootstrap_socomec_one_column_12
+      library: null
+      disable_css: false
+      entity_classes: all_classes
+      settings:
+        wrappers:
+          first: div
+        outer_wrapper: div
+        attributes: ''
+        link_attribute: ''
+        link_custom: ''
+        classes:
+          layout_class: {  }
+          first: {  }
+    regions:
+      first:
+        - content_moderation_control
+        - node_post_date
+        - addtoany
+        - field_media_image
+        - field_news_theme
+        - field_news_type
+        - field_teaser
+        - field_body
+        - field_product_reference
+        - field_model_pdf
+        - field_metatags
+    fields:
+      node_post_date:
+        plugin_id: node_post_date
+        weight: 1
+        label: hidden
+        formatter: ds_post_date_socomec_date
+id: node.news.default
+targetEntityType: node
+bundle: news
+mode: default
+content:
+  addtoany:
+    weight: 2
+    region: first
+    settings: {  }
+    third_party_settings: {  }
+  content_moderation_control:
+    weight: 0
+    region: first
+    settings: {  }
+    third_party_settings: {  }
+  field_body:
+    weight: 7
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    type: entity_reference_revisions_entity_view
+    region: first
+  field_media_image:
+    type: media_thumbnail
+    weight: 3
+    label: hidden
+    settings:
+      image_style: news_hero_illustration
+      image_link: ''
+    third_party_settings:
+      ds:
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
+    region: first
+  field_metatags:
+    weight: 10
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: metatag_empty_formatter
+    region: first
+  field_model_pdf:
+    type: entity_reference_revisions_entity_view
+    weight: 9
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: first
+  field_news_theme:
+    weight: 4
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: first
+  field_news_type:
+    weight: 5
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: first
+  field_product_reference:
+    weight: 8
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: first
+  field_teaser:
+    weight: 6
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: first
+hidden:
+  field_news_audience: true
+  field_news_mommentum: true
+  langcode: true
+  links: true
+  search_api_excerpt: true

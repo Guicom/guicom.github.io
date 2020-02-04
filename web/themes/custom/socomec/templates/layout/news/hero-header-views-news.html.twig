@@ -1,0 +1,15 @@
+<div class="hero-block">
+  <div class="container">
+    <div class="row">
+      <div class="news-info col-lg-3 col-md-12">
+        <h1>
+          <span class="news-title">{{ "News"|t }}</span>
+        </h1>
+        {{ drupal_entity('block', 'viewsnewsteaser') }}
+      </div>
+      <div class="news-highlight col-lg-9 col-md-12">
+        {{ drupal_view('news_highlight', 'block_1') }}
+      </div>
+    </div>
+  </div>
+</div>

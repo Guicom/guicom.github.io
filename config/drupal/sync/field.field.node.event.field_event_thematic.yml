@@ -1,0 +1,29 @@
+uuid: 4eca53ba-8b93-4bc3-9b20-97f2b13727e3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_event_thematic
+    - node.type.event
+    - taxonomy.vocabulary.event_thematic
+id: node.event.field_event_thematic
+field_name: field_event_thematic
+entity_type: node
+bundle: event
+label: 'Event Thematic'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      event_thematic: event_thematic
+    sort:
+      field: name
+      direction: asc
+    auto_create: true
+    auto_create_bundle: ''
+field_type: entity_reference

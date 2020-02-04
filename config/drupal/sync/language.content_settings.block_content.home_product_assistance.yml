@@ -1,0 +1,18 @@
+uuid: bab2aa48-43e0-4c8e-99c2-8f0db4c16ca4
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.home_product_assistance
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: false
+    bundle_settings:
+      untranslatable_fields_hide: '0'
+id: block_content.home_product_assistance
+target_entity_type_id: block_content
+target_bundle: home_product_assistance
+default_langcode: site_default
+language_alterable: false
