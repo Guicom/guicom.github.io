@@ -103,8 +103,8 @@
                   <a id="main-content" tabindex="-1"></a>
                   <div class="block-filter-by">
                     <div class="filter-by">{{ "Filter by"|t }}</div>
-                    {{ drupal_entity('block', 'newstypetaxonomytermname') }}
-                    {{ drupal_entity('block', 'newsthemetaxonomytermname') }}
+                      <div class="facet-inline-position-title">{{ drupal_entity('block', 'newstypetaxonomytermname') }}</div>
+                      <div class="facet-inline-position-title">{{ drupal_entity('block', 'newsthemetaxonomytermname') }}</div>
                   </div>
                   {{ page.content }}
                 </section>

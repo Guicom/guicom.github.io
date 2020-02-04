@@ -1,0 +1,12 @@
+/* ------------------ malihu-custom-scrollbar ------------------ */
+.mCS-minimal-dark{
+  &.mCSB_scrollTools {
+    .mCSB_dragger{
+      .mCSB_dragger_bar{
+        background-color: $yellow !important;
+        width: 5px;
+        border-radius: unset;
+      }
+    }
+  }
+}

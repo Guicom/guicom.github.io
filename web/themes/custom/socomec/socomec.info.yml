@@ -16,6 +16,7 @@ libraries:
   - socomec/roboto
   - socomec/poppins
   - socomec/bootstrap-select
+  - socomec/malihu-custom-scrollbar
 libraries-override:
   bootstrap_barrio/global-styling: false
 regions:

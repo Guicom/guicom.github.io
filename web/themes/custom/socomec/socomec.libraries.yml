@@ -38,6 +38,13 @@ bootstrap-select:
     component:
       https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.9/dist/css/bootstrap-select.min.css: { type: external }
 
+malihu-custom-scrollbar:
+  version: VERSION
+  css:
+    component:
+      assets/libraries/malihu-custom-scrollbar/jquery.mCustomScrollbar.css: {}
+  js:
+    assets/libraries/malihu-custom-scrollbar/jquery.mCustomScrollbar.concat.min.js: {}
 # Fonts
 roboto:
   version: VERSION
