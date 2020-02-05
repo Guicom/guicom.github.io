@@ -1,0 +1,69 @@
+<?php
+
+use Drupal\language\Entity\ConfigurableLanguage;
+
+/**
+ * Implements hook_install
+ * Create custom languages.
+ */
+function soc_language_install() {
+  $languages = [
+    'de' => [
+      'name' => 'German',
+    ],
+    'de-ch' => [
+      'name' => 'German (Switzerland)',
+    ],
+    'en' => [
+      'name' => 'English',
+    ],
+    'en-ch' => [
+      'name' => 'English (Switzerland)',
+    ],
+    'en-gb' => [
+      'name' => 'English (United Kingdom)',
+    ],
+    'en-in' => [
+      'name' => 'English (India)',
+    ],
+    'en-us' => [
+      'name' => 'English (USA)',
+    ],
+    'es' => [
+      'name' => 'Spanish',
+    ],
+    'fr' => [
+      'name' => 'French',
+    ],
+    'fr-be' => [
+      'name' => 'French (Belgium)',
+    ],
+    'fr-ch' => [
+      'name' => 'French (Switzerland)',
+    ],
+    'it' => [
+      'name' => 'Italian',
+    ],
+    'it-ch' => [
+      'name' => 'Italian (Switzerland)',
+    ],
+    'pl' => [
+      'name' => 'Polish',
+    ],
+    'nl-be' => [
+      'name' => 'Flemish (Belgium)',
+    ],
+    'zh-hans' => [
+      'name' => 'Chinese (Simplified)',
+    ],
+  ];
+  foreach ($languages as $langcode => $langinfo) {
+    $language = ConfigurableLanguage::createFromLangcode($langcode);
+    $language->setName($langinfo['name']);
+    try {
+      $language->save();
+    } catch (\Drupal\Core\Entity\EntityStorageException $e) {
+      \Drupal::logger('soc_language')->error($e->getMessage());
+    }
+  }
+}

@@ -1,0 +1,9 @@
+uuid: dfa2fcec-ee98-4dc4-bba9-8ff96efb8f15
+langcode: en
+status: true
+dependencies: {  }
+id: nl-be
+label: Flemish
+direction: ltr
+weight: 2
+locked: false
