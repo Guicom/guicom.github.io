@@ -123,14 +123,6 @@ $config_directories[$_site_name] = "$app_ground/config/drupal/$_site_name/sync";
 $config_directories[$_overrides_name] = "$app_ground/config/drupal/$_site_name/overrides";
 $config_directories['local'] = "$app_ground/config/drupal/local";
 
-// Config splits
-$config['config_split.config_split.' . $_site_name]['status'] = TRUE;
-$config['config_split.config_split.' . $_site_name]['folder'] = "../config/drupal/$_site_name/sync";
-$config['config_split.config_split.' . $_overrides_name]['status'] = FALSE;
-$config['config_split.config_split.' . $_overrides_name]['folder'] = "../config/drupal/$_site_name/overrides";
-$config['config_split.config_split.overrides']['status'] = FALSE;
-$config['config_split.config_split.overrides']['folder'] = "../config/drupal/overrides";
-
 /**
  * Files configurations.
  */
@@ -147,3 +139,7 @@ $databases["default"]["default"] = array (
   "namespace" => "Drupal\\Core\\Database\\Driver\\mysql",
   "driver" => "mysql",
 );
+
+// Config splits
+$config['config_split.config_split.contenthub']['status'] = TRUE;
+$config['config_split.config_split.contenthub']['folder'] = "../config/drupal/contenthub/sync";

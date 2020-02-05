@@ -1,18 +1,17 @@
 uuid: 9da8d871-c53f-4a40-9b15-8d1da99c75f2
 langcode: en
-status: true
+status: false
 dependencies: {  }
 id: contenthub
 label: Contenthub
 description: 'Contenthub configuration'
-folder: ''
+folder: ../config/drupal/contenthub/sync
 module:
   basic_auth: 0
   entity_share_server: 0
 theme: {  }
 blacklist:
   - 'entity_share_server.*'
-  - config_split.config_split.contenthub
 graylist: {  }
 graylist_dependents: true
 graylist_skip_equal: true

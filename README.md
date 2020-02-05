@@ -78,11 +78,12 @@ sudo npm install --no-bin-link
 gulp
 ```
 
-## Theme :
+## Theme
 
 The Socomec theme is a subtheme of Barrio.
 
-## Pardot Form :
+## Pardot Form
+
 Pardot form style & js are manage throw a specfics github project.
 For install 
 * go to web/themes/custom/socomec/assets
@@ -90,3 +91,82 @@ For install
 
 To compile CSS you must launch `gulp pardot` 
 
+## Content hub
+
+Content hub is part of the web factory as a subsite.
+
+### Setup the content hub
+
+#### 1. Create a database for the content hub
+
+In our example, we will name it `contenthub`.
+
+#### 2. Create the local settings file
+
+From project root:
+
+```
+cp config/drupal/contenthub/example.settings.local.php config/drupal/contenthub/settings.local.php
+```
+
+#### 3. Configure the local settings file
+
+Configure the database connection info:
+
+```php
+$databases["default"]["default"] = array (
+  "database" => "contenthub",
+  'username' => 'mysqlusr',
+  'password' => 'mysqlpwd',
+  "host" => "mysql",
+  "port" => "3306",
+  "namespace" => "Drupal\\Core\\Database\\Driver\\mysql",
+  "driver" => "mysql",
+);
+```
+
+#### 4. Enable the site
+
+If `web/sites/sites.php` does not exist:
+
+```
+cp web/sites/example.sites.php web/sites/sites.php
+```
+
+Then, edit `sites.php` and configure it like:
+
+```php
+$sites['socomec.com.loc'] = 'default';
+$sites['contenthub.loc'] = 'contenthub';
+```
+
+Where `socomec.com.loc` is the URL of the default website and `contenthub.loc` is the URL of the content hub.
+
+#### 4. Build the site
+
+```
+drush cr
+./vendor/bin/phing build -Dmultisite.uri=contenthub.loc
+```
+
+Where `contenthub.loc` is the URL declared in `sites.php`.
+
+### Update the content hub
+
+Two steps are needed to update the content hub.
+
+#### 1. Export specific configuration prior to updating
+
+This step is very important. If any changes are made to the configuration of the content hub, they may be lost if this step is not 
+
+```
+drush --uri=contenthub.loc csex contenthub
+```
+
+#### 2. Import configuration
+
+On this step, the project can be updated almost as usual, but by specifying the URI of the content hub.
+
+```
+./vendor/bin/phing update -Dmultisite.uri=contenthub.loc
+```
