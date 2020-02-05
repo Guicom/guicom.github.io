@@ -1,0 +1,12 @@
+#wishlist_form_wrapper{
+  .dataTables_wrapper{
+    @media (min-width: 768px){
+      .col-md-6{
+        padding:0px;
+      }
+    }
+    .dataTables_filter{
+      text-align: left;
+    }
+  }
+}

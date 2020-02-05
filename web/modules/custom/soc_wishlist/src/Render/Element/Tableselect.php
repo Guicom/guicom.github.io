@@ -54,12 +54,12 @@ class Tableselect extends CoreTableSelect {
       if ($element['#js_select']) {
         // Add a "Select all" checkbox.
         $element['#attached']['library'][] = 'core/drupal.tableselect';
-        array_push($header, ['class' => ['select-all']]);
+        array_push($header, ['class' => ['select-all', 'all', 'no-sort']]);
       }
       else {
         // Add an empty header when radio buttons are displayed or a "Select all"
         // checkbox is not desired.
-        array_push($header, '');
+        array_push($header, ['class' => ['all', 'no-sort']]);
       }
     }
 

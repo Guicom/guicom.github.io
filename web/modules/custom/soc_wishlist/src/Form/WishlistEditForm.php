@@ -87,6 +87,11 @@ class WishlistEditForm extends FormBase {
    *   The form structure.
    */
   public function buildForm(array $form, FormStateInterface $form_state) {
+    $form['title'] = [
+      '#markup' => $this->getTitle(),
+      '#prefix' => '<h1 class="title-socomec-wave-below">',
+      '#suffix' => '</h1>'
+    ];
     $items = $this->wishlistManager->loadSavedItems();
 
     // Set header.
@@ -156,7 +161,7 @@ class WishlistEditForm extends FormBase {
       '#header' => $header,
       '#options' => $options,
       '#empty' => t('No items found!'),
-      '#prefix' => '<div>',
+      '#prefix' => '<div class="full-width table-responsive-no-srcoll">',
       '#suffix' => '</div>',
       '#process' => [
         '::processTable',
@@ -204,6 +209,10 @@ class WishlistEditForm extends FormBase {
       ]
     ];
 
+    $form['#attached']['library'][] = 'soc_wishlist/wishlist-datatable';
+    $form['#attached']['drupalSettings']['wishlistDatatable'] = [
+      'searchPlaceholder' => $this->t('Search, filter...'),
+    ];
     // Return form.
     return $form;
   }
