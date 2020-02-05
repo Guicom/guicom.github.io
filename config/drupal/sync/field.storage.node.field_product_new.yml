@@ -1,0 +1,24 @@
+uuid: 95aca63a-f5f1-4ec2-85a9-952b8541dfd0
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - options
+id: node.field_product_new
+field_name: field_product_new
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: new
+      label: New
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -95,6 +95,7 @@ module:
   remote_stream_wrapper: 0
   remote_stream_wrapper_widget: 0
   responsive_image: 0
+  scheduled_updates: 0
   scheduler: 0
   search: 0
   search_api: 0
