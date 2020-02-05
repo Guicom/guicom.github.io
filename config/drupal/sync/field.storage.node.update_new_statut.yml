@@ -1,0 +1,20 @@
+uuid: 009958eb-68c2-475b-8340-43c874bb35c1
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - scheduled_updates
+id: node.update_new_statut
+field_name: update_new_statut
+entity_type: node
+type: entity_reference
+settings:
+  target_type: scheduled_update
+module: core
+locked: false
+cardinality: -1
+translatable: false
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

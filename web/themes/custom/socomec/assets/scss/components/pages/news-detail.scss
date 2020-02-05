@@ -1,15 +1,18 @@
-.node--type-news {
+.node--type-news,
+.node--type-event {
   #page-wrapper {
     overflow: hidden;
   }
   // FIELDS
-  .field--name-field-news-type {
+  .field--name-field-news-type,
+  .field--name-field-event-type{
     margin-bottom: 0;
     a {
       @include tag($blue, $yellow);
     }
   }
-  .field--name-field-news-theme {
+  .field--name-field-news-theme,
+  .field--name-field-event-thematic {
     margin-bottom: 0;
     line-height: 0.5rem;
     a {
@@ -21,7 +24,8 @@
       letter-spacing: 0.5px;
     }
   }
-  .news-date {
+  .news-date,
+  .event-date{
     color: $turquoize;
     font-family: $font-roboto;
     padding-right: $spacer;
@@ -30,14 +34,15 @@
       font-size: 0.75rem
     }
   }
-  .news-teaser {
+  .news-teaser,
+  .event-teaser{
     @include media-breakpoint-down(md) {
      margin-top: 2rem
     }
   }
-  .field--name-field-teaser {
+  .field--name-field-teaser,
+  .field--name-field-event-teaser {
     margin-top: 30px;
-
     p {
       @include S2($blue);
       line-height: 40px;
@@ -45,6 +50,12 @@
         font-size: 1rem;
         line-height: 1.6;
       }
+    }
+  }
+  .event-teaser-wrapper {
+    margin-bottom: 5rem;
+    @include media-breakpoint-down(md) {
+      margin-bottom: 0;
     }
   }
 
@@ -61,7 +72,8 @@
       }
     }
     // LEFT SIDE
-    .news-info {
+    .news-info,
+    .event-info {
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -80,13 +92,15 @@
       }
       h1 {
         margin-bottom: 2*$spacer;
-        .news-title {
+        .news-title,
+        .event-title {
           @include S1($white);
           font-weight: 300;
           @include offset-underscore;
         }
       }
-      .news-sub-infos {
+      .news-sub-infos,
+      .event-sub-infos {
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -109,7 +123,8 @@
       @include media-breakpoint-down(md) {
         flex-direction: column;
       }
-      .news-info {
+      .news-info,
+      .event-info {
         width: 540px;
         max-width: 540px;
         flex: 0 0 540px;
@@ -140,7 +155,8 @@
         @include media-breakpoint-down(lg) {
           @include make-col(12)
         }
-        .field--name-field-media-image {
+        .field--name-field-media-image,
+        .field--name-field-event-picture {
           width: 100%;
           height: auto;
           @include media-breakpoint-down(md) {
@@ -156,6 +172,127 @@
               width: 100%;
               left: initial;
               right: 0;
+            }
+          }
+        }
+      }
+      .event-informations {
+        position: relative;
+        flex: 0 0 auto;
+        flex-grow: 1;
+        @include media-breakpoint-down(lg) {
+          @include make-col(12)
+        }
+        .field--name-field-media-image,
+        .field--name-field-event-picture {
+          width: 100%;
+          height: auto;
+          @include media-breakpoint-down(md) {
+            margin-bottom: -2rem;
+          }
+          img {
+            @include media-breakpoint-down(md) {
+              position: relative;
+              width: 100%;
+              left: initial;
+              right: 0;
+            }
+          }
+        }
+        .event-squarebox {
+          position: absolute;
+          top: 0;
+          left: 0;
+          height: auto;
+          @include media-breakpoint-down(md) {
+            position: relative;
+            margin-bottom: 2rem;
+          }
+        }
+        // EVENT DATE
+        .event-top {
+          background: $yellow;
+          padding: 1.5rem 0;
+          text-align: center;
+          font-size: $font-size-h4;
+          color: $blue;
+          .field--name-field-event-place {
+            font-weight: 300;
+          }
+          .event-date-wrapper {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            .line-date {
+              display: flex;
+              font-size: $font-size-h2;
+              text-transform: uppercase;
+              font-weight: 700;
+              height: 2.2rem;
+              line-height: 1;
+              margin-top: 1rem;
+            }
+            .line-years {
+              display: flex;
+              font-size: $font-size-h2;
+              text-transform: uppercase;
+              font-weight: 300;
+              line-height: 1;
+              height: 2.5rem;
+            }
+            .line-hours {
+              display: flex;
+              font-size: $font-size-h4;
+              text-transform: uppercase;
+              font-weight: 300;
+            }
+            .event-start {
+              text-align: right;
+            }
+            .event-end {
+              text-align: left;
+            }
+            .separator {
+              font-size: $font-size-base;
+              font-weight: 600;
+              line-height: 2;
+              width: 2rem;
+            }
+          }
+        }
+        .bottom-link {
+          time {
+            display: none;
+          }
+          .addtocalendar {
+            width: 100%;
+            text-align: center;
+            a {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              background: $white;
+              border: 1px solid rgba($blue, 0.3);
+              padding: 0.5rem 2.5rem;
+              border-radius: 0;
+              color: $blue;
+              text-transform: uppercase;
+              font-family: $font-poppins;
+              font-weight: 600;
+              font-size: $font-size-sm;
+              box-shadow: none;
+              &:before {
+                content: '';
+                background: url("../images/picto/ui/Calendar-add.svg") no-repeat center center;
+                display: block;
+                height: 34px;
+                width: 34px;
+                transform: translateY(0);
+              }
+            }
+            .atcb-list {
+              width: 100%;
             }
           }
         }

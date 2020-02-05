@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "71ea5ef09aaba92b5b04a978ba1095be",
+    "content-hash": "4c3d1c44cdcb756a1fdea6fbcfe9fbcf",
     "packages": [
         {
             "name": "actency/foundation",
@@ -2708,6 +2708,73 @@
             "homepage": "https://www.drupal.org/project/addtoany",
             "support": {
                 "source": "https://git.drupalcode.org/project/addtoany"
+            }
+        },
+        {
+            "name": "drupal/addtocalendar",
+            "version": "3.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/addtocalendar.git",
+                "reference": "8.x-3.1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/addtocalendar-8.x-3.1.zip",
+                "reference": "8.x-3.1",
+                "shasum": "c384df6017790173908ee7566e2af22ab5234b9d"
+            },
+            "require": {
+                "drupal/core": "*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-3.x": "3.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-3.1",
+                    "datestamp": "1511952790",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "anand.toshniwal93",
+                    "homepage": "https://www.drupal.org/user/3345088"
+                },
+                {
+                    "name": "gagarine",
+                    "homepage": "https://www.drupal.org/user/162439"
+                },
+                {
+                    "name": "gg24",
+                    "homepage": "https://www.drupal.org/user/3389212"
+                },
+                {
+                    "name": "guptahemant",
+                    "homepage": "https://www.drupal.org/user/3278073"
+                },
+                {
+                    "name": "purushotam.rai",
+                    "homepage": "https://www.drupal.org/user/3193859"
+                },
+                {
+                    "name": "sonvir249",
+                    "homepage": "https://www.drupal.org/user/3225171"
+                }
+            ],
+            "description": "Add to calendar button to be used for event page.",
+            "homepage": "https://www.drupal.org/project/addtocalendar",
+            "support": {
+                "source": "https://git.drupalcode.org/project/addtocalendar"
             }
         },
         {
@@ -6431,6 +6498,54 @@
             "homepage": "https://www.drupal.org/project/remote_stream_wrapper_widget",
             "support": {
                 "source": "https://git.drupalcode.org/project/remote_stream_wrapper_widget"
+            }
+        },
+        {
+            "name": "drupal/scheduled_updates",
+            "version": "1.0.0-alpha7",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/scheduled_updates.git",
+                "reference": "8.x-1.0-alpha7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/scheduled_updates-8.x-1.0-alpha7.zip",
+                "reference": "8.x-1.0-alpha7",
+                "shasum": "4c02187c7202bef453268ed3eb644bb411c01891"
+            },
+            "require": {
+                "drupal/core": "*",
+                "drupal/inline_entity_form": "*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-1.x": "1.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-1.0-alpha7",
+                    "datestamp": "1524485284",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Project has not opted into security advisory coverage!"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "tedbow",
+                    "homepage": "https://www.drupal.org/user/240860"
+                }
+            ],
+            "description": "Create scheduled updates to field values on entities such content, users, and terms.",
+            "homepage": "https://www.drupal.org/project/scheduled_updates",
+            "support": {
+                "source": "https://git.drupalcode.org/project/scheduled_updates"
             }
         },
         {
@@ -13991,6 +14106,7 @@
         "drupal/gdpr": 15,
         "drupal/inline_entity_form": 5,
         "drupal/libraries": 15,
+        "drupal/scheduled_updates": 15,
         "drupal/we_megamenu_deploy": 15
     },
     "prefer-stable": true,

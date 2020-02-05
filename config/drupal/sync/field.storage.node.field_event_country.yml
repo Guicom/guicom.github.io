@@ -1,0 +1,21 @@
+uuid: 379cb316-9ace-4853-bb74-efd76dfd18b0
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - options
+id: node.field_event_country
+field_name: field_event_country
+entity_type: node
+type: list_string
+settings:
+  allowed_values: {  }
+  allowed_values_function: sco_core_allowed_values_countries_function
+module: options
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

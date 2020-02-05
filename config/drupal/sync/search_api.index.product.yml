@@ -5,11 +5,14 @@ dependencies:
   module:
     - search_api_solr
     - node
+    - scheduled_updates
     - taxonomy
     - search_api
   config:
     - field.storage.node.field_product_family
     - field.storage.node.field_json_product_data
+    - field.storage.node.update_new_statut
+    - field.storage.scheduled_update.field_product_new
     - field.storage.node.field_protection_level
     - search_api.server.socomec
 third_party_settings:
@@ -71,6 +74,17 @@ field_settings:
     dependencies:
       config:
         - field.storage.node.field_product_family
+  field_product_new:
+    label: 'New » Scheduled update » New'
+    datasource_id: 'entity:node'
+    property_path: 'update_new_statut:entity:field_product_new'
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.update_new_statut
+        - field.storage.scheduled_update.field_product_new
+      module:
+        - scheduled_updates
   field_protection_level:
     label: 'Protection level'
     datasource_id: 'entity:node'

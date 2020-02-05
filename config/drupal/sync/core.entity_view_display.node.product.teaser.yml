@@ -7,13 +7,18 @@ dependencies:
     - field.field.node.product.field_associated_products
     - field.field.node.product.field_background_hero_block
     - field.field.node.product.field_json_product_data
+    - field.field.node.product.field_multiline_anchor_name
     - field.field.node.product.field_product_advantage_text
+    - field.field.node.product.field_product_application_label
+    - field.field.node.product.field_product_application_link
     - field.field.node.product.field_product_cta_1
     - field.field.node.product.field_product_cta_2
     - field.field.node.product.field_product_cta_3
     - field.field.node.product.field_product_cta_4
     - field.field.node.product.field_product_extid
     - field.field.node.product.field_product_family
+    - field.field.node.product.field_product_multiline
+    - field.field.node.product.field_product_new
     - field.field.node.product.field_product_orc_content
     - field.field.node.product.field_product_orc_title
     - field.field.node.product.field_product_pictures
@@ -22,6 +27,7 @@ dependencies:
     - field.field.node.product.field_product_teaser
     - field.field.node.product.field_protection_level
     - field.field.node.product.field_standard_label
+    - field.field.node.product.update_new_statut
     - node.type.product
   module:
     - ds
@@ -45,13 +51,15 @@ third_party_settings:
           ds_content: {  }
     regions:
       ds_content:
+        - content_moderation_control
+        - update_new_statut
         - field_product_pictures
         - node_title
         - field_product_teaser
     fields:
       node_title:
         plugin_id: node_title
-        weight: 1
+        weight: 3
         label: hidden
         formatter: default
         settings:
@@ -67,9 +75,14 @@ targetEntityType: node
 bundle: product
 mode: teaser
 content:
+  content_moderation_control:
+    weight: 0
+    region: ds_content
+    settings: {  }
+    third_party_settings: {  }
   field_product_pictures:
     type: entity_reference_entity_view
-    weight: 0
+    weight: 2
     region: ds_content
     label: hidden
     settings:
@@ -86,11 +99,28 @@ content:
             classes: {  }
   field_product_teaser:
     type: basic_string
-    weight: 2
+    weight: 4
     region: ds_content
     label: hidden
     settings: {  }
     third_party_settings: {  }
+  update_new_statut:
+    type: entity_reference_entity_view
+    weight: 1
+    region: ds_content
+    label: hidden
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings:
+      ds:
+        ds_limit: ''
+        ft:
+          id: minimal
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
 hidden:
   addtoany: true
   field_associated_products: true
@@ -109,6 +139,7 @@ hidden:
   field_product_extid: true
   field_product_family: true
   field_product_multiline: true
+  field_product_new: true
   field_product_orc_content: true
   field_product_orc_title: true
   field_product_reference: true

@@ -94,7 +94,7 @@
                 },
                 "uuid": [
                     {
-                        "value": "a144a767-e637-4350-8e02-f56f96df71d8"
+                        "value": "7ce68e63-4eb2-4ff9-b3ba-1353868398ce"
                     }
                 ]
             }
@@ -111,7 +111,7 @@
                 },
                 "uuid": [
                     {
-                        "value": "a144a767-e637-4350-8e02-f56f96df71d8"
+                        "value": "7ce68e63-4eb2-4ff9-b3ba-1353868398ce"
                     }
                 ],
                 "lang": "en"
@@ -318,10 +318,10 @@
                 "canonical_url": "http:\/\/default\/news\/efficiently-unleash-cross-media-value-proposition-organically-grow-0",
                 "og_type": "News",
                 "og_url": "http:\/\/default\/news\/efficiently-unleash-cross-media-value-proposition-organically-grow-0",
-                "image_src": "http:\/\/default\/sites\/default\/files\/styles\/og_image_600x315\/public\/2019-12\/AdobeStock_187085088.jpeg?itok=KkicLwnP",
+                "image_src": "http:\/\/default\/sites\/default\/files\/styles\/og_image_600x315\/public\/2019-12\/AdobeStock_187085088.jpeg?itok=ksJKpJ_g",
                 "og_title": "Efficiently unleash cross-media value proposition organically grow",
-                "og_image_0": "http:\/\/default\/sites\/default\/files\/styles\/og_image_600x315\/public\/2019-12\/AdobeStock_187085088.jpeg?itok=KkicLwnP",
-                "og_image_url_0": "http:\/\/default\/sites\/default\/files\/styles\/og_image_600x315\/public\/2019-12\/AdobeStock_187085088.jpeg?itok=KkicLwnP",
+                "og_image_0": "http:\/\/default\/sites\/default\/files\/styles\/og_image_600x315\/public\/2019-12\/AdobeStock_187085088.jpeg?itok=ksJKpJ_g",
+                "og_image_url_0": "http:\/\/default\/sites\/default\/files\/styles\/og_image_600x315\/public\/2019-12\/AdobeStock_187085088.jpeg?itok=ksJKpJ_g",
                 "og_image_type": "image\/jpeg",
                 "og_image_width": "600",
                 "og_image_height": "315",
@@ -332,7 +332,7 @@
     "path": [
         {
             "alias": "\/news\/efficiently-unleash-cross-media-value-proposition-organically-grow-0",
-            "pid": 20,
+            "pid": 22,
             "langcode": "en",
             "lang": "en"
         }
