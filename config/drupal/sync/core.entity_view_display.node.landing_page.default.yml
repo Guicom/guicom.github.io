@@ -44,7 +44,6 @@ third_party_settings:
         - field_body
         - addtoany
       right:
-        - field_resource
         - field_pardot_form
 id: node.landing_page.default
 targetEntityType: node
@@ -72,27 +71,20 @@ content:
     region: left
   field_pardot_form:
     type: entity_reference_revisions_entity_view
-    weight: 4
+    weight: 3
     region: right
     label: hidden
     settings:
       view_mode: default
       link: ''
     third_party_settings: {  }
-  field_resource:
-    weight: 3
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    type: entity_reference_label
-    region: right
 hidden:
   field_client_name: true
   field_footer_version: true
   field_hero_paragraph: true
   field_metatags: true
   field_premium_content_type: true
+  field_resource: true
   langcode: true
   layout_builder__layout: true
   links: true

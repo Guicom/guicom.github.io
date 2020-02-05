@@ -1,0 +1,17 @@
+uuid: 4c1f94bc-fec9-4102-97d6-c9bf3acfd980
+langcode: en
+status: true
+dependencies: {  }
+id: node__field_product_new
+label: 'Content - New'
+update_entity_type: node
+update_types_supported:
+  - embedded
+field_map:
+  field_product_new: field_product_new
+update_runner:
+  id: default_embedded
+  after_run: DELETE
+  invalid_update_behavior: DELETE
+  create_revisions: BUNDLE_DEFAULT
+  update_user: USER_UPDATE_RUNNER

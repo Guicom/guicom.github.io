@@ -16,6 +16,7 @@ dependencies:
     - field.field.node.event.field_event_teaser
     - field.field.node.event.field_event_thematic
     - field.field.node.event.field_event_type
+    - image.style.event_hero_illustration
     - node.type.event
   module:
     - addtocalendar
@@ -23,6 +24,7 @@ dependencies:
     - ds
     - entity_reference_revisions
     - link
+    - media
     - options
     - text
     - user
@@ -32,13 +34,18 @@ bundle: event
 mode: default
 content:
   content_moderation_control:
-    weight: -20
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  extra_field_soc_event_date:
+    weight: 15
     region: content
     settings: {  }
     third_party_settings: {  }
   field_event_content:
     type: entity_reference_revisions_entity_view
-    weight: 107
+    weight: 7
     label: hidden
     settings:
       view_mode: default
@@ -46,14 +53,14 @@ content:
     third_party_settings: {  }
     region: content
   field_event_country:
-    weight: 116
+    weight: 14
     label: hidden
     settings: {  }
     third_party_settings: {  }
     type: list_default
     region: content
   field_event_cta_download:
-    weight: 110
+    weight: 10
     label: hidden
     settings:
       trim_length: 80
@@ -65,7 +72,7 @@ content:
     type: link
     region: content
   field_event_cta_external_link:
-    weight: 109
+    weight: 9
     label: hidden
     settings:
       trim_length: 80
@@ -77,7 +84,7 @@ content:
     type: link
     region: content
   field_event_custom_audience:
-    weight: 111
+    weight: 11
     label: hidden
     settings:
       link: true
@@ -85,12 +92,12 @@ content:
     type: entity_reference_label
     region: content
   field_event_date:
-    weight: 115
+    weight: 13
     label: hidden
     settings:
       timezone_override: ''
       format_type: short
-      separator: '|'
+      separator: ''
     third_party_settings:
       addtocalendar:
         addtocalendar_show: '1'
@@ -125,15 +132,13 @@ content:
             Outlook: 0
       ds:
         ft:
-          id: default
+          id: reset
           settings:
             lb: ''
-            lb-col: false
-            classes: {  }
     type: daterange_default
     region: content
   field_event_momemtum:
-    weight: 112
+    weight: 12
     label: hidden
     settings:
       link: true
@@ -141,23 +146,30 @@ content:
     type: entity_reference_label
     region: content
   field_event_picture:
-    type: entity_reference_entity_view
-    weight: 101
+    type: media_thumbnail
+    weight: 2
     label: hidden
     settings:
-      view_mode: default
-      link: false
-    third_party_settings: {  }
+      image_style: event_hero_illustration
+      image_link: ''
+    third_party_settings:
+      ds:
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
     region: content
   field_event_place:
-    weight: 103
+    weight: 4
     label: hidden
     settings: {  }
     third_party_settings: {  }
     type: basic_string
     region: content
   field_event_product:
-    weight: 108
+    weight: 8
     label: above
     settings:
       link: true
@@ -165,14 +177,14 @@ content:
     type: entity_reference_label
     region: content
   field_event_teaser:
-    weight: 102
+    weight: 3
     label: hidden
     settings: {  }
     third_party_settings: {  }
     type: text_default
     region: content
   field_event_thematic:
-    weight: 105
+    weight: 6
     label: hidden
     settings:
       link: true
@@ -180,7 +192,7 @@ content:
     type: entity_reference_label
     region: content
   field_event_type:
-    weight: 104
+    weight: 5
     label: hidden
     settings:
       link: true
@@ -188,7 +200,7 @@ content:
     type: entity_reference_label
     region: content
   links:
-    weight: 100
+    weight: 1
     region: content
     settings: {  }
     third_party_settings: {  }

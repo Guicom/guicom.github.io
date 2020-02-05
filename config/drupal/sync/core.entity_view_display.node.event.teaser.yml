@@ -12,6 +12,11 @@ targetEntityType: node
 bundle: event
 mode: teaser
 content:
+  content_moderation_control:
+    weight: -20
+    settings: {  }
+    third_party_settings: {  }
+    region: content
   links:
     weight: 100
     settings: {  }
@@ -19,5 +24,18 @@ content:
     region: content
 hidden:
   addtoany: true
+  field_event_content: true
+  field_event_country: true
+  field_event_cta_download: true
+  field_event_cta_external_link: true
+  field_event_custom_audience: true
+  field_event_date: true
+  field_event_momemtum: true
+  field_event_picture: true
+  field_event_place: true
+  field_event_product: true
+  field_event_teaser: true
+  field_event_thematic: true
+  field_event_type: true
   langcode: true
   search_api_excerpt: true

@@ -610,6 +610,28 @@ bundles:
       notes: ''
       relationship: 0
       sars_filename: ''
+    field_product_new:
+      bundle: product
+      name: field_product_new
+      entity_type_id: node
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    update_new_statut:
+      bundle: product
+      name: update_new_statut
+      entity_type_id: node
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
   thank_you_page:
     field_title:
       bundle: thank_you_page
@@ -1469,20 +1491,6 @@ bundles:
       notes: ''
       relationship: 0
       sars_filename: ''
-    field_event_product:
-      bundle: event
-      name: field_event_product
-      entity_type_id: node
-      rtf: 'no'
-      rta: 'no'
-      enabled: false
-      anonymizer: date_anonymizer
-      notes: ''
-      relationship: 0
-      sars_filename: ''
-    field_event_country:
-      bundle: event
-      name: field_event_country
     field_res_resource_type:
       bundle: resource_youtube
       name: field_res_resource_type
