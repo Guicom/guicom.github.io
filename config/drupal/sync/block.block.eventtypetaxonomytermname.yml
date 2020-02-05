@@ -1,0 +1,29 @@
+uuid: 6ec617fe-175a-43ec-b952-dc90b20be8ac
+langcode: en
+status: true
+dependencies:
+  config:
+    - facets.facet.event_type_taxonomy_term_name
+  module:
+    - facets
+    - system
+  theme:
+    - socomec
+id: eventtypetaxonomytermname
+theme: socomec
+region: hidden
+weight: -11
+provider: null
+plugin: 'facet_block:event_type_taxonomy_term_name'
+settings:
+  id: 'facet_block:event_type_taxonomy_term_name'
+  label: TYPES
+  provider: facets
+  label_display: visible
+  block_id: eventtypetaxonomytermname
+visibility:
+  request_path:
+    id: request_path
+    pages: /events
+    negate: false
+    context_mapping: {  }

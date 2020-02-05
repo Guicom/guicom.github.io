@@ -10,12 +10,6 @@
             {
                 "href": "http:\/\/default\/products\/metering-monitoring-power-quality\/measurement-energy-management-analyze?_format=hal_json"
             }
-        ],
-        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/family\/content_translation_uid": [
-            {
-                "href": "http:\/\/default\/user\/1?_format=hal_json",
-                "lang": "en"
-            }
         ]
     },
     "tid": [
@@ -81,24 +75,6 @@
                         "value": "7f9db69f-36ff-492d-9548-ed8006801630"
                     }
                 ]
-            }
-        ],
-        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/family\/content_translation_uid": [
-            {
-                "_links": {
-                    "self": {
-                        "href": "http:\/\/default\/user\/1?_format=hal_json"
-                    },
-                    "type": {
-                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
-                    }
-                },
-                "uuid": [
-                    {
-                        "value": "059d0fa6-5dd6-4e1c-ace5-ef18988bb748"
-                    }
-                ],
-                "lang": "en"
             }
         ]
     },
