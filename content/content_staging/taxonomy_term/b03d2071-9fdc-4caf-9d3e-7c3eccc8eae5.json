@@ -1,7 +1,7 @@
 {
     "_links": {
         "self": {
-            "href": "http:\/\/default\/taxonomy\/term\/63?_format=hal_json"
+            "href": "http:\/\/default\/taxonomy\/term\/93?_format=hal_json"
         },
         "type": {
             "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/event_thematic"
@@ -18,17 +18,17 @@
     },
     "tid": [
         {
-            "value": 63
+            "value": 93
         }
     ],
     "uuid": [
         {
-            "value": "4030d9e6-2daf-420f-8c30-7fc2a80593fd"
+            "value": "b03d2071-9fdc-4caf-9d3e-7c3eccc8eae5"
         }
     ],
     "revision_id": [
         {
-            "value": 63
+            "value": 93
         }
     ],
     "langcode": [
@@ -44,7 +44,7 @@
     ],
     "revision_created": [
         {
-            "value": "2020-02-05T16:37:35+00:00",
+            "value": "2020-02-06T08:57:25+00:00",
             "format": "Y-m-d\\TH:i:sP"
         }
     ],
@@ -56,7 +56,7 @@
     ],
     "name": [
         {
-            "value": "Data Centre",
+            "value": "Building",
             "lang": "zxx"
         }
     ],
@@ -90,7 +90,7 @@
     },
     "changed": [
         {
-            "value": "2020-02-06T08:55:11+00:00",
+            "value": "2020-02-06T08:57:25+00:00",
             "lang": "zxx",
             "format": "Y-m-d\\TH:i:sP"
         }
@@ -121,7 +121,7 @@
     ],
     "content_translation_created": [
         {
-            "value": "2020-02-05T16:37:35+00:00",
+            "value": "2020-02-06T08:57:25+00:00",
             "lang": "zxx",
             "format": "Y-m-d\\TH:i:sP"
         }
@@ -129,8 +129,8 @@
     "metatag": [
         {
             "value": {
-                "title": "Data Centre | Socomec",
-                "canonical_url": "http:\/\/default\/taxonomy\/term\/63"
+                "title": "Building | Socomec",
+                "canonical_url": "http:\/\/default\/taxonomy\/term\/93"
             }
         }
     ]
