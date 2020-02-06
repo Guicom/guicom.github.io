@@ -20,3 +20,14 @@ function soc_wishlist_element_info_alter(array &$types) {
     ['Drupal\soc_wishlist\Render\Element\TableSelect', 'preRenderTableselect']
   ];
 }
+
+/**
+ * Implements hook_theme().
+ */
+function soc_wishlist_theme($existing, $type, $theme, $path) {
+  return [
+    'soc_wishlist_custom_form' => [
+      'render element' => 'form',
+    ],
+  ];
+}

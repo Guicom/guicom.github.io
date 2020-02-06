@@ -71,11 +71,11 @@ h1.title-socomec-wave-below,
   font-weight: 300;
   line-height: 60px;
   text-transform: uppercase;
-  margin-bottom: 45px;
+  margin-bottom: 40px;
   @include socomec-hero-wave;
   &:after {
     margin-left: -30px;
-    margin-top: 45px;
+    margin-top: 40px;
   }
 }
 

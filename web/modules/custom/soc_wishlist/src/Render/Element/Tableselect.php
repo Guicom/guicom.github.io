@@ -29,7 +29,7 @@ class Tableselect extends CoreTableSelect {
         foreach ($element['#header'] as $fieldname => $title) {
           // A row cell can span over multiple headers, which means less row
           // cells than headers could be present.
-          if (isset($element['#options'][$key][$fieldname])) {
+          if (array_key_exists($fieldname, $element['#options'][$key])) {
             // A header can span over multiple cells and in this case the cells
             // are passed in an array. The order of this array determines the
             // order in which they are added.

@@ -1,12 +1,97 @@
-#wishlist_form_wrapper{
-  .dataTables_wrapper{
-    @media (min-width: 768px){
-      .col-md-6{
-        padding:0px;
+#page {
+  &.my-wishlist-page{
+    background-color: $white-grey;
+    #wishlist-page-header {
+      background-color: $white;
+      .container{
+        padding-right:0px;
+        padding-left:0px;
       }
     }
-    .dataTables_filter{
-      text-align: left;
+    .soc-wishlist-wishlist-edit-form{
+      margin:40px 0 80px 0;
+      #wishlist_form_wrapper {
+        .dataTables_wrapper {
+          @media (min-width: 768px){
+            .col-md-6 {
+              padding:0px;
+            }
+          }
+          .dataTables_filter {
+            text-align: left;
+          }
+        }
+      }
+      .navbar-wishlist {
+        .navbar-light {
+          .navbar-nav {
+            .nav-item{
+              a {
+                &.nav-link {
+                  position: relative;
+                  @include button-icon($blue_light, $white);
+                  padding: 20px 50px 20px 20px;
+                  border: solid 1px $grey-blue;
+                  font-weight: 600;
+                  &.no-background {
+                    @include button-icon($transparent, $blue_light);
+                    padding: 20px 50px 20px 20px;
+                    border:solid 1px $transparent;
+                    font-weight: 600;
+                  }
+                  &:after {
+                    display: block;
+                    content: '';
+                    background-repeat: no-repeat;
+                    transition: all ease-in 0.2s;
+                    position: absolute;
+                    right: 20px;
+                    top: 50%;
+                    margin-top:-10px;
+                    width: 21px;
+                    height: 20px;
+                    background-size: cover;
+                    z-index: 0;
+                    border:none;
+                  }
+                  &.icon-dealer {
+                    &:after{
+                      background-image: url('../images/picto/ui/locator.svg');
+                    }
+                  }
+                  &.icon-actions {
+                    &:after{
+                      background-image: url('../images/picto/ui/more-vert-circle.svg');
+                    }
+                  }
+                  &.icon-pricing {
+                    &:after{
+                      background-image: url('../images/picto/ui/ask-pricing.svg');
+                    }
+                  }
+                }
+              }
+              &.dropdown {
+                &.show {
+                  a{
+                    &.nav-link {
+                      @include button-icon($white, $blue_light);
+                      padding: 20px 50px 20px 20px;
+                      font-weight: 600;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      #navbar-wishlist-top {
+        .navbar-collapse {
+          margin:0px -15px;
+        }
+      }
     }
   }
 }
+

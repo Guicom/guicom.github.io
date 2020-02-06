@@ -1,0 +1,62 @@
+<div id="navbar-wishlist-top">
+    {% set key = 0 %}
+    {% block navbar_wishlist %}
+    <div class="navbar-wishlist">
+        <nav class="navbar m-0 p-0 navbar-expand-lg navbar-light">
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link no-background icon-dealer" href="#">{{ 'Find a dealer'|t }}</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle icon-actions" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            {{ 'Actions'|t }}
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <div class="dropdown-item-text">{{ 'Exportations'|t }}</div>
+                            <div class="dropdown-divider"></div>
+                            <div class="dropdown-item-text">{{ form.actions.exports[key] }}</div>
+                            <div class="dropdown-item-text">{{ 'Others actions'|t }}</div>
+                            <div class="dropdown-divider"></div>
+                            <div class="dropdown-item-text">{{ form.actions.others[key] }}</div>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link icon-pricing" href="#">{{ 'Ask for pricing'|t }}</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+{% endblock %}
+</div>
+{{ form | without('title', 'actions') }}
+<div id="navbar-wishlist-bottom">
+    <div class="navbar-wishlist">
+        <nav class="navbar m-0 p-0 navbar-expand-lg navbar-light">
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link no-background icon-dealer" href="#">{{ 'Find a dealer'|t }}</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle icon-actions" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            {{ 'Actions'|t }}
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <div class="dropdown-item-text">{{ 'Exportations'|t }}</div>
+                            <div class="dropdown-divider"></div>
+                            <div class="dropdown-item-text">{{ form.actions.exports.1 }}</div>
+                            <div class="dropdown-item-text">{{ 'Others actions'|t }}</div>
+                            <div class="dropdown-divider"></div>
+                            <div class="dropdown-item-text">{{ form.actions.others.1 }}</div>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link icon-pricing" href="#">{{ 'Ask for pricing'|t }}</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+</div>

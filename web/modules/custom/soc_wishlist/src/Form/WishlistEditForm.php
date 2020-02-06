@@ -87,19 +87,29 @@ class WishlistEditForm extends FormBase {
    *   The form structure.
    */
   public function buildForm(array $form, FormStateInterface $form_state) {
-    $form['title'] = [
-      '#markup' => $this->getTitle(),
-      '#prefix' => '<h1 class="title-socomec-wave-below">',
-      '#suffix' => '</h1>'
-    ];
+    $form['#theme'] = 'soc_wishlist_custom_form';
     $items = $this->wishlistManager->loadSavedItems();
 
     // Set header.
     $header = [
-      'picture' => t('Picture'),
-      'reference' => t('Reference'),
-      'description' => t('Description'),
-      'quantity' => t('Quantity'),
+      'picture' => [
+        'data' => t('Img'),
+        'class' => ['no-sort']
+      ],
+      'model' => [
+        'data' => t('Model'),
+      ],
+      'reference' => [
+        'data' => t('Reference'),
+      ],
+      'description' => [
+        'data' => t('Main specifications'),
+        'class' => ['no-sort']
+      ],
+      'quantity' => [
+        'data' => t('Qty'),
+        'class' => ['no-sort']
+      ],
     ];
 
     // Prepare tableselect field.
@@ -117,6 +127,7 @@ class WishlistEditForm extends FormBase {
               '#uri' => $picture,
             ],
           ],
+          'model' => $result['node']->get('field_reference_name')->value,
           'reference' => $result['node']->get('field_reference_ref')->value,
           'description' => $result['node']->getTitle(),
           'quantity' => [
@@ -169,34 +180,51 @@ class WishlistEditForm extends FormBase {
       ]
     ];
 
-    if (sizeof($items)) {
-      $form['submit'] = [
+    $confirmRemoveClass = 'confirm-remove';
+    for($i = 0; $i < 2; ++$i) {
+      // Export btn
+      $form['actions']['exports'][$i]['xls'][$i] = [
         '#type' => 'submit',
-        '#value' => t('Remove selected'),
+        '#value' => t('Export to an XLS file'),
         '#ajax' => [
-          'callback' => [static::class, 'updateItems'],
-          'wrapper' => 'wishlist_form_wrapper',
+          'callback' => [$this, 'exportItems'],
         ],
       ];
 
-      // Link
-      $downloadLinks = '
-      <div class="btn-group btn-group-sm align-right" role="group" aria-label="Export whishlist">
-        <span class="btn">Export as </span>
-        <a class="btn btn-secondary" href="/wishlist/export/csv">CSV</a>
-        <a class="btn btn-secondary" href="/wishlist/export/xls">XLS</a> 
-        <a class="btn btn-secondary" href="/wishlist/export/xlsx">XLSX</a> 
-        <a class="btn btn-secondary" href="/wishlist/export/pdf">PDF</a>
-      </div>';
-      $form['links'] = [
-        '#markup' => $downloadLinks,
+      // Export btn
+      $form['actions']['exports'][$i]['pdf'][$i] = [
+        '#type' => 'submit',
+        '#value' => t('Export to an PDF file'),
+        '#ajax' => [
+          'callback' => [$this, 'exportItems'],
+        ],
       ];
 
+      // Export btn
+      $form['actions']['exports'][$i]['csv'][$i] = [
+        '#type' => 'submit',
+        '#value' => t('Export to an CSV file'),
+        '#ajax' => [
+          'callback' => [$this, 'exportItems'],
+        ],
+      ];
+
+      // Update quantity
+      if (sizeof($items)) {
+        $form['actions']['others'][$i]['update'][$i] = [
+          '#type' => 'submit',
+          '#value' => t('Remove selected'),
+          '#ajax' => [
+            'callback' => [static::class, 'updateItems'],
+            'wrapper' => 'wishlist_form_wrapper',
+            'progress' => ['type' => 'none'],
+          ],
+        ];
+        $form['actions']['others'][$i]['update'][$i]['#attributes']['class'][] = $confirmRemoveClass;
+      }
     }
 
     // Confirm before deleting
-    $confirmRemoveClass = 'confirm-remove';
-    $form['submit']['#attributes']['class'][] = $confirmRemoveClass;
     $form['#attached']['library'][] = 'core/drupal.ajax';
     $form['#attached']['library'][] = 'core/drupal.dialog.ajax';
     $form['#attached']['library'][] = 'soc_wishlist/ajax-confirm';
@@ -242,6 +270,17 @@ class WishlistEditForm extends FormBase {
       }
     }
     return $element;
+  }
+
+  /**
+   * @param array $form
+   * @param \Drupal\Core\Form\FormStateInterface $form_state
+   *
+   * @return mixed
+   */
+  public function exportItems(array &$form, FormStateInterface $form_state) {
+    $response = new AjaxResponse();
+    return $response;
   }
 
   /**
