@@ -19,7 +19,7 @@
     ],
     "revision_id": [
         {
-            "value": 432
+            "value": 436
         }
     ],
     "langcode": [
@@ -70,16 +70,17 @@
             "lang": "en"
         }
     ],
-    "field_text": [
+    "revision_translation_affected": [
         {
-            "value": "<p>Semper libero sociis venenatis pharetra dapibus convallis<\/p>\r\n",
-            "format": "socomec",
-            "processed": "<p>Semper libero sociis venenatis pharetra dapibus convallis<\/p>"
+            "value": true,
+            "lang": "en"
         }
     ],
-    "field_title": [
+    "field_text": [
         {
-            "value": "test"
+            "value": "<p class=\"custom-cke-title-3\">Titre de niveau 1<\/p>\r\n\r\n<p class=\"custom-cke-subtitle-3\">Semper libero sociis venenatis pharetra dapibus convallis<\/p>\r\n",
+            "format": "socomec",
+            "processed": "<p class=\"custom-cke-title-3\">Titre de niveau 1<\/p>\n<p class=\"custom-cke-subtitle-3\">Semper libero sociis venenatis pharetra dapibus convallis<\/p>"
         }
     ]
 }

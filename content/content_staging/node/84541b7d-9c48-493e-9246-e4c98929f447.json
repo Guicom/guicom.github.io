@@ -1,7 +1,7 @@
 {
     "_links": {
         "self": {
-            "href": "http:\/\/default\/event\/sdsds?_format=hal_json"
+            "href": "http:\/\/default\/event\/energy-storage-international-2020?_format=hal_json"
         },
         "type": {
             "href": "http:\/\/drupal.org\/rest\/type\/node\/event"
@@ -23,6 +23,14 @@
                 "lang": "en"
             }
         ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/event\/field_event_custom_audience": [
+            {
+                "href": "http:\/\/default\/taxonomy\/term\/26?_format=hal_json"
+            },
+            {
+                "href": "http:\/\/default\/taxonomy\/term\/23?_format=hal_json"
+            }
+        ],
         "http:\/\/drupal.org\/rest\/relation\/node\/event\/field_event_picture": [
             {
                 "href": "http:\/\/default\/media\/41\/edit?_format=hal_json"
@@ -35,12 +43,12 @@
         ],
         "http:\/\/drupal.org\/rest\/relation\/node\/event\/field_event_thematic": [
             {
-                "href": "http:\/\/default\/taxonomy\/term\/63?_format=hal_json"
+                "href": "http:\/\/default\/taxonomy\/term\/91?_format=hal_json"
             }
         ],
         "http:\/\/drupal.org\/rest\/relation\/node\/event\/field_event_type": [
             {
-                "href": "http:\/\/default\/taxonomy\/term\/64?_format=hal_json"
+                "href": "http:\/\/default\/taxonomy\/term\/86?_format=hal_json"
             }
         ]
     },
@@ -56,7 +64,7 @@
     ],
     "vid": [
         {
-            "value": 147
+            "value": 151
         }
     ],
     "langcode": [
@@ -72,7 +80,7 @@
     ],
     "revision_timestamp": [
         {
-            "value": "2020-02-06T08:48:35+00:00",
+            "value": "2020-02-06T09:07:35+00:00",
             "format": "Y-m-d\\TH:i:sP"
         }
     ],
@@ -128,7 +136,39 @@
                     }
                 ],
                 "lang": "en",
-                "target_revision_id": "432"
+                "target_revision_id": "436"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/event\/field_event_custom_audience": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/taxonomy\/term\/26?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/news_audience"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "ea61f89b-f4b0-45d6-bd70-df020cc5113d"
+                    }
+                ]
+            },
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/taxonomy\/term\/23?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/news_audience"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "1f6b24d4-72eb-484a-b7a3-605916d385ca"
+                    }
+                ]
             }
         ],
         "http:\/\/drupal.org\/rest\/relation\/node\/event\/field_event_picture": [
@@ -169,7 +209,7 @@
             {
                 "_links": {
                     "self": {
-                        "href": "http:\/\/default\/taxonomy\/term\/63?_format=hal_json"
+                        "href": "http:\/\/default\/taxonomy\/term\/91?_format=hal_json"
                     },
                     "type": {
                         "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/event_thematic"
@@ -177,7 +217,7 @@
                 },
                 "uuid": [
                     {
-                        "value": "4030d9e6-2daf-420f-8c30-7fc2a80593fd"
+                        "value": "368804b5-faec-4cc0-850d-422a277cf16d"
                     }
                 ]
             }
@@ -186,7 +226,7 @@
             {
                 "_links": {
                     "self": {
-                        "href": "http:\/\/default\/taxonomy\/term\/64?_format=hal_json"
+                        "href": "http:\/\/default\/taxonomy\/term\/86?_format=hal_json"
                     },
                     "type": {
                         "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/event_type"
@@ -194,7 +234,7 @@
                 },
                 "uuid": [
                     {
-                        "value": "eaf46f6d-93d9-41ec-b140-0d0096f7e5ef"
+                        "value": "1e854a07-faab-481b-9b82-1b50438174fa"
                     }
                 ]
             }
@@ -208,7 +248,7 @@
     ],
     "title": [
         {
-            "value": "sdsds",
+            "value": "Energy Storage International 2020",
             "lang": "en"
         }
     ],
@@ -221,7 +261,7 @@
     ],
     "changed": [
         {
-            "value": "2020-02-06T08:48:35+00:00",
+            "value": "2020-02-06T09:07:35+00:00",
             "lang": "en",
             "format": "Y-m-d\\TH:i:sP"
         }
@@ -271,14 +311,14 @@
     "metatag": [
         {
             "value": {
-                "title": "sdsds | Socomec",
-                "canonical_url": "http:\/\/default\/event\/sdsds"
+                "title": "Energy Storage International 2020 | Socomec",
+                "canonical_url": "http:\/\/default\/event\/energy-storage-international-2020"
             }
         }
     ],
     "path": [
         {
-            "alias": "\/event\/sdsds",
+            "alias": "\/event\/energy-storage-international-2020",
             "pid": 48,
             "langcode": "en",
             "lang": "en"
@@ -286,30 +326,30 @@
     ],
     "field_add_to_calendar": [
         {
-            "value": false
+            "value": true
         }
     ],
     "field_event_country": [
         {
-            "value": "DZ"
+            "value": "US"
         }
     ],
     "field_event_date": [
         {
-            "value": "2020-02-06T11:11:11+01:00",
-            "end_value": "2020-02-14T11:11:01+01:00"
+            "value": "2019-12-28T09:00:00+01:00",
+            "end_value": "2020-03-14T18:00:00+01:00"
         }
     ],
     "field_event_place": [
         {
-            "value": "Event Place"
+            "value": "Salt Lake City, UT \/ Booth 2507"
         }
     ],
     "field_event_teaser": [
         {
-            "value": "<p>sdsd<\/p>\r\n",
+            "value": "<p>Join us at ESI 2020 in Salt Lake City for the largest energy storage event in North America<\/p>\r\n",
             "format": "socomec",
-            "processed": "<p>sdsd<\/p>",
+            "processed": "<p>Join us at ESI 2020 in Salt Lake City for the largest energy storage event in North America<\/p>",
             "summary": ""
         }
     ]
