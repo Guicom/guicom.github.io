@@ -64,7 +64,7 @@
     ],
     "vid": [
         {
-            "value": 159
+            "value": 169
         }
     ],
     "langcode": [
@@ -80,7 +80,7 @@
     ],
     "revision_timestamp": [
         {
-            "value": "2020-02-06T14:12:38+00:00",
+            "value": "2020-02-06T15:39:58+00:00",
             "format": "Y-m-d\\TH:i:sP"
         }
     ],
@@ -136,7 +136,7 @@
                     }
                 ],
                 "lang": "en",
-                "target_revision_id": "444"
+                "target_revision_id": "454"
             }
         ],
         "http:\/\/drupal.org\/rest\/relation\/node\/event\/field_event_custom_audience": [
@@ -261,7 +261,7 @@
     ],
     "changed": [
         {
-            "value": "2020-02-06T14:12:38+00:00",
+            "value": "2020-02-06T15:39:58+00:00",
             "lang": "en",
             "format": "Y-m-d\\TH:i:sP"
         }
@@ -274,7 +274,7 @@
     ],
     "sticky": [
         {
-            "value": false,
+            "value": true,
             "lang": "en"
         }
     ],
