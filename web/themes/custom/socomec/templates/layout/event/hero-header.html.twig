@@ -2,7 +2,8 @@
     <div class="mobile-container">
     <div {{ attributes.addClass(class, 'hero-wrapper').removeClass('mobile-container') }}>
       <div {{ attributes.addClass(class, 'event-info').removeClass('mobile-container','hero-wrapper') }}>
-        <a class="back-to-button" href="/event">{% include '/themes/custom/socomec/assets/images/picto/ui/chevron-left-circle.svg' %}{{ 'ALL EVENTS' | t }}</a>
+        <a class="back-to-button" href="{{ path('view.events.page_1') }}">{% include
+            '/themes/custom/socomec/assets/images/picto/ui/chevron-left-circle.svg' %}{{ 'ALL EVENTS' | t }}</a>
         <h1>
           <span class="event-title">{{ drupal_field('title', 'node') }}</span>
         </h1>
