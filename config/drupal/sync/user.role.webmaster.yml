@@ -220,6 +220,7 @@ permissions:
   - 'translate block_content'
   - 'translate configuration'
   - 'translate menu_link_content'
+  - 'update any basic block content'
   - 'update any media'
   - 'update any textfield block content'
   - 'update any tool_promotion block content'
