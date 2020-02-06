@@ -9,17 +9,17 @@
     },
     "id": [
         {
-            "value": 59
+            "value": 60
         }
     ],
     "uuid": [
         {
-            "value": "f9743e14-e8b3-4b98-bfec-077de9ede591"
+            "value": "ad5fa3ab-4f59-4731-8a58-58c86b69d266"
         }
     ],
     "revision_id": [
         {
-            "value": 444
+            "value": 446
         }
     ],
     "langcode": [
@@ -40,13 +40,13 @@
     ],
     "created": [
         {
-            "value": "2020-02-06T08:47:57+00:00",
+            "value": "2020-02-06T13:50:54+00:00",
             "format": "Y-m-d\\TH:i:sP"
         }
     ],
     "parent_id": [
         {
-            "value": "52"
+            "value": "53"
         }
     ],
     "parent_type": [
@@ -72,9 +72,14 @@
     ],
     "field_text": [
         {
-            "value": "<p class=\"custom-cke-title-3\">Titre de niveau 1<\/p>\r\n\r\n<p class=\"custom-cke-subtitle-3\">Semper libero sociis venenatis pharetra dapibus convallis<\/p>\r\n",
+            "value": "<p>sdsd<\/p>\r\n",
             "format": "socomec",
-            "processed": "<p class=\"custom-cke-title-3\">Titre de niveau 1<\/p>\n<p class=\"custom-cke-subtitle-3\">Semper libero sociis venenatis pharetra dapibus convallis<\/p>"
+            "processed": "<p>sdsd<\/p>"
+        }
+    ],
+    "field_title": [
+        {
+            "value": "dsd"
         }
     ]
 }

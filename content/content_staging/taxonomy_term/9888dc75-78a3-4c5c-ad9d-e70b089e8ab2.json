@@ -10,6 +10,12 @@
             {
                 "href": "http:\/\/default\/products?_format=hal_json"
             }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/family\/content_translation_uid": [
+            {
+                "href": "http:\/\/default\/user\/1?_format=hal_json",
+                "lang": "en"
+            }
         ]
     },
     "tid": [
@@ -75,6 +81,24 @@
                         "value": "2e4108af-6939-4d12-bd4e-2ff6496cc8aa"
                     }
                 ]
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/family\/content_translation_uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/user\/1?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "639675d9-184b-46a3-a954-077022b40562"
+                    }
+                ],
+                "lang": "en"
             }
         ]
     },

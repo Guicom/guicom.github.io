@@ -66,7 +66,7 @@
     ],
     "vid": [
         {
-            "value": 137
+            "value": 153
         }
     ],
     "langcode": [
@@ -82,7 +82,7 @@
     ],
     "revision_timestamp": [
         {
-            "value": "2020-01-22T14:38:55+00:00",
+            "value": "2020-02-06T12:44:57+00:00",
             "format": "Y-m-d\\TH:i:sP"
         }
     ],
@@ -99,7 +99,7 @@
                 },
                 "uuid": [
                     {
-                        "value": "1bbc8659-cab2-4a15-9f3a-428b9f85a9a2"
+                        "value": "639675d9-184b-46a3-a954-077022b40562"
                     }
                 ]
             }
@@ -116,7 +116,7 @@
                 },
                 "uuid": [
                     {
-                        "value": "1bbc8659-cab2-4a15-9f3a-428b9f85a9a2"
+                        "value": "639675d9-184b-46a3-a954-077022b40562"
                     }
                 ],
                 "lang": "en"
@@ -138,7 +138,7 @@
                     }
                 ],
                 "lang": "en",
-                "target_revision_id": "374"
+                "target_revision_id": "437"
             }
         ],
         "http:\/\/drupal.org\/rest\/relation\/node\/news\/field_media_image": [
@@ -173,7 +173,7 @@
                         "value": "9dcff6bf-08ef-40f3-bf26-74a5de5a3c7c"
                     }
                 ],
-                "target_revision_id": "375"
+                "target_revision_id": "438"
             }
         ],
         "http:\/\/drupal.org\/rest\/relation\/node\/news\/field_news_audience": [
@@ -266,7 +266,7 @@
     ],
     "changed": [
         {
-            "value": "2020-01-22T14:38:55+00:00",
+            "value": "2020-02-06T12:44:57+00:00",
             "lang": "en",
             "format": "Y-m-d\\TH:i:sP"
         }
@@ -279,7 +279,7 @@
     ],
     "sticky": [
         {
-            "value": false,
+            "value": true,
             "lang": "en"
         }
     ],
@@ -323,14 +323,14 @@
                 "canonical_url": "http:\/\/default\/news\/fake-sleuths-web-gets-it-wrong-london-attacker",
                 "og_type": "News",
                 "og_url": "http:\/\/default\/news\/fake-sleuths-web-gets-it-wrong-london-attacker",
-                "image_src": "http:\/\/default\/sites\/default\/files\/styles\/og_image_600x315\/public\/2020-01\/IMG-hover-scale-105%25%401x.jpg?itok=VULW0_hj",
+                "image_src": "http:\/\/default\/sites\/default\/files\/styles\/og_image_600x315\/public\/2020-01\/IMG-hover-scale-105%25%401x.jpg?itok=vBpJLxSV",
                 "og_title": "Fake Sleuths: Web Gets It Wrong on London Attacker",
-                "og_image_0": "http:\/\/default\/sites\/default\/files\/styles\/og_image_600x315\/public\/2020-01\/IMG-hover-scale-105%25%401x.jpg?itok=VULW0_hj",
-                "og_image_url_0": "http:\/\/default\/sites\/default\/files\/styles\/og_image_600x315\/public\/2020-01\/IMG-hover-scale-105%25%401x.jpg?itok=VULW0_hj",
+                "og_image_0": "http:\/\/default\/sites\/default\/files\/styles\/og_image_600x315\/public\/2020-01\/IMG-hover-scale-105%25%401x.jpg?itok=vBpJLxSV",
+                "og_image_url_0": "http:\/\/default\/sites\/default\/files\/styles\/og_image_600x315\/public\/2020-01\/IMG-hover-scale-105%25%401x.jpg?itok=vBpJLxSV",
                 "og_image_type": "image\/jpeg",
                 "og_image_width": "600",
                 "og_image_height": "315",
-                "og_updated_time": "Wed, 01\/22\/2020 - 15:38"
+                "og_updated_time": "Thu, 02\/06\/2020 - 13:44"
             }
         }
     ],
