@@ -1,61 +1,63 @@
 {
     "_links": {
         "self": {
-            "href": "http:\/\/default\/taxonomy\/term\/5?_format=hal_json"
+            "href": "http:\/\/default\/taxonomy\/term\/87?_format=hal_json"
         },
         "type": {
-            "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/product_status"
+            "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/event_type"
         },
-        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/product_status\/parent": [
+        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/event_type\/parent": [
             null
         ],
-        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/product_status\/content_translation_uid": [
+        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/event_type\/content_translation_uid": [
             {
                 "href": "http:\/\/default\/user\/1?_format=hal_json",
-                "lang": "en"
+                "lang": "zxx"
             }
         ]
     },
     "tid": [
         {
-            "value": 5
+            "value": 87
         }
     ],
     "uuid": [
         {
-            "value": "b728c2f1-5620-4216-b006-25954055d22f"
+            "value": "a4d2c41f-cac1-4dc4-afa2-9601704a23e2"
         }
     ],
     "revision_id": [
         {
-            "value": 5
+            "value": 87
         }
     ],
     "langcode": [
         {
-            "value": "en",
-            "lang": "en"
+            "value": "zxx",
+            "lang": "zxx"
         }
     ],
     "vid": [
         {
-            "target_id": "product_status"
+            "target_id": "event_type"
         }
     ],
     "revision_created": [
         {
-            "value": "2019-12-02T10:52:07+00:00",
+            "value": "2020-02-06T08:53:04+00:00",
             "format": "Y-m-d\\TH:i:sP"
         }
     ],
     "status": [
         {
-            "value": true
+            "value": true,
+            "lang": "zxx"
         }
     ],
     "name": [
         {
-            "value": "Discontinued"
+            "value": "Seminar",
+            "lang": "zxx"
         }
     ],
     "weight": [
@@ -64,10 +66,10 @@
         }
     ],
     "_embedded": {
-        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/product_status\/parent": [
+        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/event_type\/parent": [
             null
         ],
-        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/product_status\/content_translation_uid": [
+        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/event_type\/content_translation_uid": [
             {
                 "_links": {
                     "self": {
@@ -82,45 +84,54 @@
                         "value": "1bbc8659-cab2-4a15-9f3a-428b9f85a9a2"
                     }
                 ],
-                "lang": "en"
+                "lang": "zxx"
             }
         ]
     },
     "changed": [
         {
-            "value": "2019-12-02T10:52:07+00:00",
+            "value": "2020-02-06T08:53:04+00:00",
+            "lang": "zxx",
             "format": "Y-m-d\\TH:i:sP"
         }
     ],
     "default_langcode": [
         {
             "value": true,
-            "lang": "en"
+            "lang": "zxx"
         }
     ],
     "revision_translation_affected": [
         {
             "value": true,
-            "lang": "en"
+            "lang": "zxx"
         }
     ],
     "content_translation_source": [
         {
             "value": "und",
-            "lang": "en"
+            "lang": "zxx"
         }
     ],
     "content_translation_outdated": [
         {
             "value": false,
-            "lang": "en"
+            "lang": "zxx"
         }
     ],
     "content_translation_created": [
         {
-            "value": "2020-01-14T11:00:17+00:00",
-            "lang": "en",
+            "value": "2020-02-06T08:53:04+00:00",
+            "lang": "zxx",
             "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "metatag": [
+        {
+            "value": {
+                "title": "Seminar | Socomec",
+                "canonical_url": "http:\/\/default\/taxonomy\/term\/87"
+            }
         }
     ]
 }
