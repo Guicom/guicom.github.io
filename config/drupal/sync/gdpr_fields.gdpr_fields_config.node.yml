@@ -1479,6 +1479,17 @@ bundles:
     field_event_date:
       bundle: event
       name: field_event_date
+    field_add_to_calendar:
+      bundle: event
+      name: field_add_to_calendar
+      entity_type_id: node
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: date_anonymizer
+      notes: ''
+      relationship: 0
+      sars_filename: ''
   resource_youtube:
     field_resource_link_youtube:
       bundle: resource_youtube

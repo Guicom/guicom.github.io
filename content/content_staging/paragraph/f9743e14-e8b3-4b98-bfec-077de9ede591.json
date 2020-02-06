@@ -1,0 +1,85 @@
+{
+    "_links": {
+        "self": {
+            "href": ""
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/model_text"
+        }
+    },
+    "id": [
+        {
+            "value": 59
+        }
+    ],
+    "uuid": [
+        {
+            "value": "f9743e14-e8b3-4b98-bfec-077de9ede591"
+        }
+    ],
+    "revision_id": [
+        {
+            "value": 432
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "type": [
+        {
+            "target_id": "model_text"
+        }
+    ],
+    "status": [
+        {
+            "value": true
+        }
+    ],
+    "created": [
+        {
+            "value": "2020-02-06T08:47:57+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "parent_id": [
+        {
+            "value": "52"
+        }
+    ],
+    "parent_type": [
+        {
+            "value": "node"
+        }
+    ],
+    "parent_field_name": [
+        {
+            "value": "field_event_content"
+        }
+    ],
+    "behavior_settings": [
+        {
+            "value": []
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "field_text": [
+        {
+            "value": "<p>Semper libero sociis venenatis pharetra dapibus convallis<\/p>\r\n",
+            "format": "socomec",
+            "processed": "<p>Semper libero sociis venenatis pharetra dapibus convallis<\/p>"
+        }
+    ],
+    "field_title": [
+        {
+            "value": "test"
+        }
+    ]
+}
