@@ -1365,6 +1365,9 @@ bundles:
       notes: ''
       relationship: 0
       sars_filename: ''
+    field_product_family:
+      bundle: resource
+      name: field_product_family
   event:
     field_event_picture:
       bundle: event
