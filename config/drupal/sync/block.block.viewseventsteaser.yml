@@ -1,0 +1,31 @@
+uuid: 448266ed-7780-427a-8801-bb1e2723d35a
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:dc9eaeee-27b7-41bb-80fe-b5f35d09fd71'
+  module:
+    - block_content
+    - system
+  theme:
+    - socomec
+id: viewseventsteaser
+theme: socomec
+region: hidden
+weight: 0
+provider: null
+plugin: 'block_content:dc9eaeee-27b7-41bb-80fe-b5f35d09fd71'
+settings:
+  id: 'block_content:dc9eaeee-27b7-41bb-80fe-b5f35d09fd71'
+  label: 'Views Events teaser'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    pages: /events
+    negate: false
+    context_mapping: {  }
