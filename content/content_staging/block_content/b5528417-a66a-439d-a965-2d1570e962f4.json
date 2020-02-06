@@ -6,12 +6,6 @@
         "type": {
             "href": "http:\/\/drupal.org\/rest\/type\/block_content\/home_product_assistance"
         },
-        "http:\/\/drupal.org\/rest\/relation\/block_content\/home_product_assistance\/content_translation_uid": [
-            {
-                "href": "http:\/\/default\/user\/1?_format=hal_json",
-                "lang": "en"
-            }
-        ],
         "http:\/\/drupal.org\/rest\/relation\/block_content\/home_product_assistance\/field_background_image": [
             {
                 "href": "http:\/\/default\/media\/34\/edit?_format=hal_json"
@@ -110,25 +104,14 @@
             "lang": "en"
         }
     ],
+    "content_translation_created": [
+        {
+            "value": "2019-12-16T16:55:06+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
     "_embedded": {
-        "http:\/\/drupal.org\/rest\/relation\/block_content\/home_product_assistance\/content_translation_uid": [
-            {
-                "_links": {
-                    "self": {
-                        "href": "http:\/\/default\/user\/1?_format=hal_json"
-                    },
-                    "type": {
-                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
-                    }
-                },
-                "uuid": [
-                    {
-                        "value": "d9b82eba-c048-4c84-b618-46c4faa05479"
-                    }
-                ],
-                "lang": "en"
-            }
-        ],
         "http:\/\/drupal.org\/rest\/relation\/block_content\/home_product_assistance\/field_background_image": [
             {
                 "_links": {
@@ -199,13 +182,6 @@
             }
         ]
     },
-    "content_translation_created": [
-        {
-            "value": "2019-12-16T16:55:06+00:00",
-            "lang": "en",
-            "format": "Y-m-d\\TH:i:sP"
-        }
-    ],
     "field_ba_text": [
         {
             "value": "<p>Browse our FAQs to easily find answer, submit a Support Request...<\/p>\r\n",

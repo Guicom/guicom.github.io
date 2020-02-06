@@ -1,12 +1,12 @@
 {
     "_links": {
         "self": {
-            "href": "http:\/\/default\/block\/3?_format=hal_json"
+            "href": "http:\/\/default\/block\/8?_format=hal_json"
         },
         "type": {
-            "href": "http:\/\/drupal.org\/rest\/type\/block_content\/link"
+            "href": "http:\/\/drupal.org\/rest\/type\/block_content\/basic"
         },
-        "http:\/\/drupal.org\/rest\/relation\/block_content\/link\/content_translation_uid": [
+        "http:\/\/drupal.org\/rest\/relation\/block_content\/basic\/content_translation_uid": [
             {
                 "href": "http:\/\/default\/user\/1?_format=hal_json",
                 "lang": "en"
@@ -15,17 +15,17 @@
     },
     "id": [
         {
-            "value": 3
+            "value": 8
         }
     ],
     "uuid": [
         {
-            "value": "cd83bf6d-f525-4456-b1a8-20f8b374f3b2"
+            "value": "dc9eaeee-27b7-41bb-80fe-b5f35d09fd71"
         }
     ],
     "revision_id": [
         {
-            "value": 5
+            "value": 13
         }
     ],
     "langcode": [
@@ -36,31 +36,28 @@
     ],
     "type": [
         {
-            "target_id": "link"
+            "target_id": "basic"
         }
     ],
     "revision_created": [
         {
-            "value": "2019-10-17T14:25:43+00:00",
+            "value": "2020-02-06T12:49:22+00:00",
             "format": "Y-m-d\\TH:i:sP"
         }
     ],
     "status": [
         {
-            "value": true,
-            "lang": "en"
+            "value": true
         }
     ],
     "info": [
         {
-            "value": "Pardot newsletter",
-            "lang": "en"
+            "value": "Views Events teaser"
         }
     ],
     "changed": [
         {
-            "value": "2019-10-17T14:25:43+00:00",
-            "lang": "en",
+            "value": "2020-02-06T13:25:01+00:00",
             "format": "Y-m-d\\TH:i:sP"
         }
     ],
@@ -94,7 +91,7 @@
         }
     ],
     "_embedded": {
-        "http:\/\/drupal.org\/rest\/relation\/block_content\/link\/content_translation_uid": [
+        "http:\/\/drupal.org\/rest\/relation\/block_content\/basic\/content_translation_uid": [
             {
                 "_links": {
                     "self": {
@@ -115,25 +112,17 @@
     },
     "content_translation_created": [
         {
-            "value": "2019-10-17T14:25:43+00:00",
+            "value": "2020-02-06T12:49:22+00:00",
             "lang": "en",
             "format": "Y-m-d\\TH:i:sP"
         }
     ],
-    "metatag": [
+    "body": [
         {
-            "value": {
-                "title": "| Socomec",
-                "canonical_url": "http:\/\/default\/node"
-            }
-        }
-    ],
-    "field_link": [
-        {
-            "uri": "https:\/\/go.socomec.com\/l\/86922\/2019-10-15\/67j4ls",
-            "title": "",
-            "options": [],
-            "lang": "en"
+            "value": "<p>Event contenu du bloc custom.<\/p>\r\n",
+            "format": "socomec",
+            "processed": "<p>Event contenu du bloc custom.<\/p>",
+            "summary": ""
         }
     ]
 }
