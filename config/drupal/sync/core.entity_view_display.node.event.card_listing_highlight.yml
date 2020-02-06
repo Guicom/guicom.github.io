@@ -38,7 +38,14 @@ content:
     weight: 4
     label: hidden
     settings: {  }
-    third_party_settings: {  }
+    third_party_settings:
+      ds:
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
     type: add_to_calendar
     region: content
   field_event_date:
