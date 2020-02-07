@@ -14,6 +14,7 @@
         placeholder = settings.wishlistDatatable.searchPlaceholder;
       }
       var table = $( "#wishlist_form_wrapper table", context );
+
       table.once('wishlistDatatable').DataTable({
         retrieve:   true,
         responsive: true,

@@ -90,94 +90,77 @@ class WishlistEditForm extends FormBase {
     $form['#theme'] = 'soc_wishlist_custom_form';
     $items = $this->wishlistManager->loadSavedItems();
 
-    // Set header.
-    $header = [
-      'picture' => [
-        'data' => t('Img'),
-        'class' => ['no-sort']
-      ],
-      'model' => [
-        'data' => t('Model'),
-      ],
-      'reference' => [
-        'data' => t('Reference'),
-      ],
-      'description' => [
-        'data' => t('Main specifications'),
-        'class' => ['no-sort']
-      ],
-      'quantity' => [
-        'data' => t('Qty'),
-        'class' => ['no-sort']
-      ],
+    // Form wrapper for AJAX
+    $form['wrapper_wishlist'] = [
+      '#type' => 'container',
     ];
-
-    // Prepare tableselect field.
-    $options = [];
+    $i = 0;
     foreach ($items as $result) {
       if ($result['node'] instanceof Node) {
         $extId = $result['node']->get('field_reference_extid')->value;
         $mediaId = $result['node']->get('field_reference_picture')->target_id;
-        $picture = $this->mediaApi->getFileUriFromMediaId($mediaId);
-        $options[$extId] = [
-          'picture' => [
-            'data' => [
-              '#theme' => 'image_style',
-              '#style_name' => 'thumbnail',
-              '#uri' => $picture,
-            ],
-          ],
-          'model' => $result['node']->get('field_reference_name')->value,
-          'reference' => $result['node']->get('field_reference_ref')->value,
-          'description' => $result['node']->getTitle(),
-          'quantity' => [
-            'data' => [
-              '#type' => 'number',
-              '#title' => 'Quantity',
-              '#title_display' => 'invisible',
-              '#value' => $result['quantity'],
-              '#name' => 'quantity[' . $extId . ']',
-              '#attributes' => [
-                'data-extid' => $extId,
-              ],
-              '#size' => 2,
-              '#prefix' => '<span id="wishlist_quantity_' . $extId . '">',
-              '#suffix' => '</span>',
-              '#ajax' => [
-                'callback' => [$this, 'updateItems'],
-                'event' => 'change',
-                'wrapper' => 'wishlist_quantity_' . $extId,
-                'progress' => [
-                  'type' => 'throbber',
-                  'message' => $this->t('Updating quantity...'),
-                ],
-              ],
-            ],
+        $picture = '';
+        if (!empty($mediaId)) {
+          $picture = $this->mediaApi->getFileUriFromMediaId($mediaId);
+        }
+
+        $form['wrapper_wishlist'][$i]['extid'] = [
+          '#value' => $extId
+        ];
+
+        $form['wrapper_wishlist'][$i]['picture_'.$extId] = [
+            '#theme' => 'image_style',
+            '#style_name' => 'thumbnail',
+            '#uri' => $picture,
+        ];
+
+        $form['wrapper_wishlist'][$i]['model_'.$extId] = [
+          '#markup' => $result['node']->get('field_reference_ref')->value,
+        ];
+
+        $form['wrapper_wishlist'][$i]['reference_'.$extId] = [
+          '#markup' => $result['node']->get('field_reference_ref')->value,
+        ];
+
+        $form['wrapper_wishlist'][$i]['description_'.$extId] = [
+          '#markup' => $result['node']->getTitle(),
+        ];
+
+        $form['wrapper_wishlist'][$i]['quantity_'.$extId] = [
+          '#type' => 'number',
+          '#title' => 'Quantity',
+          '#title_display' => 'invisible',
+          '#default_value' => $result['quantity'],
+          '#prefix' => '<div id="wishlist_quantity_wrapper_'.$extId.'">',
+          '#suffix' => '</div>',
+          '#size' => 2,
+          '#ajax' => [
+            'callback' => [$this, 'updateItems'],
+            'event' => 'change',
+            'wrapper' => 'wishlist_quantity_wrapper_'.$extId,
           ],
         ];
+
+        $form['wrapper_wishlist'][$i]['wishlist_action_'.$extId] = [
+          '#title' => 'action',
+          '#title_display' => 'invisible',
+          '#type' => 'checkboxes',
+          '#options' =>  ['checked' => 'checked'],
+          '#default_value' => ['checked'],
+          '#prefix' => '<div id="wishlist_wishlist_action_wrapper_'.$extId.'">',
+          '#suffix' => '</div>',
+          /*'#ajax' => [
+            'callback' => [$this, 'updateSelect'],
+            'event' => 'change',
+            'progress' => ['type' => 'none'],
+          ],*/
+        ];
       }
+      $i++;
     }
 
-    // Form wrapper for AJAX
-    $form['wrapper'] = [
-      '#type' => 'container',
-      '#attributes' => [
-        'id' => 'wishlist_form_wrapper',
-      ],
-    ];
-
-    // Create fields.
-    $form['wrapper']['items'] = [
-      '#type' => 'tableselect',
-      '#header' => $header,
-      '#options' => $options,
-      '#empty' => t('No items found!'),
-      '#prefix' => '<div class="full-width table-responsive-no-srcoll">',
-      '#suffix' => '</div>',
-      '#process' => [
-        '::processTable',
-        [Tableselect::class, 'processTableselect']
-      ]
+    $form['wrapper_wishlist']['nb'] = [
+      '#value' => $i
     ];
 
     $confirmRemoveClass = 'confirm-remove';
@@ -186,27 +169,18 @@ class WishlistEditForm extends FormBase {
       $form['actions']['exports'][$i]['xls'][$i] = [
         '#type' => 'submit',
         '#value' => t('Export to an XLS file'),
-        '#ajax' => [
-          'callback' => [$this, 'exportItems'],
-        ],
       ];
 
       // Export btn
       $form['actions']['exports'][$i]['pdf'][$i] = [
         '#type' => 'submit',
         '#value' => t('Export to an PDF file'),
-        '#ajax' => [
-          'callback' => [$this, 'exportItems'],
-        ],
       ];
 
       // Export btn
       $form['actions']['exports'][$i]['csv'][$i] = [
         '#type' => 'submit',
         '#value' => t('Export to an CSV file'),
-        '#ajax' => [
-          'callback' => [$this, 'exportItems'],
-        ],
       ];
 
       // Update quantity
@@ -242,6 +216,7 @@ class WishlistEditForm extends FormBase {
       'searchPlaceholder' => $this->t('Search, filter...'),
     ];
     // Return form.
+
     return $form;
   }
 
@@ -258,28 +233,23 @@ class WishlistEditForm extends FormBase {
   public function submitForm(array &$form, FormStateInterface $form_state) {
   }
 
-  public function processTable(&$element, FormStateInterface $form_state, &$complete_form) {
-    foreach (array_keys($element['#options']) as $option) {
-      $element['#options'][$option]['#attributes']['id'] = 'item_line_' . $option;
-      foreach (array_keys($element['#options'][$option]) as $col) {
-        if (is_array($element['#options'][$option][$col]) && isset($element['#options'][$option][$col]['data'])) {
-          $element['#options'][$option][$col]['data']['#name'] = implode('-', [$element['#name'], $option, $col]);
-          $element['#options'][$option][$col]['data']['#id'] = implode('-', [$element['#id'], $option, $col]);
-          $element['#options'][$option][$col]['data'] = RenderElement::preRenderAjaxForm($element['#options'][$option][$col]['data']);
-        }
-      }
-    }
-    return $element;
-  }
-
   /**
    * @param array $form
    * @param \Drupal\Core\Form\FormStateInterface $form_state
    *
    * @return mixed
    */
-  public function exportItems(array &$form, FormStateInterface $form_state) {
+  public function updateSelect(array &$form, FormStateInterface $form_state) {
     $response = new AjaxResponse();
+    $userInput = $form_state->getUserInput();
+    $extids = [];
+    foreach ($form['wrapper_wishlist'] as $key => $item ) {
+      if (is_numeric($key)) {
+        if (!empty($item['extid']['#value'])) {
+          $extids[] = $item['extid']['#value'];
+        }
+      }
+    }
     return $response;
   }
 

@@ -31,7 +31,40 @@
     {% endblock %}
   {% endwith %}
 </div>
-{{ form | without('title', 'actions') }}
+<div id="wishlist_form_wrapper">
+  <table class="full-width">
+    <thead>
+    <tr>
+      <th>{{ 'Img'|t }}</th>
+      <th>{{ 'Model'|t }}</th>
+      <th>{{ 'Reference'|t }}</th>
+      <th>{{ 'Main specifications'|t }}</th>
+      <th>{{ 'Qty'|t }}</th>
+      <th>{{ 'actions'|t }}</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for i in range(0, form.wrapper_wishlist.nb['#value']) %}
+      <tr id="wishlist_row_wrapper_{{ form.wrapper_wishlist[i].extid['#value'] }}">
+        {{  form.wrapper_wishlist[i].extid }}
+        {%  set quantity = "quantity_" ~ form.wrapper_wishlist[i].extid['#value'] %}
+        {%  set wishlist_action = "wishlist_action_" ~ form.wrapper_wishlist[i].extid['#value'] %}
+        {%  set picture = "picture_" ~ form.wrapper_wishlist[i].extid['#value'] %}
+        {%  set model = "model_" ~ form.wrapper_wishlist[i].extid['#value'] %}
+        {%  set reference = "reference_" ~ form.wrapper_wishlist[i].extid['#value'] %}
+        {%  set description = "description_" ~ form.wrapper_wishlist[i].extid['#value'] %}
+        <td>{{ form.wrapper_wishlist[i][picture] }}</td>
+        <td>{{ form.wrapper_wishlist[i][model] }}</td>
+        <td>{{ form.wrapper_wishlist[i][reference] }}</td>
+        <td>{{ form.wrapper_wishlist[i][description] }}</td>
+        <td>{{ form.wrapper_wishlist[i][quantity] }}</td>
+        <td>{{ form.wrapper_wishlist[i][wishlist_action] }}</td>
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+</div>
+{{ form | without('title', 'actions', 'wrapper_wishlist') }}
 <div id="navbar-wishlist-bottom">
   {% with {'key': 1} %}
     {{ block('navbar_wishlist') }}
