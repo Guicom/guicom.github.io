@@ -26,7 +26,6 @@ permissions:
   - 'delete product_reference revisions'
   - 'delete terms in family'
   - 'display eu cookie compliance popup'
-  - 'edit any event content'
   - 'edit any landing_page content'
   - 'edit any news content'
   - 'edit any product content'
