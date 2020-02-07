@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.thank_you_page.field_body
+    - field.field.node.thank_you_page.field_country
     - field.field.node.thank_you_page.field_cta
     - field.field.node.thank_you_page.field_file
     - field.field.node.thank_you_page.field_landing_page
@@ -11,10 +12,13 @@ dependencies:
     - field.field.node.thank_you_page.field_thank_you_text
     - field.field.node.thank_you_page.field_thumbnail
     - node.type.thank_you_page
+    - workflows.workflow.editorial
   module:
+    - content_moderation
     - media_library
     - paragraphs
     - path
+    - scheduler
     - text
 id: node.thank_you_page.default
 targetEntityType: node
@@ -38,6 +42,12 @@ content:
       default_paragraph_type: _none
     third_party_settings: {  }
     type: entity_reference_paragraphs
+    region: content
+  field_country:
+    weight: 101
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
     region: content
   field_cta:
     weight: 6
@@ -141,9 +151,9 @@ content:
     third_party_settings: {  }
   scheduler_settings:
     weight: 20
+    region: content
     settings: {  }
     third_party_settings: {  }
-    region: content
   status:
     type: boolean_checkbox
     settings:

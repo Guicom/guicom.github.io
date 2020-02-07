@@ -3,12 +3,13 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.media.product_image.field_country
     - field.field.media.product_image.field_media_image_2
     - image.style.thumbnail
     - media.type.product_image
   module:
-    - image
     - path
+    - svg_image
 id: media.product_image.default
 targetEntityType: media
 bundle: product_image
@@ -20,6 +21,15 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_country:
+    weight: 101
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
   field_media_image_2:
     weight: 0
     settings:
