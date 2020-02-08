@@ -1,0 +1,15 @@
+uuid: 876a752c-03a1-4b66-8ecc-3c6ca9cbcc7a
+langcode: en
+status: true
+dependencies: {  }
+id: es_news
+label: 'ES / News'
+channel_entity_type: node
+channel_bundle: news
+channel_langcode: es
+channel_filters: null
+channel_groups: null
+channel_sorts: {  }
+channel_searches: null
+authorized_users:
+  cd0d9446-cb19-4e87-9dcf-d3bdc37a70a7: cd0d9446-cb19-4e87-9dcf-d3bdc37a70a7

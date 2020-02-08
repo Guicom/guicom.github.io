@@ -1,0 +1,15 @@
+uuid: 5e432363-ff60-45cb-bc07-a395043a6efb
+langcode: en
+status: true
+dependencies: {  }
+id: en_gb_news
+label: 'EN-GB / News'
+channel_entity_type: node
+channel_bundle: news
+channel_langcode: en-gb
+channel_filters: null
+channel_groups: null
+channel_sorts: {  }
+channel_searches: null
+authorized_users:
+  cd0d9446-cb19-4e87-9dcf-d3bdc37a70a7: cd0d9446-cb19-4e87-9dcf-d3bdc37a70a7

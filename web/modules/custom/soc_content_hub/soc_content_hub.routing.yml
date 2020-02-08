@@ -1,0 +1,7 @@
+soc_content_hub.generate_channels:
+  path: '/socomec-channels'
+  defaults:
+    _controller: '\Drupal\soc_content_hub\Controller\ChannelsController::generateChannels'
+    _title: 'Generate channels'
+  requirements:
+    _permission: 'access content'

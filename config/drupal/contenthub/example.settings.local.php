@@ -143,3 +143,7 @@ $databases["default"]["default"] = array (
 // Config splits
 $config['config_split.config_split.contenthub']['status'] = TRUE;
 $config['config_split.config_split.contenthub']['folder'] = "../config/drupal/contenthub/sync";
+
+// Entity share user
+$settings['entity_share_username'] = 'entityshare';
+$settings['entity_share_password'] = 'entityshare';

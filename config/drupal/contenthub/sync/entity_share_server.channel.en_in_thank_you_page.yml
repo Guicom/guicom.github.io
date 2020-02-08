@@ -1,0 +1,15 @@
+uuid: 0a161d8f-8c7c-4120-9fa6-90e398e65725
+langcode: en
+status: true
+dependencies: {  }
+id: en_in_thank_you_page
+label: 'EN-IN / Thank_you_page'
+channel_entity_type: node
+channel_bundle: thank_you_page
+channel_langcode: en-in
+channel_filters: null
+channel_groups: null
+channel_sorts: {  }
+channel_searches: null
+authorized_users:
+  cd0d9446-cb19-4e87-9dcf-d3bdc37a70a7: cd0d9446-cb19-4e87-9dcf-d3bdc37a70a7

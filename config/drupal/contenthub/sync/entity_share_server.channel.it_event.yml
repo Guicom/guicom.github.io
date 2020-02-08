@@ -1,0 +1,15 @@
+uuid: 83dd2967-3cf2-4534-ad23-f35659a2eed5
+langcode: en
+status: true
+dependencies: {  }
+id: it_event
+label: 'IT / Event'
+channel_entity_type: node
+channel_bundle: event
+channel_langcode: it
+channel_filters: null
+channel_groups: null
+channel_sorts: {  }
+channel_searches: null
+authorized_users:
+  cd0d9446-cb19-4e87-9dcf-d3bdc37a70a7: cd0d9446-cb19-4e87-9dcf-d3bdc37a70a7
