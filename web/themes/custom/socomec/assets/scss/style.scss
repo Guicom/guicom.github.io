@@ -13,6 +13,24 @@ body {
   background: $white;
   //overflow-x: hidden;
 }
+html {
+  .overlay {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0,0,0,0.7);
+    z-index: 998;
+    display: none;
+    opacity: 0;
+    top: 0;
+    transition: all 0.3s;
+    &.active {
+      display: block;
+      opacity: 1;
+      transition: all 0.3s;
+    }
+  }
+}
 
 /* COLORS
 --------------------------------------------------*/

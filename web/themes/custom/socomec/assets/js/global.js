@@ -105,15 +105,52 @@
         }
       });
 
+      // SLIDE Dropdown lvl0
+      $("li[data-level='0']", context).once('socomecMobileMenulv0').each(function () {
+        $(this).click(function (e) {
+          $(this).toggleClass('active');
+          var dropdown = $(this).find('.we-mega-menu-submenu.dropdown-menu').first();
+          e.preventDefault();
+          e.stopPropagation();
+          $(dropdown).slideToggle("400");
+        });
+      });
+      // CLOSE OTHER Dropdown lvl0
+      $("li[data-level='0']", context).once('socomecMobileMenuClosinglv0').each(function () {
+        $(this).click(function () {
+          var dropdown = $(this).find('.we-mega-menu-submenu.dropdown-menu');
+          $(".we-mega-menu-submenu.dropdown-menu").not(dropdown).slideUp("400");
+        });
+      });
+
+      // SLIDE OPENING Dropdown lvl1
       $("[data-level='1'] .mobile-dropdown-trigger", context).once('socomecMobileMenu').each(function () {
         $(this).click(function (e) {
-          console.log('test');
+          $(this).toggleClass('active');
           var dropdown = $(this).next('.we-mega-menu-submenu.dropdown-menu');
           e.preventDefault();
           e.stopPropagation();
           $(dropdown).slideToggle("400");
         });
       });
+      // CLOSE OTHER Dropdown lvl1
+      $("[data-level='1'] .mobile-dropdown-trigger", context).once('socomecMobileMenuClosinglv1').each(function () {
+        $(this).click(function () {
+          var dropdown = $(this).next('.we-mega-menu-submenu.dropdown-menu');
+          console.log('toto1');
+          $(".level-1 > .we-mega-menu-submenu.dropdown-menu").not(dropdown).slideUp("400");
+          console.log('toto2');
+        });
+      });
+
+      // OVERLAY + Kill open dropdown
+      $('.navbar-toggler', context).once('socomecOverlayResponsive').each(function() {
+        var allDropdown = $('.we-mega-menu-submenu.dropdown-menu');
+        $(this).click(function (){
+          $('html .overlay').toggleClass('active');
+          allDropdown.hide();
+        })
+      })
     }
   };
 

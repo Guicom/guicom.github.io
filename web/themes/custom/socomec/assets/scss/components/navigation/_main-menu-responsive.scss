@@ -76,6 +76,7 @@
                 position: initial;
                 border: 0;
                 text-transform: uppercase;
+                white-space: normal;
                 &:before,
                 &:after {
                   display: none;
@@ -101,12 +102,11 @@
                   .menu-title-wrapper {
                     display: block;
                     width: 80%;
-                    white-space: nowrap;
-                    overflow: hidden;
-                    text-overflow: ellipsis;
+                    white-space: normal;
                     font-size: 12px;
                     margin-top: 0;
                     padding: 0;
+                    border-bottom: 0;
                   }
                   .menu-icon-wrapper {
                     display: none;
@@ -117,13 +117,11 @@
                 }
                 & > a,
                 span:not(.mobile-dropdown-trigger) {
-                  margin-top: 1.5rem;
-                  margin-bottom: 1rem;
-                  padding: 0 16px;
-                  transition: 0.2s;
+                  padding: 1.5rem 1rem;
+                  border-bottom: 1px solid rgba($white, 0.8);
+
                   &[aria-expanded='true'] {
-                    padding-left: 1.5rem;
-                    transition: 0.2s;
+
                   }
                 }
                 >.we-mega-menu-submenu {
@@ -141,7 +139,7 @@
                 &.show {
                   border-bottom: 1px solid $yellow;
                   height: auto;
-                  background:  linear-gradient(180deg, #084796 0%, #232C77 100%);
+                  //background:  linear-gradient(180deg, #084796 0%, #232C77 100%);
                 }
                 & >.we-mega-menu-submenu {
                   width: 100%!important;
@@ -196,29 +194,38 @@
                     content: '';
                     display: block;
                     position: absolute;
-                    top: 5px;
+                    top: 18px;
                     right: 10px;
                     background: red;
                     background: url("../images/picto/ui/chevron-right-circle-white-yellow.svg") no-repeat center center;
                     height:20px;
                     width: 20px;
                     transform: rotate(90deg);
+                    transition: all 0.2s;
+                    &.active {
+                      transform: rotate(270deg);
+                      transition: all 0.2s;
+                    }
                   }
 
-                  > span,
+                  > span:not(.mobile-dropdown-trigger),
                   > a {
                     font-size: 12px;
                     margin-top: 0;
-                    padding: 1rem;
+                    padding: 1rem 1.5rem;
+                    white-space: normal;
+                    background: rgba($blue, 0.9);
+                    border-bottom: 1px solid rgba($white, 0.5)
                   }
 
                   > .dropdown-menu {
                     width: 100%!important;
                     position: initial;
-                    background: linear-gradient(180deg, rgba(0,79,159,0) 0%, #045aaa 100%);
+                    background: $blue;
                     border: none;
                     box-shadow: none;
                     padding: 0;
+                    border-radius: 0;
                   }
                   &:after {
 
@@ -238,103 +245,56 @@
                     font-weight: 600;
                     text-align: left;
                     height: auto;
-                    white-space: initial;
                     display: flex;
                     align-items: center;
                     text-transform: none;
                     padding: 1rem 2rem;
+                    white-space: normal;
+                    background: rgba(255, 255, 255, 0.25);
                   }
                   &:hover {
                     > a {
-
                     }
                   }
                   .tool-promotion {
                     display: none;
                   }
                   .we-mega-menu-submenu {
-                    background: $blue;
+                    position: relative;
+                    top: 0;
+                    background: rgba(255, 255, 255, 0.15);
+                    border: none;
+                    padding: 0;
+                  }
+                  .mobile-dropdown-trigger {
+                    right: 24px;
                   }
                 }
-
-                .we-mega-menu-col {
-
-                  &.full-width {
-
-
-                    .level-1 {
-
-                      &:hover {
-
-                      }
-
-                      .we-mega-menu-submenu-inner {
-
-
-                        .we-mega-menu-row {
-
-                        }
-                      }
-                    }
+                .level-3 {
+                  a,
+                  span:not(.mobile-dropdown-trigger) {
+                    padding: 1rem 2.5rem;
                   }
                 }
               }
             }
             // More global style
             &.level-1 {
-
-              &.col-6 {
-
-              }
-              > a {
-
-                .menu-title-wrapper {
-
-                }
-                .menu-icon-wrapper {
-
-                  svg {
-
-                  }
-                }
-              }
               > .dropdown-menu {
                 position: initial;
               }
             }
             &.level-2 {
-
-              > a {
-
-              }
-
               > .dropdown-menu {
                 position: initial;
-                &:before {
-
-                }
-                &:after {
-
-                }
                 > .submenu-bg {
                   background: rgba(0, 79, 159, 0.1);
                 }
-                .we-mega-menu-row {
-
-                  .we-mega-menu-col {
-
-                  }
-                }
-              }
-              .subul {
-
               }
             }
 
             &.level-3 {
-
               > a {
-
               }
             }
           }
@@ -355,10 +315,10 @@
         width: 85%;
         height: 100vh;
         padding-top: 3.25rem;
-        padding-left: 0;
-        padding-right: 0;
+        padding-left: 0.8rem;
+        padding-right: 0.8rem;
         background: $blue;
-        //background: rgba(8,71,150, 1);
+        box-shadow: $box-shadow08;
         transition: $transition02;
         overflow-y: scroll;
         &.show {
@@ -369,7 +329,7 @@
           > li {
             > .we-mega-menu-submenu {
               position: initial;
-              background: rgba(0, 79, 159, 0.1);
+              background: rgb(255, 255, 255);
               box-shadow: none;
               border: none;
               padding: 0;
@@ -390,6 +350,14 @@
           }
         }
       }
+    }
+  }
+}
+.nav-tabs {
+  > li {
+    > a {
+      margin-right: 0;
+      border-radius: 0;
     }
   }
 }
