@@ -75,6 +75,7 @@
       {% endblock %}
       {{ drupal_block('system_breadcrumb_block') }}
       {% include '@socomec/layout/news/hero-header.html.twig' %}
+      {{ drupal_block('local_tasks_block') }}
     </header>
     {% if drupal_field('field_teaser', 'node')[0] %}
     <div class="news-teaser-wrapper">

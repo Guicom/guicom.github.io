@@ -12,7 +12,9 @@ filenames:
   optional_related_content: ''
   news: ''
   resource: ''
+  event: ''
   resource_youtube: ''
+  article: ''
 bundles:
   product:
     field_complementary_info:
@@ -609,6 +611,28 @@ bundles:
       notes: ''
       relationship: 0
       sars_filename: ''
+    field_product_new:
+      bundle: product
+      name: field_product_new
+      entity_type_id: node
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    update_new_statut:
+      bundle: product
+      name: update_new_statut
+      entity_type_id: node
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
   thank_you_page:
     field_title:
       bundle: thank_you_page
@@ -847,6 +871,51 @@ bundles:
     field_json:
       bundle: product_reference
       name: field_json
+      entity_type_id: node
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+  article:
+    body:
+      bundle: article
+      name: body
+      entity_type_id: node
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_country:
+      bundle: article
+      name: field_country
+      entity_type_id: node
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: clear_anonymizer
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_image:
+      bundle: article
+      name: field_image
+      entity_type_id: node
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_tags:
+      bundle: article
+      name: field_tags
       entity_type_id: node
       rtf: 'no'
       rta: 'no'
@@ -1339,6 +1408,134 @@ bundles:
       rta: 'no'
       enabled: false
       anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_product_family:
+      bundle: resource
+      name: field_product_family
+  event:
+    field_event_picture:
+      bundle: event
+      name: field_event_picture
+      entity_type_id: node
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: date_anonymizer
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_event_teaser:
+      bundle: event
+      name: field_event_teaser
+      entity_type_id: node
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: date_anonymizer
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_event_place:
+      bundle: event
+      name: field_event_place
+      entity_type_id: node
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: date_anonymizer
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_event_type:
+      bundle: event
+      name: field_event_type
+      entity_type_id: node
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: date_anonymizer
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_event_thematic:
+      bundle: event
+      name: field_event_thematic
+      entity_type_id: node
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: date_anonymizer
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_event_content:
+      bundle: event
+      name: field_event_content
+      entity_type_id: node
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: date_anonymizer
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_event_cta_external_link:
+      bundle: event
+      name: field_event_cta_external_link
+      entity_type_id: node
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_event_cta_download:
+      bundle: event
+      name: field_event_cta_download
+      entity_type_id: node
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_event_custom_audience:
+      bundle: event
+      name: field_event_custom_audience
+      entity_type_id: node
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: date_anonymizer
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_event_momemtum:
+      bundle: event
+      name: field_event_momemtum
+      entity_type_id: node
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_event_date:
+      bundle: event
+      name: field_event_date
+    field_add_to_calendar:
+      bundle: event
+      name: field_add_to_calendar
+      entity_type_id: node
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: date_anonymizer
       notes: ''
       relationship: 0
       sars_filename: ''

@@ -36,6 +36,16 @@ body.node--type-product {
       @include media-breakpoint-down(xs) {
         flex-wrap: wrap;
       }
+
+      .product-label {
+        position: absolute;
+        right: 20px;
+        top: 25px;
+
+        .field-name-field-product-new {
+          @include block-label($turquoize, $white)
+        }
+      }
       .product-main-picture {
         order: 2;
         @include media-breakpoint-down(xs) {
@@ -547,19 +557,18 @@ body.node--type-product {
           }
           td {
             vertical-align: middle;
-          }
-          td,
-          td a{
+            padding: 0;
             border-bottom: 1px solid $lighter-grey;
+          }
+          td a{
+            display: flex;
             border-top: none;
             color: $dark-grey;
             font-family: $font-roboto;
             font-size: 16px;
             font-weight: 400;
             line-height: 25px;
-            a {
-              border: none;
-            }
+            padding: 18px 10px;
           }
         }
       }

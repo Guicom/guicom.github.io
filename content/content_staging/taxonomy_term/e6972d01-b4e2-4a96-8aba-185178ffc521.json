@@ -1,14 +1,14 @@
 {
     "_links": {
         "self": {
-            "href": "http:\/\/default\/products\/power-conversion\/midi-ups\/masterys-bc-10-40kva?_format=hal_json"
+            "href": "http:\/\/default\/power-conversion\/midi-ups\/masterys-bc-10-40kva?_format=hal_json"
         },
         "type": {
             "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/family"
         },
         "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/family\/parent": [
             {
-                "href": "http:\/\/default\/products\/power-conversion\/midi-ups?_format=hal_json"
+                "href": "http:\/\/default\/power-conversion\/midi-ups?_format=hal_json"
             }
         ],
         "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/family\/content_translation_uid": [
@@ -70,7 +70,7 @@
             {
                 "_links": {
                     "self": {
-                        "href": "http:\/\/default\/products\/power-conversion\/midi-ups?_format=hal_json"
+                        "href": "http:\/\/default\/power-conversion\/midi-ups?_format=hal_json"
                     },
                     "type": {
                         "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/family"
@@ -95,7 +95,7 @@
                 },
                 "uuid": [
                     {
-                        "value": "059d0fa6-5dd6-4e1c-ace5-ef18988bb748"
+                        "value": "ab305055-1463-4828-9111-9323f0be842d"
                     }
                 ],
                 "lang": "en"

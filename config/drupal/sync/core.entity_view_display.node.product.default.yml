@@ -17,6 +17,7 @@ dependencies:
     - field.field.node.product.field_product_extid
     - field.field.node.product.field_product_family
     - field.field.node.product.field_product_multiline
+    - field.field.node.product.field_product_new
     - field.field.node.product.field_product_orc_content
     - field.field.node.product.field_product_orc_title
     - field.field.node.product.field_product_pictures
@@ -25,10 +26,12 @@ dependencies:
     - field.field.node.product.field_product_teaser
     - field.field.node.product.field_protection_level
     - field.field.node.product.field_standard_label
+    - field.field.node.product.update_new_statut
     - node.type.product
   module:
     - ds
     - entity_reference_revisions
+    - options
     - text
     - user
 third_party_settings:
@@ -74,6 +77,8 @@ third_party_settings:
         - field_multiline_anchor_name
         - field_product_application_label
         - field_product_application_link
+        - field_product_new
+        - update_new_statut
     fields:
       node_post_date:
         plugin_id: node_post_date
@@ -236,6 +241,13 @@ content:
       link: ''
     third_party_settings: {  }
     region: ds_content
+  field_product_new:
+    weight: 24
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: ds_content
   field_product_orc_content:
     weight: 18
     label: hidden
@@ -335,6 +347,23 @@ content:
       link: ''
     third_party_settings: {  }
     region: ds_content
+  update_new_statut:
+    type: entity_reference_entity_view
+    weight: 25
+    region: ds_content
+    label: hidden
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings:
+      ds:
+        ds_limit: ''
+        ft:
+          id: minimal
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
 hidden:
   field_product_extid: true
   field_product_status: true

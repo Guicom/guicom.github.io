@@ -1,15 +1,13 @@
 {
     "_links": {
         "self": {
-            "href": "http:\/\/default\/products\/energy-storage-solution?_format=hal_json"
+            "href": "http:\/\/default\/energy-storage-solution?_format=hal_json"
         },
         "type": {
             "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/family"
         },
         "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/family\/parent": [
-            {
-                "href": "http:\/\/default\/products?_format=hal_json"
-            }
+            null
         ],
         "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/family\/content_translation_uid": [
             {
@@ -84,26 +82,12 @@
     ],
     "weight": [
         {
-            "value": 1
+            "value": 0
         }
     ],
     "_embedded": {
         "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/family\/parent": [
-            {
-                "_links": {
-                    "self": {
-                        "href": "http:\/\/default\/products?_format=hal_json"
-                    },
-                    "type": {
-                        "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/family"
-                    }
-                },
-                "uuid": [
-                    {
-                        "value": "2e4108af-6939-4d12-bd4e-2ff6496cc8aa"
-                    }
-                ]
-            }
+            null
         ],
         "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/family\/content_translation_uid": [
             {
@@ -117,7 +101,7 @@
                 },
                 "uuid": [
                     {
-                        "value": "7ce68e63-4eb2-4ff9-b3ba-1353868398ce"
+                        "value": "ab305055-1463-4828-9111-9323f0be842d"
                     }
                 ],
                 "lang": "en"
@@ -179,7 +163,7 @@
     },
     "changed": [
         {
-            "value": "2020-01-23T08:40:42+00:00",
+            "value": "2020-02-10T16:12:49+00:00",
             "format": "Y-m-d\\TH:i:sP"
         }
     ],

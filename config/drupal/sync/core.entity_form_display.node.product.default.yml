@@ -17,6 +17,7 @@ dependencies:
     - field.field.node.product.field_product_extid
     - field.field.node.product.field_product_family
     - field.field.node.product.field_product_multiline
+    - field.field.node.product.field_product_new
     - field.field.node.product.field_product_orc_content
     - field.field.node.product.field_product_orc_title
     - field.field.node.product.field_product_pictures
@@ -25,7 +26,9 @@ dependencies:
     - field.field.node.product.field_product_teaser
     - field.field.node.product.field_protection_level
     - field.field.node.product.field_standard_label
+    - field.field.node.product.update_new_statut
     - node.type.product
+    - workflows.workflow.editorial
   module:
     - content_moderation
     - field_group
@@ -33,6 +36,7 @@ dependencies:
     - media_library
     - paragraphs
     - path
+    - scheduler
     - text
 third_party_settings:
   field_group:
@@ -59,8 +63,6 @@ third_party_settings:
         - field_standard_label
         - field_product_extid
         - field_product_status
-        - field_family_first_level
-        - field_family_second_level
         - field_product_family
       parent_name: group_tabs
       weight: 9
@@ -80,7 +82,7 @@ third_party_settings:
         - field_product_cta_3
         - field_product_cta_4
       parent_name: group_webmastering
-      weight: 10
+      weight: 11
       format_type: tab
       format_settings:
         label: CTA
@@ -112,6 +114,7 @@ third_party_settings:
         - group_associated_products
         - group_application
         - group_cta
+        - update_new_statut
       parent_name: group_tabs
       weight: 11
       format_type: tab
@@ -184,7 +187,7 @@ mode: default
 content:
   created:
     type: datetime_timestamp
-    weight: 5
+    weight: 4
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -402,20 +405,20 @@ content:
     region: content
   langcode:
     type: language_select
-    weight: 2
+    weight: 1
     region: content
     settings:
       include_locked: true
     third_party_settings: {  }
   moderation_state:
     type: moderation_state_default
-    weight: 3
+    weight: 2
     settings: {  }
     region: content
     third_party_settings: {  }
   path:
     type: path
-    weight: 8
+    weight: 7
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -423,32 +426,32 @@ content:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 6
+    weight: 5
     region: content
     third_party_settings: {  }
   publish_on:
     type: datetime_timestamp_no_default
-    weight: 30
+    weight: 11
     region: content
     settings: {  }
     third_party_settings: {  }
   scheduler_settings:
-    weight: 20
+    weight: 10
+    region: content
     settings: {  }
     third_party_settings: {  }
-    region: content
   status:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 10
+    weight: 9
     region: content
     third_party_settings: {  }
   sticky:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 7
+    weight: 6
     region: content
     third_party_settings: {  }
   title:
@@ -461,7 +464,7 @@ content:
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 4
+    weight: 3
     settings:
       match_operator: CONTAINS
       size: 60
@@ -470,13 +473,30 @@ content:
     third_party_settings: {  }
   unpublish_on:
     type: datetime_timestamp_no_default
-    weight: 30
+    weight: 12
     region: content
     settings: {  }
     third_party_settings: {  }
+  update_new_statut:
+    type: inline_entity_form_complex
+    weight: 13
+    settings:
+      override_labels: true
+      label_singular: 'Update new statut'
+      label_plural: 'Update new statuts'
+      allow_new: true
+      match_operator: CONTAINS
+      allow_existing: false
+      form_mode: default
+      collapsible: false
+      collapsed: false
+      allow_duplicate: false
+    third_party_settings: {  }
+    region: content
   url_redirects:
-    weight: 9
+    weight: 8
     region: content
     settings: {  }
     third_party_settings: {  }
-hidden: {  }
+hidden:
+  field_product_new: true

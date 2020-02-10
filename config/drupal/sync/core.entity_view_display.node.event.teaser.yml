@@ -4,22 +4,17 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
-    - field.field.node.event.body
     - node.type.event
   module:
-    - text
     - user
 id: node.event.teaser
 targetEntityType: node
 bundle: event
 mode: teaser
 content:
-  body:
-    label: hidden
-    type: text_summary_or_trimmed
-    weight: 101
-    settings:
-      trim_length: 600
+  content_moderation_control:
+    weight: -20
+    settings: {  }
     third_party_settings: {  }
     region: content
   links:
@@ -29,5 +24,18 @@ content:
     region: content
 hidden:
   addtoany: true
+  field_event_content: true
+  field_event_country: true
+  field_event_cta_download: true
+  field_event_cta_external_link: true
+  field_event_custom_audience: true
+  field_event_date: true
+  field_event_momemtum: true
+  field_event_picture: true
+  field_event_place: true
+  field_event_product: true
+  field_event_teaser: true
+  field_event_thematic: true
+  field_event_type: true
   langcode: true
   search_api_excerpt: true
