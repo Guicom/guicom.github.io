@@ -29,7 +29,7 @@
             var column = this;
             var colheader = this.header();
             var colname = $(colheader).text().trim();
-            if (colname != 'Select') {
+            if (colname != Drupal.t('Select', {}, {context: "product-reference-table"})) {
               var select = $('<select><option value="">' + colname + '</option></select>')
                 .appendTo( $(column.header()).empty() )
                 .on( 'change', function () {

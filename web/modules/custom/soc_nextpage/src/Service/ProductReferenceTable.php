@@ -35,7 +35,7 @@ class ProductReferenceTable {
 
     $footer = $header;
     // We don't want translation ono this string as we have a test on it in JS
-    $header['select'] = 'Select';
+    $header['select'] = t('Select', [], ['context' => 'product-reference-table']);
     $lib['library'][] = 'soc_nextpage/product-datatable';
     return [
       '#type' => 'table',
