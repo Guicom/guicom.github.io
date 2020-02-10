@@ -6,10 +6,14 @@ dependencies:
     - search_api.index.resources
     - views.view.resource_center
   module:
+    - facets_pretty_paths
     - search_api
+third_party_settings:
+  facets_pretty_paths:
+    coder: taxonomy_term_coder
 id: language
 name: Language
-url_alias: language
+url_alias: resource-language
 weight: 0
 min_count: 0
 show_only_one_result: true

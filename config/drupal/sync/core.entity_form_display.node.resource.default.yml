@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.node.resource.field_description
     - field.field.node.resource.field_open_link_in_new_window
+    - field.field.node.resource.field_product_family
     - field.field.node.resource.field_res_application
     - field.field.node.resource.field_res_downloadable
     - field.field.node.resource.field_res_link_url
@@ -20,6 +21,7 @@ dependencies:
     - field.field.node.resource.field_res_title
     - image.style.thumbnail
     - node.type.resource
+    - workflows.workflow.editorial
   module:
     - conditional_fields
     - content_moderation
@@ -69,6 +71,12 @@ content:
           entity_type: node
           bundle: resource
     type: boolean_checkbox
+    region: content
+  field_product_family:
+    weight: 28
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
     region: content
   field_res_application:
     weight: 16

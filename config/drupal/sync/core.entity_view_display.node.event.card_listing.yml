@@ -1,0 +1,179 @@
+uuid: 5cdc84a3-156c-4091-81a0-0b3fe6af890b
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.card_listing
+    - field.field.node.event.field_event_content
+    - field.field.node.event.field_event_country
+    - field.field.node.event.field_event_cta_download
+    - field.field.node.event.field_event_cta_external_link
+    - field.field.node.event.field_event_custom_audience
+    - field.field.node.event.field_event_date
+    - field.field.node.event.field_event_momemtum
+    - field.field.node.event.field_event_picture
+    - field.field.node.event.field_event_place
+    - field.field.node.event.field_event_product
+    - field.field.node.event.field_event_teaser
+    - field.field.node.event.field_event_thematic
+    - field.field.node.event.field_event_type
+    - node.type.event
+  module:
+    - addtocalendar
+    - datetime_range
+    - ds
+    - smart_trim
+    - user
+third_party_settings:
+  ds:
+    layout:
+      id: layout_onecol
+      library: layout_discovery/onecol
+      disable_css: false
+      entity_classes: all_classes
+      settings: {  }
+    regions:
+      content:
+        - field_event_date
+        - field_event_picture
+        - field_event_type
+        - node_title
+        - field_event_place
+        - node_link
+    fields:
+      node_link:
+        plugin_id: node_link
+        weight: 5
+        label: hidden
+        formatter: default
+      node_title:
+        plugin_id: node_title
+        weight: 3
+        label: hidden
+        formatter: default
+        settings:
+          wrapper: p
+          class: ''
+          link: false
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
+id: node.event.card_listing
+targetEntityType: node
+bundle: event
+mode: card_listing
+content:
+  field_event_date:
+    weight: 0
+    label: hidden
+    settings:
+      timezone_override: ''
+      format_type: socomec_date
+      separator: '|'
+    third_party_settings:
+      addtocalendar:
+        addtocalendar_settings:
+          style: blue
+          display_text: 'Add to Calendar'
+          atc_title:
+            field: title
+            tokenized: Title
+          atc_description:
+            field: token
+            tokenized: '[node:field_event_teaser:value]'
+          atc_location:
+            field: token
+            tokenized: '[node:field_event_place:value]'
+          atc_organizer:
+            field: token
+            tokenized: Socomec
+          atc_organizer_email:
+            field: token
+            tokenized: admin@example.com
+          atc_date_end:
+            field: field_event_date
+            tokenized: ''
+          atc_privacy: public
+          data_secure: auto
+          data_calendars:
+            iCalendar: iCalendar
+            'Google Calendar': 'Google Calendar'
+            'Outlook Online': 'Outlook Online'
+            'Yahoo! Calendar': 'Yahoo! Calendar'
+            Outlook: 0
+        addtocalendar_show: 0
+      ds:
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
+    type: daterange_default
+    region: content
+  field_event_picture:
+    type: entity_reference_entity_view
+    weight: 1
+    label: hidden
+    settings:
+      view_mode: teaser_image_crop_270x140
+      link: false
+    third_party_settings:
+      ds:
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
+    region: content
+  field_event_place:
+    type: smart_trim
+    weight: 4
+    region: content
+    label: hidden
+    settings:
+      trim_length: 600
+      trim_type: chars
+      trim_suffix: ''
+      wrap_output: false
+      wrap_class: trimmed
+      more_link: false
+      more_class: more-link
+      more_text: More
+      summary_handler: full
+      trim_options: {  }
+    third_party_settings: {  }
+  field_event_type:
+    type: entity_reference_label
+    weight: 2
+    region: content
+    label: hidden
+    settings:
+      link: false
+    third_party_settings:
+      ds:
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
+hidden:
+  addtoany: true
+  content_moderation_control: true
+  field_event_content: true
+  field_event_country: true
+  field_event_cta_download: true
+  field_event_cta_external_link: true
+  field_event_custom_audience: true
+  field_event_momemtum: true
+  field_event_product: true
+  field_event_teaser: true
+  field_event_thematic: true
+  langcode: true
+  links: true
+  search_api_excerpt: true

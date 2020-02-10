@@ -224,4 +224,62 @@
     }
   };
 
+  /**
+   * Facets bootstrap_select
+   */
+  Drupal.behaviors.socomec_facets_bootstrap_select = {
+    attach: function (context, settings) {
+      $('select.facets-dropdown').each(function () {
+        $(this).selectpicker({
+          virtualScroll: false,
+        });
+        if ($(this).parents('.facet-inline-position-title').length) {
+          var width = $(this).parents("div.block-facet--dropdown").find("div.facet-title").first().width();
+          $(this).siblings('.dropdown-toggle.btn-light').css('padding-left', width + 20 + 'px');
+        }
+        else{
+          var height = $(this).parents("div.block-facet--dropdown").find("div.facet-title").first().height();
+          $(this).siblings('.dropdown-toggle.btn-light').css('padding-top', height + 7 + 'px');
+        }
+        $(this).parents(".bootstrap-select").find("div.dropdown-menu").first().mCustomScrollbar({
+          theme:"minimal-dark",
+          mouseWheel:{ preventDefault:true }
+        });
+      });
+    }
+  };
+
+  /**
+   * Facets bootstrap_list_select
+   */
+  Drupal.behaviors.socomec_facets_list_select = {
+    attach: function (context, settings) {
+      $(".facet-list-display-select").each(function () {
+        var element = $(this);
+        var reset = element.find(".facets-reset > a");
+        if(reset.length > 0){
+          var facetTitle = $(this).find('.facet-title');
+          if(facetTitle.find(".filter-option").length < 1){
+            facetTitle.append('<div class="filter-option"></div>').find(".filter-option").append(reset.text());
+            facetTitle.wrap('<div class="wrapper-facet-title"></div>')
+          }
+        }
+        element.find(".wrapper-facet-title").once().on("click", function (e) {
+          $(this).toggleClass("active");
+          element.find("ul.item-list__links").toggleClass("active");
+        });
+        var active = element.find("li:not(.facets-reset) .is-active");
+        if(active.length > 0){
+          active.parents('li').addClass('active');
+          element.find(".wrapper-facet-title").addClass("active");
+          element.find("ul.item-list__links").addClass("active");
+        }
+        $(element).find(".facets-widget-links").mCustomScrollbar({
+          theme:"minimal-dark",
+          mouseWheel:{ preventDefault:true }
+        });
+      });
+    }
+  };
+
 })(jQuery, Drupal);

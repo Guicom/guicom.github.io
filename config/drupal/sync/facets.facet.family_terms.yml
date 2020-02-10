@@ -1,0 +1,61 @@
+uuid: fb360d96-cf1b-4f71-8f36-d583eca342b4
+langcode: en
+status: true
+dependencies:
+  config:
+    - search_api.index.resources
+    - views.view.resource_center
+  module:
+    - facets_pretty_paths
+    - search_api
+third_party_settings:
+  facets_pretty_paths:
+    coder: taxonomy_term_coder
+id: family_terms
+name: 'Family terms'
+url_alias: family
+weight: 0
+min_count: 1
+show_only_one_result: true
+field_identifier: field_product_family_terms
+facet_source_id: 'search_api:views_page__resource_center__page_1'
+widget:
+  type: links
+  config:
+    show_numbers: false
+    soft_limit: 0
+    soft_limit_settings:
+      show_less_label: 'Show less'
+      show_more_label: 'Show more'
+    show_reset_link: true
+    reset_text: All
+    hide_reset_when_no_selection: false
+query_operator: or
+use_hierarchy: true
+expand_hierarchy: true
+enable_parent_when_child_gets_disabled: true
+hard_limit: 0
+exclude: false
+only_visible_when_facet_source_is_visible: true
+processor_configs:
+  exclude_specified_items:
+    processor_id: exclude_specified_items
+    weights:
+      build: 50
+    settings:
+      exclude: Products
+      regex: false
+  translate_entity:
+    processor_id: translate_entity
+    weights:
+      build: 5
+    settings: {  }
+  url_processor_handler:
+    processor_id: url_processor_handler
+    weights:
+      pre_query: 50
+      build: 15
+    settings: {  }
+empty_behavior:
+  behavior: none
+show_title: false
