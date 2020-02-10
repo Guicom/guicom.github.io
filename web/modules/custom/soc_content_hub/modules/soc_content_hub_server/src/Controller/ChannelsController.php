@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\soc_content_hub\Controller;
+namespace Drupal\soc_content_hub_server\Controller;
 
 use Drupal\Core\Controller\ControllerBase;
 use Drupal\Core\Language\LanguageManagerInterface;
@@ -51,9 +51,23 @@ class ChannelsController extends ControllerBase {
     $languages = $this->languageManager->getLanguages();
 
     // Load models
-    $nodeModelChannel = \Drupal::entityTypeManager()
-      ->getStorage('channel')
-      ->load('en_news');
+    try {
+      $nodeModelChannel = \Drupal::entityTypeManager()
+        ->getStorage('channel')
+        ->load('en_news');
+    } catch (\Exception $e) {
+      \Drupal::logger('soc_content_hub_server')->error($e->getMessage());
+    }
+    try {
+      $mediaModelChannel = \Drupal::entityTypeManager()
+        ->getStorage('channel')
+        ->load('en_image');
+    } catch (\Exception $e) {
+      \Drupal::logger('soc_content_hub_server')->error($e->getMessage());
+    }
+    if (!$nodeModelChannel || !$mediaModelChannel) {
+      return [];
+    }
 
     // Load existing channels
     $existingChannels = \Drupal::entityTypeManager()
@@ -70,6 +84,37 @@ class ChannelsController extends ControllerBase {
         if (!array_key_exists($channelId, $existingChannels)) {
           /** @var Drupal\entity_share_server\Entity\Channel $newChannel */
           $newChannel = $nodeModelChannel->createDuplicate();
+          $newChannel->set('id', $channelId);
+          $newChannel->set('langcode', 'en');
+          $newChannel->set('label', strtoupper($languageId) . ' / ' . ucfirst($entityType));
+          $newChannel->set('channel_langcode', $languageId);
+          $newChannel->set('channel_bundle', $entityType);
+          try {
+            $newChannel->save();
+          } catch (\Exception $e) {
+            \Drupal::logger('soc_content_hub')->error($e->getMessage());
+          }
+        }
+        else {
+          /** @var Drupal\entity_share_server\Entity\Channel $newChannel */
+          $newChannel = $existingChannels[$channelId];
+          $newChannel->set('langcode', 'en');
+          $newChannel->set('label', strtoupper($languageId) . ' / ' . ucfirst($entityType));
+          $newChannel->set('channel_langcode', $languageId);
+          $newChannel->set('channel_bundle', $entityType);
+          try {
+            $newChannel->save();
+          } catch (\Exception $e) {
+            \Drupal::logger('soc_content_hub')->error($e->getMessage());
+          }
+        }
+      }
+      // Media
+      foreach ($entityTypes['media'] as $entityType) {
+        $channelId = $configLanguageId . '_' . $entityType;
+        if (!array_key_exists($channelId, $existingChannels)) {
+          /** @var Drupal\entity_share_server\Entity\Channel $newChannel */
+          $newChannel = $mediaModelChannel->createDuplicate();
           $newChannel->set('id', $channelId);
           $newChannel->set('langcode', 'en');
           $newChannel->set('label', strtoupper($languageId) . ' / ' . ucfirst($entityType));

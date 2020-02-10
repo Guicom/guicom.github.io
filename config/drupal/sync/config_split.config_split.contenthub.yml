@@ -8,6 +8,7 @@ description: 'Contenthub configuration'
 folder: ../config/drupal/contenthub/sync
 module:
   basic_auth: 0
+  soc_content_hub_server: 0
   entity_share_server: 0
 theme: {  }
 blacklist:

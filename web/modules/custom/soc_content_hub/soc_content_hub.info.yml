@@ -1,6 +1,6 @@
 name: Socomec Content Hub
 type: module
-description: Provide content and medias to country websites.
+description: Content hub foundation.
 core: 8.x
 package: Socomec
 dependencies:
