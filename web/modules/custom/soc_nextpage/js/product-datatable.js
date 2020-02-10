@@ -32,6 +32,7 @@
             if (colname != Drupal.t('Select', {}, {context: "product-reference-table"})) {
               var select = $('<select><option value="">' + colname + '</option></select>')
                 .appendTo( $(column.header()).empty() )
+                .selectpicker({virtualScroll: false})
                 .on( 'change', function () {
                   var val = $.fn.dataTable.util.escapeRegex(
                     $(this).val()

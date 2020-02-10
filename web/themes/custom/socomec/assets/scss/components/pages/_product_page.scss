@@ -544,6 +544,27 @@ body.node--type-product {
             line-height: 20px;
             border-bottom: 2px solid $lighter-grey;
             border-top: none;
+            position: relative;
+          }
+        }
+        .bootstrap-select {
+          @include bootstrap-select();
+          background: none;
+          box-shadow: none;
+          &.show {
+            background: none;
+            box-shadow: none;
+            >.dropdown-toggle.btn-light{
+              box-shadow: none;
+            }
+          }
+          >.dropdown-toggle.btn-light:active,
+          >.dropdown-toggle.btn-light:focus,
+          >.dropdown-toggle.btn-light:hover,
+          >.dropdown-toggle.bs-placeholder:active,
+          >.dropdown-toggle.bs-placeholder:focus,
+          >.dropdown-toggle.bs-placeholder:hover{
+            box-shadow: none;
           }
         }
       }
