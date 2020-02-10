@@ -1,0 +1,29 @@
+uuid: f8874af5-fc4b-4ae8-b33f-2d96cce78a2e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_product_family
+    - node.type.resource
+    - taxonomy.vocabulary.family
+id: node.resource.field_product_family
+field_name: field_product_family
+entity_type: node
+bundle: resource
+label: Family
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      family: family
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

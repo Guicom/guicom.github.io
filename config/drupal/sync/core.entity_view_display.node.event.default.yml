@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.event.field_add_to_calendar
     - field.field.node.event.field_event_content
     - field.field.node.event.field_event_country
     - field.field.node.event.field_event_cta_download
@@ -43,6 +44,13 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_add_to_calendar:
+    weight: 16
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: add_to_calendar
+    region: content
   field_event_content:
     type: entity_reference_revisions_entity_view
     weight: 7

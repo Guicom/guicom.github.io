@@ -1,0 +1,9 @@
+uuid: 51db194e-1563-4e49-af2e-52e6c28f52f8
+langcode: en
+status: true
+dependencies: {  }
+id: de-ch
+label: 'German (Switzerland)'
+direction: ltr
+weight: 0
+locked: false

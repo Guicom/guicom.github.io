@@ -1,14 +1,20 @@
 {
     "_links": {
         "self": {
-            "href": "http:\/\/default\/products\/power-conversion\/midi-ups\/itys-pro?_format=hal_json"
+            "href": "http:\/\/default\/power-conversion\/midi-ups\/itys-pro?_format=hal_json"
         },
         "type": {
             "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/family"
         },
         "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/family\/parent": [
             {
-                "href": "http:\/\/default\/products\/power-conversion\/midi-ups?_format=hal_json"
+                "href": "http:\/\/default\/power-conversion\/midi-ups?_format=hal_json"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/family\/content_translation_uid": [
+            {
+                "href": "http:\/\/default\/user\/1?_format=hal_json",
+                "lang": "en"
             }
         ]
     },
@@ -64,7 +70,7 @@
             {
                 "_links": {
                     "self": {
-                        "href": "http:\/\/default\/products\/power-conversion\/midi-ups?_format=hal_json"
+                        "href": "http:\/\/default\/power-conversion\/midi-ups?_format=hal_json"
                     },
                     "type": {
                         "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/family"
@@ -75,6 +81,24 @@
                         "value": "69a29d2d-93de-4ee2-a394-15d293cfbe0a"
                     }
                 ]
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/family\/content_translation_uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/user\/1?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "ab305055-1463-4828-9111-9323f0be842d"
+                    }
+                ],
+                "lang": "en"
             }
         ]
     },

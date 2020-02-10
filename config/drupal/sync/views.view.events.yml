@@ -68,6 +68,10 @@ display:
           quantity: 9
       style:
         type: default
+        options:
+          row_class: 'col-lg-3 col-md-4 col-sm-6'
+          default_row_class: true
+          uses_fields: false
       row:
         type: search_api
         options:

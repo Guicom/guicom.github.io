@@ -8,7 +8,7 @@ dependencies:
   module:
     - search_api
 id: news_theme_taxonomy_term_name
-name: 'News Theme » Taxonomy term » Name'
+name: THEMATICS
 url_alias: news_theme_taxonomy_term_name
 weight: 0
 min_count: 1
@@ -19,7 +19,7 @@ widget:
   type: dropdown
   config:
     show_numbers: false
-    default_option_label: Choose
+    default_option_label: All
 query_operator: or
 use_hierarchy: false
 expand_hierarchy: false
@@ -46,6 +46,11 @@ processor_configs:
       sort: 40
     settings:
       sort: ASC
+  list_item:
+    processor_id: list_item
+    weights:
+      build: 5
+    settings: {  }
   url_processor_handler:
     processor_id: url_processor_handler
     weights:

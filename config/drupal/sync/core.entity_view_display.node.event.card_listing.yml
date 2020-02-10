@@ -22,6 +22,7 @@ dependencies:
     - addtocalendar
     - datetime_range
     - ds
+    - smart_trim
     - user
 third_party_settings:
   ds:
@@ -33,20 +34,21 @@ third_party_settings:
       settings: {  }
     regions:
       content:
+        - field_event_date
         - field_event_picture
         - field_event_type
         - node_title
-        - field_event_date
+        - field_event_place
         - node_link
     fields:
       node_link:
         plugin_id: node_link
-        weight: 4
+        weight: 5
         label: hidden
         formatter: default
       node_title:
         plugin_id: node_title
-        weight: 2
+        weight: 3
         label: hidden
         formatter: default
         settings:
@@ -65,7 +67,7 @@ bundle: event
 mode: card_listing
 content:
   field_event_date:
-    weight: 3
+    weight: 0
     label: hidden
     settings:
       timezone_override: ''
@@ -114,10 +116,10 @@ content:
     region: content
   field_event_picture:
     type: entity_reference_entity_view
-    weight: 0
+    weight: 1
     label: hidden
     settings:
-      view_mode: teaser_image_crop_270x190
+      view_mode: teaser_image_crop_270x140
       link: false
     third_party_settings:
       ds:
@@ -128,9 +130,26 @@ content:
             lb-col: false
             classes: {  }
     region: content
+  field_event_place:
+    type: smart_trim
+    weight: 4
+    region: content
+    label: hidden
+    settings:
+      trim_length: 600
+      trim_type: chars
+      trim_suffix: ''
+      wrap_output: false
+      wrap_class: trimmed
+      more_link: false
+      more_class: more-link
+      more_text: More
+      summary_handler: full
+      trim_options: {  }
+    third_party_settings: {  }
   field_event_type:
     type: entity_reference_label
-    weight: 1
+    weight: 2
     region: content
     label: hidden
     settings:
@@ -152,7 +171,6 @@ hidden:
   field_event_cta_external_link: true
   field_event_custom_audience: true
   field_event_momemtum: true
-  field_event_place: true
   field_event_product: true
   field_event_teaser: true
   field_event_thematic: true
