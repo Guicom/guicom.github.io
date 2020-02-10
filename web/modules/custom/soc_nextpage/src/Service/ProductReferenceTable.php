@@ -34,13 +34,13 @@ class ProductReferenceTable {
     }
 
     $footer = $header;
-    $header['select'] = t('Select');
+    // We don't want translation ono this string as we have a test on it in JS
+    $header['select'] = 'Select';
     $lib['library'][] = 'soc_nextpage/product-datatable';
     return [
       '#type' => 'table',
       '#header' => $header,
       '#rows' => $rows,
-      '#footer' => [$footer],
       '#attached' => $lib,
       '#attributes' => [
         'id' => 'product-reference-table'
