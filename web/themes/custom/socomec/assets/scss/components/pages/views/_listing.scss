@@ -1,8 +1,10 @@
-.path-news{
+.path-news,
+.path-events {
   background-color: $light-grayish-blue;
 }
 
-.view-news {
+.view-news,
+.view-events {
   &.view-display-id-page_1 {
     .view-content{
       &.row{
@@ -72,6 +74,13 @@
                   left:-150px;
                 }
               }
+              &.field--name-field-event-picture {
+                .field__item {
+                  &:after {
+                    display: none;
+                  }
+                }
+              }
             }
             .field--name-field-news-type{
               position: absolute;
@@ -132,9 +141,91 @@
                 margin-bottom: 90px;
               }
             }
+            // EVENTS CARD ONLY
+            &.socomec-wrapper-events-card-listing {
+              &:before {
+                content: '';
+                display: block;
+                width: 3.75rem;
+                height: 0.125rem;
+                background: $yellow;
+                position: absolute;
+                top: 0;
+                left: 50%;
+                transform: translateX(-50%);
+              }
+              .field--name-field-event-type {
+                font-family: $font-poppins;
+                font-weight: 500;
+                color: $blue;
+                font-size: $font-size-xs;
+                letter-spacing: 1px;
+                text-align: center;
+                padding: 0.5rem 1rem;
+              }
+              .field--name-node-title {
+                text-align: center;
+                height: 6.25rem;
+              }
+              .field--name-field-event-place {
+                font-family: $font-poppins;
+                font-weight: 500;
+                color: $blue;
+                font-size: $font-size-xs;
+                letter-spacing: 1px;
+                text-align: center;
+                padding: 0.5rem 1rem;
+                text-transform: uppercase;
+              }
+            }
           }
         }
       }
+    }
+  }
+  // RENDERING DATE EVENTS
+  .event-date-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: $blue;
+    margin-top: 0.25rem;
+    .line-date {
+      display: flex;
+      font-size: $font-size-lg;
+      text-transform: uppercase;
+      font-weight: 700;
+      height: 1.6rem;
+      line-height: 1;
+      margin-top: 1rem;
+    }
+    .line-years {
+      display: flex;
+      font-size: $font-size-lg;
+      text-transform: uppercase;
+      font-weight: 300;
+      line-height: 1;
+      height: 2.5rem;
+    }
+    .line-hours {
+      display: flex;
+      font-size: $font-size-h4;
+      text-transform: uppercase;
+      font-weight: 300;
+    }
+    .event-start {
+      text-align: right;
+    }
+    .event-end {
+      text-align: left;
+    }
+    .separator {
+      font-size: $font-size-base;
+      font-weight: 600;
+      line-height: 1.5;
+      width: 1rem;
+      text-align: center;
     }
   }
 }
