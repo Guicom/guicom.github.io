@@ -1,0 +1,9 @@
+uuid: 040a44f3-843b-4e52-a1fe-15865c9d6d4f
+langcode: en
+status: true
+dependencies: {  }
+id: fr-be
+label: 'French (Belgium)'
+direction: ltr
+weight: 1
+locked: false

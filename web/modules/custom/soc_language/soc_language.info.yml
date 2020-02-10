@@ -1,0 +1,7 @@
+name: Socomec Language
+type: module
+description: Socomec custom languages.
+core: 8.x
+package: Socomec
+dependencies:
+  - language
