@@ -1,0 +1,9 @@
+uuid: 4db29955-b258-4688-a8ce-6bae7d8de955
+langcode: en
+status: true
+dependencies: {  }
+id: en-in
+label: 'English (India)'
+direction: ltr
+weight: 0
+locked: false

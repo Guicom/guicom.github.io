@@ -1,0 +1,22 @@
+display:
+  default:
+    display_title: Główny
+    display_options:
+      exposed_form:
+        options:
+          submit_button: Zastosuj
+          reset_button_label: Resetuj
+          exposed_sorts_label: 'Sortuj po'
+          sort_asc_label: Rosnąco
+          sort_desc_label: Malejąco
+      fields:
+        created:
+          separator: ', '
+        sar_export:
+          separator: ', '
+      arguments:
+        user_id:
+          exception:
+            title: Wszystko
+  page_1:
+    display_title: Strona

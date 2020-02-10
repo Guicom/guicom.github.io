@@ -1,0 +1,15 @@
+uuid: 23c9be8b-2424-43f4-a03e-290c1a713870
+langcode: fr
+status: true
+dependencies: {  }
+id: _europe_articles
+label: '[Europe] Articles'
+channel_entity_type: node
+channel_bundle: article
+channel_langcode: en
+channel_filters: null
+channel_groups: null
+channel_sorts: {  }
+channel_searches: null
+authorized_users:
+  42ea428e-201b-44a1-82ea-74ed75e960a2: 42ea428e-201b-44a1-82ea-74ed75e960a2
