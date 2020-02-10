@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.event.field_add_to_calendar
     - field.field.node.event.field_country
     - field.field.node.event.field_event_content
     - field.field.node.event.field_event_country
@@ -44,6 +45,13 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_add_to_calendar:
+    weight: 16
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: add_to_calendar
+    region: content
   field_country:
     weight: 16
     label: above

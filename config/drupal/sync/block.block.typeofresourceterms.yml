@@ -1,0 +1,23 @@
+uuid: 7f81e2e4-ba14-424d-9e8e-c454a06573a2
+langcode: en
+status: true
+dependencies:
+  config:
+    - facets.facet.type_of_resource_terms
+  module:
+    - facets
+  theme:
+    - socomec
+id: typeofresourceterms
+theme: socomec
+region: facets
+weight: 0
+provider: null
+plugin: 'facet_block:type_of_resource_terms'
+settings:
+  id: 'facet_block:type_of_resource_terms'
+  label: Type
+  provider: facets
+  label_display: visible
+  block_id: typeofresourceterms
+visibility: {  }

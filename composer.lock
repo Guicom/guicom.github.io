@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "4c3d1c44cdcb756a1fdea6fbcfe9fbcf",
+    "content-hash": "dac1f9fe8f3f01f327deead096fd65ca",
     "packages": [
         {
             "name": "actency/foundation",
@@ -4803,6 +4803,71 @@
             }
         },
         {
+            "name": "drupal/entity_share",
+            "version": "2.0.0-alpha10",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/entity_share.git",
+                "reference": "8.x-2.0-alpha10"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/entity_share-8.x-2.0-alpha10.zip",
+                "reference": "8.x-2.0-alpha10",
+                "shasum": "d741119bd0d6b1d1254dd6be61bbf01707eb6f19"
+            },
+            "require": {
+                "drupal/core": "~8.0"
+            },
+            "conflict": {
+                "drupal/jsonapi": "1.*"
+            },
+            "require-dev": {
+                "drupal/block_field": "~1.0",
+                "drupal/dynamic_entity_reference": "~2.0",
+                "drupal/entity_share_client": "*",
+                "drupal/jsonapi": "*",
+                "drupal/jsonapi_extras": "3.13",
+                "drupal/metatag": "~1.0",
+                "drupal/paragraphs": "~1.0",
+                "drupal/pathauto": "~1.0",
+                "fzaninotto/faker": "^1.7"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-2.x": "2.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-2.0-alpha10",
+                    "datestamp": "1579265887",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Alpha releases are not covered by Drupal security advisories."
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Grimreaper",
+                    "homepage": "https://www.drupal.org/user/2388214"
+                },
+                {
+                    "name": "ithom",
+                    "homepage": "https://www.drupal.org/user/3175403"
+                }
+            ],
+            "description": "Provides an UI to share entities.",
+            "homepage": "https://www.drupal.org/project/entity_share",
+            "support": {
+                "source": "https://git.drupalcode.org/project/entity_share"
+            }
+        },
+        {
             "name": "drupal/entity_usage",
             "version": "2.0.0-beta1",
             "source": {
@@ -5039,6 +5104,9 @@
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
                     }
+                },
+                "patches_applied": {
+                    "Facets Show reset link of the LinksWidget do not work when facets_pretty_path is active to 8.x-1.x": "https://www.drupal.org/files/issues/2020-01-29/show_reset_link_when_pretty_path_is_active-3079451-3.patch"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -14103,6 +14171,7 @@
         "drupal/default_content_deploy": 20,
         "drupal/drush_language": 5,
         "drupal/entity_usage": 10,
+        "drupal/entity_share": 15,
         "drupal/gdpr": 15,
         "drupal/inline_entity_form": 5,
         "drupal/libraries": 15,
