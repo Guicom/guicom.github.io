@@ -105,12 +105,14 @@
         }
       });
 
-      // Mobile Dropdown lvl1
-      $("[data-level='1'] .mobile-dropdown-trigger").click( function (e) {
-        var dropdown = $(this).next('.we-mega-menu-submenu.dropdown-menu');
-        e.preventDefault();
-        e.stopPropagation();
+      $("[data-level='1'] .mobile-dropdown-trigger", context).once('socomecMobileMenu').each(function () {
+        $(this).click(function (e) {
+          console.log('test');
+          var dropdown = $(this).next('.we-mega-menu-submenu.dropdown-menu');
+          e.preventDefault();
+          e.stopPropagation();
           $(dropdown).slideToggle("400");
+        });
       });
     }
   };

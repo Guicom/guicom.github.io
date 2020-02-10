@@ -9,6 +9,7 @@ global-styling:
       assets/css/style.css: {}
   dependencies:
     - core/jquery
+    - core/jquery.once
     - core/drupal
 
 datatables-styling:
