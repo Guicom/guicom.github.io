@@ -105,19 +105,13 @@
         }
       });
 
-      // Mobile Dropdown
-
+      // Mobile Dropdown lvl1
       $("[data-level='1'] .mobile-dropdown-trigger").click( function (e) {
         var dropdown = $(this).next('.we-mega-menu-submenu.dropdown-menu');
         e.preventDefault();
         e.stopPropagation();
-        if ( $(dropdown).is( ":hidden" ))  {
-          $(dropdown).slideDown("400");
-        } else {
-          $(dropdown).slideUp("400");
-        }
+          $(dropdown).slideToggle("400");
       });
-
     }
   };
 

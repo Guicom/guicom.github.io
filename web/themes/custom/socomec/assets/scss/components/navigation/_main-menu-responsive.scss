@@ -120,8 +120,10 @@
                   margin-top: 1.5rem;
                   margin-bottom: 1rem;
                   padding: 0 16px;
+                  transition: 0.2s;
                   &[aria-expanded='true'] {
-                    padding-left: 20px;
+                    padding-left: 1.5rem;
+                    transition: 0.2s;
                   }
                 }
                 >.we-mega-menu-submenu {
@@ -216,6 +218,7 @@
                     background: linear-gradient(180deg, rgba(0,79,159,0) 0%, #045aaa 100%);
                     border: none;
                     box-shadow: none;
+                    padding: 0;
                   }
                   &:after {
 
@@ -245,6 +248,12 @@
                     > a {
 
                     }
+                  }
+                  .tool-promotion {
+                    display: none;
+                  }
+                  .we-mega-menu-submenu {
+                    background: $blue;
                   }
                 }
 
@@ -345,7 +354,7 @@
         right: -320px;
         width: 85%;
         height: 100vh;
-        padding-top: 2.25rem;
+        padding-top: 3.25rem;
         padding-left: 0;
         padding-right: 0;
         background: $blue;
@@ -363,6 +372,7 @@
               background: rgba(0, 79, 159, 0.1);
               box-shadow: none;
               border: none;
+              padding: 0;
               > .submenu-bg {
 
               }
