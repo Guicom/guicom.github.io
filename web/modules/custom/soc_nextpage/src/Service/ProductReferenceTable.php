@@ -23,12 +23,7 @@ class ProductReferenceTable {
       $url = Url::fromRoute('entity.node.canonical', ['node' => $item["content"]["#node"]->id()]);
       $json = (array) json_decode($json[0]["value"]);
       foreach ($header as $head) {
-        if ($head == 'Reference') {
-          $rows[$key][$head] = $json[$head] ? Link::fromTextAndUrl($json[$head], $url) : '';
-        }
-        else {
-          $rows[$key][$head] = $json[$head] ? $json[$head]: '';
-        }
+        $rows[$key][$head] = $json[$head] ? Link::fromTextAndUrl($json[$head], $url) : '';
       }
       $rows[$key]['select'] = $this->getCartLink();
     }
