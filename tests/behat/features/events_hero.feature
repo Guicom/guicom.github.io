@@ -6,7 +6,7 @@ Feature: Events Hero
   Scenario: Bloc Hero for the events page.
     When I visit "/events"
     Then I should see an "body.path-events" element
-
+    Then I should see "Iterative approaches to establish a new normal that has evolved from generation x."
 
   #@api @cit @javascript @event_hero
   #Si 0 EVENT épinglé, le prochain Event est mis en avant. (Hypothèse = date de début+ proche de la date du jour)
