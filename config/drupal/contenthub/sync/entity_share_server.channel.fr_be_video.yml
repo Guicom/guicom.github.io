@@ -1,0 +1,15 @@
+uuid: 7ff2c275-1d40-4ee3-bff3-485d304e0864
+langcode: en
+status: true
+dependencies: {  }
+id: fr_be_video
+label: 'FR-BE / Video'
+channel_entity_type: media
+channel_bundle: video
+channel_langcode: fr-be
+channel_filters: null
+channel_groups: null
+channel_sorts: {  }
+channel_searches: null
+authorized_users:
+  cd0d9446-cb19-4e87-9dcf-d3bdc37a70a7: cd0d9446-cb19-4e87-9dcf-d3bdc37a70a7
