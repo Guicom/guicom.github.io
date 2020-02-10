@@ -532,6 +532,7 @@ body.node--type-product {
       &.dataTable {
         visibility: visible;
         @include transition-socomec;
+        margin-bottom: 15px !important;
       }
       thead {
         tr {
