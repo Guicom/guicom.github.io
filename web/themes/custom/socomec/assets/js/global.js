@@ -209,7 +209,7 @@
   Drupal.behaviors.socomec_smooth_anchor_scrolling = {
     attach: function (context, settings) {
       $(function() {
-        $('a[href*="#"]:not([href="#"])').click(function() {
+        $('a[href^="#"]:not([href="#"])').click(function() {
           var offset = -200;
             var target = $(this.hash);
             target = target.length ? target : $('[name=' + this.hash.slice(1) +']');

@@ -1,21 +1,13 @@
 {
     "_links": {
         "self": {
-            "href": "http:\/\/default\/products\/power-switching-monitoring?_format=hal_json"
+            "href": "http:\/\/default\/power-switching-monitoring?_format=hal_json"
         },
         "type": {
             "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/family"
         },
         "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/family\/parent": [
-            {
-                "href": "http:\/\/default\/products?_format=hal_json"
-            }
-        ],
-        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/family\/content_translation_uid": [
-            {
-                "href": "http:\/\/default\/user\/1?_format=hal_json",
-                "lang": "en"
-            }
+            null
         ]
     },
     "tid": [
@@ -69,49 +61,17 @@
     ],
     "weight": [
         {
-            "value": 2
+            "value": 3
         }
     ],
     "_embedded": {
         "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/family\/parent": [
-            {
-                "_links": {
-                    "self": {
-                        "href": "http:\/\/default\/products?_format=hal_json"
-                    },
-                    "type": {
-                        "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/family"
-                    }
-                },
-                "uuid": [
-                    {
-                        "value": "2e4108af-6939-4d12-bd4e-2ff6496cc8aa"
-                    }
-                ]
-            }
-        ],
-        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/family\/content_translation_uid": [
-            {
-                "_links": {
-                    "self": {
-                        "href": "http:\/\/default\/user\/1?_format=hal_json"
-                    },
-                    "type": {
-                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
-                    }
-                },
-                "uuid": [
-                    {
-                        "value": "1bbc8659-cab2-4a15-9f3a-428b9f85a9a2"
-                    }
-                ],
-                "lang": "en"
-            }
+            null
         ]
     },
     "changed": [
         {
-            "value": "2020-01-23T08:40:42+00:00",
+            "value": "2020-02-10T10:13:15+00:00",
             "format": "Y-m-d\\TH:i:sP"
         }
     ],
