@@ -5,9 +5,37 @@ url:
   prefixes:
     en: ''
     fr: fr
+    fr-be: fr-be
+    nl-be: nl-be
+    de: de
+    en-us: en-us
+    de-ch: de-ch
+    en-ch: en-ch
+    en-gb: en-gb
+    en-in: en-in
+    es: es
+    fr-ch: fr-ch
+    it: it
+    it-ch: it-ch
+    zh-cn: zh-cn
+    pl: pl
   domains:
     en: ''
     fr: ''
+    fr-be: ''
+    nl-be: ''
+    de: ''
+    en-us: ''
+    de-ch: ''
+    en-ch: ''
+    en-gb: ''
+    en-in: ''
+    es: ''
+    fr-ch: ''
+    it: ''
+    it-ch: ''
+    zh-cn: ''
+    pl: ''
 selected_langcode: site_default
 _core:
   default_config_hash: uEePITI9tV6WqzmsTb7MfPCi5yPWXSxAN1xeLcYFQbM

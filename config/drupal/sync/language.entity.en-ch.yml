@@ -1,0 +1,9 @@
+uuid: c8e07c89-af1a-44ca-89ac-ce897d366db8
+langcode: en
+status: true
+dependencies: {  }
+id: en-ch
+label: 'English (Switzerland)'
+direction: ltr
+weight: 0
+locked: false
