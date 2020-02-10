@@ -1,0 +1,137 @@
+{
+    "_links": {
+        "self": {
+            "href": "http:\/\/default\/taxonomy\/term\/88?_format=hal_json"
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/event_type"
+        },
+        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/event_type\/parent": [
+            null
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/event_type\/content_translation_uid": [
+            {
+                "href": "http:\/\/default\/user\/1?_format=hal_json",
+                "lang": "zxx"
+            }
+        ]
+    },
+    "tid": [
+        {
+            "value": 88
+        }
+    ],
+    "uuid": [
+        {
+            "value": "bc4d31ed-6758-40af-90f6-f2e953df9174"
+        }
+    ],
+    "revision_id": [
+        {
+            "value": 88
+        }
+    ],
+    "langcode": [
+        {
+            "value": "zxx",
+            "lang": "zxx"
+        }
+    ],
+    "vid": [
+        {
+            "target_id": "event_type"
+        }
+    ],
+    "revision_created": [
+        {
+            "value": "2020-02-04T16:22:20+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "status": [
+        {
+            "value": true,
+            "lang": "zxx"
+        }
+    ],
+    "name": [
+        {
+            "value": "Seminar",
+            "lang": "zxx"
+        }
+    ],
+    "weight": [
+        {
+            "value": 0
+        }
+    ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/event_type\/parent": [
+            null
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/event_type\/content_translation_uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/user\/1?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "07e50755-19d9-4b20-8680-0fd004348b53"
+                    }
+                ],
+                "lang": "zxx"
+            }
+        ]
+    },
+    "changed": [
+        {
+            "value": "2020-02-04T16:22:20+00:00",
+            "lang": "zxx",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "zxx"
+        }
+    ],
+    "revision_translation_affected": [
+        {
+            "value": true,
+            "lang": "zxx"
+        }
+    ],
+    "content_translation_source": [
+        {
+            "value": "und",
+            "lang": "zxx"
+        }
+    ],
+    "content_translation_outdated": [
+        {
+            "value": false,
+            "lang": "zxx"
+        }
+    ],
+    "content_translation_created": [
+        {
+            "value": "2020-02-04T16:22:20+00:00",
+            "lang": "zxx",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "metatag": [
+        {
+            "value": {
+                "title": "Seminar | Socomec",
+                "canonical_url": "http:\/\/default\/taxonomy\/term\/88"
+            }
+        }
+    ]
+}

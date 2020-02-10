@@ -85,74 +85,75 @@
           <div class="event-teaser col-12 col-md-6">
             {% else %}
             <div class="event-teaser col-12 col-md-10 offset-md-1">
-            {% endif %}
-            <span class="event-subtitle">{{ drupal_field('field_event_teaser', 'node') }}</span>
+              {% endif %}
+              <span class="event-subtitle">{{ drupal_field('field_event_teaser', 'node') }}</span>
+            </div>
+            {% include '@socomec/layout/share.html.twig' %}
           </div>
-          {% include '@socomec/layout/share.html.twig' %}
         </div>
       </div>
-    </div>
-    {% endif %}
+      {% endif %}
 
-    {% if page.highlighted %}
-      <div class="highlighted">
-        <aside class="{{ container }} section clearfix" role="complementary">
-          {{ page.highlighted }}
-        </aside>
-      </div>
-    {% endif %}
-    {% if page.featured_top %}
-      {% block featured %}
-        <div class="featured-top">
-          <aside class="featured-top__inner section {{ container }} clearfix" role="complementary">
-            {{ page.featured_top }}
+      {% if page.highlighted %}
+        <div class="highlighted">
+          <aside class="{{ container }} section clearfix" role="complementary">
+            {{ page.highlighted }}
           </aside>
         </div>
-      {% endblock %}
-    {% endif %}
-    <main id="main-wrapper" class="layout-main-wrapper clearfix">
-      {% block content %}
-        <article id="main" class="container-fluid">
-          <section class="section-light" id="event-info-section">
-            <div class="container">
-              <div class="row">
-                <div class="col-12 col-md-10 offset-md-1">
-                  {{ drupal_field('field_event_content', 'node') }}
-                </div>
+      {% endif %}
+      {% if page.featured_top %}
+        {% block featured %}
+          <div class="featured-top">
+            <aside class="featured-top__inner section {{ container }} clearfix" role="complementary">
+              {{ page.featured_top }}
+            </aside>
+          </div>
+        {% endblock %}
+      {% endif %}
+      <main id="main-wrapper" class="layout-main-wrapper clearfix">
+        {% block content %}
+          <article id="main" class="container-fluid">
+            <section class="section-light" id="event-info-section">
+              <div class="container">
+                <div class="row">
+                  <div class="col-12 col-md-10 offset-md-1">
+                    {{ drupal_field('field_event_content', 'node') }}
+                  </div>
                 </div>
               </div>
             </section>
-        </article>
-      {% endblock %}
-    </main>
+          </article>
+        {% endblock %}
+      </main>
 
-    {% if page.featured_bottom_first or page.featured_bottom_second or page.featured_bottom_third %}
-      <div class="featured-bottom">
-        <aside class="{{ container }} clearfix" role="complementary">
-          {{ page.featured_bottom_first }}
-          {{ page.featured_bottom_second }}
-          {{ page.featured_bottom_third }}
-        </aside>
-      </div>
-    {% endif %}
-    <footer class="site-footer">
-      {% block footer %}
-        <div class="{{ container }}">
-          {% if page.footer_first or page.footer_second or page.footer_third or page.footer_fourth %}
-            <div class="site-footer__top clearfix">
-              {{ page.footer_first }}
-              {{ page.footer_second }}
-              {{ page.footer_third }}
-              {{ page.footer_fourth }}
-            </div>
-          {% endif %}
-          {% if page.footer_fifth %}
-            <div class="site-footer__bottom">
-              {{ page.footer_fifth }}
-            </div>
-          {% endif %}
+      {% if page.featured_bottom_first or page.featured_bottom_second or page.featured_bottom_third %}
+        <div class="featured-bottom">
+          <aside class="{{ container }} clearfix" role="complementary">
+            {{ page.featured_bottom_first }}
+            {{ page.featured_bottom_second }}
+            {{ page.featured_bottom_third }}
+          </aside>
         </div>
-      {% endblock %}
-    </footer>
+      {% endif %}
+      <footer class="site-footer">
+        {% block footer %}
+          <div class="{{ container }}">
+            {% if page.footer_first or page.footer_second or page.footer_third or page.footer_fourth %}
+              <div class="site-footer__top clearfix">
+                {{ page.footer_first }}
+                {{ page.footer_second }}
+                {{ page.footer_third }}
+                {{ page.footer_fourth }}
+              </div>
+            {% endif %}
+            {% if page.footer_fifth %}
+              <div class="site-footer__bottom">
+                {{ page.footer_fifth }}
+              </div>
+            {% endif %}
+          </div>
+        {% endblock %}
+      </footer>
+    </div>
   </div>
 </div>

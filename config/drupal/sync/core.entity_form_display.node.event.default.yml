@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.event.field_add_to_calendar
     - field.field.node.event.field_event_content
     - field.field.node.event.field_event_country
     - field.field.node.event.field_event_cta_download
@@ -19,6 +20,7 @@ dependencies:
     - node.type.event
     - workflows.workflow.editorial
   module:
+    - addtocalendar
     - content_moderation
     - datetime_range
     - link_target
@@ -38,6 +40,12 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_add_to_calendar:
+    weight: 27
+    settings: {  }
+    third_party_settings: {  }
+    type: add_to_calendar_widget_type
+    region: content
   field_event_content:
     type: entity_reference_paragraphs
     weight: 21
