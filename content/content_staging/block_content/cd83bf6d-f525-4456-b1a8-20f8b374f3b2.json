@@ -5,13 +5,7 @@
         },
         "type": {
             "href": "http:\/\/drupal.org\/rest\/type\/block_content\/link"
-        },
-        "http:\/\/drupal.org\/rest\/relation\/block_content\/link\/content_translation_uid": [
-            {
-                "href": "http:\/\/default\/user\/1?_format=hal_json",
-                "lang": "en"
-            }
-        ]
+        }
     },
     "id": [
         {
@@ -93,26 +87,6 @@
             "lang": "en"
         }
     ],
-    "_embedded": {
-        "http:\/\/drupal.org\/rest\/relation\/block_content\/link\/content_translation_uid": [
-            {
-                "_links": {
-                    "self": {
-                        "href": "http:\/\/default\/user\/1?_format=hal_json"
-                    },
-                    "type": {
-                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
-                    }
-                },
-                "uuid": [
-                    {
-                        "value": "639675d9-184b-46a3-a954-077022b40562"
-                    }
-                ],
-                "lang": "en"
-            }
-        ]
-    },
     "content_translation_created": [
         {
             "value": "2019-10-17T14:25:43+00:00",

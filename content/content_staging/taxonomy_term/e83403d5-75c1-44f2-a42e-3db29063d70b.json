@@ -11,12 +11,6 @@
                 "href": "http:\/\/default\/products\/energy-storage-solution\/storage-converters?_format=hal_json"
             }
         ],
-        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/family\/content_translation_uid": [
-            {
-                "href": "http:\/\/default\/user\/1?_format=hal_json",
-                "lang": "en"
-            }
-        ],
         "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/family\/field_background_image": [
             {
                 "href": "http:\/\/default\/media\/28\/edit?_format=hal_json"
@@ -101,24 +95,6 @@
                         "value": "868352ea-0c8b-495c-b756-750eaa3298b5"
                     }
                 ]
-            }
-        ],
-        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/family\/content_translation_uid": [
-            {
-                "_links": {
-                    "self": {
-                        "href": "http:\/\/default\/user\/1?_format=hal_json"
-                    },
-                    "type": {
-                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
-                    }
-                },
-                "uuid": [
-                    {
-                        "value": "639675d9-184b-46a3-a954-077022b40562"
-                    }
-                ],
-                "lang": "en"
             }
         ],
         "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/family\/field_background_image": [
