@@ -41,15 +41,87 @@
   }
 
   &.contextual-family {
-    ul {
-      li {
-        color: $blue;
-        font-family: $font-roboto;
-        font-size: 16px;
-        line-height: 25px;
-        a {
+    .first-level {
+      > li {
+        padding: 0;
+        border-bottom: 0;
+        display: flex;
+        a,
+        p {
+          display: flex;
+          width: 100%;
+          margin-bottom: 0;
+          padding: 20px 10px;
+          border-bottom: 1px solid $black;
+          color: $black;
+          font-family: $font-roboto;
+          font-size: 14px;
+          font-weight: bold;
+          line-height: 20px;
+          text-transform: uppercase;
+          &:hover {
+            text-decoration: none;
+          }
+        }
+      }
+    }
+    .second-level {
+      > li {
+        padding: 0;
+        border-bottom: 0;
+        display: flex;
+        a,
+        p {
+          display: flex;
+          width: 100%;
+          margin-bottom: 0;
           color: $darker-grey;
-          display: block;
+          font-family: $font-roboto;
+          font-size: 16px;
+          line-height: 25px;
+          padding: 6px 10px;
+          border-bottom: solid 1px $blue_lighter;
+          &:hover {
+            background: #EDF7FC;
+            text-decoration: none;
+          }
+        }
+        &.current {
+          a,
+          p {
+            border-bottom: solid 1px $turquoize;
+            color: $blue;
+          }
+        }
+      }
+    }
+    .third-level {
+      > li {
+        padding: 0;
+        border-bottom: 0;
+        display: flex;
+        a,
+        p {
+          display: flex;
+          width: 100%;
+          margin-bottom: 0;
+          color: $darker-grey;
+          font-family: $font-roboto;
+          font-size: 16px;
+          line-height: 25px;
+          padding: 6px 10px 6px 20px;
+          border-bottom: solid 1px $blue_lighter;
+          &:hover {
+            background: #EDF7FC;
+            text-decoration: none;
+          }
+        }
+        &.current {
+          a,
+          p {
+            border-bottom: solid 1px $turquoize;
+            color: $blue;
+          }
         }
       }
     }

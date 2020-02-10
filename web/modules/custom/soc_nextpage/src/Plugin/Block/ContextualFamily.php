@@ -52,27 +52,44 @@ class ContextualFamily extends BlockBase {
       $base_tid = $parent ? $parent->id() : $tid;
 
       //build listing
-      $output = '<ul>';
+      $output = '<ul class="first-level">';
       foreach ($tree as $term) {
         $text = $term->name;
         // If current bas term.
         if ($term->tid == $base_tid) {
-          $output .= '<li>' . $text . '</li>';
-          $output .= '<ul class="sub-list">';
+          if ($term->tid == $tid) {
+            $output .= '<li class="current" ><p>' . $text . '</p></li>';
+          }
+          else {
+            $url = Url::fromRoute('entity.taxonomy_term.canonical', ['taxonomy_term' => $term->tid])->setOptions($options);
+            $link = Link::fromTextAndUrl($text, $url);
+            $link = $link->toRenderable();
+            $text = render($link);
+            $output .= '<li>' . $text . '</li>';
+          }
+          $output .= '<ul class="second-level">';
           $level2_tree = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadTree($vid, $term->tid, 1);
           foreach ($level2_tree as $term_2) {
             $text = $term_2->name;
             // If current term or parent term.
             if ($term_2->tid == $tid || (isset($parent_level2) && $term_2->tid == $parent_level2->id())) {
-              $output .= '<ul class="sub-list">';
-              $output .= '<li>' . $text . '</li>';
+              if ($term_2->tid == $tid) {
+                $output .= '<li class="current"><p>' . $text . '</p></li>';
+              }
+              else {
+                $url = Url::fromRoute('entity.taxonomy_term.canonical', ['taxonomy_term' => $term->tid])->setOptions($options);
+                $link = Link::fromTextAndUrl($text, $url);
+                $link = $link->toRenderable();
+                $text = render($link);
+                $output .= '<li class="current">' . $text . '</li>';
+              }
+              $output .= '<ul class="third-level">';
               $level3_tree = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadTree($vid, $term_2->tid, 1);
               foreach ($level3_tree as $term_3) {
                 $text = $term_3->name;
-                $output .= '<ul class="sub-list">';
                 // If current term.
                 if ($term_3->tid == $tid) {
-                  $output .= '<li>' . $text . '</li>';
+                  $output .= '<li class="current"><p>' . $text . '</p></li>';
                 }
                 else {
                   $url = Url::fromRoute('entity.taxonomy_term.canonical', ['taxonomy_term' => $term_3->tid])->setOptions($options);
