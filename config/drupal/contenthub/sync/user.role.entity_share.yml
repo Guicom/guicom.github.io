@@ -8,3 +8,6 @@ weight: 7
 is_admin: null
 permissions:
   - entity_share_server_access_channels
+  - 'view any unpublished content'
+  - 'view own unpublished media'
+  - 'view unpublished paragraphs'
