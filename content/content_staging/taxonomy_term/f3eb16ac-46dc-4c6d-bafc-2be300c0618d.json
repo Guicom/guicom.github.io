@@ -8,6 +8,12 @@
         },
         "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/protection_level\/parent": [
             null
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/protection_level\/content_translation_uid": [
+            {
+                "href": "http:\/\/default\/user\/1?_format=hal_json",
+                "lang": "en"
+            }
         ]
     },
     "tid": [
@@ -60,6 +66,24 @@
     "_embedded": {
         "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/protection_level\/parent": [
             null
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/protection_level\/content_translation_uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/user\/1?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "f3e9391d-262f-4e8e-bd22-44a92e7d961b"
+                    }
+                ],
+                "lang": "en"
+            }
         ]
     },
     "changed": [
