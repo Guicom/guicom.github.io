@@ -15,7 +15,7 @@
         "autoWidth": true,
         "info": false,
         "ordering": false,
-
+        "responsive": true,
         "sPaginationType":"simple_numbers",
         "iDisplayLength": 4,
         language: {
