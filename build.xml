@@ -49,7 +49,7 @@
     <import file="phing/tasks/admin-socomec.xml" optional="true"/>
     <import file="phing/tasks/megamenu-socomec.xml" optional="true"/>
     <import file="phing/tasks/solr.xml" optional="true"/>
-    
+
     <!-- import drush tasks -->
     <import file="./vendor/drupal/phingdrushtask/import.xml"/>
 
@@ -61,5 +61,5 @@
     <target
             name="build-local"
             description="Rebuild the local environment."
-            depends="build, content-import-all"/>
+            depends="build, content-import-all, megamenu-socomec:import"/>
 </project>
