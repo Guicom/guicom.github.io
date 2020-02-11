@@ -12,6 +12,9 @@ module:
   entity_share_server: 0
 theme: {  }
 blacklist:
+  - system.action.user_add_role_action.entity_share
+  - system.action.user_remove_role_action.entity_share
+  - user.role.entity_share
   - 'entity_share_server.*'
 graylist:
   - user.role.webmaster
