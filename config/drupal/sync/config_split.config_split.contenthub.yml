@@ -13,7 +13,8 @@ module:
 theme: {  }
 blacklist:
   - 'entity_share_server.*'
-graylist: {  }
+graylist:
+  - user.role.webmaster
 graylist_dependents: true
 graylist_skip_equal: true
 weight: 0

@@ -137,6 +137,7 @@ content:
 hidden:
   addtoany: true
   field_body: true
+  field_country: true
   field_metatags: true
   field_model_pdf: true
   field_news_audience: true

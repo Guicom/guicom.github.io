@@ -1,9 +1,3 @@
 tips:
-  search-api-index-processors-enable:
-    label: 'Prozessoren aktivieren'
-    body: 'Hier werden alle für diesen Index verfügbaren Prozessoren aufgelistet. Zu aktivierende Prozessoren können hier ausgewählt werden. (Hinweis: Einige Prozessoren können nicht deaktiviert werden.)'
-  search-api-index-processors-weights:
-    label: Prozessorreihenfolge
   search-api-index-processors-settings:
     label: Prozessoreinstellungen
-    body: 'Einige Prozessoren stellen zusätzliche Konfigurationen zur Verfügung. Diese Konfigurationen können hier angepasst werden.'

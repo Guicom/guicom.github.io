@@ -1,27 +1,14 @@
-label: 'In diesem Index indizierte Felder'
 tips:
-  search-api-index-fields-introduction:
-    label: 'In diesem Index indizierte Felder'
-    body: 'Diese Seite listet auf, welche Felder in diesem Index indiziert sind, gruppiert nach Datenquellen. (Datasource-unabhängige Felder werden unter "Allgemein" aufgelistet.) Indizierte Felder können verwendet werden, um Filter hinzuzufügen oder Ansichten oder anderen Suchanzeigen, die auf dem Index basieren, zu sortieren. Felder vom Typ „Volltext" können auch für die Volltextsuche verwendet werden.'
   search-api-index-fields-add:
     label: 'Felder hinzufügen'
-    body: 'Mit der Schaltfläche „Felder hinzufügen" können Sie diesem Index zusätzliche Felder hinzufügen.'
   search-api-index-fields-label:
     label: Beschriftung
   search-api-index-fields-machine-name:
     label: Systemname
-    body: 'Die interne ID, die für dieses Feld verwendet werden soll. Kann von unerfahrenen Benutzern in den meisten Fällen sicher ignoriert werden. Das Ändern des Rechnernamens eines Feldes erfordert eine Neuindizierung des Index.'
-  search-api-index-fields-property-path:
-    label: Eigenschaftspfad
-    body: 'Die interne Beziehung, die das indizierte Element mit dem Feld verknüpft, wobei die Links durch Doppelpunkte (:) getrennt sind. Dies kann für fortgeschrittene Benutzer nützliche Informationen sein, kann aber ansonsten ignoriert werden.'
   search-api-index-fields-type:
     label: Typ
-    body: 'Der Datentyp, der bei der Indizierung des Feldes verwendet werden soll. Legt fest, wie ein Feld bei der Suche verwendet werden kann. Informationen zu den verfügbaren Typen finden Sie in der Box <a href="#search-api-data-types-table">"Datentyptabelle"</a> am Ende der Seite.'
-  search-api-index-fields-boost:
-    label: Boost
   search-api-index-fields-edit:
     label: 'Feld bearbeiten'
-    body: 'Einige Felder besitzen zusätzliche Konfigurationen. Für solche Felder wird ein Link mit der Aufschrift Bearbeiten in der Spalte Aktionen angezeigt.'
   search-api-index-fields-remove:
     label: 'Feld löschen'
   search-api-index-fields-submit:

@@ -87,6 +87,7 @@ hidden:
   extra_field_is_download_ressource: true
   field_description: true
   field_open_link_in_new_window: true
+  field_product_family: true
   field_res_application: true
   field_res_downloadable: true
   field_res_link_url: true
