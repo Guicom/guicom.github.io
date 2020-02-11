@@ -10,9 +10,12 @@
   Drupal.behaviors.product_datatable = {
     attach: function(context, settings) {
 
+
+
       $('#product-reference-table').once("product-datatable").DataTable( {
         "lengthChange": false,
-        "autoWidth": true,
+        "autoWidth": false,
+        "retrieve":   true,
         "info": false,
         "ordering": false,
         "responsive": true,
