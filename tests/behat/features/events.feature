@@ -25,3 +25,12 @@ Feature: Events
     #Then I should not see "Energy Storage International 2020"
     Then I should not see "Conference"
     Then I should not see "Energy Storage International 2020" in the ".view-id-events" element
+
+     # L’EVENT promu à venir s'affiche dans le Hero de la listing EVENT.
+  Scenario Outline: Bloc Hero for the events page.
+    When I visit "/events"
+    Then I should see an "<element>" element
+    Then I should see "<text>"
+    Examples:
+      | element          | text                                                                               |
+      | body.path-events | Iterative approaches to establish a new normal that has evolved from generation x. |
