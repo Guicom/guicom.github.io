@@ -19,6 +19,10 @@ libraries:
   - socomec/malihu-custom-scrollbar
 libraries-override:
   bootstrap_barrio/global-styling: false
+  we_megamenu/form.we-mega-menu-frontend:
+    css:
+      theme:
+        /libraries/bootstrap/css/bootstrap.min.css: false
 regions:
   top_header: 'Top Header'
   hero: 'Hero'

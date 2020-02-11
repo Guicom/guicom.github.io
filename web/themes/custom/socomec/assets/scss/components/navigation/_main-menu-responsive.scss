@@ -18,6 +18,9 @@
     .container-nav {
       @include right-overflow();
       height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
     }
     .block-we-megamenu-blockheader {
       // TOGGLER BTN
@@ -249,7 +252,7 @@
                     display: flex;
                     align-items: center;
                     text-transform: none;
-                    padding: 1rem 2rem;
+                    padding: 1rem 4rem 1rem 2rem;
                     white-space: normal;
                     background: rgba(255, 255, 255, 0.25);
                   }
@@ -266,6 +269,7 @@
                     background: rgba(255, 255, 255, 0.15);
                     border: none;
                     padding: 0;
+                    width: 100% !important;
                   }
                   .mobile-dropdown-trigger {
                     right: 24px;
@@ -312,7 +316,7 @@
         position: fixed;
         z-index: 99;
         top: 0;
-        right: -320px;
+        right: -85%;
         width: 85%;
         height: 100%;
         padding-top: 3.25rem;
@@ -324,7 +328,7 @@
         overflow-y: scroll;
         &.show {
           right: 0!important;
-          transition: $transition02;
+          transition: right .2s ease-in-out;
         }
         > ul {
           > li {

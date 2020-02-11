@@ -17,6 +17,7 @@
     .container-nav {
       @include right-overflow();
       height: 60px;
+      display: flex;
     }
     .block-we-megamenu-blockheader {
       .navbar {
@@ -34,7 +35,7 @@
               border: none;
               position: initial;
               a,
-              span {
+              span:not(.mobile-dropdown-trigger) {
                 background: none;
                 color: $white;
                 font-family: $font-poppins;
@@ -59,6 +60,10 @@
                   font-family: $font-poppins;
                 }
               }
+              span {
+                border: none;
+                padding: 0;
+              }
 
               &.dropdown-menu {
                 min-width: auto;
@@ -69,6 +74,7 @@
                 height: 59px;
                 border-bottom: 1px solid transparent;
                 >.we-mega-menu-submenu {
+                  margin-top: 61px;
                   >.submenu-bg {
                     >.container {
                       >.close-menu {
