@@ -75,3 +75,7 @@ Feature: Events
     And I visit "/node/53/revisions"
     Then I should see the text "<message>"
 
+    # Critéres d'acceptance à implémenter
+    # - ETQ Webmaster, je peux ajouter des thèmes pour le vocabulaire Thématique afin de les ajouter dans la page de contribution du CT Event
+
+

@@ -15,3 +15,8 @@ drupal-update:
 	./vendor/bin/phing admin-socomec:add-role
 	./vendor/bin/phing gulp-socomec:css
 	./vendor/bin/phing gulp-socomec:clear-cache
+
+
+.PHONY: behat-event
+behat-event:
+	./vendor/bin/phing behat:run -Dbehat.tags=wip
