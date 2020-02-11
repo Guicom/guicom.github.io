@@ -19,7 +19,9 @@ use Drupal\Core\Entity\ContentEntityInterface;
  *
  * @see options_allowed_values()
  */
-function soc_core_allowed_values_countries_function(FieldStorageConfig $definition, ContentEntityInterface $entity = NULL, &$cacheable = NULL) {
+function soc_core_allowed_values_countries_function(FieldStorageConfig $definition,
+                                                    ContentEntityInterface $entity = NULL,
+                                                    &$cacheable = NULL) {
   // Add a custom countries option for Event nodes.
   if ($entity->bundle() === 'event') {
     /** @var \Drupal\Core\Locale\CountryManager $service */
