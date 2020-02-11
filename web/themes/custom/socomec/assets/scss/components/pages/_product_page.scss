@@ -581,6 +581,20 @@ body.node--type-product {
             vertical-align: middle;
             padding: 0;
             border-bottom: 1px solid $lighter-grey;
+            &:first-child {
+              &:before {
+                right: 12px !important;
+                left: initial !important;
+                color: black;
+                border: none;
+                background: none;
+                top: 0;
+                height: 100%;
+                box-shadow: none;
+                display: flex;
+                align-items: center;
+              }
+            }
           }
           td a{
             display: flex;

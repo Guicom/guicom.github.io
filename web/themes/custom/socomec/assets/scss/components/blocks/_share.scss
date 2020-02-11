@@ -6,6 +6,7 @@
   transform: translateY(-50%);
   @include media-breakpoint-down(sm) {
     transition: 0.2s;
+    right: 3rem;
   }
   .share-menu {
     position: relative;
@@ -15,10 +16,14 @@
     box-shadow: $box-shadow08;
     transition: $transition02;
     @include media-breakpoint-down(sm) {
-      right: -3rem;
+      position: absolute;
+      right: -6rem;
     }
     &.open {
       right: 0;
+      @include media-breakpoint-down(sm) {
+        right: -2rem;
+      }
     }
   }
   .share-button {
