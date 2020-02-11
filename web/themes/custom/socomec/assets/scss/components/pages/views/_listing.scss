@@ -1,20 +1,6 @@
 .path-news,
 .path-events {
   background-color: $light-grayish-blue;
-  #block-newsthemetaxonomytermname,
-  #block-newstypetaxonomytermname{
-    margin:0 10px 0 0;
-    .facet-title{
-      height: 20px;
-      color: $blue;
-      font-family: $font-poppins;
-      font-size: 12px;
-      font-weight: 600;
-      letter-spacing: 0.5px;
-      line-height: 20px;
-      margin: 5px 10px 0 0;
-    }
-  }
 }
 
 .view-news,

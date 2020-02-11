@@ -1,0 +1,20 @@
+uuid: 0d0e2a53-cdfd-4b58-bd69-62223f123b3b
+langcode: fr
+status: true
+dependencies: {  }
+id: _fr_fr_articles
+label: '[fr-fr] Articles'
+channel_entity_type: node
+channel_bundle: article
+channel_langcode: fr
+channel_filters:
+  field_country_name:
+    path: field_country.name
+    operator: '='
+    value:
+      - France
+channel_groups: null
+channel_sorts: {  }
+channel_searches: {  }
+authorized_users:
+  42ea428e-201b-44a1-82ea-74ed75e960a2: 42ea428e-201b-44a1-82ea-74ed75e960a2

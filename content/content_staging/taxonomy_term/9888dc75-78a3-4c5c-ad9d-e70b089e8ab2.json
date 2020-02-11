@@ -1,14 +1,18 @@
 {
     "_links": {
         "self": {
-            "href": "http:\/\/default\/products\/metering-monitoring-power-quality?_format=hal_json"
+            "href": "http:\/\/default\/metering-monitoring-power-quality?_format=hal_json"
         },
         "type": {
             "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/family"
         },
         "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/family\/parent": [
+            null
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/family\/content_translation_uid": [
             {
-                "href": "http:\/\/default\/products?_format=hal_json"
+                "href": "http:\/\/default\/user\/1?_format=hal_json",
+                "lang": "en"
             }
         ],
         "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/family\/content_translation_uid": [
@@ -62,25 +66,29 @@
     ],
     "weight": [
         {
-            "value": 0
+            "value": 1
         }
     ],
     "_embedded": {
         "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/family\/parent": [
+            null
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/family\/content_translation_uid": [
             {
                 "_links": {
                     "self": {
-                        "href": "http:\/\/default\/products?_format=hal_json"
+                        "href": "http:\/\/default\/user\/1?_format=hal_json"
                     },
                     "type": {
-                        "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/family"
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
                     }
                 },
                 "uuid": [
                     {
-                        "value": "2e4108af-6939-4d12-bd4e-2ff6496cc8aa"
+                        "value": "ab305055-1463-4828-9111-9323f0be842d"
                     }
-                ]
+                ],
+                "lang": "en"
             }
         ],
         "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/family\/content_translation_uid": [
@@ -104,7 +112,7 @@
     },
     "changed": [
         {
-            "value": "2020-01-23T09:05:32+00:00",
+            "value": "2020-02-10T16:12:49+00:00",
             "format": "Y-m-d\\TH:i:sP"
         }
     ],

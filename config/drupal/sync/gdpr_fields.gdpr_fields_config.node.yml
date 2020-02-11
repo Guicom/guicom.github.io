@@ -14,6 +14,7 @@ filenames:
   resource: ''
   event: ''
   resource_youtube: ''
+  article: ''
 bundles:
   product:
     field_complementary_info:
@@ -878,6 +879,51 @@ bundles:
       notes: ''
       relationship: 0
       sars_filename: ''
+  article:
+    body:
+      bundle: article
+      name: body
+      entity_type_id: node
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_country:
+      bundle: article
+      name: field_country
+      entity_type_id: node
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: clear_anonymizer
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_image:
+      bundle: article
+      name: field_image
+      entity_type_id: node
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_tags:
+      bundle: article
+      name: field_tags
+      entity_type_id: node
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
     field_reference_extid:
       bundle: product_reference
       name: field_reference_extid
@@ -1365,6 +1411,9 @@ bundles:
       notes: ''
       relationship: 0
       sars_filename: ''
+    field_product_family:
+      bundle: resource
+      name: field_product_family
   event:
     field_event_picture:
       bundle: event

@@ -10,6 +10,7 @@ dependencies:
   config:
     - field.storage.node.field_res_application
     - field.storage.node.field_description
+    - field.storage.node.field_product_family
     - field.storage.node.field_res_momentum
     - field.storage.node.field_res_original_description
     - field.storage.node.field_res_resource_type
@@ -96,6 +97,14 @@ field_settings:
     dependencies:
       config:
         - field.storage.node.field_description
+  field_product_family_terms:
+    label: 'Family terms'
+    datasource_id: 'entity:node'
+    property_path: field_product_family
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_product_family
   langcode:
     label: Language
     datasource_id: 'entity:node'
@@ -131,7 +140,7 @@ field_settings:
     dependencies:
       config:
         - field.storage.node.field_res_original_description
-  resource_type:
+  resource_type_name:
     label: 'Type of resource'
     datasource_id: 'entity:node'
     property_path: 'field_res_resource_type:entity:name'
@@ -142,6 +151,14 @@ field_settings:
       module:
         - taxonomy
         - taxonomy
+  resource_type_terms:
+    label: 'Type of resource terms'
+    datasource_id: 'entity:node'
+    property_path: field_res_resource_type
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_res_resource_type
   riginal_title:
     label: 'Original title'
     datasource_id: 'entity:node'
@@ -209,8 +226,15 @@ datasource_settings:
 processor_settings:
   add_url: {  }
   aggregated_field: {  }
+  hierarchy:
+    fields:
+      field_product_family_terms: taxonomy_term-parent
+    weights:
+      preprocess_index: -45
   rendered_item: {  }
-  solr_date_range: {  }
+  solr_date_range:
+    weights:
+      preprocess_index: 0
 tracker_settings:
   default:
     indexing_order: fifo
