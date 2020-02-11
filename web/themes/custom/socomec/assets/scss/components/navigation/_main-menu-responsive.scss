@@ -44,6 +44,9 @@
             width: 28px;
           }
         }
+        &:focus {
+          outline: none;
+        }
 
       }
       .navbar {
