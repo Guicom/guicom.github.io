@@ -23,6 +23,7 @@
       // TOGGLER BTN
       .navbar-toggler {
         z-index: 999;
+        display: block !important;
         &[aria-expanded='true'] {
           span {
             background: url("../images/picto/ui/close-white.svg") no-repeat center center;
@@ -313,7 +314,7 @@
         top: 0;
         right: -320px;
         width: 85%;
-        height: 100vh;
+        height: 100%;
         padding-top: 3.25rem;
         padding-left: 0.8rem;
         padding-right: 0.8rem;

@@ -12,6 +12,9 @@ Description: Bootstrap 4 with Sass
 body {
   background: $white;
   //overflow-x: hidden;
+  &.fixed {
+    overflow: hidden;
+  }
 }
 html {
   .overlay {
