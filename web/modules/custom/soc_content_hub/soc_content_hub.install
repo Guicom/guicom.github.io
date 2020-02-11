@@ -27,7 +27,7 @@ function soc_content_hub_install() {
     ->getStorage('taxonomy_term');
 
   foreach ($countries as $country) {
-    if (!$termStorage->loadByProperties(['name' => $country, 'vid' => 'country'])) {
+    if (!sizeof($termStorage->loadByProperties(['name' => $country, 'vid' => 'country']))) {
       $term = Term::create(
         [
           'name' => $country,
