@@ -1,0 +1,10 @@
+<project name="cache-clear" default="megamenu-socomec">
+    <target name="cache-clear:all">
+        <drush
+                command="cr"
+                assume="yes"
+                root="${website.drupal.dir}"
+                verbose="${drush.verbose}">
+        </drush>
+    </target>
+</project>
