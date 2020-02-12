@@ -32,7 +32,7 @@
             var column = this;
             var colheader = this.header();
             var colname = $(colheader).text().trim();
-            if (colname != Drupal.t('Select', {}, {context: "product-reference-table"})) {
+            if (colname !== Drupal.t('Select', {}, {context: "product-reference-table"})) {
               var select = $('<select><option value="">' + colname + '</option></select>')
                 .appendTo( $(column.header()).empty() )
                 .selectpicker({virtualScroll: false})
@@ -41,13 +41,16 @@
                     $(this).val()
                   );
 
-                  column
-                    .search( val ? '^'+val+'$' : '', true, false )
-                    .draw();
+                  /*column
+                    .search( val ? val : '', false, false )
+                    .draw();*/
                 } );
               column.data().unique().sort().each( function ( d, j ) {
-                var StrippedString = d.replace(/(<([^>]+)>)/ig,"");
-                select.append( '<option value="'+ StrippedString +'">'+ StrippedString +'</option>' )
+                var optionTag = $.parseHTML(d);
+                if (optionTag.length) {
+                  var optionValue = optionTag[0].text;
+                  select.append( '<option value="'+ optionValue +'">'+ optionValue +'</option>' )
+                }
               });
             }
           });
