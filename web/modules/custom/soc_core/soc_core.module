@@ -1,0 +1,30 @@
+<?php
+
+
+use Drupal\field\Entity\FieldStorageConfig;
+use Drupal\Core\Entity\ContentEntityInterface;
+
+/**
+ * Set dynamic allowed values for the country field (CT Event).
+ *
+ * @param \Drupal\field\Entity\FieldStorageConfig $definition
+ *   The field definition.
+ * @param \Drupal\Core\Entity\ContentEntityInterface|null $entity
+ *   The entity being created if applicable.
+ * @param bool $cacheable
+ *   Boolean indicating if the results are cacheable.
+ *
+ * @return array
+ *   An array of possible key and value options.
+ *
+ * @see options_allowed_values()
+ */
+function sco_core_allowed_values_countries_function(FieldStorageConfig $definition, ContentEntityInterface $entity = NULL, $cacheable) {
+  // Add a custom countries option for Event nodes.
+  if ($entity->bundle() === 'event') {
+    /** @var \Drupal\Core\Locale\CountryManager $service */
+    $service = \Drupal::service('country_manager');
+    return $service->getList();
+  }
+
+}

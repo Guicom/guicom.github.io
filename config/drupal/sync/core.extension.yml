@@ -1,6 +1,7 @@
 module:
   abjs: 0
   addtoany: 0
+  addtocalendar: 0
   admin_toolbar: 0
   admin_toolbar_links_access_filter: 0
   admin_toolbar_tools: 0
@@ -31,6 +32,7 @@ module:
   contextual: 0
   ctools: 0
   datetime: 0
+  datetime_range: 0
   dblog: 0
   default_content: 0
   default_content_deploy: 0
@@ -90,6 +92,7 @@ module:
   remote_stream_wrapper: 0
   remote_stream_wrapper_widget: 0
   responsive_image: 0
+  scheduled_updates: 0
   scheduler: 0
   search: 0
   search_api: 0

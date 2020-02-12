@@ -11,6 +11,15 @@
     margin-bottom: 15px;
     justify-content: space-between;
 
+    .field-name-update-new-statut {
+      position: absolute;
+      top: 5px;
+      right: 5px;
+      .field-name-field-product-new {
+        @include block-label($turquoize, $white)
+      }
+    }
+
     .product-teaser-title {
       color: $blue;
       font-family: $font-roboto;

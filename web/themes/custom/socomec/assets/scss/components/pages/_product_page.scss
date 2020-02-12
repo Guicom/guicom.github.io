@@ -36,6 +36,16 @@ body.node--type-product {
       @include media-breakpoint-down(xs) {
         flex-wrap: wrap;
       }
+
+      .product-label {
+        position: absolute;
+        right: 20px;
+        top: 25px;
+
+        .field-name-field-product-new {
+          @include block-label($turquoize, $white)
+        }
+      }
       .product-main-picture {
         order: 2;
         @include media-breakpoint-down(xs) {

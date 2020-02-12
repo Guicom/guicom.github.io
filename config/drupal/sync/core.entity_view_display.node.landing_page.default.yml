@@ -10,6 +10,7 @@ dependencies:
     - field.field.node.landing_page.field_metatags
     - field.field.node.landing_page.field_pardot_form
     - field.field.node.landing_page.field_premium_content_type
+    - field.field.node.landing_page.field_resource
     - node.type.landing_page
   module:
     - ds
@@ -83,6 +84,7 @@ hidden:
   field_hero_paragraph: true
   field_metatags: true
   field_premium_content_type: true
+  field_resource: true
   langcode: true
   layout_builder__layout: true
   links: true

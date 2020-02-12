@@ -33,5 +33,6 @@ hidden:
   field_metatags: true
   field_pardot_form: true
   field_premium_content_type: true
+  field_resource: true
   langcode: true
   search_api_excerpt: true

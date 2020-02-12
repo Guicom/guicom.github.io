@@ -1,0 +1,33 @@
+uuid: 0d7e662b-47ca-4ae0-9f73-89d5d64c217b
+langcode: en
+status: true
+dependencies:
+  module:
+    - language
+    - node
+id: default_path_event
+label: 'Default path : Event'
+type: 'canonical_entities:node'
+pattern: '[node:content-type]/[node:title]'
+selection_criteria:
+  610c582a-c922-469f-81d8-d03e45df48d0:
+    id: node_type
+    bundles:
+      event: event
+    negate: false
+    context_mapping:
+      node: node
+    uuid: 610c582a-c922-469f-81d8-d03e45df48d0
+  a5e66a78-98bc-4a7e-98f4-755d31ba2919:
+    id: language
+    langcodes:
+      en: en
+    negate: false
+    context_mapping:
+      language: 'node:langcode:language'
+    uuid: a5e66a78-98bc-4a7e-98f4-755d31ba2919
+selection_logic: and
+weight: -10
+relationships:
+  'node:langcode:language':
+    label: Language
