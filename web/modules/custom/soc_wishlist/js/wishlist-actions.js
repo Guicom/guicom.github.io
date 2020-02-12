@@ -42,6 +42,12 @@
         }
         else{
           $('#edit-select-all-select').parent().removeClass('checkbox-indeterminate');
+          if (checked == 1 && unchecked == 0) {
+            $('#edit-select-all-select').prop('checked', true);
+          }
+          else{
+            $('#edit-select-all-select').prop('checked', false);
+          }
         }
       }
     }

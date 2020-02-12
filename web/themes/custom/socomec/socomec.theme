@@ -228,7 +228,7 @@ function socomec_preprocess_views_view(&$variables) {
     if (!empty($rows) && !empty($rows[0]['#row']->paragraphs_item_field_data_node__field_hero_paragraph_id)) {
       $hero_paragraph_id = $rows[0]['#row']->paragraphs_item_field_data_node__field_hero_paragraph_id;
     }
-    if(!empty($hero_paragraph_id)){
+    if (!empty($hero_paragraph_id)) {
       /** @var Drupal\paragraphs\Entity\Paragraph $paragraph */
       $paragraph = Paragraph::load($hero_paragraph_id);
       if (empty($paragraph)) {

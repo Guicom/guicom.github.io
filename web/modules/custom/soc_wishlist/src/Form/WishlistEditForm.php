@@ -221,7 +221,7 @@ class WishlistEditForm extends FormBase {
           '#type' => 'submit',
           '#value' => t('Remove selected'),
           '#ajax' => [
-            'callback' => [static::class, 'removeItems'],
+            'callback' => [$this, 'removeItems'],
             'wrapper' => 'wishlist_form_wrapper',
             'progress' => ['type' => 'none'],
           ],
@@ -383,11 +383,15 @@ class WishlistEditForm extends FormBase {
         }
       }
       $count = sizeof($items);
-      $messageSingular = "@count item deleted.";
-      $messagePlural = "@count items deleted.";
-      $message = \Drupal::translation()->formatPlural($count, $messageSingular, $messagePlural);
-      \Drupal::service('messenger')->addStatus($message);
-      $messages = \Drupal::service('renderer')->renderRoot(StatusMessages::renderMessages());
+
+      \Drupal::messenger()->addMessage($this->t("@count item(s) deleted.", ["@count" => $count]), 'status', TRUE);
+
+      $message = [
+        '#theme' => 'status_messages',
+        '#message_list' => drupal_get_messages(),
+      ];
+
+      $messages = \Drupal::service('renderer')->render($message);
       $response->addCommand(new PrependCommand('#wishlist_form_message', $messages));
     }
 
