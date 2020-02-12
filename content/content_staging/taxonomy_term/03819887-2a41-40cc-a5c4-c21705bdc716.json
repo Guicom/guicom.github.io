@@ -8,6 +8,12 @@
         },
         "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/family\/parent": [
             null
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/family\/content_translation_uid": [
+            {
+                "href": "http:\/\/default\/user\/1?_format=hal_json",
+                "lang": "en"
+            }
         ]
     },
     "tid": [
@@ -61,17 +67,35 @@
     ],
     "weight": [
         {
-            "value": 3
+            "value": 25
         }
     ],
     "_embedded": {
         "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/family\/parent": [
             null
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/family\/content_translation_uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/user\/1?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "38a0704b-66e6-4249-b1b5-0a1e27b65992"
+                    }
+                ],
+                "lang": "en"
+            }
         ]
     },
     "changed": [
         {
-            "value": "2020-02-10T10:13:15+00:00",
+            "value": "2020-02-11T08:04:00+00:00",
             "format": "Y-m-d\\TH:i:sP"
         }
     ],

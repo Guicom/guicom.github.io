@@ -1,0 +1,15 @@
+uuid: 3df49c4f-ff71-49c4-ae9b-6a0061c50293
+langcode: en
+status: true
+dependencies: {  }
+id: pl_file
+label: 'PL / File'
+channel_entity_type: media
+channel_bundle: file
+channel_langcode: pl
+channel_filters: null
+channel_groups: null
+channel_sorts: {  }
+channel_searches: null
+authorized_users:
+  cd0d9446-cb19-4e87-9dcf-d3bdc37a70a7: cd0d9446-cb19-4e87-9dcf-d3bdc37a70a7

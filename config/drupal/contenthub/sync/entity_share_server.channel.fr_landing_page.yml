@@ -1,0 +1,15 @@
+uuid: 9f5e0ef2-f246-47b3-b443-ec7f320eaf49
+langcode: en
+status: true
+dependencies: {  }
+id: fr_landing_page
+label: 'FR / Landing_page'
+channel_entity_type: node
+channel_bundle: landing_page
+channel_langcode: fr
+channel_filters: null
+channel_groups: null
+channel_sorts: {  }
+channel_searches: null
+authorized_users:
+  cd0d9446-cb19-4e87-9dcf-d3bdc37a70a7: cd0d9446-cb19-4e87-9dcf-d3bdc37a70a7

@@ -1,59 +1,6 @@
-label: 'Biblioteka akapitów'
 display:
   default:
-    display_title: Główny
     display_options:
-      exposed_form:
-        options:
-          submit_button: Filtr
-          reset_button_label: Resetuj
-          exposed_sorts_label: 'Sortuj po'
-          sort_asc_label: Rosnąco
-          sort_desc_label: Malejąco
-      pager:
-        options:
-          tags:
-            previous: ‹‹
-            next: ››
-          expose:
-            items_per_page_label: 'Elementów na stronę'
-            items_per_page_options_all_label: '- Wszystko -'
-            offset_label: Przesunięcie
       fields:
-        label:
-          label: Etykieta
-          separator: ', '
-        type:
-          label: Typ
-          separator: ', '
-        paragraphs__target_id:
-          label: Akapity
-          separator: ', '
-        langcode:
-          label: Język
-          separator: ', '
-        id:
-          label: ID
-          separator: ', '
-        count:
-          label: Wykorzystane
-        changed:
-          label: Zmieniono
-          separator: ', '
         operations:
           label: Operacje
-      filters:
-        label:
-          expose:
-            label: Etykieta
-          group_info:
-            label: Etykieta
-        type:
-          expose:
-            label: Typ
-      title: 'Biblioteka akapitów'
-      empty:
-        area_text_custom:
-          content: 'Brak elementów biblioteki.'
-  page_1:
-    display_title: Strona

@@ -1,0 +1,15 @@
+uuid: 05a3a95f-fc16-41ac-babf-3a0b429532a7
+langcode: en
+status: true
+dependencies: {  }
+id: de_ch_image
+label: 'DE-CH / Image'
+channel_entity_type: media
+channel_bundle: image
+channel_langcode: de-ch
+channel_filters: null
+channel_groups: null
+channel_sorts: {  }
+channel_searches: null
+authorized_users:
+  cd0d9446-cb19-4e87-9dcf-d3bdc37a70a7: cd0d9446-cb19-4e87-9dcf-d3bdc37a70a7

@@ -1,0 +1,15 @@
+uuid: df207c4b-850d-46e9-8fcf-7bf2a4ba6883
+langcode: en
+status: true
+dependencies: {  }
+id: nl_be_event
+label: 'NL-BE / Event'
+channel_entity_type: node
+channel_bundle: event
+channel_langcode: nl-be
+channel_filters: null
+channel_groups: null
+channel_sorts: {  }
+channel_searches: null
+authorized_users:
+  cd0d9446-cb19-4e87-9dcf-d3bdc37a70a7: cd0d9446-cb19-4e87-9dcf-d3bdc37a70a7

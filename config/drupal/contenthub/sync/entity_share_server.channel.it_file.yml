@@ -1,0 +1,15 @@
+uuid: 19429581-07bd-4a61-b227-a298211350c2
+langcode: en
+status: true
+dependencies: {  }
+id: it_file
+label: 'IT / File'
+channel_entity_type: media
+channel_bundle: file
+channel_langcode: it
+channel_filters: null
+channel_groups: null
+channel_sorts: {  }
+channel_searches: null
+authorized_users:
+  cd0d9446-cb19-4e87-9dcf-d3bdc37a70a7: cd0d9446-cb19-4e87-9dcf-d3bdc37a70a7
