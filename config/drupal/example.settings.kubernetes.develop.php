@@ -143,7 +143,7 @@ $settings['redis.connection']['host'] = getenv('REDIS_MASTER_HOSTNAME');
 /**
  * Config Split overrides.
  */
-$config['config_split.config_split.dev']['status'] = TRUE;
+$config['config_split.config_split.dev']['status'] = FALSE;
 $config['config_split.config_split.dev']['folder'] = "../config/drupal/dev";
 /**
  * @see \soc_user_install()

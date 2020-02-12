@@ -22,3 +22,10 @@ spec:
             backend:
               serviceName: {{ .Values.drupal.name }}-service
               servicePort: http
+    - host: {{ .Values.drupal.ingress_content_hub_hostname }}
+      http:
+        paths:
+          - path: /
+            backend:
+              serviceName: {{ .Values.drupal.name }}-service
+              servicePort: http
