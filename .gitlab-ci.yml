@@ -174,4 +174,5 @@ deploy:
   only:
     refs:
       - recette
+      - develop
   when: manual
