@@ -41,12 +41,13 @@
     <table class="full-width">
       <thead>
       <tr>
-        <th class="no-sort wishlist-img tablet-l desktop">{{ 'Img'|t }}</th>
-        <th class="wishlist-model">{{ 'Model'|t }}</th>
-        <th class="wishlist-reference">{{ 'Reference'|t }}</th>
-        <th class="wishlist-main-specifications">{{ 'Main specifications'|t }}</th>
-        <th class="no-sort wishlist-qty">{{ 'Qty'|t }}</th>
-        <th class="no-sort wishlist-select-all">{{ form.select_all }}</th>
+        <th class="no-sort btn-responsive all"></th>
+        <th class="no-sort wishlist-img min-tablet">{{ 'Img'|t }}</th>
+        <th class="wishlist-model all">{{ 'Model'|t }}</th>
+        <th class="wishlist-reference all">{{ 'Reference'|t }}</th>
+        <th class="wishlist-main-specifications min-tablet">{{ 'Main specifications'|t }}</th>
+        <th class="no-sort wishlist-qty min-tablet">{{ 'Qty'|t }}</th>
+        <th class="no-sort wishlist-select-all all">{{ form.select_all }}</th>
       </tr>
       </thead>
       <tbody>
@@ -60,6 +61,7 @@
             {%  set model = "model_" ~ form.wrapper_wishlist[i].extid['#value'] %}
             {%  set reference = "reference_" ~ form.wrapper_wishlist[i].extid['#value'] %}
             {%  set description = "description_" ~ form.wrapper_wishlist[i].extid['#value'] %}
+            <td class="btn-responsive"></td>
             <td>{{ form.wrapper_wishlist[i][picture] }}</td>
             <td>{{ form.wrapper_wishlist[i][model] }}</td>
             <td>{{ form.wrapper_wishlist[i][reference] }}</td>

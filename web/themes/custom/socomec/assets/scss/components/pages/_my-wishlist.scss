@@ -107,7 +107,21 @@
                   border-bottom: 2px solid $blue_lighter;
                   &.wishlist-img,
                   &.wishlist-qty{
-                    width:60px;
+                    width: 60px;
+                    @media (max-width: 481px) {
+                      width: 100%;
+                    }
+                  }
+
+                  &.btn-responsive{
+                    width:0px;
+                    @media (max-width: 481px){
+                      width:20px;
+                      &:before{
+                        top: 50%;
+                        margin-top: -7px;
+                      }
+                    }
                   }
                   &.sorting:before,
                   &.sorting_asc:before,
@@ -152,11 +166,33 @@
                   font-size: 16px;
                   line-height: 25px;
                   padding: 0px 5px;
+                  &.btn-responsive{
+                    &:before{
+                      top: 50%;
+                      margin-top: -7px;
+                    }
+                  }
                   img{
                     width: 40px;
+                    @media (max-width: 481px) {
+                      width: 100px;
+                      margin: 0 auto;
+                      display: block;
+                    }
                   }
                   .form-number{
                     width: 60px;
+                    @media (max-width: 481px) {
+                      width: 100%;
+                    }
+                  }
+                  @media (max-width: 481px) {
+                    .dtr-details,
+                    .dtr-title,
+                    .dtr-data{
+                      display: block;
+                      width: 100%;
+                    }
                   }
                 }
               }
