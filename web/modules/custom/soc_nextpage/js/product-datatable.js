@@ -14,6 +14,8 @@
         "lengthChange": false,
         "autoWidth": true,
         "info": false,
+        "ordering": false,
+
         "sPaginationType":"simple_numbers",
         "iDisplayLength": 4,
         language: {
@@ -27,23 +29,25 @@
             var column = this;
             var colheader = this.header();
             var colname = $(colheader).text().trim();
-            var select = $('<select><option value="">' + colname + '</option></select>')
-              .appendTo( $(column.footer()).empty() )
-              .on( 'change', function () {
-                var val = $.fn.dataTable.util.escapeRegex(
-                  $(this).val()
-                );
+            if (colname != Drupal.t('Select', {}, {context: "product-reference-table"})) {
+              var select = $('<select><option value="">' + colname + '</option></select>')
+                .appendTo( $(column.header()).empty() )
+                .selectpicker({virtualScroll: false})
+                .on( 'change', function () {
+                  var val = $.fn.dataTable.util.escapeRegex(
+                    $(this).val()
+                  );
 
-                column
-                  .search( val ? '^'+val+'$' : '', true, false )
-                  .draw();
-              } );
-
-            column.data().unique().sort().each( function ( d, j ) {
-              var StrippedString = d.replace(/(<([^>]+)>)/ig,"");
-              select.append( '<option value="'+ StrippedString +'">'+ StrippedString +'</option>' )
-            } );
-          } );
+                  column
+                    .search( val ? '^'+val+'$' : '', true, false )
+                    .draw();
+                } );
+              column.data().unique().sort().each( function ( d, j ) {
+                var StrippedString = d.replace(/(<([^>]+)>)/ig,"");
+                select.append( '<option value="'+ StrippedString +'">'+ StrippedString +'</option>' )
+              });
+            }
+          });
         },
         preDrawCallback: function (settings) {
           var api = new $.fn.dataTable.Api(settings);
