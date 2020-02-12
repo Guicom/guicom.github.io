@@ -82,11 +82,13 @@
         </div>
         <div class="col-lg-7 col-md-12">
           {% if not logged_in %}
-            <div aria-label="" class="alert alert-dismissible show col-12 alert-warning" role="alert">
-              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                <span aria-hidden="true">×</span>
-              </button>
-              {{ 'You are not connected. Please,  <a href="@login">Sign in</a> or <a href="@register">create an account</a> to keep your selections'|t({'@login':'/user/login', '@register':'/user/register'}) }}
+            <div class="alert-wrapper">
+              <div aria-label="" class="alert alert-dismissible show col-12 alert-warning" role="alert">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                  <span aria-hidden="true">×</span>
+                </button>
+                {{ 'You are not connected. Please,  <a href="@login">Sign in</a> or <a href="@register">create an account</a> to keep your selections'|t({'@login':'/user/login', '@register':'/user/register'}) }}
+              </div>
             </div>
           {% endif %}
         </div>

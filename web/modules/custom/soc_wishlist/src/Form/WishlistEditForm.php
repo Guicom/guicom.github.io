@@ -4,17 +4,19 @@ namespace Drupal\soc_wishlist\Form;
 
 use Drupal\Core\Ajax\AjaxResponse;
 use Drupal\Core\Ajax\InvokeCommand;
+use Drupal\Core\Ajax\ReplaceCommand;
+use Drupal\Core\Ajax\RemoveCommand;
 use Drupal\Core\Ajax\PrependCommand;
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Messenger\MessengerInterface;
-use Drupal\Core\Render\Element\RenderElement;
 use Drupal\Core\Render\Element\StatusMessages;
-use Drupal\Core\Render\Element\Tableselect;
 use Drupal\node\Entity\Node;
 use Drupal\soc_core\Service\MediaApi;
 use Drupal\soc_wishlist\Service\Manager\WishlistManager;
 use Symfony\Component\DependencyInjection\ContainerInterface;
+use Drupal\Core\Url;
+
 
 class WishlistEditForm extends FormBase {
 
@@ -88,12 +90,30 @@ class WishlistEditForm extends FormBase {
    */
   public function buildForm(array $form, FormStateInterface $form_state) {
     $form['#theme'] = 'soc_wishlist_custom_form';
+    if ( empty($this->wishlistManager) ) {
+      $this->wishlistManager = \Drupal::service('soc_wishlist.wishlist_manager');
+    }
     $items = $this->wishlistManager->loadSavedItems();
+
 
     // Form wrapper for AJAX
     $form['wrapper_wishlist'] = [
       '#type' => 'container',
     ];
+
+    $form['select_all'] = [
+      '#title' => 'Select all',
+      '#title_display' => 'invisible',
+      '#type' => 'checkboxes',
+      '#options' =>  ['select' => ''],
+      '#ajax' => [
+        'callback' => [$this, 'updateSelect'],
+        'event' => 'change',
+        'progress' => ['type' => 'none'],
+      ],
+    ];
+
+    $exportList = (isset($_SESSION['socomec_wishlist_export'])) ? $_SESSION['socomec_wishlist_export'] : '';
     $i = 0;
     foreach ($items as $result) {
       if ($result['node'] instanceof Node) {
@@ -135,28 +155,32 @@ class WishlistEditForm extends FormBase {
           '#suffix' => '</div>',
           '#size' => 2,
           '#ajax' => [
-            'callback' => [$this, 'updateItems'],
+            'callback' => [$this, 'updateQuantity'],
             'event' => 'change',
+            'progress' => ['type' => 'none'],
             'wrapper' => 'wishlist_quantity_wrapper_'.$extId,
           ],
         ];
 
+        $default_value = [];
+        if (!empty($exportList[$extId])) {
+          $default_value = [$extId];
+        }
         $form['wrapper_wishlist'][$i]['wishlist_action_'.$extId] = [
           '#title' => 'action',
           '#title_display' => 'invisible',
           '#type' => 'checkboxes',
-          '#options' =>  ['checked' => 'checked'],
-          '#default_value' => ['checked'],
-          '#prefix' => '<div id="wishlist_wishlist_action_wrapper_'.$extId.'">',
-          '#suffix' => '</div>',
-          /*'#ajax' => [
-            'callback' => [$this, 'updateSelect'],
+          '#options' =>  [$extId => ''],
+          '#default_value' => $default_value,
+          '#ajax' => [
+            'callback' => [$this, 'updateSession'],
             'event' => 'change',
             'progress' => ['type' => 'none'],
-          ],*/
+          ],
+          '#attributes' => ['class' => ['wishlist-action-item']]
         ];
+        $i++;
       }
-      $i++;
     }
 
     $form['wrapper_wishlist']['nb'] = [
@@ -166,37 +190,46 @@ class WishlistEditForm extends FormBase {
     $confirmRemoveClass = 'confirm-remove';
     for($i = 0; $i < 2; ++$i) {
       // Export btn
-      $form['actions']['exports'][$i]['xls'][$i] = [
-        '#type' => 'submit',
-        '#value' => t('Export to an XLS file'),
+      $form['actions']['exports'][$i]['xls'] = [
+        '#type' => 'link',
+        '#title' => t('Export to an XLS file'),
+        '#url' => Url::fromRoute('soc_wishlist.export', ['type' => 'xls']),
+        "#prefix" => '<div class="dropdown-item-text">',
+        "#suffix" => '</div>'
       ];
 
-      // Export btn
-      $form['actions']['exports'][$i]['pdf'][$i] = [
-        '#type' => 'submit',
-        '#value' => t('Export to an PDF file'),
+      $form['actions']['exports'][$i]['pdf'] = [
+        '#type' => 'link',
+        '#title' => t('Export to an PDF file'),
+        '#url' => Url::fromRoute('soc_wishlist.export', ['type' => 'pdf']),
+        "#prefix" => '<div class="dropdown-item-text">',
+        "#suffix" => '</div>'
       ];
 
-      // Export btn
-      $form['actions']['exports'][$i]['csv'][$i] = [
-        '#type' => 'submit',
-        '#value' => t('Export to an CSV file'),
+      $form['actions']['exports'][$i]['csv'] = [
+        '#type' => 'link',
+        '#title' => t('Export to an CSV file'),
+        '#url' => Url::fromRoute('soc_wishlist.export', ['type' => 'csv']),
+        "#prefix" => '<div class="dropdown-item-text">',
+        "#suffix" => '</div>'
       ];
 
       // Update quantity
       if (sizeof($items)) {
-        $form['actions']['others'][$i]['update'][$i] = [
+        $form['actions']['others'][$i]['remove'][$i] = [
           '#type' => 'submit',
           '#value' => t('Remove selected'),
           '#ajax' => [
-            'callback' => [static::class, 'updateItems'],
+            'callback' => [static::class, 'removeItems'],
             'wrapper' => 'wishlist_form_wrapper',
             'progress' => ['type' => 'none'],
           ],
         ];
-        $form['actions']['others'][$i]['update'][$i]['#attributes']['class'][] = $confirmRemoveClass;
+        $form['actions']['others'][$i]['remove'][$i]['#attributes']['class'][] = $confirmRemoveClass;
       }
     }
+
+    $form['#attached']['library'][] = 'soc_wishlist/wishlist-actions';
 
     // Confirm before deleting
     $form['#attached']['library'][] = 'core/drupal.ajax';
@@ -234,6 +267,27 @@ class WishlistEditForm extends FormBase {
   }
 
   /**
+   * @param $input
+   *
+   * @return array
+   */
+  public static function customSelectedItems($input) {
+    $selectItems = [];
+    if (!empty($input) && is_array($input)) {
+      foreach ($input as $keyItem => $item) {
+        if( substr( $keyItem, 0, 16 ) === "wishlist_action_") {
+          $keys = array_keys($item);
+          if (!empty($item[$keys[0]])) {
+            $selectItems[$item[$keys[0]]] = $item[$keys[0]];
+          }
+        }
+      }
+    }
+    return $selectItems;
+  }
+
+
+  /**
    * @param array $form
    * @param \Drupal\Core\Form\FormStateInterface $form_state
    *
@@ -241,15 +295,13 @@ class WishlistEditForm extends FormBase {
    */
   public function updateSelect(array &$form, FormStateInterface $form_state) {
     $response = new AjaxResponse();
-    $userInput = $form_state->getUserInput();
-    $extids = [];
-    foreach ($form['wrapper_wishlist'] as $key => $item ) {
-      if (is_numeric($key)) {
-        if (!empty($item['extid']['#value'])) {
-          $extids[] = $item['extid']['#value'];
-        }
-      }
+
+    $input = $form_state->getUserInput();
+    $items = self::customSelectedItems($input);
+    if (sizeof($items)) {
+      $_SESSION['socomec_wishlist_export'] = $items;
     }
+
     return $response;
   }
 
@@ -259,54 +311,81 @@ class WishlistEditForm extends FormBase {
    *
    * @return mixed
    */
-  public function updateItems(array &$form, FormStateInterface $form_state) {
+  public function updateSession(array &$form, FormStateInterface $form_state) {
     $response = new AjaxResponse();
 
-    $deletedItems = [];
+    $input = $form_state->getUserInput();
+    $items = self::customSelectedItems($input);
+    if (sizeof($items)) {
+      $_SESSION['socomec_wishlist_export'] = $items;
+    }
 
-    /** @var \Drupal\soc_wishlist\Service\Manager\WishlistManager $wishlistManager */
-    $wishlistManager = \Drupal::service('soc_wishlist.wishlist_manager');
-    $userInput = $form_state->getUserInput();
-    if (isset($userInput['items']) && sizeof($userInput['items'])) {
+    return $response;
+  }
+
+  /**
+   * @param array $form
+   * @param \Drupal\Core\Form\FormStateInterface $form_state
+   *
+   * @return mixed
+   */
+  public function updateQuantity(array &$form, FormStateInterface $form_state) {
+    $input = $form_state->getUserInput();
+    $selectItems = [];
+    if (!empty($input) && is_array($input)) {
+      foreach ($input as $keyItem => $item) {
+        if ($keyItem === $input['_triggering_element_name']) {
+          $explode = explode('quantity_', $keyItem);
+          $selectItems[$explode[1]] = $item;
+        }
+      }
+    }
+
+    if (!empty($selectItems)) {
+      $wishlistManager = \Drupal::service('soc_wishlist.wishlist_manager');
       $wishlistManager->loadSavedItems();
-      $items = $userInput['items'];
-      foreach ($items as $extId => $selected) {
-        if (array_key_exists('items-' . $extId . '-quantity', $userInput)) {
-          $quantity = $userInput['items-' . $extId . '-quantity'];
-          if (is_numeric($quantity)) {
-            if ($quantity > 0) {
-              $wishlistManager->setQuantity($extId, $quantity);
-            }
-            else {
-              $wishlistManager->remove($extId);
-              $response->addCommand(new InvokeCommand('#item_line_'.$extId, 'hide'));
-              $deletedItems[] = $extId;
-            }
-          }
-        }
-        if ($extId === $selected) {
-          $wishlistManager->remove($extId);
-          $deletedItems[] = $extId;
-        }
+      foreach ($selectItems as $extId => $quantity) {
+        $wishlistManager->setQuantity($extId, $quantity);
       }
       try {
         $wishlistManager->updateCookie();
       } catch (\Exception $e) {
-        $this->messenger->addError($e->getMessage());
+        //$this->messenger->addError($e->getMessage());
       }
     }
+  }
 
-    if (sizeof($deletedItems)) {
-      foreach ($deletedItems as $deletedItem) {
-        $response->addCommand(new InvokeCommand('#item_line_'.$deletedItem, 'hide'));
+  /**
+   * @param array $form
+   * @param \Drupal\Core\Form\FormStateInterface $form_state
+   *
+   * @return mixed
+   */
+  public function removeItems(array &$form, FormStateInterface $form_state) {
+    $response = new AjaxResponse();
+    $input = $form_state->getUserInput();
+    $items = self::customSelectedItems($input);
+    if (sizeof($items)) {
+      /** @var \Drupal\soc_wishlist\Service\Manager\WishlistManager $wishlistManager */
+      $wishlistManager = \Drupal::service('soc_wishlist.wishlist_manager');
+      $wishlistManager->loadSavedItems();
+      foreach ($items as $deletedItem) {
+        $removedLine = '#item_line_'.$deletedItem;
+        $wishlistManager->remove($deletedItem);
+        try {
+          $wishlistManager->updateCookie();
+          $response->addCommand(new RemoveCommand($removedLine));
+        } catch (\Exception $e) {
+          //$this->messenger->addError($e->getMessage());
+        }
       }
-      $count = sizeof($deletedItems);
+      $count = sizeof($items);
       $messageSingular = "@count item deleted.";
       $messagePlural = "@count items deleted.";
       $message = \Drupal::translation()->formatPlural($count, $messageSingular, $messagePlural);
       \Drupal::service('messenger')->addStatus($message);
       $messages = \Drupal::service('renderer')->renderRoot(StatusMessages::renderMessages());
-      $response->addCommand(new PrependCommand('#wishlist_form_wrapper', $messages));
+      $response->addCommand(new PrependCommand('#wishlist_form_message', $messages));
     }
 
     return $response;

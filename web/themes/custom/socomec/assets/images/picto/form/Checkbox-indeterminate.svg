@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="21px" height="20px" viewBox="0 0 21 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: sketchtool 62 (101010) - https://sketch.com -->
+    <title>2B2D1F5F-BC1F-4F02-92E9-6037B10D1D82</title>
+    <desc>Created with sketchtool.</desc>
+    <defs>
+        <rect id="path-1" x="1" y="1" width="18" height="18"></rect>
+        <filter x="-16.7%" y="-16.7%" width="133.3%" height="133.3%" filterUnits="objectBoundingBox" id="filter-2">
+            <feGaussianBlur stdDeviation="2.5" in="SourceAlpha" result="shadowBlurInner1"></feGaussianBlur>
+            <feOffset dx="0" dy="1" in="shadowBlurInner1" result="shadowOffsetInner1"></feOffset>
+            <feComposite in="shadowOffsetInner1" in2="SourceAlpha" operator="arithmetic" k2="-1" k3="1" result="shadowInnerInner1"></feComposite>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.2 0" type="matrix" in="shadowInnerInner1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Asset-Artboard-Page" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="➁/⨍-Form/Toggle/Checkbox-empty-➁/⨍-Form/Toggle/Checkbox-indeterminate" transform="translate(0.030481, 0.000000)">
+            <g id="bg">
+                <use fill="#F2F3F3" fill-rule="evenodd" xlink:href="#path-1"></use>
+                <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+            </g>
+            <g id="ui/Medium/Checkbox-multiple">
+                <path d="M2.34375,0 L17.65625,0 C18.9506674,0 20,1.04933262 20,2.34375 L20,17.65625 C20,18.9506674 18.9506674,20 17.65625,20 L2.34375,20 C1.04933262,20 0,18.9506674 0,17.65625 L0,2.34375 C0,1.04933262 1.04933262,0 2.34375,0 Z M2.34375,1.5625 C1.91227754,1.5625 1.5625,1.91227754 1.5625,2.34375 L1.5625,17.65625 C1.5625,18.0877225 1.91227754,18.4375 2.34375,18.4375 L17.65625,18.4375 C18.0877225,18.4375 18.4375,18.0877225 18.4375,17.65625 L18.4375,2.34375 C18.4375,1.91227754 18.0877225,1.5625 17.65625,1.5625 L2.34375,1.5625 Z" id="Checkbox" fill="#004F9F"></path>
+                <path d="M4.375,10 C4.375,9.56848145 4.74804687,9.21875 5.20833333,9.21875 L14.7916667,9.21875 C15.2519531,9.21875 15.625,9.56848145 15.625,10 C15.625,10.4315186 15.2519531,10.78125 14.7916667,10.78125 L5.20833333,10.78125 C4.74804687,10.78125 4.375,10.4315186 4.375,10 Z" id="Path" fill="#4CAFE4"></path>
+            </g>
+        </g>
+    </g>
+</svg>

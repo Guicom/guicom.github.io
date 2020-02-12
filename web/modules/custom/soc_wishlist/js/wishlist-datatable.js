@@ -19,11 +19,13 @@
         retrieve:   true,
         responsive: true,
         autoWidth: false,
-        paging:     false,
+        paging:     true,
         ordering:   true,
         order: [],
         info:       false,
         searching:  true,
+        pageLength: 20,
+        lengthChange: false,
         language: {
           searchPlaceholder: placeholder,
           search: ""
@@ -33,8 +35,6 @@
           { targets: 'no-sort', orderable: false }
         ]
       });
-
-      $( "div.custom-datatable-header-right" ).html($( "div#navbar-wishlist-top" ));
     }
   };
 

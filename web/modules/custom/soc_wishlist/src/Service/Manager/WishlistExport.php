@@ -45,7 +45,19 @@ class WishlistExport {
    * WishlistExport manage export
    */
   public function export() {
-    $items = $this->wishlistManager->loadSavedItems();
+    $tmpItems = $this->wishlistManager->loadSavedItems();
+    $exportlist = $_SESSION['socomec_wishlist_export'];
+    $items = [];
+    if (!empty($exportlist)) {
+      foreach ($exportlist as $selectedItem) {
+        if (isset($tmpItems[$selectedItem])) {
+          $items[$selectedItem] = $tmpItems[$selectedItem];
+        }
+      }
+    }
+    else{
+      $items = $tmpItems;
+    }
     if (!empty($items)) {
       switch ($this->getType()) {
         case 'csv':
