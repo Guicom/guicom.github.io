@@ -1,69 +1,6 @@
 display:
   default:
     display_options:
-      exposed_form:
-        options:
-          reset_button_label: Zurücksetzen
-          exposed_sorts_label: 'Sortieren nach'
-          sort_asc_label: Aufsteigend
-          sort_desc_label: Absteigend
-      pager:
-        options:
-          tags:
-            previous: '‹ vorherige Seite'
-            next: 'nächste Seite ›'
-            first: '« erste Seite'
-            last: 'letzte Seite »'
       fields:
-        node_bulk_form:
-          action_title: Aktion
-        title:
-          label: Titel
-        type:
-          label: Inhaltstyp
-        name:
-          label: Autor
-        status:
-          settings:
-            format_custom_true: Veröffentlicht
-            format_custom_false: 'Nicht veröffentlicht'
-        publish_on:
-          label: 'Veröffentlichen am/um'
-        unpublish_on:
-          label: 'Archivieren am/um'
         operations:
           label: Aktionen
-      filters:
-        title:
-          expose:
-            label: Titel
-        type:
-          expose:
-            label: Inhaltstyp
-        status:
-          group_info:
-            label: 'Status veröffentlicht'
-            group_items:
-              1:
-                title: Veröffentlicht
-              2:
-                title: 'Nicht veröffentlicht'
-        langcode:
-          expose:
-            label: Sprache
-  overview:
-    display_options:
-      menu:
-        title: Zeitgesteuert
-      tab_options:
-        title: Inhalt
-  user_page:
-    display_options:
-      menu:
-        title: Zeitgesteuert
-      tab_options:
-        title: Inhalt
-      arguments:
-        uid:
-          exception:
-            title: Alle

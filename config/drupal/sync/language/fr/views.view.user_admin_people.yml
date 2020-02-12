@@ -3,4 +3,4 @@ display:
     display_options:
       fields:
         operations:
-          label: Aktionen
+          label: Actions
