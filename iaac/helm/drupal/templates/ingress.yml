@@ -1,7 +1,7 @@
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
-  name: {{ .Values.drupal.name }}-ingress
+  name: {{ .Values.namespace }}-{{ .Values.drupal.name }}-ingress
   namespace: {{ .Values.namespace }}
   annotations:
     certmanager.k8s.io/cluster-issuer: letsencrypt

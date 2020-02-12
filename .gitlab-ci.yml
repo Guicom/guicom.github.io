@@ -146,7 +146,7 @@ deploy-prod:
     - chmod +x /usr/local/bin/kubectl
   script:
     - helm ls --namespace ${NAMESPACE}
-    - cd iaac/helm && helm upgrade --wait --namespace ${NAMESPACE} -f ${ENVIRONMENT}.yaml ${NAMESPACE}-drupal drupal
+    - cd iaac/helm && helm upgrade -i --wait --namespace ${NAMESPACE} -f ${ENVIRONMENT}.yaml ${NAMESPACE}-drupal drupal
     - cd .. && make wait-pod-to-be-ready && make run-drupal-update
   only:
     refs:
@@ -169,7 +169,7 @@ deploy:
     - chmod +x /usr/local/bin/kubectl
   script:
     - helm ls --namespace ${NAMESPACE}
-    - cd iaac/helm && helm upgrade --wait --namespace ${NAMESPACE} -f ${ENVIRONMENT}.yaml ${NAMESPACE}-drupal drupal
+    - cd iaac/helm && helm upgrade -i --wait --namespace ${NAMESPACE} -f ${ENVIRONMENT}.yaml ${NAMESPACE}-drupal drupal
     - cd .. && make wait-pod-to-be-ready && make run-drupal-update
   only:
     refs:
