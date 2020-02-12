@@ -134,16 +134,10 @@ $settings['trusted_host_patterns'] = array(
 //$settings['file_public_path'] = $app_ground . '/web/sites/default/files';
 $settings['file_private_path'] = '/PRIVATE_DATA';
 
-// Redis
-$settings['redis.connection']['interface'] = 'Predis';
-$settings['redis.connection']['host'] = getenv('REDIS_MASTER_HOSTNAME');
-// You have to enable these lines AFTER your install (see https://github.com/pantheon-systems/documentation/issues/3215)
-//$settings['cache']['default'] = 'cache.backend.redis';
-
 /**
  * Config Split overrides.
  */
-$config['config_split.config_split.dev']['status'] = FALSE;
+$config['config_split.config_split.dev']['status'] = TRUE;
 $config['config_split.config_split.dev']['folder'] = "../config/drupal/dev";
 
 /**
@@ -155,12 +149,15 @@ $settings['admin_email'] = 'admin_socomec@socomec.com';
 
 $settings['DISABLE_SUPER_ADMIN_ACCOUNT'] = 1;
 
-$config['search_api.server.socomec']['backend_config']['connector_config']['host'] = getenv('SOLR_HOST');
-$config['search_api.server.socomec']['backend_config']['connector_config']['port'] = getenv('SOLR_PORT');
-$config['search_api.server.socomec']['backend_config']['connector_config']['core'] = getenv('SOLR_COLLECTION');
-
 /**
  * Drupal 8 MegaMenu Deploy
  */
 $settings['we_megamenu_deploy_content'] = $app_ground . '/content/we_megamenu_content';
 
+// Config splits
+$config['config_split.config_split.contenthub']['status'] = TRUE;
+$config['config_split.config_split.contenthub']['folder'] = "../config/drupal/contenthub/sync";
+
+// Entity share user
+$settings['entity_share_username'] = 'entityshare';
+$settings['entity_share_password'] = 'entityshare';

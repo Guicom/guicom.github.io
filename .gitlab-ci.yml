@@ -80,7 +80,7 @@ sonarqube:
     SONAR_URL: http://sonarqube.actency.fr
     SONAR_ANALYSIS_MODE: preview
   script:
-    - gitlab-sonar-scanner -Dsonar.gitlab.ref_name=$CI_COMMIT_REF_NAME -Dsonar.gitlab.project_id=$CI_PROJECT_ID -Dsonar.login=$SONARQUBE_ACCESS_KEY -Dsonar.gitlab.user_token=$GITLAB_ACCESS_KEY
+    - gitlab-sonar-scanner -Dsonar.analysis.mode=publish -Dsonar.gitlab.ref_name=$CI_COMMIT_REF_NAME -Dsonar.gitlab.project_id=$CI_PROJECT_ID -Dsonar.login=$SONARQUBE_ACCESS_KEY -Dsonar.gitlab.user_token=$GITLAB_ACCESS_KEY
   only:
     - merge_requests
 
@@ -119,6 +119,7 @@ build:
   only:
     refs:
       - recette
+      - develop
 
 build-prod:
   variables:
@@ -145,7 +146,7 @@ deploy-prod:
     - chmod +x /usr/local/bin/kubectl
   script:
     - helm ls --namespace ${NAMESPACE}
-    - cd iaac/helm && helm upgrade --wait --namespace ${NAMESPACE} -f ${ENVIRONMENT}.yaml ${NAMESPACE}-drupal drupal
+    - cd iaac/helm && helm upgrade -i --wait --namespace ${NAMESPACE} -f ${ENVIRONMENT}.yaml ${NAMESPACE}-drupal drupal
     - cd .. && make wait-pod-to-be-ready && make run-drupal-update
   only:
     refs:
@@ -168,9 +169,10 @@ deploy:
     - chmod +x /usr/local/bin/kubectl
   script:
     - helm ls --namespace ${NAMESPACE}
-    - cd iaac/helm && helm upgrade --wait --namespace ${NAMESPACE} -f ${ENVIRONMENT}.yaml ${NAMESPACE}-drupal drupal
+    - cd iaac/helm && helm upgrade -i --wait --namespace ${NAMESPACE} -f ${ENVIRONMENT}.yaml ${NAMESPACE}-drupal drupal
     - cd .. && make wait-pod-to-be-ready && make run-drupal-update
   only:
     refs:
       - recette
+      - develop
   when: manual
