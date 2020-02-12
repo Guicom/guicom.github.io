@@ -299,6 +299,7 @@ class WishlistEditForm extends FormBase {
 
     $input = $form_state->getUserInput();
     $items = self::customSelectedItems($input);
+    $_SESSION['socomec_wishlist_export'] = [];
     if (sizeof($items)) {
       $_SESSION['socomec_wishlist_export'] = $items;
     }
@@ -317,6 +318,7 @@ class WishlistEditForm extends FormBase {
 
     $input = $form_state->getUserInput();
     $items = self::customSelectedItems($input);
+    $_SESSION['socomec_wishlist_export'] = [];
     if (sizeof($items)) {
       $_SESSION['socomec_wishlist_export'] = $items;
     }

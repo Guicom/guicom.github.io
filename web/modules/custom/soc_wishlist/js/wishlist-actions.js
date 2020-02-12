@@ -9,6 +9,8 @@
 
   Drupal.behaviors.wishlistActions = {
     attach: function(context, settings) {
+      checkBtnState()
+
       $('#edit-select-all-select').click(function () {
         if( $('#edit-select-all-select').is(':checked') ){
           $('.wishlist-action-item input').prop('checked', true);
@@ -20,6 +22,10 @@
       });
 
       $('.wishlist-action-item input').click(function () {
+        checkBtnState()
+      });
+
+      function checkBtnState() {
         var checked = 0;
         var unchecked = 0;
         $('.wishlist-action-item input').each(function( index ) {
@@ -37,7 +43,7 @@
         else{
           $('#edit-select-all-select').parent().removeClass('checkbox-indeterminate');
         }
-      });
+      }
     }
   };
 
