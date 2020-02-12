@@ -135,7 +135,7 @@ class WishlistEditForm extends FormBase {
         ];
 
         $form['wrapper_wishlist'][$i]['model_'.$extId] = [
-          '#markup' => $result['node']->get('field_reference_ref')->value,
+          '#markup' => $result['node']->get('field_reference_name')->value,
         ];
 
         $form['wrapper_wishlist'][$i]['reference_'.$extId] = [
@@ -203,7 +203,8 @@ class WishlistEditForm extends FormBase {
         '#title' => t('Export to an PDF file'),
         '#url' => Url::fromRoute('soc_wishlist.export', ['type' => 'pdf']),
         "#prefix" => '<div class="dropdown-item-text">',
-        "#suffix" => '</div>'
+        "#suffix" => '</div>',
+        '#attributes' => ['target' => '_blank']
       ];
 
       $form['actions']['exports'][$i]['csv'] = [

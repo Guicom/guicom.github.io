@@ -105,16 +105,21 @@ class WishlistExport {
     $response->headers->set('Content-Disposition', 'attachment; filename=' . self::WISHLIST_FILENAME . '.csv');
 
     $csvData = [
-      implode(';', ['reference', 'description', 'quantity']),
+      implode(';', ['model', 'reference', 'main specification', 'quantity']),
     ];
 
     //write data in the CSV format
     foreach ($items as $item) {
       if ($item['node'] instanceof Node) {
+        $model = ($item['node']->get('field_reference_name')->value) ?? "";
+        $reference = ($item['node']->get('field_reference_ref')->value) ?? "";
+        $specifications = ($item['node']->getTitle()) ?? "";
+        $quantity = ($item['quantity']) ?? "";
         $csvData[] = implode(';', [
-          $item['node']->get('field_reference_ref')->value,
-          $item['node']->getTitle(),
-          $item['quantity']
+          $model,
+          $reference,
+          $specifications,
+          $quantity
         ]);
       }
     }
@@ -160,16 +165,22 @@ class WishlistExport {
     /*
     * TITLES
     */
-    $worksheet->getCell('A1')->setValue('reference');
-    $worksheet->getCell('B1')->setValue('description');
-    $worksheet->getCell('C1')->setValue('quantity');
+    $worksheet->getCell('A1')->setValue('Model');
+    $worksheet->getCell('B1')->setValue('Reference');
+    $worksheet->getCell('C1')->setValue('Main specifications');
+    $worksheet->getCell('D1')->setValue('Quantity');
 
     $inc = 2;
     foreach ($items as $item) {
       if ($item['node'] instanceof Node) {
-        $worksheet->setCellValue('A' . $inc, $item['node']->get('field_reference_ref')->value);
-        $worksheet->setCellValue('B' . $inc, $item['node']->getTitle());
-        $worksheet->setCellValue('C' . $inc, $item['quantity']);
+        $model = ($item['node']->get('field_reference_name')->value) ?? "";
+        $reference = ($item['node']->get('field_reference_ref')->value) ?? "";
+        $specifications = ($item['node']->getTitle()) ?? "";
+        $quantity = ($item['quantity']) ?? "";
+        $worksheet->setCellValue('A' . $inc, $model);
+        $worksheet->setCellValue('B' . $inc, $reference);
+        $worksheet->setCellValue('C' . $inc, $specifications);
+        $worksheet->setCellValue('D' . $inc, $quantity);
         $inc++;
       }
     }
@@ -225,15 +236,22 @@ class WishlistExport {
     /*
     * TITLES
     */
-    $worksheet->getCell('A1')->setValue('reference');
-    $worksheet->getCell('B1')->setValue('description');
-    $worksheet->getCell('C1')->setValue('quantity');
+    $worksheet->getCell('A1')->setValue('Model');
+    $worksheet->getCell('B1')->setValue('Reference');
+    $worksheet->getCell('C1')->setValue('Main specifications');
+    $worksheet->getCell('D1')->setValue('Quantity');
+
     $inc = 2;
     foreach ($items as $item) {
       if ($item['node'] instanceof Node) {
-        $worksheet->setCellValue('A' . $inc, $item['node']->get('field_reference_ref')->value);
-        $worksheet->setCellValue('B' . $inc, $item['node']->getTitle());
-        $worksheet->setCellValue('C' . $inc, $item['quantity']);
+        $model = ($item['node']->get('field_reference_name')->value) ?? "";
+        $reference = ($item['node']->get('field_reference_ref')->value) ?? "";
+        $specifications = ($item['node']->getTitle()) ?? "";
+        $quantity = ($item['quantity']) ?? "";
+        $worksheet->setCellValue('A' . $inc, $model);
+        $worksheet->setCellValue('B' . $inc, $reference);
+        $worksheet->setCellValue('C' . $inc, $specifications);
+        $worksheet->setCellValue('D' . $inc, $quantity);
         $inc++;
       }
     }
@@ -314,15 +332,21 @@ class WishlistExport {
 
     $tbl = '<table cellspacing="0" cellpadding="1" border="1">';
     $tbl .= '<tr>';
+    $tbl .= '<th>' . t('Model') . '</th>';
     $tbl .= '<th>' . t('Reference') . '</th>';
-    $tbl .= '<th>' . t('Description') . '</th>';
+    $tbl .= '<th>' . t('Main specifications') . '</th>';
     $tbl .= '<th>' . t('Quantity') . '</th>';
     $tbl .= '</tr>';
     foreach($items as $item) {
+      $model = ($item['node']->get('field_reference_name')->value) ?? "";
+      $reference = ($item['node']->get('field_reference_ref')->value) ?? "";
+      $specifications = ($item['node']->getTitle()) ?? "";
+      $quantity = ($item['quantity']) ?? "";
       $tbl .= '<tr>';
-      $tbl .= '<td>' . $item['node']->get('field_reference_ref')->value . '</td>';
-      $tbl .= '<td>' . $item['node']->getTitle() . '</td>';
-      $tbl .= '<td>' . $item['quantity'].'</td>';
+      $tbl .= '<td>' . $model . '</td>';
+      $tbl .= '<td>' . $reference . '</td>';
+      $tbl .= '<td>' . $specifications . '</td>';
+      $tbl .= '<td>' . $quantity . '</td>';
       $tbl .= '</tr>';
     }
     $tbl .= '</table>';
