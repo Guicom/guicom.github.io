@@ -355,4 +355,28 @@
     }
   };
 
+  /**
+   * Facets show facets-category
+   */
+  Drupal.behaviors.socomec_facets_show = {
+    attach: function (context, settings) {
+      $( document ).ready(function() {
+        if ( $("#block-familyterms [data-drupal-facet-id='family_terms']").not('.facet-empty') ) {
+          $('.facets-category-range').show();
+        }
+        else {
+          $('.facets-category-range').hide();
+        }
+
+        if ( $("#block-typeofresourceterms [data-drupal-facet-id='type_of_resource_terms']").not('.facet-empty')
+            && $("#block-language [data-drupal-facet-id='language']").not('.facet-empty') ) {
+          $('.facets-category-characteristics').show();
+        }
+        else {
+          $('.facets-category-characteristics').hide();
+        }
+      });
+    }
+  };
+
 })(jQuery, Drupal);

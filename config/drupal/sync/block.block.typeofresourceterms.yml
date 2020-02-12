@@ -18,6 +18,6 @@ settings:
   id: 'facet_block:type_of_resource_terms'
   label: Type
   provider: facets
-  label_display: visible
+  label_display: '0'
   block_id: typeofresourceterms
 visibility: {  }
