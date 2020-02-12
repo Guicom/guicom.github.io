@@ -119,6 +119,7 @@ build:
   only:
     refs:
       - recette
+      - develop
 
 build-prod:
   variables:
