@@ -46,8 +46,11 @@
                     .draw();
                 } );
               column.data().unique().sort().each( function ( d, j ) {
-                var StrippedString = d.replace(/(<([^>]+)>)/ig,"");
-                select.append( '<option value="'+ StrippedString +'">'+ StrippedString +'</option>' )
+                var optionTag = $.parseHTML(d);
+                if (optionTag.length) {
+                  var optionValue = optionTag[0].text;
+                  select.append( '<option value="'+ optionValue +'">'+ optionValue +'</option>' )
+                }
               });
             }
           });
