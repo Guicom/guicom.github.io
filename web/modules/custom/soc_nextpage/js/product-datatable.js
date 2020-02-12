@@ -41,9 +41,9 @@
                     $(this).val()
                   );
 
-                  column
+                  /*column
                     .search( val ? val : '', false, false )
-                    .draw();
+                    .draw();*/
                 } );
               column.data().unique().sort().each( function ( d, j ) {
                 var optionTag = $.parseHTML(d);
