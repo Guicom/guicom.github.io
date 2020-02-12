@@ -1,7 +1,6 @@
 label: Nachricht
 display:
   default:
-    display_title: Master
     display_options:
       exposed_form:
         options:
@@ -22,31 +21,15 @@ display:
             first: '« erste Seite'
             last: 'letzte Seite »'
       fields:
-        message_bulk_form_1:
-          label: 'Massenbearbeitungsformular für Nachrichtenaktionen'
-          action_title: 'Mit Auswahl'
         mid:
           label: Nachrichten-ID
-          separator: ', '
-        template:
-          label: Nachrichtenvorlage
-          separator: ', '
         get_text:
           label: 'Text der Nachricht'
         uid:
           label: Autor
-          separator: ', '
         created:
           label: 'Erschienen am'
-      filters:
-        template:
-          expose:
-            label: Template
       title: Nachricht
-      empty:
-        area:
-          content:
-            value: 'Noch keine Nachrichten erstellt'
   page_1:
     display_title: Seite
     display_options:

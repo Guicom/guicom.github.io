@@ -1,0 +1,15 @@
+uuid: 06c6a26b-8427-48b2-a217-c3eca4ca94f8
+langcode: en
+status: true
+dependencies: {  }
+id: nl_be_image
+label: 'NL-BE / Image'
+channel_entity_type: media
+channel_bundle: image
+channel_langcode: nl-be
+channel_filters: null
+channel_groups: null
+channel_sorts: {  }
+channel_searches: null
+authorized_users:
+  cd0d9446-cb19-4e87-9dcf-d3bdc37a70a7: cd0d9446-cb19-4e87-9dcf-d3bdc37a70a7

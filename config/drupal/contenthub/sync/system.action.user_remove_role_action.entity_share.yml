@@ -1,0 +1,14 @@
+uuid: 12b53cce-f930-42ed-a0cc-46700653e81e
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.entity_share
+  module:
+    - user
+id: user_remove_role_action.entity_share
+label: 'Remove the Entity share role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: entity_share

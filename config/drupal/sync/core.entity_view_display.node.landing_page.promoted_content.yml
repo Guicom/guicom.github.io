@@ -101,6 +101,7 @@ hidden:
   addtoany: true
   content_moderation_control: true
   field_body: true
+  field_country: true
   field_footer_version: true
   field_metatags: true
   field_resource: true

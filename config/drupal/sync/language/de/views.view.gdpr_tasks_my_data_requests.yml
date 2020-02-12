@@ -1,6 +1,5 @@
 display:
   default:
-    display_title: Master
     display_options:
       exposed_form:
         options:
@@ -9,11 +8,6 @@ display:
           exposed_sorts_label: 'Sortieren nach'
           sort_asc_label: Aufsteigend
           sort_desc_label: Absteigend
-      fields:
-        created:
-          separator: ', '
-        sar_export:
-          separator: ', '
       arguments:
         user_id:
           exception:

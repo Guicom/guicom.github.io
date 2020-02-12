@@ -2,7 +2,6 @@ label: 'Bearbeiten-Seite anzeigen'
 tips:
   views-main:
     label: 'Ansichtseinstellungen verwalten'
-    body: 'Konfiguration anzeigen oder bearbeiten.'
   views-ui-displays:
     label: 'Anzeigen in dieser Ansicht'
     body: 'Eine Anzeige ist eine Möglichkeit, die Ergebnisse auszugeben, z. B. als Seite oder Block. Eine Ansicht kann mehrere Anzeigen enthalten, die hier aufgelistet sind. Die aktive Anzeige wird hervorgehoben.'

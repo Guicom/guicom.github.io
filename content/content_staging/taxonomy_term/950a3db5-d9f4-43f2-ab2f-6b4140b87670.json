@@ -8,12 +8,6 @@
         },
         "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/event_type\/parent": [
             null
-        ],
-        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/event_type\/content_translation_uid": [
-            {
-                "href": "http:\/\/default\/user\/1?_format=hal_json",
-                "lang": "zxx"
-            }
         ]
     },
     "tid": [
@@ -68,24 +62,6 @@
     "_embedded": {
         "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/event_type\/parent": [
             null
-        ],
-        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/event_type\/content_translation_uid": [
-            {
-                "_links": {
-                    "self": {
-                        "href": "http:\/\/default\/user\/1?_format=hal_json"
-                    },
-                    "type": {
-                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
-                    }
-                },
-                "uuid": [
-                    {
-                        "value": "07e50755-19d9-4b20-8680-0fd004348b53"
-                    }
-                ],
-                "lang": "zxx"
-            }
         ]
     },
     "changed": [

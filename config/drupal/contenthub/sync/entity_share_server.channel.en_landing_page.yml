@@ -1,0 +1,15 @@
+uuid: 3f62df62-f96b-441f-96d6-b8eedb851719
+langcode: en
+status: true
+dependencies: {  }
+id: en_landing_page
+label: 'EN / Landing_page'
+channel_entity_type: node
+channel_bundle: landing_page
+channel_langcode: en
+channel_filters: null
+channel_groups: null
+channel_sorts: {  }
+channel_searches: null
+authorized_users:
+  cd0d9446-cb19-4e87-9dcf-d3bdc37a70a7: cd0d9446-cb19-4e87-9dcf-d3bdc37a70a7

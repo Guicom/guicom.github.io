@@ -1,0 +1,15 @@
+uuid: 98103e1f-25a0-4398-bbcf-328192e84602
+langcode: en
+status: true
+dependencies: {  }
+id: fr_file
+label: 'FR / File'
+channel_entity_type: media
+channel_bundle: file
+channel_langcode: fr
+channel_filters: null
+channel_groups: null
+channel_sorts: {  }
+channel_searches: null
+authorized_users:
+  cd0d9446-cb19-4e87-9dcf-d3bdc37a70a7: cd0d9446-cb19-4e87-9dcf-d3bdc37a70a7

@@ -26,6 +26,7 @@ hidden:
   addtoany: true
   field_body: true
   field_client_name: true
+  field_country: true
   field_footer_version: true
   field_form_url: true
   field_hero_paragraph: true

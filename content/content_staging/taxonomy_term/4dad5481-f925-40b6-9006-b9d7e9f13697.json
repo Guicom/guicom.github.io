@@ -10,12 +10,6 @@
             {
                 "href": "http:\/\/default\/power-conversion\/micro-ups?_format=hal_json"
             }
-        ],
-        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/family\/content_translation_uid": [
-            {
-                "href": "http:\/\/default\/user\/1?_format=hal_json",
-                "lang": "en"
-            }
         ]
     },
     "tid": [
@@ -81,24 +75,6 @@
                         "value": "5a4d6c27-0731-445d-be49-bc81ac983254"
                     }
                 ]
-            }
-        ],
-        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/family\/content_translation_uid": [
-            {
-                "_links": {
-                    "self": {
-                        "href": "http:\/\/default\/user\/1?_format=hal_json"
-                    },
-                    "type": {
-                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
-                    }
-                },
-                "uuid": [
-                    {
-                        "value": "ab305055-1463-4828-9111-9323f0be842d"
-                    }
-                ],
-                "lang": "en"
             }
         ]
     },

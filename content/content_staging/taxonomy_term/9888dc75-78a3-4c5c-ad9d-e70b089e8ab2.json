@@ -8,18 +8,6 @@
         },
         "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/family\/parent": [
             null
-        ],
-        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/family\/content_translation_uid": [
-            {
-                "href": "http:\/\/default\/user\/1?_format=hal_json",
-                "lang": "en"
-            }
-        ],
-        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/family\/content_translation_uid": [
-            {
-                "href": "http:\/\/default\/user\/1?_format=hal_json",
-                "lang": "en"
-            }
         ]
     },
     "tid": [
@@ -66,53 +54,17 @@
     ],
     "weight": [
         {
-            "value": 1
+            "value": 15
         }
     ],
     "_embedded": {
         "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/family\/parent": [
             null
-        ],
-        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/family\/content_translation_uid": [
-            {
-                "_links": {
-                    "self": {
-                        "href": "http:\/\/default\/user\/1?_format=hal_json"
-                    },
-                    "type": {
-                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
-                    }
-                },
-                "uuid": [
-                    {
-                        "value": "ab305055-1463-4828-9111-9323f0be842d"
-                    }
-                ],
-                "lang": "en"
-            }
-        ],
-        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/family\/content_translation_uid": [
-            {
-                "_links": {
-                    "self": {
-                        "href": "http:\/\/default\/user\/1?_format=hal_json"
-                    },
-                    "type": {
-                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
-                    }
-                },
-                "uuid": [
-                    {
-                        "value": "639675d9-184b-46a3-a954-077022b40562"
-                    }
-                ],
-                "lang": "en"
-            }
         ]
     },
     "changed": [
         {
-            "value": "2020-02-10T16:12:49+00:00",
+            "value": "2020-02-11T08:04:00+00:00",
             "format": "Y-m-d\\TH:i:sP"
         }
     ],

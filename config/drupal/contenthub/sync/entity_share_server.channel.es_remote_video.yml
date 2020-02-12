@@ -1,0 +1,15 @@
+uuid: 4958350e-1d2d-4c50-868d-30edf9e6fb8c
+langcode: en
+status: true
+dependencies: {  }
+id: es_remote_video
+label: 'ES / Remote_video'
+channel_entity_type: media
+channel_bundle: remote_video
+channel_langcode: es
+channel_filters: null
+channel_groups: null
+channel_sorts: {  }
+channel_searches: null
+authorized_users:
+  cd0d9446-cb19-4e87-9dcf-d3bdc37a70a7: cd0d9446-cb19-4e87-9dcf-d3bdc37a70a7

@@ -1,0 +1,15 @@
+uuid: e3fe83c0-6da5-45fa-8343-94a13376defe
+langcode: en
+status: true
+dependencies: {  }
+id: nl_be_thank_you_page
+label: 'NL-BE / Thank_you_page'
+channel_entity_type: node
+channel_bundle: thank_you_page
+channel_langcode: nl-be
+channel_filters: null
+channel_groups: null
+channel_sorts: {  }
+channel_searches: null
+authorized_users:
+  cd0d9446-cb19-4e87-9dcf-d3bdc37a70a7: cd0d9446-cb19-4e87-9dcf-d3bdc37a70a7

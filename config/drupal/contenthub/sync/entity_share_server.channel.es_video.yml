@@ -1,0 +1,15 @@
+uuid: 3aa4bdcb-85c1-4dc3-9c5e-0e20a5118502
+langcode: en
+status: true
+dependencies: {  }
+id: es_video
+label: 'ES / Video'
+channel_entity_type: media
+channel_bundle: video
+channel_langcode: es
+channel_filters: null
+channel_groups: null
+channel_sorts: {  }
+channel_searches: null
+authorized_users:
+  cd0d9446-cb19-4e87-9dcf-d3bdc37a70a7: cd0d9446-cb19-4e87-9dcf-d3bdc37a70a7

@@ -166,6 +166,7 @@ hidden:
   addtoany: true
   content_moderation_control: true
   field_add_to_calendar: true
+  field_country: true
   field_event_content: true
   field_event_country: true
   field_event_cta_download: true

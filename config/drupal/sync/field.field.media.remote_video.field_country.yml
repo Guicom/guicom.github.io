@@ -1,0 +1,29 @@
+uuid: 66a5bc5e-e29d-4866-9ef1-b5760150db55
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_country
+    - media.type.remote_video
+    - taxonomy.vocabulary.country
+id: media.remote_video.field_country
+field_name: field_country
+entity_type: media
+bundle: remote_video
+label: Country
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      country: country
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

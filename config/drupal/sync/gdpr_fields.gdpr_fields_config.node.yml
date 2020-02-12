@@ -766,6 +766,17 @@ bundles:
       notes: ''
       relationship: 0
       sars_filename: ''
+    field_country:
+      bundle: thank_you_page
+      name: field_country
+      entity_type_id: node
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
   landing_page:
     field_hero_paragraph:
       bundle: landing_page
@@ -847,6 +858,17 @@ bundles:
     field_cta:
       bundle: landing_page
       name: field_cta
+      entity_type_id: node
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_country:
+      bundle: landing_page
+      name: field_country
       entity_type_id: node
       rtf: 'no'
       rta: 'no'
@@ -1223,6 +1245,17 @@ bundles:
       notes: ''
       relationship: 0
       sars_filename: ''
+    field_country:
+      bundle: news
+      name: field_country
+      entity_type_id: node
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
   resource:
     field_res_reference:
       bundle: resource
@@ -1536,6 +1569,17 @@ bundles:
       rta: 'no'
       enabled: false
       anonymizer: date_anonymizer
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_country:
+      bundle: event
+      name: field_country
+      entity_type_id: node
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
       notes: ''
       relationship: 0
       sars_filename: ''
