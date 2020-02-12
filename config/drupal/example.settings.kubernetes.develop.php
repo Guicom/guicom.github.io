@@ -131,7 +131,7 @@ $settings['trusted_host_patterns'] = array(
 /**
  * Files configurations.
  */
-$settings['file_public_path'] = $app_ground . '/web/sites/default/files';
+//$settings['file_public_path'] = $app_ground . '/web/sites/default/files';
 $settings['file_private_path'] = '/PRIVATE_DATA';
 
 // Redis
@@ -157,3 +157,9 @@ $settings['DISABLE_SUPER_ADMIN_ACCOUNT'] = 1;
 $config['search_api.server.socomec']['backend_config']['connector_config']['host'] = getenv('SOLR_HOST');
 $config['search_api.server.socomec']['backend_config']['connector_config']['port'] = getenv('SOLR_PORT');
 $config['search_api.server.socomec']['backend_config']['connector_config']['core'] = getenv('SOLR_COLLECTION');
+
+/**
+ * Drupal 8 MegaMenu Deploy
+ */
+$settings['we_megamenu_deploy_content'] = $app_ground . '/content/we_megamenu_content';
+
