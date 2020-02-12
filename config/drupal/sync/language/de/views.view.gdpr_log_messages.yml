@@ -1,6 +1,5 @@
 display:
   default:
-    display_title: Master
     display_options:
       exposed_form:
         options:
@@ -25,22 +24,10 @@ display:
           label: 'Text der Nachricht'
         created:
           label: Datum
-          separator: ', '
         uid:
           label: 'Erstellt von'
-          separator: ', '
-      filters:
-        template:
-          expose:
-            label: Template
       title: Nachricht
-      empty:
-        area:
-          content:
-            value: 'Noch keine Nachrichten erstellt'
       arguments:
         user_target_id:
           exception:
             title: Alle
-  block_1:
-    display_title: Block

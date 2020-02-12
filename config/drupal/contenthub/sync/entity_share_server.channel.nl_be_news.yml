@@ -1,0 +1,15 @@
+uuid: 49d4acc8-0e12-4a0d-9186-195006b96942
+langcode: en
+status: true
+dependencies: {  }
+id: nl_be_news
+label: 'NL-BE / News'
+channel_entity_type: node
+channel_bundle: news
+channel_langcode: nl-be
+channel_filters: null
+channel_groups: null
+channel_sorts: {  }
+channel_searches: null
+authorized_users:
+  cd0d9446-cb19-4e87-9dcf-d3bdc37a70a7: cd0d9446-cb19-4e87-9dcf-d3bdc37a70a7

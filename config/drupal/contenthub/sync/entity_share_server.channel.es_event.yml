@@ -1,0 +1,15 @@
+uuid: ead57d21-638f-4b5a-b855-723edf1c3c5b
+langcode: en
+status: true
+dependencies: {  }
+id: es_event
+label: 'ES / Event'
+channel_entity_type: node
+channel_bundle: event
+channel_langcode: es
+channel_filters: null
+channel_groups: null
+channel_sorts: {  }
+channel_searches: null
+authorized_users:
+  cd0d9446-cb19-4e87-9dcf-d3bdc37a70a7: cd0d9446-cb19-4e87-9dcf-d3bdc37a70a7

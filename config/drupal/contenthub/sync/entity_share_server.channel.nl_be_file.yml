@@ -1,0 +1,15 @@
+uuid: 2b384313-3381-40d4-a503-5c780baac6e7
+langcode: en
+status: true
+dependencies: {  }
+id: nl_be_file
+label: 'NL-BE / File'
+channel_entity_type: media
+channel_bundle: file
+channel_langcode: nl-be
+channel_filters: null
+channel_groups: null
+channel_sorts: {  }
+channel_searches: null
+authorized_users:
+  cd0d9446-cb19-4e87-9dcf-d3bdc37a70a7: cd0d9446-cb19-4e87-9dcf-d3bdc37a70a7

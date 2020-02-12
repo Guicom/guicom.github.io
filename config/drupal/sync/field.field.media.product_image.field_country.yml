@@ -1,0 +1,29 @@
+uuid: 3e5b1738-5db7-4536-b21e-b72c50a2b8bc
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_country
+    - media.type.product_image
+    - taxonomy.vocabulary.country
+id: media.product_image.field_country
+field_name: field_country
+entity_type: media
+bundle: product_image
+label: Country
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      country: country
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

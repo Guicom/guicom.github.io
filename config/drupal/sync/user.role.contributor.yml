@@ -38,6 +38,8 @@ permissions:
   - 'edit own product content'
   - 'edit own product_reference content'
   - 'edit terms in family'
+  - entity_share_access_config_pages
+  - entity_share_client_pull_content
   - 'revert product revisions'
   - 'revert product_reference revisions'
   - 'update any tool_promotion block content'
@@ -48,6 +50,7 @@ permissions:
   - 'use editorial transition submit_for_review'
   - 'view any unpublished content'
   - 'view latest version'
+  - 'view own unpublished content'
   - 'view product revisions'
   - 'view product_reference revisions'
   - 'view the administration theme'

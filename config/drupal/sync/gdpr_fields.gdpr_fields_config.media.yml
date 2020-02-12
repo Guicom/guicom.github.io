@@ -8,6 +8,13 @@ filenames:
   pdf: ''
   resource: ''
   downloadable_resource: ''
+  image: ''
+  video: ''
+  file: ''
+  remote_video: ''
+  product_image: ''
+  private_image: ''
+  private_file: ''
 bundles:
   icone:
     field_media_image:
@@ -137,6 +144,90 @@ bundles:
     field_mime_type:
       bundle: downloadable_resource
       name: field_mime_type
+      entity_type_id: media
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+  image:
+    field_country:
+      bundle: image
+      name: field_country
+      entity_type_id: media
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+  video:
+    field_country:
+      bundle: video
+      name: field_country
+      entity_type_id: media
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+  file:
+    field_country:
+      bundle: file
+      name: field_country
+      entity_type_id: media
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+  remote_video:
+    field_country:
+      bundle: remote_video
+      name: field_country
+      entity_type_id: media
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+  product_image:
+    field_country:
+      bundle: product_image
+      name: field_country
+      entity_type_id: media
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+  private_image:
+    field_country:
+      bundle: private_image
+      name: field_country
+      entity_type_id: media
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+  private_file:
+    field_country:
+      bundle: private_file
+      name: field_country
       entity_type_id: media
       rtf: 'no'
       rta: 'no'

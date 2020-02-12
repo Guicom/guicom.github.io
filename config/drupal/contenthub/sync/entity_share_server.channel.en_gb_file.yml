@@ -1,0 +1,15 @@
+uuid: f68a1ba0-d0dd-4321-b241-6a9dc280e9b4
+langcode: en
+status: true
+dependencies: {  }
+id: en_gb_file
+label: 'EN-GB / File'
+channel_entity_type: media
+channel_bundle: file
+channel_langcode: en-gb
+channel_filters: null
+channel_groups: null
+channel_sorts: {  }
+channel_searches: null
+authorized_users:
+  cd0d9446-cb19-4e87-9dcf-d3bdc37a70a7: cd0d9446-cb19-4e87-9dcf-d3bdc37a70a7

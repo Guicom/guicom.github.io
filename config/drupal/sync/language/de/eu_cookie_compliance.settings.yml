@@ -5,13 +5,8 @@ popup_disagree_button_message: 'Weitere Informationen'
 popup_find_more_button_message: 'Weitere Informationen'
 popup_hide_button_message: Ausblenden
 popup_info:
-  value: '<h2>Wir verwenden auf dieser Website Cookies, um die Gebrauchsfreundlichkeit zu verbessern</h2><p>Klicken Sie "Akzeptieren", um sich damit einverstanden zu erklären.</p>'
-mobile_popup_info:
-  value: '<h2>Wir verwenden auf dieser Website Cookies, um die Gebrauchsfreundlichkeit zu verbessern</h2><p>Wählen Sie "Akzeptieren", um sich damit einverstanden zu erklären.</p>'
-disagree_button_label: 'Nein, danke'
+  value: "<h3 class=\"h3-blue\">We use cookies on this site to enhance your user experience</h3>\r\n"
 withdraw_message:
-  value: '<h2>Wir verwenden Cookies auf dieser Website, um das Besuchererlebnis zu verbessern</h2><p>Sie haben uns Ihre Zustimmung gegeben, Cookies zu setzen.</p>'
-withdraw_action_button_label: 'Zustimmung zurückziehen'
-withdraw_tab_button_label: Datenschutzeinstellungen
+  value: "<h2>We use cookies on this site to enhance your user experience</h2>\r\n\r\n<p>You have given your consent for us to set cookies.</p>\r\n"
 save_preferences_button_label: 'Einstellungen speichen'
-accept_all_categories_button_label: 'Alle Cookies akzeptieren'
+accept_all_categories_button_label: 'Accept all'
