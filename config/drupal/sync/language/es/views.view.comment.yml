@@ -3,9 +3,9 @@ display:
     display_options:
       fields:
         operations:
-          label: Aktionen
+          label: Operaciones
   page_unapproved:
     display_options:
       fields:
         operations:
-          label: Aktionen
+          label: Operaciones
