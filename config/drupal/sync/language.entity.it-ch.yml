@@ -1,0 +1,9 @@
+uuid: feb0364e-f4fc-405a-8def-682321261b30
+langcode: en
+status: true
+dependencies: {  }
+id: it-ch
+label: 'Italian (Switzerland)'
+direction: ltr
+weight: 0
+locked: false

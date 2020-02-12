@@ -1,0 +1,23 @@
+uuid: 2676563c-0897-4625-8fa2-243be857e0ad
+langcode: en
+status: true
+dependencies:
+  config:
+    - facets.facet.family_terms
+  module:
+    - facets
+  theme:
+    - socomec
+id: familyterms
+theme: socomec
+region: facets
+weight: 0
+provider: null
+plugin: 'facet_block:family_terms'
+settings:
+  id: 'facet_block:family_terms'
+  label: 'Product Family'
+  provider: facets
+  label_display: visible
+  block_id: familyterms
+visibility: {  }

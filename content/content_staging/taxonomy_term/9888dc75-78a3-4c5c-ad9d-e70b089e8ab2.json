@@ -1,15 +1,13 @@
 {
     "_links": {
         "self": {
-            "href": "http:\/\/default\/products\/metering-monitoring-power-quality?_format=hal_json"
+            "href": "http:\/\/default\/metering-monitoring-power-quality?_format=hal_json"
         },
         "type": {
             "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/family"
         },
         "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/family\/parent": [
-            {
-                "href": "http:\/\/default\/products?_format=hal_json"
-            }
+            null
         ],
         "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/family\/content_translation_uid": [
             {
@@ -62,26 +60,12 @@
     ],
     "weight": [
         {
-            "value": 0
+            "value": 1
         }
     ],
     "_embedded": {
         "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/family\/parent": [
-            {
-                "_links": {
-                    "self": {
-                        "href": "http:\/\/default\/products?_format=hal_json"
-                    },
-                    "type": {
-                        "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/family"
-                    }
-                },
-                "uuid": [
-                    {
-                        "value": "2e4108af-6939-4d12-bd4e-2ff6496cc8aa"
-                    }
-                ]
-            }
+            null
         ],
         "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/family\/content_translation_uid": [
             {
@@ -95,7 +79,7 @@
                 },
                 "uuid": [
                     {
-                        "value": "059d0fa6-5dd6-4e1c-ace5-ef18988bb748"
+                        "value": "ab305055-1463-4828-9111-9323f0be842d"
                     }
                 ],
                 "lang": "en"
@@ -104,7 +88,7 @@
     },
     "changed": [
         {
-            "value": "2020-01-23T09:05:32+00:00",
+            "value": "2020-02-10T16:12:49+00:00",
             "format": "Y-m-d\\TH:i:sP"
         }
     ],

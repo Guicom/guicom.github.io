@@ -3,7 +3,7 @@ services:
   # web with xdebug - actency images
   web:
     # @see https://github.com/Actency/docker-apache-php
-    image: actency/docker-apache-php:7.2
+    image: actency/docker-apache-php:7.3
     environment:
       - SERVERNAME=socomec.com.loc
       - SERVERALIAS=socomec.com.loc
@@ -26,6 +26,7 @@ services:
     shm_size: 2G
     extra_hosts:
       - "socomec.com.loc:127.0.0.1"
+      - "contenthub.loc:127.0.0.1"
       - "docker_host:10.10.10.254" # YOUR IP HERE
     hostname: "socomec.com.loc"
 

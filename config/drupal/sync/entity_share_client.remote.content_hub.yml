@@ -1,0 +1,9 @@
+uuid: ccdd7221-4134-4e06-b26b-5c2c0b3b85ce
+langcode: en
+status: true
+dependencies: {  }
+id: content_hub
+label: 'Content hub'
+url: 'http://contenthub.loc'
+basic_auth_username: entityshare
+basic_auth_password: entityshare
