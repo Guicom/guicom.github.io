@@ -74,7 +74,7 @@ Feature: Events
     And I visit "/node/53/revisions"
     Then I should see the text "<message>"
 
-  @api @cit @javascript @events @wip
+  @api @cit @javascript @events
   Scenario Outline: The webmaster role can add a new term.
     Examples:
       | role          | message                                    |
@@ -84,3 +84,16 @@ Feature: Events
     Given I am logged in as a "<role>"
     And I visit "/admin/structure/taxonomy/manage/event_thematic/overview"
     Then I should see the text "<message>"
+
+
+  # @todo: ajouter une brique pour voir le bouton add to calendar
+  @api @cit @javascript @events @wip
+    # Check if the filter working with the first element.
+  Scenario: Events check for calendar items
+    Given I visit "/event/event-2"
+    #Then I should not see "Energy Storage International 2020"
+    Then I should see "Add to Calendar"
+    #Then I should see "Google Calendar" in the "u.atcb-list" element
+    #Then I should see "iCalendar" in the ".atcb-list" element
+    #Then I should see "Outlook Online" in the ".atcb-list" element
+    #Then I should see "Yahoo! Calendar" in the ".atcb-list" element
