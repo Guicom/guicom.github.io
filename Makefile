@@ -6,7 +6,9 @@ install:
 	./vendor/bin/phing gulp-socomec:css
 
 set-kubernetes-configs:
-	cp /var/www/html/config/drupal/example.settings.kubernetes.php /var/www/html/config/drupal/settings.local.php
+	cp /var/www/html/config/drupal/example.settings.kubernetes.${ENVIRONMENT}.php /var/www/html/config/drupal/settings.local.php
+	cp /var/www/html/config/drupal/contenthub/example.settings.kubernetes.${ENVIRONMENT}.php /var/www/html/config/drupal/contenthub/settings.local.php
+	cp /var/www/html/web/sites/sites.${ENVIRONMENT}.php /var/www/html/web/sites/sites.php
 
 drupal-update:
 	./vendor/bin/phing update

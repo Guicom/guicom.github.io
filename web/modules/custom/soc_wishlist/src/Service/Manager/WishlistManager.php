@@ -126,7 +126,6 @@ class WishlistManager {
    * Load wishlist from cookie.
    *
    * @return array
-   * @throws \Exception
    */
   public function loadSavedItems() {
     if (isset($_COOKIE[$this->getCookieName()])) {
@@ -158,6 +157,8 @@ class WishlistManager {
 
   /**
    * Update wishlist cookie.
+   *
+   * @throws \Exception
    */
   public function updateCookie() {
     $name = $this->getCookieName();
@@ -166,7 +167,7 @@ class WishlistManager {
     $expire = time() + (3600 * 24 * $expireDays); // now + X days
     $path = '/';
     $domain = \Drupal::request()->getHost();
-    if (!setcookie($name, $value, $expire, $path, $domain)) {
+    if (!setcookie($name, $value, $expire, $path)) {
       throw new \Exception('Unable to save the wishlist.
       Please check that your browser settings are allowing cookies, then try again.');
     }

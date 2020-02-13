@@ -2,7 +2,7 @@
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 
-namespace: webfactory-prod
+namespace: webfactory-dev
 
 registry:
   name: agc-regis-credential
@@ -20,9 +20,10 @@ drupal:
   username: admin
   password: admin
   ingress_hostname: webfactory-drupal-dev.dpk-soc-web-cl01.doobesha.org
-  files_storage_class: webfactory-prod-fast01
+  ingress_content_hub_hostname: contenthub-drupal-dev.dpk-soc-web-cl01.doobesha.org
+  files_storage_class: webfactory-dev-fast01
   files_size: 5Gi
-  files_private_storage_class: webfactory-prod-fast01
+  files_private_storage_class: webfactory-dev-fast01
   files_private_size: 5Gi
   disk_size: 10Gi
   replicaCount: 1

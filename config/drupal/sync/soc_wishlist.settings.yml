@@ -1,2 +1,9 @@
 cookie_lifetime_days: '60'
 pdf_disclaimer: 'This is the PDF disclaimer text.'
+page_title_en: 'My space'
+page_title_fr: 'Mon espace'
+submit: 'Save configuration'
+form_build_id: form-URb6QHO6qiPNxu4Qxad6vPG58Lf8aV7D9RlINNX0Vy0
+form_token: ev6Slrm2x85ouEXuS5UUPyfMqAFflMQvFuCgQ5Mxp6A
+form_id: soc_wishlist_settings
+op: 'Save configuration'

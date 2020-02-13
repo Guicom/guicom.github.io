@@ -1,0 +1,11 @@
+display:
+  default:
+    display_options:
+      fields:
+        operations:
+          label: Actions
+  page_unapproved:
+    display_options:
+      fields:
+        operations:
+          label: Actions
