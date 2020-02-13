@@ -34,3 +34,6 @@ $checkbox: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcm
   background-image: url('../images/picto/form/Checkbox-grey.svg');
 }
 
+.checkbox-indeterminate [type="checkbox"] + label:after {
+  background-image: url('../images/picto/form/Checkbox-indeterminate.svg');
+}

@@ -1,0 +1,83 @@
+<div id="wishlist_form_message"></div>
+<div id="wishlist_form_content_wrapper">
+  <div id="navbar-wishlist-top">
+    {% with {'key': 0} %}
+      {% block navbar_wishlist %}
+        {%  set ml_auto = "" %}
+        {% if key == 1 %}
+          {%  set ml_auto = "ml-auto" %}
+        {% endif %}
+        <div class="navbar-wishlist">
+          <nav class="navbar m-0 p-0 navbar-expand navbar-light">
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+              <ul class="navbar-nav {{ ml_auto }}">
+                <li class="nav-item">
+                  <a class="nav-link no-background icon-dealer" href="#">{{ 'Find a dealer'|t }}</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle icon-actions" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    {{ 'Actions'|t }}
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    <div class="dropdown-item-text label-section">{{ 'Exportations'|t }}</div>
+                    <div class="dropdown-divider"></div>
+                    {{ form.actions.exports[key] }}
+                    <div class="dropdown-item-text label-section">{{ 'Others actions'|t }}</div>
+                    <div class="dropdown-divider"></div>
+                    <div class="dropdown-item-text">{{ form.actions.others[key] }}</div>
+                  </div>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link icon-pricing" href="#">{{ 'Ask for pricing'|t }}</a>
+                </li>
+              </ul>
+            </div>
+          </nav>
+        </div>
+      {% endblock %}
+    {% endwith %}
+  </div>
+  <div id="wishlist_form_wrapper">
+    <table class="full-width">
+      <thead>
+      <tr>
+        <th class="no-sort btn-responsive all"></th>
+        <th class="no-sort wishlist-img min-tablet">{{ 'Img'|t }}</th>
+        <th class="wishlist-model all">{{ 'Model'|t }}</th>
+        <th class="wishlist-reference all">{{ 'Reference'|t }}</th>
+        <th class="wishlist-main-specifications min-tablet">{{ 'Main specifications'|t }}</th>
+        <th class="no-sort wishlist-qty min-tablet">{{ 'Qty'|t }}</th>
+        <th class="no-sort wishlist-select-all all">{{ form.select_all }}</th>
+      </tr>
+      </thead>
+      <tbody>
+      {% for i in range(0, form.wrapper_wishlist.nb['#value']) %}
+        {% if  form.wrapper_wishlist[i].extid['#value'] %}
+          <tr id="item_line_{{ form.wrapper_wishlist[i].extid['#value'] }}">
+            {{  form.wrapper_wishlist[i].extid }}
+            {%  set quantity = "quantity_" ~ form.wrapper_wishlist[i].extid['#value'] %}
+            {%  set wishlist_action = "wishlist_action_" ~ form.wrapper_wishlist[i].extid['#value'] %}
+            {%  set picture = "picture_" ~ form.wrapper_wishlist[i].extid['#value'] %}
+            {%  set model = "model_" ~ form.wrapper_wishlist[i].extid['#value'] %}
+            {%  set reference = "reference_" ~ form.wrapper_wishlist[i].extid['#value'] %}
+            {%  set description = "description_" ~ form.wrapper_wishlist[i].extid['#value'] %}
+            <td class="btn-responsive"></td>
+            <td>{{ form.wrapper_wishlist[i][picture] }}</td>
+            <td>{{ form.wrapper_wishlist[i][model] }}</td>
+            <td>{{ form.wrapper_wishlist[i][reference] }}</td>
+            <td>{{ form.wrapper_wishlist[i][description] }}</td>
+            <td>{{ form.wrapper_wishlist[i][quantity] }}</td>
+            <td>{{ form.wrapper_wishlist[i][wishlist_action] }}</td>
+          </tr>
+        {% endif %}
+      {% endfor %}
+      </tbody>
+    </table>
+  </div>
+  {{ form | without('title', 'actions', 'wrapper_wishlist', 'select_all') }}
+</div>
+<div id="navbar-wishlist-bottom">
+  {% with {'key': 1} %}
+    {{ block('navbar_wishlist') }}
+  {% endwith %}
+</div>

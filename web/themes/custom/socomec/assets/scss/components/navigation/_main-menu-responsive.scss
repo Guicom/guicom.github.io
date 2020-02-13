@@ -2,7 +2,7 @@
 // Position header with hero region.
 @include media-breakpoint-down(md) {
   .nav-wrapper {
-    background: rgba(0, 79, 159, 0.1);
+    margin-top:-60px;
     width: 100%;
     position: fixed;
     z-index: 1022;

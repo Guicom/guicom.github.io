@@ -86,6 +86,29 @@ a {
   display: none;
 }
 
+h1.title-socomec-wave-below,
+.title-socomec-wave-below h1{
+  color: $blue;
+  font-family: $font-roboto;
+  font-size: 48px;
+  font-weight: 300;
+  line-height: 60px;
+  text-transform: uppercase;
+  margin-bottom: 40px;
+  @include socomec-hero-wave;
+  &:after {
+    margin-left: -30px;
+    margin-top: 40px;
+  }
+}
+
+#header{
+  h1.title-socomec-wave-below,
+  .title-socomec-wave-below h1{
+    color: $white;
+  }
+}
+
 h2.h2-blue {
 
 }
@@ -96,4 +119,15 @@ h3.h3-blue {
   font-weight: 300;
   line-height: 30px;
   margin-bottom: 10px;
+}
+
+.full-width {
+  width:100%;
+}
+
+.table-responsive-no-srcoll{
+  overflow-x: initial;
+  .table-responsive{
+    overflow-x: initial;
+  }
 }
