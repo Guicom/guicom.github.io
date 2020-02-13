@@ -1,31 +1,25 @@
 {
     "_links": {
         "self": {
-            "href": "http:\/\/default\/block\/6?_format=hal_json"
+            "href": "http:\/\/default\/block\/8?_format=hal_json"
         },
         "type": {
             "href": "http:\/\/drupal.org\/rest\/type\/block_content\/basic"
-        },
-        "http:\/\/drupal.org\/rest\/relation\/block_content\/basic\/content_translation_uid": [
-            {
-                "href": "http:\/\/default\/user\/1?_format=hal_json",
-                "lang": "en"
-            }
-        ]
+        }
     },
     "id": [
         {
-            "value": 11
+            "value": 8
         }
     ],
     "uuid": [
         {
-            "value": "c97d069b-ed27-49c0-819a-fb4fcf408469"
+            "value": "dc9eaeee-27b7-41bb-80fe-b5f35d09fd71"
         }
     ],
     "revision_id": [
         {
-            "value": 14
+            "value": 13
         }
     ],
     "langcode": [
@@ -41,7 +35,7 @@
     ],
     "revision_created": [
         {
-            "value": "2020-01-21T10:49:48+00:00",
+            "value": "2020-02-06T12:49:22+00:00",
             "format": "Y-m-d\\TH:i:sP"
         }
     ],
@@ -52,12 +46,12 @@
     ],
     "info": [
         {
-            "value": "Views News Teaser"
+            "value": "Views Events teaser"
         }
     ],
     "changed": [
         {
-            "value": "2020-01-21T10:49:48+00:00",
+            "value": "2020-02-10T12:04:40+00:00",
             "format": "Y-m-d\\TH:i:sP"
         }
     ],
@@ -90,29 +84,9 @@
             "lang": "en"
         }
     ],
-    "_embedded": {
-        "http:\/\/drupal.org\/rest\/relation\/block_content\/basic\/content_translation_uid": [
-            {
-                "_links": {
-                    "self": {
-                        "href": "http:\/\/default\/user\/1?_format=hal_json"
-                    },
-                    "type": {
-                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
-                    }
-                },
-                "uuid": [
-                    {
-                        "value": "639675d9-184b-46a3-a954-077022b40562"
-                    }
-                ],
-                "lang": "en"
-            }
-        ]
-    },
     "content_translation_created": [
         {
-            "value": "2020-01-21T10:49:48+00:00",
+            "value": "2020-02-06T12:49:22+00:00",
             "lang": "en",
             "format": "Y-m-d\\TH:i:sP"
         }

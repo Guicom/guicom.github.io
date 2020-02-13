@@ -12,14 +12,14 @@
                 "lang": "en"
             }
         ],
-        "http:\/\/drupal.org\/rest\/relation\/block_content\/home_product_assistance\/field_background_image": [
-            {
-                "href": "http:\/\/default\/media\/34\/edit?_format=hal_json"
-            }
-        ],
         "http:\/\/drupal.org\/rest\/relation\/block_content\/home_product_assistance\/field_ba_icon": [
             {
                 "href": "http:\/\/default\/media\/32\/edit?_format=hal_json"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/block_content\/home_product_assistance\/field_background_image": [
+            {
+                "href": "http:\/\/default\/media\/34\/edit?_format=hal_json"
             }
         ],
         "http:\/\/drupal.org\/rest\/relation\/block_content\/home_product_assistance\/field_br_icon": [
@@ -123,27 +123,10 @@
                 },
                 "uuid": [
                     {
-                        "value": "d9b82eba-c048-4c84-b618-46c4faa05479"
+                        "value": "b27ff409-fda1-4515-9ac3-a73a013a9376"
                     }
                 ],
                 "lang": "en"
-            }
-        ],
-        "http:\/\/drupal.org\/rest\/relation\/block_content\/home_product_assistance\/field_background_image": [
-            {
-                "_links": {
-                    "self": {
-                        "href": "http:\/\/default\/media\/34\/edit?_format=hal_json"
-                    },
-                    "type": {
-                        "href": "http:\/\/drupal.org\/rest\/type\/media\/image"
-                    }
-                },
-                "uuid": [
-                    {
-                        "value": "48d78949-ea4d-4bea-870d-d115256684ae"
-                    }
-                ]
             }
         ],
         "http:\/\/drupal.org\/rest\/relation\/block_content\/home_product_assistance\/field_ba_icon": [
@@ -159,6 +142,23 @@
                 "uuid": [
                     {
                         "value": "b712d991-4a35-491a-9972-60589b6a96f7"
+                    }
+                ]
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/block_content\/home_product_assistance\/field_background_image": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/media\/34\/edit?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/media\/image"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "48d78949-ea4d-4bea-870d-d115256684ae"
                     }
                 ]
             }

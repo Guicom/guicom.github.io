@@ -41,6 +41,7 @@ permissions:
   - entity_share_client_pull_content
   - 'revert product revisions'
   - 'revert product_reference revisions'
+  - 'update any basic block content'
   - 'update any tool_promotion block content'
   - 'use editorial transition archive'
   - 'use editorial transition archived_draft'
