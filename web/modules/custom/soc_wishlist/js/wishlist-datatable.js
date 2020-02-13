@@ -35,7 +35,7 @@
           { targets: 'no-sort', orderable: false }
         ]
       });
-      
+      $("#navbar-wishlist-top").show();
       var nbPage = 0;
       $("#wishlist_form_wrapper .dataTables_wrapper .pagination > li").each(function( index ) {
         nbPage = nbPage + 1;
