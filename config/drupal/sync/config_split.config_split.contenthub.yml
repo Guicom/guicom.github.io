@@ -8,11 +8,16 @@ description: 'Contenthub configuration'
 folder: ../config/drupal/contenthub/sync
 module:
   basic_auth: 0
+  soc_content_hub_server: 0
   entity_share_server: 0
 theme: {  }
 blacklist:
+  - system.action.user_add_role_action.entity_share
+  - system.action.user_remove_role_action.entity_share
+  - user.role.entity_share
   - 'entity_share_server.*'
-graylist: {  }
+graylist:
+  - user.role.webmaster
 graylist_dependents: true
 graylist_skip_equal: true
 weight: 0

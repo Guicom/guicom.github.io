@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "dac1f9fe8f3f01f327deead096fd65ca",
+    "content-hash": "5a46c9fbc9edb54a3aad86491196ed59",
     "packages": [
         {
             "name": "actency/foundation",
@@ -4865,6 +4865,106 @@
             "homepage": "https://www.drupal.org/project/entity_share",
             "support": {
                 "source": "https://git.drupalcode.org/project/entity_share"
+            }
+        },
+        {
+            "name": "drupal/entity_share_client",
+            "version": "2.0.0-alpha10",
+            "require": {
+                "drupal/core": "~8.0",
+                "drupal/entity_share": "self.version",
+                "drupal/jsonapi": "*"
+            },
+            "type": "metapackage",
+            "extra": {
+                "branch-alias": {
+                    "dev-2.x": "2.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-2.0-alpha10",
+                    "datestamp": "1579265887",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Alpha releases are not covered by Drupal security advisories."
+                    }
+                },
+                "drush": {
+                    "services": {
+                        "drush.services.yml": "^9"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Grimreaper",
+                    "homepage": "https://www.drupal.org/user/2388214"
+                },
+                {
+                    "name": "ithom",
+                    "homepage": "https://www.drupal.org/user/3175403"
+                }
+            ],
+            "description": "Provides an UI to share entities.",
+            "homepage": "https://www.drupal.org/project/entity_share",
+            "support": {
+                "source": "https://git.drupalcode.org/project/entity_share"
+            }
+        },
+        {
+            "name": "drupal/entity_share_cron",
+            "version": "2.0.0-alpha3",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/entity_share_cron.git",
+                "reference": "8.x-2.0-alpha3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/entity_share_cron-8.x-2.0-alpha3.zip",
+                "reference": "8.x-2.0-alpha3",
+                "shasum": "6adf73b7148aba9fbe8ae0856041292e5ea96255"
+            },
+            "require": {
+                "drupal/core": "~8.0",
+                "drupal/entity_share": "^2.0@alpha",
+                "drupal/entity_share_client": "*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-2.x": "2.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-2.0-alpha3",
+                    "datestamp": "1580139481",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Alpha releases are not covered by Drupal security advisories."
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "Grimreaper",
+                    "homepage": "https://www.drupal.org/user/2388214"
+                },
+                {
+                    "name": "dbiscalchin",
+                    "homepage": "https://www.drupal.org/user/3081151"
+                }
+            ],
+            "description": "Synchronizes entities on Cron execution.",
+            "homepage": "https://www.drupal.org/project/entity_share_cron",
+            "support": {
+                "source": "https://git.drupalcode.org/project/entity_share_cron"
             }
         },
         {
@@ -14170,8 +14270,9 @@
         "drupal/conditional_fields": 15,
         "drupal/default_content_deploy": 20,
         "drupal/drush_language": 5,
-        "drupal/entity_usage": 10,
         "drupal/entity_share": 15,
+        "drupal/entity_share_cron": 15,
+        "drupal/entity_usage": 10,
         "drupal/gdpr": 15,
         "drupal/inline_entity_form": 5,
         "drupal/libraries": 15,

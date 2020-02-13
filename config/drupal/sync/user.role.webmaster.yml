@@ -52,6 +52,7 @@ permissions:
   - 'administer users'
   - 'administer views'
   - 'administer we_megamenu'
+  - administer_remote_entity
   - 'bypass node access'
   - 'create article content'
   - 'create audio media'
@@ -199,6 +200,8 @@ permissions:
   - 'edit terms in protection_level'
   - 'edit terms in resource_type'
   - 'edit terms in tags'
+  - entity_share_access_config_pages
+  - entity_share_client_pull_content
   - 'grant gdpr any consent'
   - 'grant gdpr own consent'
   - 'manage gdpr agreements'

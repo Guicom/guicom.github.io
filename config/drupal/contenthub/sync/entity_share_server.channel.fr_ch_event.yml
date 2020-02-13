@@ -1,0 +1,15 @@
+uuid: 44b0bc34-cb10-48d2-b1d0-2595949ce720
+langcode: en
+status: true
+dependencies: {  }
+id: fr_ch_event
+label: 'FR-CH / Event'
+channel_entity_type: node
+channel_bundle: event
+channel_langcode: fr-ch
+channel_filters: null
+channel_groups: null
+channel_sorts: {  }
+channel_searches: null
+authorized_users:
+  cd0d9446-cb19-4e87-9dcf-d3bdc37a70a7: cd0d9446-cb19-4e87-9dcf-d3bdc37a70a7

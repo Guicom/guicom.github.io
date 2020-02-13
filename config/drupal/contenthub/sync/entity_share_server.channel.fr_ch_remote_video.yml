@@ -1,0 +1,15 @@
+uuid: 4f40069b-2782-491a-b850-0ae066121577
+langcode: en
+status: true
+dependencies: {  }
+id: fr_ch_remote_video
+label: 'FR-CH / Remote_video'
+channel_entity_type: media
+channel_bundle: remote_video
+channel_langcode: fr-ch
+channel_filters: null
+channel_groups: null
+channel_sorts: {  }
+channel_searches: null
+authorized_users:
+  cd0d9446-cb19-4e87-9dcf-d3bdc37a70a7: cd0d9446-cb19-4e87-9dcf-d3bdc37a70a7

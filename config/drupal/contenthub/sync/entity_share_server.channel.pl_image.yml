@@ -1,0 +1,15 @@
+uuid: 5869ed60-5b2b-467a-a05f-5ac425c67900
+langcode: en
+status: true
+dependencies: {  }
+id: pl_image
+label: 'PL / Image'
+channel_entity_type: media
+channel_bundle: image
+channel_langcode: pl
+channel_filters: null
+channel_groups: null
+channel_sorts: {  }
+channel_searches: null
+authorized_users:
+  cd0d9446-cb19-4e87-9dcf-d3bdc37a70a7: cd0d9446-cb19-4e87-9dcf-d3bdc37a70a7

@@ -1,0 +1,13 @@
+uuid: 1bd37520-dd26-42b2-929e-45ebe281c685
+langcode: en
+status: true
+dependencies: {  }
+id: entity_share
+label: 'Entity share'
+weight: 7
+is_admin: null
+permissions:
+  - entity_share_server_access_channels
+  - 'view any unpublished content'
+  - 'view own unpublished media'
+  - 'view unpublished paragraphs'

@@ -1,0 +1,7 @@
+name: Socomec Content Hub Server
+type: module
+description: Share content and medias to country websites.
+core: 8.x
+package: Socomec
+dependencies:
+  - soc_content_hub

@@ -532,6 +532,9 @@ body.node--type-product {
       &.dataTable {
         visibility: visible;
         @include transition-socomec;
+        margin-bottom: 15px !important;
+        width: 100% !important;
+        max-width: 100% !important;
       }
       thead {
         tr {
@@ -543,6 +546,30 @@ body.node--type-product {
             line-height: 20px;
             border-bottom: 2px solid $lighter-grey;
             border-top: none;
+            position: relative;
+            padding: 0.75rem 0;
+            vertical-align: middle;
+          }
+        }
+        .bootstrap-select {
+          @include bootstrap-select();
+          background: none;
+          box-shadow: none;
+          width: 100%;
+          &.show {
+            background: none;
+            box-shadow: none;
+            >.dropdown-toggle.btn-light{
+              box-shadow: none;
+            }
+          }
+          >.dropdown-toggle.btn-light:active,
+          >.dropdown-toggle.btn-light:focus,
+          >.dropdown-toggle.btn-light:hover,
+          >.dropdown-toggle.bs-placeholder:active,
+          >.dropdown-toggle.bs-placeholder:focus,
+          >.dropdown-toggle.bs-placeholder:hover{
+            box-shadow: none;
           }
         }
       }
@@ -559,6 +586,20 @@ body.node--type-product {
             vertical-align: middle;
             padding: 0;
             border-bottom: 1px solid $lighter-grey;
+            &:first-child {
+              &:before {
+                right: 12px !important;
+                left: initial !important;
+                color: black;
+                border: none;
+                background: none;
+                top: 0;
+                height: 100%;
+                box-shadow: none;
+                display: flex;
+                align-items: center;
+              }
+            }
           }
           td a{
             display: flex;

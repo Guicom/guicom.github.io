@@ -1,0 +1,15 @@
+uuid: c19ab056-94a2-4d7c-8d86-c0747922f791
+langcode: en
+status: true
+dependencies: {  }
+id: zh_cn_news
+label: 'ZH-CN / News'
+channel_entity_type: node
+channel_bundle: news
+channel_langcode: zh-cn
+channel_filters: null
+channel_groups: null
+channel_sorts: {  }
+channel_searches: null
+authorized_users:
+  cd0d9446-cb19-4e87-9dcf-d3bdc37a70a7: cd0d9446-cb19-4e87-9dcf-d3bdc37a70a7

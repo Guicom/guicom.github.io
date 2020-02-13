@@ -1,0 +1,14 @@
+uuid: 90dfd54f-9ac9-4ee5-a572-5b06deebd50d
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.entity_share
+  module:
+    - user
+id: user_add_role_action.entity_share
+label: 'Add the Entity share role to the selected user(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: entity_share

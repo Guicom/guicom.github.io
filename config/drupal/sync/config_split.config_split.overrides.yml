@@ -11,6 +11,8 @@ theme: {  }
 blacklist: {  }
 graylist:
   - dblog.settings
+  - entity_share_client.remote.content_hub
+  - entity_share_cron.settings
   - soc_nextpage.nextpage_ws
   - soc_pardot.privacy_policy
   - soc_wishlist.settings
