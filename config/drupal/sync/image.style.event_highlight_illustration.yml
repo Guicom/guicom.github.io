@@ -1,0 +1,15 @@
+uuid: 3cefb9f4-62df-4a03-a228-efe814c7d109
+langcode: en
+status: true
+dependencies: {  }
+name: event_highlight_illustration
+label: event_highlight_illustration
+effects:
+  5c852d6d-6359-4bb9-a94f-498a56e15f28:
+    uuid: 5c852d6d-6359-4bb9-a94f-498a56e15f28
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 435
+      height: 440
+      anchor: center-center

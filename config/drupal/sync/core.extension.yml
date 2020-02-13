@@ -110,6 +110,7 @@ module:
   soc_content_hub: 0
   soc_core: 0
   soc_eu_cookie_compliance: 0
+  soc_events: 0
   soc_iframe_redirect: 0
   soc_multisite: 0
   soc_nextpage: 0

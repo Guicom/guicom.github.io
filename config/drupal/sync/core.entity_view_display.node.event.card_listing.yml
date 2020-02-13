@@ -40,6 +40,7 @@ third_party_settings:
         - node_title
         - field_event_place
         - node_link
+        - extra_field_event_type_icon_file
     fields:
       node_link:
         plugin_id: node_link
@@ -66,6 +67,21 @@ targetEntityType: node
 bundle: event
 mode: card_listing
 content:
+  extra_field_event_type_icon:
+    weight: 6
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  extra_field_event_type_icon_file:
+    weight: 6
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  extra_field_resource_title:
+    weight: 7
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   field_event_date:
     weight: 0
     label: hidden

@@ -1,0 +1,28 @@
+uuid: 5d81dd3e-2617-4275-a7a6-16d2f1a0ede7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_event_type_icon
+    - media.type.icone
+    - taxonomy.vocabulary.event_type
+id: taxonomy_term.event_type.field_event_type_icon
+field_name: field_event_type_icon
+entity_type: taxonomy_term
+bundle: event_type
+label: 'Event Type Icon'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      icone: icone
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: icone
+field_type: entity_reference

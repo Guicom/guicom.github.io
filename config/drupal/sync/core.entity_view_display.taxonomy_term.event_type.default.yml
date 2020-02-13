@@ -1,0 +1,41 @@
+uuid: 37697cc4-5934-49c6-be4a-780765bd59da
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.event_type.field_event_type_icon
+    - taxonomy.vocabulary.event_type
+  module:
+    - ds
+    - text
+id: taxonomy_term.event_type.default
+targetEntityType: taxonomy_term
+bundle: event_type
+mode: default
+content:
+  description:
+    label: hidden
+    type: text_default
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_event_type_icon:
+    type: entity_reference_entity_view
+    weight: 1
+    label: hidden
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings:
+      ds:
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
+    region: content
+hidden:
+  langcode: true
+  search_api_excerpt: true

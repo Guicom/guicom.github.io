@@ -18,11 +18,13 @@ dependencies:
     - field.field.node.event.field_event_teaser
     - field.field.node.event.field_event_thematic
     - field.field.node.event.field_event_type
+    - image.style.event_highlight_illustration
     - node.type.event
   module:
     - addtocalendar
     - datetime_range
     - ds
+    - media
     - user
 id: node.event.card_listing_highlight
 targetEntityType: node
@@ -97,12 +99,12 @@ content:
     type: daterange_default
     region: content
   field_event_picture:
-    type: entity_reference_entity_view
+    type: media_thumbnail
     weight: 1
     label: hidden
     settings:
-      view_mode: bootstrap_breakpoint
-      link: false
+      image_style: event_highlight_illustration
+      image_link: ''
     third_party_settings:
       ds:
         ft:
@@ -127,7 +129,6 @@ content:
 hidden:
   addtoany: true
   content_moderation_control: true
-  field_country: true
   field_event_content: true
   field_event_country: true
   field_event_cta_download: true

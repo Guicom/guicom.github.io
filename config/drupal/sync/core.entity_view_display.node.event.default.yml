@@ -40,6 +40,11 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  extra_field_event_type_icon:
+    weight: 16
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   extra_field_soc_event_date:
     weight: 15
     region: content
@@ -223,5 +228,6 @@ content:
     third_party_settings: {  }
 hidden:
   addtoany: true
+  extra_field_event_type_icon_file: true
   langcode: true
   search_api_excerpt: true
