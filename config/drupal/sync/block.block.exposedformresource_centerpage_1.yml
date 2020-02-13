@@ -12,7 +12,7 @@ dependencies:
 id: exposedformresource_centerpage_1
 theme: socomec
 region: hero
-weight: -8
+weight: -11
 provider: null
 plugin: 'views_exposed_filter_block:resource_center-page_1'
 settings:
@@ -24,6 +24,6 @@ settings:
 visibility:
   request_path:
     id: request_path
-    pages: /resource-center
+    pages: "/resource-center\r\n/resource-center/*"
     negate: false
     context_mapping: {  }

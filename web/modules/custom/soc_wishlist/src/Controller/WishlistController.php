@@ -47,7 +47,9 @@ class WishlistController extends ControllerBase {
    * @return array
    */
   public function addItemAction(string $extid) {
-    $this->wishlistManager->loadSavedItems();
+    try {
+      $this->wishlistManager->loadSavedItems();
+    } catch (\Exception $e) {}
     if ($this->wishlistManager->add($extid)) {
       try {
         $this->wishlistManager->updateCookie();
@@ -64,7 +66,9 @@ class WishlistController extends ControllerBase {
    * @return array
    */
   public function removeItemAction(string $extid) {
-    $this->wishlistManager->loadSavedItems();
+    try {
+      $this->wishlistManager->loadSavedItems();
+    } catch (\Exception $e) {}
     if ($this->wishlistManager->remove($extid)) {
       try {
         $this->wishlistManager->updateCookie();

@@ -1,0 +1,85 @@
+{
+    "_links": {
+        "self": {
+            "href": ""
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/model_text"
+        }
+    },
+    "id": [
+        {
+            "value": 60
+        }
+    ],
+    "uuid": [
+        {
+            "value": "ad5fa3ab-4f59-4731-8a58-58c86b69d266"
+        }
+    ],
+    "revision_id": [
+        {
+            "value": 455
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "type": [
+        {
+            "target_id": "model_text"
+        }
+    ],
+    "status": [
+        {
+            "value": true
+        }
+    ],
+    "created": [
+        {
+            "value": "2020-02-06T13:50:54+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "parent_id": [
+        {
+            "value": "53"
+        }
+    ],
+    "parent_type": [
+        {
+            "value": "node"
+        }
+    ],
+    "parent_field_name": [
+        {
+            "value": "field_event_content"
+        }
+    ],
+    "behavior_settings": [
+        {
+            "value": []
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "field_text": [
+        {
+            "value": "<p>sdsd<\/p>\r\n",
+            "format": "socomec",
+            "processed": "<p>sdsd<\/p>"
+        }
+    ],
+    "field_title": [
+        {
+            "value": "dsd"
+        }
+    ]
+}

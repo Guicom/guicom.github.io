@@ -52,9 +52,8 @@
   ]
 %}
 
-  {% set date_event = drupal_field('field_event_date', 'node') %}
-  {% set date_event_start = date_event[0].start_date['#attributes'].datetime %}
-  {% set date_event_end = date_event[0].end_date['#attributes'].datetime %}
+  {% set date_event_start = items[0].content.start_date['#attributes'].datetime %}
+  {% set date_event_end = items[0].content.end_date['#attributes'].datetime %}
   <div class="event-date-wrapper">
     <div class="line-date">
       <div class="event-start">

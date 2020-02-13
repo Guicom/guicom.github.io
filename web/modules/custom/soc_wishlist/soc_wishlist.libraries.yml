@@ -8,3 +8,11 @@ ajax-confirm:
     - core/drupal.ajax
     - core/jquery
     - core/jquery.once
+wishlist-actions:
+  version: VERSION
+  js:
+    js/wishlist-actions.js: {}
+wishlist-datatable:
+  version: VERSION
+  js:
+    js/wishlist-datatable.js: {}

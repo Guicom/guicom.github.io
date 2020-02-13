@@ -12,7 +12,7 @@ third_party_settings:
   facets_pretty_paths:
     coder: taxonomy_term_coder
 id: family_terms
-name: 'Family terms'
+name: 'Product Family'
 url_alias: family
 weight: 0
 min_count: 1
@@ -38,13 +38,6 @@ hard_limit: 0
 exclude: false
 only_visible_when_facet_source_is_visible: true
 processor_configs:
-  exclude_specified_items:
-    processor_id: exclude_specified_items
-    weights:
-      build: 50
-    settings:
-      exclude: Products
-      regex: false
   translate_entity:
     processor_id: translate_entity
     weights:
@@ -58,4 +51,4 @@ processor_configs:
     settings: {  }
 empty_behavior:
   behavior: none
-show_title: false
+show_title: true
