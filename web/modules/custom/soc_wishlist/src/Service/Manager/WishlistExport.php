@@ -55,9 +55,7 @@ class WishlistExport {
         }
       }
     }
-    else{
-      $items = $tmpItems;
-    }
+
     if (empty($items)) {
       $items = [];
     }
