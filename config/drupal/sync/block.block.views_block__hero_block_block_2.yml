@@ -12,7 +12,7 @@ dependencies:
 id: views_block__hero_block_block_2
 theme: socomec
 region: hero
-weight: -10
+weight: -12
 provider: null
 plugin: 'views_block:hero_block-block_2'
 settings:

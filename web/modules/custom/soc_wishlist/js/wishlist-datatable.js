@@ -24,7 +24,7 @@
         order: [],
         info:       false,
         searching:  true,
-        pageLength: 20,
+        pageLength: 50,
         lengthChange: false,
         language: {
           searchPlaceholder: placeholder,
@@ -35,6 +35,14 @@
           { targets: 'no-sort', orderable: false }
         ]
       });
+      $("#navbar-wishlist-top").show();
+      var nbPage = 0;
+      $("#wishlist_form_wrapper .dataTables_wrapper .pagination > li").each(function( index ) {
+        nbPage = nbPage + 1;
+      });
+      if (nbPage < 4) {
+        $("#wishlist_form_wrapper .dataTables_wrapper .pagination").hide();
+      }
     }
   };
 

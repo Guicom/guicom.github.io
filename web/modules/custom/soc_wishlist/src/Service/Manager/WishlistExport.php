@@ -46,7 +46,7 @@ class WishlistExport {
    */
   public function export() {
     $tmpItems = $this->wishlistManager->loadSavedItems();
-    $exportlist = $_SESSION['socomec_wishlist_export'];
+    $exportlist = ($_SESSION['socomec_wishlist_export']) ?? NULL;
     $items = [];
     if (!empty($exportlist)) {
       foreach ($exportlist as $selectedItem) {
@@ -58,33 +58,34 @@ class WishlistExport {
     else{
       $items = $tmpItems;
     }
-    if (!empty($items)) {
-      switch ($this->getType()) {
-        case 'csv':
-          return $this->exportCSV($items);
-          break;
-        case 'xls':
-          try {
-            return $this->exportXLS($items);
-          } catch (Exception $e) {
-          } catch (\PhpOffice\PhpSpreadsheet\Exception $e) {
-          }
-          break;
-        case 'xlsx':
-          try {
-            return $this->exportXLSX($items);
-          } catch (Exception $e) {
-          } catch (\PhpOffice\PhpSpreadsheet\Exception $e) {
-          }
-          break;
-        case 'pdf':
-          try {
-            return $this->exportPDF($items);
-          } catch (Exception $e) {
-          } catch (\PhpOffice\PhpSpreadsheet\Exception $e) {
-          }
-          break;
-      }
+    if (empty($items)) {
+      $items = [];
+    }
+    switch ($this->getType()) {
+      case 'csv':
+        return $this->exportCSV($items);
+        break;
+      case 'xls':
+        try {
+          return $this->exportXLS($items);
+        } catch (Exception $e) {
+        } catch (\PhpOffice\PhpSpreadsheet\Exception $e) {
+        }
+        break;
+      case 'xlsx':
+        try {
+          return $this->exportXLSX($items);
+        } catch (Exception $e) {
+        } catch (\PhpOffice\PhpSpreadsheet\Exception $e) {
+        }
+        break;
+      case 'pdf':
+        try {
+          return $this->exportPDF($items);
+        } catch (Exception $e) {
+        } catch (\PhpOffice\PhpSpreadsheet\Exception $e) {
+        }
+        break;
     }
     return false;
   }

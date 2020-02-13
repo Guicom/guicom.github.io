@@ -224,12 +224,14 @@ function socomec_preprocess_views_view(&$variables) {
 
   // Apply background image for hero paragraph view block
   if ((!empty($id) && $id == 'hero_block') && ($display_id == 'block_1' || $display_id == 'block_2')) {
-    $rows = $variables['rows'][0]['#rows'];
-    $hero_paragraph_id = $rows[0]['#row']->paragraphs_item_field_data_node__field_hero_paragraph_id;
-    if(!empty($hero_paragraph_id)){
+    $rows = (!empty($variables['rows'][0]['#rows'])) ? $variables['rows'][0]['#rows'] : NULL ;
+    if (!empty($rows) && !empty($rows[0]['#row']->paragraphs_item_field_data_node__field_hero_paragraph_id)) {
+      $hero_paragraph_id = $rows[0]['#row']->paragraphs_item_field_data_node__field_hero_paragraph_id;
+    }
+    if (!empty($hero_paragraph_id)) {
       /** @var Drupal\paragraphs\Entity\Paragraph $paragraph */
       $paragraph = Paragraph::load($hero_paragraph_id);
-      if(empty($paragraph)){
+      if (empty($paragraph)) {
         return;
       }
       if ($paragraph->hasField('field_background_image')
@@ -238,7 +240,7 @@ function socomec_preprocess_views_view(&$variables) {
         $media = Media::load($field_background_image_id);
         $fid = $media->getSource()->getSourceFieldValue($media);
         $file = File::load($fid);
-        if(empty($file)){
+        if (empty($file)) {
           return;
         }
         $file_url = file_create_url($file->getFileUri());
