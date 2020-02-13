@@ -105,6 +105,7 @@
                   <div class="filter-by">{{ "Filter by"|t }}</div>
                   {% block facets %}
                     {{ drupal_entity('block', 'eventtypetaxonomytermname') }}
+                    {{ drupal_entity('block', 'eventthematictaxonomytermname') }}
                   {% endblock %}
                 </div>
                 {{ page.content }}
