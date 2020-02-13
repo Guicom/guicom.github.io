@@ -53,6 +53,11 @@
             "value": "5f5100cf-81e9-48e1-8dcb-bf8b9eadc512"
         }
     ],
+    "revision_id": [
+        {
+            "value": 12
+        }
+    ],
     "langcode": [
         {
             "value": "en",

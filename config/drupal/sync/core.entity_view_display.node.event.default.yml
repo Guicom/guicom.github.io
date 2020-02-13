@@ -47,7 +47,7 @@ content:
     third_party_settings: {  }
   field_add_to_calendar:
     weight: 16
-    label: above
+    label: hidden
     settings: {  }
     third_party_settings: {  }
     type: add_to_calendar
@@ -187,7 +187,7 @@ content:
     region: content
   field_event_product:
     weight: 8
-    label: above
+    label: hidden
     settings:
       link: true
     third_party_settings: {  }
