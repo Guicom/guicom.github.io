@@ -71,6 +71,7 @@ permissions:
   - 'create product_reference content'
   - 'create remote_video media'
   - 'create terms in application'
+  - 'create terms in event_thematic'
   - 'create terms in family'
   - 'create terms in file_type'
   - 'create terms in format_de_boitier'

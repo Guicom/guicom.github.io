@@ -1,0 +1,29 @@
+uuid: edec29ba-e291-4028-8d34-b5a7b0850cee
+langcode: en
+status: true
+dependencies:
+  config:
+    - facets.facet.event_thematic_taxonomy_term_name
+  module:
+    - facets
+    - system
+  theme:
+    - socomec
+id: eventthematictaxonomytermname
+theme: socomec
+region: hidden
+weight: 0
+provider: null
+plugin: 'facet_block:event_thematic_taxonomy_term_name'
+settings:
+  id: 'facet_block:event_thematic_taxonomy_term_name'
+  label: THEMATICS
+  provider: facets
+  label_display: visible
+  block_id: eventthematictaxonomytermname
+visibility:
+  request_path:
+    id: request_path
+    pages: /events
+    negate: false
+    context_mapping: {  }
