@@ -133,6 +133,9 @@
 }
 
 .facets-widget-links{
+  ul {
+    padding-inline-start:0px;
+  }
   .facet-item{
     margin:0px;
     padding:0px;
