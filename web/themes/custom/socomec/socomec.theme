@@ -23,20 +23,20 @@ use Drupal\we_megamenu\WeMegaMenuBuilder;
  */
 function socomec_form_system_theme_settings_alter(&$form, FormStateInterface $form_state) {
   $form['components']['navbar']['bootstrap_barrio_navbar_top_background']['#options'] = array(
-      'bg-primary' => t('Primary'),
-      'bg-secondary' => t('Secondary'),
-      'bg-light' => t('Light'),
-      'bg-dark' => t('Dark'),
-      'bg-white' => t('White'),
-      'bg-transparent' => t('Transparent'),
+    'bg-primary' => t('Primary'),
+    'bg-secondary' => t('Secondary'),
+    'bg-light' => t('Light'),
+    'bg-dark' => t('Dark'),
+    'bg-white' => t('White'),
+    'bg-transparent' => t('Transparent'),
   );
   $form['components']['navbar']['bootstrap_barrio_navbar_background']['#options'] = array(
-      'bg-primary' => t('Primary'),
-      'bg-secondary' => t('Secondary'),
-      'bg-light' => t('Light'),
-      'bg-dark' => t('Dark'),
-      'bg-white' => t('White'),
-      'bg-transparent' => t('Transparent'),
+    'bg-primary' => t('Primary'),
+    'bg-secondary' => t('Secondary'),
+    'bg-light' => t('Light'),
+    'bg-dark' => t('Dark'),
+    'bg-white' => t('White'),
+    'bg-transparent' => t('Transparent'),
   );
 }
 
@@ -162,8 +162,8 @@ function socomec_theme_suggestions_page_alter(array &$suggestions, array $variab
 }
 
 /**
-  * Implements hook_theme_suggestions_HOOK_alter().
-  */
+ * Implements hook_theme_suggestions_HOOK_alter().
+ */
 function socomec_theme_suggestions_views_view_fields_alter(array &$suggestions, array $variables) {
   // Suggestions for custom views_view bundles.
   if (!empty($variables['view'])) {
@@ -250,20 +250,33 @@ function socomec_preprocess_views_view(&$variables) {
   }
 
   // Apply background color for news page without image
-  if ((!empty($id) && $id == 'news') && ($display_id == 'page_1' || $display_id == 'page_1')) {
+  if ((!empty($id) && ($id == 'news' || $id == 'events')) && $display_id == 'page_1') {
     if (!empty($variables['rows'][0]['#rows'])) {
       foreach ($variables['rows'][0]['#rows'] as $key => $value) {
         if (is_numeric($key)) {
           $variables['rows'][0]['#rows'][$key]['#background'] = 'with-img';
           $node = $value['#node'];
-          if ($node->hasField('field_media_image') && empty($node->get('field_media_image')->getValue())) {
-            $background = [
-              'bg-blue-1',
-              'bg-blue-2',
-              'bg-blue-3',
-            ];
-            $rand = rand( 0 , 2 );
-            $variables['rows'][0]['#rows'][$key]['#background'] = 'no-img '.$background[$rand];
+          if ($id == 'news') {
+            if ($node->hasField('field_media_image') && empty($node->get('field_media_image')->getValue())) {
+              $background = [
+                'bg-blue-1',
+                'bg-blue-2',
+                'bg-blue-3',
+              ];
+              $rand = rand( 0 , 2 );
+              $variables['rows'][0]['#rows'][$key]['#background'] = 'no-img '.$background[$rand];
+            }
+          }
+          elseif ($id == "events" ) {
+            if ($node->hasField('field_event_picture') && empty($node->get('field_event_picture')->getValue())) {
+              $background = [
+                'bg-blue-1',
+                'bg-blue-2',
+                'bg-blue-3',
+              ];
+              $rand = rand( 0 , 2 );
+              $variables['rows'][0]['#rows'][$key]['#background'] = 'no-img '.$background[$rand];
+            }
           }
         }
       }
@@ -375,7 +388,7 @@ function socomec_preprocess_page(&$variables) {
             if (sizeof($teaserInstances)) {
               $block = reset($teaserInstances);
               $variables['tool_promotion'] = \Drupal::entityTypeManager()->
-                getViewBuilder('block')->view($block);
+              getViewBuilder('block')->view($block);
               break;
             }
           }

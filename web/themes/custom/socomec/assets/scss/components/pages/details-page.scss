@@ -37,7 +37,7 @@
   .news-teaser,
   .event-teaser{
     @include media-breakpoint-down(md) {
-     margin-top: 2rem
+      margin-top: 2rem
     }
   }
   .field--name-field-teaser,
@@ -88,6 +88,14 @@
         transition: $transition02;
         @include media-breakpoint-down(md) {
           margin-bottom: 2rem;
+        }
+        svg {
+          g {
+            fill: $white;
+            path {
+              opacity: 1;
+            }
+          }
         }
       }
       h1 {
@@ -187,6 +195,7 @@
         .field--name-field-event-picture {
           width: 100%;
           height: auto;
+          margin-bottom: 0;
           @include media-breakpoint-down(md) {
             margin-bottom: -2rem;
           }
@@ -199,6 +208,11 @@
             }
           }
         }
+        .no-img-content {
+          min-width: 35.625rem;
+          min-height: 18.5rem;
+          background: $turquoize;
+        }
         .event-squarebox {
           position: absolute;
           top: 0;
@@ -207,93 +221,6 @@
           @include media-breakpoint-down(md) {
             position: relative;
             margin-bottom: 2rem;
-          }
-        }
-        // EVENT DATE
-        .event-top {
-          background: $yellow;
-          padding: 1.5rem 0;
-          text-align: center;
-          font-size: $font-size-h4;
-          color: $blue;
-          .field--name-field-event-place {
-            font-weight: 300;
-          }
-          .event-date-wrapper {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            .line-date {
-              display: flex;
-              font-size: $font-size-h2;
-              text-transform: uppercase;
-              font-weight: 700;
-              height: 2.2rem;
-              line-height: 1;
-              margin-top: 1rem;
-            }
-            .line-years {
-              display: flex;
-              font-size: $font-size-h2;
-              text-transform: uppercase;
-              font-weight: 300;
-              line-height: 1;
-              height: 2.5rem;
-            }
-            .line-hours {
-              display: flex;
-              font-size: $font-size-h4;
-              text-transform: uppercase;
-              font-weight: 300;
-            }
-            .event-start {
-              text-align: right;
-            }
-            .event-end {
-              text-align: left;
-            }
-            .separator {
-              font-size: $font-size-base;
-              font-weight: 600;
-              line-height: 2;
-              width: 2rem;
-            }
-          }
-        }
-        .bottom-link {
-          time {
-            display: none;
-          }
-          .addtocalendar {
-            width: 100%;
-            text-align: center;
-            a {
-              display: flex;
-              justify-content: center;
-              align-items: center;
-              background: $white;
-              border: 1px solid rgba($blue, 0.3);
-              padding: 0.5rem 2.5rem;
-              border-radius: 0;
-              color: $blue;
-              text-transform: uppercase;
-              font-family: $font-poppins;
-              font-weight: 600;
-              font-size: $font-size-sm;
-              box-shadow: none;
-              &:before {
-                content: '';
-                background: url("../images/picto/ui/Calendar-add.svg") no-repeat center center;
-                display: block;
-                height: 34px;
-                width: 34px;
-                transform: translateY(0);
-              }
-            }
-            .atcb-list {
-              width: 100%;
-            }
           }
         }
       }
@@ -307,5 +234,224 @@
   // CONTENT PAGE
   #news-info-section {
     margin-bottom: 2*$spacer;
+  }
+  // EVENT DATE
+  .event-top {
+    background: $yellow;
+    padding: 1.5rem 0;
+    text-align: center;
+    font-size: $font-size-h4;
+    color: $blue;
+    .field--name-field-event-place {
+      font-weight: 300;
+    }
+    .event-date-wrapper {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      .line-date {
+        display: flex;
+        font-size: $font-size-h2;
+        text-transform: uppercase;
+        font-weight: 700;
+        height: 2.2rem;
+        line-height: 1;
+        margin-top: 1rem;
+      }
+      .line-years {
+        display: flex;
+        font-size: $font-size-h2;
+        text-transform: uppercase;
+        font-weight: 300;
+        line-height: 1;
+        height: 2.5rem;
+      }
+      .line-hours {
+        display: flex;
+        font-size: $font-size-h4;
+        text-transform: uppercase;
+        font-weight: 300;
+      }
+      .event-start {
+        text-align: right;
+      }
+      .event-end {
+        text-align: left;
+      }
+      .separator {
+        font-size: $font-size-base;
+        font-weight: 600;
+        line-height: 2;
+        width: 2rem;
+      }
+    }
+  }
+  .bottom-content-links {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 2rem 0 3rem 0;
+    .left-links {
+      display: flex;
+    }
+    .field--name-field-add-to-calendar {
+      a {
+        display: flex;
+        align-items: center;
+        font-size: $font-size-sm;
+        font-family: $font-poppins;
+        color: $blue;
+        font-weight: 600;
+        text-transform: uppercase;
+        padding: 0.5rem 1.5rem;
+        text-decoration: none;
+        background: none;
+        box-shadow: none;
+        border-radius: 0;
+        .placeholder {
+          font-style: normal;
+        }
+        &:after {
+          content: '';
+          background: url("../images/picto/ui/Calendar-add.svg") no-repeat center center;
+          display: block;
+          height: 24px;
+          width: 24px;
+          margin-left: 0.5rem;
+          transform: scale(0.8);
+        }
+        &:hover {
+          background: none;
+          box-shadow: none;
+          color: $blue;
+          font-size: $font-size-sm;
+          font-family: $font-poppins;
+          font-weight: 600;
+          text-transform: uppercase;
+          padding: 0.5rem 1.5rem;
+          border-radius: 0;
+        }
+      }
+    }
+  }
+  .field--name-field-event-cta-download {
+    display: flex;
+    padding: 0.5rem 1.5rem;
+    border: 1px solid rgba($blue, 0.2);
+    &:before {
+      content: '';
+      background: url("../images/picto/ui/download-blue.svg") no-repeat center center;
+      display: block;
+      height: 24px;
+      width: 24px;
+      margin-right: 0.5rem;
+      transform: scale(0.8);
+    }
+    a {
+      display: flex;
+      align-items: center;
+      color: $blue;
+      font-size: $font-size-sm;
+      font-family: $font-poppins;
+      font-weight: 600;
+      text-transform: uppercase;
+      text-decoration: none;
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+  .field--name-field-event-cta-external-link {
+    display: flex;
+    padding: 0.5rem 1.5rem;
+    align-items: center;
+    &:before {
+      content: '';
+      background: url("../images/picto/ui/external-link.svg") no-repeat center center;
+      display: block;
+      height: 24px;
+      width: 24px;
+      margin-right: 0.5rem;
+      transform: scale(0.8);
+    }
+    a {
+      display: flex;
+      align-items: center;
+      color: $blue;
+      font-size: $font-size-sm;
+      font-family: $font-poppins;
+      font-weight: 600;
+      text-transform: uppercase;
+      text-decoration: none;
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+
+}
+.bottom-link {
+  time {
+    display: none;
+  }
+  &.detail-page {
+    // HARD OVERRIDE STYLE CONTRIB FOR ADD TO CALENDAR
+    .addtocalendar {
+      width: 100%;
+      text-align: center;
+      a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: $white!important;
+        border: 1px solid rgba($blue, 0.3);
+        padding: 0.5rem 2.5rem!important;
+        border-radius: 0;
+        color: $blue!important;
+        text-transform: uppercase;
+        font-family: $font-poppins!important;
+        font-weight: 600;
+        font-size: $font-size-xs!important;
+        box-shadow: none!important;
+
+        &:hover {
+          background: none;
+          box-shadow: none;
+          text-transform: uppercase;
+          font-family: $font-poppins;
+          font-weight: 600;
+          font-size: $font-size-xs;
+          color: $blue;
+          padding: 0.5rem 2.5rem;
+        }
+        .placeholder {
+          font-style: normal;
+        }
+        &:before {
+          content: '';
+          background: url("../images/picto/ui/Calendar-add.svg") no-repeat center center;
+          display: block;
+          height: 34px;
+          width: 34px;
+          transform: translateY(0);
+        }
+      }
+      .atcb-list {
+        width: 100%;
+        .atcb-item-link {
+          padding: initial;
+          color: initial;
+          background: initial;
+          box-shadow: initial;
+          &:hover {
+            padding: initial;
+            color: initial;
+            background: initial;
+            box-shadow: initial;
+          }
+        }
+      }
+    }
   }
 }

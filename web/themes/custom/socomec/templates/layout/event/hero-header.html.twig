@@ -1,5 +1,5 @@
 <div class="hero-block">
-    <div class="mobile-container">
+  <div class="mobile-container">
     <div {{ attributes.addClass(class, 'hero-wrapper').removeClass('mobile-container') }}>
       <div {{ attributes.addClass(class, 'event-info').removeClass('mobile-container','hero-wrapper') }}>
         <a class="back-to-button" href="{{ path('view.events.page_1') }}">{% include
@@ -60,7 +60,11 @@
             </div>
           </div>
           {{ drupal_field('field_event_picture', 'node') }}
-          <div class="bottom-link">
+          {% if drupal_field('field_event_picture', 'node')[0] is empty  %}
+            <div class="no-img-content">
+            </div>
+          {% endif %}
+          <div class="bottom-link detail-page">
             {{ drupal_field('field_add_to_calendar', 'node') }}
           </div>
         </div>
