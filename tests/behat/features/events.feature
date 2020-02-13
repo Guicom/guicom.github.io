@@ -1,7 +1,6 @@
 Feature: Events
 
   @api @cit @javascript @events
-  Test if the page events is visible
   # ./vendor/bin/phing behat:run -Dbehat.tags=events
   # See the example news features.
   Scenario: Events detail
@@ -62,7 +61,7 @@ Feature: Events
     And I visit "/node/53/edit"
     Then I should see the text "<message>"
 
-  @api @cit @javascript @events @wip
+  @api @cit @javascript @events
      # Verifier la permission revision pour le CT event.
     # ticket(s) SOCSOB-806
   Scenario Outline: Check permissions for the specific roles.
@@ -75,7 +74,13 @@ Feature: Events
     And I visit "/node/53/revisions"
     Then I should see the text "<message>"
 
-    # Critéres d'acceptance à implémenter
-    # - ETQ Webmaster, je peux ajouter des thèmes pour le vocabulaire Thématique afin de les ajouter dans la page de contribution du CT Event
-
-
+  @api @cit @javascript @events @wip
+  Scenario Outline: The webmaster role can add a new term.
+    Examples:
+      | role          | message                                    |
+      | webmaster     | Add term                                   |
+      | contributor   | Access denied                                   |
+      | authenticated | You are not authorized to access this page |
+    Given I am logged in as a "<role>"
+    And I visit "/admin/structure/taxonomy/manage/event_thematic/overview"
+    Then I should see the text "<message>"
