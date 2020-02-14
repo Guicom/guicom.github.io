@@ -9,6 +9,8 @@ set-kubernetes-configs:
 	cp /var/www/html/config/drupal/example.settings.kubernetes.${ENVIRONMENT}.php /var/www/html/config/drupal/settings.local.php
 	cp /var/www/html/config/drupal/contenthub/example.settings.kubernetes.${ENVIRONMENT}.php /var/www/html/config/drupal/contenthub/settings.local.php
 	cp /var/www/html/web/sites/sites.${ENVIRONMENT}.php /var/www/html/web/sites/sites.php
+	chmod g+r /var/www/html/web/sites/sites.php /var/www/html/config/drupal/contenthub/settings.local.php /var/www/html/config/drupal/settings.local.php
+	chown web:www-data /var/www/html/web/sites/sites.php /var/www/html/config/drupal/contenthub/settings.local.php /var/www/html/config/drupal/settings.local.php
 
 drupal-update:
 	./vendor/bin/phing update
