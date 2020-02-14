@@ -173,7 +173,7 @@
         $('.navbar-toggler', context).once('socomecOverlayResponsive').each(function() {
           var allDropdown = $('.we-mega-menu-submenu.dropdown-menu');
           $(this).click(function (){
-            $('html .overlay').toggleClass('active');
+            $('html .£').toggleClass('active');
             allDropdown.hide();
           })
         });
@@ -302,7 +302,7 @@
    */
   Drupal.behaviors.socomec_facets_bootstrap_select = {
     attach: function (context, settings) {
-      $('select.facets-dropdown').each(function () {
+      $('select').each(function () {
         $(this).selectpicker({
           virtualScroll: false,
         });
@@ -315,6 +315,13 @@
           $(this).siblings('.dropdown-toggle.btn-light').css('padding-top', height + 7 + 'px');
         }
         $(this).parents(".bootstrap-select").find("div.dropdown-menu").first().mCustomScrollbar({
+          theme:"minimal-dark",
+          mouseWheel:{ preventDefault:true }
+        });
+      });
+
+      $('.bootstrap-select').each(function () {
+        $(this).find("div.dropdown-menu").first().mCustomScrollbar({
           theme:"minimal-dark",
           mouseWheel:{ preventDefault:true }
         });
