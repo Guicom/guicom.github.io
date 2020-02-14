@@ -66,15 +66,18 @@ class ButtonDownloadResourceDisplay extends ExtraFieldDisplayFormattedBase {
     }
     else {
       // je pose un lien de téléchargement.
-      if ($id = $entity->get('field_res_remote_file_url')->first()->getValue()['target_id']) {
-        try {
-          /* @var \Drupal\file\FileInterface $file */
-          $file = \Drupal::entityTypeManager()->getStorage('file')->load($id);
-          $url = Url::fromUri($file->getFileUri());
-          $attributes['download'] = TRUE;
-          $attributes['class'][]='is-file';
-        } catch (\Exception $e) {
-          \Drupal::logger('soc_resource_center')->error($e->getMessage());
+      $field_res_remote_file_url = $entity->get('field_res_remote_file_url')->first();
+      if (!empty($field_res_remote_file_url) && !empty($field_res_remote_file_url->getValue())) {
+        if ($id = $field_res_remote_file_url->getValue()['target_id']) {
+          try {
+            /* @var \Drupal\file\FileInterface $file */
+            $file = \Drupal::entityTypeManager()->getStorage('file')->load($id);
+            $url = Url::fromUri($file->getFileUri());
+            $attributes['download'] = TRUE;
+            $attributes['class'][]='is-file';
+          } catch (\Exception $e) {
+            \Drupal::logger('soc_resource_center')->error($e->getMessage());
+          }
         }
       }
     }
