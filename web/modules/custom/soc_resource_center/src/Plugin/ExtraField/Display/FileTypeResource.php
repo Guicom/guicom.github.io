@@ -44,16 +44,17 @@ class FileTypeResource extends ExtraFieldDisplayFormattedBase {
     if (!empty($field_res_downloadable) && $field_res_downloadable->getValue()[0]['value'] === '1') {
       $field_res_remote_file_url = $entity->get('field_res_remote_file_url');
       if (!empty($field_res_remote_file_url)) {
-        $id = $field_res_remote_file_url->first()->getValue()['target_id'];
-      }
-      if (!empty($field_res_remote_file_url)) {
-        /* @var \Drupal\file\FileInterface $file */
-        $file = \Drupal::entityTypeManager()->getStorage('file')->load($id);
-        $mimeType = $file->getMimeType();
-        $type = str_replace('application/', '', $mimeType);
-        return [
-          ['#markup' => '<span class="ressource-type-file">'.$type.'</span>'],
-        ];
+        if (!empty($field_res_remote_file_url->first())) {
+          if ($id = $field_res_remote_file_url->first()->getValue()['target_id']) {
+            /* @var \Drupal\file\FileInterface $file */
+            $file = \Drupal::entityTypeManager()->getStorage('file')->load($id);
+            $mimeType = $file->getMimeType();
+            $type = str_replace('application/', '', $mimeType);
+            return [
+              ['#markup' => '<span class="ressource-type-file">'.$type.'</span>'],
+            ];
+          }
+        }
       }
     }
     return FALSE;
