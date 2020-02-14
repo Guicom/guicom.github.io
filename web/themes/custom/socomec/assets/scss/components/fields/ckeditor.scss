@@ -16,38 +16,47 @@ ol li{
   margin: 0 0 10px 0;
 }
 
-h3{
-  color: $blue;
-  font-family: $font-roboto;
-  font-size: 24px;
-  font-weight: 300;
-  line-height: 30px;
-  margin: 0 0 10px 0;
+h3 {
+  &.custom-cke-title-3 {
+    @include S3($blue);
+    font-weight: 800;
+  }
+  &.custom-cke-subtitle-3 {
+    @include S3($blue_light);
+    font-weight: 300;
+  }
 }
 
-h4{
-  color: $black;
-  font-family: $font-roboto;
-  font-size: 16px;
-  font-weight: 700;
-  line-height: 25px;
-  margin: 0 0 10px 0;
+h4 {
+  &.custom-cke-title-4 {
+    @include S4($blue_light);
+    font-weight: 800;
+
+  }
+  &.custom-cke-subtitle-4 {
+    @include S4($blue);
+    font-weight: 300;
+  }
 }
-h5{
-  color: $black;
-  font-family: $font-roboto;
-  font-size: 14px;
-  font-weight: 700;
-  line-height: 25px;
-  margin: 0 0 10px 0;
+h5 {
+  &.custom-cke-title-5 {
+    @include S5($darker-grey);
+    font-weight: 800;
+  }
+  &.custom-cke-subtitle-5 {
+    @include S5($darker-grey);
+    font-weight: 300;
+  }
 }
-h6{
-  color: $black;
-  font-family: $font-roboto;
-  font-size: 12px;
-  font-weight: 700;
-  line-height: 25px;
-  margin: 0 0 10px 0;
+h6 {
+  &.custom-cke-title-6 {
+    @include S6($darker-grey);
+    font-weight: 800;
+  }
+  &.custom-cke-subtitle-6 {
+    @include S6($darker-grey);
+    font-weight: 300;
+  }
 }
 
 b,
