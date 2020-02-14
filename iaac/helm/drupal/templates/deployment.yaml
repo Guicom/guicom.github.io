@@ -20,6 +20,8 @@ spec:
       labels:
         app: {{ .Values.drupal.name }}
         release: {{ .Release.Name }}
+      annotations:
+        timestamp: {{ date "20060102150405" .Release.Time | quote }}
     spec:
       hostname: drupal
       imagePullSecrets:
