@@ -9,9 +9,7 @@
 
   Drupal.behaviors.product_datatable = {
     attach: function(context, settings) {
-
-
-
+      var dataSelect = [];
       $('#product-reference-table').once("product-datatable").DataTable( {
         "lengthChange": false,
         "autoWidth": false,
@@ -35,7 +33,6 @@
             if (colname !== Drupal.t('Select', {}, {context: "product-reference-table"})) {
               var select = $('<select><option value="">' + colname + '</option></select>')
                 .appendTo( $(column.header()).empty() )
-                .selectpicker({virtualScroll: false})
                 .on( 'change', function () {
                   var val = $.fn.dataTable.util.escapeRegex(
                     $(this).val()
@@ -47,9 +44,11 @@
                 } );
               column.data().unique().sort().each( function ( d, j ) {
                 var optionTag = $.parseHTML(d);
-                if (optionTag.length) {
+                var checkDuplicate = $.inArray(optionTag[0].text, dataSelect);
+                if (optionTag.length && checkDuplicate === -1) {
                   var optionValue = optionTag[0].text;
-                  select.append( '<option value="'+ optionValue +'">'+ optionValue +'</option>' )
+                  select.append( '<option value="'+ optionValue +'">'+ optionValue +'</option>' );
+                  dataSelect.push(optionTag[0].text);
                 }
               });
             }
