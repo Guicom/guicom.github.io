@@ -138,63 +138,14 @@
                         display: none;
                       }
                     }
-                    >.we-mega-menu-submenu-inner {
-
-                    }
                   }
                 }
                 &.show {
                   border-bottom: 1px solid $yellow;
                   height: auto;
-                  //background:  linear-gradient(180deg, #084796 0%, #232C77 100%);
                 }
                 & >.we-mega-menu-submenu {
                   width: 100%!important;
-                  //background: linear-gradient(180deg, rgba(0,79,159,0) 0%, #045aaa 100%);
-
-                  >.submenu-bg {
-
-                    >.we-mega-menu-submenu-inner {
-                      >.we-mega-menu-row {
-                        >.we-mega-menu-col {
-                          &.span12:not(.full-width) {
-
-                            .level-1 {
-                              //impair
-                              &:nth-child(odd) {
-
-                              }
-                              //pair
-                              &:nth-child(even) {
-
-                              }
-
-                              &:hover {
-
-                              }
-                            }
-                          }
-                          + .we-mega-menu-col {
-                            &.span12:not(.full-width) {
-                              .level-1 {
-                                //impair
-                                &:nth-child(odd) {
-
-                                }
-                                //pair
-                                &:nth-child(even) {
-
-                                }
-                                &:hover {
-
-                                }
-                              }
-                            }
-                          }
-                        }
-                      }
-                    }
-                  }
                 }
                 .level-1 {
                   .mobile-dropdown-trigger {
@@ -233,12 +184,6 @@
                     box-shadow: none;
                     padding: 0;
                     border-radius: 0;
-                  }
-                  &:after {
-
-                  }
-                  .subul {
-
                   }
                 }
                 .level-2 {
@@ -300,21 +245,9 @@
                 }
               }
             }
-
-            &.level-3 {
-              > a {
-              }
-            }
           }
         }
       }
-
-      .we-mega-menu-row {
-        .span3{
-
-        }
-      }
-
       .navbar-collapse {
         position: fixed;
         z-index: 99;
@@ -341,19 +274,6 @@
               box-shadow: none;
               border: none;
               padding: 0;
-              > .submenu-bg {
-
-              }
-              > .we-mega-menu-submenu-inner {
-                > .we-mega-menu-row {
-                  > .we-mega-menu-col {
-
-                  }
-                }
-              }
-              .we-mega-menu-submenu-inner {
-
-              }
             }
           }
         }

@@ -37,6 +37,17 @@ html {
   }
 }
 
+@include media-breakpoint-down(sm) {
+  #toolbar-administration {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    nav {
+      position: relative;
+    }
+  }
+}
+
 /* COLORS
 --------------------------------------------------*/
 
