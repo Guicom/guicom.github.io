@@ -118,6 +118,16 @@
                 <div class="row">
                   <div class="col-12 col-md-10 offset-md-1">
                     {{ drupal_field('field_event_content', 'node') }}
+                    <div class="bottom-content-links">
+                      <div class="left-links">
+                        {{ drupal_field('field_event_cta_download', 'node') }}
+                        {{ drupal_field('field_event_cta_external_link', 'node') }}
+                      </div>
+                      <div class="right-links">
+                        {{ drupal_field('field_add_to_calendar', 'node') }}
+                      </div>
+
+                    </div>
                   </div>
                 </div>
               </div>

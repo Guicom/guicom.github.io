@@ -39,36 +39,41 @@
 #}
 {%
   set classes = [
-    'field',
-    'field--name-' ~ field_name|clean_class,
-    'field--type-' ~ field_type|clean_class,
-    'field--label-' ~ label_display,
-  ]
+  'field',
+  'field--name-' ~ field_name|clean_class,
+  'field--type-' ~ field_type|clean_class,
+  'field--label-' ~ label_display,
+]
 %}
 {%
   set title_classes = [
-    'field__label',
-    label_display == 'visually_hidden' ? 'visually-hidden',
-  ]
+  'field__label',
+  label_display == 'visually_hidden' ? 'visually-hidden',
+]
 %}
 
   {% set date_event_start = items[0].content.start_date['#attributes'].datetime %}
   {% set date_event_end = items[0].content.end_date['#attributes'].datetime %}
-  <div class="event-date-wrapper">
-    <div class="line-date">
-      <div class="event-start">
-        {{ date_event_start|date('M') }}.
-        {{ date_event_start|date('d') }}
-      </div>
-      <div class="separator">
-        •
-      </div>
-      <div class="event-end">
-        {{ date_event_end|date('M') }}.
-        {{ date_event_end|date('d') }}
-      </div>
+<div class="event-date-wrapper">
+  <div class="line-date">
+    <div class="event-start">
+      {{ date_event_start|date('M') }}.
+      {{ date_event_start|date('d') }}
     </div>
-    <div class="line-years">
+    <div class="separator">
+      •
+    </div>
+    <div class="event-end">
+      {{ date_event_end|date('M') }}.
+      {{ date_event_end|date('d') }}
+    </div>
+  </div>
+  <div class="line-years">
+    {% if date_event_start|date('Y') == date_event_end|date('Y') %}
+      <div class="event-start">
+        {{ date_event_start|date('Y') }}
+      </div>
+    {% else %}
       <div class="event-start">
         {{ date_event_start|date('Y') }}
       </div>
@@ -78,5 +83,6 @@
       <div class="event-end">
         {{ date_event_end|date('Y') }}
       </div>
-    </div>
+    {% endif %}
   </div>
+</div>

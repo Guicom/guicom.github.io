@@ -2,7 +2,6 @@
 .path-events {
   background-color: $light-grayish-blue;
 }
-
 .view-news,
 .view-events {
   &.view-display-id-page_1 {
@@ -21,7 +20,7 @@
             position: relative;
             height: 425px;
             &.bg-blue-1{
-            background-color: $blue;
+              background-color: $blue;
             }
             &.bg-blue-2{
               background-color: $blue_light;
@@ -176,6 +175,26 @@
                 text-align: center;
                 padding: 0.5rem 1rem;
                 text-transform: uppercase;
+              }
+              &.no-img {
+                .field--name-field-event-place,
+                .field--name-field-event-type,
+                .event-date-wrapper {
+                  color: $white;
+                }
+                .field--name-field-event-place {
+                  color: $yellow;
+                }
+                .field--name-node-title{
+                  margin-bottom: 0;
+                }
+                .field--name-extra-field-event-type-icon-file {
+                  text-align: center;
+                  img {
+                    opacity: 0.5;
+                    max-height: 8.25rem;
+                  }
+                }
               }
             }
           }
