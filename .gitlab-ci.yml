@@ -133,7 +133,7 @@ build-prod:
 
 deploy-prod:
   stage: deploy
-  image: alpine/helm:latest
+  image: alpine/helm:3.0.3
   tags:
     - socomec
   variables:
@@ -156,7 +156,7 @@ deploy-prod:
 
 deploy-rct:
   stage: deploy
-  image: alpine/helm:latest
+  image: alpine/helm:3.0.3
   tags:
     - socomec
   variables:
@@ -178,7 +178,7 @@ deploy-rct:
 
 deploy-dev:
   stage: deploy
-  image: alpine/helm:latest
+  image: alpine/helm:3.0.3
   tags:
     - socomec
   variables:
