@@ -12,8 +12,9 @@ Feature: [SELECT] Tests Behat
       | English  | News test | News            | Industry         | USERS                | Setup                | Teaser test | published        | 1      |
     And I visit "admin/config/search/search-api/index/news"
     And I press "Index now"
+    And I wait 2 seconds
     Then I visit "/news"
-    Then I should see "News test"
+    And I should see "News test"
     #  Je vois les classes .bootstrap-select sur l'element Type
     Then I should see "Filter by"
     Then I should see a ".facet-inline-position-title #block-newstypetaxonomytermname .bootstrap-select" element
@@ -37,8 +38,9 @@ Feature: [SELECT] Tests Behat
       | English  | TEST00001           | Resource test | Resource test            | Brochure                | Energy storage solution | published        | 1      |
     And I visit "admin/config/search/search-api/index/resources"
     And I press "Index now"
+    And I wait 2 seconds
     Then I visit "/resource-center"
-    Then I should see "Resource test"
+    And I should see "Resource test"
     #  Je vois la section Filter by
     Then I should see "Filter by"
     #  Je vois la section RANGE
