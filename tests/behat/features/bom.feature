@@ -70,6 +70,7 @@ Feature: [BOM] Tests Behat
     And I press "Remove selected"
     And I press "Yes"
     And I wait for AJAX to finish
+    And I wait 1 seconds
     And I should see "1 item(s) deleted."
     And I should not see "Test reference ref 02"
     And I click the ".form-item-select-all-select" element
