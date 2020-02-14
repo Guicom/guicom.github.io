@@ -10,9 +10,9 @@ Feature: [SELECT] Tests Behat
     And news content:
       | Language | title     | field_news_type | field_news_theme | field_news_audience  | field_news_mommentum |field_teaser | moderation_state | status |
       | English  | News test | News            | Industry         | USERS                | Setup                | Teaser test | published        | 1      |
-    And I run drush "search-api-index"
+    And I visit "admin/config/search/search-api/index/news"
+    And I press "Index now"
     Then I visit "/news"
-    And I wait 2 seconds
     Then I should see "News test"
     #  Je vois les classes .bootstrap-select sur l'element Type
     Then I should see "Filter by"
@@ -35,9 +35,9 @@ Feature: [SELECT] Tests Behat
     And resource content:
       | Language | field_res_reference | title         | field_res_original_title | field_res_resource_type | field_product_family    | moderation_state | status |
       | English  | TEST00001           | Resource test | Resource test            | Brochure                | Energy storage solution | published        | 1      |
-    And I run drush "search-api-index"
+    And I visit "admin/config/search/search-api/index/resources"
+    And I press "Index now"
     Then I visit "/resource-center"
-    And I wait 2 seconds
     Then I should see "Resource test"
     #  Je vois la section Filter by
     Then I should see "Filter by"
