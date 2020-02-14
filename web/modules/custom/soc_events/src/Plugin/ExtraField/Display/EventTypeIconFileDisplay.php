@@ -1,6 +1,5 @@
 <?php
 
-
 namespace Drupal\soc_events\Plugin\ExtraField\Display;
 
 use Drupal\Core\Entity\ContentEntityInterface;
@@ -21,32 +20,28 @@ use Drupal\media\Entity\Media;
  *   }
  * )
  */
-class EventTypeIconFileDisplay extends ExtraFieldDisplayFormattedBase
-{
+class EventTypeIconFileDisplay extends ExtraFieldDisplayFormattedBase {
 
   use StringTranslationTrait;
 
   /**
    * {@inheritdoc}
    */
-  public function getLabel()
-  {
+  public function getLabel() {
     return $this->t('Event Type Icon File');
   }
 
   /**
    * {@inheritdoc}
    */
-  public function getLabelDisplay()
-  {
+  public function getLabelDisplay() {
     return 'hidden';
   }
 
   /**
    * {@inheritdoc}
    */
-  public function viewElements(ContentEntityInterface $entity): array
-  {
+  public function viewElements(ContentEntityInterface $entity): array {
 
     $url = NULL;
     $elements = [];
