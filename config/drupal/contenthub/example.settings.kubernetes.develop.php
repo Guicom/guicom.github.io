@@ -135,12 +135,6 @@ $settings['trusted_host_patterns'] = array(
 $settings['file_private_path'] = '/PRIVATE_DATA';
 
 /**
- * Config Split overrides.
- */
-$config['config_split.config_split.dev']['status'] = TRUE;
-$config['config_split.config_split.dev']['folder'] = "../config/drupal/dev";
-
-/**
  * @see \soc_user_install()
  */
 $settings['admin_username'] = getenv('DRUPAL_USERNAME');
