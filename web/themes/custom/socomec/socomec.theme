@@ -41,8 +41,12 @@ function socomec_form_system_theme_settings_alter(&$form, FormStateInterface $fo
 }
 
 function socomec_preprocess_node(&$variables) {
-  $test = 1;
+  switch ($variables['node']->getType()) {
+    case "event":
+      break;
+  }
 }
+
 
 /**
  * Implements template_preprocess_paragraph().
