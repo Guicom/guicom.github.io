@@ -1,0 +1,92 @@
+{
+    "_links": {
+        "self": {
+            "href": ""
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/file\/file"
+        },
+        "http:\/\/drupal.org\/rest\/relation\/file\/file\/uid": [
+            {
+                "href": "http:\/\/default\/user\/1?_format=hal_json"
+            }
+        ]
+    },
+    "fid": [
+        {
+            "value": 49
+        }
+    ],
+    "uuid": [
+        {
+            "value": "3f2249ed-ea6c-476d-b6a8-f9eac363bb3a"
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en"
+        }
+    ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/file\/file\/uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/user\/1?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "b025be0c-a462-4ec6-a673-5b947cda5c69"
+                    }
+                ]
+            }
+        ]
+    },
+    "filename": [
+        {
+            "value": "btn-conference_0.svg"
+        }
+    ],
+    "uri": [
+        {
+            "value": "public:\/\/2020-02\/btn-conference_0.svg",
+            "url": "\/sites\/default\/files\/2020-02\/btn-conference_0.svg"
+        }
+    ],
+    "filemime": [
+        {
+            "value": "image\/svg+xml"
+        }
+    ],
+    "filesize": [
+        {
+            "value": 3239
+        }
+    ],
+    "status": [
+        {
+            "value": true
+        }
+    ],
+    "created": [
+        {
+            "value": "2020-02-14T17:14:47+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "changed": [
+        {
+            "value": "2020-02-14T17:14:56+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "data": [
+        {
+            "value": "PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iMTQxcHgiIGhlaWdodD0iMTQwcHgiIHZpZXdCb3g9IjAgMCAxNDEgMTQwIiB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiPgogICAgPCEtLSBHZW5lcmF0b3I6IHNrZXRjaHRvb2wgNjIgKDEwMTAxMCkgLSBodHRwczovL3NrZXRjaC5jb20gLS0+CiAgICA8dGl0bGU+RDc3MUMyMkMtMUFFMy00M0MyLTlERUYtNERFQjUwMjI1ODJCPC90aXRsZT4KICAgIDxkZXNjPkNyZWF0ZWQgd2l0aCBza2V0Y2h0b29sLjwvZGVzYz4KICAgIDxnIGlkPSJBc3NldC1BcnRib2FyZC1QYWdlIiBzdHJva2U9Im5vbmUiIHN0cm9rZS13aWR0aD0iMSIgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIj4KICAgICAgICA8ZyBpZD0i4p6BLS\/imJ4tQnV0dG9ucy9PdGhlci1jdGEvQmlnLWxpbmUtY2lyY2xlIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgwLjA0ODc4MCwgMC4wMDAwMDApIj4KICAgICAgICAgICAgPGNpcmNsZSBpZD0iT3ZhbCIgc3Ryb2tlPSIjRkZGRkZGIiBjeD0iNzAiIGN5PSI3MCIgcj0iNjkuNSI+PC9jaXJjbGU+CiAgICAgICAgICAgIDxnIGlkPSJ1aS9UaGluL2Fycm93LXJpZ2h0LWxpZ2h0IiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgzNS4wMDAwMDAsIDM1LjAwMDAwMCkiIGZpbGw9IiNGRkZGRkYiPgogICAgICAgICAgICAgICAgPHBhdGggZD0iTTM1LjA2ODM1OTQsMS42NDA2MjUgQzM5LjYzNjU3NDEsMS42NDA2MjUgNDMuMzM5ODQzOCw1LjM0Mzg5NDcgNDMuMzM5ODQzOCw5LjkxMjEwOTM4IEM0My4zMzk4NDM4LDEyLjc0MTUzMjQgNDEuOTE5MTkwNSwxNS4yMzkxNDQxIDM5Ljc1MjI4MTgsMTYuNzMwNTQ2NSBDNDUuMjI0OTcxNCwxOC40OTc3MTY3IDQ5LjM0NTY4NiwyMy4yNzkwMzM3IDUwLjE2Mzk1NzMsMjkuMTIwOTk5MiBMNTkuMTk5MjE4OCwyOS4xMjEwOTM4IEM1OS44MDMyODAyLDI5LjEyMTA5MzggNjAuMjkyOTY4OCwyOS42MTA3ODIzIDYwLjI5Mjk2ODgsMzAuMjE0ODQzOCBDNjAuMjkyOTY4OCwzMC44MTg5MDUyIDU5LjgwMzI4MDIsMzEuMzA4NTkzOCA1OS4xOTkyMTg4LDMxLjMwODU5MzggTDUyLjYzNjYzMDcsMzEuMzA4NTkzOCBMNTIuNjM2NzE4Nyw2Ny4yNjU2MjUgQzUyLjYzNjcxODcsNjcuODY5Njg2NCA1Mi4xNDcwMzAyLDY4LjM1OTM3NSA1MS41NDI5Njg3LDY4LjM1OTM3NSBDNTAuOTM4OTA3Myw2OC4zNTkzNzUgNTAuNDQ5MjE4OCw2Ny44Njk2ODY0IDUwLjQ0OTIxODgsNjcuMjY1NjI1IEw1MC40NDkyMTg4LDMxLjMwODU5MzggTDE5LjY4NzUsMzEuMzA4NTkzOCBMMTkuNjg3NSw2Ny4yNjU2MjUgQzE5LjY4NzUsNjcuODY5Njg2NCAxOS4xOTc4MTE0LDY4LjM1OTM3NSAxOC41OTM3NSw2OC4zNTkzNzUgQzE3Ljk4OTY4ODYsNjguMzU5Mzc1IDE3LjUsNjcuODY5Njg2NCAxNy41LDY3LjI2NTYyNSBMMTcuNDk5OTExOSwzMS4zMDg1OTM4IEwxMC44MDA3ODEyLDMxLjMwODU5MzggQzEwLjE5NjcxOTgsMzEuMzA4NTkzOCA5LjcwNzAzMTI1LDMwLjgxODkwNTIgOS43MDcwMzEyNSwzMC4yMTQ4NDM4IEM5LjcwNzAzMTI1LDI5LjYxMDc4MjMgMTAuMTk2NzE5OCwyOS4xMjEwOTM4IDEwLjgwMDc4MTIsMjkuMTIxMDkzOCBMMTIuNjA1NTA5NywyOS4xMjExNjg3IEMxMy41MTUzMTMxLDIzLjk4NDM2NTQgMTQuODE4NTU0OSwxOC45ODM1Mjk2IDE2LjQ4Mjk4MzIsMTQuMTUwODQ0MyBDMTYuNTUwMTEyNSwxMy42MTEwNzE3IDE3LjAxMDQ1NSwxMy4xOTMzNTk0IDE3LjU2ODM1OTQsMTMuMTkzMzU5NCBDMTguMTcyNDIwOCwxMy4xOTMzNTk0IDE4LjY2MjEwOTQsMTMuNjgzMDQ3OSAxOC42NjIxMDk0LDE0LjI4NzEwOTQgQzE4LjY2MjEwOTQsMTQuNDE2NjkwNSAxOC42Mzk1NzUyLDE0LjU0MTAwODQgMTguNTk4MjExOSwxNC42NTYzNTgzIEMxOC41OTk4MDksMTQuNjcwMzQ1NiAxOC41OTgzNDA5LDE0LjY4NDAwMzQgMTguNTkzNzUsMTQuNjk3MjY1NiBDMTYuOTgzODA0NywxOS4zNDgxMTIzIDE1LjcyMTY5MjcsMjQuMTc2MzQ1NyAxNC44Mjc2OTk0LDI5LjEyMTExNDQgTDE5Ljk3Mjc1ODksMjkuMTIxMDE3NSBDMjAuNzkxMDMyNiwyMy4yNzg5ODMzIDI0LjkxMTgyNjgsMTguNDk3NjE5OCAzMC4zODQ0ODgzLDE2LjczMDE1NTcgQzI4LjIxNzU4ODMsMTUuMjM5MjQ5NiAyNi43OTY4NzUsMTIuNzQxNTkyMiAyNi43OTY4NzUsOS45MTIxMDkzOCBDMjYuNzk2ODc1LDUuMzQzODk0NyAzMC41MDAxNDQ3LDEuNjQwNjI1IDM1LjA2ODM1OTQsMS42NDA2MjUgWiBNMzUuMDY4NzcsMTguMTgzNTkzOCBMMzQuODQzNzMwOSwxOC4xODUzNzExIEwzNC42Mzg2NTMyLDE4LjE5MDUyMzYgQzI4LjM5OTUwMDYsMTguMzkyMTg4IDIzLjI3NTMzOCwyMi45NzU0NjE0IDIyLjIxMzY2MTcsMjguOTU3NDAxMiBMMjIuMTg1ODk4NywyOS4xMjEwOTM4IEw0Ny45NTA5NTc3LDI5LjEyMTA5MzggTDQ3LjkxODc0NTgsMjguOTMyNTEzIEM0Ni44MzQ2Mjg1LDIyLjg4OTIzOTggNDEuNjA0OTUxMywxOC4yODc5ODE2IDM1LjI4NDI1NjMsMTguMTg1MzQ1NSBMMzUuMDY4NzcsMTguMTgzNTkzOCBaIE0zNS4wNjgzNTk0LDMuODI4MTI1IEMzMS43MDgyNjc2LDMuODI4MTI1IDI4Ljk4NDM3NSw2LjU1MjAxNzU5IDI4Ljk4NDM3NSw5LjkxMjEwOTM4IEMyOC45ODQzNzUsMTMuMjcyMjAxMiAzMS43MDgyNjc2LDE1Ljk5NjA5MzggMzUuMDY4MzU5NCwxNS45OTYwOTM4IEMzOC40Mjg0NTEyLDE1Ljk5NjA5MzggNDEuMTUyMzQzOCwxMy4yNzIyMDEyIDQxLjE1MjM0MzgsOS45MTIxMDkzOCBDNDEuMTUyMzQzOCw2LjU1MjAxNzU5IDM4LjQyODQ1MTIsMy44MjgxMjUgMzUuMDY4MzU5NCwzLjgyODEyNSBaIE0xOC44NjcxODc1LDEwLjExNzE4NzUgQzE5LjQ3MTI0ODksMTAuMTE3MTg3NSAxOS45NjA5Mzc1LDEwLjYwNjg3NjEgMTkuOTYwOTM3NSwxMS4yMTA5Mzc1IEMxOS45NjA5Mzc1LDExLjgxNDk5ODkgMTkuNDcxMjQ4OSwxMi4zMDQ2ODc1IDE4Ljg2NzE4NzUsMTIuMzA0Njg3NSBDMTguMjYzMTI2MSwxMi4zMDQ2ODc1IDE3Ljc3MzQzNzUsMTEuODE0OTk4OSAxNy43NzM0Mzc1LDExLjIxMDkzNzUgQzE3Ljc3MzQzNzUsMTAuNjA2ODc2MSAxOC4yNjMxMjYxLDEwLjExNzE4NzUgMTguODY3MTg3NSwxMC4xMTcxODc1IFoiIGlkPSJTaGFwZSI+PC9wYXRoPgogICAgICAgICAgICA8L2c+CiAgICAgICAgPC9nPgogICAgPC9nPgo8L3N2Zz4="
+        }
+    ]
+}

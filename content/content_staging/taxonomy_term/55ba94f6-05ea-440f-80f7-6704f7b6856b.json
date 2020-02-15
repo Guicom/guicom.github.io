@@ -8,6 +8,11 @@
         },
         "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/event_type\/parent": [
             null
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/event_type\/field_event_type_icon": [
+            {
+                "href": "http:\/\/default\/media\/46\/edit?_format=hal_json"
+            }
         ]
     },
     "tid": [
@@ -62,11 +67,28 @@
     "_embedded": {
         "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/event_type\/parent": [
             null
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/event_type\/field_event_type_icon": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/media\/46\/edit?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/media\/icone"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "d02b569b-5cfb-4ca3-99bb-877e7be62939"
+                    }
+                ]
+            }
         ]
     },
     "changed": [
         {
-            "value": "2020-02-04T16:22:09+00:00",
+            "value": "2020-02-14T17:15:19+00:00",
             "lang": "zxx",
             "format": "Y-m-d\\TH:i:sP"
         }
