@@ -20,12 +20,13 @@ install-new-release:
 wait-deployment-rollout:
 	ATTEMPTS=0; \
 	ROLLOUT_STATUS_CMD="kubectl rollout status webfactory-drupal -n ${NAMESPACE}"; \
-	until $ROLLOUT_STATUS_CMD || [ $ATTEMPTS -eq 60 ]; \
-	do; \
-	$ROLLOUT_STATUS_CMD; \
-	ATTEMPTS=$((attempts + 1)); \
+	until $$ROLLOUT_STATUS_CMD || [ $$ATTEMPTS -eq 60 ]; \
+	do \
+	$$ROLLOUT_STATUS_CMD; \
+	ATTEMPTS=$$((ATTEMPTS + 1)); \
 	sleep 10; \
 	done
+
 
 wait-pod-to-be-ready:
 	pod=$$(kubectl get po --namespace=${NAMESPACE} -l "app=webfactory-drupal,release=${NAMESPACE}-drupal" -o 'jsonpath={.items[0].metadata.name}'); \
