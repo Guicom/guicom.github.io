@@ -29,6 +29,12 @@ wait-deployment-rollout:
 
 
 wait-pod-to-be-ready:
+	NUMBER_OF_POD="kubectl get po --namespace=${NAMESPACE} -l "app=webfactory-drupal,release=${NAMESPACE}-drupal" | wc -l'; \
+	until [ $$NUMBER_OF_POD -ne 2 ]; \
+	do \
+	$$NUMBER_OF_POD;
+	sleep 10; \
+	done
 	pod=$$(kubectl get po --namespace=${NAMESPACE} -l "app=webfactory-drupal,release=${NAMESPACE}-drupal" -o 'jsonpath={.items[0].metadata.name}'); \
 	status="False"; \
 	while [ ! "$${status}" = "True" ]; do echo "waiting for pod $${pod}" && sleep 1; \
