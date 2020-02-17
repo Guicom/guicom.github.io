@@ -62,7 +62,9 @@
         btnUp.click(function() {
           var oldValue = parseFloat(input.val());
           var newVal = oldValue;
-          if (oldValue < max) {
+          if (oldValue >= max) {
+            newVal = oldValue;
+          } else {
             newVal = oldValue + 1;
           }
           spinner.find("input").val(newVal);
@@ -72,17 +74,14 @@
         btnDown.click(function() {
           var oldValue = parseFloat(input.val());
           var newVal = oldValue;
-          if (oldValue > min) {
+          if (oldValue <= min) {
+            newVal = oldValue;
+          } else {
             newVal = oldValue - 1;
           }
           spinner.find("input").val(newVal);
           spinner.find("input").trigger("change");
         });
-      });
-
-      $("#wishlist_form_message .alert-wrapper").delay(10000).queue(function() {
-        var alert = $(this);
-        $(alert).remove();
       });
 
     }

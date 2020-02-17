@@ -108,7 +108,7 @@ class WishlistEditForm extends FormBase {
       '#type' => 'checkboxes',
       '#options' =>  ['select' => ''],
       '#ajax' => [
-        'callback' => [$this, 'updateSelect'],
+        'callback' => [$this, 'updateSession'],
         'event' => 'change',
         'progress' => ['type' => 'none'],
       ],
@@ -285,26 +285,6 @@ class WishlistEditForm extends FormBase {
       }
     }
     return $selectItems;
-  }
-
-
-  /**
-   * @param array $form
-   * @param \Drupal\Core\Form\FormStateInterface $form_state
-   *
-   * @return \Drupal\Core\Ajax\AjaxResponse
-   */
-  public function updateSelect(array &$form, FormStateInterface $form_state) {
-    $response = new AjaxResponse();
-
-    $input = $form_state->getUserInput();
-    $items = self::customSelectedItems($input);
-    $_SESSION['socomec_wishlist_export'] = [];
-    if (sizeof($items)) {
-      $_SESSION['socomec_wishlist_export'] = $items;
-    }
-
-    return $response;
   }
 
   /**
