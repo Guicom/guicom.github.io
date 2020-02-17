@@ -16,7 +16,21 @@ delete-current-release:
 install-new-release:
 	helm upgrade --install --wait --recreate-pods --namespace=${NAMESPACE} drupal-${ENVIRONMENT} ./helm/${ENVIRONMENT}
 
+# Check deployment rollout status every 10 seconds (max 10 minutes) until complete.
+wait-deployment-rollout:
+	ATTEMPTS=0; \
+	ROLLOUT_STATUS_CMD="kubectl rollout status deployment/webfactory-drupal -n ${NAMESPACE}"; \
+	until $$ROLLOUT_STATUS_CMD || [ $$ATTEMPTS -eq 60 ]; \
+	do \
+	$$ROLLOUT_STATUS_CMD; \
+	ATTEMPTS=$$((ATTEMPTS + 1)); \
+	sleep 10; \
+	done
+
+
 wait-pod-to-be-ready:
+	NUMBER_OF_POD_CMD="kubectl get po --namespace=${NAMESPACE} -l 'app=webfactory-drupal,release=${NAMESPACE}-drupal' | wc -l"; \
+	while [ $$NUMBER_OF_POD_CMD -ne 2 ]; do sleep 10; done
 	pod=$$(kubectl get po --namespace=${NAMESPACE} -l "app=webfactory-drupal,release=${NAMESPACE}-drupal" -o 'jsonpath={.items[0].metadata.name}'); \
 	status="False"; \
 	while [ ! "$${status}" = "True" ]; do echo "waiting for pod $${pod}" && sleep 1; \

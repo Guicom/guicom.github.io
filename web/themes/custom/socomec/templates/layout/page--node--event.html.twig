@@ -81,11 +81,7 @@
     <div class="event-teaser-wrapper">
       <div class="container">
         <div class="row">
-          {% if drupal_field('field_event_picture', 'node')[0] %}
           <div class="event-teaser col-12 col-md-6">
-            {% else %}
-            <div class="event-teaser col-12 col-md-10 offset-md-1">
-              {% endif %}
               <span class="event-subtitle">{{ drupal_field('field_event_teaser', 'node') }}</span>
             </div>
             {% include '@socomec/layout/share.html.twig' %}

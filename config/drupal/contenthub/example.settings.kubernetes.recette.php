@@ -122,6 +122,7 @@ $databases['default']['default'] = array (
 
 $config_directories['sync'] = $app_ground . '/config/drupal/sync';
 $config_directories['local'] = $app_ground . '/config/drupal/local';
+$config_directories['contenthub'] = "$app_ground/config/drupal/contenthub/sync";
 
 $settings['hash_salt'] = 'lfMHEedn4q7V3RXGNTt_NxM5iWA98y7liFVAJgAbnX7WW0rWs_dy2j0sHLbRDiSyRj88MGBGMg';
 $settings['trusted_host_patterns'] = array(
@@ -133,12 +134,6 @@ $settings['trusted_host_patterns'] = array(
  */
 //$settings['file_public_path'] = $app_ground . '/web/sites/default/files';
 $settings['file_private_path'] = '/PRIVATE_DATA';
-
-/**
- * Config Split overrides.
- */
-$config['config_split.config_split.dev']['status'] = TRUE;
-$config['config_split.config_split.dev']['folder'] = "../config/drupal/dev";
 
 /**
  * @see \soc_user_install()

@@ -108,35 +108,6 @@ Parent element must have position set to relative
   }
 }
 
-@mixin S1($color) {
-  font-size: $font-size-h1;
-  font-family: $font-roboto;
-  color: $color;
-  line-height: 3.75rem;
-  @include media-breakpoint-down(md){
-    font-size: $font-size-h3;
-    line-height: 1rem;
-  }
-}
-
-@mixin S2($color) {
-  font-size: $font-size-h2;
-  font-family: $font-roboto;
-  color: $color;
-  @include media-breakpoint-down(md){
-    font-size: $font-size-h3;
-  }
-}
-
-@mixin S3($color) {
-  font-size: $font-size-h4;
-  font-family: $font-roboto;
-  color: $color;
-  @include media-breakpoint-down(md){
-    font-size: $font-size-h5;
-  }
-}
-
 @mixin back-to-button {
   display: flex;
   margin-bottom: $spacer;
@@ -548,6 +519,37 @@ Parent element must have position set to relative
   @include media-breakpoint-down(md){
     font-size: $font-size-h3;
   }
+}
+
+@mixin S3($color) {
+  color: $color;
+  font-family: $font-roboto;
+  font-size: $font-size-h4;
+  line-height: 30px;
+  margin: 0 0 10px 0;
+}
+
+@mixin S4($color) {
+  color: $color;
+  font-family: $font-roboto;
+  font-size: $font-size-h5;
+  line-height: 25px;
+  margin: 0 0 10px 0;
+}
+
+@mixin S5($color) {
+  color: $color;
+  font-family: $font-roboto;
+  font-size: 1.125rem;
+  line-height: 25px;
+  margin: 0 0 10px 0;
+}
+@mixin S6($color) {
+  color: $color;
+  font-family: $font-roboto;
+  font-size: 1rem;
+  line-height: 25px;
+  margin: 0 0 10px 0;
 }
 
 @mixin back-to-button {

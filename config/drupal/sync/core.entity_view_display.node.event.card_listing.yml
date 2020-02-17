@@ -4,6 +4,8 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.card_listing
+    - field.field.node.event.field_add_to_calendar
+    - field.field.node.event.field_country
     - field.field.node.event.field_event_content
     - field.field.node.event.field_event_country
     - field.field.node.event.field_event_cta_download
@@ -36,20 +38,20 @@ third_party_settings:
       content:
         - field_event_date
         - field_event_picture
+        - extra_field_event_type_icon_file
         - field_event_type
         - node_title
         - field_event_place
         - node_link
-        - extra_field_event_type_icon_file
     fields:
       node_link:
         plugin_id: node_link
-        weight: 5
+        weight: 6
         label: hidden
         formatter: default
       node_title:
         plugin_id: node_title
-        weight: 3
+        weight: 4
         label: hidden
         formatter: default
         settings:
@@ -73,7 +75,7 @@ content:
     settings: {  }
     third_party_settings: {  }
   extra_field_event_type_icon_file:
-    weight: 6
+    weight: 2
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -148,7 +150,7 @@ content:
     region: content
   field_event_place:
     type: smart_trim
-    weight: 4
+    weight: 5
     region: content
     label: hidden
     settings:
@@ -165,7 +167,7 @@ content:
     third_party_settings: {  }
   field_event_type:
     type: entity_reference_label
-    weight: 2
+    weight: 3
     region: content
     label: hidden
     settings:

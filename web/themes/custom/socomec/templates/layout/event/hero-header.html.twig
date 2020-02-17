@@ -61,11 +61,15 @@
           </div>
           {{ drupal_field('field_event_picture', 'node') }}
           {% if drupal_field('field_event_picture', 'node')[0] is empty  %}
-            <div class="no-img-content">
-            </div>
+            {% set field_event_type = drupal_field('field_event_type', 'node') %}
+            {% if field_event_type['#items'].entity.field_event_type_icon.entity.field_media_image.entity.uri.value is not empty  %}
+              <div class="no-img-content">
+                <img src="{{ file_url(field_event_type['#items'].entity.field_event_type_icon.entity.field_media_image.entity.uri.value) }}" />
+              </div>
+            {% endif %}
           {% endif %}
           <div class="bottom-link detail-page">
-            {{ drupal_field('field_add_to_calendar', 'node') }}
+              {{ drupal_field('field_add_to_calendar', 'node') }}
           </div>
         </div>
       </div>
