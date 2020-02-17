@@ -173,7 +173,7 @@
         $('.navbar-toggler', context).once('socomecOverlayResponsive').each(function() {
           var allDropdown = $('.we-mega-menu-submenu.dropdown-menu');
           $(this).click(function (){
-            $('html .£').toggleClass('active');
+            $('html .overlay').toggleClass('active');
             allDropdown.hide();
           })
         });

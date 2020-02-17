@@ -19,7 +19,7 @@ Feature: Products
 
   # ./vendor/bin/phing behat:run -Dbehat.tags=product-news
   @product-news @api @cit @javascript
-  Scenario: News behaviour
+  Scenario: New behaviour
     Given users:
       | name              | mail                | roles     | password |
       | webmaster_sofiene | webmaster@gmail.com | webmaster | admin    |
