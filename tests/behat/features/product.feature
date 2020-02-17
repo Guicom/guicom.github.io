@@ -27,7 +27,7 @@ Feature: Products
     When I visit "/node/10/edit"
     And I click the ".horizontal-tab-button-2 a" element
     And I click the ".field--type-entity-reference.field--name-update-new-statut input" element
-    And I fill in "update_new_statut[form][inline_entity_form][update_timestamp][0][value][date]" with date "now"
+    And I fill in "update_new_statut[form][inline_entity_form][update_timestamp][0][value][date]" with date "now" in the format "Y-m-d"
     And I fill in "update_new_statut[form][inline_entity_form][update_timestamp][0][value][time]" with date "+10 second" in the format "G:i:s a"
     And I select "New" from "update_new_statut[form][inline_entity_form][field_product_new]"
     And I click the ".field--name-update-new-statut .ief-entity-submit " element
