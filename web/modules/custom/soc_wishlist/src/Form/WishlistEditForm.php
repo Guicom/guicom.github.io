@@ -91,7 +91,7 @@ class WishlistEditForm extends FormBase {
    */
   public function buildForm(array $form, FormStateInterface $form_state) {
     $form['#theme'] = 'soc_wishlist_custom_form';
-    if ( empty($this->wishlistManager) ) {
+    if (empty($this->wishlistManager)) {
       $this->wishlistManager = \Drupal::service('soc_wishlist.wishlist_manager');
     }
     $items = $this->wishlistManager->loadSavedItems();
@@ -189,7 +189,7 @@ class WishlistEditForm extends FormBase {
     ];
 
     $confirmRemoveClass = 'confirm-remove';
-    for($i = 0; $i < 2; ++$i) {
+    for ($i = 0; $i < 2; ++$i) {
       // Export btn
       $form['actions']['exports'][$i]['xls'] = [
         '#type' => 'link',
@@ -250,7 +250,6 @@ class WishlistEditForm extends FormBase {
     $form['#attached']['drupalSettings']['wishlistDatatable'] = [
       'searchPlaceholder' => $this->t('Search, filter...'),
     ];
-    // Return form.
 
     return $form;
   }
@@ -277,7 +276,7 @@ class WishlistEditForm extends FormBase {
     $selectItems = [];
     if (!empty($input) && is_array($input)) {
       foreach ($input as $keyItem => $item) {
-        if( substr( $keyItem, 0, 16 ) === "wishlist_action_") {
+        if (substr($keyItem, 0, 16) === "wishlist_action_") {
           $keys = array_keys($item);
           if (!empty($item[$keys[0]])) {
             $selectItems[$item[$keys[0]]] = $item[$keys[0]];
@@ -293,7 +292,7 @@ class WishlistEditForm extends FormBase {
    * @param array $form
    * @param \Drupal\Core\Form\FormStateInterface $form_state
    *
-   * @return mixed
+   * @return \Drupal\Core\Ajax\AjaxResponse
    */
   public function updateSelect(array &$form, FormStateInterface $form_state) {
     $response = new AjaxResponse();
@@ -312,7 +311,7 @@ class WishlistEditForm extends FormBase {
    * @param array $form
    * @param \Drupal\Core\Form\FormStateInterface $form_state
    *
-   * @return mixed
+   * @return \Drupal\Core\Ajax\AjaxResponse
    */
   public function updateSession(array &$form, FormStateInterface $form_state) {
     $response = new AjaxResponse();
@@ -330,8 +329,6 @@ class WishlistEditForm extends FormBase {
   /**
    * @param array $form
    * @param \Drupal\Core\Form\FormStateInterface $form_state
-   *
-   * @return mixed
    */
   public function updateQuantity(array &$form, FormStateInterface $form_state) {
     $input = $form_state->getUserInput();
@@ -363,7 +360,7 @@ class WishlistEditForm extends FormBase {
    * @param array $form
    * @param \Drupal\Core\Form\FormStateInterface $form_state
    *
-   * @return mixed
+   * @return \Drupal\Core\Ajax\AjaxResponse
    */
   public function removeItems(array &$form, FormStateInterface $form_state) {
     $response = new AjaxResponse();
@@ -403,6 +400,9 @@ class WishlistEditForm extends FormBase {
     return $response;
   }
 
+  /**
+   * @return array|\Drupal\Core\StringTranslation\TranslatableMarkup|mixed|null
+   */
   public static function getTitle() {
     $language = \Drupal::languageManager()->getCurrentLanguage();
     return \Drupal::config('soc_wishlist.settings')->get('page_title_' . $language->getId())
