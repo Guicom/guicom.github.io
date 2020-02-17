@@ -27,7 +27,6 @@ wait-deployment-rollout:
 	sleep 10; \
 	done
 
-
 wait-pod-to-be-ready:
 	NUMBER_OF_POD_CMD="kubectl get po --namespace=${NAMESPACE} -l 'app=webfactory-drupal,release=${NAMESPACE}-drupal' | wc -l"; \
 	while [ $$NUMBER_OF_POD_CMD -ne 2 ]; do sleep 10; done
