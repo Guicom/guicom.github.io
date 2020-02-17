@@ -1,0 +1,17 @@
+<?php
+
+
+/**
+ * Implements preprocess_page().
+ */
+function soc_events_preprocess_page(&$variables) {
+  // notes: La route /events
+  // notes: Inject the $variables['#title'] to the web/themes/custom/socomec/templates/layout/page--events.html.twig.
+  $current_route = \Drupal::routeMatch()->getRouteName();
+  if ($current_route === 'view.events.page_1') {
+    $language = \Drupal::languageManager()->getCurrentLanguage();
+    $variables['title_page'] = \Drupal::config('soc_events.eventssettings')
+        ->get('page_title_' . $language->getId()) ?? t('Events');
+  }
+
+}
