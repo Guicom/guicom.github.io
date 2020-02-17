@@ -205,7 +205,7 @@
         <property name="export.type" value="${content.folder}" />
       </else>
     </if>
-    <input propertyName="taxonomy.type" message="->Socomec ">What block_content bundle would you export ?</input>
+    <input propertyName="taxonomy.type" validArgs="event_type" message="->Socomec ">What taxonomy bundle would you export ?</input>
     <drush
       command="dcder"
       assume="yes"
