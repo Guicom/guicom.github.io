@@ -71,10 +71,9 @@
 
         btnDown.click(function() {
           var oldValue = parseFloat(input.val());
-          if (oldValue <= min) {
-            var newVal = oldValue;
-          } else {
-            var newVal = oldValue - 1;
+          var newVal = oldValue;
+          if (oldValue > min) {
+            newVal = oldValue - 1;
           }
           spinner.find("input").val(newVal);
           spinner.find("input").trigger("change");
