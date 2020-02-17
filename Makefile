@@ -20,7 +20,7 @@ drupal-update:
 	./vendor/bin/phing solr:cr
 	./vendor/bin/phing gulp-socomec:css
 	./vendor/bin/phing gulp-socomec:clear-cache
-	./vendor/bin/phing drush:cr
+	./vendor/bin/phing drush:cc
 
 
 .PHONY: behat-event
