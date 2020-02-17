@@ -13,8 +13,21 @@
   }
   .field--name-field-news-theme,
   .field--name-field-event-thematic {
+    display: flex;
     margin-bottom: 0;
-    line-height: 0.5rem;
+    line-height: 0.6rem;
+    @include media-breakpoint-up(lg) {
+      flex-direction: row;
+    }
+    @include media-breakpoint-down(lg) {
+      flex-direction: column;
+    }
+    @include media-breakpoint-down(md) {
+      flex-direction: row;
+    }
+    @include media-breakpoint-down(xs) {
+      flex-direction: column;
+    }
     a {
       font-family: $font-poppins;
       text-transform: uppercase;
@@ -22,6 +35,21 @@
       font-size: 0.75rem;
       text-decoration: none;
       letter-spacing: 0.5px;
+    }
+    .field__item {
+      margin-right: 0.5rem;
+      @include media-breakpoint-up(lg) {
+        margin-bottom: 0;
+      }
+      @include media-breakpoint-down(lg) {
+        margin-bottom: 0.2rem;
+      }
+      @include media-breakpoint-down(md) {
+        margin-bottom: 0;
+      }
+      @include media-breakpoint-down(xs) {
+        margin-bottom: 0.2rem;
+      }
     }
   }
   .news-date,
@@ -133,14 +161,14 @@
       }
       .news-info,
       .event-info {
-        width: 540px;
-        max-width: 540px;
-        flex: 0 0 540px;
+        width:33.75rem;
+        max-width: 33.75rem;
+        flex: 0 0 33.75rem;
         min-height: 22rem;
         @include media-breakpoint-between(md, lg) {
-          width: 320px;
-          max-width: 320px;
-          flex: 0 0 320px;
+          width: 29.375rem;
+          max-width: 29.375rem;
+          flex: 0 0 29.375rem;
         }
         @include media-breakpoint-down(md) {
           @include make-col(12);

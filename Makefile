@@ -17,6 +17,7 @@ drupal-update:
 	./vendor/bin/phing content-import-all || true
 	./vendor/bin/phing megamenu-socomec:import || true
 	./vendor/bin/phing admin-socomec:add-role
+	./vendor/bin/phing solr:cr
 	./vendor/bin/phing gulp-socomec:css
 	./vendor/bin/phing gulp-socomec:clear-cache
 	./vendor/bin/phing drush:cr

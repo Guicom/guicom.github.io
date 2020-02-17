@@ -58,9 +58,9 @@
     <target
             name="install-local"
             description="Install the website and set up the local development environment."
-            depends="install, content-import-all, megamenu-socomec:import, cache-clear:all"/>
+            depends="install, content-import-all, megamenu-socomec:import, solr:cr, cache-clear:all"/>
     <target
             name="build-local"
             description="Rebuild the local environment."
-            depends="build, content-import-all, megamenu-socomec:import, cache-clear:all"/>
+            depends="build, content-import-all, megamenu-socomec:import, solr:cr, cache-clear:all"/>
 </project>
