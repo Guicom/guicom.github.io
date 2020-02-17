@@ -82,6 +82,11 @@
         });
       });
 
+      $("#wishlist_form_message .alert-wrapper").delay(10000).queue(function() {
+        var alert = $(this);
+        $(alert).remove();
+      });
+
     }
   };
 

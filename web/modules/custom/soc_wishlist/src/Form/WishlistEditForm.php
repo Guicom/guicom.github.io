@@ -16,6 +16,7 @@ use Drupal\soc_core\Service\MediaApi;
 use Drupal\soc_wishlist\Service\Manager\WishlistManager;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Drupal\Core\Url;
+use Drupal\Core\Link;
 
 
 class WishlistEditForm extends FormBase {
@@ -372,19 +373,23 @@ class WishlistEditForm extends FormBase {
       /** @var \Drupal\soc_wishlist\Service\Manager\WishlistManager $wishlistManager */
       $wishlistManager = \Drupal::service('soc_wishlist.wishlist_manager');
       $wishlistManager->loadSavedItems();
+      $_SESSION['socomec_wishlist_last_deleted'] = [];
       foreach ($items as $deletedItem) {
         $removedLine = '#item_line_'.$deletedItem;
         $wishlistManager->remove($deletedItem);
         try {
           $wishlistManager->updateCookie();
           $response->addCommand(new RemoveCommand($removedLine));
+          $_SESSION['socomec_wishlist_last_deleted'][$deletedItem] = $deletedItem;
         } catch (\Exception $e) {
           //$this->messenger->addError($e->getMessage());
         }
       }
       $count = sizeof($items);
 
-      \Drupal::messenger()->addMessage($this->t("@count item(s) deleted.", ["@count" => $count]), 'status', TRUE);
+      $url = Url::fromRoute('soc_wishlist.undo_remove_item');
+      $link = Link::fromTextAndUrl(t('Cancel deletion(s)'), $url)->toString();
+      \Drupal::messenger()->addMessage($this->t("@count item(s) deleted. @link", ["@count" => $count , "@link" => $link ]), 'status', TRUE);
 
       $message = [
         '#theme' => 'status_messages',
