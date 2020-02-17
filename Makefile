@@ -19,7 +19,7 @@ drupal-update:
 	./vendor/bin/phing admin-socomec:add-role
 	./vendor/bin/phing gulp-socomec:css
 	./vendor/bin/phing gulp-socomec:clear-cache
-	./vendor/bin/phing drush:cc
+	./vendor/bin/phing drush:cr
 
 
 .PHONY: behat-event
