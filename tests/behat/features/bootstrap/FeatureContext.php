@@ -84,6 +84,16 @@ class FeatureContext extends RawDrupalContext {
   }
 
   /**
+   * @Then /^I take a screenshot$/
+   *
+   * @throws \Exception
+   */
+  public function iTakeScreenshot() {
+    $this->screenshot = new ScreenshotContext();
+    $this->screenshot->takeAScreenshot();
+  }
+
+  /**
    * @Then /^I want to see the page content$/
    *
    * @throws \Exception
