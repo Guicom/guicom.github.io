@@ -31,7 +31,7 @@ default:
         drupal_root: "web"
       drush:
         root: "web"
-        binary: '../../vendor/bin/drush'
+        binary: './vendor/bin/drush'
       region_map:
         header: "#navbar"
         main menu: "#block-main-menu"
