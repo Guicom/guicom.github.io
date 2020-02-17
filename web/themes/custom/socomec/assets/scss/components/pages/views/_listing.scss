@@ -19,6 +19,10 @@
             transition: $transition02;
             position: relative;
             height: 425px;
+            @include media-breakpoint-down(sm) {
+              height: auto;
+              padding-bottom: 1rem;
+            }
             &.bg-blue-1{
               background-color: $blue;
             }
