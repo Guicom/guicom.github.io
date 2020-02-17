@@ -55,30 +55,18 @@
         var spinner = $(this).parent(),
             input = spinner.find('input[type="number"]'),
             btnUp = spinner.find('.quantity-up'),
-            btnDown = spinner.find('.quantity-down'),
-            min = input.attr('min'),
-            max = input.attr('max');
+            btnDown = spinner.find('.quantity-down');
 
         btnUp.click(function() {
           var oldValue = parseFloat(input.val());
-          var newVal = oldValue;
-          if (oldValue >= max) {
-            newVal = oldValue;
-          } else {
-            newVal = oldValue + 1;
-          }
+          var newVal = oldValue + 1;
           spinner.find("input").val(newVal);
           spinner.find("input").trigger("change");
         });
 
         btnDown.click(function() {
           var oldValue = parseFloat(input.val());
-          var newVal = oldValue;
-          if (oldValue <= min) {
-            newVal = oldValue;
-          } else {
-            newVal = oldValue - 1;
-          }
+          var newVal = oldValue - 1;
           spinner.find("input").val(newVal);
           spinner.find("input").trigger("change");
         });
