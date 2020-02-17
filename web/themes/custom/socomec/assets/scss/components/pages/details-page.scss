@@ -133,14 +133,14 @@
       }
       .news-info,
       .event-info {
-        width: 540px;
-        max-width: 540px;
-        flex: 0 0 540px;
+        width:33.75rem;
+        max-width: 33.75rem;
+        flex: 0 0 33.75rem;
         min-height: 22rem;
         @include media-breakpoint-between(md, lg) {
-          width: 320px;
-          max-width: 320px;
-          flex: 0 0 320px;
+          width: 29.375rem;
+          max-width: 29.375rem;
+          flex: 0 0 29.375rem;
         }
         @include media-breakpoint-down(md) {
           @include make-col(12);
