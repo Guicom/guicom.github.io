@@ -13,7 +13,7 @@ set-kubernetes-configs:
 	chown web:www-data /var/www/html/web/sites/sites.php /var/www/html/config/drupal/contenthub/settings.local.php /var/www/html/config/drupal/settings.local.php
 
 drupal-update:
-  contenthub_uri="$(php -r 'include("/var/www/html/web/sites/sites.php"); print array_search('contenthub');')"
+	contenthub_uri=$$(php -r "include('/var/www/html/web/sites/sites.php'); print array_search('contenthub');")
 	./vendor/bin/phing update
 	./vendor/bin/phing content-import-all || true
 	./vendor/bin/phing megamenu-socomec:import || true
@@ -21,7 +21,7 @@ drupal-update:
 	./vendor/bin/phing solr:cr
 	./vendor/bin/phing gulp-socomec:css
 	./vendor/bin/phing gulp-socomec:clear-cache
-	./vendor/bin/phing update -Dmultisite.uri=$contenthub_uri
+	./vendor/bin/phing update -Dmultisite.uri=$${contenthub_uri}
 	./vendor/bin/phing drush:cc
 
 
