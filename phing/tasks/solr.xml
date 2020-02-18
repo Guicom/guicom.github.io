@@ -1,10 +1,18 @@
 <project name="solr" default="solr:clear">
     <target name="solr:clear">
-        <exec command="curl ${solr.scheme}://${solr.host}:${solr.port}/solr/${solr.core}/update -H 'Content-type: text/xml' --data-binary '&lt;delete&gt;&lt;query&gt;*:*&lt;/query&gt;&lt;/delete&gt;'" />
-        <exec command="curl ${solr.scheme}://${solr.host}:${solr.port}/solr/${solr.core}/update -H 'Content-type: text/xml' --data-binary '&lt;commit /&gt;'" />
+        <exec command="curl ${solr.scheme}://${solr.host}:${solr.port}/solr/${solr.core}/update -H 'Content-Type: text/xml' --data-binary '&lt;delete&gt;&lt;query&gt;*:*&lt;/query&gt;&lt;/delete&gt;'" />
+        <echo>"curl ${solr.scheme}://${solr.host}:${solr.port}/solr/${solr.core}/update -H 'Content-Type: text/xml' --data-binary '&lt;delete&gt;&lt;query&gt;*:*&lt;/query&gt;&lt;/delete&gt;'"</echo>
+        <exec command="curl ${solr.scheme}://${solr.host}:${solr.port}/solr/${solr.core}/update -H 'Content-Type: text/xml' --data-binary '&lt;commit/&gt;'" />
+        <echo>"curl ${solr.scheme}://${solr.host}:${solr.port}/solr/${solr.core}/update -H 'Content-Type: text/xml' --data-binary '&lt;commit/&gt;'"</echo>
     </target>
 
     <target name="solr:rebuild">
+        <drush
+                command="search-api-reset-tracker"
+                assume="yes"
+                root="${website.drupal.dir}"
+                verbose="${drush.verbose}">
+        </drush>
         <drush
                 command="search-api-clear"
                 assume="yes"
