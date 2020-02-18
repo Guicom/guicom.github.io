@@ -1,9 +1,14 @@
+{#
+*
+* @see soc_events_preprocess_page()
+#}
+
 <div class="hero-block">
   <div class="container">
     <div class="row">
       <div class="event-info col-lg-3 col-md-12">
         <h1>
-          <span class="event-title">{{ "Events"|t }}</span>
+          <span class="event-title">{{ title_page }}</span>
         </h1>
         {{ drupal_entity('block', 'viewseventsteaser') }}
       </div>

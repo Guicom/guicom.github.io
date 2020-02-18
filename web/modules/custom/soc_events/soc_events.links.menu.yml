@@ -1,0 +1,7 @@
+soc_events.events_settings_form:
+  title: 'Events Settings'
+  route_name: soc_events.events_settings_form
+  description: 'Configure Events Settings'
+  parent: system.admin_config_system
+  weight: 99
+
