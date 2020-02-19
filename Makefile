@@ -21,7 +21,6 @@ drupal-update:
 	./vendor/bin/phing solr:cr
 	./vendor/bin/phing gulp-socomec:css
 	./vendor/bin/phing gulp-socomec:clear-cache
-	./vendor/bin/phing update -Dmultisite.uri=$${contenthub_uri}
 	./vendor/bin/phing drush:cc
 
 
