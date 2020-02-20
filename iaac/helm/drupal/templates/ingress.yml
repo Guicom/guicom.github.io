@@ -35,7 +35,6 @@ spec:
               serviceName: {{ .Values.drupal.name }}-service
               servicePort: http
   tls:
-  - hosts:
-    - {{ .Values.drupal.ingress_hostname }}
-    - {{ .Values.drupal.ingress_content_hub_hostname }}
-    secretName: cert-lets-webfactory-drupal
+    - hosts:
+      - {{ .Values.drupal.ingress_hostname }}
+      secretName: cert-lets-webfactory-drupal
