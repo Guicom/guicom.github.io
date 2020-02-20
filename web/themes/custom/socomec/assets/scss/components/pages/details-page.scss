@@ -64,8 +64,10 @@
   }
   .news-teaser,
   .event-teaser{
+    min-height: 13rem;
     @include media-breakpoint-down(md) {
-      margin-top: 2rem
+      margin-top: 2rem;
+      min-height: initial;
     }
   }
   .field--name-field-teaser,
@@ -78,12 +80,6 @@
         font-size: 1rem;
         line-height: 1.6;
       }
-    }
-  }
-  .event-teaser-wrapper {
-    margin-bottom: 5rem;
-    @include media-breakpoint-down(md) {
-      margin-bottom: 0;
     }
   }
 
@@ -257,7 +253,6 @@
           height: auto;
           @include media-breakpoint-down(md) {
             position: relative;
-            margin-bottom: 2rem;
           }
         }
       }
