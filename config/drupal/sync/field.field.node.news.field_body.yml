@@ -11,6 +11,7 @@ dependencies:
     - paragraphs.paragraphs_type.model_image
     - paragraphs.paragraphs_type.model_testimony
     - paragraphs.paragraphs_type.model_text
+    - paragraphs.paragraphs_type.video_embed
   module:
     - entity_reference_revisions
 id: node.news.field_body
@@ -34,6 +35,7 @@ settings:
       model_testimony: model_testimony
       model_text: model_text
       model_citation: model_citation
+      video_embed: video_embed
     target_bundles_drag_drop:
       from_library:
         weight: 14
@@ -78,8 +80,8 @@ settings:
         weight: 25
         enabled: false
       video_embed:
+        enabled: true
         weight: 26
-        enabled: false
       standard_label:
         weight: 32
         enabled: false
