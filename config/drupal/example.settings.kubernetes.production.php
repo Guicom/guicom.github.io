@@ -164,3 +164,6 @@ $config['search_api.server.socomec']['backend_config']['connector_config']['core
  */
 $settings['we_megamenu_deploy_content'] = $app_ground . '/content/we_megamenu_content';
 
+$databases['default']['default']['init_commands'] = array(
+  'isolation' => "SET SESSION tx_isolation='READ-COMMITTED'"
+);
