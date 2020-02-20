@@ -11,6 +11,11 @@ metadata:
     nginx.ingress.kubernetes.io/auth-type: basic
     nginx.ingress.kubernetes.io/proxy-body-size: 100m
     nginx.ingress.kubernetes.io/ssl-redirect: "false"
+    nginx.ingress.kubernetes.io/proxy-buffer-size: "256k"
+    nginx.ingress.kubernetes.io/configuration-snippet: |
+      proxy_busy_buffers_size 256k;
+
+    cert-manager.io/cluster-issuer: letsencrypt
   labels:
     app: {{ .Values.drupal.name }}
 spec:
