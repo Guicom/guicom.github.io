@@ -18,6 +18,7 @@ install-new-release:
 
 # Check deployment rollout status every 10 seconds (max 10 minutes) until complete.
 wait-deployment-rollout:
+	sleep 30; \
 	ATTEMPTS=0; \
 	ROLLOUT_STATUS_CMD="kubectl rollout status deployment/webfactory-drupal -n ${NAMESPACE}"; \
 	until $$ROLLOUT_STATUS_CMD || [ $$ATTEMPTS -eq 60 ]; \
@@ -28,8 +29,11 @@ wait-deployment-rollout:
 	done
 
 wait-pod-to-be-ready:
-	NUMBER_OF_POD_CMD="kubectl get po --namespace=${NAMESPACE} -l 'app=webfactory-drupal,release=${NAMESPACE}-drupal' | wc -l"; \
-	while [ $$NUMBER_OF_POD_CMD -ne 2 ]; do sleep 10; done
+	NUMBER_OF_POD=$$(kubectl get po --namespace=${NAMESPACE} -l 'app=webfactory-drupal,release=${NAMESPACE}-drupal' | wc -l); \
+	while [ $${NUMBER_OF_POD} -ne 2 ]; do \
+	sleep 10; \
+	NUMBER_OF_POD=$$(kubectl get po --namespace=${NAMESPACE} -l 'app=webfactory-drupal,release=${NAMESPACE}-drupal' | wc -l); \
+	done
 	pod=$$(kubectl get po --namespace=${NAMESPACE} -l "app=webfactory-drupal,release=${NAMESPACE}-drupal" -o 'jsonpath={.items[0].metadata.name}'); \
 	status="False"; \
 	while [ ! "$${status}" = "True" ]; do echo "waiting for pod $${pod}" && sleep 1; \
