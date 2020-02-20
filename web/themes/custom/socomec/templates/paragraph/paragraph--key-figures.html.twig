@@ -93,6 +93,9 @@
           {% endif %}
         </div>
       {% endif %}
+      {% if figures_count == 3 %}
+        {% set figure_col_sm = 'col-sm-12' %}
+      {% endif %}
       {% if content.field_figure_3_number.0 is not empty %}
         <div class="key-figure {{ figure_col }} {{ figure_col_sm }} {{ figure_col_lg }}">
           <span class="number">{{ content.field_figure_3_number }}</span>
