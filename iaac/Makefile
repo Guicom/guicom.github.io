@@ -18,6 +18,7 @@ install-new-release:
 
 # Check deployment rollout status every 10 seconds (max 10 minutes) until complete.
 wait-deployment-rollout:
+	sleep 30; \
 	ATTEMPTS=0; \
 	ROLLOUT_STATUS_CMD="kubectl rollout status deployment/webfactory-drupal -n ${NAMESPACE}"; \
 	until $$ROLLOUT_STATUS_CMD || [ $$ATTEMPTS -eq 60 ]; \
