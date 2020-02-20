@@ -45,7 +45,7 @@
         ],
         "http:\/\/drupal.org\/rest\/relation\/node\/news\/field_news_type": [
             {
-                "href": "http:\/\/default\/taxonomy\/term\/39?_format=hal_json"
+                "href": "http:\/\/default\/taxonomy\/term\/43?_format=hal_json"
             }
         ]
     },
@@ -61,7 +61,7 @@
     ],
     "vid": [
         {
-            "value": 136
+            "value": 172
         }
     ],
     "langcode": [
@@ -77,7 +77,7 @@
     ],
     "revision_timestamp": [
         {
-            "value": "2020-01-24T14:51:49+00:00",
+            "value": "2020-02-20T17:15:06+00:00",
             "format": "Y-m-d\\TH:i:sP"
         }
     ],
@@ -94,7 +94,7 @@
                 },
                 "uuid": [
                     {
-                        "value": "639675d9-184b-46a3-a954-077022b40562"
+                        "value": "0c9aa577-d856-4733-aade-e8b7c37852e1"
                     }
                 ]
             }
@@ -111,7 +111,7 @@
                 },
                 "uuid": [
                     {
-                        "value": "639675d9-184b-46a3-a954-077022b40562"
+                        "value": "0c9aa577-d856-4733-aade-e8b7c37852e1"
                     }
                 ],
                 "lang": "en"
@@ -133,7 +133,7 @@
                     }
                 ],
                 "lang": "en",
-                "target_revision_id": "386"
+                "target_revision_id": "458"
             }
         ],
         "http:\/\/drupal.org\/rest\/relation\/node\/news\/field_model_pdf": [
@@ -151,7 +151,7 @@
                         "value": "5572b391-b42d-4180-98d8-405e0e438f6b"
                     }
                 ],
-                "target_revision_id": "389"
+                "target_revision_id": "459"
             }
         ],
         "http:\/\/drupal.org\/rest\/relation\/node\/news\/field_news_audience": [
@@ -209,7 +209,7 @@
             {
                 "_links": {
                     "self": {
-                        "href": "http:\/\/default\/taxonomy\/term\/39?_format=hal_json"
+                        "href": "http:\/\/default\/taxonomy\/term\/43?_format=hal_json"
                     },
                     "type": {
                         "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/news_type"
@@ -217,7 +217,7 @@
                 },
                 "uuid": [
                     {
-                        "value": "1b590420-87b2-470b-9a92-047c2b530a0c"
+                        "value": "8766c360-e7db-4e55-9d97-221347b1e4f2"
                     }
                 ]
             }
@@ -244,7 +244,7 @@
     ],
     "changed": [
         {
-            "value": "2020-01-24T14:51:49+00:00",
+            "value": "2020-02-20T17:15:06+00:00",
             "lang": "en",
             "format": "Y-m-d\\TH:i:sP"
         }
@@ -302,14 +302,14 @@
                 "og_type": "News",
                 "og_url": "http:\/\/default\/news\/socomec-certifie-iso-14001-en-alsace",
                 "og_title": "Socomec certifi\u00e9 ISO 14001 en Alsace",
-                "og_updated_time": "Fri, 01\/24\/2020 - 15:51"
+                "og_updated_time": "Thu, 02\/20\/2020 - 18:15"
             }
         }
     ],
     "path": [
         {
             "alias": "\/news\/socomec-certifie-iso-14001-en-alsace",
-            "pid": 17,
+            "pid": 38,
             "langcode": "en",
             "lang": "en"
         }

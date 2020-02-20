@@ -1,14 +1,18 @@
 {
     "_links": {
         "self": {
-            "href": "http:\/\/default\/products\/power-switching?_format=hal_json"
+            "href": "http:\/\/default\/power-switching?_format=hal_json"
         },
         "type": {
             "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/family"
         },
         "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/family\/parent": [
+            null
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/family\/content_translation_uid": [
             {
-                "href": "http:\/\/default\/products?_format=hal_json"
+                "href": "http:\/\/default\/user\/1?_format=hal_json",
+                "lang": "en"
             }
         ]
     },
@@ -61,20 +65,24 @@
     ],
     "_embedded": {
         "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/family\/parent": [
+            null
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/family\/content_translation_uid": [
             {
                 "_links": {
                     "self": {
-                        "href": "http:\/\/default\/products?_format=hal_json"
+                        "href": "http:\/\/default\/user\/1?_format=hal_json"
                     },
                     "type": {
-                        "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/family"
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
                     }
                 },
                 "uuid": [
                     {
-                        "value": "2e4108af-6939-4d12-bd4e-2ff6496cc8aa"
+                        "value": "0c9aa577-d856-4733-aade-e8b7c37852e1"
                     }
-                ]
+                ],
+                "lang": "en"
             }
         ]
     },
