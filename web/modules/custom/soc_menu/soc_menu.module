@@ -1,0 +1,28 @@
+<?php
+
+/**
+ * @file
+ * Contains prae_core.module.
+ */
+
+use Drupal\Core\Entity\EntityInterface;
+
+/**
+ * Implements hook_entity_presave().
+ *
+ * Reset menu to default status when origin menu changed.
+ */
+function soc_menu_entity_update(EntityInterface $entity) {
+  if (method_exists($entity, 'getTypedData') && method_exists($entity, 'getEntityTypeId')) {
+    $data = $entity->getTypedData();
+    $data = $data->toArray();
+    $entity_type = $entity->getEntityTypeId();
+    switch ($entity_type) {
+      case 'menu':
+        $count = Drupal::service('we_megamenu_deploy.importer')->importMenus(TRUE);
+      case 'menu_link_content':
+
+        break;
+    }
+  }
+}

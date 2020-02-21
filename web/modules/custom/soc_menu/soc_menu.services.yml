@@ -1,0 +1,5 @@
+services:
+  soc_menu.route_subscriber:
+    class: Drupal\soc_menu\Routing\MenuRouteSubscriber
+    tags:
+      - { name: event_subscriber }
