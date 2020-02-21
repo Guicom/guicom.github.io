@@ -25,7 +25,7 @@ class SocMenuSave extends ControllerBase {
       $menu_name = $_POST['menu_name'];
       WeMegaMenuBuilder::saveConfig($menu_name, $theme, $data_config);
       we_megamenu_flush_render_cache();
-      $count = Drupal::service('we_megamenu_deploy.exporter')->exportMenus($menu_name);
+      Drupal::service('we_megamenu_deploy.exporter')->exportMenus($menu_name);
     }
     exit;
   }
