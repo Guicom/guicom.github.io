@@ -1,7 +1,7 @@
 {
     "_links": {
         "self": {
-            "href": "http:\/\/default\/taxonomy\/term\/65?_format=hal_json"
+            "href": "http:\/\/default\/taxonomy\/term\/109?_format=hal_json"
         },
         "type": {
             "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/resource_type"
@@ -18,17 +18,17 @@
     },
     "tid": [
         {
-            "value": 65
+            "value": 109
         }
     ],
     "uuid": [
         {
-            "value": "bab4034a-6e98-46fd-8658-e68b2ce1ec53"
+            "value": "17572a10-a05d-4af5-8981-76106e8adb67"
         }
     ],
     "revision_id": [
         {
-            "value": 65
+            "value": 109
         }
     ],
     "langcode": [
@@ -44,7 +44,7 @@
     ],
     "revision_created": [
         {
-            "value": "2020-01-15T13:58:07+00:00",
+            "value": "2020-02-20T17:08:19+00:00",
             "format": "Y-m-d\\TH:i:sP"
         }
     ],
@@ -56,7 +56,7 @@
     ],
     "name": [
         {
-            "value": "Webinar replay",
+            "value": "Whitepaper",
             "lang": "en"
         }
     ],
@@ -81,7 +81,7 @@
                 },
                 "uuid": [
                     {
-                        "value": "f3e9391d-262f-4e8e-bd22-44a92e7d961b"
+                        "value": "0c9aa577-d856-4733-aade-e8b7c37852e1"
                     }
                 ],
                 "lang": "en"
@@ -90,7 +90,7 @@
     },
     "changed": [
         {
-            "value": "2020-01-15T13:58:07+00:00",
+            "value": "2020-02-20T17:08:19+00:00",
             "lang": "en",
             "format": "Y-m-d\\TH:i:sP"
         }
@@ -121,7 +121,7 @@
     ],
     "content_translation_created": [
         {
-            "value": "2020-01-15T13:58:07+00:00",
+            "value": "2020-02-20T17:08:19+00:00",
             "lang": "en",
             "format": "Y-m-d\\TH:i:sP"
         }
@@ -129,8 +129,8 @@
     "metatag": [
         {
             "value": {
-                "title": "Webinar replay | Socomec",
-                "canonical_url": "http:\/\/default\/taxonomy\/term\/65"
+                "title": "Whitepaper | Socomec",
+                "canonical_url": "http:\/\/default\/taxonomy\/term\/109"
             }
         }
     ]
