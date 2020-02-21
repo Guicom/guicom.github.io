@@ -9,7 +9,7 @@ Feature: [SELECT] Tests Behat
     And I accept all cookies compliance
     And news content:
       | Language | title     | field_news_type | field_news_theme | field_news_audience  | field_news_mommentum | field_teaser | moderation_state | status |
-      | English  | News test | News            | Industry         | USERS                | Setup                | Teaser test | published         | 1      |
+      | English  | News test | Corporate       | Industry         | USERS                | Setup                | Teaser test | published         | 1      |
     And I visit "admin/config/search/search-api/index/news"
     And I press "Index now"
     And I wait 2 seconds

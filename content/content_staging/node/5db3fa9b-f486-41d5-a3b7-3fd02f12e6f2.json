@@ -59,13 +59,13 @@
         ],
         "http:\/\/drupal.org\/rest\/relation\/node\/product\/field_product_family": [
             {
-                "href": "http:\/\/default\/products\/energy-storage-solution?_format=hal_json"
+                "href": "http:\/\/default\/energy-storage-solution?_format=hal_json"
             },
             {
-                "href": "http:\/\/default\/products\/energy-storage-solution\/storage-converters?_format=hal_json"
+                "href": "http:\/\/default\/energy-storage-solution\/storage-converters?_format=hal_json"
             },
             {
-                "href": "http:\/\/default\/products\/energy-storage-solution\/storage-converters\/grid-modular-indoor?_format=hal_json"
+                "href": "http:\/\/default\/energy-storage-solution\/storage-converters\/grid-modular-indoor?_format=hal_json"
             }
         ],
         "http:\/\/drupal.org\/rest\/relation\/node\/product\/field_product_multiline": [
@@ -109,13 +109,13 @@
                 "href": "http:\/\/default\/22004016-sirco-mv-4x160a?_format=hal_json"
             },
             {
-                "href": "http:\/\/default\/22003110-sirco-mv-3x100a?_format=hal_json"
+                "href": "http:\/\/default\/22003110-sirco-mv-3x100a-0?_format=hal_json"
             },
             {
                 "href": "http:\/\/default\/22003016-sirco-mv-3x160a?_format=hal_json"
             },
             {
-                "href": "http:\/\/default\/22003110-sirco-mv-3x100a-0?_format=hal_json"
+                "href": "http:\/\/default\/22003110-sirco-mv-3x100a?_format=hal_json"
             },
             {
                 "href": "http:\/\/default\/22004110-sirco-mv-4x100a?_format=hal_json"
@@ -185,7 +185,7 @@
                 },
                 "uuid": [
                     {
-                        "value": "639675d9-184b-46a3-a954-077022b40562"
+                        "value": "0c9aa577-d856-4733-aade-e8b7c37852e1"
                     }
                 ]
             }
@@ -202,7 +202,7 @@
                 },
                 "uuid": [
                     {
-                        "value": "639675d9-184b-46a3-a954-077022b40562"
+                        "value": "0c9aa577-d856-4733-aade-e8b7c37852e1"
                     }
                 ]
             }
@@ -365,7 +365,7 @@
             {
                 "_links": {
                     "self": {
-                        "href": "http:\/\/default\/products\/energy-storage-solution?_format=hal_json"
+                        "href": "http:\/\/default\/energy-storage-solution?_format=hal_json"
                     },
                     "type": {
                         "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/family"
@@ -380,7 +380,7 @@
             {
                 "_links": {
                     "self": {
-                        "href": "http:\/\/default\/products\/energy-storage-solution\/storage-converters?_format=hal_json"
+                        "href": "http:\/\/default\/energy-storage-solution\/storage-converters?_format=hal_json"
                     },
                     "type": {
                         "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/family"
@@ -395,7 +395,7 @@
             {
                 "_links": {
                     "self": {
-                        "href": "http:\/\/default\/products\/energy-storage-solution\/storage-converters\/grid-modular-indoor?_format=hal_json"
+                        "href": "http:\/\/default\/energy-storage-solution\/storage-converters\/grid-modular-indoor?_format=hal_json"
                     },
                     "type": {
                         "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/family"
@@ -584,7 +584,7 @@
             {
                 "_links": {
                     "self": {
-                        "href": "http:\/\/default\/22003110-sirco-mv-3x100a?_format=hal_json"
+                        "href": "http:\/\/default\/22003110-sirco-mv-3x100a-0?_format=hal_json"
                     },
                     "type": {
                         "href": "http:\/\/drupal.org\/rest\/type\/node\/product_reference"
@@ -614,7 +614,7 @@
             {
                 "_links": {
                     "self": {
-                        "href": "http:\/\/default\/22003110-sirco-mv-3x100a-0?_format=hal_json"
+                        "href": "http:\/\/default\/22003110-sirco-mv-3x100a?_format=hal_json"
                     },
                     "type": {
                         "href": "http:\/\/drupal.org\/rest\/type\/node\/product_reference"

@@ -9,6 +9,12 @@
         "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/family\/parent": [
             null
         ],
+        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/family\/content_translation_uid": [
+            {
+                "href": "http:\/\/default\/user\/1?_format=hal_json",
+                "lang": "en"
+            }
+        ],
         "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/family\/field_background_image": [
             {
                 "href": "http:\/\/default\/media\/17\/edit?_format=hal_json"
@@ -82,6 +88,24 @@
     "_embedded": {
         "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/family\/parent": [
             null
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/family\/content_translation_uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/user\/1?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "0c9aa577-d856-4733-aade-e8b7c37852e1"
+                    }
+                ],
+                "lang": "en"
+            }
         ],
         "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/family\/field_background_image": [
             {
