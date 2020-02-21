@@ -508,56 +508,56 @@ remotes:
         url: 'http://contenthub.loc/fr-be/jsonapi/media/video?filter%5Blangcode-filter%5D%5Bcondition%5D%5Bpath%5D=langcode&filter%5Blangcode-filter%5D%5Bcondition%5D%5Boperator%5D=%3D&filter%5Blangcode-filter%5D%5Bcondition%5D%5Bvalue%5D=fr-be'
         url_uuid: 'http://contenthub.loc/fr-be/jsonapi/media/video?filter%5Blangcode-filter%5D%5Bcondition%5D%5Bpath%5D=langcode&filter%5Blangcode-filter%5D%5Bcondition%5D%5Boperator%5D=%3D&filter%5Blangcode-filter%5D%5Bcondition%5D%5Bvalue%5D=fr-be&fields%5Bmedia--video%5D=changed'
       fr_ch_event:
-        enabled: true
+        enabled: false
         operations:
           create: true
           update: true
         url: 'http://contenthub.loc/fr-ch/jsonapi/node/event?filter%5Blangcode-filter%5D%5Bcondition%5D%5Bpath%5D=langcode&filter%5Blangcode-filter%5D%5Bcondition%5D%5Boperator%5D=%3D&filter%5Blangcode-filter%5D%5Bcondition%5D%5Bvalue%5D=fr-ch'
         url_uuid: 'http://contenthub.loc/fr-ch/jsonapi/node/event?filter%5Blangcode-filter%5D%5Bcondition%5D%5Bpath%5D=langcode&filter%5Blangcode-filter%5D%5Bcondition%5D%5Boperator%5D=%3D&filter%5Blangcode-filter%5D%5Bcondition%5D%5Bvalue%5D=fr-ch&fields%5Bnode--event%5D=changed'
       fr_ch_file:
-        enabled: true
+        enabled: false
         operations:
           create: true
           update: true
         url: 'http://contenthub.loc/fr-ch/jsonapi/media/file?filter%5Blangcode-filter%5D%5Bcondition%5D%5Bpath%5D=langcode&filter%5Blangcode-filter%5D%5Bcondition%5D%5Boperator%5D=%3D&filter%5Blangcode-filter%5D%5Bcondition%5D%5Bvalue%5D=fr-ch'
         url_uuid: 'http://contenthub.loc/fr-ch/jsonapi/media/file?filter%5Blangcode-filter%5D%5Bcondition%5D%5Bpath%5D=langcode&filter%5Blangcode-filter%5D%5Bcondition%5D%5Boperator%5D=%3D&filter%5Blangcode-filter%5D%5Bcondition%5D%5Bvalue%5D=fr-ch&fields%5Bmedia--file%5D=changed'
       fr_ch_image:
-        enabled: true
+        enabled: false
         operations:
           create: true
           update: true
         url: 'http://contenthub.loc/fr-ch/jsonapi/media/image?filter%5Blangcode-filter%5D%5Bcondition%5D%5Bpath%5D=langcode&filter%5Blangcode-filter%5D%5Bcondition%5D%5Boperator%5D=%3D&filter%5Blangcode-filter%5D%5Bcondition%5D%5Bvalue%5D=fr-ch'
         url_uuid: 'http://contenthub.loc/fr-ch/jsonapi/media/image?filter%5Blangcode-filter%5D%5Bcondition%5D%5Bpath%5D=langcode&filter%5Blangcode-filter%5D%5Bcondition%5D%5Boperator%5D=%3D&filter%5Blangcode-filter%5D%5Bcondition%5D%5Bvalue%5D=fr-ch&fields%5Bmedia--image%5D=changed'
       fr_ch_landing_page:
-        enabled: true
+        enabled: false
         operations:
           create: true
           update: true
         url: 'http://contenthub.loc/fr-ch/jsonapi/node/landing_page?filter%5Blangcode-filter%5D%5Bcondition%5D%5Bpath%5D=langcode&filter%5Blangcode-filter%5D%5Bcondition%5D%5Boperator%5D=%3D&filter%5Blangcode-filter%5D%5Bcondition%5D%5Bvalue%5D=fr-ch'
         url_uuid: 'http://contenthub.loc/fr-ch/jsonapi/node/landing_page?filter%5Blangcode-filter%5D%5Bcondition%5D%5Bpath%5D=langcode&filter%5Blangcode-filter%5D%5Bcondition%5D%5Boperator%5D=%3D&filter%5Blangcode-filter%5D%5Bcondition%5D%5Bvalue%5D=fr-ch&fields%5Bnode--landing_page%5D=changed'
       fr_ch_news:
-        enabled: true
+        enabled: false
         operations:
           create: true
           update: true
         url: 'http://contenthub.loc/fr-ch/jsonapi/node/news?filter%5Blangcode-filter%5D%5Bcondition%5D%5Bpath%5D=langcode&filter%5Blangcode-filter%5D%5Bcondition%5D%5Boperator%5D=%3D&filter%5Blangcode-filter%5D%5Bcondition%5D%5Bvalue%5D=fr-ch'
         url_uuid: 'http://contenthub.loc/fr-ch/jsonapi/node/news?filter%5Blangcode-filter%5D%5Bcondition%5D%5Bpath%5D=langcode&filter%5Blangcode-filter%5D%5Bcondition%5D%5Boperator%5D=%3D&filter%5Blangcode-filter%5D%5Bcondition%5D%5Bvalue%5D=fr-ch&fields%5Bnode--news%5D=changed'
       fr_ch_remote_video:
-        enabled: true
+        enabled: false
         operations:
           create: true
           update: true
         url: 'http://contenthub.loc/fr-ch/jsonapi/media/remote_video?filter%5Blangcode-filter%5D%5Bcondition%5D%5Bpath%5D=langcode&filter%5Blangcode-filter%5D%5Bcondition%5D%5Boperator%5D=%3D&filter%5Blangcode-filter%5D%5Bcondition%5D%5Bvalue%5D=fr-ch'
         url_uuid: 'http://contenthub.loc/fr-ch/jsonapi/media/remote_video?filter%5Blangcode-filter%5D%5Bcondition%5D%5Bpath%5D=langcode&filter%5Blangcode-filter%5D%5Bcondition%5D%5Boperator%5D=%3D&filter%5Blangcode-filter%5D%5Bcondition%5D%5Bvalue%5D=fr-ch&fields%5Bmedia--remote_video%5D=changed'
       fr_ch_thank_you_page:
-        enabled: true
+        enabled: false
         operations:
           create: true
           update: true
         url: 'http://contenthub.loc/fr-ch/jsonapi/node/thank_you_page?filter%5Blangcode-filter%5D%5Bcondition%5D%5Bpath%5D=langcode&filter%5Blangcode-filter%5D%5Bcondition%5D%5Boperator%5D=%3D&filter%5Blangcode-filter%5D%5Bcondition%5D%5Bvalue%5D=fr-ch'
         url_uuid: 'http://contenthub.loc/fr-ch/jsonapi/node/thank_you_page?filter%5Blangcode-filter%5D%5Bcondition%5D%5Bpath%5D=langcode&filter%5Blangcode-filter%5D%5Bcondition%5D%5Boperator%5D=%3D&filter%5Blangcode-filter%5D%5Bcondition%5D%5Bvalue%5D=fr-ch&fields%5Bnode--thank_you_page%5D=changed'
       fr_ch_video:
-        enabled: true
+        enabled: false
         operations:
           create: true
           update: true

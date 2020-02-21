@@ -146,6 +146,9 @@ $settings['cache']['default'] = 'cache.backend.redis';
 $config['config_split.config_split.dev']['status'] = FALSE;
 $config['config_split.config_split.dev']['folder'] = "../config/drupal/dev";
 
+$config['config_split.config_split.overrides']['status'] = TRUE;
+$config['config_split.config_split.overrides']['folder'] = "../config/drupal/overrides";
+
 /**
  * @see \soc_user_install()
  */
