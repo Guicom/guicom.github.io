@@ -5,11 +5,30 @@
   </a>
 </div>
 <div class="product-thumbnail-picture">
-  {% for key, item in items %}
-    {%  if key > 0 and key < 5 %}
-      <a href="{{ item.content | render | striptags | trim  }}" class="fresco" data-fresco-group="product_galerie">
+  {% if items|length > 5 %}
+    {% for key, item in items %}
+      {% if key > 0 and key < 4 %}
+        <a href="{{ item.content | render | striptags | trim }}" class="fresco" data-fresco-group="product_galerie">
+          {{ drupal_image(item.content['#media'].field_media_image_2.value.0.target_id, 'product_thumbnail', {alt: item.content['#media'].field_media_image_2.value.0.alt}) }}
+        </a>
+      {% endif %}
+    {% endfor %}
+    <a class="count" data-toggle="collapse" href=".productAdditionalImages" role="button" aria-expanded="false" aria-controls="productAdditionalImages">+{{ items|length - 5 }}</a>
+    <div class="break"></div>
+    <div class="collapse productAdditionalImages">
+    {% for key, item in items %}
+      {% if key > 4 %}
+      <a href="{{ item.content | render | striptags | trim }}" class="fresco" data-fresco-group="product_galerie">
         {{ drupal_image(item.content['#media'].field_media_image_2.value.0.target_id, 'product_thumbnail', {alt: item.content['#media'].field_media_image_2.value.0.alt}) }}
       </a>
-    {% endif %}
-  {% endfor %}
+      {% endif %}
+    {% endfor %}
+    </div>
+  {% else %}
+    {% for key, item in items %}
+      <a href="{{ item.content | render | striptags | trim }}" class="fresco" data-fresco-group="product_galerie">
+        {{ drupal_image(item.content['#media'].field_media_image_2.value.0.target_id, 'product_thumbnail', {alt: item.content['#media'].field_media_image_2.value.0.alt}) }}
+      </a>
+    {% endfor %}
+  {% endif %}
 </div>
