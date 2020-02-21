@@ -1,6 +1,8 @@
 .paragraph--type--model-testimony{
   font-family: $font-roboto;
-
+  .col-sm-12 {
+    float: none;
+  }
   .infoblock {
     display: flex;
     /*justify-content: space-between;*/
