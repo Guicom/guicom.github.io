@@ -80,6 +80,7 @@
         "drupal/remote_stream_wrapper_widget": "^1.2",
         "drupal/scheduled_updates": "^1.0@alpha",
         "drupal/scheduler": "^1.1",
+        "drupal/scheduler_content_moderation_integration": "^1.1",
         "drupal/search_api": "^1.14",
         "drupal/search_api_autocomplete": "^1.2",
         "drupal/search_api_solr": "^3.7",
