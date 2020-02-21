@@ -13,7 +13,7 @@ set-kubernetes-configs:
 	chown web:www-data /var/www/html/web/sites/sites.php /var/www/html/config/drupal/contenthub/settings.local.php /var/www/html/config/drupal/settings.local.php
 
 drupal-update:
-	contenthub_uri=$$(php -r "include('/var/www/html/web/sites/sites.php'); print array_search('contenthub', \$sites);")
+	contenthub_uri=$$(php -r "include('/var/www/html/web/sites/sites.php'); print array_search('contenthub', \$$sites);")
 	./vendor/bin/phing update
 	./vendor/bin/phing content-import-all || true
 	./vendor/bin/phing megamenu-socomec:import || true
