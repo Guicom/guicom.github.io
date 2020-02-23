@@ -1,5 +1,0 @@
-name: Socomec Access Block
-type: module
-description:  Manage custom access for block (used to manage block access for selected footer version).
-core: 8.x
-package: Socomec
