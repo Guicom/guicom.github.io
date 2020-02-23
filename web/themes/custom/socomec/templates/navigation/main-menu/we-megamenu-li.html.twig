@@ -7,9 +7,10 @@
         <span class="menu-title-wrapper">
           {{ title }}
         </span>
-        {% if attributes | getMenuIcon() not NULL %}
+        {% set icon = attributes | getMenuIcon() %}
+        {% if icon is not null %}
           <span class="menu-icon-wrapper">
-            {% include attributes | getMenuIcon() %}
+            {% include icon %}
           </span>
         {% endif %}
       {% else %}
