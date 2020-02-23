@@ -367,11 +367,15 @@
                   .level-1 {
                     padding: 15px 20px 40px;
                     position: relative;
-                    > span,
+                    > span:not(.mobile-dropdown-trigger),
                     > a {
                       padding: 0;
                       text-transform: uppercase;
                       height: 40px;
+                    }
+
+                    > span:not(.mobile-dropdown-trigger) {
+                      cursor: initial;
                     }
 
                     > .dropdown-menu {
@@ -382,6 +386,11 @@
                       background: transparent;
                       border: none;
                       box-shadow: none !important;
+
+                      .submenu-bg {
+                        @include make-col(12);
+                        width: 100%;
+                      }
                     }
                     &:after {
                       content: '';
