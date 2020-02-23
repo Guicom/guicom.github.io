@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5a46c9fbc9edb54a3aad86491196ed59",
+    "content-hash": "f068c72b10a01e97dca3cbca5dcc468d",
     "packages": [
         {
             "name": "actency/foundation",
@@ -4104,6 +4104,7 @@
                     "merge-extra": false
                 },
                 "patches_applied": {
+                    "3047046 - Media Library widget fails when used on taxonomy term form.": "https://www.drupal.org/files/issues/2019-10-04/3047046-8.patch",
                     "Media library causes validation errors when it is used in a required field of a nested form": "https://www.drupal.org/files/issues/2019-09-28/3003150-92.patch"
                 }
             },
