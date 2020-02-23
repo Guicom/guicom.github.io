@@ -56,11 +56,15 @@ class NextpageTwig extends \Twig_Extension {
       $term =  Term::load($tid);
       $icon = $term->get('field_family_menu_icon')->getValue();
       // Load Media.
-      $media = Media::load($icon[0]["target_id"]);
-      $media_item = $media->get('field_media_image')->getValue();
-      // Load file and get url
-      $file = File::load($media_item[0]["target_id"]);
-      $url = $file->createFileUrl();
+      if (isset$icon[0]["target_id"])) {
+        $media = Media::load($icon[0]["target_id"]);
+        $media_item = $media->get('field_media_image')->getValue();
+        // Load file and get url
+        if (isset($media_item[0]["target_id"])) {
+          $file = File::load($media_item[0]["target_id"]);
+          $url = $file->createFileUrl();
+        }
+      }
     }
     return $url;
   }
