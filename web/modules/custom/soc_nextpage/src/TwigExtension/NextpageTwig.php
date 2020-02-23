@@ -56,7 +56,7 @@ class NextpageTwig extends \Twig_Extension {
       $term =  Term::load($tid);
       $icon = $term->get('field_family_menu_icon')->getValue();
       // Load Media.
-      if (isset$icon[0]["target_id"])) {
+      if (isset($icon[0]["target_id"])) {
         $media = Media::load($icon[0]["target_id"]);
         $media_item = $media->get('field_media_image')->getValue();
         // Load file and get url
