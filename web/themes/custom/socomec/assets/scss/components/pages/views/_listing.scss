@@ -144,6 +144,14 @@
                 margin-bottom: 90px;
               }
             }
+            // MOBILE DISPLAY
+            &.socomec-wrapper-news-card-listing,
+            &.socomec-wrapper-events-card-listing{
+              max-width: none;
+              img {
+                width: 100%;
+              }
+            }
             // EVENTS CARD ONLY
             &.socomec-wrapper-events-card-listing {
               &:before {

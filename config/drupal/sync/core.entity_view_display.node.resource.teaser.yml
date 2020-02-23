@@ -51,6 +51,11 @@ targetEntityType: node
 bundle: resource
 mode: teaser
 content:
+  content_moderation_control:
+    weight: -20
+    settings: {  }
+    third_party_settings: {  }
+    region: content
   extra_field_bookmark_resource:
     weight: 2
     region: ds_content

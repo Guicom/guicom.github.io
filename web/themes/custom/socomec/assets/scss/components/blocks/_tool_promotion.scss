@@ -5,22 +5,26 @@
   position: relative;
   text-align: center;
   box-shadow: 0 0 1px 0 rgba(35,44,119,0.33);
-  background-size: contain;
+  background-size: cover;
+  background-position-x: 50%;
+  padding-top: 0;
   .hero-content{
     .title-hero {
       font-size: 24px;
+      font-weight: 200;
       margin-bottom: 0;
       flex-shrink: 0;
+      margin-top: 0.3rem;
     }
     .description {
       .text-formatted {
-        margin: 0 $grid-gutter-width;
         p, span, div, ul li, ol li {
           color: $white;
-          font: $font-poppins;
-          font-weight: 600;
+          font-family: $font-poppins;
+          font-weight: 500;
           font-size: 12px;
           line-height: 20px;
+          letter-spacing: 1px;
         }
       }
     }
@@ -57,12 +61,14 @@
       width: 100%;
       justify-content: center;
       padding-bottom: 15px;
+      margin-left: -15px;
       a {
         color: $blue;
-        font: $font-poppins;
+        font-family: $font-poppins;
         font-weight: 600;
         font-size: 12px;
         text-transform: uppercase;
+        letter-spacing: 1px;
         &:before {
           content: url("../images/picto/ui/chevron-right-circle.svg");
           display: inline-block;

@@ -1,14 +1,18 @@
 {
     "_links": {
         "self": {
-            "href": "http:\/\/default\/products\/energy-storage-solution\/battery\/option-battery?_format=hal_json"
+            "href": "http:\/\/default\/option-battery?_format=hal_json"
         },
         "type": {
             "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/family"
         },
         "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/family\/parent": [
+            null
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/family\/content_translation_uid": [
             {
-                "href": "http:\/\/default\/products\/energy-storage-solution\/battery?_format=hal_json"
+                "href": "http:\/\/default\/user\/1?_format=hal_json",
+                "lang": "en"
             }
         ]
     },
@@ -61,20 +65,24 @@
     ],
     "_embedded": {
         "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/family\/parent": [
+            null
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/family\/content_translation_uid": [
             {
                 "_links": {
                     "self": {
-                        "href": "http:\/\/default\/products\/energy-storage-solution\/battery?_format=hal_json"
+                        "href": "http:\/\/default\/user\/1?_format=hal_json"
                     },
                     "type": {
-                        "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/family"
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
                     }
                 },
                 "uuid": [
                     {
-                        "value": "8591688b-0f12-4907-a64d-841379d2b185"
+                        "value": "0c9aa577-d856-4733-aade-e8b7c37852e1"
                     }
-                ]
+                ],
+                "lang": "en"
             }
         ]
     },
