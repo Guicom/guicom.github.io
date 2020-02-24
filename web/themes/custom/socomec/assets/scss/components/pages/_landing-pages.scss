@@ -23,6 +23,12 @@ body {
         &:last-of-type {
           margin-bottom: 0;
         }
+        .paragraph--type--video-embed {
+          .field--name-field-video-embed-video {
+            @include make-col(12);
+            @include make-col-offset(0);
+          }
+        }
       }
     }
   }
