@@ -14,7 +14,7 @@ set-kubernetes-configs:
 
 drupal-update:
 	contenthub_uri=$$(php -r "include('/var/www/html/web/sites/sites.php'); print array_search('contenthub', \$$sites);")
-	./vendor/bin/phing update
+	./vendor/bin/phing deploy:update
 	./vendor/bin/phing content-import-all || true
 	./vendor/bin/phing megamenu-socomec:import || true
 	./vendor/bin/phing admin-socomec:add-role
