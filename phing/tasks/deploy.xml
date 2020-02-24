@@ -1,5 +1,5 @@
 <project name="deploy" default="update">
-  <target name="update">
+  <target name="deploy:update">
     <drush
       command="csex"
       assume="yes"
@@ -10,5 +10,5 @@
       <param>overrides</param>
     </drush>
   </target>
-  <phingcall target="update" />
+  <phingcall target="update:update" />
 </project>
