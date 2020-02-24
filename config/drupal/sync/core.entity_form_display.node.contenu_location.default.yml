@@ -1,61 +1,69 @@
-uuid: 3536f92a-9a03-4917-b783-5f9dd358197f
+uuid: 0491b2c4-f478-48c4-93c6-f0629b75fa46
 langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.article.body
-    - field.field.node.article.field_country
-    - field.field.node.article.field_image
-    - field.field.node.article.field_tags
-    - image.style.thumbnail
-    - node.type.article
+    - field.field.node.contenu_location.field_location_address
+    - field.field.node.contenu_location.field_location_company
+    - field.field.node.contenu_location.field_location_firstname
+    - field.field.node.contenu_location.field_location_name_contact
+    - field.field.node.contenu_location.field_location_website
+    - node.type.contenu_location
   module:
+    - address
     - content_moderation
-    - image
+    - link
     - path
-    - text
-id: node.article.default
+    - scheduler
+    - scheduler_content_moderation_integration
+id: node.contenu_location.default
 targetEntityType: node
-bundle: article
+bundle: contenu_location
 mode: default
 content:
-  body:
-    weight: 121
-    settings:
-      rows: 9
-      summary_rows: 3
-      placeholder: ''
-    third_party_settings: {  }
-    type: text_textarea_with_summary
-    region: content
   created:
     type: datetime_timestamp
     weight: 10
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_country:
-    weight: 122
+  field_location_address:
+    weight: 125
     settings: {  }
     third_party_settings: {  }
-    type: options_buttons
+    type: address_default
     region: content
-  field_image:
-    weight: 123
+  field_location_company:
+    weight: 121
     settings:
-      progress_indicator: throbber
-      preview_image_style: thumbnail
-    third_party_settings: {  }
-    type: image_image
-    region: content
-  field_tags:
-    weight: 124
-    settings:
-      match_operator: CONTAINS
       size: 60
       placeholder: ''
     third_party_settings: {  }
-    type: entity_reference_autocomplete
+    type: string_textfield
+    region: content
+  field_location_firstname:
+    weight: 123
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_location_name_contact:
+    weight: 122
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_location_website:
+    weight: 124
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
     region: content
   langcode:
     type: language_select
@@ -95,11 +103,6 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-  scheduler_settings:
-    weight: 20
-    settings: {  }
-    third_party_settings: {  }
-    region: content
   status:
     type: boolean_checkbox
     settings:
@@ -150,7 +153,7 @@ content:
     third_party_settings: {  }
   url_redirects:
     weight: 50
-    region: content
     settings: {  }
     third_party_settings: {  }
+    region: content
 hidden: {  }

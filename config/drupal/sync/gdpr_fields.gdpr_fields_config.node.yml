@@ -15,6 +15,7 @@ filenames:
   event: ''
   resource_youtube: ''
   article: ''
+  contenu_location: ''
 bundles:
   product:
     field_complementary_info:
@@ -1603,6 +1604,62 @@ bundles:
       rta: 'no'
       enabled: false
       anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+  contenu_location:
+    field_location_company:
+      bundle: contenu_location
+      name: field_location_company
+      entity_type_id: node
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_location_name_contact:
+      bundle: contenu_location
+      name: field_location_name_contact
+      entity_type_id: node
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_location_firstname:
+      bundle: contenu_location
+      name: field_location_firstname
+      entity_type_id: node
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_location_website:
+      bundle: contenu_location
+      name: field_location_website
+      entity_type_id: node
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: date_anonymizer
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_location_address:
+      bundle: contenu_location
+      name: field_location_address
+      entity_type_id: node
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: date_anonymizer
       notes: ''
       relationship: 0
       sars_filename: ''
