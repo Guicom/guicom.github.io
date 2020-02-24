@@ -1,22 +1,22 @@
 {
     "_links": {
         "self": {
-            "href": "http:\/\/default\/media\/28\/edit?_format=hal_json"
+            "href": "http:\/\/default\/media\/50\/edit?_format=hal_json"
         },
         "type": {
-            "href": "http:\/\/drupal.org\/rest\/type\/media\/image"
+            "href": "http:\/\/drupal.org\/rest\/type\/media\/icone"
         },
-        "http:\/\/drupal.org\/rest\/relation\/media\/image\/uid": [
+        "http:\/\/drupal.org\/rest\/relation\/media\/icone\/uid": [
             {
                 "href": "http:\/\/default\/user\/1?_format=hal_json"
             }
         ],
-        "http:\/\/drupal.org\/rest\/relation\/media\/image\/thumbnail": [
+        "http:\/\/drupal.org\/rest\/relation\/media\/icone\/thumbnail": [
             {
                 "href": ""
             }
         ],
-        "http:\/\/drupal.org\/rest\/relation\/media\/image\/field_media_image": [
+        "http:\/\/drupal.org\/rest\/relation\/media\/icone\/field_media_image": [
             {
                 "href": ""
             }
@@ -24,17 +24,17 @@
     },
     "mid": [
         {
-            "value": 28
+            "value": 50
         }
     ],
     "uuid": [
         {
-            "value": "d16e2fba-561a-48ed-a9f1-d935af3f5d00"
+            "value": "422c5b95-b5e2-4de7-bc0a-9da31b27a42d"
         }
     ],
     "vid": [
         {
-            "value": 28
+            "value": 50
         }
     ],
     "langcode": [
@@ -45,12 +45,12 @@
     ],
     "bundle": [
         {
-            "target_id": "image"
+            "target_id": "icone"
         }
     ],
     "revision_created": [
         {
-            "value": "2020-02-21T07:58:29+00:00",
+            "value": "2020-02-23T17:00:15+00:00",
             "format": "Y-m-d\\TH:i:sP"
         }
     ],
@@ -60,7 +60,7 @@
         }
     ],
     "_embedded": {
-        "http:\/\/drupal.org\/rest\/relation\/media\/image\/uid": [
+        "http:\/\/drupal.org\/rest\/relation\/media\/icone\/uid": [
             {
                 "_links": {
                     "self": {
@@ -77,7 +77,7 @@
                 ]
             }
         ],
-        "http:\/\/drupal.org\/rest\/relation\/media\/image\/thumbnail": [
+        "http:\/\/drupal.org\/rest\/relation\/media\/icone\/thumbnail": [
             {
                 "_links": {
                     "self": {
@@ -89,16 +89,16 @@
                 },
                 "uuid": [
                     {
-                        "value": "81dfcae6-162e-48b0-b62b-9ea0e082a485"
+                        "value": "fe0a5882-ff38-4008-bc48-67656e5f8f16"
                     }
                 ],
-                "alt": "AdobeStock_187085088",
+                "alt": "switching",
                 "title": null,
-                "width": "2500",
-                "height": "1669"
+                "width": null,
+                "height": null
             }
         ],
-        "http:\/\/drupal.org\/rest\/relation\/media\/image\/field_media_image": [
+        "http:\/\/drupal.org\/rest\/relation\/media\/icone\/field_media_image": [
             {
                 "_links": {
                     "self": {
@@ -110,30 +110,30 @@
                 },
                 "uuid": [
                     {
-                        "value": "81dfcae6-162e-48b0-b62b-9ea0e082a485"
+                        "value": "fe0a5882-ff38-4008-bc48-67656e5f8f16"
                     }
                 ],
-                "alt": "AdobeStock_187085088",
+                "alt": "switching",
                 "title": "",
-                "width": "2500",
-                "height": "1669"
+                "width": "40",
+                "height": "40"
             }
         ]
     },
     "name": [
         {
-            "value": "AdobeStock_187085088.jpeg"
+            "value": "switching.svg"
         }
     ],
     "created": [
         {
-            "value": "2019-12-13T10:57:46+00:00",
+            "value": "2020-02-23T17:00:11+00:00",
             "format": "Y-m-d\\TH:i:sP"
         }
     ],
     "changed": [
         {
-            "value": "2019-12-13T10:57:46+00:00",
+            "value": "2020-02-23T17:00:11+00:00",
             "format": "Y-m-d\\TH:i:sP"
         }
     ],
