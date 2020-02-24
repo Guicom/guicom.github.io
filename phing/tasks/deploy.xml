@@ -9,6 +9,6 @@
     >
       <param>overrides</param>
     </drush>
+    <phingcall target="update:update" />
   </target>
-  <phingcall target="update:update" />
 </project>
