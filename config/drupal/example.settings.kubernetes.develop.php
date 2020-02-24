@@ -138,13 +138,17 @@ $settings['file_private_path'] = '/PRIVATE_DATA';
 $settings['redis.connection']['interface'] = 'Predis';
 $settings['redis.connection']['host'] = getenv('REDIS_MASTER_HOSTNAME');
 // You have to enable these lines AFTER your install (see https://github.com/pantheon-systems/documentation/issues/3215)
-//$settings['cache']['default'] = 'cache.backend.redis';
+#$settings['cache']['default'] = 'cache.backend.redis';
 
 /**
  * Config Split overrides.
  */
 $config['config_split.config_split.dev']['status'] = FALSE;
 $config['config_split.config_split.dev']['folder'] = "../config/drupal/dev";
+
+$config['config_split.config_split.overrides']['status'] = TRUE;
+$config['config_split.config_split.overrides']['folder'] = "../config/drupal/overrides";
+
 /**
  * @see \soc_user_install()
  */
@@ -163,3 +167,6 @@ $config['search_api.server.socomec']['backend_config']['connector_config']['core
  */
 $settings['we_megamenu_deploy_content'] = $app_ground . '/content/we_megamenu_content';
 
+$databases['default']['default']['init_commands'] = array(
+  'isolation' => "SET SESSION tx_isolation='READ-COMMITTED'"
+);

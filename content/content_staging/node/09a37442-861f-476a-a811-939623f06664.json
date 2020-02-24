@@ -28,11 +28,6 @@
                 "href": "http:\/\/default\/media\/39\/edit?_format=hal_json"
             }
         ],
-        "http:\/\/drupal.org\/rest\/relation\/node\/event\/field_event_thematic": [
-            {
-                "href": "http:\/\/default\/taxonomy\/term\/63?_format=hal_json"
-            }
-        ],
         "http:\/\/drupal.org\/rest\/relation\/node\/event\/field_event_type": [
             {
                 "href": "http:\/\/default\/taxonomy\/term\/64?_format=hal_json"
@@ -84,7 +79,7 @@
                 },
                 "uuid": [
                     {
-                        "value": "1bbc8659-cab2-4a15-9f3a-428b9f85a9a2"
+                        "value": "0c9aa577-d856-4733-aade-e8b7c37852e1"
                     }
                 ]
             }
@@ -101,7 +96,7 @@
                 },
                 "uuid": [
                     {
-                        "value": "1bbc8659-cab2-4a15-9f3a-428b9f85a9a2"
+                        "value": "0c9aa577-d856-4733-aade-e8b7c37852e1"
                     }
                 ],
                 "lang": "en"
@@ -139,23 +134,6 @@
                 "uuid": [
                     {
                         "value": "d738c3b9-e95c-48ba-8efd-58c03f1f23ef"
-                    }
-                ]
-            }
-        ],
-        "http:\/\/drupal.org\/rest\/relation\/node\/event\/field_event_thematic": [
-            {
-                "_links": {
-                    "self": {
-                        "href": "http:\/\/default\/taxonomy\/term\/63?_format=hal_json"
-                    },
-                    "type": {
-                        "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/event_thematic"
-                    }
-                },
-                "uuid": [
-                    {
-                        "value": "4030d9e6-2daf-420f-8c30-7fc2a80593fd"
                     }
                 ]
             }

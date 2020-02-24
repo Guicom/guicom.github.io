@@ -45,7 +45,7 @@
         ],
         "http:\/\/drupal.org\/rest\/relation\/node\/news\/field_news_type": [
             {
-                "href": "http:\/\/default\/taxonomy\/term\/39?_format=hal_json"
+                "href": "http:\/\/default\/taxonomy\/term\/43?_format=hal_json"
             }
         ]
     },
@@ -72,7 +72,7 @@
     ],
     "revision_timestamp": [
         {
-            "value": "2020-01-20T15:51:39+00:00",
+            "value": "2020-02-20T17:15:50+00:00",
             "format": "Y-m-d\\TH:i:sP"
         }
     ],
@@ -89,7 +89,7 @@
                 },
                 "uuid": [
                     {
-                        "value": "7ce68e63-4eb2-4ff9-b3ba-1353868398ce"
+                        "value": "0c9aa577-d856-4733-aade-e8b7c37852e1"
                     }
                 ]
             }
@@ -106,7 +106,7 @@
                 },
                 "uuid": [
                     {
-                        "value": "7ce68e63-4eb2-4ff9-b3ba-1353868398ce"
+                        "value": "0c9aa577-d856-4733-aade-e8b7c37852e1"
                     }
                 ],
                 "lang": "en"
@@ -128,7 +128,7 @@
                     }
                 ],
                 "lang": "en",
-                "target_revision_id": "371"
+                "target_revision_id": "468"
             }
         ],
         "http:\/\/drupal.org\/rest\/relation\/node\/news\/field_media_image": [
@@ -203,7 +203,7 @@
             {
                 "_links": {
                     "self": {
-                        "href": "http:\/\/default\/taxonomy\/term\/39?_format=hal_json"
+                        "href": "http:\/\/default\/taxonomy\/term\/43?_format=hal_json"
                     },
                     "type": {
                         "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/news_type"
@@ -211,7 +211,7 @@
                 },
                 "uuid": [
                     {
-                        "value": "1b590420-87b2-470b-9a92-047c2b530a0c"
+                        "value": "8766c360-e7db-4e55-9d97-221347b1e4f2"
                     }
                 ]
             }
@@ -238,7 +238,7 @@
     ],
     "changed": [
         {
-            "value": "2020-01-20T15:51:39+00:00",
+            "value": "2020-02-20T17:15:50+00:00",
             "lang": "en",
             "format": "Y-m-d\\TH:i:sP"
         }
@@ -296,22 +296,22 @@
                 "og_type": "News",
                 "description": "Curabitur ut arcu eget ligula maximus ultrices. Pellentesque non quam quis leo tristique tincidunt. Mauris eget lacus ex. Curabitur non suscipit arcu, vel luctus enim.",
                 "og_url": "http:\/\/default\/news\/efficiently-unleash-cross-media-value-proposition-organically-grow",
-                "image_src": "http:\/\/default\/sites\/default\/files\/styles\/og_image_600x315\/public\/2019-12\/salle-serveur.jpg?itok=MmaJruRH",
+                "image_src": "http:\/\/default\/sites\/default\/files\/styles\/og_image_600x315\/public\/2019-12\/salle-serveur.jpg?itok=6Y8o9wc-",
                 "og_title": "Efficiently unleash cross-media value proposition organically grow",
                 "og_description": "Curabitur ut arcu eget ligula maximus ultrices. Pellentesque non quam quis leo tristique tincidunt. Mauris eget lacus ex. Curabitur non suscipit arcu, vel luctus enim.",
-                "og_image_0": "http:\/\/default\/sites\/default\/files\/styles\/og_image_600x315\/public\/2019-12\/salle-serveur.jpg?itok=MmaJruRH",
-                "og_image_url_0": "http:\/\/default\/sites\/default\/files\/styles\/og_image_600x315\/public\/2019-12\/salle-serveur.jpg?itok=MmaJruRH",
+                "og_image_0": "http:\/\/default\/sites\/default\/files\/styles\/og_image_600x315\/public\/2019-12\/salle-serveur.jpg?itok=6Y8o9wc-",
+                "og_image_url_0": "http:\/\/default\/sites\/default\/files\/styles\/og_image_600x315\/public\/2019-12\/salle-serveur.jpg?itok=6Y8o9wc-",
                 "og_image_type": "image\/jpeg",
                 "og_image_width": "600",
                 "og_image_height": "315",
-                "og_updated_time": "Mon, 01\/20\/2020 - 16:51"
+                "og_updated_time": "Thu, 02\/20\/2020 - 18:15"
             }
         }
     ],
     "path": [
         {
             "alias": "\/news\/efficiently-unleash-cross-media-value-proposition-organically-grow",
-            "pid": 21,
+            "pid": 32,
             "langcode": "en",
             "lang": "en"
         }

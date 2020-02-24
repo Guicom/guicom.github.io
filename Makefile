@@ -13,8 +13,8 @@ set-kubernetes-configs:
 	chown web:www-data /var/www/html/web/sites/sites.php /var/www/html/config/drupal/contenthub/settings.local.php /var/www/html/config/drupal/settings.local.php
 
 drupal-update:
-	contenthub_uri=$$(php -r "include('/var/www/html/web/sites/sites.php'); print array_search('contenthub');")
-	./vendor/bin/phing update
+	contenthub_uri=$$(php -r "include('/var/www/html/web/sites/sites.php'); print array_search('contenthub', \$$sites);")
+	./vendor/bin/phing deploy:update
 	./vendor/bin/phing content-import-all || true
 	./vendor/bin/phing megamenu-socomec:import || true
 	./vendor/bin/phing admin-socomec:add-role

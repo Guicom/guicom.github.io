@@ -216,11 +216,7 @@ display:
             group_items: {  }
           parse_mode: phrase
           min_length: null
-          fields:
-            - description
-            - original_description
-            - riginal_title
-            - title
+          fields: {  }
           plugin_id: search_api_fulltext
         status:
           id: status

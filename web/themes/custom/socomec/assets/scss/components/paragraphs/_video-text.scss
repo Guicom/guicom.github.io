@@ -1,6 +1,16 @@
 .paragraph--type-video-text,
 .paragraph--type--video-embed {
   @include make-row();
+  padding-top: 2.5rem;
+  padding-bottom: 3.375rem;
+  h2 {
+    margin-top: 0;
+    &.field--name-field-title {
+      @include block-title(true);
+      margin-top: 0;
+      font-weight: 300;
+    }
+  }
   .group-left {
     padding-left: calc(#{$grid-gutter-width} / 2);
     padding-right: calc(#{$grid-gutter-width} / 2);
@@ -22,9 +32,33 @@
   .field--name-field-media-oembed-video {
     width: 100%;
   }
+  .embed-responsive {
+    height: 100%;
+    @include media-breakpoint-down(md) {
+      height: 180px;
+    }
+  }
 }
-
+.paragraph--type-video-text {
+  .embed-responsive {
+    @include media-breakpoint-up(lg) {
+      height: 400px;
+    }
+  }
+}
 .paragraph--type--video-embed {
-  padding-left: calc(#{$grid-gutter-width} / 2);
-  padding-right: calc(#{$grid-gutter-width} / 2);
+  @include make-container();
+  .field--name-field-video-embed-video {
+    @include make-col(10);
+    @include make-col-offset(1);
+  }
+  .field--name-field-title {
+    @include make-col-offset(1);
+  }
+  .embed-responsive {
+    height: 100%;
+    @include media-breakpoint-up(lg) {
+      height: 530px;
+    }
+  }
 }
