@@ -419,7 +419,20 @@
       }
     }
   }
-
+  // CONTENT MULTILIGNE
+  .field--name-field-body,
+  .field--name-field-event-content {
+    .paragraph--type--video-embed {
+      padding-left: 0;
+      padding-right: 0;
+      .field--name-field-title {
+      }
+      .field--name-field-video-embed-video {
+        @include make-col(12);
+        @include make-col-offset(0);
+      }
+    }
+  }
 }
 .bottom-link {
   time {
