@@ -12,6 +12,7 @@ dependencies:
     - paragraphs.paragraphs_type.model_image
     - paragraphs.paragraphs_type.model_testimony
     - paragraphs.paragraphs_type.model_text
+    - paragraphs.paragraphs_type.video_text
   module:
     - entity_reference_revisions
 id: node.event.field_event_content
@@ -36,6 +37,7 @@ settings:
       model_image: model_image
       model_testimony: model_testimony
       model_text: model_text
+      video_text: video_text
     target_bundles_drag_drop:
       content:
         weight: 18
@@ -86,6 +88,6 @@ settings:
         weight: 33
         enabled: false
       video_text:
+        enabled: true
         weight: 34
-        enabled: false
 field_type: entity_reference_revisions
