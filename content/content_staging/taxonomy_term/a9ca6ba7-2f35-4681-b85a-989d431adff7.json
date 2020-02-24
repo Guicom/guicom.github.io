@@ -1,13 +1,15 @@
 {
     "_links": {
         "self": {
-            "href": "http:\/\/default\/power-switching?_format=hal_json"
+            "href": "http:\/\/default\/energy-storage-solution\/power-switching?_format=hal_json"
         },
         "type": {
             "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/family"
         },
         "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/family\/parent": [
-            null
+            {
+                "href": "http:\/\/default\/energy-storage-solution?_format=hal_json"
+            }
         ],
         "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/family\/content_translation_uid": [
             {
@@ -60,12 +62,26 @@
     ],
     "weight": [
         {
-            "value": 2
+            "value": 1
         }
     ],
     "_embedded": {
         "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/family\/parent": [
-            null
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/energy-storage-solution?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/family"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "59b4df63-c1cc-49ae-81ba-1cd80dcd280b"
+                    }
+                ]
+            }
         ],
         "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/family\/content_translation_uid": [
             {
@@ -79,7 +95,7 @@
                 },
                 "uuid": [
                     {
-                        "value": "0c9aa577-d856-4733-aade-e8b7c37852e1"
+                        "value": "f249bc8f-cc01-41d5-aba6-8852ecc9abf5"
                     }
                 ],
                 "lang": "en"
@@ -88,7 +104,7 @@
     },
     "changed": [
         {
-            "value": "2020-01-17T17:38:27+00:00",
+            "value": "2020-02-23T16:59:04+00:00",
             "format": "Y-m-d\\TH:i:sP"
         }
     ],

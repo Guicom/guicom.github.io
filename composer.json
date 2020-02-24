@@ -194,6 +194,9 @@
             },
             "drupal/facets": {
                 "Facets Show reset link of the LinksWidget do not work when facets_pretty_path is active to 8.x-1.x": "https://www.drupal.org/files/issues/2020-01-29/show_reset_link_when_pretty_path_is_active-3079451-3.patch"
+            },
+            "drupal/we_megamenu": {
+                "Add taxonomy menu compatibnilty": "./patches/we_mega_menu_menu_taxonmy_integration.patch"
             }
         }
     }
