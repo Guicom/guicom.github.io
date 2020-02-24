@@ -76,8 +76,8 @@
                         label{
                             padding-left: 0px;
                             .toggle-activated{
-                                .disabled{
-                                    opacity: 0.4%;
+                                &.disabled{
+                                    opacity: 0.4;
                                 }
                             }
                         }
