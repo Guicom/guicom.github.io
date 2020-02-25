@@ -26,7 +26,6 @@ class ExportSampleFileSalesLocationsForm extends FormBase {
   // @todo: définir les données des nodes à extraire pour le fichier CSV.
 
 
-
   /**
    * @var \Drupal\soc_sales_locations\Service\SalesLocationsManagerServiceInterface
    */
@@ -45,9 +44,7 @@ class ExportSampleFileSalesLocationsForm extends FormBase {
    * {@inheritdoc}
    */
   public static function create(ContainerInterface $container) {
-    return new static(
-      $container->get('soc_sales_locations.manager')
-    );
+    return new static($container->get('soc_sales_locations.manager'));
   }
 
   /**

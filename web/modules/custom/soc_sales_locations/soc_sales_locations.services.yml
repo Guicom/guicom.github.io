@@ -5,4 +5,4 @@ services:
 
   soc_sales_locations.manager:
     class: Drupal\soc_sales_locations\Service\SalesLocationsManagerService
-    arguments: []
+    arguments: ['@entity_type.manager','@messenger']
