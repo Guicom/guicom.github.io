@@ -2,6 +2,10 @@ ol {
   &.breadcrumb {
     padding-left: 0;
     .breadcrumb-item {
+      color: $darker-grey;
+      font-family: $font-roboto;
+      font-size: 12px;
+      line-height: 20px;
       a {
         color: $darker-grey;
         font-family: $font-roboto;
