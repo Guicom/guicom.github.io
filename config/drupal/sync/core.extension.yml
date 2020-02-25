@@ -119,6 +119,7 @@ module:
   soc_pardot: 0
   soc_premium_content: 0
   soc_resource_center: 0
+  soc_search: 0
   soc_user: 0
   soc_views_news: 0
   soc_wishlist: 0

@@ -1,0 +1,18 @@
+<?php
+
+/**
+ * @file
+ * Update scripts for the soc_search module.
+ */
+
+/**
+ * Implements hook_install().
+ */
+function soc_search_install() {
+  module_load_include('module', 'soc_search', 'soc_search');
+
+  \Drupal::configFactory()
+    ->getEditable('soc_search.settings')
+    ->set('title', 'Search')->save()
+	  ->set('placeholder', 'Search a reference, an advice, etc.')->save();
+}

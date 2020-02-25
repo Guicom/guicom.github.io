@@ -1,0 +1,5 @@
+langcode: en
+title: Search
+placeholder: 'Search a reference, an advice, etc.'
+_core:
+  default_config_hash: VaxJUeXO3NdBcP_CqNreuAsFM26IT-HHV4GllFgH_mE

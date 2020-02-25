@@ -1,0 +1,14 @@
+# Schema for the configuration files of the Resource center page list.
+
+soc_search.settings:
+  type: config_object
+  label: 'Search Settings'
+  mapping:
+    title:
+      label: 'Title'
+      type: label
+      translatable: true
+    placeholder:
+      label: 'Placeholder'
+      type: label
+      translatable: true
