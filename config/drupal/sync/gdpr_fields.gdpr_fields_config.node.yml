@@ -1663,3 +1663,25 @@ bundles:
       notes: ''
       relationship: 0
       sars_filename: ''
+    field_location_phone:
+      bundle: contenu_location
+      name: field_location_phone
+      entity_type_id: node
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_location_fax:
+      bundle: contenu_location
+      name: field_location_fax
+      entity_type_id: node
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
