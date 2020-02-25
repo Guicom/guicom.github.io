@@ -1,12 +1,12 @@
-uuid: 5bf703de-f480-48a8-9b84-d02d02c9056e
+uuid: f34a2287-9d0d-4107-9ccc-15d7e470eb75
 langcode: en
 status: true
 dependencies:
   module:
     - node
     - telephone
-id: node.field_location_phone
-field_name: field_location_phone
+id: node.field_location_telephone
+field_name: field_location_telephone
 entity_type: node
 type: telephone
 settings: {  }

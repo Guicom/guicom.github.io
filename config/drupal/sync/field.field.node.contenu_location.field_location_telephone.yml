@@ -1,19 +1,19 @@
-uuid: 70fd0a85-a519-44d1-8020-0d3983281a8c
+uuid: 5d1c7687-38c0-4f1f-ba78-eab52fbe1e6e
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_location_phone
+    - field.storage.node.field_location_telephone
     - node.type.contenu_location
   module:
     - telephone
-id: node.contenu_location.field_location_phone
-field_name: field_location_phone
+id: node.contenu_location.field_location_telephone
+field_name: field_location_telephone
 entity_type: node
 bundle: contenu_location
-label: Phone
+label: Telephone
 description: ''
-required: false
+required: true
 translatable: false
 default_value: {  }
 default_value_callback: ''
