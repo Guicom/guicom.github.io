@@ -221,17 +221,38 @@
           }
         });
 
-        $("#eu-cookie-compliance-categories input:checkbox", context).each(function() {
-          if($(this).prop('checked')){
-            $(this).next("label").find('.toggle-activated').removeClass("d-none");
-            if($(this).prop('disabled')){
-              $(this).next("label").find('.toggle-activated').addClass("disabled");
+        $("#eu-cookie-compliance-categories  input:checkbox", context).each(function() {
+          $(this).next("label").find('.toggle-normal').removeClass("d-none");
+        });
+
+        if (drupalSettings.eu_cookie_compliance.method === 'categories') {
+          var status = Drupal.eu_cookie_compliance.getCurrentStatus();
+          var categories_checked = [];
+          var all_categories = drupalSettings.eu_cookie_compliance.cookie_categories;
+          var categories_count = all_categories.length;
+          if (status === null) {
+            if (drupalSettings.eu_cookie_compliance.select_all_categories_by_default) {
+              categories_checked = drupalSettings.eu_cookie_compliance.cookie_categories;
             }
           }
-          else{
-            $(this).next("label").find('.toggle-normal').removeClass("d-none");
+          else {
+            categories_checked = Drupal.eu_cookie_compliance.getAcceptedCategories();
           }
-        });
+
+          for (var i = 0 ; i < categories_count ; i++) {
+            if ($.inArray(all_categories[i], categories_checked) > -1) {
+              $("#eu-cookie-compliance-categories input:checkbox", context).each(function() {
+                 if($(this).val() === all_categories[i]){
+                   $(this).next("label").find('.toggle-normal').addClass("d-none");
+                   $(this).next("label").find('.toggle-activated').removeClass("d-none");
+                   if($(this).prop('disabled')){
+                     $(this).next("label").find('.toggle-activated').addClass("disabled");
+                   }
+                 }
+              });
+            }
+          }
+        }
 
         $("#eu-cookie-compliance-categories input:checkbox", context).click(function() {
           if(!$(this).prop('disabled')){
