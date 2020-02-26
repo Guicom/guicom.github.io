@@ -368,19 +368,15 @@
   Drupal.behaviors.socomec_facets_show = {
     attach: function (context, settings) {
       $( document ).ready(function() {
-        if ( $("#block-familyterms [data-drupal-facet-id='family_terms']").not('.facet-empty') ) {
-          $('.facets-category-range').show();
-        }
-        else {
-          $('.facets-category-range').hide();
+        var elementFamilyTerms = $("#block-familyterms div[data-drupal-facet-id='family_terms']");
+        if (!elementFamilyTerms.hasClass('facet-empty')) {
+          $('.facets-category-range').removeClass('d-none');
         }
 
-        if ( $("#block-typeofresourceterms [data-drupal-facet-id='type_of_resource_terms']").not('.facet-empty')
-            && $("#block-language [data-drupal-facet-id='language']").not('.facet-empty') ) {
-          $('.facets-category-characteristics').show();
-        }
-        else {
-          $('.facets-category-characteristics').hide();
+        var elementTypeResource = $("#block-familyterms div[data-drupal-facet-id='type_of_resource_terms']");
+        var elementLanguage = $("#block-familyterms div[data-drupal-facet-id='type_of_resource_terms']");
+        if (!elementTypeResource.hasClass('facet-empty') || !elementLanguage.hasClass('facet-empty')) {
+          $('.facets-category-characteristics').removeClass('d-none');
         }
       });
     }

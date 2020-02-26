@@ -17,7 +17,7 @@ provider: null
 plugin: 'block_content:adc184e0-615a-4d05-89eb-4b523dd947b8'
 settings:
   id: 'block_content:adc184e0-615a-4d05-89eb-4b523dd947b8'
-  label: 'Ressource center'
+  label: 'Resource center'
   provider: block_content
   label_display: visible
   status: true
