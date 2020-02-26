@@ -1,0 +1,25 @@
+uuid: 415f9e12-6504-44b1-82e6-c885918c0996
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:multiple_links_and_image:47d98be2-9ab9-430d-8f65-abf4a6cca11a'
+  module:
+    - block_content
+  theme:
+    - socomec
+id: socialmenufooter
+theme: socomec
+region: footer_fourth
+weight: 0
+provider: null
+plugin: 'block_content:47d98be2-9ab9-430d-8f65-abf4a6cca11a'
+settings:
+  id: 'block_content:47d98be2-9ab9-430d-8f65-abf4a6cca11a'
+  label: 'Social menu footer'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

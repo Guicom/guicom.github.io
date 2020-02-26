@@ -9,6 +9,8 @@ filenames:
   link: ''
   tool_promotion: ''
   home_product_assistance: ''
+  social_menu_footer: ''
+  multiple_links_and_image: ''
 bundles:
   textfield:
     field_text:
@@ -162,6 +164,41 @@ bundles:
     field_ba_link:
       bundle: home_product_assistance
       name: field_ba_link
+      entity_type_id: block_content
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+  social_menu_footer:
+    field_social_links:
+      bundle: social_menu_footer
+      name: field_social_links
+      entity_type_id: block_content
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+  multiple_links_and_image:
+    field_links:
+      bundle: multiple_links_and_image
+      name: field_links
+      entity_type_id: block_content
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_image:
+      bundle: multiple_links_and_image
+      name: field_image
       entity_type_id: block_content
       rtf: 'no'
       rta: 'no'
