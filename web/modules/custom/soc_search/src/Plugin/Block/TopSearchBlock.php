@@ -10,7 +10,7 @@ use Drupal\Core\Block\BlockBase;
  * @Block(
  *   id = "top_search_block",
  *   admin_label = @Translation("Top 5 searches"),
- *   category = @Translation("Top Search"),
+ *   category = @Translation("Soc Search"),
  * )
  */
 class TopSearchBlock extends BlockBase {

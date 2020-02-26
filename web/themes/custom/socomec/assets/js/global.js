@@ -386,4 +386,26 @@
     }
   };
 
+  /**
+   * Search menu
+   */
+  Drupal.behaviors.socomec_searhc = {
+    attach: function (context, settings) {
+      $( document ).ready(function() {
+        // SLIDE OPENING Dropdown lvl1
+        $(".menu--header-visitors [href='#search']", context).once('socomecSearchMenu').each(function () {
+          $(this).click(function (e) {
+            $(this).toggleClass('close-search');
+            $(".block-soc-search-block").toggleClass('d-none');
+            $(".we-mega-menu-submenu").removeClass('show');
+            $('.nav-wrapper').toggleClass('open-menu');
+            e.preventDefault();
+            e.stopPropagation();
+          });
+        });
+      });
+    }
+  };
+
+
 })(jQuery, Drupal);
