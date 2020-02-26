@@ -658,6 +658,7 @@
           }
           &.close-search{
             background-image: url('../images/picto/ui/close-circle-yellow.svg');
+            border-bottom: 2px $yellow solid;
           }
         }
         &.ico-bookmark-star-white{

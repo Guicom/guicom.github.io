@@ -406,10 +406,9 @@
   /**
    * Search menu
    */
-  Drupal.behaviors.socomec_searhc = {
+  Drupal.behaviors.socomec_search = {
     attach: function (context, settings) {
       $( document ).ready(function() {
-        // SLIDE OPENING Dropdown lvl1
         $(".menu--header-visitors [href='#search']", context).once('socomecSearchMenu').each(function () {
           $(this).click(function (e) {
             $(this).toggleClass('close-search');
