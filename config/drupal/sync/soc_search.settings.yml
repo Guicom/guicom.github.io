@@ -1,5 +1,7 @@
 langcode: en
 title: Search
 placeholder: 'Search a reference, an advice, etc.'
+top_search_number: 5
+quick_links_number: 5
 _core:
-  default_config_hash: VaxJUeXO3NdBcP_CqNreuAsFM26IT-HHV4GllFgH_mE
+  default_config_hash: othICpVxquxRdsa1oqiN-mgeFClN-mMZ9Dg-tF2_RyY
