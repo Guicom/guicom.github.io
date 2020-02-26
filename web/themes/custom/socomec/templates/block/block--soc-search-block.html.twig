@@ -40,7 +40,7 @@
 <div{{ attributes.addClass(classes) }}>
 
   {% block content_top %}
-    <div class="submenu-bg">
+    <div class="submenu-bg-top">
       <div{{ content_attributes.addClass(['content', 'container']) }}>
         {{ content }}
       </div>
@@ -48,7 +48,7 @@
   {% endblock %}
 
   {% block content_bottom %}
-    <div class="submenu-bg">
+    <div class="submenu-bg-bottom">
       <div{{ content_attributes.addClass(['content', 'container']) }}>
         {{ drupal_entity('block', 'top5searches') }}
         {{ drupal_entity('block', 'quicklinks') }}

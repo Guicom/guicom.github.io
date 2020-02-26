@@ -692,6 +692,12 @@
           background-size: 24px 24px;
           background-repeat: no-repeat;
           background-position: left 18px center;
+          @include media-breakpoint-down(lg) {
+            padding:20px;
+            text-indent: -99999px;
+            background-position: center;
+            width: 60px;
+          }
           &:hover{
             background-color: $white;
           }
@@ -727,8 +733,11 @@
   padding-top: 0;
   overflow-y: auto;
   margin-top: 60px;
-  .submenu-bg{
+  .submenu-bg-top{
     background: linear-gradient(180deg, rgba(0,79,159,0) 0%, #0070C0  100%);
     position: relative;
+  }
+  .submenu-bg-bottom{
+    background: linear-gradient(180deg, #232C77 0%, #084796 100%);
   }
 }
