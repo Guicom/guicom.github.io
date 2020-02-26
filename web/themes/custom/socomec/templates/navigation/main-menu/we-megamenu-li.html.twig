@@ -7,9 +7,12 @@
         <span class="menu-title-wrapper">
           {{ title }}
         </span>
-        <span class="menu-icon-wrapper">
-        {% include '/themes/custom/socomec/assets/images/picto/menu/' ~ attribute(attributes, 'data-icon') ~ '.svg' %}
-        </span>
+        {% set icon = attributes | getMenuIcon() %}
+        {% if icon is not null %}
+          <span class="menu-icon-wrapper">
+            {% include icon %}
+          </span>
+        {% endif %}
       {% else %}
         {{ title }}
       {% endif %}
@@ -21,3 +24,5 @@
   {% endif %}
   {{ content }}
 </li>
+
+

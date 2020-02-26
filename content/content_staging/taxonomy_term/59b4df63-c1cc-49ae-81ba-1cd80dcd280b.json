@@ -25,6 +25,11 @@
                 "href": ""
             }
         ],
+        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/family\/field_family_menu_icon": [
+            {
+                "href": "http:\/\/default\/media\/47\/edit?_format=hal_json"
+            }
+        ],
         "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/family\/field_family_second_multiline": [
             {
                 "href": ""
@@ -82,7 +87,7 @@
     ],
     "weight": [
         {
-            "value": 0
+            "value": 2
         }
     ],
     "_embedded": {
@@ -101,7 +106,7 @@
                 },
                 "uuid": [
                     {
-                        "value": "0c9aa577-d856-4733-aade-e8b7c37852e1"
+                        "value": "f249bc8f-cc01-41d5-aba6-8852ecc9abf5"
                     }
                 ],
                 "lang": "en"
@@ -142,6 +147,23 @@
                 "target_revision_id": "314"
             }
         ],
+        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/family\/field_family_menu_icon": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/media\/47\/edit?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/media\/icone"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "39167560-6c1b-437f-9421-d9f3b5f0b3de"
+                    }
+                ]
+            }
+        ],
         "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/family\/field_family_second_multiline": [
             {
                 "_links": {
@@ -163,7 +185,7 @@
     },
     "changed": [
         {
-            "value": "2020-02-10T16:12:49+00:00",
+            "value": "2020-02-23T16:59:04+00:00",
             "format": "Y-m-d\\TH:i:sP"
         }
     ],

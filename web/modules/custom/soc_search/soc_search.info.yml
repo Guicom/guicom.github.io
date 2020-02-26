@@ -1,0 +1,8 @@
+name: Socomec Search
+type: module
+description: 'Socomec search settings.'
+configure: soc_search.settings
+core: 8.x
+
+dependencies:
+  - block

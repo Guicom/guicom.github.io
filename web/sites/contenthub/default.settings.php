@@ -763,6 +763,10 @@ $settings['entity_update_batch_size'] = 50;
  */
 $settings['entity_update_backup'] = TRUE;
 
+$app_ground = explode('/', $app_root);
+array_pop($app_ground);
+$app_ground = implode('/', $app_ground);
+
 /**
  * Load local development override configuration, if available.
  *

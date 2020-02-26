@@ -12,7 +12,7 @@ services:
     arguments: ['@entity_type.manager']
   soc_nextpage.twig.extension:
     arguments: ['@renderer']
-    class: Drupal\soc_nextpage\TwigExtension\GetJsonElement
+    class: Drupal\soc_nextpage\TwigExtension\NextpageTwig
     tags:
       - { name: twig.extension}
   soc_nextpage.product_reference_table:

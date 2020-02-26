@@ -206,6 +206,7 @@ permissions:
   - 'grant gdpr own consent'
   - 'manage gdpr agreements'
   - 'manage nextpage settings'
+  - 'manage search settings'
   - 'manage wishlist settings'
   - 'overview messages'
   - 'revert all revisions'

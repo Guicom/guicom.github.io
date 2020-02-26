@@ -70,7 +70,7 @@
                     > div{
                         max-width: 90%;
                         margin:0 auto;
-                        &:not(:last-child) > .eu-cookie-compliance-category-selector{
+                        > .eu-cookie-compliance-category-selector{
                             border-bottom: 2px solid $blue_lighter;
                         }
                         label{

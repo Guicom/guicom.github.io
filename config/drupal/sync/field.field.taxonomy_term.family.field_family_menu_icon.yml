@@ -1,0 +1,28 @@
+uuid: 11fd443e-5ec3-44d5-8416-4ec779e155d9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_family_menu_icon
+    - media.type.icone
+    - taxonomy.vocabulary.family
+id: taxonomy_term.family.field_family_menu_icon
+field_name: field_family_menu_icon
+entity_type: taxonomy_term
+bundle: family
+label: 'Menu icon'
+description: 'Only fir the first level'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      icone: icone
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

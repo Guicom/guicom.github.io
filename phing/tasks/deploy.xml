@@ -1,14 +1,13 @@
 <project name="deploy" default="update">
-  <target name="update">
+  <target name="deploy:update">
     <drush
       command="csex"
       assume="yes"
       root="${website.drupal.dir}"
       verbose="${drush.verbose}"
-      uri="${multisite.uri}"
     >
       <param>overrides</param>
     </drush>
+    <phingcall target="update" />
   </target>
-  <phingcall target="update" />
 </project>
