@@ -1,0 +1,8 @@
+uuid: fa4a214a-ed95-42a7-a517-817b30b565b1
+langcode: en
+status: true
+dependencies: {  }
+id: search-quick-link
+label: 'Search - Quicklink'
+description: 'Search - Quicklink suggestion'
+locked: false
