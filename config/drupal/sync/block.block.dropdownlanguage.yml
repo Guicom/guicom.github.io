@@ -1,0 +1,21 @@
+uuid: 02b7a936-bb11-4e39-b9c4-08fc344adf96
+langcode: en-gb
+status: true
+dependencies:
+  module:
+    - dropdown_language
+  theme:
+    - socomec
+id: dropdownlanguage
+theme: socomec
+region: footer_fifth
+weight: -16
+provider: null
+plugin: 'dropdown_language:language_interface'
+settings:
+  id: 'dropdown_language:language_interface'
+  label: 'Dropdown Language'
+  provider: dropdown_language
+  label_display: '0'
+  labels: null
+visibility: {  }

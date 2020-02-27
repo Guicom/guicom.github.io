@@ -1,0 +1,25 @@
+uuid: 7d5df4ab-86dc-4932-8e7f-af96f99c6bdd
+langcode: en-gb
+status: true
+dependencies:
+  content:
+    - 'block_content:link:4f904162-4647-40a8-97a1-29f2698566c6'
+  module:
+    - block_content
+  theme:
+    - socomec
+id: backtotop
+theme: socomec
+region: footer_fifth
+weight: 0
+provider: null
+plugin: 'block_content:4f904162-4647-40a8-97a1-29f2698566c6'
+settings:
+  id: 'block_content:4f904162-4647-40a8-97a1-29f2698566c6'
+  label: 'Back to top'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }
