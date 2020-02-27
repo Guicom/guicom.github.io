@@ -386,4 +386,34 @@
     }
   };
 
+  /**
+   * Back to top btn
+   */
+  Drupal.behaviors.socomec_back_to_top = {
+    attach: function (context, settings) {
+      var backToTopBtn = $('#block-backtotop');
+      if (backToTopBtn.length) {
+        var scrollTrigger = 100, // px
+          backToTop = function () {
+            var scrollTop = $(window).scrollTop();
+            if (scrollTop > scrollTrigger) {
+              backToTopBtn.addClass('show');
+            } else {
+              backToTopBtn.removeClass('show');
+            }
+          };
+        backToTop();
+        $(window).on('scroll', function () {
+          backToTop();
+        });
+        backToTopBtn.on('click', function (e) {
+          e.preventDefault();
+          $('html,body').animate({
+            scrollTop: 0
+          }, 700);
+        });
+      }
+    }
+  };
+
 })(jQuery, Drupal);
