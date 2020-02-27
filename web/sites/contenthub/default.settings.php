@@ -773,6 +773,11 @@ $settings['entity_update_backup'] = TRUE;
  *
  * Keep this code block at the end of this file to take full effect.
  */
+
+$app_ground = explode('/', $app_root);
+array_pop($app_ground);
+$app_ground = implode('/', $app_ground);
+
 if (file_exists($app_ground . '/config/drupal/contenthub/settings.local.php')) {
   include $app_ground . '/config/drupal/contenthub/settings.local.php';
 } elseif (file_exists($app_ground . '/config/drupal/settings.travis.php')) {
