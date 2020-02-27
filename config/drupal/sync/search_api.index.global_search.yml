@@ -1,0 +1,330 @@
+uuid: 90753c4a-cadb-44fa-9014-afd0e584f4b5
+langcode: en
+status: true
+dependencies:
+  module:
+    - search_api_solr
+    - paragraphs
+    - node
+    - taxonomy
+    - content_translation
+    - search_api
+  config:
+    - field.storage.node.field_body
+    - field.storage.paragraph.field_answer
+    - field.storage.paragraph.field_citation_author_position
+    - field.storage.paragraph.field_citation_content
+    - field.storage.paragraph.field_text
+    - field.storage.paragraph.field_figure_2_text_line_1
+    - field.storage.paragraph.field_figure_2_text_line_2
+    - field.storage.paragraph.field_figure_3_text_line_1
+    - field.storage.paragraph.field_figure_3_text_line_2
+    - field.storage.paragraph.field_figure_4_text_line_2
+    - field.storage.paragraph.field_title
+    - field.storage.node.field_product_teaser
+    - search_api.server.socomec
+third_party_settings:
+  search_api_solr:
+    finalize: false
+    commit_before_finalize: false
+    commit_after_finalize: false
+    multilingual:
+      limit_to_content_language: false
+      include_language_independent: true
+    highlighter:
+      maxAnalyzedChars: 51200
+      fragmenter: gap
+      regex:
+        slop: 0.5
+        pattern: blank
+        maxAnalyzedChars: 10000
+      usePhraseHighlighter: true
+      highlightMultiTerm: true
+      preserveMulti: false
+      highlight:
+        mergeContiguous: false
+        requireFieldMatch: false
+        snippets: 3
+        fragsize: 0
+    mlt:
+      mintf: 1
+      mindf: 1
+      maxdf: 0
+      maxdfpct: 0
+      minwl: 0
+      maxwl: 0
+      maxqt: 100
+      maxntp: 2000
+      boost: false
+      interestingTerms: none
+    advanced:
+      index_prefix: ''
+      collection: ''
+      timezone: ''
+id: global_search
+name: 'Global search'
+description: ''
+read_only: false
+field_settings:
+  content_translation_created:
+    label: 'Translation created time'
+    datasource_id: 'entity:taxonomy_term'
+    property_path: content_translation_created
+    type: date
+    dependencies:
+      module:
+        - content_translation
+  field_citation_author_position:
+    label: 'Body » Paragraph » Citation author''s position'
+    datasource_id: 'entity:node'
+    property_path: 'field_body:entity:field_citation_author_position'
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_body
+        - field.storage.paragraph.field_citation_author_position
+      module:
+        - paragraphs
+  field_citation_content:
+    label: 'Body » Paragraph » Citation content'
+    datasource_id: 'entity:node'
+    property_path: 'field_body:entity:field_citation_content'
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_body
+        - field.storage.paragraph.field_citation_content
+      module:
+        - paragraphs
+  field_figure_2_text_line_1:
+    label: 'Body » Paragraph » Figure 2 - Text line 1'
+    datasource_id: 'entity:node'
+    property_path: 'field_body:entity:field_figure_2_text_line_1'
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_body
+        - field.storage.paragraph.field_figure_2_text_line_1
+      module:
+        - paragraphs
+  field_figure_2_text_line_2:
+    label: 'Body » Paragraph » Figure 2 - Text line 2'
+    datasource_id: 'entity:node'
+    property_path: 'field_body:entity:field_figure_2_text_line_2'
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_body
+        - field.storage.paragraph.field_figure_2_text_line_2
+      module:
+        - paragraphs
+  field_figure_3_text_line_1:
+    label: 'Body » Paragraph » Figure 3 - Text line 1'
+    datasource_id: 'entity:node'
+    property_path: 'field_body:entity:field_figure_3_text_line_1'
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_body
+        - field.storage.paragraph.field_figure_3_text_line_1
+      module:
+        - paragraphs
+  field_figure_3_text_line_2:
+    label: 'Body » Paragraph » Figure 3 - Text line 2'
+    datasource_id: 'entity:node'
+    property_path: 'field_body:entity:field_figure_3_text_line_2'
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_body
+        - field.storage.paragraph.field_figure_3_text_line_2
+      module:
+        - paragraphs
+  field_figure_4_text_line_2:
+    label: 'Body » Paragraph » Figure 4 - Text line 2'
+    datasource_id: 'entity:node'
+    property_path: 'field_body:entity:field_figure_4_text_line_2'
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_body
+        - field.storage.paragraph.field_figure_4_text_line_2
+      module:
+        - paragraphs
+  field_product_teaser:
+    label: Teaser
+    datasource_id: 'entity:node'
+    property_path: field_product_teaser
+    type: text
+    boost: !!float 21
+    dependencies:
+      config:
+        - field.storage.node.field_product_teaser
+  field_title:
+    label: 'Body » Paragraph » Title'
+    datasource_id: 'entity:node'
+    property_path: 'field_body:entity:field_title'
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_body
+        - field.storage.paragraph.field_title
+      module:
+        - paragraphs
+  name_14:
+    label: Name
+    datasource_id: 'entity:taxonomy_term'
+    property_path: name
+    type: string
+    dependencies:
+      module:
+        - taxonomy
+  parent:
+    label: 'Term Parents'
+    datasource_id: 'entity:taxonomy_term'
+    property_path: parent
+    type: integer
+    dependencies:
+      module:
+        - taxonomy
+  processed:
+    label: 'Body » Paragraph » Description » Processed text'
+    datasource_id: 'entity:node'
+    property_path: 'field_body:entity:field_text:processed'
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_body
+        - field.storage.paragraph.field_text
+      module:
+        - paragraphs
+  processed_1:
+    label: 'Body » Paragraph » Answer » Processed text'
+    datasource_id: 'entity:node'
+    property_path: 'field_body:entity:field_answer:processed'
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_body
+        - field.storage.paragraph.field_answer
+      module:
+        - paragraphs
+  processed_2:
+    label: 'Description » Processed text'
+    datasource_id: 'entity:taxonomy_term'
+    property_path: 'description:processed'
+    type: text
+    dependencies:
+      module:
+        - taxonomy
+  processed_4:
+    label: 'Description » Processed text'
+    datasource_id: 'entity:taxonomy_term'
+    property_path: 'description:processed'
+    type: string
+    dependencies:
+      module:
+        - taxonomy
+  revision_created:
+    label: 'Revision create time'
+    datasource_id: 'entity:taxonomy_term'
+    property_path: revision_created
+    type: date
+    dependencies:
+      module:
+        - taxonomy
+  revision_uid:
+    label: 'Revision user'
+    datasource_id: 'entity:node'
+    property_path: revision_uid
+    type: integer
+    dependencies:
+      module:
+        - node
+  sticky:
+    label: 'Sticky at top of lists'
+    datasource_id: 'entity:node'
+    property_path: sticky
+    type: boolean
+    dependencies:
+      module:
+        - node
+  title:
+    label: Title
+    datasource_id: 'entity:node'
+    property_path: title
+    type: text
+    dependencies:
+      module:
+        - node
+  title_1:
+    label: Title
+    datasource_id: 'entity:node'
+    property_path: title
+    type: text
+    dependencies:
+      module:
+        - node
+  type:
+    label: 'Content type'
+    datasource_id: 'entity:node'
+    property_path: type
+    type: string
+    dependencies:
+      module:
+        - node
+  vid:
+    label: Vocabulary
+    datasource_id: 'entity:taxonomy_term'
+    property_path: vid
+    type: string
+    dependencies:
+      module:
+        - taxonomy
+datasource_settings:
+  'entity:node':
+    bundles:
+      default: false
+      selected:
+        - event
+        - landing_page
+        - news
+        - product
+        - product_reference
+        - resource
+        - resource_youtube
+    languages:
+      default: true
+      selected: {  }
+  'entity:taxonomy_term':
+    bundles:
+      default: false
+      selected:
+        - family
+    languages:
+      default: true
+      selected: {  }
+processor_settings:
+  add_url: {  }
+  aggregated_field: {  }
+  rendered_item: {  }
+  solr_date_range:
+    weights:
+      preprocess_index: 0
+  type_boost:
+    boosts:
+      'entity:node':
+        datasource_boost: !!float 1
+      'entity:taxonomy_term':
+        datasource_boost: !!float 21
+        bundle_boosts:
+          family: !!float 21
+    weights:
+      preprocess_index: 0
+tracker_settings:
+  default:
+    indexing_order: fifo
+options:
+  index_directly: true
+  cron_limit: 50
+server: socomec
