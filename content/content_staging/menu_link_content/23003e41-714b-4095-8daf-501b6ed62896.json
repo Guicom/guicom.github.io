@@ -1,12 +1,12 @@
 {
     "_links": {
         "self": {
-            "href": "http:\/\/default\/block\/3?_format=hal_json"
+            "href": "http:\/\/default\/admin\/structure\/menu\/item\/7\/edit?_format=hal_json"
         },
         "type": {
-            "href": "http:\/\/drupal.org\/rest\/type\/block_content\/link"
+            "href": "http:\/\/drupal.org\/rest\/type\/menu_link_content\/menu_link_content"
         },
-        "http:\/\/drupal.org\/rest\/relation\/block_content\/link\/content_translation_uid": [
+        "http:\/\/drupal.org\/rest\/relation\/menu_link_content\/menu_link_content\/content_translation_uid": [
             {
                 "href": "http:\/\/default\/user\/1?_format=hal_json",
                 "lang": "en"
@@ -15,17 +15,17 @@
     },
     "id": [
         {
-            "value": 3
+            "value": 7
         }
     ],
     "uuid": [
         {
-            "value": "cd83bf6d-f525-4456-b1a8-20f8b374f3b2"
+            "value": "23003e41-714b-4095-8daf-501b6ed62896"
         }
     ],
     "revision_id": [
         {
-            "value": 5
+            "value": 7
         }
     ],
     "langcode": [
@@ -34,39 +34,65 @@
             "lang": "en"
         }
     ],
-    "type": [
+    "bundle": [
         {
-            "target_id": "link"
+            "value": "menu_link_content"
         }
     ],
     "revision_created": [
         {
-            "value": "2019-10-17T14:25:43+00:00",
+            "value": "2019-10-16T08:23:45+00:00",
             "format": "Y-m-d\\TH:i:sP"
         }
     ],
-    "status": [
+    "enabled": [
         {
-            "value": true,
+            "value": true
+        }
+    ],
+    "title": [
+        {
+            "value": "Market & applications",
             "lang": "en"
         }
     ],
-    "info": [
+    "menu_name": [
         {
-            "value": "Pardot newsletter",
-            "lang": "en"
+            "value": "footer"
+        }
+    ],
+    "link": [
+        {
+            "uri": "internal:\/",
+            "title": "",
+            "options": []
+        }
+    ],
+    "external": [
+        {
+            "value": false
+        }
+    ],
+    "rediscover": [
+        {
+            "value": true
+        }
+    ],
+    "weight": [
+        {
+            "value": -49
+        }
+    ],
+    "expanded": [
+        {
+            "value": true
         }
     ],
     "changed": [
         {
-            "value": "2019-10-17T14:25:43+00:00",
+            "value": "2020-02-27T12:40:00+00:00",
             "lang": "en",
             "format": "Y-m-d\\TH:i:sP"
-        }
-    ],
-    "reusable": [
-        {
-            "value": true
         }
     ],
     "default_langcode": [
@@ -94,7 +120,7 @@
         }
     ],
     "_embedded": {
-        "http:\/\/drupal.org\/rest\/relation\/block_content\/link\/content_translation_uid": [
+        "http:\/\/drupal.org\/rest\/relation\/menu_link_content\/menu_link_content\/content_translation_uid": [
             {
                 "_links": {
                     "self": {
@@ -113,9 +139,15 @@
             }
         ]
     },
+    "content_translation_status": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
     "content_translation_created": [
         {
-            "value": "2019-10-17T14:25:43+00:00",
+            "value": "2019-10-17T11:17:37+00:00",
             "lang": "en",
             "format": "Y-m-d\\TH:i:sP"
         }
@@ -126,14 +158,6 @@
                 "title": "| Socomec",
                 "canonical_url": "http:\/\/default\/node"
             }
-        }
-    ],
-    "field_link": [
-        {
-            "uri": "https:\/\/go.socomec.com\/l\/86922\/2019-10-15\/67j4ls",
-            "title": "",
-            "options": [],
-            "lang": "en"
         }
     ]
 }
