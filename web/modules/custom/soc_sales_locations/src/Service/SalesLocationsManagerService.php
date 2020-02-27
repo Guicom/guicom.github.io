@@ -6,6 +6,8 @@ namespace Drupal\soc_sales_locations\Service;
 use Drupal\Core\Entity\EntityTypeManager;
 use Drupal\Core\Messenger\Messenger;
 use Drupal\node\NodeInterface;
+use Drupal\taxonomy\Entity\Term;
+use Symfony\Component\HttpFoundation\Response;
 
 /**
  * Class SalesLocationsManagerService.
@@ -32,8 +34,17 @@ class SalesLocationsManagerService implements SalesLocationsManagerServiceInterf
     $this->messenger = $messenger;
   }
 
-  public function getHeaders() {
-    // TODO: Implement getHeaders() method.
+  /**
+   * @inheritDoc
+   */
+  public function getHeaders(Response $response) {
+
+    $name_file = 'export-sales-locations-' . date('Y-m-d');
+    $response->headers->set('Pragma', 'no-cache');
+    $response->headers->set('Expires', '0');
+    $response->headers->set('Content-type', 'text/csv');
+    $response->headers->set('Content-Disposition', 'attachment; filename=' . $name_file . '.csv');
+    return $response;
   }
 
   public function getRow(NodeInterface $node) {
@@ -45,8 +56,7 @@ class SalesLocationsManagerService implements SalesLocationsManagerServiceInterf
    * @inheritDoc
    */
   public function getNodes() {
-    /** @var  $nodes */
-
+    /** @var array<NodeInterface>  $nodes */
     $nodes = $this->em->getStorage('node')
       ->loadByProperties(['type' => 'contenu_location']);
     /** @var \Drupal\node\NodeInterface $node */
@@ -55,4 +65,146 @@ class SalesLocationsManagerService implements SalesLocationsManagerServiceInterf
     }
   }
 
+  /**
+   * @inheritDoc
+   * @throws \Drupal\Core\TypedData\Exception\MissingDataException
+   */
+  public function getNameCompany(NodeInterface $node) {
+    if ($node->get('field_location_company')->isEmpty()) {
+      return '';
+    }
+    return $node->get('field_location_company')->first()->getValue()['value'] ?? '';
+  }
+
+
+  /**
+   * @inheritDoc
+   * @throws \Drupal\Core\TypedData\Exception\MissingDataException
+   */
+  public function getFirstName(NodeInterface $node) {
+    if ($node->get('field_location_firstname')->isEmpty()) {
+      return '';
+    }
+    return $node->get('field_location_firstname')->first()->getValue()['value'] ?? '';
+  }
+
+  /**
+   * @inheritDoc
+   * @throws \Drupal\Core\TypedData\Exception\MissingDataException
+   */
+  public function getNameContact(NodeInterface $node) {
+    if ($node->get('field_location_name_contact')->isEmpty()) {
+      return '';
+    }
+    return $node->get('field_location_name_contact')->first()->getValue()['value'] ?? '';
+  }
+
+  /**
+   * @inheritDoc
+   */
+  public function getTelephone(NodeInterface $node) {
+    if ($node->get('field_location_telephone')->isEmpty()) {
+      return '';
+    }
+    return $node->get('field_location_telephone')->first()->getValue()['value'] ?? '';
+  }
+
+  /**
+   * @inheritDoc
+   */
+  public function getContinent(NodeInterface $node) {
+    if ($node->get('field_location_continent')->isEmpty()) {
+      return '';
+    }
+    $id =  $node->get('field_location_continent')->first()->getValue()['target_id'];
+    $term = Term::load($id);
+    return $term->label();
+  }
+
+  /**
+   * @inheritDoc
+   */
+  public function getSubArea(NodeInterface $node) {
+    if ($node->get('field_location_subarea')->isEmpty()) {
+      return '';
+    }
+    $id =  $node->get('field_location_subarea')->first()->getValue()['target_id'];
+    $term = Term::load($id);
+    return $term->label();
+  }
+
+  /**
+   * @inheritDoc
+   */
+  public function getArea(NodeInterface $node) {
+    if ($node->get('field_location_area')->isEmpty()) {
+      return '';
+    }
+    $id =  $node->get('field_location_area')->first()->getValue()['target_id'];
+    $term = Term::load($id);
+    return $term->label();
+  }
+
+  /**
+   * @inheritDoc
+   */
+  public function getActivity(NodeInterface $node) {
+    if ($node->get('field_location_activity')->isEmpty()) {
+      return '';
+    }
+    $area_id =  $node->get('field_location_activity')->first()->getValue()['target_id'];
+    $area = Term::load($area_id);
+    return $area->label();
+  }
+
+  /**
+   * @inheritDoc
+   */
+  public function getType(NodeInterface $node) {
+    if ($node->get('field_location_type')->isEmpty()) {
+      return '';
+    }
+    return $node->get('field_location_type')->first()->getValue()['value'] ?? '';
+
+  }
+
+  /**
+   * @inheritDoc
+   */
+  public function getAddress(NodeInterface $node) {
+    if ($node->get('field_location_address')->isEmpty()) {
+      return '';
+    }
+    return $node->get('field_location_address')->getValue()[0]['address_line1'];
+  }
+
+  /**
+   * @inheritDoc
+   */
+  public function getZipCode(NodeInterface $node) {
+    if ($node->get('field_location_address')->isEmpty()) {
+      return '';
+    }
+    return $node->get('field_location_address')->getValue()[0]['postal_code'];
+  }
+
+  /**
+   * @inheritDoc
+   */
+  public function getCity(NodeInterface $node) {
+    if ($node->get('field_location_address')->isEmpty()) {
+      return '';
+    }
+    return $node->get('field_location_address')->getValue()[0]['locality'];
+  }
+
+  /**
+   * @inheritDoc
+   */
+  public function getWebsite(NodeInterface $node) {
+    if ($node->get('field_location_website')->isEmpty()) {
+      return '';
+    }
+    return $node->get('field_location_website')->getValue()[0]['uri'];
+  }
 }

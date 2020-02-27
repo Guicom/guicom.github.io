@@ -8,11 +8,9 @@ use Drupal\Core\Entity\EntityTypeManager;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
-use Drupal\Core\Messenger\MessengerInterface;
-use Drupal\soc_core\Service\MediaApi;
 use Drupal\soc_sales_locations\Service\SalesLocationsManagerServiceInterface;
-use Drupal\soc_wishlist\Service\Manager\WishlistManager;
 use Symfony\Component\DependencyInjection\ContainerInterface;
+use Symfony\Component\HttpFoundation\Response;
 
 /**
  * Class DefaultForm.
@@ -20,11 +18,11 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 class ExportSampleFileSalesLocationsForm extends FormBase {
 
   // @todo: clic sur le bouton submit lance l'export CSV
-  // @todo: ajouter une dépendance avec entity-manager
+  // @done: ajouter une dépendance avec entity-manager
   // @done: service pour avoir la liste de tous les locations
-  // @todo: service pour générer un fichier CSV.
+  // @done: service pour générer un fichier CSV.
   // @todo: définir les données des nodes à extraire pour le fichier CSV.
-
+  // @see: \Drupal\soc_wishlist\Service\Manager\WishlistExport::exportCSV()
 
   /**
    * @var \Drupal\soc_sales_locations\Service\SalesLocationsManagerServiceInterface
@@ -63,7 +61,6 @@ class ExportSampleFileSalesLocationsForm extends FormBase {
       '#type' => 'submit',
       '#value' => $this->t('Submit'),
     ];
-    \Drupal::service('soc_sales_locations.manager')->getNodes();
 
     return $form;
   }
