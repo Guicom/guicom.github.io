@@ -403,4 +403,35 @@
     }
   };
 
+  /**
+   * Search menu
+   */
+  Drupal.behaviors.socomec_search = {
+    attach: function (context, settings) {
+      $( document ).ready(function() {
+        $(".menu--header-visitors [href='#search']", context).once('socomecSearchMenu').each(function () {
+          $(this).click(function (e) {
+            $(this).toggleClass('close-search');
+            $(".block-soc-search-block").toggleClass('d-none');
+            $(".we-mega-menu-submenu").removeClass('show');
+            if ($(".block-soc-search-block").hasClass('d-none')) {
+              if ($(".nav-wrapper").hasClass('open-menu')) {
+                $('.nav-wrapper').removeClass('open-menu');
+              }
+            }
+            else{
+              if (!$(".nav-wrapper").hasClass('open-menu')) {
+                $('.nav-wrapper').addClass('open-menu');
+              }
+              $('.block-soc-search-block input[name="search_api_fulltext"]').focus();
+            }
+            e.preventDefault();
+            e.stopPropagation();
+          });
+        });
+      });
+    }
+  };
+
+
 })(jQuery, Drupal);
