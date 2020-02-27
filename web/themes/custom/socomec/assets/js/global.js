@@ -414,7 +414,17 @@
             $(this).toggleClass('close-search');
             $(".block-soc-search-block").toggleClass('d-none');
             $(".we-mega-menu-submenu").removeClass('show');
-            $('.nav-wrapper').toggleClass('open-menu');
+            if ($(".block-soc-search-block").hasClass('d-none')) {
+              if ($(".nav-wrapper").hasClass('open-menu')) {
+                $('.nav-wrapper').removeClass('open-menu');
+              }
+            }
+            else{
+              if (!$(".nav-wrapper").hasClass('open-menu')) {
+                $('.nav-wrapper').addClass('open-menu');
+              }
+              $('.block-soc-search-block input[name="search_api_fulltext"]').focus();
+            }
             e.preventDefault();
             e.stopPropagation();
           });
