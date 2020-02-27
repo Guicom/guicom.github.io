@@ -38,11 +38,10 @@
   ]
 %}
 <div{{ attributes.addClass(classes) }}>
-
   {% block content_top %}
     <div class="submenu-bg-top">
       <div{{ content_attributes.addClass(['content', 'container']) }}>
-        {{ content }}
+        {{ drupal_entity('block', 'exposedformglobal_searchpage_1') }}
       </div>
     </div>
   {% endblock %}
@@ -50,10 +49,10 @@
   {% block content_bottom %}
     <div class="submenu-bg-bottom">
       <div{{ content_attributes.addClass(['content', 'container']) }}>
+        {{ content }}
         {{ drupal_entity('block', 'top5searches') }}
         {{ drupal_entity('block', 'quicklinks') }}
       </div>
     </div>
   {% endblock %}
-</div>
 </div>
