@@ -39,16 +39,68 @@ class SearchSettingsForm extends ConfigFormBase {
       '#title' => $this->t('Search - settings'),
     ];
 
-    $form['soc_search']['title'] = [
+    $form['soc_search']['basic'] = [
+      '#type'  => 'details',
+      '#open'  => TRUE,
+      '#title' => $this->t('Basic'),
+    ];
+
+    $form['soc_search']['basic']['title'] = [
       '#type'          => 'textfield',
       '#title' => $this->t('Title'),
       '#default_value' => $settings->get('title'),
     ];
 
-    $form['soc_search']['placeholder'] = [
+    $form['soc_search']['basic']['placeholder'] = [
       '#type'          => 'textfield',
       '#title' => $this->t('Placeholder'),
       '#default_value' => $settings->get('placeholder'),
+    ];
+
+    $form['soc_search']['top_search'] = [
+      '#type'  => 'details',
+      '#open'  => TRUE,
+      '#title' => $this->t('Top Search'),
+    ];
+
+    $links_top_search = '<ul class="admin-list">';
+    $links_top_search .= '<li><a href="/admin/structure/block/manage/topsearch" target="_blank">';
+    $links_top_search .= '<span class="label">'.t("Top Search  Title block").'</span>';
+    $links_top_search .= '<div class="description">'.t("Configure Block Top Search Title").'</div>';
+    $links_top_search .= '</a></li>';
+    $links_top_search .= '<li><a href="/admin/structure/menu/manage/search-top-search" target="_blank">';
+    $links_top_search .= '<span class="label">'.t("Top Search settings").'</span>';
+    $links_top_search .= '<div class="description">'.t("Configure Top searches links").'</div>';
+    $links_top_search .= '</a></li>';
+    $links_top_search .= '</ul>';
+    $form['soc_search']['top_search']['top_search_number'] = [
+      '#type'          => 'number',
+      '#title' => $this->t('Maximum number of links in Top Search.'),
+      '#default_value' => $settings->get('top_search_number'),
+      '#suffix' => $links_top_search
+    ];
+
+    $form['soc_search']['quick_links'] = [
+      '#type'  => 'details',
+      '#open'  => TRUE,
+      '#title' => $this->t('Quick Links'),
+    ];
+
+    $links_quick_links = '<ul class="admin-list">';
+    $links_quick_links .= '<li><a href="/admin/structure/block/manage/quicklinksearch" target="_blank">';
+    $links_quick_links .= '<span class="label">'.t("Quicklink Title block").'</span>';
+    $links_quick_links .= '<div class="description">'.t("Configure Block Quicklink Title").'</div>';
+    $links_quick_links .= '</a></li>';
+    $links_quick_links .= '<li><a href="/admin/structure/menu/manage/search-quick-link" target="_blank">';
+    $links_quick_links .= '<span class="label">'.t("Quick Links settings").'</span>';
+    $links_quick_links .= '<div class="description">'.t("Configure Quick Links").'</div>';
+    $links_quick_links .= '</a></li>';
+    $links_quick_links .= '</ul>';
+    $form['soc_search']['quick_links']['quick_links_number'] = [
+      '#type'          => 'number',
+      '#title' => $this->t('Maximum number of links in Quick Links.'),
+      '#default_value' => $settings->get('quick_links_number'),
+      '#suffix' => $links_quick_links
     ];
 
     return $form;
@@ -62,6 +114,8 @@ class SearchSettingsForm extends ConfigFormBase {
     $settings = $this->configFactory->getEditable('soc_search.settings');
     $settings->set('title', $form_state->getValue('title'))->save();
     $settings->set('placeholder', $form_state->getValue('placeholder'))->save();
+    $settings->set('top_search_number', $form_state->getValue('top_search_number'))->save();
+    $settings->set('quick_links_number', $form_state->getValue('quick_links_number'))->save();
   }
 
 }

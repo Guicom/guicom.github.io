@@ -1,0 +1,8 @@
+uuid: 216c0406-b9fe-49b9-b06a-821ad6bcd9ae
+langcode: fr
+status: true
+dependencies: {  }
+id: search-top-search
+label: 'Search - Top search'
+description: 'Search - Top searches suggestion'
+locked: false

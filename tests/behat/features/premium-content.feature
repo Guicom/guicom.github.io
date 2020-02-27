@@ -3,12 +3,16 @@ Feature: Premium Content
 
   Scenario: Thank you page
     Given I am not logged in
+    And I visit "/"
+    And I accept all cookies compliance
     When I am on "/comment-garantir-la-continuite-dalimentation-des-blocs-operatoires/thank-you"
     Then the response status code should be 403
 
   @api @cit @javascript @pardot_form
   Scenario: Pardot form
     Given I am not logged in
+    And I visit "/"
+    And I accept all cookies compliance
     When I visit "/landing-page-premium/whitepaper/comment-garantir-la-continuite-dalimentation-des-blocs-operatoires"
     And I accept all cookies compliance
     And I wait 2 seconds

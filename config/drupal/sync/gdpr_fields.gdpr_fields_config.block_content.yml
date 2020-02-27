@@ -9,6 +9,7 @@ filenames:
   link: ''
   tool_promotion: ''
   home_product_assistance: ''
+  basic: ''
   social_menu_footer: ''
   multiple_links_and_image: ''
 bundles:
@@ -164,6 +165,18 @@ bundles:
     field_ba_link:
       bundle: home_product_assistance
       name: field_ba_link
+      entity_type_id: block_content
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+  basic:
+    body:
+      bundle: basic
+      name: body
       entity_type_id: block_content
       rtf: 'no'
       rta: 'no'

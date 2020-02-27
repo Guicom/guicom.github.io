@@ -45,8 +45,7 @@
     {{ title }}
   {% endif %}
   {{ title_suffix }}
-
-  {% if hidden_count_results %}
+  {% if hidden_count_results and view.getQuery().getFilter().getConditions()|length < 2 %}
     <h2 class="intro">{{ 'More than @total resources just for you!' |t({ '@total': '60 000'}) }}</h2>
   {% else %}
     {% if view.total_rows == 1 %}

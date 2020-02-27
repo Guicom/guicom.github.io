@@ -4,13 +4,17 @@ Feature: Events
   # ./vendor/bin/phing behat:run -Dbehat.tags=events
   # See the example news features.
   Scenario: Events detail
-    Given I visit "/event/energy-storage-international-2020"
+    Given I visit "/"
+    And I accept all cookies compliance
+    When I visit "/event/energy-storage-international-2020"
     Then I should see a "body.node--type-event" element
 
   @api @cit @javascript @events
     # Check if the filter working with the last element.
   Scenario: Events Landing page
-    Given I visit "/events"
+    Given I visit "/"
+    And I accept all cookies compliance
+    When I visit "/events"
     And I click the "select[data-drupal-facet-id='event_type_taxonomy_term_name'] option:last-child" element
     And I wait 2 seconds
     Then I should see "Event #2" in the ".view-id-events" element
@@ -18,7 +22,9 @@ Feature: Events
   @api @cit @javascript @events
     # Check if the filter working with the first element.
   Scenario: Events Landing page
-    Given I visit "/events"
+    Given I visit "/"
+    And I accept all cookies compliance
+    When I visit "/events"
     And I click the "select[data-drupal-facet-id='event_type_taxonomy_term_name'] option:last-child" element
     And I wait 2 seconds
     #Then I should not see "Energy Storage International 2020"
@@ -28,6 +34,8 @@ Feature: Events
   @api @cit @javascript @events
      # L’EVENT promu à venir s'affiche dans le Hero de la listing EVENT.
   Scenario Outline: Bloc Hero for the events page.
+    Given I visit "/"
+    And I accept all cookies compliance
     When I visit "/events"
     Then I should see an "<element>" element
     Then I should see "<text>"
@@ -45,6 +53,7 @@ Feature: Events
       | contributor   | Create Event                               |
       | authenticated | You are not authorized to access this page |
     Given I am logged in as a "<role>"
+    And I accept all cookies compliance
     And I visit "/node/add/event"
     Then I should see the text "<message>"
 
@@ -58,6 +67,7 @@ Feature: Events
       | contributor   | Event #2                                   |
       | authenticated | You are not authorized to access this page |
     Given I am logged in as a "<role>"
+    And I accept all cookies compliance
     And I visit "/node/53/edit"
     Then I should see the text "<message>"
 
@@ -71,6 +81,7 @@ Feature: Events
       | contributor   | Access denied |
       | authenticated | You are not authorized to access this page |
     Given I am logged in as a "<role>"
+    And I accept all cookies compliance
     And I visit "/node/53/revisions"
     Then I should see the text "<message>"
 
@@ -82,6 +93,7 @@ Feature: Events
       | contributor   | Access denied                                   |
       | authenticated | You are not authorized to access this page |
     Given I am logged in as a "<role>"
+    And I accept all cookies compliance
     And I visit "/admin/structure/taxonomy/manage/event_thematic/overview"
     Then I should see the text "<message>"
 
@@ -90,7 +102,9 @@ Feature: Events
   @api @cit @javascript @events @wip
     # Check if the filter working with the first element.
   Scenario: Events check for calendar items
-    Given I visit "/event/event-2"
+    Given I visit "/"
+    And I accept all cookies compliance
+    When I visit "/event/event-2"
     #Then I should not see "Energy Storage International 2020"
     Then I should see "Add to Calendar"
     #Then I should see "Google Calendar" in the "u.atcb-list" element
