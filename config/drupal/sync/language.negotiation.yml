@@ -19,6 +19,7 @@ url:
     it-ch: it-ch
     zh-cn: zh-cn
     pl: pl
+    '': null
   domains:
     en: ''
     fr: ''
