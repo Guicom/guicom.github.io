@@ -98,3 +98,4 @@ content:
     third_party_settings: {  }
 hidden:
   field_background_image: true
+  field_family_menu_icon: true
