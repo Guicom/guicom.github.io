@@ -15,7 +15,7 @@ use Drupal\Component\Utility\Xss;
  * @param \Drupal\Core\Form\FormStateInterface $form_state
  * @param $form_id
  */
-function soc_search_form_alter(&$form, FormStateInterface $form_state, $form_id){
+function soc_search_form_alter(&$form, FormStateInterface $form_state, $form_id) {
   $is_exposed = $form_id == 'views_exposed_form';
   if ($is_exposed) {
     if (!empty($form['#id']) && $form['#id'] === 'views-exposed-form-global-search-page-1') {
@@ -39,7 +39,7 @@ function soc_search_preprocess_breadcrumb(&$variables) {
     $breadcrumb_title_searched = \Drupal::config('soc_search.settings')->get('breadcrumb_title_searched');
 
     $query = Xss::filter(\Drupal::request()->query->get('search_api_fulltext'));
-    if( $query ) {
+    if ($query) {
       $breadcrumb_title = str_replace('@word', $query, $breadcrumb_title_searched);
     }
     $variables['breadcrumb'][1] = array(
@@ -60,7 +60,7 @@ function soc_search_views_pre_render(ViewExecutable $view) {
     $title_no_result = \Drupal::config('soc_search.settings')->get('title_no_result');
 
     $query = Xss::filter(\Drupal::request()->query->get('search_api_fulltext'));
-    if( $query ) {
+    if ($query) {
       $title = str_replace('@word', $query, $title_searched);
     }
     if (empty($view->total_rows)) {
