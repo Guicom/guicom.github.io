@@ -1,0 +1,19 @@
+uuid: 334939a7-f04f-4a19-ba0e-d45c194ba8e1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_location_company
+    - node.type.contenu_location
+id: node.contenu_location.field_location_company
+field_name: field_location_company
+entity_type: node
+bundle: contenu_location
+label: Company
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
