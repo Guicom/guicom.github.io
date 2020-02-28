@@ -13,15 +13,6 @@ function soc_wishlist_form_alter(&$form, FormStateInterface $form_state, $form_i
 }
 
 /**
- * Implements hook_element_info_alter().
- */
-function soc_wishlist_element_info_alter(array &$types) {
-  $types['tableselect']['#pre_render'] = [
-    ['Drupal\soc_wishlist\Render\Element\TableSelect', 'preRenderTableselect']
-  ];
-}
-
-/**
  * Implements hook_theme().
  */
 function soc_wishlist_theme($existing, $type, $theme, $path) {
