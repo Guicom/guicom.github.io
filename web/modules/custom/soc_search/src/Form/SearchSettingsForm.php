@@ -45,11 +45,20 @@ class SearchSettingsForm extends ConfigFormBase {
       '#title' => $this->t('Basic'),
     ];
 
-    $form['soc_search']['basic']['title'] = [
+    $form['soc_search']['basic']['breadcrumb_title'] = [
       '#type'          => 'textfield',
-      '#title' => $this->t('Title'),
-      '#default_value' => $settings->get('title'),
+      '#title' => $this->t('Breadcrumb title'),
+      '#default_value' => $settings->get('breadcrumb_title'),
+      '#description' => $this->t('Breadcrumb of the search page without the word you are looking for.'),
     ];
+
+    $form['soc_search']['basic']['breadcrumb_title_searched'] = [
+      '#type'          => 'textfield',
+      '#title' => $this->t('Breadcrumb title with searched text'),
+      '#default_value' => $settings->get('breadcrumb_title_sought'),
+      '#description' => $this->t('Breadcrumb of the search page with the word you are looking for. use %word token for dynamic text exemple : Search results for "%word"'),
+    ];
+
 
     $form['soc_search']['basic']['placeholder'] = [
       '#type'          => 'textfield',
@@ -112,7 +121,8 @@ class SearchSettingsForm extends ConfigFormBase {
   public function submitForm(array &$form, FormStateInterface $form_state) {
     // Save settings.
     $settings = $this->configFactory->getEditable('soc_search.settings');
-    $settings->set('title', $form_state->getValue('title'))->save();
+    $settings->set('breadcrumb_title', $form_state->getValue('breadcrumb_title'))->save();
+    $settings->set('breadcrumb_title_searched', $form_state->getValue('breadcrumb_title_searched'))->save();
     $settings->set('placeholder', $form_state->getValue('placeholder'))->save();
     $settings->set('top_search_number', $form_state->getValue('top_search_number'))->save();
     $settings->set('quick_links_number', $form_state->getValue('quick_links_number'))->save();

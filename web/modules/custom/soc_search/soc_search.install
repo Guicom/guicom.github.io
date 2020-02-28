@@ -13,7 +13,8 @@ function soc_search_install() {
 
   \Drupal::configFactory()
     ->getEditable('soc_search.settings')
-    ->set('title', 'Search')->save()
+    ->set('breadcrumb_title', 'Search')->save()
+    ->set('breadcrumb_title_searched', 'Search results for "%word"')->save()
 	  ->set('placeholder', 'Search a reference, an advice, etc.')->save()
     ->set('top_search_number', 5)->save()
     ->set('quick_links_number', 5)->save();

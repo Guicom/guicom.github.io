@@ -1,5 +1,6 @@
 langcode: en
-title: ''
-placeholder: ''
-top_search_number: ''
-quick_links_number: ''
+breadcrumb_title: 'Search'
+breadcrumb_title_searched: 'Search results for "%word"'
+placeholder: 'Search a reference, an advice, etc.'
+top_search_number: 5
+quick_links_number: 5
