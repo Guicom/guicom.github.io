@@ -105,10 +105,13 @@ content:
     type: telephone_default
     region: content
   field_location_type:
-    weight: 19
-    settings: {  }
+    weight: 27
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
-    type: options_select
+    type: entity_reference_autocomplete
     region: content
   field_location_website:
     weight: 26
