@@ -1,5 +1,6 @@
 module:
   abjs: 0
+  address: 0
   addtoany: 0
   addtocalendar: 0
   admin_toolbar: 0
@@ -128,6 +129,7 @@ module:
   system: 0
   taxonomy: 0
   taxonomy_menu: 0
+  telephone: 0
   text: 0
   token: 0
   toolbar: 0

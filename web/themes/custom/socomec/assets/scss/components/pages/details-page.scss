@@ -265,6 +265,19 @@
   #news-info-section {
     margin-bottom: 2*$spacer;
   }
+  .multiline-content {
+    .field--name-field-body,
+    .field--name-field-event-content{
+      .field__item {
+        .paragraph {
+          &:not(.paragraph--type-video-text) {
+            @include make-col(10);
+            @include make-col-offset(1);
+          }
+        }
+      }
+    }
+  }
   // EVENT DATE
   .event-top {
     background: $yellow;
