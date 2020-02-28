@@ -1,0 +1,7 @@
+soc_search.settings:
+  path: '/admin/config/socomec/soc_search/settings'
+  defaults:
+    _form: '\Drupal\soc_search\Form\SearchSettingsForm'
+    _title: 'Search settings'
+  requirements:
+    _permission: 'manage search settings'

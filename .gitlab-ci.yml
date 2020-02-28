@@ -50,7 +50,7 @@ cache: &global_cache
     - docker-compose exec -u root -T web bash -c "cd /var/www/html/ && composer install"
     - docker-compose exec -u root -T web bash -c "cd /var/www/html/tests/behat && composer install"
     - docker-compose exec -u root -T web bash -c "cd /var/www/html/ && ./vendor/bin/phing install-local"
-    - docker-compose exec -u root -T web bash -c "chown -R www-data:www-data /var/www/html/"
+    - docker-compose exec -u root -T web bash -c "chown -R web:www-data /var/www/html/"
 
 .build_project: &build_project
   artifacts:
@@ -69,6 +69,7 @@ cache: &global_cache
     - docker-compose up -d
     - docker-compose exec -u root -T web bash -c "cd /var/www/html/ && make install"
     - docker-compose exec -u root -T web bash -c "cd /var/www/html/ && make set-kubernetes-configs"
+    - docker-compose exec -u root -T web bash -c "chown -R web:www-data /var/www/html/"
 
 # SonarQube Runner
 sonarqube:

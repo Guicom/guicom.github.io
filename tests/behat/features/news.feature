@@ -4,13 +4,18 @@ Feature: News
   Test if the page news is visible
  # vendor/bin/phing behat:run -Dbehat.tags=news
   Scenario: News detail
-    Given I visit "/news/socomec-certifie-iso-14001-en-alsace"
+    Given I visit "/"
+    And I accept all cookies compliance
+    When I visit "/news/socomec-certifie-iso-14001-en-alsace"
+    And I accept all cookies compliance
     Then I should see a "body.node--type-news" element
 
   @api @cit @news @javascript
  # vendor/bin/phing behat:run -Dbehat.tags=news
   Scenario: News Landing page
-    Given I visit "/news"
+    Given I visit "/"
+    And I accept all cookies compliance
+    When I visit "/news"
     And I click the "select[data-drupal-facet-id='news_theme_taxonomy_term_name'] option:last-child" element
     And I wait 2 seconds
     Then I should see "Socomec certifié ISO"

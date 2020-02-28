@@ -29,6 +29,7 @@ third_party_settings:
     regions:
       ds_content:
         - field_media_oembed_video
+        - field_country
 _core:
   default_config_hash: gUaDZKMQD3lmLKWPn727X3JHVdKJ525g4EJCCcDVAqk
 id: media.remote_video.default
@@ -43,7 +44,7 @@ content:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
-    region: content
+    region: ds_content
   field_media_oembed_video:
     type: oembed
     weight: 0
@@ -69,7 +70,7 @@ content:
             fis-at: ''
             fi: true
             fi-el: div
-            fi-cl: 'embed-responsive embed-responsive-21by9'
+            fi-cl: 'embed-responsive embed-responsive-16by9'
             fi-at: ''
             suffix: ''
             lbw: false

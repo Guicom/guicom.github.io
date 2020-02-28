@@ -319,7 +319,7 @@
                               background: linear-gradient(180deg, rgba(0,79,159,0) 0%, #0070C0 100%);
                               @include left-overflow-color(linear-gradient(180deg, rgba(0,79,159,0) 0%, #0070C0 100%));
                               @include right-overflow-color(linear-gradient(180deg, rgba(0,79,159,0) 0%, #0070C0 100%));
-
+                              margin-top: -15px;
                               .level-1 {
                                 //impair
                                 &:nth-child(odd) {
@@ -367,11 +367,15 @@
                   .level-1 {
                     padding: 15px 20px 40px;
                     position: relative;
-                    > span,
+                    > span:not(.mobile-dropdown-trigger),
                     > a {
                       padding: 0;
                       text-transform: uppercase;
                       height: 40px;
+                    }
+
+                    > span:not(.mobile-dropdown-trigger) {
+                      cursor: initial;
                     }
 
                     > .dropdown-menu {
@@ -382,6 +386,11 @@
                       background: transparent;
                       border: none;
                       box-shadow: none !important;
+
+                      .submenu-bg {
+                        @include make-col(12);
+                        width: 100%;
+                      }
                     }
                     &:after {
                       content: '';
@@ -587,6 +596,8 @@
                 height: 100vh;
                 background: #084796;
                 padding-top: 0;
+                overflow-y: auto;
+                padding-bottom: 80px;
                 > .submenu-bg {
                   background: linear-gradient(180deg, rgba(0,79,159,0) 0%, #0070C0  100%);
                   position: relative;
@@ -610,7 +621,7 @@
       }
     }
     .mobile-dropdown-trigger {
-      display: none;
+      display: none!important;
     }
   }
 

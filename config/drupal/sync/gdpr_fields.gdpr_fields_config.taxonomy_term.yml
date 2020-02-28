@@ -99,6 +99,17 @@ bundles:
       notes: ''
       relationship: 0
       sars_filename: ''
+    field_family_menu_icon:
+      bundle: family
+      name: field_family_menu_icon
+      entity_type_id: taxonomy_term
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
   label:
     field_image:
       bundle: label

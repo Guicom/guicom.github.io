@@ -1,0 +1,92 @@
+{
+    "_links": {
+        "self": {
+            "href": ""
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/file\/file"
+        },
+        "http:\/\/drupal.org\/rest\/relation\/file\/file\/uid": [
+            {
+                "href": "http:\/\/default\/user\/1?_format=hal_json"
+            }
+        ]
+    },
+    "fid": [
+        {
+            "value": 51
+        }
+    ],
+    "uuid": [
+        {
+            "value": "6c11be49-47a6-45cf-9121-5ec995d108c8"
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en"
+        }
+    ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/file\/file\/uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/user\/1?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "f249bc8f-cc01-41d5-aba6-8852ecc9abf5"
+                    }
+                ]
+            }
+        ]
+    },
+    "filename": [
+        {
+            "value": "metering-monitoring.svg"
+        }
+    ],
+    "uri": [
+        {
+            "value": "public:\/\/2020-02\/metering-monitoring.svg",
+            "url": "\/sites\/default\/files\/2020-02\/metering-monitoring.svg"
+        }
+    ],
+    "filemime": [
+        {
+            "value": "image\/svg+xml"
+        }
+    ],
+    "filesize": [
+        {
+            "value": 3971
+        }
+    ],
+    "status": [
+        {
+            "value": true
+        }
+    ],
+    "created": [
+        {
+            "value": "2020-02-23T16:59:22+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "changed": [
+        {
+            "value": "2020-02-23T16:59:26+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "data": [
+        {
+            "value": "PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iNDBweCIgaGVpZ2h0PSI0MHB4IiB2aWV3Qm94PSIwIDAgNDAgNDAiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+CiAgICA8IS0tIEdlbmVyYXRvcjogc2tldGNodG9vbCA2MS4yICgxMDEwMTApIC0gaHR0cHM6Ly9za2V0Y2guY29tIC0tPgogICAgPHRpdGxlPkEzMjM3NUVGLTc5MTktNERGQS04RTQ3LUM0QzBCNjhCNjMwMjwvdGl0bGU+CiAgICA8ZGVzYz5DcmVhdGVkIHdpdGggc2tldGNodG9vbC48L2Rlc2M+CiAgICA8ZyBpZD0iQXNzZXQtQXJ0Ym9hcmQtUGFnZSIgc3Ryb2tlPSJub25lIiBzdHJva2Utd2lkdGg9IjEiIGZpbGwtcnVsZT0iZXZlbm9kZCI+CiAgICAgICAgPGcgaWQ9InVpL01lZGl1bS9jaGV2cm9uLWxlZnQtdWkvVGhpbi9tZXRlcmluZy1tb25pdG9yaW5nIj4KICAgICAgICAgICAgPHBhdGggZD0iTTMyLjkxNjU2NDksMjMuODI1OTg4OCBDMzIuOTE2NTY0OSwyMy45OTg1OTYyIDMyLjg0NjY0NDcsMjQuMTU0ODYxNiAzMi43MzM1NDEyLDI0LjI2Nzk2NTEgQzMyLjYyMDQzNzgsMjQuMzgxMDY4NSAzMi40NjQxNzI0LDI0LjQ1MDk4ODggMzIuMjkxNTY0OSwyNC40NTA5ODg4IEw3LjcwODQzNTA2LDI0LjQ1MDk4ODggQzcuNTM1ODI3NjQsMjQuNDUwOTg4OCA3LjM3OTU2MjIsMjQuMzgxMDY4NSA3LjI2NjQ1ODc1LDI0LjI2Nzk2NTEgQzcuMTUzMzU1MywyNC4xNTQ4NjE2IDcuMDgzNDM1MDYsMjMuOTk4NTk2MiA3LjA4MzQzNTA2LDIzLjgyNTk4ODggQzcuMDgzNDM1MDYsMjMuNjUzNDIxMiA3LjE1MzQxODczLDIzLjQ5NzE2NjkgNy4yNjY1MzM3NywyMy4zODQwNTE5IEM3LjM3OTYyMzMzLDIzLjI3MDk2MjMgNy41MzU4NDg4LDIzLjIwMDk4ODggNy43MDg0MzUwNiwyMy4yMDA5ODg4IEwzMi4yOTE4NzAyLDIzLjIwMDk4ODggQzMyLjQ2NDMzMzQsMjMuMjAwOTg4OCAzMi42MjA0NTAzLDIzLjI3MDk3NTcgMzIuNzMzNDczMiwyMy4zODQwMjA3IEMzMi44NDY1NzY1LDIzLjQ5NzE0NjEgMzIuOTE2NTY0OSwyMy42NTM0MDk4IDMyLjkxNjU2NDksMjMuODI1OTg4OCBaIE0zOS4wNjI1LDQuODc3MDE0MTQgTDM5LjA2MjUsMjUuOTA0MjM1OSBDMzkuMDYyNSwyNi45OTAzNjk0IDM4LjYyMDI5OTYsMjcuOTc1MDE3OCAzNy45MDcwMzM3LDI4LjY4ODI4MzcgQzM3LjE5Mzc2NzgsMjkuNDAxNTQ5NiAzNi4yMDkxMTk0LDI5Ljg0Mzc1IDM1LjEyMjk4NTksMjkuODQzNzUgTDI3LjAxMjg4NjgsMjkuODQzNzUgTDI5LjY2OTEzNjgsMzcuODEyNSBMMzIuMjkxODcwMiwzNy44MTI1IEMzMi40NjQ0Mzc3LDM3LjgxMjUgMzIuNjIwNjkyLDM3Ljg4MjQ4MzcgMzIuNzMzODA3LDM3Ljk5NTU5ODcgQzMyLjg0Njg5NjYsMzguMTA4Njg4MyAzMi45MTY4NzAyLDM4LjI2NDkxMzcgMzIuOTE2ODcwMiwzOC40Mzc1IEMzMi45MTY4NzAyLDM4LjYxMDA4NjMgMzIuODQ2ODk2NiwzOC43NjYzMTE3IDMyLjczMzgwNywzOC44Nzk0MDEzIEMzMi42MjA2OTIsMzguOTkyNTE2MyAzMi40NjQ0Mzc3LDM5LjA2MjUgMzIuMjkxODcwMiwzOS4wNjI1IEw3LjcwODQzNTA4LDM5LjA2MjUgQzcuNTM1ODI3NjYsMzkuMDYyNSA3LjM3OTU2MjIyLDM4Ljk5MjU3OTggNy4yNjY0NTg3NywzOC44Nzk0NzYzIEM3LjE1MzM1NTMyLDM4Ljc2NjM3MjkgNy4wODM0MzUwOCwzOC42MTAxMDc0IDcuMDgzNDM1MDgsMzguNDM3NSBDNy4wODM0MzUwOCwzOC4yNjQ4OTI2IDcuMTUzMzU1MzIsMzguMTA4NjI3MSA3LjI2NjQ1ODc3LDM3Ljk5NTUyMzcgQzcuMzc5NTYyMjIsMzcuODgyNDIwMiA3LjUzNTgyNzY2LDM3LjgxMjUgNy43MDg0MzUwOCwzNy44MTI1IEwxMC4zMzA4NjMyLDM3LjgxMjUgTDEyLjk4NzExMzIsMjkuODQzNzUgTDQuODc3MDE0MTQsMjkuODQzNzUgQzMuNzkwODgwNjUsMjkuODQzNzUgMi44MDYyMzIyMSwyOS40MDE1NDk2IDIuMDkyOTY2MzEsMjguNjg4MjgzNyBDMS4zNzk3MDA0LDI3Ljk3NTAxNzggMC45Mzc1LDI2Ljk5MDM2OTQgMC45Mzc1LDI1LjkwNDIzNTkgTDAuOTM3NSw0Ljg3NzAxNDE0IEMwLjkzNzUsMy43OTA4ODA2NSAxLjM3OTcwMDQsMi44MDYyMzIyMSAyLjA5Mjk2NjMxLDIuMDkyOTY2MzEgQzIuODA2MjMyMjEsMS4zNzk3MDA0IDMuNzkwODgwNjUsMC45Mzc1IDQuODc3MDE0MTQsMC45Mzc1IEwzNS4xMjI5ODU5LDAuOTM3NSBDMzYuMjA5MTE5NCwwLjkzNzUgMzcuMTkzNzY3OCwxLjM3OTcwMDQgMzcuOTA3MDMzNywyLjA5Mjk2NjMxIEMzOC42MjAyOTk2LDIuODA2MjMyMjEgMzkuMDYyNSwzLjc5MDg4MDY1IDM5LjA2MjUsNC44NzcwMTQxNCBaIE00Ljg3NzAxNDE0LDIuMTg3NSBDNC4xMzU2NTI2OSwyLjE4NzUgMy40NjMwMTYwNSwyLjQ4ODc2MTg4IDIuOTc1ODg4OTYsMi45NzU4ODg5NiBDMi40ODg3NjE4OCwzLjQ2MzAxNjA1IDIuMTg3NSw0LjEzNTY1MjY5IDIuMTg3NSw0Ljg3NzAxNDE0IEwyLjE4NzUsMjUuOTA0MjM1OSBDMi4xODc1LDI2LjY0NTU5NzMgMi40ODg3NjE4OCwyNy4zMTgyMzM5IDIuOTc1ODg4OTYsMjcuODA1MzYxIEMzLjQ2MzAxNjA1LDI4LjI5MjQ4ODEgNC4xMzU2NTI2OSwyOC41OTM3NSA0Ljg3NzAxNDE0LDI4LjU5Mzc1IEwzNS4xMjI5ODU5LDI4LjU5Mzc1IEMzNS44NjQzNDczLDI4LjU5Mzc1IDM2LjUzNjk4MzksMjguMjkyNDg4MSAzNy4wMjQxMTEsMjcuODA1MzYxIEMzNy41MTEyMzgxLDI3LjMxODIzMzkgMzcuODEyNSwyNi42NDU1OTczIDM3LjgxMjUsMjUuOTA0MjM1OSBMMzcuODEyNSw0Ljg3NzAxNDE0IEMzNy44MTI1LDQuMTM1NjUyNjkgMzcuNTExMjM4MSwzLjQ2MzAxNjA1IDM3LjAyNDExMSwyLjk3NTg4ODk2IEMzNi41MzY5ODM5LDIuNDg4NzYxODggMzUuODY0MzQ3MywyLjE4NzUgMzUuMTIyOTg1OSwyLjE4NzUgTDQuODc3MDE0MTQsMi4xODc1IFogTTE0LjMwNDc1NywyOS44NDM3NSBMMTEuNjQ4NTA3MSwzNy44MTI1IEwyOC4zNTE0MzA5LDM3LjgxMjUgTDI1LjY5NTU4LDI5Ljg0Mzc1IEwxNC4zMDQ3NTcsMjkuODQzNzUgWiBNMzIuOTE2ODcwMSw3LjcwODQzNTA2IEwzMi45MTY4NzAxLDE4LjQzMzUzMjcgQzMyLjkxNjg3MDEsMTguNjA2MTE5IDMyLjg0Njg5NjUsMTguNzYyMzQ0NCAzMi43MzM4MDcsMTguODc1NDM0IEMzMi42MjA2OTIsMTguOTg4NTQ5IDMyLjQ2NDQzNzYsMTkuMDU4NTMyNyAzMi4yOTE4NzAxLDE5LjA1ODUzMjcgTDcuNzA4NDM1MDYsMTkuMDU4NTMyNyBDNy41MzU4Mjc2NCwxOS4wNTg1MzI3IDcuMzc5NTYyMiwxOC45ODg2MTI1IDcuMjY2NDU4NzUsMTguODc1NTA5IEM3LjE1MzM1NTMsMTguNzYyNDA1NiA3LjA4MzQzNTA2LDE4LjYwNjE0MDEgNy4wODM0MzUwNiwxOC40MzM1MzI3IEw3LjA4MzQzNTA2LDcuNzA4NDM1MDYgQzcuMDgzNDM1MDYsNy41MzU4Mjc2NCA3LjE1MzM1NTMsNy4zNzk1NjIyIDcuMjY2NDU4NzUsNy4yNjY0NTg3NSBDNy4zNzk1NjIyLDcuMTUzMzU1MyA3LjUzNTgyNzY0LDcuMDgzNDM1MDYgNy43MDg0MzUwNiw3LjA4MzQzNTA2IEwzMi4yOTE1NjQ5LDcuMDgzNDM1MDYgQzMyLjQ2NDE5NjQsNy4wODM0MzUwNiAzMi42MjA0NzU2LDcuMTUzMzc3MDkgMzIuNzMzNjEwNSw3LjI2NjQ4OTkxIEMzMi44NDY4MTA2LDcuMzc5NjY3ODYgMzIuOTE2ODcwMSw3LjUzNjA0MTE4IDMyLjkxNjg3MDEsNy43MDg0MzUwNiBaIE0yNS41MjA5MzUxLDE3LjgwODUzMjcgTDI1LjUyMDkzNTEsOC4zMzM0MzUwNiBMOC4zMzM0MzUwNiw4LjMzMzQzNTA2IEw4LjMzMzQzNTA2LDE3LjgwODUzMjcgTDI1LjUyMDkzNTEsMTcuODA4NTMyNyBaIE0yNi43NzA5MzUxLDguMzMzMTI5ODggTDI2Ljc3MDkzNTEsMTcuODA4NTMyNyBMMzEuNjY2NTY0OSwxNy44MDg1MzI3IEwzMS42NjY1NjQ5LDguMzMzMTI5ODggTDI2Ljc3MDkzNTEsOC4zMzMxMjk4OCBaIiBpZD0iU2hhcGUiPjwvcGF0aD4KICAgICAgICA8L2c+CiAgICA8L2c+Cjwvc3ZnPgo="
+        }
+    ]
+}

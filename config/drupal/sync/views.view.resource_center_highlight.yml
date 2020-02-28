@@ -202,10 +202,22 @@ display:
             group_items: {  }
           plugin_id: search_api_boolean
       sorts:
-        created:
-          id: created
+        changed:
+          id: changed
           table: search_api_index_resources
-          field: created
+          field: changed
+          relationship: none
+          group_type: group
+          admin_label: ''
+          order: DESC
+          exposed: false
+          expose:
+            label: ''
+          plugin_id: search_api
+        sticky:
+          id: sticky
+          table: search_api_index_resources
+          field: sticky
           relationship: none
           group_type: group
           admin_label: ''

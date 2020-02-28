@@ -1,0 +1,247 @@
+Index: web/modules/contrib/we_megamenu/src/WeMegaMenuBuilder.php
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- web/modules/contrib/we_megamenu/src/WeMegaMenuBuilder.php	(date 1582484973942)
++++ web/modules/contrib/we_megamenu/src/WeMegaMenuBuilder.php	(date 1582484973942)
+@@ -427,7 +427,7 @@
+             }
+           }
+         }
+-      } 
++      }
+     }
+   }
+ 
+@@ -437,9 +437,10 @@
+    * @param object $menu_config
+    *   Public static function menuItemInsert menu_config.
+    */
+-  public static function orderMenuItems($menu_config) {
++  public static function orderMenuItems($menu_name, $menu_config) {
+     if (isset($menu_config->menu_config)) {
+       $menus = $menu_config->menu_config;
++      $tree = \Drupal::menuTree()->load($menu_name, new \Drupal\Core\Menu\MenuTreeParameters());
+       if (isset($menus) && is_object($menus)) {
+         foreach ($menus as $key_menu => $menu) {
+           if (isset($menu->rows_content)) {
+@@ -462,7 +463,7 @@
+                         $menu_item = Drupal::entityTypeManager()
+                           ->getStorage('menu_link_content')
+                           ->loadByProperties(['uuid' => $col->mlid]);
+-                        if (is_array($menu_item)) {
++                        if (is_array($menu_item) && !empty($menu_item)) {
+                           $menu_item = reset($menu_item);
+                           if (method_exists($menu_item, 'get')) {
+                             $list_menu_items[] =  [
+@@ -473,12 +474,60 @@
+                             $list_mega_menu_items[] = $col;
+                           }
+                         }
+-                      }
+-                    }
+-                  }
+-                }
+-              }
+-
++                        else {
++                          $current_uuid = 'taxonomy_menu.menu_link:' . $col->mlid;
++                          foreach ($tree as $key_sub => $sub_tree) {
++                            if ($key_sub == $current_uuid) {
++                              $list_menu_items[] =  [
++                                'derivativeId' => $col->mlid,
++                                'title' => $sub_tree->link->getTitle(),
++                                'weight' => $sub_tree->link->getWeight(),
++                              ];
++                              $list_mega_menu_items[] = $col;
++                            }
++                            elseif (isset($sub_tree->subtree) && !empty($sub_tree->subtree)) {
++                              foreach ($sub_tree->subtree as $key_sub_sub => $sub_sub_tree) {
++                                if ($key_sub_sub == $current_uuid) {
++                                  $list_menu_items[] =  [
++                                    'derivativeId' => $col->mlid,
++                                    'title' => $sub_sub_tree->link->getTitle(),
++                                    'weight' => $sub_sub_tree->link->getWeight(),
++                                  ];
++                                  $list_mega_menu_items[] = $col;
++                                }
++                                elseif (isset($sub_sub_tree->subtree) && !empty($sub_sub_tree->subtree)) {
++                                  foreach ($sub_sub_tree->subtree as $key_sub_sub_sub => $sub_sub_sub_tree) {
++                                    if ($key_sub_sub_sub == $current_uuid) {
++                                      $list_menu_items[] =  [
++                                        'derivativeId' => $col->mlid,
++                                        'title' => $sub_sub_sub_tree->link->getTitle(),
++                                        'weight' => $sub_sub_sub_tree->link->getWeight(),
++                                      ];
++                                      $list_mega_menu_items[] = $col;
++                                    }
++                                    elseif(isset($sub_sub_sub_tree->subtree) && !empty($sub_sub_sub_tree->subtree)) {
++                                      foreach ($sub_sub_sub_tree->subtree as $key_sub_sub_sub_sub => $sub_sub_sub_sub_tree) {
++                                        if ($key_sub_sub_sub_sub == $current_uuid) {
++                                          $list_menu_items[] = [
++                                            'derivativeId' => $col->mlid,
++                                            'title' => $sub_sub_sub_sub_tree->link->getTitle(),
++                                            'weight' => $sub_sub_sub_sub_tree->link->getWeight(),
++                                          ];
++                                          $list_mega_menu_items[] = $col;
++                                        }
++                                      }
++                                    }
++                                  }
++                                }
++                              }
++                            }
++                          }
++                        }
++                      }
++                    }
++                  }
++                }
++              }
+               if (!sizeof($positions)) {
+                 continue;
+               }
+@@ -710,4 +759,4 @@
+       }
+     }
+   }
+-}
+\ No newline at end of file
++}
+Index: web/modules/contrib/we_megamenu/we_megamenu.module
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- web/modules/contrib/we_megamenu/we_megamenu.module	(date 1582485387662)
++++ web/modules/contrib/we_megamenu/we_megamenu.module	(date 1582485387662)
+@@ -266,7 +266,7 @@
+     }
+ 
+     if (strpos($vars['href'], 'user/login') !== FALSE && $current_user->id() != 0 && $vars['section'] != 'admin') {
+-      continue; 
++      continue;
+     }
+ 
+     $vars['content'][] = [
+@@ -300,7 +300,7 @@
+   $block_theme = $vars['block_theme'];
+   $data_config = WeMegaMenuBuilder::loadConfig($menu_name, $block_theme);
+   $menu_config = isset($data_config->menu_config) ? $data_config->menu_config : [];
+-  
++
+   $vars['attributes'] = new Attribute();
+   $vars['attributes']['class'] = [];
+   $vars['attributes']['class'][] = 'we-mega-menu-li';
+@@ -342,7 +342,7 @@
+     $vars['attributes']['class'][] = 'active-trail';
+     $vars['link']['attributes']['class'][] = 'active-trail';
+   }
+-  
++
+   if ($vars['subtree']) {
+     $vars['content'] = [
+       '#theme' => 'we_megamenu_submenu',
+@@ -431,7 +431,7 @@
+   $vars['attributes']['class'] = [];
+   $vars['attributes']['class'][] = 'we-mega-menu-row';
+   $vars['attributes']['data-element-type'] = 'we-mega-menu-row';
+-  
++
+   if ($vars['item_config']) {
+     foreach ($vars['item_config'] as $key_col => $col) {
+       $vars['col'][] = [
+@@ -484,7 +484,7 @@
+         '#menu_name' => $vars['menu_name'],
+         '#trail' => $vars['trail'],
+       ];
+-    } 
++    }
+ 
+     if (isset($col_items->col_content->block_id)) {
+       $block_id = $col_items->col_content->block_id;
+@@ -608,15 +608,15 @@
+ 
+     switch ($entity_type) {
+       case 'menu':
+-        
++
+         break;
+-      
++
+       case 'menu_link_content':
+         if (isset($data['parent'][0]['value'])) {
+           $mid_parent = $data['parent'][0]['value'];
+           $mid_parent = str_replace('menu_link_content:', '', $mid_parent);
+           $menu_name = $data['menu_name'][0]['value'];
+-          $config = \Drupal::config('system.theme');    
++          $config = \Drupal::config('system.theme');
+           $theme_name = $config->get('default');
+           # Load main menu and insert to megamenu
+           $menu_item_obj = new stdClass();
+@@ -662,7 +662,7 @@
+                 'col_content' =>$tmp_col_content,
+                 'col_cfg' =>$tmp_col_cfg,
+               ];
+-              
++
+               $menu_position = WeMegaMenuBuilder::menuItemInsert($key_menu, $menu_config, $menu, $child_item);
+             }
+           }
+@@ -684,16 +684,16 @@
+     $data = $entity->getTypedData();
+     $data = $data->toArray();
+     $entity_type = $entity->getEntityTypeId();
+-    
++
+ 
+     switch ($entity_type) {
+       case 'menu':
+-      
++
+         break;
+-      
++
+       case 'menu_link_content':
+         $menu_name = $data['menu_name'][0]['value'];
+-        $config = \Drupal::config('system.theme');    
++        $config = \Drupal::config('system.theme');
+         $theme_name = $config->get('default');
+         $menu_uuid = $entity->get('uuid')->getString();
+         $menu_uuid = ($menu_uuid == 'standard.front_page') ? base_path() : $menu_uuid;
+@@ -718,9 +718,9 @@
+     switch ($entity_type) {
+       case 'menu':
+         $menu_name = $data['id'];
+-        $config = \Drupal::config('system.theme');    
++        $config = \Drupal::config('system.theme');
+         $theme_name = $config->get('default');
+-        
++
+         $tmp_col_content = new stdClass();
+         $tmp_col_content->mlid = '';
+         $tmp_col_content->type = 'we-mega-menu-li';
+@@ -741,12 +741,12 @@
+ 
+         $menu_config = WeMegaMenuBuilder::loadConfig($menu_name, $theme_name);
+         WeMegaMenuBuilder::dragDropMenuItems($menu_name, $theme_name, $menu_config, $child_item);
+-        WeMegaMenuBuilder::orderMenuItems($menu_config);
++        WeMegaMenuBuilder::orderMenuItems($menu_name, $menu_config);
+         WeMegaMenuBuilder::saveConfig($menu_name, $theme_name, json_encode($menu_config));
+         break;
+-      
++
+       case 'menu_link_content':
+-        
++
+         break;
+     }
+   }
+@@ -773,4 +773,4 @@
+ function we_megamenu_flush_render_cache() {
+   $renderCache = \Drupal::service('cache.render');
+   $renderCache->invalidateAll();
+-}
+\ No newline at end of file
++}

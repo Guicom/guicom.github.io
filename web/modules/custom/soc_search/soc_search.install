@@ -1,0 +1,32 @@
+<?php
+
+/**
+ * @file
+ * Update scripts for the soc_search module.
+ */
+
+/**
+ * Implements hook_install().
+ */
+function soc_search_install() {
+  module_load_include('module', 'soc_search', 'soc_search');
+
+  \Drupal::configFactory()
+    ->getEditable('soc_search.settings')
+    ->set('title', 'Search')->save()
+	  ->set('placeholder', 'Search a reference, an advice, etc.')->save()
+    ->set('top_search_number', 5)->save()
+    ->set('quick_links_number', 5)->save();
+}
+
+/**
+ * Implements hook_update_N
+ * Set top_search_number value
+ * Set quick_links_number value
+ */
+function soc_search_update_8001() {
+  \Drupal::configFactory()
+    ->getEditable('soc_search.settings')
+    ->set('top_search_number', 5)->save()
+    ->set('quick_links_number', 5)->save();
+}

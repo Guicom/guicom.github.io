@@ -1,11 +1,16 @@
 .paragraph--type--model-text{
+  padding-top: 2.5rem;
+  padding-bottom: 3.75rem;
+  h2 {
+    margin-top: 0;
+  }
   .field--name-field-title {
     color: $blue;
     font-family: $font-roboto;
     font-size: 48px;
     font-weight: 300;
     line-height: 60px;
-    margin: 40px 0 20px 0;
+    margin-bottom: 20px;
     display: inline-flex;
     position: relative;
 

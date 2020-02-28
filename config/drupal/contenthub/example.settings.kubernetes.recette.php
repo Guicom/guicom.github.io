@@ -156,3 +156,7 @@ $config['config_split.config_split.contenthub']['folder'] = "../config/drupal/co
 // Entity share user
 $settings['entity_share_username'] = 'entityshare';
 $settings['entity_share_password'] = 'entityshare';
+
+$databases['default']['default']['init_commands'] = array(
+  'isolation' => "SET SESSION tx_isolation='READ-COMMITTED'"
+);

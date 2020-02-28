@@ -1,14 +1,20 @@
 {
     "_links": {
         "self": {
-            "href": "http:\/\/default\/products\/power-switching?_format=hal_json"
+            "href": "http:\/\/default\/energy-storage-solution\/power-switching?_format=hal_json"
         },
         "type": {
             "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/family"
         },
         "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/family\/parent": [
             {
-                "href": "http:\/\/default\/products?_format=hal_json"
+                "href": "http:\/\/default\/energy-storage-solution?_format=hal_json"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/family\/content_translation_uid": [
+            {
+                "href": "http:\/\/default\/user\/1?_format=hal_json",
+                "lang": "en"
             }
         ]
     },
@@ -56,7 +62,7 @@
     ],
     "weight": [
         {
-            "value": 2
+            "value": 1
         }
     ],
     "_embedded": {
@@ -64,7 +70,7 @@
             {
                 "_links": {
                     "self": {
-                        "href": "http:\/\/default\/products?_format=hal_json"
+                        "href": "http:\/\/default\/energy-storage-solution?_format=hal_json"
                     },
                     "type": {
                         "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/family"
@@ -72,15 +78,33 @@
                 },
                 "uuid": [
                     {
-                        "value": "2e4108af-6939-4d12-bd4e-2ff6496cc8aa"
+                        "value": "59b4df63-c1cc-49ae-81ba-1cd80dcd280b"
                     }
                 ]
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/family\/content_translation_uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/user\/1?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "f249bc8f-cc01-41d5-aba6-8852ecc9abf5"
+                    }
+                ],
+                "lang": "en"
             }
         ]
     },
     "changed": [
         {
-            "value": "2020-01-17T17:38:27+00:00",
+            "value": "2020-02-23T16:59:04+00:00",
             "format": "Y-m-d\\TH:i:sP"
         }
     ],
