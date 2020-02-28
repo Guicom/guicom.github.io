@@ -1,0 +1,29 @@
+uuid: 7a8597ea-69f0-401e-b3c2-15903a358037
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_location_activity
+    - node.type.contenu_location
+    - taxonomy.vocabulary.location_activity
+id: node.contenu_location.field_location_activity
+field_name: field_location_activity
+entity_type: node
+bundle: contenu_location
+label: Activity
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      location_activity: location_activity
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: location_areas
+field_type: entity_reference
