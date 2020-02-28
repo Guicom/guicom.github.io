@@ -1,12 +1,11 @@
-uuid: 36fa9067-2ed2-40ce-b315-889427150fea
+uuid: 50f2f684-c01f-47aa-b5eb-9abee4ba3a9f
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.node.field_location_type
     - node.type.contenu_location
-  module:
-    - options
+    - taxonomy.vocabulary.location_type
 id: node.contenu_location.field_location_type
 field_name: field_location_type
 entity_type: node
@@ -14,8 +13,17 @@ bundle: contenu_location
 label: Type
 description: ''
 required: true
-translatable: false
+translatable: true
 default_value: {  }
 default_value_callback: ''
-settings: {  }
-field_type: list_string
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      location_type: location_type
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

@@ -1,27 +1,17 @@
-uuid: e86c9dc3-c0fa-4fb2-8afa-7ede21fe7b8e
+uuid: d930a1ac-e45f-4e0e-89d4-1e51a1ffcc72
 langcode: en
 status: true
 dependencies:
   module:
     - node
-    - options
+    - taxonomy
 id: node.field_location_type
 field_name: field_location_type
 entity_type: node
-type: list_string
+type: entity_reference
 settings:
-  allowed_values:
-    -
-      value: distributor
-      label: Distributor
-    -
-      value: reseller
-      label: Reseller
-    -
-      value: subsidiary
-      label: Subsidiary
-  allowed_values_function: ''
-module: options
+  target_type: taxonomy_term
+module: core
 locked: false
 cardinality: 1
 translatable: true
