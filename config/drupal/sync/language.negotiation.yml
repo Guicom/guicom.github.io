@@ -3,7 +3,7 @@ session:
 url:
   source: path_prefix
   prefixes:
-    en: ''
+    en: en
     fr: fr
     fr-be: fr-be
     nl-be: nl-be
@@ -19,6 +19,7 @@ url:
     it-ch: it-ch
     zh-cn: zh-cn
     pl: pl
+    '': null
   domains:
     en: ''
     fr: ''
