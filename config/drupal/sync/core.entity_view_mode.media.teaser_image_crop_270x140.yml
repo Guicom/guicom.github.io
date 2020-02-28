@@ -5,6 +5,6 @@ dependencies:
   module:
     - media
 id: media.teaser_image_crop_270x140
-label: 'teaser image crop 270x140'
+label: 'Teaser image crop 270x140'
 targetEntityType: media
 cache: true

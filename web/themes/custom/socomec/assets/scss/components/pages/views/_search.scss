@@ -79,6 +79,9 @@
                   margin: 0px;
                   > div {
                     border-left: 1px #F0F3F9 solid;
+                    display: flex;
+                    align-items: center;
+                    justify-content: flex-end;
                     img {
                       margin: 0px;
                     }
