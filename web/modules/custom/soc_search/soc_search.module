@@ -38,7 +38,7 @@ function soc_search_preprocess_breadcrumb(&$variables) {
 
     $query = Xss::filter(\Drupal::request()->query->get('search_api_fulltext'));
     if( $query ) {
-      $breadcrumb_title = str_replace('%word', $query, $breadcrumb_title_searched);
+      $breadcrumb_title = str_replace('@word', $query, $breadcrumb_title_searched);
     }
     $variables['breadcrumb'][1] = array(
       'text' => $breadcrumb_title
@@ -53,13 +53,24 @@ function soc_search_preprocess_breadcrumb(&$variables) {
 function soc_search_views_pre_render(ViewExecutable $view) {
   $route_name = \Drupal::routeMatch()->getRouteName();
   if ($route_name === "search.view") {
-    $breadcrumb_title = \Drupal::config('soc_search.settings')->get('breadcrumb_title');
-    $breadcrumb_title_searched = \Drupal::config('soc_search.settings')->get('breadcrumb_title_searched');
+    $title = \Drupal::config('soc_search.settings')->get('title');
+    $title_searched = \Drupal::config('soc_search.settings')->get('title_searched');
+    $title_no_result = \Drupal::config('soc_search.settings')->get('title_no_result');
 
     $query = Xss::filter(\Drupal::request()->query->get('search_api_fulltext'));
     if( $query ) {
-      $breadcrumb_title = str_replace('%word', $query, $breadcrumb_title_searched);
+      $title = str_replace('@word', $query, $title_searched);
     }
-    $view->setTitle($breadcrumb_title);
+    if (empty($view->total_rows)) {
+      if (!empty($title_no_result)) {
+        $title = $title_no_result;
+      }
+      $title = str_replace('@total', $view->total_rows, $title);
+    }
+    else {
+      $title = str_replace('@total', $view->total_rows, $title);
+    }
+
+    $view->setTitle($title);
   }
 }

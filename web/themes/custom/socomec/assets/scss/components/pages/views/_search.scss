@@ -1,5 +1,16 @@
 .path-search{
+  h1.title-socomec-wave-below{
+    text-transform: initial;
+  }
+  #search-page-header{
+    background-color: $white;
+    .container{
+      padding-right:0px;
+      padding-left:0px;
+    }
+  }
   .view-global-search{
+    margin:40px 0 80px 0;
     .view-content{
       &.row{
         .views-row{
@@ -28,6 +39,7 @@
               transition: $transition02;
             }
             &.ds-2col {
+              display: flex;
               p{
                 padding:0px;
                 margin:0px;
@@ -35,30 +47,42 @@
 
               > .group-full {
                 padding: 10px;
-                width: auto;
               }
 
               > .group-left{
                 padding: 10px;
-                width: auto;
-                @include media-breakpoint-up(lg) {
-                  width: 899px;
+                width: 80%;
+                float: none;
+                @include media-breakpoint-down(md) {
+                  width: 70%;
                 }
               }
 
               > .group-right{
                 float: right;
-                width: auto;
-                border-left: 1px $grey-blue solid;
+                width: 20%;
+                float: none;
+                @include media-breakpoint-down(md) {
+                  width: 30%;
+                }
+                 > div {
+                   height: 100%;
+                   div {
+                     height: 100%;
+                   }
+                 }
                 .field--type-image,
                 .field--type-entity-reference{
+                  display: flex;
+                  align-items: center;
+                  justify-content: flex-end;
                   margin: 0px;
-                  img {
-                    margin: 0px;
+                  > div {
+                    border-left: 1px #F0F3F9 solid;
+                    img {
+                      margin: 0px;
+                    }
                   }
-                }
-                @include media-breakpoint-down(lg) {
-                  display: none;
                 }
               }
               .field--name-bundle-fieldtaxonomy-term,

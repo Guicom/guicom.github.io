@@ -4,6 +4,14 @@ soc_search.settings:
   type: config_object
   label: 'Search Settings'
   mapping:
+    title:
+      label: 'Title'
+      type: label
+      translatable: true
+    title_searched:
+      label: 'Title searched text'
+      type: label
+      translatable: true
     breadcrumb_title:
       label: 'Breadcrumb title'
       type: label
