@@ -252,7 +252,7 @@
         <property name="export.type" value="${content.folder}" />
       </else>
     </if>
-    <input propertyName="menu.type" validArgs="main, header, footer-legal-mentions" message="->Socomec ">What menu bundle would you export ?</input>
+    <input propertyName="menu.type" validArgs="main, header, footer-legal-mentions, header-visitors, search-quick-link, search-top-search" message="->Socomec ">What menu bundle would you export ?</input>
     <drush
       command="dcder"
       assume="yes"
