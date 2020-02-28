@@ -1,0 +1,21 @@
+uuid: 36fa9067-2ed2-40ce-b315-889427150fea
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_location_type
+    - node.type.contenu_location
+  module:
+    - options
+id: node.contenu_location.field_location_type
+field_name: field_location_type
+entity_type: node
+bundle: contenu_location
+label: Type
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

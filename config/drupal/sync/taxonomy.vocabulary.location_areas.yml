@@ -1,0 +1,8 @@
+uuid: dfd5030a-5789-4939-bd3b-fcb6c3088736
+langcode: en
+status: true
+dependencies: {  }
+name: 'Location Areas'
+vid: location_areas
+description: 'Using by the Contenu Location for the Continent of sales, Areas of sales, Subarea of sale fields.'
+weight: 0
