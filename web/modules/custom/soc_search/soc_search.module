@@ -1,0 +1,26 @@
+<?php
+/**
+ * @file
+ * Handle search integration.
+ */
+
+use Drupal\Core\Form\FormStateInterface;
+
+/**
+ * Implement HOOK_form_alter()
+ *
+ * @param $form
+ * @param \Drupal\Core\Form\FormStateInterface $form_state
+ * @param $form_id
+ */
+function soc_search_form_alter(&$form, FormStateInterface $form_state, $form_id){
+  $is_exposed = $form_id == 'views_exposed_form';
+  if ($is_exposed) {
+    if (!empty($form['#id']) && $form['#id'] === 'views-exposed-form-global-search-page-1') {
+      if (!empty($form['search_api_fulltext'])) {
+        $form['search_api_fulltext']['#attributes']['placeholder'] = \Drupal::config('soc_search.settings')->get('placeholder') ?? '';
+      }
+    }
+  }
+
+}

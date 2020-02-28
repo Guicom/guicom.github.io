@@ -1,0 +1,20 @@
+uuid: ffccdafc-ca67-4b7c-b892-64b3856baf87
+langcode: en
+status: true
+dependencies:
+  module:
+    - soc_search
+  theme:
+    - socomec
+id: top5searches
+theme: socomec
+region: hidden
+weight: 0
+provider: null
+plugin: top_search_block
+settings:
+  id: top_search_block
+  label: 'Top 5 searches'
+  provider: soc_search
+  label_display: visible
+visibility: {  }

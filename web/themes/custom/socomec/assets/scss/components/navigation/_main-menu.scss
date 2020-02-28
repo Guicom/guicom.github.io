@@ -319,7 +319,7 @@
                               background: linear-gradient(180deg, rgba(0,79,159,0) 0%, #0070C0 100%);
                               @include left-overflow-color(linear-gradient(180deg, rgba(0,79,159,0) 0%, #0070C0 100%));
                               @include right-overflow-color(linear-gradient(180deg, rgba(0,79,159,0) 0%, #0070C0 100%));
-
+                              margin-top: -15px;
                               .level-1 {
                                 //impair
                                 &:nth-child(odd) {
@@ -367,11 +367,15 @@
                   .level-1 {
                     padding: 15px 20px 40px;
                     position: relative;
-                    > span,
+                    > span:not(.mobile-dropdown-trigger),
                     > a {
                       padding: 0;
                       text-transform: uppercase;
                       height: 40px;
+                    }
+
+                    > span:not(.mobile-dropdown-trigger) {
+                      cursor: initial;
                     }
 
                     > .dropdown-menu {
@@ -382,6 +386,11 @@
                       background: transparent;
                       border: none;
                       box-shadow: none !important;
+
+                      .submenu-bg {
+                        @include make-col(12);
+                        width: 100%;
+                      }
                     }
                     &:after {
                       content: '';
@@ -587,6 +596,8 @@
                 height: 100vh;
                 background: #084796;
                 padding-top: 0;
+                overflow-y: auto;
+                padding-bottom: 80px;
                 > .submenu-bg {
                   background: linear-gradient(180deg, rgba(0,79,159,0) 0%, #0070C0  100%);
                   position: relative;
@@ -610,7 +621,7 @@
       }
     }
     .mobile-dropdown-trigger {
-      display: none;
+      display: none!important;
     }
   }
 
@@ -619,4 +630,115 @@
 #toolbar-administration {
   position: relative;
   z-index: 99999;
+}
+
+.block-menu {
+  &.menu--header-visitors{
+    position: absolute;
+    right: 0px;
+    h2 {
+      display: none;
+    }
+    .nav-item{
+      a{
+        height: 60px;
+        color:$white;
+        font-family: $font-poppins;
+        font-weight: 400;
+        text-transform: uppercase;
+        padding:20px;
+        &.ico-search-white{
+          background-color: transparent;
+          background-image: url('../images/picto/ui/search-white.svg');
+          background-size: 20px 20px;
+          background-repeat: no-repeat;
+          background-position: center;
+          &:hover{
+            background-color: transparent;
+          }
+          &.close-search{
+            background-image: url('../images/picto/ui/close-circle-yellow.svg');
+            border-bottom: 2px $yellow solid;
+          }
+        }
+        &.ico-bookmark-star-white{
+          background-color: $blue_light;
+          background-image: url('../images/picto/ui/bookmark-star-white.svg');
+          background-size: 20px 20px;
+          background-repeat: no-repeat;
+          &:hover{
+            background-color: $blue_light;
+          }
+          &.no-label{
+            background-position: center;
+          }
+        }
+        &.ico-favorite{
+          background-color: $yellow;
+          background-image: url('../images/picto/ui/favorite.svg');
+          background-size: 20px 20px;
+          background-repeat: no-repeat;
+          &:hover{
+            background-color: $yellow;
+          }
+          &.no-label{
+            background-position: center;
+          }
+        }
+        &.ico-user{
+          padding:20px 50px;
+          color:$blue;
+          background-color: $white;
+          background-image: url('../images/picto/ui/user.svg');
+          background-size: 24px 24px;
+          background-repeat: no-repeat;
+          background-position: left 18px center;
+          @include media-breakpoint-down(lg) {
+            padding:20px;
+            text-indent: -99999px;
+            background-position: center;
+            width: 60px;
+          }
+          &:hover{
+            background-color: $white;
+          }
+          &.no-label{
+            background-position: center;
+          }
+        }
+        &.no-label{
+          text-indent: -99999px;
+          width: 60px;
+        }
+      }
+    }
+  }
+}
+.user-logged-in{
+  .block-menu {
+    &.menu--header-visitors {
+      .nav-item{
+        a[data-drupal-link-system-path="user/register"] {
+          display: none;
+        }
+      }
+    }
+  }
+}
+.block-soc-search-block{
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 100vh;
+  background: #084796;
+  padding-top: 0;
+  overflow-y: auto;
+  margin-top: 60px;
+  .submenu-bg-top{
+    background: linear-gradient(180deg, rgba(0,79,159,0) 0%, #0070C0  100%);
+    position: relative;
+  }
+  .submenu-bg-bottom{
+    background: linear-gradient(180deg, #232C77 0%, #084796 100%);
+  }
 }

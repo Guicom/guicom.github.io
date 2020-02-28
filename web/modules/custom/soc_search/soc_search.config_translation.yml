@@ -1,0 +1,5 @@
+soc_search.settings:
+  title: 'Search settings'
+  base_route_name: soc_search.settings
+  names:
+    - soc_search.settings

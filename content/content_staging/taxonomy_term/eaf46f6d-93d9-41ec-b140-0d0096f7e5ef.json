@@ -9,10 +9,9 @@
         "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/event_type\/parent": [
             null
         ],
-        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/event_type\/content_translation_uid": [
+        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/event_type\/field_event_type_icon": [
             {
-                "href": "http:\/\/default\/user\/1?_format=hal_json",
-                "lang": "zxx"
+                "href": "http:\/\/default\/media\/45\/edit?_format=hal_json"
             }
         ]
     },
@@ -56,7 +55,7 @@
     ],
     "name": [
         {
-            "value": "Exhibition",
+            "value": "Webinar",
             "lang": "zxx"
         }
     ],
@@ -69,28 +68,27 @@
         "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/event_type\/parent": [
             null
         ],
-        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/event_type\/content_translation_uid": [
+        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/event_type\/field_event_type_icon": [
             {
                 "_links": {
                     "self": {
-                        "href": "http:\/\/default\/user\/1?_format=hal_json"
+                        "href": "http:\/\/default\/media\/45\/edit?_format=hal_json"
                     },
                     "type": {
-                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                        "href": "http:\/\/drupal.org\/rest\/type\/media\/icone"
                     }
                 },
                 "uuid": [
                     {
-                        "value": "1bbc8659-cab2-4a15-9f3a-428b9f85a9a2"
+                        "value": "54d03162-b69c-4c41-bd41-d384a2619dd4"
                     }
-                ],
-                "lang": "zxx"
+                ]
             }
         ]
     },
     "changed": [
         {
-            "value": "2020-02-06T08:52:28+00:00",
+            "value": "2020-02-14T17:13:16+00:00",
             "lang": "zxx",
             "format": "Y-m-d\\TH:i:sP"
         }
@@ -129,7 +127,7 @@
     "metatag": [
         {
             "value": {
-                "title": "Exhibition | Socomec",
+                "title": "Webinar | Socomec",
                 "canonical_url": "http:\/\/default\/taxonomy\/term\/64"
             }
         }

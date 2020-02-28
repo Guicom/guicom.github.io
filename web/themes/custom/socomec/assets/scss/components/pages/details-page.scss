@@ -7,21 +7,47 @@
   .field--name-field-news-type,
   .field--name-field-event-type{
     margin-bottom: 0;
-    a {
-      @include tag($blue, $yellow);
-    }
+    @include tag($blue, $yellow);
   }
   .field--name-field-news-theme,
   .field--name-field-event-thematic {
+    display: flex;
     margin-bottom: 0;
-    line-height: 0.5rem;
-    a {
+    line-height: 0.6rem;
+    @include media-breakpoint-up(lg) {
+      flex-direction: row;
+    }
+    @include media-breakpoint-down(lg) {
+      flex-direction: column;
+    }
+    @include media-breakpoint-down(md) {
+      flex-direction: row;
+    }
+    @include media-breakpoint-down(xs) {
+      flex-direction: column;
+    }
+
+    .field__item {
+      margin-right: 0.5rem;
       font-family: $font-poppins;
       text-transform: uppercase;
       color: $white;
       font-size: 0.75rem;
       text-decoration: none;
       letter-spacing: 0.5px;
+      @include media-breakpoint-up(lg) {
+        margin-bottom: 0;
+      }
+      @include media-breakpoint-down(lg) {
+        margin-bottom: 0.5rem;
+      }
+      @include media-breakpoint-down(md) {
+        margin-bottom: 0;
+      }
+      @include media-breakpoint-down(xs) {
+        margin-bottom: 0.5rem;
+        line-height: 1;
+      }
     }
   }
   .news-date,
@@ -36,8 +62,10 @@
   }
   .news-teaser,
   .event-teaser{
+    min-height: 13rem;
     @include media-breakpoint-down(md) {
-      margin-top: 2rem
+      margin-top: 2rem;
+      min-height: initial;
     }
   }
   .field--name-field-teaser,
@@ -50,12 +78,6 @@
         font-size: 1rem;
         line-height: 1.6;
       }
-    }
-  }
-  .event-teaser-wrapper {
-    margin-bottom: 5rem;
-    @include media-breakpoint-down(md) {
-      margin-bottom: 0;
     }
   }
 
@@ -133,14 +155,14 @@
       }
       .news-info,
       .event-info {
-        width: 540px;
-        max-width: 540px;
-        flex: 0 0 540px;
+        width:33.75rem;
+        max-width: 33.75rem;
+        flex: 0 0 33.75rem;
         min-height: 22rem;
         @include media-breakpoint-between(md, lg) {
-          width: 320px;
-          max-width: 320px;
-          flex: 0 0 320px;
+          width: 29.375rem;
+          max-width: 29.375rem;
+          flex: 0 0 29.375rem;
         }
         @include media-breakpoint-down(md) {
           @include make-col(12);
@@ -209,9 +231,18 @@
           }
         }
         .no-img-content {
+          display: flex;
+          justify-content: center;
           min-width: 35.625rem;
           min-height: 18.5rem;
           background: $turquoize;
+          @include media-breakpoint-down(md) {
+            width: 100%;
+            min-width: 100%;
+          }
+          img {
+            opacity: 0.8;
+          }
         }
         .event-squarebox {
           position: absolute;
@@ -220,7 +251,6 @@
           height: auto;
           @include media-breakpoint-down(md) {
             position: relative;
-            margin-bottom: 2rem;
           }
         }
       }
@@ -234,6 +264,19 @@
   // CONTENT PAGE
   #news-info-section {
     margin-bottom: 2*$spacer;
+  }
+  .multiline-content {
+    .field--name-field-body,
+    .field--name-field-event-content{
+      .field__item {
+        .paragraph {
+          &:not(.paragraph--type-video-text) {
+            @include make-col(10);
+            @include make-col-offset(1);
+          }
+        }
+      }
+    }
   }
   // EVENT DATE
   .event-top {
@@ -389,7 +432,20 @@
       }
     }
   }
-
+  // CONTENT MULTILIGNE
+  .field--name-field-body,
+  .field--name-field-event-content {
+    .paragraph--type--video-embed {
+      padding-left: 0;
+      padding-right: 0;
+      .field--name-field-title {
+      }
+      .field--name-field-video-embed-video {
+        @include make-col(12);
+        @include make-col-offset(0);
+      }
+    }
+  }
 }
 .bottom-link {
   time {
@@ -439,11 +495,13 @@
       }
       .atcb-list {
         width: 100%;
+        box-shadow: none;
         .atcb-item-link {
           padding: initial;
           color: initial;
           background: initial;
-          box-shadow: initial;
+          box-shadow: none;
+          border: none;
           &:hover {
             padding: initial;
             color: initial;

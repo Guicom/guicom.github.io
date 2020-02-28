@@ -2,6 +2,7 @@ body.node--type-product {
 
   h2.field--name-field-title {
     @include block-title(true);
+    margin-top: 0;
   }
 
   header {
@@ -72,6 +73,33 @@ body.node--type-product {
         a {
           display: block;
           margin-bottom: 15px;
+          &.count {
+            color: $white;
+            font-family: $font-poppins;
+            font-size: 12px;
+            font-weight: 600;
+            background: #9ebbd6;
+            width: 50px;
+            height: 50px;
+            border-radius: 25px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          }
+        }
+        @include media-breakpoint-up(sm) {
+          .productAdditionalImages {
+            position: absolute;
+            top: 340px;
+          }
+        }
+        @include media-breakpoint-down(sm) {
+          .count {
+            display: none !important;
+          }
+          .productAdditionalImages {
+            display: flex !important;
+          }
         }
         @include media-breakpoint-down(xs) {
           order: 2;
@@ -86,6 +114,10 @@ body.node--type-product {
             margin: 0 5px;
           }
         }
+        /*.break {
+          flex-basis: 100%;
+          height: 0;
+        }*/
       }
     }
 
@@ -687,6 +719,17 @@ body.node--type-product {
         margin-left: auto;
         padding-right: 15px;
         padding-left: 15px;
+      }
+      > div.paragraph--type--video-embed {
+        @include make-container();
+        .field--name-field-video-embed-video {
+          @include make-col(10);
+          @include make-col-offset(1);
+        }
+        .field--name-field-title {
+          max-width: calc-column-width(10, xl);
+          @include make-col-offset(1);
+        }
       }
     }
   }

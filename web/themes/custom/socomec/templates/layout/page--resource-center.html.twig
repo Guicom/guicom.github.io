@@ -105,18 +105,25 @@
                   <aside class="col-md-3">
                     <div class="facets">
                       <div class="facets-title">{{ 'Filter by' |t }}</div>
-                      <div class="facets-category facets-category-range">{{ 'Range' |t }}</div>
+                      <div class="facets-category facets-category-range d-none">{{ 'Range' |t }}</div>
                       <div class="facet-bloc-position-title facet-full-width facet-highlight-first-elements facet-list-display-select">{{ drupal_entity('block', 'familyterms') }}</div>
-                      <div class="facets-category facets-category-characteristics">{{ 'Characteristics' |t }}</div>
+                      <div class="facets-category facets-category-characteristics d-none">{{ 'Characteristics' |t }}</div>
                       <div class="facet-bloc-position-title facet-full-width">{{ drupal_entity('block', 'typeofresourceterms') }}</div>
                       <div class="facet-bloc-position-title facet-full-width">{{ drupal_entity('block', 'language') }}</div>
                     </div>
-                    {% if page.sidebar_first %}
-                      {{ page.sidebar_first }}
-                    {% endif %}
+                    <div class="d-none d-md-block">
+                      {% if page.sidebar_first %}
+                        {{ page.sidebar_first }}
+                      {% endif %}
+                    </div>
                   </aside>
                   <div class="col-md-9">
                     {{ page.content }}
+                    <div class="d-md-none">
+                      {% if page.sidebar_first %}
+                        {{ page.sidebar_first }}
+                      {% endif %}
+                    </div>
                   </div>
                 </div>
               </div>

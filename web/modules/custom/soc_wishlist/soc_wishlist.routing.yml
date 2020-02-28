@@ -26,6 +26,15 @@ soc_wishlist.remove_item:
   options:
     no_cache: TRUE
 
+soc_wishlist.undo_remove_item:
+  path: '/wishlist/undo'
+  defaults:
+    _controller: '\Drupal\soc_wishlist\Controller\WishlistController::undoRemoveItemAction'
+  requirements:
+    _permission: 'edit own wishlist'
+  options:
+    no_cache: TRUE
+
 soc_wishlist.export:
   path: '/wishlist/export/{type}'
   defaults:

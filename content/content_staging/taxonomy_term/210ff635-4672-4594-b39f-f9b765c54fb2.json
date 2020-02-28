@@ -10,6 +10,12 @@
             {
                 "href": "http:\/\/default\/power-conversion\/modular-and-scalable-ups?_format=hal_json"
             }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/family\/content_translation_uid": [
+            {
+                "href": "http:\/\/default\/user\/1?_format=hal_json",
+                "lang": "en"
+            }
         ]
     },
     "tid": [
@@ -75,6 +81,24 @@
                         "value": "90fed0fa-8be6-47d3-8da7-0757627551e8"
                     }
                 ]
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/family\/content_translation_uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/user\/1?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "f249bc8f-cc01-41d5-aba6-8852ecc9abf5"
+                    }
+                ],
+                "lang": "en"
             }
         ]
     },

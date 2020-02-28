@@ -9,10 +9,9 @@
         "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/family\/parent": [
             null
         ],
-        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/family\/content_translation_uid": [
+        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/family\/field_family_menu_icon": [
             {
-                "href": "http:\/\/default\/user\/1?_format=hal_json",
-                "lang": "en"
+                "href": "http:\/\/default\/media\/50\/edit?_format=hal_json"
             }
         ]
     },
@@ -67,35 +66,34 @@
     ],
     "weight": [
         {
-            "value": 25
+            "value": 26
         }
     ],
     "_embedded": {
         "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/family\/parent": [
             null
         ],
-        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/family\/content_translation_uid": [
+        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/family\/field_family_menu_icon": [
             {
                 "_links": {
                     "self": {
-                        "href": "http:\/\/default\/user\/1?_format=hal_json"
+                        "href": "http:\/\/default\/media\/50\/edit?_format=hal_json"
                     },
                     "type": {
-                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                        "href": "http:\/\/drupal.org\/rest\/type\/media\/icone"
                     }
                 },
                 "uuid": [
                     {
-                        "value": "38a0704b-66e6-4249-b1b5-0a1e27b65992"
+                        "value": "422c5b95-b5e2-4de7-bc0a-9da31b27a42d"
                     }
-                ],
-                "lang": "en"
+                ]
             }
         ]
     },
     "changed": [
         {
-            "value": "2020-02-11T08:04:00+00:00",
+            "value": "2020-02-23T17:00:17+00:00",
             "format": "Y-m-d\\TH:i:sP"
         }
     ],

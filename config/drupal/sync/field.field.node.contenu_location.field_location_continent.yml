@@ -1,0 +1,29 @@
+uuid: 50022ee4-e537-4d5e-a390-d47faf476fdd
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_location_continent
+    - node.type.contenu_location
+    - taxonomy.vocabulary.location_areas
+id: node.contenu_location.field_location_continent
+field_name: field_location_continent
+entity_type: node
+bundle: contenu_location
+label: 'Continent of Sales'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      location_areas: location_areas
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

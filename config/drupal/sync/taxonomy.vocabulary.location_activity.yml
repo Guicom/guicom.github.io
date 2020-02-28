@@ -1,0 +1,8 @@
+uuid: 30ba8bea-6120-45a8-8217-897d5e53f264
+langcode: en
+status: true
+dependencies: {  }
+name: 'Location activity'
+vid: location_activity
+description: 'using by the Contenu Location CT'
+weight: 0
