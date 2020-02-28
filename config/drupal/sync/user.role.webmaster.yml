@@ -37,6 +37,7 @@ permissions:
   - 'administer media types'
   - 'administer media_type labels'
   - 'administer menu'
+  - 'administer menu_per_role'
   - 'administer message_template labels'
   - 'administer meta tags'
   - 'administer node_type labels'

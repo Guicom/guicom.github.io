@@ -64,7 +64,7 @@ class SearchSettingsForm extends ConfigFormBase {
     ];
 
     $links_top_search = '<ul class="admin-list">';
-    $links_top_search .= '<li><a href="/admin/structure/block/manage/topsearch" target="_blank">';
+    $links_top_search .= '<li><a href="/admin/structure/block/manage/top5searches" target="_blank">';
     $links_top_search .= '<span class="label">'.t("Top Search  Title block").'</span>';
     $links_top_search .= '<div class="description">'.t("Configure Block Top Search Title").'</div>';
     $links_top_search .= '</a></li>';
@@ -87,7 +87,7 @@ class SearchSettingsForm extends ConfigFormBase {
     ];
 
     $links_quick_links = '<ul class="admin-list">';
-    $links_quick_links .= '<li><a href="/admin/structure/block/manage/quicklinksearch" target="_blank">';
+    $links_quick_links .= '<li><a href="/admin/structure/block/manage/quicklinks" target="_blank">';
     $links_quick_links .= '<span class="label">'.t("Quicklink Title block").'</span>';
     $links_quick_links .= '<div class="description">'.t("Configure Block Quicklink Title").'</div>';
     $links_quick_links .= '</a></li>';
