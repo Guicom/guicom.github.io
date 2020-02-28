@@ -8,12 +8,11 @@
     &.field--name-field-title {
       @include block-title(true);
       margin-top: 0;
-      font-weight: 300;
     }
   }
   .group-left {
     padding-left: calc(#{$grid-gutter-width} / 2);
-    padding-right: calc(#{$grid-gutter-width} / 2);
+    padding-right: $grid-gutter-width;
     @include make-col(4);
     @include media-breakpoint-down(lg) {
       @include make-col(12);
@@ -33,16 +32,16 @@
     width: 100%;
   }
   .embed-responsive {
-    height: 100%;
+    height: auto;
     @include media-breakpoint-down(md) {
-      height: 180px;
+      height: auto;
     }
   }
 }
 .paragraph--type-video-text {
   .embed-responsive {
     @include media-breakpoint-up(lg) {
-      height: 400px;
+      height: auto;
     }
   }
 }
@@ -58,7 +57,7 @@
   .embed-responsive {
     height: 100%;
     @include media-breakpoint-up(lg) {
-      height: 530px;
+      height: auto;
     }
   }
 }

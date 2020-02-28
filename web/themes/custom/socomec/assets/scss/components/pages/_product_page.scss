@@ -727,7 +727,7 @@ body.node--type-product {
           @include make-col-offset(1);
         }
         .field--name-field-title {
-          @include make-col(10);
+          max-width: calc-column-width(10, xl);
           @include make-col-offset(1);
         }
       }
