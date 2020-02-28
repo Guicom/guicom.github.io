@@ -21,6 +21,8 @@ function soc_search_form_alter(&$form, FormStateInterface $form_state, $form_id)
     if (!empty($form['#id']) && $form['#id'] === 'views-exposed-form-global-search-page-1') {
       if (!empty($form['search_api_fulltext'])) {
         $form['search_api_fulltext']['#attributes']['placeholder'] = \Drupal::config('soc_search.settings')->get('placeholder') ?? '';
+        $form['search_api_fulltext']['#attributes']['autocomplete'] = 'off';
+        $form['actions']['submit']['#value'] = t('Search');
       }
     }
   }
