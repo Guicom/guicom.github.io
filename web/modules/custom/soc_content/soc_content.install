@@ -1,0 +1,5 @@
+<?php
+
+function soc_content_install() {
+
+}

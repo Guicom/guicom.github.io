@@ -1,0 +1,5 @@
+services:
+  soc_content.content_manager:
+    class: Drupal\soc_content\Service\Manager\ContentManager
+    arguments:
+      ['@entity.repository', '@logger.factory']
