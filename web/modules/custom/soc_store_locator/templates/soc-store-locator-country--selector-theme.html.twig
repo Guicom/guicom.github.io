@@ -1,28 +1,23 @@
 <ul class="nav nav-tabs" id="myTab" role="tablist">
 {% for tab in tabs %}
   <li class="nav-item">
-  <a class="nav-link" id="home-tab" data-toggle="tab" href="#{{ tab }}" role="tab" aria-controls="{{ tab }}">
-    <span>{{ tab }}</span>
-    <span>France</span>
+  <a class="nav-link" id="home-tab" data-toggle="tab" href="#{{ tab.value }}" role="tab" aria-controls="{{ tab.value }}">
+    <span>{{ tab.value }}</span>
+    <span>{{ tab.sub }}</span>
   </a>
   </li>
 {% endfor %}
-  <li class="nav-item current">
-    <a class="nav-link" id="home-tab" data-toggle="tab" href="#{{ tab }}" role="tab" aria-controls="{{ tab }}">
-      <span>{{ tab }}</span>
-      <span>France</span>
-    </a>
-  </li>
 </ul>
 <div class="tab-content" id="myTabContent">
   {% for key, content in tabs_content %}
     <div class="tab-pane fade" id="{{ key }}" role="tabpanel" aria-labelledby="{{ key }}-tab">
       <ul>
         {% for item in content %}
-          <li><a href="">{{ item }}</a> </li>
+          <li>
+            {{ item.link }}
+          </li>
         {% endfor %}
       </ul>
     </div>
   {% endfor %}
 </div>
-
