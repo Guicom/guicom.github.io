@@ -1,0 +1,23 @@
+uuid: a52a4e3d-4b64-475a-b5ed-c2de9f0ad871
+langcode: en
+status: true
+dependencies:
+  config:
+    - facets.facet.type_of_resource
+  module:
+    - facets
+  theme:
+    - socomec
+id: typeofresource
+theme: socomec
+region: facets
+weight: 0
+provider: null
+plugin: 'facet_block:type_of_resource'
+settings:
+  id: 'facet_block:type_of_resource'
+  label: 'Search - Type of resource'
+  provider: facets
+  label_display: '0'
+  block_id: typeofresource
+visibility: {  }

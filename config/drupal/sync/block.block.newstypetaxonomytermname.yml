@@ -12,7 +12,7 @@ dependencies:
 id: newstypetaxonomytermname
 theme: socomec
 region: facets
-weight: -13
+weight: -19
 provider: null
 plugin: 'facet_block:news_type_taxonomy_term_name'
 settings:

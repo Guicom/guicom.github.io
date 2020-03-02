@@ -1,23 +1,23 @@
-uuid: 18a54c89-baa5-4d6b-bbe4-5f5097f698f9
+uuid: 88f7a963-4f83-4327-bcd1-a69fb3257c73
 langcode: en
 status: true
 dependencies:
   config:
-    - facets.facet.language
+    - facets.facet.news_type
   module:
     - facets
   theme:
     - socomec
-id: language
+id: newstype
 theme: socomec
 region: facets
-weight: -15
+weight: 0
 provider: null
-plugin: 'facet_block:language'
+plugin: 'facet_block:news_type'
 settings:
-  id: 'facet_block:language'
-  label: Language
+  id: 'facet_block:news_type'
+  label: 'Search - News Type'
   provider: facets
   label_display: '0'
-  block_id: language
+  block_id: newstype
 visibility: {  }
