@@ -11,11 +11,9 @@ entity_type: node
 bundle: news
 label: 'News Video'
 description: 'Permet d''afficher l''icône video .'
-required: false
+required: true
 translatable: false
-default_value:
-  -
-    value: 0
+default_value: {  }
 default_value_callback: ''
 settings:
   on_label: Oui
