@@ -44,6 +44,7 @@ third_party_settings:
         - content_moderation_control
         - field_body
         - addtoany
+        - field_country
       right:
         - field_pardot_form
 id: node.landing_page.default
@@ -77,7 +78,7 @@ content:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
-    region: content
+    region: left
   field_pardot_form:
     type: entity_reference_revisions_entity_view
     weight: 3

@@ -1,0 +1,4 @@
+services:
+  soc_search.soc_search_tree_manipulators:
+    class: Drupal\soc_search\Service\SocSearchMenuLinkTreeManipulators
+    arguments: ['@access_manager', '@current_user', '@entity_type.manager', '@language_manager', '@entity.repository']
