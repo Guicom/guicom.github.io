@@ -265,7 +265,7 @@ class WishlistExport {
     $tbl .= '<th>' . t('Main specifications') . '</th>';
     $tbl .= '<th>' . t('Quantity') . '</th>';
     $tbl .= '</tr>';
-    foreach($items as $item) {
+    foreach ($items as $item) {
       $model = ($item['node']->get('field_reference_name')->value) ?? "";
       $reference = ($item['node']->get('field_reference_ref')->value) ?? "";
       $specifications = ($item['node']->getTitle()) ?? "";

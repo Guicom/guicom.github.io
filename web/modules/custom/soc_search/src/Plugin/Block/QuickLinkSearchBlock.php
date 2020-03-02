@@ -13,13 +13,11 @@ namespace Drupal\soc_search\Plugin\Block;
  */
 class QuickLinkSearchBlock extends ParentSearchBlock {
 
-  const SOC_SEARCH_MENU_NAME = 'search-quick-link';
-
   /**
    * {@inheritdoc}
    */
   public function build() {
-    $this->setMenuName(self::SOC_SEARCH_MENU_NAME);
+    $this->setMenuName('search-quick-link');
     return parent::build();
   }
 

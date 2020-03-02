@@ -13,13 +13,11 @@ namespace Drupal\soc_search\Plugin\Block;
  */
 class TopSearchBlock extends ParentSearchBlock {
 
-  const SOC_SEARCH_MENU_NAME = 'search-top-search';
-
   /**
    * {@inheritdoc}
    */
   public function build() {
-    $this->setMenuName(self::SOC_SEARCH_MENU_NAME);
+    $this->setMenuName('search-top-search');
     return parent::build();
   }
 
