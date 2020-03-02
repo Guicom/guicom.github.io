@@ -2,7 +2,7 @@
 
 /**
  * @file
- * Contains prae_core.module.
+ * Contains soc_access_block.module.
  */
 
 use Drupal\block\Entity\Block;
