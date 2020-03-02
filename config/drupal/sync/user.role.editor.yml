@@ -7,5 +7,11 @@ label: Editor
 weight: 3
 is_admin: null
 permissions:
+  - 'create node__field_product_new scheduled updates'
+  - 'delete any node__field_product_new scheduled updates'
+  - 'delete own node__field_product_new scheduled updates'
   - 'display eu cookie compliance popup'
+  - 'edit any node__field_product_new scheduled updates'
   - 'edit own landing_page content'
+  - 'edit own node__field_product_new scheduled updates'
+  - 'view scheduled update entities'
