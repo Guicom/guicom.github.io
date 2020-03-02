@@ -10,7 +10,7 @@
         border: 2px solid $blue;
       }
       .first-row {
-        padding: 1.5rem 1.5rem 1rem 1.5rem;
+        padding: 1.5rem 1.5rem 0 1.5rem;
         display: flex;
         align-items: baseline;
         @include media-breakpoint-down(md) {
@@ -22,6 +22,7 @@
           .field--name-field-location-company {
             @include S3($blue);
             font-weight: 800;
+            text-transform: uppercase;
             float: left;
             margin-right: 1rem;
             p {
@@ -36,6 +37,7 @@
             font-size: $font-size-xs;
             letter-spacing: 1px;
             margin-right: 1rem;
+            margin-bottom: 1rem;
             float: left;
           }
         }
@@ -128,7 +130,7 @@
       }
       .third-row {
        background: $light-grayish-red;
-        padding: 1rem 1.5rem 1.5rem 1.5rem;
+        padding: 1rem 1.5rem 0.5rem 1.5rem;
         .address-wrapper {
           display: flex;
           justify-content: space-between;
@@ -141,6 +143,9 @@
             font-size: $font-size-h5;
             color: $blue;
             line-height: 30px;
+           .country {
+             display: none;
+           }
           }
         }
         .access {
@@ -153,7 +158,7 @@
             color: $blue;
             text-transform: uppercase;
             font-size: $font-size-sm;
-            font-weight: 500;
+            font-weight: 700;
             letter-spacing: 1px;
             &:after {
               content: '';
