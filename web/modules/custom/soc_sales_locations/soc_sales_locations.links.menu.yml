@@ -1,0 +1,6 @@
+soc_sales_locations.export_csv_controller_exportfile:
+  title: Sales Locations Export
+  route_name: soc_sales_locations.export_csv_controller_exportfile
+  parent: soc_core.config
+  description: Click on the link.
+  weight: 0
