@@ -63,32 +63,42 @@
 
 {%
   set classes = [
-    'node',
-    'node--type-' ~ node.bundle|clean_class,
     node.isPromoted() ? 'node--promoted',
     node.isSticky() ? 'node--sticky',
-    not node.isPublished() ? 'node--unpublished',
-    view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
     'clearfix',
+    'store-teaser-cards',
   ]
 %}
 
-<div class="store-teaser-cards">
+{% set location_type = content.field_location_type[0]['#plain_text'] %}
+
+{%  set type_class = [
+  location_type == "Subsidiary" ? 'subsidiary',
+  location_type != "Subsidiary" ? 'other'
+]
+%}
+
+<div {{attributes.addClass(classes) }}>
 <div class="first-row">
-  <div class="compagny">
+  <div class="company">
     {{ content.field_location_company }}
     {{ content.field_location_activity }}
   </div>
+</div>
   <div class="second-row">
     <div class="left-content">
         {{ content.field_location_telephone }}
         {{ content.field_location_email }}
     </div>
     <div class="right-content">
+      <div {{ attributes.addClass(type_class).removeClass(classes) }}>
         {{ content.field_location_type }}
+      </div>
+
     </div>
+  </div>
     <div class="third-row">
-      <div class="adress-wrapper">
+      <div class="address-wrapper">
           {{ content.field_location_address }}
         <div class="access">
           <button>
@@ -97,8 +107,4 @@
         </div>
       </div>
     </div>
-
-
   </div>
-</div>
-</div>
