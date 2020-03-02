@@ -6,7 +6,6 @@ dependencies:
     - field.field.taxonomy_term.event_type.field_event_type_icon
     - taxonomy.vocabulary.event_type
   module:
-    - media_library
     - path
     - text
 id: taxonomy_term.event_type.default
@@ -23,10 +22,9 @@ content:
       rows: 5
     third_party_settings: {  }
   field_event_type_icon:
-    type: media_library_widget
+    type: options_select
     weight: 31
-    settings:
-      media_types: {  }
+    settings: {  }
     third_party_settings: {  }
     region: content
   langcode:
