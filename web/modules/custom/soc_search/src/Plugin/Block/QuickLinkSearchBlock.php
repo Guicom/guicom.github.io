@@ -10,7 +10,7 @@ use Drupal\Core\Block\BlockBase;
  * @Block(
  *   id = "quick_link_block",
  *   admin_label = @Translation("Quicklinks"),
- *   category = @Translation("Quicklink Search"),
+ *   category = @Translation("Soc Search"),
  * )
  */
 class QuickLinkSearchBlock extends BlockBase {

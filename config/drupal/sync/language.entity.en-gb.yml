@@ -5,5 +5,5 @@ dependencies: {  }
 id: en-gb
 label: 'English (United Kingdom)'
 direction: ltr
-weight: 0
+weight: -6
 locked: false

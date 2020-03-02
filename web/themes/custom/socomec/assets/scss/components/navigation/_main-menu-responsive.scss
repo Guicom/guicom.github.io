@@ -20,7 +20,8 @@
       height: 60px;
       display: flex;
       align-items: center;
-      justify-content: space-around;
+      justify-content: space-between;
+      padding: 0 1em;
     }
     .block-we-megamenu-blockheader {
       // TOGGLER BTN
@@ -274,6 +275,45 @@
               box-shadow: none;
               border: none;
               padding: 0;
+            }
+          }
+        }
+      }
+    }
+    .block-menu {
+      &.menu--header-visitors {
+        &.responsive {
+          display: flex;
+          justify-content: flex-end;
+          position: initial;
+          margin-top: 1.375rem;
+          .side-menu-responsive {
+            ul.nav {
+              li.nav-item {
+                display: block;
+                &:first-child {
+                  display: none;
+                }
+                a {
+                  &.ico-user{
+                    padding:20px 20px 20px 50px;
+                    color: $blue;
+                    background-color: $white;
+                    background-image: url('../images/picto/ui/user.svg');
+                    background-size: 24px 24px;
+                    background-repeat: no-repeat;
+                    background-position: left 18px center;
+                    text-indent: initial;
+                    width: 100%;
+                    &:hover{
+                      background-color: $white;
+                    }
+                    &.no-label{
+                      background-position: center;
+                    }
+                  }
+                }
+              }
             }
           }
         }

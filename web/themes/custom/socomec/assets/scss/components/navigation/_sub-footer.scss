@@ -1,5 +1,4 @@
-.site-footer__bottom {
-  position: relative;
+.site-footer__top + .site-footer__bottom{
   padding-top: 0.3rem;
   &:before {
     content: '';
@@ -10,6 +9,10 @@
     left: 50%;
     margin-left: -50vw;
   }
+}
+
+.site-footer__bottom {
+  position: relative;
   .region-footer-fifth {
     #block-dropdownlanguage {
       @include media-breakpoint-down(md) {

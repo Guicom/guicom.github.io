@@ -80,6 +80,7 @@ module:
   media: 0
   media_library: 0
   menu_link_attributes: 0
+  menu_per_role: 0
   menu_ui: 0
   message: 0
   metatag: 0

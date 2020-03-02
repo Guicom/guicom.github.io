@@ -3,3 +3,76 @@
  * @file
  * Handle search integration.
  */
+
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\views\ViewExecutable;
+use Drupal\Component\Utility\Xss;
+
+/**
+ * Implement HOOK_form_alter()
+ *
+ * @param $form
+ * @param \Drupal\Core\Form\FormStateInterface $form_state
+ * @param $form_id
+ */
+function soc_search_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  $is_exposed = $form_id == 'views_exposed_form';
+  if ($is_exposed) {
+    if (!empty($form['#id']) && $form['#id'] === 'views-exposed-form-global-search-page-1') {
+      if (!empty($form['search_api_fulltext'])) {
+        $form['search_api_fulltext']['#attributes']['placeholder'] = \Drupal::config('soc_search.settings')->get('placeholder') ?? '';
+        $form['search_api_fulltext']['#attributes']['autocomplete'] = 'off';
+        $form['actions']['submit']['#value'] = t('Search');
+      }
+    }
+  }
+}
+
+/**
+ * Implements hook_preprocess_breadcrumb().
+ * @param $variables
+ */
+function soc_search_preprocess_breadcrumb(&$variables) {
+  $route_name = \Drupal::routeMatch()->getRouteName();
+  if ($route_name === "search.view") {
+    $breadcrumb_title = \Drupal::config('soc_search.settings')->get('breadcrumb_title');
+    $breadcrumb_title_searched = \Drupal::config('soc_search.settings')->get('breadcrumb_title_searched');
+
+    $query = Xss::filter(\Drupal::request()->query->get('search_api_fulltext'));
+    if ($query) {
+      $breadcrumb_title = str_replace('@word', $query, $breadcrumb_title_searched);
+    }
+    $variables['breadcrumb'][1] = array(
+      'text' => $breadcrumb_title
+    );
+  }
+}
+
+/**
+ * Implements hook_views_pre_render().
+ * @param \Drupal\views\ViewExecutable $view
+ */
+function soc_search_views_pre_render(ViewExecutable $view) {
+  $route_name = \Drupal::routeMatch()->getRouteName();
+  if ($route_name === "search.view") {
+    $title = \Drupal::config('soc_search.settings')->get('title');
+    $title_searched = \Drupal::config('soc_search.settings')->get('title_searched');
+    $title_no_result = \Drupal::config('soc_search.settings')->get('title_no_result');
+
+    $query = Xss::filter(\Drupal::request()->query->get('search_api_fulltext'));
+    if ($query) {
+      $title = str_replace('@word', $query, $title_searched);
+    }
+    if (empty($view->total_rows)) {
+      if (!empty($title_no_result)) {
+        $title = $title_no_result;
+      }
+      $title = str_replace('@total', $view->total_rows, $title);
+    }
+    else {
+      $title = str_replace('@total', $view->total_rows, $title);
+    }
+
+    $view->setTitle($title);
+  }
+}
