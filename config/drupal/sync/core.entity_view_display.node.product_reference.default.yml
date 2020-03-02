@@ -14,14 +14,21 @@ dependencies:
     - field.field.node.product_reference.field_reference_name
     - field.field.node.product_reference.field_reference_picture
     - field.field.node.product_reference.field_reference_ref
+    - field.field.node.product_reference.field_teaser
     - node.type.product_reference
   module:
+    - text
     - user
 id: node.product_reference.default
 targetEntityType: node
 bundle: product_reference
 mode: default
 content:
+  content_moderation_control:
+    weight: -20
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   field_dc_r_erp_dimension_unit:
     weight: 107
     label: above
@@ -108,6 +115,13 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     type: string
+    region: content
+  field_teaser:
+    weight: 112
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
     region: content
   links:
     weight: 100

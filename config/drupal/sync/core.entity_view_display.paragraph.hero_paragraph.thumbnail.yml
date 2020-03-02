@@ -1,0 +1,39 @@
+uuid: d0e9044a-2d66-4f03-835a-735ad321c3cd
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.paragraph.thumbnail
+    - field.field.paragraph.hero_paragraph.field_background_image
+    - field.field.paragraph.hero_paragraph.field_baseline
+    - field.field.paragraph.hero_paragraph.field_thumbnail
+    - image.style.crop_210x160
+    - paragraphs.paragraphs_type.hero_paragraph
+  module:
+    - ds
+    - media
+id: paragraph.hero_paragraph.thumbnail
+targetEntityType: paragraph
+bundle: hero_paragraph
+mode: thumbnail
+content:
+  field_thumbnail:
+    type: media_thumbnail
+    weight: 0
+    label: hidden
+    settings:
+      image_style: crop_210x160
+      image_link: ''
+    third_party_settings:
+      ds:
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
+    region: content
+hidden:
+  field_background_image: true
+  field_baseline: true
+  search_api_excerpt: true

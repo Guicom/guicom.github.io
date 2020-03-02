@@ -3,6 +3,13 @@
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    {% set menu = drupal_menu('header-visitors') %}
+    <div class="block-menu menu--header-visitors responsive">
+      <div class="side-menu-responsive">
+        {{ menu }}
+      </div>
+    </div>
   {{ content }}
+
   </div>
 </nav>

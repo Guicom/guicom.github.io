@@ -902,6 +902,17 @@ bundles:
       notes: ''
       relationship: 0
       sars_filename: ''
+    field_teaser:
+      bundle: product_reference
+      name: field_teaser
+      entity_type_id: node
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
   article:
     body:
       bundle: article
