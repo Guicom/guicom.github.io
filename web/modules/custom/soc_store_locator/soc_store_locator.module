@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * Implements hook_theme().
+ */
+function soc_store_locator_theme() {
+  return [
+    'soc_store_locator_country__selector_theme' => [
+      'variables' => [
+        'tabs' => [],
+        'tabs_content' => [],
+      ],
+    ]
+  ];
+}
