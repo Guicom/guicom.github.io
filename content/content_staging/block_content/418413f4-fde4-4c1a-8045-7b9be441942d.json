@@ -1,0 +1,255 @@
+{
+    "_links": {
+        "self": {
+            "href": "http:\/\/default\/en-gb\/block\/12?_format=hal_json"
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/block_content\/multiple_links_and_image"
+        },
+        "http:\/\/drupal.org\/rest\/relation\/block_content\/multiple_links_and_image\/revision_user": [
+            {
+                "href": "http:\/\/default\/user\/1?_format=hal_json"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/block_content\/multiple_links_and_image\/content_translation_uid": [
+            {
+                "href": "http:\/\/default\/user\/1?_format=hal_json",
+                "lang": "en-gb"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/block_content\/multiple_links_and_image\/field_image": [
+            {
+                "href": "http:\/\/default\/en-gb\/media\/55\/edit?_format=hal_json"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/block_content\/multiple_links_and_image\/field_links": [
+            {
+                "href": ""
+            },
+            {
+                "href": ""
+            },
+            {
+                "href": ""
+            },
+            {
+                "href": ""
+            }
+        ]
+    },
+    "id": [
+        {
+            "value": 12
+        }
+    ],
+    "uuid": [
+        {
+            "value": "418413f4-fde4-4c1a-8045-7b9be441942d"
+        }
+    ],
+    "revision_id": [
+        {
+            "value": 18
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en-gb",
+            "lang": "en-gb"
+        }
+    ],
+    "type": [
+        {
+            "target_id": "multiple_links_and_image"
+        }
+    ],
+    "revision_created": [
+        {
+            "value": "2020-02-26T13:10:54+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/block_content\/multiple_links_and_image\/revision_user": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/user\/1?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "6e922b1e-82c3-48d2-a8c3-b42f70d6f54e"
+                    }
+                ]
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/block_content\/multiple_links_and_image\/content_translation_uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/user\/1?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "6e922b1e-82c3-48d2-a8c3-b42f70d6f54e"
+                    }
+                ],
+                "lang": "en-gb"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/block_content\/multiple_links_and_image\/field_image": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/en-gb\/media\/55\/edit?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/media\/image"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "6babfdd4-0834-42c0-9ccc-3e317d703736"
+                    }
+                ]
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/block_content\/multiple_links_and_image\/field_links": [
+            {
+                "_links": {
+                    "self": {
+                        "href": ""
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/link"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "7a5936b6-8a2f-416e-8fce-961d7230eb5c"
+                    }
+                ],
+                "target_revision_id": "479"
+            },
+            {
+                "_links": {
+                    "self": {
+                        "href": ""
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/link"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "d03f0bb3-425d-4281-9724-ec1c97cd2dbb"
+                    }
+                ],
+                "target_revision_id": "480"
+            },
+            {
+                "_links": {
+                    "self": {
+                        "href": ""
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/link"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "b5275855-2b15-4f7f-a4df-c6a70290a820"
+                    }
+                ],
+                "target_revision_id": "481"
+            },
+            {
+                "_links": {
+                    "self": {
+                        "href": ""
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/link"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "9c32acbe-e289-4362-8567-570105a44eab"
+                    }
+                ],
+                "target_revision_id": "482"
+            }
+        ]
+    },
+    "status": [
+        {
+            "value": true,
+            "lang": "en-gb"
+        }
+    ],
+    "info": [
+        {
+            "value": "Social menu footer",
+            "lang": "en-gb"
+        }
+    ],
+    "changed": [
+        {
+            "value": "2020-02-26T13:10:54+00:00",
+            "lang": "en-gb",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "reusable": [
+        {
+            "value": true
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en-gb"
+        }
+    ],
+    "revision_translation_affected": [
+        {
+            "value": true,
+            "lang": "en-gb"
+        }
+    ],
+    "content_translation_source": [
+        {
+            "value": "und",
+            "lang": "en-gb"
+        }
+    ],
+    "content_translation_outdated": [
+        {
+            "value": false,
+            "lang": "en-gb"
+        }
+    ],
+    "content_translation_created": [
+        {
+            "value": "2020-02-26T12:36:10+00:00",
+            "lang": "en-gb",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "metatag": [
+        {
+            "value": {
+                "title": "| Socomec",
+                "canonical_url": "http:\/\/default\/en-gb\/node"
+            }
+        }
+    ]
+}
