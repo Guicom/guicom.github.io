@@ -11,7 +11,7 @@ dependencies:
 id: socomec_footer_legal_mentions
 theme: socomec
 region: footer_fifth
-weight: -6
+weight: -15
 provider: null
 plugin: 'system_menu_block:footer-legal-mentions'
 settings:

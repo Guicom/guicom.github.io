@@ -34,9 +34,6 @@ function soc_resource_center_views_query_alter(ViewExecutable $view, QueryPlugin
 
 /**
  * Implements hook_form_FORM_ID_alter().
- */
-/**
- * Implements hook_form_FORM_ID_alter().
  *
  * Alter existing node resource form for add sticky description
  *

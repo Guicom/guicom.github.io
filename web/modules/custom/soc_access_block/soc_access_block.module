@@ -2,7 +2,7 @@
 
 /**
  * @file
- * Contains prae_core.module.
+ * Contains soc_access_block.module.
  */
 
 use Drupal\block\Entity\Block;
@@ -23,7 +23,9 @@ function soc_access_block_block_access(Block $block, $operation, AccountInterfac
   // If operation is view
   if (strcmp($operation, 'view') === 0) {
     // If block id is socomec_footer
-    if (strcmp($block->id(), 'socomec_footer') === 0 || strcmp($block->id(), 'socomec_pardot_newsletter') === 0) {
+    if (strcmp($block->id(), 'socomec_footer') === 0
+      || strcmp($block->id(), 'socomec_pardot_newsletter') === 0
+      || strcmp($block->id(), 'socialmenufooter') === 0) {
       // Load node
       $node = Drupal::routeMatch()->getParameter('node');
       // If node is instance of NodeInterface
