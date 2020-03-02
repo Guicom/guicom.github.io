@@ -4,7 +4,7 @@ domains_option: 1
 domains_list: ''
 eu_only: null
 eu_only_js: null
-exclude_paths: "/admin\r\n/admin/*\r\n/batch\r\n/node/add*\r\n/node/*/*\r\n/user/*/*"
+exclude_paths: "/admin\r\n/admin/*\r\n/batch\r\n/node/add*\r\n/node/*/*\r\n/user\r\n/user/*\r\n/user/*/*"
 exclude_admin_theme: false
 langcode: en
 popup_agreed:
@@ -18,7 +18,7 @@ popup_scrolling_confirmation: false
 popup_delay: 0
 show_disagree_button: true
 popup_disagree_button_message: 'More info'
-popup_enabled: false
+popup_enabled: true
 popup_find_more_button_message: 'More info'
 popup_height: null
 popup_hide_agreed: false
@@ -47,7 +47,7 @@ use_mobile_message: false
 method: categories
 disagree_button_label: 'No, thanks'
 disabled_javascripts: ''
-whitelisted_cookies: ''
+whitelisted_cookies: "required:socomec_wishlist\r\nrequired:_gat_gtag_UA_156330380_1\r\nrequired:_gid\r\nrequired:_ga"
 consent_storage_method: basic
 withdraw_message:
   value: "<h2>We use cookies on this site to enhance your user experience</h2>\r\n\r\n<p>You have given your consent for us to set cookies.</p>\r\n"

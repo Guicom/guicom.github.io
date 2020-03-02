@@ -1,5 +1,6 @@
 module:
   abjs: 0
+  address: 0
   addtoany: 0
   addtocalendar: 0
   admin_toolbar: 0
@@ -79,6 +80,7 @@ module:
   media: 0
   media_library: 0
   menu_link_attributes: 0
+  menu_per_role: 0
   menu_ui: 0
   message: 0
   metatag: 0
@@ -119,6 +121,7 @@ module:
   soc_pardot: 0
   soc_premium_content: 0
   soc_resource_center: 0
+  soc_search: 0
   soc_user: 0
   soc_views_news: 0
   soc_wishlist: 0
@@ -126,6 +129,7 @@ module:
   system: 0
   taxonomy: 0
   taxonomy_menu: 0
+  telephone: 0
   text: 0
   token: 0
   toolbar: 0

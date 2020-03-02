@@ -1,0 +1,35 @@
+uuid: 3e1c12d3-8b38-4ac0-90fd-4b5d599f8f86
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - node.type.contenu_location
+  module:
+    - user
+id: node.contenu_location.teaser
+targetEntityType: node
+bundle: contenu_location
+mode: teaser
+content:
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  addtoany: true
+  field_location_activity: true
+  field_location_address: true
+  field_location_area: true
+  field_location_company: true
+  field_location_continent: true
+  field_location_fax: true
+  field_location_firstname: true
+  field_location_name_contact: true
+  field_location_subarea: true
+  field_location_telephone: true
+  field_location_type: true
+  field_location_website: true
+  langcode: true
+  search_api_excerpt: true

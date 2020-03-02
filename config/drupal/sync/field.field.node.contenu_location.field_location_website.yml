@@ -1,0 +1,23 @@
+uuid: 90557cd8-ebc0-49de-a4b9-062afcbf59c0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_location_website
+    - node.type.contenu_location
+  module:
+    - link
+id: node.contenu_location.field_location_website
+field_name: field_location_website
+entity_type: node
+bundle: contenu_location
+label: Website
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 16
+  title: 0
+field_type: link

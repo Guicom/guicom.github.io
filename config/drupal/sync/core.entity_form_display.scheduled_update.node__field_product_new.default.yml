@@ -5,6 +5,8 @@ dependencies:
   config:
     - field.field.scheduled_update.node__field_product_new.field_product_new
     - scheduled_updates.scheduled_update_type.node__field_product_new
+  module:
+    - scheduler
 id: scheduled_update.node__field_product_new.default
 targetEntityType: scheduled_update
 bundle: node__field_product_new
@@ -17,7 +19,7 @@ content:
     type: options_select
     region: content
   update_timestamp:
-    type: datetime_timestamp
+    type: datetime_timestamp_no_default
     weight: -9
     region: content
     settings: {  }

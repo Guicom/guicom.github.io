@@ -1,0 +1,19 @@
+uuid: 565173ef-b6ef-434e-8648-2489b625343b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_location_name_contact
+    - node.type.contenu_location
+id: node.contenu_location.field_location_name_contact
+field_name: field_location_name_contact
+entity_type: node
+bundle: contenu_location
+label: 'Name Contact'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

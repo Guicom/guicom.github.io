@@ -9,12 +9,26 @@
  * - ds_content: content region
  */
 #}
+{% set field_res_downloadable = drupal_field('field_res_downloadable', 'node', node.id) %}
 <{{ ds_content_wrapper }}{{ attributes.addClass('ds-1col', 'clearfix') }}>
 
   {{ title_suffix.contextual_links }}
 
   {{ ds_content }}
-
-  <a class="parent-overlap" href="{{ path('entity.node.canonical', {'node': node.id}) | render | striptags | trim }}"></a>
-
+  {% if field_res_downloadable['#items'] is not empty and field_res_downloadable['#items'] | first.value == 1 %}
+    {% set field_res_remote_file_url = drupal_field('field_res_remote_file_url', 'node', node.id) %}
+    {% if field_res_remote_file_url['#items'] is not empty %}
+      <a class="parent-overlap" href="{{ file_url(field_res_remote_file_url['#items']|first.entity.fileuri) }}" download="download"></a>
+    {% endif %}
+  {% else %}
+    {% set target = '' %}
+    {% set field_open_link_in_new_window = drupal_field('field_open_link_in_new_window', 'node', node.id) %}
+    {% if  field_open_link_in_new_window['#items'] is not empty and field_open_link_in_new_window['#items']|first.value == 1 %}
+      {% set target = 'target="_blank"' %}
+    {% endif %}
+    {% set field_res_link_url = drupal_field('field_res_link_url', 'node', node.id) %}
+    {% if field_res_link_url['#items'] is not empty %}
+      <a class="parent-overlap" href="{{ field_res_link_url['#items'] | first.value | trim }}" {{ target }}></a>
+    {% endif %}
+  {% endif %}
 </{{ ds_content_wrapper }}>

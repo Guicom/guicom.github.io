@@ -70,14 +70,14 @@
                     > div{
                         max-width: 90%;
                         margin:0 auto;
-                        &:not(:last-child) > .eu-cookie-compliance-category-selector{
+                        > .eu-cookie-compliance-category-selector{
                             border-bottom: 2px solid $blue_lighter;
                         }
                         label{
                             padding-left: 0px;
                             .toggle-activated{
-                                .disabled{
-                                    opacity: 0.4%;
+                                &.disabled{
+                                    opacity: 0.4;
                                 }
                             }
                         }

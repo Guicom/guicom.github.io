@@ -5,5 +5,5 @@ dependencies: {  }
 id: en-ch
 label: 'English (Switzerland)'
 direction: ltr
-weight: 0
+weight: -7
 locked: false
