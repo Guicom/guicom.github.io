@@ -167,12 +167,6 @@ content:
     third_party_settings: {  }
   publish_state:
     type: scheduler_moderation
-    weight: 7
-    region: content
-    settings: {  }
-    third_party_settings: {  }
-  publish_state:
-    type: scheduler_moderation
     weight: 30
     region: content
     settings: {  }
@@ -218,10 +212,6 @@ content:
     type: scheduler_moderation
     weight: 30
     region: content
-    settings: {  }
-    third_party_settings: {  }
-  url_redirects:
-    weight: 50
     settings: {  }
     third_party_settings: {  }
   url_redirects:

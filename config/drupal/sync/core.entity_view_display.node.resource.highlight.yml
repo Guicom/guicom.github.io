@@ -113,6 +113,8 @@ content:
 hidden:
   addtoany: true
   extra_field_bookmark_resource: true
+  extra_field_file_size_resource: true
+  extra_field_language_resource: true
   extra_field_resource_description: true
   field_description: true
   field_open_link_in_new_window: true

@@ -157,16 +157,42 @@
                 line-height: 30px;
                 margin-top:10px;
               }
-
-              .field--name-field-event-date{
-                margin-left: -10px;
+              .date-place {
+                margin-left: -20px;
                 border-left: 2px $yellow solid;
-                padding-left: 10px;
+                padding-left: 20px;
+                padding-top: 9px;
+                padding-bottom: 9px;
+              }
+              .field--name-field-event-date{
+                display: inline-block;
+                height: 100%;
+                vertical-align: middle;
                 color: $blue;
                 font-family: $font-roboto;
                 font-size: 18px;
                 font-weight: 600;
-                line-height: 45px;
+                line-height: 20px;
+                display: inline-block;
+                height: 100%;
+                vertical-align: middle;
+                .datetime {
+                  margin-right: 40px;
+                }
+                .datetime:first-child {
+                  margin-right: 20px;
+                }
+              }
+              .field--name-field-event-place{
+                display: inline-block;
+                height: 100%;
+                vertical-align: middle;
+                color: $turquoize;
+                font-family: $font-poppins;
+                font-size: 12px;
+                font-weight: 600;
+                letter-spacing: 1px;
+                line-height: 20px;
               }
               .field--name-node-post-date{
                 color: $blue;
