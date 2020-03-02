@@ -1,0 +1,23 @@
+uuid: bf936e8d-015c-44c2-87bc-90883f65b3d5
+langcode: en
+status: true
+dependencies:
+  config:
+    - facets.facet.thematics
+  module:
+    - facets
+  theme:
+    - socomec
+id: searchthematics
+theme: socomec
+region: facets
+weight: -10
+provider: null
+plugin: 'facet_block:thematics'
+settings:
+  id: 'facet_block:thematics'
+  label: 'Search - Event thematic'
+  provider: facets
+  label_display: '0'
+  block_id: searchthematics
+visibility: {  }

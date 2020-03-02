@@ -161,6 +161,9 @@
       > a {
         border-bottom: 1px solid $light-grayish-red;
         color: $darker-grey;
+        &.is-active{
+          background-color: transparent;
+        }
       }
     }
     &.facet-item--expanded,
@@ -213,6 +216,23 @@
         }
       }
     }
+  }
+}
+.block-facet--links {
+  .facet-title{
+    color: black;
+    font-family: $font-poppins;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    line-height: 20px;
+    margin: 10px 0px;
+  }
+  ul {
+    list-style: none;
+    margin-left: 0;
+    padding-left: 0;
   }
 }
 

@@ -21,7 +21,14 @@ dependencies:
     - field.storage.paragraph.field_figure_3_text_line_2
     - field.storage.paragraph.field_figure_4_text_line_2
     - field.storage.paragraph.field_title
+    - field.storage.node.field_event_thematic
+    - field.storage.node.field_event_type
+    - field.storage.node.field_news_theme
+    - field.storage.node.field_news_type
+    - field.storage.node.field_product_family
+    - field.storage.node.field_protection_level
     - field.storage.node.field_product_teaser
+    - field.storage.node.field_res_resource_type
     - search_api.server.socomec
 third_party_settings:
   search_api_solr:
@@ -96,6 +103,22 @@ field_settings:
         - field.storage.paragraph.field_citation_content
       module:
         - paragraphs
+  field_event_thematic:
+    label: 'Event Thematic'
+    datasource_id: 'entity:node'
+    property_path: field_event_thematic
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_event_thematic
+  field_event_type:
+    label: 'Event Type'
+    datasource_id: 'entity:node'
+    property_path: field_event_type
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_event_type
   field_figure_2_text_line_1:
     label: 'Body » Paragraph » Figure 2 - Text line 1'
     datasource_id: 'entity:node'
@@ -151,6 +174,30 @@ field_settings:
         - field.storage.paragraph.field_figure_4_text_line_2
       module:
         - paragraphs
+  field_news_theme:
+    label: 'News Theme'
+    datasource_id: 'entity:node'
+    property_path: field_news_theme
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_news_theme
+  field_news_type:
+    label: 'News Type'
+    datasource_id: 'entity:node'
+    property_path: field_news_type
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_news_type
+  field_product_family:
+    label: 'Product Family'
+    datasource_id: 'entity:node'
+    property_path: field_product_family
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_product_family
   field_product_teaser:
     label: Teaser
     datasource_id: 'entity:node'
@@ -160,6 +207,22 @@ field_settings:
     dependencies:
       config:
         - field.storage.node.field_product_teaser
+  field_protection_level:
+    label: 'Protection level'
+    datasource_id: 'entity:node'
+    property_path: field_protection_level
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_protection_level
+  field_res_resource_type:
+    label: 'Type of resource'
+    datasource_id: 'entity:node'
+    property_path: field_res_resource_type
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_res_resource_type
   field_title:
     label: 'Body » Paragraph » Title'
     datasource_id: 'entity:node'
@@ -307,6 +370,11 @@ datasource_settings:
 processor_settings:
   add_url: {  }
   aggregated_field: {  }
+  hierarchy:
+    fields:
+      field_product_family: taxonomy_term-parent
+    weights:
+      preprocess_index: -45
   rendered_item: {  }
   solr_date_range:
     weights:

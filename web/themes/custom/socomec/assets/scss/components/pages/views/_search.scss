@@ -9,8 +9,10 @@
       padding-left:0px;
     }
   }
-  .view-global-search{
+  .soc-search-wrapper{
     margin:40px 0 80px 0;
+  }
+  .view-global-search{
     .view-content{
       &.row{
         .views-row{
@@ -95,7 +97,11 @@
               .field--name-field-news-theme,
               .field--name-field-news-theme .field__label,
               .field--name-field-news-theme .field__items,
-              .field--name-field-reference-ref{
+              .field--name-field-reference-ref,
+              .field--type-entity-reference,
+              .field--name-extra-field-file-type-resource,
+              .field--name-extra-field-language-resource,
+              .field--name-extra-field-file-size-resource{
                 color: $dark-grey;
                 font-family: $font-poppins;
                 font-size: 12px;
@@ -108,6 +114,15 @@
                 padding: 0px 5px;
                 margin:0px;
               }
+              #field-language-display label{
+                display:none;
+              }
+              .field--name-extra-field-file-size-resource{
+                font-family: $font-roboto;
+                color: $turquoize;
+                background-color: $white;
+                font-weight: 300;
+              }
               .field--name-field-product-status{
                 color: $white;
                 background-color: $turquoize;
@@ -117,17 +132,21 @@
               .field--name-field-news-theme .field__label,
               .field--name-field-news-theme .field__items,
               .field--name-field-news-theme .field__items .field__item,
-              .field--name-field-reference-ref{
+              .field--name-field-reference-ref,
+              .field--name-extra-field-file-type-resource{
                 background-color: $white;
                 color: $dark-grey;
               }
               .field--name-field-news-theme .field__label,
               .field--name-bundle-fieldtaxonomy-term,
-              .field--name-bundle-fieldnode{
+              .field--name-bundle-fieldnode,
+              .field--type-entity-reference,
+              .field--name-extra-field-language-resource{
                 text-transform: uppercase;
               }
 
-              .field--name-field-event-type{
+              .field--name-field-event-type,
+              .field--name-extra-field-language-resource{
                 background-color: $white;
               }
 

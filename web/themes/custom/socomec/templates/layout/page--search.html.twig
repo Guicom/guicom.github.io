@@ -101,31 +101,41 @@
     {% endif %}
     <main id="main-wrapper" class="layout-main-wrapper clearfix">
       {% block content %}
-        <div id="main" class="{{ container }}">
-          {{ page.breadcrumb }}
-          <div class="row row-offcanvas row-offcanvas-left clearfix">
-              <main{{ content_attributes }}>
-                <section class="section">
-                  <a id="main-content" tabindex="-1"></a>
-                  {{ page.content }}
-                </section>
-              </main>
-            {% if page.sidebar_first %}
-              <div{{ sidebar_first_attributes }}>
-                <aside class="section" role="complementary">
-                  {{ page.sidebar_first }}
-                </aside>
+        <section class="section-grey-light" id="product-reference-section">
+          <div class="container">
+            <div class="row">
+              <div class="soc-search-wrapper col-md-12">
+                <div class="row">
+                  <aside class="col-md-3">
+                    <div class="facets">
+                      <div class="facets-title">{{ 'Filter by' |t }}</div>
+                      <div class="facet-bloc-position-title facet-full-width facet-highlight-first-elements">{{ drupal_entity('block', 'searchcategories') }}</div>
+                      <div class="facet-bloc-position-title facet-full-width">{{ drupal_entity('block', 'protectionlevel_2') }}</div>
+                      <div class="facet-bloc-position-title facet-full-width">{{ drupal_entity('block', 'searchthematics') }}</div>
+                      <div class="facet-bloc-position-title facet-full-width">{{ drupal_entity('block', 'eventtype') }}</div>
+                      <div class="facet-bloc-position-title facet-full-width">{{ drupal_entity('block', 'newstheme') }}</div>
+                      <div class="facet-bloc-position-title facet-full-width">{{ drupal_entity('block', 'newstype') }}</div>
+                      <div class="facet-bloc-position-title facet-full-width">{{ drupal_entity('block', 'typeofresource') }}</div>
+                    </div>
+                    <div class="d-none d-md-block">
+                      {% if page.sidebar_first %}
+                        {{ page.sidebar_first }}
+                      {% endif %}
+                    </div>
+                  </aside>
+                  <div class="col-md-9">
+                    {{ page.content }}
+                    <div class="d-md-none">
+                      {% if page.sidebar_first %}
+                        {{ page.sidebar_first }}
+                      {% endif %}
+                    </div>
+                  </div>
+                </div>
               </div>
-            {% endif %}
-            {% if page.sidebar_second %}
-              <div{{ sidebar_second_attributes }}>
-                <aside class="section" role="complementary">
-                  {{ page.sidebar_second }}
-                </aside>
-              </div>
-            {% endif %}
+            </div>
           </div>
-        </div>
+        </section>
       {% endblock %}
     </main>
     {% if page.featured_bottom_first or page.featured_bottom_second or page.featured_bottom_third %}
