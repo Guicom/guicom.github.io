@@ -157,7 +157,7 @@
         <property name="export.type" value="${content.folder}" />
       </else>
     </if>
-    <input propertyName="block.type" validArgs="basic" message="->Socomec ">What block_content bundle would you export ?</input>
+    <input propertyName="block.type" validArgs="basic, multiple_links_and_image, link" message="->Socomec ">What block_content bundle would you export ?</input>
     <drush
       command="dcder"
       assume="yes"

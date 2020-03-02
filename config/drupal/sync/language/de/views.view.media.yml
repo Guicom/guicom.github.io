@@ -1,6 +1,18 @@
+label: Medien
 display:
   default:
     display_options:
+      pager:
+        options:
+          expose:
+            offset_label: Versatz
       fields:
-        operations:
-          label: Aktionen
+        bundle:
+          label: Typ
+      filters:
+        bundle:
+          expose:
+            label: Typ
+      title: Medien
+  media_page_list:
+    display_title: Medien

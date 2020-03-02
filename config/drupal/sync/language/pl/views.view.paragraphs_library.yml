@@ -1,6 +1,21 @@
 display:
   default:
     display_options:
+      pager:
+        options:
+          expose:
+            offset_label: Przesunięcie
       fields:
-        operations:
-          label: Operacje
+        label:
+          label: Etykieta
+        type:
+          label: Typ
+      filters:
+        label:
+          expose:
+            label: Etykieta
+          group_info:
+            label: Etykieta
+        type:
+          expose:
+            label: Typ
