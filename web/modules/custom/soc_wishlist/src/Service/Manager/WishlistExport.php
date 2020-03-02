@@ -64,15 +64,22 @@ class WishlistExport {
         return $this->exportCSV($items);
         break;
       case 'xls':
-        try {
-          return $this->exportXLS($items);
-        } catch (Exception $e) {
-        } catch (\PhpOffice\PhpSpreadsheet\Exception $e) {
-        }
-        break;
       case 'xlsx':
         try {
-          return $this->exportXLSX($items);
+          $response = new Response();
+          $response->headers->set('Pragma', 'no-cache');
+          $response->headers->set('Expires', '0');
+          $response->headers->set('Content-Type', 'application/vnd.ms-excel');
+          if ($this->getType() == 'xls') {
+            $response->headers->set('Content-Disposition', 'attachment; filename=' . self::WISHLIST_FILENAME . '.xls');
+            $writerType = 'Xls';
+          }
+          else {
+            $response->headers->set('Content-Disposition', 'attachment; filename=' . self::WISHLIST_FILENAME . '.xlsx');
+            $writerType = 'Xlsx';
+          }
+
+          return $this->exportXLS($response, $writerType, $items);
         } catch (Exception $e) {
         } catch (\PhpOffice\PhpSpreadsheet\Exception $e) {
         }
@@ -92,7 +99,6 @@ class WishlistExport {
    * WishlistExport CSV
    *
    * @param $items
-   * @param $datas
    *
    * @return \Symfony\Component\HttpFoundation\Response
    */
@@ -129,22 +135,17 @@ class WishlistExport {
   }
 
   /**
-   * WishlistExport XLS
+   * WishlistExport XLS OR XLSX
    *
+   * @param $response
+   * @param $writerType
    * @param $items
-   * @param $datas
    *
    * @return \Symfony\Component\HttpFoundation\Response
    * @throws \PhpOffice\PhpSpreadsheet\Exception
    * @throws \PhpOffice\PhpSpreadsheet\Writer\Exception
    */
-  protected function exportXLS($items) {
-    $response = new Response();
-    $response->headers->set('Pragma', 'no-cache');
-    $response->headers->set('Expires', '0');
-    $response->headers->set('Content-Type', 'application/vnd.ms-excel');
-    $response->headers->set('Content-Disposition', 'attachment; filename=' . self::WISHLIST_FILENAME . '.xls');
-
+  protected function exportXLS($response, $writerType, $items) {
     $spreadsheet = new Spreadsheet();
 
     //Set metadata.
@@ -185,78 +186,7 @@ class WishlistExport {
     }
 
     // Get the writer and export in memory.
-    $writer = IOFactory::createWriter($spreadsheet, 'Xls');
-    ob_start();
-    $writer->save('php://output');
-    $content = ob_get_clean();
-
-    // Memory cleanup.
-    $spreadsheet->disconnectWorksheets();
-    unset($spreadsheet);
-
-
-    $response->setContent($content);
-    return $response;
-  }
-
-  /**
-   * WishlistExport XLSX
-   *
-   * @param $items
-   * @param $datas
-   *
-   * @return \Symfony\Component\HttpFoundation\Response
-   * @throws \PhpOffice\PhpSpreadsheet\Exception
-   * @throws \PhpOffice\PhpSpreadsheet\Writer\Exception
-   */
-  protected function exportXLSX($items) {
-    $response = new Response();
-    $response->headers->set('Pragma', 'no-cache');
-    $response->headers->set('Expires', '0');
-    $response->headers->set('Content-Type', 'application/vnd.ms-excel');
-    $response->headers->set('Content-Disposition', 'attachment; filename=' . self::WISHLIST_FILENAME . '.xlsx');
-
-    $spreadsheet = new Spreadsheet();
-
-    //Set metadata.
-    $spreadsheet->getProperties()
-      ->setCreator('Socomec')
-      ->setLastModifiedBy('Socomec')
-      ->setTitle("Wishlist")
-      ->setLastModifiedBy('Socomec');
-
-    // Get the active sheet.
-    $spreadsheet->setActiveSheetIndex(0);
-    $worksheet = $spreadsheet->getActiveSheet();
-
-    //Rename sheet
-    $worksheet->setTitle('Wishlist');
-
-    /*
-    * TITLES
-    */
-    $worksheet->getCell('A1')->setValue('Model');
-    $worksheet->getCell('B1')->setValue('Reference');
-    $worksheet->getCell('C1')->setValue('Main specifications');
-    $worksheet->getCell('D1')->setValue('Quantity');
-
-    $inc = 2;
-    foreach ($items as $item) {
-      if ($item['node'] instanceof Node) {
-        $model = ($item['node']->get('field_reference_name')->value) ?? "";
-        $reference = ($item['node']->get('field_reference_ref')->value) ?? "";
-        $specifications = ($item['node']->getTitle()) ?? "";
-        $quantity = ($item['quantity']) ?? "";
-        $worksheet->setCellValue('A' . $inc, $model);
-        $worksheet->setCellValue('B' . $inc, $reference);
-        $worksheet->setCellValue('C' . $inc, $specifications);
-        $worksheet->setCellValue('D' . $inc, $quantity);
-        $inc++;
-      }
-    }
-
-    // Get the writer and export in memory.
-    $writer = IOFactory::createWriter($spreadsheet, 'Xlsx');
+    $writer = IOFactory::createWriter($spreadsheet, $writerType);
     ob_start();
     $writer->save('php://output');
     $content = ob_get_clean();
@@ -274,7 +204,6 @@ class WishlistExport {
    * WishlistExport PDF
    *
    * @param $items
-   * @param $datas
    *
    * @return \Symfony\Component\HttpFoundation\Response
    * @throws \PhpOffice\PhpSpreadsheet\Exception
