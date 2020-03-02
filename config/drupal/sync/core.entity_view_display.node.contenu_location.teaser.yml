@@ -20,6 +20,7 @@ dependencies:
     - node.type.contenu_location
   module:
     - address
+    - ds
     - smart_trim
     - soc_eu_cookie_compliance
     - taxonomy
@@ -36,8 +37,15 @@ content:
     region: content
     label: hidden
     settings:
-      link: true
-    third_party_settings: {  }
+      link: false
+    third_party_settings:
+      ds:
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
   field_location_address:
     type: address_default
     weight: 2
@@ -146,8 +154,15 @@ content:
     region: content
     label: hidden
     settings:
-      link: true
-    third_party_settings: {  }
+      link: false
+    third_party_settings:
+      ds:
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
   field_location_website:
     type: soc_gpdr_link
     weight: 12
