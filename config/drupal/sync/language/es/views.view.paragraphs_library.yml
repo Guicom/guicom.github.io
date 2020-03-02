@@ -1,6 +1,21 @@
 display:
   default:
     display_options:
+      pager:
+        options:
+          expose:
+            offset_label: Desplazamiento
       fields:
-        operations:
-          label: Operaciones
+        label:
+          label: Etiqueta
+        type:
+          label: Tipo
+      filters:
+        label:
+          expose:
+            label: Etiqueta
+          group_info:
+            label: Etiqueta
+        type:
+          expose:
+            label: Tipo

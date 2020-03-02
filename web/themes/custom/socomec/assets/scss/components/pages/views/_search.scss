@@ -61,8 +61,12 @@
                 width: 30%;
                 float: none;
                  > div {
+                   padding: 0;
+                   margin:0;
                    height: 100%;
                    div {
+                     padding: 0;
+                     margin:0;
                      height: 100%;
                    }
                  }
@@ -135,10 +139,10 @@
               .field--name-field-news-theme .field__label,
               .field--name-bundle-fieldtaxonomy-term,
               .field--name-bundle-fieldnode,
-              .field--type-entity-reference,
               .field--name-extra-field-language-resource{
                 text-transform: uppercase;
               }
+              .field--type-entity-reference,
               .field--name-field-news-theme .field__item {
                 text-transform: initial;
               }

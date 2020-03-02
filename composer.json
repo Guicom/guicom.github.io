@@ -66,6 +66,7 @@
         "drupal/google_analytics": "^3.0",
         "drupal/hook_event_dispatcher": "^1.25",
         "drupal/hotjar": "^1.5",
+        "drupal/image_effects": "^2.0",
         "drupal/inline_entity_form": "^1.0@RC",
         "drupal/international_phone": "^1.0",
         "drupal/libraries": "^3.0@alpha",
