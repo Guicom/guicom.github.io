@@ -5,9 +5,7 @@ namespace Drupal\soc_content\Service\Manager;
 
 
 use Drupal\Core\Entity\EntityRepository;
-use Drupal\Core\Entity\EntityStorageException;
 use Drupal\Core\Logger\LoggerChannelFactoryInterface;
-use Drupal\taxonomy\Entity\Term;
 
 class ContentManager {
 
@@ -69,39 +67,8 @@ class ContentManager {
    *
    * @return \Drupal\Core\Entity\EntityInterface|null
    */
-  protected function getTermByUuid(string $uuid) {
-    return $this->getEntityByUuid('taxonomy_term', $uuid);
-  }
-
-  /**
-   * @param string $uuid
-   *
-   * @return \Drupal\Core\Entity\EntityInterface|null
-   */
-  protected function getMenuItemByUuid(string $uuid) {
-    return $this->getEntityByUuid('menu_link_content', $uuid);
-  }
-
-  /**
-   * @param string $uuid
-   *
-   * @return \Drupal\Core\Entity\EntityInterface|null
-   */
   public function getBlockContentByUuid(string $uuid) {
     return $this->getEntityByUuid('block_content', $uuid);
-  }
-
-  /**
-   * @param $data
-   */
-  public function createTerm($data) {
-    $new_term = Term::create($data);
-    $new_term->enforceIsNew();
-    try {
-      $new_term->save();
-    } catch (EntityStorageException $e) {
-      $this->logger->error($e->getMessage());
-    }
   }
 
 }
