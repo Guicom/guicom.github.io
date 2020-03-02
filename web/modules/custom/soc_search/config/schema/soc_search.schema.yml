@@ -8,6 +8,18 @@ soc_search.settings:
       label: 'Title'
       type: label
       translatable: true
+    title_searched:
+      label: 'Title searched text'
+      type: label
+      translatable: true
+    breadcrumb_title:
+      label: 'Breadcrumb title'
+      type: label
+      translatable: true
+    breadcrumb_title_searched:
+      label: 'Breadcrumb title with searched text'
+      type: label
+      translatable: true
     placeholder:
       label: 'Placeholder'
       type: label

@@ -1,0 +1,15 @@
+uuid: b9e0ce62-b527-47e1-b76f-2e69ad4096a2
+langcode: en
+status: true
+dependencies: {  }
+name: crop_210x140
+label: 'Crop 210x140'
+effects:
+  73443282-24e9-4efc-8cd7-887ad82add77:
+    uuid: 73443282-24e9-4efc-8cd7-887ad82add77
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 210
+      height: 140
+      anchor: center-center

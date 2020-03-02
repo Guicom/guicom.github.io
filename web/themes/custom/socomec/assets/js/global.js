@@ -411,7 +411,7 @@
       $( document ).ready(function() {
         $(".menu--header-visitors [href='#search']", context).once('socomecSearchMenu').each(function () {
           $(this).click(function (e) {
-            $(this).toggleClass('close-search');
+            $(this).toggleClass('close-search icon-search-white');
             $(".block-soc-search-block").toggleClass('d-none');
             $(".we-mega-menu-submenu").removeClass('show');
             if ($(".block-soc-search-block").hasClass('d-none')) {

@@ -1,0 +1,183 @@
+.block-soc-search-block{
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 100vh;
+  background: #084796;
+  padding-top: 0;
+  overflow-y: auto;
+  margin-top: 60px;
+  @include media-breakpoint-down(md) {
+    top: 0;
+    margin-top: 0;
+  }
+  .views-exposed-form {
+    form {
+      .form-row {
+        position: relative;
+      }
+      fieldset {
+        @include media-breakpoint-down(md) {
+          margin-top: 4.25rem;
+          margin-bottom: 0;
+          width: 100%;
+        }
+        label {
+          display: none;
+        }
+        .form-control {
+          background: none;
+          border: none;
+          box-shadow: none;
+          color: $white;
+          font-size: 4.2rem;
+          font-family: $font-poppins;
+          font-weight: 100;
+          margin-top: 2rem;
+          @include media-breakpoint-down(md) {
+            font-size: 3rem;
+            margin-top: 1rem;
+            padding: 0;
+          }
+          &::placeholder {
+            color: $turquoize;
+          }
+        }
+      }
+    }
+    .form-actions {
+      @include media-breakpoint-between(md, lg) {
+        display: none;
+      }
+      button {
+        background: $yellow;
+        color: $darker-grey;
+        @include media-breakpoint-down(md) {
+          width: 100%;
+        }
+      }
+      @include media-breakpoint-up(md) {
+        position: absolute;
+        right: 0;
+        height: 100%;
+        background: none;
+        button {
+          height: 100%;
+          position: relative;
+          background: none;
+          text-indent: -99999px;
+          border: none;
+          &:after {
+            content: '';
+            position: absolute;
+            display: block;
+            top: 55%;
+            right: 1rem;
+            transform: translateY(-50%);
+            background-image: url("../images/picto/ui/search-white.svg");
+            background-size: 48px 48px;
+            height: 48px;
+            width: 48px;
+          }
+        }
+      }
+      @include media-breakpoint-down(md) {
+        width: 100%;
+      }
+    }
+  }
+
+  .submenu-bg-top{
+    background: linear-gradient(180deg, rgba(0,79,159,0) 0%, #0070C0  100%);
+    position: relative;
+  }
+  .submenu-bg-bottom{
+    background: linear-gradient(180deg, #232C77 0%, #084796 100%);
+    .content {
+      padding-top: 0.5rem;
+      @include media-breakpoint-down(md) {
+        overflow: hidden;
+      }
+    }
+  }
+
+}
+.wrapper-bottom-search {
+  &.top10 {
+    &:after {
+      content:'';
+      display: block;
+      position: absolute;
+      background: linear-gradient(180deg, #004F9F 0%, #084796 100%) !important;
+      height: 500px;
+      right: 0;
+      top: 0;
+      z-index: 0;
+      width: calc(100% + 50vw);
+      border-top-right-radius: 10px;
+      @include media-breakpoint-down(md) {
+        height: 100%;
+        border-top-right-radius: 0;
+        right: -1rem;
+      }
+    }
+  }
+  .block-top-search-block,
+  .block-quick-link-block {
+    position: relative;
+    z-index: 10;
+    margin-top: 2rem;
+    @include media-breakpoint-down(md) {
+      margin-top: 0;
+      padding-top: 1rem;
+      padding-bottom: 2rem;
+    }
+    h2 {
+      font-family: $font-poppins;
+      font-weight: 500;
+      font-size: $font-size-xs;
+      color: $white;
+      text-transform: uppercase;
+      margin-bottom: 2rem;
+      letter-spacing: 1px;
+      @include offset-underscore;
+      &:before {
+        top: initial;
+        bottom: -1rem;
+        width: 30px;
+      }
+    }
+    .nav {
+      flex-direction: column;
+      li.nav-item {
+        a.nav-link {
+          font-family: $font-roboto;
+          color: rgba($white, 0.8);
+          font-size: $font-size-base;
+          border-bottom: 1px solid rgba($white, 0.1);
+          padding: 12px 15px;
+          &:hover {
+            background: none;
+          }
+        }
+      }
+    }
+  }
+  .block-quick-link-block {
+    h2 {
+      &:before {
+        background: $turquoize;
+      }
+    }
+    .nav {
+      li.nav-item {
+        a.nav-link {
+          font-size: $font-size-xs;
+          font-family: $font-poppins;
+          font-weight: 500;
+        }
+      }
+    }
+  }
+
+}
