@@ -1,0 +1,16 @@
+display:
+  default:
+    display_options:
+      pager:
+        options:
+          expose:
+            offset_label: Desplazamiento
+      fields:
+        filesize:
+          label: Tamaño
+  page_2:
+    display_options:
+      pager:
+        options:
+          expose:
+            offset_label: Desplazamiento

@@ -1,6 +1,18 @@
+label: Multimedia
 display:
   default:
     display_options:
+      pager:
+        options:
+          expose:
+            offset_label: Desplazamiento
       fields:
-        operations:
-          label: Operaciones
+        bundle:
+          label: Tipo
+      filters:
+        bundle:
+          expose:
+            label: Tipo
+      title: Multimedia
+  media_page_list:
+    display_title: Multimedia

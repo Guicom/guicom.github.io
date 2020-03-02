@@ -1,0 +1,12 @@
+display:
+  default:
+    display_options:
+      pager:
+        options:
+          expose:
+            offset_label: Desplazamiento
+      title: Multimedia
+  page:
+    display_options:
+      menu:
+        title: Multimedia
