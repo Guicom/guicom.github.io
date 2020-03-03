@@ -71,6 +71,13 @@ interface SalesLocationsManagerServiceInterface {
    *
    * @return mixed
    */
+  public function getFax(NodeInterface $node);
+
+  /**
+   * @param \Drupal\node\NodeInterface $node
+   *
+   * @return mixed
+   */
   public function getContinent(NodeInterface $node);
 
   /**
@@ -107,21 +114,28 @@ interface SalesLocationsManagerServiceInterface {
    *
    * @return mixed
    */
-  public function getAddress(NodeInterface $node);
+  public function getAddressLine1(NodeInterface $node);
 
   /**
    * @param \Drupal\node\NodeInterface $node
    *
    * @return mixed
    */
-  public function getZipCode(NodeInterface $node);
+  public function getAddressLine2(NodeInterface $node);
 
   /**
    * @param \Drupal\node\NodeInterface $node
    *
    * @return mixed
    */
-  public function getCity(NodeInterface $node);
+  public function getPostalCode(NodeInterface $node);
+
+  /**
+   * @param \Drupal\node\NodeInterface $node
+   *
+   * @return mixed
+   */
+  public function getLocality(NodeInterface $node);
 
   /**
    * @param \Drupal\node\NodeInterface $node
@@ -130,4 +144,31 @@ interface SalesLocationsManagerServiceInterface {
    */
   public function getWebsite(NodeInterface $node);
 
+  /**
+   * @param \Drupal\node\NodeInterface $node
+   *
+   * @return mixed
+   */
+  public function getCountryCode(NodeInterface $node);
+
+  /**
+   * @param \Drupal\node\NodeInterface $node
+   *
+   * @return mixed
+   */
+  public function getSortingCode(NodeInterface $node);
+
+  /**
+   * @param \Drupal\node\NodeInterface $node
+   *
+   * @return mixed
+   */
+  public function getAdministrativeArea(NodeInterface $node);
+
+  /**
+   * @param \Drupal\node\NodeInterface $node
+   *
+   * @return mixed
+   */
+  public function getDependentLocality(NodeInterface $node);
 }
