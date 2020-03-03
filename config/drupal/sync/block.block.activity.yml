@@ -1,0 +1,29 @@
+uuid: 1da3d43a-864a-4925-9446-7d405088afe2
+langcode: en
+status: true
+dependencies:
+  config:
+    - facets.facet.activity
+  module:
+    - facets
+    - system
+  theme:
+    - socomec
+id: activity
+theme: socomec
+region: facets
+weight: 0
+provider: null
+plugin: 'facet_block:activity'
+settings:
+  id: 'facet_block:activity'
+  label: Thematics
+  provider: facets
+  label_display: visible
+  block_id: activity
+visibility:
+  request_path:
+    id: request_path
+    pages: "/where-to-buy\r\n/where-to-buy/*/*"
+    negate: false
+    context_mapping: {  }

@@ -4,10 +4,11 @@ status: true
 dependencies:
   module:
     - search_api_solr
-    - node
     - taxonomy
+    - node
     - search_api
   config:
+    - field.storage.node.field_location_activity
     - field.storage.node.field_location_address
     - field.storage.node.field_location_area
     - field.storage.node.field_location_type
@@ -71,6 +72,28 @@ field_settings:
     dependencies:
       config:
         - field.storage.node.field_location_address
+  name:
+    label: 'Type » Taxonomy term » Name'
+    datasource_id: 'entity:node'
+    property_path: 'field_location_type:entity:name'
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_location_type
+      module:
+        - taxonomy
+        - taxonomy
+  name_1:
+    label: 'Activity » Taxonomy term » Name'
+    datasource_id: 'entity:node'
+    property_path: 'field_location_activity:entity:name'
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_location_activity
+      module:
+        - taxonomy
+        - taxonomy
   title:
     label: Title
     datasource_id: 'entity:node'

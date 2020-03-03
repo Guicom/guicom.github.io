@@ -129,16 +129,18 @@ content:
       placeholder_title: ''
     third_party_settings:
       conditional_fields:
-        f2823efe-554b-4404-af17-21e2ef3a6178:
+        584c9830-343e-42ed-9120-e9def6734093:
           dependee: field_location_type
           settings:
             state: required
             condition: value
             grouping: AND
-            values_set: 2
+            values_set: 1
             value: ''
-            values: reseller
-            value_form: {  }
+            values: {  }
+            value_form:
+              -
+                target_id: '111'
             effect: show
             effect_options: {  }
             selector: ''

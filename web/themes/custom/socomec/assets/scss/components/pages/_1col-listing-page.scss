@@ -6,6 +6,7 @@
     .store-teaser-cards {
       border: 1px solid $mid-grey;
       margin-bottom: 1rem;
+      padding: 0;
       &.node--sticky {
         border: 2px solid $blue;
       }
@@ -77,6 +78,7 @@
           }
         }
         .field--name-field-location-telephone {
+          margin-right: 2.5rem;
           &:before {
             content: '';
             display: block;
@@ -130,51 +132,49 @@
       }
       .third-row {
        background: $light-grayish-red;
-        padding: 1rem 1.5rem 0.5rem 1.5rem;
+        padding: 1rem 1.5rem 1rem 1.5rem;
         .address-wrapper {
-          display: flex;
-          justify-content: space-between;
-          @include media-breakpoint-down(md) {
-            flex-direction: column;
-          }
+
           .field--name-field-location-address {
-            font-family: $font-roboto;
-            font-weight: 300;
-            font-size: $font-size-h5;
-            color: $blue;
-            line-height: 30px;
-           .country {
-             display: none;
-           }
-          }
-        }
-        .access {
-          display: flex;
-          align-items: flex-end;
-          button {
             display: flex;
-            background: none;
-            border: none;
-            color: $blue;
-            text-transform: uppercase;
-            font-size: $font-size-sm;
-            font-weight: 700;
-            letter-spacing: 1px;
-            &:after {
-              content: '';
-              display: block;
-              width: 18px;
-              height: 20px;
-              background-image: url("../images/picto/ui/locator-blue.svg");
-              background-size: 18px 20px;
-              background-repeat: no-repeat;
-              margin-left: 0.5rem;
+            justify-content: space-between;
+            @include media-breakpoint-down(md) {
+              flex-direction: column;
+            }
+            .address {
+              font-family: $font-roboto;
+              font-weight: 300;
+              font-size: $font-size-h5;
+              color: $blue;
+              line-height: 30px;
+              .country {
+                display: none;
+              }
+            }
+            .address-map-link {
+              display: flex;
+              align-items: flex-end;
+              background: none;
+              border: none;
+              color: $blue;
+              text-transform: uppercase;
+              font-size: $font-size-sm;
+              font-weight: 700;
+              letter-spacing: 1px;
+              &:after {
+                content: '';
+                display: block;
+                width: 18px;
+                height: 20px;
+                background-image: url("../images/picto/ui/locator-blue.svg");
+                background-size: 18px 20px;
+                background-repeat: no-repeat;
+                margin-left: 0.5rem;
+              }
             }
           }
         }
       }
-
-
     }
   }
 }

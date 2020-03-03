@@ -63,11 +63,11 @@
 
 {%
   set classes = [
-    node.isPromoted() ? 'node--promoted',
-    node.isSticky() ? 'node--sticky',
-    'clearfix',
-    'store-teaser-cards',
-  ]
+  node.isPromoted() ? 'node--promoted',
+  node.isSticky() ? 'node--sticky',
+  'clearfix',
+  'store-teaser-cards',
+]
 %}
 
 {% set location_type = content.field_location_type[0]['#plain_text'] %}
@@ -79,16 +79,19 @@
 %}
 
 <div {{attributes.addClass(classes) }}>
-<div class="first-row">
-  <div class="company">
-    {{ content.field_location_company }}
-    {{ content.field_location_activity }}
+
+  <div class="first-row">
+    <div class="company">
+      {{ content.field_location_company }}
+      {{ content.field_location_activity }}
+    </div>
   </div>
-</div>
   <div class="second-row">
     <div class="left-content">
-        {{ content.field_location_telephone }}
-        {{ content.field_location_email }}
+      {{ content.field_location_telephone }}
+      <div class="field--name-field-location-email">
+        <a href="mailto:{{ content.field_location_email | render  | striptags | trim  }}">{{ "Send a Mail" |t }}</a>
+      </div>
     </div>
     <div class="right-content">
       <div {{ attributes.addClass(type_class).removeClass(classes) }}>
@@ -97,14 +100,9 @@
 
     </div>
   </div>
-    <div class="third-row">
-      <div class="address-wrapper">
-          {{ content.field_location_address }}
-        <div class="access">
-          <button>
-            {{ 'ACCESS PLAN'|t}}
-          </button>
-        </div>
-      </div>
+  <div class="third-row">
+    <div class="address-wrapper">
+      {{ content.field_location_address }}
     </div>
   </div>
+</div>
