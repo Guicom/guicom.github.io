@@ -1,0 +1,23 @@
+uuid: ff6620d4-9672-4880-b762-0064d4663e53
+langcode: en
+status: true
+dependencies:
+  config:
+    - facets.facet.protection_level
+  module:
+    - facets
+  theme:
+    - socomec
+id: protectionlevel_2
+theme: socomec
+region: facets
+weight: -11
+provider: null
+plugin: 'facet_block:protection_level'
+settings:
+  id: 'facet_block:protection_level'
+  label: 'Search - Protection level'
+  provider: facets
+  label_display: '0'
+  block_id: protectionlevel_2
+visibility: {  }

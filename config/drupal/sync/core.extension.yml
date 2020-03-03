@@ -37,6 +37,7 @@ module:
   dblog: 0
   default_content: 0
   default_content_deploy: 0
+  dropdown_language: 0
   drush_language: 0
   ds_extras: 0
   dynamic_page_cache: 0
@@ -55,6 +56,9 @@ module:
   field_group: 0
   field_ui: 0
   file: 0
+  file_mdm: 0
+  file_mdm_exif: 0
+  file_mdm_font: 0
   filter: 0
   fontawesome: 0
   gdpr: 0
@@ -69,6 +73,7 @@ module:
   hook_event_dispatcher: 0
   hotjar: 0
   image: 0
+  image_effects: 0
   inline_entity_form: 0
   jsonapi: 0
   language: 0

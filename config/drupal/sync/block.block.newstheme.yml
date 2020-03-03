@@ -1,0 +1,23 @@
+uuid: f9b3871f-672d-4ca0-aad3-31a2fe4e5a3c
+langcode: en
+status: true
+dependencies:
+  config:
+    - facets.facet.news_theme
+  module:
+    - facets
+  theme:
+    - socomec
+id: newstheme
+theme: socomec
+region: facets
+weight: 0
+provider: null
+plugin: 'facet_block:news_theme'
+settings:
+  id: 'facet_block:news_theme'
+  label: 'Search - News Theme'
+  provider: facets
+  label_display: '0'
+  block_id: newstheme
+visibility: {  }

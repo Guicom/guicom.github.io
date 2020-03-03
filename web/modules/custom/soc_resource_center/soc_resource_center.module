@@ -33,34 +33,17 @@ function soc_resource_center_views_query_alter(ViewExecutable $view, QueryPlugin
 }
 
 /**
- * Implements hook_form_FORM_ID_alter().
- */
-/**
- * Implements hook_form_FORM_ID_alter().
- *
- * Alter existing node resource form for add sticky description
+ * Implements hook_form_alter().
  *
  * @param $form
  * @param \Drupal\Core\Form\FormStateInterface $form_state
  * @param $form_id
  */
-function soc_resource_center_form_node_resource_edit_form_alter(&$form, FormStateInterface $form_state, $form_id) {
-  $edit_sticky_description =  t('will only be displayed if a thumb is attached');
-  $form['sticky']['widget']['value']['#description'] = $edit_sticky_description;
-}
-
-/**
- * Implements hook_form_FORM_ID_alter().
- *
- * Alter new node resource form for add sticky description
- *
- * @param $form
- * @param \Drupal\Core\Form\FormStateInterface $form_state
- * @param $form_id
- */
-function soc_resource_center_form_node_resource_form_alter(&$form, FormStateInterface $form_state, $form_id) {
-  $add_sticky_description =  t('will only be displayed if a thumb is attached');
-  $form['sticky']['widget']['value']['#description'] = $add_sticky_description;
+function soc_resource_center_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  if (strcmp($form_id, 'node_resource_edit_form') === 0 || strcmp($form_id, 'node_resource_form') === 0) {
+    $sticky_resource_description =  t('will only be displayed if a thumb is attached');
+    $form['sticky']['widget']['value']['#description'] = $sticky_resource_description;
+  }
 }
 
 /**
