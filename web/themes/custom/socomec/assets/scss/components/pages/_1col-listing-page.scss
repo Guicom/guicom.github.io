@@ -104,7 +104,12 @@
             margin-right: 0.5rem;
           }
         }
+        .node--type-contenu-location {
+          margin: 0;
+          padding: 0;
+        }
         .subsidiary {
+          border-bottom: none;
           .field--name-field-location-type {
             font-family: $font-poppins;
             font-weight: 500;
@@ -118,6 +123,7 @@
           }
         }
         .other {
+          border-bottom: none;
           .field--name-field-location-type {
             font-family: $font-poppins;
             font-weight: 500;
@@ -173,6 +179,11 @@
                 background-size: 18px 20px;
                 background-repeat: no-repeat;
                 margin-left: 0.5rem;
+              }
+            }
+            a {
+              &:hover {
+                text-decoration: none;
               }
             }
           }
