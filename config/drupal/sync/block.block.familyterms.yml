@@ -11,7 +11,7 @@ dependencies:
 id: familyterms
 theme: socomec
 region: facets
-weight: 0
+weight: -14
 provider: null
 plugin: 'facet_block:family_terms'
 settings:

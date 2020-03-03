@@ -28,9 +28,11 @@ dependencies:
     - field.field.node.product.field_protection_level
     - field.field.node.product.field_standard_label
     - field.field.node.product.update_new_statut
+    - image.style.background_transparent_210x140
     - node.type.product
   module:
     - ds
+    - media
     - smart_trim
     - user
 third_party_settings:
@@ -93,12 +95,12 @@ bundle: product
 mode: search_index
 content:
   field_product_pictures:
-    type: entity_reference_entity_view
+    type: media_thumbnail
     weight: 5
     label: hidden
     settings:
-      view_mode: teaser_image_crop_210x140
-      link: false
+      image_style: background_transparent_210x140
+      image_link: ''
     third_party_settings:
       ds:
         ds_limit: '1'

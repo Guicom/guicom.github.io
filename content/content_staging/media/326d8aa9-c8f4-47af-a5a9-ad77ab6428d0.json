@@ -1,0 +1,164 @@
+{
+    "_links": {
+        "self": {
+            "href": "http:\/\/default\/en-gb\/media\/52\/edit?_format=hal_json"
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/media\/icone"
+        },
+        "http:\/\/drupal.org\/rest\/relation\/media\/icone\/uid": [
+            {
+                "href": "http:\/\/default\/user\/1?_format=hal_json"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/media\/icone\/thumbnail": [
+            {
+                "href": ""
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/media\/icone\/field_media_image": [
+            {
+                "href": ""
+            }
+        ]
+    },
+    "mid": [
+        {
+            "value": 52
+        }
+    ],
+    "uuid": [
+        {
+            "value": "326d8aa9-c8f4-47af-a5a9-ad77ab6428d0"
+        }
+    ],
+    "vid": [
+        {
+            "value": 52
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en-gb",
+            "lang": "en-gb"
+        }
+    ],
+    "bundle": [
+        {
+            "target_id": "icone"
+        }
+    ],
+    "revision_created": [
+        {
+            "value": "2020-02-26T12:38:09+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "status": [
+        {
+            "value": true
+        }
+    ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/media\/icone\/uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/user\/1?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "6e922b1e-82c3-48d2-a8c3-b42f70d6f54e"
+                    }
+                ]
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/media\/icone\/thumbnail": [
+            {
+                "_links": {
+                    "self": {
+                        "href": ""
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/file\/file"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "8a87bb6a-3de4-4c9f-a0e9-683bc76a1c1f"
+                    }
+                ],
+                "alt": "Facebook",
+                "title": null,
+                "width": null,
+                "height": null
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/media\/icone\/field_media_image": [
+            {
+                "_links": {
+                    "self": {
+                        "href": ""
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/file\/file"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "8a87bb6a-3de4-4c9f-a0e9-683bc76a1c1f"
+                    }
+                ],
+                "alt": "Facebook",
+                "title": "",
+                "width": "21",
+                "height": "20"
+            }
+        ]
+    },
+    "name": [
+        {
+            "value": "facebook.svg"
+        }
+    ],
+    "created": [
+        {
+            "value": "2020-02-26T12:38:02+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "changed": [
+        {
+            "value": "2020-02-26T12:38:02+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en-gb"
+        }
+    ],
+    "revision_translation_affected": [
+        {
+            "value": true,
+            "lang": "en-gb"
+        }
+    ],
+    "content_translation_source": [
+        {
+            "value": "und",
+            "lang": "en-gb"
+        }
+    ],
+    "content_translation_outdated": [
+        {
+            "value": false,
+            "lang": "en-gb"
+        }
+    ]
+}
