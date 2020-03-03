@@ -94,13 +94,6 @@ field_settings:
         - taxonomy
         - taxonomy
   name_1:
-    label: 'Activity » Taxonomy term » Name'
-    datasource_id: 'entity:node'
-    property_path: 'field_location_activity:entity:name'
-    type: string
-    dependencies:
-      config:
-        - field.storage.node.field_location_activity
     label: 'Area of Sales » Taxonomy term » Name'
     datasource_id: 'entity:node'
     property_path: 'field_location_area:entity:name'
@@ -108,6 +101,17 @@ field_settings:
     dependencies:
       config:
         - field.storage.node.field_location_area
+      module:
+        - taxonomy
+        - taxonomy
+  name_2:
+    label: 'Activity » Taxonomy term » Name'
+    datasource_id: 'entity:node'
+    property_path: 'field_location_activity:entity:name'
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_location_activity
       module:
         - taxonomy
         - taxonomy

@@ -19,6 +19,8 @@ dependencies:
     - node.type.contenu_location
   module:
     - address
+    - address_map_link
+    - ds
     - link
     - telephone
     - user
@@ -39,7 +41,20 @@ content:
     weight: 8
     label: hidden
     settings: {  }
-    third_party_settings: {  }
+    third_party_settings:
+      address_map_link:
+        link_address: '1'
+        map_link_type: google_maps
+        map_link_position: after
+        map_link_text: 'Access plan'
+        map_link_new_window: '1'
+      ds:
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
     type: address_default
     region: content
   field_location_area:
