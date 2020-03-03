@@ -17,28 +17,30 @@ function soc_store_locator_theme() {
   ];
 }
 
-function soc_store_locator_views_query_alter(ViewExecutable $view, QueryPluginBase $query) {
+/**
+ * Implements hook_search_api_query_alter.
+ *
+ * @param \Drupal\search_api\Query\QueryInterface $query
+ */
+function soc_store_locator_search_api_query_alter(\Drupal\search_api\Query\QueryInterface &$query) {
+  if ($query->getIndex()->getServerInstance()->supportsFeature('search_api_facets')) {
+    /** @var \Drupal\facets\FacetManager\DefaultFacetManager $facet_manager */
+    $facet_manager = \Drupal::service('facets.manager');
 
-  // (Example assuming a view with an exposed filter on node title.)
-  // If the input for the title filter is a positive integer, filter against
-  // node ID instead of node title.
-  if ($view
-      ->id() == 'my_view' && is_numeric($view->exposed_raw_input['title']) && $view->exposed_raw_input['title'] > 0) {
+    $search_id = $query->getSearchId();
 
-    // Traverse through the 'where' part of the query.
-    foreach ($query->where as &$condition_group) {
-      foreach ($condition_group['conditions'] as &$condition) {
-
-        // If this is the part of the query filtering on title, chang the
-        // condition to filter on node ID.
-        if ($condition['field'] == 'node.title') {
-          $condition = [
-            'field' => 'node.nid',
-            'value' => $view->exposed_raw_input['title'],
-            'operator' => '=',
-          ];
-        }
-      }
+    // If we find an attachment view query, we use the same query alter as the page because they belong together
+    if ($search_id === 'views_page:store_locator__page_2') {
+//      $query->setSearchId('store_locator__page_1');
+//      facets_search_api_query_alter($query);
+      $search_id = 'views_page:store_locator__page_1';
+      $facet_manager->alterQuery($query, $search_id);
     }
+//    if(strpos($search_id, 'views_page:store_locator__page_2') === 0) {
+//      $search_id = 'search_api:views_page__search__page';
+//
+//      // Add the active filters.
+//      $facet_manager->alterQuery($query, $search_id);
+//    }
   }
 }

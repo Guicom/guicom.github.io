@@ -1,4 +1,12 @@
 .path-where-to-buy {
+  .where-to-buy-filters {
+      margin-top: 155px;
+  }
+  .view-header {
+    @include block-title(true);
+    margin-left: -300px;
+    margin-bottom: 45px;
+  }
   .view-store-locator {
     .views-row {
       width: 100%;
@@ -27,6 +35,7 @@
             text-transform: uppercase;
             float: left;
             margin-right: 1rem;
+            margin-bottom: 0;
             p {
               margin: 0;
             }
@@ -40,7 +49,9 @@
             letter-spacing: 1px;
             margin-right: 1rem;
             margin-bottom: 1rem;
-            float: left;
+            div {
+              display: inline-block;
+            }
           }
         }
       }
