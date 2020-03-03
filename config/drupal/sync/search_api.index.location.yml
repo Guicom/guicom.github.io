@@ -83,7 +83,6 @@ field_settings:
       config:
         - field.storage.node.field_location_address
   name:
-<<<<<<< HEAD
     label: 'Type » Taxonomy term » Name'
     datasource_id: 'entity:node'
     property_path: 'field_location_type:entity:name'
@@ -102,7 +101,6 @@ field_settings:
     dependencies:
       config:
         - field.storage.node.field_location_activity
-=======
     label: 'Area of Sales » Taxonomy term » Name'
     datasource_id: 'entity:node'
     property_path: 'field_location_area:entity:name'
@@ -132,7 +130,6 @@ field_settings:
     dependencies:
       config:
         - field.storage.node.field_location_area
->>>>>>> 16e2fa6c0a59bea6f64b2ec5a2dd135dc5d166f4
       module:
         - taxonomy
         - taxonomy
