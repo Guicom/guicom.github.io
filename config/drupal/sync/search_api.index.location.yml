@@ -5,12 +5,14 @@ dependencies:
   module:
     - search_api_solr
     - taxonomy
+    - path
     - node
     - search_api
   config:
     - field.storage.node.field_location_activity
     - field.storage.node.field_location_address
     - field.storage.node.field_location_area
+    - field.storage.node.field_location_continent
     - field.storage.node.field_location_type
     - search_api.server.location
 third_party_settings:
@@ -64,6 +66,14 @@ field_settings:
     dependencies:
       config:
         - field.storage.node.field_location_area
+  field_location_continent:
+    label: 'Continent of Sales'
+    datasource_id: 'entity:node'
+    property_path: field_location_continent
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_location_continent
   locality:
     label: 'Address » The locality (i.e. city).'
     datasource_id: 'entity:node'
@@ -73,6 +83,7 @@ field_settings:
       config:
         - field.storage.node.field_location_address
   name:
+<<<<<<< HEAD
     label: 'Type » Taxonomy term » Name'
     datasource_id: 'entity:node'
     property_path: 'field_location_type:entity:name'
@@ -91,6 +102,37 @@ field_settings:
     dependencies:
       config:
         - field.storage.node.field_location_activity
+=======
+    label: 'Area of Sales » Taxonomy term » Name'
+    datasource_id: 'entity:node'
+    property_path: 'field_location_area:entity:name'
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_location_area
+      module:
+        - taxonomy
+        - taxonomy
+  path:
+    label: 'Area of Sales » Taxonomy term » URL alias'
+    datasource_id: 'entity:node'
+    property_path: 'field_location_area:entity:path'
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_location_area
+      module:
+        - taxonomy
+        - path
+  tid:
+    label: 'Area of Sales » Taxonomy term » Term ID'
+    datasource_id: 'entity:node'
+    property_path: 'field_location_area:entity:tid'
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_location_area
+>>>>>>> 16e2fa6c0a59bea6f64b2ec5a2dd135dc5d166f4
       module:
         - taxonomy
         - taxonomy

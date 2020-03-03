@@ -11,7 +11,7 @@ dependencies:
 id: backtotop
 theme: socomec
 region: footer_fifth
-weight: 0
+weight: -20
 provider: null
 plugin: 'block_content:19f08398-afb3-4c4b-b4d4-dd399507172d'
 settings:
