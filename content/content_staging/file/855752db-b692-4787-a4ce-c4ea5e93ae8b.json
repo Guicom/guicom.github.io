@@ -1,0 +1,92 @@
+{
+    "_links": {
+        "self": {
+            "href": ""
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/file\/file"
+        },
+        "http:\/\/drupal.org\/rest\/relation\/file\/file\/uid": [
+            {
+                "href": "http:\/\/default\/user\/1?_format=hal_json"
+            }
+        ]
+    },
+    "fid": [
+        {
+            "value": 54
+        }
+    ],
+    "uuid": [
+        {
+            "value": "855752db-b692-4787-a4ce-c4ea5e93ae8b"
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en-gb"
+        }
+    ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/file\/file\/uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/user\/1?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "6e922b1e-82c3-48d2-a8c3-b42f70d6f54e"
+                    }
+                ]
+            }
+        ]
+    },
+    "filename": [
+        {
+            "value": "linkedin.svg"
+        }
+    ],
+    "uri": [
+        {
+            "value": "public:\/\/2020-02\/linkedin_0.svg",
+            "url": "\/sites\/default\/files\/2020-02\/linkedin_0.svg"
+        }
+    ],
+    "filemime": [
+        {
+            "value": "image\/svg+xml"
+        }
+    ],
+    "filesize": [
+        {
+            "value": 2261
+        }
+    ],
+    "status": [
+        {
+            "value": true
+        }
+    ],
+    "created": [
+        {
+            "value": "2020-02-26T12:36:55+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "changed": [
+        {
+            "value": "2020-02-26T12:37:05+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "data": [
+        {
+            "value": "PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iMjFweCIgaGVpZ2h0PSIyMHB4IiB2aWV3Qm94PSIwIDAgMjEgMjAiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+CiAgICA8IS0tIEdlbmVyYXRvcjogc2tldGNodG9vbCA2MS4yICgxMDEwMTApIC0gaHR0cHM6Ly9za2V0Y2guY29tIC0tPgogICAgPHRpdGxlPjdBNDIwQUQ0LTZFMjUtNDI4NC1BOTFDLUM1MEJGREE5QUQwQTwvdGl0bGU+CiAgICA8ZGVzYz5DcmVhdGVkIHdpdGggc2tldGNodG9vbC48L2Rlc2M+CiAgICA8ZyBpZD0iQXNzZXQtQXJ0Ym9hcmQtUGFnZSIgc3Ryb2tlPSJub25lIiBzdHJva2Utd2lkdGg9IjEiIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+CiAgICAgICAgPGcgaWQ9InVpL01lZGl1bS9iYWctcHVyY2hhc2UtdWkvc29jaWFsL2xpbmtlZGluIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgwLjEyNTk1MCwgMC4wMDAwMDApIiBmaWxsPSIjMDA0RjlGIj4KICAgICAgICAgICAgPHBhdGggZD0iTTE3LjY1NjI1LDAgQzE4Ljk0ODY2OTUsMCAyMCwxLjA1MTMzMDU1IDIwLDIuMzQzNzUgTDIwLDE3LjY1NjI1IEMyMCwxOC45NDg2Njk1IDE4Ljk0ODY2OTUsMjAgMTcuNjU2MjUsMjAgTDIuMzQzNzUsMjAgQzEuMDUxMzMwNTUsMjAgMCwxOC45NDg2Njk1IDAsMTcuNjU2MjUgTDAsMi4zNDM3NSBDMCwxLjA1MTMzMDU1IDEuMDUxMzMwNTUsMCAyLjM0Mzc1LDAgTDE3LjY1NjI1LDAgWiBNMTguNDM3NSwxNy42NTYyNSBMMTguNDM3NSwyLjM0Mzc1IEMxOC40Mzc1LDEuOTEyOTk0MzggMTguMDg3MDA1NiwxLjU2MjUgMTcuNjU2MjUsMS41NjI1IEwyLjM0Mzc1LDEuNTYyNSBDMS45MTI5OTQzOCwxLjU2MjUgMS41NjI1LDEuOTEyOTk0MzggMS41NjI1LDIuMzQzNzUgTDEuNTYyNSwxNy42NTYyNSBDMS41NjI1LDE4LjA4NzAwNTYgMS45MTI5OTQzOCwxOC40Mzc1IDIuMzQzNzUsMTguNDM3NSBMMTcuNjU2MjUsMTguNDM3NSBDMTguMDg3MDA1NiwxOC40Mzc1IDE4LjQzNzUsMTguMDg3MDA1NiAxOC40Mzc1LDE3LjY1NjI1IFogTTE1LjQ0NjM0MjIsMTEuMTc0NDE2IEwxNS40NDYzNDIyLDE1LjIwOTc5NTIgTDEzLjEwNjg4NDYsMTUuMjA5Nzk1MiBMMTMuMTA2ODg0NiwxMS40NDQ2ODE0IEMxMy4xMDY4ODQ2LDEwLjQ5ODg1NDEgMTIuNzY4NTA3Myw5Ljg1MzM2NCAxMS45MjE3MDEyLDkuODUzMzY0IEMxMS4yNzUyNzIxLDkuODUzMzY0IDEwLjg5MDU4MTcsMTAuMjg4Mzc3IDEwLjcyMTM0MjMsMTAuNzA5MTc5IEMxMC42NTk2MjU0LDEwLjg1OTYxNCAxMC42NDM3Mzk0LDExLjA2ODk5OTkgMTAuNjQzNzM5NCwxMS4yNzk1Nzg1IEwxMC42NDM3Mzk0LDE1LjIwOTc5NTIgTDguMzAzNDk1MDUsMTUuMjA5Nzk1MiBDOC4zMDM0OTUwNSwxNS4yMDk3OTUyIDguMzM1MDEzMzIsOC44MzI5MjgyNCA4LjMwMzQ5NTA1LDguMTcyMjM3MjYgTDEwLjY0MzUxMSw4LjE3MjIzNzI2IEwxMC42NDM1MTEsOS4xNjk3ODI5NCBDMTAuNjM4NzY1NSw5LjE3NzI0Mzc5IDEwLjYzMjU5ODgsOS4xODUyODgzIDEwLjYyODEzMjUsOS4xOTI1MjA3NiBMMTAuNjQzNTExLDkuMTkyNTIwNzYgTDEwLjY0MzUxMSw5LjE2OTc4Mjk0IEMxMC45NTQ0MDUsOC42OTA5NDM3NiAxMS41MDk2MjksOC4wMDY5MDU5MSAxMi43NTIzOTI5LDguMDA2OTA1OTEgQzE0LjI5MjA5MzQsOC4wMDY5MDU5MSAxNS40NDYzNDIyLDkuMDEyNzQ5ODggMTUuNDQ2MzQyMiwxMS4xNzQ0MTYgWiBNNS44NTU0OTk1OSw0Ljc3OTc4NTI4IEM2LjY1NjE3MDI4LDQuNzc5Nzg1MjggNy4xNDgzMzI0MSw1LjMwNDkxMjE1IDcuMTYzNzEwODksNS45OTU0NzE4OCBDNy4xNjM3MTA4OSw2LjY3MTA4NDU0IDYuNjU2MTcwMjgsNy4yMTIwNDY2OCA1Ljg0MDA3MDM1LDcuMjEyMDQ2NjggTDUuODI0NDM4MSw3LjIxMjA0NjY4IEM1LjAzOTc1NDk0LDcuMjEyMDQ2NjggNC41MzEyNSw2LjY3MDk4MzAzIDQuNTMxMjUsNS45OTU0NzE4OCBDNC41MzEyNSw1LjMwNDkxMjE1IDUuMDU0OTA1MDMsNC43Nzk3ODUyOCA1Ljg1NTQ5OTU5LDQuNzc5Nzg1MjggWiBNNC42NzAyMzk5OCwxNS4yMDk3OTUyIEw0LjY3MDIzOTk4LDguMTcyMjM3MjggTDcuMDA5NTk2MDgsOC4xNzIyMzcyOCBMNy4wMDk1OTYwOCwxNS4yMDk3OTUyIEw0LjY3MDIzOTk4LDE1LjIwOTc5NTIgWiIgaWQ9IlNoYXBlIj48L3BhdGg+CiAgICAgICAgPC9nPgogICAgPC9nPgo8L3N2Zz4="
+        }
+    ]
+}

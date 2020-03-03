@@ -1,0 +1,92 @@
+{
+    "_links": {
+        "self": {
+            "href": ""
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/file\/file"
+        },
+        "http:\/\/drupal.org\/rest\/relation\/file\/file\/uid": [
+            {
+                "href": "http:\/\/default\/user\/1?_format=hal_json"
+            }
+        ]
+    },
+    "fid": [
+        {
+            "value": 57
+        }
+    ],
+    "uuid": [
+        {
+            "value": "baa91528-56f1-48d9-994c-e983735f5f61"
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en-gb"
+        }
+    ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/file\/file\/uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/user\/1?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "6e922b1e-82c3-48d2-a8c3-b42f70d6f54e"
+                    }
+                ]
+            }
+        ]
+    },
+    "filename": [
+        {
+            "value": "youtube.svg"
+        }
+    ],
+    "uri": [
+        {
+            "value": "public:\/\/2020-02\/youtube_0.svg",
+            "url": "\/sites\/default\/files\/2020-02\/youtube_0.svg"
+        }
+    ],
+    "filemime": [
+        {
+            "value": "image\/svg+xml"
+        }
+    ],
+    "filesize": [
+        {
+            "value": 2054
+        }
+    ],
+    "status": [
+        {
+            "value": true
+        }
+    ],
+    "created": [
+        {
+            "value": "2020-02-26T12:39:47+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "changed": [
+        {
+            "value": "2020-02-26T12:39:53+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "data": [
+        {
+            "value": "PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iMjFweCIgaGVpZ2h0PSIyMHB4IiB2aWV3Qm94PSIwIDAgMjEgMjAiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+CiAgICA8IS0tIEdlbmVyYXRvcjogc2tldGNodG9vbCA2MS4yICgxMDEwMTApIC0gaHR0cHM6Ly9za2V0Y2guY29tIC0tPgogICAgPHRpdGxlPkIzNzZGOEU0LTFDRUEtNDA4MS04MkU5LUU1N0Q3QUM4QTkzQjwvdGl0bGU+CiAgICA8ZGVzYz5DcmVhdGVkIHdpdGggc2tldGNodG9vbC48L2Rlc2M+CiAgICA8ZyBpZD0iQXNzZXQtQXJ0Ym9hcmQtUGFnZSIgc3Ryb2tlPSJub25lIiBzdHJva2Utd2lkdGg9IjEiIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+CiAgICAgICAgPGcgaWQ9InVpL3NvY2lhbC95b3V0dWJlIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgwLjEyNTk1MCwgMC4wMDAwMDApIiBmaWxsPSIjMDA0RjlGIj4KICAgICAgICAgICAgPHBhdGggZD0iTTE3LjY1NjI1LDIwIEwyLjM0Mzc1LDIwIEMxLjA1MTMzMDU1LDIwIDAsMTguOTQ4NjY5NSAwLDE3LjY1NjI1IEwwLDIuMzQzNzUgQzAsMS4wNTEzMzA1NSAxLjA1MTMzMDU1LDAgMi4zNDM3NSwwIEwxNy42NTYyNSwwIEMxOC45NDg2Njk1LDAgMjAsMS4wNTEzMzA1NSAyMCwyLjM0Mzc1IEwyMCwxNy42NTYyNSBDMjAsMTguOTQ4NjY5NSAxOC45NDg2Njk1LDIwIDE3LjY1NjI1LDIwIFogTTIuMzQzNzUsMS41NjI1IEMxLjkxMjk5NDM4LDEuNTYyNSAxLjU2MjUsMS45MTI5OTQzOCAxLjU2MjUsMi4zNDM3NSBMMS41NjI1LDE3LjY1NjI1IEMxLjU2MjUsMTguMDg3MDA1NiAxLjkxMjk5NDM4LDE4LjQzNzUgMi4zNDM3NSwxOC40Mzc1IEwxNy42NTYyNSwxOC40Mzc1IEMxOC4wODcwMDU2LDE4LjQzNzUgMTguNDM3NSwxOC4wODcwMDU2IDE4LjQzNzUsMTcuNjU2MjUgTDE4LjQzNzUsMi4zNDM3NSBDMTguNDM3NSwxLjkxMjk5NDM4IDE4LjA4NzAwNTYsMS41NjI1IDE3LjY1NjI1LDEuNTYyNSBMMi4zNDM3NSwxLjU2MjUgWiBNMTUuMDAzOTA2Myw2Ljk3NDYwOTM4IEMxNS4zMTI4OTA2LDcuNTAxNjYwMTYgMTUuNDY4NzUsOC40MDk0NzI2NiAxNS40Njg3NSwxMC4wMDgzOTg0IEwxNS40Njg3NSwxMC4wMTM4NjcyIEMxNS40Njg3NSwxMS42MDUyNzM0IDE1LjMxMjg5MDYsMTIuNTE5OTIxOSAxNS4wMDQ1ODk4LDEzLjA0MTUwMzkgQzE0LjcwNzkxMDIsMTMuNTY5MjM4MyAxNC4zODU5Mzc1LDEzLjY2NDk0MTQgMTMuNzMwMzcxMSwxMy43MDkzNzUgQzEzLjA3NDgwNDcsMTMuNzQ2OTcyNyAxMS40MjgwMjczLDEzLjc2OTUzMTIgMTAuMDAxMzY3MiwxMy43Njk1MzEyIEM4LjU3MTk3MjY2LDEzLjc2OTUzMTIgNi45MjQ1MTE3MiwxMy43NDY5NzI3IDYuMjY5NjI4OTEsMTMuNzA4NjkxNCBDNS42MTU0Mjk2OSwxMy42NjQyNTc4IDUuMjkzNDU3MDMsMTMuNTY4NTU0NyA0Ljk5NDA0Mjk3LDEzLjA0MDgyMDMgQzQuNjg4NDc2NTYsMTIuNTE5MjM4MyA0LjUzMTI1LDExLjYwNDU4OTggNC41MzEyNSwxMC4wMTMxODM2IEw0LjUzMTI1LDEwLjAwNzcxNDggQzQuNTMxMjUsOC40MDk0NzI2NiA0LjY4ODQ3NjU2LDcuNTAxNjYwMTYgNC45OTQwNDI5Nyw2Ljk3NDYwOTM4IEM1LjI5MzQ1NzAzLDYuNDQ2MTkxNDEgNS42MTYxMTMyOCw2LjM0OTgwNDY5IDYuMjcwMzEyNSw2LjMxMjIwNzAzIEM2LjkyNDUxMTcyLDYuMjY4NDU3MDMgOC41NzE5NzI2Niw2LjI1IDEwLjAwMTM2NzIsNi4yNSBDMTEuNDI4MDI3Myw2LjI1IDEzLjA3NDgwNDcsNi4yNjg0NTcwMyAxMy43Mjk2ODc1LDYuMzEyODkwNjMgQzE0LjM4NTI1MzksNi4zNDk4MDQ2OSAxNC43MDcyMjY2LDYuNDQ2ODc1IDE1LjAwMzkwNjMsNi45NzQ2MDkzOCBaIE04LjYzMjgxMjUsMTIuMDYwNTQ2OSBMMTIuMDUwNzgxMiwxMC4wMDk3NjU2IEw4LjYzMjgxMjUsNy45NTg5ODQzOCBMOC42MzI4MTI1LDEyLjA2MDU0NjkgWiIgaWQ9IlNoYXBlIj48L3BhdGg+CiAgICAgICAgPC9nPgogICAgPC9nPgo8L3N2Zz4="
+        }
+    ]
+}

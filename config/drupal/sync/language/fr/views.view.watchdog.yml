@@ -1,6 +1,14 @@
 display:
   default:
     display_options:
+      pager:
+        options:
+          expose:
+            offset_label: Décalage
       fields:
-        link:
-          label: Actions
+        type:
+          label: Type
+      filters:
+        type:
+          expose:
+            label: Type

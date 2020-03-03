@@ -16,9 +16,11 @@ dependencies:
     - field.field.node.product_reference.field_reference_picture
     - field.field.node.product_reference.field_reference_ref
     - field.field.node.product_reference.field_teaser
+    - image.style.background_transparent_210x140
     - node.type.product_reference
   module:
     - ds
+    - media
     - smart_trim
     - user
 third_party_settings:
@@ -81,12 +83,12 @@ bundle: product_reference
 mode: search_index
 content:
   field_reference_picture:
-    type: entity_reference_entity_view
+    type: media_thumbnail
     weight: 5
     label: hidden
     settings:
-      view_mode: teaser_image_crop_210x140
-      link: false
+      image_style: background_transparent_210x140
+      image_link: ''
     third_party_settings:
       ds:
         ds_limit: '1'

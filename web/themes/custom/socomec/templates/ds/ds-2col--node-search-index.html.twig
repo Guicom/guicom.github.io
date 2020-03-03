@@ -17,7 +17,7 @@
 <{{ outer_wrapper }}{{ attributes.addClass('ds-2col', 'clearfix') }}>
 
   {{ title_suffix.contextual_links }}
-  {% if right is not empty %}
+  {% if right|render|trim %}
     <{{ left_wrapper }}{{ left_attributes.addClass('group-left') }}>
       {{ left }}
     </{{ left_wrapper }}>

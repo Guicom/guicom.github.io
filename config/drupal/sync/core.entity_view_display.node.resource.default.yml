@@ -182,8 +182,11 @@ content:
 hidden:
   addtoany: true
   extra_field_bookmark_resource: true
+  extra_field_file_size_resource: true
   extra_field_file_type_resource: true
   extra_field_is_download_ressource: true
+  extra_field_language_resource: true
+  extra_field_resource_description: true
   extra_field_resource_title: true
   langcode: true
   search_api_excerpt: true
