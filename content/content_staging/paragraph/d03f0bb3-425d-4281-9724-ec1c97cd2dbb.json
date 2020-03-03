@@ -1,0 +1,107 @@
+{
+    "_links": {
+        "self": {
+            "href": ""
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/link"
+        },
+        "http:\/\/drupal.org\/rest\/relation\/paragraph\/link\/field_link_icon": [
+            {
+                "href": "http:\/\/default\/en-gb\/media\/52\/edit?_format=hal_json"
+            }
+        ]
+    },
+    "id": [
+        {
+            "value": 62
+        }
+    ],
+    "uuid": [
+        {
+            "value": "d03f0bb3-425d-4281-9724-ec1c97cd2dbb"
+        }
+    ],
+    "revision_id": [
+        {
+            "value": 480
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en-gb",
+            "lang": "en-gb"
+        }
+    ],
+    "type": [
+        {
+            "target_id": "link"
+        }
+    ],
+    "status": [
+        {
+            "value": true
+        }
+    ],
+    "created": [
+        {
+            "value": "2020-02-26T12:37:45+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "parent_id": [
+        {
+            "value": "12"
+        }
+    ],
+    "parent_type": [
+        {
+            "value": "block_content"
+        }
+    ],
+    "parent_field_name": [
+        {
+            "value": "field_links"
+        }
+    ],
+    "behavior_settings": [
+        {
+            "value": []
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en-gb"
+        }
+    ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/paragraph\/link\/field_link_icon": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/en-gb\/media\/52\/edit?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/media\/icone"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "326d8aa9-c8f4-47af-a5a9-ad77ab6428d0"
+                    }
+                ]
+            }
+        ]
+    },
+    "field_link_link": [
+        {
+            "value": "https:\/\/www.facebook.com\/SocomecGroup\/"
+        }
+    ],
+    "field_link_target": [
+        {
+            "value": "_blank"
+        }
+    ]
+}

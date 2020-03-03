@@ -1,0 +1,92 @@
+{
+    "_links": {
+        "self": {
+            "href": ""
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/file\/file"
+        },
+        "http:\/\/drupal.org\/rest\/relation\/file\/file\/uid": [
+            {
+                "href": "http:\/\/default\/user\/1?_format=hal_json"
+            }
+        ]
+    },
+    "fid": [
+        {
+            "value": 56
+        }
+    ],
+    "uuid": [
+        {
+            "value": "977eec57-9782-4586-bb4c-4fe4da404ab5"
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en-gb"
+        }
+    ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/file\/file\/uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/user\/1?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "6e922b1e-82c3-48d2-a8c3-b42f70d6f54e"
+                    }
+                ]
+            }
+        ]
+    },
+    "filename": [
+        {
+            "value": "twitter.svg"
+        }
+    ],
+    "uri": [
+        {
+            "value": "public:\/\/2020-02\/twitter_0.svg",
+            "url": "\/sites\/default\/files\/2020-02\/twitter_0.svg"
+        }
+    ],
+    "filemime": [
+        {
+            "value": "image\/svg+xml"
+        }
+    ],
+    "filesize": [
+        {
+            "value": 2515
+        }
+    ],
+    "status": [
+        {
+            "value": true
+        }
+    ],
+    "created": [
+        {
+            "value": "2020-02-26T12:38:52+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "changed": [
+        {
+            "value": "2020-02-26T12:39:00+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "data": [
+        {
+            "value": "PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iMjFweCIgaGVpZ2h0PSIyMHB4IiB2aWV3Qm94PSIwIDAgMjEgMjAiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+CiAgICA8IS0tIEdlbmVyYXRvcjogc2tldGNodG9vbCA2MS4yICgxMDEwMTApIC0gaHR0cHM6Ly9za2V0Y2guY29tIC0tPgogICAgPHRpdGxlPjk4QUQwMzZDLUIxRjEtNEExQy04QjlGLUQ3RTU2QjMyMEJCMTwvdGl0bGU+CiAgICA8ZGVzYz5DcmVhdGVkIHdpdGggc2tldGNodG9vbC48L2Rlc2M+CiAgICA8ZyBpZD0iQXNzZXQtQXJ0Ym9hcmQtUGFnZSIgc3Ryb2tlPSJub25lIiBzdHJva2Utd2lkdGg9IjEiIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+CiAgICAgICAgPGcgaWQ9InVpL01lZGl1bS9iYWctcHVyY2hhc2UtdWkvc29jaWFsL3R3aXR0ZXIiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDAuMTI1OTUwLCAwLjAwMDAwMCkiIGZpbGw9IiMwMDRGOUYiPgogICAgICAgICAgICA8cGF0aCBkPSJNMTcuNjU2MjUsMjAgTDIuMzQzNzUsMjAgQzEuMDUxMzMwNTUsMjAgMCwxOC45NDg2Njk1IDAsMTcuNjU2MjUgTDAsMi4zNDM3NSBDMCwxLjA1MTMzMDU1IDEuMDUxMzMwNTUsMCAyLjM0Mzc1LDAgTDE3LjY1NjI1LDAgQzE4Ljk0ODY2OTUsMCAyMCwxLjA1MTMzMDU1IDIwLDIuMzQzNzUgTDIwLDE3LjY1NjI1IEMyMCwxOC45NDg2Njk1IDE4Ljk0ODY2OTUsMjAgMTcuNjU2MjUsMjAgWiBNMi4zNDM3NSwxLjU2MjUgQzEuOTEyOTk0MzgsMS41NjI1IDEuNTYyNSwxLjkxMjk5NDM4IDEuNTYyNSwyLjM0Mzc1IEwxLjU2MjUsMTcuNjU2MjUgQzEuNTYyNSwxOC4wODcwMDU2IDEuOTEyOTk0MzgsMTguNDM3NSAyLjM0Mzc1LDE4LjQzNzUgTDE3LjY1NjI1LDE4LjQzNzUgQzE4LjA4NzAwNTYsMTguNDM3NSAxOC40Mzc1LDE4LjA4NzAwNTYgMTguNDM3NSwxNy42NTYyNSBMMTguNDM3NSwyLjM0Mzc1IEMxOC40Mzc1LDEuOTEyOTk0MzggMTguMDg3MDA1NiwxLjU2MjUgMTcuNjU2MjUsMS41NjI1IEwyLjM0Mzc1LDEuNTYyNSBaIE0xNS44NTkzNzUsNi4zNTg0MDc3NCBDMTUuNTMyNzE0OCw2Ljg0MzM3MDUzIDE1LjEzMjA4MDEsNy4yNjQ3OTE1MSAxNC42NTUyNzM0LDcuNjAyMjIwNDQgQzE0LjY2MDQwMDQsNy43MDM3NDEyNyAxNC42NjQwNjI1LDcuODA1OTkyNDYgMTQuNjY0MDYyNSw3LjkxMTg5NTQ4IEMxNC42NjQwNjI1LDExLjA3NzMwMDIgMTIuMjQ3MDcwMywxNC43MjkxMjg1IDcuODI2MTcxODgsMTQuNzI5MTI4NSBDNi40NjYwNjQ0NSwxNC43MjkxMjg1IDUuMjA0ODMzOTgsMTQuMzM4MzgyOSA0LjE0MDYyNSwxMy42NTQwMzAyIEM0LjMyOTU4OTg0LDEzLjY3ODEzMjMgNC41MTg1NTQ2OSwxMy42ODY4OTY3IDQuNzE1NTc2MTcsMTMuNjg2ODk2NyBDNS44MzkxMTEzMywxMy42ODY4OTY3IDYuODc2OTUzMTIsMTMuMzAyNzI0NCA3LjY5NDMzNTk0LDEyLjY2NTExNTEgQzYuNjQ0MDQyOTcsMTIuNjQyNDczOCA1Ljc2MDc0MjE5LDExLjk0NDk3NDYgNS40NDk0NjI4OSwxMC45OTYyMjk2IEM1LjU5NTIxNDg0LDExLjAyODM2NTcgNS43NTA0ODgyOCwxMS4wMzcxMzAxIDUuOTA0Mjk2ODgsMTEuMDM3MTMwMSBDNi4xMjU0ODgyOCwxMS4wMzcxMzAxIDYuMzM4NjIzMDUsMTEuMDExNTY3MyA2LjUzNDE3OTY5LDEwLjk1ODI1MDYgQzUuNDQyMTM4NjcsMTAuNzM1NDg5MSA0LjYwOTM3NSw5Ljc2ODQ4NDk3IDQuNjA5Mzc1LDguNjA0MjgyMTIgTDQuNjA5Mzc1LDguNTc3OTg4OTYgQzQuOTMwMTc1NzgsOC43NTQwMDcwOCA1LjMwODgzNzg5LDguODY1NzUzMDIgNS42OTQ4MjQyMiw4Ljg3MzA1NjY4IEM1LjA1NjE1MjM0LDguNDQ3MjUzNSA0LjYyNzY4NTU1LDcuNzExNzc1MjkgNC42Mjc2ODU1NSw2Ljg4MjA3OTkxIEM0LjYyNzY4NTU1LDYuNDQwMjA4NjkgNC43NDkyNjc1OCw2LjAyOTc0MzIgNC45NTY1NDI5Nyw1LjY3MTEzMzY2IEM2LjE0Mzc5ODgzLDcuMTI1MjkxNjcgNy45MTExMzI4MSw4LjA3OTg3OTU4IDkuOTA4NDQ3MjcsOC4xNzcwMTgyMSBDOS44Njg4OTY0OCw4LjAwMzE5MTE5IDkuODUyNzgzMiw3LjgyMDU5OTc3IDkuODUyNzgzMiw3LjYzMDcwNDcxIEM5Ljg1Mjc4MzIsNi4zMTA5MzM5NyAxMC45MjM1ODQsNS4yMzQzNzUgMTIuMjUzNjYyMSw1LjIzNDM3NSBDMTIuOTM5MjA5LDUuMjM0Mzc1IDEzLjU2NzYyNyw1LjUyNDMzMDE2IDE0LjAwODU0NDksNS45OTI0OTQ1NSBDMTQuNTU0OTMxNiw1Ljg4MzY3MDA2IDE1LjA2NzYyNyw1LjY4ODY2MjQ0IDE1LjUzMTk4MjQsNS40MTI1ODQyMiBDMTUuMzUzMjcxNSw1Ljk3NDIzNTQxIDE0Ljk3MzE0NDUsNi40NDAyMDg2OSAxNC40NzUwOTc3LDYuNzM2NzM3MTUgQzE0Ljk1OTIyODUsNi42NzUzODY0MyAxNS40MjM1ODQsNi41NDkwMzMxNyAxNS44NTkzNzUsNi4zNTg0MDc3NCBaIiBpZD0iU2hhcGUiPjwvcGF0aD4KICAgICAgICA8L2c+CiAgICA8L2c+Cjwvc3ZnPg=="
+        }
+    ]
+}

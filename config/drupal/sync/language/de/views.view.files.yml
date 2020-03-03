@@ -1,0 +1,16 @@
+display:
+  default:
+    display_options:
+      pager:
+        options:
+          expose:
+            offset_label: Versatz
+      fields:
+        filesize:
+          label: Größe
+  page_2:
+    display_options:
+      pager:
+        options:
+          expose:
+            offset_label: Versatz

@@ -12,6 +12,11 @@ targetEntityType: node
 bundle: product_reference
 mode: teaser
 content:
+  content_moderation_control:
+    weight: -20
+    settings: {  }
+    third_party_settings: {  }
+    region: content
   links:
     weight: 100
     settings: {  }
@@ -30,5 +35,6 @@ hidden:
   field_reference_name: true
   field_reference_picture: true
   field_reference_ref: true
+  field_teaser: true
   langcode: true
   search_api_excerpt: true

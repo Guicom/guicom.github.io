@@ -1,0 +1,15 @@
+uuid: a6e20004-1307-4190-9d6c-ff82a0056014
+langcode: en
+status: true
+dependencies: {  }
+name: crop_210x160
+label: 'Crop 210x160'
+effects:
+  1572c2b1-8296-40df-9e5e-9771e8887bab:
+    uuid: 1572c2b1-8296-40df-9e5e-9771e8887bab
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 210
+      height: 160
+      anchor: center-center

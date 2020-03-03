@@ -1,0 +1,23 @@
+uuid: 6b454157-0e9c-4368-81f2-023f0b95c1c4
+langcode: en
+status: true
+dependencies:
+  config:
+    - facets.facet.categories
+  module:
+    - facets
+  theme:
+    - socomec
+id: searchcategories
+theme: socomec
+region: facets
+weight: -12
+provider: null
+plugin: 'facet_block:categories'
+settings:
+  id: 'facet_block:categories'
+  label: 'Search - Family'
+  provider: facets
+  label_display: '0'
+  block_id: searchcategories
+visibility: {  }

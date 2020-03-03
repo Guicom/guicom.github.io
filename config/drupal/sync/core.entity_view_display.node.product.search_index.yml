@@ -1,0 +1,181 @@
+uuid: 39dd0494-7e3f-4db2-abeb-6d36f94397a2
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.search_index
+    - field.field.node.product.field_associated_products
+    - field.field.node.product.field_background_hero_block
+    - field.field.node.product.field_json_product_data
+    - field.field.node.product.field_multiline_anchor_name
+    - field.field.node.product.field_product_advantage_text
+    - field.field.node.product.field_product_application_label
+    - field.field.node.product.field_product_application_link
+    - field.field.node.product.field_product_cta_1
+    - field.field.node.product.field_product_cta_2
+    - field.field.node.product.field_product_cta_3
+    - field.field.node.product.field_product_cta_4
+    - field.field.node.product.field_product_extid
+    - field.field.node.product.field_product_family
+    - field.field.node.product.field_product_multiline
+    - field.field.node.product.field_product_new
+    - field.field.node.product.field_product_orc_content
+    - field.field.node.product.field_product_orc_title
+    - field.field.node.product.field_product_pictures
+    - field.field.node.product.field_product_reference
+    - field.field.node.product.field_product_status
+    - field.field.node.product.field_product_teaser
+    - field.field.node.product.field_protection_level
+    - field.field.node.product.field_standard_label
+    - field.field.node.product.update_new_statut
+    - image.style.background_transparent_210x140
+    - node.type.product
+  module:
+    - ds
+    - media
+    - smart_trim
+    - user
+third_party_settings:
+  ds:
+    layout:
+      id: ds_2col
+      library: ds/ds_2col
+      disable_css: false
+      entity_classes: all_classes
+      settings:
+        wrappers:
+          left: div
+          right: div
+        outer_wrapper: div
+        attributes: ''
+        link_attribute: ''
+        link_custom: ''
+        classes:
+          layout_class: {  }
+          left: {  }
+          right: {  }
+    regions:
+      left:
+        - 'bundle_field:node'
+        - field_product_status
+        - node_title
+        - field_product_teaser
+        - node_link
+      right:
+        - field_product_pictures
+    fields:
+      'bundle_field:node':
+        plugin_id: 'bundle_field:node'
+        weight: 0
+        label: hidden
+        formatter: default
+      node_link:
+        plugin_id: node_link
+        weight: 4
+        label: hidden
+        formatter: default
+      node_title:
+        plugin_id: node_title
+        weight: 2
+        label: hidden
+        formatter: default
+        settings:
+          wrapper: p
+          class: ''
+          link: false
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
+id: node.product.search_index
+targetEntityType: node
+bundle: product
+mode: search_index
+content:
+  field_product_pictures:
+    type: media_thumbnail
+    weight: 5
+    label: hidden
+    settings:
+      image_style: background_transparent_210x140
+      image_link: ''
+    third_party_settings:
+      ds:
+        ds_limit: '1'
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
+    region: right
+  field_product_status:
+    type: entity_reference_label
+    weight: 1
+    region: left
+    label: hidden
+    settings:
+      link: false
+    third_party_settings:
+      ds:
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
+  field_product_teaser:
+    weight: 3
+    label: hidden
+    settings:
+      trim_length: 120
+      trim_type: chars
+      trim_suffix: ...
+      wrap_output: true
+      wrap_class: trimmed
+      more_text: ...
+      more_class: more-link
+      trim_options:
+        text: true
+        trim_zero: false
+      more_link: false
+      summary_handler: full
+    third_party_settings:
+      ds:
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
+    type: smart_trim
+    region: left
+hidden:
+  addtoany: true
+  content_moderation_control: true
+  field_associated_products: true
+  field_background_hero_block: true
+  field_json_product_data: true
+  field_multiline_anchor_name: true
+  field_product_advantage_text: true
+  field_product_application_label: true
+  field_product_application_link: true
+  field_product_cta_1: true
+  field_product_cta_2: true
+  field_product_cta_3: true
+  field_product_cta_4: true
+  field_product_extid: true
+  field_product_family: true
+  field_product_multiline: true
+  field_product_new: true
+  field_product_orc_content: true
+  field_product_orc_title: true
+  field_product_reference: true
+  field_protection_level: true
+  field_standard_label: true
+  langcode: true
+  links: true
+  search_api_excerpt: true
+  update_new_statut: true

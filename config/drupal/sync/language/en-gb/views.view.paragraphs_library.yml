@@ -2,5 +2,16 @@ display:
   default:
     display_options:
       fields:
-        operations:
-          label: Operations
+        label:
+          label: Label
+        type:
+          label: Type
+      filters:
+        label:
+          expose:
+            label: Label
+          group_info:
+            label: Label
+        type:
+          expose:
+            label: Type

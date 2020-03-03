@@ -14,6 +14,10 @@ function soc_search_install() {
   \Drupal::configFactory()
     ->getEditable('soc_search.settings')
     ->set('title', 'Search')->save()
+    ->set('title_searched', '@total results for "@word"')->save()
+    ->set('title_no_result', 'No result')->save()
+    ->set('breadcrumb_title', 'Search')->save()
+    ->set('breadcrumb_title_searched', 'Search results for "@word"')->save()
 	  ->set('placeholder', 'Search a reference, an advice, etc.')->save()
     ->set('top_search_number', 5)->save()
     ->set('quick_links_number', 5)->save();
@@ -21,12 +25,24 @@ function soc_search_install() {
 
 /**
  * Implements hook_update_N
+ * Set title value
+ * Set title_searched value
+ * Set title_no_result value
+ * Set breadcrumb_title value
+ * Set breadcrumb_title_searched value
+ * Set placeholder value
  * Set top_search_number value
  * Set quick_links_number value
  */
 function soc_search_update_8001() {
   \Drupal::configFactory()
     ->getEditable('soc_search.settings')
+    ->set('title', 'Search')->save()
+    ->set('title_searched', '@total results for "@word"')->save()
+    ->set('title_no_result', 'No result')->save()
+    ->set('breadcrumb_title', 'Search')->save()
+    ->set('breadcrumb_title_searched', 'Search results for "@word"')->save()
+    ->set('placeholder', 'Search a reference, an advice, etc.')->save()
     ->set('top_search_number', 5)->save()
     ->set('quick_links_number', 5)->save();
 }

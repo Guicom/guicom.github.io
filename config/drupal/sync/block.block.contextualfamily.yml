@@ -9,7 +9,7 @@ dependencies:
 id: contextualfamily
 theme: socomec
 region: facets
-weight: -9
+weight: -16
 provider: null
 plugin: contextual_family
 settings:

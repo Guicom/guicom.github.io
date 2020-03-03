@@ -1,0 +1,22 @@
+uuid: 842f751c-d87a-4668-8f03-deb3b467b29d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_teaser
+    - node.type.product_reference
+  module:
+    - text
+id: node.product_reference.field_teaser
+field_name: field_teaser
+entity_type: node
+bundle: product_reference
+label: 'Reference teaser'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+field_type: text_with_summary
