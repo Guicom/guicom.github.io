@@ -110,7 +110,7 @@
         <property name="export.type" value="${content.folder}" />
       </else>
     </if>
-    <input propertyName="node.type" validArgs="article, page, event, news, landing_page, product, product_reference, resource, thank_you_page" message="->Socomec ">What node bundle would you export ?</input>
+    <input propertyName="node.type" validArgs="article, page, event, news, landing_page, product, product_reference, resource, thank_you_page, contenu_location" message="->Socomec ">What node bundle would you export ?</input>
     <drush
       command="dcder"
       assume="yes"
