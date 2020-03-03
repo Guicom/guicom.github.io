@@ -60,18 +60,21 @@ class SocomecECC {
    */
   public function hasAccess() {
     if (\Drupal::moduleHandler()->moduleExists('eu_cookie_compliance')) {
-      if ($this->getCookieValue() !== 0) {
-        if ($this->config->get('method') === 'categories') {
-          if (!empty($this->getCookieCategorieValue())) {
-            $term = $this->getCookieCategorieValue();
-            if (strpos($term, '"'.$this->categorie.'"') !== false) {
-              return true;
+      if (!empty($this->config->get('popup_enabled'))) {
+        if ($this->getCookieValue() !== 0) {
+          if ($this->config->get('method') === 'categories') {
+            if (!empty($this->getCookieCategorieValue())) {
+              $term = $this->getCookieCategorieValue();
+              if (strpos($term, '"'.$this->categorie.'"') !== false) {
+                return TRUE;
+              }
             }
           }
         }
+        return FALSE;
       }
     }
-    return false;
+    return TRUE;
   }
 
   /**
@@ -84,12 +87,12 @@ class SocomecECC {
       $cookieCategories = $this->config->get('cookie_categories');
       if ($this->config->get('method') === 'categories') {
         $cookieCategories = _eu_cookie_compliance_extract_category_key_label_description($cookieCategories);
-        $service = $cookieCategories[$this->categorie]['label'];
-        return  t('Service <a href="#" class="display-ecc-popup">@service</a> must be enabled.', ['@service' => $service]);
+        if (isset($cookieCategories[$this->categorie])) {
+          $service = $cookieCategories[$this->categorie]['label'];
+          return  t('Service <a href="#" class="display-ecc-popup">@service</a> must be enabled.', ['@service' => $service]);
+        }
       }
-      else {
-        return  t('Service must be enabled <a href="#" class="display-ecc-popup">Here</a>.');
-      }
+      return  t('Service must be enabled <a href="#" class="display-ecc-popup">Here</a>.');
     }
   }
 }
