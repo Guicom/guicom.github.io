@@ -37,6 +37,7 @@ module:
   dblog: 0
   default_content: 0
   default_content_deploy: 0
+  dropdown_language: 0
   drush_language: 0
   ds_extras: 0
   dynamic_page_cache: 0

@@ -1,0 +1,21 @@
+uuid: afdcfacb-aa04-425a-9423-0ed541aacdbf
+langcode: fr
+status: true
+dependencies:
+  module:
+    - dropdown_language
+  theme:
+    - socomec
+id: dropdownlanguage
+theme: socomec
+region: footer_fifth
+weight: -23
+provider: null
+plugin: 'dropdown_language:language_interface'
+settings:
+  id: 'dropdown_language:language_interface'
+  label: 'Dropdown Language'
+  provider: dropdown_language
+  label_display: '0'
+  labels: null
+visibility: {  }
