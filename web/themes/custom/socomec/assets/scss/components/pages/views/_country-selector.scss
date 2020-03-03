@@ -1,8 +1,41 @@
 .path-where-to-buy {
-  .header {
-    background-image: url("../images/earth.jpg") bottom center!important;
+  #header {
+   background-position: bottom;
   }
   .select-country {
-    margin: 6rem 0;
+    position: relative;
+    width: 100%;
+    margin: 4rem 0 12rem 0;
+    .block-country-selector {
+      position: absolute;
+      width: 100%;
+      .nav {
+        .nav-item {
+          width: 23%;
+          .nav-link {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            background: $white;
+            border-radius: 0;
+            span {
+              &:first-child {
+                font-family: $font-poppins;
+                font-size: $font-size-xs;
+                font-weight: 500;
+                letter-spacing: 0.5px;
+                color: $blue;
+                text-transform: uppercase;
+              }
+              &:last-child {
+                font-family: $font-roboto;
+                font-size: $font-size-base;
+                color: $dark-grey;
+              }
+            }
+          }
+        }
+      }
+    }
   }
 }

@@ -48,7 +48,7 @@ class CountrySelector extends BlockBase {
         $tabs_header[$key]['sub'] = t('All');
       }
       $subtree = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadTree('location_areas', $areas->tid, 1);
-      foreach ($subtree as $country) {
+      foreach ($subtree as $c => $country) {
         $alias_parent = $aliasManager->getAliasByPath('/taxonomy/term/'.$areas->tid);
         $alias = $aliasManager->getAliasByPath('/taxonomy/term/'.$country->tid);
         $url_alias = '/' . t('where-to-buy') . $alias_parent . $alias;
@@ -58,8 +58,8 @@ class CountrySelector extends BlockBase {
         }
         $url = Url::fromUri('internal:' . $url_alias, $param);
         $url = Link::fromTextAndUrl($country->name, $url);
-        $tabs_content[$areas->name][$key]['value'] = $country->name;
-        $tabs_content[$areas->name][$key]['link'] = render($url);
+        $tabs_content[$areas->name][$c]['value'] = $country->name;
+        $tabs_content[$areas->name][$c]['link'] = render($url);
       }
     }
 

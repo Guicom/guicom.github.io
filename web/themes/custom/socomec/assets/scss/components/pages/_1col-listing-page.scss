@@ -3,12 +3,14 @@
     .views-row {
       width: 100%;
     }
+    // CARD LOCATOR
     .store-teaser-cards {
       border: 1px solid $mid-grey;
       margin-bottom: 1rem;
       &.node--sticky {
         border: 2px solid $blue;
       }
+      // FIRST LINE
       .first-row {
         padding: 1.5rem 1.5rem 0 1.5rem;
         display: flex;
@@ -18,7 +20,6 @@
         }
         .company {
           line-height: 30px;
-
           .field--name-field-location-company {
             @include S3($blue);
             font-weight: 800;
@@ -42,6 +43,7 @@
           }
         }
       }
+      // SECOND LINE
       .second-row {
         display: flex;
         justify-content: space-between;
@@ -128,6 +130,7 @@
           }
         }
       }
+      // THIRD LINE
       .third-row {
        background: $light-grayish-red;
         padding: 1rem 1.5rem 0.5rem 1.5rem;
@@ -173,8 +176,6 @@
           }
         }
       }
-
-
     }
   }
 }
