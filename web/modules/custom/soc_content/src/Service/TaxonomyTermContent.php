@@ -29,10 +29,10 @@ class TaxonomyTermContent extends ContentManager {
   public function createTerm($data) {
     // Validate input.
     if (!isset($data['name'])) {
-      $this->logger->error('Trying to create a term without name, skipped...');
+      $this->logger->warning('Trying to create a term without name, skipped...');
     }
     elseif (!isset($data['vid'])) {
-      $this->logger->error('Trying to create a term without vid, skipped...');
+      $this->logger->warning('Trying to create a term without vid, skipped...');
     }
     // If input is OK.
     else {
@@ -44,11 +44,11 @@ class TaxonomyTermContent extends ContentManager {
 
       // If term does not exist, create it.
       if (empty($terms)) {
-        $new_term = Term::create($data);
-        $new_term->enforceIsNew();
+        $newTerm = Term::create($data);
+        $newTerm->enforceIsNew();
         try {
-          $new_term->save();
-          return $new_term;
+          $newTerm->save();
+          return $newTerm;
         } catch (EntityStorageException $e) {
           $this->logger->error($e->getMessage());
         }

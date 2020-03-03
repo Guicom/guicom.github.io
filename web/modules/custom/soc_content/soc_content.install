@@ -1,5 +1,10 @@
 <?php
 
 function soc_content_install() {
-
+  /** @var \Drupal\soc_content\Service\TaxonomyTermContent $termManager */
+  $termManager = \Drupal::service('soc_content.taxonomy_term');
+  /** @var \Drupal\soc_content\Service\MenuItemContent $menuItemManager */
+  $menuItemManager = \Drupal::service('soc_content.menu_item');
+  /** @var \Drupal\soc_content\Service\MediaContent $mediaManager */
+  $mediaManager = \Drupal::service('soc_content.media');
 }

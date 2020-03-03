@@ -5,8 +5,8 @@ namespace Drupal\soc_content\Service;
 
 
 use Drupal\Core\Entity\EntityStorageException;
+use Drupal\menu_link_content\Entity\MenuLinkContent;
 use Drupal\soc_content\Service\Manager\ContentManager;
-use Drupal\taxonomy\Entity\Term;
 
 class MenuItemContent extends ContentManager {
 
@@ -24,31 +24,34 @@ class MenuItemContent extends ContentManager {
    *
    * @param $data
    *
-   * @return bool|\Drupal\Core\Entity\EntityInterface|\Drupal\taxonomy\Entity\Term
+   * @return bool|\Drupal\Core\Entity\EntityInterface|\Drupal\menu_link_content\Entity\MenuLinkContent
    */
-  public function createTerm($data) {
+  public function createMenuItem($data) {
     // Validate input.
-    if (!isset($data['name'])) {
-      $this->logger->error('Trying to create a term without name, skipped...');
+    if (!isset($data['title'])) {
+      $this->logger->warning('Trying to create a menu item without title, skipped...');
     }
-    elseif (!isset($data['vid'])) {
-      $this->logger->error('Trying to create a term without vid, skipped...');
+    elseif (!isset($data['link'])) {
+      $this->logger->warning('Trying to create a menu item without link, skipped...');
+    }
+    elseif (!isset($data['menu_name'])) {
+      $this->logger->error('Trying to create a menu item without menu name, skipped...');
     }
     // If input is OK.
     else {
-      // Check if term already exists.
-      $terms = \Drupal::entityQuery('taxonomy_term')
-        ->condition('name', $data['name'])
-        ->condition('vid', $data['vid'])
+      // Check if menu link already exists.
+      $menuLinks = \Drupal::entityQuery('menu_link_content')
+        ->condition('title', $data['title'])
+        ->condition('link', $data['link'])
+        ->condition('menu_name', $data['menu_name'])
         ->execute();
 
-      // If term does not exist, create it.
-      if (empty($terms)) {
-        $new_term = Term::create($data);
-        $new_term->enforceIsNew();
+      // If menu item does not exist, create it.
+      if (empty($menuLinks)) {
+        $newMenuLink = MenuLinkContent::create($data);
         try {
-          $new_term->save();
-          return $new_term;
+          $newMenuLink->save();
+          return $newMenuLink;
         } catch (EntityStorageException $e) {
           $this->logger->error($e->getMessage());
         }
