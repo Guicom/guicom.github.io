@@ -1,12 +1,12 @@
 langcode: en
-title: ' Search'
-placeholder: 'Search a reference, an advice, etc.'
+title: 'TEST EN PAGE title'
+placeholder: 'TEST Placeholder'
 top_search_number: '5'
 quick_links_number: '5'
 _core:
   default_config_hash: othICpVxquxRdsa1oqiN-mgeFClN-mMZ9Dg-tF2_RyY
 title_sought: ' Search results for "%word"'
-breadcrumb_title: Search
-breadcrumb_title_searched: 'Search results for "@word"'
-title_searched: '@total results for "@word"'
-title_no_result: 'No result.'
+breadcrumb_title: 'TEST Breadcrumb title'
+breadcrumb_title_searched: 'TEST Breadcrumb title with searched text @word'
+title_searched: 'TEST Page title with searched text @total results for @word'
+title_no_result: 'TEST Page title without result'
