@@ -119,22 +119,7 @@ content:
       placeholder_url: ''
       placeholder_title: ''
     third_party_settings:
-      conditional_fields:
-        f2823efe-554b-4404-af17-21e2ef3a6178:
-          dependee: field_location_type
-          settings:
-            state: required
-            condition: value
-            grouping: AND
-            values_set: 2
-            value: ''
-            values: reseller
-            value_form: {  }
-            effect: show
-            effect_options: {  }
-            selector: ''
-          entity_type: node
-          bundle: contenu_location
+      conditional_fields: {  }
     type: link_default
     region: content
   langcode:

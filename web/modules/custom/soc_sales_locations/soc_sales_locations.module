@@ -1,0 +1,24 @@
+<?php
+
+/**
+ * @file
+ * Contains soc_sales_locations.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function soc_sales_locations_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the soc_locations module.
+    case 'help.page.soc_sales_locations':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Socomec') . '</p>';
+      return $output;
+
+    default:
+  }
+}
