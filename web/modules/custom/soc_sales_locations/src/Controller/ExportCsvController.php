@@ -54,18 +54,23 @@ class ExportCsvController extends ControllerBase {
       'ID',
       'Title',
       'Continent',
-      'Sub Area',
       'Area',
+      'Sub Area',
       'Activity',
-      'Module',
       'Type',
       'Company',
       'Name',
       'First Name',
-      'Address',
-      'Zip Code',
-      'City',
+      'Address Line 1',
+      'Address Line 2',
+      'Dependent Locality',
+      'Postal Code',
+      'Administrative Area',
+      'Locality',
+      'Sorting Code',
+      'Country Code',
       'Phone',
+      'Fax',
       'Website',
     ];
     $csvData = [
@@ -76,8 +81,6 @@ class ExportCsvController extends ControllerBase {
       ->getStorage('node')
       ->getQuery()
       ->condition('type', 'contenu_location')
-//      ->condition('nid', '56')
-//      ->range(0, 2)
       ->execute();
     $nodes = Node::loadMultiple($nids);
     /** @var \Drupal\node\NodeInterface $node */
@@ -91,26 +94,38 @@ class ExportCsvController extends ControllerBase {
       $name_contact = $this->manager->getNameContact($node);
       $firstname = $this->manager->getFirstName($node);
       $telephone = $this->manager->getTelephone($node);
-      $address = $this->manager->getAddress($node);
-      $zip_code = $this->manager->getZipCode($node);
-      $city = $this->manager->getCity($node);
+      $fax = $this->manager->getFax($node);
+      $address_line1 = $this->manager->getAddressLine1($node);
+      $address_line2 = $this->manager->getAddressLine2($node);
+      $postal_code = $this->manager->getPostalCode($node);
+      $locality = $this->manager->getLocality($node);
       $website = $this->manager->getWebsite($node);
+      $country_code = $this->manager->getCountryCode($node);
+      $sorting_code = $this->manager->getSortingCode($node);
+      $administrative_area = $this->manager->getAdministrativeArea($node);
+      $dependent_locality = $this->manager->getDependentLocality($node);
+
       $csvData[] = implode(';', [
         $node->id(),
         $node->label(),
         $continent,
-        $subarea,
         $area,
+        $subarea,
         $activity,
-        'IMPL',
         $type,
         $company,
         $name_contact,
         $firstname,
-        $address,
-        $zip_code,
-        $city,
+        $address_line1,
+        $address_line2,
+        $dependent_locality,
+        $postal_code,
+        $administrative_area,
+        $locality,
+        $sorting_code,
+        $country_code,
         $telephone,
+        $fax,
         $website,
       ]);
     }

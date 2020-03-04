@@ -112,6 +112,16 @@ class SalesLocationsManagerService implements SalesLocationsManagerServiceInterf
   /**
    * @inheritDoc
    */
+  public function getFax(NodeInterface $node) {
+    if ($node->get('field_location_fax')->isEmpty()) {
+      return '';
+    }
+    return $node->get('field_location_fax')->first()->getValue()['value'] ?? '';
+  }
+
+  /**
+   * @inheritDoc
+   */
   public function getContinent(NodeInterface $node) {
     if ($node->get('field_location_continent')->isEmpty()) {
       return '';
@@ -164,24 +174,44 @@ class SalesLocationsManagerService implements SalesLocationsManagerServiceInterf
     if ($node->get('field_location_type')->isEmpty()) {
       return '';
     }
-    return $node->get('field_location_type')->first()->getValue()['value'] ?? '';
+    $term_id =  $node->get('field_location_type')->first()->getValue()['target_id'];
+    $term = Term::load($term_id);
+    return $term->label();
 
   }
 
   /**
    * @inheritDoc
    */
-  public function getAddress(NodeInterface $node) {
+  public function getAddressLine1(NodeInterface $node) {
     if ($node->get('field_location_address')->isEmpty()) {
       return '';
     }
     return $node->get('field_location_address')->getValue()[0]['address_line1'];
   }
+  /**
+   * @inheritDoc
+   */
+  public function getAddressLine2(NodeInterface $node) {
+    if ($node->get('field_location_address')->isEmpty()) {
+      return '';
+    }
+    return $node->get('field_location_address')->getValue()[0]['address_line2'];
+  }
+  /**
+   * @inheritDoc
+   */
+  public function getAdministrativeArea(NodeInterface $node) {
+    if ($node->get('field_location_address')->isEmpty()) {
+      return '';
+    }
+    return $node->get('field_location_address')->getValue()[0]['administrative_area'];
+  }
 
   /**
    * @inheritDoc
    */
-  public function getZipCode(NodeInterface $node) {
+  public function getPostalCode(NodeInterface $node) {
     if ($node->get('field_location_address')->isEmpty()) {
       return '';
     }
@@ -191,7 +221,7 @@ class SalesLocationsManagerService implements SalesLocationsManagerServiceInterf
   /**
    * @inheritDoc
    */
-  public function getCity(NodeInterface $node) {
+  public function getLocality(NodeInterface $node) {
     if ($node->get('field_location_address')->isEmpty()) {
       return '';
     }
@@ -207,4 +237,36 @@ class SalesLocationsManagerService implements SalesLocationsManagerServiceInterf
     }
     return $node->get('field_location_website')->getValue()[0]['uri'];
   }
+
+  /**
+   * @inheritDoc
+   */
+  public function getCountryCode(NodeInterface $node) {
+    if ($node->get('field_location_address')->isEmpty()) {
+      return '';
+    }
+    return $node->get('field_location_address')->getValue()[0]['country_code'];
+  }
+
+  /**
+   * @inheritDoc
+   */
+  public function getSortingCode(NodeInterface $node) {
+    if ($node->get('field_location_address')->isEmpty()) {
+      return '';
+    }
+    return $node->get('field_location_address')->getValue()[0]['sorting_code'];
+  }
+
+  /**
+   * @inheritDoc
+   */
+  public function getDependentLocality(NodeInterface $node) {
+    if ($node->get('field_location_address')->isEmpty()) {
+      return '';
+    }
+    return $node->get('field_location_address')->getValue()[0]['dependent_locality'];
+  }
+
+
 }
