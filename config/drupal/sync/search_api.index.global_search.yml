@@ -359,7 +359,6 @@ datasource_settings:
       default: false
       selected:
         - event
-        - landing_page
         - news
         - product
         - product_reference
