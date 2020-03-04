@@ -135,15 +135,19 @@ content:
             state: required
             condition: value
             grouping: AND
-            values_set: 1
+            values_set: 6
             value: ''
-            values: {  }
+            values: '111'
             value_form:
               -
                 target_id: '111'
             effect: show
             effect_options: {  }
             selector: ''
+            field_location_type:
+              -
+                target_id: null
+            regex: '^(Reseller)(.*)$'
           entity_type: node
           bundle: contenu_location
     type: link_default
