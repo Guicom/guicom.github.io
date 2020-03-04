@@ -12,7 +12,7 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
  * Class ImportCsvFileForm.
  */
 class ImportCsvFileForm extends FormBase {
-  
+
   /**
    * @var \Drupal\soc_sales_locations\Service\SalesLocationsManagerImportService
    */
