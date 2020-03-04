@@ -1,20 +1,14 @@
 {
     "_links": {
         "self": {
-            "href": "http:\/\/default\/taxonomy\/term\/121?_format=hal_json"
+            "href": "http:\/\/default\/en\/korea-south?_format=hal_json"
         },
         "type": {
             "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/location_areas"
         },
         "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/location_areas\/parent": [
             {
-                "href": "http:\/\/default\/taxonomy\/term\/120?_format=hal_json"
-            }
-        ],
-        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/location_areas\/content_translation_uid": [
-            {
-                "href": "http:\/\/default\/user\/1?_format=hal_json",
-                "lang": "en"
+                "href": "http:\/\/default\/en\/asia?_format=hal_json"
             }
         ]
     },
@@ -72,7 +66,7 @@
             {
                 "_links": {
                     "self": {
-                        "href": "http:\/\/default\/taxonomy\/term\/120?_format=hal_json"
+                        "href": "http:\/\/default\/en\/asia?_format=hal_json"
                     },
                     "type": {
                         "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/location_areas"
@@ -83,24 +77,6 @@
                         "value": "e82c61cb-3825-48b0-92f7-4f000ed3bccf"
                     }
                 ]
-            }
-        ],
-        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/location_areas\/content_translation_uid": [
-            {
-                "_links": {
-                    "self": {
-                        "href": "http:\/\/default\/user\/1?_format=hal_json"
-                    },
-                    "type": {
-                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
-                    }
-                },
-                "uuid": [
-                    {
-                        "value": "54e1892a-0515-46b2-8871-afc0f64dbaf2"
-                    }
-                ],
-                "lang": "en"
             }
         ]
     },
@@ -146,8 +122,16 @@
         {
             "value": {
                 "title": "Korea (South) | Socomec",
-                "canonical_url": "http:\/\/default\/taxonomy\/term\/121"
+                "canonical_url": "http:\/\/default\/en\/korea-south"
             }
+        }
+    ],
+    "path": [
+        {
+            "alias": "\/korea-south",
+            "pid": 2,
+            "langcode": "en",
+            "lang": "en"
         }
     ]
 }

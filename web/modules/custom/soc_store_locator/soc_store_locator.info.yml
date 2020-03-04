@@ -1,0 +1,4 @@
+name: Socomec Store Locator
+type: module
+description: 'Store locator module.'
+core: 8.x

@@ -1,20 +1,14 @@
 {
     "_links": {
         "self": {
-            "href": "http:\/\/default\/taxonomy\/term\/118?_format=hal_json"
+            "href": "http:\/\/default\/en\/rhone-alpes?_format=hal_json"
         },
         "type": {
             "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/location_areas"
         },
         "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/location_areas\/parent": [
             {
-                "href": "http:\/\/default\/taxonomy\/term\/116?_format=hal_json"
-            }
-        ],
-        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/location_areas\/content_translation_uid": [
-            {
-                "href": "http:\/\/default\/user\/1?_format=hal_json",
-                "lang": "en"
+                "href": "http:\/\/default\/en\/france?_format=hal_json"
             }
         ]
     },
@@ -72,7 +66,7 @@
             {
                 "_links": {
                     "self": {
-                        "href": "http:\/\/default\/taxonomy\/term\/116?_format=hal_json"
+                        "href": "http:\/\/default\/en\/france?_format=hal_json"
                     },
                     "type": {
                         "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/location_areas"
@@ -83,24 +77,6 @@
                         "value": "938c7ac7-8638-45c6-ac57-af5a0270adcf"
                     }
                 ]
-            }
-        ],
-        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/location_areas\/content_translation_uid": [
-            {
-                "_links": {
-                    "self": {
-                        "href": "http:\/\/default\/user\/1?_format=hal_json"
-                    },
-                    "type": {
-                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
-                    }
-                },
-                "uuid": [
-                    {
-                        "value": "54e1892a-0515-46b2-8871-afc0f64dbaf2"
-                    }
-                ],
-                "lang": "en"
             }
         ]
     },
@@ -146,8 +122,16 @@
         {
             "value": {
                 "title": "Rh\u00f4ne-Alpes | Socomec",
-                "canonical_url": "http:\/\/default\/taxonomy\/term\/118"
+                "canonical_url": "http:\/\/default\/en\/rhone-alpes"
             }
+        }
+    ],
+    "path": [
+        {
+            "alias": "\/rhone-alpes",
+            "pid": 7,
+            "langcode": "en",
+            "lang": "en"
         }
     ]
 }

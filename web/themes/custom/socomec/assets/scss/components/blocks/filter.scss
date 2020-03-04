@@ -16,3 +16,18 @@
     }
   }
 }
+
+.store-locator-wrapper {
+  @include media-breakpoint-down(md) {
+    margin-bottom: 1rem;
+  }
+  .block-filter-by {
+    flex-direction: column;
+    .block-facets-ajax {
+      @include media-breakpoint-down(md) {
+        width: 100%;
+        margin-bottom: 20px;
+      }
+    }
+  }
+}

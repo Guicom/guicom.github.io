@@ -1,0 +1,26 @@
+uuid: 7d360627-46b4-4b0c-a4cc-0effba2bcd54
+langcode: en
+status: true
+dependencies:
+  module:
+    - soc_store_locator
+    - system
+  theme:
+    - socomec
+id: countryselector
+theme: socomec
+region: hidden
+weight: -17
+provider: null
+plugin: country_selector
+settings:
+  id: country_selector
+  label: 'Country selector'
+  provider: soc_store_locator
+  label_display: visible
+visibility:
+  request_path:
+    id: request_path
+    pages: "/where-to-buy\r\n/where-to-buy/*/*\r\n/where-to-buy/*"
+    negate: false
+    context_mapping: {  }
