@@ -55,6 +55,17 @@
         @include media-breakpoint-down(md) {
           width: 100%;
         }
+        &.btn-primary:hover,
+        &.btn-primary:active,
+        &.btn-primary:focus,
+        &.btn-primary:visited {
+          background-color: transparent;
+          border: none;
+          -webkit-box-shadow: none;
+          box-shadow: none;
+          border-color: transparent;
+          outline: none;
+        }
       }
       @include media-breakpoint-up(md) {
         position: absolute;
