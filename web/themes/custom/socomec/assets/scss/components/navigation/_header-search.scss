@@ -30,9 +30,9 @@
           border: none;
           box-shadow: none;
           color: $white;
-          font-size: 4.2rem;
+          font-size: 4rem;
           font-family: $font-poppins;
-          font-weight: 100;
+          font-weight: 200;
           margin-top: 2rem;
           @include media-breakpoint-down(md) {
             font-size: 3rem;
@@ -44,6 +44,10 @@
           }
         }
       }
+    }
+    .form-item-search-api-fulltext {
+      width: 100%;
+      padding: 0px;
     }
     .form-actions {
       @include media-breakpoint-between(md, lg) {
@@ -89,6 +93,9 @@
             background-size: 48px 48px;
             height: 48px;
             width: 48px;
+          }
+          @include media-breakpoint-up(md) {
+            display: none;
           }
         }
       }
