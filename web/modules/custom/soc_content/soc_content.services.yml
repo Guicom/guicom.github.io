@@ -15,3 +15,7 @@ services:
     class: Drupal\soc_content\Service\MediaContent
     arguments:
       ['@entity.repository', '@logger.factory']
+  soc_content.block_content:
+    class: Drupal\soc_content\Service\BlockContentContent
+    arguments:
+      ['@entity.repository', '@logger.factory']
