@@ -9,7 +9,11 @@ soc_search.settings:
       type: label
       translatable: true
     title_searched:
-      label: 'Title searched text'
+      label: 'Page title with searched text'
+      type: label
+      translatable: true
+    title_no_result:
+      label: 'Page title without result'
       type: label
       translatable: true
     breadcrumb_title:
