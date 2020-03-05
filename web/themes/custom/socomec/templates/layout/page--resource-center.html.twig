@@ -69,6 +69,7 @@
 #}
 <div id="page-wrapper">
   <div id="page">
+    {% include '@socomec/layout/share.html.twig' %}
     <header id="header" class="header" role="banner" aria-label="{{ 'Site header'|t}}">
       {% block head %}
         {% include '@socomec/includes/header.html.twig' %}
@@ -77,7 +78,6 @@
       {% if page.hero %}
         {{ page.hero }}
       {% endif %}
-      {% include '@socomec/layout/share.html.twig' %}
     </header>
     {% if page.highlighted %}
       <div class="highlighted">
