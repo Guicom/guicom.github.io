@@ -17,7 +17,16 @@
           <div class="news-sub-infos">
             <div class="wrapper">
               <span class="news-type">{{ drupal_field('field_news_type', 'node') }}</span>
-              <span class="news-theme">{{ drupal_field('field_news_theme', 'node') }}</span>
+              <span class="news-theme">
+                 {% set field_news_themes =  drupal_field('field_news_theme', 'node') %}
+                <div class="field--name-field-news-theme">
+                   {% for field_news_theme in field_news_themes['#items']|slice(0, 3) %}
+                     <div class="field__item">
+                    {{ field_news_theme.entity.getName() }}
+                  </div>
+                   {% endfor %}
+                </div>
+              </span>
             </div>
             <span class="news-date">{{ node.createdtime|format_date('socomec_date') }}</span>
           </div>

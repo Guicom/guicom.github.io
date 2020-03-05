@@ -48,14 +48,6 @@
         line-height: 1;
       }
     }
-    div {
-      display: none;
-    }
-    div {
-      &:nth-child(-n+3) {
-        display: block;
-      }
-    }
   }
   .news-date,
   .event-date{

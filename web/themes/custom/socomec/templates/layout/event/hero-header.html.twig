@@ -10,7 +10,16 @@
         <div class="event-sub-infos">
           <div class="wrapper">
             <span class="event-type">{{ drupal_field('field_event_type', 'node') }}</span>
-            <span class="event-theme">{{ drupal_field('field_event_thematic', 'node') }}</span>
+            <span class="event-theme">
+              {% set field_event_themes =  drupal_field('field_event_thematic', 'node') %}
+                <div class="field--name-field-event-thematic">
+                   {% for field_event_themes in field_event_themes['#items']|slice(0, 3) %}
+                     <div class="field__item">
+                    {{ field_event_themes.entity.getName() }}
+                  </div>
+                   {% endfor %}
+                </div>
+            </span>
           </div>
         </div>
       </div>
