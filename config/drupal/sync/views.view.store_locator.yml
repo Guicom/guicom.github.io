@@ -161,17 +161,7 @@ display:
             label: ''
           plugin_id: search_api
       title: 'Where to buy'
-      header:
-        result:
-          id: result
-          table: views
-          field: result
-          relationship: none
-          group_type: group
-          admin_label: ''
-          empty: false
-          content: '@total contacts'
-          plugin_id: result
+      header: {  }
       footer: {  }
       empty: {  }
       relationships: {  }
