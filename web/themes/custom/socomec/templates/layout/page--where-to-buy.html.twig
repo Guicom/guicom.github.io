@@ -67,6 +67,8 @@
  * @see html.html.twig
  */
 #}
+{%  set view_store_locator = drupal_view_result('store_locator', 'page_1') %}
+
 <div id="page-wrapper">
   <div id="page">
     {% include '@socomec/layout/share.html.twig' %}
@@ -104,6 +106,13 @@
                   <div class="container">
                     <div class="row">
                       <div class="store-locator-wrapper col-md-12">
+                        {% if view_store_locator|length == 1 %}
+                          <h2 class="intro">{{ view_store_locator|length }} {{ 'contact' |t }}</h2>
+                        {% elseif view_store_locator|length > 1 %}
+                          <h2 class="intro">{{ view_store_locator|length }} {{ 'contacts' |t }}</h2>
+                        {% else %}
+                          <h2 class="intro">{{ 'No result found' |t }}</h2>
+                        {% endif %}
                         <div class="row">
                           <aside class="col-md-3 where-to-buy-filters">
                             <div class="block-filter-by">
