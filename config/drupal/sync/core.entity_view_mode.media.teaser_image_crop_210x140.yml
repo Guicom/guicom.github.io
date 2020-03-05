@@ -1,0 +1,10 @@
+uuid: 064558e2-40d6-42fc-9791-fa1760fe9f6b
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.teaser_image_crop_210x140
+label: 'Teaser image crop 210x140'
+targetEntityType: media
+cache: true

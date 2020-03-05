@@ -1,0 +1,8 @@
+services:
+  logger.channel.soc_sales_locations:
+    parent: logger.channel_base
+    arguments: ['soc_sales_locations']
+
+  soc_sales_locations.manager:
+    class: Drupal\soc_sales_locations\Service\SalesLocationsManagerService
+    arguments: ['@entity_type.manager','@messenger']

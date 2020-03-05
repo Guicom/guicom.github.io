@@ -1,0 +1,35 @@
+uuid: 5ad5b0c8-6eb4-4c66-ac12-8a2be30f9cb7
+langcode: en
+status: true
+dependencies:
+  module:
+    - image_effects
+name: background_transparent_210x140
+label: 'background transparent 210x140'
+effects:
+  760c50ba-bae7-424e-8768-8decedb9bf8b:
+    uuid: 760c50ba-bae7-424e-8768-8decedb9bf8b
+    id: image_scale
+    weight: 1
+    data:
+      width: null
+      height: 140
+      upscale: true
+  f7b80860-26a3-4e23-82ec-d0c99eee8ce0:
+    uuid: f7b80860-26a3-4e23-82ec-d0c99eee8ce0
+    id: image_effects_set_canvas
+    weight: 2
+    data:
+      canvas_size: exact
+      exact:
+        width: '210'
+        height: '140'
+        placement: center-center
+        x_offset: 0
+        y_offset: 0
+      relative:
+        left: 0
+        right: 0
+        top: 0
+        bottom: 0
+      canvas_color: ''

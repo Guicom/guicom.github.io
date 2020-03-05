@@ -1,0 +1,179 @@
+uuid: e30133a6-b43c-476e-bcf9-895331bc2b61
+langcode: en
+status: true
+dependencies:
+  module:
+    - search_api_solr
+    - taxonomy
+    - path
+    - node
+    - search_api
+  config:
+    - field.storage.node.field_location_activity
+    - field.storage.node.field_location_address
+    - field.storage.node.field_location_area
+    - field.storage.node.field_location_continent
+    - field.storage.node.field_location_type
+    - search_api.server.location
+third_party_settings:
+  search_api_solr:
+    finalize: false
+    commit_before_finalize: false
+    commit_after_finalize: false
+    multilingual:
+      limit_to_content_language: false
+      include_language_independent: true
+    highlighter:
+      maxAnalyzedChars: 51200
+      fragmenter: gap
+      regex:
+        slop: 0.5
+        pattern: blank
+        maxAnalyzedChars: 10000
+      usePhraseHighlighter: true
+      highlightMultiTerm: true
+      preserveMulti: false
+      highlight:
+        mergeContiguous: false
+        requireFieldMatch: false
+        snippets: 3
+        fragsize: 0
+    mlt:
+      mintf: 1
+      mindf: 1
+      maxdf: 0
+      maxdfpct: 0
+      minwl: 0
+      maxwl: 0
+      maxqt: 100
+      maxntp: 2000
+      boost: false
+      interestingTerms: none
+    advanced:
+      index_prefix: ''
+      collection: ''
+      timezone: ''
+id: location
+name: location
+description: ''
+read_only: false
+field_settings:
+  field_location_area:
+    label: 'Area of Sales'
+    datasource_id: 'entity:node'
+    property_path: field_location_area
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_location_area
+  field_location_continent:
+    label: 'Continent of Sales'
+    datasource_id: 'entity:node'
+    property_path: field_location_continent
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_location_continent
+  locality:
+    label: 'Address » The locality (i.e. city).'
+    datasource_id: 'entity:node'
+    property_path: 'field_location_address:locality'
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_location_address
+  name:
+    label: 'Type » Taxonomy term » Name'
+    datasource_id: 'entity:node'
+    property_path: 'field_location_type:entity:name'
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_location_type
+      module:
+        - taxonomy
+        - taxonomy
+  name_1:
+    label: 'Area of Sales » Taxonomy term » Name'
+    datasource_id: 'entity:node'
+    property_path: 'field_location_area:entity:name'
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_location_area
+      module:
+        - taxonomy
+        - taxonomy
+  name_2:
+    label: 'Activity » Taxonomy term » Name'
+    datasource_id: 'entity:node'
+    property_path: 'field_location_activity:entity:name'
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_location_activity
+      module:
+        - taxonomy
+        - taxonomy
+  path:
+    label: 'Area of Sales » Taxonomy term » URL alias'
+    datasource_id: 'entity:node'
+    property_path: 'field_location_area:entity:path'
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_location_area
+      module:
+        - taxonomy
+        - path
+  tid:
+    label: 'Area of Sales » Taxonomy term » Term ID'
+    datasource_id: 'entity:node'
+    property_path: 'field_location_area:entity:tid'
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_location_area
+      module:
+        - taxonomy
+        - taxonomy
+  title:
+    label: Title
+    datasource_id: 'entity:node'
+    property_path: title
+    type: string
+    dependencies:
+      module:
+        - node
+  weight:
+    label: 'Type » Taxonomy term » Weight'
+    datasource_id: 'entity:node'
+    property_path: 'field_location_type:entity:weight'
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_location_type
+      module:
+        - taxonomy
+        - taxonomy
+datasource_settings:
+  'entity:node':
+    bundles:
+      default: false
+      selected:
+        - contenu_location
+    languages:
+      default: true
+      selected: {  }
+processor_settings:
+  add_url: {  }
+  aggregated_field: {  }
+  rendered_item: {  }
+  solr_date_range: {  }
+tracker_settings:
+  default:
+    indexing_order: fifo
+options:
+  index_directly: true
+  cron_limit: 50
+server: location

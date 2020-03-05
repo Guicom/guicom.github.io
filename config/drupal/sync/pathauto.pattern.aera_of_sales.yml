@@ -1,0 +1,23 @@
+uuid: b84d533a-32dc-41fa-8832-8e07da529c6b
+langcode: en
+status: true
+dependencies:
+  module:
+    - ctools
+    - taxonomy
+id: aera_of_sales
+label: 'Aera of sales'
+type: 'canonical_entities:taxonomy_term'
+pattern: '[term:name]'
+selection_criteria:
+  3c0a7fae-6fd7-4717-9dd5-8c485927c2af:
+    id: 'entity_bundle:taxonomy_term'
+    bundles:
+      location_areas: location_areas
+    negate: false
+    context_mapping:
+      taxonomy_term: taxonomy_term
+    uuid: 3c0a7fae-6fd7-4717-9dd5-8c485927c2af
+selection_logic: and
+weight: -5
+relationships: {  }

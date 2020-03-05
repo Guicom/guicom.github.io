@@ -1,0 +1,12 @@
+display:
+  default:
+    display_options:
+      pager:
+        options:
+          expose:
+            offset_label: Décalage
+      title: Média
+  page:
+    display_options:
+      menu:
+        title: Média

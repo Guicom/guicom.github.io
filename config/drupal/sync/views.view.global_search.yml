@@ -44,7 +44,7 @@ display:
           sort_asc_label: Asc
           sort_desc_label: Desc
       pager:
-        type: mini
+        type: full
         options:
           items_per_page: 20
           offset: 0
@@ -53,6 +53,8 @@ display:
           tags:
             previous: ‹‹
             next: ››
+            first: '« First'
+            last: 'Last »'
           expose:
             items_per_page: false
             items_per_page_label: 'Items per page'
@@ -61,15 +63,23 @@ display:
             items_per_page_options_all_label: '- All -'
             offset: false
             offset_label: Offset
+          quantity: 9
       style:
         type: default
       row:
-        type: fields
+        type: search_api
         options:
-          default_field_elements: true
-          inline: {  }
-          separator: ''
-          hide_empty: false
+          view_modes:
+            'entity:node':
+              event: search_index
+              landing_page: search_index
+              news: search_index
+              product: search_index
+              product_reference: search_index
+              resource: search_index
+              resource_youtube: search_index
+            'entity:taxonomy_term':
+              family: search_index
       fields:
         title_1:
           id: title_1
@@ -467,6 +477,7 @@ display:
       relationships: {  }
       arguments: {  }
       display_extenders: {  }
+      use_ajax: true
     cache_metadata:
       max-age: -1
       contexts:
@@ -483,6 +494,11 @@ display:
     display_options:
       display_extenders: {  }
       path: search
+      exposed_block: true
+      cache:
+        type: none
+      defaults:
+        cache: false
     cache_metadata:
       max-age: -1
       contexts:

@@ -1,0 +1,107 @@
+{
+    "_links": {
+        "self": {
+            "href": ""
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/link"
+        },
+        "http:\/\/drupal.org\/rest\/relation\/paragraph\/link\/field_link_icon": [
+            {
+                "href": "http:\/\/default\/en-gb\/media\/54\/edit?_format=hal_json"
+            }
+        ]
+    },
+    "id": [
+        {
+            "value": 64
+        }
+    ],
+    "uuid": [
+        {
+            "value": "9c32acbe-e289-4362-8567-570105a44eab"
+        }
+    ],
+    "revision_id": [
+        {
+            "value": 482
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en-gb",
+            "lang": "en-gb"
+        }
+    ],
+    "type": [
+        {
+            "target_id": "link"
+        }
+    ],
+    "status": [
+        {
+            "value": true
+        }
+    ],
+    "created": [
+        {
+            "value": "2020-02-26T12:39:33+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "parent_id": [
+        {
+            "value": "12"
+        }
+    ],
+    "parent_type": [
+        {
+            "value": "block_content"
+        }
+    ],
+    "parent_field_name": [
+        {
+            "value": "field_links"
+        }
+    ],
+    "behavior_settings": [
+        {
+            "value": []
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en-gb"
+        }
+    ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/paragraph\/link\/field_link_icon": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/en-gb\/media\/54\/edit?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/media\/icone"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "3f5de55f-471e-4de5-b9d3-7f36844e22b7"
+                    }
+                ]
+            }
+        ]
+    },
+    "field_link_link": [
+        {
+            "value": "https:\/\/www.youtube.com\/channel\/UCqYisxCze5VfEqjCymYWPxw"
+        }
+    ],
+    "field_link_target": [
+        {
+            "value": "_blank"
+        }
+    ]
+}

@@ -1,0 +1,29 @@
+uuid: 75e92771-ee00-4025-aab9-ae4555bf7b14
+langcode: en
+status: true
+dependencies:
+  config:
+    - facets.facet.type_store_locator
+  module:
+    - facets
+    - system
+  theme:
+    - socomec
+id: typestorelocator
+theme: socomec
+region: facets
+weight: 0
+provider: null
+plugin: 'facet_block:type_store_locator'
+settings:
+  id: 'facet_block:type_store_locator'
+  label: Types
+  provider: facets
+  label_display: visible
+  block_id: typestorelocator
+visibility:
+  request_path:
+    id: request_path
+    pages: "/where-to-buy\r\n/where-to-buy/*/*"
+    negate: false
+    context_mapping: {  }

@@ -1,0 +1,9 @@
+soc_sales_locations.export_csv_controller_exportfile:
+  path: '/admin/config/socomec/sales_locations/export/file'
+  defaults:
+    _controller: '\Drupal\soc_sales_locations\Controller\ExportCsvController::exportFile'
+    _title: 'Export CSV File'
+  requirements:
+    _permission: 'access administration pages'
+  options:
+    _admin_route: TRUE

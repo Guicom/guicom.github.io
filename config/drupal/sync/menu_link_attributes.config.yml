@@ -1,4 +1,7 @@
 attributes:
+  id:
+    label: ''
+    description: ''
   class:
     label: ''
     description: ''

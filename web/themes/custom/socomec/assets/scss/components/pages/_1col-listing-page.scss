@@ -1,0 +1,212 @@
+.path-where-to-buy {
+  .store-locator-wrapper {
+    .intro {
+      @include block-title(true);
+      font-weight: 300;
+      margin: 4rem 0 3rem 0;
+      @include media-breakpoint-down(md) {
+        margin: 2rem 0;
+      }
+    }
+  }
+  .view-header {
+    @include block-title(true);
+    margin-left: -300px;
+    margin-bottom: 45px;
+  }
+  .view-store-locator {
+    .views-row {
+      width: 100%;
+    }
+    // CARD LOCATOR
+    .store-teaser-cards {
+      border: 1px solid $mid-grey;
+      margin-bottom: 1rem;
+      padding: 0;
+      &.node--sticky {
+        border: 2px solid $blue;
+      }
+      // FIRST LINE
+      .first-row {
+        padding: 1.5rem 1.5rem 0 1.5rem;
+        display: flex;
+        align-items: baseline;
+        @include media-breakpoint-down(md) {
+          padding-bottom: 0;
+        }
+        .company {
+          line-height: 30px;
+          .field--name-field-location-company {
+            @include S3($blue);
+            font-weight: 800;
+            text-transform: uppercase;
+            float: left;
+            margin-right: 1rem;
+            margin-bottom: 0;
+            p {
+              margin: 0;
+            }
+          }
+          .field--name-field-location-activity {
+            font-family: $font-poppins;
+            font-weight: 600;
+            color: $dark-grey;
+            text-transform: uppercase;
+            font-size: $font-size-xs;
+            letter-spacing: 1px;
+            margin-right: 1rem;
+            margin-bottom: 1rem;
+            div {
+              display: inline-block;
+            }
+          }
+        }
+      }
+      // SECOND LINE
+      .second-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 1.5rem 1.5rem 1.5rem;
+        @include media-breakpoint-down(md) {
+          flex-direction: column-reverse;
+          align-items: end;
+        }
+        .left-content {
+          display: flex;
+          @include media-breakpoint-down(md) {
+            flex-direction: column;
+          }
+        }
+        .field--name-field-location-telephone,
+        .field--name-field-location-email {
+          display: flex;
+          align-items: center;
+          font-family: $font-roboto;
+          font-size: $font-size-h4;
+          color: $blue;
+          font-weight: 300;
+          text-decoration: none;
+          margin-right: 1.5rem;
+          @include media-breakpoint-down(md) {
+            margin-top: 0.5rem;
+          }
+          a {
+            &:hover {
+              text-decoration: none;
+            }
+          }
+        }
+        .field--name-field-location-telephone {
+          margin-right: 2.5rem;
+          &:before {
+            content: '';
+            display: block;
+            width: 30px;
+            height: 27px;
+            background-image: url("../images/picto/ui/call.svg");
+            background-size: 30px 27px;
+            background-repeat: no-repeat;
+            margin-right: 0.5rem;
+          }
+        }
+        .field--name-field-location-email {
+          &:before {
+            content: '';
+            display: block;
+            width: 30px;
+            height: 27px;
+            background-image: url("../images/picto/ui/mail.svg");
+            background-size: 30px 27px;
+            background-repeat: no-repeat;
+            margin-right: 0.5rem;
+          }
+        }
+        .node--type-contenu-location {
+          margin: 0;
+          padding: 0;
+        }
+        .subsidiary {
+          border-bottom: none;
+          .field--name-field-location-type {
+            font-family: $font-poppins;
+            font-weight: 500;
+            font-size: $font-size-xs;
+            color: $white;
+            background: $blue;
+            border-radius: 3px;
+            padding: 0.2rem 0.5rem;
+            letter-spacing: 0.5px;
+            margin: 0;
+          }
+        }
+        .other {
+          border-bottom: none;
+          .field--name-field-location-type {
+            font-family: $font-poppins;
+            font-weight: 500;
+            font-size: $font-size-xs;
+            color: $dark-grey;
+            background: transparent;
+            border: 1px solid $dark-grey;
+            border-radius: 3px;
+            padding: 0.2rem 0.5rem;
+            letter-spacing: 0.5px;
+            margin: 0;
+          }
+        }
+      }
+      // THIRD LINE
+      .third-row {
+       background: $light-grayish-red;
+        padding: 1rem 1.5rem 1rem 1.5rem;
+        .address-wrapper {
+
+          .field--name-field-location-address {
+            display: flex;
+            justify-content: space-between;
+            @include media-breakpoint-down(md) {
+              flex-direction: column;
+            }
+            .address {
+              font-family: $font-roboto;
+              font-weight: 300;
+              font-size: $font-size-h5;
+              color: $blue;
+              line-height: 30px;
+              .country {
+                display: none;
+              }
+            }
+            .address-map-link {
+              display: flex;
+              align-items: flex-end;
+              background: none;
+              border: none;
+              color: $blue;
+              text-transform: uppercase;
+              font-size: $font-size-sm;
+              font-weight: 700;
+              letter-spacing: 1px;
+              &:after {
+                content: '';
+                display: block;
+                width: 18px;
+                height: 20px;
+                background-image: url("../images/picto/ui/locator-blue.svg");
+                background-size: 18px 20px;
+                background-repeat: no-repeat;
+                margin-left: 0.5rem;
+              }
+            }
+            a {
+              &:hover {
+                text-decoration: none;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

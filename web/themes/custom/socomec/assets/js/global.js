@@ -300,23 +300,23 @@
   /**
    * Smooth scroll for anchor
    */
-  Drupal.behaviors.socomec_smooth_anchor_scrolling = {
-    attach: function (context, settings) {
-      $(function() {
-        $('a[href^="#"]:not([href="#"])').click(function() {
-          var offset = -200;
-            var target = $(this.hash);
-            target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-            if (target.length) {
-              $('html, body').animate({
-                scrollTop: target.offset().top + offset
-              }, 1000);
-              return false;
-            }
-        });
-      });
-    }
-  };
+  // Drupal.behaviors.socomec_smooth_anchor_scrolling = {
+  //   attach: function (context, settings) {
+  //     $(function() {
+  //       $('a[href^="#"]:not([href="#"])').click(function() {
+  //         var offset = -200;
+  //           var target = $(this.hash);
+  //           target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+  //           if (target.length) {
+  //             $('html, body').animate({
+  //               scrollTop: target.offset().top + offset
+  //             }, 1000);
+  //             return false;
+  //           }
+  //       });
+  //     });
+  //   }
+  // };
 
   /**
    * Facets bootstrap_select
@@ -404,6 +404,36 @@
   };
 
   /**
+   * Back to top btn
+   */
+  Drupal.behaviors.socomec_back_to_top = {
+    attach: function (context, settings) {
+      var backToTopBtn = $('#block-backtotop', context);
+      if (backToTopBtn.length) {
+        var scrollTrigger = 100, // px
+          backToTop = function () {
+            var scrollTop = $(window).scrollTop();
+            if (scrollTop > scrollTrigger) {
+              backToTopBtn.addClass('show');
+            } else {
+              backToTopBtn.removeClass('show');
+            }
+          };
+        backToTop();
+        $(window).on('scroll', function () {
+          backToTop();
+        });
+        backToTopBtn.once('socomecBackToTop').on('click', function (e) {
+          e.preventDefault();
+          $('html,body').animate({
+            scrollTop: 0
+          }, 700);
+        });
+      }
+    }
+  };
+
+  /**
    * Search menu
    */
   Drupal.behaviors.socomec_search = {
@@ -411,7 +441,7 @@
       $( document ).ready(function() {
         $(".menu--header-visitors [href='#search']", context).once('socomecSearchMenu').each(function () {
           $(this).click(function (e) {
-            $(this).toggleClass('close-search');
+            $(this).toggleClass('close-search icon-search-white');
             $(".block-soc-search-block").toggleClass('d-none');
             $(".we-mega-menu-submenu").removeClass('show');
             if ($(".block-soc-search-block").hasClass('d-none')) {
@@ -432,6 +462,5 @@
       });
     }
   };
-
 
 })(jQuery, Drupal);

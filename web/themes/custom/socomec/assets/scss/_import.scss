@@ -38,6 +38,7 @@
 @import "components/pages/resource-center";
 @import "components/pages/listing-page";
 @import "components/pages/details-page";
+@import "components/pages/1col-listing-page";
 @import "components/paragraphs/key-figure";
 @import "components/paragraphs/testimony";
 @import "components/paragraphs/text";
@@ -49,6 +50,8 @@
 @import "components/background";
 @import "components/form";
 @import "components/pages/views/listing";
+@import "components/pages/views/search";
+@import "components/pages/views/country-selector";
 @import "components/bookmarks";
 @import "components/pages/my-wishlist";
 
@@ -68,3 +71,6 @@
 @import "components/navigation/breadcrumb";
 @import "components/navigation/main-menu";
 @import "components/navigation/main-menu-responsive";
+@import "components/navigation/sub-footer";
+@import "components/navigation/side-menu";
+@import "components/navigation/header-search";

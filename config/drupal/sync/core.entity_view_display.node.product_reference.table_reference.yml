@@ -24,6 +24,11 @@ targetEntityType: node
 bundle: product_reference
 mode: table_reference
 content:
+  content_moderation_control:
+    weight: -20
+    settings: {  }
+    third_party_settings: {  }
+    region: content
   field_reference_json_table:
     weight: 0
     label: hidden
@@ -48,6 +53,7 @@ hidden:
   field_reference_name: true
   field_reference_picture: true
   field_reference_ref: true
+  field_teaser: true
   langcode: true
   links: true
   search_api_excerpt: true

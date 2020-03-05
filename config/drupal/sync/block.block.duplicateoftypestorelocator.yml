@@ -1,0 +1,23 @@
+uuid: 76978f09-5b50-4866-976f-439a4b6881e8
+langcode: en
+status: true
+dependencies:
+  config:
+    - facets.facet.duplicate_of_type_store_locator
+  module:
+    - facets
+  theme:
+    - socomec
+id: duplicateoftypestorelocator
+theme: socomec
+region: facets
+weight: 0
+provider: null
+plugin: 'facet_block:duplicate_of_type_store_locator'
+settings:
+  id: 'facet_block:duplicate_of_type_store_locator'
+  label: Types
+  provider: facets
+  label_display: visible
+  block_id: duplicateoftypestorelocator
+visibility: {  }

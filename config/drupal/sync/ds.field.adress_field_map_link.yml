@@ -1,0 +1,9 @@
+id: adress_field_map_link
+label: 'Adress field map link'
+ui_limit: 'contenu_location|*'
+properties:
+  field_id: node.contenu_location.field_location_address
+type: display_field_copy
+type_label: 'Copy field'
+entities:
+  node: node

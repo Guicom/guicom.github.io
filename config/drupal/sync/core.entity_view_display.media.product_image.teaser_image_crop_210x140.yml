@@ -1,0 +1,47 @@
+uuid: 6ff5b0bb-906b-4fe5-bcef-31b034add355
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.media.teaser_image_crop_210x140
+    - field.field.media.product_image.field_country
+    - field.field.media.product_image.field_media_image_2
+    - image.style.crop_210x140
+    - media.type.product_image
+  module:
+    - ds
+    - svg_image
+id: media.product_image.teaser_image_crop_210x140
+targetEntityType: media
+bundle: product_image
+mode: teaser_image_crop_210x140
+content:
+  field_media_image_2:
+    type: image
+    weight: 0
+    region: content
+    label: hidden
+    settings:
+      image_style: crop_210x140
+      image_link: ''
+      svg_render_as_image: '1'
+      svg_attributes:
+        width: '210'
+        height: '140'
+    third_party_settings:
+      ds:
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
+hidden:
+  addtoany: true
+  created: true
+  field_country: true
+  langcode: true
+  name: true
+  search_api_excerpt: true
+  thumbnail: true
+  uid: true

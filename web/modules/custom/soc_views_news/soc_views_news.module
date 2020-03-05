@@ -80,15 +80,15 @@ function soc_views_news_entity_delete(Drupal\Core\Entity\EntityInterface $entity
 }
 
 /**
- * Implements hook_form_FORM_ID_alter().
+ * Implements hook_form_alter().
+ *
+ * @param $form
+ * @param \Drupal\Core\Form\FormStateInterface $form_state
+ * @param $form_id
  */
-function soc_views_news_form_node_news_edit_form_alter(&$form, FormStateInterface $form_state, $form_id) {
- $form['sticky']['widget']['value']['#description'] = t('will only be displayed if a photo is attached');
-}
-
-/**
- * Implements hook_form_FORM_ID_alter().
- */
-function soc_views_news_form_node_news_form_alter(&$form, FormStateInterface $form_state, $form_id) {
-  $form['sticky']['widget']['value']['#description'] = t('will only be displayed if a photo is attached');
+function soc_views_news_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  if (strcmp($form_id, 'node_news_edit_form') === 0 || strcmp($form_id, 'node_news_form') === 0) {
+    $sticky_news_description = t('will only be displayed if a photo is attached');
+    $form['sticky']['widget']['value']['#description'] = $sticky_news_description;
+  }
 }
