@@ -79,6 +79,14 @@ class SalesLocationsManagerImportService implements SalesLocationsManagerImportS
     $this->rowNode->importNameContact($row[8]);
     $this->rowNode->importFirstName($row[9]);
     $this->rowNode->importAddress($row);
+    $this->rowNode->importPhone($row[18]);
+    $this->rowNode->importFax($row[19]);
+    $this->rowNode->importWebsite($row[20]);
+    $this->rowNode->importType($row[6]);
+    $this->rowNode->importActivity($row[5]);
+    $this->rowNode->importContient($row[2]);
+    $this->rowNode->importArea($row[3]);
+    $this->rowNode->importSubArea($row[4]);
     try {
       $this->rowNode->saveUpdatedRevisionsNode();
 
@@ -100,8 +108,6 @@ class SalesLocationsManagerImportService implements SalesLocationsManagerImportS
       $i++;
     }
   }
-
-
 
 
 }

@@ -30,4 +30,5 @@ interface SalesLocationsManagerImportServiceInterface {
    * @return mixed
    */
   public function importAllRow(FileInterface $file);
+
 }
