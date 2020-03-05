@@ -394,6 +394,11 @@ function socomec_preprocess_page(&$variables) {
         break;
     }
   }
+  else {
+    if (\Drupal::routeMatch()->getRouteName() == 'view.store_locator.page_2') {
+      $variables['store_locator'] = "page_2";
+    }
+  }
 }
 
 /**
