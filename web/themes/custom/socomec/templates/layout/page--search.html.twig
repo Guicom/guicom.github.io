@@ -69,11 +69,11 @@
 #}
 <div id="page-wrapper">
   <div id="page">
+    {% include '@socomec/layout/share.html.twig' %}
     <header id="header" class="header" role="banner" aria-label="{{ 'Site header'|t}}">
       {% block head %}
         {% include '@socomec/includes/header.html.twig' %}
       {% endblock %}
-      {% include '@socomec/layout/share.html.twig' %}
     </header>
     <div id="search-page-header" class="header">
       {{ drupal_block('system_breadcrumb_block') }}
