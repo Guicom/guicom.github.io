@@ -4,6 +4,9 @@
       @include block-title(true);
       font-weight: 300;
       margin: 4rem 0 3rem 0;
+      @include media-breakpoint-down(md) {
+        margin: 1rem 0;
+      }
     }
   }
   .view-header {
