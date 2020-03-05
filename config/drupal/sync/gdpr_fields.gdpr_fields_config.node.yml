@@ -553,7 +553,7 @@ bundles:
       rtf: 'no'
       rta: 'no'
       enabled: false
-      anonymizer: ''
+      anonymizer: clear_anonymizer
       notes: ''
       relationship: 0
       sars_filename: ''
@@ -894,6 +894,17 @@ bundles:
     field_json:
       bundle: product_reference
       name: field_json
+      entity_type_id: node
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_teaser:
+      bundle: product_reference
+      name: field_teaser
       entity_type_id: node
       rtf: 'no'
       rta: 'no'
@@ -1748,6 +1759,17 @@ bundles:
       rta: 'no'
       enabled: false
       anonymizer: date_anonymizer
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_location_email:
+      bundle: contenu_location
+      name: field_location_email
+      entity_type_id: node
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: clear_anonymizer
       notes: ''
       relationship: 0
       sars_filename: ''

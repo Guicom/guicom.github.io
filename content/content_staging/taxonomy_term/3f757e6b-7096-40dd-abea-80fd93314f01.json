@@ -1,20 +1,14 @@
 {
     "_links": {
         "self": {
-            "href": "http:\/\/default\/taxonomy\/term\/122?_format=hal_json"
+            "href": "http:\/\/default\/en\/seoul?_format=hal_json"
         },
         "type": {
             "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/location_areas"
         },
         "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/location_areas\/parent": [
             {
-                "href": "http:\/\/default\/taxonomy\/term\/121?_format=hal_json"
-            }
-        ],
-        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/location_areas\/content_translation_uid": [
-            {
-                "href": "http:\/\/default\/user\/1?_format=hal_json",
-                "lang": "en"
+                "href": "http:\/\/default\/en\/korea-south?_format=hal_json"
             }
         ]
     },
@@ -72,7 +66,7 @@
             {
                 "_links": {
                     "self": {
-                        "href": "http:\/\/default\/taxonomy\/term\/121?_format=hal_json"
+                        "href": "http:\/\/default\/en\/korea-south?_format=hal_json"
                     },
                     "type": {
                         "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/location_areas"
@@ -83,24 +77,6 @@
                         "value": "18add1f7-b98a-40a9-b40b-06997af6c681"
                     }
                 ]
-            }
-        ],
-        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/location_areas\/content_translation_uid": [
-            {
-                "_links": {
-                    "self": {
-                        "href": "http:\/\/default\/user\/1?_format=hal_json"
-                    },
-                    "type": {
-                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
-                    }
-                },
-                "uuid": [
-                    {
-                        "value": "54e1892a-0515-46b2-8871-afc0f64dbaf2"
-                    }
-                ],
-                "lang": "en"
             }
         ]
     },
@@ -146,8 +122,16 @@
         {
             "value": {
                 "title": "Seoul | Socomec",
-                "canonical_url": "http:\/\/default\/taxonomy\/term\/122"
+                "canonical_url": "http:\/\/default\/en\/seoul"
             }
+        }
+    ],
+    "path": [
+        {
+            "alias": "\/seoul",
+            "pid": 6,
+            "langcode": "en",
+            "lang": "en"
         }
     ]
 }

@@ -1,0 +1,12 @@
+display:
+  default:
+    display_options:
+      pager:
+        options:
+          expose:
+            offset_label: Przesunięcie
+      title: Media
+  page:
+    display_options:
+      menu:
+        title: Media

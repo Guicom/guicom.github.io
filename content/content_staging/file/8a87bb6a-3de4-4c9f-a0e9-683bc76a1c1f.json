@@ -1,0 +1,92 @@
+{
+    "_links": {
+        "self": {
+            "href": ""
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/file\/file"
+        },
+        "http:\/\/drupal.org\/rest\/relation\/file\/file\/uid": [
+            {
+                "href": "http:\/\/default\/user\/1?_format=hal_json"
+            }
+        ]
+    },
+    "fid": [
+        {
+            "value": 55
+        }
+    ],
+    "uuid": [
+        {
+            "value": "8a87bb6a-3de4-4c9f-a0e9-683bc76a1c1f"
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en-gb"
+        }
+    ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/file\/file\/uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/user\/1?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "6e922b1e-82c3-48d2-a8c3-b42f70d6f54e"
+                    }
+                ]
+            }
+        ]
+    },
+    "filename": [
+        {
+            "value": "facebook.svg"
+        }
+    ],
+    "uri": [
+        {
+            "value": "public:\/\/2020-02\/facebook_0.svg",
+            "url": "\/sites\/default\/files\/2020-02\/facebook_0.svg"
+        }
+    ],
+    "filemime": [
+        {
+            "value": "image\/svg+xml"
+        }
+    ],
+    "filesize": [
+        {
+            "value": 1597
+        }
+    ],
+    "status": [
+        {
+            "value": true
+        }
+    ],
+    "created": [
+        {
+            "value": "2020-02-26T12:38:02+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "changed": [
+        {
+            "value": "2020-02-26T12:38:09+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "data": [
+        {
+            "value": "PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iMjFweCIgaGVpZ2h0PSIyMHB4IiB2aWV3Qm94PSIwIDAgMjEgMjAiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+CiAgICA8IS0tIEdlbmVyYXRvcjogc2tldGNodG9vbCA2MS4yICgxMDEwMTApIC0gaHR0cHM6Ly9za2V0Y2guY29tIC0tPgogICAgPHRpdGxlPjIxNUI2NzEyLTA0RTktNEUzRi05NDc0LTk3MkM1M0U4QjZEMDwvdGl0bGU+CiAgICA8ZGVzYz5DcmVhdGVkIHdpdGggc2tldGNodG9vbC48L2Rlc2M+CiAgICA8ZyBpZD0iQXNzZXQtQXJ0Ym9hcmQtUGFnZSIgc3Ryb2tlPSJub25lIiBzdHJva2Utd2lkdGg9IjEiIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+CiAgICAgICAgPGcgaWQ9InVpL01lZGl1bS9iYWctcHVyY2hhc2UtdWkvc29jaWFsL2ZhY2Vib29rIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgwLjEyNTk1MCwgMC4wMDAwMDApIiBmaWxsPSIjMDA0RjlGIj4KICAgICAgICAgICAgPHBhdGggZD0iTTEyLjc3MzQzNzUsMTguNDM3NSBMMTcuNjU2MjUsMTguNDM3NSBDMTguMDg3MDA1NiwxOC40Mzc1IDE4LjQzNzUsMTguMDg3MDA1NiAxOC40Mzc1LDE3LjY1NjI1IEwxOC40Mzc1LDIuMzQzNzUgQzE4LjQzNzUsMS45MTI5OTQzOCAxOC4wODcwMDU2LDEuNTYyNSAxNy42NTYyNSwxLjU2MjUgTDIuMzQzNzUsMS41NjI1IEMxLjkxMjk5NDM4LDEuNTYyNSAxLjU2MjUsMS45MTI5OTQzOCAxLjU2MjUsMi4zNDM3NSBMMS41NjI1LDE3LjY1NjI1IEMxLjU2MjUsMTguMDg3MDA1NiAxLjkxMjk5NDM4LDE4LjQzNzUgMi4zNDM3NSwxOC40Mzc1IEwxMC40Mjk2ODc1LDE4LjQzNzUgTDEwLjQyOTY4NzUsMTIuMzA0Njg3NSBMOC44NjcxODc1LDEyLjMwNDY4NzUgTDguODY3MTg3NSwxMC4zNTE1NjI1IEwxMC40Mjk2ODc1LDEwLjM1MTU2MjUgTDEwLjQyOTY4NzUsOC4zOTg0Mzc1IEMxMC40Mjk2ODc1LDcuMTAzOTA2MjUgMTEuNDc4OTA2Myw2LjA1NDY4NzUgMTIuNzczNDM3NSw2LjA1NDY4NzUgTDE0LjMzNTkzNzUsNi4wNTQ2ODc1IEwxNC4zMzU5Mzc1LDguMDA3ODEyNSBMMTMuNTU0Njg3NSw4LjAwNzgxMjUgQzEzLjEyMzQzNzUsOC4wMDc4MTI1IDEyLjc3MzQzNzUsOC4zNTc4MTI1IDEyLjc3MzQzNzUsOC43ODkwNjI1IEwxMi43NzM0Mzc1LDEwLjM1MTU2MjUgTDE1LjExNzE4NzUsMTAuMzUxNTYyNSBMMTQuMzM1OTM3NSwxMi4zMDQ2ODc1IEwxMi43NzM0Mzc1LDEyLjMwNDY4NzUgTDEyLjc3MzQzNzUsMTguNDM3NSBaIE0xNy42NTYyNSwyMCBMMi4zNDM3NSwyMCBDMS4wNTEzMzA1NSwyMCAwLDE4Ljk0ODY2OTUgMCwxNy42NTYyNSBMMCwyLjM0Mzc1IEMwLDEuMDUxMzMwNTUgMS4wNTEzMzA1NSwwIDIuMzQzNzUsMCBMMTcuNjU2MjUsMCBDMTguOTQ4NjY5NSwwIDIwLDEuMDUxMzMwNTUgMjAsMi4zNDM3NSBMMjAsMTcuNjU2MjUgQzIwLDE4Ljk0ODY2OTUgMTguOTQ4NjY5NSwyMCAxNy42NTYyNSwyMCBaIiBpZD0iU2hhcGUiPjwvcGF0aD4KICAgICAgICA8L2c+CiAgICA8L2c+Cjwvc3ZnPg=="
+        }
+    ]
+}

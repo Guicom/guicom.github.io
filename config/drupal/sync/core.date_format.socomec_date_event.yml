@@ -1,0 +1,8 @@
+uuid: 11bd34f5-4265-4538-8358-25f6a77f6228
+langcode: en
+status: true
+dependencies: {  }
+id: socomec_date_event
+label: 'Socomec date event'
+locked: false
+pattern: 'M. j Y'

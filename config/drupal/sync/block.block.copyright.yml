@@ -11,7 +11,7 @@ dependencies:
 id: copyright
 theme: socomec
 region: footer_fifth
-weight: -5
+weight: -21
 provider: null
 plugin: 'block_content:4396368f-b51c-4348-a79e-7cd52a85d79a'
 settings:

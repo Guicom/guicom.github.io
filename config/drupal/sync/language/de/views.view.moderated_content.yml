@@ -1,6 +1,7 @@
 display:
   default:
     display_options:
-      fields:
-        operations:
-          label: Aktionen
+      pager:
+        options:
+          expose:
+            offset_label: Versatz
