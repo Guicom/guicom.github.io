@@ -67,7 +67,11 @@
  * @see html.html.twig
  */
 #}
-{%  set view_store_locator = drupal_view_result('store_locator', 'page_1') %}
+{% if store_locator and store_locator == 'page_2' %}
+  {%  set view_store_locator = drupal_view_result('store_locator', 'page_2') %}
+{% else %}
+  {%  set view_store_locator = drupal_view_result('store_locator', 'page_1') %}
+{% endif %}
 
 <div id="page-wrapper">
   <div id="page">
