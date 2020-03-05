@@ -12,6 +12,7 @@ dependencies:
     - field.field.node.news.field_news_mommentum
     - field.field.node.news.field_news_theme
     - field.field.node.news.field_news_type
+    - field.field.node.news.field_news_video
     - field.field.node.news.field_product_reference
     - field.field.node.news.field_teaser
     - image.style.news_hero_illustration
@@ -155,6 +156,16 @@ content:
             classes: {  }
     type: entity_reference_label
     region: first
+  field_news_video:
+    weight: 12
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+    region: content
   field_product_reference:
     weight: 8
     label: hidden

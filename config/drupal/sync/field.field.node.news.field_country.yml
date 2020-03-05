@@ -10,9 +10,9 @@ id: node.news.field_country
 field_name: field_country
 entity_type: node
 bundle: news
-label: Country
+label: 'News Area of publication'
 description: ''
-required: false
+required: true
 translatable: true
 default_value: {  }
 default_value_callback: ''
