@@ -13,6 +13,7 @@ dependencies:
     - field.storage.node.field_location_address
     - field.storage.node.field_location_area
     - field.storage.node.field_location_continent
+    - field.storage.node.field_location_subarea
     - field.storage.node.field_location_type
     - search_api.server.location
 third_party_settings:
@@ -112,6 +113,17 @@ field_settings:
     dependencies:
       config:
         - field.storage.node.field_location_activity
+      module:
+        - taxonomy
+        - taxonomy
+  name_3:
+    label: 'Subarea Of Sales » Taxonomy term » Name'
+    datasource_id: 'entity:node'
+    property_path: 'field_location_subarea:entity:name'
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_location_subarea
       module:
         - taxonomy
         - taxonomy
