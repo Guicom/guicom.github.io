@@ -11,13 +11,9 @@ field_name: field_news_theme
 entity_type: node
 bundle: news
 label: 'News Theme'
-<<<<<<< HEAD
 description: 'Only the three tags will be displayed'
-required: true
-=======
-description: ''
 required: false
->>>>>>> ea6438b54d2c2b83698f583907554cfbb8c1fc55
+>>>>>>>>> Temporary merge branch 2
 translatable: false
 default_value: {  }
 default_value_callback: ''
