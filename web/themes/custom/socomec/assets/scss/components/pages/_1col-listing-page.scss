@@ -1,6 +1,13 @@
 .path-where-to-buy {
-  .where-to-buy-filters {
-      margin-top: 155px;
+  .store-locator-wrapper {
+    .intro {
+      @include block-title(true);
+      font-weight: 300;
+      margin: 4rem 0 3rem 0;
+      @include media-breakpoint-down(md) {
+        margin: 2rem 0;
+      }
+    }
   }
   .view-header {
     @include block-title(true);
