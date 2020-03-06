@@ -1,6 +1,7 @@
 module:
   abjs: 0
   address: 0
+  address_map_link: 0
   addtoany: 0
   addtocalendar: 0
   admin_toolbar: 0
@@ -37,6 +38,7 @@ module:
   dblog: 0
   default_content: 0
   default_content_deploy: 0
+  dropdown_language: 0
   drush_language: 0
   ds_extras: 0
   dynamic_page_cache: 0
@@ -90,6 +92,7 @@ module:
   metatag: 0
   metatag_hreflang: 0
   metatag_open_graph: 0
+  metatag_views: 0
   multiselect: 0
   node: 0
   options: 0
@@ -127,6 +130,7 @@ module:
   soc_resource_center: 0
   soc_sales_locations: 0
   soc_search: 0
+  soc_store_locator: 0
   soc_user: 0
   soc_views_news: 0
   soc_wishlist: 0

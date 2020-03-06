@@ -1,0 +1,23 @@
+uuid: 098fc7dd-1762-44bc-942d-55230e027278
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_weight
+    - taxonomy.vocabulary.location_type
+id: taxonomy_term.location_type.field_weight
+field_name: field_weight
+entity_type: taxonomy_term
+bundle: location_type
+label: Weight
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: 0
+  max: 10
+  prefix: ''
+  suffix: ''
+field_type: integer

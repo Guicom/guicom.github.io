@@ -29,6 +29,9 @@
         }
         .js-form-item{
           margin-bottom: 0;
+          @include media-breakpoint-down(md) {
+            width: 100%;
+          }
         }
       }
       // THEMING SELECT LANGUAGE

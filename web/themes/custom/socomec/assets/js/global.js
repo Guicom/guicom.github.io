@@ -300,23 +300,23 @@
   /**
    * Smooth scroll for anchor
    */
-  Drupal.behaviors.socomec_smooth_anchor_scrolling = {
-    attach: function (context, settings) {
-      $(function() {
-        $('a[href^="#"]:not([href="#"])').click(function() {
-          var offset = -200;
-            var target = $(this.hash);
-            target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-            if (target.length) {
-              $('html, body').animate({
-                scrollTop: target.offset().top + offset
-              }, 1000);
-              return false;
-            }
-        });
-      });
-    }
-  };
+  // Drupal.behaviors.socomec_smooth_anchor_scrolling = {
+  //   attach: function (context, settings) {
+  //     $(function() {
+  //       $('a[href^="#"]:not([href="#"])').click(function() {
+  //         var offset = -200;
+  //           var target = $(this.hash);
+  //           target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+  //           if (target.length) {
+  //             $('html, body').animate({
+  //               scrollTop: target.offset().top + offset
+  //             }, 1000);
+  //             return false;
+  //           }
+  //       });
+  //     });
+  //   }
+  // };
 
   /**
    * Facets bootstrap_select
@@ -408,7 +408,7 @@
    */
   Drupal.behaviors.socomec_back_to_top = {
     attach: function (context, settings) {
-      var backToTopBtn = $('#block-backtotop');
+      var backToTopBtn = $('#block-backtotop', context);
       if (backToTopBtn.length) {
         var scrollTrigger = 100, // px
           backToTop = function () {
@@ -423,7 +423,7 @@
         $(window).on('scroll', function () {
           backToTop();
         });
-        backToTopBtn.on('click', function (e) {
+        backToTopBtn.once('socomecBackToTop').on('click', function (e) {
           e.preventDefault();
           $('html,body').animate({
             scrollTop: 0

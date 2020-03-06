@@ -1,20 +1,14 @@
 {
     "_links": {
         "self": {
-            "href": "http:\/\/default\/taxonomy\/term\/116?_format=hal_json"
+            "href": "http:\/\/default\/en\/france?_format=hal_json"
         },
         "type": {
             "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/location_areas"
         },
         "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/location_areas\/parent": [
             {
-                "href": "http:\/\/default\/taxonomy\/term\/115?_format=hal_json"
-            }
-        ],
-        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/location_areas\/content_translation_uid": [
-            {
-                "href": "http:\/\/default\/user\/1?_format=hal_json",
-                "lang": "en"
+                "href": "http:\/\/default\/en\/europe?_format=hal_json"
             }
         ]
     },
@@ -72,7 +66,7 @@
             {
                 "_links": {
                     "self": {
-                        "href": "http:\/\/default\/taxonomy\/term\/115?_format=hal_json"
+                        "href": "http:\/\/default\/en\/europe?_format=hal_json"
                     },
                     "type": {
                         "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/location_areas"
@@ -83,24 +77,6 @@
                         "value": "eafc75e9-5a8e-4d85-a1a2-7583c06a84b1"
                     }
                 ]
-            }
-        ],
-        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/location_areas\/content_translation_uid": [
-            {
-                "_links": {
-                    "self": {
-                        "href": "http:\/\/default\/user\/1?_format=hal_json"
-                    },
-                    "type": {
-                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
-                    }
-                },
-                "uuid": [
-                    {
-                        "value": "54e1892a-0515-46b2-8871-afc0f64dbaf2"
-                    }
-                ],
-                "lang": "en"
             }
         ]
     },
@@ -146,8 +122,16 @@
         {
             "value": {
                 "title": "France | Socomec",
-                "canonical_url": "http:\/\/default\/taxonomy\/term\/116"
+                "canonical_url": "http:\/\/default\/en\/france"
             }
+        }
+    ],
+    "path": [
+        {
+            "alias": "\/france",
+            "pid": 4,
+            "langcode": "en",
+            "lang": "en"
         }
     ]
 }

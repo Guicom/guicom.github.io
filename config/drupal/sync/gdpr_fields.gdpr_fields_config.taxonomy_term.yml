@@ -9,6 +9,7 @@ filenames:
   product_label: ''
   protection_level: ''
   event_type: ''
+  location_type: ''
 bundles:
   family:
     field_family_code:
@@ -172,6 +173,18 @@ bundles:
     field_label_icon:
       bundle: event_type
       name: field_label_icon
+      entity_type_id: taxonomy_term
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+  location_type:
+    field_weight:
+      bundle: location_type
+      name: field_weight
       entity_type_id: taxonomy_term
       rtf: 'no'
       rta: 'no'
