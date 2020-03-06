@@ -148,10 +148,10 @@ display:
             display_methods: {  }
       filters: {  }
       sorts:
-        weight:
-          id: weight
+        field_weight:
+          id: field_weight
           table: search_api_index_location
-          field: weight
+          field: field_weight
           relationship: none
           group_type: group
           admin_label: ''
@@ -161,17 +161,7 @@ display:
             label: ''
           plugin_id: search_api
       title: 'Where to buy'
-      header:
-        result:
-          id: result
-          table: views
-          field: result
-          relationship: none
-          group_type: group
-          admin_label: ''
-          empty: false
-          content: '@total contacts'
-          plugin_id: result
+      header: {  }
       footer: {  }
       empty: {  }
       relationships: {  }
@@ -191,7 +181,8 @@ display:
     display_title: Page
     position: 1
     display_options:
-      display_extenders: {  }
+      display_extenders:
+        metatag_display_extender: {  }
       path: where-to-buy
       cache:
         type: search_api_tag

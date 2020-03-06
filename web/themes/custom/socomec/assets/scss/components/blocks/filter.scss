@@ -29,5 +29,17 @@
         margin-bottom: 20px;
       }
     }
+
+    #block-duplicateofsubareaofsales {
+      margin: 0;
+      .facet-title{
+        padding: 10px 12px;
+        margin-top: 0;
+      }
+
+      .bootstrap-select {
+        width: 100%;
+      }
+    }
   }
 }
