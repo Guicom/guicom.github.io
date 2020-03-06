@@ -148,10 +148,10 @@ display:
             display_methods: {  }
       filters: {  }
       sorts:
-        weight:
-          id: weight
+        field_weight:
+          id: field_weight
           table: search_api_index_location
-          field: weight
+          field: field_weight
           relationship: none
           group_type: group
           admin_label: ''
@@ -181,7 +181,8 @@ display:
     display_title: Page
     position: 1
     display_options:
-      display_extenders: {  }
+      display_extenders:
+        metatag_display_extender: {  }
       path: where-to-buy
       cache:
         type: search_api_tag
