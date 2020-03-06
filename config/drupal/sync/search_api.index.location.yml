@@ -12,6 +12,7 @@ dependencies:
     - field.storage.node.field_location_activity
     - field.storage.node.field_location_address
     - field.storage.node.field_location_area
+    - field.storage.node.field_location_company
     - field.storage.node.field_location_continent
     - field.storage.node.field_location_subarea
     - field.storage.node.field_location_type
@@ -68,6 +69,14 @@ field_settings:
     dependencies:
       config:
         - field.storage.node.field_location_area
+  field_location_company:
+    label: Company
+    datasource_id: 'entity:node'
+    property_path: field_location_company
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_location_company
   field_location_continent:
     label: 'Continent of Sales'
     datasource_id: 'entity:node'

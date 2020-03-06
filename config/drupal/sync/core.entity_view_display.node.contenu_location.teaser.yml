@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
+    - field.field.node.contenu_location.field_content_highlight
     - field.field.node.contenu_location.field_location_activity
     - field.field.node.contenu_location.field_location_address
     - field.field.node.contenu_location.field_location_area
@@ -22,6 +23,7 @@ dependencies:
     - address
     - address_map_link
     - ds
+    - options
     - smart_trim
     - soc_eu_cookie_compliance
     - taxonomy
@@ -60,11 +62,19 @@ third_party_settings:
         - field_location_type
         - field_location_website
         - field_location_email
+        - field_content_highlight
 id: node.contenu_location.teaser
 targetEntityType: node
 bundle: contenu_location
 mode: teaser
 content:
+  field_content_highlight:
+    type: list_key
+    weight: 14
+    region: ds_content
+    label: above
+    settings: {  }
+    third_party_settings: {  }
   field_location_activity:
     type: entity_reference_label
     weight: 1

@@ -8,7 +8,13 @@
         },
         "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/location_areas\/parent": [
             {
-                "href": "http:\/\/default\/en\/asia?_format=hal_json"
+                "href": "http:\/\/default\/en\/asia-pacific?_format=hal_json"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/location_areas\/content_translation_uid": [
+            {
+                "href": "http:\/\/default\/en\/user\/1?_format=hal_json",
+                "lang": "en"
             }
         ]
     },
@@ -66,7 +72,7 @@
             {
                 "_links": {
                     "self": {
-                        "href": "http:\/\/default\/en\/asia?_format=hal_json"
+                        "href": "http:\/\/default\/en\/asia-pacific?_format=hal_json"
                     },
                     "type": {
                         "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/location_areas"
@@ -77,6 +83,24 @@
                         "value": "e82c61cb-3825-48b0-92f7-4f000ed3bccf"
                     }
                 ]
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/location_areas\/content_translation_uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/en\/user\/1?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "facfcbdf-d7a8-417e-8b67-a4e2eed2b0dd"
+                    }
+                ],
+                "lang": "en"
             }
         ]
     },
