@@ -22,7 +22,10 @@
 }
 
 .block-facets-ajax {
-  margin-bottom: 40px;
+  .block{
+    padding-bottom: 40px;
+  }
+
   .facet-title {
     @extend .facets-category;
   }

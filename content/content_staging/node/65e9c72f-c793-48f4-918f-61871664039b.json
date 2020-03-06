@@ -1,0 +1,314 @@
+{
+    "_links": {
+        "self": {
+            "href": "http:\/\/default\/en\/node\/55?_format=hal_json"
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/node\/contenu_location"
+        },
+        "http:\/\/drupal.org\/rest\/relation\/node\/contenu_location\/revision_uid": [
+            {
+                "href": "http:\/\/default\/en\/user\/1?_format=hal_json"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/contenu_location\/uid": [
+            {
+                "href": "http:\/\/default\/en\/user\/1?_format=hal_json",
+                "lang": "en"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/contenu_location\/field_location_activity": [
+            {
+                "href": "http:\/\/default\/en\/taxonomy\/term\/123?_format=hal_json"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/contenu_location\/field_location_area": [
+            {
+                "href": "http:\/\/default\/en\/france?_format=hal_json"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/contenu_location\/field_location_continent": [
+            {
+                "href": "http:\/\/default\/en\/europe?_format=hal_json"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/contenu_location\/field_location_subarea": [
+            {
+                "href": "http:\/\/default\/en\/alsace?_format=hal_json"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/contenu_location\/field_location_type": [
+            {
+                "href": "http:\/\/default\/en\/taxonomy\/term\/112?_format=hal_json",
+                "lang": "en"
+            }
+        ]
+    },
+    "nid": [
+        {
+            "value": 55
+        }
+    ],
+    "uuid": [
+        {
+            "value": "65e9c72f-c793-48f4-918f-61871664039b"
+        }
+    ],
+    "vid": [
+        {
+            "value": 178
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "type": [
+        {
+            "target_id": "contenu_location"
+        }
+    ],
+    "revision_timestamp": [
+        {
+            "value": "2020-03-03T15:35:41+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/node\/contenu_location\/revision_uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/en\/user\/1?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "ad8c43df-5b93-4da0-bfb9-cf07778f3a40"
+                    }
+                ]
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/contenu_location\/uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/en\/user\/1?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "ad8c43df-5b93-4da0-bfb9-cf07778f3a40"
+                    }
+                ],
+                "lang": "en"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/contenu_location\/field_location_activity": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/en\/taxonomy\/term\/123?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/location_activity"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "a3b4fc98-4d5b-49b4-8afe-bf9f1421b3b7"
+                    }
+                ]
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/contenu_location\/field_location_area": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/en\/france?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/location_areas"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "938c7ac7-8638-45c6-ac57-af5a0270adcf"
+                    }
+                ]
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/contenu_location\/field_location_continent": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/en\/europe?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/location_areas"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "eafc75e9-5a8e-4d85-a1a2-7583c06a84b1"
+                    }
+                ]
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/contenu_location\/field_location_subarea": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/en\/alsace?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/location_areas"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "1ac284cb-5265-418f-88c4-be2bc5805184"
+                    }
+                ]
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/contenu_location\/field_location_type": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/en\/taxonomy\/term\/112?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/location_type"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "a0aa91a9-d698-4ff6-96ea-c73cf5b753d3"
+                    }
+                ],
+                "lang": "en"
+            }
+        ]
+    },
+    "status": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "title": [
+        {
+            "value": "Rothelec",
+            "lang": "en"
+        }
+    ],
+    "created": [
+        {
+            "value": "2020-03-03T15:30:52+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "changed": [
+        {
+            "value": "2020-03-03T15:35:41+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "promote": [
+        {
+            "value": false,
+            "lang": "en"
+        }
+    ],
+    "sticky": [
+        {
+            "value": false,
+            "lang": "en"
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "revision_translation_affected": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "content_translation_source": [
+        {
+            "value": "und",
+            "lang": "en"
+        }
+    ],
+    "content_translation_outdated": [
+        {
+            "value": false,
+            "lang": "en"
+        }
+    ],
+    "metatag": [
+        {
+            "value": {
+                "title": "Rothelec | Socomec",
+                "canonical_url": "http:\/\/default\/en\/node\/55"
+            }
+        }
+    ],
+    "field_location_address": [
+        {
+            "langcode": "",
+            "country_code": "FR",
+            "administrative_area": null,
+            "locality": "Strasbourg",
+            "dependent_locality": null,
+            "postal_code": "67000",
+            "sorting_code": "",
+            "address_line1": "18 rue d'alsace",
+            "address_line2": null,
+            "organization": null,
+            "given_name": null,
+            "additional_name": null,
+            "family_name": null
+        }
+    ],
+    "field_location_company": [
+        {
+            "value": "Rothelec"
+        }
+    ],
+    "field_location_email": [
+        {
+            "value": "walter@socomec.com"
+        }
+    ],
+    "field_location_firstname": [
+        {
+            "value": "Jean"
+        }
+    ],
+    "field_location_name_contact": [
+        {
+            "value": "Walter"
+        }
+    ],
+    "field_location_telephone": [
+        {
+            "value": "06856969658"
+        }
+    ]
+}

@@ -1,0 +1,18 @@
+uuid: d1737f0f-2ed8-44d1-b8f0-0776ddbd1429
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_news_video
+field_name: field_news_video
+entity_type: node
+type: boolean
+settings: {  }
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

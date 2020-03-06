@@ -3,11 +3,13 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.contenu_location.field_content_highlight
     - field.field.node.contenu_location.field_location_activity
     - field.field.node.contenu_location.field_location_address
     - field.field.node.contenu_location.field_location_area
     - field.field.node.contenu_location.field_location_company
     - field.field.node.contenu_location.field_location_continent
+    - field.field.node.contenu_location.field_location_email
     - field.field.node.contenu_location.field_location_fax
     - field.field.node.contenu_location.field_location_firstname
     - field.field.node.contenu_location.field_location_name_contact
@@ -18,7 +20,10 @@ dependencies:
     - node.type.contenu_location
   module:
     - address
+    - address_map_link
+    - ds
     - link
+    - options
     - telephone
     - user
 id: node.contenu_location.default
@@ -26,6 +31,13 @@ targetEntityType: node
 bundle: contenu_location
 mode: default
 content:
+  field_content_highlight:
+    weight: 14
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
   field_location_activity:
     weight: 3
     label: hidden
@@ -38,7 +50,20 @@ content:
     weight: 8
     label: hidden
     settings: {  }
-    third_party_settings: {  }
+    third_party_settings:
+      address_map_link:
+        link_address: '1'
+        map_link_type: google_maps
+        map_link_position: after
+        map_link_text: 'Access plan'
+        map_link_new_window: '1'
+      ds:
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
     type: address_default
     region: content
   field_location_area:
@@ -64,6 +89,13 @@ content:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
+    region: content
+  field_location_email:
+    weight: 13
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
     region: content
   field_location_fax:
     weight: 10

@@ -16,3 +16,30 @@
     }
   }
 }
+
+.store-locator-wrapper {
+  @include media-breakpoint-down(md) {
+    margin-bottom: 1rem;
+  }
+  .block-filter-by {
+    flex-direction: column;
+    .block-facets-ajax {
+      @include media-breakpoint-down(md) {
+        width: 100%;
+        margin-bottom: 20px;
+      }
+    }
+
+    #block-duplicateofsubareaofsales {
+      margin: 0;
+      .facet-title{
+        padding: 10px 12px;
+        margin-top: 0;
+      }
+
+      .bootstrap-select {
+        width: 100%;
+      }
+    }
+  }
+}

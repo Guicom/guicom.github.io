@@ -1,7 +1,7 @@
 {
     "_links": {
         "self": {
-            "href": "http:\/\/default\/taxonomy\/term\/112?_format=hal_json"
+            "href": "http:\/\/default\/en\/taxonomy\/term\/112?_format=hal_json"
         },
         "type": {
             "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/location_type"
@@ -11,7 +11,7 @@
         ],
         "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/location_type\/content_translation_uid": [
             {
-                "href": "http:\/\/default\/user\/1?_format=hal_json",
+                "href": "http:\/\/default\/en\/user\/1?_format=hal_json",
                 "lang": "en"
             }
         ]
@@ -73,7 +73,7 @@
             {
                 "_links": {
                     "self": {
-                        "href": "http:\/\/default\/user\/1?_format=hal_json"
+                        "href": "http:\/\/default\/en\/user\/1?_format=hal_json"
                     },
                     "type": {
                         "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
@@ -81,7 +81,7 @@
                 },
                 "uuid": [
                     {
-                        "value": "54e1892a-0515-46b2-8871-afc0f64dbaf2"
+                        "value": "facfcbdf-d7a8-417e-8b67-a4e2eed2b0dd"
                     }
                 ],
                 "lang": "en"
@@ -90,7 +90,7 @@
     },
     "changed": [
         {
-            "value": "2020-02-28T13:58:26+00:00",
+            "value": "2020-03-06T13:29:07+00:00",
             "lang": "en",
             "format": "Y-m-d\\TH:i:sP"
         }
@@ -130,8 +130,13 @@
         {
             "value": {
                 "title": "Distributor | Socomec",
-                "canonical_url": "http:\/\/default\/taxonomy\/term\/112"
+                "canonical_url": "http:\/\/default\/en\/taxonomy\/term\/112"
             }
+        }
+    ],
+    "field_weight": [
+        {
+            "value": 1
         }
     ]
 }

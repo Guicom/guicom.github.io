@@ -43,8 +43,6 @@ third_party_settings:
       left:
         - content_moderation_control
         - field_body
-        - addtoany
-        - field_country
       right:
         - field_pardot_form
 id: node.landing_page.default
@@ -52,11 +50,6 @@ targetEntityType: node
 bundle: landing_page
 mode: default
 content:
-  addtoany:
-    weight: 2
-    region: left
-    settings: {  }
-    third_party_settings: {  }
   content_moderation_control:
     weight: 0
     region: left
@@ -71,17 +64,9 @@ content:
       link: ''
     third_party_settings: {  }
     region: left
-  field_country:
-    weight: 4
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    type: entity_reference_label
-    region: left
   field_pardot_form:
     type: entity_reference_revisions_entity_view
-    weight: 3
+    weight: 2
     region: right
     label: hidden
     settings:
@@ -89,7 +74,9 @@ content:
       link: ''
     third_party_settings: {  }
 hidden:
+  addtoany: true
   field_client_name: true
+  field_country: true
   field_footer_version: true
   field_hero_paragraph: true
   field_metatags: true

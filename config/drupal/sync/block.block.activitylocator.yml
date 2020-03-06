@@ -1,0 +1,23 @@
+uuid: b40ecf23-a1ed-478f-826f-67a105ae4864
+langcode: en
+status: true
+dependencies:
+  config:
+    - facets.facet.activity_locator
+  module:
+    - facets
+  theme:
+    - socomec
+id: activitylocator
+theme: socomec
+region: facets
+weight: 0
+provider: null
+plugin: 'facet_block:activity_locator'
+settings:
+  id: 'facet_block:activity_locator'
+  label: Thematics
+  provider: facets
+  label_display: visible
+  block_id: activitylocator
+visibility: {  }

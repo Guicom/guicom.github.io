@@ -1,0 +1,23 @@
+uuid: 3441271c-d851-4e4f-a409-09b619c795dd
+langcode: en
+status: true
+dependencies:
+  config:
+    - facets.facet.duplicate_of_activity_locator
+  module:
+    - facets
+  theme:
+    - socomec
+id: duplicateofactivitylocator
+theme: socomec
+region: facets
+weight: 0
+provider: null
+plugin: 'facet_block:duplicate_of_activity_locator'
+settings:
+  id: 'facet_block:duplicate_of_activity_locator'
+  label: Thematics
+  provider: facets
+  label_display: visible
+  block_id: duplicateofactivitylocator
+visibility: {  }

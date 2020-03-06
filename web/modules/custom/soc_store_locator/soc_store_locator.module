@@ -1,0 +1,46 @@
+<?php
+
+use Drupal\views\ViewExecutable;
+use Drupal\views\Plugin\views\query\QueryPluginBase;
+
+/**
+ * Implements hook_theme().
+ */
+function soc_store_locator_theme() {
+  return [
+    'soc_store_locator_country__selector_theme' => [
+      'variables' => [
+        'tabs' => [],
+        'tabs_content' => [],
+      ],
+    ]
+  ];
+}
+
+/**
+ * Implements hook_search_api_query_alter.
+ *
+ * @param \Drupal\search_api\Query\QueryInterface $query
+ */
+function soc_store_locator_search_api_query_alter(\Drupal\search_api\Query\QueryInterface &$query) {
+  if ($query->getIndex()->getServerInstance()->supportsFeature('search_api_facets')) {
+    /** @var \Drupal\facets\FacetManager\DefaultFacetManager $facet_manager */
+    $facet_manager = \Drupal::service('facets.manager');
+
+    $search_id = $query->getSearchId();
+
+    // If we find an attachment view query, we use the same query alter as the page because they belong together
+    if ($search_id === 'views_page:store_locator__page_2') {
+//      $query->setSearchId('store_locator__page_1');
+//      facets_search_api_query_alter($query);
+      $search_id = 'views_page:store_locator__page_1';
+      $facet_manager->alterQuery($query, $search_id);
+    }
+//    if(strpos($search_id, 'views_page:store_locator__page_2') === 0) {
+//      $search_id = 'search_api:views_page__search__page';
+//
+//      // Add the active filters.
+//      $facet_manager->alterQuery($query, $search_id);
+//    }
+  }
+}

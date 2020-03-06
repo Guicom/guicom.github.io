@@ -4,31 +4,33 @@ status: true
 dependencies:
   module:
     - search_api_solr
-    - paragraphs
-    - node
-    - taxonomy
     - content_translation
+    - paragraphs
+    - taxonomy
+    - node
     - search_api
   config:
     - field.storage.node.field_body
-    - field.storage.paragraph.field_answer
     - field.storage.paragraph.field_citation_author_position
     - field.storage.paragraph.field_citation_content
-    - field.storage.paragraph.field_text
+    - field.storage.node.field_event_teaser
+    - field.storage.node.field_event_thematic
+    - field.storage.node.field_event_type
     - field.storage.paragraph.field_figure_2_text_line_1
     - field.storage.paragraph.field_figure_2_text_line_2
     - field.storage.paragraph.field_figure_3_text_line_1
     - field.storage.paragraph.field_figure_3_text_line_2
     - field.storage.paragraph.field_figure_4_text_line_2
-    - field.storage.paragraph.field_title
-    - field.storage.node.field_event_thematic
-    - field.storage.node.field_event_type
     - field.storage.node.field_news_theme
     - field.storage.node.field_news_type
     - field.storage.node.field_product_family
-    - field.storage.node.field_protection_level
     - field.storage.node.field_product_teaser
+    - field.storage.node.field_protection_level
     - field.storage.node.field_res_resource_type
+    - field.storage.node.field_teaser
+    - field.storage.paragraph.field_title
+    - field.storage.paragraph.field_text
+    - field.storage.paragraph.field_answer
     - search_api.server.socomec
 third_party_settings:
   search_api_solr:
@@ -103,6 +105,14 @@ field_settings:
         - field.storage.paragraph.field_citation_content
       module:
         - paragraphs
+  field_event_teaser:
+    label: 'Event Teaser'
+    datasource_id: 'entity:node'
+    property_path: field_event_teaser
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_event_teaser
   field_event_thematic:
     label: 'Event Thematic'
     datasource_id: 'entity:node'
@@ -199,11 +209,10 @@ field_settings:
       config:
         - field.storage.node.field_product_family
   field_product_teaser:
-    label: Teaser
+    label: 'Product Teaser'
     datasource_id: 'entity:node'
     property_path: field_product_teaser
     type: text
-    boost: !!float 21
     dependencies:
       config:
         - field.storage.node.field_product_teaser
@@ -223,6 +232,14 @@ field_settings:
     dependencies:
       config:
         - field.storage.node.field_res_resource_type
+  field_teaser:
+    label: 'News / Resource teaser'
+    datasource_id: 'entity:node'
+    property_path: field_teaser
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_teaser
   field_title:
     label: 'Body » Paragraph » Title'
     datasource_id: 'entity:node'
@@ -320,14 +337,6 @@ field_settings:
     dependencies:
       module:
         - node
-  title_1:
-    label: Title
-    datasource_id: 'entity:node'
-    property_path: title
-    type: text
-    dependencies:
-      module:
-        - node
   type:
     label: 'Content type'
     datasource_id: 'entity:node'
@@ -350,7 +359,6 @@ datasource_settings:
       default: false
       selected:
         - event
-        - landing_page
         - news
         - product
         - product_reference
@@ -384,9 +392,7 @@ processor_settings:
       'entity:node':
         datasource_boost: !!float 1
       'entity:taxonomy_term':
-        datasource_boost: !!float 21
-        bundle_boosts:
-          family: !!float 21
+        datasource_boost: !!float 1
     weights:
       preprocess_index: 0
 tracker_settings:
