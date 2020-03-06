@@ -1,0 +1,23 @@
+uuid: e6ae8e1c-144d-445f-ab8b-358fd0547260
+langcode: en
+status: true
+dependencies:
+  config:
+    - facets.facet.duplicate_of_subarea_of_sales
+  module:
+    - facets
+  theme:
+    - socomec
+id: duplicateofsubareaofsales
+theme: socomec
+region: facets
+weight: 0
+provider: null
+plugin: 'facet_block:duplicate_of_subarea_of_sales'
+settings:
+  id: 'facet_block:duplicate_of_subarea_of_sales'
+  label: Subarea
+  provider: facets
+  label_display: visible
+  block_id: duplicateofsubareaofsales
+visibility: {  }

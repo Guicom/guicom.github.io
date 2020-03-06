@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.contenu_location.field_content_highlight
     - field.field.node.contenu_location.field_location_activity
     - field.field.node.contenu_location.field_location_address
     - field.field.node.contenu_location.field_location_area
@@ -22,6 +23,7 @@ dependencies:
     - address_map_link
     - ds
     - link
+    - options
     - telephone
     - user
 id: node.contenu_location.default
@@ -29,6 +31,13 @@ targetEntityType: node
 bundle: contenu_location
 mode: default
 content:
+  field_content_highlight:
+    weight: 14
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
   field_location_activity:
     weight: 3
     label: hidden

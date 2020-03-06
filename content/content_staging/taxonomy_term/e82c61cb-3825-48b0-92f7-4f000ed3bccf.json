@@ -1,13 +1,19 @@
 {
     "_links": {
         "self": {
-            "href": "http:\/\/default\/en\/asia?_format=hal_json"
+            "href": "http:\/\/default\/en\/asia-pacific?_format=hal_json"
         },
         "type": {
             "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/location_areas"
         },
         "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/location_areas\/parent": [
             null
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/location_areas\/content_translation_uid": [
+            {
+                "href": "http:\/\/default\/en\/user\/1?_format=hal_json",
+                "lang": "en"
+            }
         ]
     },
     "tid": [
@@ -50,7 +56,7 @@
     ],
     "name": [
         {
-            "value": "Asia",
+            "value": "Asia pacific",
             "lang": "en"
         }
     ],
@@ -62,11 +68,29 @@
     "_embedded": {
         "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/location_areas\/parent": [
             null
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/location_areas\/content_translation_uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/en\/user\/1?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "facfcbdf-d7a8-417e-8b67-a4e2eed2b0dd"
+                    }
+                ],
+                "lang": "en"
+            }
         ]
     },
     "changed": [
         {
-            "value": "2020-03-03T15:27:30+00:00",
+            "value": "2020-03-06T13:32:48+00:00",
             "lang": "en",
             "format": "Y-m-d\\TH:i:sP"
         }
@@ -105,14 +129,14 @@
     "metatag": [
         {
             "value": {
-                "title": "Asia | Socomec",
-                "canonical_url": "http:\/\/default\/en\/asia"
+                "title": "Asia pacific | Socomec",
+                "canonical_url": "http:\/\/default\/en\/asia-pacific"
             }
         }
     ],
     "path": [
         {
-            "alias": "\/asia",
+            "alias": "\/asia-pacific",
             "pid": 1,
             "langcode": "en",
             "lang": "en"
