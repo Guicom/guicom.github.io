@@ -20,7 +20,7 @@
               <span class="news-theme">
                  {% set field_news_themes =  drupal_field('field_news_theme', 'node') %}
                 <div class="field--name-field-news-theme">
-                   {% for field_news_theme in field_news_themes['#items']|slice(0, 3) %}
+                   {% for field_news_theme in field_news_themes['#items']|slice(0, 2) %}
                      <div class="field__item">
                     {{ field_news_theme.entity.getName() }}
                   </div>
