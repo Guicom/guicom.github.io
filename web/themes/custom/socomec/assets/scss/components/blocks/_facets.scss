@@ -362,14 +362,70 @@
 
 .facet-full-width {
   .block-facet--dropdown{
-    margin:0px;
+    margin:0;
     .bootstrap-select{
       width: 100% !important;
     }
   }
 }
+.facet-mobile-modal-close {
+  display: none;
+}
+.facet-mobile-modal-open {
+  display: none;
+}
+// CREAT  MODAL FOR FACETS MOBILE ONLY
+@include media-breakpoint-down(md) {
+  .facet-mobile-modal-open {
+    display: block;
+    .modal-open {
+      @include button-icon($blue, $white);
+      border: none;
+      width: 100%;
+      margin-bottom: 2rem;
+    }
+  }
+  .facet-mobile-modal-close {
+    display: block;
+    position: fixed;
+    right: 1rem;
+    top: 1rem;
+    text-align: right;
+    .modal-close {
+      @include close-btn;
+    }
+  }
+  // ONLY ON STORE LOCATOR PAGE FOR THE MOMENT -- WILL BE GLOBALIZE AFTER SPRINT 6
+  .store-locator-wrapper {
+    .modal-facets-mobile {
+      display: none;
+      &.active {
+        display: block;
+        position: fixed!important;
+        background: $white;
+        padding: 3rem 1rem 1rem 1rem;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        z-index: 9999999;
+        overflow-y: auto;
+      }
+      .bootstrap-select {
+        >select {
+          position: relative!important;
+        }
+      }
+      .block-facets-ajax {
+        margin-bottom: 0!important;
+        .block {
+          padding-bottom: 0;
+        }
+      }
+    }
+  }
 
-
+}
 
 
 

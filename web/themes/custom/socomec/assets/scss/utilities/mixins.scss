@@ -130,6 +130,16 @@ Parent element must have position set to relative
     }
   }
 }
+@mixin close-btn {
+  width: 24px;
+  height: 24px;
+  background-image: url('../images/picto/ui/close-circle-yellow.svg');
+  background-size: 24px 24px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: $white;
+  border: none;
+}
 
 @mixin tag($color, $background) {
   display: block;

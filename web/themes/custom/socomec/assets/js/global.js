@@ -463,4 +463,37 @@
     }
   };
 
+  /**
+   * Close modal for country selection on mobile
+   */
+  Drupal.behaviors.socomec_country_close_modal = {
+    attach: function (context, settings) {
+
+      var closeBtn = $('#myTabContent .modal-close');
+
+      closeBtn.once().on("click", function (e) {
+        closeBtn.closest('.tab-pane').removeClass('active');
+        $('.nav-link.active').removeClass('active');
+      })
+    }
+  };
+
+  /**
+   * Modal mechanics for facets filters on mobile
+   */
+  Drupal.behaviors.socomec_facets_modals = {
+    attach: function (context, settings) {
+
+      var openBtn = $('.facet-mobile-modal-open .modal-open');
+      var closeBtn = $('.facet-mobile-modal-close .modal-close');
+
+      openBtn.once().on("click", function (e) {
+        $('.modal-facets-mobile').addClass('active');
+      });
+      closeBtn.once().on("click", function (e) {
+        $('.modal-facets-mobile').removeClass('active');
+      });
+    }
+  };
+
 })(jQuery, Drupal);
