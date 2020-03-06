@@ -10,6 +10,12 @@
             {
                 "href": "http:\/\/default\/en\/korea-south?_format=hal_json"
             }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/location_areas\/content_translation_uid": [
+            {
+                "href": "http:\/\/default\/en\/user\/1?_format=hal_json",
+                "lang": "en"
+            }
         ]
     },
     "tid": [
@@ -78,6 +84,24 @@
                     }
                 ]
             }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/location_areas\/content_translation_uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/en\/user\/1?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "facfcbdf-d7a8-417e-8b67-a4e2eed2b0dd"
+                    }
+                ],
+                "lang": "en"
+            }
         ]
     },
     "changed": [
@@ -129,7 +153,7 @@
     "path": [
         {
             "alias": "\/seoul",
-            "pid": 6,
+            "pid": 3,
             "langcode": "en",
             "lang": "en"
         }

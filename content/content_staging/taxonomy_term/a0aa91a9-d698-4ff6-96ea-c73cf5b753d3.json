@@ -8,6 +8,12 @@
         },
         "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/location_type\/parent": [
             null
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/location_type\/content_translation_uid": [
+            {
+                "href": "http:\/\/default\/en\/user\/1?_format=hal_json",
+                "lang": "en"
+            }
         ]
     },
     "tid": [
@@ -62,11 +68,29 @@
     "_embedded": {
         "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/location_type\/parent": [
             null
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/location_type\/content_translation_uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/en\/user\/1?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "facfcbdf-d7a8-417e-8b67-a4e2eed2b0dd"
+                    }
+                ],
+                "lang": "en"
+            }
         ]
     },
     "changed": [
         {
-            "value": "2020-02-28T13:58:26+00:00",
+            "value": "2020-03-06T13:29:07+00:00",
             "lang": "en",
             "format": "Y-m-d\\TH:i:sP"
         }
@@ -108,6 +132,11 @@
                 "title": "Distributor | Socomec",
                 "canonical_url": "http:\/\/default\/en\/taxonomy\/term\/112"
             }
+        }
+    ],
+    "field_weight": [
+        {
+            "value": 1
         }
     ]
 }

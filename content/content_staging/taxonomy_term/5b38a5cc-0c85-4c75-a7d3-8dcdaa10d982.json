@@ -1,14 +1,14 @@
 {
     "_links": {
         "self": {
-            "href": "http:\/\/default\/en\/alsace?_format=hal_json"
+            "href": "http:\/\/default\/en\/canada?_format=hal_json"
         },
         "type": {
             "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/location_areas"
         },
         "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/location_areas\/parent": [
             {
-                "href": "http:\/\/default\/en\/france?_format=hal_json"
+                "href": "http:\/\/default\/en\/north-america?_format=hal_json"
             }
         ],
         "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/location_areas\/content_translation_uid": [
@@ -20,17 +20,17 @@
     },
     "tid": [
         {
-            "value": 119
+            "value": 126
         }
     ],
     "uuid": [
         {
-            "value": "1ac284cb-5265-418f-88c4-be2bc5805184"
+            "value": "5b38a5cc-0c85-4c75-a7d3-8dcdaa10d982"
         }
     ],
     "revision_id": [
         {
-            "value": 119
+            "value": 126
         }
     ],
     "langcode": [
@@ -46,7 +46,7 @@
     ],
     "revision_created": [
         {
-            "value": "2020-02-28T14:32:25+00:00",
+            "value": "2020-03-06T13:33:22+00:00",
             "format": "Y-m-d\\TH:i:sP"
         }
     ],
@@ -58,13 +58,13 @@
     ],
     "name": [
         {
-            "value": "Alsace",
+            "value": "Canada",
             "lang": "en"
         }
     ],
     "weight": [
         {
-            "value": 1
+            "value": 0
         }
     ],
     "_embedded": {
@@ -72,7 +72,7 @@
             {
                 "_links": {
                     "self": {
-                        "href": "http:\/\/default\/en\/france?_format=hal_json"
+                        "href": "http:\/\/default\/en\/north-america?_format=hal_json"
                     },
                     "type": {
                         "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/location_areas"
@@ -80,7 +80,7 @@
                 },
                 "uuid": [
                     {
-                        "value": "938c7ac7-8638-45c6-ac57-af5a0270adcf"
+                        "value": "92e2dce5-4f7c-491d-afc6-e98b8a70d2a3"
                     }
                 ]
             }
@@ -106,7 +106,7 @@
     },
     "changed": [
         {
-            "value": "2020-02-28T14:34:24+00:00",
+            "value": "2020-03-06T13:33:22+00:00",
             "lang": "en",
             "format": "Y-m-d\\TH:i:sP"
         }
@@ -137,7 +137,7 @@
     ],
     "content_translation_created": [
         {
-            "value": "2020-02-28T14:32:25+00:00",
+            "value": "2020-03-06T13:33:22+00:00",
             "lang": "en",
             "format": "Y-m-d\\TH:i:sP"
         }
@@ -145,15 +145,15 @@
     "metatag": [
         {
             "value": {
-                "title": "Alsace | Socomec",
-                "canonical_url": "http:\/\/default\/en\/alsace"
+                "title": "Canada | Socomec",
+                "canonical_url": "http:\/\/default\/en\/canada"
             }
         }
     ],
     "path": [
         {
-            "alias": "\/alsace",
-            "pid": 6,
+            "alias": "\/canada",
+            "pid": 60,
             "langcode": "en",
             "lang": "en"
         }
