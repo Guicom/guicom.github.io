@@ -1,0 +1,23 @@
+uuid: cc5388db-b4a1-4db5-971a-f90e1391976a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_content_highlight
+    - node.type.contenu_location
+  module:
+    - options
+id: node.contenu_location.field_content_highlight
+field_name: field_content_highlight
+entity_type: node
+bundle: contenu_location
+label: Highlight
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 'no'
+default_value_callback: ''
+settings: {  }
+field_type: list_string

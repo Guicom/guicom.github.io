@@ -1,7 +1,7 @@
 <ul class="nav nav-tabs" id="myTab" role="tablist">
 {% for tab in tabs %}
   <li class="nav-item">
-  <a class="nav-link" id="home-tab" data-toggle="tab" href="#{{ tab.value }}" role="tab" aria-controls="{{ tab.value }}">
+  <a class="nav-link" id="home-tab" data-toggle="tab" href="#{{ tab.value | replace({' ': ''}) }}" role="tab" aria-controls="{{ tab.value | replace({' ': ''}) }}">
     <span>{{ tab.value }}</span>
     <span>{{ tab.sub }}</span>
   </a>
@@ -10,7 +10,7 @@
 </ul>
 <div class="tab-content" id="myTabContent">
   {% for key, content in tabs_content %}
-    <div class="tab-pane" id="{{ key }}" role="tabpanel" aria-labelledby="{{ key }}-tab">
+  <div class="tab-pane" id="{{ key | replace({' ': ''}) }}" role="tabpanel" aria-labelledby="{{ key | replace({' ': ''}) }}-tab">
       <div class="mobile-modal-close">
         <button class="modal-close" aria-label="close"></button>
       </div>
