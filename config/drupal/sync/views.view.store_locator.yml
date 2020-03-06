@@ -160,6 +160,18 @@ display:
           expose:
             label: ''
           plugin_id: search_api
+        field_location_company:
+          id: field_location_company
+          table: search_api_index_location
+          field: field_location_company
+          relationship: none
+          group_type: group
+          admin_label: ''
+          order: ASC
+          exposed: false
+          expose:
+            label: ''
+          plugin_id: search_api
       title: 'Where to buy'
       header: {  }
       footer: {  }
