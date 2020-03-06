@@ -89,7 +89,7 @@ Feature: [STORE_LOCATOR] Tests Behat
     And I press "Save"
     Then I should see "Edit"
     And I click Edit
-    Then I should see "Edit Locator Title content location"
+    Then I should see "Title content location"
     Then I should see "View"
     Then I should see "Delete"
     Then I should see "Revisions"
