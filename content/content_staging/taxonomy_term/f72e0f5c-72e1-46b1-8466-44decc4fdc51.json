@@ -1,15 +1,13 @@
 {
     "_links": {
         "self": {
-            "href": "http:\/\/default\/en\/alsace?_format=hal_json"
+            "href": "http:\/\/default\/en\/middle-east-africa?_format=hal_json"
         },
         "type": {
             "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/location_areas"
         },
         "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/location_areas\/parent": [
-            {
-                "href": "http:\/\/default\/en\/france?_format=hal_json"
-            }
+            null
         ],
         "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/location_areas\/content_translation_uid": [
             {
@@ -20,17 +18,17 @@
     },
     "tid": [
         {
-            "value": 119
+            "value": 130
         }
     ],
     "uuid": [
         {
-            "value": "1ac284cb-5265-418f-88c4-be2bc5805184"
+            "value": "f72e0f5c-72e1-46b1-8466-44decc4fdc51"
         }
     ],
     "revision_id": [
         {
-            "value": 119
+            "value": 130
         }
     ],
     "langcode": [
@@ -46,7 +44,7 @@
     ],
     "revision_created": [
         {
-            "value": "2020-02-28T14:32:25+00:00",
+            "value": "2020-03-06T13:33:57+00:00",
             "format": "Y-m-d\\TH:i:sP"
         }
     ],
@@ -58,32 +56,18 @@
     ],
     "name": [
         {
-            "value": "Alsace",
+            "value": "Middle east africa",
             "lang": "en"
         }
     ],
     "weight": [
         {
-            "value": 1
+            "value": 0
         }
     ],
     "_embedded": {
         "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/location_areas\/parent": [
-            {
-                "_links": {
-                    "self": {
-                        "href": "http:\/\/default\/en\/france?_format=hal_json"
-                    },
-                    "type": {
-                        "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/location_areas"
-                    }
-                },
-                "uuid": [
-                    {
-                        "value": "938c7ac7-8638-45c6-ac57-af5a0270adcf"
-                    }
-                ]
-            }
+            null
         ],
         "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/location_areas\/content_translation_uid": [
             {
@@ -106,7 +90,7 @@
     },
     "changed": [
         {
-            "value": "2020-02-28T14:34:24+00:00",
+            "value": "2020-03-06T13:33:57+00:00",
             "lang": "en",
             "format": "Y-m-d\\TH:i:sP"
         }
@@ -137,7 +121,7 @@
     ],
     "content_translation_created": [
         {
-            "value": "2020-02-28T14:32:25+00:00",
+            "value": "2020-03-06T13:33:57+00:00",
             "lang": "en",
             "format": "Y-m-d\\TH:i:sP"
         }
@@ -145,15 +129,15 @@
     "metatag": [
         {
             "value": {
-                "title": "Alsace | Socomec",
-                "canonical_url": "http:\/\/default\/en\/alsace"
+                "title": "Middle east africa | Socomec",
+                "canonical_url": "http:\/\/default\/en\/middle-east-africa"
             }
         }
     ],
     "path": [
         {
-            "alias": "\/alsace",
-            "pid": 6,
+            "alias": "\/middle-east-africa",
+            "pid": 64,
             "langcode": "en",
             "lang": "en"
         }
