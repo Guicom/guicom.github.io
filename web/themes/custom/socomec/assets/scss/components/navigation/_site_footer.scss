@@ -45,20 +45,19 @@ footer{
         }
       }
     }
-    .col-stack {
-      li.nav-item {
-        &:first-child {
-          margin-bottom: 0.2rem;
-        }
+  }
+  .col-stack {
+    > li.nav-item {
+      &:first-child {
+        margin-bottom: 0.8rem;
       }
     }
   }
-  ul.nav {
-    &:first-child {
-      background: green;
-      li.nav-item {
-        &:first-child {
-          background: red;
+  .menu-item--expanded {
+    .menu {
+      .col-stack {
+        li.nav-item {
+          margin-bottom: 0;
         }
       }
     }
