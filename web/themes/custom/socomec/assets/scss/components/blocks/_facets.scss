@@ -40,6 +40,7 @@
         font-family: $font-roboto;
         font-size: 16px;
         line-height: 25px;
+        font-weight: 400;
       }
       [type="checkbox"]:checked + label {
         color: $blue_light;
@@ -368,6 +369,7 @@
     }
   }
 }
+
 .facet-mobile-modal-close {
   display: none;
 }
@@ -426,6 +428,13 @@
   }
 
 }
+
+.facets {
+  .facet-full-width {
+    margin-bottom: 2.5rem;
+  }
+}
+
 
 
 

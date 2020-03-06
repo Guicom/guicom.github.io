@@ -1,5 +1,6 @@
 .path-where-to-buy {
   .store-locator-wrapper {
+    margin-bottom: 5rem;
     .intro {
       @include block-title(true);
       font-weight: 300;
@@ -21,7 +22,7 @@
     // CARD LOCATOR
     .store-teaser-cards {
       border: 1px solid $mid-grey;
-      margin-bottom: 1rem;
+      margin-bottom: 1.875rem;
       padding: 0;
       &.node--highlight {
         border: 2px solid $blue;
@@ -161,7 +162,6 @@
        background: $light-grayish-red;
         padding: 1rem 1.5rem 1rem 1.5rem;
         .address-wrapper {
-
           .field--name-field-location-address {
             display: flex;
             justify-content: space-between;
@@ -185,16 +185,17 @@
               border: none;
               color: $blue;
               text-transform: uppercase;
-              font-size: $font-size-sm;
-              font-weight: 700;
+              font-size: 0.7rem;
+              font-family: $font-poppins;
+              font-weight: 600;
               letter-spacing: 1px;
               &:after {
                 content: '';
                 display: block;
-                width: 18px;
+                width: 20px;
                 height: 20px;
                 background-image: url("../images/picto/ui/locator-blue.svg");
-                background-size: 18px 20px;
+                background-size: 20px 20px;
                 background-repeat: no-repeat;
                 margin-left: 0.5rem;
               }
