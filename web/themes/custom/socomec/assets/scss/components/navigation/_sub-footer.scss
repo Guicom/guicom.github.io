@@ -88,6 +88,8 @@
               }
             }
             .dropbutton-action {
+              min-width: 60px;
+              padding-left: 5px;
               padding-right: 10px;
               &:first-child {
                 &:hover {
