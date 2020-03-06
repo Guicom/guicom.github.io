@@ -13,7 +13,6 @@ bundle: news
 label: 'News Theme'
 description: 'Only the three tags will be displayed'
 required: false
->>>>>>>>> Temporary merge branch 2
 translatable: false
 default_value: {  }
 default_value_callback: ''
