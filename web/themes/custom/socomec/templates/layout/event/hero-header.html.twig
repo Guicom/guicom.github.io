@@ -8,12 +8,16 @@
           <span class="event-title">{{ drupal_field('title', 'node') }}</span>
         </h1>
         <div class="event-sub-infos">
-          <div class="wrapper">
+          {% set field_event_themes =  drupal_field('field_event_thematic', 'node') %}
+          {%  if field_event_themes['#items']|length > 2 %}
+          <div class="wrapper more">
+            {% else %}
+            <div class="wrapper">
+              {% endif %}
             <span class="event-type">{{ drupal_field('field_event_type', 'node') }}</span>
             <span class="event-theme">
-              {% set field_event_themes =  drupal_field('field_event_thematic', 'node') %}
                 <div class="field--name-field-event-thematic">
-                   {% for field_event_themes in field_event_themes['#items']|slice(0, 2) %}
+                   {% for field_event_themes in field_event_themes['#items']|slice(0, 4) %}
                      <div class="field__item">
                     {{ field_event_themes.entity.getName() }}
                   </div>

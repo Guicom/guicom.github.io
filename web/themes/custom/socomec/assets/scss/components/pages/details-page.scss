@@ -13,7 +13,6 @@
   .field--name-field-event-thematic {
     display: flex;
     margin-bottom: 0;
-    line-height: 0.6rem;
     @include media-breakpoint-up(lg) {
       flex-direction: row;
     }
@@ -135,11 +134,18 @@
       .event-sub-infos {
         display: flex;
         justify-content: space-between;
-        align-items: center;
+        align-items: flex-end;
         margin-bottom: 0.5rem;
         .wrapper {
           display: flex;
           align-items: center;
+          &.more {
+            flex-direction: column;
+            align-items: flex-start;
+            .news-type {
+              margin-bottom: 0.5rem;
+            }
+          }
           span {
             margin: 0 0.5rem;
           }
