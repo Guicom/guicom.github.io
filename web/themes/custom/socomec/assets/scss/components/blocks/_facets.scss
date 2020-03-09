@@ -413,11 +413,11 @@
         z-index: 9999999;
         overflow-y: auto;
       }
-      .bootstrap-select {
-        >select {
-          position: relative!important;
-        }
-      }
+      //.bootstrap-select {
+      //  >select {
+      //    position: relative!important;
+      //  }
+      //}
       .block-facets-ajax {
         margin-bottom: 0!important;
         .block {
