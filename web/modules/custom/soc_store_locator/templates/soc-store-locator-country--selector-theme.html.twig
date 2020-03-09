@@ -10,7 +10,10 @@
 </ul>
 <div class="tab-content" id="myTabContent">
   {% for key, content in tabs_content %}
-    <div class="tab-pane" id="{{ key | replace({' ': ''}) }}" role="tabpanel" aria-labelledby="{{ key | replace({' ': ''}) }}-tab">
+  <div class="tab-pane" id="{{ key | replace({' ': ''}) }}" role="tabpanel" aria-labelledby="{{ key | replace({' ': ''}) }}-tab">
+      <div class="mobile-modal-close">
+        <button class="modal-close" aria-label="close"></button>
+      </div>
       <ul>
         {% for item in content %}
           <li>
