@@ -15,6 +15,10 @@
       width: 100%;
       @include media-breakpoint-down(md) {
         position: initial;
+        padding: 0 1rem;
+      }
+      .mobile-modal-close {
+        display: none;
       }
       .nav {
         box-shadow: $box-shadow08;
@@ -113,6 +117,40 @@
                   background: rgba($turquoize, 0.1);
                   transition: 0.2s;
                 }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+// CREAT  MODAL FOR COUNTRY SELECTION MOBILE ONLY
+@include media-breakpoint-down(md) {
+  .path-where-to-buy {
+    .select-country {
+      .block-country-selector {
+        .tab-content {
+          .tab-pane {
+            &.active {
+              position: fixed!important;
+              background: $white;
+              padding-top: 3rem;
+              top: 0;
+              left: 0;
+              width: 100%;
+              height: 100vh;
+              z-index: 9999999;
+              overflow-y: auto;
+            }
+            .mobile-modal-close {
+              display: block;
+              position: fixed;
+              right: 1rem;
+              top: 1rem;
+              text-align: right;
+              button {
+                @include close-btn;
               }
             }
           }

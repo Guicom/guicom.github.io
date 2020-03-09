@@ -37,6 +37,7 @@
         }
         .company {
           line-height: 30px;
+          width: 100%;
           .field--name-field-location-company {
             @include S3($blue);
             font-weight: 800;
