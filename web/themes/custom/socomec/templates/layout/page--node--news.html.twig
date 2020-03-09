@@ -85,7 +85,7 @@
           {% if drupal_field('field_media_image', 'node')[0] %}
           <div class="news-teaser col-12 col-lg-6">
             {% else %}
-            <div class="news-teaser col-12 col-md-10 offset-md-1">
+            <div class="news-teaser col-12 col-md-10 offset-md-1 no-img">
             {% endif %}
             <span class="news-subtitle">{{ drupal_field('field_teaser', 'node') }}</span>
           </div>

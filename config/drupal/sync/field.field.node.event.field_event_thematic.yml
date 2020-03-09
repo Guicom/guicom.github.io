@@ -11,7 +11,7 @@ field_name: field_event_thematic
 entity_type: node
 bundle: event
 label: 'Event Thematic'
-description: ''
+description: 'Only the four tags will be displayed'
 required: false
 translatable: false
 default_value: {  }
