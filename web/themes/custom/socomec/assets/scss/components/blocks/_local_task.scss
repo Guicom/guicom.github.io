@@ -1,14 +1,25 @@
-body.node--type-product,
-body.taxonomy-family {
-  // Made edit button  sticky
-  nav.tabs {
-    position: fixed;
-    background: rgba(255, 255, 255, 0.7);
-    z-index: 1;
+// Made edit button  sticky
 
+nav.tabs-local-tasks {
+  position: fixed;
+  background: rgba(255, 255, 255, 0.7);
+  z-index: 1;
+  padding: 0;
+  min-height: 30px;
+  .collapse:not(.show) {
+    &:not(.show) {
+      display: none!important;
+      @include media-breakpoint-up(xl) {
+        display: block!important;
+      }
+    }
+  }
+  .navbar-collapse{
+    padding: 0;
     ul.nav.nav-tabs.primary {
       display: flex;
       flex-flow: column;
     }
   }
 }
+
