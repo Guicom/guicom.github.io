@@ -24,16 +24,24 @@
       padding: 0 1em;
     }
     .block-we-megamenu-blockheader {
+      width: 50px;
+      height: 60px;
       // TOGGLER BTN
       .navbar-toggler {
         z-index: 999;
         display: block !important;
+        padding: 0;
+        width: 50px;
+        height: 60px;
         &[aria-expanded='true'] {
           span {
-            background: url("../images/picto/ui/close-white.svg") no-repeat center center;
-            background-size: contain;
-            height:30px;
-            width: 28px;
+            width: 50px;
+            height: 60px;
+            background-image: url('../images/picto/ui/close-circle-yellow.svg');
+            background-size: 20px 20px;
+            background-repeat: no-repeat;
+            background-position: center;
+            border-bottom: 2px $yellow solid;
           }
         }
 
@@ -252,20 +260,17 @@
       .navbar-collapse {
         position: fixed;
         z-index: 99;
-        top: 0;
-        right: -85%;
-        width: 85%;
+        top: 60px;
+        right: 0;
+        width: 100%;
         height: 100%;
-        padding-top: 3.25rem;
-        padding-left: 0.8rem;
-        padding-right: 0.8rem;
+        padding: 0.8rem;
         background: $blue;
         box-shadow: $box-shadow08;
         transition: $transition02;
         overflow-y: scroll;
         &.show {
-          right: 0!important;
-          transition: right .2s ease-in-out;
+          //transition: right .2s ease-in-out;
         }
         > ul {
           > li {
@@ -285,8 +290,10 @@
         &.responsive {
           display: flex;
           justify-content: flex-end;
-          position: initial;
-          margin-top: 1.375rem;
+          position: absolute;
+          top: initial;
+          bottom: 60px;
+          right: 0;
           .side-menu-responsive {
             ul.nav {
               li.nav-item {
