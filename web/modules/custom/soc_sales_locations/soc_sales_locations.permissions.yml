@@ -1,0 +1,8 @@
+import location:
+  title: 'Import locatioon'
+  description: 'Import location.'
+  restrict access: true
+export location:
+  title: 'Export locatioon'
+  description: 'Import location.'
+  restrict access: true

@@ -2,8 +2,11 @@
 
 namespace Drupal\soc_sales_locations\Form;
 
+use Drupal\Core\Entity\EntityStorageException;
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\dgddi_media_migrate\Batch\MigrateMedia;
+use Drupal\soc_sales_locations\Batch\LocationsImportBatch;
 use Drupal\soc_sales_locations\Service\SalesLocationsManagerImportService;
 use Exception;
 use Symfony\Component\DependencyInjection\ContainerInterface;
@@ -64,31 +67,36 @@ class ImportCsvFileForm extends FormBase {
   /**
    * {@inheritdoc}
    */
-  public function validateForm(array &$form, FormStateInterface $form_state) {
-    foreach ($form_state->getValues() as $key => $value) {
-      // @TODO: Validate fields.
-    }
-    parent::validateForm($form, $form_state);
-  }
-
-  /**
-   * {@inheritdoc}
-   */
   public function submitForm(array &$form, FormStateInterface $form_state) {
     $file_id = $form_state->getValue('file_csv');
     // @todo: avoir une injection de dépendance dans les régles de l'art.
     /** @var \Drupal\file\Entity\File $file */
     $file = \Drupal::service('entity_type.manager')->getStorage('file')->load($file_id[0]);
-    // @todo: avoir une injection de dépendance dans les régles de l'art.
+   // @todo: avoir une injection de dépendance dans les régles de l'art.
     /** @var \Drupal\soc_sales_locations\Service\SalesLocationsManagerImportServiceInterface $smi */
     $smi  = \Drupal::service('soc_sales_locations.manager.import');
-    if (!$smi->validate($file)) {
-      throw new Exception('souci sur la qualité du fichier csv.');
-    }
-    $smi->importAllRow($file);
+    try {
+      $smi->validate($file);
 
-    foreach ($form_state->getValues() as $key => $value) {
+    } catch (Exception $e){
+      \Drupal::messenger()->addError($e->getMessage());
     }
+//    $queue = \Drupal::queue('location_import');
+//    $queue->createQueue();
+//
+//    $operations = [];
+//    $fh = fopen($file->getFileUri(), 'r');
+//    $i = 0;
+//    while ($row = fgetcsv($fh, 0, ';')) {
+//      if ($i !== 0) {
+//        $queue->createItem($row);
+//      }
+//      $i++;
+//    }
+
+    $batch = LocationsImportBatch::locationImport($file);
+    batch_set($batch);
+
   }
 
 }

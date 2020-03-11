@@ -2,6 +2,8 @@
 
 namespace Drupal\soc_sales_locations\Service;
 
+use Drupal\Core\Database\Database;
+use Drupal\Core\Database\Transaction;
 use Drupal\Core\Entity\EntityStorageException;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\File\FileSystemInterface;
@@ -60,7 +62,9 @@ class SalesLocationsManagerImportService implements SalesLocationsManagerImportS
   /**
    * @inheritDoc
    */
-  public function importRow($row) {
+  public function importRow($row, $token) {
+    $database = \Drupal::database();
+    $transaction = $database->popTransaction('test');
 
     // @todo: si row[0] alors pas de nid,
     /** @var \Drupal\node\NodeInterface $node */
@@ -91,23 +95,10 @@ class SalesLocationsManagerImportService implements SalesLocationsManagerImportS
       $this->rowNode->saveUpdatedRevisionsNode();
 
     }catch (EntityStorageException $e){
+      $database->rollBack($token);
+      $errors[] = $e->getMessage();
       \Drupal::messenger()->addError($e->getMessage());
     }
   }
-
-  /**
-   * @inheritDoc
-   */
-  public function importAllRow(FileInterface $file) {
-    $fh = fopen($file->getFileUri(), 'r');
-    $i = 0;
-    while ($row = fgetcsv($fh, 0, ';')) {
-      if ($i !== 0) {
-        $this->importRow($row);
-      }
-      $i++;
-    }
-  }
-
 
 }

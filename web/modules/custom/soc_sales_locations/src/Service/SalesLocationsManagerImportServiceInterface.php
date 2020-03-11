@@ -2,6 +2,8 @@
 
 namespace Drupal\soc_sales_locations\Service;
 
+use Drupal\Core\Database\Database;
+use Drupal\Core\Database\Transaction;
 use Drupal\file\FileInterface;
 
 /**
@@ -20,15 +22,11 @@ interface SalesLocationsManagerImportServiceInterface {
   /**
    * @param array $row
    *
+   * @param $token
+   * @param \Drupal\Core\Database\Database $database
+   *
    * @return bool
    */
-  public function importRow($row);
-
-  /**
-   * @param \Drupal\file\FileInterface $file
-   *
-   * @return mixed
-   */
-  public function importAllRow(FileInterface $file);
+  public function importRow($row, $token);
 
 }
