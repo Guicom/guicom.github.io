@@ -1,6 +1,6 @@
 .paragraph--type--key-figures {
-  padding-top: 2.5rem;
-  padding-bottom: 4.125rem;
+  margin-top: 2.5rem;
+  margin-bottom: 4.125rem;
   align-items: stretch;
   @media (min-width: 575.99px) {
     border-top: 2px solid $yellow;
@@ -10,7 +10,7 @@
   justify-content: space-around;
 
   .key-figure {
-    padding: 0 0 10px;
+    padding: 1rem 0;
     position: relative;
     text-align: center;
     @media (max-width: 575.98px) {
