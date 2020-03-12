@@ -20,6 +20,7 @@ graylist:
   - system.file
   - system.logging
   - system.mail
+  - 'relaxed.*'
 graylist_dependents: true
 graylist_skip_equal: true
 weight: 0

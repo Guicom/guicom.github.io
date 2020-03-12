@@ -1,0 +1,22 @@
+uuid: bfdfddf2-1c42-492e-82c4-292f2cba11e0
+langcode: en
+status: true
+dependencies:
+  module:
+    - basic_auth
+    - relaxed
+    - serialization
+    - user
+_core:
+  default_config_hash: i09HdsMDGPjaXcu56kCCbURcwgWyvL6wUT-JMS7xMIA
+id: relaxed.bulk_docs
+plugin_id: 'relaxed:bulk_docs'
+granularity: resource
+configuration:
+  methods:
+    - POST
+  formats:
+    - json
+  authentication:
+    - basic_auth
+    - cookie

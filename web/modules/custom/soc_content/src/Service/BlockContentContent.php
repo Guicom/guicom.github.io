@@ -57,4 +57,41 @@ class BlockContentContent extends ContentManager {
     return FALSE;
   }
 
+  /**
+   * Update existing block content.
+   *
+   * @param string $uuid
+   * @param array $data
+   *
+   * @return bool|\Drupal\Core\Entity\EntityInterface|\Drupal\block_content\Entity\BlockContent
+   */
+  public function updateBlockContent(string $uuid, array $data) {
+    // Check if block content already exists.
+    /** @var \Drupal\block_content\Entity\BlockContent $blockContent */
+    if (!$blockContent = $this->getTermByUuid($uuid)) {
+      $this->logger->warning('Trying to update a block content who does not exist, skipped...');
+    }
+    // Validate input.
+    elseif (!isset($data['type'])) {
+      $this->logger->warning('Trying to update a block content without type, skipped...');
+    }
+    elseif (!isset($data['info'])) {
+      $this->logger->warning('Trying to update a block content without info, skipped...');
+    }
+    // If input is OK.
+    else {
+      // Update block content.
+      foreach ($data as $propertyName => $propertyValue) {
+        $blockContent->set($propertyName, $propertyValue);
+      }
+      try {
+        $blockContent->save();
+        return $blockContent;
+      } catch (EntityStorageException $e) {
+        $this->logger->error($e->getMessage());
+      }
+    }
+    return FALSE;
+  }
+
 }

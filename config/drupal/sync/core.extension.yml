@@ -11,6 +11,7 @@ module:
   anonymizer: 0
   auto_entitylabel: 0
   automated_cron: 0
+  basic_auth: 0
   better_exposed_filters: 0
   better_normalizers: 0
   big_pipe: 0
@@ -29,6 +30,7 @@ module:
   config_ignore: 0
   config_split: 0
   config_translation: 0
+  conflict: 0
   content_moderation: 0
   content_translation: 0
   contextual: 0
@@ -38,6 +40,7 @@ module:
   dblog: 0
   default_content: 0
   default_content_deploy: 0
+  deploy: 0
   dropdown_language: 0
   drush_language: 0
   ds_extras: 0
@@ -77,6 +80,7 @@ module:
   image_effects: 0
   inline_entity_form: 0
   jsonapi: 0
+  key_value: 0
   language: 0
   layout_discovery: 0
   libraries: 0
@@ -93,7 +97,10 @@ module:
   metatag_hreflang: 0
   metatag_open_graph: 0
   metatag_views: 0
+  migrate: 0
+  migrate_drupal: 0
   multiselect: 0
+  multiversion: 0
   node: 0
   options: 0
   paragraphs_library: 0
@@ -103,9 +110,12 @@ module:
   recaptcha: 0
   redirect: 0
   redis: 0
+  relaxed: 0
   remote_stream_wrapper: 0
   remote_stream_wrapper_widget: 0
+  replication: 0
   responsive_image: 0
+  rest: 0
   scheduled_updates: 0
   scheduler: 0
   scheduler_content_moderation_integration: 0
@@ -154,6 +164,7 @@ module:
   menu_link_content: 1
   pathauto: 1
   views: 10
+  workspace: 10
   paragraphs: 11
   standard: 1000
   eu_cookie_compliance: 1001

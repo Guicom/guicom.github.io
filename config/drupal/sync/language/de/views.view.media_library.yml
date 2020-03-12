@@ -1,12 +1,7 @@
 display:
   default:
     display_options:
-      pager:
-        options:
+      filters:
+        status:
           expose:
-            offset_label: Versatz
-      title: Medien
-  page:
-    display_options:
-      menu:
-        title: Medien
+            label: Veröffentlichungsstatus

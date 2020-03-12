@@ -67,32 +67,28 @@ class TaxonomyTermContent extends ContentManager {
    */
   public function updateTerm(string $uuid, array $data) {
     // Check if term already exists.
-    if (!$term = $this-getTermByUuid($uuid)) {
+    /** @var \Drupal\taxonomy\Entity\Term $term */
+    if (!$term = $this->getTermByUuid($uuid)) {
       $this->logger->warning('Trying to update a term who does not exist, skipped...');
     }
     // Validate input.
     elseif (!isset($data['name'])) {
-      $this->logger->warning('Trying to create a term without name, skipped...');
-    }
-    if (!isset($data['name'])) {
-      $this->logger->warning('Trying to create a term without name, skipped...');
+      $this->logger->warning('Trying to update a term without name, skipped...');
     }
     elseif (!isset($data['vid'])) {
-      $this->logger->warning('Trying to create a term without vid, skipped...');
+      $this->logger->warning('Trying to update a term without vid, skipped...');
     }
     // If input is OK.
     else {
       // Update term.
-      if (empty($terms)) {
-        foreach ($data as $propertyName => $propertyValue) {
-          $term->set($propertyName, $propertyValue);
-        }
-        try {
-          $term->save();
-          return $term;
-        } catch (EntityStorageException $e) {
-          $this->logger->error($e->getMessage());
-        }
+      foreach ($data as $propertyName => $propertyValue) {
+        $term->set($propertyName, $propertyValue);
+      }
+      try {
+        $term->save();
+        return $term;
+      } catch (EntityStorageException $e) {
+        $this->logger->error($e->getMessage());
       }
     }
     return FALSE;
