@@ -39,13 +39,9 @@ class IsDownloadRessource extends ExtraFieldDisplayFormattedBase {
    * {@inheritdoc}
    */
   public function viewElements(ContentEntityInterface $entity) {
-    $field_res_downloadable = $entity->get('field_res_downloadable');
-    if (!empty($field_res_downloadable) && $field_res_downloadable->getValue()[0]['value'] === '1') {
       return [
         ['#markup' => t('Download')],
       ];
-    }
-    return FALSE;
   }
 
 }
