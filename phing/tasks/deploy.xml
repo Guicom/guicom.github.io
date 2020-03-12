@@ -3,7 +3,7 @@
   <target
     name="deploy:install"
     description="Install the website and set up environment."
-    depends="install, solr:cr, gulp-socomec:install, gulp-socomec:css, gulp-socomec:clear-cache, cache-clear:all"/>
+    depends="install, project:create-content, megamenu-socomec:import, solr:cr, gulp-socomec:install, gulp-socomec:css, gulp-socomec:clear-cache, cache-clear:all"/>
 
   <target name="deploy:update">
     <drush
