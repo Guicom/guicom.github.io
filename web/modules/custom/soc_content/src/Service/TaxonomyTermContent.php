@@ -22,36 +22,28 @@ class TaxonomyTermContent extends ContentManager {
   /**
    * Create new term.
    *
-   * @param $data
+   * @param string $name
+   * @param string $vid
+   * @param array $data
    *
    * @return bool|\Drupal\Core\Entity\EntityInterface|\Drupal\taxonomy\Entity\Term
    */
-  public function createTerm($data) {
-    // Validate input.
-    if (!isset($data['name'])) {
-      $this->logger->warning('Trying to create a term without name, skipped...');
-    }
-    elseif (!isset($data['vid'])) {
-      $this->logger->warning('Trying to create a term without vid, skipped...');
-    }
-    // If input is OK.
-    else {
-      // Check if term already exists.
-      $terms = \Drupal::entityQuery('taxonomy_term')
-        ->condition('name', $data['name'])
-        ->condition('vid', $data['vid'])
-        ->execute();
+  public function createTerm(string $name, string $vid, array $data = []) {
+    // Check if term already exists.
+    $terms = \Drupal::entityQuery('taxonomy_term')
+      ->condition('name', $name)
+      ->condition('vid', $vid)
+      ->execute();
 
-      // If term does not exist, create it.
-      if (empty($terms)) {
-        $newTerm = Term::create($data);
-        $newTerm->enforceIsNew();
-        try {
-          $newTerm->save();
-          return $newTerm;
-        } catch (EntityStorageException $e) {
-          $this->logger->error($e->getMessage());
-        }
+    // If term does not exist, create it.
+    if (empty($terms)) {
+      $newTerm = Term::create($data);
+      $newTerm->enforceIsNew();
+      try {
+        $newTerm->save();
+        return $newTerm;
+      } catch (EntityStorageException $e) {
+        $this->logger->error($e->getMessage());
       }
     }
     return FALSE;

@@ -9,4 +9,8 @@ function soc_content_install() {
   $menuItemManager = \Drupal::service('soc_content.menu_item');
   /** @var \Drupal\soc_content\Service\MediaContent $mediaManager */
   $mediaManager = \Drupal::service('soc_content.media');
+
+  // Product type vocabulary
+  $termManager->createTerm('New', 'product_type');
+  $termManager->createTerm('Discontinued', 'product_type');
 }

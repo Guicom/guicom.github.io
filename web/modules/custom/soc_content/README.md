@@ -24,9 +24,8 @@ $termManager = \Drupal::service('soc_content.taxonomy_term');
 #### Create a taxonomy term
 
 ```php
-$newTerm = $termManager->createTerm([
-  'name' => 'My new term',
-  'vid' => 'my_existing_vocabulary',
+$newTerm = $termManager->createTerm('My new term', 'my_existing_vocabulary', [
+  'field_to_populate' => $field_value,
 ]);
 ```
 
