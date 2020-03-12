@@ -22,36 +22,30 @@ class BlockContentContent extends ContentManager {
   /**
    * Create new block content.
    *
+   * @param string $type
+   * @param string $info
    * @param $data
    *
    * @return bool|\Drupal\block_content\Entity\BlockContent
    */
-  public function createBlockContent($data) {
-    // Validate input.
-    if (!isset($data['type'])) {
-      $this->logger->warning('Trying to create a block content without type, skipped...');
-    }
-    elseif (!isset($data['info'])) {
-      $this->logger->warning('Trying to create a block content without info, skipped...');
-    }
-    // If input is OK.
-    else {
-      // Check if term already exists.
-      $terms = \Drupal::entityQuery('block_content')
-        ->condition('type', $data['type'])
-        ->condition('info', $data['info'])
-        ->execute();
+  public function createBlockContent(string $type, string $info, $data) {
+    // Check if block content already exists.
+    $blockContents = \Drupal::entityQuery('block_content')
+      ->condition('type', $data['type'])
+      ->condition('info', $data['info'])
+      ->execute();
 
-      // If block content does not exist, create it.
-      if (empty($terms)) {
-        $newBlockContent = BlockContent::create($data);
-        $newBlockContent->enforceIsNew();
-        try {
-          $newBlockContent->save();
-          return $newBlockContent;
-        } catch (EntityStorageException $e) {
-          $this->logger->error($e->getMessage());
-        }
+    // If block content does not exist, create it.
+    if (empty($blockContents)) {
+      $data['type'] = $type;
+      $data['info'] = $info;
+      $newBlockContent = BlockContent::create($data);
+      $newBlockContent->enforceIsNew();
+      try {
+        $newBlockContent->save();
+        return $newBlockContent;
+      } catch (EntityStorageException $e) {
+        $this->logger->error($e->getMessage());
       }
     }
     return FALSE;

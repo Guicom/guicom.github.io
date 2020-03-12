@@ -37,6 +37,8 @@ class TaxonomyTermContent extends ContentManager {
 
     // If term does not exist, create it.
     if (empty($terms)) {
+      $data['name'] = $name;
+      $data['vid'] = $vid;
       $newTerm = Term::create($data);
       $newTerm->enforceIsNew();
       try {

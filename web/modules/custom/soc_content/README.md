@@ -53,10 +53,7 @@ $blockContentManager = \Drupal::service('soc_content.block_content');
 
 ```php
 $blockUuid = 'aaaa-bbbb-cccc-dddd';
-$newBlockContent = $blockContentManager->createTerm($blockUuid, [
-  'name' => 'My new block content',
-  'vid' => 'my_existing_vocabulary',
-]);
+$newBlockContent = $blockContentManager->createBlockContent($type);
 ```
 
 #### Update a block content

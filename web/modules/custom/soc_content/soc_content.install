@@ -13,4 +13,22 @@ function soc_content_install() {
   // Product type vocabulary
   $termManager->createTerm('New', 'product_type');
   $termManager->createTerm('Discontinued', 'product_type');
+
+  // Event type vocabulary
+  $termManager->createTerm('Conference', 'event_type');
+  $termManager->createTerm('Exhibition', 'event_type');
+  $termManager->createTerm('Seminar', 'event_type');
+  $termManager->createTerm('Webinar', 'event_type');
+
+  // Events teaser block
+  $blockContentManager->createBlockContent('basic', 'Views Events teaser', [
+    'langcode' => 'en',
+    'uuid' => 'dc9eaeee-27b7-41bb-80fe-b5f35d09fd71',
+    'body' => [
+      "value" => "<p>Iterative approaches to establish a new normal that has evolved from generation x.<\/p>\r\n",
+      "format" => "socomec",
+      "processed" => "<p>Iterative approaches to establish a new normal that has evolved from generation x.<\/p>",
+      "summary" => "",
+    ]
+  ]);
 }
