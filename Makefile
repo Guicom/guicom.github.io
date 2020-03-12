@@ -1,10 +1,7 @@
 
 install:
 	composer install
-	./vendor/bin/phing install
-	./vendor/bin/phing gulp-socomec:install
-	./vendor/bin/phing gulp-socomec:css
-	./vendor/bin/phing gulp-socomec:clear-cache
+	./vendor/bin/phing deploy:install
 
 set-kubernetes-configs:
 	cp /var/www/html/config/drupal/example.settings.kubernetes.${ENVIRONMENT}.php /var/www/html/config/drupal/settings.local.php
