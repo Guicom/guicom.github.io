@@ -1,0 +1,22 @@
+.region-footer-third {
+  position: relative;
+  background: $blue;
+  &:before {
+    content: '';
+    position: absolute;
+    left: -50%;
+    display: block;
+    width: 50%;
+    height: 100%;
+    background: $blue;
+  }
+  &:after {
+    content: '';
+    position: absolute;
+    right: -50%;
+    display: block;
+    width: 50%;
+    height: 100%;
+    background: $yellow;
+  }
+}
