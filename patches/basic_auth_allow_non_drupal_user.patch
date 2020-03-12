@@ -1,10 +1,10 @@
-Index: core/modules/basic_auth/src/Authentication/Provider/BasicAuth.php
+Index: web/core/modules/basic_auth/src/Authentication/Provider/BasicAuth.php
 IDEA additional info:
 Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
 <+>UTF-8
 ===================================================================
---- core/modules/basic_auth/src/Authentication/Provider/BasicAuth.php	(revision 338bcf9f84bc08b02887aed1f5115d14f398a65a)
-+++ core/modules/basic_auth/src/Authentication/Provider/BasicAuth.php	(date 1584036202238)
+--- web/core/modules/basic_auth/src/Authentication/Provider/BasicAuth.php	(revision 338bcf9f84bc08b02887aed1f5115d14f398a65a)
++++ web/core/modules/basic_auth/src/Authentication/Provider/BasicAuth.php	(date 1584036202238)
 @@ -79,6 +79,12 @@
    public function applies(Request $request) {
      $username = $request->headers->get('PHP_AUTH_USER');
