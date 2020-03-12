@@ -1,4 +1,5 @@
 Feature: Events
+  #vendor/bin/phing behat:run -Dbehat.tags=events
 
   Background:
     Given event_type terms:
@@ -67,7 +68,7 @@ Feature: Events
       | authenticated | You are not authorized to access this page |
     Given I am logged in as a "<role>"
     When I go to "admin/content"
-    And I click "edit" in the "MyTestEvent" row
+    And I click "Edit" in the "MyTestEvent" row
     Then I should see the text "<message>"
 
   @api @cit @javascript @events
@@ -77,11 +78,11 @@ Feature: Events
     Examples:
       | role          | message                                    |
       | webmaster     | revision                                   |
-      | contributor   | Access denied |
-      | authenticated | You are not authorized to access this page |
+      | contributor   | Access denied                              |
+      #| authenticated | You are not authorized to access this page |
     Given I am logged in as a "<role>"
     And I accept all cookies compliance
-    And I click "edit" in the "MyTestEvent" row
+    And I click "Edit" in the "MyTestEvent" row
     And I click "Revisions"
     Then I should see the text "<message>"
 

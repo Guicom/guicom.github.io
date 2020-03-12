@@ -31,8 +31,8 @@ class BlockContentContent extends ContentManager {
   public function createBlockContent(string $type, string $info, $data) {
     // Check if block content already exists.
     $blockContents = \Drupal::entityQuery('block_content')
-      ->condition('type', $data['type'])
-      ->condition('info', $data['info'])
+      ->condition('type', $type)
+      ->condition('info', $info)
       ->execute();
 
     // If block content does not exist, create it.

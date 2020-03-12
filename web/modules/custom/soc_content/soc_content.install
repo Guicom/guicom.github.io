@@ -31,4 +31,26 @@ function soc_content_install() {
       "summary" => "",
     ]
   ]);
+
+  // Product menu
+  $menuItemManager->createMenuItem('Products', 'header', [
+    'uri' => 'route:<nolink>',
+  ], [
+    'uuid' => 'f138a7fe-23b6-4906-a9fd-e808bfa2bd94',
+  ]);
+  $menuItemManager->createMenuItem('Solutions', 'header', [
+    'uri' => 'route:<nolink>',
+  ]);
+  $menuItemManager->createMenuItem('Services', 'header', [
+    'uri' => 'route:<nolink>',
+  ]);
+  $menuItemManager->createMenuItem('Support', 'header', [
+    'uri' => 'route:<nolink>',
+  ]);
+  $menuItemManager->createMenuItem('Partners', 'header', [
+    'uri' => 'route:<nolink>',
+  ]);
+  $menuItemManager->createMenuItem('Corporate', 'header', [
+    'uri' => 'route:<nolink>',
+  ]);
 }
