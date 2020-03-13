@@ -10,9 +10,9 @@ function soc_content_install() {
   /** @var \Drupal\soc_content\Service\MediaContent $mediaManager */
   $mediaManager = \Drupal::service('soc_content.media');
 
-  // Product type vocabulary
-  $termManager->createTerm('New', 'product_type');
-  $termManager->createTerm('Discontinued', 'product_type');
+  // Product status vocabulary
+  $termManager->createTerm('New', 'product_status');
+  $termManager->createTerm('Discontinued', 'product_status');
 
   // Event type vocabulary
   $termManager->createTerm('Conference', 'event_type');
