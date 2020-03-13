@@ -1,3 +1,6 @@
 manage nextpage settings:
   title: 'Manage nextPage API settings'
   restrict access: true
+force nextpage import:
+  title: 'Force next page import'
+  restrict access: true
