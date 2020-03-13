@@ -69,7 +69,7 @@
               </label>
             </div>
             {% if category.description %}
-              <div class="eu-cookie-compliance-category-description">{{ category.description }}</div>
+              <div class="eu-cookie-compliance-category-description">{{ category.description|raw }}</div>
             {% endif %}
           </div>
         {% endfor %}
