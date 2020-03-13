@@ -263,19 +263,9 @@
       });
     },
     openCategories: function () {
-      if ($(".eu-cookie-compliance-banner").hasClass("categorie-open")) {
-        $(".eu-cookie-compliance-banner").removeClass("categorie-open");
-      }
-      else{
-        $(".eu-cookie-compliance-banner").addClass("categorie-open");
-      }
-      if ($("#eu-cookie-compliance-categories").hasClass("d-none")) {
-        $(".customize-button").addClass("d-none");
-        $("#eu-cookie-compliance-categories").removeClass("d-none").addClass("d-bloc");
-      }
-      else{
-        $("#eu-cookie-compliance-categories").removeClass("d-bloc").addClass("d-none");
-      }
+      $(".eu-cookie-compliance-banner").addClass("categorie-open");
+      $(".customize-button").addClass("d-none");
+      $(".eu-cookie-compliance-categories").removeClass("d-none").addClass("d-bloc");
     }
 
   };
