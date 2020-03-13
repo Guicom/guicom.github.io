@@ -211,8 +211,13 @@
     attach: function(context, settings) {
       $(document).on('eu_cookie_compliance_popup_open', '#sliding-popup', function() {
         $(".customize-button", context).click(function() {
+          if ($(".eu-cookie-compliance-banner").hasClass("categorie-open")) {
+            $(".eu-cookie-compliance-banner").removeClass("categorie-open");
+          }
+          else{
+            $(".eu-cookie-compliance-banner").addClass("categorie-open");
+          }
           if ($("#eu-cookie-compliance-categories").hasClass("d-none")) {
-            $("#custum-popup-header").addClass("d-none");
             $(".customize-button").addClass("d-none");
             $("#eu-cookie-compliance-categories").removeClass("d-none").addClass("d-bloc");
           }

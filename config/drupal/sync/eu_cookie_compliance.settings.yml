@@ -24,7 +24,7 @@ popup_height: null
 popup_hide_agreed: false
 popup_hide_button_message: Hide
 popup_info:
-  value: "<h3 class=\"h3-blue\">We use cookies on this site to enhance your user experience</h3>\r\n"
+  value: "<p class=\"h3-blue\">We use cookies on this site to enhance your user experience</p>\r\n"
   format: socomec
 mobile_popup_info:
   value: ''
@@ -32,8 +32,8 @@ mobile_popup_info:
 popup_info_template: new
 mobile_breakpoint: 768
 popup_link: '<front>'
-popup_link_new_window: true
-popup_position: true
+popup_link_new_window: false
+popup_position: false
 fixed_top_position: true
 popup_text_hex: ''
 popup_width: ''

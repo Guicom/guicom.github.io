@@ -1,68 +1,37 @@
 /* ------------------ Eu cookie compliance ------------------ */
+
 #sliding-popup {
-    top:0px;
     left:0px;
-    bottom: 0px;
     right: 0px;
-    background: rgba(0, 0, 0, 0.7);
     display: flex;
     display: -webkit-flex;
     .eu-cookie-compliance-banner {
-        background: $white;
-        padding: 1em;
-        border-radius: 2px;
-        box-shadow: 0 1px 3px rgba(33,41,52,.75);
+        padding: 0;
         box-sizing: content-box;
         display: flex;
         display: -webkit-flex;
         flex-direction: column;
         -webkit-flex-direction: column;
         margin: auto;
-        max-width: 770px;
-        min-width: 320px;
         position: relative;
         width: 100%;
         will-change: visibility,opacity;
+        &.categorie-open{
+            top:0px;
+            bottom: 0px;
+        }
         .eu-cookie-compliance-content {
             max-width: 100%;
-            .eu-cookie-compliance-message {
-                float: none;
-                max-width: 90%;
-                margin:0 auto;
-            }
-            #eu-cookie-compliance-categories{
-                margin:1em 0 0;
-                padding:1em 0 0;
-                border-top:solid 1px $blue_lighter;
-            }
-            .eu-cookie-compliance-buttons{
-                max-width: 90%;
-                margin:0 auto;
-                float: none;
-                text-align: right;
-                .eu-cookie-compliance-default-button {
-                    color: $blue;
-                    font-family: $font-poppins;
-                    font-size: 12px;
-                    font-weight: 600;
-                    letter-spacing: 1px;
-                    line-height: 20px;
-                    padding: 1em;
-                    &.agree-button{
-                        background-color: $yellow;
-                        border:solid 1px $yellow;
-                    }
-                    &.customize-button{
-                        background-color: $white;
-                        border:solid 1px $blue_lighter;
-                    }
-                    &.decline-button{
-                        background-color: $white;
-                        border:solid 1px $blue_lighter;
-                    }
+            #custum-popup-header{
+                background: $blue_light;
+                .eu-cookie-compliance-message {
+                    float: none;
+                    margin:0 auto;
                 }
             }
             #eu-cookie-compliance-categories{
+                background: $white-grey;
+                border-top:solid 1px $blue_lighter;
                 .eu-cookie-compliance-category-list{
                     max-height: 45vh;
                     overflow: auto;
@@ -105,6 +74,32 @@
                         letter-spacing: 1px;
                         line-height: 20px;
                         padding: 1em;
+                    }
+                }
+            }
+
+            .eu-cookie-compliance-buttons{
+                max-width: 90%;
+                margin:0 auto;
+                float: none;
+                text-align: right;
+                .eu-cookie-compliance-default-button {
+                    color: $blue;
+                    font-family: $font-poppins;
+                    font-size: 12px;
+                    font-weight: 600;
+                    letter-spacing: 1px;
+                    line-height: 20px;
+                    padding: 1em;
+                    &.customize-button{
+                        background-color: $white;
+                        border:solid 1px $blue_lighter;
+                    }
+                    &.agree-button,
+                    &.decline-button{
+                        color: $white;
+                        background-color: $transparent;
+                        border:solid 1px $blue_lighter;
                     }
                 }
             }
