@@ -33,7 +33,6 @@ class MenuItemContent extends ContentManager {
     // Check if menu link already exists.
     $menuLinks = \Drupal::entityQuery('menu_link_content')
       ->condition('title', $title)
-      ->condition('link', $link)
       ->condition('menu_name', $menu_name)
       ->execute();
 
