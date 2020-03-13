@@ -65,8 +65,6 @@ class SalesLocationsManagerImportService implements SalesLocationsManagerImportS
   public function importRow($row, $token) {
     $database = \Drupal::database();
     $transaction = $database->popTransaction('test');
-
-    // @todo: si row[0] alors pas de nid,
     /** @var \Drupal\node\NodeInterface $node */
     if ($row[0] === '') {
       $node = $this->em->getStorage('node')
@@ -77,7 +75,6 @@ class SalesLocationsManagerImportService implements SalesLocationsManagerImportS
         ->load($row[0]);
     }
     $this->rowNode = new StoreLocationImportHelper($node);
-
     $this->rowNode->importTitle($row[1]);
     $this->rowNode->importNameCompany($row[7]);
     $this->rowNode->importNameContact($row[8]);
@@ -93,10 +90,9 @@ class SalesLocationsManagerImportService implements SalesLocationsManagerImportS
     $this->rowNode->importSubArea($row[4]);
     try {
       $this->rowNode->saveUpdatedRevisionsNode();
-
-    }catch (EntityStorageException $e){
+    }
+    catch (EntityStorageException $e){
       $database->rollBack($token);
-      $errors[] = $e->getMessage();
       \Drupal::messenger()->addError($e->getMessage());
     }
   }

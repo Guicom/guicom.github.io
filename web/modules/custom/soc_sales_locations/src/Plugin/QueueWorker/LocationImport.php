@@ -2,6 +2,7 @@
 
 namespace Drupal\soc_sales_locations\Plugin\QueueWorker;
 
+use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Drupal\Core\Queue\QueueWorkerBase;
 
 /**
@@ -18,8 +19,10 @@ class LocationImport extends QueueWorkerBase {
    * {@inheritdoc}
    */
   public function processItem($data) {
-//    $mailManager = \Drupal::service('plugin.manager.mail');
-//    $params = $data;
-//    $mailManager->mail('learning', 'email_queue', $data['email'], 'en', $params , $send = TRUE);
+    /** @var \Drupal\soc_sales_locations\Service\SalesLocationsManagerImportService $importer */
+    $importer = \Drupal::service('soc_sales_locations.manager.import');
+    // @notes: don't known argument for 'token', so using test word.
+    $importer->importRow($data, 'test');
   }
+
 }

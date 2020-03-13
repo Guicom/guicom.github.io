@@ -11,6 +11,11 @@ use Drupal\file\FileInterface;
  */
 class LocationsImportBatch {
 
+  /**
+   * @param \Drupal\file\FileInterface $file
+   *
+   * @return array
+   */
   public static function locationImport(FileInterface $file) {
     $queue = \Drupal::queue('location_import');
     $queue->createQueue();
@@ -29,21 +34,27 @@ class LocationsImportBatch {
     }
 
     return [
-      'title' => t('Migrate to Media...'),
+      'title' => t('Import Sales Locations Queue Worker'),
       'operations' => $operations,
       '\Drupal\soc_sales_locations\Batch\LocationsImportBatch::finished',
     ];
   }
 
+  /**
+   * @param $row
+   * @param $context
+   */
   public static function processRow($row, &$context) {
     $queue = \Drupal::queue('location_import');
     $queue->createItem($row);
-//    $importer = \Drupal::service('soc_sales_locations.manager.import');
-//    $importer->importRow($row, $token);
   }
 
   /**
    * Finish method.
+   *
+   * @param $success
+   * @param $results
+   * @param $operations
    */
   public static function finished($success, $results, $operations) {
     // The 'success' parameter means no fatal PHP errors were detected. All

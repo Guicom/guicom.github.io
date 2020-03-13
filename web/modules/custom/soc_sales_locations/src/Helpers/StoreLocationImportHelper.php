@@ -37,7 +37,7 @@ class StoreLocationImportHelper {
    * @return void
    */
   public function importTitle(string $title){
-    $this->node->setTitle($title.' new');
+    $this->node->setTitle($title);
   }
 
   /**

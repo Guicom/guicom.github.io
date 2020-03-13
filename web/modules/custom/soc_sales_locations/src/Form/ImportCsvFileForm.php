@@ -81,21 +81,10 @@ class ImportCsvFileForm extends FormBase {
     } catch (Exception $e){
       \Drupal::messenger()->addError($e->getMessage());
     }
-//    $queue = \Drupal::queue('location_import');
-//    $queue->createQueue();
-//
-//    $operations = [];
-//    $fh = fopen($file->getFileUri(), 'r');
-//    $i = 0;
-//    while ($row = fgetcsv($fh, 0, ';')) {
-//      if ($i !== 0) {
-//        $queue->createItem($row);
-//      }
-//      $i++;
-//    }
 
-    $batch = LocationsImportBatch::locationImport($file);
+   $batch = LocationsImportBatch::locationImport($file);
     batch_set($batch);
+
 
   }
 
