@@ -20,6 +20,9 @@ function soc_content_install() {
   $termManager->createTerm('Seminar', 'event_type');
   $termManager->createTerm('Webinar', 'event_type');
 
+  // Family vocabulary
+  $termManager->createTerm('Test family', 'family');
+
   // Events teaser block
   $blockContentManager->createBlockContent('basic', 'Views Events teaser', [
     'langcode' => 'en',
@@ -53,4 +56,14 @@ function soc_content_install() {
   $menuItemManager->createMenuItem('Corporate', 'header', [
     'uri' => 'route:<nolink>',
   ]);
+
+  // Taxonomy menu
+  // Set parent again now that it exists.
+  $config = \Drupal::service('config.factory')
+    ->getEditable('taxonomy_menu.taxonomy_menu.family');
+  $config->set('menu_parent', 'header:menu_link_content:f138a7fe-23b6-4906-a9fd-e808bfa2bd94');
+  try {
+    $config->save();
+  } catch (\Exception $e) {
+  }
 }

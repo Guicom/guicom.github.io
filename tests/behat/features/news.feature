@@ -3,8 +3,8 @@ Feature: News
 
   Background:
     Given news content:
-      | language | title                                 | status |
-      | English  | Socomec certified ISO-14001 in Alsace | 1      |
+      | language | title                                 | status | moderation_state |
+      | English  | Socomec certified ISO-14001 in Alsace | 1      | published        |
 
   @api @cit @news @javascript
   Test if the page news is visible

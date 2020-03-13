@@ -6,9 +6,8 @@ Feature: Events
       | language | name        |
       | English  | MyEventType |
     And event content:
-      | language | title                             | status | field_event_type |
-      | English  | MyTestEvent                       | 1      | MyEventType      |
-      | English  | Energy storage international 2020 | 1      | MyEventType      |
+      | language | title       | status | field_event_type | moderation_state |
+      | English  | MyTestEvent | 1      | MyEventType      | published        |
 
   @api @cit @javascript @events
   # ./vendor/bin/phing behat:run -Dbehat.tags=events
@@ -16,7 +15,7 @@ Feature: Events
   Scenario: Events detail
     Given I visit "/"
     And I accept all cookies compliance
-    When I visit "/event/energy-storage-international-2020"
+    When I visit "/event/mytestevent"
     Then I should see a "body.node--type-event" element
 
   @api @cit @javascript @events
@@ -63,9 +62,8 @@ Feature: Events
   Scenario Outline: Check permissions for the specific roles.
     Examples:
       | role          | message                                    |
-      | webmaster     | Test event                                 |
-      | contributor   | Test event                                 |
-      | authenticated | You are not authorized to access this page |
+      | webmaster     | MyTestEvent                                |
+      | contributor   | MyTestEvent                                |
     Given I am logged in as a "<role>"
     When I go to "admin/content"
     And I click "Edit" in the "MyTestEvent" row
@@ -79,7 +77,6 @@ Feature: Events
       | role          | message                                    |
       | webmaster     | revision                                   |
       | contributor   | Access denied                              |
-      #| authenticated | You are not authorized to access this page |
     Given I am logged in as a "<role>"
     And I accept all cookies compliance
     And I click "Edit" in the "MyTestEvent" row
@@ -91,8 +88,7 @@ Feature: Events
     Examples:
       | role          | message                                    |
       | webmaster     | Add term                                   |
-      | contributor   | Access denied                                   |
-      | authenticated | You are not authorized to access this page |
+      | contributor   | Access denied                              |
     Given I am logged in as a "<role>"
     And I accept all cookies compliance
     And I visit "/admin/structure/taxonomy/manage/event_thematic/overview"
@@ -105,7 +101,7 @@ Feature: Events
   Scenario: Events check for calendar items
     Given I visit "/"
     And I accept all cookies compliance
-    When I visit "/event/energy-storage-international-2020"
+    When I visit "/event/mytestevent"
     Then I should see "Add to Calendar"
     #Then I should see "Google Calendar" in the "u.atcb-list" element
     #Then I should see "iCalendar" in the ".atcb-list" element
