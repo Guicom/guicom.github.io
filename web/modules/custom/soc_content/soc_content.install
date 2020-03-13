@@ -25,10 +25,10 @@ function soc_content_install() {
     'langcode' => 'en',
     'uuid' => 'dc9eaeee-27b7-41bb-80fe-b5f35d09fd71',
     'body' => [
-      "value" => "<p>Iterative approaches to establish a new normal that has evolved from generation x.<\/p>\r\n",
-      "format" => "socomec",
-      "processed" => "<p>Iterative approaches to establish a new normal that has evolved from generation x.<\/p>",
-      "summary" => "",
+      [
+        "value" => "<p>Iterative approaches to establish a new normal that has evolved from generation x.<\/p>\r\n",
+        "format" => "socomec",
+      ],
     ]
   ]);
 

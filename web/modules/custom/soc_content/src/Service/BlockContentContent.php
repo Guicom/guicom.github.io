@@ -39,6 +39,9 @@ class BlockContentContent extends ContentManager {
     if (empty($blockContents)) {
       $data['type'] = $type;
       $data['info'] = $info;
+      if (!isset($data['langcode'])) {
+        $data['langcode'] = 'en';
+      }
       $newBlockContent = BlockContent::create($data);
       $newBlockContent->enforceIsNew();
       try {
