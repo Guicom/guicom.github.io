@@ -5,6 +5,7 @@ namespace Drupal\soc_nextpage\Form;
 use Drupal\Core\Form\ConfigFormBase;
 use Drupal\Core\Form\FormStateInterface;
 
+use Drupal\Core\Language\LanguageManager;
 use Drupal\Core\Link;
 use Drupal\Core\Site\Settings;
 
@@ -80,8 +81,15 @@ class NextpageApiSettingsForm extends ConfigFormBase {
 
     $form['context'] = [
       '#type'           => 'details',
-      '#open'           => FALSE,
-      '#title'          => $this->t('Context'),
+      '#open'           => TRUE,
+      '#title'          => $this->t('Settings'),
+    ];
+
+    $form['context']['channel_extid'] = [
+      '#type'           => 'textfield',
+      '#title'          => $this->t('Channel ExtID'),
+      '#description'    => $this->t('The channel extID for this site.'),
+      '#default_value'  => $config->get('channel_extid') ?? '',
     ];
 
     $form['context']['context_id'] = [
@@ -91,16 +99,33 @@ class NextpageApiSettingsForm extends ConfigFormBase {
       '#default_value'  => $config->get('context_id') ?? '1',
     ];
 
-    $form['context']['language_id'] = [
-      '#type'           => 'textfield',
-      '#title'          => $this->t('Language ID'),
-      '#description'    => $this->t('The language ID to use to request nextPage.'),
-      '#default_value'  => $config->get('language_id') ?? '1',
+    $form['context']['langue'] = [
+      '#type'           => 'details',
+      '#open'           => FALSE,
+      '#title'          => $this->t('Languages'),
     ];
+
+    // Get enable language
+    $langueManager = \Drupal::languageManager();
+    $langcodes = $langueManager->getLanguages();
+    $langcodes = array_keys($langcodes);
+
+    // Add one field for one language
+    foreach ($langcodes as $lang) {
+      $form['context']['langue']['language_id_' . $lang] = [
+        '#type'           => 'textfield',
+        '#title'          => $this->t('Language ID for @language (@langid)', [
+                              '@language' => $langueManager->getLanguageName($lang),
+                              '@langid' => $lang
+                              ]),
+        '#description'    => $this->t('The language ID to use to request nextPage.'),
+        '#default_value'  => $config->get('language_id_' . $lang) ?? '1',
+      ];
+    }
 
     $form['endpoints'] = [
       '#type'           => 'details',
-      '#open'           => FALSE,
+      '#open'           => TRUE,
       '#title'          => $this->t('Endpoints'),
     ];
 
@@ -181,7 +206,7 @@ class NextpageApiSettingsForm extends ConfigFormBase {
                'username',
                'password',
                'context_id',
-               'language_id',
+               'channel_extid',
                'endpoint_token',
                'endpoint_dicocarac',
                'endpoint_elementsandlinks',
@@ -189,6 +214,17 @@ class NextpageApiSettingsForm extends ConfigFormBase {
                'endpoint_elementsbychartemplate',] as $configKey) {
       $this->configFactory->getEditable(self::WS_SETTINGS_KEY)
         ->set($configKey, $form_state->getValue($configKey))
+        ->save();
+    }
+    // Get enable language
+    $langueManager = \Drupal::languageManager();
+    $langcodes = $langueManager->getLanguages();
+    $langcodes = array_keys($langcodes);
+
+    foreach ($langcodes as $lang) {
+      $key = 'language_id_' . $lang;
+      $this->configFactory->getEditable(self::WS_SETTINGS_KEY)
+        ->set($key, $form_state->getValue($key))
         ->save();
     }
 
