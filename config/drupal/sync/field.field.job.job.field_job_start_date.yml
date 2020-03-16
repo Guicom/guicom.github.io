@@ -1,0 +1,22 @@
+uuid: 0bb4dddd-0a4f-42bf-b590-a12b9cde0e54
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.job.field_job_start_date
+  module:
+    - soc_job
+id: job.job.field_job_start_date
+field_name: field_job_start_date
+entity_type: job
+bundle: job
+label: 'Start date'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1584354178
+default_value_callback: ''
+settings: {  }
+field_type: timestamp

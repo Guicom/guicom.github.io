@@ -1,0 +1,22 @@
+uuid: b5cf112d-49b4-4bcc-9b23-eea4f3352c7a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.job.field_job_heartbeat
+  module:
+    - soc_job
+id: job.job.field_job_heartbeat
+field_name: field_job_heartbeat
+entity_type: job
+bundle: job
+label: Heartbeat
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1584354213
+default_value_callback: ''
+settings: {  }
+field_type: timestamp
