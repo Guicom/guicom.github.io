@@ -12,19 +12,19 @@ use Drupal\soc_nextpage\Service\NextpageApi;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 class NextPageSynchroForm extends FormBase {
-  
+
   /**
    * @var NextpageApi $nextpageApi
    */
   protected $nextpageApi;
-  
+
   /**
    * Class constructor.
    */
   public function __construct(NextpageApi $nextpageApi) {
     $this->nextpageApi = $nextpageApi;
   }
-  
+
   /**
    * {@inheritdoc}
    */
@@ -35,7 +35,7 @@ class NextPageSynchroForm extends FormBase {
       $container->get('soc_nextpage.nextpage_api')
     );
   }
-  
+
   /**
    * Returns a unique string identifying the form.
    *
@@ -49,7 +49,7 @@ class NextPageSynchroForm extends FormBase {
   public function getFormId() {
     return 'next_page_synchro_form';
   }
-  
+
   /**
    * Form constructor.
    *
@@ -69,7 +69,7 @@ class NextPageSynchroForm extends FormBase {
       '#description' => $this->t('Synchronize product from date'),
       '#disabled' => TRUE,
     ];
-    
+
     // Batch size
     $form['batch_size'] = [
       '#type' => 'textfield',
@@ -78,25 +78,16 @@ class NextPageSynchroForm extends FormBase {
       '#default_value' => '50',
       '#size' => 4,
     ];
-  
-    // Batch size
-    $form['ext_id'] = [
-      '#type' => 'textfield',
-      '#title' => $this->t('ExtIDs to import'),
-      '#description' => $this->t('Temporary field, for testing only. EX : FRacine_CODE_FAMILLE_1_001'),
-      '#default_value' => '',
-      '#size' => 40,
-    ];
-    
+
     // Synchro submit
     $form['actions']['submit'] = [
       '#type' => 'submit',
       '#value' => $this->t('Import PIM Product'),
     ];
-  
+
     return $form;
   }
-  
+
   /**
    * Form submission handler.
    *
@@ -109,14 +100,14 @@ class NextPageSynchroForm extends FormBase {
     $batch_size = $form_state->getValue('batch_size');
     $product = $this->nextpageApi->descendantsAndLinks([$form_state->getValue('ext_id')]);
     $test = 1;
-  
+
     foreach ($product->Elements ?? [] as $row) {
       $operations[] = [
         '\Drupal\soc_nextpage\Batch\ImportPendingProduct::addPendingProduct',
         [$row]
       ];
     }
-  
+
     // Setup batch.
     $batch = [
       'title' => t('Importing pending product...'),
@@ -125,7 +116,7 @@ class NextPageSynchroForm extends FormBase {
       'finished' => '\Drupal\coc_nextpage\Batch\ImportPendingProduct::addPendingProductCallback',
     ];
     batch_set($batch);
-  
+
     //$this->messenger()->addMessage($token, 'error');$this->logger('my_channel')->info($token);
     //
   }

@@ -1,11 +1,13 @@
 .region-footer-fourth {
   justify-content: space-between;
+  padding-top: 3rem;
 }
 footer{
   &.site-footer{
     border-top:1px solid $blue_lighter;
     background: rgba(0, 79, 159, 0.05) !important;
     padding: 0;
+    margin-top: 80px; // TEMPORARY MARGIN FOR FOOTER
   }
 }
 #block-socomec-footer {
@@ -92,5 +94,23 @@ footer{
         padding-right: 0;
       }
     }
+  }
+}
+
+// SPECIAL STYLE FOR PAGE WITH SLIM FOOTER
+.node--type-landing-page {
+  .region-footer-fourth {
+    padding-top: 0.5rem;
+    padding-bottom: 1rem;
+    #block-socialmenufooter {
+      @include make-col(12);
+      // HIDE SOCIAL MENU LINKS
+      .field--name-field-links {
+        display: none;
+      }
+    }
+  }
+  .region-footer-fifth {
+    padding-bottom: 2rem;
   }
 }
