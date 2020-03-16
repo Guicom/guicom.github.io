@@ -1,0 +1,64 @@
+uuid: b4b7378e-d285-4f5a-9da8-ff1ee5dfdbf3
+langcode: en
+status: true
+dependencies: {  }
+id: job
+filenames:
+  job: ''
+bundles:
+  job:
+    field_job_type:
+      bundle: job
+      name: field_job_type
+      entity_type_id: job
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_job_status:
+      bundle: job
+      name: field_job_status
+      entity_type_id: job
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_job_start_date:
+      bundle: job
+      name: field_job_start_date
+      entity_type_id: job
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_job_heartbeat:
+      bundle: job
+      name: field_job_heartbeat
+      entity_type_id: job
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_job_info_status:
+      bundle: job
+      name: field_job_info_status
+      entity_type_id: job
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''

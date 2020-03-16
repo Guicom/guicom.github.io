@@ -14,7 +14,7 @@ soc_nextpage.synchro_page:
     _form: '\Drupal\soc_nextpage\Form\NextPageSynchroForm'
     _title: 'Socomec'
   requirements:
-    _permission: 'Synchronize PIM'
+    _permission: 'force nextpage import'
 
 # Tests
 

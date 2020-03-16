@@ -73,6 +73,7 @@
       {% block head %}
         {% include '@socomec/includes/header.html.twig' %}
       {% endblock %}
+      {{ drupal_block('local_tasks_block') }}
     </header>
     <div id="wishlist-page-header" class="header">
       {{ drupal_block('system_breadcrumb_block') }}

@@ -1,0 +1,21 @@
+uuid: 87696879-923b-4926-a447-eeaf33366f79
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.job.field_job_type
+  module:
+    - options
+    - soc_job
+id: job.job.field_job_type
+field_name: field_job_type
+entity_type: job
+bundle: job
+label: Type
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string
