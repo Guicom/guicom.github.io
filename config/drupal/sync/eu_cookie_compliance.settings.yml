@@ -55,7 +55,7 @@ withdraw_message:
 withdraw_action_button_label: 'Withdraw consent'
 withdraw_tab_button_label: 'Privacy settings'
 withdraw_enabled: false
-cookie_categories: "required|Required\r\nstatistics|Statistics\r\npreferences|Preferences\r\ntargeting|Targeting"
+cookie_categories: "required|Required|These cookies are essential to allow you to navigate the site and use its features. Without these cookies, basic services cannot be provided.\r\nstatistics|Statistics|These cookies allow the site to remember your preferences and offer you improved and personalized functions. For example where you are.\r\npreferences|Preferences|These cookies allow a website to analyze a visitor's behavior in order to be able to improve the site according to the visitor's needs.\r\ntargeting|Targeting|These cookies allow websites to personalize advertisements to suit your preferences or allow you to \"share\" content with friends via social networks such as Facebook, Twitter or similar service providers."
 enable_save_preferences_button: true
 save_preferences_button_label: 'Save preferences'
 accept_all_categories_button_label: 'Accept all'
