@@ -6,7 +6,8 @@ id: pim_configuration
 label: 'Pim configuration'
 description: ''
 folder: ''
-module: {  }
+module:
+  ultimate_cron: 0
 theme: {  }
 blacklist:
   - soc_nextpage.nextpage_ws
