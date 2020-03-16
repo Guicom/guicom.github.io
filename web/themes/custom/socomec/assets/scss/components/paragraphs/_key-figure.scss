@@ -10,7 +10,7 @@
   justify-content: space-around;
 
   .key-figure {
-    padding: 1rem 0;
+    padding: 1rem 0 1.2rem;
     position: relative;
     text-align: center;
     @media (max-width: 575.98px) {
@@ -33,6 +33,7 @@
       font-weight: 600;
       text-transform: uppercase;
       line-height: 1.7;
+      margin-bottom: 10px;
     }
   }
 
