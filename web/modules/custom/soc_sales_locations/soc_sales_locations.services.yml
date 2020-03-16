@@ -6,3 +6,6 @@ services:
   soc_sales_locations.manager:
     class: Drupal\soc_sales_locations\Service\SalesLocationsManagerService
     arguments: ['@entity_type.manager','@messenger']
+  soc_sales_locations.manager.import:
+    class: Drupal\soc_sales_locations\Service\SalesLocationsManagerImportService
+    arguments: ['@entity.manager', '@file_system']
