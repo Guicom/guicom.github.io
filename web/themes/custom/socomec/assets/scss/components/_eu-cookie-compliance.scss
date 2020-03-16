@@ -1,108 +1,168 @@
 /* ------------------ Eu cookie compliance ------------------ */
 
 #sliding-popup {
-    left:0px;
-    right: 0px;
+  left:0px;
+  right: 0px;
+  display: flex;
+  display: -webkit-flex;
+  .eu-cookie-compliance-banner {
+    padding: 0;
+    box-sizing: content-box;
     display: flex;
     display: -webkit-flex;
-    .eu-cookie-compliance-banner {
-        padding: 0;
-        box-sizing: content-box;
-        display: flex;
-        display: -webkit-flex;
-        flex-direction: column;
-        -webkit-flex-direction: column;
-        margin: auto;
-        position: relative;
-        width: 100%;
-        will-change: visibility,opacity;
-        &.categorie-open{
-            top:0px;
-            bottom: 0px;
+    flex-direction: column;
+    -webkit-flex-direction: column;
+    margin: auto;
+    position: relative;
+    width: 100%;
+    will-change: visibility,opacity;
+    &.categorie-open {
+      height: 100vh;
+      top:0;
+      bottom: 0;
+      transition: 0.2s;
+      .eu-cookie-compliance-content {
+        height: 100vh;
+        transition: 0.2s;
+        .eu-cookie-compliance-categories {
+          height: 100vh;
+          transition: 0.2s;
         }
-        .eu-cookie-compliance-content {
-            max-width: 100%;
-            #custum-popup-header{
-                background: $blue_light;
-                .eu-cookie-compliance-message {
-                    float: none;
-                    margin:0 auto;
-                }
-            }
-            #eu-cookie-compliance-categories{
-                background: $white-grey;
-                border-top:solid 1px $blue_lighter;
-                .eu-cookie-compliance-category-list{
-                    max-height: 45vh;
-                    overflow: auto;
-                    margin-bottom: 1em;
-                    > div{
-                        max-width: 90%;
-                        margin:0 auto;
-                        > .eu-cookie-compliance-category-selector{
-                            border-bottom: 2px solid $blue_lighter;
-                        }
-                        label{
-                            padding-left: 0px;
-                            .toggle-activated{
-                                &.disabled{
-                                    opacity: 0.4;
-                                }
-                            }
-                        }
-                        input[type="checkbox"],
-                        input[type="checkbox"] + label:after{
-                            display:none;
-                        }
-                    }
-                    .eu-cookie-compliance-category-description{
-                        margin-bottom: 1em;
-                    }
-                }
-                .eu-cookie-compliance-categories-buttons{
-                    float: none;
-                    text-align: right;
-                    max-width: 90%;
-                    margin:0 auto;
-                    .eu-cookie-compliance-save-preferences-button{
-                        color: $blue;
-                        background-color: $white;
-                        border:solid 1px $blue_lighter;
-                        font-family: $font-poppins;
-                        font-size: 12px;
-                        font-weight: 600;
-                        letter-spacing: 1px;
-                        line-height: 20px;
-                        padding: 1em;
-                    }
-                }
-            }
-
-            .eu-cookie-compliance-buttons{
-                max-width: 90%;
-                margin:0 auto;
-                float: none;
-                text-align: right;
-                .eu-cookie-compliance-default-button {
-                    color: $blue;
-                    font-family: $font-poppins;
-                    font-size: 12px;
-                    font-weight: 600;
-                    letter-spacing: 1px;
-                    line-height: 20px;
-                    padding: 1em;
-                    &.customize-button{
-                        background-color: $white;
-                        border:solid 1px $blue_lighter;
-                    }
-                    &.agree-button,
-                    &.decline-button{
-                        color: $white;
-                        background-color: $transparent;
-                        border:solid 1px $blue_lighter;
-                    }
-                }
-            }
-        }
+      }
     }
+    .eu-cookie-compliance-content {
+      background: $dark-blue;
+      max-width: 100%;
+      #custum-popup-header {
+        display: flex;
+        color: $white;
+        padding: 2rem 0;
+        @include make-container();
+        @include make-container-max-widths();
+        justify-content: space-between;
+        @include media-breakpoint-down(sm) {
+          flex-direction: column;
+        }
+        .eu-cookie-compliance-message {
+          display: flex;
+          align-items: center;
+          p {
+            margin-bottom: 0;
+            font-family: $font-roboto;
+            font-size: $font-size-lg;
+            font-weight: 300;
+          }
+        }
+      }
+      #eu-cookie-compliance-categories {
+        background: $light-grayish-red;
+        border-top:solid 1px $blue_lighter;
+        .eu-cookie-compliance-category-list {
+          @include make-container();
+          @include make-container-max-widths();
+          overflow: auto;
+          margin-bottom: 2em;
+          margin-top: 4rem;
+          > div {
+            max-width: 90%;
+            margin:0 auto;
+            padding: 1rem 0;
+            border-bottom: 2px solid $blue_lighter;
+            label {
+              padding-left: 0px;
+              .toggle-activated {
+                &.disabled {
+                  opacity: 0.4;
+                }
+              }
+            }
+            input[type="checkbox"],
+            input[type="checkbox"] + label:after {
+              display:none;
+            }
+          }
+          .eu-cookie-compliance-category-description {
+            margin-bottom: 1em;
+          }
+        }
+        .eu-cookie-compliance-categories-buttons {
+          @include make-container();
+          @include make-container-max-widths();
+          text-align: center;
+          margin:0 auto;
+          .eu-cookie-compliance-save-preferences-button {
+            color: $blue;
+            background-color: $white;
+            border:solid 1px $blue_lighter;
+            font-family: $font-poppins;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            line-height: 20px;
+            padding: 1em;
+            text-transform: uppercase;
+          }
+        }
+      }
+
+      .eu-cookie-compliance-buttons {
+        display: flex;
+        align-items: center;
+        float: initial;
+        max-width: initial;
+        .eu-cookie-compliance-default-button {
+          color: $blue;
+          font-family: $font-poppins;
+          font-size: $font-size-sm;
+          font-weight: 600;
+          letter-spacing: 1px;
+          line-height: 20px;
+          padding: 0.6rem 2rem;
+          text-transform: uppercase;
+          &.customize-button {
+            background-color: $white;
+            border:solid 1px $blue_lighter;
+          }
+          &.agree-button,
+          &.decline-button {
+            color: $white;
+            background-color: $transparent;
+            border: none;
+            text-decoration: underline;
+          }
+        }
+        .close-button {
+          position: relative;
+          width: 1rem;
+          height: 1rem;
+          display: block;
+          background: none;
+          border: none;
+          &:after,
+          &:before {
+            position: absolute;
+            top: 0;
+            content: ' ';
+            height: 16px;
+            width: 1px;
+            background-color: $white;
+          }
+          &:after {
+            transform: rotate(-45deg);
+          }
+          &:before {
+            transform: rotate(45deg);
+          }
+        }
+      }
+    }
+  }
+}
+.eu-cookie-compliance-buttons  {
+  float: initial;
+  max-width: initial;
+}
+.eu-cookie-compliance-message {
+  float: initial;
+  max-width: initial;
 }

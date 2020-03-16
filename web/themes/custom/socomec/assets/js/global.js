@@ -214,6 +214,10 @@
           Drupal.behaviors.socomec_eu_cookie_compliance.openCategories();
         });
 
+        $(".close-button", context).click(function() {
+          Drupal.behaviors.socomec_eu_cookie_compliance.closeCategories();
+        });
+
         $("#eu-cookie-compliance-categories  input:checkbox", context).each(function() {
           $(this).next("label").find('.toggle-normal').removeClass("d-none");
         });
@@ -261,11 +265,21 @@
         });
 
       });
+
+      var height = $(".eu-cookie-compliance-content").height();
+      $("body").css('padding-bottom',height+'px');
     },
+
     openCategories: function () {
       $(".eu-cookie-compliance-banner").addClass("categorie-open");
       $(".customize-button").addClass("d-none");
       $(".eu-cookie-compliance-categories").removeClass("d-none").addClass("d-bloc");
+    },
+    closeCategories: function () {
+      $(".eu-cookie-compliance-banner").removeClass("categorie-open");
+      $(".customize-button").addClass("d-none");
+      $(".eu-cookie-compliance-categories").removeClass("d-bloc").addClass("d-none");
+      $("#sliding-popup").addClass("d-none");
     }
 
   };
