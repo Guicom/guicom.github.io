@@ -8,7 +8,7 @@
   overflow-y: auto;
   margin-top: 60px;
   @include media-breakpoint-down(md) {
-    top: 0;
+    top: 60px;
     margin-top: 0;
   }
   .views-exposed-form {
@@ -18,7 +18,7 @@
       }
       fieldset {
         @include media-breakpoint-down(md) {
-          margin-top: 4.25rem;
+          margin-top: 1rem;
           margin-bottom: 0;
           width: 100%;
         }
@@ -55,7 +55,10 @@
       }
       button {
         background: $yellow;
-        color: $darker-grey;
+        color: $dark-blue;
+        border-radius: 0;
+        text-transform: uppercase;
+        font-weight: 500;
         @include media-breakpoint-down(md) {
           width: 100%;
         }

@@ -168,15 +168,6 @@
             console.log('CLOSE OTHER Dropdown lvl2');
           });
         });
-
-        // OVERLAY + Kill open dropdown
-        $('.navbar-toggler', context).once('socomecOverlayResponsive').each(function() {
-          var allDropdown = $('.we-mega-menu-submenu.dropdown-menu');
-          $(this).click(function (){
-            $('html .overlay').toggleClass('active');
-            allDropdown.hide();
-          })
-        });
       }
     }
   };

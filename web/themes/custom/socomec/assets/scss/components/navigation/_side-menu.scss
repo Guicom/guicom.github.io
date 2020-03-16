@@ -6,7 +6,7 @@
     right: 0;
     @include media-breakpoint-down(md) {
       right: 3.75rem;
-      top: 0.188rem;
+      top: 0.1rem;
     }
     h2 {
       display: none;
@@ -84,7 +84,7 @@
         }
         &.no-label{
           text-indent: -99999px;
-          width: 60px;
+          width: 50px;
         }
       }
     }
