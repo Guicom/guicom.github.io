@@ -14,6 +14,7 @@ class StoreLocationImportHelper {
 
   use StringTranslationTrait;
 
+
   const CONTENT_TYPE = 'contenu_location';
 
   const DELIMITER = "|";
@@ -150,8 +151,6 @@ class StoreLocationImportHelper {
     else{
       return $this->createTerm($voc, $name);
     }
-
-    return NULL;
   }
 
   /**
@@ -189,9 +188,14 @@ class StoreLocationImportHelper {
       $this->node->get('field_location_subarea')->setValue(['target_id' => $term->id()]);
     }
   }
-  public function importContient($continent){
+  public function importContinent($continent){
     $term = $this->importTerm('location_areas',$continent);
     if(!is_null($term) ){
+      $datas = [
+        ['target_id' => $term->id()],
+      ];
+    //  \Drupal::messenger()->addMessage($term->label());
+     // $this->node->field_location_continent = $datas;
       $this->node->get('field_location_continent')->setValue(['target_id' => $term->id()]);
     }
   }

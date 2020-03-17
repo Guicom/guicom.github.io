@@ -55,8 +55,6 @@ class SalesLocationsManagerImportService implements SalesLocationsManagerImportS
    * @inheritDoc
    */
   public function importRow($row, $token) {
-    $database = \Drupal::database();
-    $transaction = $database->popTransaction('test');
     /** @var \Drupal\node\NodeInterface $node */
     if ($row[0] === '') {
       $node = $this->em->getStorage('node')
@@ -77,14 +75,13 @@ class SalesLocationsManagerImportService implements SalesLocationsManagerImportS
     $this->rowNode->importWebsite($row[20]);
     $this->rowNode->importType($row[6]);
     $this->rowNode->importActivity($row[5]);
-    $this->rowNode->importContient($row[2]);
+    $this->rowNode->importContinent($row[2]);
     $this->rowNode->importArea($row[3]);
     $this->rowNode->importSubArea($row[4]);
     try {
       $this->rowNode->saveUpdatedRevisionsNode();
     }
     catch (EntityStorageException $e){
-      $database->rollBack($token);
       \Drupal::messenger()->addError($e->getMessage());
     }
   }

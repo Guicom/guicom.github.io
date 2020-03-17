@@ -28,20 +28,6 @@ class splitTestTermeAreaTest extends UnitTestCase {
     
   }
 
-  public function _testSingleItemArea(){
-/*
-    $file =  $this->getMockBuilder(Drupal\Core\File\FileSystem::class)
-      ->disableOriginalConstructor()
-      ->getMock();
-
-    $file->expects($this->any())
-      ->method('realpath')
-      ->will($this->returnValue(__DIR__.'/../../fixtures/IncorrectFormatFileCSV.csv'));
-    $this->assertEquals('hello',$this->check('hello'));
-    $this->importService->validate($file);
-*/
-  }
-
 
   public function testHowManyTerm(){
     $node = $this->getMockBuilder(Drupal\node\Entity\Node::class)
