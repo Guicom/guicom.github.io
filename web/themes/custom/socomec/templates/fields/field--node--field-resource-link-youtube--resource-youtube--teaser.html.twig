@@ -54,15 +54,16 @@
 
     {% for item in items %}
       <div class="field">
-        <a href="#myModal{{ item.content['#video_id'] }}" class="resource-watch" data-toggle="modal">Launch</a>
-        <div id="myModal{{ item.content['#video_id'] }}" class="modal modal-resource">
+        <div class="src">https://www.youtube.com/embed/{{ item.content['#video_id'] }}</div>
+        <a href="#myModal{{ item.content['#video_id'] }}" class="resource-watch video-launcher" data-toggle="modal">Launch</a>
+        <div id="myModal{{ item.content['#video_id'] }}" class="modal modal-resource modal-youtube">
           <div class="modal-dialog">
             <div class="modal-content">
               <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">Close</button>
               </div>
               <div class="modal-resource-body">
-                <iframe id="modalFrame" width="560" height="315" src="https://www.youtube.com/embed/{{ item.content['#video_id'] }}" frameborder="0" allow="autoplay" allowfullscreen></iframe>
+                <iframe class="video-iframe" id="modalFrame" width="560" height="315" src="https://www.youtube.com/embed/{{ item.content['#video_id'] }}" frameborder="0" allow="autoplay" allowfullscreen></iframe>
               </div>
             </div>
           </div>

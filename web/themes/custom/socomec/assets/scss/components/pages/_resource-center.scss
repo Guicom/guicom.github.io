@@ -101,8 +101,18 @@ body {
                 background-image: url("../images/picto/ui/bookmark-star-blue.svg");
               }
             }
-            .resource-download {
+            .resource-download,
+            .resource-watch {
               background-image: url("../images/picto/ui/chevron-right-circle.svg") !important;
+              &:after {
+                content:'';
+                position: absolute;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                z-index: 1;
+              }
             }
           }
         }
@@ -160,12 +170,14 @@ body {
             z-index: 2;
           }
           .resource-watch {
-            text-indent: -9999px;
             display: block;
             width: 20px;
             height: 20px;
-            background-image: url("../images/picto/social/youtube.svg");
+            background-image: url("../images/picto/ui/chevron-right-circle-grey.svg");
             text-indent: -9999px;
+          }
+          .src {
+            display: none;
           }
         }
         a.parent-overlap {
@@ -318,6 +330,11 @@ body {
       }
     }
     .modal-resource {
+      transition: 0.2s;
+      &.show {
+        background: $white;
+        transition: 0.2s;
+      }
       .modal-dialog {
         max-width: 930px;
         background: transparent;
@@ -335,13 +352,16 @@ body {
             &.close {
               text-indent: -9999px;
               display: block;
-              width: 18px;
-              height: 18px;
-              background-image: url("../images/picto/ui/close-white.svg");
-              background-size: 18px 18px;
-              background-repeat: no-repeat;
+              width: 26px;
+              height: 26px;
+              background: url("../images/picto/ui/close-white.svg") center center no-repeat $blue;
+              background-size: 50%;
+              border-radius: 50%;
+              opacity: 1;
               &:hover {
-                background: none;
+                background: url("../images/picto/ui/close-white.svg") center center no-repeat $blue;
+                background-size: 50%;
+                opacity: 1;
               }
               @include media-breakpoint-down(md) {
                 margin: -15px 10px initial initial;
