@@ -6,8 +6,8 @@ Feature: Events
       | language | name        |
       | English  | MyEventType |
     And event content:
-      | language | title       | status | field_event_type | moderation_state |
-      | English  | MyTestEvent | 1      | MyEventType      | published        |
+      | language | title       | status | field_event_country | field_event_place | field_event_type | field_event_teaser | field_event_date                          | moderation_state |
+      | English  | MyTestEvent | 1      | FR                  | Zenith Strasbourg | MyEventType      | Nice event         | 2020-03-17 17:45:00 - 2025-02-08 19:45:00 | published        |
 
   @api @cit @javascript @events
   # ./vendor/bin/phing behat:run -Dbehat.tags=events
