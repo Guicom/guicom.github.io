@@ -29,6 +29,7 @@
 /web/sites/**/files/*
 /data/**/files/private
 /data/db
+!/data/db/tag/
 !/web/sites/**/files/label/
 
 # Ignore sites.php
