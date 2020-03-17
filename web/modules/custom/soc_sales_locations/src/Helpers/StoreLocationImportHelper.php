@@ -73,9 +73,6 @@ class StoreLocationImportHelper {
     if(!$this->node->getEntityType()->isRevisionable()){
       throw new EntityStorageException('Le type de contenu n\'est pas l\'option revision d\'activer');
     }
-    if ($this->node->id() == '55') {
-      throw new EntityStorageException('Le type de contenu n\'est pas l\'option revision d\'activer');
-    }
     $this->node->setNewRevision();
     $message = $this->t('Import done @date', ['@date' => date('d/m/y h:i:s', time())]);
     $this->node->setRevisionLogMessage($message);
