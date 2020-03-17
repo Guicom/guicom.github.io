@@ -51,6 +51,7 @@
     <import file="phing/tasks/cache.xml" optional="true"/>
     <import file="phing/tasks/solr.xml" optional="true"/>
     <import file="phing/tasks/deploy.xml" optional="true"/>
+    <import file="phing/tasks/dev.xml" optional="true"/>
 
     <!-- import drush tasks -->
     <import file="./vendor/drupal/phingdrushtask/import.xml"/>
