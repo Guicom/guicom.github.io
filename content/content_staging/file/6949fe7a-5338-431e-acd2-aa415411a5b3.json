@@ -8,15 +8,10 @@
         },
         "http:\/\/drupal.org\/rest\/relation\/file\/file\/uid": [
             {
-                "href": "http:\/\/default\/user\/1?_format=hal_json"
+                "href": "http:\/\/socomec.com.loc\/en\/user\/1?_format=hal_json"
             }
         ]
     },
-    "fid": [
-        {
-            "value": 35
-        }
-    ],
     "uuid": [
         {
             "value": "6949fe7a-5338-431e-acd2-aa415411a5b3"
@@ -32,7 +27,7 @@
             {
                 "_links": {
                     "self": {
-                        "href": "http:\/\/default\/user\/1?_format=hal_json"
+                        "href": "http:\/\/socomec.com.loc\/en\/user\/1?_format=hal_json"
                     },
                     "type": {
                         "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
@@ -40,7 +35,7 @@
                 },
                 "uuid": [
                     {
-                        "value": "39080102-237a-48b7-89a2-efb1cbf5b248"
+                        "value": "0239213a-20c6-47d9-97d6-55bfd7a03bd7"
                     }
                 ]
             }

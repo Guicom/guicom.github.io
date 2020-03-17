@@ -7,19 +7,9 @@
             "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/model_cta_pdf"
         }
     },
-    "id": [
-        {
-            "value": 31
-        }
-    ],
     "uuid": [
         {
             "value": "ebcaf046-8fe2-42bc-aa3d-474ec5fd63db"
-        }
-    ],
-    "revision_id": [
-        {
-            "value": 103
         }
     ],
     "langcode": [
@@ -35,14 +25,12 @@
     ],
     "status": [
         {
-            "value": true,
-            "lang": "en"
+            "value": true
         }
     ],
     "created": [
         {
             "value": "2019-12-15T23:30:51+00:00",
-            "lang": "en",
             "format": "Y-m-d\\TH:i:sP"
         }
     ],

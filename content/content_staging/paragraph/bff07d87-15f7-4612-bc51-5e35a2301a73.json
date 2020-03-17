@@ -8,7 +8,7 @@
         },
         "http:\/\/drupal.org\/rest\/relation\/paragraph\/link\/field_link_paragraph": [
             {
-                "href": "http:\/\/default\/admin\/content\/paragraphs\/2?_format=hal_json"
+                "href": "http:\/\/default\/en\/admin\/content\/paragraphs\/2?_format=hal_json"
             }
         ]
     },
@@ -86,7 +86,7 @@
             {
                 "_links": {
                     "self": {
-                        "href": "http:\/\/default\/admin\/content\/paragraphs\/2?_format=hal_json"
+                        "href": "http:\/\/default\/en\/admin\/content\/paragraphs\/2?_format=hal_json"
                     },
                     "type": {
                         "href": "http:\/\/drupal.org\/rest\/type\/paragraphs_library_item\/paragraphs_library_item"
