@@ -8,10 +8,9 @@ Feature: Events
     And event content:
       | language | title       | status | field_event_country | field_event_place | field_event_type | field_event_teaser | field_event_date                          | moderation_state |
       | English  | MyTestEvent | 1      | FR                  | Zenith Strasbourg | MyEventType      | Nice event         | 2020-03-17 17:45:00 - 2025-02-08 19:45:00 | published        |
-    And I run drush "search-api:index events"
-    # And I am logged in as a user with the "administrator" role
-    # And I visit "/admin/config/search/search-api/index/events"
-    # And I press "Index now"
+    And I am logged in as a user with the "administrator" role
+    And I visit "/admin/config/search/search-api/index/events"
+    And I press "Index now"
 
   @api @cit @javascript @events
   # ./vendor/bin/phing behat:run -Dbehat.tags=events
