@@ -9,6 +9,7 @@ use Drupal\Core\Entity\EntityStorageException;
 use Drupal\Core\StringTranslation\StringTranslationTrait;
 use Drupal\node\NodeInterface;
 use Drupal\taxonomy\Entity\Term;
+use Drupal\taxonomy\TermInterface;
 
 class StoreLocationImportHelper {
 
@@ -134,10 +135,11 @@ class StoreLocationImportHelper {
       return NULL;
     }
     if ($this->getCountTermsForRow($name) > 1) {
+      $_multipleTerms =  [];
         foreach ($this->getNameForRow($name) as $item){
-          $this->importTerm($voc, $item);
+          $_multipleTerms[]  = $this->importTerm($voc, $item);
         }
-      return NULL;
+      return $_multipleTerms;
     }
     $terms = \Drupal::entityTypeManager()
       ->getStorage('taxonomy_term')
@@ -149,7 +151,7 @@ class StoreLocationImportHelper {
       return reset($terms);
     }
     else{
-      return $this->createTerm($voc, $name);
+      return $this->createTermIfNecessary($voc, $name);
     }
   }
 
@@ -159,7 +161,7 @@ class StoreLocationImportHelper {
    *
    * @return Term
    */
-  private function createTerm($voc, $name){
+  private function createTermIfNecessary($voc, $name){
     \Drupal::messenger()->addWarning('Création d\'un nouveau term taxonomy '. $name. ' pour le vocabulaire ' . $voc);
     $term = Term::create([
       'vid' => $voc,
@@ -177,26 +179,34 @@ class StoreLocationImportHelper {
   }
   public function importArea($area){
     $term = $this->importTerm('location_areas',$area);
-    if(!is_null($term) ){
+    if(!is_null($term) && !is_array($term) ){
       $this->node->get('field_location_area')->setValue(['target_id' => $term->id()]);
+    }
+    elseif (is_array($term)){
+      $targets_id = $this->getTargetsId($term);
+      $this->node->set('field_location_area', $targets_id);
     }
   }
 
   public function importSubArea($subarea){
     $term = $this->importTerm('location_areas',$subarea);
-    if(!is_null($term) ){
+    if(!is_null($term) && !is_array($term) ){
       $this->node->get('field_location_subarea')->setValue(['target_id' => $term->id()]);
+    }
+    elseif (is_array($term)){
+      $targets_id = $this->getTargetsId($term);
+      $this->node->set('field_location_subarea', $targets_id);
     }
   }
   public function importContinent($continent){
     $term = $this->importTerm('location_areas',$continent);
-    if(!is_null($term) ){
-      $datas = [
-        ['target_id' => $term->id()],
-      ];
-    //  \Drupal::messenger()->addMessage($term->label());
-     // $this->node->field_location_continent = $datas;
+    
+    if(!is_null($term) && !is_array($term) ){
       $this->node->get('field_location_continent')->setValue(['target_id' => $term->id()]);
+    }
+    elseif (is_array($term)){
+      $targets_id = $this->getTargetsId($term);
+      $this->node->set('field_location_continent', $targets_id);
     }
   }
 
@@ -218,6 +228,22 @@ class StoreLocationImportHelper {
     $sample = array_filter($sample);
     return $sample;
 
+  }
+
+  /**
+   * Return an array ids, using to update some fiels like continent, area, subarea.
+   *
+   *
+   * @param array $term
+   *
+   * @return array
+   */
+  private function getTargetsId(array $term): array {
+    $targets_id = [];
+    foreach ($term as $t) {
+      $targets_id[] = ['target_id' => $t->id()];
+    }
+    return $targets_id;
   }
 
 
