@@ -69,16 +69,15 @@ class StoreLocationImportHelper {
    * @throws \Drupal\Core\Entity\EntityStorageException
    */
   public function saveUpdatedRevisionsNode(){
-    // @todo: ajouter un message en anglais.
     if(!$this->node->getEntityType()->isRevisionable()){
-      throw new EntityStorageException('Le type de contenu n\'est pas l\'option revision d\'activer');
+      throw new EntityStorageException('The content type has not the revision option.');
     }
     $this->node->setNewRevision();
     $message = $this->t('Import done @date', ['@date' => date('d/m/y h:i:s', time())]);
     $this->node->setRevisionLogMessage($message);
     $this->node->save();
-    // @todo: ajouter un message en anglais.
-    \Drupal::messenger()->addMessage($this->node->label() . ' a été sauvegardé');
+    $message = $this->t('@title has been saved', ['@title' => $this->node->label()]);
+    \Drupal::messenger()->addMessage($message);
   }
 
   public function importFirstName($firstname) {
@@ -153,13 +152,20 @@ class StoreLocationImportHelper {
   }
 
   /**
+   * Create a new Term if it doesn't exists.
+   *
    * @param $voc
    * @param $name
    *
    * @return Term
+   * @throws \Drupal\Core\Entity\EntityStorageException
    */
   private function createTermIfNecessary($voc, $name){
-    \Drupal::messenger()->addWarning('Création d\'un nouveau term taxonomy '. $name. ' pour le vocabulaire ' . $voc);
+    $message = $this->t('Creation of a new taxonomy term @name for the vocabulary @voc.', [
+      '@name' => $name,
+      '@voc' => $voc,
+    ]);
+    \Drupal::messenger()->addWarning($message);
     $term = Term::create([
       'vid' => $voc,
       'name' => $name,
