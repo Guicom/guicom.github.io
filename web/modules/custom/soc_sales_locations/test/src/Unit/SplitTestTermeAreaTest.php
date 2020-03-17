@@ -58,6 +58,7 @@ class splitTestTermeAreaTest extends UnitTestCase {
       ->disableOriginalConstructor()
       ->getMock();
     $helper =  new Drupal\soc_sales_locations\Helpers\StoreLocationImportHelper($node);
+    $this->assertEquals(['hello'], $helper->getNameForRow('hello'));
     $this->assertEquals(['hello', 'world'], $helper->getNameForRow('hello|world'));
     $this->assertEquals(['hello', 'world'], $helper->getNameForRow('hello|world|'));
 
