@@ -23,12 +23,6 @@ class SalesLocationsManagerImportService implements SalesLocationsManagerImportS
    */
   protected $em;
 
-  /**
-   * Drupal\Core\File\FileSystemInterface definition.
-   *
-   * @var \Drupal\Core\File\FileSystemInterface
-   */
-  protected $fileSystem;
 
   /**
    * @var \Drupal\soc_sales_locations\Helpers\StoreLocationImportHelper
@@ -39,11 +33,9 @@ class SalesLocationsManagerImportService implements SalesLocationsManagerImportS
    * Constructs a new SalesLocationsManagerImportService object.
    *
    * @param \Drupal\Core\Entity\EntityTypeManagerInterface $entity_manager
-   * @param \Drupal\Core\File\FileSystemInterface $file_system
    */
-  public function __construct(EntityTypeManagerInterface $entity_manager, FileSystemInterface $file_system) {
+  public function __construct(EntityTypeManagerInterface $entity_manager) {
     $this->em = $entity_manager;
-    $this->fileSystem = $file_system;
   }
 
   /**

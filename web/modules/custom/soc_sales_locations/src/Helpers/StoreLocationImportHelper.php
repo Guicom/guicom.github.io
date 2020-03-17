@@ -16,6 +16,8 @@ class StoreLocationImportHelper {
 
   const CONTENT_TYPE = 'contenu_location';
 
+  const DELIMITER = "|";
+
   /**
    * @var \Drupal\node\NodeInterface
    */
@@ -126,29 +128,46 @@ class StoreLocationImportHelper {
    * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
    * @throws \Drupal\Core\Entity\EntityStorageException
    */
-  private function importTerm($voc, $name=NULL) {
+  public function importTerm($voc, $name=NULL) {
     if ($name === NULL) {
+      return NULL;
+    }
+    if ($this->getCountTermsForRow($name) > 1) {
+        foreach ($this->getNameForRow($name) as $item){
+          $this->importTerm($voc, $item);
+        }
       return NULL;
     }
     $terms = \Drupal::entityTypeManager()
       ->getStorage('taxonomy_term')
       ->loadByProperties([
+        'vid' => $voc,
         'name' => $name,
       ]);
     if (count($terms) >= 1) {
       return reset($terms);
     }
     else{
-      \Drupal::messenger()->addWarning('Création d\'un nouveau term taxonomy '. $name. ' pour le vocabulaire ' . $voc);
-      $term = Term::create([
-        'vid' => $voc,
-        'name' => $name,
-      ]);
-      $term->save();
-      return $term;
+      return $this->createTerm($voc, $name);
     }
 
     return NULL;
+  }
+
+  /**
+   * @param $voc
+   * @param $name
+   *
+   * @return Term
+   */
+  private function createTerm($voc, $name){
+    \Drupal::messenger()->addWarning('Création d\'un nouveau term taxonomy '. $name. ' pour le vocabulaire ' . $voc);
+    $term = Term::create([
+      'vid' => $voc,
+      'name' => $name,
+    ]);
+    $term->save();
+    return $term;
   }
 
   public function importActivity($activity) {
@@ -176,5 +195,26 @@ class StoreLocationImportHelper {
       $this->node->get('field_location_continent')->setValue(['target_id' => $term->id()]);
     }
   }
+
+  /**
+   * @param $name
+   *
+   * @return int|void
+   *   If count == 1 not multiple.
+   */
+
+  public function getCountTermsForRow($name){
+    $sample = explode(self::DELIMITER, $name);
+    $sample = array_filter($sample);
+    return count($sample);
+  }
+
+  public function getNameForRow($name){
+    $sample = explode(self::DELIMITER, $name);
+    $sample = array_filter($sample);
+    return $sample;
+
+  }
+
 
 }
