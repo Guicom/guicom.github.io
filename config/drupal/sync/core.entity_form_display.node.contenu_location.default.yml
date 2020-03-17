@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.contenu_location.field_content_highlight
     - field.field.node.contenu_location.field_location_activity
     - field.field.node.contenu_location.field_location_address
     - field.field.node.contenu_location.field_location_area
@@ -37,6 +38,12 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_content_highlight:
+    weight: 29
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
   field_location_activity:
     weight: 18
     settings: {  }

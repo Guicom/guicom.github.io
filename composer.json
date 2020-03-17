@@ -96,6 +96,7 @@
         "drupal/svg_image": "^1.9",
         "drupal/taxonomy_menu": "^3.4",
         "drupal/twig_tweak": "^2.4",
+        "drupal/ultimate_cron": "^2.0@alpha",
         "drupal/we_megamenu": "^1.7",
         "drupal/we_megamenu_deploy": "^1.0@alpha",
         "drupal/youtube": "^1.0",

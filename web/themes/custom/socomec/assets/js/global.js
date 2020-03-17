@@ -168,15 +168,6 @@
             console.log('CLOSE OTHER Dropdown lvl2');
           });
         });
-
-        // OVERLAY + Kill open dropdown
-        $('.navbar-toggler', context).once('socomecOverlayResponsive').each(function() {
-          var allDropdown = $('.we-mega-menu-submenu.dropdown-menu');
-          $(this).click(function (){
-            $('html .overlay').toggleClass('active');
-            allDropdown.hide();
-          })
-        });
       }
     }
   };
@@ -321,32 +312,41 @@
   /**
    * Facets bootstrap_select
    */
+  function SocomecfacetsCalculate(element) {
+    if ($(element).parents('.facet-inline-position-title').length) {
+      var width = $(element).parents("div.block-facet--dropdown").find("div.facet-title").first().width();
+      $(element).siblings('.dropdown-toggle.btn-light').css('padding-left', width + 20 + 'px');
+    }
+    else{
+      var height = $(element).parents("div.block-facet--dropdown").find("div.facet-title").first().height();
+      $(element).siblings('.dropdown-toggle.btn-light').css('padding-top', height + 7 + 'px');
+    }
+  }
+
+  function SocomecfacetsSelect(context, settings) {
+    $('select').each(function () {
+      var element = $(this);
+      element.selectpicker({
+        virtualScroll: false,
+      });
+      SocomecfacetsCalculate(element);
+      element.parents(".bootstrap-select").find("div.dropdown-menu").first().mCustomScrollbar({
+        theme:"minimal-dark",
+        mouseWheel:{ preventDefault:true }
+      });
+    });
+
+    $('.bootstrap-select').each(function () {
+      $(this).find("div.dropdown-menu").first().mCustomScrollbar({
+        theme:"minimal-dark",
+        mouseWheel:{ preventDefault:true }
+      });
+    });
+  }
+
   Drupal.behaviors.socomec_facets_bootstrap_select = {
     attach: function (context, settings) {
-      $('select').each(function () {
-        $(this).selectpicker({
-          virtualScroll: false,
-        });
-        if ($(this).parents('.facet-inline-position-title').length) {
-          var width = $(this).parents("div.block-facet--dropdown").find("div.facet-title").first().width();
-          $(this).siblings('.dropdown-toggle.btn-light').css('padding-left', width + 20 + 'px');
-        }
-        else{
-          var height = $(this).parents("div.block-facet--dropdown").find("div.facet-title").first().height();
-          $(this).siblings('.dropdown-toggle.btn-light').css('padding-top', height + 7 + 'px');
-        }
-        $(this).parents(".bootstrap-select").find("div.dropdown-menu").first().mCustomScrollbar({
-          theme:"minimal-dark",
-          mouseWheel:{ preventDefault:true }
-        });
-      });
-
-      $('.bootstrap-select').each(function () {
-        $(this).find("div.dropdown-menu").first().mCustomScrollbar({
-          theme:"minimal-dark",
-          mouseWheel:{ preventDefault:true }
-        });
-      });
+      SocomecfacetsSelect(context, settings);
     }
   };
 
@@ -459,6 +459,41 @@
             e.stopPropagation();
           });
         });
+      });
+    }
+  };
+
+  /**
+   * Close modal for country selection on mobile
+   */
+  Drupal.behaviors.socomec_country_close_modal = {
+    attach: function (context, settings) {
+
+      var closeBtn = $('#myTabContent .modal-close');
+
+      closeBtn.once().on("click", function (e) {
+        closeBtn.closest('.tab-pane').removeClass('active');
+        $('.nav-link.active').removeClass('active');
+      })
+    }
+  };
+
+  /**
+   * Modal mechanics for facets filters on mobile
+   */
+  Drupal.behaviors.socomec_facets_modals = {
+    attach: function (context, settings) {
+
+      var openBtn = $('.facet-mobile-modal-open .modal-open');
+      var closeBtn = $('.facet-mobile-modal-close .modal-close');
+
+      openBtn.once().on("click", function (e) {
+        $('.modal-facets-mobile').addClass('active');
+        SocomecfacetsSelect(context, settings);
+      });
+      closeBtn.once().on("click", function (e) {
+        $('.modal-facets-mobile').removeClass('active');
+        SocomecfacetsSelect(context, settings);
       });
     }
   };

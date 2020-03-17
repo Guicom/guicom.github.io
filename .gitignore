@@ -23,11 +23,13 @@
 
 # Ignore overrides config
 /config/drupal/overrides
+/config/drupal/pim_configuration/*
 
 # Ignore sensitive information
 /web/sites/**/files/*
 /data/**/files/private
 /data/db
+!/data/db/tag/
 !/web/sites/**/files/label/
 
 # Ignore sites.php

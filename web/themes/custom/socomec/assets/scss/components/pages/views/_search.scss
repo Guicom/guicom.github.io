@@ -1,21 +1,21 @@
-.path-search{
-  h1.title-socomec-wave-below{
+.path-search {
+  h1.title-socomec-wave-below {
     text-transform: initial;
   }
   #search-page-header{
     background-color: $white;
-    .container{
-      padding-right:0px;
-      padding-left:0px;
+    .container {
+      padding-right: 0;
+      padding-left: 0;
     }
   }
-  .soc-search-wrapper{
-    margin:40px 0 80px 0;
+  .soc-search-wrapper {
+    margin: 40px 0px 0px 0px;
   }
-  .view-global-search{
-    .view-content{
-      &.row{
-        .views-row{
+  .view-global-search {
+    .view-content {
+      &.row {
+        .views-row {
           width: 100%;
           > div {
             width: 100%;
@@ -25,9 +25,10 @@
             overflow:hidden;
             margin-bottom:10px;
             position: relative;
+            transition: $transition02;
             &.taxonomy-term--type-family,
             &.node--type-product,
-            &.node--type-product-reference{
+            &.node--type-product-reference {
               height: 140px;
               @include media-breakpoint-down(lg) {
                 height: auto;
@@ -36,37 +37,47 @@
             @include media-breakpoint-down(lg) {
               height: auto;
             }
-            &:hover{
+            &:hover {
               box-shadow: $box-shadow-card-list;
               transition: $transition02;
+              z-index: 999;
             }
             &.ds-2col {
               display: flex;
-              p{
-                padding:0px;
-                margin:0px;
+              @include media-breakpoint-down(md) {
+                flex-direction: column-reverse;
+              }
+              p {
+                padding: 0;
+                margin: 0;
               }
 
               > .group-full,
-              > .group-left{
+              > .group-left {
                 padding: 20px;
               }
 
-              > .group-left{
-                width: 70%;
+              > .group-left {
+                width: 75%;
                 float: none;
+                @include media-breakpoint-down(md) {
+                  width: 100%;
+                }
               }
 
-              > .group-right{
-                width: 30%;
+              > .group-right {
+                width: 25%;
                 float: none;
+                @include media-breakpoint-down(md) {
+                  width: 100%;
+                }
                  > div {
                    padding: 0;
-                   margin:0;
+                   margin: 0;
                    height: 100%;
                    div {
                      padding: 0;
-                     margin:0;
+                     margin: 0;
                      height: 100%;
                    }
                  }
@@ -75,18 +86,24 @@
                   display: flex;
                   align-items: center;
                   justify-content: flex-end;
-                  margin: 0px;
+                  margin: 0;
                   background-color: $white;
+                  @include media-breakpoint-down(md) {
+                    justify-content: center;
+                  }
                   > div {
                     border-left: 1px #F0F3F9 solid;
                     display: flex;
                     align-items: center;
                     justify-content: flex-end;
                     img {
-                      padding: 0px;
-                      margin: 0px;
+                      padding: 0;
+                      margin: 0;
                     }
                   }
+                }
+                .field--name-field-event-picture {
+                  background: rgba($blue_lighter_alt, 0.2);
                 }
               }
               .field--name-bundle-fieldtaxonomy-term,
@@ -100,46 +117,40 @@
               .field--type-entity-reference,
               .field--name-extra-field-file-type-resource,
               .field--name-extra-field-language-resource,
-              .field--name-extra-field-file-size-resource{
-                color: $dark-grey;
-                font-family: $font-poppins;
-                font-size: 12px;
-                font-weight: 600;
-                letter-spacing: 0.5px;
-                line-height: 20px;
-                border-radius: 2px;
-                background-color: $light-grayish-red;
+              .field--name-extra-field-file-size-resource {
+                @include tag($dark-grey, $light-grayish-red);
                 display: inline-block;
-                padding: 0px 5px;
-                margin:0px;
+                text-transform: uppercase;
+                margin-bottom: 0.5rem;
+                padding: 1px 10px;
               }
               #field-language-display label{
-                display:none;
+                display: none;
               }
-              .field--name-extra-field-file-size-resource{
+              .field--name-extra-field-file-size-resource {
                 font-family: $font-roboto;
                 color: $turquoize;
                 background-color: $white;
                 font-weight: 300;
               }
-              .field--name-field-product-status{
+              .field--name-field-product-status {
                 color: $white;
                 background-color: $turquoize;
-                text-transform: uppercase;
+                text-transform: uppercase!important;
               }
               .field--name-field-news-theme,
               .field--name-field-news-theme .field__label,
               .field--name-field-news-theme .field__items,
               .field--name-field-news-theme .field__items .field__item,
               .field--name-field-reference-ref,
-              .field--name-extra-field-file-type-resource{
+              .field--name-extra-field-file-type-resource {
                 background-color: $white;
                 color: $dark-grey;
               }
               .field--name-field-news-theme .field__label,
               .field--name-bundle-fieldtaxonomy-term,
               .field--name-bundle-fieldnode,
-              .field--name-extra-field-language-resource{
+              .field--name-extra-field-language-resource {
                 text-transform: uppercase;
               }
               .field--type-entity-reference,
@@ -147,13 +158,13 @@
                 text-transform: initial;
               }
               .field--name-field-event-type,
-              .field--name-extra-field-language-resource{
+              .field--name-extra-field-language-resource {
                 background-color: $white;
               }
 
               .field--name-taxonomy-term-title,
               .field--name-extra-field-resource-title,
-              .field--name-node-title{
+              .field--name-node-title {
                 color: $blue;
                 font-family: $font-roboto;
                 font-size: 20px;
@@ -168,7 +179,7 @@
                 padding-top: 9px;
                 padding-bottom: 9px;
               }
-              .field--name-field-event-date{
+              .field--name-field-event-date {
                 display: inline-block;
                 height: 100%;
                 vertical-align: middle;
@@ -177,9 +188,6 @@
                 font-size: 18px;
                 font-weight: 600;
                 line-height: 20px;
-                display: inline-block;
-                height: 100%;
-                vertical-align: middle;
                 .datetime {
                   margin-right: 40px;
                 }
@@ -187,7 +195,7 @@
                   margin-right: 20px;
                 }
               }
-              .field--name-field-event-place{
+              .field--name-field-event-place {
                 display: inline-block;
                 height: 100%;
                 vertical-align: middle;
@@ -197,8 +205,9 @@
                 font-weight: 600;
                 letter-spacing: 1px;
                 line-height: 20px;
+                text-transform: uppercase;
               }
-              .field--name-node-post-date{
+              .field--name-node-post-date {
                 color: $blue;
                 font-family: $font-poppins;
                 font-size: 12px;
@@ -209,9 +218,9 @@
               }
               .field--name-extra-field-resource-description,
               .field--name-field-event-teaser,
-              .field--name-field-event-teaser p{
-                margin:0px;
-                padding: 0px;
+              .field--name-field-event-teaser p {
+                margin:0;
+                padding: 0;
                 color: $dark-grey;
                 font-family: $font-roboto;
                 font-size: 16px;
@@ -219,16 +228,20 @@
               }
 
               .field--name-taxonomy-term-link,
-              .field--name-node-link{
+              .field--name-node-link {
                 a {
                   position: absolute;
-                  top: 0px;
-                  right: 0px;
-                  bottom: 0px;
-                  left: 0px;
+                  top: 0;
+                  right: 0;
+                  bottom: 0;
+                  left: 0;
                   text-indent: -9999px;
                   z-index: 1;
                 }
+              }
+              .field--name-field-product-teaser {
+                font-family: $font-roboto;
+                color: $dark-grey;
               }
             }
           }

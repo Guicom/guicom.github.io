@@ -1,0 +1,17 @@
+uuid: d36dde3a-eea2-452e-a194-7e2b833289d2
+langcode: en
+status: true
+dependencies: {  }
+id: pim_configuration
+label: 'Pim configuration'
+description: ''
+folder: ''
+module:
+  ultimate_cron: 0
+theme: {  }
+blacklist:
+  - soc_nextpage.nextpage_ws
+graylist: {  }
+graylist_dependents: true
+graylist_skip_equal: true
+weight: 0
