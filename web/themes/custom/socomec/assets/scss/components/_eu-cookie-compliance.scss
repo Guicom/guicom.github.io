@@ -130,7 +130,7 @@
           text-transform: uppercase;
           @include media-breakpoint-down(sm) {
             margin: 0.3rem 0;
-            width: 80%;
+            width: 96%;
           }
           &.customize-button {
             background-color: $white;
