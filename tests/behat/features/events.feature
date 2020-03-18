@@ -2,14 +2,22 @@ Feature: Events
   #vendor/bin/phing behat:run -Dbehat.tags=events
 
   Background:
-    Given event_type terms:
+    Given I am logged in as a user with the "administrator" role
+    And event_type terms:
       | language | name        |
       | English  | MyEventType |
+    #And model_text paragraph:
     And event content:
-      | language | title       | status | field_event_country | field_event_place | field_event_type | field_event_teaser | field_event_date                          | moderation_state |
-      | English  | MyTestEvent | 1      | FR                  | Zenith Strasbourg | MyEventType      | Nice event         | 2020-03-17 17:45:00 - 2025-02-08 19:45:00 | published        |
+      | language | title       | status | field_event_country | field_event_place | field_event_type | field_event_teaser | moderation_state |
+      | English  | MyTestEvent | 1      | FR                  | Zenith Strasbourg | MyEventType      | Nice event         | published        |
+    And I go to "admin/content"
+    # needed for next step
+    And I click "Edit" in the "MyTestEvent" row
+    And I set the event date
+    And I visit "/admin/config/search/search-api/index/events"
+    And I press "Index now"
 
-  @api @cit @javascript @events
+  @api @cit @javascript @events @events_detail
   # ./vendor/bin/phing behat:run -Dbehat.tags=events
   # See the example event.
   Scenario: Events detail
@@ -17,23 +25,19 @@ Feature: Events
     And I accept all cookies compliance
     When I visit "/event/mytestevent"
     Then I should see a "body.node--type-event" element
+    And I should see "MyTestEvent"
 
-  @api @cit @javascript @events
+  @api @cit @javascript @events @events_lp
     # Check if the filter working with the last element.
   Scenario: Events Landing page
-    Given I am logged in as a user with the "administrator" role
-    And I visit "/admin/config/search/search-api/index/events"
-    And I press "Index now"
-    Then I am an anonymous user
+    #Then I am an anonymous user
     And I visit "/"
     And I accept all cookies compliance
     When I visit "/events"
-    And I click the "select[data-drupal-facet-id='event_type_taxonomy_term_name'] option:last-child" element
-    And I wait 2 seconds
     Then I should see "MyTestEvent" in the ".view-id-events" element
-    And I click the "select[data-drupal-facet-id='event_type_taxonomy_term_name'] option:first-child" element
     And I wait 2 seconds
-    Then I should not see "MyEventType"
+    Then I visit "/events?f%5B0%5D=event_type_taxonomy_term_name%3AExhibition"
+    And I wait 2 seconds
     Then I should not see "MyTestEvent" in the ".view-id-events" element
 
   @api @cit @javascript @events
@@ -87,7 +91,7 @@ Feature: Events
     And I click "Revisions"
     Then I should see the text "<message>"
 
-  @api @cit @javascript @events
+  @api @cit @javascript @events @event_webmaster_add_term
   Scenario Outline: The webmaster role can add a new term.
     Examples:
       | role          | message                                    |
