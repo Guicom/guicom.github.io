@@ -21,6 +21,7 @@
       top:0;
       bottom: 0;
       transition: 0.2s;
+      overflow-y: auto;
       .eu-cookie-compliance-content {
         height: 100vh;
         transition: 0.2s;
@@ -42,10 +43,15 @@
         justify-content: space-between;
         @include media-breakpoint-down(sm) {
           flex-direction: column;
+          padding: 1rem 0;
         }
         .eu-cookie-compliance-message {
           display: flex;
           align-items: center;
+          @include media-breakpoint-down(sm) {
+            padding: 0 0.5rem;
+            margin-bottom: 0.5rem;
+          }
           p {
             margin-bottom: 0;
             font-family: $font-roboto;
@@ -110,6 +116,9 @@
         align-items: center;
         float: initial;
         max-width: initial;
+        @include media-breakpoint-down(sm) {
+          flex-direction: column;
+        }
         .eu-cookie-compliance-default-button {
           color: $blue;
           font-family: $font-poppins;
@@ -119,6 +128,10 @@
           line-height: 20px;
           padding: 0.6rem 2rem;
           text-transform: uppercase;
+          @include media-breakpoint-down(sm) {
+            margin: 0.3rem 0;
+            width: 80%;
+          }
           &.customize-button {
             background-color: $white;
             border:solid 1px $blue_lighter;
