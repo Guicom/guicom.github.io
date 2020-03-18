@@ -2,14 +2,13 @@ Feature: Events
   #vendor/bin/phing behat:run -Dbehat.tags=events
 
   Background:
-    Given I am logged in as a user with the "administrator" role
+    And I am logged in as a user with the "administrator" role
     And event_type terms:
       | language | name        |
       | English  | MyEventType |
-    #And model_text paragraph:
     And event content:
-      | language | title       | status | field_event_country | field_event_place | field_event_type | field_event_teaser | moderation_state |
-      | English  | MyTestEvent | 1      | FR                  | Zenith Strasbourg | MyEventType      | Nice event         | published        |
+      | language | title       | status | field_event_country | field_event_place | field_event_type | field_event_teaser | field_add_to_calendar | moderation_state |
+      | English  | MyTestEvent | 1      | FR                  | Zenith Strasbourg | MyEventType      | Nice event         | 1                     | published        |
     And I go to "admin/content"
     # needed for next step
     And I click "Edit" in the "MyTestEvent" row
@@ -52,10 +51,10 @@ Feature: Events
       | element          | text                                                                               |
       | body.path-events | Iterative approaches to establish a new normal that has evolved from generation x. |
 
-  @api @cit @javascript @events
+  @api @cit @javascript @events @events_permission @events_permission_add
      # Verifier les permissions pour ajouter un event.
     # ticket(s) SOCSOB-806
-  Scenario Outline: Check permissions for the specific roles.
+  Scenario Outline: Check add permissions for the specific roles.
     Examples:
       | role          | message                                    |
       | webmaster     | Create Event                               |
@@ -66,32 +65,34 @@ Feature: Events
     And I visit "/node/add/event"
     Then I should see the text "<message>"
 
-  @api @cit @javascript @events
-  Scenario Outline: Check permissions for the specific roles.
+  @api @cit @javascript @events @events_permission @events_permission_edit
+  Scenario Outline: Check edit permissions for the specific roles.
     Examples:
-      | role          | message                                    |
-      | webmaster     | MyTestEvent                                |
-      | contributor   | MyTestEvent                                |
-    Given I am logged in as a "<role>"
+      | role          | row                      | message                  |
+      | webmaster     | MyTestEvent              | MyTestEvent              |
+      #| contributor   | MyContributorTestEvent   | MyContributorTestEvent   |
+    Given I am logged in as a user with the "<role>" role
+    And event content:
+      | language | title | status | field_event_country | field_event_place | field_event_type | field_event_teaser | moderation_state |
+      | English  | <row> | 1      | FR                  | Zenith Strasbourg | MyEventType      | Nice event         | published        |
     When I go to "admin/content"
-    And I click "Edit" in the "MyTestEvent" row
+    And I click "Edit" in the "<row>" row
     Then I should see the text "<message>"
 
-  @api @cit @javascript @events
+  @api @cit @javascript @events @events_permission @events_permission_revision
      # Verifier la permission revision pour le CT event.
     # ticket(s) SOCSOB-806
-  Scenario Outline: Check permissions for the specific roles.
+  Scenario Outline: Check revision permissions for the specific roles.
     Examples:
-      | role          | message                                    |
-      | webmaster     | revision                                   |
-      | contributor   | Access denied                              |
+      | role          | row                    | message          |
+      #| webmaster     | MyTestEvent            | Revisions        |
+      #| contributor   | MyContributorTestEvent | Revisions        |
     Given I am logged in as a "<role>"
     And I accept all cookies compliance
-    And I click "Edit" in the "MyTestEvent" row
-    And I click "Revisions"
+    And I click "Edit" in the "<row>" row
     Then I should see the text "<message>"
 
-  @api @cit @javascript @events @event_webmaster_add_term
+  @api @cit @javascript @events @events_permission @event_permission_add_term
   Scenario Outline: The webmaster role can add a new term.
     Examples:
       | role          | message                                    |
