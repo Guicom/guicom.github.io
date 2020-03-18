@@ -8,9 +8,6 @@ Feature: Events
     And event content:
       | language | title       | status | field_event_country | field_event_place | field_event_type | field_event_teaser | field_event_date                          | moderation_state |
       | English  | MyTestEvent | 1      | FR                  | Zenith Strasbourg | MyEventType      | Nice event         | 2020-03-17 17:45:00 - 2025-02-08 19:45:00 | published        |
-    And I am logged in as a user with the "administrator" role
-    And I visit "/admin/config/search/search-api/index/events"
-    And I press "Index now"
 
   @api @cit @javascript @events
   # ./vendor/bin/phing behat:run -Dbehat.tags=events
@@ -24,7 +21,11 @@ Feature: Events
   @api @cit @javascript @events
     # Check if the filter working with the last element.
   Scenario: Events Landing page
-    Given I visit "/"
+    Given I am logged in as a user with the "administrator" role
+    And I visit "/admin/config/search/search-api/index/events"
+    And I press "Index now"
+    Then I am an anonymous user
+    And I visit "/"
     And I accept all cookies compliance
     When I visit "/events"
     And I click the "select[data-drupal-facet-id='event_type_taxonomy_term_name'] option:last-child" element
