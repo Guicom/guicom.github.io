@@ -10,7 +10,7 @@ Feature: Family
   Scenario: Family page
     Given I visit "/"
     And I accept all cookies compliance
-    When I visit "/test-family/my-product-family"
+    When I visit "/products/my-product-family"
     Then I should see an "body.taxonomy-family" element
     Then I should see an "#product-reference-section" element
 
