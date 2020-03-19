@@ -10,6 +10,9 @@ function soc_content_install() {
   /** @var \Drupal\soc_content\Service\MediaContent $mediaManager */
   $mediaManager = \Drupal::service('soc_content.media');
 
+  // Family vocabulary - keep in first position
+  $termManager->createTerm('Products', 'family');
+
   // Product status vocabulary
   $termManager->createTerm('New', 'product_status');
   $termManager->createTerm('Discontinued', 'product_status');
@@ -19,9 +22,6 @@ function soc_content_install() {
   $termManager->createTerm('Exhibition', 'event_type');
   $termManager->createTerm('Seminar', 'event_type');
   $termManager->createTerm('Webinar', 'event_type');
-
-  // Family vocabulary
-  $termManager->createTerm('Test family', 'family');
 
   // Events teaser block
   $blockContentManager->createBlockContent('basic', 'Views Events teaser', [
@@ -35,12 +35,6 @@ function soc_content_install() {
     ]
   ]);
 
-  // Product menu
-  $menuItemManager->createMenuItem('Products', 'header', [
-    'uri' => 'route:<nolink>',
-  ], [
-    'uuid' => 'f138a7fe-23b6-4906-a9fd-e808bfa2bd94',
-  ]);
   $menuItemManager->createMenuItem('Solutions', 'header', [
     'uri' => 'route:<nolink>',
   ]);
@@ -57,15 +51,4 @@ function soc_content_install() {
     'uri' => 'route:<nolink>',
   ]);
 
-  // Taxonomy menu
-  // Set parent again now that it exists.
-  /** @var \Drupal\Core\Config\ConfigFactoryInterface $configFactory */
-  $configFactory = \Drupal::service('config.factory');
-  /** @var \Drupal\Core\Config\Config $config */
-  $config = $configFactory->getEditable('taxonomy_menu.taxonomy_menu.family');
-  $config->set('menu_parent', 'header:menu_link_content:f138a7fe-23b6-4906-a9fd-e808bfa2bd94');
-  try {
-    $config->save();
-  } catch (\Exception $e) {
-  }
 }
