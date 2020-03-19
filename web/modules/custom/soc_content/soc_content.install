@@ -59,8 +59,10 @@ function soc_content_install() {
 
   // Taxonomy menu
   // Set parent again now that it exists.
-  $config = \Drupal::service('config.factory')
-    ->getEditable('taxonomy_menu.taxonomy_menu.family');
+  /** @var \Drupal\Core\Config\ConfigFactoryInterface $configFactory */
+  $configFactory = \Drupal::service('config.factory');
+  /** @var \Drupal\Core\Config\Config $config */
+  $config = $configFactory->getEditable('taxonomy_menu.taxonomy_menu.family');
   $config->set('menu_parent', 'header:menu_link_content:f138a7fe-23b6-4906-a9fd-e808bfa2bd94');
   try {
     $config->save();
