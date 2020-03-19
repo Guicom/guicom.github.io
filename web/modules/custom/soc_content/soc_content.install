@@ -12,7 +12,7 @@ function soc_content_install() {
 
   // Family vocabulary - keep in first position
   $productsTerm = $termManager->createTerm('Products', 'family');
-  $termManager->createTerm('Products', 'family', [
+  $termManager->createTerm('My Product Family', 'family', [
     'parent' => $productsTerm->id(),
   ]);
 
