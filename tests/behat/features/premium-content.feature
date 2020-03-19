@@ -1,16 +1,23 @@
 Feature: Premium Content
   In order to test out premium contents
 
+  @api @cit @javascript @premium_content @premium_content_thank_you_page
   Scenario: Thank you page
-    Given I am not logged in
+    Given thank_you_page content:
+      | language | title                                                               | status |
+      | English  | Comment garantir la continuite dalimentation des blocs operatoires  | 1      |
+    And I am not logged in
     And I visit "/"
     And I accept all cookies compliance
     When I am on "/comment-garantir-la-continuite-dalimentation-des-blocs-operatoires/thank-you"
     Then the response status code should be 403
 
-  @api @cit @javascript @pardot_form
+  @api @cit @javascript @premium_content @premium_content_landing_page
   Scenario: Pardot form
-    Given I am not logged in
+    Given landing_page content:
+      | language | title                                                               | field_pardot_form_url                            | status |
+      | English  | Comment garantir la continuite dalimentation des blocs operatoires  | https://go.socomec.com/l/86922/2019-08-21/62nvkw | 1      |
+    And I am not logged in
     And I visit "/"
     And I accept all cookies compliance
     When I visit "/landing-page-premium/whitepaper/comment-garantir-la-continuite-dalimentation-des-blocs-operatoires"

@@ -26,6 +26,12 @@ function soc_content_install() {
   $termManager->createTerm('Seminar', 'event_type');
   $termManager->createTerm('Webinar', 'event_type');
 
+  // Premium content type vocabulary
+  $termManager->createTerm('White paper', 'premium_content_type');
+  $termManager->createTerm('Case study', 'premium_content_type');
+  $termManager->createTerm('Technical note', 'premium_content_type');
+  $termManager->createTerm('Webinar replay', 'premium_content_type');
+
   // Events teaser block
   $blockContentManager->createBlockContent('basic', 'Views Events teaser', [
     'langcode' => 'en',
