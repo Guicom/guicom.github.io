@@ -11,7 +11,10 @@ function soc_content_install() {
   $mediaManager = \Drupal::service('soc_content.media');
 
   // Family vocabulary - keep in first position
-  $termManager->createTerm('Products', 'family');
+  $productsTerm = $termManager->createTerm('Products', 'family');
+  $termManager->createTerm('Products', 'family', [
+    'parent' => $productsTerm->id(),
+  ]);
 
   // Product status vocabulary
   $termManager->createTerm('New', 'product_status');
