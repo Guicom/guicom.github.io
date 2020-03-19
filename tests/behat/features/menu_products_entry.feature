@@ -16,7 +16,7 @@ Feature: Menu Products entry
     When  I go to "/energy-storage-solution/sirco-vm"
       And I accept all cookies compliance
       And I wait 1 seconds
-      And I click the ".we-mega-menu-ul .product > a" element
+      #And I click the ".we-mega-menu-ul .product > a" element
   #  Then I should see an "[data-icon='energy-storage']" element
   #  And I should see an "[data-icon='power-conversion']" element
   #  And I should see an "[data-icon='metering-monitoring']" element
