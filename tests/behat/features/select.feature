@@ -34,8 +34,8 @@ Feature: [SELECT] Tests Behat
     Given I am logged in as a user with the "administrator" role
     And I accept all cookies compliance
     And resource content:
-      | Language | field_res_reference | title         | field_res_original_title | field_res_resource_type | field_product_family    | moderation_state | status |
-      | English  | TEST00001           | Resource test | Resource test            | Brochure                | Energy storage solution | published        | 1      |
+      | Language | field_res_reference | title         | field_res_original_title | field_res_resource_type | field_product_family | moderation_state | status |
+      | English  | TEST00001           | Resource test | Resource test            | Brochure                | My Product Family    | published        | 1      |
     And I visit "admin/config/search/search-api/index/resources"
     And I press "Index now"
     And I wait 2 seconds
