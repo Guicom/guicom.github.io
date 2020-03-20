@@ -6,6 +6,7 @@ use Drupal\Core\Render\BubbleableMetadata;
 use Drupal\Core\Url;
 use Drupal\search_api_autocomplete\Element\SearchApiAutocomplete;
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\search_api_autocomplete\Entity\Search;
 
 /**
  * Provides a Search API Autocomplete form element.
@@ -95,8 +96,13 @@ class SocSearchSearchApiAutocomplete extends SearchApiAutocomplete {
    *   Thrown if the #search_id property is missing or invalid.
    */
   public static function processSearchApiAutocomplete(array &$element, FormStateInterface $form_state, array &$complete_form) {
+
     parent::processSearchApiAutocomplete($element,  $form_state,  $complete_form);
-    $element['#autocomplete_route_name'] = 'soc_search.autocomplete';
+
+    if (!empty ($element['#autocomplete_route_parameters'])) {
+      $element['#autocomplete_route_name'] = 'soc_search.autocomplete';
+    }
+
     return $element;
   }
 
