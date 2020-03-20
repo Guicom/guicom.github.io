@@ -32,6 +32,55 @@ function soc_content_install() {
   $termManager->createTerm('Technical note', 'premium_content_type');
   $termManager->createTerm('Webinar replay', 'premium_content_type');
 
+  // News Audience vocabulary
+  $termManager->createTerm('Contracting / Contractors & Services', 'news_audience');
+  $termManager->createTerm('Users', 'news_audience');
+  $termManager->createTerm('Specification & Spec-in', 'news_audience');
+  $termManager->createTerm('Trading & Distribution', 'news_audience');
+  $termManager->createTerm('OEM: Manufacturers', 'news_audience');
+  $termManager->createTerm('Mounting & Cabling / Panel Builders', 'news_audience');
+
+  // News Momentum vocabulary
+  $termManager->createTerm('Design', 'news_mommentum');
+  $termManager->createTerm('Selection', 'news_mommentum');
+  $termManager->createTerm('Build', 'news_mommentum');
+  $termManager->createTerm('Setup', 'news_mommentum');
+  $termManager->createTerm('Operation', 'news_mommentum');
+
+  // Visitors menu
+  $menuItemManager->createMenuItem('search', 'header-visitors', [
+    'uri' => '#search',
+    'attributes' => [
+      'class' => 'ico-search-white no-label',
+    ],
+  ]);
+  $menuItemManager->createMenuItem('Bookmark', 'header-visitors', [
+    'uri' => '#bookmark',
+    'attributes' => [
+      'class' => 'ico-bookmark-star-white no-label',
+    ],
+  ]);
+  $menuItemManager->createMenuItem('Wishlist', 'header-visitors', [
+    'uri' => 'internal:/my-wishlist',
+    'attributes' => [
+      'class' => 'ico-favorite no-label',
+    ],
+  ]);
+  $menuItemManager->createMenuItem('Sign in', 'header-visitors', [
+    'uri' => 'internal:/user/login',
+    'attributes' => [
+      'class' => 'ico-user',
+      'menu_per_role__show_role' => ['authenticated'],
+    ],
+  ]);
+  $menuItemManager->createMenuItem('Sign out', 'header-visitors', [
+    'uri' => 'internal:/user/logout',
+    'attributes' => [
+      'class' => 'ico-user',
+      'menu_per_role__hide_role' => ['authenticated']
+    ],
+  ]);
+
   // Events teaser block
   $blockContentManager->createBlockContent('basic', 'Views Events teaser', [
     'langcode' => 'en',

@@ -4,9 +4,12 @@ Feature: Products
 
   @product-detail @api @cit @javascript
   Scenario: Detail product
-    Given I visit "/"
+    Given product content:
+      | language | title            | status | field_product_family |
+      | English  | My test product  | 1      | My Product Family    |
+    And I visit "/"
     And I accept all cookies compliance
-    When I visit "/energy-storage-solution/sirco-vm"
+    When I visit "/my-productfamily/my-test-product"
     Then I should see an "body.node--type-product" element
     Then I should see an "#product-info-section" element
     Then I should see an "#product-reference-section" element
