@@ -15,7 +15,7 @@ class BlockContentContent extends ContentManager {
    *
    * @return \Drupal\Core\Entity\EntityInterface|null
    */
-  protected function getTermByUuid(string $uuid) {
+  public function getBlockContentByUuid(string $uuid) {
     return $this->getEntityByUuid('block_content', $uuid);
   }
 
@@ -30,10 +30,15 @@ class BlockContentContent extends ContentManager {
    */
   public function createBlockContent(string $type, string $info, $data) {
     // Check if block content already exists.
-    $blockContents = \Drupal::entityQuery('block_content')
-      ->condition('type', $type)
-      ->condition('info', $info)
-      ->execute();
+    $blockContentQuery = \Drupal::entityQuery('block_content');
+    if (isset($data['uuid'])) {
+      $blockContentQuery->condition('uuid', $data['uuid']);
+    }
+    else {
+      $blockContentQuery->condition('type', $type);
+      $blockContentQuery->condition('info', $info);
+    }
+    $blockContents = $blockContentQuery->execute();
 
     // If block content does not exist, create it.
     if (empty($blockContents)) {

@@ -62,13 +62,4 @@ class ContentManager {
     return $this->getEntityByUuid('node', $uuid);
   }
 
-  /**
-   * @param string $uuid
-   *
-   * @return \Drupal\Core\Entity\EntityInterface|null
-   */
-  public function getBlockContentByUuid(string $uuid) {
-    return $this->getEntityByUuid('block_content', $uuid);
-  }
-
 }

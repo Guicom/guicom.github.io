@@ -19,3 +19,7 @@ services:
     class: Drupal\soc_content\Service\BlockContentContent
     arguments:
       ['@entity.repository', '@logger.factory']
+  soc_content.paragraph:
+    class: Drupal\soc_content\Service\ParagraphContent
+    arguments:
+      ['@entity.repository', '@logger.factory']

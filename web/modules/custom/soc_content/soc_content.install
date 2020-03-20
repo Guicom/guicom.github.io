@@ -9,6 +9,8 @@ function soc_content_install() {
   $menuItemManager = \Drupal::service('soc_content.menu_item');
   /** @var \Drupal\soc_content\Service\MediaContent $mediaManager */
   $mediaManager = \Drupal::service('soc_content.media');
+  /** @var \Drupal\soc_content\Service\ParagraphContent $paragraphManager */
+  $paragraphManager = \Drupal::service('soc_content.paragraph');
 
   // Family vocabulary - keep in first position
   if ($productsTerm = $termManager->createTerm('Products', 'family')) {
@@ -136,6 +138,7 @@ function soc_content_install() {
   // Visitors menu
   $menuItemManager->createMenuItem('search', 'header-visitors', [
     'uri' => 'internal:/#search',
+    'weight' => 0,
     'options' => [
       'attributes' => [
         'class' => 'ico-search-white no-label',
@@ -144,6 +147,7 @@ function soc_content_install() {
   ]);
   $menuItemManager->createMenuItem('Bookmark', 'header-visitors', [
     'uri' => 'internal:/#bookmark',
+    'weight' => 1,
     'options' => [
       'attributes' => [
         'class' => 'ico-bookmark-star-white no-label',
@@ -152,6 +156,7 @@ function soc_content_install() {
   ]);
   $menuItemManager->createMenuItem('Wishlist', 'header-visitors', [
     'uri' => 'internal:/my-wishlist',
+    'weight' => 2,
     'options' => [
       'attributes' => [
         'class' => 'ico-favorite no-label',
@@ -160,19 +165,52 @@ function soc_content_install() {
   ]);
   $menuItemManager->createMenuItem('Sign in', 'header-visitors', [
     'uri' => 'internal:/user/login',
+    'weight' => 3,
+    'menu_per_role__show_role' => ['authenticated'],
     'options' => [
       'attributes' => [
         'class' => 'ico-user',
-        'menu_per_role__show_role' => ['authenticated'],
       ],
     ],
   ]);
   $menuItemManager->createMenuItem('Sign out', 'header-visitors', [
     'uri' => 'internal:/user/logout',
+    'weight' => 3,
+    'menu_per_role__hide_role' => ['authenticated'],
     'options' => [
       'attributes' => [
         'class' => 'ico-user',
-        'menu_per_role__hide_role' => ['authenticated']
+      ],
+    ],
+  ]);
+
+  // Copyright block
+  $blockContentManager->createBlockContent('textfield', 'Copyright', [
+    'langcode' => 'en',
+    'uuid' => '4396368f-b51c-4348-a79e-7cd52a85d79a',
+    'field_text' => 'Copyright © 2018. All rights reserved',
+  ]);
+
+  // Pardot newsletter block
+  $blockContentManager->createBlockContent('link', 'Pardot newsletter', [
+    'langcode' => 'en',
+    'uuid' => 'cd83bf6d-f525-4456-b1a8-20f8b374f3b2',
+    'field_link' => [
+      "uri" => "https://go.socomec.com/l/86922/2019-10-15/67j4ls",
+      "title" => "",
+      "options" => [],
+      "lang" => "en",
+    ],
+  ]);
+
+  // News teaser block
+  $blockContentManager->createBlockContent('basic', 'Views News Teaser', [
+    'langcode' => 'en',
+    'uuid' => 'c97d069b-ed27-49c0-819a-fb4fcf408469',
+    'body' => [
+      [
+        "value" => "<p>Iterative approaches to establish a new normal that has evolved from generation x.</p>\r\n",
+        "format" => "socomec",
       ],
     ],
   ]);
@@ -199,6 +237,93 @@ function soc_content_install() {
         "format" => "socomec",
       ],
     ]
+  ]);
+
+  // Social menu footer block
+  if ($logoImage = $mediaManager->createFile('logo-socomec_blue.png')) {
+    $logoMedia = $mediaManager->createMedia($logoImage, 'Logo Socomec Social Footer', 'image');
+  }
+  if ($linkedInImage = $mediaManager->createFile('linkedin.svg')) {
+    if ($linkedInIcon = $mediaManager->createMedia($linkedInImage, 'LinkedIn', 'icone')) {
+      $linkedInParagraph = $paragraphManager->createParagraph('link', [
+        'field_link_icon' => [
+          'target_id' => $linkedInIcon->id(),
+        ],
+        'field_link_link' => 'https://www.linkedin.com/company/socomec/',
+      ]);
+    }
+  }
+  if ($facebookImage = $mediaManager->createFile('facebook.svg')) {
+    if ($facebookIcon = $mediaManager->createMedia($facebookImage, 'Facebook', 'icone')) {
+      $facebookParagraph = $paragraphManager->createParagraph('link', [
+        'field_link_icon' => [
+          'target_id' => $facebookIcon->id(),
+        ],
+        'field_link_link' => 'https://www.facebook.com/SocomecGroup/',
+      ]);
+    }
+  }
+  if ($twitterImage = $mediaManager->createFile('twitter.svg')) {
+    if ($twitterIcon = $mediaManager->createMedia($twitterImage, 'Twitter', 'icone')) {
+      $twitterParagraph = $paragraphManager->createParagraph('link', [
+        'field_link_icon' => [
+          'target_id' => $twitterIcon->id(),
+        ],
+        'field_link_link' => 'https://twitter.com/socomec_group',
+      ]);
+    }
+  }
+  if ($youtubeImage = $mediaManager->createFile('youtube.svg')) {
+    if ($youtubeIcon = $mediaManager->createMedia($youtubeImage, 'YouTube', 'icone')) {
+      $youtubeParagraph = $paragraphManager->createParagraph('link', [
+        'field_link_icon' => [
+          'target_id' => $youtubeIcon->id(),
+        ],
+        'field_link_link' => 'https://www.youtube.com/channel/UCqYisxCze5VfEqjCymYWPxw',
+      ]);
+    }
+  }
+  if (isset($logoMedia) && isset($linkedInParagraph) && isset($facebookParagraph)
+    && isset($twitterParagraph) && isset($youtubeParagraph)) {
+    $blockContentManager->createBlockContent('multiple_links_and_image', 'Social menu footer', [
+      'langcode' => 'en',
+      'uuid' => '418413f4-fde4-4c1a-8045-7b9be441942d',
+      'field_image' => [
+        [
+          'target_id' => $logoMedia->id(),
+        ],
+      ],
+      'field_links' => [
+        [
+          'target_id' => $linkedInParagraph->id(),
+          'target_revision_id' => $linkedInParagraph->getRevisionId(),
+        ],
+        [
+          'target_id' => $facebookParagraph->id(),
+          'target_revision_id' => $facebookParagraph->getRevisionId(),
+        ],
+        [
+          'target_id' => $twitterParagraph->id(),
+          'target_revision_id' => $twitterParagraph->getRevisionId(),
+        ],
+        [
+          'target_id' => $youtubeParagraph->id(),
+          'target_revision_id' => $youtubeParagraph->getRevisionId(),
+        ],
+      ],
+    ]);
+  }
+
+  // Back to top block
+  $blockContentManager->createBlockContent('link', 'back to top', [
+    'langcode' => 'en',
+    'uuid' => '19f08398-afb3-4c4b-b4d4-dd399507172d',
+    'field_link' => [
+      "uri" => "internal:/",
+      "title" => "TOP",
+      "options" => [],
+      "lang" => "en",
+    ],
   ]);
 
 }

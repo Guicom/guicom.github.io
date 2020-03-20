@@ -30,10 +30,15 @@ class TaxonomyTermContent extends ContentManager {
    */
   public function createTerm(string $name, string $vid, array $data = []) {
     // Check if term already exists.
-    $terms = \Drupal::entityQuery('taxonomy_term')
-      ->condition('name', $name)
-      ->condition('vid', $vid)
-      ->execute();
+    $termsQuery = \Drupal::entityQuery('taxonomy_term');
+    if (isset($data['uuid'])) {
+      $termsQuery->condition('uuid', $data['uuid']);
+    }
+    else {
+      $termsQuery->condition('name', $name);
+      $termsQuery->condition('vid', $vid);
+    }
+    $terms = $termsQuery->execute();
 
     // If term does not exist, create it.
     if (empty($terms)) {

@@ -31,10 +31,15 @@ class MenuItemContent extends ContentManager {
    */
   public function createMenuItem(string $title, string $menu_name, array $link, $data = []) {
     // Check if menu link already exists.
-    $menuLinks = \Drupal::entityQuery('menu_link_content')
-      ->condition('title', $title)
-      ->condition('menu_name', $menu_name)
-      ->execute();
+    $menuLinksQuery = \Drupal::entityQuery('menu_link_content');
+    if (isset($data['uuid'])) {
+      $menuLinksQuery->condition('uuid', $data['uuid']);
+    }
+    else {
+      $menuLinksQuery->condition('title', $title);
+      $menuLinksQuery->condition('menu_name', $menu_name);
+    }
+    $menuLinks = $menuLinksQuery->execute();
 
     // If menu item does not exist, create it.
     if (empty($menuLinks)) {
