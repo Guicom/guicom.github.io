@@ -76,7 +76,7 @@ Feature: [STORE_LOCATOR] Tests Behat
     And I fill in "Title" with "Title content location"
     And I select "Europe" from "Continent of Sales"
     And I select "-France" from "Area of Sales"
-    And I select "Energy Efficiency" from "Activity"
+    And I select "Energy storage" from "Activity"
     And I fill in "Company" with "Company content location"
     And I select "France" from "Country"
     And I wait for AJAX to finish

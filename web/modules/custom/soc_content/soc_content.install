@@ -61,6 +61,12 @@ function soc_content_install() {
   $termManager->createTerm('Energy Storage', 'news_theme');
   $termManager->createTerm('Expert Services', 'news_theme');
 
+  // News Type vocabulary
+  $termManager->createTerm('Corporate', 'news_type');
+  $termManager->createTerm('Customers story', 'news_type');
+  $termManager->createTerm('Solutions & Offers', 'news_type');
+  $termManager->createTerm('Events', 'news_type');
+
   // Resource type vocabulary
   $termManager->createTerm('Catalogue', 'resource_type');
   $termManager->createTerm('Brochure', 'resource_type');
@@ -81,6 +87,13 @@ function soc_content_install() {
   $termManager->createTerm('Video', 'resource_type');
   $termManager->createTerm('CAD Files', 'resource_type');
 
+  // Location Activity vocabulary
+  $termManager->createTerm('Power switching', 'location_activity');
+  $termManager->createTerm('Power monitoring', 'location_activity');
+  $termManager->createTerm('Power conversion', 'location_activity');
+  $termManager->createTerm('Energy storage', 'location_activity');
+  $termManager->createTerm('Expert services', 'location_activity');
+
   // Location Areas vocabulary
   if ($europeTerm = $termManager->createTerm('Europe', 'location_areas')) {
     if ($franceTerm = $termManager->createTerm('France', 'location_areas', [
@@ -91,6 +104,17 @@ function soc_content_install() {
       ]);
     }
   }
+
+  // Location Type vocabulary
+  $termManager->createTerm('Power', 'Distributor', [
+    'field_weight' => '1',
+  ]);
+  $termManager->createTerm('Power', 'Reseller', [
+    'field_weight' => '0',
+  ]);
+  $termManager->createTerm('Power', 'Subsidiary', [
+    'field_weight' => '1',
+  ]);
 
   // Header menu
   $menuItemManager->createMenuItem('Solutions', 'header', [
@@ -150,6 +174,18 @@ function soc_content_install() {
     'body' => [
       [
         "value" => "<p>Iterative approaches to establish a new normal that has evolved from generation x.</p>\r\n",
+        "format" => "socomec",
+      ],
+    ]
+  ]);
+
+  // Resource center hero block
+  $blockContentManager->createBlockContent('basic', 'Resource Center Hero', [
+    'langcode' => 'en',
+    'uuid' => 'adc184e0-615a-4d05-89eb-4b523dd947b8',
+    'body' => [
+      [
+        "value" => "<p>Distinctively exploit optimal networks interactively, procrastinate B2B users with leading-edge intellectual.</p>\r\n",
         "format" => "socomec",
       ],
     ]

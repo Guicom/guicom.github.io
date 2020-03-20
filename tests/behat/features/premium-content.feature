@@ -1,16 +1,7 @@
 Feature: Premium Content
   In order to test out premium contents
 
-  @api @cit @javascript @premium_content @premium_content_thank_you_page
-  Scenario: Thank you page
-    Given thank_you_page content:
-      | language | title                                                               | status |
-      | English  | Comment garantir la continuite dalimentation des blocs operatoires  | 1      |
-    And I am not logged in
-    And I visit "/"
-    And I accept all cookies compliance
-    When I am on "/comment-garantir-la-continuite-dalimentation-des-blocs-operatoires/thank-you"
-    Then the response status code should be 403
+  # ./vendor/bin/phing behat:run -Dbehat.tags=premium_content
 
   @api @cit @javascript @premium_content @premium_content_landing_page
   Scenario: Pardot form
@@ -36,3 +27,13 @@ Feature: Premium Content
 #    And I click the ".submit input" element
     And I switch to the main windows
 
+  @api @cit @javascript @premium_content @premium_content_thank_you_page
+  Scenario: Thank you page
+    #Given thank_you_page content:
+    #  | language | title                                                               | status |
+    #  | English  | Comment garantir la continuite dalimentation des blocs operatoires  | 1      |
+    Given I am not logged in
+    And I visit "/"
+    And I accept all cookies compliance
+    When I am on "/comment-garantir-la-continuite-dalimentation-des-blocs-operatoires/thank-you"
+    Then the response status code should be 403
