@@ -5,8 +5,8 @@ Feature: Products
   @product-detail @api @cit @javascript
   Scenario: Detail product
     Given product content:
-      | language | title            | status | field_product_family |
-      | English  | My test product  | 1      | My Product Family    |
+      | language | title            | status | field_product_family | moderation_state |
+      | English  | My test product  | 1      | My Product Family    | published        |
     And I visit "/"
     And I accept all cookies compliance
     When I visit "/my-product-family/my-test-product"

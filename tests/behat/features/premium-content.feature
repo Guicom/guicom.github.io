@@ -6,8 +6,8 @@ Feature: Premium Content
   @api @cit @javascript @premium_content @premium_content_landing_page
   Scenario: Pardot form
     Given landing_page content:
-      | language | title                                                               | field_pardot_form_url                            | status |
-      | English  | Comment garantir la continuite dalimentation des blocs operatoires  | https://go.socomec.com/l/86922/2019-08-21/62nvkw | 1      |
+      | language | title                                                               | field_pardot_form_url                            | status | moderation_state |
+      | English  | Comment garantir la continuite dalimentation des blocs operatoires  | https://go.socomec.com/l/86922/2019-08-21/62nvkw | 1      | published        |
     And I am not logged in
     And I visit "/"
     And I accept all cookies compliance

@@ -106,13 +106,13 @@ function soc_content_install() {
   }
 
   // Location Type vocabulary
-  $termManager->createTerm('Power', 'Distributor', [
+  $termManager->createTerm('Distributor', 'location_type', [
     'field_weight' => '1',
   ]);
-  $termManager->createTerm('Power', 'Reseller', [
+  $termManager->createTerm('Reseller', 'location_type', [
     'field_weight' => '0',
   ]);
-  $termManager->createTerm('Power', 'Subsidiary', [
+  $termManager->createTerm('Subsidiary', 'location_type', [
     'field_weight' => '1',
   ]);
 
@@ -136,34 +136,44 @@ function soc_content_install() {
   // Visitors menu
   $menuItemManager->createMenuItem('search', 'header-visitors', [
     'uri' => 'internal:/#search',
-    'attributes' => [
-      'class' => 'ico-search-white no-label',
+    'options' => [
+      'attributes' => [
+        'class' => 'ico-search-white no-label',
+      ],
     ],
   ]);
   $menuItemManager->createMenuItem('Bookmark', 'header-visitors', [
     'uri' => 'internal:/#bookmark',
-    'attributes' => [
-      'class' => 'ico-bookmark-star-white no-label',
+    'options' => [
+      'attributes' => [
+        'class' => 'ico-bookmark-star-white no-label',
+      ],
     ],
   ]);
   $menuItemManager->createMenuItem('Wishlist', 'header-visitors', [
     'uri' => 'internal:/my-wishlist',
-    'attributes' => [
-      'class' => 'ico-favorite no-label',
+    'options' => [
+      'attributes' => [
+        'class' => 'ico-favorite no-label',
+      ],
     ],
   ]);
   $menuItemManager->createMenuItem('Sign in', 'header-visitors', [
     'uri' => 'internal:/user/login',
-    'attributes' => [
-      'class' => 'ico-user',
-      'menu_per_role__show_role' => ['authenticated'],
+    'options' => [
+      'attributes' => [
+        'class' => 'ico-user',
+        'menu_per_role__show_role' => ['authenticated'],
+      ],
     ],
   ]);
   $menuItemManager->createMenuItem('Sign out', 'header-visitors', [
     'uri' => 'internal:/user/logout',
-    'attributes' => [
-      'class' => 'ico-user',
-      'menu_per_role__hide_role' => ['authenticated']
+    'options' => [
+      'attributes' => [
+        'class' => 'ico-user',
+        'menu_per_role__hide_role' => ['authenticated']
+      ],
     ],
   ]);
 
