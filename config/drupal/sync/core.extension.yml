@@ -39,7 +39,6 @@ module:
   dblog: 0
   default_content: 0
   default_content_deploy: 0
-  deploy: 0
   dropdown_language: 0
   drush_language: 0
   ds_extras: 0
@@ -99,7 +98,6 @@ module:
   migrate: 0
   migrate_drupal: 0
   multiselect: 0
-  multiversion: 0
   node: 0
   options: 0
   paragraphs_library: 0
@@ -111,7 +109,6 @@ module:
   redis: 0
   remote_stream_wrapper: 0
   remote_stream_wrapper_widget: 0
-  replication: 0
   responsive_image: 0
   rest: 0
   scheduled_updates: 0
@@ -163,7 +160,6 @@ module:
   menu_link_content: 1
   pathauto: 1
   views: 10
-  workspace: 10
   paragraphs: 11
   standard: 1000
   eu_cookie_compliance: 1001
