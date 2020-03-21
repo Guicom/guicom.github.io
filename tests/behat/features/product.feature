@@ -2,13 +2,37 @@
 Feature: Products
   In order to test out the products
 
-  @product-detail @api @cit @javascript
+  @api @cit @javascript @product @product_detail
   Scenario: Detail product
-    Given product content:
-      | language | title            | status | field_product_family | moderation_state |
-      | English  | My test product  | 1      | My Product Family    | published        |
+    Given product_reference content:
+      | language | title                    | status | moderation_state |
+      | English  | 22003016-SIRCO MV 3X160A | 1      | published        |
+    And optional_related_content content:
+      | language | title   | status | moderation_state | field_orc_text |
+      | English  | My ORC  | 1      | published        | ORC text       |
+    And product content:
+      | language | title             | status | field_product_family | moderation_state | field_product_reference   | field_associated_products | field_product_orc_content |
+      | English  | My other product  | 1      | My Product Family    | published        | 22003016-SIRCO MV 3X160A  |                           |                           |
+      | English  | My test product   | 1      | My Product Family    | published        | 22003016-SIRCO MV 3X160A  | My other product          | My ORC                    |
+    And I am logged in as a user with the "administrator" role
+    And I go to "admin/content"
+    And I click "Edit" in the "My test product" row
+    And I click the "a[href='#edit-group-webmastering']" element
+    And I wait 1 seconds
+    And I click the "#edit-group-multiline" element
+    And I wait 1 seconds
+    And I click the "#edit-field-product-multiline li.dropbutton-toggle button" element
+    And I press the "field_product_multiline_model_text_add_more" button
+    And I fill in "field_product_multiline[0][subform][field_title][0][value]" with "Text"
+    And I press "edit-submit"
+    And I go to "admin/content"
+    And I click "Edit" in the "22003016-SIRCO MV 3X160A" row
+    And I set the dummy json data on the reference
+    Then I am an anonymous user
     And I visit "/"
+    And I wait 1 seconds
     And I accept all cookies compliance
+    And I wait 1 seconds
     When I visit "/my-product-family/my-test-product"
     Then I should see an "body.node--type-product" element
     Then I should see an "#product-info-section" element

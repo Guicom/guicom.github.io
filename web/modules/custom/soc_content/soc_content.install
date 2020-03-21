@@ -29,6 +29,31 @@ function soc_content_install() {
   $termManager->createTerm('Seminar', 'event_type');
   $termManager->createTerm('Webinar', 'event_type');
 
+  // Event thematic vocabulary
+  $termManager->createTerm('Data Centre', 'event_thematic');
+  $termManager->createTerm('Healthcare', 'event_thematic');
+  $termManager->createTerm('Infrastructure', 'event_thematic');
+  $termManager->createTerm('Energy', 'event_thematic');
+  $termManager->createTerm('Industry', 'event_thematic');
+  $termManager->createTerm('Building', 'event_thematic');
+  $termManager->createTerm('Power Conversion', 'event_thematic');
+  $termManager->createTerm('Power Switching', 'event_thematic');
+  $termManager->createTerm('Power Monitoring', 'event_thematic');
+  $termManager->createTerm('Energy Storage', 'event_thematic');
+  $termManager->createTerm('Expert Services', 'event_thematic');
+
+  // Country vocabulary
+  $termManager->createTerm('Belgium', 'country');
+  $termManager->createTerm('China', 'country');
+  $termManager->createTerm('France', 'country');
+  $termManager->createTerm('India', 'country');
+  $termManager->createTerm('Italy', 'country');
+  $termManager->createTerm('Poland', 'country');
+  $termManager->createTerm('Spain', 'country');
+  $termManager->createTerm('Switzerland', 'country');
+  $termManager->createTerm('United Kingdom', 'country');
+  $termManager->createTerm('USA', 'country');
+
   // Premium content type vocabulary
   $termManager->createTerm('White paper', 'premium_content_type');
   $termManager->createTerm('Case study', 'premium_content_type');
@@ -118,6 +143,55 @@ function soc_content_install() {
     'field_weight' => '1',
   ]);
 
+  // Protection level vocabulary
+  if ($primeImage = $mediaManager->createFile('mkt-prime.svg')) {
+    if ($primeMedia = $mediaManager->createMedia($primeImage, 'Prime protection level', 'icone')) {
+      $termManager->createTerm('Prime', 'protection_level', [
+        'field_label_icon' => ['target_id' => $primeMedia->id()],
+        'field_protection_sub_title' => 'Trustworthy power',
+        'description' => [
+          'value' => '<p>Reliable and cost effective protection to <strong>assure operational continuity</strong></p>',
+          'format' => 'socomec',
+        ],
+      ]);
+    }
+  }
+  if ($superiorImage = $mediaManager->createFile('mkt-superior.svg')) {
+    if ($superiorMedia = $mediaManager->createMedia($superiorImage, 'Superior protection level', 'icone')) {
+      $termManager->createTerm('Superior', 'protection_level', [
+        'field_label_icon' => ['target_id' => $superiorMedia->id()],
+        'field_protection_sub_title' => 'Unrivalled power performance',
+        'description' => [
+          'value' => '<p>Best in class &amp; certified performance to <strong>optimise usage and Total Cost of Ownership</strong></p>',
+          'format' => 'socomec',
+        ],
+      ]);
+    }
+  }
+  if ($ultimateImage = $mediaManager->createFile('mkt-ultimate.svg')) {
+    if ($ultimateMedia = $mediaManager->createMedia($ultimateImage, 'Ultimate protection level', 'icone')) {
+      $termManager->createTerm('Ultimate', 'protection_level', [
+        'field_label_icon' => ['target_id' => $ultimateMedia->id()],
+      ]);
+    }
+  }
+
+  // Product label vocabulary
+  if ($iecImage = $mediaManager->createFile('iec.svg')) {
+    if ($iecMedia = $mediaManager->createMedia($iecImage, 'IEC product label', 'icone')) {
+      $termManager->createTerm('iec', 'product_label', [
+        'field_label_icon' => ['target_id' => $iecMedia->id()],
+      ]);
+    }
+  }
+  if ($ulImage = $mediaManager->createFile('ul.svg')) {
+    if ($ulMedia = $mediaManager->createMedia($ulImage, 'UL product label', 'icone')) {
+      $termManager->createTerm('ul', 'product_label', [
+        'field_label_icon' => ['target_id' => $ulMedia->id()],
+      ]);
+    }
+  }
+
   // Header menu
   $menuItemManager->createMenuItem('Solutions', 'header', [
     'uri' => 'route:<nolink>',
@@ -137,7 +211,7 @@ function soc_content_install() {
 
   // Visitors menu
   $menuItemManager->createMenuItem('search', 'header-visitors', [
-    'uri' => 'internal:/#search',
+    'uri' => 'internal:#search',
     'weight' => 0,
     'options' => [
       'attributes' => [
@@ -146,7 +220,7 @@ function soc_content_install() {
     ],
   ]);
   $menuItemManager->createMenuItem('Bookmark', 'header-visitors', [
-    'uri' => 'internal:/#bookmark',
+    'uri' => 'internal:#bookmark',
     'weight' => 1,
     'options' => [
       'attributes' => [
@@ -182,6 +256,152 @@ function soc_content_install() {
         'class' => 'ico-user',
       ],
     ],
+  ]);
+
+  // Search quicklinks menu
+  $menuItemManager->createMenuItem('Events Calendar', 'search-quick-link', [
+    'uri' => 'internal:/events',
+    'weight' => 1,
+  ]);
+  $menuItemManager->createMenuItem('Our Worldwide Locations', 'search-quick-link', [
+    'uri' => 'internal:/where-to-buy',
+    'weight' => 2,
+  ]);
+  $menuItemManager->createMenuItem('Resource center', 'search-quick-link', [
+    'uri' => 'internal:/resource-center',
+    'weight' => 3,
+  ]);
+  $menuItemManager->createMenuItem('Link 4', 'search-quick-link', [
+    'uri' => 'route:<nolink>',
+    'weight' => 4,
+  ]);
+  $menuItemManager->createMenuItem('Link 5', 'search-quick-link', [
+    'uri' => 'route:<nolink>',
+    'weight' => 5,
+  ]);
+
+  // Top Searches menu
+  $menuItemManager->createMenuItem('My product family', 'search-top-search', [
+    'uri' => 'internal:/taxonomy/term/2',
+    'weight' => 1,
+  ]);
+  $menuItemManager->createMenuItem('Link 2', 'search-top-search', [
+    'uri' => 'route:<nolink>',
+    'weight' => 2,
+  ]);
+  $menuItemManager->createMenuItem('Link 3', 'search-top-search', [
+    'uri' => 'route:<nolink>',
+    'weight' => 3,
+  ]);
+  $menuItemManager->createMenuItem('Link 4', 'search-top-search', [
+    'uri' => 'route:<nolink>',
+    'weight' => 4,
+  ]);
+  $menuItemManager->createMenuItem('Link 5', 'search-top-search', [
+    'uri' => 'route:<nolink>',
+    'weight' => 5,
+  ]);
+
+  // Footer menu
+  $productsMenu = $menuItemManager->createMenuItem('Products', 'footer', [
+    'uri' => 'entity:taxonomy_term/1',
+    'weight' => 1,
+  ]);
+  if ($productsMenu != FALSE) {
+    $menuItemManager->createMenuItem('My Product Family', 'footer', [
+      'uri' => 'entity:taxonomy_term/2',
+      'parent' => $productsMenu->getPluginId(),
+    ]);
+  }
+  $industriesMenu = $menuItemManager->createMenuItem('Industries', 'footer', [
+    'uri' => 'route:<nolink>',
+    'weight' => 2,
+  ]);
+  if ($industriesMenu != FALSE) {
+    $menuItemManager->createMenuItem('Industrial process', 'footer', [
+      'uri' => 'route:<nolink>',
+      'parent' => $industriesMenu->getPluginId(),
+    ]);
+    $menuItemManager->createMenuItem('Building infrastructure', 'footer', [
+      'uri' => 'route:<nolink>',
+      'parent' => $industriesMenu->getPluginId(),
+    ]);
+    $menuItemManager->createMenuItem('Energy healthcare', 'footer', [
+      'uri' => 'route:<nolink>',
+      'parent' => $industriesMenu->getPluginId(),
+    ]);
+    $menuItemManager->createMenuItem('Datacenter', 'footer', [
+      'uri' => 'route:<nolink>',
+      'parent' => $industriesMenu->getPluginId(),
+    ]);
+  }
+  $resourcesMenu = $menuItemManager->createMenuItem('Resources', 'footer', [
+    'uri' => 'internal:/resource-center',
+    'weight' => 3,
+  ]);
+  $locationsMenu = $menuItemManager->createMenuItem('Locations & Partners', 'footer', [
+    'uri' => 'route:<nolink>',
+    'weight' => 4,
+  ]);
+  if ($locationsMenu != FALSE) {
+    $menuItemManager->createMenuItem('Become a distributor', 'footer', [
+      'uri' => 'route:<nolink>',
+      'parent' => $locationsMenu->getPluginId(),
+    ]);
+    $menuItemManager->createMenuItem('Locations', 'footer', [
+      'uri' => 'internal:/where-to-buy',
+      'parent' => $locationsMenu->getPluginId(),
+    ]);
+  }
+  $newsMenu = $menuItemManager->createMenuItem('News', 'footer', [
+    'uri' => 'internal:/news',
+    'weight' => 5,
+  ]);
+  if ($newsMenu != FALSE) {
+    $menuItemManager->createMenuItem('News', 'footer', [
+      'uri' => 'internal:/news',
+      'parent' => $newsMenu->getPluginId(),
+    ]);
+    $menuItemManager->createMenuItem('Events', 'footer', [
+      'uri' => 'internal:/events',
+      'parent' => $newsMenu->getPluginId(),
+    ]);
+  }
+  $aboutMenu = $menuItemManager->createMenuItem('About us', 'footer', [
+    'uri' => 'route:<nolink>',
+    'weight' => 6,
+  ]);
+  if ($aboutMenu != FALSE) {
+    $menuItemManager->createMenuItem('Career', 'footer', [
+      'uri' => 'route:<nolink>',
+      'parent' => $aboutMenu->getPluginId(),
+    ]);
+    $menuItemManager->createMenuItem('Street art', 'footer', [
+      'uri' => 'route:<nolink>',
+      'parent' => $aboutMenu->getPluginId(),
+    ]);
+    $menuItemManager->createMenuItem('Who we are', 'footer', [
+      'uri' => 'route:<nolink>',
+      'parent' => $aboutMenu->getPluginId(),
+    ]);
+  }
+
+  // Footer legal menu
+  $menuItemManager->createMenuItem('Legal mentions', 'footer-legal-mentions', [
+    'uri' => 'route:<nolink>',
+    'weight' => 1,
+  ]);
+  $menuItemManager->createMenuItem('Legal Data privacy', 'footer-legal-mentions', [
+    'uri' => 'route:<nolink>',
+    'weight' => 1,
+  ]);
+  $menuItemManager->createMenuItem('Terms and conditions', 'footer-legal-mentions', [
+    'uri' => 'route:<nolink>',
+    'weight' => 1,
+  ]);
+  $menuItemManager->createMenuItem('Contact', 'footer-legal-mentions', [
+    'uri' => 'route:<nolink>',
+    'weight' => 1,
   ]);
 
   // Copyright block
@@ -325,5 +545,35 @@ function soc_content_install() {
       "lang" => "en",
     ],
   ]);
+
+  // Product assistance block
+  $blockData = [
+    'uuid' => 'b5528417-a66a-439d-a965-2d1570e962f4',
+    'field_br_title' => 'Looking for product resources?',
+    'field_br_text' => [
+      'value' => '<p>Access product catalogs, operating instructions, technical documents, CAD files, &nbsp;and more.</p>',
+      'format' => 'socomec',
+    ],
+    'field_ba_title' => 'Questions? We can help!',
+    'field_ba_text' => [
+      'value' => '<p>Browse our FAQs to easily find answer, submit a Support Request...</p>',
+      'format' => 'socomec',
+    ],
+  ];
+  if ($file = $mediaManager->createFile('resources.svg')) {
+    if ($media = $mediaManager->createMedia($file, 'Resources', 'icone')) {
+      $blockData['field_br_icon'] = [
+        'target_id' => $media->id(),
+      ];
+    }
+  }
+  if ($file = $mediaManager->createFile('resources-crop-2018.png')) {
+    if ($media = $mediaManager->createMedia($file, 'Resources background', 'image')) {
+      $blockData['field_background_image'] = [
+        'target_id' => $media->id(),
+      ];
+    }
+  }
+  $blockContentManager->createBlockContent('home_product_assistance', 'Home Product Assistance', $blockData);
 
 }
