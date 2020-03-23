@@ -1,14 +1,20 @@
 {
     "_links": {
         "self": {
-            "href": "http:\/\/default\/power-switching-monitoring\/load-break-switch\/sirco-dc-pv-load-break-switch?_format=hal_json"
+            "href": "http:\/\/default\/en\/power-switching-monitoring\/load-break-switch\/sirco-dc-pv-load-break-switch?_format=hal_json"
         },
         "type": {
             "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/family"
         },
         "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/family\/parent": [
             {
-                "href": "http:\/\/default\/power-switching-monitoring\/load-break-switch?_format=hal_json"
+                "href": "http:\/\/default\/en\/power-switching-monitoring\/load-break-switch?_format=hal_json"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/family\/content_translation_uid": [
+            {
+                "href": "http:\/\/default\/en\/user\/1?_format=hal_json",
+                "lang": "en"
             }
         ]
     },
@@ -71,7 +77,7 @@
             {
                 "_links": {
                     "self": {
-                        "href": "http:\/\/default\/power-switching-monitoring\/load-break-switch?_format=hal_json"
+                        "href": "http:\/\/default\/en\/power-switching-monitoring\/load-break-switch?_format=hal_json"
                     },
                     "type": {
                         "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/family"
@@ -82,6 +88,24 @@
                         "value": "f50106f3-aeee-467f-9ff7-6bb437455271"
                     }
                 ]
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/family\/content_translation_uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/en\/user\/1?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "0239213a-20c6-47d9-97d6-55bfd7a03bd7"
+                    }
+                ],
+                "lang": "en"
             }
         ]
     },

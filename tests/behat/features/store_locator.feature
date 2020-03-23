@@ -63,7 +63,7 @@ Feature: [STORE_LOCATOR] Tests Behat
     And I fill in "Type" with "Reseller"
     And I wait for AJAX to finish
     Then I should see "Website"
-    Then I should see an "input#edit-field-location-website-0-uri[required='required']" element
+    Then I should see an ".field--name-field-location-website[required='required']" element
 
   @api @cit @store_locator @javascript
   # vendor/bin/phing behat:run -Dbehat.tags=store_locator

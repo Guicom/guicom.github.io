@@ -1,31 +1,30 @@
 {
     "_links": {
         "self": {
-            "href": "http:\/\/default\/admin\/structure\/menu\/item\/94\/edit?_format=hal_json"
+            "href": "http:\/\/default\/en\/admin\/structure\/menu\/item\/106\/edit?_format=hal_json"
         },
         "type": {
             "href": "http:\/\/drupal.org\/rest\/type\/menu_link_content\/menu_link_content"
         },
-        "http:\/\/drupal.org\/rest\/relation\/menu_link_content\/menu_link_content\/content_translation_uid": [
+        "http:\/\/drupal.org\/rest\/relation\/menu_link_content\/menu_link_content\/menu_link_content_parent_entity": [
             {
-                "href": "http:\/\/default\/user\/1?_format=hal_json",
-                "lang": "en"
+                "href": "http:\/\/default\/en\/admin\/structure\/menu\/item\/5\/edit?_format=hal_json"
             }
         ]
     },
     "id": [
         {
-            "value": 94
+            "value": 106
         }
     ],
     "uuid": [
         {
-            "value": "8bb8d22a-a571-4425-93a9-286a0ae37275"
+            "value": "43f59139-30f4-4998-be37-c1ea32efa400"
         }
     ],
     "revision_id": [
         {
-            "value": 94
+            "value": 106
         }
     ],
     "langcode": [
@@ -41,7 +40,7 @@
     ],
     "revision_created": [
         {
-            "value": "2020-02-27T12:44:46+00:00",
+            "value": "2020-03-06T09:29:08+00:00",
             "format": "Y-m-d\\TH:i:sP"
         }
     ],
@@ -52,18 +51,18 @@
     ],
     "title": [
         {
-            "value": "Portal Login",
+            "value": "Area of sales",
             "lang": "en"
         }
     ],
     "menu_name": [
         {
-            "value": "footer"
+            "value": "header"
         }
     ],
     "link": [
         {
-            "uri": "internal:\/",
+            "uri": "route:<nolink>",
             "title": "",
             "options": []
         }
@@ -75,12 +74,12 @@
     ],
     "rediscover": [
         {
-            "value": true
+            "value": false
         }
     ],
     "weight": [
         {
-            "value": 0
+            "value": -91
         }
     ],
     "expanded": [
@@ -88,9 +87,14 @@
             "value": false
         }
     ],
+    "parent": [
+        {
+            "value": "menu_link_content:05d16870-ef3f-47c9-b395-09269655210e"
+        }
+    ],
     "changed": [
         {
-            "value": "2020-02-27T12:44:46+00:00",
+            "value": "2020-03-06T09:29:16+00:00",
             "lang": "en",
             "format": "Y-m-d\\TH:i:sP"
         }
@@ -119,26 +123,6 @@
             "lang": "en"
         }
     ],
-    "_embedded": {
-        "http:\/\/drupal.org\/rest\/relation\/menu_link_content\/menu_link_content\/content_translation_uid": [
-            {
-                "_links": {
-                    "self": {
-                        "href": "http:\/\/default\/user\/1?_format=hal_json"
-                    },
-                    "type": {
-                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
-                    }
-                },
-                "uuid": [
-                    {
-                        "value": "8a641616-abc0-4847-95f7-18a4544b5b9b"
-                    }
-                ],
-                "lang": "en"
-            }
-        ]
-    },
     "content_translation_status": [
         {
             "value": true,
@@ -147,7 +131,7 @@
     ],
     "content_translation_created": [
         {
-            "value": "2020-02-27T12:44:46+00:00",
+            "value": "2020-03-06T09:29:08+00:00",
             "lang": "en",
             "format": "Y-m-d\\TH:i:sP"
         }
@@ -156,8 +140,27 @@
         {
             "value": {
                 "title": "| Socomec",
-                "canonical_url": "http:\/\/default\/node"
+                "canonical_url": "http:\/\/default\/en\/node"
             }
         }
-    ]
+    ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/menu_link_content\/menu_link_content\/menu_link_content_parent_entity": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/en\/admin\/structure\/menu\/item\/5\/edit?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/menu_link_content\/menu_link_content"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "05d16870-ef3f-47c9-b395-09269655210e"
+                    }
+                ]
+            }
+        ]
+    }
 }

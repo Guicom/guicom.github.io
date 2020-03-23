@@ -1,67 +1,67 @@
 {
     "_links": {
         "self": {
-            "href": "http:\/\/default\/node\/24?_format=hal_json"
+            "href": "http:\/\/default\/en\/node\/24?_format=hal_json"
         },
         "type": {
             "href": "http:\/\/drupal.org\/rest\/type\/node\/resource"
         },
         "http:\/\/drupal.org\/rest\/relation\/node\/resource\/revision_uid": [
             {
-                "href": "http:\/\/default\/user\/1?_format=hal_json"
+                "href": "http:\/\/default\/en\/user\/1?_format=hal_json"
             }
         ],
         "http:\/\/drupal.org\/rest\/relation\/node\/resource\/uid": [
             {
-                "href": "http:\/\/default\/user\/1?_format=hal_json",
+                "href": "http:\/\/default\/en\/user\/1?_format=hal_json",
                 "lang": "en"
             }
         ],
         "http:\/\/drupal.org\/rest\/relation\/node\/resource\/field_res_momentum": [
             {
-                "href": "http:\/\/default\/taxonomy\/term\/29?_format=hal_json"
+                "href": "http:\/\/default\/en\/taxonomy\/term\/29?_format=hal_json"
             },
             {
-                "href": "http:\/\/default\/taxonomy\/term\/27?_format=hal_json"
+                "href": "http:\/\/default\/en\/taxonomy\/term\/27?_format=hal_json"
             },
             {
-                "href": "http:\/\/default\/taxonomy\/term\/31?_format=hal_json"
+                "href": "http:\/\/default\/en\/taxonomy\/term\/31?_format=hal_json"
             },
             {
-                "href": "http:\/\/default\/taxonomy\/term\/28?_format=hal_json"
+                "href": "http:\/\/default\/en\/taxonomy\/term\/28?_format=hal_json"
             }
         ],
         "http:\/\/drupal.org\/rest\/relation\/node\/resource\/field_res_resource_type": [
             {
-                "href": "http:\/\/default\/taxonomy\/term\/62?_format=hal_json"
+                "href": "http:\/\/default\/en\/taxonomy\/term\/62?_format=hal_json"
             }
         ],
         "http:\/\/drupal.org\/rest\/relation\/node\/resource\/field_res_segment": [
             {
-                "href": "http:\/\/default\/taxonomy\/term\/45?_format=hal_json"
+                "href": "http:\/\/default\/en\/taxonomy\/term\/45?_format=hal_json"
             },
             {
-                "href": "http:\/\/default\/taxonomy\/term\/46?_format=hal_json"
+                "href": "http:\/\/default\/en\/taxonomy\/term\/46?_format=hal_json"
             },
             {
-                "href": "http:\/\/default\/taxonomy\/term\/35?_format=hal_json"
+                "href": "http:\/\/default\/en\/taxonomy\/term\/35?_format=hal_json"
             },
             {
-                "href": "http:\/\/default\/taxonomy\/term\/36?_format=hal_json"
+                "href": "http:\/\/default\/en\/taxonomy\/term\/36?_format=hal_json"
             },
             {
-                "href": "http:\/\/default\/taxonomy\/term\/37?_format=hal_json"
+                "href": "http:\/\/default\/en\/taxonomy\/term\/37?_format=hal_json"
             }
         ],
         "http:\/\/drupal.org\/rest\/relation\/node\/resource\/field_res_target": [
             {
-                "href": "http:\/\/default\/taxonomy\/term\/21?_format=hal_json"
+                "href": "http:\/\/default\/en\/taxonomy\/term\/21?_format=hal_json"
             },
             {
-                "href": "http:\/\/default\/taxonomy\/term\/24?_format=hal_json"
+                "href": "http:\/\/default\/en\/taxonomy\/term\/24?_format=hal_json"
             },
             {
-                "href": "http:\/\/default\/taxonomy\/term\/22?_format=hal_json"
+                "href": "http:\/\/default\/en\/taxonomy\/term\/22?_format=hal_json"
             }
         ]
     },
@@ -102,7 +102,7 @@
             {
                 "_links": {
                     "self": {
-                        "href": "http:\/\/default\/user\/1?_format=hal_json"
+                        "href": "http:\/\/default\/en\/user\/1?_format=hal_json"
                     },
                     "type": {
                         "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
@@ -110,7 +110,7 @@
                 },
                 "uuid": [
                     {
-                        "value": "0c9aa577-d856-4733-aade-e8b7c37852e1"
+                        "value": "0239213a-20c6-47d9-97d6-55bfd7a03bd7"
                     }
                 ]
             }
@@ -119,7 +119,7 @@
             {
                 "_links": {
                     "self": {
-                        "href": "http:\/\/default\/user\/1?_format=hal_json"
+                        "href": "http:\/\/default\/en\/user\/1?_format=hal_json"
                     },
                     "type": {
                         "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
@@ -127,7 +127,7 @@
                 },
                 "uuid": [
                     {
-                        "value": "0c9aa577-d856-4733-aade-e8b7c37852e1"
+                        "value": "0239213a-20c6-47d9-97d6-55bfd7a03bd7"
                     }
                 ],
                 "lang": "en"
@@ -137,7 +137,7 @@
             {
                 "_links": {
                     "self": {
-                        "href": "http:\/\/default\/taxonomy\/term\/29?_format=hal_json"
+                        "href": "http:\/\/default\/en\/taxonomy\/term\/29?_format=hal_json"
                     },
                     "type": {
                         "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/news_mommentum"
@@ -152,7 +152,7 @@
             {
                 "_links": {
                     "self": {
-                        "href": "http:\/\/default\/taxonomy\/term\/27?_format=hal_json"
+                        "href": "http:\/\/default\/en\/taxonomy\/term\/27?_format=hal_json"
                     },
                     "type": {
                         "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/news_mommentum"
@@ -167,7 +167,7 @@
             {
                 "_links": {
                     "self": {
-                        "href": "http:\/\/default\/taxonomy\/term\/31?_format=hal_json"
+                        "href": "http:\/\/default\/en\/taxonomy\/term\/31?_format=hal_json"
                     },
                     "type": {
                         "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/news_mommentum"
@@ -182,7 +182,7 @@
             {
                 "_links": {
                     "self": {
-                        "href": "http:\/\/default\/taxonomy\/term\/28?_format=hal_json"
+                        "href": "http:\/\/default\/en\/taxonomy\/term\/28?_format=hal_json"
                     },
                     "type": {
                         "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/news_mommentum"
@@ -199,7 +199,7 @@
             {
                 "_links": {
                     "self": {
-                        "href": "http:\/\/default\/taxonomy\/term\/62?_format=hal_json"
+                        "href": "http:\/\/default\/en\/taxonomy\/term\/62?_format=hal_json"
                     },
                     "type": {
                         "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/resource_type"
@@ -216,7 +216,7 @@
             {
                 "_links": {
                     "self": {
-                        "href": "http:\/\/default\/taxonomy\/term\/45?_format=hal_json"
+                        "href": "http:\/\/default\/en\/taxonomy\/term\/45?_format=hal_json"
                     },
                     "type": {
                         "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/news_theme"
@@ -231,7 +231,7 @@
             {
                 "_links": {
                     "self": {
-                        "href": "http:\/\/default\/taxonomy\/term\/46?_format=hal_json"
+                        "href": "http:\/\/default\/en\/taxonomy\/term\/46?_format=hal_json"
                     },
                     "type": {
                         "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/news_theme"
@@ -246,7 +246,7 @@
             {
                 "_links": {
                     "self": {
-                        "href": "http:\/\/default\/taxonomy\/term\/35?_format=hal_json"
+                        "href": "http:\/\/default\/en\/taxonomy\/term\/35?_format=hal_json"
                     },
                     "type": {
                         "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/news_theme"
@@ -261,7 +261,7 @@
             {
                 "_links": {
                     "self": {
-                        "href": "http:\/\/default\/taxonomy\/term\/36?_format=hal_json"
+                        "href": "http:\/\/default\/en\/taxonomy\/term\/36?_format=hal_json"
                     },
                     "type": {
                         "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/news_theme"
@@ -276,7 +276,7 @@
             {
                 "_links": {
                     "self": {
-                        "href": "http:\/\/default\/taxonomy\/term\/37?_format=hal_json"
+                        "href": "http:\/\/default\/en\/taxonomy\/term\/37?_format=hal_json"
                     },
                     "type": {
                         "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/news_theme"
@@ -293,7 +293,7 @@
             {
                 "_links": {
                     "self": {
-                        "href": "http:\/\/default\/taxonomy\/term\/21?_format=hal_json"
+                        "href": "http:\/\/default\/en\/taxonomy\/term\/21?_format=hal_json"
                     },
                     "type": {
                         "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/news_audience"
@@ -308,7 +308,7 @@
             {
                 "_links": {
                     "self": {
-                        "href": "http:\/\/default\/taxonomy\/term\/24?_format=hal_json"
+                        "href": "http:\/\/default\/en\/taxonomy\/term\/24?_format=hal_json"
                     },
                     "type": {
                         "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/news_audience"
@@ -323,7 +323,7 @@
             {
                 "_links": {
                     "self": {
-                        "href": "http:\/\/default\/taxonomy\/term\/22?_format=hal_json"
+                        "href": "http:\/\/default\/en\/taxonomy\/term\/22?_format=hal_json"
                     },
                     "type": {
                         "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/news_audience"
@@ -409,8 +409,16 @@
         {
             "value": {
                 "title": "Comment garantir la continuit\u00e9 d\u2019alimentation des blocs op\u00e9ratoires | Socomec",
-                "canonical_url": "http:\/\/default\/node\/24"
+                "canonical_url": "http:\/\/default\/en\/node\/24"
             }
+        }
+    ],
+    "path": [
+        {
+            "alias": null,
+            "pid": null,
+            "langcode": "en",
+            "lang": "en"
         }
     ],
     "field_open_link_in_new_window": [

@@ -16,7 +16,6 @@ Feature: Premium Content
     When I visit "/landing-page-premium/whitepaper/comment-garantir-la-continuite-dalimentation-des-blocs-operatoires"
     And I accept all cookies compliance
     And I wait 2 seconds
-    Then I click the ".ancher-button a" element
     Given I switch to the iframe "pardot-iframe"
     And I wait 2 seconds
     And I click the "#86922_82642pi_86922_82642_866570_866570 + label" element
