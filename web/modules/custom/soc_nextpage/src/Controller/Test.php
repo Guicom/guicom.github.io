@@ -38,8 +38,8 @@ class Test {
    *
    * @return array
    */
-  public function characteristicsDictionary($langId = 1) {
-    $characteristics = $this->nextPageApi->characteristicsDictionary();
+  public function characteristicsDictionary($langId = 2) {
+    $characteristics = $this->nextPageApi->characteristicsDictionary($langId);
     $filename = 'characteristics_dictionary.json';
     $app_root = \Drupal::root();
 

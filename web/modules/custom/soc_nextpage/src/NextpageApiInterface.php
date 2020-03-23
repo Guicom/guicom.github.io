@@ -24,6 +24,11 @@ interface NextpageApiInterface {
 
   public function elementsByCharTemplate($charTemplateExtID, $paths);
 
-  public function characteristicsDictionary();
+  /**
+   * @param string $languageId
+   *
+   * @return mixed
+   */
+  public function characteristicsDictionary(string $languageId);
 
 }

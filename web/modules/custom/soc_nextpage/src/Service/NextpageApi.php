@@ -93,15 +93,14 @@ class NextpageApi extends NextpageBaseApi implements NextpageApiInterface {
   /**
    * Get the characteristics dictionary.
    *
+   * @param $languageId
+   *
    * @return array|mixed
    */
-  public function characteristicsDictionary() {
+  public function characteristicsDictionary($languageId) {
     $endpoints = $this->getEndpoints();
     $results = [];
     $dictionary = [];
-    // $languageId  = $this->getLanguageId();
-    // @fixeme: using the right information $languageId.
-    $languageId = "2";
     try {
       $results = $this->call($endpoints['dicocarac'] . '/' . $languageId,
         NULL, 'GET', 'json',FALSE);
