@@ -194,6 +194,9 @@
             },
             "drupal/we_megamenu": {
                 "Add taxonomy menu compatibnilty": "./patches/we_mega_menu_menu_taxonmy_integration.patch"
+            },
+            "drupal/search_api_solr": {
+                "Autocomplete suggestions fail for large requests : TO FOLLOW FOR UPDATED ISSUE !": "https://www.drupal.org/files/issues/2020-01-30/search_api_solr-3109911-8.patch"
             }
         }
     }
