@@ -103,7 +103,7 @@ class NextpageApi extends NextpageBaseApi implements NextpageApiInterface {
     $dictionary = [];
     try {
       $results = $this->call($endpoints['dicocarac'] . '/' . $languageId,
-        NULL, 'GET', 'json',FALSE);
+        NULL, 'GET', 'json', FALSE);
       // Build dictionary using extid for easer search.
       foreach ($results->Results->Caracs as $carac) {
         $dictionary[$carac->ExtID] = $carac;
