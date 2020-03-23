@@ -7,19 +7,9 @@
             "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/model_text"
         }
     },
-    "id": [
-        {
-            "value": 57
-        }
-    ],
     "uuid": [
         {
             "value": "d3272789-d1bf-4290-8e5c-cd4a125d993a"
-        }
-    ],
-    "revision_id": [
-        {
-            "value": 429
         }
     ],
     "langcode": [

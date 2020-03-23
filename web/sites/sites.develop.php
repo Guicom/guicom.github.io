@@ -57,4 +57,5 @@
  */
 
 $sites['localhost'] = 'contenthub';
+$sites['contenthub-drupal-dev.dpk-soc-web-cl01.doobesha.org'] = 'contenthub';
 $sites['webfactory-drupal-dev.dpk-soc-web-cl01.doobesha.org'] = 'default';

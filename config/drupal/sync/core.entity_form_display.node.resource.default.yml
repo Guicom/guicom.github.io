@@ -28,6 +28,7 @@ dependencies:
     - path
     - remote_stream_wrapper_widget
     - scheduler
+    - scheduler_content_moderation_integration
     - svg_image
 id: node.resource.default
 targetEntityType: node
@@ -308,6 +309,7 @@ content:
       match_operator: CONTAINS
       size: 60
       placeholder: ''
+      match_limit: 10
     region: content
     third_party_settings: {  }
   unpublish_on:

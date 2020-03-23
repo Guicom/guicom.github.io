@@ -1,14 +1,14 @@
 {
     "_links": {
         "self": {
-            "href": "http:\/\/default\/media\/37\/edit?_format=hal_json"
+            "href": "http:\/\/default\/en\/media\/37\/edit?_format=hal_json"
         },
         "type": {
             "href": "http:\/\/drupal.org\/rest\/type\/media\/icone"
         },
         "http:\/\/drupal.org\/rest\/relation\/media\/icone\/uid": [
             {
-                "href": "http:\/\/default\/user\/1?_format=hal_json"
+                "href": "http:\/\/default\/en\/user\/1?_format=hal_json"
             }
         ],
         "http:\/\/drupal.org\/rest\/relation\/media\/icone\/thumbnail": [
@@ -45,7 +45,7 @@
     ],
     "revision_created": [
         {
-            "value": "2020-02-20T17:08:21+00:00",
+            "value": "2020-03-16T23:48:05+00:00",
             "format": "Y-m-d\\TH:i:sP"
         }
     ],
@@ -59,7 +59,7 @@
             {
                 "_links": {
                     "self": {
-                        "href": "http:\/\/default\/user\/1?_format=hal_json"
+                        "href": "http:\/\/default\/en\/user\/1?_format=hal_json"
                     },
                     "type": {
                         "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
@@ -67,7 +67,7 @@
                 },
                 "uuid": [
                     {
-                        "value": "0c9aa577-d856-4733-aade-e8b7c37852e1"
+                        "value": "0239213a-20c6-47d9-97d6-55bfd7a03bd7"
                     }
                 ]
             }
@@ -84,7 +84,7 @@
                 },
                 "uuid": [
                     {
-                        "value": "81972ee0-9b5e-48c0-a204-719021405781"
+                        "value": "6e942a42-9638-41ea-bcd5-8d07cb541251"
                     }
                 ],
                 "alt": null,

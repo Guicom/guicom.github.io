@@ -1,20 +1,14 @@
 {
     "_links": {
         "self": {
-            "href": "http:\/\/default\/energy-storage-solution\/system?_format=hal_json"
+            "href": "http:\/\/default\/en\/energy-storage-solution\/system?_format=hal_json"
         },
         "type": {
             "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/family"
         },
         "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/family\/parent": [
             {
-                "href": "http:\/\/default\/energy-storage-solution?_format=hal_json"
-            }
-        ],
-        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/family\/content_translation_uid": [
-            {
-                "href": "http:\/\/default\/user\/1?_format=hal_json",
-                "lang": "en"
+                "href": "http:\/\/default\/en\/energy-storage-solution?_format=hal_json"
             }
         ]
     },
@@ -70,7 +64,7 @@
             {
                 "_links": {
                     "self": {
-                        "href": "http:\/\/default\/energy-storage-solution?_format=hal_json"
+                        "href": "http:\/\/default\/en\/energy-storage-solution?_format=hal_json"
                     },
                     "type": {
                         "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/family"
@@ -81,24 +75,6 @@
                         "value": "59b4df63-c1cc-49ae-81ba-1cd80dcd280b"
                     }
                 ]
-            }
-        ],
-        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/family\/content_translation_uid": [
-            {
-                "_links": {
-                    "self": {
-                        "href": "http:\/\/default\/user\/1?_format=hal_json"
-                    },
-                    "type": {
-                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
-                    }
-                },
-                "uuid": [
-                    {
-                        "value": "0c9aa577-d856-4733-aade-e8b7c37852e1"
-                    }
-                ],
-                "lang": "en"
             }
         ]
     },

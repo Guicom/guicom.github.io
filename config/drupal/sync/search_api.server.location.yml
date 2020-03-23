@@ -53,3 +53,4 @@ backend_config:
   domain: generic
   optimize: false
   site_hash: false
+  environment: default

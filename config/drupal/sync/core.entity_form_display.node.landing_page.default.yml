@@ -20,6 +20,7 @@ dependencies:
     - paragraphs
     - path
     - scheduler
+    - scheduler_content_moderation_integration
 id: node.landing_page.default
 targetEntityType: node
 bundle: landing_page
@@ -171,6 +172,7 @@ content:
       match_operator: CONTAINS
       size: 60
       placeholder: ''
+      match_limit: 10
     region: content
     third_party_settings: {  }
   unpublish_on:

@@ -1,7 +1,7 @@
 {
     "_links": {
         "self": {
-            "href": "http:\/\/default\/energy-storage-solution?_format=hal_json"
+            "href": "http:\/\/default\/en\/energy-storage-solution?_format=hal_json"
         },
         "type": {
             "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/family"
@@ -9,15 +9,9 @@
         "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/family\/parent": [
             null
         ],
-        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/family\/content_translation_uid": [
-            {
-                "href": "http:\/\/default\/user\/1?_format=hal_json",
-                "lang": "en"
-            }
-        ],
         "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/family\/field_background_image": [
             {
-                "href": "http:\/\/default\/media\/17\/edit?_format=hal_json"
+                "href": "http:\/\/default\/en\/media\/17\/edit?_format=hal_json"
             }
         ],
         "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/family\/field_family_first_multiline": [
@@ -27,7 +21,7 @@
         ],
         "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/family\/field_family_menu_icon": [
             {
-                "href": "http:\/\/default\/media\/47\/edit?_format=hal_json"
+                "href": "http:\/\/default\/en\/media\/47\/edit?_format=hal_json"
             }
         ],
         "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/family\/field_family_second_multiline": [
@@ -94,29 +88,11 @@
         "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/family\/parent": [
             null
         ],
-        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/family\/content_translation_uid": [
-            {
-                "_links": {
-                    "self": {
-                        "href": "http:\/\/default\/user\/1?_format=hal_json"
-                    },
-                    "type": {
-                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
-                    }
-                },
-                "uuid": [
-                    {
-                        "value": "f249bc8f-cc01-41d5-aba6-8852ecc9abf5"
-                    }
-                ],
-                "lang": "en"
-            }
-        ],
         "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/family\/field_background_image": [
             {
                 "_links": {
                     "self": {
-                        "href": "http:\/\/default\/media\/17\/edit?_format=hal_json"
+                        "href": "http:\/\/default\/en\/media\/17\/edit?_format=hal_json"
                     },
                     "type": {
                         "href": "http:\/\/drupal.org\/rest\/type\/media\/image"
@@ -151,7 +127,7 @@
             {
                 "_links": {
                     "self": {
-                        "href": "http:\/\/default\/media\/47\/edit?_format=hal_json"
+                        "href": "http:\/\/default\/en\/media\/47\/edit?_format=hal_json"
                     },
                     "type": {
                         "href": "http:\/\/drupal.org\/rest\/type\/media\/icone"

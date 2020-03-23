@@ -1,30 +1,24 @@
 {
     "_links": {
         "self": {
-            "href": "http:\/\/default\/block\/4?_format=hal_json"
+            "href": "http:\/\/default\/en\/block\/4?_format=hal_json"
         },
         "type": {
             "href": "http:\/\/drupal.org\/rest\/type\/block_content\/home_product_assistance"
         },
-        "http:\/\/drupal.org\/rest\/relation\/block_content\/home_product_assistance\/content_translation_uid": [
+        "http:\/\/drupal.org\/rest\/relation\/block_content\/home_product_assistance\/field_background_image": [
             {
-                "href": "http:\/\/default\/user\/1?_format=hal_json",
-                "lang": "en"
+                "href": "http:\/\/default\/en\/media\/34\/edit?_format=hal_json"
             }
         ],
         "http:\/\/drupal.org\/rest\/relation\/block_content\/home_product_assistance\/field_ba_icon": [
             {
-                "href": "http:\/\/default\/media\/32\/edit?_format=hal_json"
-            }
-        ],
-        "http:\/\/drupal.org\/rest\/relation\/block_content\/home_product_assistance\/field_background_image": [
-            {
-                "href": "http:\/\/default\/media\/34\/edit?_format=hal_json"
+                "href": "http:\/\/default\/en\/media\/32\/edit?_format=hal_json"
             }
         ],
         "http:\/\/drupal.org\/rest\/relation\/block_content\/home_product_assistance\/field_br_icon": [
             {
-                "href": "http:\/\/default\/media\/30\/edit?_format=hal_json"
+                "href": "http:\/\/default\/en\/media\/30\/edit?_format=hal_json"
             }
         ],
         "http:\/\/drupal.org\/rest\/relation\/block_content\/home_product_assistance\/field_br_link": [
@@ -110,47 +104,19 @@
             "lang": "en"
         }
     ],
+    "content_translation_created": [
+        {
+            "value": "2019-12-16T16:55:06+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
     "_embedded": {
-        "http:\/\/drupal.org\/rest\/relation\/block_content\/home_product_assistance\/content_translation_uid": [
-            {
-                "_links": {
-                    "self": {
-                        "href": "http:\/\/default\/user\/1?_format=hal_json"
-                    },
-                    "type": {
-                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
-                    }
-                },
-                "uuid": [
-                    {
-                        "value": "b27ff409-fda1-4515-9ac3-a73a013a9376"
-                    }
-                ],
-                "lang": "en"
-            }
-        ],
-        "http:\/\/drupal.org\/rest\/relation\/block_content\/home_product_assistance\/field_ba_icon": [
-            {
-                "_links": {
-                    "self": {
-                        "href": "http:\/\/default\/media\/32\/edit?_format=hal_json"
-                    },
-                    "type": {
-                        "href": "http:\/\/drupal.org\/rest\/type\/media\/icone"
-                    }
-                },
-                "uuid": [
-                    {
-                        "value": "b712d991-4a35-491a-9972-60589b6a96f7"
-                    }
-                ]
-            }
-        ],
         "http:\/\/drupal.org\/rest\/relation\/block_content\/home_product_assistance\/field_background_image": [
             {
                 "_links": {
                     "self": {
-                        "href": "http:\/\/default\/media\/34\/edit?_format=hal_json"
+                        "href": "http:\/\/default\/en\/media\/34\/edit?_format=hal_json"
                     },
                     "type": {
                         "href": "http:\/\/drupal.org\/rest\/type\/media\/image"
@@ -163,11 +129,28 @@
                 ]
             }
         ],
+        "http:\/\/drupal.org\/rest\/relation\/block_content\/home_product_assistance\/field_ba_icon": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/en\/media\/32\/edit?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/media\/icone"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "b712d991-4a35-491a-9972-60589b6a96f7"
+                    }
+                ]
+            }
+        ],
         "http:\/\/drupal.org\/rest\/relation\/block_content\/home_product_assistance\/field_br_icon": [
             {
                 "_links": {
                     "self": {
-                        "href": "http:\/\/default\/media\/30\/edit?_format=hal_json"
+                        "href": "http:\/\/default\/en\/media\/30\/edit?_format=hal_json"
                     },
                     "type": {
                         "href": "http:\/\/drupal.org\/rest\/type\/media\/icone"
@@ -199,13 +182,6 @@
             }
         ]
     },
-    "content_translation_created": [
-        {
-            "value": "2019-12-16T16:55:06+00:00",
-            "lang": "en",
-            "format": "Y-m-d\\TH:i:sP"
-        }
-    ],
     "field_ba_text": [
         {
             "value": "<p>Browse our FAQs to easily find answer, submit a Support Request...<\/p>\r\n",

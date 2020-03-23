@@ -89,7 +89,7 @@
                 },
                 "uuid": [
                     {
-                        "value": "ad8c43df-5b93-4da0-bfb9-cf07778f3a40"
+                        "value": "0239213a-20c6-47d9-97d6-55bfd7a03bd7"
                     }
                 ]
             }
@@ -106,7 +106,7 @@
                 },
                 "uuid": [
                     {
-                        "value": "ad8c43df-5b93-4da0-bfb9-cf07778f3a40"
+                        "value": "0239213a-20c6-47d9-97d6-55bfd7a03bd7"
                     }
                 ],
                 "lang": "en"
@@ -267,6 +267,19 @@
                 "title": "SOCOMEC LYON | Socomec",
                 "canonical_url": "http:\/\/default\/en\/node\/54"
             }
+        }
+    ],
+    "path": [
+        {
+            "alias": null,
+            "pid": null,
+            "langcode": "en",
+            "lang": "en"
+        }
+    ],
+    "field_content_highlight": [
+        {
+            "value": "no"
         }
     ],
     "field_location_address": [

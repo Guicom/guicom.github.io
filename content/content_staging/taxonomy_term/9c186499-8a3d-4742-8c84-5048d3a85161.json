@@ -1,19 +1,13 @@
 {
     "_links": {
         "self": {
-            "href": "http:\/\/default\/taxonomy\/term\/25?_format=hal_json"
+            "href": "http:\/\/default\/en\/taxonomy\/term\/25?_format=hal_json"
         },
         "type": {
             "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/news_audience"
         },
         "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/news_audience\/parent": [
             null
-        ],
-        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/news_audience\/content_translation_uid": [
-            {
-                "href": "http:\/\/default\/user\/1?_format=hal_json",
-                "lang": "en"
-            }
         ]
     },
     "tid": [
@@ -68,24 +62,6 @@
     "_embedded": {
         "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/news_audience\/parent": [
             null
-        ],
-        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/news_audience\/content_translation_uid": [
-            {
-                "_links": {
-                    "self": {
-                        "href": "http:\/\/default\/user\/1?_format=hal_json"
-                    },
-                    "type": {
-                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
-                    }
-                },
-                "uuid": [
-                    {
-                        "value": "0c9aa577-d856-4733-aade-e8b7c37852e1"
-                    }
-                ],
-                "lang": "en"
-            }
         ]
     },
     "changed": [
@@ -130,8 +106,16 @@
         {
             "value": {
                 "title": "OEM: MANUFACTURERS | Socomec",
-                "canonical_url": "http:\/\/default\/taxonomy\/term\/25"
+                "canonical_url": "http:\/\/default\/en\/taxonomy\/term\/25"
             }
+        }
+    ],
+    "path": [
+        {
+            "alias": null,
+            "pid": null,
+            "langcode": "en",
+            "lang": "en"
         }
     ]
 }
