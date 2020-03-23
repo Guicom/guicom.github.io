@@ -8,7 +8,7 @@
         },
         "http:\/\/drupal.org\/rest\/relation\/paragraph\/content\/field_content": [
             {
-                "href": "http:\/\/default\/landing-page-premium\/whitepaper\/comment-garantir-la-continuite-dalimentation-des-blocs-operatoires?_format=hal_json"
+                "href": "http:\/\/default\/en\/landing-page-premium\/whitepaper\/comment-garantir-la-continuite-dalimentation-des-blocs-operatoires?_format=hal_json"
             }
         ]
     },
@@ -86,7 +86,7 @@
             {
                 "_links": {
                     "self": {
-                        "href": "http:\/\/default\/landing-page-premium\/whitepaper\/comment-garantir-la-continuite-dalimentation-des-blocs-operatoires?_format=hal_json"
+                        "href": "http:\/\/default\/en\/landing-page-premium\/whitepaper\/comment-garantir-la-continuite-dalimentation-des-blocs-operatoires?_format=hal_json"
                     },
                     "type": {
                         "href": "http:\/\/drupal.org\/rest\/type\/node\/landing_page"

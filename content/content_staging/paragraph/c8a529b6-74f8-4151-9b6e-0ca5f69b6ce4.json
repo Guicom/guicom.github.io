@@ -8,7 +8,7 @@
         },
         "http:\/\/drupal.org\/rest\/relation\/paragraph\/standard_label\/field_label": [
             {
-                "href": "http:\/\/default\/taxonomy\/term\/15?_format=hal_json"
+                "href": "http:\/\/default\/en\/taxonomy\/term\/15?_format=hal_json"
             }
         ]
     },
@@ -86,7 +86,7 @@
             {
                 "_links": {
                     "self": {
-                        "href": "http:\/\/default\/taxonomy\/term\/15?_format=hal_json"
+                        "href": "http:\/\/default\/en\/taxonomy\/term\/15?_format=hal_json"
                     },
                     "type": {
                         "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/product_label"

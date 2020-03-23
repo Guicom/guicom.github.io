@@ -7,19 +7,9 @@
             "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/model_cta_pdf"
         }
     },
-    "id": [
-        {
-            "value": 30
-        }
-    ],
     "uuid": [
         {
             "value": "5cf5fe98-1777-4d96-94e7-cb2899a119e2"
-        }
-    ],
-    "revision_id": [
-        {
-            "value": 102
         }
     ],
     "langcode": [

@@ -8,7 +8,7 @@
         },
         "http:\/\/drupal.org\/rest\/relation\/paragraph\/video_text\/field_video_embed_video": [
             {
-                "href": "http:\/\/default\/media\/38\/edit?_format=hal_json"
+                "href": "http:\/\/default\/en\/media\/38\/edit?_format=hal_json"
             }
         ]
     },
@@ -98,7 +98,7 @@
             {
                 "_links": {
                     "self": {
-                        "href": "http:\/\/default\/media\/38\/edit?_format=hal_json"
+                        "href": "http:\/\/default\/en\/media\/38\/edit?_format=hal_json"
                     },
                     "type": {
                         "href": "http:\/\/drupal.org\/rest\/type\/media\/remote_video"

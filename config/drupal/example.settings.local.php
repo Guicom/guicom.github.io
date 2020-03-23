@@ -151,8 +151,8 @@ $databases['default']['default'] = array (
   'driver' => 'mysql',
 );
 
-$config_directories['sync'] = $app_ground . '/config/drupal/sync';
-$config_directories['local'] = $app_ground . '/config/drupal/local';
+$settings['config_sync_directory'] = $app_ground . '/config/drupal/sync';
+$settings['config_local_directory'] = $app_ground . '/config/drupal/local';
 
 /**
  * Files configurations.

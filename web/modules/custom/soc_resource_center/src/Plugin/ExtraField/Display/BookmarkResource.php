@@ -14,6 +14,7 @@ use Drupal\extra_field\Plugin\ExtraFieldDisplayFormattedBase;
  *   label = @Translation("Bookmark resource"),
  *   bundles = {
  *     "node.resource",
+ *     "node.resource_youtube",
  *   }
  * )
  */

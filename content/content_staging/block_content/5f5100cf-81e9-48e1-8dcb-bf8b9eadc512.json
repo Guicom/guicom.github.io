@@ -1,45 +1,51 @@
 {
     "_links": {
         "self": {
-            "href": "http:\/\/default\/block\/5?_format=hal_json"
+            "href": "http:\/\/default\/en\/block\/5?_format=hal_json"
         },
         "type": {
             "href": "http:\/\/drupal.org\/rest\/type\/block_content\/tool_promotion"
         },
+        "http:\/\/drupal.org\/rest\/relation\/block_content\/tool_promotion\/content_translation_uid": [
+            {
+                "href": "http:\/\/default\/en\/user\/1?_format=hal_json",
+                "lang": "en"
+            }
+        ],
         "http:\/\/drupal.org\/rest\/relation\/block_content\/tool_promotion\/field_background_image": [
             {
-                "href": "http:\/\/default\/media\/17\/edit?_format=hal_json"
+                "href": "http:\/\/default\/en\/media\/17\/edit?_format=hal_json"
             }
         ],
         "http:\/\/drupal.org\/rest\/relation\/block_content\/tool_promotion\/field_main_image": [
             {
-                "href": "http:\/\/default\/media\/2\/edit?_format=hal_json"
+                "href": "http:\/\/default\/en\/media\/2\/edit?_format=hal_json"
             }
         ],
         "http:\/\/drupal.org\/rest\/relation\/block_content\/tool_promotion\/field_tool_promotion_families": [
             {
-                "href": "http:\/\/default\/products\/energy-storage-solution?_format=hal_json"
+                "href": "http:\/\/default\/en\/energy-storage-solution?_format=hal_json"
             },
             {
-                "href": "http:\/\/default\/products\/power-switching-monitoring?_format=hal_json"
+                "href": "http:\/\/default\/en\/power-switching-monitoring?_format=hal_json"
             },
             {
-                "href": "http:\/\/default\/products\/energy-storage-solution\/storage-converters?_format=hal_json"
+                "href": "http:\/\/default\/en\/energy-storage-solution\/storage-converters?_format=hal_json"
             },
             {
-                "href": "http:\/\/default\/products\/energy-storage-solution\/storage-converters\/grid-modular-indoor?_format=hal_json"
+                "href": "http:\/\/default\/en\/energy-storage-solution\/storage-converters\/grid-modular-indoor?_format=hal_json"
             },
             {
-                "href": "http:\/\/default\/products\/energy-storage-solution\/storage-converters\/grid-modular-indoor-0?_format=hal_json"
+                "href": "http:\/\/default\/en\/energy-storage-solution\/storage-converters\/grid-modular-indoor-0?_format=hal_json"
             },
             {
-                "href": "http:\/\/default\/products\/power-switching-monitoring\/load-break-switch?_format=hal_json"
+                "href": "http:\/\/default\/en\/power-switching-monitoring\/load-break-switch?_format=hal_json"
             },
             {
-                "href": "http:\/\/default\/products\/power-switching-monitoring\/load-break-switch\/sirco-ac-load-break-switch?_format=hal_json"
+                "href": "http:\/\/default\/en\/power-switching-monitoring\/load-break-switch\/sirco-ac-load-break-switch?_format=hal_json"
             },
             {
-                "href": "http:\/\/default\/products\/power-switching-monitoring\/load-break-switch\/sirco-dc-pv-load-break-switch?_format=hal_json"
+                "href": "http:\/\/default\/en\/power-switching-monitoring\/load-break-switch\/sirco-dc-pv-load-break-switch?_format=hal_json"
             }
         ]
     },
@@ -123,27 +129,30 @@
             "lang": "en"
         }
     ],
-    "content_translation_created": [
-        {
-            "value": "2019-12-31T15:25:08+00:00",
-            "lang": "en",
-            "format": "Y-m-d\\TH:i:sP"
-        }
-    ],
-    "metatag": [
-        {
-            "value": {
-                "title": "| Socomec",
-                "canonical_url": "http:\/\/default\/node"
-            }
-        }
-    ],
     "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/block_content\/tool_promotion\/content_translation_uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/en\/user\/1?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "0239213a-20c6-47d9-97d6-55bfd7a03bd7"
+                    }
+                ],
+                "lang": "en"
+            }
+        ],
         "http:\/\/drupal.org\/rest\/relation\/block_content\/tool_promotion\/field_background_image": [
             {
                 "_links": {
                     "self": {
-                        "href": "http:\/\/default\/media\/17\/edit?_format=hal_json"
+                        "href": "http:\/\/default\/en\/media\/17\/edit?_format=hal_json"
                     },
                     "type": {
                         "href": "http:\/\/drupal.org\/rest\/type\/media\/image"
@@ -160,7 +169,7 @@
             {
                 "_links": {
                     "self": {
-                        "href": "http:\/\/default\/media\/2\/edit?_format=hal_json"
+                        "href": "http:\/\/default\/en\/media\/2\/edit?_format=hal_json"
                     },
                     "type": {
                         "href": "http:\/\/drupal.org\/rest\/type\/media\/product_image"
@@ -177,7 +186,7 @@
             {
                 "_links": {
                     "self": {
-                        "href": "http:\/\/default\/products\/energy-storage-solution?_format=hal_json"
+                        "href": "http:\/\/default\/en\/energy-storage-solution?_format=hal_json"
                     },
                     "type": {
                         "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/family"
@@ -192,7 +201,7 @@
             {
                 "_links": {
                     "self": {
-                        "href": "http:\/\/default\/products\/power-switching-monitoring?_format=hal_json"
+                        "href": "http:\/\/default\/en\/power-switching-monitoring?_format=hal_json"
                     },
                     "type": {
                         "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/family"
@@ -207,7 +216,7 @@
             {
                 "_links": {
                     "self": {
-                        "href": "http:\/\/default\/products\/energy-storage-solution\/storage-converters?_format=hal_json"
+                        "href": "http:\/\/default\/en\/energy-storage-solution\/storage-converters?_format=hal_json"
                     },
                     "type": {
                         "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/family"
@@ -222,7 +231,7 @@
             {
                 "_links": {
                     "self": {
-                        "href": "http:\/\/default\/products\/energy-storage-solution\/storage-converters\/grid-modular-indoor?_format=hal_json"
+                        "href": "http:\/\/default\/en\/energy-storage-solution\/storage-converters\/grid-modular-indoor?_format=hal_json"
                     },
                     "type": {
                         "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/family"
@@ -237,7 +246,7 @@
             {
                 "_links": {
                     "self": {
-                        "href": "http:\/\/default\/products\/energy-storage-solution\/storage-converters\/grid-modular-indoor-0?_format=hal_json"
+                        "href": "http:\/\/default\/en\/energy-storage-solution\/storage-converters\/grid-modular-indoor-0?_format=hal_json"
                     },
                     "type": {
                         "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/family"
@@ -252,7 +261,7 @@
             {
                 "_links": {
                     "self": {
-                        "href": "http:\/\/default\/products\/power-switching-monitoring\/load-break-switch?_format=hal_json"
+                        "href": "http:\/\/default\/en\/power-switching-monitoring\/load-break-switch?_format=hal_json"
                     },
                     "type": {
                         "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/family"
@@ -267,7 +276,7 @@
             {
                 "_links": {
                     "self": {
-                        "href": "http:\/\/default\/products\/power-switching-monitoring\/load-break-switch\/sirco-ac-load-break-switch?_format=hal_json"
+                        "href": "http:\/\/default\/en\/power-switching-monitoring\/load-break-switch\/sirco-ac-load-break-switch?_format=hal_json"
                     },
                     "type": {
                         "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/family"
@@ -282,7 +291,7 @@
             {
                 "_links": {
                     "self": {
-                        "href": "http:\/\/default\/products\/power-switching-monitoring\/load-break-switch\/sirco-dc-pv-load-break-switch?_format=hal_json"
+                        "href": "http:\/\/default\/en\/power-switching-monitoring\/load-break-switch\/sirco-dc-pv-load-break-switch?_format=hal_json"
                     },
                     "type": {
                         "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/family"
@@ -296,6 +305,21 @@
             }
         ]
     },
+    "content_translation_created": [
+        {
+            "value": "2019-12-31T15:25:08+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "metatag": [
+        {
+            "value": {
+                "title": "| Socomec",
+                "canonical_url": "http:\/\/default\/en\/node"
+            }
+        }
+    ],
     "field_description": [
         {
             "value": "<p>The ideal interface to choose the UPS best suited to your specific applications.<\/p>\r\n",

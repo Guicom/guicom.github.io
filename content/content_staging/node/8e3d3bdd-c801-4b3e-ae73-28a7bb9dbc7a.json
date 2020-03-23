@@ -29,7 +29,7 @@
         ],
         "http:\/\/drupal.org\/rest\/relation\/node\/contenu_location\/field_location_continent": [
             {
-                "href": "http:\/\/default\/en\/asia?_format=hal_json"
+                "href": "http:\/\/default\/en\/asia-pacific?_format=hal_json"
             }
         ],
         "http:\/\/drupal.org\/rest\/relation\/node\/contenu_location\/field_location_subarea": [
@@ -89,7 +89,7 @@
                 },
                 "uuid": [
                     {
-                        "value": "ad8c43df-5b93-4da0-bfb9-cf07778f3a40"
+                        "value": "0239213a-20c6-47d9-97d6-55bfd7a03bd7"
                     }
                 ]
             }
@@ -106,7 +106,7 @@
                 },
                 "uuid": [
                     {
-                        "value": "ad8c43df-5b93-4da0-bfb9-cf07778f3a40"
+                        "value": "0239213a-20c6-47d9-97d6-55bfd7a03bd7"
                     }
                 ],
                 "lang": "en"
@@ -150,7 +150,7 @@
             {
                 "_links": {
                     "self": {
-                        "href": "http:\/\/default\/en\/asia?_format=hal_json"
+                        "href": "http:\/\/default\/en\/asia-pacific?_format=hal_json"
                     },
                     "type": {
                         "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/location_areas"
@@ -267,6 +267,19 @@
                 "title": "SOCOMEC ASIA PACIFIC PTE. | Socomec",
                 "canonical_url": "http:\/\/default\/en\/node\/56"
             }
+        }
+    ],
+    "path": [
+        {
+            "alias": null,
+            "pid": null,
+            "langcode": "en",
+            "lang": "en"
+        }
+    ],
+    "field_content_highlight": [
+        {
+            "value": "no"
         }
     ],
     "field_location_address": [

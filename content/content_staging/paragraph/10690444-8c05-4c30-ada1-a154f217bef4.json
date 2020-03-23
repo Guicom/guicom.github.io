@@ -8,7 +8,7 @@
         },
         "http:\/\/drupal.org\/rest\/relation\/paragraph\/link\/field_link_icon": [
             {
-                "href": "http:\/\/default\/media\/20\/edit?_format=hal_json"
+                "href": "http:\/\/default\/en\/media\/20\/edit?_format=hal_json"
             }
         ]
     },
@@ -86,7 +86,7 @@
             {
                 "_links": {
                     "self": {
-                        "href": "http:\/\/default\/media\/20\/edit?_format=hal_json"
+                        "href": "http:\/\/default\/en\/media\/20\/edit?_format=hal_json"
                     },
                     "type": {
                         "href": "http:\/\/drupal.org\/rest\/type\/media\/icone"

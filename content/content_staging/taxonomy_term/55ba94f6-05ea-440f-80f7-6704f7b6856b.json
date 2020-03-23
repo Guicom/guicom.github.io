@@ -9,15 +9,9 @@
         "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/event_type\/parent": [
             null
         ],
-        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/event_type\/content_translation_uid": [
-            {
-                "href": "http:\/\/default\/user\/1?_format=hal_json",
-                "lang": "zxx"
-            }
-        ],
         "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/event_type\/field_event_type_icon": [
             {
-                "href": "http:\/\/default\/media\/46\/edit?_format=hal_json"
+                "href": "http:\/\/default\/en\/media\/46\/edit?_format=hal_json"
             }
         ]
     },
@@ -74,29 +68,11 @@
         "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/event_type\/parent": [
             null
         ],
-        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/event_type\/content_translation_uid": [
-            {
-                "_links": {
-                    "self": {
-                        "href": "http:\/\/default\/user\/1?_format=hal_json"
-                    },
-                    "type": {
-                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
-                    }
-                },
-                "uuid": [
-                    {
-                        "value": "0c9aa577-d856-4733-aade-e8b7c37852e1"
-                    }
-                ],
-                "lang": "zxx"
-            }
-        ],
         "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/event_type\/field_event_type_icon": [
             {
                 "_links": {
                     "self": {
-                        "href": "http:\/\/default\/media\/46\/edit?_format=hal_json"
+                        "href": "http:\/\/default\/en\/media\/46\/edit?_format=hal_json"
                     },
                     "type": {
                         "href": "http:\/\/drupal.org\/rest\/type\/media\/icone"
@@ -154,6 +130,14 @@
                 "title": "Conference | Socomec",
                 "canonical_url": "http:\/\/default\/taxonomy\/term\/87"
             }
+        }
+    ],
+    "path": [
+        {
+            "alias": null,
+            "pid": null,
+            "langcode": "zxx",
+            "lang": "zxx"
         }
     ]
 }
