@@ -3,9 +3,12 @@
 namespace Drupal\soc_nextpage\Controller;
 
 
+use Drupal;
 use Drupal\soc_nextpage\Exception\InvalidTokenException;
 
 class Test {
+
+  use Drupal\Core\StringTranslation\StringTranslationTrait;
 
   /** @var \Drupal\soc_nextpage\Service\NextpageApi $ws */
   public $nextPageApi;
@@ -37,8 +40,17 @@ class Test {
    */
   public function characteristicsDictionary($langId = 1) {
     $characteristics = $this->nextPageApi->characteristicsDictionary();
-    kint(count($characteristics));
-    return [];
+    $filename = 'characteristics_dictionary.json';
+    $app_root = \Drupal::root();
+
+    $fh = fopen($app_root . '/../data/' . $filename, 'w')
+    or die('Error opening output file');
+    fwrite($fh, json_encode($characteristics,JSON_PRETTY_PRINT));
+    fclose($fh);
+    Drupal::logger('soc_nextpage')->log(LogLevel::INFO, $this->t('The file has been saved to @file', ['@file' => $filename]));
+    return [
+      "#markup" => $this->t('Synchronisation is done'),
+    ];
   }
 
   public function elementsAndLinks() {
