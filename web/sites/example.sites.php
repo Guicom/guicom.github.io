@@ -55,3 +55,6 @@
  * @see \Drupal\Core\DrupalKernel::getSitePath()
  * @see https://www.drupal.org/documentation/install/multi-site
  */
+
+$sites['socomec.com.loc'] = 'default';
+$sites['contenthub.loc'] = 'contenthub';
