@@ -1,7 +1,8 @@
 display:
   default:
     display_options:
-      pager:
-        options:
-          expose:
-            offset_label: Desplazamiento
+      fields:
+        name:
+          label: 'Nombre de usuario'
+        operations:
+          label: Operaciones

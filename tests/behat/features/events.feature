@@ -1,35 +1,43 @@
 Feature: Events
+  #vendor/bin/phing behat:run -Dbehat.tags=events
 
-  @api @cit @javascript @events
+  Background:
+    And I am logged in as a user with the "administrator" role
+    And event_type terms:
+      | language | name        |
+      | English  | MyEventType |
+    And event content:
+      | language | title       | status | field_event_country | field_event_place | field_event_type | field_event_teaser | field_add_to_calendar | moderation_state |
+      | English  | MyTestEvent | 1      | FR                  | Zenith Strasbourg | MyEventType      | Nice event         | 1                     | published        |
+    And I go to "admin/content"
+    # needed for next step
+    And I click "Edit" in the "MyTestEvent" row
+    And I set the event date
+    And I visit "/admin/config/search/search-api/index/events"
+    And I press "Index now"
+
+  @api @cit @javascript @events @events_detail
   # ./vendor/bin/phing behat:run -Dbehat.tags=events
-  # See the example news features.
+  # See the example event.
   Scenario: Events detail
     Given I visit "/"
     And I accept all cookies compliance
-    When I visit "/event/energy-storage-international-2020"
+    When I visit "/event/mytestevent"
     Then I should see a "body.node--type-event" element
+    And I should see "MyTestEvent"
 
-  @api @cit @javascript @events
+  @api @cit @javascript @events @events_lp
     # Check if the filter working with the last element.
   Scenario: Events Landing page
-    Given I visit "/"
+    #Then I am an anonymous user
+    And I visit "/"
     And I accept all cookies compliance
     When I visit "/events"
-    And I click the "select[data-drupal-facet-id='event_type_taxonomy_term_name'] option:last-child" element
+    Then I should see "MyTestEvent" in the ".view-id-events" element
     And I wait 2 seconds
-    Then I should see "Event #2" in the ".view-id-events" element
-
-  @api @cit @javascript @events
-    # Check if the filter working with the first element.
-  Scenario: Events Landing page
-    Given I visit "/"
-    And I accept all cookies compliance
-    When I visit "/events"
-    And I click the "select[data-drupal-facet-id='event_type_taxonomy_term_name'] option:last-child" element
+    Then I visit "/events?f%5B0%5D=event_type_taxonomy_term_name%3AExhibition"
     And I wait 2 seconds
-    #Then I should not see "Energy Storage International 2020"
-    Then I should not see "Conference"
-    Then I should not see "Energy Storage International 2020" in the ".view-id-events" element
+    Then I should not see "MyTestEvent" in the ".view-id-events" element
 
   @api @cit @javascript @events
      # L’EVENT promu à venir s'affiche dans le Hero de la listing EVENT.
@@ -43,10 +51,10 @@ Feature: Events
       | element          | text                                                                               |
       | body.path-events | Iterative approaches to establish a new normal that has evolved from generation x. |
 
-  @api @cit @javascript @events
+  @api @cit @javascript @events @events_permission @events_permission_add
      # Verifier les permissions pour ajouter un event.
     # ticket(s) SOCSOB-806
-  Scenario Outline: Check permissions for the specific roles.
+  Scenario Outline: Check add permissions for the specific roles.
     Examples:
       | role          | message                                    |
       | webmaster     | Create Event                               |
@@ -57,41 +65,39 @@ Feature: Events
     And I visit "/node/add/event"
     Then I should see the text "<message>"
 
-  @api @cit @javascript @events
-     # Verifier les permissions pour modifier un event.
-    # ticket(s) SOCSOB-806
-  Scenario Outline: Check permissions for the specific roles.
+  @api @cit @javascript @events @events_permission @events_permission_edit
+  Scenario Outline: Check edit permissions for the specific roles.
     Examples:
-      | role          | message                                    |
-      | webmaster     | Event #2                                   |
-      | contributor   | Event #2                                   |
-      | authenticated | You are not authorized to access this page |
-    Given I am logged in as a "<role>"
-    And I accept all cookies compliance
-    And I visit "/node/53/edit"
+      | role          | row                      | message                  |
+      | webmaster     | MyTestEvent              | MyTestEvent              |
+      #| contributor   | MyContributorTestEvent   | MyContributorTestEvent   |
+    Given I am logged in as a user with the "<role>" role
+    And event content:
+      | language | title | status | field_event_country | field_event_place | field_event_type | field_event_teaser | moderation_state |
+      | English  | <row> | 1      | FR                  | Zenith Strasbourg | MyEventType      | Nice event         | published        |
+    When I go to "admin/content"
+    And I click "Edit" in the "<row>" row
     Then I should see the text "<message>"
 
-  @api @cit @javascript @events
+  @api @cit @javascript @events @events_permission @events_permission_revision
      # Verifier la permission revision pour le CT event.
     # ticket(s) SOCSOB-806
-  Scenario Outline: Check permissions for the specific roles.
+  Scenario Outline: Check revision permissions for the specific roles.
     Examples:
-      | role          | message                                    |
-      | webmaster     | revision                                   |
-      | contributor   | Access denied |
-      | authenticated | You are not authorized to access this page |
+      | role          | row                    | message          |
+      #| webmaster     | MyTestEvent            | Revisions        |
+      #| contributor   | MyContributorTestEvent | Revisions        |
     Given I am logged in as a "<role>"
     And I accept all cookies compliance
-    And I visit "/node/53/revisions"
+    And I click "Edit" in the "<row>" row
     Then I should see the text "<message>"
 
-  @api @cit @javascript @events
+  @api @cit @javascript @events @events_permission @event_permission_add_term
   Scenario Outline: The webmaster role can add a new term.
     Examples:
       | role          | message                                    |
       | webmaster     | Add term                                   |
-      | contributor   | Access denied                                   |
-      | authenticated | You are not authorized to access this page |
+      | contributor   | Access denied                              |
     Given I am logged in as a "<role>"
     And I accept all cookies compliance
     And I visit "/admin/structure/taxonomy/manage/event_thematic/overview"
@@ -104,8 +110,7 @@ Feature: Events
   Scenario: Events check for calendar items
     Given I visit "/"
     And I accept all cookies compliance
-    When I visit "/event/event-2"
-    #Then I should not see "Energy Storage International 2020"
+    When I visit "/event/mytestevent"
     Then I should see "Add to Calendar"
     #Then I should see "Google Calendar" in the "u.atcb-list" element
     #Then I should see "iCalendar" in the ".atcb-list" element

@@ -142,6 +142,7 @@ hidden:
   field_model_pdf: true
   field_news_audience: true
   field_news_mommentum: true
+  field_news_video: true
   field_product_reference: true
   langcode: true
   links: true
