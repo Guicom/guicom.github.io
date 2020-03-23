@@ -37,11 +37,12 @@ class Test {
    */
   public function characteristicsDictionary($langId = 1) {
     $characteristics = $this->nextPageApi->characteristicsDictionary();
-    kint($characteristics);
+    kint(count($characteristics));
     return [];
   }
 
   public function elementsAndLinks() {
+
     $elements = $this->nextPageApi->elementsAndLinks(['P_000517']);
     kint($elements);
     return [];

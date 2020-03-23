@@ -99,9 +99,12 @@ class NextpageApi extends NextpageBaseApi implements NextpageApiInterface {
     $endpoints = $this->getEndpoints();
     $results = [];
     $dictionary = [];
+    // $languageId  = $this->getLanguageId();
+    // @fixeme: using the right information $languageId.
+    $languageId = "2";
     try {
-      $results = $this->call($endpoints['dicocarac'] . '/' . $this->getLanguageId(),
-        NULL, 'GET');
+      $results = $this->call($endpoints['dicocarac'] . '/' . $languageId,
+        NULL, 'GET', 'json',FALSE);
       // Build dictionary using extid for easer search.
       foreach ($results->Results->Caracs as $carac) {
         $dictionary[$carac->ExtID] = $carac;
