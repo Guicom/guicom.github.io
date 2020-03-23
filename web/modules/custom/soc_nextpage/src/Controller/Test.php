@@ -47,7 +47,8 @@ class Test {
     or die('Error opening output file');
     fwrite($fh, json_encode($characteristics,JSON_PRETTY_PRINT));
     fclose($fh);
-    Drupal::logger('soc_nextpage')->log(LogLevel::INFO, $this->t('The file has been saved to @file', ['@file' => $filename]));
+
+    Drupal::logger('soc_nextpage')->info($this->t('The file has been saved to @file', ['@file' => $filename]));
     return [
       "#markup" => $this->t('Synchronisation is done'),
     ];
