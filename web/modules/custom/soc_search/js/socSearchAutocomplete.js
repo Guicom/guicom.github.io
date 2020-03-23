@@ -51,7 +51,7 @@
           var result = false;
           if (typeof output['suggestion'] !== 'undefined' || typeof output['categorized'] !== 'undefined') {
             if (typeof output['suggestion'] !== 'undefined' && output['suggestion'].length) {
-              var suggestion = $(".block-soc-search .submenu-bg-bottom .search-suggestions .result-search-suggestions > ul");
+              var suggestion = $(".block-soc-search .submenu-bg-bottom .search-default-suggestions .result-search-suggestions > ul");
               suggestion.empty();
               for (var item in output['suggestion']) {
                 result = true;
@@ -62,7 +62,7 @@
               }
             }
             if (typeof output['categorized'] !== 'undefined' && output['categorized'].length) {
-              var categorized = $(".block-soc-search .submenu-bg-bottom .search-categorized-suggestions .result-search-categorized-suggestions > ul");
+              var categorized = $(".block-soc-search .submenu-bg-bottom .search-categorized-suggestions .result-search-suggestions > ul");
               categorized.empty();
               for (var item in output['categorized']) {
                 result = true;

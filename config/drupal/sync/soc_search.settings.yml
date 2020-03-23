@@ -10,3 +10,5 @@ breadcrumb_title: Search
 breadcrumb_title_searched: 'Search results for "@word"'
 title_searched: '@total results for "@word"'
 title_no_result: 'No result'
+suggestion_title: 'More than 1250 Results here some suggestions'
+categorized_title: 'Categorized suggestions'

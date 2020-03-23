@@ -1,0 +1,43 @@
+uuid: 85d20f3b-a4de-47ac-806e-db44ec5cc5d6
+langcode: en
+status: true
+dependencies:
+  config:
+    - search_api.index.global_search
+    - views.view.global_search
+  module:
+    - views
+    - search_api_autocomplete
+id: global_search
+label: 'Global search'
+index_id: global_search
+suggester_settings:
+  server:
+    fields:
+      - field_citation_author_position
+      - field_citation_content
+      - field_event_teaser
+      - field_figure_2_text_line_1
+      - field_figure_2_text_line_2
+      - field_figure_3_text_line_1
+      - field_figure_3_text_line_2
+      - field_figure_4_text_line_2
+      - field_product_teaser
+      - field_teaser
+      - field_title
+      - title
+suggester_weights:
+  server: 0
+suggester_limits: {  }
+search_settings:
+  'views:global_search':
+    displays:
+      default: true
+      selected: {  }
+options:
+  limit: 10
+  min_length: 3
+  show_count: false
+  autosubmit: false
+  submit_button_selector: ':submit'
+  delay: null

@@ -148,19 +148,9 @@ class SocSearchAutocompleteController extends AutocompleteController {
               'url' => $url,
               'label' => $label,
             ];
-            $matches['categorized'][] = [
-              'bundle' => $bundle_info[$entity->getEntityTypeId()][$entity->bundle()]['label'],
-              'value' => $trimmed_label,
-              'url' => $url,
-              'label' => $label,
-            ];
           }
           else {
             $matches['suggestion'][] = [
-              'value' => trim($suggestion->getSuggestedKeys()),
-              'label' => $label,
-            ];
-            $matches['categorized'][] = [
               'value' => trim($suggestion->getSuggestedKeys()),
               'label' => $label,
             ];
@@ -176,6 +166,32 @@ class SocSearchAutocompleteController extends AutocompleteController {
       watchdog_exception('search_api_autocomplete', $e, '%type while retrieving autocomplete suggestions: @message in %function (line %line of %file).');
     }
 
+    // @todo custom query categorized
+    /*
+    $index = \Drupal\search_api\Entity\Index::load('global_search');
+    $fulltext_fields = $index->getFulltextFields();
+    $query = $index->query();
+    $query->setFulltextFields($fulltext_fields);
+    $parse_mode = \Drupal::service('plugin.manager.search_api.parse_mode')->createInstance('direct');
+    // Optionnellement, on peut choisir un opérateur spécifique (OR ou AND)
+    $parse_mode->setConjunction('OR');
+    // Affectation du mode de la requête
+    $query->setParseMode($parse_mode);
+    $query->keys('sirco');
+    $query->range(0, 10);
+    $data = $query->execute();
+
+    $matches['suggestion'][] = [
+      'value' => 'test 1',
+      'label' => 'test',
+    ];
+   $matches['categorized'][] = [
+    'bundle' => $bundle_info[$entity->getEntityTypeId()][$entity->bundle()]['label'],
+    'value' => $trimmed_label,
+    'url' => $url,
+    'label' => $label,
+  ];
+    */
     return new JsonResponse($matches);
   }
 
