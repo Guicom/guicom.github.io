@@ -57,4 +57,34 @@ class MenuItemContent extends ContentManager {
     return FALSE;
   }
 
+  /**
+   * Update existing block content.
+   *
+   * @param string $uuid
+   * @param array $data
+   *
+   * @return bool|\Drupal\Core\Entity\EntityInterface|\Drupal\menu_link_content\Entity\MenuLinkContent
+   */
+  public function updateMenuItemContent(string $uuid, array $data) {
+    // Check if block content already exists.
+    /** @var \Drupal\menu_link_content\Entity\MenuLinkContent $menuItemContent */
+    if (!$menuItemContent = $this->getMenuItemByUuid($uuid)) {
+      $this->logger->warning('Trying to update a menu item who does not exist, skipped...');
+    }
+    // If input is OK.
+    else {
+      // Update menu item.
+      foreach ($data as $propertyName => $propertyValue) {
+        $menuItemContent->set($propertyName, $propertyValue);
+      }
+      try {
+        $menuItemContent->save();
+        return $menuItemContent;
+      } catch (EntityStorageException $e) {
+        $this->logger->error($e->getMessage());
+      }
+    }
+    return FALSE;
+  }
+
 }

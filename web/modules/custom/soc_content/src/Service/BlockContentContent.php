@@ -70,15 +70,8 @@ class BlockContentContent extends ContentManager {
   public function updateBlockContent(string $uuid, array $data) {
     // Check if block content already exists.
     /** @var \Drupal\block_content\Entity\BlockContent $blockContent */
-    if (!$blockContent = $this->getTermByUuid($uuid)) {
+    if (!$blockContent = $this->getBlockContentByUuid($uuid)) {
       $this->logger->warning('Trying to update a block content who does not exist, skipped...');
-    }
-    // Validate input.
-    elseif (!isset($data['type'])) {
-      $this->logger->warning('Trying to update a block content without type, skipped...');
-    }
-    elseif (!isset($data['info'])) {
-      $this->logger->warning('Trying to update a block content without info, skipped...');
     }
     // If input is OK.
     else {

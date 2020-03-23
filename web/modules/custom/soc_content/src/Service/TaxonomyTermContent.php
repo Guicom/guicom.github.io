@@ -70,13 +70,6 @@ class TaxonomyTermContent extends ContentManager {
     if (!$term = $this->getTermByUuid($uuid)) {
       $this->logger->warning('Trying to update a term who does not exist, skipped...');
     }
-    // Validate input.
-    elseif (!isset($data['name'])) {
-      $this->logger->warning('Trying to update a term without name, skipped...');
-    }
-    elseif (!isset($data['vid'])) {
-      $this->logger->warning('Trying to update a term without vid, skipped...');
-    }
     // If input is OK.
     else {
       // Update term.
