@@ -43,12 +43,12 @@ class Test {
     $filename = 'characteristics_dictionary.json';
     $app_root = \Drupal::root();
 
-    $fh = fopen($app_root . '/../data/' . $filename, 'w')
-    or die('Error opening output file');
-    fwrite($fh, json_encode($characteristics,JSON_PRETTY_PRINT));
+    $fh = fopen($app_root . '/../data/' . $filename, 'w') or die('Error opening output file');
+    fwrite($fh, json_encode($characteristics, JSON_PRETTY_PRINT));
     fclose($fh);
 
-    Drupal::logger('soc_nextpage')->info($this->t('The file has been saved to @file', ['@file' => $filename]));
+    Drupal::logger('soc_nextpage')
+      ->info($this->t('The file has been saved to @file', ['@file' => $filename]));
     return [
       "#markup" => $this->t('Synchronisation is done'),
     ];
