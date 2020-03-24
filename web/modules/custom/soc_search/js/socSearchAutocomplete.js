@@ -9,24 +9,24 @@
 
 
   Drupal.behaviors.socSearchAutocomplete = {
-    attach: function attach(context , settings) {
+    attach: function attach(context, settings) {
       var element = $(context).find('input.soc-search-form-autocomplete').once('socSearchAutocomplete');
-      $('.see-all-search-suggestions').once('socSearchAutocomplete').click(function(e) {
+      $('.see-all-search-suggestions').once('socSearchAutocomplete').click(function (e) {
         e.preventDefault();
         $('#views-exposed-form-global-search-page-1').submit();
       });
-      $(".block-soc-search").once('socSearchAutocomplete').on("click", ".search-default-suggestions .result-search-suggestions a", function(e) {
+      $(".block-soc-search").once('socSearchAutocomplete').on("click", ".search-default-suggestions .result-search-suggestions a", function (e) {
         e.preventDefault();
-        var searchValue = $(this).attr("soc-search-value");
+        var searchValue = $(this).attr("data-soc-search-value");
         $('#views-exposed-form-global-search-page-1 input[name="search_api_fulltext"]').val(searchValue);
         $('#views-exposed-form-global-search-page-1').submit();
       });
       if (element.length) {
         var minLength = 1;
         if (settings
-            && settings.search_api_autocomplete
-            && settings.search_api_autocomplete['global_search']
-            && settings.search_api_autocomplete['global_search']['min_length']) {
+          && settings.search_api_autocomplete
+          && settings.search_api_autocomplete['global_search']
+          && settings.search_api_autocomplete['global_search']['min_length']) {
           minLength = settings.search_api_autocomplete['global_search']['min_length'];
         }
         var path = element.attr('data-autocomplete-path');
@@ -34,7 +34,8 @@
         if (value.length >= minLength) {
           Drupal.behaviors.socSearchAutocomplete.ajax(path, value);
         }
-        element.bind('change keyup', function(){
+
+        element.bind('change keyup', this.delay(function (e) {
           value = $(this).val();
           if (value.length >= minLength) {
             Drupal.behaviors.socSearchAutocomplete.ajax(path, value);
@@ -44,16 +45,16 @@
             Drupal.behaviors.socSearchAutocomplete.hideResult();
             Drupal.behaviors.socSearchAutocomplete.showBlock();
           }
-        });
+        }, 250));
       }
     },
     ajax: function (path, value) {
       $.ajax({
-        url : path,
-        type : 'GET',
-        data : { q: value },
-        dataType : 'json', // On désire recevoir du HTML
-        success : function(output, statut){
+        url: path,
+        type: 'GET',
+        data: {q: value},
+        dataType: 'json', // On désire recevoir du HTML
+        success: function (output, statut) {
           var result = false;
           if (typeof output['suggestion'] !== 'undefined' || typeof output['categorized'] !== 'undefined') {
             var suggestion = $(".block-soc-search .submenu-bg-bottom .search-default-suggestions .result-search-suggestions > ul");
@@ -68,7 +69,7 @@
                 Drupal.behaviors.socSearchAutocomplete.hideNoResult();
                 Drupal.behaviors.socSearchAutocomplete.hideBlock();
                 Drupal.behaviors.socSearchAutocomplete.showResult();
-                suggestion.prepend('<li class="nav-item"><a class="nav-link" href="#search" soc-search-value="' + output['suggestion'][itemSuggestion].value + '">' + output['suggestion'][itemSuggestion].label + '</a></li>');
+                suggestion.prepend('<li class="nav-item"><a class="nav-link" href="#search" data-soc-search-value="' + output['suggestion'][itemSuggestion].value + '">' + output['suggestion'][itemSuggestion].label + '</a></li>');
               }
             }
 
@@ -89,31 +90,41 @@
         }
       });
     },
-    showBlock : function(){
+    showBlock: function () {
       $(".block-soc-search .wrapper-bottom-search .block").show();
       $(".block-soc-search .wrapper-bottom-search.quick").removeClass("col-lg-6");
       $(".block-soc-search .wrapper-bottom-search.quick").removeClass("col-lg-3");
       $(".block-soc-search .wrapper-bottom-search.quick").addClass("col-lg-3");
     },
-    hideBlock : function(){
+    hideBlock: function () {
       $(".block-soc-search .wrapper-bottom-search .block").hide();
       $(".block-soc-search .wrapper-bottom-search.quick").removeClass("col-lg-6");
       $(".block-soc-search .wrapper-bottom-search.quick").removeClass("col-lg-3");
       $(".block-soc-search .wrapper-bottom-search.quick").addClass("col-lg-6");
     },
-    showResult : function(){
+    showResult: function () {
       $(".block-soc-search .submenu-bg-bottom .search-suggestions").show();
     },
-    hideResult : function(){
+    hideResult: function () {
       $(".block-soc-search .submenu-bg-bottom .search-suggestions").hide();
     },
-    showNoResult : function(){
+    showNoResult: function () {
       $(".block-soc-search .wrapper-bottom-search").hide();
       $(".block-soc-search .search-suggestions-no-result").show();
     },
-    hideNoResult : function(){
+    hideNoResult: function () {
       $(".block-soc-search .search-suggestions-no-result").hide();
       $(".block-soc-search .wrapper-bottom-search").show();
+    },
+    delay: function (callback, ms) {
+      var timer = 0;
+      return function () {
+        var context = this, args = arguments;
+        clearTimeout(timer);
+        timer = setTimeout(function () {
+          callback.apply(context, args);
+        }, ms || 0);
+      };
     }
   };
 
