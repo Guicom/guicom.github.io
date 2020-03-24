@@ -1,19 +1,22 @@
 <?php
 
-namespace Drupal\soc_wishlist\Controller;
+namespace Drupal\soc_content_list\Controller;
 
 use Drupal\Core\Controller\ControllerBase;
 use Drupal\Core\Messenger\MessengerInterface;
-use Drupal\soc_wishlist\Service\Manager\WishlistManager;
+use Drupal\redirect\Entity\Redirect;
+use Drupal\soc_content_list\Service\Manager\ContentListManager;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Response;
 use Drupal\Core\Url;
+use Drupal\Core\Ajax\AjaxResponse;
+use Drupal\Core\Ajax\RedirectCommand;
 
 
-class WishlistController extends ControllerBase {
+class ContentListController extends ControllerBase {
 
-  /** @var \Drupal\soc_wishlist\Service\Manager\WishlistManager $wishlistManager */
+  /** @var \Drupal\soc_content_list\Service\Manager\ContentListManager $wishlistManager */
   private $wishlistManager;
 
   /**
@@ -26,11 +29,11 @@ class WishlistController extends ControllerBase {
   /**
    * WishlistController constructor.
    *
-   * @param \Drupal\soc_wishlist\Service\Manager\WishlistManager $wishlistManager
+   * @param \Drupal\soc_content_list\Service\Manager\ContentListManager $contentListManager
    * @param \Drupal\Core\Messenger\MessengerInterface $messenger
    */
-  public function __construct(WishlistManager $wishlistManager, MessengerInterface $messenger) {
-    $this->wishlistManager = $wishlistManager;
+  public function __construct(ContentListManager $contentListManager, MessengerInterface $messenger) {
+    $this->contentListManager = $contentListManager;
     $this->messenger = $messenger;
   }
 
@@ -39,7 +42,7 @@ class WishlistController extends ControllerBase {
    */
   public static function create(ContainerInterface $container) {
     return new static(
-      $container->get('soc_wishlist.wishlist_manager'),
+      $container->get('soc_content_list.wishlist_manager'),
       $container->get('messenger')
     );
   }
@@ -102,7 +105,7 @@ class WishlistController extends ControllerBase {
         $this->messenger->addError($e->getMessage());
       }
     }
-    $redirect_url = Url::fromRoute('soc_wishlist.edit_wishlist');
+    $redirect_url = Url::fromRoute('soc_content_list.edit_wishlist');
     $response = new RedirectResponse($redirect_url->toString(), 302);
     $response->expire();
     return $response;
@@ -127,8 +130,8 @@ class WishlistController extends ControllerBase {
     ];
 
     if (in_array($type, $types)) {
-      /** @var \Drupal\soc_wishlist\Service\Manager\WishlistExport $export */
-      $export = \Drupal::service('soc_wishlist.wishlist_export');
+      /** @var \Drupal\soc_content_list\Service\Manager\WishlistExport $export */
+      $export = \Drupal::service('soc_content_list.wishlist_export');
       $export->setType($type);
       try {
         return $export->export();
