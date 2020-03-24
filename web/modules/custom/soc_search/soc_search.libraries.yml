@@ -1,0 +1,10 @@
+soc_search.autocomplete:
+  js:
+    js/socSearchAutocomplete.js: { weight: -1 }
+  dependencies:
+    - core/jquery
+    - core/drupal
+    - core/drupalSettings
+    - core/drupal.ajax
+    - core/jquery.ui.autocomplete
+

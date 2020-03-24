@@ -28,3 +28,11 @@ soc_search.settings:
       label: 'Placeholder'
       type: label
       translatable: true
+    suggestion_title:
+      label: 'Suggestion title'
+      type: label
+      translatable: true
+    categorized_title:
+      label: 'Categorized title'
+      type: label
+      translatable: true
