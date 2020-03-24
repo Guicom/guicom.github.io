@@ -76,7 +76,7 @@ Feature: [STORE_LOCATOR] Tests Behat
     And I fill in "Title" with "Title content location"
     And I select "Europe" from "Continent of Sales"
     And I select "-France" from "Area of Sales"
-    And I select "Energy Efficiency" from "Activity"
+    And I select "Energy storage" from "Activity"
     And I fill in "Company" with "Company content location"
     And I select "France" from "Country"
     And I wait for AJAX to finish
@@ -112,7 +112,7 @@ Feature: [STORE_LOCATOR] Tests Behat
     And I select "Europe" from "Continent of Sales"
     And I select "-France" from "Area of Sales"
     And I select "--Alsace" from "Subarea Of Sales"
-    And I select "Energy Efficiency" from "Activity"
+    And I select "Energy storage" from "Activity"
     And I fill in "Company" with "Test company 1"
     And I fill in "Name Contact" with "Test name contact 1"
     And I fill in "Firstname" with "Test Firstname 1"
@@ -135,7 +135,7 @@ Feature: [STORE_LOCATOR] Tests Behat
     And I accept all cookies compliance
     Then I should see "1 contact"
     Then I should see "Test company 1" in the ".field--name-field-location-company" element
-    Then I should see "ENERGY EFFICIENCY" in the ".field--type-entity-reference" element
+    Then I should see "ENERGY STORAGE" in the ".field--type-entity-reference" element
     Then I should see "0600000000" in the ".field--type-telephone" element
     Then I should see "Send a Mail" in the "a[href='mailto:email@gmail.com']" element
     Then I should see "TestingType" in the ".field--name-field-location-type" element

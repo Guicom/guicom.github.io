@@ -5,6 +5,7 @@ default:
         - FeatureContext
         - SessionContext
         - ScreenshotContext
+        - EventContext
         - Drupal\DrupalExtension\Context\ConfigContext
         - Drupal\DrupalExtension\Context\DrupalContext
         - Drupal\DrupalExtension\Context\MinkContext

@@ -8,11 +8,11 @@ dependencies:
     - taxonomy
     - search_api
   config:
+    - field.storage.node.field_event_date
     - field.storage.node.field_event_content
     - field.storage.node.field_event_country
-    - field.storage.node.field_event_custom_audience
-    - field.storage.node.field_event_date
     - field.storage.node.field_event_teaser
+    - field.storage.node.field_event_custom_audience
     - field.storage.node.field_event_thematic
     - field.storage.node.field_event_type
     - search_api.server.socomec

@@ -1,0 +1,25 @@
+services:
+  soc_content.content_manager:
+    class: Drupal\soc_content\Service\Manager\ContentManager
+    arguments:
+      ['@entity.repository', '@logger.factory']
+  soc_content.taxonomy_term:
+    class: Drupal\soc_content\Service\TaxonomyTermContent
+    arguments:
+      ['@entity.repository', '@logger.factory']
+  soc_content.menu_item:
+    class: Drupal\soc_content\Service\MenuItemContent
+    arguments:
+      ['@entity.repository', '@logger.factory']
+  soc_content.media:
+    class: Drupal\soc_content\Service\MediaContent
+    arguments:
+      ['@entity.repository', '@logger.factory']
+  soc_content.block_content:
+    class: Drupal\soc_content\Service\BlockContentContent
+    arguments:
+      ['@entity.repository', '@logger.factory']
+  soc_content.paragraph:
+    class: Drupal\soc_content\Service\ParagraphContent
+    arguments:
+      ['@entity.repository', '@logger.factory']
