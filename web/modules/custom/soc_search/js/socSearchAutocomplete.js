@@ -56,26 +56,29 @@
         success : function(output, statut){
           var result = false;
           if (typeof output['suggestion'] !== 'undefined' || typeof output['categorized'] !== 'undefined') {
+            var suggestion = $(".block-soc-search .submenu-bg-bottom .search-default-suggestions .result-search-suggestions > ul");
+            suggestion.empty();
+
+            var categorized = $(".block-soc-search .submenu-bg-bottom .search-categorized-suggestions .result-search-suggestions > ul");
+            categorized.empty();
+
             if (typeof output['suggestion'] !== 'undefined' && output['suggestion'].length) {
-              var suggestion = $(".block-soc-search .submenu-bg-bottom .search-default-suggestions .result-search-suggestions > ul");
-              suggestion.empty();
-              for (var item in output['suggestion']) {
+              for (var itemSuggestion in output['suggestion']) {
                 result = true;
                 Drupal.behaviors.socSearchAutocomplete.hideNoResult();
                 Drupal.behaviors.socSearchAutocomplete.hideBlock();
                 Drupal.behaviors.socSearchAutocomplete.showResult();
-                suggestion.prepend('<li class="nav-item"><a class="nav-link" href="#search" soc-search-value="' + output['suggestion'][item].value + '">' + output['suggestion'][item].value + '</a></li>');
+                suggestion.prepend('<li class="nav-item"><a class="nav-link" href="#search" soc-search-value="' + output['suggestion'][itemSuggestion].value + '">' + output['suggestion'][itemSuggestion].label + '</a></li>');
               }
             }
+
             if (typeof output['categorized'] !== 'undefined' && output['categorized'].length) {
-              var categorized = $(".block-soc-search .submenu-bg-bottom .search-categorized-suggestions .result-search-suggestions > ul");
-              categorized.empty();
-              for (var item in output['categorized']) {
+              for (var itemCategorized in output['categorized']) {
                 result = true;
                 Drupal.behaviors.socSearchAutocomplete.hideNoResult();
                 Drupal.behaviors.socSearchAutocomplete.hideBlock();
                 Drupal.behaviors.socSearchAutocomplete.showResult();
-                categorized.prepend('<li class="nav-item"><a class="nav-link" href="' + output['categorized'][item].url + '"><span class="search-label">' + output['categorized'][item].value + '</span><span class="search-bundle">' + output['categorized'][item].bundle + '</span></a></li>');
+                categorized.prepend('<li class="nav-item"><a class="nav-link" href="' + output['categorized'][itemCategorized].url + '"><span class="search-label">' + output['categorized'][itemCategorized].value + '</span><span class="search-bundle">' + output['categorized'][itemCategorized].bundle + '</span></a></li>');
               }
             }
           }

@@ -284,6 +284,18 @@
                 color:rgba($turquoize, 0.8);
               }
             }
+            .search-api-autocomplete-suggestion{
+              padding: 0px;
+              span {
+                display:inline;
+                &.autocomplete-suggestion-user-input{
+                  font-weight: normal;
+                }
+                &.autocomplete-suggestion-suggestion-suffix{
+                  font-weight: bold;
+                }
+              }
+            }
           }
         }
       }

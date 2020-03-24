@@ -34,6 +34,7 @@ class SocSearchAutocompleteController extends AutocompleteController {
     $matches = ['suggestion', 'categorized'];
     $matches['suggestion'] = json_decode($content, true);
 
+    $key = $request->query->get('q');
     $index = \Drupal\search_api\Entity\Index::load('global_search');
     $fulltext_fields = $index->getFulltextFields();
     /** @var \Drupal\search_api\Query\QueryInterface $query */
@@ -41,12 +42,27 @@ class SocSearchAutocompleteController extends AutocompleteController {
     $query->setFulltextFields($fulltext_fields);
     $parse_mode = \Drupal::service('plugin.manager.search_api.parse_mode')->createInstance('direct');
     $query->setParseMode($parse_mode);
-    $query->keys($request->query->get('q'));
+    $query->keys($key);
     $query->sort('search_api_relevance', 'ASC');
     $query->setOption( 'search_api_retrieved_field_values', ['tcngramm_X3b_en_title', 'ss_type']);
     $query->range(0, 7);
-    $results_set = $query->execute();
+    $tmp_query = clone $query;
+    $results_set = $tmp_query->execute();
     $nb_results = $results_set->getResultCount();
+    if ($nb_results === 0 && !empty($matches['suggestion'][0]['value'])) {
+      $query->keys($matches['suggestion'][0]['value']);
+      $results_set = $query->execute();
+    }
+
+    if ($nb_results > 0 && empty($matches['suggestion'][0]['value'])) {
+      if (!empty($key)) {
+        $matches['suggestion'][0] = [
+          'value' => trim($key),
+          'label' => $key,
+        ];
+      }
+    }
+
     // Récupération des entités
     $bundle_info = \Drupal::service("entity_type.bundle.info")->getAllBundleInfo();
     foreach ($results_set->getResultItems() as $item) {
