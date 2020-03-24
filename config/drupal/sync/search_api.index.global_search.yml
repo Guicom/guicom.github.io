@@ -87,7 +87,7 @@ field_settings:
     label: 'Body » Paragraph » Citation author''s position'
     datasource_id: 'entity:node'
     property_path: 'field_body:entity:field_citation_author_position'
-    type: 'solr_text_custom:ngram'
+    type: text
     dependencies:
       config:
         - field.storage.node.field_body
@@ -98,7 +98,7 @@ field_settings:
     label: 'Body » Paragraph » Citation content'
     datasource_id: 'entity:node'
     property_path: 'field_body:entity:field_citation_content'
-    type: 'solr_text_custom:ngram'
+    type: text
     dependencies:
       config:
         - field.storage.node.field_body
@@ -109,7 +109,7 @@ field_settings:
     label: 'Event Teaser'
     datasource_id: 'entity:node'
     property_path: field_event_teaser
-    type: 'solr_text_custom:ngram'
+    type: text
     dependencies:
       config:
         - field.storage.node.field_event_teaser
@@ -133,7 +133,7 @@ field_settings:
     label: 'Body » Paragraph » Figure 2 - Text line 1'
     datasource_id: 'entity:node'
     property_path: 'field_body:entity:field_figure_2_text_line_1'
-    type: 'solr_text_custom:ngram'
+    type: text
     dependencies:
       config:
         - field.storage.node.field_body
@@ -144,7 +144,7 @@ field_settings:
     label: 'Body » Paragraph » Figure 2 - Text line 2'
     datasource_id: 'entity:node'
     property_path: 'field_body:entity:field_figure_2_text_line_2'
-    type: 'solr_text_custom:ngram'
+    type: text
     dependencies:
       config:
         - field.storage.node.field_body
@@ -155,7 +155,7 @@ field_settings:
     label: 'Body » Paragraph » Figure 3 - Text line 1'
     datasource_id: 'entity:node'
     property_path: 'field_body:entity:field_figure_3_text_line_1'
-    type: 'solr_text_custom:ngram'
+    type: text
     dependencies:
       config:
         - field.storage.node.field_body
@@ -166,7 +166,7 @@ field_settings:
     label: 'Body » Paragraph » Figure 3 - Text line 2'
     datasource_id: 'entity:node'
     property_path: 'field_body:entity:field_figure_3_text_line_2'
-    type: 'solr_text_custom:ngram'
+    type: text
     dependencies:
       config:
         - field.storage.node.field_body
@@ -177,7 +177,7 @@ field_settings:
     label: 'Body » Paragraph » Figure 4 - Text line 2'
     datasource_id: 'entity:node'
     property_path: 'field_body:entity:field_figure_4_text_line_2'
-    type: 'solr_text_custom:ngram'
+    type: text
     dependencies:
       config:
         - field.storage.node.field_body
@@ -212,7 +212,7 @@ field_settings:
     label: 'Product Teaser'
     datasource_id: 'entity:node'
     property_path: field_product_teaser
-    type: 'solr_text_custom:ngram'
+    type: text
     dependencies:
       config:
         - field.storage.node.field_product_teaser
@@ -236,7 +236,7 @@ field_settings:
     label: 'News / Resource teaser'
     datasource_id: 'entity:node'
     property_path: field_teaser
-    type: 'solr_text_custom:ngram'
+    type: text
     dependencies:
       config:
         - field.storage.node.field_teaser
@@ -244,7 +244,7 @@ field_settings:
     label: 'Body » Paragraph » Title'
     datasource_id: 'entity:node'
     property_path: 'field_body:entity:field_title'
-    type: 'solr_text_custom:ngram'
+    type: text
     dependencies:
       config:
         - field.storage.node.field_body
@@ -259,6 +259,13 @@ field_settings:
     dependencies:
       module:
         - taxonomy
+  node_grants:
+    label: 'Node access information'
+    property_path: search_api_node_grants
+    type: string
+    indexed_locked: true
+    type_locked: true
+    hidden: true
   parent:
     label: 'Term Parents'
     datasource_id: 'entity:taxonomy_term'
@@ -271,7 +278,7 @@ field_settings:
     label: 'Body » Paragraph » Description » Processed text'
     datasource_id: 'entity:node'
     property_path: 'field_body:entity:field_text:processed'
-    type: 'solr_text_custom:ngram'
+    type: text
     dependencies:
       config:
         - field.storage.node.field_body
@@ -282,7 +289,7 @@ field_settings:
     label: 'Body » Paragraph » Answer » Processed text'
     datasource_id: 'entity:node'
     property_path: 'field_body:entity:field_answer:processed'
-    type: 'solr_text_custom:ngram'
+    type: text
     dependencies:
       config:
         - field.storage.node.field_body
@@ -321,6 +328,16 @@ field_settings:
     dependencies:
       module:
         - node
+  status:
+    label: status
+    datasource_id: 'entity:node'
+    property_path: status
+    type: boolean
+    indexed_locked: true
+    type_locked: true
+    dependencies:
+      module:
+        - node
   sticky:
     label: 'Sticky at top of lists'
     datasource_id: 'entity:node'
@@ -333,7 +350,7 @@ field_settings:
     label: Title
     datasource_id: 'entity:node'
     property_path: title
-    type: 'solr_text_custom:ngram'
+    type: text
     dependencies:
       module:
         - node
@@ -342,6 +359,16 @@ field_settings:
     datasource_id: 'entity:node'
     property_path: type
     type: string
+    dependencies:
+      module:
+        - node
+  uid:
+    label: uid
+    datasource_id: 'entity:node'
+    property_path: uid
+    type: integer
+    indexed_locked: true
+    type_locked: true
     dependencies:
       module:
         - node
@@ -378,11 +405,49 @@ datasource_settings:
 processor_settings:
   add_url: {  }
   aggregated_field: {  }
+  content_access:
+    weights:
+      preprocess_query: -30
   hierarchy:
     fields:
       field_product_family: taxonomy_term-parent
     weights:
       preprocess_index: -45
+  html_filter:
+    all_fields: false
+    fields:
+      - field_citation_author_position
+      - field_citation_content
+      - field_event_teaser
+      - field_figure_2_text_line_1
+      - field_figure_2_text_line_2
+      - field_figure_3_text_line_1
+      - field_figure_3_text_line_2
+      - field_figure_4_text_line_2
+      - field_product_teaser
+      - field_teaser
+      - field_title
+      - name_14
+      - processed
+      - processed_1
+      - processed_2
+      - processed_4
+      - title
+      - type
+      - vid
+    title: true
+    alt: true
+    tags:
+      b: 2
+      em: 1
+      h1: 5
+      h2: 3
+      h3: 2
+      strong: 2
+      u: 1
+    weights:
+      preprocess_index: -15
+      preprocess_query: -15
   language_with_fallback: {  }
   rendered_item: {  }
   solr_date_range:

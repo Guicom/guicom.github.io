@@ -15,6 +15,12 @@
         e.preventDefault();
         $('#views-exposed-form-global-search-page-1').submit();
       });
+      $(".block-soc-search").once('socSearchAutocomplete').on("click", ".search-default-suggestions .result-search-suggestions a", function(e) {
+        e.preventDefault();
+        var searchValue = $(this).attr("soc-search-value");
+        $('#views-exposed-form-global-search-page-1 input[name="search_api_fulltext"]').val(searchValue);
+        $('#views-exposed-form-global-search-page-1').submit();
+      });
       if (element.length) {
         var minLength = 1;
         if (settings
@@ -58,7 +64,7 @@
                 Drupal.behaviors.socSearchAutocomplete.hideNoResult();
                 Drupal.behaviors.socSearchAutocomplete.hideBlock();
                 Drupal.behaviors.socSearchAutocomplete.showResult();
-                suggestion.prepend('<li class="nav-item"><a class="nav-link" href="' + output['suggestion'][item].url + '">' + output['suggestion'][item].value + '</a></li>');
+                suggestion.prepend('<li class="nav-item"><a class="nav-link" href="#search" soc-search-value="' + output['suggestion'][item].value + '">' + output['suggestion'][item].value + '</a></li>');
               }
             }
             if (typeof output['categorized'] !== 'undefined' && output['categorized'].length) {
