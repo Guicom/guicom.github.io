@@ -4,6 +4,7 @@ use Behat\Mink\Driver\Selenium2Driver;
 use Drupal\Component\Utility\UrlHelper;
 use Drupal\Core\Url;
 use Drupal\DrupalExtension\Context\RawDrupalContext;
+use Drupal\node\Entity\Node;
 
 /**
  * Class FeatureContext

@@ -98,9 +98,11 @@ behat:
   script:
     - docker-compose exec -u web -T web bash -c "cd /var/www/html && ./vendor/bin/phing behat:run -Dbehat.bin=tests/behat/bin/behat"
   artifacts:
+    name: "$CI_COMMIT_REF_NAME"
     paths:
       - /builds/actency/prod/socomec/socomec.com/tests/behat/report/html
     expire_in: 1 week
+    when: always
   only:
     - merge_requests
 
