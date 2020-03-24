@@ -99,7 +99,7 @@ behat:
     - docker-compose exec -u web -T web bash -c "cd /var/www/html && ./vendor/bin/phing behat:run -Dbehat.bin=tests/behat/bin/behat"
   artifacts:
     paths:
-      - /var/www/html/tests/behat/report/html
+      - /builds/actency/prod/socomec/socomec.com/tests/behat/report/html
     expire_in: 1 week
   only:
     - merge_requests
