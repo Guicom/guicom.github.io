@@ -20,7 +20,8 @@ class WishlistManager extends ContentListManager {
     $settings = $configFactory->getEditable('soc_wishlist.settings');
     $bundle = 'reference';
     $referencedField = 'field_reference_extid';
-    parent::__construct($contentList, $cookieName, $settings, $bundle, $referencedField);
+    $cookieIdField = 'extid';
+    parent::__construct($contentList, $cookieName, $settings, $bundle, $referencedField, $cookieIdField);
   }
 
 }

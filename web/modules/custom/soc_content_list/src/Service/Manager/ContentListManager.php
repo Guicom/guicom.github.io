@@ -22,6 +22,9 @@ class ContentListManager {
 
   /** @var $referencedField */
   protected $referencedField;
+  
+  /** @var $cookieIdField */
+  protected $cookieIdField;
 
   /**
    * WishlistManager constructor.
@@ -32,12 +35,15 @@ class ContentListManager {
    * @param string $bundle
    * @param string $referenced_field
    */
-  public function __construct(ContentList $content_list, string $cookie_name, Config $settings, string $bundle, string $referenced_field) {
+  public function __construct(ContentList $content_list, string $cookie_name,
+                              Config $settings, string $bundle, string $referenced_field,
+                              string $cookieIdField) {
     $this->contentList = $content_list;
     $this->cookie_name = $cookie_name;
     $this->settings = $settings;
     $this->bundle = $bundle;
     $this->referencedField = $referenced_field;
+    $this->cookieIdField = $cookieIdField;
   }
 
   /**
@@ -51,7 +57,7 @@ class ContentListManager {
     $items = $this->contentList->getItems();
     if (!is_array($items) || !array_key_exists($extid, $items)) {
       $items[$extid] = [
-        'extid' => $extid,
+        $this->getCookieIdField() => $extid,
         'quantity' => 1,
       ];
       $this->contentList->setItems($items);
@@ -116,9 +122,9 @@ class ContentListManager {
         $items = Node::loadMultiple($itemsResults);
         $preparedItems = [];
         foreach ($items as $item) {
-          $preparedItems[$datas[$item->get($this->getReferencedField())->value]['extid']] =  [
+          $preparedItems[$datas[$item->get($this->getReferencedField())->value][$this->getCookieIdField()]] =  [
             'node' => $item,
-            'extid' => $datas[$item->get($this->getReferencedField())->value]['extid'],
+            $this->getCookieIdField() => $datas[$item->get($this->getReferencedField())->value][$this->getCookieIdField()],
             'quantity' => $datas[$item->get($this->getReferencedField())->value]['quantity']
           ];
         }
@@ -167,6 +173,13 @@ class ContentListManager {
    */
   public function getReferencedField() {
     return $this->referencedField;
+  }
+
+  /**
+   * @return mixed
+   */
+  public function getCookieIdField() {
+    return $this->cookieIdField;
   }
 
 }
