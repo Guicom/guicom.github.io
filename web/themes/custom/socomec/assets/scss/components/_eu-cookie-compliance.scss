@@ -66,8 +66,9 @@
         .eu-cookie-compliance-category-list {
           @include make-container();
           @include make-container-max-widths();
+          background: $light-grayish-red;
           overflow: auto;
-          margin-bottom: 2em;
+          padding-bottom: 2em;
           margin-top: 4rem;
           > div {
             max-width: 90%;
@@ -94,8 +95,10 @@
         .eu-cookie-compliance-categories-buttons {
           @include make-container();
           @include make-container-max-widths();
+          background: $light-grayish-red;
           text-align: center;
           margin:0 auto;
+          padding-bottom: 2em;
           .eu-cookie-compliance-save-preferences-button {
             color: $blue;
             background-color: $white;
