@@ -214,3 +214,8 @@ $settings['we_megamenu_deploy_content'] = $app_ground . '/content/we_megamenu_co
 $databases['default']['default']['init_commands'] = array(
   'isolation' => "SET SESSION tx_isolation='READ-COMMITTED'"
 );
+
+/**
+ * Modules excluded from config export.
+ */
+$settings['config_exclude_modules'] = ['soc_content'];
