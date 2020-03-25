@@ -1,7 +1,7 @@
 {
     "_links": {
         "self": {
-            "href": "http:\/\/default\/power-switching-monitoring?_format=hal_json"
+            "href": "http:\/\/default\/en\/power-switching-monitoring?_format=hal_json"
         },
         "type": {
             "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/family"
@@ -9,9 +9,15 @@
         "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/family\/parent": [
             null
         ],
+        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/family\/content_translation_uid": [
+            {
+                "href": "http:\/\/default\/en\/user\/1?_format=hal_json",
+                "lang": "en"
+            }
+        ],
         "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/family\/field_family_menu_icon": [
             {
-                "href": "http:\/\/default\/media\/50\/edit?_format=hal_json"
+                "href": "http:\/\/default\/en\/media\/50\/edit?_format=hal_json"
             }
         ]
     },
@@ -73,11 +79,29 @@
         "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/family\/parent": [
             null
         ],
+        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/family\/content_translation_uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/en\/user\/1?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "0239213a-20c6-47d9-97d6-55bfd7a03bd7"
+                    }
+                ],
+                "lang": "en"
+            }
+        ],
         "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/family\/field_family_menu_icon": [
             {
                 "_links": {
                     "self": {
-                        "href": "http:\/\/default\/media\/50\/edit?_format=hal_json"
+                        "href": "http:\/\/default\/en\/media\/50\/edit?_format=hal_json"
                     },
                     "type": {
                         "href": "http:\/\/drupal.org\/rest\/type\/media\/icone"

@@ -1,20 +1,14 @@
 {
     "_links": {
         "self": {
-            "href": "http:\/\/default\/metering-monitoring-power-quality\/power-factor-correction?_format=hal_json"
+            "href": "http:\/\/default\/en\/metering-monitoring-power-quality\/power-factor-correction?_format=hal_json"
         },
         "type": {
             "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/family"
         },
         "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/family\/parent": [
             {
-                "href": "http:\/\/default\/metering-monitoring-power-quality?_format=hal_json"
-            }
-        ],
-        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/family\/content_translation_uid": [
-            {
-                "href": "http:\/\/default\/user\/1?_format=hal_json",
-                "lang": "en"
+                "href": "http:\/\/default\/en\/metering-monitoring-power-quality?_format=hal_json"
             }
         ]
     },
@@ -70,7 +64,7 @@
             {
                 "_links": {
                     "self": {
-                        "href": "http:\/\/default\/metering-monitoring-power-quality?_format=hal_json"
+                        "href": "http:\/\/default\/en\/metering-monitoring-power-quality?_format=hal_json"
                     },
                     "type": {
                         "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/family"
@@ -81,24 +75,6 @@
                         "value": "9888dc75-78a3-4c5c-ad9d-e70b089e8ab2"
                     }
                 ]
-            }
-        ],
-        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/family\/content_translation_uid": [
-            {
-                "_links": {
-                    "self": {
-                        "href": "http:\/\/default\/user\/1?_format=hal_json"
-                    },
-                    "type": {
-                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
-                    }
-                },
-                "uuid": [
-                    {
-                        "value": "f249bc8f-cc01-41d5-aba6-8852ecc9abf5"
-                    }
-                ],
-                "lang": "en"
             }
         ]
     },

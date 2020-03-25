@@ -1,0 +1,21 @@
+uuid: 0927909b-fd22-4fdd-b33f-f8eaab52ab41
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.job.field_job_status
+  module:
+    - options
+    - soc_job
+id: job.job.field_job_status
+field_name: field_job_status
+entity_type: job
+bundle: job
+label: Status
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

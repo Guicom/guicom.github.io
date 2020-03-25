@@ -8,11 +8,11 @@ dependencies:
     - taxonomy
     - search_api
   config:
-    - field.storage.node.field_news_audience
     - field.storage.node.field_body
-    - field.storage.node.field_news_mommentum
     - field.storage.node.field_media_image
     - field.storage.node.field_teaser
+    - field.storage.node.field_news_audience
+    - field.storage.node.field_news_mommentum
     - field.storage.node.field_news_theme
     - field.storage.node.field_news_type
     - search_api.server.socomec

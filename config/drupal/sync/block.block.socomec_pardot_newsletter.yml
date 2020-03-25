@@ -6,6 +6,7 @@ dependencies:
     - 'block_content:link:cd83bf6d-f525-4456-b1a8-20f8b374f3b2'
   module:
     - block_content
+    - system
   theme:
     - socomec
 id: socomec_pardot_newsletter
@@ -22,4 +23,9 @@ settings:
   status: true
   info: ''
   view_mode: full
-visibility: {  }
+visibility:
+  request_path:
+    id: request_path
+    pages: '/landing-page-premium/*'
+    negate: true
+    context_mapping: {  }

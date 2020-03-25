@@ -63,6 +63,7 @@
 
 {%
   set classes = [
+  content.field_content_highlight[0]["#markup"] == "yes" ? 'node--highlight',
   node.isPromoted() ? 'node--promoted',
   node.isSticky() ? 'node--sticky',
   'clearfix',
@@ -90,7 +91,7 @@
     <div class="left-content">
       {{ content.field_location_telephone }}
       <div class="field--name-field-location-email">
-        <a href="mailto:{{ content.field_location_email | render  | striptags | trim  }}">{{ "Send a Mail" |t }}</a>
+        <a href="mailto:{{ content.field_location_email | render | striptags | trim  }}">{{ "Send a Mail" |t }}</a>
       </div>
     </div>
     <div class="right-content">

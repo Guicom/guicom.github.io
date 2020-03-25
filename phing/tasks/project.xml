@@ -25,6 +25,18 @@
         <phingcall target="project:remove-unwanted-config" />
     </target>
 
+    <target name="project:create-content">
+      <drush
+        command="en"
+        assume="yes"
+        root="${website.drupal.dir}"
+        bin="${drush.bin}"
+        verbose="${drush.verbose}"
+        uri="${multisite.uri}">
+        <param>soc_content</param>
+      </drush>
+    </target>
+
     <target name="project:post-install">
         <echo>Project Post-Install</echo>
         <!-- Gulp install -->

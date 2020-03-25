@@ -1,7 +1,7 @@
 # Admin / config menu links
 soc_search.settings:
-  title: Search
+  title: 'Search settings'
   route_name: soc_search.settings
   parent: soc_core.config
-  description: Configure search settings.
+  description: 'Configure search settings.'
   weight: 0

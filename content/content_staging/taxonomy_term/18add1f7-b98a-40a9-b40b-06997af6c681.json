@@ -8,7 +8,7 @@
         },
         "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/location_areas\/parent": [
             {
-                "href": "http:\/\/default\/en\/asia?_format=hal_json"
+                "href": "http:\/\/default\/en\/asia-pacific?_format=hal_json"
             }
         ]
     },
@@ -66,7 +66,7 @@
             {
                 "_links": {
                     "self": {
-                        "href": "http:\/\/default\/en\/asia?_format=hal_json"
+                        "href": "http:\/\/default\/en\/asia-pacific?_format=hal_json"
                     },
                     "type": {
                         "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/location_areas"
@@ -129,7 +129,7 @@
     "path": [
         {
             "alias": "\/korea-south",
-            "pid": 2,
+            "pid": 11,
             "langcode": "en",
             "lang": "en"
         }

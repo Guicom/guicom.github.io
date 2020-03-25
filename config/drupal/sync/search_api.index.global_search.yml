@@ -4,41 +4,41 @@ status: true
 dependencies:
   module:
     - search_api_solr
-    - content_translation
     - paragraphs
-    - taxonomy
     - node
+    - taxonomy
+    - content_translation
     - search_api
   config:
     - field.storage.node.field_body
+    - field.storage.paragraph.field_answer
     - field.storage.paragraph.field_citation_author_position
     - field.storage.paragraph.field_citation_content
-    - field.storage.node.field_event_teaser
-    - field.storage.node.field_event_thematic
-    - field.storage.node.field_event_type
+    - field.storage.paragraph.field_text
     - field.storage.paragraph.field_figure_2_text_line_1
     - field.storage.paragraph.field_figure_2_text_line_2
     - field.storage.paragraph.field_figure_3_text_line_1
     - field.storage.paragraph.field_figure_3_text_line_2
     - field.storage.paragraph.field_figure_4_text_line_2
+    - field.storage.paragraph.field_title
+    - field.storage.node.field_event_teaser
+    - field.storage.node.field_event_thematic
+    - field.storage.node.field_event_type
+    - field.storage.node.field_teaser
     - field.storage.node.field_news_theme
     - field.storage.node.field_news_type
     - field.storage.node.field_product_family
     - field.storage.node.field_product_teaser
     - field.storage.node.field_protection_level
     - field.storage.node.field_res_resource_type
-    - field.storage.node.field_teaser
-    - field.storage.paragraph.field_title
-    - field.storage.paragraph.field_text
-    - field.storage.paragraph.field_answer
-    - search_api.server.socomec
+    - search_api.server.search
 third_party_settings:
   search_api_solr:
     finalize: false
     commit_before_finalize: false
     commit_after_finalize: false
     multilingual:
-      limit_to_content_language: false
+      limit_to_content_language: true
       include_language_independent: true
     highlighter:
       maxAnalyzedChars: 51200
@@ -259,6 +259,13 @@ field_settings:
     dependencies:
       module:
         - taxonomy
+  node_grants:
+    label: 'Node access information'
+    property_path: search_api_node_grants
+    type: string
+    indexed_locked: true
+    type_locked: true
+    hidden: true
   parent:
     label: 'Term Parents'
     datasource_id: 'entity:taxonomy_term'
@@ -321,6 +328,16 @@ field_settings:
     dependencies:
       module:
         - node
+  status:
+    label: status
+    datasource_id: 'entity:node'
+    property_path: status
+    type: boolean
+    indexed_locked: true
+    type_locked: true
+    dependencies:
+      module:
+        - node
   sticky:
     label: 'Sticky at top of lists'
     datasource_id: 'entity:node'
@@ -342,6 +359,16 @@ field_settings:
     datasource_id: 'entity:node'
     property_path: type
     type: string
+    dependencies:
+      module:
+        - node
+  uid:
+    label: uid
+    datasource_id: 'entity:node'
+    property_path: uid
+    type: integer
+    indexed_locked: true
+    type_locked: true
     dependencies:
       module:
         - node
@@ -378,11 +405,50 @@ datasource_settings:
 processor_settings:
   add_url: {  }
   aggregated_field: {  }
+  content_access:
+    weights:
+      preprocess_query: -30
   hierarchy:
     fields:
       field_product_family: taxonomy_term-parent
     weights:
       preprocess_index: -45
+  html_filter:
+    all_fields: false
+    fields:
+      - field_citation_author_position
+      - field_citation_content
+      - field_event_teaser
+      - field_figure_2_text_line_1
+      - field_figure_2_text_line_2
+      - field_figure_3_text_line_1
+      - field_figure_3_text_line_2
+      - field_figure_4_text_line_2
+      - field_product_teaser
+      - field_teaser
+      - field_title
+      - name_14
+      - processed
+      - processed_1
+      - processed_2
+      - processed_4
+      - title
+      - type
+      - vid
+    title: true
+    alt: true
+    tags:
+      b: 2
+      em: 1
+      h1: 5
+      h2: 3
+      h3: 2
+      strong: 2
+      u: 1
+    weights:
+      preprocess_index: -15
+      preprocess_query: -15
+  language_with_fallback: {  }
   rendered_item: {  }
   solr_date_range:
     weights:
@@ -401,4 +467,4 @@ tracker_settings:
 options:
   index_directly: true
   cron_limit: 50
-server: socomec
+server: search

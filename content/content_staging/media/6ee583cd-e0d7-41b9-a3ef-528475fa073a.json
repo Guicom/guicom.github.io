@@ -1,37 +1,25 @@
 {
     "_links": {
         "self": {
-            "href": "http:\/\/default\/media\/36\/edit?_format=hal_json"
+            "href": "http:\/\/socomec.com.loc\/en\/media\/36\/edit?_format=hal_json"
         },
         "type": {
             "href": "http:\/\/drupal.org\/rest\/type\/media\/icone"
         },
         "http:\/\/drupal.org\/rest\/relation\/media\/icone\/uid": [
             {
-                "href": "http:\/\/default\/user\/1?_format=hal_json",
-                "lang": "en"
+                "href": "http:\/\/socomec.com.loc\/en\/user\/1?_format=hal_json"
             }
         ],
         "http:\/\/drupal.org\/rest\/relation\/media\/icone\/thumbnail": [
             {
-                "href": "",
-                "lang": "en"
+                "href": ""
             }
         ]
     },
-    "mid": [
-        {
-            "value": 36
-        }
-    ],
     "uuid": [
         {
             "value": "6ee583cd-e0d7-41b9-a3ef-528475fa073a"
-        }
-    ],
-    "vid": [
-        {
-            "value": 36
         }
     ],
     "langcode": [
@@ -47,14 +35,13 @@
     ],
     "revision_created": [
         {
-            "value": "2019-12-20T15:46:25+00:00",
+            "value": "2020-03-16T23:48:05+00:00",
             "format": "Y-m-d\\TH:i:sP"
         }
     ],
     "status": [
         {
-            "value": true,
-            "lang": "en"
+            "value": true
         }
     ],
     "_embedded": {
@@ -62,7 +49,7 @@
             {
                 "_links": {
                     "self": {
-                        "href": "http:\/\/default\/user\/1?_format=hal_json"
+                        "href": "http:\/\/socomec.com.loc\/en\/user\/1?_format=hal_json"
                     },
                     "type": {
                         "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
@@ -70,10 +57,9 @@
                 },
                 "uuid": [
                     {
-                        "value": "39080102-237a-48b7-89a2-efb1cbf5b248"
+                        "value": "0239213a-20c6-47d9-97d6-55bfd7a03bd7"
                     }
-                ],
-                "lang": "en"
+                ]
             }
         ],
         "http:\/\/drupal.org\/rest\/relation\/media\/icone\/thumbnail": [
@@ -88,10 +74,9 @@
                 },
                 "uuid": [
                     {
-                        "value": "257325b0-40b8-45fc-a921-9ec65ff23ca5"
+                        "value": "6e942a42-9638-41ea-bcd5-8d07cb541251"
                     }
                 ],
-                "lang": "en",
                 "alt": null,
                 "title": null,
                 "width": "180",
@@ -101,21 +86,18 @@
     },
     "name": [
         {
-            "value": "Big-line-circle.svg",
-            "lang": "en"
+            "value": "Big-line-circle.svg"
         }
     ],
     "created": [
         {
             "value": "2019-12-19T09:56:44+00:00",
-            "lang": "en",
             "format": "Y-m-d\\TH:i:sP"
         }
     ],
     "changed": [
         {
             "value": "2019-12-19T09:56:44+00:00",
-            "lang": "en",
             "format": "Y-m-d\\TH:i:sP"
         }
     ],
@@ -131,12 +113,16 @@
             "lang": "en"
         }
     ],
-    "metatag": [
+    "content_translation_source": [
         {
-            "value": {
-                "title": "| Socomec",
-                "canonical_url": "http:\/\/default\/node"
-            }
+            "value": "und",
+            "lang": "en"
+        }
+    ],
+    "content_translation_outdated": [
+        {
+            "value": false,
+            "lang": "en"
         }
     ]
 }

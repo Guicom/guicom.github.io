@@ -1,7 +1,11 @@
 display:
   default:
     display_options:
-      pager:
-        options:
-          expose:
-            offset_label: Décalage
+      fields:
+        operations:
+          label: Actions
+  page_unapproved:
+    display_options:
+      fields:
+        operations:
+          label: Actions

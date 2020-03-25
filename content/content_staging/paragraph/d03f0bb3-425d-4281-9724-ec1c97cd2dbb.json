@@ -22,11 +22,6 @@
             "value": "d03f0bb3-425d-4281-9724-ec1c97cd2dbb"
         }
     ],
-    "revision_id": [
-        {
-            "value": 480
-        }
-    ],
     "langcode": [
         {
             "value": "en-gb",
@@ -70,6 +65,12 @@
         }
     ],
     "default_langcode": [
+        {
+            "value": true,
+            "lang": "en-gb"
+        }
+    ],
+    "revision_translation_affected": [
         {
             "value": true,
             "lang": "en-gb"

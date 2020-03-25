@@ -1,0 +1,19 @@
+uuid: bfb0d59a-5140-4798-bb5a-6a576181be89
+langcode: en
+status: true
+dependencies:
+  module:
+    - soc_job
+id: job.field_job_info_status
+field_name: field_job_info_status
+entity_type: job
+type: string_long
+settings:
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
