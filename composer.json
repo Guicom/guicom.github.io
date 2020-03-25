@@ -110,7 +110,8 @@
         "zaporylie/composer-drupal-optimizations": "^1.0"
     },
     "require-dev": {
-        "drupal/devel": "^2.1"
+        "drupal/devel": "^2.1",
+        "roydude/behat-html-formatter": "^0.1.0"
     },
     "conflict": {
         "drupal/drupal": "*"

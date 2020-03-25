@@ -12,7 +12,18 @@ default:
         - Drupal\DrupalExtension\Context\MarkupContext
         - Drupal\DrupalExtension\Context\MessageContext
         - Drupal\DrupalExtension\Context\DrushContext
+  formatters:
+    pretty: true
+    html:
+      output_path: %paths.base%/report/html
   extensions:
+    emuse\BehatHTMLFormatter\BehatHTMLFormatterExtension:
+      name: html
+      renderer: Twig
+      file_name: index
+      print_args: true
+      print_outp: true
+      loop_break: true
     Drupal\MinkExtension:
       goutte: ~
       browser_name: 'chrome'
