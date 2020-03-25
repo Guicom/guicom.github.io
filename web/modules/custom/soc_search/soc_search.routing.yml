@@ -5,3 +5,10 @@ soc_search.settings:
     _title: 'Search settings'
   requirements:
     _permission: 'manage search settings'
+
+soc_search.autocomplete:
+  path: /soc_search_api_autocomplete/{search_api_autocomplete_search}
+  defaults:
+    _controller: \Drupal\soc_search\Controller\SocSearchAutocompleteController::autocomplete
+  requirements:
+    _search_api_autocomplete: 'TRUE'

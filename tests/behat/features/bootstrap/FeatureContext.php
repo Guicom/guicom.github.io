@@ -1,6 +1,7 @@
 <?php
 
 use Behat\Mink\Driver\Selenium2Driver;
+use Drupal\Component\Utility\UrlHelper;
 use Drupal\Core\Url;
 use Drupal\DrupalExtension\Context\RawDrupalContext;
 use Drupal\node\Entity\Node;
@@ -339,6 +340,35 @@ JS;
 
     $dateToSet = date($format, $newDate);
     $this->getSession()->getPage()->fillField($field, $dateToSet);
+  }
+
+  /**
+   * Set dummy JSON data on a reference.
+   *
+   * @Given I set the dummy json data on the reference
+   */
+  public function setReferenceDummyJsonData() {
+
+    // get ID of reference
+    $path = UrlHelper::parse($this->getSession()->getCurrentUrl());
+    $arrayUrl = explode('/', $path['path']);
+    array_pop($arrayUrl); // remove the "edit" at the end
+    $nid = end($arrayUrl);
+
+    $node = Node::load($nid);
+    $jsonData = json_encode([
+      "Name" => "22003016-SIRCO MV 3X160A",
+      "Reference" => "22003016",
+      "WEIGHT" => "0,82",
+      "Nombre de pôle" => "2 P",
+      "Format de boitier" => "Format de boitier A",
+      "Test champs vide" => "",
+    ]);
+    $node->set('field_reference_json_table', $jsonData);
+    try {
+      $node->save();
+    } catch (Exception $e) {
+    }
   }
 
 }

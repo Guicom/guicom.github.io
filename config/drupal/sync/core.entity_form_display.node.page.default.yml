@@ -6,9 +6,13 @@ dependencies:
     - field.field.node.page.body
     - field.field.node.page.field_table
     - node.type.page
+    - workflows.workflow.editorial
   module:
+    - content_moderation
     - paragraphs
     - path
+    - scheduler
+    - scheduler_content_moderation_integration
     - text
 _core:
   default_config_hash: sb0qCkzU_8mNq29NehYAU8jCBXWPLeX0UN8sYFVGVcw
@@ -25,6 +29,7 @@ content:
       rows: 9
       summary_rows: 3
       placeholder: ''
+      show_summary: false
     third_party_settings: {  }
   created:
     type: datetime_timestamp
@@ -117,6 +122,7 @@ content:
       match_operator: CONTAINS
       size: 60
       placeholder: ''
+      match_limit: 10
     third_party_settings: {  }
   unpublish_on:
     type: datetime_timestamp_no_default

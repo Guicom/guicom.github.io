@@ -1,13 +1,11 @@
 display:
   default:
     display_options:
-      pager:
-        options:
-          expose:
-            offset_label: Scostamento
       fields:
         type:
           label: Tipo
+        link:
+          label: Operazioni
       filters:
         type:
           expose:

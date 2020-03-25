@@ -6,17 +6,6 @@
         "type": {
             "href": "http:\/\/drupal.org\/rest\/type\/block_content\/multiple_links_and_image"
         },
-        "http:\/\/drupal.org\/rest\/relation\/block_content\/multiple_links_and_image\/revision_user": [
-            {
-                "href": "http:\/\/default\/user\/1?_format=hal_json"
-            }
-        ],
-        "http:\/\/drupal.org\/rest\/relation\/block_content\/multiple_links_and_image\/content_translation_uid": [
-            {
-                "href": "http:\/\/default\/user\/1?_format=hal_json",
-                "lang": "en-gb"
-            }
-        ],
         "http:\/\/drupal.org\/rest\/relation\/block_content\/multiple_links_and_image\/field_image": [
             {
                 "href": "http:\/\/default\/en-gb\/media\/55\/edit?_format=hal_json"
@@ -69,42 +58,70 @@
             "format": "Y-m-d\\TH:i:sP"
         }
     ],
+    "status": [
+        {
+            "value": true,
+            "lang": "en-gb"
+        }
+    ],
+    "info": [
+        {
+            "value": "Social menu footer",
+            "lang": "en-gb"
+        }
+    ],
+    "changed": [
+        {
+            "value": "2020-02-26T13:10:54+00:00",
+            "lang": "en-gb",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "reusable": [
+        {
+            "value": true
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en-gb"
+        }
+    ],
+    "revision_translation_affected": [
+        {
+            "value": true,
+            "lang": "en-gb"
+        }
+    ],
+    "content_translation_source": [
+        {
+            "value": "und",
+            "lang": "en-gb"
+        }
+    ],
+    "content_translation_outdated": [
+        {
+            "value": false,
+            "lang": "en-gb"
+        }
+    ],
+    "content_translation_created": [
+        {
+            "value": "2020-02-26T12:36:10+00:00",
+            "lang": "en-gb",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "metatag": [
+        {
+            "value": {
+                "title": "| Socomec",
+                "canonical_url": "http:\/\/default\/en\/node"
+            }
+        }
+    ],
     "_embedded": {
-        "http:\/\/drupal.org\/rest\/relation\/block_content\/multiple_links_and_image\/revision_user": [
-            {
-                "_links": {
-                    "self": {
-                        "href": "http:\/\/default\/user\/1?_format=hal_json"
-                    },
-                    "type": {
-                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
-                    }
-                },
-                "uuid": [
-                    {
-                        "value": "6e922b1e-82c3-48d2-a8c3-b42f70d6f54e"
-                    }
-                ]
-            }
-        ],
-        "http:\/\/drupal.org\/rest\/relation\/block_content\/multiple_links_and_image\/content_translation_uid": [
-            {
-                "_links": {
-                    "self": {
-                        "href": "http:\/\/default\/user\/1?_format=hal_json"
-                    },
-                    "type": {
-                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
-                    }
-                },
-                "uuid": [
-                    {
-                        "value": "6e922b1e-82c3-48d2-a8c3-b42f70d6f54e"
-                    }
-                ],
-                "lang": "en-gb"
-            }
-        ],
         "http:\/\/drupal.org\/rest\/relation\/block_content\/multiple_links_and_image\/field_image": [
             {
                 "_links": {
@@ -188,68 +205,5 @@
                 "target_revision_id": "482"
             }
         ]
-    },
-    "status": [
-        {
-            "value": true,
-            "lang": "en-gb"
-        }
-    ],
-    "info": [
-        {
-            "value": "Social menu footer",
-            "lang": "en-gb"
-        }
-    ],
-    "changed": [
-        {
-            "value": "2020-02-26T13:10:54+00:00",
-            "lang": "en-gb",
-            "format": "Y-m-d\\TH:i:sP"
-        }
-    ],
-    "reusable": [
-        {
-            "value": true
-        }
-    ],
-    "default_langcode": [
-        {
-            "value": true,
-            "lang": "en-gb"
-        }
-    ],
-    "revision_translation_affected": [
-        {
-            "value": true,
-            "lang": "en-gb"
-        }
-    ],
-    "content_translation_source": [
-        {
-            "value": "und",
-            "lang": "en-gb"
-        }
-    ],
-    "content_translation_outdated": [
-        {
-            "value": false,
-            "lang": "en-gb"
-        }
-    ],
-    "content_translation_created": [
-        {
-            "value": "2020-02-26T12:36:10+00:00",
-            "lang": "en-gb",
-            "format": "Y-m-d\\TH:i:sP"
-        }
-    ],
-    "metatag": [
-        {
-            "value": {
-                "title": "| Socomec",
-                "canonical_url": "http:\/\/default\/en-gb\/node"
-            }
-        }
-    ]
+    }
 }

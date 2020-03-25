@@ -8,12 +8,6 @@
         },
         "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/event_thematic\/parent": [
             null
-        ],
-        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/event_thematic\/content_translation_uid": [
-            {
-                "href": "http:\/\/default\/user\/1?_format=hal_json",
-                "lang": "zxx"
-            }
         ]
     },
     "tid": [
@@ -68,24 +62,6 @@
     "_embedded": {
         "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/event_thematic\/parent": [
             null
-        ],
-        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/event_thematic\/content_translation_uid": [
-            {
-                "_links": {
-                    "self": {
-                        "href": "http:\/\/default\/user\/1?_format=hal_json"
-                    },
-                    "type": {
-                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
-                    }
-                },
-                "uuid": [
-                    {
-                        "value": "0c9aa577-d856-4733-aade-e8b7c37852e1"
-                    }
-                ],
-                "lang": "zxx"
-            }
         ]
     },
     "changed": [
@@ -132,6 +108,14 @@
                 "title": "Industry | Socomec",
                 "canonical_url": "http:\/\/default\/taxonomy\/term\/92"
             }
+        }
+    ],
+    "path": [
+        {
+            "alias": null,
+            "pid": null,
+            "langcode": "zxx",
+            "lang": "zxx"
         }
     ]
 }

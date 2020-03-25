@@ -1,15 +1,17 @@
 display:
   default:
     display_options:
-      pager:
-        options:
-          expose:
-            offset_label: Décalage
       fields:
         label:
           label: Étiquette
         type:
           label: Type
+        id:
+          label: 'Identifiant (ID)'
+        changed:
+          label: Modifié
+        operations:
+          label: Actions
       filters:
         label:
           expose:

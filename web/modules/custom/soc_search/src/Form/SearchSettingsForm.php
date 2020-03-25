@@ -133,6 +133,24 @@ class SearchSettingsForm extends ConfigFormBase {
       '#suffix' => $links_quick_links
     ];
 
+    $form['soc_search']['autocomplete'] = [
+      '#type'  => 'details',
+      '#open'  => TRUE,
+      '#title' => $this->t('Autocomplete'),
+    ];
+
+    $form['soc_search']['autocomplete']['suggestion_title'] = [
+      '#type'          => 'textfield',
+      '#title' => $this->t('Suggestion title'),
+      '#default_value' => $settings->get('suggestion_title'),
+    ];
+
+    $form['soc_search']['autocomplete']['categorized_title'] = [
+      '#type'          => 'textfield',
+      '#title' => $this->t('Categorized title'),
+      '#default_value' => $settings->get('categorized_title'),
+    ];
+
     return $form;
   }
 
@@ -150,6 +168,8 @@ class SearchSettingsForm extends ConfigFormBase {
     $settings->set('placeholder', $form_state->getValue('placeholder'))->save();
     $settings->set('top_search_number', $form_state->getValue('top_search_number'))->save();
     $settings->set('quick_links_number', $form_state->getValue('quick_links_number'))->save();
+    $settings->set('suggestion_title', $form_state->getValue('suggestion_title'))->save();
+    $settings->set('categorized_title', $form_state->getValue('categorized_title'))->save();
   }
 
 }

@@ -1,1 +1,0 @@
-The folder is dedicated for test content.

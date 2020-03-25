@@ -1,7 +1,6 @@
 display:
   default:
     display_options:
-      pager:
-        options:
-          expose:
-            offset_label: Przesunięcie
+      fields:
+        operations:
+          label: Operacje

@@ -1,18 +1,12 @@
-label: Média
 display:
   default:
     display_options:
-      pager:
-        options:
-          expose:
-            offset_label: Décalage
       fields:
         bundle:
           label: Type
+        operations:
+          label: Actions
       filters:
         bundle:
           expose:
             label: Type
-      title: Média
-  media_page_list:
-    display_title: Média

@@ -1,17 +1,11 @@
 {
     "_links": {
         "self": {
-            "href": "http:\/\/default\/admin\/structure\/menu\/item\/91\/edit?_format=hal_json"
+            "href": "http:\/\/default\/en\/admin\/structure\/menu\/item\/91\/edit?_format=hal_json"
         },
         "type": {
             "href": "http:\/\/drupal.org\/rest\/type\/menu_link_content\/menu_link_content"
-        },
-        "http:\/\/drupal.org\/rest\/relation\/menu_link_content\/menu_link_content\/content_translation_uid": [
-            {
-                "href": "http:\/\/default\/user\/1?_format=hal_json",
-                "lang": "en"
-            }
-        ]
+        }
     },
     "id": [
         {
@@ -123,26 +117,6 @@
             "lang": "en"
         }
     ],
-    "_embedded": {
-        "http:\/\/drupal.org\/rest\/relation\/menu_link_content\/menu_link_content\/content_translation_uid": [
-            {
-                "_links": {
-                    "self": {
-                        "href": "http:\/\/default\/user\/1?_format=hal_json"
-                    },
-                    "type": {
-                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
-                    }
-                },
-                "uuid": [
-                    {
-                        "value": "c878dbf8-62f6-4317-92c8-008550037f99"
-                    }
-                ],
-                "lang": "en"
-            }
-        ]
-    },
     "content_translation_status": [
         {
             "value": true,
@@ -160,7 +134,7 @@
         {
             "value": {
                 "title": "| Socomec",
-                "canonical_url": "http:\/\/default\/node"
+                "canonical_url": "http:\/\/default\/en\/node"
             }
         }
     ]

@@ -1,7 +1,8 @@
 display:
   default:
     display_options:
-      pager:
-        options:
-          expose:
-            offset_label: Décalage
+      fields:
+        name:
+          label: 'Nom d''utilisateur'
+        operations:
+          label: Actions

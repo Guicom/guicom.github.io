@@ -31,10 +31,12 @@ class NextpageTwig extends \Twig_Extension {
    */
   public static function getFieldData($string, $extid) {
     // ['Main incoming load break', 'Distribution load break','Machine control','Local safety load break']
-    $json_value = json_decode($string[0]["#context"]["value"]);
     $data = NULL;
-    if (isset($json_value->Marketing->value->{$extid})) {
-      $data = $json_value->Marketing->value->{$extid}->value;
+    if (isset($string[0]["#context"]["value"])) {
+      $json_value = json_decode($string[0]["#context"]["value"]);
+      if (isset($json_value->Marketing->value->{$extid})) {
+        $data = $json_value->Marketing->value->{$extid}->value;
+      }
     }
     return $data;
   }

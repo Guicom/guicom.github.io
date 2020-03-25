@@ -541,3 +541,31 @@ function socomec_preprocess_we_megamenu_li(&$vars) {
     $vars['attributes']['class'][] = 'dropdown';
   }
 }
+
+/**
+ * Add current page to breadcrumb
+ */
+function socomec_preprocess_breadcrumb(&$variables) {
+
+  $request = \Drupal::request();
+  $route_match = \Drupal::routeMatch();
+  $page_title = \Drupal::service('title_resolver')->getTitle($request, $route_match->getRouteObject());
+
+  $node_type = null;
+  if ($route_match->getCurrentRouteMatch()->getRouteName() == 'entity.node.canonical') {
+    $node = $route_match->getParameter('node');
+    $node_type = $node->getType();
+  }
+  if ($node_type == 'event') {
+    $variables["breadcrumb"][1] = [
+      'text' => "Event",
+      'url' => ""
+    ];
+  }
+  if (($node = \Drupal::routeMatch()->getParameter('node')) && $variables['breadcrumb']) {
+    $variables['breadcrumb'][] = array(
+      'text' => $node->getTitle(),
+    );
+  }
+
+}

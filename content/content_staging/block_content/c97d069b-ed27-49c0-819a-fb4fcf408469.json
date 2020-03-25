@@ -1,17 +1,11 @@
 {
     "_links": {
         "self": {
-            "href": "http:\/\/default\/block\/6?_format=hal_json"
+            "href": "http:\/\/default\/en\/block\/11?_format=hal_json"
         },
         "type": {
             "href": "http:\/\/drupal.org\/rest\/type\/block_content\/basic"
-        },
-        "http:\/\/drupal.org\/rest\/relation\/block_content\/basic\/content_translation_uid": [
-            {
-                "href": "http:\/\/default\/user\/1?_format=hal_json",
-                "lang": "en"
-            }
-        ]
+        }
     },
     "id": [
         {
@@ -90,26 +84,6 @@
             "lang": "en"
         }
     ],
-    "_embedded": {
-        "http:\/\/drupal.org\/rest\/relation\/block_content\/basic\/content_translation_uid": [
-            {
-                "_links": {
-                    "self": {
-                        "href": "http:\/\/default\/user\/1?_format=hal_json"
-                    },
-                    "type": {
-                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
-                    }
-                },
-                "uuid": [
-                    {
-                        "value": "639675d9-184b-46a3-a954-077022b40562"
-                    }
-                ],
-                "lang": "en"
-            }
-        ]
-    },
     "content_translation_created": [
         {
             "value": "2020-01-21T10:49:48+00:00",
@@ -122,7 +96,8 @@
             "value": "<p>Iterative approaches to establish a new normal that has evolved from generation x.<\/p>\r\n",
             "format": "socomec",
             "processed": "<p>Iterative approaches to establish a new normal that has evolved from generation x.<\/p>",
-            "summary": ""
+            "summary": "",
+            "lang": "en"
         }
     ]
 }

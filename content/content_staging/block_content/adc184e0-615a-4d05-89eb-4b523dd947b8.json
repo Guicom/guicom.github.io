@@ -1,17 +1,11 @@
 {
     "_links": {
         "self": {
-            "href": "http:\/\/default\/block\/7?_format=hal_json"
+            "href": "http:\/\/default\/en\/block\/7?_format=hal_json"
         },
         "type": {
             "href": "http:\/\/drupal.org\/rest\/type\/block_content\/basic"
-        },
-        "http:\/\/drupal.org\/rest\/relation\/block_content\/basic\/content_translation_uid": [
-            {
-                "href": "http:\/\/default\/user\/1?_format=hal_json",
-                "lang": "en"
-            }
-        ]
+        }
     },
     "id": [
         {
@@ -90,26 +84,6 @@
             "lang": "en"
         }
     ],
-    "_embedded": {
-        "http:\/\/drupal.org\/rest\/relation\/block_content\/basic\/content_translation_uid": [
-            {
-                "_links": {
-                    "self": {
-                        "href": "http:\/\/default\/user\/1?_format=hal_json"
-                    },
-                    "type": {
-                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
-                    }
-                },
-                "uuid": [
-                    {
-                        "value": "b27ff409-fda1-4515-9ac3-a73a013a9376"
-                    }
-                ],
-                "lang": "en"
-            }
-        ]
-    },
     "content_translation_created": [
         {
             "value": "2020-01-24T15:03:59+00:00",
@@ -122,7 +96,8 @@
             "value": "<p>Distinctively exploit optimal networks interactively, procrastinate B2B users with leading-edge intellectual.<\/p>\r\n",
             "format": "socomec",
             "processed": "<p>Distinctively exploit optimal networks interactively, procrastinate B2B users with leading-edge intellectual.<\/p>",
-            "summary": ""
+            "summary": "",
+            "lang": "en"
         }
     ]
 }

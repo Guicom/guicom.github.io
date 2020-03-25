@@ -6,10 +6,12 @@ dependencies:
     - field.field.node.resource_youtube.field_res_resource_type
     - field.field.node.resource_youtube.field_resource_link_youtube
     - node.type.resource_youtube
+    - workflows.workflow.editorial
   module:
     - content_moderation
     - path
     - scheduler
+    - scheduler_content_moderation_integration
     - youtube
 id: node.resource_youtube.default
 targetEntityType: node
@@ -28,6 +30,7 @@ content:
       match_operator: CONTAINS
       size: 60
       placeholder: ''
+      match_limit: 10
     third_party_settings: {  }
     type: entity_reference_autocomplete
     region: content
@@ -110,6 +113,7 @@ content:
       match_operator: CONTAINS
       size: 60
       placeholder: ''
+      match_limit: 10
     region: content
     third_party_settings: {  }
   unpublish_on:

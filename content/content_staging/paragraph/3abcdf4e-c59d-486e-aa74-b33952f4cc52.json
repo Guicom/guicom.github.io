@@ -8,7 +8,7 @@
         },
         "http:\/\/drupal.org\/rest\/relation\/paragraph\/hero_paragraph\/field_thumbnail": [
             {
-                "href": "http:\/\/default\/media\/28\/edit?_format=hal_json"
+                "href": "http:\/\/default\/en\/media\/28\/edit?_format=hal_json"
             }
         ]
     },
@@ -91,7 +91,7 @@
             {
                 "_links": {
                     "self": {
-                        "href": "http:\/\/default\/media\/28\/edit?_format=hal_json"
+                        "href": "http:\/\/default\/en\/media\/28\/edit?_format=hal_json"
                     },
                     "type": {
                         "href": "http:\/\/drupal.org\/rest\/type\/media\/image"
