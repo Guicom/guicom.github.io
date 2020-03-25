@@ -23,10 +23,12 @@ function soc_core_allowed_values_countries_function(FieldStorageConfig $definiti
                                                     ContentEntityInterface $entity = NULL,
                                                     &$cacheable = NULL) {
   // Add a custom countries option for Event nodes.
-  if ($entity->bundle() === 'event') {
-    /** @var \Drupal\Core\Locale\CountryManager $service */
-    $service = \Drupal::service('country_manager');
-    return $service->getList();
+  if (!is_null($entity)) {
+    if ($entity->bundle() === 'event') {
+      /** @var \Drupal\Core\Locale\CountryManager $service */
+      $service = \Drupal::service('country_manager');
+      return $service->getList();
+    }
   }
 
 }
