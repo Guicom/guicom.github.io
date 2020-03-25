@@ -1,8 +1,8 @@
 Feature: [STORE_LOCATOR] Tests Behat
 
-  @api @cit @store_locator @javascript
+  @api @cit @javascript @store_locator @store_locator_data_model
   Checking store_locator
-  # vendor/bin/phing behat:run -Dbehat.tags=store_locator
+  # vendor/bin/phing behat:run -Dbehat.tags=store_locator_data_model
   # ticket JIRA: SOCSOB-927
   # Testing content datas with webmaster role
   Scenario: contenu_location backoffice content datas
@@ -65,8 +65,8 @@ Feature: [STORE_LOCATOR] Tests Behat
     Then I should see "Website"
     Then I should see an ".field--name-field-location-website[required='required']" element
 
-  @api @cit @store_locator @javascript
-  # vendor/bin/phing behat:run -Dbehat.tags=store_locator
+  @api @cit @javascript @store_locator @store_locator_contrib
+  # vendor/bin/phing behat:run -Dbehat.tags=store_locator_contrib
   # ticket JIRA: SOCSOB-502
   # Testing webmaster contribution
   Scenario: contenu_location backoffice contribution
@@ -96,8 +96,8 @@ Feature: [STORE_LOCATOR] Tests Behat
     Then I should see "Translate"
     Then I should not see "Current state : Published"
 
-  @api @cit @store_locator @javascript
-  # vendor/bin/phing behat:run -Dbehat.tags=store_locator
+  @api @cit @javascript @store_locator @store_locator_listing
+  # vendor/bin/phing behat:run -Dbehat.tags=store_locator_listing
   # ticket JIRA: SOCSOB-839
   # Testing Front
   Scenario: contenu_location Front list
@@ -142,8 +142,8 @@ Feature: [STORE_LOCATOR] Tests Behat
     Then I should see "45 avenue de colmar 67000 Strasbourg"
     Then I should see "Access plan" in the "a[href='https://google.com/maps?q=45%20avenue%20de%20colmar%20Strasbourg%2067000%20FR']" element
 
-  @api @cit @store_locator @javascript
-  # vendor/bin/phing behat:run -Dbehat.tags=store_locator
+  @api @cit @javascript @store_locator @store_locator_import
+  # vendor/bin/phing behat:run -Dbehat.tags=store_locator_import
   # ticket JIRA: SOCSOB-839
   # Testing Export
   Scenario: Testing export
