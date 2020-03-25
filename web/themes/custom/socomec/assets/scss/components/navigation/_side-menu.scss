@@ -104,7 +104,7 @@
   .block-menu {
     &.menu--header-visitors {
       .nav-item{
-        a[data-drupal-link-system-path="user/register"] {
+        a[data-drupal-link-system-path="user/login"] {
           display: none;
         }
       }
