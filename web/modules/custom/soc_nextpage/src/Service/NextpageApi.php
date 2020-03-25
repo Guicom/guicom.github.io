@@ -93,15 +93,17 @@ class NextpageApi extends NextpageBaseApi implements NextpageApiInterface {
   /**
    * Get the characteristics dictionary.
    *
+   * @param $languageId
+   *
    * @return array|mixed
    */
-  public function characteristicsDictionary() {
+  public function characteristicsDictionary($languageId) {
     $endpoints = $this->getEndpoints();
     $results = [];
     $dictionary = [];
     try {
-      $results = $this->call($endpoints['dicocarac'] . '/' . $this->getLanguageId(),
-        NULL, 'GET');
+      $results = $this->call($endpoints['dicocarac'] . '/' . $languageId,
+        NULL, 'GET', 'json', FALSE);
       // Build dictionary using extid for easer search.
       foreach ($results->Results->Caracs as $carac) {
         $dictionary[$carac->ExtID] = $carac;
@@ -134,6 +136,24 @@ class NextpageApi extends NextpageBaseApi implements NextpageApiInterface {
       }
     }
     return [];
+  }
+
+  /**
+   * Synchronises Dictionary and save the json file inside the data folder.
+   *
+   */
+  public function synchroniseCharacteristicsDictionary($langId = 2){
+    $characteristics = $this->characteristicsDictionary($langId);
+    $filename = 'characteristics_dictionary.json';
+    $app_root = \Drupal::root();
+
+    $fh = fopen($app_root . '/../data/' . $filename, 'w') or die('Error opening output file');
+    fwrite($fh, json_encode($characteristics));
+    fclose($fh);
+
+    \Drupal::logger('soc_nextpage')
+      ->info($this->t('The file has been saved to @file', ['@file' => $filename]));
+    return TRUE;
   }
 
 }
