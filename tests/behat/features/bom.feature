@@ -55,25 +55,24 @@ Feature: [BOM] Tests Behat
     And I should see "Product reference test 01"
     And I should see "Product reference test 02"
     And I should see "Product reference test 03"
+    And I fill in "edit-quantity-extid-test-ref-01" with "1"
     And I fill in "edit-quantity-extid-test-ref-01" with "15"
-    And I wait 2 seconds
+    And I wait 1 seconds
     Then I visit "/my-wishlist"
     And the "edit-quantity-extid-test-ref-01" field should contain "15"
-    And I click Actions
     And I wait for AJAX to finish
+    And I click the "#wishlist_form_content_wrapper .form-item-wishlist-action-extid-test-ref-02-extid-test-ref-02.form-check-label" element
+    And I click Actions
     And I should see "Export to an XLS file"
     And I should see "Export to an PDF file"
     And I should see "Export to an CSV file"
     And I should see "Remove selected"
-    And I click the ".form-item-wishlist-action-extid-test-ref-02-extid-test-ref-02" element
-    And I click Actions
     And I press "Remove selected"
     And I press "Yes"
     And I wait for AJAX to finish
-    And I wait 1 seconds
     And I should see "1 item(s) deleted."
     And I should not see "Test reference ref 02"
-    And I click the ".form-item-select-all-select" element
+    And I click the "#wishlist_form_content_wrapper .form-item-select-all-select.form-check-label" element
     And I click Actions
     And I press "Remove selected"
     And I press "Yes"

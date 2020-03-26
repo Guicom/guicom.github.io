@@ -24,7 +24,7 @@ class BookmarkController extends ContentListController {
   protected $messenger;
 
   /**
-   * WishlistController constructor.
+   * BookmarkController constructor.
    *
    * @param \Drupal\soc_bookmarks\Service\Manager\BookmarkManager $bookmarkManager
    * @param \Drupal\soc_bookmarks\Service\Manager\BookmarkDownload $bookmarkDownload

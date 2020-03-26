@@ -6,9 +6,7 @@ use Drupal\soc_content_list\Controller\ContentListController;
 use Drupal\Core\Messenger\MessengerInterface;
 use Drupal\soc_wishlist\Service\Manager\WishlistManager;
 use Symfony\Component\DependencyInjection\ContainerInterface;
-use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Response;
-use Drupal\Core\Url;
 
 class WishlistController extends ContentListController {
 

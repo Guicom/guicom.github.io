@@ -92,8 +92,15 @@ class BookmarkEditForm extends FormBase {
    */
   public function buildForm(array $form, FormStateInterface $form_state) {
     $form['#theme'] = 'soc_bookmarks_custom_form';
+    if (empty($this->bookmarkManager)) {
+      $this->bookmarkManager = \Drupal::service('soc_bookmarks.bookmark_manager');
+    }
     $items = $this->bookmarkManager->loadSavedItems();
-
+    if (!empty($items)) {
+      usort($items, function ($item1, $item2) {
+        return $item2['timestamp'] <=> $item1['timestamp'];
+      });
+    }
     // Form wrapper for AJAX
     $form['wrapper_bookmark'] = [
       '#type' => 'container',
@@ -183,6 +190,9 @@ class BookmarkEditForm extends FormBase {
           ];
           $form['actions']['others'][$i]['remove'][$i]['#attributes']['class'][] = 'confirm-remove';
         }
+      }
+      if (empty($this->contentListFormManager)) {
+        $this->contentListFormManager = \Drupal::service('soc_content_list.content_list_form_manager');
       }
       $this->contentListFormManager->attached($form, 'confirm-remove');
     }

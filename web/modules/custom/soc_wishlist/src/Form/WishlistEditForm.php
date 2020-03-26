@@ -11,6 +11,7 @@ use Drupal\soc_core\Service\MediaApi;
 use Drupal\soc_wishlist\Service\Manager\WishlistManager;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Drupal\Core\Url;
+use Drupal\Core\Ajax\AjaxResponse;
 
 class WishlistEditForm extends FormBase {
 
@@ -88,6 +89,9 @@ class WishlistEditForm extends FormBase {
    */
   public function buildForm(array $form, FormStateInterface $form_state) {
     $form['#theme'] = 'soc_wishlist_custom_form';
+    if (empty($this->wishlistManager)) {
+      $this->wishlistManager = \Drupal::service('soc_wishlist.wishlist_manager');
+    }
     $items = $this->wishlistManager->loadSavedItems();
 
     // Form wrapper_wishlist for AJAX
@@ -221,6 +225,9 @@ class WishlistEditForm extends FormBase {
       }
     }
 
+    if (empty($this->contentListFormManager)) {
+      $this->contentListFormManager = \Drupal::service('soc_content_list.content_list_form_manager');
+    }
     $this->contentListFormManager->attached($form, $confirmRemoveClass);
 
     return $form;
@@ -265,6 +272,8 @@ class WishlistEditForm extends FormBase {
   /**
    * @param array $form
    * @param \Drupal\Core\Form\FormStateInterface $form_state
+   *
+   * @return array
    */
   public function updateQuantity(array &$form, FormStateInterface $form_state) {
     $input = $form_state->getUserInput();
@@ -279,17 +288,21 @@ class WishlistEditForm extends FormBase {
     }
 
     if (!empty($selectItems)) {
-      $wishlistManager = \Drupal::service('soc_wishlist.wishlist_manager');
-      $wishlistManager->loadSavedItems();
+      if (empty($this->wishlistManager)) {
+        $this->wishlistManager = \Drupal::service('soc_wishlist.wishlist_manager');
+      }
+      $this->wishlistManager->loadSavedItems();
       foreach ($selectItems as $extId => $quantity) {
-        $wishlistManager->setQuantity($extId, $quantity);
+        $this->wishlistManager->setQuantity($extId, $quantity);
       }
       try {
-        $wishlistManager->updateCookie();
+        $this->wishlistManager->updateCookie();
       } catch (\Exception $e) {
-        //$this->messenger->addError($e->getMessage());
+        \Drupal::messenger()->addError($e->getMessage());
       }
     }
+    $response = new AjaxResponse();
+    return $response;
   }
 
 
