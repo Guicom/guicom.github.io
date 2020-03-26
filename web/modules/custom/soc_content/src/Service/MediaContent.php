@@ -6,7 +6,6 @@ namespace Drupal\soc_content\Service;
 
 use Drupal\Core\Entity\EntityStorageException;
 use Drupal\file\Entity\File;
-use Drupal\media\Entity\Media;
 use Drupal\soc_content\Service\Manager\ContentManager;
 
 class MediaContent extends ContentManager {
@@ -74,13 +73,7 @@ class MediaContent extends ContentManager {
 
       // If media does not exist, create it.
       if (empty($medias)) {
-        $newMedia = Media::create($data);
-        try {
-          $newMedia->save();
-          return $newMedia;
-        } catch (EntityStorageException $e) {
-          $this->logger->error($e->getMessage());
-        }
+        return $this->createEntity('Drupal\media\Entity\Media', $data);
       }
     }
     else {

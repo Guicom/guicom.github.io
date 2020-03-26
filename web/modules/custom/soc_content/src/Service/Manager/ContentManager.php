@@ -5,6 +5,7 @@ namespace Drupal\soc_content\Service\Manager;
 
 
 use Drupal\Core\Entity\EntityRepository;
+use Drupal\Core\Entity\EntityStorageException;
 use Drupal\Core\Logger\LoggerChannelFactoryInterface;
 
 class ContentManager {
@@ -60,6 +61,18 @@ class ContentManager {
    */
   protected function getNodeByUuid(string $uuid) {
     return $this->getEntityByUuid('node', $uuid);
+  }
+
+  public function createEntity(string $type, array $data) {
+    $content = $type::create($data);
+    $content->enforceIsNew();
+    try {
+      $content->save();
+      return $content;
+    } catch (EntityStorageException $e) {
+      $this->logger->error($e->getMessage());
+    }
+    return FALSE;
   }
 
 }

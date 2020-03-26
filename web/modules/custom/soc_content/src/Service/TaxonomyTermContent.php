@@ -6,7 +6,6 @@ namespace Drupal\soc_content\Service;
 
 use Drupal\Core\Entity\EntityStorageException;
 use Drupal\soc_content\Service\Manager\ContentManager;
-use Drupal\taxonomy\Entity\Term;
 
 class TaxonomyTermContent extends ContentManager {
 
@@ -44,14 +43,7 @@ class TaxonomyTermContent extends ContentManager {
     if (empty($terms)) {
       $data['name'] = $name;
       $data['vid'] = $vid;
-      $newTerm = Term::create($data);
-      $newTerm->enforceIsNew();
-      try {
-        $newTerm->save();
-        return $newTerm;
-      } catch (EntityStorageException $e) {
-        $this->logger->error($e->getMessage());
-      }
+      return $this->createEntity('Drupal\taxonomy\Entity\Term', $data);
     }
     return FALSE;
   }
