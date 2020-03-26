@@ -213,6 +213,7 @@ permissions:
   - entity_share_client_pull_content
   - 'grant gdpr any consent'
   - 'grant gdpr own consent'
+  - 'manage bookmark settings'
   - 'manage gdpr agreements'
   - 'manage nextpage settings'
   - 'manage search settings'

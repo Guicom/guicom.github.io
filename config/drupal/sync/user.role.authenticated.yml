@@ -16,6 +16,7 @@ permissions:
   - 'cancel account'
   - 'change own username'
   - 'display eu cookie compliance popup'
+  - 'edit own bookmark'
   - 'edit own wishlist'
   - 'opt-in or out of google analytics tracking'
   - 'post comments'

@@ -1,0 +1,12 @@
+cookie_lifetime_days: '60'
+page_title_en: 'My space'
+page_title_fr: 'Mon espace'
+_core:
+  default_config_hash: 1I108rBH239V-HJU4cPaHhfDhBNrnItq9Ic5FiAKU88
+bookmark_page_title: 'My documents'
+bookmark_no_result: 'No result'
+submit: 'Save configuration'
+form_build_id: form-TMNhMay2-Pvzq8QfILydtLYJmPQAepzA364_lzXaZP8
+form_token: thN53oUKfPkdM14gwUyhCViPPjFo4SQ3rjkgx7PbUQU
+form_id: soc_bookmarks_settings
+op: 'Save configuration'
