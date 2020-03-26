@@ -211,7 +211,7 @@ function soc_content_install() {
 
   // Visitors menu
   $menuItemManager->createMenuItem('search', 'header-visitors', [
-    'uri' => 'internal:#search',
+    'uri' => 'internal:/search',
     'weight' => 0,
     'options' => [
       'attributes' => [
@@ -219,15 +219,21 @@ function soc_content_install() {
       ],
     ],
   ]);
+
   $menuItemManager->createMenuItem('Bookmark', 'header-visitors', [
-    'uri' => 'internal:#bookmark',
+    'uri' => 'internal:/my-documents',
     'weight' => 1,
     'options' => [
       'attributes' => [
         'class' => 'ico-bookmark-star-white no-label',
+        'data-toggle' => 'tooltip',
+        'data-html' => 'true',
+        'data-original-title' => 'My documents',
+        'data-placement' => 'bottom',
       ],
     ],
   ]);
+
   $menuItemManager->createMenuItem('Wishlist', 'header-visitors', [
     'uri' => 'internal:/my-wishlist',
     'weight' => 2,
