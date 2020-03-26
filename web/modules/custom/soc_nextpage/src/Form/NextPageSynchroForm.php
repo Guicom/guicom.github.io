@@ -117,6 +117,9 @@ class NextPageSynchroForm extends FormBase {
     ];
     batch_set($batch);
 
+
+    $this->nextpageApi->synchroniseCharacteristicsDictionary("2");
+
     //$this->messenger()->addMessage($token, 'error');$this->logger('my_channel')->info($token);
     //
   }

@@ -2,7 +2,7 @@ Feature: Moderation acces
 
   @api @cit @admin_moderation @javascript
   Test of access to the administration page of the moderation states of a content by the administer
- # vendor/bin/phing behat:run -Dbehat.tags=admin_moderation
+  # vendor/bin/phing behat:run -Dbehat.tags=admin_moderation
   Scenario: Test of access to the administration page of the moderation states of a content by the administer
     Given users:
       | name          | mail                 | roles         | password |
@@ -22,7 +22,7 @@ Feature: Moderation acces
     Then I should see the "a" element with the "id" attribute set to "edit-delete" in the "content" region
 
   @api @cit @webmaster_moderation
- # vendor/bin/phing behat:run -Dbehat.tags=webmaster_moderation
+  # vendor/bin/phing behat:run -Dbehat.tags=webmaster_moderation
   Scenario: Test of access to the administration page of the moderation states of a content by the administer
     Given users:
       | name              | mail                | roles     | password |

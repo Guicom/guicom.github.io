@@ -153,7 +153,7 @@
       padding-top: 1rem;
       padding-bottom: 2rem;
     }
-    h2 {
+    .soc-block-title {
       font-family: $font-poppins;
       font-weight: 600;
       font-size: $font-size-xs;
@@ -177,7 +177,9 @@
           font-size: $font-size-base;
           border-bottom: 1px solid rgba($white, 0.1);
           padding: 12px 15px;
-          &:hover {
+          &:hover,
+          &:active,
+          &:focus {
             background: none;
           }
         }
@@ -186,7 +188,7 @@
   }
   .block-quick-link-block {
     margin-left: 5px;
-    h2 {
+    .soc-block-title {
       &:before {
         background: $turquoize;
       }
@@ -201,5 +203,108 @@
       }
     }
   }
-
+  .search-suggestions{
+    position: relative;
+    z-index: 10;
+    margin-top: 30px;
+    .header-search-suggestions{
+      color: $white;
+      font-family: $font-poppins;
+      font-size: $font-size-xs;
+      font-weight: 600;
+      letter-spacing: 1px;
+      line-height: 20px;
+      text-transform: uppercase;
+      margin-bottom: 2rem;
+      position: relative;
+      display: flex;
+      justify-content: space-between;
+      @include offset-underscore;
+      &:before {
+        top: initial;
+        bottom: -1rem;
+        width: 30px;
+      }
+      span{
+        display: block;
+      }
+      a{
+        position: relative;
+        padding-left: 30px;
+        display: block;
+        color:rgba($turquoize, 0.8);
+        font-family: Poppins;
+        font-size: 12px;
+        font-weight: 600;
+        letter-spacing: 1px;
+        line-height: 20px;
+        background-size: 20px 20px;
+        background-repeat: no-repeat;
+        background-position: center;
+        &:before{
+          visibility: visible;
+          content: '';
+          display: block;
+          height: 20px;
+          width: 20px;
+          position: absolute;
+          left: 0;
+          background-position: center center;
+          background-repeat: no-repeat;
+          background-size: cover;
+          background-image: url("../images/picto/ui/chevron-right-circle-white.svg");
+        }
+      }
+      &.header-search-categorized-suggestions{
+        &:before {
+          background: $turquoize;
+        }
+      }
+    }
+    .result-search-suggestions {
+      .nav {
+        flex-direction: column;
+        li.nav-item {
+          a.nav-link {
+            font-family: $font-roboto;
+            color: rgba($white, 0.8);
+            font-size: $font-size-base;
+            border-bottom: 1px solid rgba($white, 0.1);
+            padding: 12px 15px;
+            display: flex;
+            justify-content: space-between;
+            &:hover,
+            &:active,
+            &:focus{
+              background: none;
+            }
+            span {
+              display: block;
+              &.search-bundle{
+                color:rgba($turquoize, 0.8);
+              }
+            }
+            .search-api-autocomplete-suggestion{
+              padding: 0px;
+              span {
+                display:inline;
+                &.autocomplete-suggestion-user-input{
+                  font-weight: normal;
+                }
+                &.autocomplete-suggestion-suggestion-suffix{
+                  font-weight: bold;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.search-suggestions-no-result{
+  margin-top: 30px;
+  text-align: center;
+  color: rgba($white, 0.8);
+  font-size: $font-size-base;
 }

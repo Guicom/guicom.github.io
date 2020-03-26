@@ -9,21 +9,21 @@ use Drupal\views\ViewExecutable;
 use Drupal\Component\Utility\Xss;
 
 /**
- * Implement HOOK_form_alter()
+ * Implements hook_form_FORM_ID_alter() for "views_exposed_form".
  *
- * @param $form
- * @param \Drupal\Core\Form\FormStateInterface $form_state
- * @param $form_id
+ * Adds autocompletion to input fields for fulltext keywords on views with
+ * exposed filters.
+ *
+ * @see \Drupal\views\Form\ViewsExposedForm
+ * @see \Drupal\search_api_autocomplete\Plugin\search_api_autocomplete\search\Views
  */
-function soc_search_form_alter(&$form, FormStateInterface $form_state, $form_id) {
-  $is_exposed = $form_id == 'views_exposed_form';
-  if ($is_exposed) {
-    if (!empty($form['#id']) && $form['#id'] === 'views-exposed-form-global-search-page-1') {
-      if (!empty($form['search_api_fulltext'])) {
-        $form['search_api_fulltext']['#attributes']['placeholder'] = \Drupal::config('soc_search.settings')->get('placeholder') ?? '';
-        $form['search_api_fulltext']['#attributes']['autocomplete'] = 'off';
-        $form['actions']['submit']['#value'] = t('Search');
-      }
+function soc_search_form_views_exposed_form_alter(array &$form, FormStateInterface $form_state) {
+  if (!empty($form['#id']) && $form['#id'] === 'views-exposed-form-global-search-page-1') {
+    if (!empty($form['search_api_fulltext'])) {
+      $form['search_api_fulltext']['#type'] = 'soc_search_search_api_autocomplete';
+      $form['search_api_fulltext']['#attributes']['placeholder'] = \Drupal::config('soc_search.settings')->get('placeholder') ?? '';
+      $form['search_api_fulltext']['#attributes']['autocomplete'] = 'off';
+      $form['actions']['submit']['#value'] = t('Search');
     }
   }
 }
