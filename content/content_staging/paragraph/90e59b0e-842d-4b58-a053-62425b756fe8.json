@@ -7,19 +7,9 @@
             "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/model_testimony"
         }
     },
-    "id": [
-        {
-            "value": 10
-        }
-    ],
     "uuid": [
         {
             "value": "90e59b0e-842d-4b58-a053-62425b756fe8"
-        }
-    ],
-    "revision_id": [
-        {
-            "value": 49
         }
     ],
     "langcode": [
@@ -95,8 +85,7 @@
         {
             "value": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
             "format": null,
-            "processed": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.<\/p>\n",
-            "lang": "en"
+            "processed": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.<\/p>\n"
         }
     ]
 }

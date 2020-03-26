@@ -1,0 +1,31 @@
+uuid: 85d20f3b-a4de-47ac-806e-db44ec5cc5d6
+langcode: en
+status: true
+dependencies:
+  config:
+    - search_api.index.global_search
+    - views.view.global_search
+  module:
+    - views
+    - search_api_autocomplete
+id: global_search
+label: 'Global search'
+index_id: global_search
+suggester_settings:
+  server:
+    fields: {  }
+suggester_weights:
+  server: 0
+suggester_limits: {  }
+search_settings:
+  'views:global_search':
+    displays:
+      default: true
+      selected: {  }
+options:
+  limit: 5
+  min_length: 3
+  show_count: false
+  autosubmit: false
+  submit_button_selector: ':submit'
+  delay: null

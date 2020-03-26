@@ -202,14 +202,11 @@
     attach: function(context, settings) {
       $(document).on('eu_cookie_compliance_popup_open', '#sliding-popup', function() {
         $(".customize-button", context).click(function() {
-          if ($("#eu-cookie-compliance-categories").hasClass("d-none")) {
-            $("#custum-popup-header").addClass("d-none");
-            $(".customize-button").addClass("d-none");
-            $("#eu-cookie-compliance-categories").removeClass("d-none").addClass("d-bloc");
-          }
-          else{
-            $("#eu-cookie-compliance-categories").removeClass("d-bloc").addClass("d-none");
-          }
+          Drupal.behaviors.socomec_eu_cookie_compliance.openCategories();
+        });
+
+        $(".close-button", context).click(function() {
+          Drupal.behaviors.socomec_eu_cookie_compliance.closeCategories();
         });
 
         $("#eu-cookie-compliance-categories  input:checkbox", context).each(function() {
@@ -259,11 +256,27 @@
         });
 
       });
+
+      var height = $(".eu-cookie-compliance-content").height();
+      $("body").css('padding-bottom',height+'px');
+    },
+
+    openCategories: function () {
+      $(".eu-cookie-compliance-banner").addClass("categorie-open");
+      $(".customize-button").addClass("d-none");
+      $(".eu-cookie-compliance-categories").removeClass("d-none").addClass("d-bloc");
+    },
+    closeCategories: function () {
+      $(".eu-cookie-compliance-banner").removeClass("categorie-open");
+      $(".customize-button").addClass("d-none");
+      $(".eu-cookie-compliance-categories").removeClass("d-bloc").addClass("d-none");
+      $("#sliding-popup").addClass("d-none");
     }
+
   };
 
 
-  /**
+    /**
    * Add to bookmarks button
    */
   Drupal.behaviors.socomec_add_to_bookmarks = {
@@ -497,5 +510,42 @@
       });
     }
   };
+
+  /**
+   * Modal with youtube video
+   */
+  Drupal.behaviors.socomec_modal_videos = {
+    attach: function (context, settings) {
+
+      $(document).ready(function() {
+        let videoSrc;
+        let getVideo;
+        // let videoTitle;
+        // let videoDesc;
+        // When we click to open modal, get videoId and set videoSrc
+        $('.video-launcher').click(function() {
+           getVideo = $('.src').html();
+          // let videoid = $('.video-iframe').data("src").match(/(?:https?:\/{2})?(?:w{3}\.)?youtu(?:be)?\.(?:com|be)(?:\/watch\?v=|\/)([^\s&]+)/);
+          // videoSrc = "https://www.youtube.com/embed/"+videoid[1];
+          // videoTitle = $(this).parent().find('.videoTitle').text();
+          // videoDesc = $(this).parent().find('.videoDescription').text();
+        });
+        // When modal is open, we autoplay video
+        $('.modal-resource').on('show.bs.modal', function (e) {
+          $(".video-iframe", this).attr('src',getVideo + "?autoplay=1&showinfo=0&modestbranding=1" );
+          // $('#ModalLongTitle', this).text(videoTitle);
+          // $('#ModalVideoDescription', this).text(videoDesc);
+        });
+        // When modal is close, we stop video
+        $('.modal-resource').on('hidden.bs.modal', function (e) {
+          $(".video-iframe", this).attr('src','');
+          // $('#ModalLongTitle', this).text('');
+          // $('#ModalVideoDescription', this).text('');
+        });
+      });
+    }
+  };
+
+
 
 })(jQuery, Drupal);

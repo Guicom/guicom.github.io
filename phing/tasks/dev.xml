@@ -1,0 +1,7 @@
+<project name="dev" default="update">
+
+  <target name="dev:rebuild" depends="dev-rebuild, update"/>
+
+  <target name="dev:rebuild-local" depends="dev-rebuild, update, megamenu-socomec:import, solr:cr, cache-clear:all"/>
+
+</project>

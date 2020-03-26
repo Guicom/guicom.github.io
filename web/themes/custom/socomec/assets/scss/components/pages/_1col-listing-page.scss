@@ -1,6 +1,5 @@
 .path-where-to-buy {
   .store-locator-wrapper {
-    margin-bottom: 5rem;
     .intro {
       @include block-title(true);
       font-weight: 300;
@@ -16,9 +15,17 @@
     margin-bottom: 45px;
   }
   .view-store-locator {
-    .views-row {
-      width: 100%;
+    .view-content{
+      .views-row {
+        width: 100%;
+        &:last-child{
+          .store-teaser-cards {
+            margin-bottom: 0px;
+          }
+        }
+      }
     }
+
     // CARD LOCATOR
     .store-teaser-cards {
       border: 1px solid $mid-grey;

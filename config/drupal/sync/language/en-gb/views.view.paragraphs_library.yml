@@ -6,6 +6,10 @@ display:
           label: Label
         type:
           label: Type
+        id:
+          label: ID
+        operations:
+          label: Operations
       filters:
         label:
           expose:

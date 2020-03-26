@@ -120,8 +120,8 @@ $databases['default']['default'] = array (
   'driver' => 'mysql',
 );
 
-$config_directories['sync'] = $app_ground . '/config/drupal/sync';
-$config_directories['local'] = $app_ground . '/config/drupal/local';
+$settings['config_sync_directory'] = $app_ground . '/config/drupal/sync';
+$settings['config_local_directory'] = $app_ground . '/config/drupal/local';
 
 $settings['hash_salt'] = 'lfMHEedn4q7V3RXGNTt_NxM5iWA98y7liFVAJgAbnX7WW0rWs_dy2j0sHLbRDiSyRj88MGBGMg';
 $settings['trusted_host_patterns'] = array(
@@ -214,3 +214,8 @@ $settings['we_megamenu_deploy_content'] = $app_ground . '/content/we_megamenu_co
 $databases['default']['default']['init_commands'] = array(
   'isolation' => "SET SESSION tx_isolation='READ-COMMITTED'"
 );
+
+/**
+ * Modules excluded from config export.
+ */
+$settings['config_exclude_modules'] = ['soc_content'];

@@ -120,8 +120,8 @@ $databases['default']['default'] = array (
   'driver' => 'mysql',
 );
 
-$config_directories['sync'] = $app_ground . '/config/drupal/sync';
-$config_directories['local'] = $app_ground . '/config/drupal/local';
+$settings['config_sync_directory'] = $app_ground . '/config/drupal/sync';
+$settings['config_local_directory'] = $app_ground . '/config/drupal/local';
 
 $settings['hash_salt'] = '***GENERATE_SALT***';
 $settings['trusted_host_patterns'] = array(
@@ -133,3 +133,8 @@ $settings['trusted_host_patterns'] = array(
  */
 $settings['file_public_base_url'] = 'http://127.0.0.1:8080/sites/default/files';
 $settings['file_private_path'] = $app_ground . '/data/files/private';
+
+/**
+ * Modules excluded from config export.
+ */
+$settings['config_exclude_modules'] = ['soc_content'];

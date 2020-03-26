@@ -82,6 +82,7 @@
       {% endblock %}
       {{ drupal_block('system_breadcrumb_block') }}
         {% include '@socomec/layout/store-locator/hero-header-views.html.twig' %}
+      {{ drupal_block('local_tasks_block') }}
     </header>
     {% if page.highlighted %}
       <div class="highlighted">

@@ -1,0 +1,4 @@
+ID;Title;Continent;Area;Sub Area;Activity;Type;Company;Name;First Name;Address Line 1;Address Line 2;Dependent Locality;Postal Code;Administrative Area;Locality;Sorting Code;Country Code;Phone;Fax;Website
+;Test Import 1;Europe;France;Alsace;Energy Efficiency;TestingExportType;Test Import 1 Company;Test Import 1 Name;Test Import 1 First name;Test Import 1 Address Line 1;;;67000;;Strasbourg;;FR;0600000000;;
+;Test Import 2;Europe;France;Alsace;Energy Efficiency;TestingExportType;Test Import 2 Company;Test Import 2 Name;Test Import 2 First name;Test Import 2 Address Line 1;;;67000;;Strasbourg;;FR;0600000000;;
+;Test Import 3;Europe;France;Alsace;Energy Efficiency;TestingExportType;Test Import 3 Company;Test Import 3 Name;Test Import 3 First name;Test Import 3 Address Line 1;;;67000;;Strasbourg;;FR;0600000000;;

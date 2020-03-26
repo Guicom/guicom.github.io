@@ -51,6 +51,7 @@
     <import file="phing/tasks/cache.xml" optional="true"/>
     <import file="phing/tasks/solr.xml" optional="true"/>
     <import file="phing/tasks/deploy.xml" optional="true"/>
+    <import file="phing/tasks/dev.xml" optional="true"/>
 
     <!-- import drush tasks -->
     <import file="./vendor/drupal/phingdrushtask/import.xml"/>
@@ -59,9 +60,9 @@
     <target
             name="install-local"
             description="Install the website and set up the local development environment."
-            depends="install, content-import-all, megamenu-socomec:import, solr:cr, gulp-socomec:install, gulp-socomec:css, cache-clear:all"/>
+            depends="install, project:create-content, drush:updb, megamenu-socomec:import, solr:cr, gulp-socomec:install, gulp-socomec:css, cache-clear:all"/>
     <target
             name="build-local"
             description="Rebuild the local environment."
-            depends="build, content-import-all, megamenu-socomec:import, solr:cr, cache-clear:all"/>
+            depends="build, project:create-content, drush:updb, megamenu-socomec:import, solr:cr, cache-clear:all"/>
 </project>

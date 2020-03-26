@@ -10,6 +10,8 @@ dependencies:
     - node.type.optional_related_content
   module:
     - media_library
+    - scheduler
+    - scheduler_content_moderation_integration
 id: node.optional_related_content.default
 targetEntityType: node
 bundle: optional_related_content

@@ -151,8 +151,8 @@ $databases['default']['default'] = array (
   'driver' => 'mysql',
 );
 
-$config_directories['sync'] = $app_ground . '/config/drupal/sync';
-$config_directories['local'] = $app_ground . '/config/drupal/local';
+$settings['config_sync_directory'] = $app_ground . '/config/drupal/sync';
+$settings['config_local_directory'] = $app_ground . '/config/drupal/local';
 
 /**
  * Files configurations.
@@ -188,3 +188,8 @@ $settings['admin_password'] = 'admin_socomec12!';
 $settings['admin_email'] = 'admin_socomec@socomec.com';
 
 $settings['DISABLE_SUPER_ADMIN_ACCOUNT'] = 1;
+
+/**
+ * Modules excluded from config export.
+ */
+$settings['config_exclude_modules'] = ['soc_content'];

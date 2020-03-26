@@ -29,6 +29,7 @@
 /web/sites/**/files/*
 /data/**/files/private
 /data/db
+!/data/db/tag/
 !/web/sites/**/files/label/
 
 # Ignore sites.php
@@ -55,3 +56,4 @@ docker-sync.yml
 
 # Ignore SQL files
 *.sql
+/data/characteristics_dictionary.json

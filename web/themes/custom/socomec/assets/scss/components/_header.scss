@@ -4,6 +4,8 @@
   padding-top:60px;
   background: linear-gradient(324.68deg, #00519D 0%, rgba(0,81,157,0.8) 100%);
   background-size: cover;
+  display: flex;
+  flex-flow: column;
   #navbar-top{
     z-index: 1;
     height: 59px;

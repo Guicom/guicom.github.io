@@ -1,6 +1,5 @@
 {
   "minimum-stability": "dev",
-  "prefer-stable": true,
   "require": {
     "behat/behat": "^3.5",
     "drupal/drupal-extension": "^4.0",
@@ -12,6 +11,8 @@
   },
   "config": {
     "bin-dir": "bin/"
+  },
+  "require-dev": {
+    "roydude/behat-html-formatter": "dev-master"
   }
 }
-

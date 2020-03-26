@@ -1,35 +1,35 @@
 {
     "_links": {
         "self": {
-            "href": "http:\/\/default\/energy-storage-solution\/sirco-vm?_format=hal_json"
+            "href": "http:\/\/default\/en\/energy-storage-solution\/sirco-vm?_format=hal_json"
         },
         "type": {
             "href": "http:\/\/drupal.org\/rest\/type\/node\/product"
         },
         "http:\/\/drupal.org\/rest\/relation\/node\/product\/revision_uid": [
             {
-                "href": "http:\/\/default\/user\/1?_format=hal_json"
+                "href": "http:\/\/default\/en\/user\/1?_format=hal_json"
             }
         ],
         "http:\/\/drupal.org\/rest\/relation\/node\/product\/uid": [
             {
-                "href": "http:\/\/default\/user\/1?_format=hal_json"
+                "href": "http:\/\/default\/en\/user\/1?_format=hal_json"
             }
         ],
         "http:\/\/drupal.org\/rest\/relation\/node\/product\/field_associated_products": [
             {
-                "href": "http:\/\/default\/energy-storage-solution\/sirco-mv?_format=hal_json"
+                "href": "http:\/\/default\/en\/energy-storage-solution\/sirco-mv?_format=hal_json"
             },
             {
-                "href": "http:\/\/default\/energy-storage-solution\/sirco-ul?_format=hal_json"
+                "href": "http:\/\/default\/en\/energy-storage-solution\/sirco-ul?_format=hal_json"
             },
             {
-                "href": "http:\/\/default\/energy-storage-solution\/sirco-mv?_format=hal_json"
+                "href": "http:\/\/default\/en\/energy-storage-solution\/sirco-mv?_format=hal_json"
             }
         ],
         "http:\/\/drupal.org\/rest\/relation\/node\/product\/field_background_hero_block": [
             {
-                "href": "http:\/\/default\/media\/17\/edit?_format=hal_json"
+                "href": "http:\/\/default\/en\/media\/17\/edit?_format=hal_json"
             }
         ],
         "http:\/\/drupal.org\/rest\/relation\/node\/product\/field_product_application_link": [
@@ -59,13 +59,13 @@
         ],
         "http:\/\/drupal.org\/rest\/relation\/node\/product\/field_product_family": [
             {
-                "href": "http:\/\/default\/energy-storage-solution?_format=hal_json"
+                "href": "http:\/\/default\/en\/energy-storage-solution?_format=hal_json"
             },
             {
-                "href": "http:\/\/default\/energy-storage-solution\/storage-converters?_format=hal_json"
+                "href": "http:\/\/default\/en\/energy-storage-solution\/storage-converters?_format=hal_json"
             },
             {
-                "href": "http:\/\/default\/energy-storage-solution\/storage-converters\/grid-modular-indoor?_format=hal_json"
+                "href": "http:\/\/default\/en\/energy-storage-solution\/storage-converters\/grid-modular-indoor?_format=hal_json"
             }
         ],
         "http:\/\/drupal.org\/rest\/relation\/node\/product\/field_product_multiline": [
@@ -75,60 +75,60 @@
         ],
         "http:\/\/drupal.org\/rest\/relation\/node\/product\/field_product_orc_content": [
             {
-                "href": "http:\/\/default\/node\/21?_format=hal_json"
+                "href": "http:\/\/default\/en\/node\/21?_format=hal_json"
             },
             {
-                "href": "http:\/\/default\/node\/22?_format=hal_json"
+                "href": "http:\/\/default\/en\/node\/22?_format=hal_json"
             }
         ],
         "http:\/\/drupal.org\/rest\/relation\/node\/product\/field_product_pictures": [
             {
-                "href": "http:\/\/default\/media\/23\/edit?_format=hal_json"
+                "href": "http:\/\/default\/en\/media\/23\/edit?_format=hal_json"
             },
             {
-                "href": "http:\/\/default\/media\/22\/edit?_format=hal_json"
+                "href": "http:\/\/default\/en\/media\/22\/edit?_format=hal_json"
             },
             {
-                "href": "http:\/\/default\/media\/11\/edit?_format=hal_json"
+                "href": "http:\/\/default\/en\/media\/11\/edit?_format=hal_json"
             },
             {
-                "href": "http:\/\/default\/media\/10\/edit?_format=hal_json"
+                "href": "http:\/\/default\/en\/media\/10\/edit?_format=hal_json"
             },
             {
-                "href": "http:\/\/default\/media\/1\/edit?_format=hal_json"
+                "href": "http:\/\/default\/en\/media\/1\/edit?_format=hal_json"
             },
             {
-                "href": "http:\/\/default\/media\/4\/edit?_format=hal_json"
+                "href": "http:\/\/default\/en\/media\/4\/edit?_format=hal_json"
             },
             {
-                "href": "http:\/\/default\/media\/3\/edit?_format=hal_json"
+                "href": "http:\/\/default\/en\/media\/3\/edit?_format=hal_json"
             }
         ],
         "http:\/\/drupal.org\/rest\/relation\/node\/product\/field_product_reference": [
             {
-                "href": "http:\/\/default\/22004016-sirco-mv-4x160a?_format=hal_json"
+                "href": "http:\/\/default\/en\/22004016-sirco-mv-4x160a?_format=hal_json"
             },
             {
-                "href": "http:\/\/default\/22003110-sirco-mv-3x100a-0?_format=hal_json"
+                "href": "http:\/\/default\/en\/22003110-sirco-mv-3x100a?_format=hal_json"
             },
             {
-                "href": "http:\/\/default\/22003016-sirco-mv-3x160a?_format=hal_json"
+                "href": "http:\/\/default\/en\/22003016-sirco-mv-3x160a?_format=hal_json"
             },
             {
-                "href": "http:\/\/default\/22003110-sirco-mv-3x100a?_format=hal_json"
+                "href": "http:\/\/default\/en\/22003110-sirco-mv-3x100a-0?_format=hal_json"
             },
             {
-                "href": "http:\/\/default\/22004110-sirco-mv-4x100a?_format=hal_json"
+                "href": "http:\/\/default\/en\/22004110-sirco-mv-4x100a?_format=hal_json"
             }
         ],
         "http:\/\/drupal.org\/rest\/relation\/node\/product\/field_product_status": [
             {
-                "href": "http:\/\/default\/taxonomy\/term\/4?_format=hal_json"
+                "href": "http:\/\/default\/en\/taxonomy\/term\/4?_format=hal_json"
             }
         ],
         "http:\/\/drupal.org\/rest\/relation\/node\/product\/field_protection_level": [
             {
-                "href": "http:\/\/default\/taxonomy\/term\/1?_format=hal_json"
+                "href": "http:\/\/default\/en\/taxonomy\/term\/1?_format=hal_json"
             }
         ],
         "http:\/\/drupal.org\/rest\/relation\/node\/product\/field_standard_label": [
@@ -177,7 +177,7 @@
             {
                 "_links": {
                     "self": {
-                        "href": "http:\/\/default\/user\/1?_format=hal_json"
+                        "href": "http:\/\/default\/en\/user\/1?_format=hal_json"
                     },
                     "type": {
                         "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
@@ -185,7 +185,7 @@
                 },
                 "uuid": [
                     {
-                        "value": "0c9aa577-d856-4733-aade-e8b7c37852e1"
+                        "value": "0239213a-20c6-47d9-97d6-55bfd7a03bd7"
                     }
                 ]
             }
@@ -194,7 +194,7 @@
             {
                 "_links": {
                     "self": {
-                        "href": "http:\/\/default\/user\/1?_format=hal_json"
+                        "href": "http:\/\/default\/en\/user\/1?_format=hal_json"
                     },
                     "type": {
                         "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
@@ -202,7 +202,7 @@
                 },
                 "uuid": [
                     {
-                        "value": "0c9aa577-d856-4733-aade-e8b7c37852e1"
+                        "value": "0239213a-20c6-47d9-97d6-55bfd7a03bd7"
                     }
                 ]
             }
@@ -211,7 +211,7 @@
             {
                 "_links": {
                     "self": {
-                        "href": "http:\/\/default\/energy-storage-solution\/sirco-mv?_format=hal_json"
+                        "href": "http:\/\/default\/en\/energy-storage-solution\/sirco-mv?_format=hal_json"
                     },
                     "type": {
                         "href": "http:\/\/drupal.org\/rest\/type\/node\/product"
@@ -226,7 +226,7 @@
             {
                 "_links": {
                     "self": {
-                        "href": "http:\/\/default\/energy-storage-solution\/sirco-ul?_format=hal_json"
+                        "href": "http:\/\/default\/en\/energy-storage-solution\/sirco-ul?_format=hal_json"
                     },
                     "type": {
                         "href": "http:\/\/drupal.org\/rest\/type\/node\/product"
@@ -241,7 +241,7 @@
             {
                 "_links": {
                     "self": {
-                        "href": "http:\/\/default\/energy-storage-solution\/sirco-mv?_format=hal_json"
+                        "href": "http:\/\/default\/en\/energy-storage-solution\/sirco-mv?_format=hal_json"
                     },
                     "type": {
                         "href": "http:\/\/drupal.org\/rest\/type\/node\/product"
@@ -258,7 +258,7 @@
             {
                 "_links": {
                     "self": {
-                        "href": "http:\/\/default\/media\/17\/edit?_format=hal_json"
+                        "href": "http:\/\/default\/en\/media\/17\/edit?_format=hal_json"
                     },
                     "type": {
                         "href": "http:\/\/drupal.org\/rest\/type\/media\/image"
@@ -365,7 +365,7 @@
             {
                 "_links": {
                     "self": {
-                        "href": "http:\/\/default\/energy-storage-solution?_format=hal_json"
+                        "href": "http:\/\/default\/en\/energy-storage-solution?_format=hal_json"
                     },
                     "type": {
                         "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/family"
@@ -380,7 +380,7 @@
             {
                 "_links": {
                     "self": {
-                        "href": "http:\/\/default\/energy-storage-solution\/storage-converters?_format=hal_json"
+                        "href": "http:\/\/default\/en\/energy-storage-solution\/storage-converters?_format=hal_json"
                     },
                     "type": {
                         "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/family"
@@ -395,7 +395,7 @@
             {
                 "_links": {
                     "self": {
-                        "href": "http:\/\/default\/energy-storage-solution\/storage-converters\/grid-modular-indoor?_format=hal_json"
+                        "href": "http:\/\/default\/en\/energy-storage-solution\/storage-converters\/grid-modular-indoor?_format=hal_json"
                     },
                     "type": {
                         "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/family"
@@ -430,7 +430,7 @@
             {
                 "_links": {
                     "self": {
-                        "href": "http:\/\/default\/node\/21?_format=hal_json"
+                        "href": "http:\/\/default\/en\/node\/21?_format=hal_json"
                     },
                     "type": {
                         "href": "http:\/\/drupal.org\/rest\/type\/node\/optional_related_content"
@@ -445,7 +445,7 @@
             {
                 "_links": {
                     "self": {
-                        "href": "http:\/\/default\/node\/22?_format=hal_json"
+                        "href": "http:\/\/default\/en\/node\/22?_format=hal_json"
                     },
                     "type": {
                         "href": "http:\/\/drupal.org\/rest\/type\/node\/optional_related_content"
@@ -462,7 +462,7 @@
             {
                 "_links": {
                     "self": {
-                        "href": "http:\/\/default\/media\/23\/edit?_format=hal_json"
+                        "href": "http:\/\/default\/en\/media\/23\/edit?_format=hal_json"
                     },
                     "type": {
                         "href": "http:\/\/drupal.org\/rest\/type\/media\/product_image"
@@ -477,7 +477,7 @@
             {
                 "_links": {
                     "self": {
-                        "href": "http:\/\/default\/media\/22\/edit?_format=hal_json"
+                        "href": "http:\/\/default\/en\/media\/22\/edit?_format=hal_json"
                     },
                     "type": {
                         "href": "http:\/\/drupal.org\/rest\/type\/media\/product_image"
@@ -492,7 +492,7 @@
             {
                 "_links": {
                     "self": {
-                        "href": "http:\/\/default\/media\/11\/edit?_format=hal_json"
+                        "href": "http:\/\/default\/en\/media\/11\/edit?_format=hal_json"
                     },
                     "type": {
                         "href": "http:\/\/drupal.org\/rest\/type\/media\/product_image"
@@ -507,7 +507,7 @@
             {
                 "_links": {
                     "self": {
-                        "href": "http:\/\/default\/media\/10\/edit?_format=hal_json"
+                        "href": "http:\/\/default\/en\/media\/10\/edit?_format=hal_json"
                     },
                     "type": {
                         "href": "http:\/\/drupal.org\/rest\/type\/media\/product_image"
@@ -522,7 +522,7 @@
             {
                 "_links": {
                     "self": {
-                        "href": "http:\/\/default\/media\/1\/edit?_format=hal_json"
+                        "href": "http:\/\/default\/en\/media\/1\/edit?_format=hal_json"
                     },
                     "type": {
                         "href": "http:\/\/drupal.org\/rest\/type\/media\/product_image"
@@ -537,7 +537,7 @@
             {
                 "_links": {
                     "self": {
-                        "href": "http:\/\/default\/media\/4\/edit?_format=hal_json"
+                        "href": "http:\/\/default\/en\/media\/4\/edit?_format=hal_json"
                     },
                     "type": {
                         "href": "http:\/\/drupal.org\/rest\/type\/media\/product_image"
@@ -552,7 +552,7 @@
             {
                 "_links": {
                     "self": {
-                        "href": "http:\/\/default\/media\/3\/edit?_format=hal_json"
+                        "href": "http:\/\/default\/en\/media\/3\/edit?_format=hal_json"
                     },
                     "type": {
                         "href": "http:\/\/drupal.org\/rest\/type\/media\/product_image"
@@ -569,7 +569,7 @@
             {
                 "_links": {
                     "self": {
-                        "href": "http:\/\/default\/22004016-sirco-mv-4x160a?_format=hal_json"
+                        "href": "http:\/\/default\/en\/22004016-sirco-mv-4x160a?_format=hal_json"
                     },
                     "type": {
                         "href": "http:\/\/drupal.org\/rest\/type\/node\/product_reference"
@@ -584,7 +584,7 @@
             {
                 "_links": {
                     "self": {
-                        "href": "http:\/\/default\/22003110-sirco-mv-3x100a-0?_format=hal_json"
+                        "href": "http:\/\/default\/en\/22003110-sirco-mv-3x100a?_format=hal_json"
                     },
                     "type": {
                         "href": "http:\/\/drupal.org\/rest\/type\/node\/product_reference"
@@ -599,7 +599,7 @@
             {
                 "_links": {
                     "self": {
-                        "href": "http:\/\/default\/22003016-sirco-mv-3x160a?_format=hal_json"
+                        "href": "http:\/\/default\/en\/22003016-sirco-mv-3x160a?_format=hal_json"
                     },
                     "type": {
                         "href": "http:\/\/drupal.org\/rest\/type\/node\/product_reference"
@@ -614,7 +614,7 @@
             {
                 "_links": {
                     "self": {
-                        "href": "http:\/\/default\/22003110-sirco-mv-3x100a?_format=hal_json"
+                        "href": "http:\/\/default\/en\/22003110-sirco-mv-3x100a-0?_format=hal_json"
                     },
                     "type": {
                         "href": "http:\/\/drupal.org\/rest\/type\/node\/product_reference"
@@ -629,7 +629,7 @@
             {
                 "_links": {
                     "self": {
-                        "href": "http:\/\/default\/22004110-sirco-mv-4x100a?_format=hal_json"
+                        "href": "http:\/\/default\/en\/22004110-sirco-mv-4x100a?_format=hal_json"
                     },
                     "type": {
                         "href": "http:\/\/drupal.org\/rest\/type\/node\/product_reference"
@@ -646,7 +646,7 @@
             {
                 "_links": {
                     "self": {
-                        "href": "http:\/\/default\/taxonomy\/term\/4?_format=hal_json"
+                        "href": "http:\/\/default\/en\/taxonomy\/term\/4?_format=hal_json"
                     },
                     "type": {
                         "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/product_status"
@@ -663,7 +663,7 @@
             {
                 "_links": {
                     "self": {
-                        "href": "http:\/\/default\/taxonomy\/term\/1?_format=hal_json"
+                        "href": "http:\/\/default\/en\/taxonomy\/term\/1?_format=hal_json"
                     },
                     "type": {
                         "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/protection_level"

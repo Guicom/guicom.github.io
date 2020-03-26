@@ -1,15 +1,17 @@
 display:
   default:
     display_options:
-      pager:
-        options:
-          expose:
-            offset_label: Versatz
       fields:
         label:
           label: Beschriftung
         type:
           label: Typ
+        id:
+          label: ID
+        changed:
+          label: Geändert
+        operations:
+          label: Aktionen
       filters:
         label:
           expose:

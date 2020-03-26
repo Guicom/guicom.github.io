@@ -9,14 +9,14 @@ dependencies:
     - node
     - search_api
   config:
-    - field.storage.node.field_location_activity
-    - field.storage.node.field_location_address
     - field.storage.node.field_location_area
     - field.storage.node.field_location_company
     - field.storage.node.field_location_continent
-    - field.storage.node.field_location_subarea
     - field.storage.node.field_location_type
     - field.storage.taxonomy_term.field_weight
+    - field.storage.node.field_location_address
+    - field.storage.node.field_location_activity
+    - field.storage.node.field_location_subarea
     - search_api.server.location
 third_party_settings:
   search_api_solr:

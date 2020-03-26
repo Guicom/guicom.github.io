@@ -1,15 +1,35 @@
 uuid: a9c0b2b7-ee36-4802-8636-79dd8df6bfea
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  module:
+    - image_effects
 name: event_hero_illustration
 label: event_hero_illustration
 effects:
-  16926c1a-2377-4a0d-bfc0-85dcf9003e79:
-    uuid: 16926c1a-2377-4a0d-bfc0-85dcf9003e79
-    id: image_scale_and_crop
-    weight: 1
+  f2ce4da0-e83d-4d17-bd5c-e5ddec276e91:
+    uuid: f2ce4da0-e83d-4d17-bd5c-e5ddec276e91
+    id: image_scale
+    weight: 2
     data:
-      width: 570
-      height: 296
-      anchor: center-center
+      width: null
+      height: 276
+      upscale: false
+  09f714ac-1ea7-4b83-94d1-f7d51def2ec3:
+    uuid: 09f714ac-1ea7-4b83-94d1-f7d51def2ec3
+    id: image_effects_set_canvas
+    weight: 3
+    data:
+      canvas_size: exact
+      exact:
+        width: '570'
+        height: '296'
+        placement: center-center
+        x_offset: 0
+        y_offset: 0
+      relative:
+        left: 0
+        right: 0
+        top: 0
+        bottom: 0
+      canvas_color: '#E5EDF5FF'

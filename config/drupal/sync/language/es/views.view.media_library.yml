@@ -1,12 +1,7 @@
 display:
   default:
     display_options:
-      pager:
-        options:
+      filters:
+        status:
           expose:
-            offset_label: Desplazamiento
-      title: Multimedia
-  page:
-    display_options:
-      menu:
-        title: Multimedia
+            label: 'Estado de publicación'

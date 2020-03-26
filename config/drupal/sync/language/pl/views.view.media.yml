@@ -1,18 +1,12 @@
-label: Media
 display:
   default:
     display_options:
-      pager:
-        options:
-          expose:
-            offset_label: Przesunięcie
       fields:
         bundle:
           label: Typ
+        operations:
+          label: Operacje
       filters:
         bundle:
           expose:
             label: Typ
-      title: Media
-  media_page_list:
-    display_title: Media

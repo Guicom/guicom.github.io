@@ -105,6 +105,7 @@ hidden:
   field_news_audience: true
   field_news_mommentum: true
   field_news_theme: true
+  field_news_video: true
   field_product_reference: true
   field_teaser: true
   langcode: true

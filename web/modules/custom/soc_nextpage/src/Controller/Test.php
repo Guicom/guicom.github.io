@@ -3,9 +3,12 @@
 namespace Drupal\soc_nextpage\Controller;
 
 
+use Drupal;
 use Drupal\soc_nextpage\Exception\InvalidTokenException;
 
 class Test {
+
+  use Drupal\Core\StringTranslation\StringTranslationTrait;
 
   /** @var \Drupal\soc_nextpage\Service\NextpageApi $ws */
   public $nextPageApi;
@@ -35,13 +38,15 @@ class Test {
    *
    * @return array
    */
-  public function characteristicsDictionary($langId = 1) {
-    $characteristics = $this->nextPageApi->characteristicsDictionary();
-    kint($characteristics);
-    return [];
+  public function characteristicsDictionary($langId = 2) {
+    $characteristics = $this->nextPageApi->synchroniseCharacteristicsDictionary();
+    return [
+      "#markup" => $this->t('Synchronisation is done'),
+    ];
   }
 
   public function elementsAndLinks() {
+
     $elements = $this->nextPageApi->elementsAndLinks(['P_000517']);
     kint($elements);
     return [];

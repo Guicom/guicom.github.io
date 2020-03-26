@@ -1,0 +1,27 @@
+uuid: 7c8a1810-5724-44f4-9b8c-9dca9f9357ce
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - soc_job
+id: job.field_job_type
+field_name: field_job_type
+entity_type: job
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: pim
+      label: pim
+    -
+      value: location
+      label: location
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
