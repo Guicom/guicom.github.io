@@ -7,7 +7,7 @@
   display: -webkit-flex;
   background: $light-grayish-red;
   @include media-breakpoint-up(sm) {
-    transition: all 500ms;
+    transition: 500ms;
     max-height: 720px;
     overflow-y: hidden;
   }
