@@ -17,8 +17,6 @@ class LocationsImportBatch {
    * @return array
    */
   public static function locationImport(FileInterface $file) {
-    $queue = \Drupal::queue('location_import');
-    $queue->createQueue();
 
     $operations = [];
     $fh = fopen($file->getFileUri(), 'r');
@@ -34,7 +32,7 @@ class LocationsImportBatch {
     }
 
     return [
-      'title' => t('Import Sales Locations Queue Worker'),
+      'title' => t('Import Sales Locations'),
       'operations' => $operations,
       '\Drupal\soc_sales_locations\Batch\LocationsImportBatch::finished',
     ];
@@ -45,8 +43,10 @@ class LocationsImportBatch {
    * @param $context
    */
   public static function processRow($row, &$context) {
-    $queue = \Drupal::queue('location_import');
-    $queue->createItem($row);
+    /** @var \Drupal\soc_sales_locations\Service\SalesLocationsManagerImportService $importer */
+    $importer = \Drupal::service('soc_sales_locations.manager.import');
+    // @notes: don't known argument for 'token', so using test word.
+    $importer->importRow($row, 'test');
   }
 
   /**
@@ -68,6 +68,6 @@ class LocationsImportBatch {
     else {
       $message = t('Finished with an error.');
     }
-    drupal_set_message($message);
+    \Drupal::messenger()->addMessage($message);
   }
 }
