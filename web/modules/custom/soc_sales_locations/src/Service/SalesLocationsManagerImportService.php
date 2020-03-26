@@ -85,5 +85,17 @@ class SalesLocationsManagerImportService implements SalesLocationsManagerImportS
       \Drupal::messenger()->addError($e->getMessage());
     }
   }
+  /**
+   * @inheritDoc
+   */
+  public function updateCurrentJob($job_id){
+    /** @var \Drupal\soc_job\Entity\JobEntity $job */
+    $job = \Drupal::entityTypeManager()->getStorage('job')->load($job_id);
+    $job->get('field_job_status')->setValue('in_progress');
+    $job->get('field_job_heartbeat')->setValue(time());
+    $job->save();
+    return TRUE;
+  }
+
 
 }

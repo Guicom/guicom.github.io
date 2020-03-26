@@ -11,6 +11,7 @@ use Drupal\file\FileInterface;
  */
 class LocationsImportBatch {
 
+
   /**
    * @param \Drupal\file\FileInterface $file
    *
@@ -18,6 +19,16 @@ class LocationsImportBatch {
    */
   public static function locationImport(FileInterface $file) {
 
+    // @todo: create d'un job.
+    // @todo: connaitre le id du job.
+
+    /** @var \Drupal\soc_job\Entity\JobEntity $job */
+    $job = \Drupal::entityTypeManager()->getStorage('job')->create();
+    $job->setName('Untitled job');
+    $job->get('field_job_type')->setValue('location');
+    $job->get('field_job_status')->setValue('started');
+    $job->get('field_job_start_date')->setValue(time());
+    $job->save();
     $operations = [];
     $fh = fopen($file->getFileUri(), 'r');
     $i = 0;
@@ -25,7 +36,7 @@ class LocationsImportBatch {
       if ($i !== 0) {
         $operations[] = [
           '\Drupal\soc_sales_locations\Batch\LocationsImportBatch::processRow',
-          [$row],
+          [$row, $job->id()],
         ];
       }
       $i++;
@@ -40,13 +51,16 @@ class LocationsImportBatch {
 
   /**
    * @param $row
+   * @param $job_id
    * @param $context
    */
-  public static function processRow($row, &$context) {
+  public static function processRow($row, $job_id, &$context) {
     /** @var \Drupal\soc_sales_locations\Service\SalesLocationsManagerImportService $importer */
     $importer = \Drupal::service('soc_sales_locations.manager.import');
     // @notes: don't known argument for 'token', so using test word.
     $importer->importRow($row, 'test');
+    $importer->updateCurrentJob($job_id);
+    $context['message'] = 'Traitement en cours…';
   }
 
   /**

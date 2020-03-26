@@ -29,4 +29,12 @@ interface SalesLocationsManagerImportServiceInterface {
    */
   public function importRow($row, $token);
 
+  /**
+   * @param string $job_id
+   *   Job Id.
+   *
+   * @return bool
+   */
+  public function updateCurrentJob($job_id);
+
 }
