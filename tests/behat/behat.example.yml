@@ -12,7 +12,18 @@ default:
         - Drupal\DrupalExtension\Context\MarkupContext
         - Drupal\DrupalExtension\Context\MessageContext
         - Drupal\DrupalExtension\Context\DrushContext
+  formatters:
+    pretty: true
+    html:
+      output_path: %paths.base%/report/html
   extensions:
+    emuse\BehatHTMLFormatter\BehatHTMLFormatterExtension:
+      name: html
+      renderer: Twig
+      file_name: index
+      print_args: true
+      print_outp: true
+      loop_break: true
     Drupal\MinkExtension:
       goutte: ~
       browser_name: 'chrome'
@@ -26,6 +37,7 @@ default:
               w3c: false
         wd_host:  http://browser:4444/wd/hub
       base_url: http://web
+      files_path: '../tests/behat/dummy/'
     Drupal\DrupalExtension:
       api_driver: "drupal"
       drupal:

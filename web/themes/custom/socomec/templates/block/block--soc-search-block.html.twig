@@ -52,12 +52,25 @@
 {#        {{ content }}#}
         <div class="col-12 col-lg-6 wrapper-bottom-search top10">
           {{ drupal_entity('block', 'top5searches') }}
+          <div class="search-suggestions search-default-suggestions" style="display: none;">
+            <div class="header-search-suggestions header-search-default-suggestions"><span class="label-search-suggestions">{{ content.suggestion }}</span> <a class="see-all-search-suggestions" href="#search">{{ 'See all'|t }}</a></div>
+            <div class="result-search-suggestions result-search-default-suggestion">
+              <ul class="clearfix nav">
+              </ul>
+            </div>
+          </div>
         </div>
         <div class="col-12 col-lg-3 wrapper-bottom-search quick">
           {{ drupal_entity('block', 'quicklinks') }}
+          <div class="search-suggestions search-categorized-suggestions" style="display: none;">
+            <div class="header-search-suggestions header-search-categorized-suggestions"><span class="label-search-suggestions">{{ content.categorized }}</span></div>
+            <div class="result-search-suggestions result-search-categorized-suggestions">
+              <ul class="clearfix nav">
+              </ul>
+            </div>
+          </div>
         </div>
-
-
+        <div class="col-12 search-suggestions-no-result" style="display: none;">{{ 'No results'|t }}</div>
       </div>
     </div>
   {% endblock %}

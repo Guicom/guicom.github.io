@@ -133,3 +133,8 @@ $settings['trusted_host_patterns'] = array(
  */
 $settings['file_public_base_url'] = 'http://127.0.0.1:8080/sites/default/files';
 $settings['file_private_path'] = $app_ground . '/data/files/private';
+
+/**
+ * Modules excluded from config export.
+ */
+$settings['config_exclude_modules'] = ['soc_content'];

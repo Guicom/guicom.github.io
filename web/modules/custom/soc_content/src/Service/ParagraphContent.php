@@ -4,8 +4,6 @@
 namespace Drupal\soc_content\Service;
 
 
-use Drupal\Core\Entity\EntityStorageException;
-use Drupal\paragraphs\Entity\Paragraph;
 use Drupal\soc_content\Service\Manager\ContentManager;
 
 class ParagraphContent extends ContentManager {
@@ -29,15 +27,7 @@ class ParagraphContent extends ContentManager {
    */
   public function createParagraph(string $type, array $data = []) {
     $data['type'] = $type;
-    $newParagraph = Paragraph::create($data);
-    $newParagraph->enforceIsNew();
-    try {
-      $newParagraph->save();
-      return $newParagraph;
-    } catch (EntityStorageException $e) {
-      $this->logger->error($e->getMessage());
-    }
-    return FALSE;
+    return $this->createEntity('Drupal\paragraphs\Entity\Paragraph', $data);
   }
 
 }

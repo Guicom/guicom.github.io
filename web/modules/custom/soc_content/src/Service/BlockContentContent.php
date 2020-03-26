@@ -4,7 +4,6 @@
 namespace Drupal\soc_content\Service;
 
 
-use Drupal\block_content\Entity\BlockContent;
 use Drupal\Core\Entity\EntityStorageException;
 use Drupal\soc_content\Service\Manager\ContentManager;
 
@@ -47,14 +46,7 @@ class BlockContentContent extends ContentManager {
       if (!isset($data['langcode'])) {
         $data['langcode'] = 'en';
       }
-      $newBlockContent = BlockContent::create($data);
-      $newBlockContent->enforceIsNew();
-      try {
-        $newBlockContent->save();
-        return $newBlockContent;
-      } catch (EntityStorageException $e) {
-        $this->logger->error($e->getMessage());
-      }
+      return $this->createEntity('Drupal\block_content\Entity\BlockContent', $data);
     }
     return FALSE;
   }
