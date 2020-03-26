@@ -255,10 +255,10 @@
           }
         });
 
+        var height = $(".eu-cookie-compliance-content").height();
+        $("body").css('padding-bottom',height+'px');
       });
 
-      var height = $(".eu-cookie-compliance-content").height();
-      $("body").css('padding-bottom',height+'px');
     },
 
     openCategories: function () {
