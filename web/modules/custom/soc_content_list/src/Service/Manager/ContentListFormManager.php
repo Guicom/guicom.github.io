@@ -13,12 +13,6 @@ class ContentListFormManager {
 
   /**
    * ContentListFormManager constructor.
-   *
-   * @param \Drupal\soc_content_list\Model\ContentList $content_list
-   * @param string $cookie_name
-   * @param \Drupal\Core\Config\Config $settings
-   * @param string $bundle
-   * @param string $referenced_field
    */
   public function __construct() {
   }
@@ -44,6 +38,10 @@ class ContentListFormManager {
     return $response;
   }
 
+  /**
+   * @param array $form
+   * @param string $confirmRemoveClass
+   */
   public function attached(array &$form, string $confirmRemoveClass) {
     $form['#attached']['library'][] = 'soc_content_list/list-actions';
 

@@ -33,16 +33,18 @@
         dom: '<"row" <"custom-datatable-header-left col-sm-12 col-md-6"f><"custom-datatable-header-right col-sm-12 col-md-6"l>>tip',
         columnDefs: [
           { targets: 'no-sort', orderable: false }
-        ]
+        ],
+        fnDrawCallback: function(oSettings) {
+          var totalPages = this.api().page.info().pages;
+          if(totalPages < 2){
+            jQuery('.dataTables_paginate').hide();
+          }
+          else {
+            jQuery('.dataTables_paginate').show();
+          }
+        }
       });
       $(".navbar-soc-my-list-top").show();
-      var nbPage = 0;
-      $(".soc_my_list_form_wrapper .dataTables_wrapper .pagination > li").each(function( index ) {
-        nbPage = nbPage + 1;
-      });
-      if (nbPage < 4) {
-        $(".soc_my_list_form_wrapper .dataTables_wrapper .pagination").hide();
-      }
     }
   };
 

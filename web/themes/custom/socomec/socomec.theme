@@ -566,20 +566,23 @@ function socomec_preprocess_breadcrumb(&$variables) {
     }
   }
   else{
-    // Bookmark page.
-    if ($route_name === "soc_bookmarks.edit_bookmark") {
+    // Bookmark page or Wishlist page.
+    if ($route_name === "soc_bookmarks.edit_bookmark" || $route_name === "soc_wishlist.edit_wishlist") {
       $variables['breadcrumb'][1] = array(
-        'text' => \Drupal::config('soc_bookmarks.settings')->get('bookmark_page_title') ?? t('My documents')
+        'text' => t('My space')
       );
+      if ($route_name === "soc_bookmarks.edit_bookmark") {
+        $variables['breadcrumb'][2] = array(
+          'text' => \Drupal::config('soc_bookmarks.settings')->get('bookmark_page_title') ?? t('My documents')
+        );
+      }
+      elseif ( $route_name === "soc_wishlist.edit_wishlist") {
+        $language = \Drupal::languageManager()->getCurrentLanguage();
+        $variables['breadcrumb'][2] = array(
+          'text' => \Drupal::config('soc_wishlist.settings')->get('page_title_' . $language->getId()) ?? t('My wishlist')
+        );
+      }
     }
-    // Wishlist page.
-    if ($route_name === "soc_wishlist.edit_wishlist") {
-      $language = \Drupal::languageManager()->getCurrentLanguage();
-      $variables['breadcrumb'][1] = array(
-        'text' => \Drupal::config('soc_wishlist.settings')->get('page_title_' . $language->getId()) ?? t('My wishlist')
-      );
-    }
-
     // Resource center view.
     if ($route_name === "view.resource_center.page_1") {
       $block = \Drupal\block\Entity\Block::load('resourcecenterhero');
