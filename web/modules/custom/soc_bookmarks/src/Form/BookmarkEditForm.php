@@ -322,7 +322,6 @@ class BookmarkEditForm extends FormBase {
    * @return array|\Drupal\Core\StringTranslation\TranslatableMarkup|mixed|null
    */
   public static function getTitle() {
-    $language = \Drupal::languageManager()->getCurrentLanguage();
     return \Drupal::config('soc_bookmarks.settings')->get('bookmark_page_title')
       ?? t('My documents');
   }
