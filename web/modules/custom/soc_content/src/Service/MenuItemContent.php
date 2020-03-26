@@ -5,7 +5,6 @@ namespace Drupal\soc_content\Service;
 
 
 use Drupal\Core\Entity\EntityStorageException;
-use Drupal\menu_link_content\Entity\MenuLinkContent;
 use Drupal\soc_content\Service\Manager\ContentManager;
 
 class MenuItemContent extends ContentManager {
@@ -46,13 +45,7 @@ class MenuItemContent extends ContentManager {
       $data['title'] = $title;
       $data['menu_name'] = $menu_name;
       $data['link'] = $link;
-      $newMenuLink = MenuLinkContent::create($data);
-      try {
-        $newMenuLink->save();
-        return $newMenuLink;
-      } catch (EntityStorageException $e) {
-        $this->logger->error($e->getMessage());
-      }
+      return $this->createEntity('Drupal\menu_link_content\Entity\MenuLinkContent', $data);
     }
     return FALSE;
   }
