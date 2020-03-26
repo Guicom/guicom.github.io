@@ -11,8 +11,8 @@ class ContentListManager {
   /** @var \Drupal\soc_content_list\Model\ContentList $contentList */
   protected $contentList;
 
-  /** @var $cookie_name */
-  protected $cookie_name;
+  /** @var $cookieName */
+  protected $cookieName;
 
   /** @var $settings */
   protected $settings;
@@ -45,7 +45,7 @@ class ContentListManager {
                               Config $settings, string $bundle, string $referenced_field,
                               string $cookieIdField, string $itemActionRoute, string $lastDeletedSessionName) {
     $this->contentList = $content_list;
-    $this->cookie_name = $cookie_name;
+    $this->cookieName = $cookie_name;
     $this->settings = $settings;
     $this->bundle = $bundle;
     $this->referencedField = $referenced_field;
@@ -167,7 +167,7 @@ class ContentListManager {
    * @return mixed
    */
   public function getCookieName() {
-    return $this->cookie_name;
+    return $this->cookieName;
   }
 
   /**
