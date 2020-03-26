@@ -2,7 +2,7 @@
 
 namespace Drupal\soc_wishlist\Controller;
 
-use Drupal\Core\Controller\ControllerBase;
+use Drupal\soc_content_list\Controller\ContentListController;
 use Drupal\Core\Messenger\MessengerInterface;
 use Drupal\soc_wishlist\Service\Manager\WishlistManager;
 use Symfony\Component\DependencyInjection\ContainerInterface;
@@ -10,8 +10,7 @@ use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Response;
 use Drupal\Core\Url;
 
-
-class WishlistController extends ControllerBase {
+class WishlistController extends ContentListController {
 
   /** @var \Drupal\soc_wishlist\Service\Manager\WishlistManager $wishlistManager */
   private $wishlistManager;
@@ -32,6 +31,8 @@ class WishlistController extends ControllerBase {
   public function __construct(WishlistManager $wishlistManager, MessengerInterface $messenger) {
     $this->wishlistManager = $wishlistManager;
     $this->messenger = $messenger;
+    parent::__construct($wishlistManager, $messenger);
+
   }
 
   /**
@@ -43,71 +44,6 @@ class WishlistController extends ControllerBase {
       $container->get('messenger')
     );
   }
-
-  /**
-   * @param string $extid
-   *
-   * @return array
-   */
-  public function addItemAction(string $extid) {
-    try {
-      $this->wishlistManager->loadSavedItems();
-    } catch (\Exception $e) {}
-    if ($this->wishlistManager->add($extid)) {
-      try {
-        $this->wishlistManager->updateCookie();
-      } catch (\Exception $e) {
-        $this->messenger->addError($e->getMessage());
-      }
-    }
-    return [];
-  }
-
-  /**
-   * @param string $extid
-   *
-   * @return array
-   */
-  public function removeItemAction(string $extid) {
-    try {
-      $this->wishlistManager->loadSavedItems();
-    } catch (\Exception $e) {}
-    if ($this->wishlistManager->remove($extid)) {
-      try {
-        $this->wishlistManager->updateCookie();
-      } catch (\Exception $e) {
-        $this->messenger->addError($e->getMessage());
-      }
-    }
-    return [];
-  }
-
-  /**
-   * @param string $extid
-   *
-   * @return bool|\Symfony\Component\HttpFoundation\Response
-   */
-  public function undoRemoveItemAction() {
-    $lastDeleted = (isset($_SESSION['socomec_wishlist_last_deleted'])) ? $_SESSION['socomec_wishlist_last_deleted'] : '';
-    if (!empty($lastDeleted)) {
-      try {
-        $this->wishlistManager->loadSavedItems();
-      } catch (\Exception $e) {}
-      try {
-        foreach ($lastDeleted as $item) {
-          $this->wishlistManager->add($item);
-        }
-        $this->wishlistManager->updateCookie();
-      } catch (\Exception $e) {
-        $this->messenger->addError($e->getMessage());
-      }
-    }
-    $redirect_url = Url::fromRoute('soc_wishlist.edit_wishlist');
-    $response = new RedirectResponse($redirect_url->toString(), 302);
-    $response->expire();
-    return $response;
-  }
-
 
   /**
    * Export datas

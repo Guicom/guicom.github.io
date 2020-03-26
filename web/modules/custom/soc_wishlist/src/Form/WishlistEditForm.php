@@ -112,6 +112,7 @@ class WishlistEditForm extends FormBase {
         'event' => 'change',
         'progress' => ['type' => 'none'],
       ],
+      '#attributes' => ['class' => ['soc-list-action-item-wrapper']]
     ];
 
     $exportList = (isset($_SESSION['socomec_wishlist_export'])) ? $_SESSION['socomec_wishlist_export'] : '';
@@ -178,7 +179,7 @@ class WishlistEditForm extends FormBase {
             'event' => 'change',
             'progress' => ['type' => 'none'],
           ],
-          '#attributes' => ['class' => ['wishlist-action-item']]
+          '#attributes' => ['class' => ['wishlist-action-item', 'soc-list-action-item', 'soc-list-action-item-wrapper']]
         ];
         $i++;
       }
@@ -231,12 +232,12 @@ class WishlistEditForm extends FormBase {
       }
     }
 
-    $form['#attached']['library'][] = 'soc_wishlist/wishlist-actions';
+    $form['#attached']['library'][] = 'soc_content_list/list-actions';
 
     // Confirm before deleting
     $form['#attached']['library'][] = 'core/drupal.ajax';
     $form['#attached']['library'][] = 'core/drupal.dialog.ajax';
-    $form['#attached']['library'][] = 'soc_wishlist/ajax-confirm';
+    $form['#attached']['library'][] = 'soc_content_list/ajax-confirm';
     $form['#attached']['drupalSettings']['ajaxConfirm'][$confirmRemoveClass] = [
       'title' => $this->t('Confirm element removal'),
       'text' => $this->t('Are you sure that you want to remove this element?'),
@@ -246,8 +247,8 @@ class WishlistEditForm extends FormBase {
       ]
     ];
 
-    $form['#attached']['library'][] = 'soc_wishlist/wishlist-datatable';
-    $form['#attached']['drupalSettings']['wishlistDatatable'] = [
+    $form['#attached']['library'][] = 'soc_content_list/list-datatable';
+    $form['#attached']['drupalSettings']['socListDatatable'] = [
       'searchPlaceholder' => $this->t('Search, filter...'),
     ];
 
@@ -374,7 +375,7 @@ class WishlistEditForm extends FormBase {
       ];
 
       $messages = \Drupal::service('renderer')->render($message);
-      $response->addCommand(new PrependCommand('#wishlist_form_message', $messages));
+      $response->addCommand(new PrependCommand('.soc-my-list-form-message', $messages));
     }
 
     return $response;

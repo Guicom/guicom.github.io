@@ -1,6 +1,6 @@
 name: Socomec Bookmarks
 type: module
-description: Wishlist of product references.
+description: Bookmark of resource downloadable.
 core: 8.x
 package: Socomec
 dependencies:

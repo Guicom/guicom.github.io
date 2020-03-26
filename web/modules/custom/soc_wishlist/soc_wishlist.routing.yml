@@ -9,7 +9,7 @@ soc_wishlist.edit_wishlist:
     no_cache: TRUE
 
 soc_wishlist.add_item:
-  path: '/wishlist/add/{extid}'
+  path: '/wishlist/add/{item_id}'
   defaults:
     _controller: '\Drupal\soc_wishlist\Controller\WishlistController::addItemAction'
   requirements:
@@ -18,7 +18,7 @@ soc_wishlist.add_item:
     no_cache: TRUE
 
 soc_wishlist.remove_item:
-  path: '/wishlist/remove/{extid}'
+  path: '/wishlist/remove/{item_id}'
   defaults:
     _controller: '\Drupal\soc_wishlist\Controller\WishlistController::removeItemAction'
   requirements:

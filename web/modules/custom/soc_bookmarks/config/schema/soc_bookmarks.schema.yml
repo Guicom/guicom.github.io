@@ -1,0 +1,14 @@
+# Schema for the configuration files of the Resource center page list.
+
+soc_bookmarks.settings:
+  type: config_object
+  label: 'Bookmarks Settings'
+  mapping:
+    bookmark_page_title:
+      label: 'Page title'
+      type: label
+      translatable: true
+    bookmark_no_result:
+      label: 'Message without result'
+      type: text
+      translatable: true

@@ -26,6 +26,12 @@ class ContentListManager {
   /** @var $cookieIdField */
   protected $cookieIdField;
 
+  /** @var $ItemActionRoute */
+  protected $itemActionRoute;
+
+  /** @var $lastDeletedSessionName */
+  protected $lastDeletedSessionName;
+
   /**
    * WishlistManager constructor.
    *
@@ -37,13 +43,15 @@ class ContentListManager {
    */
   public function __construct(ContentList $content_list, string $cookie_name,
                               Config $settings, string $bundle, string $referenced_field,
-                              string $cookieIdField) {
+                              string $cookieIdField, string $itemActionRoute, string $lastDeletedSessionName) {
     $this->contentList = $content_list;
     $this->cookie_name = $cookie_name;
     $this->settings = $settings;
     $this->bundle = $bundle;
     $this->referencedField = $referenced_field;
     $this->cookieIdField = $cookieIdField;
+    $this->itemActionRoute = $itemActionRoute;
+    $this->lastDeletedSessionName = $lastDeletedSessionName;
   }
 
   /**
@@ -53,12 +61,13 @@ class ContentListManager {
    *
    * @return bool
    */
-  public function add($extid):bool {
+  public function add($itemId):bool {
     $items = $this->contentList->getItems();
-    if (!is_array($items) || !array_key_exists($extid, $items)) {
-      $items[$extid] = [
-        $this->getCookieIdField() => $extid,
+    if (!is_array($items) || !array_key_exists($itemId, $items)) {
+      $items[$itemId] = [
+        $this->getCookieIdField() => $itemId,
         'quantity' => 1,
+        'timestamp' => time(),
       ];
       $this->contentList->setItems($items);
       return TRUE;
@@ -73,10 +82,10 @@ class ContentListManager {
    *
    * @return bool
    */
-  public function remove($extid):bool {
+  public function remove($itemId):bool {
     $items = $this->contentList->getItems();
-    if (array_key_exists($extid, $items)) {
-      unset($items[$extid]);
+    if (array_key_exists($itemId, $items)) {
+      unset($items[$itemId]);
       $this->contentList->setItems($items);
       return TRUE;
     }
@@ -86,16 +95,16 @@ class ContentListManager {
   /**
    * Update quantity of an item.
    *
-   * @param $extid
+   * @param $itemId
    * @param $quantity
    *
    * @return bool
    */
-  public function setQuantity($extid, $quantity):bool {
+  public function setQuantity($itemId, $quantity):bool {
     if (is_numeric($quantity) === TRUE) {
       $items = $this->contentList->getItems();
-      if (array_key_exists($extid, $items)) {
-        $items[$extid]['quantity'] = $quantity;
+      if (array_key_exists($itemId, $items)) {
+        $items[$itemId]['quantity'] = $quantity;
         $this->contentList->setItems($items);
         return TRUE;
       }
@@ -181,5 +190,20 @@ class ContentListManager {
   public function getCookieIdField() {
     return $this->cookieIdField;
   }
+
+  /**
+   * @return mixed
+   */
+  public function getItemActionRoute() {
+    return $this->itemActionRoute;
+  }
+
+  /**
+   * @return mixed
+   */
+  public function getlastDeletedSessionName() {
+    return $this->lastDeletedSessionName;
+  }
+
 
 }

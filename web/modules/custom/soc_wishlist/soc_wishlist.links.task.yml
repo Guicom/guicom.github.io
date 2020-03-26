@@ -1,0 +1,13 @@
+soc_wishlist.settings_tab:
+  route_name: soc_wishlist.settings_form
+  title: Bookmark settings
+  base_route: soc_wishlist.settings_form
+soc_wishlist.wishlist_wishlist:
+  route_name: soc_wishlist.edit_wishlist
+  title: 'My bill of material'
+  base_route: soc_content_list
+  options:
+    attributes:
+      class:
+        - 'my-wishlist-nav-link-item'
+  weight: 20

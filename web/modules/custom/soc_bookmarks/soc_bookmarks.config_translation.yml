@@ -1,0 +1,5 @@
+soc_bookmarks.settings:
+  title: 'Bookmarks Settings'
+  base_route_name: soc_bookmarks.settings
+  names:
+    - soc_bookmarks.settings

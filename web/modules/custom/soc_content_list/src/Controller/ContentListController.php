@@ -12,12 +12,12 @@ use Symfony\Component\HttpFoundation\Response;
 use Drupal\Core\Url;
 use Drupal\Core\Ajax\AjaxResponse;
 use Drupal\Core\Ajax\RedirectCommand;
-
+use Drupal\soc_content_list\Service\Helper\ContentListHelper;
 
 class ContentListController extends ControllerBase {
 
-  /** @var \Drupal\soc_content_list\Service\Manager\ContentListManager $wishlistManager */
-  private $wishlistManager;
+  /** @var \Drupal\soc_content_list\Service\Manager\ContentListManager $contentListManager */
+  protected $contentListManager;
 
   /**
    * The Messenger service.
@@ -48,17 +48,17 @@ class ContentListController extends ControllerBase {
   }
 
   /**
-   * @param string $extid
+   * @param string $itemId
    *
    * @return array
    */
-  public function addItemAction(string $extid) {
+  public function addItemAction(string $item_id) {
     try {
-      $this->wishlistManager->loadSavedItems();
+      $this->contentListManager->loadSavedItems();
     } catch (\Exception $e) {}
-    if ($this->wishlistManager->add($extid)) {
+    if ($this->contentListManager->add($item_id)) {
       try {
-        $this->wishlistManager->updateCookie();
+        $this->contentListManager->updateCookie();
       } catch (\Exception $e) {
         $this->messenger->addError($e->getMessage());
       }
@@ -71,13 +71,13 @@ class ContentListController extends ControllerBase {
    *
    * @return array
    */
-  public function removeItemAction(string $extid) {
+  public function removeItemAction(string $item_id) {
     try {
-      $this->wishlistManager->loadSavedItems();
+      $this->contentListManager->loadSavedItems();
     } catch (\Exception $e) {}
-    if ($this->wishlistManager->remove($extid)) {
+    if ($this->contentListManager->remove($item_id)) {
       try {
-        $this->wishlistManager->updateCookie();
+        $this->contentListManager->updateCookie();
       } catch (\Exception $e) {
         $this->messenger->addError($e->getMessage());
       }
@@ -91,33 +91,45 @@ class ContentListController extends ControllerBase {
    * @return bool|\Symfony\Component\HttpFoundation\Response
    */
   public function undoRemoveItemAction() {
-    $lastDeleted = (isset($_SESSION['socomec_wishlist_last_deleted'])) ? $_SESSION['socomec_wishlist_last_deleted'] : '';
+    try {
+      if (ContentListHelper::sessionNameExit($this->contentListManager->getlastDeletedSessionName())) {
+        $lastDeleted = (isset($_SESSION[$this->contentListManager->getlastDeletedSessionName()])) ? $_SESSION[$this->contentListManager->getlastDeletedSessionName()] : '';
+      }
+    } catch (\Exception $e) {
+      $this->messenger->addError($e->getMessage());
+    }
+
     if (!empty($lastDeleted)) {
       try {
-        $this->wishlistManager->loadSavedItems();
+        $this->contentListManager->loadSavedItems();
       } catch (\Exception $e) {}
       try {
         foreach ($lastDeleted as $item) {
-          $this->wishlistManager->add($item);
+          $this->contentListManager->add($item);
         }
-        $this->wishlistManager->updateCookie();
+        $this->contentListManager->updateCookie();
       } catch (\Exception $e) {
         $this->messenger->addError($e->getMessage());
       }
     }
-    $redirect_url = Url::fromRoute('soc_content_list.edit_wishlist');
-    $response = new RedirectResponse($redirect_url->toString(), 302);
-    $response->expire();
-    return $response;
+
+    try {
+      if (ContentListHelper::routeExist($this->contentListManager->getItemActionRoute())) {
+        $redirect_url = Url::fromRoute($this->contentListManager->getItemActionRoute());
+        $response = new RedirectResponse($redirect_url->toString(), 302);
+        $response->expire();
+        return $response;
+      }
+    } catch (\Exception $e) {
+      $this->messenger->addError($e->getMessage());
+    }
+    return [];
   }
 
-
   /**
-   * Export datas
+   * @param string $type
    *
-   * @param string $extid
-   *
-   * @return bool|\Symfony\Component\HttpFoundation\Response
+   * @return \Symfony\Component\HttpFoundation\Response
    */
   public function export(string $type) {
     $response = new Response();

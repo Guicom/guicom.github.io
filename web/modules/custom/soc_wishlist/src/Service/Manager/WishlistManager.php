@@ -18,10 +18,12 @@ class WishlistManager extends ContentListManager {
     $contentList = new Wishlist();
     $cookieName = 'socomec_wishlist';
     $settings = $configFactory->getEditable('soc_wishlist.settings');
-    $bundle = 'reference';
+    $bundle = 'product_reference';
     $referencedField = 'field_reference_extid';
     $cookieIdField = 'extid';
-    parent::__construct($contentList, $cookieName, $settings, $bundle, $referencedField, $cookieIdField);
+    $ItemActionRoute = 'soc_wishlist.edit_wishlist';
+    $LastDeletedSessionName = 'socomec_wishlist_last_deleted';
+    parent::__construct($contentList, $cookieName, $settings, $bundle, $referencedField, $cookieIdField, $ItemActionRoute, $LastDeletedSessionName);
   }
 
 }
