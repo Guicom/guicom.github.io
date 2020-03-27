@@ -150,7 +150,11 @@ function soc_premium_content_node_insert(EntityInterface $node) {
     case 'landing_page':
       /** @var \Drupal\soc_premium_content\Service\SocPremiumContentNode $service */
       $service = \Drupal::service('soc_premium_content.soc_premium_content_node');
-      $service->autoCreateResourceFromPremiumContent($node);
+      try {
+        $service->autoCreateResourceFromPremiumContent($node);
+      } catch (\Exception $e) {
+        \Drupal::logger('soc_premium_content')->error($e->getMessage());
+      }
       break;
   }
 }
@@ -159,11 +163,5 @@ function soc_premium_content_node_insert(EntityInterface $node) {
  * Implements hook_ENTITY_TYPE_update() for node entities.
  */
 function soc_premium_content_node_update(EntityInterface $node) {
-  switch ($node->bundle()) {
-    case 'landing_page':
-      /** @var \Drupal\soc_premium_content\Service\SocPremiumContentNode $service */
-      $service = \Drupal::service('soc_premium_content.soc_premium_content_node');
-      $service->autoCreateResourceFromPremiumContent($node);
-      break;
-  }
+  soc_premium_content_node_insert($node);
 }

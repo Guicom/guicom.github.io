@@ -112,7 +112,16 @@ class ProductManager {
    *
    * @return mixed
    */
-  public function updateProduct($node, $product) {
+  public function saveProduct($node, $product) {
+    $this->updateProduct($node, $product);
+    return $node;
+  }
+
+  /**
+   * @param $node
+   * @param $product
+   */
+  public function updateProduct(&$node, $product) {
     $node->set('field_product_teaser', $product->Values->DC_P_PRODUCT_SHORT_DESCRIPTION->Value . ' - ' . $product->Values->DC_P_ASSORTMENT_WIDTH->Value);
     $node->set('title', $product->Values->DC_P_PRODUCT_NAME->Value);
     $node->set('field_json_product_data', $this->nextpageItemHandler->formatJsonField($product->Values));
