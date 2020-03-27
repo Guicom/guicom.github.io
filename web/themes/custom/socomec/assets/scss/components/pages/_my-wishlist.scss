@@ -8,21 +8,6 @@
         padding-left:0px;
       }
     }
-    .alert-wrapper {
-      position: initial;
-      .show{
-        opacity: 1;
-      }
-      .close{
-        top: 50%;
-        margin-top: -15px;
-        right: 5px;
-        &:hover,
-        &:focus{
-          background: none;
-        }
-      }
-    }
     .soc-wishlist-wishlist-edit-form,
     .soc-bookmarks-bookmark-edit-form{
       margin:40px 0px 0px 0px;
