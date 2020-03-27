@@ -197,7 +197,7 @@ class BookmarkEditForm extends FormBase {
       $this->contentListFormManager->attached($form, 'confirm-remove');
     }
     else {
-      $form['no_result'] = [
+      $form['wrapper_bookmark']['no_result'] = [
         '#markup' => \Drupal::config('soc_bookmarks.settings')->get('bookmark_no_result') ?? t('No result')
       ];
     }
