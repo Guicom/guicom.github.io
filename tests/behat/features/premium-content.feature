@@ -6,7 +6,7 @@ Feature: Premium Content
   @api @cit @javascript @premium_content @premium_content_landing_page
   Scenario: Pardot form
     Given landing_page content:
-      | language | title         | status | moderation_state | field_premium_content_type |
+      | language | title           | status | moderation_state | field_premium_content_type |
       | English  | My Landing Page | 1      | published        | White paper                |
     And I am logged in as a user with the "webmaster" role
     And I go to "admin/content"
@@ -31,11 +31,11 @@ Feature: Premium Content
     And I fill in "86922_82650pi_86922_82650" with "Actency"
     And I select "France" from "86922_82652pi_86922_82652"
     And I fill in "86922_82656pi_86922_82656" with "guillaume.essoltani@actency.fr"
-#    And I click the ".submit input" element
+      #And I click the ".submit input" element
     And I switch to the main windows
 
-  @api @cit @javascript @premium_content @premium_content_thank_you_page
-  Scenario: Thank you page
+  #@api @cit @javascript @premium_content @premium_content_thank_you_page
+  #Scenario: Thank you page
     #Given thank_you_page content:
     #  | language | title            | status |
     #  | English  | My landing page  | 1      |
