@@ -223,6 +223,9 @@ class BookmarkEditForm extends FormBase {
    * @return \Drupal\Core\Ajax\AjaxResponse
    */
   public function updateSession(array &$form, FormStateInterface $form_state) {
+    if (empty($this->contentListFormManager)) {
+      $this->contentListFormManager = \Drupal::service('soc_content_list.content_list_form_manager');
+    }
     return $this->contentListFormManager->updateSession($form, $form_state, 'bookmark_action_', 'socomec_bookmark_download');
   }
 
@@ -241,6 +244,9 @@ class BookmarkEditForm extends FormBase {
    * @return \Drupal\Core\Ajax\AjaxResponse
    */
   public function removeItems(array &$form, FormStateInterface $form_state) {
+    if (empty($this->contentListFormManager)) {
+      $this->contentListFormManager = \Drupal::service('soc_content_list.content_list_form_manager');
+    }
     $emptyMessage = \Drupal::config('soc_bookmarks.settings')->get('bookmark_no_result') ?? t('No results.');
     return $this->contentListFormManager->removeItems(
       $form,
