@@ -4,13 +4,11 @@ namespace Drupal\soc_bookmarks\Form;
 
 use Drupal\Core\Form\ConfigFormBase;
 use Drupal\Core\Form\FormStateInterface;
-use Drupal\Core\Language\LanguageManagerInterface;
-use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
- * Class WishlistSettingsForm
+ * Class BookmarkSettingsForm
  *
- * @package Drupal\soc_wishlist\Form
+ * @package Drupal\soc_bookmarks\Form
  */
 class BookmarkSettingsForm extends ConfigFormBase {
 
@@ -47,7 +45,8 @@ class BookmarkSettingsForm extends ConfigFormBase {
     ];
 
     $form['bookmark_no_result'] = [
-      '#type'           => 'textarea',
+      '#type' => 'text_format',
+      '#format' => 'socomec',
       '#title'          => $this->t('Message without result'),
       '#description'    => $this->t('The message when bookmark is empty.'),
       '#default_value'  => $config->get('bookmark_no_result')
@@ -75,10 +74,19 @@ class BookmarkSettingsForm extends ConfigFormBase {
    */
   public function submitForm(array &$form, FormStateInterface $form_state) {
     $values = $form_state->getValues();
+    $config = $this->configFactory->getEditable(self::WS_SETTINGS_KEY);
     foreach ($values as $configKey => $value) {
-      $this->configFactory->getEditable(self::WS_SETTINGS_KEY)
-        ->set($configKey, $value)
-        ->save();
+      if ($configKey === 'bookmark_no_result') {
+        $config->set($configKey, $value['value']);
+      }
+      else {
+        $config->set($configKey, $value);
+      }
+    }
+    try {
+    $config->save();
+    } catch (\Exception $e) {
+      \Drupal::logger('soc_bookmarks')->error($e->getMessage());
     }
 
     parent::submitForm($form, $form_state);
