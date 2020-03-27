@@ -29,6 +29,9 @@
         .soc_my_list_form_wrapper {
           div.dataTables_wrapper {
             .custom-datatable-header-left{
+              label {
+                width: 100%;
+              }
               input.form-control{
                 color: $dark-grey;
                 font-family: $font-roboto;
@@ -42,6 +45,10 @@
                 background-color: #F2F3F3;
                 box-shadow: inset 0 1px 5px 0 rgba(0,0,0,0.2);
                 border-radius: unset;
+                @include media-breakpoint-down(lg) {
+                  width: 100%;
+                  margin: 0;
+                }
               }
             }
 

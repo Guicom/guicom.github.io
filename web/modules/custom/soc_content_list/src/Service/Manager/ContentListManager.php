@@ -209,5 +209,11 @@ class ContentListManager {
     return $this->lastDeletedSessionName;
   }
 
+  /**
+   * @return int
+   */
+  public function getItemsCount() {
+    return sizeof($this->contentList->getItems());
+  }
 
 }
