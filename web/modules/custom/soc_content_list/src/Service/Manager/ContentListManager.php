@@ -142,7 +142,9 @@ class ContentListManager {
           ];
         }
       }
-      return $preparedItems;
+      if (!empty($preparedItems)) {
+        return $preparedItems;
+      }
     }
     return [];
   }

@@ -31,8 +31,8 @@
     {% endwith %}
   </div>
   <div id="bookmark_form_wrapper" class="soc_my_list_form_wrapper">
-    {% if form.no_result %}
-      <div class="no-result text-center"> {{ form.no_result }}</div>
+    {% if form.wrapper_bookmark.no_result %}
+      <div class="no-result text-center"> {{ form.wrapper_bookmark.no_result }}</div>
     {% else  %}
       <table class="full-width">
         <thead>
@@ -62,10 +62,10 @@
       </table>
     {% endif %}
   </div>
-  {{ form | without('title', 'actions', 'wrapper_bookmark', 'select_all', 'no_result') }}
-</div>
-<div id="navbar-bookmark-bottom" class="navbar-soc-my-list-bottom">
-  {% with {'key': 1} %}
-    {{ block('navbar_bookmark') }}
-  {% endwith %}
+  {{ form | without('title', 'actions', 'wrapper_bookmark', 'select_all') }}
+  <div id="navbar-bookmark-bottom" class="navbar-soc-my-list-bottom">
+    {% with {'key': 1} %}
+      {{ block('navbar_bookmark') }}
+    {% endwith %}
+  </div>
 </div>
