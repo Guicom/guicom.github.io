@@ -108,13 +108,19 @@ class JobEntityRevisionDeleteForm extends ConfirmFormBase {
   public function submitForm(array &$form, FormStateInterface $form_state) {
     $this->JobEntityStorage->deleteRevision($this->revision->getRevisionId());
 
-    $this->logger('content')->notice('Job: deleted %title revision %revision.', ['%title' => $this->revision->label(), '%revision' => $this->revision->getRevisionId()]);
-    $this->messenger()->addMessage(t('Revision from %revision-date of Job %title has been deleted.', ['%revision-date' => format_date($this->revision->getRevisionCreationTime()), '%title' => $this->revision->label()]));
+    $this->logger('content')->notice('Job: deleted %title revision %revision.',
+      ['%title' => $this->revision->label(), '%revision' => $this->revision->getRevisionId()]);
+    $this->messenger()->addMessage(t('Revision from %revision-date of Job %title has been deleted.',
+      [
+        '%revision-date' => format_date($this->revision->getRevisionCreationTime()),
+        '%title' => $this->revision->label()
+      ]));
     $form_state->setRedirect(
       'entity.job.canonical',
        ['job' => $this->revision->id()]
     );
-    if ($this->connection->query('SELECT COUNT(DISTINCT vid) FROM {job_field_revision} WHERE id = :id', [':id' => $this->revision->id()])->fetchField() > 1) {
+    $query = 'SELECT COUNT(DISTINCT vid) FROM {job_field_revision} WHERE id = :id';
+    if ($this->connection->query($query, [':id' => $this->revision->id()])->fetchField() > 1) {
       $form_state->setRedirect(
         'entity.job.version_history',
          ['job' => $this->revision->id()]

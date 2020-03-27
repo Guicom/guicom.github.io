@@ -67,7 +67,7 @@ class ProductManager {
    *
    * @return mixed
    */
-  function updateProduct($node, $product) {
+  public function updateProduct($node, $product) {
     $this->saveProduct($node, $product);
     return $node;
   }
@@ -76,7 +76,7 @@ class ProductManager {
    * @param $node
    * @param $product
    */
-  function saveProduct(&$node, $product) {
+  public function saveProduct(&$node, $product) {
     $node->set('title', $product->Values->DC_P_PRODUCT_SHORT_DESCRIPTION->Value . ' - ' . $product->Values->DC_P_ASSORTMENT_WIDTH->Value);
     $node->set('field_main_picture_url', $product->Values->DC_P_PRODUCT_MAIN_PICTURE->Value);
     $node->set('field_main_picture_title', $product->Values->DC_P_PRODUCT_MAIN_PICTURE_TITLE->Value);
