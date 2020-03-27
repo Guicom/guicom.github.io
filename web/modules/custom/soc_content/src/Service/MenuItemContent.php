@@ -45,6 +45,9 @@ class MenuItemContent extends ContentManager {
       $data['title'] = $title;
       $data['menu_name'] = $menu_name;
       $data['link'] = $link;
+      if (!empty($data['link']['weight'])) {
+        $data['weight'] = $data['link']['weight'];
+      }
       return $this->createEntity('Drupal\menu_link_content\Entity\MenuLinkContent', $data);
     }
     return FALSE;
