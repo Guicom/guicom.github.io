@@ -80,7 +80,7 @@ class ContentListFormManager {
    */
   public function removeItems(array &$form, FormStateInterface $form_state,
                               string $name, string $session, string $selector,
-                              Url $listUrl, Url $cancelUrl,
+                              string $emptyMessage, Url $cancelUrl,
                               ContentListManager $contentListManager) {
     $response = new AjaxResponse();
     $input = $form_state->getUserInput();
@@ -114,7 +114,6 @@ class ContentListFormManager {
 
       // if the list is empty now, remove the table.
       if ($contentListManager->getItemsCount() <= 0) {
-        $emptyMessage = \Drupal::config('soc_bookmarks.settings')->get('bookmark_no_result') ?? 'No results.';
         $response->addCommand(new BeforeCommand('#bookmark_form_content_wrapper', $emptyMessage));
         $response->addCommand(new RemoveCommand('#bookmark_form_content_wrapper'));
       }

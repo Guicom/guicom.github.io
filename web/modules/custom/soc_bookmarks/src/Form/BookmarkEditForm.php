@@ -241,13 +241,14 @@ class BookmarkEditForm extends FormBase {
    * @return \Drupal\Core\Ajax\AjaxResponse
    */
   public function removeItems(array &$form, FormStateInterface $form_state) {
+    $emptyMessage = \Drupal::config('soc_bookmarks.settings')->get('bookmark_no_result') ?? t('No results.');
     return $this->contentListFormManager->removeItems(
       $form,
       $form_state,
       'bookmark_action_',
       'socomec_bookmark_last_deleted',
       '.soc-my-list-form-message',
-      Url::fromRoute('soc_bookmarks.edit_bookmark'),
+      $emptyMessage,
       Url::fromRoute('soc_bookmarks.undo_remove_item'),
       \Drupal::service('soc_bookmarks.bookmark_manager')
       );

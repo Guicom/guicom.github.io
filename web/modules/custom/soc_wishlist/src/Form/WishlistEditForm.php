@@ -265,11 +265,14 @@ class WishlistEditForm extends FormBase {
    * @return \Drupal\Core\Ajax\AjaxResponse
    */
   public function removeItems(array &$form, FormStateInterface $form_state) {
+    $emptyMessage = t('No results.');
     return $this->contentListFormManager->removeItems(
-      $form, $form_state,
+      $form,
+      $form_state,
       'wishlist_action_',
-      'socomec_wishlist_last_deleted','.soc-my-list-form-message',
-      Url::fromRoute('soc_wishlist.edit_wishlist'),
+      'socomec_wishlist_last_deleted',
+      '.soc-my-list-form-message',
+      $emptyMessage,
       Url::fromRoute('soc_wishlist.undo_remove_item'),
       \Drupal::service('soc_wishlist.wishlist_manager')
     );
