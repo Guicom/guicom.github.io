@@ -36,9 +36,11 @@ class JobEntityForm extends ContentEntityForm {
    * @param \Drupal\Core\Session\AccountProxyInterface $account
    *   The current user account.
    */
-  public function __construct(EntityRepositoryInterface $entity_repository, EntityTypeBundleInfoInterface $entity_type_bundle_info = NULL, TimeInterface $time = NULL, AccountProxyInterface $account) {
+  public function __construct(AccountProxyInterface $account,
+                              EntityRepositoryInterface $entity_repository,
+                              EntityTypeBundleInfoInterface $entity_type_bundle_info = NULL,
+                              TimeInterface $time = NULL) {
     parent::__construct($entity_repository, $entity_type_bundle_info, $time);
-
     $this->account = $account;
   }
 
@@ -48,10 +50,10 @@ class JobEntityForm extends ContentEntityForm {
   public static function create(ContainerInterface $container) {
     // Instantiates this form class.
     return new static(
+      $container->get('current_user'),
       $container->get('entity.repository'),
       $container->get('entity_type.bundle.info'),
-      $container->get('datetime.time'),
-      $container->get('current_user')
+      $container->get('datetime.time')
     );
   }
 
