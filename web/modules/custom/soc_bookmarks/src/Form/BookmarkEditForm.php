@@ -247,6 +247,7 @@ class BookmarkEditForm extends FormBase {
       'bookmark_action_',
       'socomec_bookmark_last_deleted',
       '.soc-my-list-form-message',
+      Url::fromRoute('soc_bookmarks.edit_bookmark'),
       Url::fromRoute('soc_bookmarks.undo_remove_item'),
       \Drupal::service('soc_bookmarks.bookmark_manager')
       );

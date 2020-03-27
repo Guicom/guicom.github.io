@@ -2,6 +2,7 @@
 
 namespace Drupal\soc_content_list\Service\Manager;
 
+use Drupal\Core\Ajax\BeforeCommand;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Ajax\AjaxResponse;
 use Drupal\Core\Ajax\RemoveCommand;
@@ -69,9 +70,18 @@ class ContentListFormManager {
    * @param array $form
    * @param \Drupal\Core\Form\FormStateInterface $form_state
    *
+   * @param string $name
+   * @param string $session
+   * @param string $selector
+   * @param \Drupal\Core\Url $cancelUrl
+   * @param \Drupal\soc_content_list\Service\Manager\ContentListManager $contentListManager
+   *
    * @return \Drupal\Core\Ajax\AjaxResponse
    */
-  public function removeItems(array &$form, FormStateInterface $form_state, string $name, string $session, string $selector, Url $urlRedirect, ContentListManager $contentListManager) {
+  public function removeItems(array &$form, FormStateInterface $form_state,
+                              string $name, string $session, string $selector,
+                              Url $listUrl, Url $cancelUrl,
+                              ContentListManager $contentListManager) {
     $response = new AjaxResponse();
     $input = $form_state->getUserInput();
     $items = self::customSelectedItems($input, $name);
@@ -91,7 +101,7 @@ class ContentListFormManager {
       }
       $count = sizeof($items);
 
-      $link = Link::fromTextAndUrl(t('Cancel deletion(s)'), $urlRedirect)->toString();
+      $link = Link::fromTextAndUrl(t('Cancel deletion(s)'), $cancelUrl)->toString();
       \Drupal::messenger()->addMessage(t("@count item(s) deleted. @link", ["@count" => $count , "@link" => $link ]), 'status', TRUE);
 
       $message = [
@@ -101,6 +111,13 @@ class ContentListFormManager {
 
       $messages = \Drupal::service('renderer')->render($message);
       $response->addCommand(new PrependCommand($selector, $messages));
+
+      // if the list is empty now, remove the table.
+      if ($contentListManager->getItemsCount() <= 0) {
+        $emptyMessage = \Drupal::config('soc_bookmarks.settings')->get('bookmark_no_result') ?? 'No results.';
+        $response->addCommand(new BeforeCommand('#bookmark_form_content_wrapper', $emptyMessage));
+        $response->addCommand(new RemoveCommand('#bookmark_form_content_wrapper'));
+      }
     }
 
     return $response;

@@ -18,6 +18,9 @@ class WishlistEditForm extends FormBase {
   /** @var \Drupal\soc_wishlist\Service\Manager\WishlistManager $wishlistManager */
   private $wishlistManager;
 
+  /** @var \Drupal\soc_content_list\Service\Manager\ContentListFormManager $contentListFormManager */
+  private $contentListFormManager;
+
   /**
    * The Messenger service.
    *
@@ -35,7 +38,7 @@ class WishlistEditForm extends FormBase {
   /**
    * WishlistController constructor.
    *
-   * @param \Drupal\soc_bookmarks\Service\Manager\BookmarkManager $bookmarkManager
+   * @param \Drupal\soc_wishlist\Service\Manager\WishlistManager $wishlistManager
    * @param \Drupal\Core\Messenger\MessengerInterface $messenger
    * @param \Drupal\soc_core\Service\MediaApi $mediaApi
    * @param \Drupal\soc_content_list\Service\Manager\ContentListFormManager $contentListFormManager
@@ -262,8 +265,11 @@ class WishlistEditForm extends FormBase {
    * @return \Drupal\Core\Ajax\AjaxResponse
    */
   public function removeItems(array &$form, FormStateInterface $form_state) {
-    return $this->contentListFormManager->removeItems($form, $form_state,
-      'wishlist_action_','socomec_wishlist_last_deleted','.soc-my-list-form-message',
+    return $this->contentListFormManager->removeItems(
+      $form, $form_state,
+      'wishlist_action_',
+      'socomec_wishlist_last_deleted','.soc-my-list-form-message',
+      Url::fromRoute('soc_wishlist.edit_wishlist'),
       Url::fromRoute('soc_wishlist.undo_remove_item'),
       \Drupal::service('soc_wishlist.wishlist_manager')
     );
@@ -273,7 +279,7 @@ class WishlistEditForm extends FormBase {
    * @param array $form
    * @param \Drupal\Core\Form\FormStateInterface $form_state
    *
-   * @return array
+   * @return \Drupal\Core\Ajax\AjaxResponse
    */
   public function updateQuantity(array &$form, FormStateInterface $form_state) {
     $input = $form_state->getUserInput();
