@@ -123,7 +123,7 @@ class BaseApi {
             elseif (isset($params['body']) && is_string($params['body'])) {
               $body = $params['body'];
             }
-            curl_setopt($handle,CURLOPT_RETURNTRANSFER,true);
+            curl_setopt($handle,CURLOPT_RETURNTRANSFER, true);
           }
           else {
             curl_setopt($handle, CURLOPT_POSTFIELDS, $params);

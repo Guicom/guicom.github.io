@@ -52,7 +52,7 @@ class NextpageItemHandler  {
    */
   public function formatJsonField($values) {
     $dico = Drupal::service('soc_nextpage.nextpage_api');
-    $d = $dico->characteristicsDictionary();
+    $d = $dico->characteristicsDictionary('1');
     $json = [];
     foreach ($values as $key => $value) {
       if (isset($d[$key])) {
@@ -115,7 +115,7 @@ class NextpageItemHandler  {
   }
 
   public function getJsonField($field) {
-    $dico = $this->nextpageApi->characteristicsDictionary();
+    $dico = $this->nextpageApi->characteristicsDictionary('1');
     $dico_carac = $dico[$field->DicoCaracExtID];
     switch ($dico_carac->TypeCode) {
       case 'CHOIX':

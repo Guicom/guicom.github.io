@@ -35,6 +35,8 @@ class FamilyManager {
       }
       $this->updateFamilyTerm($term, $pendingFamily);
       return $term;
+    } else {
+       $this->getParents($pendingFamily);
     }
   }
 
@@ -49,7 +51,7 @@ class FamilyManager {
     }
   }
 
-  public function getParents($pendingFamily, $relationships) {
+  public function getParents($pendingFamily) {
     $linkNode = "##LinkNodeFPR";
     if (isset($pendingFamily->Values->{$linkNode}->LinkedElements[0]->ElementID)) {
       $productId = $pendingFamily->Values->{$linkNode}->LinkedElements[0]->ElementID;
@@ -181,7 +183,7 @@ class FamilyManager {
    */
   public function formatJsonField($values) {
     $dico = Drupal::service('soc_nextpage.nextpage_api');
-    $d = $dico->characteristicsDictionary();
+    $d = $dico->characteristicsDictionary('1');
     $json = [];
     foreach ($values as $key => $value) {
       if (isset($d[$key])) {

@@ -59,7 +59,7 @@ class ProductManager {
     }
     else {
       // First, create references.
-      $this->referencesNids =  $this->refrenceManager->handle($pendingProduct->ExtID);
+      $this->referencesNids = $this->refrenceManager->handle($pendingProduct->ExtID);
       if ($entity = $this->nextpageItemHandler->loadByExtID($pendingProduct->ExtID, 'node', 'produit')) {
         // Update product.
         $entity = $this->updateProduct($entity, $pendingProduct);
@@ -136,7 +136,8 @@ class ProductManager {
     $results = $this->nextpageItemHandler->getRelation($product->ID);
     if (isset($results[0])) {
       $ancestors = \Drupal::service('entity_type.manager')->getStorage("taxonomy_term")->loadAllParents($results[0]->family_parent_id);
-      foreach ($ancestors as $index => $term) {
+      $index = 0;
+      foreach ($ancestors as $term) {
         if ($index == 0) {
           $node->set('field_product_family', $term->id());
         }
@@ -145,6 +146,7 @@ class ProductManager {
             'target_id' => $term->id(),
           ]);
         }
+        $index++;
       }
     }
 
