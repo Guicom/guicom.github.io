@@ -12,9 +12,7 @@ use PhpOffice\PhpSpreadsheet\IOFactory;
 
 class WishlistExport {
 
-  /**
-   * filename constant.
-   */
+  /** filename constant. */
   const WISHLIST_FILENAME = 'wishlist';
 
   /** @var $wishlistManager */

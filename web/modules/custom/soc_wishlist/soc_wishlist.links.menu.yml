@@ -1,6 +1,6 @@
 # Admin / config menu links
 soc_wishlist.settings_form:
-  title: Wishlist
+  title: Wishlist settings
   route_name: soc_wishlist.settings_form
   parent: soc_core.config
   description: Configure wishlist settings.

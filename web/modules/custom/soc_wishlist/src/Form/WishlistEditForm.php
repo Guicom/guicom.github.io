@@ -2,27 +2,24 @@
 
 namespace Drupal\soc_wishlist\Form;
 
-use Drupal\Core\Ajax\AjaxResponse;
-use Drupal\Core\Ajax\InvokeCommand;
-use Drupal\Core\Ajax\ReplaceCommand;
-use Drupal\Core\Ajax\RemoveCommand;
-use Drupal\Core\Ajax\PrependCommand;
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Messenger\MessengerInterface;
-use Drupal\Core\Render\Element\StatusMessages;
 use Drupal\node\Entity\Node;
+use Drupal\soc_content_list\Service\Manager\ContentListFormManager;
 use Drupal\soc_core\Service\MediaApi;
 use Drupal\soc_wishlist\Service\Manager\WishlistManager;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Drupal\Core\Url;
-use Drupal\Core\Link;
-
+use Drupal\Core\Ajax\AjaxResponse;
 
 class WishlistEditForm extends FormBase {
 
   /** @var \Drupal\soc_wishlist\Service\Manager\WishlistManager $wishlistManager */
   private $wishlistManager;
+
+  /** @var \Drupal\soc_content_list\Service\Manager\ContentListFormManager $contentListFormManager */
+  private $contentListFormManager;
 
   /**
    * The Messenger service.
@@ -44,13 +41,16 @@ class WishlistEditForm extends FormBase {
    * @param \Drupal\soc_wishlist\Service\Manager\WishlistManager $wishlistManager
    * @param \Drupal\Core\Messenger\MessengerInterface $messenger
    * @param \Drupal\soc_core\Service\MediaApi $mediaApi
+   * @param \Drupal\soc_content_list\Service\Manager\ContentListFormManager $contentListFormManager
    */
   public function __construct(WishlistManager $wishlistManager,
                               MessengerInterface $messenger,
-                              MediaApi $mediaApi) {
+                              MediaApi $mediaApi,
+                              ContentListFormManager $contentListFormManager) {
     $this->wishlistManager = $wishlistManager;
     $this->messenger = $messenger;
     $this->mediaApi = $mediaApi;
+    $this->contentListFormManager = $contentListFormManager;
   }
 
   /**
@@ -60,7 +60,8 @@ class WishlistEditForm extends FormBase {
     return new static(
       $container->get('soc_wishlist.wishlist_manager'),
       $container->get('messenger'),
-      $container->get('soc_core.media_api')
+      $container->get('soc_core.media_api'),
+      $container->get('soc_content_list.content_list_form_manager')
     );
   }
 
@@ -96,11 +97,8 @@ class WishlistEditForm extends FormBase {
     }
     $items = $this->wishlistManager->loadSavedItems();
 
-
-    // Form wrapper for AJAX
-    $form['wrapper_wishlist'] = [
-      '#type' => 'container',
-    ];
+    // Form wrapper_wishlist for AJAX
+    $form['wrapper_wishlist'] = ['#type' => 'container',];
 
     $form['select_all'] = [
       '#title' => 'Select all',
@@ -112,6 +110,7 @@ class WishlistEditForm extends FormBase {
         'event' => 'change',
         'progress' => ['type' => 'none'],
       ],
+      '#attributes' => ['class' => ['soc-list-action-item-wrapper']]
     ];
 
     $exportList = (isset($_SESSION['socomec_wishlist_export'])) ? $_SESSION['socomec_wishlist_export'] : '';
@@ -178,15 +177,13 @@ class WishlistEditForm extends FormBase {
             'event' => 'change',
             'progress' => ['type' => 'none'],
           ],
-          '#attributes' => ['class' => ['wishlist-action-item']]
+          '#attributes' => ['class' => ['wishlist-action-item', 'soc-list-action-item', 'soc-list-action-item-wrapper']]
         ];
         $i++;
       }
     }
 
-    $form['wrapper_wishlist']['nb'] = [
-      '#value' => $i
-    ];
+    $form['wrapper_wishlist']['nb'] = ['#value' => $i];
 
     $confirmRemoveClass = 'confirm-remove';
     for ($i = 0; $i < 2; ++$i) {
@@ -231,25 +228,10 @@ class WishlistEditForm extends FormBase {
       }
     }
 
-    $form['#attached']['library'][] = 'soc_wishlist/wishlist-actions';
-
-    // Confirm before deleting
-    $form['#attached']['library'][] = 'core/drupal.ajax';
-    $form['#attached']['library'][] = 'core/drupal.dialog.ajax';
-    $form['#attached']['library'][] = 'soc_wishlist/ajax-confirm';
-    $form['#attached']['drupalSettings']['ajaxConfirm'][$confirmRemoveClass] = [
-      'title' => $this->t('Confirm element removal'),
-      'text' => $this->t('Are you sure that you want to remove this element?'),
-      'buttons' => [
-        'button_confirm' => ['text' => $this->t('Yes')],
-        'button_reject' => ['text' => $this->t('No')],
-      ]
-    ];
-
-    $form['#attached']['library'][] = 'soc_wishlist/wishlist-datatable';
-    $form['#attached']['drupalSettings']['wishlistDatatable'] = [
-      'searchPlaceholder' => $this->t('Search, filter...'),
-    ];
+    if (empty($this->contentListFormManager)) {
+      $this->contentListFormManager = \Drupal::service('soc_content_list.content_list_form_manager');
+    }
+    $this->contentListFormManager->attached($form, $confirmRemoveClass);
 
     return $form;
   }
@@ -264,28 +246,7 @@ class WishlistEditForm extends FormBase {
    *
    * @return array
    */
-  public function submitForm(array &$form, FormStateInterface $form_state) {
-  }
-
-  /**
-   * @param $input
-   *
-   * @return array
-   */
-  public static function customSelectedItems($input) {
-    $selectItems = [];
-    if (!empty($input) && is_array($input)) {
-      foreach ($input as $keyItem => $item) {
-        if (substr($keyItem, 0, 16) === "wishlist_action_") {
-          $keys = array_keys($item);
-          if (!empty($item[$keys[0]])) {
-            $selectItems[$item[$keys[0]]] = $item[$keys[0]];
-          }
-        }
-      }
-    }
-    return $selectItems;
-  }
+  public function submitForm(array &$form, FormStateInterface $form_state) {}
 
   /**
    * @param array $form
@@ -294,21 +255,40 @@ class WishlistEditForm extends FormBase {
    * @return \Drupal\Core\Ajax\AjaxResponse
    */
   public function updateSession(array &$form, FormStateInterface $form_state) {
-    $response = new AjaxResponse();
-
-    $input = $form_state->getUserInput();
-    $items = self::customSelectedItems($input);
-    $_SESSION['socomec_wishlist_export'] = [];
-    if (sizeof($items)) {
-      $_SESSION['socomec_wishlist_export'] = $items;
+    if (empty($this->contentListFormManager)) {
+      $this->contentListFormManager = \Drupal::service('soc_content_list.content_list_form_manager');
     }
-
-    return $response;
+    return $this->contentListFormManager->updateSession($form, $form_state, 'wishlist_action_', 'socomec_wishlist_export');
   }
 
   /**
    * @param array $form
    * @param \Drupal\Core\Form\FormStateInterface $form_state
+   *
+   * @return \Drupal\Core\Ajax\AjaxResponse
+   */
+  public function removeItems(array &$form, FormStateInterface $form_state) {
+    $emptyMessage = t('No results.');
+    if (empty($this->contentListFormManager)) {
+      $this->contentListFormManager = \Drupal::service('soc_content_list.content_list_form_manager');
+    }
+    return $this->contentListFormManager->removeItems(
+      $form,
+      $form_state,
+      'wishlist_action_',
+      'socomec_wishlist_last_deleted',
+      '.soc-my-list-form-message',
+      $emptyMessage,
+      Url::fromRoute('soc_wishlist.undo_remove_item'),
+      \Drupal::service('soc_wishlist.wishlist_manager')
+    );
+  }
+
+  /**
+   * @param array $form
+   * @param \Drupal\Core\Form\FormStateInterface $form_state
+   *
+   * @return \Drupal\Core\Ajax\AjaxResponse
    */
   public function updateQuantity(array &$form, FormStateInterface $form_state) {
     $input = $form_state->getUserInput();
@@ -323,70 +303,31 @@ class WishlistEditForm extends FormBase {
     }
 
     if (!empty($selectItems)) {
-      $wishlistManager = \Drupal::service('soc_wishlist.wishlist_manager');
-      $wishlistManager->loadSavedItems();
+      if (empty($this->wishlistManager)) {
+        $this->wishlistManager = \Drupal::service('soc_wishlist.wishlist_manager');
+      }
+      $this->wishlistManager->loadSavedItems();
       foreach ($selectItems as $extId => $quantity) {
-        $wishlistManager->setQuantity($extId, $quantity);
+        $this->wishlistManager->setQuantity($extId, $quantity);
       }
       try {
-        $wishlistManager->updateCookie();
+        $this->wishlistManager->updateCookie();
       } catch (\Exception $e) {
-        //$this->messenger->addError($e->getMessage());
+        \Drupal::messenger()->addError($e->getMessage());
       }
     }
-  }
-
-  /**
-   * @param array $form
-   * @param \Drupal\Core\Form\FormStateInterface $form_state
-   *
-   * @return \Drupal\Core\Ajax\AjaxResponse
-   */
-  public function removeItems(array &$form, FormStateInterface $form_state) {
     $response = new AjaxResponse();
-    $input = $form_state->getUserInput();
-    $items = self::customSelectedItems($input);
-    if (sizeof($items)) {
-      /** @var \Drupal\soc_wishlist\Service\Manager\WishlistManager $wishlistManager */
-      $wishlistManager = \Drupal::service('soc_wishlist.wishlist_manager');
-      $wishlistManager->loadSavedItems();
-      $_SESSION['socomec_wishlist_last_deleted'] = [];
-      foreach ($items as $deletedItem) {
-        $removedLine = '#item_line_'.$deletedItem;
-        $wishlistManager->remove($deletedItem);
-        try {
-          $wishlistManager->updateCookie();
-          $response->addCommand(new RemoveCommand($removedLine));
-          $_SESSION['socomec_wishlist_last_deleted'][$deletedItem] = $deletedItem;
-        } catch (\Exception $e) {
-          //$this->messenger->addError($e->getMessage());
-        }
-      }
-      $count = sizeof($items);
-
-      $url = Url::fromRoute('soc_wishlist.undo_remove_item');
-      $link = Link::fromTextAndUrl(t('Cancel deletion(s)'), $url)->toString();
-      \Drupal::messenger()->addMessage($this->t("@count item(s) deleted. @link", ["@count" => $count , "@link" => $link ]), 'status', TRUE);
-
-      $message = [
-        '#theme' => 'status_messages',
-        '#message_list' => drupal_get_messages(),
-      ];
-
-      $messages = \Drupal::service('renderer')->render($message);
-      $response->addCommand(new PrependCommand('#wishlist_form_message', $messages));
-    }
-
     return $response;
   }
+
+
 
   /**
    * @return array|\Drupal\Core\StringTranslation\TranslatableMarkup|mixed|null
    */
   public static function getTitle() {
     $language = \Drupal::languageManager()->getCurrentLanguage();
-    return \Drupal::config('soc_wishlist.settings')->get('page_title_' . $language->getId())
-      ?? t('My wishlist');
+    return \Drupal::config('soc_wishlist.settings')->get('page_title_' . $language->getId()) ?? t('My wishlist');
   }
 
 }

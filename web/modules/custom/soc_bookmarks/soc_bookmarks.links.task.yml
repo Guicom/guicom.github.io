@@ -1,0 +1,13 @@
+soc_bookmarks.settings_tab:
+  route_name: soc_bookmarks.settings
+  title: Bookmark settings
+  base_route: soc_bookmarks.settings
+soc_bookmarks.bookmark_bookmark:
+  route_name: soc_bookmarks.edit_bookmark
+  title: 'My documents'
+  base_route: soc_content_list
+  options:
+    attributes:
+      class:
+        - 'my-bookmark-nav-link-item'
+  weight: 30

@@ -4,5 +4,4 @@ description: Wishlist of product references.
 core: 8.x
 package: Socomec
 dependencies:
-  - soc_core
-  - soc_nextpage
+  - soc_content_list

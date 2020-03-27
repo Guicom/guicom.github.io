@@ -1,0 +1,7 @@
+# Admin / config menu links
+soc_bookmarks.settings:
+  title: Bookmark settings
+  route_name: soc_bookmarks.settings
+  parent: soc_core.config
+  description: Configure bookmark settings.
+  weight: 0

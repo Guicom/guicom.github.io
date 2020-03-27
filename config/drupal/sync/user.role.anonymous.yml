@@ -13,6 +13,7 @@ permissions:
   - 'access content'
   - 'access site-wide contact form'
   - 'display eu cookie compliance popup'
+  - 'edit own bookmark'
   - 'edit own wishlist'
   - 'search content'
   - 'use search_api_autocomplete for global_search'
