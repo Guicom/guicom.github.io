@@ -1,6 +1,7 @@
 .region-footer-third {
   position: relative;
   background: $blue;
+  overflow-x: hidden; // temporary fix
   &:before {
     content: '';
     position: absolute;

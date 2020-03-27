@@ -128,6 +128,7 @@ class BaseApi {
           else {
             curl_setopt($handle, CURLOPT_POSTFIELDS, $params);
           }
+          break;
         default:
           break;
       }

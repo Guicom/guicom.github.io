@@ -61,7 +61,7 @@ Feature: Search
     # landing_page genre une Resource
     And landing_page content:
       | Language | title                                                   | field_premium_content_type | moderation_state | status |
-      | English  | TestingSearchTitle TestingSearchTitlelandingPage Title  | Whitepaper                 | published        | 1      |
+      | English  | TestingSearchTitle TestingSearchTitlelandingPage Title  | White paper                | published        | 1      |
     # news
     And news content:
       | Language | title                                           | field_news_type  | field_news_theme | field_teaser                                       | moderation_state | status |
@@ -105,7 +105,7 @@ Feature: Search
     Then I should see "TEST Page title with searched text 1 results for TestingSearchTitlelandingPage"
     Then I should see "TYPE" in the ".block-facet-blockcontent-type .facet-title" element
     Then I should see "Resource" in the ".block-facet-blockcontent-type" element
-    Then I should see "Whitepaper" in the ".field--name-field-res-resource-type" element
+    Then I should see "White paper" in the ".field--name-field-res-resource-type" element
     Then I should see "EN" in the ".field--name-extra-field-language-resource" element
     Then I should not see "Landing page - Premium" in the ".block-facet-blockcontent-type" element
     Then I should see "TYPE OF RESOURCE" in the ".block-facet-blocktype-of-resource .facet-title" element

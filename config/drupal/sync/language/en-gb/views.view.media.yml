@@ -4,6 +4,8 @@ display:
       fields:
         bundle:
           label: Type
+        operations:
+          label: Operations
       filters:
         bundle:
           expose:

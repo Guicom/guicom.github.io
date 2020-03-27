@@ -1,12 +1,7 @@
 display:
   default:
     display_options:
-      pager:
-        options:
+      filters:
+        status:
           expose:
-            offset_label: Scostamento
-      title: Media
-  page:
-    display_options:
-      menu:
-        title: Media
+            label: 'Stato di pubblicazione'

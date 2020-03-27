@@ -18,17 +18,19 @@ third_party_settings:
       disable_css: false
       entity_classes: all_classes
       settings:
-        classes: {  }
         wrappers:
           ds_content: div
         outer_wrapper: div
         attributes: ''
         link_attribute: ''
         link_custom: ''
+        classes:
+          layout_class: {  }
+          ds_content: {  }
     regions:
       ds_content:
-        - field_resource_link_youtube
         - langcode
+        - field_resource_link_youtube
         - field_res_resource_type
 id: node.resource_youtube.default
 targetEntityType: node
@@ -42,20 +44,13 @@ content:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
-    region: content
+    region: ds_content
   field_resource_link_youtube:
     weight: 0
     label: hidden
     settings:
-      youtube_size: responsive
-      youtube_width: ''
-      youtube_height: ''
-      youtube_autoplay: false
-      youtube_mute: false
-      youtube_loop: false
-      youtube_controls: false
-      youtube_autohide: false
-      youtube_iv_load_policy: false
+      image_style: thumbnail
+      image_link: content
     third_party_settings:
       ds:
         ft:
@@ -64,10 +59,19 @@ content:
             lb: ''
             lb-col: false
             classes: {  }
-    type: youtube_video
-    region: content
+    type: youtube_thumbnail
+    region: ds_content
+  langcode:
+    type: language
+    weight: 0
+    region: ds_content
+    label: above
+    settings:
+      link_to_entity: false
+      native_language: false
+    third_party_settings: {  }
 hidden:
   addtoany: true
-  langcode: true
+  extra_field_bookmark_resource: true
   links: true
   search_api_excerpt: true

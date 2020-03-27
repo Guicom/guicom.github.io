@@ -7,3 +7,14 @@ soc_sales_locations.export_csv_controller_exportfile:
     _permission: 'access administration pages'
   options:
     _admin_route: TRUE
+
+soc_sales_locations.sales_locations_import_cvs_file_form:
+  path: '/admin/config/socomec/sales_locations/import_csv_file'
+  defaults:
+    _form: '\Drupal\soc_sales_locations\Form\ImportCsvFileForm'
+    _title: 'ImportCsvFileForm'
+  requirements:
+    _permission: 'access administration pages'
+  options:
+    _admin_route: TRUE
+

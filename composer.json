@@ -110,7 +110,8 @@
         "zaporylie/composer-drupal-optimizations": "^1.0"
     },
     "require-dev": {
-        "drupal/devel": "^2.1"
+        "drupal/devel": "^2.1",
+        "roydude/behat-html-formatter": "^0.1.0"
     },
     "conflict": {
         "drupal/drupal": "*"
@@ -197,6 +198,9 @@
             },
             "drupal/ultimate_cron": {
                 "port drush commands to drush 9.x": "https://www.drupal.org/files/issues/2020-03-21/2912724-21.patch"
+            },
+            "drupal/search_api_solr": {
+                "Autocomplete suggestions fail for large requests : TO FOLLOW FOR UPDATED ISSUE !": "https://www.drupal.org/files/issues/2020-01-30/search_api_solr-3109911-8.patch"
             }
         }
     }

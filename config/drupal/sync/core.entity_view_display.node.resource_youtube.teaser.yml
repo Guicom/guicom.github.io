@@ -30,13 +30,24 @@ third_party_settings:
           ds_content: {  }
     regions:
       ds_content:
-        - field_resource_link_youtube
         - field_res_resource_type
+        - extra_field_bookmark_resource
+        - field_resource_link_youtube
 id: node.resource_youtube.teaser
 targetEntityType: node
 bundle: resource_youtube
 mode: teaser
 content:
+  extra_field_bookmark_resource:
+    weight: 2
+    region: ds_content
+    settings: {  }
+    third_party_settings: {  }
+  extra_field_resource_title:
+    weight: 0
+    region: ds_content
+    settings: {  }
+    third_party_settings: {  }
   field_res_resource_type:
     type: entity_reference_label
     weight: 1
@@ -54,11 +65,11 @@ content:
             classes: {  }
   field_resource_link_youtube:
     type: youtube_video
-    weight: 0
+    weight: 3
     region: ds_content
     label: hidden
     settings:
-      youtube_size: responsive
+      youtube_size: custom
       youtube_width: ''
       youtube_height: ''
       youtube_autoplay: false

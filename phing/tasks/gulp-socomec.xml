@@ -1,6 +1,6 @@
 <project name="gulp-socomec" default="gulp-socomec:install">
     <target name="gulp-socomec:install">
-        <exec command="sudo ${npm.bin} install gulp-cli" dir="${website.drupal.dir}" passthru="true"/>
+        <exec command="sudo ${npm.bin} install gulp-cli -g" dir="${website.drupal.dir}" passthru="true"/>
         <exec command="rm -rf node_modules/node-sass" dir="${website.drupal.dir}" passthru="true"/>
         <exec command="sudo ${npm.bin} install --no-bin-link" dir="${website.drupal.dir}" passthru="true"/>
     </target>

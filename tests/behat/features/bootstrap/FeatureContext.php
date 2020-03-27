@@ -1,6 +1,7 @@
 <?php
 
 use Behat\Mink\Driver\Selenium2Driver;
+use Drupal\Component\Utility\UrlHelper;
 use Drupal\Core\Url;
 use Drupal\DrupalExtension\Context\RawDrupalContext;
 use Drupal\node\Entity\Node;
@@ -14,6 +15,50 @@ class FeatureContext extends RawDrupalContext {
    *   Command line output.
    */
   protected $output;
+
+  protected $currentScenario;
+
+  /**
+   * @BeforeScenario
+   *
+   * @param BeforeScenarioScopeAlias $scope
+   *
+   */
+  public function setUpTestEnvironment($scope)
+  {
+    $this->currentScenario = $scope->getScenario();
+  }
+
+  /**
+   * @AfterStep
+   *
+   * @param AfterStepScopeAlias $scope
+   *
+   * @throws \Behat\Mink\Exception\DriverException
+   * @throws \Behat\Mink\Exception\UnsupportedDriverActionException
+   */
+  public function afterStep($scope)
+  {
+    //if test has failed, and is not an api test, get screenshot
+    if(!$scope->getTestResult()->isPassed())
+    {
+      //create filename string
+      $featureFolder = str_replace(' ', '', $scope->getFeature()->getTitle());
+
+      $scenarioName = $this->currentScenario->getTitle();
+      $fileName = str_replace(' ', '', $scenarioName) . '.png';
+
+      //create screenshots directory if it doesn't exist
+      print (__DIR__ . '/../../report/html/assets/screenshots/' . $featureFolder);
+      if (!file_exists(__DIR__ . '/../../report/html/assets/screenshots/' . $featureFolder)) {
+        mkdir(__DIR__ . '/../../report/html/assets/screenshots/' . $featureFolder, 0777, true);
+      }
+
+      $screenshot = $this->getSession()->getDriver()->getScreenshot();
+      file_put_contents(__DIR__ . '/../../report/html/assets/screenshots/' . $featureFolder . '/' . $fileName, $screenshot);
+      print ('Error screenshot : ' . $featureFolder . '/' . $fileName);
+    }
+  }
 
   /**
    * @Given I accept all cookies compliance
@@ -339,6 +384,35 @@ JS;
 
     $dateToSet = date($format, $newDate);
     $this->getSession()->getPage()->fillField($field, $dateToSet);
+  }
+
+  /**
+   * Set dummy JSON data on a reference.
+   *
+   * @Given I set the dummy json data on the reference
+   */
+  public function setReferenceDummyJsonData() {
+
+    // get ID of reference
+    $path = UrlHelper::parse($this->getSession()->getCurrentUrl());
+    $arrayUrl = explode('/', $path['path']);
+    array_pop($arrayUrl); // remove the "edit" at the end
+    $nid = end($arrayUrl);
+
+    $node = Node::load($nid);
+    $jsonData = json_encode([
+      "Name" => "22003016-SIRCO MV 3X160A",
+      "Reference" => "22003016",
+      "WEIGHT" => "0,82",
+      "Nombre de pôle" => "2 P",
+      "Format de boitier" => "Format de boitier A",
+      "Test champs vide" => "",
+    ]);
+    $node->set('field_reference_json_table', $jsonData);
+    try {
+      $node->save();
+    } catch (Exception $e) {
+    }
   }
 
 }
