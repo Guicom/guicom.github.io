@@ -4,14 +4,11 @@ namespace Drupal\soc_content_list\Controller;
 
 use Drupal\Core\Controller\ControllerBase;
 use Drupal\Core\Messenger\MessengerInterface;
-use Drupal\redirect\Entity\Redirect;
 use Drupal\soc_content_list\Service\Manager\ContentListManager;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Response;
 use Drupal\Core\Url;
-use Drupal\Core\Ajax\AjaxResponse;
-use Drupal\Core\Ajax\RedirectCommand;
 use Drupal\soc_content_list\Service\Helper\ContentListHelper;
 
 class ContentListController extends ControllerBase {
@@ -27,7 +24,7 @@ class ContentListController extends ControllerBase {
   protected $messenger;
 
   /**
-   * WishlistController constructor.
+   * ContentListController constructor.
    *
    * @param \Drupal\soc_content_list\Service\Manager\ContentListManager $contentListManager
    * @param \Drupal\Core\Messenger\MessengerInterface $messenger

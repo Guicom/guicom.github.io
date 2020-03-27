@@ -452,7 +452,7 @@
   Drupal.behaviors.socomec_search = {
     attach: function (context, settings) {
       $( document ).ready(function() {
-        $(".menu--header-visitors [href='#search']", context).once('socomecSearchMenu').each(function () {
+        $(".menu--header-visitors [data-drupal-link-system-path='search']", context).once('socomecSearchMenu').each(function () {
           $(this).click(function (e) {
             $(this).toggleClass('close-search icon-search-white');
             $(".block-soc-search-block").toggleClass('d-none');

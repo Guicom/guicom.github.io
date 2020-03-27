@@ -33,13 +33,16 @@ class ContentListManager {
   protected $lastDeletedSessionName;
 
   /**
-   * WishlistManager constructor.
+   * ContentListManager constructor.
    *
    * @param \Drupal\soc_content_list\Model\ContentList $content_list
    * @param string $cookie_name
    * @param \Drupal\Core\Config\Config $settings
    * @param string $bundle
    * @param string $referenced_field
+   * @param string $cookieIdField
+   * @param string $itemActionRoute
+   * @param string $lastDeletedSessionName
    */
   public function __construct(ContentList $content_list, string $cookie_name,
                               Config $settings, string $bundle, string $referenced_field,
@@ -134,7 +137,8 @@ class ContentListManager {
           $preparedItems[$datas[$item->get($this->getReferencedField())->value][$this->getCookieIdField()]] =  [
             'node' => $item,
             $this->getCookieIdField() => $datas[$item->get($this->getReferencedField())->value][$this->getCookieIdField()],
-            'quantity' => $datas[$item->get($this->getReferencedField())->value]['quantity']
+            'quantity' => $datas[$item->get($this->getReferencedField())->value]['quantity'],
+            'timestamp' => $datas[$item->get($this->getReferencedField())->value]['timestamp'] ?? 0
           ];
         }
       }

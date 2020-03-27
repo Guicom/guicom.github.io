@@ -10,7 +10,7 @@ use Drupal\soc_bookmarks\Model\Bookmark;
 class BookmarkManager extends ContentListManager {
 
   /**
-   * WishlistManager constructor.
+   * BookmarkManager constructor.
    *
    * @param \Drupal\Core\Config\ConfigFactoryInterface $configFactory
    */

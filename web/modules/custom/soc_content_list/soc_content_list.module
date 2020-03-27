@@ -1,0 +1,20 @@
+<?php
+
+/**
+ * Implements hook_local_tasks_alter().
+ */
+function soc_content_list_menu_local_tasks_alter(&$data, $route_name) {
+  // Change 'Results' route to display the results 'Table'.
+  if ($route_name === "soc_bookmarks.edit_bookmark" || $route_name === "soc_wishlist.edit_wishlist") {
+    $moduleHandler = \Drupal::service('module_handler');
+    if ($moduleHandler->moduleExists('soc_bookmarks')) {
+      $title = \Drupal::config('soc_bookmarks.settings')->get('bookmark_page_title') ?? t('My documents');
+      $data['tabs'][0]['soc_bookmarks.bookmark_bookmark']['#link']['title'] = $title;
+    }
+    if ($moduleHandler->moduleExists('soc_wishlist')) {
+      $language = \Drupal::languageManager()->getCurrentLanguage();
+      $title = \Drupal::config('soc_wishlist.settings')->get('page_title_' . $language->getId()) ?? t('My wishlist');
+      $data['tabs'][0]['soc_wishlist.wishlist_wishlist']['#link']['title'] = $title;
+    }
+  }
+}
