@@ -44,20 +44,22 @@ class NextpageApi extends NextpageBaseApi implements NextpageApiInterface {
    *
    * @return array|mixed
    */
-  public function descendantsAndLinks(array $extIds, $onlyOneLevel = FALSE, $paths = [], $dcExtIds = []) {
+  public function descendantsAndLinks($onlyOneLevel = FALSE, $paths = [], $dcExtIds = [], $extId = '') {
+    $extId = ($extId == '' ? $this->extIds : $extId);
     $endpoints = $this->getEndpoints();
     $results = [];
+    $auth = $this->getAuthStatus() === 0 ? FALSE : TRUE;
     try {
       $results = $this->call($endpoints['descendantsandlinks'], [
         'body' => json_encode([
-          'ElementsExtIDs' => $extIds,
+          'ElementsExtIDs' => [$extId],
           'Paths' => $paths,
           'ContextID' => $this->getContextId(),
-          'LangID' => $this->getLanguageId(),
+          'LangID' => 2,
           'DCExtIDs' => $dcExtIds,
           'OnlyOneLevel' => $onlyOneLevel,
         ]),
-      ]);
+      ], 'POST', 'json', $auth, 5);
     } catch (\Exception $e) {
       $this->logger->error($e->getMessage());
     }
@@ -100,8 +102,8 @@ class NextpageApi extends NextpageBaseApi implements NextpageApiInterface {
     $results = [];
     $dictionary = [];
     try {
-      $results = $this->call($endpoints['dicocarac'] . '/' . $this->getLanguageId(),
-        NULL, 'GET');
+      $results = $this->call($endpoints['dicocarac'],
+        NULL, 'GET', 'json', FALSE);
       // Build dictionary using extid for easer search.
       foreach ($results->Results->Caracs as $carac) {
         $dictionary[$carac->ExtID] = $carac;

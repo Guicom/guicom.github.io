@@ -1,0 +1,31 @@
+<?php
+
+use Drupal\Core\Database\Database;
+
+function soc_nextpage_update_8001() {
+  $spec = [
+    'description' => 'Relation between int family & product',
+    'fields' => [
+      'family_id' => [
+        'description' => 'Intermediate family ID.',
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+        'default' => '',
+      ],
+      'product_id' => [
+        'description' => 'Product ID.',
+        'type' => 'text',
+        'not null' => TRUE,
+      ],
+      'family_parent_id' => [
+        'description' => 'Parent Family ID.',
+        'type' => 'text',
+        'not null' => TRUE,
+      ],
+    ],
+    'primary key' => ['family_id'],
+  ];
+  $schema = Database::getConnection()->schema();
+  $schema->createTable('soc_nextpage_relations', $spec);
+}

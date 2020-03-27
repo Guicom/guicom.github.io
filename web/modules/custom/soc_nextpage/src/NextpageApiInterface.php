@@ -20,7 +20,7 @@ interface NextpageApiInterface {
 
   public function elementsAndLinks(array $extIds, $paths, $dcExtIds);
 
-  public function descendantsAndLinks(array $extIds, $onlyOneLevel, $paths, $dcExtIds);
+  public function descendantsAndLinks($onlyOneLevel, $paths, $dcExtIds);
 
   public function elementsByCharTemplate($charTemplateExtID, $paths);
 

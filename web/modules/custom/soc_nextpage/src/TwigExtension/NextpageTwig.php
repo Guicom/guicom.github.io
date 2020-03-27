@@ -33,8 +33,17 @@ class NextpageTwig extends \Twig_Extension {
     // ['Main incoming load break', 'Distribution load break','Machine control','Local safety load break']
     $json_value = json_decode($string[0]["#context"]["value"]);
     $data = NULL;
-    if (isset($json_value->Marketing->value->{$extid})) {
-      $data = $json_value->Marketing->value->{$extid}->value;
+    if (isset($json_value->{$extid})) {
+      $data = $json_value->{$extid}->value;
+    }
+    else {
+      foreach ($json_value as $values) {
+        if (isset($values->value)) {
+          if (isset($values->value->{$extid})) {
+            $data = $values->value->{$extid}->value;
+          }
+        }
+      }
     }
     return $data;
   }
