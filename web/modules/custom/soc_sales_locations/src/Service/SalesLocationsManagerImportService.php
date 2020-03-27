@@ -10,6 +10,7 @@ use Drupal\Core\File\FileSystemInterface;
 use Drupal\file\FileInterface;
 use Drupal\node\NodeInterface;
 use Drupal\soc_sales_locations\Helpers\StoreLocationImportHelper;
+use Exception;
 
 /**
  * Class SalesLocationsManagerImportService.
@@ -95,6 +96,11 @@ class SalesLocationsManagerImportService implements SalesLocationsManagerImportS
     $job->get('field_job_heartbeat')->setValue(time());
     $job->save();
     return TRUE;
+  }
+
+
+  public function setRollbackStores($job_id){
+    $job = \Drupal::entityTypeManager()->getStorage('job')->load($job_id);
   }
 
 

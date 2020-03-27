@@ -10,6 +10,7 @@ use Drupal\Core\StringTranslation\StringTranslationTrait;
 use Drupal\node\NodeInterface;
 use Drupal\taxonomy\Entity\Term;
 use Drupal\taxonomy\TermInterface;
+use Exception;
 
 class StoreLocationImportHelper {
 
@@ -76,8 +77,6 @@ class StoreLocationImportHelper {
     $message = $this->t('Import done @date', ['@date' => date('d/m/y h:i:s', time())]);
     $this->node->setRevisionLogMessage($message);
     $this->node->save();
-    $message = $this->t('@title has been saved', ['@title' => $this->node->label()]);
-    \Drupal::messenger()->addMessage($message);
   }
 
   public function importFirstName($firstname) {

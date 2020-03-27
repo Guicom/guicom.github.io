@@ -4,7 +4,10 @@ namespace Drupal\soc_sales_locations\Batch;
 
 use Drupal\Core\Database\Database;
 use Drupal\Core\Database\Transaction;
+use Drupal\Core\StringTranslation\StringTranslationTrait;
 use Drupal\file\FileInterface;
+use Exception;
+use Symfony\Component\HttpFoundation\RedirectResponse;
 
 /**
  * Class LocationsImportBatch.
@@ -45,7 +48,10 @@ class LocationsImportBatch {
     return [
       'title' => t('Import Sales Locations'),
       'operations' => $operations,
-      '\Drupal\soc_sales_locations\Batch\LocationsImportBatch::finished',
+
+      'progress_message' => t('Processed @current out of @total.'),
+      'error_message'    => t('An error occurred during processing'),
+      'finished' => '\Drupal\soc_sales_locations\Batch\LocationsImportBatch::finished',
     ];
   }
 
@@ -55,12 +61,15 @@ class LocationsImportBatch {
    * @param $context
    */
   public static function processRow($row, $job_id, &$context) {
+
     /** @var \Drupal\soc_sales_locations\Service\SalesLocationsManagerImportService $importer */
     $importer = \Drupal::service('soc_sales_locations.manager.import');
     // @notes: don't known argument for 'token', so using test word.
     $importer->importRow($row, 'test');
     $importer->updateCurrentJob($job_id);
-    $context['message'] = 'Traitement en cours…';
+    $context['message'] = 'Traitement en cours…' . $row[1];
+
+    $context['results'][] = $row;
   }
 
   /**
@@ -73,15 +82,26 @@ class LocationsImportBatch {
   public static function finished($success, $results, $operations) {
     // The 'success' parameter means no fatal PHP errors were detected. All
     // other error management should be handled using 'results'.
+
+    // @todo: loaded le job avec $context['results']['job_id'] pour indiquer que le job est terminé.
+    $messenger = \Drupal::messenger();
     if ($success) {
-      $message = \Drupal::translation()->formatPlural(
-        count($results),
-        'One post processed.', '@count posts processed.'
-      );
+      $messenger->addMessage(t('@count store locators processed.', ['@count' => count($results)]));
     }
     else {
-      $message = t('Finished with an error.');
+      // An error occurred.
+      // $operations contains the operations that remained unprocessed.
+      $error_operation = reset($operations);
+      $messenger->addMessage(
+        t('An error occurred while processing @operation with arguments : @args',
+          [
+            '@operation' => $error_operation[0],
+            '@args' => print_r($error_operation[0], TRUE),
+          ]
+        )
+      );
     }
-    \Drupal::messenger()->addMessage($message);
+    //return new RedirectResponse(\Drupal::url('<front>'));
+
   }
 }
