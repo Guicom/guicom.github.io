@@ -181,6 +181,9 @@
           &:active,
           &:focus {
             background: none;
+            border-color: rgba(255, 255, 255, 1);
+            color: rgba(255, 255, 255, 1);
+            @include transition-socomec;
           }
         }
       }
@@ -277,6 +280,9 @@
             &:active,
             &:focus{
               background: none;
+              border-color: rgba(255, 255, 255, 1);
+              color: rgba(255, 255, 255, 1);
+              @include transition-socomec;
             }
             span {
               display: block;
