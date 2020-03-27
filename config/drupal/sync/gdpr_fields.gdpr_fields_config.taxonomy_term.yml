@@ -111,6 +111,17 @@ bundles:
       notes: ''
       relationship: 0
       sars_filename: ''
+    field_family_subtitle:
+      bundle: family
+      name: field_family_subtitle
+      entity_type_id: taxonomy_term
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
   label:
     field_image:
       bundle: label

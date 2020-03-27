@@ -913,6 +913,94 @@ bundles:
       notes: ''
       relationship: 0
       sars_filename: ''
+    field_tc1_label:
+      bundle: product_reference
+      name: field_tc1_label
+      entity_type_id: node
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_tc2_label:
+      bundle: product_reference
+      name: field_tc2_label
+      entity_type_id: node
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_tc3_label:
+      bundle: product_reference
+      name: field_tc3_label
+      entity_type_id: node
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_tc4_label:
+      bundle: product_reference
+      name: field_tc4_label
+      entity_type_id: node
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_tc1_value:
+      bundle: product_reference
+      name: field_tc1_value
+      entity_type_id: node
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_tc2_value:
+      bundle: product_reference
+      name: field_tc2_value
+      entity_type_id: node
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_tc_value:
+      bundle: product_reference
+      name: field_tc_value
+      entity_type_id: node
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_tc4_value:
+      bundle: product_reference
+      name: field_tc4_value
+      entity_type_id: node
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
   article:
     body:
       bundle: article
