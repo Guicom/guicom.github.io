@@ -255,6 +255,9 @@ class WishlistEditForm extends FormBase {
    * @return \Drupal\Core\Ajax\AjaxResponse
    */
   public function updateSession(array &$form, FormStateInterface $form_state) {
+    if (empty($this->contentListFormManager)) {
+      $this->contentListFormManager = \Drupal::service('soc_content_list.content_list_form_manager');
+    }
     return $this->contentListFormManager->updateSession($form, $form_state, 'wishlist_action_', 'socomec_wishlist_export');
   }
 
@@ -266,6 +269,9 @@ class WishlistEditForm extends FormBase {
    */
   public function removeItems(array &$form, FormStateInterface $form_state) {
     $emptyMessage = t('No results.');
+    if (empty($this->contentListFormManager)) {
+      $this->contentListFormManager = \Drupal::service('soc_content_list.content_list_form_manager');
+    }
     return $this->contentListFormManager->removeItems(
       $form,
       $form_state,
