@@ -34,7 +34,7 @@ class MultisiteHandler {
         $host = str_replace(['^', '\\', '$'], [], reset($trusted_host_patterns));
         $fileSystem->appendToFile($sitesFile, PHP_EOL . '$sites["' . $host . '"] = "default";');
       }
-      require $app_root . '/sites/sites.php';
+      require_once $app_root . '/sites/sites.php';
       if (!array_key_exists($siteDomain, $sites)) {
         // Add site to $sites variable.
         $fileSystem->appendToFile($app_root . '/sites/sites.php', PHP_EOL . '$sites["' . $siteDomain . '"] = "' . $siteMachineName . '";');

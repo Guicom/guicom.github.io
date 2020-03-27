@@ -255,10 +255,10 @@
           }
         });
 
+        var height = $(".eu-cookie-compliance-content").height();
+        $("body").css('padding-bottom',height+'px');
       });
 
-      var height = $(".eu-cookie-compliance-content").height();
-      $("body").css('padding-bottom',height+'px');
     },
 
     openCategories: function () {
@@ -452,22 +452,32 @@
   Drupal.behaviors.socomec_search = {
     attach: function (context, settings) {
       $( document ).ready(function() {
-        $(".menu--header-visitors [data-drupal-link-system-path='search']", context).once('socomecSearchMenu').each(function () {
-          $(this).click(function (e) {
-            $(this).toggleClass('close-search icon-search-white');
-            $(".block-soc-search-block").toggleClass('d-none');
+        $("[data-drupal-link-system-path='search']", context).once('socomecSearchMenu').each(function () {
+          var toggleSearch = function(link) {
+            var searchBlock = $(".block-soc-search-block");
+            var navWrapper = $(".nav-wrapper");
+            $(link).toggleClass('close-search icon-search-white');
+            searchBlock.toggleClass('d-none');
             $(".we-mega-menu-submenu").removeClass('show');
-            if ($(".block-soc-search-block").hasClass('d-none')) {
-              if ($(".nav-wrapper").hasClass('open-menu')) {
-                $('.nav-wrapper').removeClass('open-menu');
+            if (searchBlock.hasClass('d-none')) {
+              if (navWrapper.hasClass('open-menu')) {
+                navWrapper.removeClass('open-menu');
               }
             }
             else{
-              if (!$(".nav-wrapper").hasClass('open-menu')) {
-                $('.nav-wrapper').addClass('open-menu');
+              if (!navWrapper.hasClass('open-menu')) {
+                navWrapper.addClass('open-menu');
               }
               $('.block-soc-search-block input[name="search_api_fulltext"]').focus();
             }
+            $(document).on('keydown', function(event) {
+              if (event.key === "Escape") {
+                toggleSearch(link);
+              }
+            });
+          };
+          $(this).click(function (e) {
+            toggleSearch(this);
             e.preventDefault();
             e.stopPropagation();
           });

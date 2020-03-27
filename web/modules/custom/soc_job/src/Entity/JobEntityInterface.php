@@ -13,7 +13,8 @@ use Drupal\user\EntityOwnerInterface;
  *
  * @ingroup soc_job
  */
-interface JobEntityInterface extends ContentEntityInterface, RevisionLogInterface, EntityChangedInterface, EntityPublishedInterface, EntityOwnerInterface {
+interface JobEntityInterface extends ContentEntityInterface, RevisionLogInterface,
+  EntityChangedInterface, EntityPublishedInterface, EntityOwnerInterface {
 
   /**
    * Add get/set methods for your configuration properties here.

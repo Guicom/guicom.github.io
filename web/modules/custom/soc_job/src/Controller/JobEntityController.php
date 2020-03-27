@@ -108,11 +108,20 @@ class JobEntityController extends ControllerBase implements ContainerInjectionIn
     $langname = $job->language()->getName();
     $languages = $job->getTranslationLanguages();
     $has_translations = (count($languages) > 1);
-    $build['#title'] = $has_translations ? $this->t('@langname revisions for %title', ['@langname' => $langname, '%title' => $job->label()]) : $this->t('Revisions for %title', ['%title' => $job->label()]);
+    $build['#title'] = $has_translations ?
+      $this->t('@langname revisions for %title',
+        [
+          '@langname' => $langname,
+          '%title' => $job->label()
+        ]) : $this->t('Revisions for %title', [
+          '%title' => $job->label()
+      ]);
 
     $header = [$this->t('Revision'), $this->t('Operations')];
-    $revert_permission = (($account->hasPermission("revert all job revisions") || $account->hasPermission('administer job entities')));
-    $delete_permission = (($account->hasPermission("delete all job revisions") || $account->hasPermission('administer job entities')));
+    $revert_permission = (($account->hasPermission("revert all job revisions")
+      || $account->hasPermission('administer job entities')));
+    $delete_permission = (($account->hasPermission("delete all job revisions")
+      || $account->hasPermission('administer job entities')));
 
     $rows = [];
 
@@ -125,7 +134,8 @@ class JobEntityController extends ControllerBase implements ContainerInjectionIn
       $revision = $job_storage->loadRevision($vid);
       // Only show revisions that are affected by the language that is being
       // displayed.
-      if ($revision->hasTranslation($langcode) && $revision->getTranslation($langcode)->isRevisionTranslationAffected()) {
+      if ($revision->hasTranslation($langcode)
+        && $revision->getTranslation($langcode)->isRevisionTranslationAffected()) {
         $username = [
           '#theme' => 'username',
           '#account' => $revision->getRevisionUser(),
@@ -147,7 +157,8 @@ class JobEntityController extends ControllerBase implements ContainerInjectionIn
         $column = [
           'data' => [
             '#type' => 'inline_template',
-            '#template' => '{% trans %}{{ date }} by {{ username }}{% endtrans %}{% if message %}<p class="revision-log">{{ message }}</p>{% endif %}',
+            '#template' => '{% trans %}{{ date }} by {{ username }}{% endtrans %}
+              {% if message %}<p class="revision-log">{{ message }}</p>{% endif %}',
             '#context' => [
               'date' => $link,
               'username' => $this->renderer->renderPlain($username),
