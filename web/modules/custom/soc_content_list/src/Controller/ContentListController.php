@@ -90,7 +90,8 @@ class ContentListController extends ControllerBase {
   public function undoRemoveItemAction() {
     try {
       if (ContentListHelper::sessionNameExit($this->contentListManager->getlastDeletedSessionName())) {
-        $lastDeleted = (isset($_SESSION[$this->contentListManager->getlastDeletedSessionName()])) ? $_SESSION[$this->contentListManager->getlastDeletedSessionName()] : '';
+        $lastDeleted = (isset($_SESSION[$this->contentListManager->getlastDeletedSessionName()])) ?
+          $_SESSION[$this->contentListManager->getlastDeletedSessionName()] : '';
       }
     } catch (\Exception $e) {
       $this->messenger->addError($e->getMessage());
