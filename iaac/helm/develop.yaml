@@ -8,7 +8,7 @@ registry:
   name: agc-regis-credential
   location: regis.myagora.fr/socomec-web
   images:
-    drupal: drupal
+    drupal: drupal-webfactory
     varnish: image-varnish-name
 
 drupal:
