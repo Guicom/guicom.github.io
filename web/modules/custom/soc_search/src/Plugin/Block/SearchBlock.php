@@ -20,8 +20,10 @@ class SearchBlock extends BlockBase {
    */
   public function build() {
 
-    $suggestion_title = \Drupal::config('soc_search.settings')->get('suggestion_title') ?? t('More than 1250 Results here some suggestions');
-    $categorized_title = \Drupal::config('soc_search.settings')->get('categorized_title') ?? t('Categorized suggestions');
+    $suggestion_title = \Drupal::config('soc_search.settings')->get('suggestion_title') ??
+      t('More than 1250 Results here some suggestions');
+    $categorized_title = \Drupal::config('soc_search.settings')->get('categorized_title') ??
+      t('Categorized suggestions');
 
     return [
       '#markup' => $this->t('Search block'),

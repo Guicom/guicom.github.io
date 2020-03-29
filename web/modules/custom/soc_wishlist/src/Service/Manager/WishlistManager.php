@@ -23,7 +23,8 @@ class WishlistManager extends ContentListManager {
     $cookieIdField = 'extid';
     $ItemActionRoute = 'soc_wishlist.edit_wishlist';
     $LastDeletedSessionName = 'socomec_wishlist_last_deleted';
-    parent::__construct($contentList, $cookieName, $settings, $bundle, $referencedField, $cookieIdField, $ItemActionRoute, $LastDeletedSessionName);
+    parent::__construct($contentList, $cookieName, $settings, $bundle,
+      $referencedField, $cookieIdField, $ItemActionRoute, $LastDeletedSessionName);
   }
 
 }

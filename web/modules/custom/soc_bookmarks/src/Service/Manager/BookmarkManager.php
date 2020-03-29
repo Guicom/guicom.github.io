@@ -23,7 +23,8 @@ class BookmarkManager extends ContentListManager {
     $cookieIdField = 'nid';
     $ItemActionRoute = 'soc_bookmarks.edit_bookmark';
     $LastDeletedName = 'socomec_bookmark_last_deleted';
-    parent::__construct($contentList, $cookieName, $settings, $bundle, $referencedField, $cookieIdField, $ItemActionRoute, $LastDeletedName);
+    parent::__construct($contentList, $cookieName, $settings, $bundle,
+      $referencedField, $cookieIdField, $ItemActionRoute, $LastDeletedName);
   }
 
 }
