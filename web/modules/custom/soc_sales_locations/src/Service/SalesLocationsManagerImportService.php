@@ -98,9 +98,34 @@ class SalesLocationsManagerImportService implements SalesLocationsManagerImportS
     return TRUE;
   }
 
+  /**
+   * Rollback for a list of stores locator using an information date.
+   *
+   * @param $job_id
+   *
+   * @return bool
+   * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
+   * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
+   */
 
   public function setRollbackStores($job_id){
     $job = \Drupal::entityTypeManager()->getStorage('job')->load($job_id);
+    // @done: find all location withe same date information;
+    $job_start_date = $job->get('field_job_start_date')->getValue()[0]['value'];
+    $stores = \Drupal::entityTypeManager()
+      ->getStorage('node')
+      ->loadByProperties([
+          'type' => 'contenu_location',
+          'field_last_imported' => $job_start_date,
+        ]);
+    \Drupal::messenger()->addError('Enable rollback for '.count($stores).' stores');
+    // @todo: how revision n-1 for specific nodes.
+    foreach ($stores as $store){
+     // @todo: using a store node.
+      \Drupal::messenger()->addWarning($store->label());
+    }
+
+    return TRUE;
   }
 
 

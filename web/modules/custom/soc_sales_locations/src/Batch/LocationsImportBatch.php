@@ -95,8 +95,6 @@ class LocationsImportBatch {
     }
 
   }
-
-
   /**
    * Finish method.
    *
@@ -108,11 +106,12 @@ class LocationsImportBatch {
     // The 'success' parameter means no fatal PHP errors were detected. All
     // other error management should be handled using 'results'.
     $messenger = \Drupal::messenger();
+    /** @var \Drupal\soc_sales_locations\Service\SalesLocationsManagerImportService $importer */
+    $importer = \Drupal::service('soc_sales_locations.manager.import');
+    $options = reset($results)['options'];
+
     if ($success) {
       $messenger->addMessage(t('@count store locators processed.', ['@count' => count($results)]));
-      $options = reset($results)['options'];
-      /** @var \Drupal\soc_sales_locations\Service\SalesLocationsManagerImportService $importer */
-      $importer = \Drupal::service('soc_sales_locations.manager.import');
       $importer->updateCurrentJob($options['job_id'],'done');
     }
     else {
@@ -127,9 +126,10 @@ class LocationsImportBatch {
           ]
         )
       );
+      $importer->updateCurrentJob($options['job_id'],'failed');
+      $importer->setRollbackStores($options['job_id']);
     }
 
-    //return new RedirectResponse(\Drupal::url('<front>'));
 
   }
 }
