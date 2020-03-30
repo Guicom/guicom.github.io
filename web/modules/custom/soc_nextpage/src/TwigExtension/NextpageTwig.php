@@ -30,16 +30,19 @@ class NextpageTwig extends \Twig_Extension {
    * Get json field content.
    */
   public static function getFieldData($string, $extid) {
-    $json_value = json_decode($string[0]["#context"]["value"]);
-    $data = NULL;
-    if (isset($json_value->{$extid})) {
-      $data = $json_value->{$extid}->value;
-    }
-    else {
-      foreach ($json_value as $values) {
-        if (isset($values->value)) {
-          if (isset($values->value->{$extid})) {
-            $data = $values->value->{$extid}->value;
+    $data = '';
+    if (isset($string[0])) {
+      $json_value = json_decode($string[0]["#context"]["value"]);
+      $data = NULL;
+      if (isset($json_value->{$extid})) {
+        $data = $json_value->{$extid}->value;
+      }
+      else {
+        foreach ($json_value as $values) {
+          if (isset($values->value)) {
+            if (isset($values->value->{$extid})) {
+              $data = $values->value->{$extid}->value;
+            }
           }
         }
       }
