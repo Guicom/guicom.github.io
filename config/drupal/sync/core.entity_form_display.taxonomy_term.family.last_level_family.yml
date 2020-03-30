@@ -4,9 +4,11 @@ status: true
 dependencies:
   config:
     - core.entity_form_mode.taxonomy_term.last_level_family
+    - field.field.taxonomy_term.family.field_background_image
     - field.field.taxonomy_term.family.field_family_extid
     - field.field.taxonomy_term.family.field_family_first_multiline
     - field.field.taxonomy_term.family.field_family_image
+    - field.field.taxonomy_term.family.field_family_menu_icon
     - field.field.taxonomy_term.family.field_family_second_multiline
     - field.field.taxonomy_term.family.field_family_sub_title
     - taxonomy.vocabulary.family

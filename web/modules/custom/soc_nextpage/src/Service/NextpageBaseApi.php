@@ -40,7 +40,11 @@ class NextpageBaseApi extends BaseApi {
 
   /** @var \Drupal\Core\TempStore\SharedTempStore $tempStore */
   protected $tempStore;
-  
+
+  protected $extIds;
+
+  protected $authStatus;
+
   /**
    * Constructor.
    *
@@ -52,7 +56,7 @@ class NextpageBaseApi extends BaseApi {
                               ConfigFactoryInterface $configFactory,
                               SharedTempStoreFactory $sharedTempStoreFactory) {
     parent::__construct($channelFactory);
-  
+
     $this->logger = $channelFactory->get('soc_nextpage');
     $this->tempStore = $sharedTempStoreFactory->get('soc_nextpage');
 
@@ -70,6 +74,8 @@ class NextpageBaseApi extends BaseApi {
       'descendantsandlinks' => $config->get('endpoint_descendantsandlinks') ?? 'api/sdk-ext/element/DescendantsAndLinks',
       'elementsbychartemplate' => $config->get('endpoint_elementsbychartemplate') ?? 'api/sdk-ext/element/ElementsByCharTemplate',
     ];
+    $extIds = $config->get('channel_extid') ?? '';
+    $authStatus = $config->get('auth_status') ?? 0;
 
     $this->setBaseUrl($baseUrl);
     $this->setUserName($user);
@@ -77,7 +83,9 @@ class NextpageBaseApi extends BaseApi {
     $this->setContextId($contextId);
     $this->setLanguageId($languageId);
     $this->setEndpoints($endpoints);
-    
+    $this->setExtIds($extIds);
+    $this->setAuthStatusxt($authStatus);
+
   }
 
   /**
@@ -232,7 +240,7 @@ class NextpageBaseApi extends BaseApi {
   /**
    * @return string
    */
-  public function getContextId(): string {
+  public function getContextId(): int {
     return $this->contextId;
   }
 
@@ -263,12 +271,40 @@ class NextpageBaseApi extends BaseApi {
   public function getEndpoints(): array {
     return $this->endpoints;
   }
-
   /**
    * @param array $endpoints
    */
   public function setEndpoints(array $endpoints) {
     $this->endpoints = $endpoints;
   }
+
+  /**
+   * @return string
+   */
+  public function getExtIds() {
+    return $this->extIds;
+  }
+
+  /**
+   * @param string $extIDs
+   */
+  public function setExtIds(string $extIds) {
+    $this->extIds = $extIds;
+  }
+
+  /**
+   * @return string
+   */
+  public function getAuthStatus() {
+    return $this->authStatus;
+  }
+
+  /**
+   * @param int $authStatus
+   */
+  public function setAuthStatusxt(int $authStatus) {
+    $this->authStatus = $authStatus;
+  }
+
 
 }

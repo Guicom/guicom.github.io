@@ -4,17 +4,14 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.table_reference
-    - field.field.node.product_reference.field_dc_r_erp_dimension_unit
-    - field.field.node.product_reference.field_dc_r_erp_weight
-    - field.field.node.product_reference.field_format_de_boitier
     - field.field.node.product_reference.field_json_product_data
-    - field.field.node.product_reference.field_nombre_de_pole
     - field.field.node.product_reference.field_product_status
     - field.field.node.product_reference.field_reference_extid
     - field.field.node.product_reference.field_reference_json_table
     - field.field.node.product_reference.field_reference_name
     - field.field.node.product_reference.field_reference_picture
     - field.field.node.product_reference.field_reference_ref
+    - field.field.node.product_reference.field_teaser
     - node.type.product_reference
   module:
     - ds
@@ -43,11 +40,7 @@ content:
     region: content
 hidden:
   addtoany: true
-  field_dc_r_erp_dimension_unit: true
-  field_dc_r_erp_weight: true
-  field_format_de_boitier: true
   field_json_product_data: true
-  field_nombre_de_pole: true
   field_product_status: true
   field_reference_extid: true
   field_reference_name: true

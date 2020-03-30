@@ -42,7 +42,7 @@ Feature: Products
     Then I should see an "#product-associate-section" element
     Then I should see an "#assistance-section" element
     Then I should see an "#product-orc-section" element
-    Then I click the "#product-reference-table tr td" element
+    Then I click the "#product-reference-table tr td a" element
     And I should see an ".node--type-product-reference" element
 
   # ./vendor/bin/phing behat:run -Dbehat.tags=product-news

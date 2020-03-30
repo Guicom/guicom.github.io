@@ -1,0 +1,14 @@
+<?php
+
+use Drupal\soc_nextpage\Batch\ImportPendingElement;
+use Drupal\system\Entity\Menu;
+
+function soc_nextpage_cron() {
+  $context = [];
+  $product = \Drupal::service('soc_nextpage.nextpage_api')->descendantsAndLinks();
+  foreach ($product->Elements ?? [] as $row) {
+    ImportPendingElement::addPendingElement($row, $context);
+  }
+  $menu = Menu::load('header');
+  $menu->save();
+}
