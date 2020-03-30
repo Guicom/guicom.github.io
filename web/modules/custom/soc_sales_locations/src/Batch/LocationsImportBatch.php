@@ -78,12 +78,15 @@ class LocationsImportBatch {
         /** @var \Drupal\soc_sales_locations\Service\SalesLocationsManagerImportService $importer */
         $importer = \Drupal::service('soc_sales_locations.manager.import');
         // @notes: don't known argument for 'token', so using test word.
-        $importer->importRow($row, $date_start_import);
+        $status = $importer->importRow($row, $date_start_import);
         $context['message'] = $row[1];
         $context['sandbox']['progress']++;
         $context['results'][] = [
           'row' => $row,
-          'options' => ['job_id' => $job_id],
+          'options' => [
+            'job_id' => $job_id,
+            'status' => $status,
+          ],
         ];
         $context['sandbox']['current_id'] = $i;
         $importer->updateCurrentJob($job_id);
@@ -111,8 +114,15 @@ class LocationsImportBatch {
     $options = reset($results)['options'];
 
     if ($success) {
-      $messenger->addMessage(t('@count store locators processed.', ['@count' => count($results)]));
-      $importer->updateCurrentJob($options['job_id'],'done');
+      if(self::findIfRowImportFailed($results)){
+        $messenger->addError('Fail sur l\'import');
+        $importer->updateCurrentJob($options['job_id'],'failed');
+        $importer->setRollbackStores($options['job_id']);
+      }
+      else{
+        $messenger->addMessage(t('@count store locators processed.', ['@count' => count($results)]));
+        $importer->updateCurrentJob($options['job_id'],'done');
+      }
     }
     else {
       // An error occurred.
@@ -129,7 +139,19 @@ class LocationsImportBatch {
       $importer->updateCurrentJob($options['job_id'],'failed');
       $importer->setRollbackStores($options['job_id']);
     }
+  }
 
-
+  /**
+   * Find if an import row has been failed.
+   *
+   */
+  private static function findIfRowImportFailed($results):bool {
+    $fail = FALSE;
+    foreach ($results as $result_row) {
+      if (!$result_row['options']['status']) {
+        $fail = TRUE;
+      }
+    }
+    return $fail;
   }
 }

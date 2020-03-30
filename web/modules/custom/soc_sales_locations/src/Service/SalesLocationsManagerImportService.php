@@ -62,34 +62,36 @@ class SalesLocationsManagerImportService implements SalesLocationsManagerImportS
         ->create(['type' => StoreLocationImportHelper::CONTENT_TYPE]);
     }
     else {
-      $node = $this->em->getStorage('node')
-        ->load($row[0]);
+      $node = $this->em->getStorage('node')->load($row[0]);
     }
-    $this->rowNode = new StoreLocationImportHelper($node);
-    $this->rowNode->importTitle($row[1]);
-    $this->rowNode->importNameCompany($row[7]);
-    $this->rowNode->importNameContact($row[8]);
-    $this->rowNode->importFirstName($row[9]);
-    $this->rowNode->importAddress($row);
-    $this->rowNode->importPhone($row[18]);
-    $this->rowNode->importFax($row[19]);
-    $this->rowNode->importWebsite($row[20]);
-    $this->rowNode->importType($row[6]);
-    $this->rowNode->importActivity($row[5]);
-    $this->rowNode->importContinent($row[2]);
-    $this->rowNode->importArea($row[3]);
-    $this->rowNode->importSubArea($row[4]);
     try {
+      $this->rowNode = new StoreLocationImportHelper($node);
+      $this->rowNode->importTitle($row[1]);
+      $this->rowNode->importNameCompany($row[7]);
+      $this->rowNode->importNameContact($row[8]);
+      $this->rowNode->importFirstName($row[9]);
+      $this->rowNode->importAddress($row);
+      $this->rowNode->importPhone($row[18]);
+      $this->rowNode->importFax($row[19]);
+      $this->rowNode->importWebsite($row[20]);
+      $this->rowNode->importType($row[6]);
+      $this->rowNode->importActivity($row[5]);
+      $this->rowNode->importContinent($row[2]);
+      $this->rowNode->importArea($row[3]);
+      $this->rowNode->importSubArea($row[4]);
       $this->rowNode->saveUpdatedRevisionsNode($date_imported);
+      $status = TRUE;
+    } catch (EntityStorageException $e) {
+      $status = FALSE;
+
     }
-    catch (EntityStorageException $e){
-      \Drupal::messenger()->addError($e->getMessage());
-    }
+    return $status;
   }
+
   /**
    * @inheritDoc
    */
-  public function updateCurrentJob($job_id, $status = 'in_progress'){
+  public function updateCurrentJob($job_id, $status = 'in_progress') {
     /** @var \Drupal\soc_job\Entity\JobEntity $job */
     $job = \Drupal::entityTypeManager()->getStorage('job')->load($job_id);
     $job->get('field_job_status')->setValue($status);
@@ -108,20 +110,21 @@ class SalesLocationsManagerImportService implements SalesLocationsManagerImportS
    * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
    */
 
-  public function setRollbackStores($job_id){
+  public function setRollbackStores($job_id) {
     $job = \Drupal::entityTypeManager()->getStorage('job')->load($job_id);
     // @done: find all location withe same date information;
     $job_start_date = $job->get('field_job_start_date')->getValue()[0]['value'];
     $stores = \Drupal::entityTypeManager()
       ->getStorage('node')
       ->loadByProperties([
-          'type' => 'contenu_location',
-          'field_last_imported' => $job_start_date,
-        ]);
-    \Drupal::messenger()->addError('Enable rollback for '.count($stores).' stores');
+        'type' => 'contenu_location',
+        'field_last_imported' => $job_start_date,
+      ]);
+    \Drupal::messenger()
+      ->addError('Enable rollback for ' . count($stores) . ' stores');
     // @todo: how revision n-1 for specific nodes.
-    foreach ($stores as $store){
-     // @todo: using a store node.
+    foreach ($stores as $store) {
+      // @todo: using a store node.
       \Drupal::messenger()->addWarning($store->label());
     }
 
