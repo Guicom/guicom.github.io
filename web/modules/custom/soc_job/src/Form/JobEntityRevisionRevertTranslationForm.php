@@ -41,7 +41,9 @@ class JobEntityRevisionRevertTranslationForm extends JobEntityRevisionRevertForm
    * @param \Drupal\Core\Language\LanguageManagerInterface $language_manager
    *   The language manager.
    */
-  public function __construct(EntityStorageInterface $entity_storage, DateFormatterInterface $date_formatter, LanguageManagerInterface $language_manager) {
+  public function __construct(EntityStorageInterface $entity_storage,
+                              DateFormatterInterface $date_formatter,
+                              LanguageManagerInterface $language_manager) {
     parent::__construct($entity_storage, $date_formatter);
     $this->languageManager = $language_manager;
   }

@@ -1,0 +1,8 @@
+name: Socomec Content List
+type: module
+description: API allowing to create user generated content lists.
+core: 8.x
+package: Socomec
+dependencies:
+  - soc_core
+  - soc_nextpage

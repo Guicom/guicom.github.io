@@ -14,3 +14,15 @@ attributes:
     options:
       _blank: 'New window (_blank)'
       _self: 'Same window (_self)'
+  data-toggle:
+    label: ''
+    description: 'value = tooltip for activated tooltip'
+  data-html:
+    label: ''
+    description: 'value = true or false for activated tooltip html'
+  data-original-title:
+    label: ''
+    description: 'Title text.'
+  data-placement:
+    label: ''
+    description: 'Position of tooltip empty for auto or (top, right, bottom, left)'

@@ -1,0 +1,9 @@
+soc_content_list.wishlist_profile:
+  route_name: user.page
+  title: 'My profile'
+  base_route: soc_content_list
+  options:
+    attributes:
+      class:
+        - 'my-profile-nav-link-item'
+  weight: 10

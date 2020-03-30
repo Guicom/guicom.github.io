@@ -84,7 +84,11 @@ class SocSearchMenuLinkTreeManipulators extends DefaultMenuLinkTreeManipulators 
    * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
    * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
    */
-  public function __construct(AccessManagerInterface $access_manager, AccountInterface $account, EntityTypeManagerInterface $entity_type_manager, LanguageManager $language_manager, EntityRepository $entity_repository) {
+  public function __construct(AccessManagerInterface $access_manager,
+                              AccountInterface $account,
+                              EntityTypeManagerInterface $entity_type_manager,
+                              LanguageManager $language_manager,
+                              EntityRepository $entity_repository) {
     $this->accessManager = $access_manager;
     $this->account = $account;
     $this->entityTypeManager = $entity_type_manager;

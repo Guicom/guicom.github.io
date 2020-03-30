@@ -65,8 +65,8 @@ deploy_drupal:
 	helm install --namespace develop -f develop.yaml drupal
 
 build-web-image:
-	cd .. && docker build -t regis.myagora.fr/socomec-web/drupal:${ENVIRONMENT} -f iaac/docker/drupal/Dockerfile .
+	cd .. && docker build -t regis.myagora.fr/socomec-web/drupal-webfactory:${ENVIRONMENT} -f iaac/docker/drupal/Dockerfile .
 
 push-web-image: build-web-image
 	docker login --username ${REGISTRY_USERNAME} --password ${REGISTRY_PASSWORD} ${REGISTRY_HOSTNAME}
-	docker push regis.myagora.fr/socomec-web/drupal:${ENVIRONMENT}
+	docker push regis.myagora.fr/socomec-web/drupal-webfactory:${ENVIRONMENT}

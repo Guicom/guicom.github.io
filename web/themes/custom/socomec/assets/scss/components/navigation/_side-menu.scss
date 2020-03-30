@@ -12,6 +12,16 @@
       display: none;
     }
     .nav-item{
+      &.menu-item--active-trail:before{
+        content: '';
+        width: 10px;
+        height: 1px;
+        background-color: $white;
+        position: absolute;
+        bottom: 0px;
+        left: 0px;
+        z-index: 1;
+      }
       a{
         height: 60px;
         color:$white;

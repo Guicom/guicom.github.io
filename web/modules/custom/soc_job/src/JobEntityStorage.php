@@ -41,7 +41,8 @@ class JobEntityStorage extends SqlContentEntityStorage implements JobEntityStora
    * {@inheritdoc}
    */
   public function countDefaultLanguageRevisions(JobEntityInterface $entity) {
-    return $this->database->query('SELECT COUNT(*) FROM {job_field_revision} WHERE id = :id AND default_langcode = 1', [':id' => $entity->id()])
+    $query = 'SELECT COUNT(*) FROM {job_field_revision} WHERE id = :id AND default_langcode = 1';
+    return $this->database->query($query, [':id' => $entity->id()])
       ->fetchField();
   }
 
