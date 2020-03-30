@@ -67,14 +67,18 @@ class StoreLocationImportHelper {
   }
 
   /**
+   * @param int $date_start_import
+   *
    * @throws \Drupal\Core\Entity\EntityStorageException
+   * @throws \Drupal\Core\TypedData\Exception\ReadOnlyException
    */
-  public function saveUpdatedRevisionsNode(){
+  public function saveUpdatedRevisionsNode(int $date_start_import){
     if(!$this->node->getEntityType()->isRevisionable()){
       throw new EntityStorageException('The content type has not the revision option.');
     }
+    $this->node->get('field_last_imported')->setValue($date_start_import);
     $this->node->setNewRevision();
-    $message = $this->t('Import done @date', ['@date' => date('d/m/y h:i:s', time())]);
+    $message = $this->t('Import done @date', ['@date' => date('d/m/y h:i:s', $date_start_import)]);
     $this->node->setRevisionLogMessage($message);
     $this->node->save();
   }
