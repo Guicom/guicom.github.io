@@ -7,6 +7,8 @@ use Drupal\Core\Database\Transaction;
 use Drupal\Core\StringTranslation\StringTranslationTrait;
 use Drupal\file\FileInterface;
 use Drupal\soc_job\Entity\JobEntity;
+use Drupal\soc_sales_locations\Service\SalesLocationsManagerImportService;
+use Drupal\soc_sales_locations\Service\SalesLocationsManagerImportServiceInterface;
 use Exception;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 
@@ -37,32 +39,46 @@ class LocationsImportBatch {
 
 
     $fp = file($file->getFileUri(), FILE_SKIP_EMPTY_LINES);
-    $max = count($fp)-1;
-    return [
-      'title' => t('Import Sales Locations'),
-      'operations' => [
-        [
-          '\Drupal\soc_sales_locations\Batch\LocationsImportBatch::processAllRows',
+    $max = count($fp) -1 ;
+
+
+    $operations = [];
+    $i = 0;
+    $fh = fopen($file->getFileUri(), 'r');
+
+    while ($row = fgetcsv($fh, 0, ';')) {
+      if ($i !== 0) {
+        $operations[] = [
+          '\Drupal\soc_sales_locations\Batch\LocationsImportBatch::importOperationRow',
           [
-            $file,
+            $row,
             $date_start_import,
             $job->id(),
             $max
           ],
-        ],
-      ],
+        ];
+      }
+      $i++;
+    }
+
+
+    return [
+      'title' => t('Import Sales Locations'),
+      'operations' => $operations,
       'progress_message' => t('Processed @current out of @total.'),
       'error_message'    => t('An error occurred during processing'),
       'finished' => '\Drupal\soc_sales_locations\Batch\LocationsImportBatch::finished',
     ];
   }
 
-
   /**
-   * @param $file
+   * @param $row
+   * @param $date_start_import
+   * @param $job_id
+   * @param $max
    * @param $context
    */
-  public static function processAllRows(FileInterface $file, $date_start_import, $job_id, $max, &$context){
+  public static  function importOperationRow($row, $date_start_import, $job_id, $max, &$context){
 
     if (empty($context['sandbox'])) {
       $context['sandbox']['progress'] = 0;
@@ -70,34 +86,26 @@ class LocationsImportBatch {
       $context['sandbox']['max'] = $max;
       $context['sandbox']['job_id'] = $job_id;
     }
-
-    $i = 0;
-    $fh = fopen($file->getFileUri(), 'r');
-    while ($row = fgetcsv($fh, 0, ';')) {
-      if ($i !== 0) {
-        /** @var \Drupal\soc_sales_locations\Service\SalesLocationsManagerImportService $importer */
-        $importer = \Drupal::service('soc_sales_locations.manager.import');
-        // @notes: don't known argument for 'token', so using test word.
-        $status = $importer->importRow($row, $date_start_import);
-        $context['message'] = $row[1];
-        $context['sandbox']['progress']++;
-        $context['results'][] = [
-          'row' => $row,
-          'options' => [
-            'job_id' => $job_id,
-            'status' => $status,
-          ],
-        ];
-        $context['sandbox']['current_id'] = $i;
-        $importer->updateCurrentJob($job_id);
-      }
-      $i++;
-    }
+    /** @var \Drupal\soc_sales_locations\Service\SalesLocationsManagerImportService $importer */
+    $importer = \Drupal::service('soc_sales_locations.manager.import');
+    // @notes: don't known argument for 'token', so using test word.
+    $status = $importer->importRow($row, $date_start_import);
+    $context['message'] = $row[1];
+    $context['results'][] = [
+      'row' => $row,
+      'options' => [
+        'job_id' => $job_id,
+        'status' => $status,
+      ],
+    ];
+    $context['sandbox']['progress']++;
+    $importer->updateCurrentJob($job_id);
     if ($context['sandbox']['progress'] != $context['sandbox']['max']) {
       $context['finished'] = $context['sandbox']['progress'] / $context['sandbox']['max'];
     }
-
   }
+
+
   /**
    * Finish method.
    *

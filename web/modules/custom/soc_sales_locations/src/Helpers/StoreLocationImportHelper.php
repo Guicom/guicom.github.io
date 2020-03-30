@@ -75,7 +75,7 @@ class StoreLocationImportHelper {
     if(!$this->node->getEntityType()->isRevisionable()){
       throw new EntityStorageException('The content type has not the revision option.');
     }
-    $this->node->get('field_last_imported')->setValue($date_start_import);
+    $this->node->get('field_last_imported_timestamp')->setValue($date_start_import);
     $this->node->setNewRevision();
     $message = $this->t('Import done @date', ['@date' => date('d/m/y h:i:s', $date_start_import)]);
     $this->node->setRevisionLogMessage($message);

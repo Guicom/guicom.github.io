@@ -80,12 +80,15 @@ class SalesLocationsManagerImportService implements SalesLocationsManagerImportS
       $status = TRUE;
     }
     catch (EntityStorageException $e) {
+      \Drupal::messenger()->addError($e->getMessage());
       $status = FALSE;
     }
     catch (InvalidArgumentException $e){
+      \Drupal::messenger()->addError($e->getMessage());
       $status = FALSE;
     }
     catch (ImportStoreLocationException $e){
+      \Drupal::messenger()->addError($e->getMessage());
       $status = FALSE;
     }
     return $status;
@@ -121,7 +124,7 @@ class SalesLocationsManagerImportService implements SalesLocationsManagerImportS
       ->getStorage('node')
       ->loadByProperties([
         'type' => 'contenu_location',
-        'field_last_imported' => $job_start_date,
+        'field_last_imported_timestamp' => $job_start_date,
       ]);
     \Drupal::messenger()
       ->addError('Enable rollback for ' . count($stores) . ' stores');
@@ -129,6 +132,9 @@ class SalesLocationsManagerImportService implements SalesLocationsManagerImportS
     foreach ($stores as $store) {
       // @todo: using a store node.
       \Drupal::messenger()->addWarning($store->label());
+
+ /*     $vids = \Drupal::entityManager()->getStorage('node')->revisionIds($store);
+      \Drupal::entityTypeManager()->getStorage('node')->deleteRevision($revision_id);*/
     }
 
     return TRUE;
