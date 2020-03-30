@@ -1,17 +1,15 @@
-uuid: eeec912f-a920-471d-8518-805639d871f4
+uuid: 96581ba2-837f-44da-b66f-eee5e0a0aeac
 langcode: en
 status: true
 dependencies:
   module:
-    - datetime
     - node
-id: node.field_last_imported
-field_name: field_last_imported
+id: node.field_last_imported_timestamp
+field_name: field_last_imported_timestamp
 entity_type: node
-type: datetime
-settings:
-  datetime_type: datetime
-module: datetime
+type: timestamp
+settings: {  }
+module: core
 locked: false
 cardinality: 1
 translatable: true
