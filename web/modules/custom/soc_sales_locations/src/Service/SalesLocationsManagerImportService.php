@@ -11,6 +11,7 @@ use Drupal\file\FileInterface;
 use Drupal\node\NodeInterface;
 use Drupal\soc_sales_locations\Helpers\StoreLocationImportHelper;
 use Exception;
+use InvalidArgumentException;
 
 /**
  * Class SalesLocationsManagerImportService.
@@ -81,9 +82,12 @@ class SalesLocationsManagerImportService implements SalesLocationsManagerImportS
       $this->rowNode->importSubArea($row[4]);
       $this->rowNode->saveUpdatedRevisionsNode($date_imported);
       $status = TRUE;
-    } catch (EntityStorageException $e) {
+    }
+    catch (EntityStorageException $e) {
       $status = FALSE;
-
+    }
+    catch (InvalidArgumentException $e){
+      $status = FALSE;
     }
     return $status;
   }
