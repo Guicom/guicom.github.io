@@ -8,6 +8,7 @@ use Drupal\Core\Messenger\MessengerInterface;
 use Drupal\node\Entity\Node;
 use Drupal\soc_core\Service\MediaApi;
 use Drupal\soc_bookmarks\Service\Manager\BookmarkManager;
+use Drupal\soc_bookmarks\Service\Manager\BookmarkDownload;
 use \Drupal\soc_content_list\Service\Manager\ContentListFormManager;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Drupal\Core\Url;
@@ -17,6 +18,9 @@ class BookmarkEditForm extends FormBase {
 
   /** @var \Drupal\soc_bookmarks\Service\Manager\bookmarkManager $bookmarkManager */
   private $bookmarkManager;
+
+  /** @var \Drupal\soc_bookmarks\Service\Manager\bookmarkManager $bookmarkDownload */
+  private $bookmarkDownload;
 
   /** @var \Drupal\soc_content_list\Service\Manager\ContentListFormManager $contentListFormManager */
   private $contentListFormManager;
@@ -42,15 +46,18 @@ class BookmarkEditForm extends FormBase {
    * @param \Drupal\Core\Messenger\MessengerInterface $messenger
    * @param \Drupal\soc_core\Service\MediaApi $mediaApi
    * @param \Drupal\soc_content_list\Service\Manager\ContentListFormManager $contentListFormManager
+   * @param \Drupal\soc_bookmarks\Service\Manager\BookmarkDownload $bookmarkDownload
    */
   public function __construct(BookmarkManager $bookmarkManager,
                               MessengerInterface $messenger,
                               MediaApi $mediaApi,
-                              ContentListFormManager $contentListFormManager) {
+                              ContentListFormManager $contentListFormManager,
+                              BookmarkDownload $bookmarkDownload) {
     $this->bookmarkManager = $bookmarkManager;
     $this->messenger = $messenger;
     $this->mediaApi = $mediaApi;
     $this->contentListFormManager = $contentListFormManager;
+    $this->bookmarkDownload = $bookmarkDownload;
   }
 
   /**
@@ -61,7 +68,8 @@ class BookmarkEditForm extends FormBase {
       $container->get('soc_bookmarks.bookmark_manager'),
       $container->get('messenger'),
       $container->get('soc_core.media_api'),
-      $container->get('soc_content_list.content_list_form_manager')
+      $container->get('soc_content_list.content_list_form_manager'),
+      $container->get('soc_bookmarks.bookmark_download')
     );
   }
 
@@ -234,7 +242,10 @@ class BookmarkEditForm extends FormBase {
    * @param \Drupal\Core\Form\FormStateInterface $form_state
    */
   public function downloadItems(array &$form, FormStateInterface $form_state) {
+    if (empty($this->bookmarkDownload)) {
+      $this->bookmarkDownload = \Drupal::service('soc_bookmarks.bookmark_download');
 
+    }
   }
 
   /**
