@@ -2,15 +2,11 @@
 
 namespace Drupal\soc_sales_locations\Service;
 
-use Drupal\Core\Database\Database;
-use Drupal\Core\Database\Transaction;
 use Drupal\Core\Entity\EntityStorageException;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
-use Drupal\Core\File\FileSystemInterface;
 use Drupal\file\FileInterface;
-use Drupal\node\NodeInterface;
 use Drupal\soc_sales_locations\Helpers\StoreLocationImportHelper;
-use Exception;
+use \Drupal\soc_sales_locations\Exception\ImportStoreLocationException;
 use InvalidArgumentException;
 
 /**
@@ -87,6 +83,9 @@ class SalesLocationsManagerImportService implements SalesLocationsManagerImportS
       $status = FALSE;
     }
     catch (InvalidArgumentException $e){
+      $status = FALSE;
+    }
+    catch (ImportStoreLocationException $e){
       $status = FALSE;
     }
     return $status;

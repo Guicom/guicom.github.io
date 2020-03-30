@@ -4,13 +4,12 @@
 namespace Drupal\soc_sales_locations\Helpers;
 
 
-use Drupal\Console\Bootstrap\Drupal;
 use Drupal\Core\Entity\EntityStorageException;
 use Drupal\Core\StringTranslation\StringTranslationTrait;
 use Drupal\node\NodeInterface;
+use Drupal\soc_sales_locations\Exception\ImportStoreLocationException;
 use Drupal\taxonomy\Entity\Term;
-use Drupal\taxonomy\TermInterface;
-use Exception;
+
 
 class StoreLocationImportHelper {
 
