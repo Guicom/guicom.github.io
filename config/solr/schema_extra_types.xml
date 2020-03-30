@@ -113,6 +113,7 @@
   <analyzer type="query">
     <charFilter class="solr.MappingCharFilterFactory" mapping="accents_fr.txt"/>
     <tokenizer class="solr.WhitespaceTokenizerFactory"/>
+    <filter class="solr.ElisionFilterFactory"/>
     <filter class="solr.WordDelimiterGraphFilterFactory" catenateNumbers="0" generateNumberParts="0" protected="protwords_fr.txt" splitOnCaseChange="1" generateWordParts="1" preserveOriginal="1" catenateAll="0" catenateWords="0"/>
     <filter class="solr.LowerCaseFilterFactory"/>
     <filter class="solr.SynonymGraphFilterFactory" synonyms="synonyms_fr.txt" expand="true" ignoreCase="true"/>
