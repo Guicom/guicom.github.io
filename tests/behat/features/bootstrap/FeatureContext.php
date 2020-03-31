@@ -423,14 +423,33 @@ JS;
     $query->condition('type', 'resource');
     $query->condition('title', $title);
     $results = $query->execute();
+    $_SESSION['behat_bookmarks'] = [];
     if ($nodes = Node::loadMultiple($results)) {
+      /** @var \Drupal\node\Entity\Node $node */
       $node = reset($nodes);
+      /** @var \Drupal\soc_bookmarks\Service\Manager\BookmarkManager $bookmarksManager */
+      $bookmarksManager = \Drupal::service('soc_bookmarks.bookmark_manager');
+      $bookmarksManager->add($node->id());
       try {
-        $this->getSession()->visit('/en/bookmark/add/' . $node->id());
-        $this->getSession()->wait(5);
-      } catch (Exception $e) {
+        $bookmarksManager->updateCookie();
+        $_SESSION['behat_bookmarks'][] = $node->id();
+      }
+      catch (\Exception $e) {
+        \Drupal::logger('soc_bookmarks')->error($e->getMessage());
       }
     }
+  }
+
+  /**
+   * @Then /^I should have elements in my bookmarks$/
+   */
+  public function iShouldHaveElementsInMyBookmarks() {
+    /** @var \Drupal\soc_bookmarks\Service\Manager\BookmarkManager $bookmarksManager */
+    $bookmarksManager = \Drupal::service('soc_bookmarks.bookmark_manager');
+    foreach ($_SESSION['behat_bookmarks'] as $bmk) {
+      $bookmarksManager->add($bmk);
+    }
+    $bookmarksManager->updateCookie();
   }
 
 }

@@ -64,16 +64,18 @@ Feature: [BOOKMARKS] Tests Behat
       | English  | ResourceTitle2   | ResourceTitle2           | TEST_REF_02         | Brochure                | 1                      | 1      | published        |
     And I go to "admin/content"
     And I click "Edit" in the "ResourceTitle1" row
-    And I fill in "field_res_remote_file_url[0][url]" with "https://en.unesco.org/inclusivepolicylab/sites/default/files/dummy-pdf_2.pdf"
+    And I fill in "field_res_remote_file_url[0][url]" with "https://en.unesco.org/inclusivepolicylab/sites/default/files/dummy-pdf_12.pdf"
     And I press "Save"
     And I wait 2 seconds
     And I go to "admin/content"
     And I click "Edit" in the "ResourceTitle2" row
-    And I fill in "field_res_remote_file_url[0][url]" with "http://www.africau.edu/images/default/sample.pdf"
+    And I fill in "field_res_remote_file_url[0][url]" with "http://www.africau.edu/images/default/sample12.pdf"
     And I press "Save"
     And I wait 2 seconds
+    And I visit "/en/my-documents"
     And I bookmark the resource "ResourceTitle1"
     And I bookmark the resource "ResourceTitle2"
+    Then I should have elements in my bookmarks
     And I visit "/en/my-documents"
     Then I should see "ResourceTitle1"
     And I should see "ResourceTitle2"
