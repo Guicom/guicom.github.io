@@ -61,7 +61,6 @@ class SalesLocationsManagerImportService implements SalesLocationsManagerImportS
     else {
       $node = $this->em->getStorage('node')->load($row[0]);
     }
-    try {
       $this->rowNode = new StoreLocationImportHelper($node);
       $this->rowNode->importTitle($row[1]);
       $this->rowNode->importNameCompany($row[7]);
@@ -77,21 +76,6 @@ class SalesLocationsManagerImportService implements SalesLocationsManagerImportS
       $this->rowNode->importArea($row[3]);
       $this->rowNode->importSubArea($row[4]);
       $this->rowNode->saveUpdatedRevisionsNode($date_imported);
-      $status = TRUE;
-    }
-    catch (EntityStorageException $e) {
-      \Drupal::messenger()->addError($e->getMessage());
-      $status = FALSE;
-    }
-    catch (InvalidArgumentException $e){
-      \Drupal::messenger()->addError($e->getMessage());
-      $status = FALSE;
-    }
-    catch (ImportStoreLocationException $e){
-      \Drupal::messenger()->addError($e->getMessage());
-      $status = FALSE;
-    }
-    return $status;
   }
 
   /**
@@ -127,14 +111,24 @@ class SalesLocationsManagerImportService implements SalesLocationsManagerImportS
         'field_last_imported_timestamp' => $job_start_date,
       ]);
     \Drupal::messenger()
-      ->addError('Enable rollback for ' . count($stores) . ' stores');
+      ->addWarning('Rollback à faire sur ' . count($stores) . ' stores');
     // @todo: how revision n-1 for specific nodes.
     foreach ($stores as $store) {
-      // @todo: using a store node.
-      \Drupal::messenger()->addWarning($store->label());
-
- /*     $vids = \Drupal::entityManager()->getStorage('node')->revisionIds($store);
-      \Drupal::entityTypeManager()->getStorage('node')->deleteRevision($revision_id);*/
+      \Drupal::messenger()->addWarning($store->label() . '|'.$store->id());
+      $vids = \Drupal::entityTypeManager()->getStorage('node')->revisionIds($store);
+      if (count($vids) < 2) {
+        \Drupal::messenger()->addWarning('Le node '.$store->label() . '|'.$store->id() . ' récemment importé n\'est plus présent.');
+        $store->delete();
+      }
+      else{
+        $revision_id = end($vids);
+        /** Node */
+        $node  = \Drupal::entityTypeManager()->getStorage('node')->loadRevision($revision_id);
+        // @see \Drupal\node\Form\NodeRevisionRevertForm::submitForm()
+        // @see \Drupal\node\Form\NodeRevisionRevertForm::buildForm()
+/*        ksm($node->label());
+        ksm($revision_id);*/
+      }
     }
 
     return TRUE;

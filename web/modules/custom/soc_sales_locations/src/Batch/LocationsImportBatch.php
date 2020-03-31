@@ -2,15 +2,10 @@
 
 namespace Drupal\soc_sales_locations\Batch;
 
-use Drupal\Core\Database\Database;
-use Drupal\Core\Database\Transaction;
-use Drupal\Core\StringTranslation\StringTranslationTrait;
+use Drupal\Core\Entity\EntityStorageException;
 use Drupal\file\FileInterface;
-use Drupal\soc_job\Entity\JobEntity;
-use Drupal\soc_sales_locations\Service\SalesLocationsManagerImportService;
-use Drupal\soc_sales_locations\Service\SalesLocationsManagerImportServiceInterface;
-use Exception;
-use Symfony\Component\HttpFoundation\RedirectResponse;
+use Drupal\soc_sales_locations\Exception\ImportStoreLocationException;
+use InvalidArgumentException;
 
 /**
  * Class LocationsImportBatch.
@@ -24,10 +19,6 @@ class LocationsImportBatch {
    * @return array
    */
   public static function locationImport(FileInterface $file) {
-
-    // @todo: create d'un job.
-    // @todo: connaitre le id du job.
-
     $date_start_import = time();
     /** @var \Drupal\soc_job\Entity\JobEntity $job */
     $job = \Drupal::entityTypeManager()->getStorage('job')->create();
@@ -38,30 +29,30 @@ class LocationsImportBatch {
     $job->save();
 
 
+    // Get items count.
     $fp = file($file->getFileUri(), FILE_SKIP_EMPTY_LINES);
     $max = count($fp) -1 ;
 
-
-    $operations = [];
     $i = 0;
+    $operations = [];
     $fh = fopen($file->getFileUri(), 'r');
-
     while ($row = fgetcsv($fh, 0, ';')) {
       if ($i !== 0) {
+        $options = [
+          'row' => $row,
+          'date_start_import' => $date_start_import,
+          'job_id' => $job->id(),
+          'max' => $max,
+        ];
         $operations[] = [
           '\Drupal\soc_sales_locations\Batch\LocationsImportBatch::importOperationRow',
           [
-            $row,
-            $date_start_import,
-            $job->id(),
-            $max
+            'options' => $options,
           ],
         ];
       }
       $i++;
     }
-
-
     return [
       'title' => t('Import Sales Locations'),
       'operations' => $operations,
@@ -78,8 +69,12 @@ class LocationsImportBatch {
    * @param $max
    * @param $context
    */
-  public static  function importOperationRow($row, $date_start_import, $job_id, $max, &$context){
+  public static  function importOperationRow(array $options, &$context){
 
+    $row = $options['row'];
+    $date_start_import = $options['date_start_import'];
+    $job_id = $options['job_id'];
+    $max = $options['max'];
     if (empty($context['sandbox'])) {
       $context['sandbox']['progress'] = 0;
       $context['sandbox']['current_id'] = 0;
@@ -88,8 +83,22 @@ class LocationsImportBatch {
     }
     /** @var \Drupal\soc_sales_locations\Service\SalesLocationsManagerImportService $importer */
     $importer = \Drupal::service('soc_sales_locations.manager.import');
-    // @notes: don't known argument for 'token', so using test word.
-    $status = $importer->importRow($row, $date_start_import);
+    try{
+      $importer->importRow($row, $date_start_import);
+      $status = true;
+    }
+    catch (EntityStorageException $e) {
+      \Drupal::messenger()->addError($e->getMessage());
+      $status = FALSE;
+    }
+    catch (InvalidArgumentException $e){
+      \Drupal::messenger()->addError($e->getMessage());
+      $status = FALSE;
+    }
+    catch (ImportStoreLocationException $e){
+      \Drupal::messenger()->addError($e->getMessage());
+      $status = FALSE;
+    }
     $context['message'] = $row[1];
     $context['results'][] = [
       'row' => $row,
@@ -102,6 +111,9 @@ class LocationsImportBatch {
     $importer->updateCurrentJob($job_id);
     if ($context['sandbox']['progress'] != $context['sandbox']['max']) {
       $context['finished'] = $context['sandbox']['progress'] / $context['sandbox']['max'];
+    }
+    if (!$status) {
+      $context['finished'] = 1;
     }
   }
 

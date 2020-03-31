@@ -52,6 +52,7 @@ class StoreLocationImportHelper {
    * @return void
    */
   public function importNameCompany($name_company) {
+
     $this->node->set('field_location_company',$name_company);
   }
   /**
