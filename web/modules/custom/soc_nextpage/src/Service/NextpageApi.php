@@ -146,7 +146,7 @@ class NextpageApi extends NextpageBaseApi implements NextpageApiInterface {
    * Synchronises Dictionary and save the json file inside the data folder.
    *
    */
-  public function synchroniseCharacteristicsDictionary($langId = 2){
+  public function synchroniseCharacteristicsDictionary($langId = 2) {
     $characteristics = $this->characteristicsDictionary($langId);
     $filename = 'characteristics_dictionary.json';
     $app_root = \Drupal::root();

@@ -69,12 +69,12 @@ class NextpageBaseApi extends BaseApi {
     $languageId = $config->get('language_id') ?? '1';
     $endpoints = [
       'token' => $config->get('endpoint_token') ?? 'api/auth',
-      'dicocarac' => $config->get('endpoint_dicocarac') ?? 'api/sdk-debug/dicocarac/GetAll',
-      'elementsandlinks' => $config->get('endpoint_elementsandlinks') ?? 'api/sdk-ext/element/ElementsAndLinks',
-      'descendantsandlinks' => $config->get('endpoint_descendantsandlinks') ?? 'api/sdk-ext/element/DescendantsAndLinks',
-      'elementsbychartemplate' => $config->get('endpoint_elementsbychartemplate') ?? 'api/sdk-ext/element/ElementsByCharTemplate',
+      'dicocarac' => $config->get('endpoint_dicocarac') ?? 'api/sdk/dicocarac/GetAll/2',
+      'elementsandlinks' => $config->get('endpoint_elementsandlinks') ?? 'api/sdk/element/ElementsAndLinks',
+      'descendantsandlinks' => $config->get('endpoint_descendantsandlinks') ?? 'api/sdk/element/DescendantsAndLinks',
+      'elementsbychartemplate' => $config->get('endpoint_elementsbychartemplate') ?? 'api/sdkt/element/ElementsByCharTemplate',
     ];
-    $extIds = $config->get('channel_extid') ?? '';
+    $extIds = $config->get('channel_extid') ?? Settings::get('channel_extid');
     $authStatus = $config->get('auth_status') ?? 0;
 
     $this->setBaseUrl($baseUrl);

@@ -194,13 +194,7 @@ class NextpageApiSettingsForm extends ConfigFormBase {
     $form['endpoints']['endpoint_elementsbychartemplate'] = [
       '#type'           => 'textfield',
       '#title'          => $this->t('ElementsByCharTemplate'),
-      '#description'    => $this->t('Get elements by product type.') . ' ' . Link::createFromRoute('Test',
-          'soc_nextpage.test_elements_by_char_template', [], [
-            'attributes' => [
-              'target' => '_blank',
-            ],
-          ]
-        )->toString(),
+      '#description'    => $this->t('Get elements by product type.'),
       '#default_value'  => $config->get('endpoint_elementsbychartemplate') ?? 'api/sdk-ext/element/ElementsByCharTemplate',
     ];
 

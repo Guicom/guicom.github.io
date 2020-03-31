@@ -138,3 +138,10 @@ $settings['file_private_path'] = $app_ground . '/data/files/private';
  * Modules excluded from config export.
  */
 $settings['config_exclude_modules'] = ['soc_content'];
+
+/**
+ * Pim Conf
+ */
+
+$settings['nextpage_base_url'] = 'https://preprod-socomecweb-api.nextpage.fr/com/';
+$settings['channel_extid'] = '##451471a6-4f2e-4395-820c-db907b1c945c';

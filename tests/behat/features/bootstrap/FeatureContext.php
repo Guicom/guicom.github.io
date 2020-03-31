@@ -424,20 +424,4 @@ JS;
       throw new Exception("The file doesn't exist");
     }
   }
-
-  /**
-   * @Then The json response should be valid
-   */
-  public function jsoonValid() {
-    $content = $this->getSession()->getPage()->getContent();
-    $content = trim($content);
-    $jsonContent = json_decode($content);
-    dump($content);
-    dump($jsonContent);
-
-    if (!isset($jsonContent->Elements)) {
-      throw new Exception("The json doesn't exist");
-    }
-  }
-
 }
