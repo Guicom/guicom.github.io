@@ -1,10 +1,11 @@
-base_url: 'http://socomec.com.loc:88/'
+base_url: 'https://preprod-socomecweb-api.nextpage.fr/com/'
+auth_status: 0
 username: admin
 password: ''
 context_id: '1'
 language_id: '1'
 endpoint_token: api/auth
-endpoint_dicocarac: api/sdk-debug/dicocarac/GetAll
-endpoint_elementsandlinks: api/sdk-ext/element/ElementsAndLinks
-endpoint_descendantsandlinks: api/sdk-ext/element/DescendantsAndLinks
-endpoint_elementsbychartemplate: api/sdk-ext/element/ElementsByCharTemplate
+endpoint_dicocarac: api/sdk/dicocarac/GetAll/2
+endpoint_elementsandlinks: api/sdk/element/ElementsAndLinks
+endpoint_descendantsandlinks: api/sdk/element/DescendantsAndLinks
+endpoint_elementsbychartemplate: api/sdk/element/ElementsByCharTemplate

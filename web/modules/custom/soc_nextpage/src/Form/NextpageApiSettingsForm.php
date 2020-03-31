@@ -68,8 +68,8 @@ class NextpageApiSettingsForm extends ConfigFormBase {
       '#type'           => 'radios',
       '#title'          => $this->t('Active auth connexion'),
       '#options' => $active,
-      '#description'    => $this->t('The password to use to request nextPage.'),
-      '#default_value'  => $config->get('password') ??
+      '#description'    => $this->t('Activate authentification.'),
+      '#default_value'  => $config->get('auth_status') ??
         Settings::get('auth_status', 0),
     ];
 
