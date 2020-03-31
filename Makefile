@@ -21,7 +21,7 @@ drupal-update:
 	./vendor/bin/phing gulp-socomec:css
 	./vendor/bin/phing gulp-socomec:clear-cache
 	./vendor/bin/phing drush:cc
-	./vendor/bin/phing update -Dmultisite.uri=$${contenthub_uri}
+	./vendor/bin/phing deploy:update -Dmultisite.uri=$${contenthub_uri}
 
 .PHONY: behat-event
 behat-event:
