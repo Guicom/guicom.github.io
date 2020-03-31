@@ -1,8 +1,8 @@
 Feature: [BOOKMARKS] Tests Behat
 
-  @api @cit @bookmarks @javascript @bookmarks_access
+  @api @cit @bookmarks @javascript @bookmarks_access_page
   Access to My Documents Page And header tooltip is set
-  # vendor/bin/phing behat:run -Dbehat.tags=bookmarks
+  # vendor/bin/phing behat:run -Dbehat.tags=bookmarks_access_page
   # ticket JIRA: SOCSOB-553
   # CA : I Need link to bookmark page
   # CA : I Need Tooltip on link
@@ -21,9 +21,9 @@ Feature: [BOOKMARKS] Tests Behat
     Then I should see an ".container-nav > .menu--header-visitors .ico-bookmark-star-white[data-original-title='My documents']" element
     Then I should see an ".container-nav > .menu--header-visitors .ico-bookmark-star-white[data-placement='bottom']" element
 
-  @api @cit @bookmarks @javascript @bookmarks_consult
+  @api @cit @bookmarks @javascript @bookmarks_settings
   Consult my documents page Testing Settings and Access
-  # vendor/bin/phing behat:run -Dbehat.tags=bookmarks
+  # vendor/bin/phing behat:run -Dbehat.tags=bookmarks_settings
   # ticket JIRA: SOCSOB-555
   # CA : Setting bookmark page with webmaster role
   # CA : I Need Access to bookmark page
@@ -49,9 +49,9 @@ Feature: [BOOKMARKS] Tests Behat
     And I visit "/fr/my-documents"
     Then I should see "MY DOCUMENTS FRENCH"
 
-  @api @cit @bookmarks @javascript @bookmarks_add
+  @api @cit @bookmarks @javascript @bookmarks_interact
   Consult my documents page Testing Settings and Access
-  # vendor/bin/phing behat:run -Dbehat.tags=bookmarks
+  # vendor/bin/phing behat:run -Dbehat.tags=bookmarks_interact
   # ticket JIRA: SOCSOB-555
   # CA : Setting bookmark page with webmaster role
   # CA : I Need Access to bookmark page
@@ -77,3 +77,14 @@ Feature: [BOOKMARKS] Tests Behat
     And I visit "/en/my-documents"
     Then I should see "ResourceTitle1"
     And I should see "ResourceTitle2"
+    When I click the ".form-item-select-all-select.form-check-label" element
+    And I click Actions
+    Then I should see "Download"
+    When I press "Remove selected"
+    And I press "yes"
+    And I wait max 3 seconds for AJAX to finish
+    Then I should see "2 item(s) deleted."
+    And I should not see "ResourceTitle1"
+    And I should not see "ResourceTitle2"
+
+
