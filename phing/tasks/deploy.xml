@@ -11,6 +11,7 @@
       assume="yes"
       root="${website.drupal.dir}"
       verbose="${drush.verbose}"
+      uri="${multisite.uri}"
     >
       <param>overrides</param>
     </drush>
