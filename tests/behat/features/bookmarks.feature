@@ -75,6 +75,5 @@ Feature: [BOOKMARKS] Tests Behat
     And I bookmark the resource "ResourceTitle1"
     And I bookmark the resource "ResourceTitle2"
     And I visit "/en/my-documents"
-    And I wait 300 seconds
     Then I should see "ResourceTitle1"
     And I should see "ResourceTitle2"
