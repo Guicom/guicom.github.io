@@ -415,4 +415,22 @@ JS;
     }
   }
 
+  /**
+   * @Then /^I bookmark the resource "([^"]*)"$/
+   */
+  public function iBookmarkTheResource($title) {
+    $query = \Drupal::EntityQuery('node');
+    $query->condition('type', 'resource');
+    $query->condition('title', $title);
+    $results = $query->execute();
+    if ($nodes = Node::loadMultiple($results)) {
+      $node = reset($nodes);
+      try {
+        $this->getSession()->visit('/en/bookmark/add/' . $node->id());
+        $this->getSession()->wait(5);
+      } catch (Exception $e) {
+      }
+    }
+  }
+
 }
