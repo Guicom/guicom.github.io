@@ -105,6 +105,12 @@
                 .field--name-field-event-picture {
                   background: rgba($blue_lighter_alt, 0.2);
                 }
+                .field--name-field-event-picture,
+                .field--name-field-media-image {
+                  img {
+                    min-height: 100%;;
+                  }
+                }
               }
               .field--name-bundle-fieldtaxonomy-term,
               .field--name-bundle-fieldnode,
