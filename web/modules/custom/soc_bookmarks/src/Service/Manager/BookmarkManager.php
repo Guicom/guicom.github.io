@@ -27,4 +27,23 @@ class BookmarkManager extends ContentListManager {
       $referencedField, $cookieIdField, $ItemActionRoute, $LastDeletedName);
   }
 
+  /**
+   * @param string $title
+   *
+   * @return bool
+   */
+  public function checkByTitle(string $title) {
+    $itemsQuery = \Drupal::entityQuery('node');
+    $itemsQuery->condition('type', 'bookmark');
+    $itemsQuery->condition('title', $title);
+    $itemsResults = $itemsQuery->execute();
+    $items = Node::loadMultiple($itemsResults);
+    if (sizeof($items)) {
+      if ($item = reset($items)) {
+        return array_search($item->id(), $this->contentList->getItems());
+      }
+    }
+    return FALSE;
+  }
+
 }

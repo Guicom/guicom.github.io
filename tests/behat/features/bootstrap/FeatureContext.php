@@ -1,8 +1,6 @@
 <?php
 
-use Behat\Mink\Driver\Selenium2Driver;
 use Drupal\Component\Utility\UrlHelper;
-use Drupal\Core\Url;
 use Drupal\DrupalExtension\Context\RawDrupalContext;
 use Drupal\node\Entity\Node;
 
@@ -423,7 +421,6 @@ JS;
     $query->condition('type', 'resource');
     $query->condition('title', $title);
     $results = $query->execute();
-    $_SESSION['behat_bookmarks'] = [];
     if ($nodes = Node::loadMultiple($results)) {
       /** @var \Drupal\node\Entity\Node $node */
       $node = reset($nodes);
@@ -432,7 +429,6 @@ JS;
       $bookmarksManager->add($node->id());
       try {
         $bookmarksManager->updateCookie();
-        $_SESSION['behat_bookmarks'][] = $node->id();
       }
       catch (\Exception $e) {
         \Drupal::logger('soc_bookmarks')->error($e->getMessage());
@@ -441,15 +437,15 @@ JS;
   }
 
   /**
-   * @Then /^I should have elements in my bookmarks$/
+   * @Then /^I should see the resource "([^"]*)" in my bookmarks$/
    */
-  public function iShouldHaveElementsInMyBookmarks() {
+  public function iShouldSeeTheResourceInMyBookmarks($title) {
     /** @var \Drupal\soc_bookmarks\Service\Manager\BookmarkManager $bookmarksManager */
     $bookmarksManager = \Drupal::service('soc_bookmarks.bookmark_manager');
-    foreach ($_SESSION['behat_bookmarks'] as $bmk) {
-      $bookmarksManager->add($bmk);
+    if ($bookmarksManager->checkByTitle($title)) {
+      return TRUE;
     }
-    $bookmarksManager->updateCookie();
+    return FALSE;
   }
 
 }

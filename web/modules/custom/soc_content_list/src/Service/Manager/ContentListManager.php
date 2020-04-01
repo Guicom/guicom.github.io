@@ -216,8 +216,4 @@ class ContentListManager {
     return sizeof($this->contentList->getItems());
   }
 
-  public function setItems($items) {
-    $this->contentList->setItems($items);
-  }
-
 }
