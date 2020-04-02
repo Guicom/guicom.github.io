@@ -1,8 +1,6 @@
 <?php
 
-use Behat\Mink\Driver\Selenium2Driver;
 use Drupal\Component\Utility\UrlHelper;
-use Drupal\Core\Url;
 use Drupal\DrupalExtension\Context\RawDrupalContext;
 use Drupal\node\Entity\Node;
 
@@ -413,6 +411,41 @@ JS;
       $node->save();
     } catch (Exception $e) {
     }
+  }
+
+  /**
+   * @Then /^I bookmark the resource "([^"]*)"$/
+   */
+  public function iBookmarkTheResource($title) {
+    $query = \Drupal::EntityQuery('node');
+    $query->condition('type', 'resource');
+    $query->condition('title', $title);
+    $results = $query->execute();
+    if ($nodes = Node::loadMultiple($results)) {
+      /** @var \Drupal\node\Entity\Node $node */
+      $node = reset($nodes);
+      /** @var \Drupal\soc_bookmarks\Service\Manager\BookmarkManager $bookmarksManager */
+      $bookmarksManager = \Drupal::service('soc_bookmarks.bookmark_manager');
+      $bookmarksManager->add($node->id());
+      try {
+        $bookmarksManager->updateCookie();
+      }
+      catch (\Exception $e) {
+        \Drupal::logger('soc_bookmarks')->error($e->getMessage());
+      }
+    }
+  }
+
+  /**
+   * @Then /^I should see the resource "([^"]*)" in my bookmarks$/
+   */
+  public function iShouldSeeTheResourceInMyBookmarks($title) {
+    /** @var \Drupal\soc_bookmarks\Service\Manager\BookmarkManager $bookmarksManager */
+    $bookmarksManager = \Drupal::service('soc_bookmarks.bookmark_manager');
+    if ($bookmarksManager->checkByTitle($title)) {
+      return TRUE;
+    }
+    return FALSE;
   }
 
 }
