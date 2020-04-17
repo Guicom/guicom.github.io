@@ -17,6 +17,7 @@ use Drupal\Component\Transliteration\TransliterationInterface;
  * Provides a controller for autocompletion.
  */
 class SocSearchAutocompleteController extends AutocompleteController {
+
   /**
    * Page callback: Retrieves autocomplete suggestions.
    *
@@ -27,6 +28,7 @@ class SocSearchAutocompleteController extends AutocompleteController {
    *
    * @return \Symfony\Component\HttpFoundation\JsonResponse
    *   The autocompletion response.
+   * @throws \Drupal\search_api\SearchApiException
    */
   public function autocomplete(SearchInterface $search_api_autocomplete_search, Request $request) {
     $json = parent::autocomplete($search_api_autocomplete_search, $request);
@@ -63,16 +65,19 @@ class SocSearchAutocompleteController extends AutocompleteController {
       }
     }
 
-    // Récupération des entités
+    // Get the entities
     $bundle_info = \Drupal::service("entity_type.bundle.info")->getAllBundleInfo();
     foreach ($results_set->getResultItems() as $item) {
-      $resultat = $item->getOriginalObject()->getValue();
-      $matches['categorized'][] = [
-        'bundle' => $bundle_info[$resultat->getEntityTypeId()][$resultat->bundle()]['label'],
-        'value' => $resultat->getTitle(),
-        'url' => $alias = \Drupal::service('path.alias_manager')->getAliasByPath('/node/'.$resultat->id()),
-        'label' => $resultat->getTitle(),
-      ];
+      try {
+        $result = $item->getOriginalObject()->getValue();
+        $matches['categorized'][] = [
+          'bundle' => $bundle_info[$result->getEntityTypeId()][$result->bundle()]['label'],
+          'value' => $result->label(),
+          'url' => $result->toUrl()->toString(),
+          'label' => $result->label(),
+        ];
+      } catch (SearchApiException $e) {
+      }
     }
 
     return new JsonResponse($matches);
