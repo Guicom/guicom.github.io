@@ -1,8 +1,10 @@
 .block-filter-by {
   display: flex;
+  margin-top: 5rem;
   @include media-breakpoint-down(sm) {
     flex-direction: column;
     align-items: center;
+    margin-top: 2.5rem;
   }
   .filter-by{
     color: $dark-grey;
