@@ -105,6 +105,11 @@
                 .field--name-field-event-picture {
                   background: rgba($blue_lighter_alt, 0.2);
                 }
+                .field--name-field-product-pictures {
+                  .field__item {
+                    border-left: 0;
+                  }
+                }
                 .field--name-field-event-picture,
                 .field--name-field-media-image {
                   img {
@@ -248,6 +253,9 @@
               .field--name-field-product-teaser {
                 font-family: $font-roboto;
                 color: $dark-grey;
+              }
+              &.node--type-event {
+                background: $blue_lighter_alt;
               }
             }
           }
