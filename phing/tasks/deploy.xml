@@ -11,8 +11,22 @@
       assume="yes"
       root="${website.drupal.dir}"
       verbose="${drush.verbose}"
+      uri="${multisite.uri}"
     >
       <param>overrides</param>
+    </drush>
+    <phingcall target="update" />
+  </target>
+
+  <target name="deploy:update-hub">
+    <drush
+      command="csex"
+      assume="yes"
+      root="${website.drupal.dir}"
+      verbose="${drush.verbose}"
+      uri="${multisite.uri}"
+    >
+      <param>contenthub</param>
     </drush>
     <phingcall target="update" />
   </target>

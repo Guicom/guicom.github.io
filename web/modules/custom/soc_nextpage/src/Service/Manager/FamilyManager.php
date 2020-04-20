@@ -30,13 +30,14 @@ class FamilyManager {
     // Check if we had to handle this family
     if ($this->isFamily($pendingFamily) === TRUE) {
       // Check if term exist
-      if (! $term = $this->loadByExtID($pendingFamily->ExtID)) {
+      if (!$term = $this->loadByExtID($pendingFamily->ExtID)) {
         $term = $this->createFamilyTerm($pendingFamily->ExtID);
       }
       $this->updateFamilyTerm($term, $pendingFamily);
       return $term;
-    } else {
-       $this->getParents($pendingFamily);
+    }
+    else {
+      $this->getParents($pendingFamily);
     }
   }
 
@@ -70,7 +71,7 @@ class FamilyManager {
    */
   public function createFamilyTerm($textId) {
     $term = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->create([
-      'vid'        => 'family'
+      'vid' => 'family'
     ]);
     return $term;
   }
@@ -154,7 +155,9 @@ class FamilyManager {
     $result = $query->execute();
     if (!empty($result)) {
       $id = reset($result);
-      $entity = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->load($id);
+      $entity = \Drupal::entityTypeManager()
+        ->getStorage('taxonomy_term')
+        ->load($id);
     }
     return $entity;
   }
@@ -176,54 +179,4 @@ class FamilyManager {
 
   }
 
-  /**
-   * @param $values
-   *
-   * @return false|string
-   */
-  public function formatJsonField($values) {
-    $dico = Drupal::service('soc_nextpage.nextpage_api');
-    $d = $dico->characteristicsDictionary('1');
-    $json = [];
-    foreach ($values as $key => $value) {
-      if (isset($d[$key])) {
-        $dico_carac = $d[$key];
-        if ($dico_carac != NULL) {
-          if (!isset($json[$dico_carac->LibelleDossier])) {
-            $json[$dico_carac->LibelleDossier] = [
-              'group_name' => $dico_carac->LibelleDossier,
-            ];
-          }
-          $value_data = [];
-
-          switch ($dico_carac->TypeCode) {
-            case 'CHOIX':
-            case 'LISTE':
-              foreach ($dico_carac->Values as $choices) {
-                foreach ($value->Values as $val) {
-                  if ($val->ValueID == $choices->ValeurID) {
-                    $value_data[] = $choices->Valeur;
-                  }
-                }
-              }
-              $value = [
-                'id' => $dico_carac->ExtID,
-                'type' => $dico_carac->TypeCode,
-                'value' => $value_data,
-              ];
-              break;
-            default:
-              $value = [
-                'id' => $dico_carac->ExtID,
-                'type' => $dico_carac->TypeCode,
-                'value' => $value->Value ? $value->Value : '',
-              ];
-              break;
-          }
-          $json[$dico_carac->LibelleDossier]['value'][$value["id"]] = $value;
-        }
-      }
-    }
-    return json_encode($json);
-  }
 }
