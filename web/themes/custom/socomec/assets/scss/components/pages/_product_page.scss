@@ -119,8 +119,9 @@ body.node--type-product {
       }
     }
 
-    .proouct-info {
+    .product-info {
       position: relative;
+      min-height: 350px;
       @include media-breakpoint-down(md) {
         order: 2;
         position: initial;
