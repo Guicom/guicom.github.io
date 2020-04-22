@@ -570,5 +570,28 @@
     }
   };
 
+  /**
+   * Close automatically other menu on mobile
+   */
+  Drupal.behaviors.socomec_menu_interactions = {
+    attach: function (context, settings) {
+
+      var btnMainMenu = $('#btnMainNav');
+      var btnSearchMenu = $('a[data-drupal-link-system-path="search"]');
+
+      var menuSearch = $('.block-soc-search-block');
+      var menuMainMenu = $('#navbarSupportedContent');
+
+      btnMainMenu.once().on("click", function (e) {
+        menuSearch.addClass('d-none');
+        btnSearchMenu.removeClass('close-search');
+      });
+      btnSearchMenu.once().on("click", function (e) {
+        menuMainMenu.removeClass('show');
+        btnMainMenu.attr("aria-expanded","false");
+      });
+    }
+  };
+
 
 })(jQuery, Drupal);
