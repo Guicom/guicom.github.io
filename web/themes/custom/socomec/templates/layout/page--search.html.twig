@@ -107,18 +107,27 @@
             <div class="row">
               <div class="soc-search-wrapper col-md-12">
                 <div class="row">
-                  <aside class="col-md-3">
-                    <div class="facets">
-                      <div class="facets-title">{{ 'Filter by' |t }}</div>
-                      <div class="facet-bloc-position-title facet-full-width">{{ drupal_entity('block', 'contenttype') }}</div>
-                      <div class="facet-bloc-position-title facet-full-width facet-highlight-first-elements">{{ drupal_entity('block', 'searchcategories') }}</div>
-                      <div class="facet-bloc-position-title facet-full-width">{{ drupal_entity('block', 'protectionlevel_2') }}</div>
-                      <div class="facet-bloc-position-title facet-full-width">{{ drupal_entity('block', 'searchthematics') }}</div>
-                      <div class="facet-bloc-position-title facet-full-width">{{ drupal_entity('block', 'eventtype') }}</div>
-                      <div class="facet-bloc-position-title facet-full-width">{{ drupal_entity('block', 'newstheme') }}</div>
-                      <div class="facet-bloc-position-title facet-full-width">{{ drupal_entity('block', 'newstype') }}</div>
-                      <div class="facet-bloc-position-title facet-full-width">{{ drupal_entity('block', 'typeofresource') }}</div>
+                  <aside class="col-md-3 search-filters">
+                    <div class="facet-mobile-modal-open">
+                      <button class="modal-open" aria-label="open modal">{{ 'filters'|t }}</button>
                     </div>
+                    <div class="modal-facets-mobile">
+                      <div class="block-filter-by">
+                        <div class="facet-mobile-modal-close">
+                          <button class="modal-close" aria-label="close modal"></button>
+                        </div>
+                          <div class="facets-title">{{ 'Filter by' |t }}</div>
+                          <div class="facet-bloc-position-title facet-full-width">{{ drupal_entity('block', 'contenttype') }}</div>
+                          <div class="facet-bloc-position-title facet-full-width facet-highlight-first-elements">{{ drupal_entity('block', 'searchcategories') }}</div>
+                          <div class="facet-bloc-position-title facet-full-width">{{ drupal_entity('block', 'protectionlevel_2') }}</div>
+                          <div class="facet-bloc-position-title facet-full-width">{{ drupal_entity('block', 'searchthematics') }}</div>
+                          <div class="facet-bloc-position-title facet-full-width">{{ drupal_entity('block', 'eventtype') }}</div>
+                          <div class="facet-bloc-position-title facet-full-width">{{ drupal_entity('block', 'newstheme') }}</div>
+                          <div class="facet-bloc-position-title facet-full-width">{{ drupal_entity('block', 'newstype') }}</div>
+                          <div class="facet-bloc-position-title facet-full-width">{{ drupal_entity('block', 'typeofresource') }}</div>
+                      </div>
+                    </div>
+
                     <div class="d-none d-md-block">
                       {% if page.sidebar_first %}
                         {{ page.sidebar_first }}
