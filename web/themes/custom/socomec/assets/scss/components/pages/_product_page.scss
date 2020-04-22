@@ -319,6 +319,9 @@ body.node--type-product {
       }
     }
     .product-nav-item {
+      @include media-breakpoint-up(md) {
+        display: inline-block;
+      }
       a {
         padding: 15px;
         background: $white;
@@ -337,8 +340,13 @@ body.node--type-product {
       }
     }
     .mobile-dropdown-jumpto {
-      width: 100%;
-      box-shadow: $box-shadow02;
+      @include media-breakpoint-up(md) {
+        display: block!important;
+      }
+      @include media-breakpoint-down(md) {
+        width: 100%;
+        box-shadow: $box-shadow02;
+      }
     }
   }
   // 1st SECTION
