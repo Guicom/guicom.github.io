@@ -3,11 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.product_reference.field_dc_r_erp_dimension_unit
-    - field.field.node.product_reference.field_dc_r_erp_weight
-    - field.field.node.product_reference.field_format_de_boitier
     - field.field.node.product_reference.field_json_product_data
-    - field.field.node.product_reference.field_nombre_de_pole
     - field.field.node.product_reference.field_product_status
     - field.field.node.product_reference.field_reference_extid
     - field.field.node.product_reference.field_reference_json_table
@@ -35,50 +31,16 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_dc_r_erp_dimension_unit:
-    weight: 21
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-    type: string_textfield
-    region: content
-  field_dc_r_erp_weight:
-    weight: 22
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-    type: string_textfield
-    region: content
-  field_format_de_boitier:
-    weight: 24
-    settings:
-      match_operator: CONTAINS
-      size: 60
-      placeholder: ''
-      match_limit: 10
-    third_party_settings: {  }
-    type: entity_reference_autocomplete
-    region: content
   field_json_product_data:
-    weight: 16
+    weight: 14
     settings:
       rows: 5
       placeholder: ''
     third_party_settings: {  }
     type: string_textarea
     region: content
-  field_nombre_de_pole:
-    weight: 23
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-    type: string_textfield
-    region: content
   field_product_status:
-    weight: 17
+    weight: 15
     settings:
       match_operator: CONTAINS
       size: 60
@@ -88,7 +50,7 @@ content:
     type: entity_reference_autocomplete
     region: content
   field_reference_extid:
-    weight: 15
+    weight: 13
     settings:
       size: 60
       placeholder: ''
@@ -96,7 +58,7 @@ content:
     type: string_textfield
     region: content
   field_reference_json_table:
-    weight: 25
+    weight: 23
     settings:
       rows: 5
       placeholder: ''
@@ -104,7 +66,7 @@ content:
     type: string_textarea
     region: content
   field_reference_name:
-    weight: 18
+    weight: 16
     settings:
       size: 60
       placeholder: ''
@@ -113,13 +75,13 @@ content:
     region: content
   field_reference_picture:
     type: media_library_widget
-    weight: 19
+    weight: 17
     settings:
       media_types: {  }
     third_party_settings: {  }
     region: content
   field_reference_ref:
-    weight: 20
+    weight: 18
     settings:
       size: 60
       placeholder: ''
@@ -145,13 +107,13 @@ content:
     third_party_settings: {  }
   moderation_state:
     type: moderation_state_default
-    weight: 13
+    weight: 11
     settings: {  }
     region: content
     third_party_settings: {  }
   path:
     type: path
-    weight: 9
+    weight: 7
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -164,13 +126,13 @@ content:
     third_party_settings: {  }
   publish_on:
     type: datetime_timestamp_no_default
-    weight: 10
+    weight: 8
     region: content
     settings: {  }
     third_party_settings: {  }
   publish_state:
     type: scheduler_moderation
-    weight: 30
+    weight: 25
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -178,7 +140,7 @@ content:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 14
+    weight: 12
     region: content
     third_party_settings: {  }
   sticky:
@@ -208,18 +170,18 @@ content:
     third_party_settings: {  }
   unpublish_on:
     type: datetime_timestamp_no_default
-    weight: 11
+    weight: 9
     region: content
     settings: {  }
     third_party_settings: {  }
   unpublish_state:
     type: scheduler_moderation
-    weight: 30
+    weight: 24
     region: content
     settings: {  }
     third_party_settings: {  }
   url_redirects:
-    weight: 12
+    weight: 10
     region: content
     settings: {  }
     third_party_settings: {  }

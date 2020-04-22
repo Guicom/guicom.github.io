@@ -17,18 +17,18 @@ class BaseApi {
   public $baseUrl;
 
   protected $user;
-  
+
   protected $password;
 
   protected $headers;
-  
+
   /**
    * The soc_core logging channel.
    *
    * @var \Drupal\Core\Logger\LoggerChannelInterface
    */
   protected $logger;
-  
+
   /**
    * Constructor.
    *
@@ -67,10 +67,11 @@ class BaseApi {
   protected function call($uri, $params = NULL, $method = 'POST', $format = 'json',
                           $auth = TRUE, $max_tries = 5) {
     $handle = $this->prepareCall($params, $method, $format, $auth);
-   
+
     $url = $this->getBaseUrl() . $uri;
     $curl = curl_setopt($handle, CURLOPT_URL, $url);
     // Upload bug tips. We sent the header and then the body.
+    $headers = [];
     $headers = $this->getHeaders();
     //$headers[] = "Expect:";
     $this->setHeaders($headers);
@@ -93,6 +94,7 @@ class BaseApi {
             }
             $curl = curl_setopt($handle, CURLOPT_POSTFIELDS, $body);
             $headers = $this->getHeaders();
+            $headers = [];
             $headers[] = 'Content-Type: application/json';
             $headers[] = 'Content-Length: ' . strlen($body);
             $this->setHeaders($headers);
@@ -100,13 +102,16 @@ class BaseApi {
           else {
             $curl = curl_setopt($handle, CURLOPT_POSTFIELDS, $params);
           }
+          $curl = curl_setopt($handle, CURLOPT_HTTPHEADER, $this->getHeaders());
           break;
         case 'PUT':
           $curl = curl_setopt($handle, CURLOPT_CUSTOMREQUEST, 'PUT');
           $curl = curl_setopt($handle, CURLOPT_POSTFIELDS, $params);
+          $curl = curl_setopt($handle, CURLOPT_HTTPHEADER, $this->getHeaders());
           break;
         case 'DELETE':
           $curl = curl_setopt($handle, CURLOPT_CUSTOMREQUEST, 'DELETE');
+          $curl = curl_setopt($handle, CURLOPT_HTTPHEADER, $this->getHeaders());
           break;
         case 'GET':
           //curl_setopt($handle);
@@ -118,12 +123,7 @@ class BaseApi {
             elseif (isset($params['body']) && is_string($params['body'])) {
               $body = $params['body'];
             }
-            $curl = curl_setopt($handle, CURLOPT_POSTFIELDS, $body);
-            $curl = curl_setopt($handle, CURLOPT_HTTPGET, TRUE);
-            $headers = $this->getHeaders();
-            $headers[] = 'Content-Type: application/json';
-            $this->setHeaders($headers);
-            //$this->setHeaders($headers);
+            curl_setopt($handle,CURLOPT_RETURNTRANSFER, true);
           }
           else {
             curl_setopt($handle, CURLOPT_POSTFIELDS, $params);
@@ -132,8 +132,6 @@ class BaseApi {
         default:
           break;
       }
-      $headers = $this->getHeaders();
-      $curl = curl_setopt($handle, CURLOPT_HTTPHEADER, $this->getHeaders());
 
       $res = curl_exec($handle);
       $code = curl_getinfo($handle, CURLINFO_HTTP_CODE);
@@ -155,7 +153,7 @@ class BaseApi {
       $this->logger->error($message);
       return false;
     }
-  
+
     curl_close($handle);
 
     switch ($format) {

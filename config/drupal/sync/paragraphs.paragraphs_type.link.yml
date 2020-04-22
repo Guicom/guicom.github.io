@@ -10,5 +10,6 @@ third_party_settings:
 id: link
 label: Link
 icon_uuid: null
+icon_default: null
 description: 'Reusable link paragraph'
 behavior_plugins: {  }

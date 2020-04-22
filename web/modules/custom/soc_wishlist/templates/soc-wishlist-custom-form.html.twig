@@ -1,18 +1,18 @@
-<div id="wishlist_form_message"></div>
-<div id="wishlist_form_content_wrapper">
-  <div id="navbar-wishlist-top" style="display:none">
+<div id="wishlist_form_message" class="soc-my-list-form-message"></div>
+<div id="wishlist_form_content_wrapper" class="soc-my-list-form-content-wrapper">
+  <div id="navbar-wishlist-top" class="navbar-soc-my-list-top" style="display:none">
     {% with {'key': 0} %}
       {% block navbar_wishlist %}
         {%  set ml_auto = "" %}
         {% if key == 1 %}
           {%  set ml_auto = "ml-auto" %}
         {% endif %}
-        <div class="navbar-wishlist">
+        <div class="navbar-wishlist navbar-soc-my-list">
           <nav class="navbar m-0 p-0 navbar-expand navbar-light">
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
               <ul class="navbar-nav {{ ml_auto }}">
                 <li class="nav-item">
-                  <a class="nav-link no-background icon-dealer" href="#">{{ 'Find a dealer'|t }}</a>
+                  <a class="nav-link no-background icon-dealer" href="{{ path('view.store_locator.page_1') }}">{{ 'Find a dealer'|t }}</a>
                 </li>
                 {% if form.wrapper_wishlist[0].extid is not empty %}
                 <li class="nav-item dropdown">
@@ -39,7 +39,7 @@
       {% endblock %}
     {% endwith %}
   </div>
-  <div id="wishlist_form_wrapper">
+  <div id="wishlist_form_wrapper" class="soc_my_list_form_wrapper">
     <table class="full-width">
       <thead>
       <tr>
@@ -78,7 +78,7 @@
   </div>
   {{ form | without('title', 'actions', 'wrapper_wishlist', 'select_all') }}
 </div>
-<div id="navbar-wishlist-bottom">
+<div id="navbar-wishlist-bottom" class="navbar-soc-my-list-bottom">
   {% with {'key': 1} %}
     {{ block('navbar_wishlist') }}
   {% endwith %}

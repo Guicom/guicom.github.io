@@ -1,0 +1,7 @@
+services:
+  soc_content_list.content_list_manager:
+    class: Drupal\soc_content_list\Service\Manager\ContentListManager
+    arguments:
+      ['contentList', ]
+  soc_content_list.content_list_form_manager:
+    class: Drupal\soc_content_list\Service\Manager\ContentListFormManager

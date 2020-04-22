@@ -1,0 +1,9 @@
+services:
+  soc_bookmarks.bookmark_manager:
+    class: Drupal\soc_bookmarks\Service\Manager\BookmarkManager
+    arguments:
+      ['@config.factory']
+  soc_bookmarks.bookmark_download:
+    class: Drupal\soc_bookmarks\Service\Manager\BookmarkDownload
+    arguments:
+      ['@soc_bookmarks.bookmark_manager', '@config.factory']

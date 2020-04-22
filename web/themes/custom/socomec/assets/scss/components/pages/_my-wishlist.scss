@@ -1,33 +1,19 @@
 #page {
-  &.my-wishlist-page{
+  &.soc-my-list-page{
     background-color: $white-grey;
-    #wishlist-page-header {
+    #soc-my-list-page-header {
       background-color: $white;
       .container{
         padding-right:0px;
         padding-left:0px;
       }
     }
-    .alert-wrapper {
-      position: initial;
-      .show{
-        opacity: 1;
-      }
-      .close{
-        top: 50%;
-        margin-top: -15px;
-        right: 5px;
-        &:hover,
-        &:focus{
-          background: none;
-        }
-      }
-    }
-    .soc-wishlist-wishlist-edit-form{
+    .soc-wishlist-wishlist-edit-form,
+    .soc-bookmarks-bookmark-edit-form{
       margin:40px 0px 0px 0px;
-      #wishlist_form_content_wrapper{
+      .soc-my-list-form-content-wrapper{
         position:relative;
-        #navbar-wishlist-top {
+        .navbar-soc-my-list-top {
           position: absolute;
           right: 0;
           top: 0;
@@ -40,9 +26,12 @@
           }
         }
 
-        #wishlist_form_wrapper {
+        .soc_my_list_form_wrapper {
           div.dataTables_wrapper {
             .custom-datatable-header-left{
+              label {
+                width: 100%;
+              }
               input.form-control{
                 color: $dark-grey;
                 font-family: $font-roboto;
@@ -56,6 +45,10 @@
                 background-color: #F2F3F3;
                 box-shadow: inset 0 1px 5px 0 rgba(0,0,0,0.2);
                 border-radius: unset;
+                @include media-breakpoint-down(lg) {
+                  width: 100%;
+                  margin: 0;
+                }
               }
             }
 
@@ -267,11 +260,16 @@
                 }
               }
             }
+            .soc-list-action-item-wrapper {
+              .form-check {
+                text-align: right;
+              }
+            }
           }
         }
       }
 
-      .navbar-wishlist {
+      .navbar-soc-my-list {
         .navbar-light {
           .navbar-nav {
             .nav-item{
@@ -398,7 +396,7 @@
           }
         }
       }
-      #navbar-wishlist-bottom {
+      .navbar-soc-my-list-bottom {
         .navbar-collapse {
           margin:0px -15px;
         }
@@ -411,7 +409,85 @@
           }
         }
       }
-
+    }
+    .soc-my-list-tasks-block {
+      nav.tabs-local-tasks{
+        position: relative;
+        margin-bottom: 0px;
+        .navbar-collapse {
+          ul.nav.nav-tabs.primary{
+            display: initial;
+            .nav-link{
+              padding: 19px 20px 19px 50px;
+              position: relative;
+              border: none;
+              border-top:2px solid transparent;
+              font-family: $font-poppins;
+              font-size: 12px;
+              font-weight: 600;
+              color: #4A4A47;
+              letter-spacing: 1px;
+              line-height: 20px;
+              text-align: center;
+              text-transform: uppercase;
+              border-radius: inherit;
+              &.active,
+              &:hover,
+              &:active,
+              &:focus{
+                border: none;
+                border-top:2px solid #004F9F;
+                background-color: $white-grey;
+                color: #004F9F;
+              }
+              &.my-bookmark-nav-link-item:before {
+                content: '';
+                width: 20px;
+                height: 20px;
+                background-image: url('../images/picto/ui/bookmark-star-darker-grey.svg');
+                background-size: 20px 20px;
+                background-repeat: no-repeat;
+                position: absolute;
+                left: 20px;
+              }
+              &.my-wishlist-nav-link-item:before {
+                content: '';
+                width: 20px;
+                height: 20px;
+                background-image: url('../images/picto/ui/favorite-darker-grey.svg');
+                background-size: 20px 20px;
+                background-repeat: no-repeat;
+                position: absolute;
+                left: 20px;
+              }
+              &.my-profile-nav-link-item:before {
+                content: '';
+                width: 20px;
+                height: 20px;
+                background-image: url('../images/picto/ui/user-darker-grey.svg');
+                background-size: 20px 20px;
+                background-repeat: no-repeat;
+                position: absolute;
+                left: 20px;
+              }
+              &.active,
+              &:hover,
+              &:active,
+              &:focus{
+                &.my-bookmark-nav-link-item:before {
+                  background-image: url('../images/picto/ui/bookmark-star-blue.svg');
+                }
+                &.my-wishlist-nav-link-item:before {
+                  background-image: url('../images/picto/ui/favorite.svg');
+                }
+                &.my-profile-nav-link-item:before {
+                  background-image: url('../images/picto/ui/user.svg');
+                }
+              }
+            }
+          }
+        }
+      }
     }
   }
 }

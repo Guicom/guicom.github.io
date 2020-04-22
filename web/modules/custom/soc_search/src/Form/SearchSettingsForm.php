@@ -56,7 +56,8 @@ class SearchSettingsForm extends ConfigFormBase {
       '#type'          => 'textfield',
       '#title' => $this->t('Page title with searched text'),
       '#default_value' => $settings->get('title_searched'),
-      '#description' => $this->t('Title page with the word you are looking for. use @total and @WORD token for dynamic text exemple : @total results for "@word"'),
+      '#description' => $this->t('Title page with the word you are looking for. '
+        .'use @total and @WORD token for dynamic text exemple : @total results for "@word"'),
     ];
 
     $form['soc_search']['basic']['title_no_result'] = [
@@ -77,7 +78,8 @@ class SearchSettingsForm extends ConfigFormBase {
       '#type'          => 'textfield',
       '#title' => $this->t('Breadcrumb title with searched text'),
       '#default_value' => $settings->get('breadcrumb_title_searched'),
-      '#description' => $this->t('Breadcrumb of the search page with the word you are looking for. use @word token for dynamic text exemple : Search results for "@word"'),
+      '#description' => $this->t('Breadcrumb of the search page with the word you are looking for. '
+        .'use @word token for dynamic text exemple : Search results for "@word"'),
     ];
 
 

@@ -78,6 +78,12 @@
                 flex: initial;
                 max-width: initial;
               }
+              &.col-3 {
+                width: 100%;
+                max-width: 100%;
+                flex: 0 0 100%;
+                padding: 0;
+              }
               a,
               span:not(.mobile-dropdown-trigger) {
                 display: block;

@@ -1,0 +1,53 @@
+soc_bookmarks.edit_bookmark:
+  path: '/my-documents'
+  defaults:
+    _form: '\Drupal\soc_bookmarks\Form\BookmarkEditForm'
+    _title_callback: '\Drupal\soc_bookmarks\Form\BookmarkEditForm::getTitle'
+  requirements:
+    _permission: 'edit own bookmark'
+  options:
+    no_cache: TRUE
+
+soc_bookmarks.add_item:
+  path: '/bookmark/add/{item_id}'
+  defaults:
+    _controller: '\Drupal\soc_bookmarks\Controller\BookmarkController::addItemAction'
+  requirements:
+    _permission: 'edit own bookmark'
+  options:
+    no_cache: TRUE
+
+soc_bookmarks.remove_item:
+  path: '/bookmark/remove/{item_id}'
+  defaults:
+    _controller: '\Drupal\soc_bookmarks\Controller\BookmarkController::removeItemAction'
+  requirements:
+    _permission: 'edit own bookmark'
+  options:
+    no_cache: TRUE
+
+soc_bookmarks.undo_remove_item:
+  path: '/bookmark/undo'
+  defaults:
+    _controller: '\Drupal\soc_bookmarks\Controller\BookmarkController::undoRemoveItemAction'
+  requirements:
+    _permission: 'edit own bookmark'
+  options:
+    no_cache: TRUE
+
+soc_bookmarks.download_items:
+  path: '/bookmark/download'
+  defaults:
+    _controller: '\Drupal\soc_bookmarks\Controller\BookmarkController::downloadItemsAction'
+  requirements:
+    _permission: 'edit own bookmark'
+  options:
+    no_cache: TRUE
+
+soc_bookmarks.settings:
+  path: '/admin/config/socomec/bookmark/settings'
+  defaults:
+    _form: '\Drupal\soc_bookmarks\Form\BookmarkSettingsForm'
+    _title: 'Bookmark settings'
+  requirements:
+    _permission: 'manage bookmark settings'

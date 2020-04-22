@@ -45,16 +45,3 @@ function soc_resource_center_form_alter(&$form, FormStateInterface $form_state, 
     $form['sticky']['widget']['value']['#description'] = $sticky_resource_description;
   }
 }
-
-/**
- * Implements hook_preprocess_breadcrumb().
- * @param $variables
- */
-function soc_resource_center_preprocess_breadcrumb(&$variables) {
-  if (\Drupal::routeMatch()->getRouteName() === "view.resource_center.page_1") {
-    $block = \Drupal\block\Entity\Block::load('resourcecenterhero');
-    $variables['breadcrumb'][1] = array(
-      'text' => $block->label()
-    );
-  }
-}

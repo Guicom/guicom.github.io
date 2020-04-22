@@ -543,29 +543,72 @@ function socomec_preprocess_we_megamenu_li(&$vars) {
 }
 
 /**
- * Add current page to breadcrumb
+ * Implements hook_preprocess_breadcrumb().
+ * @param $variables
  */
 function socomec_preprocess_breadcrumb(&$variables) {
-
-  $request = \Drupal::request();
   $route_match = \Drupal::routeMatch();
-  $page_title = \Drupal::service('title_resolver')->getTitle($request, $route_match->getRouteObject());
-
+  $route_name = $route_match->getRouteName();
   $node_type = null;
   if ($route_match->getCurrentRouteMatch()->getRouteName() == 'entity.node.canonical') {
     $node = $route_match->getParameter('node');
     $node_type = $node->getType();
+    if ($node_type == 'event') {
+      $variables["breadcrumb"][1] = [
+        'text' => "Event",
+        'url' => ""
+      ];
+    }
+    if (($node = \Drupal::routeMatch()->getParameter('node')) && $variables['breadcrumb']) {
+      $variables['breadcrumb'][] = array(
+        'text' => $node->getTitle(),
+      );
+    }
   }
-  if ($node_type == 'event') {
-    $variables["breadcrumb"][1] = [
-      'text' => "Event",
-      'url' => ""
-    ];
-  }
-  if (($node = \Drupal::routeMatch()->getParameter('node')) && $variables['breadcrumb']) {
+  elseif (($term = \Drupal::routeMatch()->getParameter('taxonomy_term')) && $variables['breadcrumb']) {
     $variables['breadcrumb'][] = array(
-      'text' => $node->getTitle(),
+      'text' => $term->getName(),
     );
+  }
+  else{
+    // Bookmark page or Wishlist page.
+    if ($route_name === "soc_bookmarks.edit_bookmark" || $route_name === "soc_wishlist.edit_wishlist") {
+      $variables['breadcrumb'][1] = array(
+        'text' => t('My space')
+      );
+      if ($route_name === "soc_bookmarks.edit_bookmark") {
+        $variables['breadcrumb'][2] = array(
+          'text' => \Drupal::config('soc_bookmarks.settings')->get('bookmark_page_title') ?? t('My documents')
+        );
+      }
+      elseif ( $route_name === "soc_wishlist.edit_wishlist") {
+        $language = \Drupal::languageManager()->getCurrentLanguage();
+        $variables['breadcrumb'][2] = array(
+          'text' => \Drupal::config('soc_wishlist.settings')->get('page_title_' . $language->getId()) ?? t('My wishlist')
+        );
+      }
+    }
+    // Resource center view.
+    if ($route_name === "view.resource_center.page_1") {
+      $block = \Drupal\block\Entity\Block::load('resourcecenterhero');
+      $variables['breadcrumb'][1] = array(
+        'text' => $block->label()
+      );
+    }
+
+    // search view.
+    if ($route_name === "search.view") {
+      $breadcrumb_title = \Drupal::config('soc_search.settings')->get('breadcrumb_title');
+      $breadcrumb_title_searched = \Drupal::config('soc_search.settings')->get('breadcrumb_title_searched');
+
+      $query = \Drupal\Component\Utility\Xss::filter(\Drupal::request()->query->get('search_api_fulltext'));
+      if ($query) {
+        $breadcrumb_title = str_replace('@word', $query, $breadcrumb_title_searched);
+      }
+      $variables['breadcrumb'][1] = array(
+        'text' => $breadcrumb_title
+      );
+    }
   }
 
 }

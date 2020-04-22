@@ -108,10 +108,10 @@
                     <div class="strong-points col-md-5">
                       {% include '@socomec/layout/product/strong-points.html.twig' %}
                     </div>
-                    {% if drupal_field('field_json_product_data', 'node') | getfield('DC_P_LONG_DESCRIPTION') %}
+                    {% if drupal_field('field_json_product_data', 'node') | getfield('DC_P_FUNCTIONS') %}
                       <div class="product-function col-md-6">
                         <h3 class="h3-blue">{{ 'Function' |t }}</h3>
-                        <p>{{ drupal_field('field_json_product_data', 'node') | getfield('DC_P_LONG_DESCRIPTION') }}</p>
+                        <p>{{ drupal_field('field_json_product_data', 'node') | getfield('DC_P_FUNCTIONS') }}</p>
                       </div>
                     {% endif %}
                   </div>
