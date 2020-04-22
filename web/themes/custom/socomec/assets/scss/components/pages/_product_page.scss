@@ -306,6 +306,17 @@ body.node--type-product {
       font-weight: 600;
       letter-spacing: 1px;
       line-height: 20px;
+      @include media-breakpoint-down(md) {
+        width: 100%;
+        text-align: center;
+        color: $white;
+        background: $blue_light;
+        svg {
+          g {
+            fill: $white;
+          }
+        }
+      }
     }
     .product-nav-item {
       a {
@@ -320,6 +331,14 @@ body.node--type-product {
         height: 51px;
         display: block;
       }
+      @include media-breakpoint-down(md) {
+        width: 100%;
+        text-align: center;
+      }
+    }
+    .mobile-dropdown-jumpto {
+      width: 100%;
+      box-shadow: $box-shadow02;
     }
   }
   // 1st SECTION
