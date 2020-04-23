@@ -557,12 +557,12 @@
   };
 
   /**
-   * hide facet label when no data
+   * hide facet label when no data on store locator page
    */
   Drupal.behaviors.socomec_facets_hide_labels = {
     attach: function (context, settings) {
       $(document).ready(function() {
-        if ($('.block-facets div').hasClass('facet-empty')) {
+        if ($('.where-to-buy-filters .block-facets div').hasClass('facet-empty')) {
           $('.facet-title').addClass('d-none');
         }
       });
