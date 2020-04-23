@@ -556,6 +556,17 @@
     }
   };
 
-
+  /**
+   * hide facet label when no data
+   */
+  Drupal.behaviors.socomec_facets_hide_labels = {
+    attach: function (context, settings) {
+      $(document).ready(function() {
+        if ($('.block-facets div').hasClass('facet-empty')) {
+          $('.facet-title').addClass('d-none');
+        }
+      });
+    }
+  };
 
 })(jQuery, Drupal);
