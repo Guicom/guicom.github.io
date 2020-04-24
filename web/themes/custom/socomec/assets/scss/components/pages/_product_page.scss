@@ -349,6 +349,13 @@ body.node--type-product {
       }
     }
   }
+
+  // alter position on admin
+  &.toolbar-fixed {
+    .product-navigation {
+      top: 139px;
+    }
+  }
   // 1st SECTION
   .product-left-info {
     @include media-breakpoint-down(md) {
