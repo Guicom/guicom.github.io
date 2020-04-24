@@ -3,3 +3,6 @@ services:
     class: Drupal\soc_traceparts\Service\TracepartsApi
     parent: soc_core.base_api
     arguments: ['@logger.factory', '@config.factory']
+  soc_traceparts.traceparts_viewer_manager:
+    class: Drupal\soc_traceparts\Service\Manager\TracepartsViewerManager
+    arguments: ['@soc_traceparts.traceparts_api']
