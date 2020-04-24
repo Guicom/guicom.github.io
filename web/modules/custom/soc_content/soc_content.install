@@ -583,3 +583,35 @@ function soc_content_install() {
   $blockContentManager->createBlockContent('home_product_assistance', 'Home Product Assistance', $blockData);
 
 }
+
+function soc_content_update_8001() {
+  /** @var \Drupal\soc_content\Service\ParagraphContent $paragraphManager */
+  $paragraphManager = \Drupal::service('soc_content.paragraph');
+  /** @var \Drupal\soc_content\Service\MediaContent $mediaManager */
+  $mediaManager = \Drupal::service('soc_content.media');
+  /** @var \Drupal\soc_content\Service\BlockContentContent $blockContentManager */
+  $blockContentManager = \Drupal::service('soc_content.block_content');
+  $paragraph = [
+    'field_link_title' => 'Visit our help center',
+    'field_link_link' => 'https://twitter.com/socomec_group',
+  ];
+  if ($file = $mediaManager->createFile('chevron-right-circle-white.svg')) {
+    if ($media = $mediaManager->createMedia($file, 'chevron-white-right', 'icone')) {
+      $paragraph['field_link_icon'] = [
+        'target_id' => $media->id(),
+      ];
+    }
+  }
+  $paragraph_ba_link = $paragraphManager->createParagraph('link', $paragraph);
+  $blockUuid = 'b5528417-a66a-439d-a965-2d1570e962f4';
+  $updatedBlockContent = $blockContentManager->updateBlockContent($blockUuid, [
+    'field_ba_link' => [
+      [
+        'target_id' => $paragraph_ba_link->id(),
+        'target_revision_id' => $paragraph_ba_link->getRevisionId(),
+      ],
+    ],
+  ]);
+  \Drupal::logger('soc_content')->info('target_id = ' . $paragraph_ba_link->id());
+  \Drupal::logger('soc_content')->info('target_revision_id = ' . $paragraph_ba_link->getRevisionId());
+}
