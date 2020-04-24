@@ -344,7 +344,6 @@
   function SocomecfacetsSelect(context, settings) {
     $('select').each(function () {
       var element = $(this);
-      element.attr( "data-live-search", "true" );
       element.selectpicker({
         virtualScroll: false,
       });
