@@ -7,16 +7,16 @@ dependencies:
 id: pathauto_product_page
 label: 'Pathauto Product page'
 type: 'canonical_entities:node'
-pattern: '[node:field_product_family:entity:name]/[node:title]'
+pattern: '[node:field_product_family:0:entity:name]/[node:field_product_family:1:entity:name]/[node:field_product_family:2:entity:name]/[node:title]'
 selection_criteria:
-  b62ecabf-dbde-4243-852d-c04bc2e044c9:
+  b844a464-c7ad-4667-b1aa-c6e88db4fc1b:
     id: node_type
     bundles:
       product: product
     negate: false
     context_mapping:
       node: node
-    uuid: b62ecabf-dbde-4243-852d-c04bc2e044c9
+    uuid: b844a464-c7ad-4667-b1aa-c6e88db4fc1b
 selection_logic: and
 weight: -5
 relationships: {  }
