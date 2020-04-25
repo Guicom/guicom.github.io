@@ -28,13 +28,13 @@ class TracepartsApi extends BaseApi {
   /**
    * Constructs a new TracepartsApi object.
    *
-   * @param \Drupal\Core\Logger\LoggerChannelFactoryInterface $channelFactory
+   * @param \Drupal\Core\Logger\LoggerChannelFactoryInterface $channel_factory
    * @param \Drupal\Core\Config\ConfigFactoryInterface $config_factory
    */
-  public function __construct(LoggerChannelFactoryInterface $channelFactory,
-                              ConfigFactoryInterface $config_factory) {
-    parent::__construct($channelFactory);
-    $this->logger = $channelFactory->get('soc_traceparts');
+  public function __construct(ConfigFactoryInterface $config_factory,
+                              LoggerChannelFactoryInterface $channel_factory) {
+    parent::__construct($channel_factory);
+    $this->logger = $channel_factory->get('soc_traceparts');
     $this->configFactory = $config_factory;
     $this->baseUrl = 'http://ws.tracepartsonline.net/tpowebservices/';
     $this->endpoints = [

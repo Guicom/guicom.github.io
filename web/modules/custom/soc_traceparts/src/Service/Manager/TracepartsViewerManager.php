@@ -13,6 +13,8 @@ class TracepartsViewerManager {
 
   /**
    * Constructs a new TracepartsViewerManager object.
+   *
+   * @param \Drupal\soc_traceparts\Service\TracepartsApi $traceparts_api
    */
   public function __construct(TracepartsApi $traceparts_api) {
     $this->tracepartsApi = $traceparts_api;
