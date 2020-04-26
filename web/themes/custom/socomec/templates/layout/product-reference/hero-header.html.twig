@@ -1,0 +1,15 @@
+<div class="hero-block">
+  <div class="container">
+    <div class="row">
+      <div class="product-reference-image col-lg-5 col-md-12">
+      </div>
+      <div class="product-reference-info col-lg-7 col-md-12">
+        <h1 class="product-reference-title">
+          {{ drupal_field('title', 'node') }}
+        </h1>
+        <p class="product-reference-ref">{{ drupal_field('field_json_product_data', 'node') | getfield('DC_R_REFERENCE') }}</p>
+        <p class="product-reference-teaser">{{ drupal_field('field_json_product_data', 'node') | getfield('DC_R_REFERENCE_LONG_DESCRIPTION') }}</p>
+      </div>
+    </div>
+  </div>
+</div>
