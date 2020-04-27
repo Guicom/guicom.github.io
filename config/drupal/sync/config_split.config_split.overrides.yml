@@ -13,13 +13,14 @@ graylist:
   - dblog.settings
   - entity_share_client.remote.content_hub
   - entity_share_cron.settings
-  - soc_nextpage.nextpage_ws
   - soc_pardot.privacy_policy
+  - soc_search.settings
   - soc_wishlist.settings
   - system.cron
   - system.file
   - system.logging
   - system.mail
+  - soc_nextpage.nextpage_ws
 graylist_dependents: true
 graylist_skip_equal: true
 weight: 0

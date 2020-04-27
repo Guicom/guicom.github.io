@@ -565,11 +565,6 @@ function socomec_preprocess_breadcrumb(&$variables) {
       );
     }
   }
-  elseif (($term = \Drupal::routeMatch()->getParameter('taxonomy_term')) && $variables['breadcrumb']) {
-    $variables['breadcrumb'][] = array(
-      'text' => $term->getName(),
-    );
-  }
   else{
     // Bookmark page or Wishlist page.
     if ($route_name === "soc_bookmarks.edit_bookmark" || $route_name === "soc_wishlist.edit_wishlist") {
