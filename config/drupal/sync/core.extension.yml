@@ -85,6 +85,7 @@ module:
   locale: 0
   media: 0
   media_library: 0
+  menu_breadcrumb: 0
   menu_link_attributes: 0
   menu_per_role: 0
   menu_ui: 0
