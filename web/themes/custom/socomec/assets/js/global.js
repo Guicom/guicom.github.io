@@ -306,18 +306,23 @@
    */
   Drupal.behaviors.socomec_smooth_anchor_scrolling = {
     attach: function (context, settings) {
-      $(function() {
-        $('a[href^="#"]:not([href="#"])').click(function() {
-          var offset = -200;
-            var target = $(this.hash);
-            target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-            if (target.length) {
-              $('html, body').animate({
-                scrollTop: target.offset().top + offset
-              }, 1000);
-              return false;
-            }
-        });
+
+      $(document).ready(function() {
+        if ($("body").hasClass("node--type-product")) {
+          $(function() {
+            $('a[href^="#"]:not([href="#"])').click(function() {
+              var offset = -200;
+              var target = $(this.hash);
+              target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+              if (target.length) {
+                $('html, body').animate({
+                  scrollTop: target.offset().top + offset
+                }, 1000);
+                return false;
+              }
+            });
+          });
+        }
       });
     }
   };

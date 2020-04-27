@@ -292,7 +292,7 @@ body.node--type-product {
     margin-bottom: 45px;
     text-transform: uppercase;
     top: 60px;
-    z-index: 900;
+    z-index: 10000;
     .row {
       align-items: center;
       justify-content: flex-end;
@@ -347,6 +347,13 @@ body.node--type-product {
         width: 100%;
         box-shadow: $box-shadow02;
       }
+    }
+  }
+
+  // alter position on admin
+  &.toolbar-fixed {
+    .product-navigation {
+      top: 139px;
     }
   }
   // 1st SECTION
