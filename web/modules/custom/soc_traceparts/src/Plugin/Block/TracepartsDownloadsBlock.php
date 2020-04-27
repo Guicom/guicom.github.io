@@ -5,27 +5,26 @@ namespace Drupal\soc_traceparts\Plugin\Block;
 use Drupal\Core\Block\BlockBase;
 use Drupal\Core\Cache\Cache;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
-use Drupal\Core\Url;
-use Drupal\soc_traceparts\Service\Manager\TracepartsViewerManager;
+use Drupal\soc_traceparts\Service\Manager\TracepartsDownloadsManager;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
- * Provides a Node cached block that displays the Tracepart viewer of a reference.
+ * Provides a Node cached block that displays the downloadable CAD files of a reference.
  *
  * @Block(
- *   id = "traceparts_viewer_block",
- *   admin_label = @Translation("Traceparts viewer block")
+ *   id = "traceparts_downloads_block",
+ *   admin_label = @Translation("Traceparts downloads block")
  * )
  */
-class TracepartsViewerBlock extends BlockBase implements ContainerFactoryPluginInterface {
+class TracepartsDownloadsBlock extends BlockBase implements ContainerFactoryPluginInterface {
 
-  /** @var TracepartsViewerManager $viewerManager */
-  protected $viewerManager;
+  /** @var TracepartsDownloadsManager $downloadsManager */
+  protected $downloadsManager;
 
   public function __construct(array $configuration, $plugin_id, $plugin_definition,
-      TracepartsViewerManager $downloads_manager) {
+      TracepartsDownloadsManager $downloads_manager) {
     parent::__construct($configuration, $plugin_id, $plugin_definition);
-    $this->viewerManager = $downloads_manager;
+    $this->downloadsManager = $downloads_manager;
   }
 
   /**
@@ -44,7 +43,7 @@ class TracepartsViewerBlock extends BlockBase implements ContainerFactoryPluginI
       $configuration,
       $plugin_id,
       $plugin_definition,
-      $container->get('soc_traceparts.traceparts_viewer_manager')
+      $container->get('soc_traceparts.traceparts_downloads_manager')
     );
   }
 
@@ -53,21 +52,17 @@ class TracepartsViewerBlock extends BlockBase implements ContainerFactoryPluginI
     /** @var $node \Drupal\node\NodeInterface $node */
     if ($node = \Drupal::routeMatch()->getParameter('node')) {
       if ($partNumber = $node->get('field_reference_ref')->value) {
-        if ($this->viewerManager->getViewerAvailability($partNumber)) {
-          $baseUrl = 'https://www.traceparts.com/els/socomec/en/api/viewer/3d';
-          $params = [
-            'SupplierID' => 'SOCOMEC',
-            'PartNumber' => $partNumber,
-            'SetBackgroundColor' => '0xfcfcfc',
-            'DisplayLogo' => 'none',
-          ];
-          $viewerUrl = Url::fromUri($baseUrl, [
-            'query' => $params,
-          ]);
+        $downloadableFormats = $this->downloadsManager->getDownloadableFormats($partNumber);
+        if (sizeof($downloadableFormats)) {
+          $downloadLinks = [];
+          foreach ($downloadableFormats as $formatId => $formatName) {
+            $downloadLinks[] = [
+              '#markup' => '<a href="#format'.$formatId.'">' . $formatName . '</a>',
+            ];
+          }
           $build['node_id'] = [
-            '#type' => 'inline_template',
-            '#template' => '<iframe src="' . $viewerUrl->toString() . '">'
-              . $this->t('Loading...') . '</iframe>',
+            '#theme' => 'item_list',
+            '#items' => $downloadLinks,
           ];
         }
       }

@@ -7,6 +7,7 @@ use Drupal\Core\Config\ConfigFactoryInterface;
 use Drupal\Core\Logger\LoggerChannelFactoryInterface;
 use Drupal\soc_core\Service\BaseApi;
 use GuzzleHttp\Client;
+use GuzzleHttp\Exception\ClientException;
 use GuzzleHttp\Exception\RequestException;
 
 /**
@@ -66,7 +67,7 @@ class TracepartsApi extends BaseApi {
       'PartNumber' => $part_number,
     ];
     if ($results = $this->call($uri, $params, 'GET', 'json', FALSE)) {
-      if (sizeof($results)) {
+      if (sizeof((array) $results)) {
         return (array) $results;
       }
     }
@@ -96,15 +97,15 @@ class TracepartsApi extends BaseApi {
                           $auth = TRUE, $max_tries = 5) {
     $response = [];
     $url = $this->getBaseUrl() . $uri . '?' . http_build_query($params);
-    switch ($method) {
-      case 'GET':
-        $request = $this->httpClient->get($url);
-        break;
-      default:
-        $request = $this->httpClient->post($url);
-        break;
-    }
     try {
+      switch ($method) {
+        case 'GET':
+          $request = $this->httpClient->get($url);
+          break;
+        default:
+          $request = $this->httpClient->post($url);
+          break;
+      }
       $response = $request->getBody()->getContents();
       switch ($format) {
         case 'json':
@@ -113,6 +114,8 @@ class TracepartsApi extends BaseApi {
         default:
           break;
       }
+    }
+    catch (ClientException $e) {
     }
     catch (RequestException $e) {
       $this->logger->warning($e->getMessage());
