@@ -10,6 +10,7 @@
   Drupal.behaviors.product_datatable = {
     attach: function(context, settings) {
       var dataSelect = [];
+      $( "#product-reference-table tr").prepend('<td></td>');
       $('#product-reference-table').once("product-datatable").DataTable( {
         "lengthChange": false,
         "autoWidth": false,
@@ -19,6 +20,11 @@
         "responsive": true,
         "sPaginationType":"simple_numbers",
         "iDisplayLength": 4,
+        columnDefs: [
+          { responsivePriority: 10001, targets: -3 },
+          { responsivePriority: 10001, targets: -2 },
+          { responsivePriority: 10002, targets: -1 }
+        ],
         language: {
           search: "_INPUT_",
           searchPlaceholder: Drupal.t("Search, Filter..."),
