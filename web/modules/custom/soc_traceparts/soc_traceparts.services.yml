@@ -1,7 +1,7 @@
 services:
   soc_traceparts.traceparts_api:
     class: Drupal\soc_traceparts\Service\TracepartsApi
-    arguments: ['@config.factory', '@logger.factory']
+    arguments: ['@config.factory', '@logger.factory', '@http_client']
   soc_traceparts.traceparts_viewer_manager:
     class: Drupal\soc_traceparts\Service\Manager\TracepartsViewerManager
     arguments: ['@soc_traceparts.traceparts_api']

@@ -52,22 +52,24 @@ class TracepartsViewerBlock extends BlockBase implements ContainerFactoryPluginI
     $build = [];
     /** @var $node \Drupal\node\NodeInterface $node */
     if ($node = \Drupal::routeMatch()->getParameter('node')) {
-      if ($reference = $node->get('field_reference_ref')->value) {
-        $baseUrl = 'https://www.traceparts.com/els/socomec/en/api/viewer/3d';
-        $params = [
-          'SupplierID' => 'SOCOMEC',
-          'PartNumber' => $reference,
-          'SetBackgroundColor' => '0xfcfcfc',
-          'DisplayLogo' => 'none',
-        ];
-        $viewerUrl = Url::fromUri($baseUrl, [
-          'query' => $params,
-        ]);
-        $build['node_id'] = [
-          '#type' => 'inline_template',
-          '#template' => '<iframe src="' . $viewerUrl->toString() . '">'
-            . $this->t('Loading...') . '</iframe>',
-        ];
+      if ($partNumber = $node->get('field_reference_ref')->value) {
+        if ($this->viewerManager->getViewerAvailability($partNumber)) {
+          $baseUrl = 'https://www.traceparts.com/els/socomec/en/api/viewer/3d';
+          $params = [
+            'SupplierID' => 'SOCOMEC',
+            'PartNumber' => $partNumber,
+            'SetBackgroundColor' => '0xfcfcfc',
+            'DisplayLogo' => 'none',
+          ];
+          $viewerUrl = Url::fromUri($baseUrl, [
+            'query' => $params,
+          ]);
+          $build['node_id'] = [
+            '#type' => 'inline_template',
+            '#template' => '<iframe src="' . $viewerUrl->toString() . '">'
+              . $this->t('Loading...') . '</iframe>',
+          ];
+        }
       }
     }
     return $build;
