@@ -46,10 +46,16 @@
   not paragraph.isPublished() ? 'paragraph--unpublished'
 ]
 %}
+{% set url = content.field_link_link|render|striptags|trim %}
+{% set ajax = url|socContentListAddAjaxAtribute %}
 <div{{ attributes.addClass(classes) }}>
   {% if content.field_link_paragraph.0 %}
     {{ content.field_link_paragraph }}
   {%  else %}
-    <a href="{{ content.field_link_link|render|striptags|trim  }}" {% if content.field_link_target.0 %} target="{{ content.field_link_target |render|striptags|trim }}"{% endif %}>{{ content.field_link_icon }} {{ content.field_link_title }}</a>
+    <a {% if ajax %}class="ajax-soc-content-list" data-soc-content-list-ajax="{{ ajax }}"{% endif %}
+       href="{% if url %}{{ url|socContentListGetBtn }}{% else %}#{% endif %}"
+      {% if content.field_link_target.0 %} target="{{ content.field_link_target|render|striptags|trim }}"{% endif %}>
+      {{ content.field_link_icon }} {{ content.field_link_title }}
+    </a>
   {% endif %}
 </div>
