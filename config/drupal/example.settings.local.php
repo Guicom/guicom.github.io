@@ -193,3 +193,9 @@ $settings['DISABLE_SUPER_ADMIN_ACCOUNT'] = 1;
  * Modules excluded from config export.
  */
 $settings['config_exclude_modules'] = ['soc_content'];
+
+/**
+ * Pim configuration
+ */
+$config['config_split.config_split.pim_configuration']['status'] = TRUE;
+$config['config_split.config_split.pim_configuration']['folder'] = "../config/drupal/pim_configuration";
