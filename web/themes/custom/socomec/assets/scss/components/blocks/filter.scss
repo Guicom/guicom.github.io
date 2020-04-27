@@ -1,6 +1,7 @@
 .block-filter-by {
   display: flex;
-  margin-top: 5rem;
+  margin-top: 13rem;
+  margin-bottom: 2rem;
   @include media-breakpoint-down(sm) {
     flex-direction: column;
     align-items: center;
