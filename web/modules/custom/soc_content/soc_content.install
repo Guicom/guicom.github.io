@@ -612,6 +612,4 @@ function soc_content_update_8001() {
       ],
     ],
   ]);
-  \Drupal::logger('soc_content')->info('target_id = ' . $paragraph_ba_link->id());
-  \Drupal::logger('soc_content')->info('target_revision_id = ' . $paragraph_ba_link->getRevisionId());
 }
