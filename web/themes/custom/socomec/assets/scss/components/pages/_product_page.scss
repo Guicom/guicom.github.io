@@ -292,7 +292,10 @@ body.node--type-product {
     margin-bottom: 45px;
     text-transform: uppercase;
     top: 60px;
-    z-index: 10000;
+    z-index: 900;
+    @include media-breakpoint-down(md) {
+      z-index: 10000;
+    }
     .row {
       align-items: center;
       justify-content: flex-end;
