@@ -1,0 +1,28 @@
+uuid: 8dcf0914-8d9e-48e6-9553-589b0ebe54c9
+langcode: en
+status: true
+dependencies:
+  module:
+    - ctools
+    - soc_traceparts
+  theme:
+    - socomec
+id: tracepartsviewerblock
+theme: socomec
+region: content
+weight: 0
+provider: null
+plugin: traceparts_viewer_block
+settings:
+  id: traceparts_viewer_block
+  label: 'Traceparts viewer block'
+  provider: soc_traceparts
+  label_display: '0'
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    bundles:
+      product_reference: product_reference
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
