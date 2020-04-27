@@ -78,6 +78,12 @@
                 flex: initial;
                 max-width: initial;
               }
+              &.col-3 {
+                width: 100%;
+                max-width: 100%;
+                flex: 0 0 100%;
+                padding: 0;
+              }
               a,
               span:not(.mobile-dropdown-trigger) {
                 display: block;
@@ -307,7 +313,7 @@
                     color: $blue;
                     background-color: $white;
                     background-image: url('../images/picto/ui/user.svg');
-                    background-size: 24px 24px;
+                    background-size: 20px 20px;
                     background-repeat: no-repeat;
                     background-position: left 18px center;
                     text-indent: initial;
