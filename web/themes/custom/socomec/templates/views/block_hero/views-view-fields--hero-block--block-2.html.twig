@@ -45,10 +45,13 @@
       <p class="thx-text">{% spaceless %}{{ fields.field_thank_you_text.content }}{% endspaceless %}</p>
       <p class="succces-text">{% spaceless %}{{ fields.field_success_text.content }}{% endspaceless %}</p>
       <h1 class="title-hero">{% spaceless %}{{ fields.title.content }}{% endspaceless %}</h1>
+      {% if file_url is not empty  %}
       <a class="download-file col-lg-5" href="{{ file_url }}" target="_blank">
         {% include '/themes/custom/socomec/assets/images/picto/ui/download.svg' %}
         {% spaceless %}{{ fields.field_cta.content }}{% endspaceless %}
       </a>
+        {% else %}
+      {% endif %}
     </div>
   </div>
 

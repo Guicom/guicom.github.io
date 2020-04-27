@@ -17,13 +17,15 @@
   }
 }
 
-.store-locator-wrapper {
+.store-locator-wrapper,
+.soc-search-wrapper {
   @include media-breakpoint-down(md) {
     margin-bottom: 1rem;
   }
   .block-filter-by {
     flex-direction: column;
-    .block-facets-ajax {
+    .block-facets-ajax,
+    .facet-full-width {
       @include media-breakpoint-down(md) {
         width: 100%;
         margin-bottom: 20px;

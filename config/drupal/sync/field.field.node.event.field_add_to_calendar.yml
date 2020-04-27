@@ -53,5 +53,5 @@ settings:
       'Google Calendar': 'Google Calendar'
       'Outlook Online': 'Outlook Online'
       'Yahoo! Calendar': 'Yahoo! Calendar'
-      Outlook: 0
+      Outlook: Outlook
 field_type: add_to_calendar_field
