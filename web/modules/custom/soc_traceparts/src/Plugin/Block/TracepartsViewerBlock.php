@@ -5,6 +5,7 @@ namespace Drupal\soc_traceparts\Plugin\Block;
 use Drupal\Core\Block\BlockBase;
 use Drupal\Core\Cache\Cache;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
+use Drupal\Core\Url;
 use Drupal\soc_traceparts\Service\Manager\TracepartsViewerManager;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
@@ -49,11 +50,25 @@ class TracepartsViewerBlock extends BlockBase implements ContainerFactoryPluginI
 
   public function build() {
     $build = [];
-    //if node is found from routeMatch create a markup with node ID's.
+    /** @var $node \Drupal\node\NodeInterface $node */
     if ($node = \Drupal::routeMatch()->getParameter('node')) {
-      $build['node_id'] = array(
-        '#markup' => '<p>' . $node->id() . '<p>',
-      );
+      if ($reference = $node->get('field_reference_ref')->value) {
+        $baseUrl = 'https://www.traceparts.com/els/socomec/en/api/viewer/3d';
+        $params = [
+          'SupplierID' => 'SOCOMEC',
+          'PartNumber' => $reference,
+          'SetBackgroundColor' => '0xfcfcfc',
+          'DisplayLogo' => 'none',
+        ];
+        $viewerUrl = Url::fromUri($baseUrl, [
+          'query' => $params,
+        ]);
+        $build['node_id'] = [
+          '#type' => 'inline_template',
+          '#template' => '<iframe src="' . $viewerUrl->toString() . '">'
+            . $this->t('Loading...') . '</iframe>',
+        ];
+      }
     }
     return $build;
   }
