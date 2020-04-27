@@ -8,6 +8,7 @@
     z-index: 1022;
     height: 60px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(8,71,150, 1);
     z-index: 99999;
     @include transition-socomec;
     &.scrolled,
@@ -313,7 +314,7 @@
                     color: $blue;
                     background-color: $white;
                     background-image: url('../images/picto/ui/user.svg');
-                    background-size: 24px 24px;
+                    background-size: 20px 20px;
                     background-repeat: no-repeat;
                     background-position: left 18px center;
                     text-indent: initial;
