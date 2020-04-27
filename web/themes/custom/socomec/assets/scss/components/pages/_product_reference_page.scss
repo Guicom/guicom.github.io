@@ -52,7 +52,106 @@ body.node--type-product-reference {
           font-weight: 300;
           letter-spacing: 0;
           line-height: 30px;
+          p {
+            color: $blue;
+            font-family: $font-roboto;
+            font-size: 20px;
+            font-weight: 300;
+            letter-spacing: 0;
+            line-height: 30px;
+            &:last-child {
+              padding-bottom: 0px;
+            }
+          }
         }
+      }
+    }
+    .product-reference-cta-wrapper {
+      display: flex;
+      flex-direction: row;
+      height: 60px;
+      align-items: center;
+      justify-content: flex-end;
+      @include media-breakpoint-down(md) {
+        order: 3;
+        position: relative;
+        height: 120px;
+      }
+      @include media-breakpoint-down(xs) {
+        margin-top: 30px;
+        flex-wrap: wrap;
+      }
+      img {
+        margin-right: 5px;
+      }
+      .cta-simple {
+        @include media-breakpoint-down(xs) {
+          width: 50%;
+        }
+        a {
+          height: 60px;
+          padding: 0 12px;
+          text-transform: uppercase;
+          color: $blue;
+          font-family: $font-poppins;
+          font-size: 12px;
+          font-weight: 600;
+          letter-spacing: 1px;
+          line-height: 20px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+      }
+
+      .cta-blue {
+        width: 197px;
+        @include media-breakpoint-down(xs) {
+          width: 50%;
+        }
+        a {
+          padding: 0 12px;
+          text-transform: uppercase;
+          height: 60px;
+          width: 100%;
+          background: $blue_light;
+          color: $white;
+          font-family: $font-poppins;
+          font-size: 14px;
+          font-weight: 600;
+          letter-spacing: 1px;
+          line-height: 16px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+      }
+
+      .cta-yellow {
+        width: 166px;
+        @include media-breakpoint-down(xs) {
+          width: 50%;
+        }
+        a {
+          padding: 0 12px;
+          text-transform: uppercase;
+          height: 60px;
+          width: 100%;
+          background: $yellow;
+          color: $blue;
+          font-family: $font-poppins;
+          font-size: 14px;
+          font-weight: 600;
+          letter-spacing: 1px;
+          line-height: 16px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+      }
+      //reset
+      .field--type-entity-reference {
+        margin: 0;
       }
     }
   }

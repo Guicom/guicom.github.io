@@ -7,9 +7,31 @@
         <h1 class="product-reference-title">
           {{ drupal_field('title', 'node') }}
         </h1>
-        <p class="product-reference-ref">{{ drupal_field('field_json_product_data', 'node') | getfield('DC_R_REFERENCE') }}</p>
-        <p class="product-reference-teaser">{{ drupal_field('field_json_product_data', 'node') | getfield('DC_R_REFERENCE_LONG_DESCRIPTION') }}</p>
+        <div class="product-reference-ref">{{ drupal_field('field_reference_ref', 'node') }}</div>
+        <div class="product-reference-teaser">{{ drupal_field('field_teaser', 'node') }}</div>
       </div>
     </div>
+    <aside class="product-reference-cta-wrapper">
+      {% if drupal_field('field_product_cta_1', 'node')|render %}
+        <div class="cta-simple">
+          {{ drupal_field('field_product_cta_1', 'node') }}
+        </div>
+      {% endif %}
+      {% if drupal_field('field_product_cta_2', 'node')|render %}
+        <div class="cta-simple">
+          {{ drupal_field('field_product_cta_2', 'node') }}
+        </div>
+      {% endif %}
+      {% if drupal_field('field_product_cta_3', 'node')|render %}
+        <div class="cta-blue">
+          {{ drupal_field('field_product_cta_3', 'node') }}
+        </div>
+      {% endif %}
+      {% if drupal_field('field_product_cta_4', 'node')|render %}
+        <div class="cta-yellow">
+          {{ drupal_field('field_product_cta_4', 'node') }}
+        </div>
+      {% endif %}
+    </aside>
   </div>
 </div>
