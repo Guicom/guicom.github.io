@@ -10,7 +10,8 @@
   Drupal.behaviors.product_datatable = {
     attach: function(context, settings) {
       var dataSelect = [];
-      $( "#product-reference-table tr").prepend('<td></td>');
+      $('#product-reference-table tbody tr').prepend('<td></td>');
+      $('#product-reference-table thead tr').prepend('<th></th>');
       $('#product-reference-table').once("product-datatable").DataTable( {
         "lengthChange": false,
         "autoWidth": false,
