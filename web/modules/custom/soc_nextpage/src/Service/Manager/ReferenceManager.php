@@ -78,7 +78,7 @@ class ReferenceManager {
    */
   public function updateReference($node, $reference) {
     $json_field = $this->nextpageItemHandler->formatJsonField($reference->Values);
-    $node->set('title', $reference->Values->{'DC_R_ADMIN_Invoice Description'}->Value);
+    $node->set('title', $reference->Values->{'DC_R_ADMIN_Invoice_Description'}->Value);
     $node->set('field_teaser', $reference->Values->{'DC_R_REFERENCE_LONG_DESCRIPTION'}->Value);
     $node->set('field_json_product_data', $json_field);
     $node->set('field_reference_json_table', $this->buildJsonTable($reference->Values));
@@ -114,8 +114,14 @@ class ReferenceManager {
       }
     }
 
-    $node->save();
-    return $node->id();
+    try {
+      $node->save();
+      return $node->id();
+    }
+    catch (\Exception $e) {
+      \Drupal::logger('soc_nextpage')->warning($e->getMessage());
+    }
+    return FALSE;
   }
 
 
