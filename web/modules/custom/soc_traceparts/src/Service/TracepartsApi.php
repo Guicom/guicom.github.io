@@ -48,6 +48,7 @@ class TracepartsApi extends BaseApi {
     $this->baseUrl = 'http://ws.tracepartsonline.net/tpowebservices/';
     $this->endpoints = [
       'CadDataAvailability' => 'CADdataAvailability',
+      'CheckLogin' => 'CheckLogin',
     ];
     $this->apiKey = '4GusSVAXU968or';
   }
@@ -72,6 +73,28 @@ class TracepartsApi extends BaseApi {
       }
     }
     return [];
+  }
+
+  /**
+   * @param string $user_email
+   *
+   * @return bool
+   */
+  public function checkLogin(string $user_email): bool {
+    $uri = $this->endpoints['CheckLogin'];
+    $params = [
+      'ApiKey' => $this->getApiKey(),
+      'Format' => 'json',
+      'UserEmail' => $user_email,
+    ];
+    if ($results = $this->call($uri, $params, 'GET', 'json', FALSE)) {
+      if (sizeof((array) $results)) {
+        if ($results->registered == 'true') {
+          return TRUE;
+        }
+      }
+    }
+    return FALSE;
   }
 
   /**

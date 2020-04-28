@@ -1,0 +1,7 @@
+soc_traceparts.login_form:
+  path: '/traceparts/login'
+  defaults:
+    _form: '\Drupal\soc_traceparts\Form\LoginForm'
+    _title: 'Login to Traceparts'
+  requirements:
+    _access: 'TRUE'
