@@ -12,22 +12,22 @@
       </div>
     </div>
     <aside class="product-reference-cta-wrapper">
-      {% if drupal_field('field_product_cta_1', 'node')|render %}
+      {% if drupal_field('field_product_cta_1', 'node')|render|striptags|trim is not empty %}
         <div class="cta-simple">
           {{ drupal_field('field_product_cta_1', 'node') }}
         </div>
       {% endif %}
-      {% if drupal_field('field_product_cta_2', 'node')|render %}
+      {% if drupal_field('field_product_cta_2', 'node')|render|striptags|trim is not empty %}
         <div class="cta-simple">
           {{ drupal_field('field_product_cta_2', 'node') }}
         </div>
       {% endif %}
-      {% if drupal_field('field_product_cta_3', 'node')|render %}
+      {% if drupal_field('field_product_cta_3', 'node')|render|striptags|trim is not empty %}
         <div class="cta-blue">
-          {{ drupal_field('field_product_cta_3', 'node') }}
+          {{ drupal_field('field_product_cta_3', 'node')|render|striptags|trim }}
         </div>
       {% endif %}
-      {% if drupal_field('field_product_cta_4', 'node')|render %}
+      {% if drupal_field('field_product_cta_4', 'node')|render|striptags|trim is not empty %}
         <div class="cta-yellow">
           {{ drupal_field('field_product_cta_4', 'node') }}
         </div>

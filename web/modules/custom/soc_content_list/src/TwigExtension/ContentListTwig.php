@@ -37,7 +37,7 @@ class ContentListTwig extends \Twig_Extension {
         return TRUE;
       }
     }
-    return NULL;
+    return FALSE;
   }
 
   /**
