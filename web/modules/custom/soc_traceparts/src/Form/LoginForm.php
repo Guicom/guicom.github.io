@@ -103,9 +103,19 @@ class LoginForm extends FormBase {
    *   An associative array containing the structure of the form.
    * @param \Drupal\Core\Form\FormStateInterface $form_state
    *   The current state of the form.
+   *
+   * @return void
    */
   public function submitForm(array &$form, FormStateInterface $form_state) {
     $values = $form_state->cleanValues()->getValues();
-    var_dump($this->tracepartsUser->checkLogin($values['email']));
+    if ($this->tracepartsUser->checkLogin($values['email']) === TRUE) {
+      $form_state->setRedirect('soc_traceparts.download');
+    }
+    else {
+      $message = $this->t('Your email address is not associated to a Traceparts account. Please register in order to access to your download.');
+      \Drupal::messenger()->addMessage($message);
+      $form_state->setRedirect('soc_traceparts.register_form');
+    }
+    return;
   }
 }

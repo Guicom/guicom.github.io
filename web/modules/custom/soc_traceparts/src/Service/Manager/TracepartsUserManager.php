@@ -29,4 +29,15 @@ class TracepartsUserManager {
     return $this->tracepartsApi->checkLogin($user_email);
   }
 
+  /**
+   * Register a new user account.
+   *
+   * @param array $user_data
+   *
+   * @return bool
+   */
+  public function registerUser(array $user_data): bool {
+    return $this->tracepartsApi->userRegistration($user_data);
+  }
+
 }

@@ -49,11 +49,14 @@ class TracepartsApi extends BaseApi {
     $this->endpoints = [
       'CadDataAvailability' => 'CADdataAvailability',
       'CheckLogin' => 'CheckLogin',
+      'UserRegistration' => 'UserRegistration',
     ];
     $this->apiKey = '4GusSVAXU968or';
   }
 
   /**
+   * Get CAD data availability for a given part number.
+   *
    * @param string $part_number
    *
    * @return array
@@ -76,6 +79,8 @@ class TracepartsApi extends BaseApi {
   }
 
   /**
+   * Check if user accounts exists.
+   *
    * @param string $user_email
    *
    * @return bool
@@ -86,6 +91,33 @@ class TracepartsApi extends BaseApi {
       'ApiKey' => $this->getApiKey(),
       'Format' => 'json',
       'UserEmail' => $user_email,
+    ];
+    if ($results = $this->call($uri, $params, 'GET', 'json', FALSE)) {
+      if (sizeof((array) $results)) {
+        if ($results->registered == 'true') {
+          return TRUE;
+        }
+      }
+    }
+    return FALSE;
+  }
+
+  /**
+   * Register a new user account.
+   *
+   * @param array $user_data
+   *
+   * @return bool
+   */
+  public function userRegistration(array $user_data): bool {
+    $uri = $this->endpoints['UserRegistration'];
+    $params = [
+      'ApiKey' => $this->getApiKey(),
+      'Format' => 'json',
+      'UserEmail' => $user_data['email'],
+      'company' => $user_data['company'],
+      'country' => $user_data['country'],
+      'zipcode' => $user_data['zipcode'],
     ];
     if ($results = $this->call($uri, $params, 'GET', 'json', FALSE)) {
       if (sizeof((array) $results)) {
