@@ -57,12 +57,13 @@ class TracepartsDownloadsBlock extends BlockBase implements ContainerFactoryPlug
           $downloadLinks = [];
           foreach ($downloadableFormats as $formatId => $formatName) {
             $downloadLinks[] = [
-              '#markup' => '<a href="#format'.$formatId.'">' . $formatName . '</a>',
+              'format_id' => $formatId,
+              'format_name' => $formatName,
             ];
           }
           $build['node_id'] = [
-            '#theme' => 'item_list',
-            '#items' => $downloadLinks,
+            '#theme' => 'soc_traceparts_download_block',
+            '#formats' => $downloadLinks,
           ];
         }
       }

@@ -1,0 +1,10 @@
+<div class="nav-item dropdown">
+  <a class="nav-link dropdown-toggle icon-actions" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    {{ label }}
+  </a>
+  <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+    {% for format in formats %}
+      <div class="dropdown-item"><a href="#{{ format.format_id }}">{{ format.format_name }}</a></div>
+    {% endfor %}
+  </div>
+</div>

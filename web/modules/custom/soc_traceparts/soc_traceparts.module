@@ -8,6 +8,21 @@
 use Drupal\Core\Routing\RouteMatchInterface;
 
 /**
+ * Implements hook_theme().
+ */
+function soc_traceparts_theme() {
+  return [
+    'soc_traceparts_download_block' => [
+      'variables' => [
+        'label' => t('Download 3D model'),
+        'formats' => [],
+      ],
+      'template' => 'traceparts-download-block',
+    ],
+  ];
+}
+
+/**
  * Implements hook_help().
  */
 function soc_traceparts_help($route_name, RouteMatchInterface $route_match) {
