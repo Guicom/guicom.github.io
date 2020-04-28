@@ -50,16 +50,18 @@ class ContentListTwig extends \Twig_Extension {
       if ($position !== FALSE) {
         $value = "";
         $node = \Drupal::routeMatch()->getParameter('node');
-        if ($token === "ajax_btn_current_extid") {
-          if ($node->hasField('field_reference_extid')) {
-            $fieldReferenceExtid = $node->get('field_reference_extid')->getValue();
-            if (!empty($fieldReferenceExtid[0]['value'])) {
-              $value = $fieldReferenceExtid[0]['value'];
+        if ($node) {
+          if ($token === "ajax_btn_current_extid") {
+            if ($node->hasField('field_reference_extid')) {
+              $fieldReferenceExtid = $node->get('field_reference_extid')->getValue();
+              if (!empty($fieldReferenceExtid[0]['value'])) {
+                $value = $fieldReferenceExtid[0]['value'];
+              }
             }
           }
-        }
-        elseif ($token === "ajax_btn_current_nid") {
-          $value = $node->id();
+          elseif ($token === "ajax_btn_current_nid") {
+            $value = $node->id();
+          }
         }
         if (!empty($value)) {
           $url = str_replace("[$token]", $value, $url);
