@@ -24,7 +24,7 @@
       {% endif %}
       {% if drupal_field('field_product_cta_3', 'node')|render|striptags|trim is not empty %}
         <div class="cta-blue">
-          {{ drupal_field('field_product_cta_3', 'node')|render|striptags|trim }}
+          {{ drupal_field('field_product_cta_3', 'node') }}
         </div>
       {% endif %}
       {% if drupal_field('field_product_cta_4', 'node')|render|striptags|trim is not empty %}
