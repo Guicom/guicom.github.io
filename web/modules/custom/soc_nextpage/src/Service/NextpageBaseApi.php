@@ -35,9 +35,6 @@ class NextpageBaseApi extends BaseApi {
   /** @var string $apiTokenExpiration */
   protected $apiTokenExpiration;
 
-  /** @var array $endpoints */
-  protected $endpoints;
-
   /** @var \Drupal\Core\TempStore\SharedTempStore $tempStore */
   protected $tempStore;
 
@@ -263,19 +260,6 @@ class NextpageBaseApi extends BaseApi {
    */
   public function setLanguageId(string $languageId): void {
     $this->languageId = $languageId;
-  }
-
-  /**
-   * @return array
-   */
-  public function getEndpoints(): array {
-    return $this->endpoints;
-  }
-  /**
-   * @param array $endpoints
-   */
-  public function setEndpoints(array $endpoints) {
-    $this->endpoints = $endpoints;
   }
 
   /**

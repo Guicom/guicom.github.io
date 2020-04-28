@@ -139,6 +139,7 @@ module:
   soc_sales_locations: 0
   soc_search: 0
   soc_store_locator: 0
+  soc_traceparts: 0
   soc_user: 0
   soc_views_news: 0
   soc_wishlist: 0
