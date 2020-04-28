@@ -5,6 +5,7 @@ namespace Drupal\soc_traceparts\Form;
 
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Link;
 use Drupal\Core\Session\AccountInterface;
 use Drupal\soc_traceparts\Service\Manager\TracepartsUserManager;
 use Symfony\Component\DependencyInjection\ContainerInterface;
@@ -26,6 +27,7 @@ class LoginForm extends FormBase {
    *
    * @param \Drupal\Core\Session\AccountInterface $current_user
    *   The current user.
+   * @param \Drupal\soc_traceparts\Service\Manager\TracepartsUserManager $traceparts_user
    */
   public function __construct(AccountInterface $current_user,
                               TracepartsUserManager $traceparts_user) {
@@ -69,6 +71,14 @@ class LoginForm extends FormBase {
    *   The form structure.
    */
   public function buildForm(array $form, FormStateInterface $form_state) {
+    $registrationLink = Link::createFromRoute(
+      $this->t('Register'),
+      'soc_traceparts.register_form'
+    );
+
+    $form['register'] = [
+      '#markup' => '<p class="col-xs-12">' . $registrationLink->toString() . '</p>',
+    ];
     $form['email'] = [
       '#type' => 'email',
       '#title' => $this->t('Your email address'),

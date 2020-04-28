@@ -5,3 +5,19 @@ soc_traceparts.login_form:
     _title: 'Login to Traceparts'
   requirements:
     _access: 'TRUE'
+
+soc_traceparts.register_form:
+  path: '/traceparts/register'
+  defaults:
+    _form: '\Drupal\soc_traceparts\Form\LoginForm'
+    _title: 'Register to Traceparts'
+  requirements:
+    _access: 'TRUE'
+
+soc_traceparts.download:
+  path: '/traceparts/download'
+  defaults:
+    _form: '\Drupal\soc_traceparts\Form\LoginForm'
+    _title: 'Download Traceparts'
+  requirements:
+    _access: 'TRUE'
