@@ -5,6 +5,7 @@ namespace Drupal\soc_traceparts\Plugin\Block;
 use Drupal\Core\Block\BlockBase;
 use Drupal\Core\Cache\Cache;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
+use Drupal\Core\Url;
 use Drupal\soc_traceparts\Service\Manager\TracepartsDownloadsManager;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
@@ -57,7 +58,10 @@ class TracepartsDownloadsBlock extends BlockBase implements ContainerFactoryPlug
           $downloadLinks = [];
           foreach ($downloadableFormats as $formatId => $formatName) {
             $downloadLinks[] = [
-              'format_id' => $formatId,
+              'download_link' => Url::fromRoute('soc_traceparts.login_form', [
+                'part_number' => $partNumber,
+                'format_id' => $formatId,
+              ]),
               'format_name' => $formatName,
             ];
           }

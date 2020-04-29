@@ -6,11 +6,12 @@ namespace Drupal\soc_traceparts\Form;
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Link;
+use Drupal\Core\Locale\CountryManager;
 use Drupal\Core\Session\AccountInterface;
 use Drupal\soc_traceparts\Service\Manager\TracepartsUserManager;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
-class LoginForm extends FormBase {
+class RegisterForm extends FormBase {
 
   /**
    * The current user.
@@ -54,7 +55,7 @@ class LoginForm extends FormBase {
    *   The unique string identifying the form.
    */
   public function getFormId() {
-    return 'soc_traceparts_login';
+    return 'soc_traceparts_register';
   }
 
   /**
@@ -74,29 +75,49 @@ class LoginForm extends FormBase {
   public function buildForm(array $form, FormStateInterface $form_state,
                             $part_number = NULL, $format_id = NULL) {
     $registrationLink = Link::createFromRoute(
-      $this->t('Register'),
-      'soc_traceparts.register_form',
+      $this->t('Login'),
+      'soc_traceparts.login_form',
       [
         'part_number' => $part_number,
         'format_id' => $format_id,
       ]
     );
 
+    $values = $form_state->cleanValues()->getValues();
     $form['register'] = [
       '#markup' => '<p class="col-xs-12">' . $registrationLink->toString() . '</p>',
     ];
     $form['email'] = [
       '#type' => 'email',
       '#title' => $this->t('Your email address'),
-      '#default_value' => $this->currentUser->getEmail() ?? '',
+      '#default_value' => $values['email'] ?? $this->currentUser->getEmail() ?? '',
+      '#required' => TRUE,
+    ];
+    $form['company'] = [
+      '#type' => 'textfield',
+      '#title' => $this->t('Your company'),
+      '#default_value' => $values['company'] ?? '',
+      '#required' => TRUE,
+    ];
+    $form['country'] = [
+      '#type' => 'select',
+      '#title' => $this->t('Your country'),
+      '#options' => CountryManager::getStandardList(),
+      '#default_value' => $values['country'] ?? '',
+      '#required' => TRUE,
+    ];
+    $form['zipcode'] = [
+      '#type' => 'textfield',
+      '#title' => $this->t('Your zip code'),
+      '#default_value' => $values['zipcode'] ?? '',
       '#required' => TRUE,
     ];
     $form['part_number'] = [
-      '#type' => 'hidden',
+      '#type' => 'value',
       '#value' => $part_number,
     ];
     $form['format_id'] = [
-      '#type' => 'hidden',
+      '#type' => 'value',
       '#value' => $format_id,
     ];
 
@@ -122,19 +143,21 @@ class LoginForm extends FormBase {
    */
   public function submitForm(array &$form, FormStateInterface $form_state) {
     $values = $form_state->cleanValues()->getValues();
-    if ($this->tracepartsUser->checkLogin($values['email']) === TRUE) {
+    $userData = [
+      'UserEmail' => $values['email'],
+      'company' => $values['company'],
+      'country' => $values['country'],
+      'zipcode' => $values['zipcode'],
+    ];
+    if ($this->tracepartsUser->registerUser($userData) === TRUE) {
       $form_state->setRedirect('soc_traceparts.download', [
         'part_number' => $values['part_number'],
         'format_id' => $values['format_id'],
       ]);
     }
     else {
-      $message = $this->t('Your email address is not associated to a Traceparts account. Please register in order to access to your download.');
+      $message = $this->t('Your Traceparts account could not be created. Please try again in a few moments.');
       \Drupal::messenger()->addMessage($message);
-      $form_state->setRedirect('soc_traceparts.register_form', [
-        'part_number' => $values['part_number'],
-        'format_id' => $values['format_id'],
-      ]);
     }
     return;
   }
