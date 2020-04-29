@@ -1,6 +1,6 @@
 /* ------------------ Header MOBILE ------------------ */
 // Position header with hero region.
-@include media-breakpoint-down(md) {
+@media (max-width: 991.98px) {
   .nav-wrapper {
     margin-top:-60px;
     width: 100%;
@@ -69,7 +69,8 @@
           border: none;
           &.we-mega-menu-ul {
             border: none;
-            height: auto;
+            height: 480px;
+            overflow-y: scroll;
             li {
               background: none;
               border: none;
@@ -332,6 +333,13 @@
           }
         }
       }
+    }
+  }
+  .navbar-collapse.collapse {
+    display: none!important;
+    &.show {
+      display: block!important;
+      height: 100%!important;
     }
   }
 }
