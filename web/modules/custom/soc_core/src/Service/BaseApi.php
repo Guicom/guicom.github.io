@@ -22,6 +22,9 @@ class BaseApi {
 
   protected $headers;
 
+  /** @var array $endpoints */
+  protected $endpoints;
+
   /**
    * The soc_core logging channel.
    *
@@ -36,6 +39,26 @@ class BaseApi {
    */
   public function __construct(LoggerChannelFactoryInterface $channelFactory) {
     $this->logger = $channelFactory->get('soc_core');
+  }
+
+  /**
+   * @return mixed
+   */
+  public function getBaseUrl() {
+    return $this->baseUrl;
+  }
+
+  /**
+   * @return array
+   */
+  public function getEndpoints(): array {
+    return $this->endpoints;
+  }
+  /**
+   * @param array $endpoints
+   */
+  public function setEndpoints(array $endpoints) {
+    $this->endpoints = $endpoints;
   }
 
   /**

@@ -1,0 +1,28 @@
+uuid: 7fad866d-6c68-4cc3-8c1d-c3acfc6860b9
+langcode: en
+status: true
+dependencies:
+  module:
+    - ctools
+    - soc_traceparts
+  theme:
+    - socomec
+id: tracepartsdownloadsblock
+theme: socomec
+region: hidden
+weight: -18
+provider: null
+plugin: traceparts_downloads_block
+settings:
+  id: traceparts_downloads_block
+  label: 'Traceparts downloads block'
+  provider: soc_traceparts
+  label_display: '0'
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    bundles:
+      product_reference: product_reference
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
