@@ -177,4 +177,22 @@ class NextpageItemHandler  {
       ->execute();
   }
 
+  public function getFieldFromJson($json_value, $extid) {
+    $data = NULL;
+    if (isset($json_value->{$extid})) {
+      $data = $json_value->{$extid}->value;
+    }
+    else {
+      foreach ($json_value as $values) {
+        if (isset($values->value)) {
+          if (isset($values->value->{$extid})) {
+            $data = $values->value->{$extid}->value;
+          }
+        }
+      }
+    }
+
+    return $data;
+  }
+
 }
