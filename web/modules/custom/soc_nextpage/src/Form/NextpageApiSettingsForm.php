@@ -18,7 +18,7 @@ class NextpageApiSettingsForm extends ConfigFormBase {
 
   const WS_SETTINGS_KEY = 'soc_nextpage.nextpage_ws';
 
-  const DEFAULT_BASE_URL = 'http://socomec-dummies.actency.fr/';
+  const DEFAULT_BASE_URL = 'https://preprod-socomecweb-api.nextpage.fr/com/';
   const DEFAULT_USERNAME = 'admin';
 
   /**
@@ -99,7 +99,7 @@ class NextpageApiSettingsForm extends ConfigFormBase {
       '#type'           => 'textfield',
       '#title'          => $this->t('Channel ExtID'),
       '#description'    => $this->t('The channel extID for this site.'),
-      '#default_value'  => $config->get('channel_extid') ?? '',
+      '#default_value'  => $config->get('channel_extid') ?? '##451471a6-4f2e-4395-820c-db907b1c945c',
     ];
 
     $form['context']['context_id'] = [
@@ -162,7 +162,7 @@ class NextpageApiSettingsForm extends ConfigFormBase {
             ],
           ]
         )->toString(),
-      '#default_value'  => $config->get('endpoint_dicocarac') ?? 'api/sdk-debug/dicocarac/GetAll',
+      '#default_value'  => $config->get('endpoint_dicocarac') ?? 'api/sdk/dicocarac/GetAll/2',
     ];
 
     $form['endpoints']['endpoint_elementsandlinks'] = [
@@ -175,7 +175,7 @@ class NextpageApiSettingsForm extends ConfigFormBase {
             ],
           ]
         )->toString(),
-      '#default_value'  => $config->get('endpoint_elementsandlinks') ?? 'api/sdk-ext/element/ElementsAndLinks',
+      '#default_value'  => $config->get('endpoint_elementsandlinks') ?? 'api/sdk/element/ElementsAndLinks',
     ];
 
     $form['endpoints']['endpoint_descendantsandlinks'] = [
@@ -188,7 +188,7 @@ class NextpageApiSettingsForm extends ConfigFormBase {
             ],
           ]
         )->toString(),
-      '#default_value'  => $config->get('endpoint_descendantsandlinks') ?? 'api/sdk-ext/element/DescendantsAndLinks',
+      '#default_value'  => $config->get('endpoint_descendantsandlinks') ?? 'api/sdk/element/DescendantsAndLinks',
     ];
 
     $form['endpoints']['endpoint_elementsbychartemplate'] = [
@@ -201,7 +201,7 @@ class NextpageApiSettingsForm extends ConfigFormBase {
             ],
           ]
         )->toString(),
-      '#default_value'  => $config->get('endpoint_elementsbychartemplate') ?? 'api/sdk-ext/element/ElementsByCharTemplate',
+      '#default_value'  => $config->get('endpoint_elementsbychartemplate') ?? 'api/sdk/element/ElementsByCharTemplate',
     ];
 
     return parent::buildForm($form, $form_state);
