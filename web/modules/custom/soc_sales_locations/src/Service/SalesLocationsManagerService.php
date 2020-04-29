@@ -38,7 +38,6 @@ class SalesLocationsManagerService implements SalesLocationsManagerServiceInterf
    * @inheritDoc
    */
   public function getHeaders(Response $response) {
-
     $name_file = 'export-sales-locations-' . date('Y-m-d');
     $response->headers->set('Pragma', 'no-cache');
     $response->headers->set('Expires', '0');
