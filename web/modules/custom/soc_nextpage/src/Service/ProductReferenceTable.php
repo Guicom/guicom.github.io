@@ -23,9 +23,9 @@ class ProductReferenceTable {
       $url = Url::fromRoute('entity.node.canonical', ['node' => $item["content"]["#node"]->id()]);
       $json = (array) json_decode($json[0]["value"]);
       foreach ($header as $head) {
-        $rows[$key][$head] = $json[$head] ? Link::fromTextAndUrl($json[$head], $url) : '';
+        $rows[$key][$head] = isset($json[$head]) ? Link::fromTextAndUrl($json[$head], $url) : '';
       }
-      $rows[$key]['select'] = $this->getCartLink();
+      $rows[$key]['select'] = $this->getCartLink($item["content"]["#node"]);
     }
 
     $footer = $header;
@@ -68,7 +68,13 @@ class ProductReferenceTable {
    * @return \Drupal\Component\Render\FormattableMarkup
    *   Formatted html
    */
-  public function getCartLink() {
-    return new FormattableMarkup("<span class='add-to-favorite'></span>", []);
+  public function getCartLink($node) {
+    $bomLink = "#";
+    $fieldReferenceExtid = $node->get('field_reference_extid')->getValue();
+    if (!empty($fieldReferenceExtid[0]['value'])) {
+      $extid = $fieldReferenceExtid[0]['value'];
+      $bomLink = "/wishlist/add/$extid";
+    }
+    return new FormattableMarkup("<a class='add-to-favorite ajax-soc-content-list' data-soc-content-list-ajax='1' href='$bomLink'></a>", []);
   }
 }

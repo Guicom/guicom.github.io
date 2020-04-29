@@ -10,8 +10,19 @@ body.node--type-product-reference {
         @include media-breakpoint-down(md) {
           background: $white;
         }
+        .back-to-button {
+          @include back-to-button();
+          color:$blue;
+          margin-bottom: $spacer;
+          transition: $transition02;
+          text-transform: uppercase;
+          @include media-breakpoint-down(md) {
+            margin-bottom: 2rem;
+          }
+        }
         .block-system-breadcrumb-block {
           ol.breadcrumb {
+            margin-bottom: 0px;
             li.breadcrumb-item {
               color:$darker-grey;
               a {
