@@ -5,8 +5,34 @@ namespace Drupal\soc_nextpage\Service;
 use Drupal\Component\Render\FormattableMarkup;
 use Drupal\Core\Link;
 use Drupal\Core\Url;
+use Drupal\Core\Extension\ModuleHandlerInterface;
 
 class ProductReferenceTable {
+
+  /**
+   * The module handler service.
+   *
+   * @var \Drupal\Core\Extension\ModuleHandlerInterface
+   */
+  protected $moduleHandler;
+
+  /**
+   *
+   * @param \Drupal\Core\Extension\ModuleHandlerInterface $module_handler
+   *   The module handler service.
+   */
+  public function __construct(ModuleHandlerInterface $module_handler) {
+    $this->moduleHandler = $module_handler;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public static function create(ContainerInterface $container) {
+    return new static(
+      $container->get('module_handler')
+    );
+  }
 
   /**
    * @param $field
@@ -69,12 +95,17 @@ class ProductReferenceTable {
    *   Formatted html
    */
   public function getCartLink($node) {
-    $bomLink = "#";
-    $fieldReferenceExtid = $node->get('field_reference_extid')->getValue();
-    if (!empty($fieldReferenceExtid[0]['value'])) {
-      $extid = $fieldReferenceExtid[0]['value'];
-      $bomLink = "/wishlist/add/$extid";
+    if ($this->moduleHandler->moduleExists('soc_wishlist')) {
+      $fieldReferenceExtid = $node->get('field_reference_extid')->getValue();
+      if (!empty($fieldReferenceExtid[0]['value'])) {
+        $extid = $fieldReferenceExtid[0]['value'];
+        $url = Url::fromRoute('soc_wishlist.add_item', ['item_id' => $extid])->toString();
+      }
+      if (!empty($url)) {
+        $link = "<a class='add-to-favorite ajax-soc-content-list' data-soc-content-list-ajax='1' href='$url'></a>";
+        return new FormattableMarkup($link, []);
+      }
     }
-    return new FormattableMarkup("<a class='add-to-favorite ajax-soc-content-list' data-soc-content-list-ajax='1' href='$bomLink'></a>", []);
+    return [];
   }
 }
