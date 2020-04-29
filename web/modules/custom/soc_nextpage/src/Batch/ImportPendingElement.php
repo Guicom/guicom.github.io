@@ -21,7 +21,7 @@ class ImportPendingElement {
       'title' => t('Importing pending product...'),
       'operations' => $operations,
       'init_message' => t('Import is starting.'),
-      'finished' => '\Drupal\coc_nextpage\Batch\ImportPendingElement::addPendingElementCallback',
+      'finished' => '\Drupal\soc_nextpage\Batch\ImportPendingElement::addPendingElementCallback',
     ];
     batch_set($batch);
   }
@@ -53,6 +53,7 @@ class ImportPendingElement {
   }
 
   public static function addPendingElementCallback() {
+    \Drupal::logger('soc_nextpage')->warning("Finished");
     $menu = Menu::load('header');
     $menu->save();
   }
