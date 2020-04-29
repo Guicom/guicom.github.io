@@ -11,12 +11,13 @@ Feature: Products
       | language | title   | status | moderation_state | field_orc_text |
       | English  | My ORC  | 1      | published        | ORC text       |
     And product content:
-      | language | title             | status | field_product_family | moderation_state | field_product_reference   | field_associated_products | field_product_orc_content | field_product_teaser | field_json_product_data |
-      | English  | My other product  | 1      | My Product Family    | published        | 22003016-SIRCO MV 3X160A  |                           |                           | Teaser               | {"Marketing":{"group_name":"Marketing","value":{"DC_P_FUNCTIONS":{"id":"DC_P_FUNCTIONS","type":"TXTLONG","value":"Value"},"DC_P_UNIQUE_VALUE_PROPOSAL":{"id":"DC_P_UNIQUE_VALUE_PROPOSAL","type":"TXTLONG","value":"Value"}}}} |
-      | English  | My test product   | 1      | My Product Family    | published        | 22003016-SIRCO MV 3X160A  | My other product          | My ORC                    | Teaser               | {"Marketing":{"group_name":"Marketing","value":{"DC_P_FUNCTIONS":{"id":"DC_P_FUNCTIONS","type":"TXTLONG","value":"Value"},"DC_P_UNIQUE_VALUE_PROPOSAL":{"id":"DC_P_UNIQUE_VALUE_PROPOSAL","type":"TXTLONG","value":"Value"}}}} |
+      | language | title             | status | field_product_family | moderation_state | field_product_reference   | field_associated_products | field_product_orc_content | field_product_teaser |
+      | English  | My other product  | 1      | My Product Family    | published        | 22003016-SIRCO MV 3X160A  |                           |                           | Teaser               |
+      | English  | My test product   | 1      | My Product Family    | published        | 22003016-SIRCO MV 3X160A  | My other product          | My ORC                    | Teaser               |
     And I am logged in as a user with the "administrator" role
     And I go to "admin/content"
     And I click "Edit" in the "My test product" row
+    And I fill in "field_json_product_data[0][value]" with "{\"Marketing\":{\"group_name\":\"Marketing\",\"value\":{\"DC_P_FUNCTIONS\":{\"id\":\"DC_P_FUNCTIONS\",\"type\":\"TXTLONG\",\"value\":\"Value\"},\"DC_P_UNIQUE_VALUE_PROPOSAL\":{\"id\":\"DC_P_UNIQUE_VALUE_PROPOSAL\",\"type\":\"TXTLONG\",\"value\":\"Value\"}}}}"
     And I click the "a[href='#edit-group-webmastering']" element
     And I wait 1 seconds
     And I click the "#edit-group-multiline" element
@@ -25,6 +26,7 @@ Feature: Products
     And I press the "field_product_multiline_model_text_add_more" button
     And I fill in "field_product_multiline[0][subform][field_title][0][value]" with "Text"
     And I press "edit-submit"
+    And I wait 120 seconds
     And I go to "admin/content"
     And I click "Edit" in the "22003016-SIRCO MV 3X160A" row
     And I set the dummy json data on the reference
@@ -34,6 +36,7 @@ Feature: Products
     And I accept all cookies compliance
     And I wait 1 seconds
     When I visit "/my-product-family/my-test-product"
+    And I wait 120 seconds
     Then I should see an "body.node--type-product" element
     Then I should see an "#product-info-section" element
     Then I should see an "#product-reference-section" element
