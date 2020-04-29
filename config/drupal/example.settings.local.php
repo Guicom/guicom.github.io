@@ -199,3 +199,11 @@ $settings['config_exclude_modules'] = ['soc_content'];
  */
 $config['config_split.config_split.pim_configuration']['status'] = TRUE;
 $config['config_split.config_split.pim_configuration']['folder'] = "../config/drupal/pim_configuration";
+
+/**
+ * Pim Conf
+ */
+
+$settings['nextpage_base_url'] = 'https://preprod-socomecweb-api.nextpage.fr/com/';
+$settings['channel_extid'] = '##451471a6-4f2e-4395-820c-db907b1c945c';
+
