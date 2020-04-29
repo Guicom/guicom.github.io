@@ -69,14 +69,17 @@
 #}
 <div id="page-wrapper">
   <div id="page">
+    {% include '@socomec/layout/share.html.twig' %}
     <header id="header" class="header" role="banner" aria-label="{{ 'Site header'|t}}">
       {% block head %}
         {% include '@socomec/includes/header.html.twig' %}
       {% endblock %}
-      {{ drupal_block('system_breadcrumb_block') }}
-      {% if page.hero %}
-        {{ page.hero }}
-      {% endif %}
+      <div class="header-product-reference-background">
+        <div class="header-product-reference">
+          {{ drupal_block('system_breadcrumb_block') }}
+          {% include '@socomec/layout/product-reference/hero-header.html.twig' %}
+        </div>
+      </div>
       {{ drupal_block('local_tasks_block') }}
     </header>
     {% if page.highlighted %}
@@ -97,33 +100,17 @@
     {% endif %}
     <main id="main-wrapper" class="layout-main-wrapper clearfix">
       {% block content %}
-        <div id="main" class="{{ container }}">
-          {{ page.breadcrumb }}
-          <div class="row row-offcanvas row-offcanvas-left clearfix">
-              <main{{ content_attributes }}>
-                <section class="section">
-                  <a id="main-content" tabindex="-1"></a>
-                  {{ page.content }}
-                  {{ drupal_block('traceparts_viewer_block') }}
-                  {{ drupal_block('traceparts_downloads_block') }}
-                </section>
-              </main>
-            {% if page.sidebar_first %}
-              <div{{ sidebar_first_attributes }}>
-                <aside class="section" role="complementary">
-                  {{ page.sidebar_first }}
-                </aside>
+        <article id="main" class="container-fluid">
+          <section class="section-light" id="product-info-section">
+            <div class="container">
+              <div class="row">
+                {{ content }}
+                {{ drupal_block('traceparts_viewer_block') }}
+                {{ drupal_block('traceparts_downloads_block') }}
               </div>
-            {% endif %}
-            {% if page.sidebar_second %}
-              <div{{ sidebar_second_attributes }}>
-                <aside class="section" role="complementary">
-                  {{ page.sidebar_second }}
-                </aside>
-              </div>
-            {% endif %}
-          </div>
-        </div>
+            </div>
+          </section>
+        </article>
       {% endblock %}
     </main>
     {% if page.featured_bottom_first or page.featured_bottom_second or page.featured_bottom_third %}

@@ -4,6 +4,10 @@ status: true
 dependencies:
   config:
     - field.field.node.product_reference.field_json_product_data
+    - field.field.node.product_reference.field_product_cta_1
+    - field.field.node.product_reference.field_product_cta_2
+    - field.field.node.product_reference.field_product_cta_3
+    - field.field.node.product_reference.field_product_cta_4
     - field.field.node.product_reference.field_product_status
     - field.field.node.product_reference.field_reference_extid
     - field.field.node.product_reference.field_reference_json_table
@@ -13,6 +17,7 @@ dependencies:
     - field.field.node.product_reference.field_teaser
     - node.type.product_reference
   module:
+    - entity_reference_revisions
     - text
     - user
 id: node.product_reference.default
@@ -27,14 +32,50 @@ content:
     third_party_settings: {  }
   field_json_product_data:
     weight: 102
-    label: above
+    label: hidden
     settings: {  }
     third_party_settings: {  }
     type: basic_string
     region: content
+  field_product_cta_1:
+    weight: 113
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    type: entity_reference_revisions_entity_view
+    region: content
+  field_product_cta_2:
+    weight: 114
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    type: entity_reference_revisions_entity_view
+    region: content
+  field_product_cta_3:
+    weight: 115
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    type: entity_reference_revisions_entity_view
+    region: content
+  field_product_cta_4:
+    weight: 116
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    type: entity_reference_revisions_entity_view
+    region: content
   field_product_status:
     weight: 103
-    label: above
+    label: hidden
     settings:
       link: true
     third_party_settings: {  }
@@ -42,7 +83,7 @@ content:
     region: content
   field_reference_extid:
     weight: 101
-    label: above
+    label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
@@ -50,14 +91,14 @@ content:
     region: content
   field_reference_json_table:
     weight: 111
-    label: above
+    label: hidden
     settings: {  }
     third_party_settings: {  }
     type: basic_string
     region: content
   field_reference_name:
     weight: 104
-    label: above
+    label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
@@ -66,7 +107,7 @@ content:
   field_reference_picture:
     type: entity_reference_entity_view
     weight: 105
-    label: above
+    label: hidden
     settings:
       view_mode: default
       link: false
@@ -74,7 +115,7 @@ content:
     region: content
   field_reference_ref:
     weight: 106
-    label: above
+    label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
@@ -82,7 +123,7 @@ content:
     region: content
   field_teaser:
     weight: 112
-    label: above
+    label: hidden
     settings: {  }
     third_party_settings: {  }
     type: text_default

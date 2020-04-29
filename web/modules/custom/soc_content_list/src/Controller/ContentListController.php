@@ -10,6 +10,7 @@ use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Response;
 use Drupal\Core\Url;
 use Drupal\soc_content_list\Service\Helper\ContentListHelper;
+use Symfony\Component\HttpFoundation\JsonResponse;
 
 class ContentListController extends ControllerBase {
 
@@ -50,17 +51,19 @@ class ContentListController extends ControllerBase {
    * @return array
    */
   public function addItemAction(string $item_id) {
+    $return = ['false'];
     try {
       $this->contentListManager->loadSavedItems();
     } catch (\Exception $e) {}
     if ($this->contentListManager->add($item_id)) {
       try {
         $this->contentListManager->updateCookie();
+        $return = ['true'];
       } catch (\Exception $e) {
         $this->messenger->addError($e->getMessage());
       }
     }
-    return [];
+    return new JsonResponse($return);
   }
 
   /**
