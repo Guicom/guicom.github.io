@@ -35,7 +35,6 @@ Feature: Products
     And I accept all cookies compliance
     And I wait 1 seconds
     When I visit "/my-product-family/my-test-product"
-    And I wait 120 seconds
     Then I should see an "body.node--type-product" element
     Then I should see an "#product-info-section" element
     Then I should see an "#product-reference-section" element
