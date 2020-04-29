@@ -154,7 +154,7 @@ class NextpageApi extends NextpageBaseApi implements NextpageApiInterface {
     fclose($fh);
 
     \Drupal::logger('soc_nextpage')
-      ->info($this->t('The file has been saved to @file', ['@file' => $filename]));
+      ->info(t('The file has been saved to @file', ['@file' => $filename]));
     return TRUE;
   }
 
