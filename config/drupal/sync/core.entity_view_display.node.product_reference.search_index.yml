@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.search_index
+    - field.field.node.product_reference.field_characteristics
     - field.field.node.product_reference.field_json_product_data
     - field.field.node.product_reference.field_product_cta_1
     - field.field.node.product_reference.field_product_cta_2
@@ -136,6 +137,7 @@ content:
 hidden:
   addtoany: true
   content_moderation_control: true
+  field_characteristics: true
   field_json_product_data: true
   field_product_cta_1: true
   field_product_cta_2: true

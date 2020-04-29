@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.product_reference.field_characteristics
     - field.field.node.product_reference.field_json_product_data
     - field.field.node.product_reference.field_product_cta_1
     - field.field.node.product_reference.field_product_cta_2
@@ -30,6 +31,13 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_characteristics:
+    weight: 117
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
   field_json_product_data:
     weight: 102
     label: hidden
