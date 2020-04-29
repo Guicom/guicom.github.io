@@ -203,7 +203,6 @@ $config['config_split.config_split.pim_configuration']['folder'] = "../config/dr
 /**
  * Pim Conf
  */
-
-$settings['nextpage_base_url'] = 'https://preprod-socomecweb-api.nextpage.fr/com/';
+$settings['soc_nextpage_base_url'] = 'https://preprod-socomecweb-api.nextpage.fr/com/';
 $settings['channel_extid'] = '##451471a6-4f2e-4395-820c-db907b1c945c';
 
