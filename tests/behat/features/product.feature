@@ -12,8 +12,8 @@ Feature: Products
       | English  | My ORC  | 1      | published        | ORC text       |
     And product content:
       | language | title             | status | field_product_family | moderation_state | field_product_reference   | field_associated_products | field_product_orc_content | field_product_teaser | field_json_product_data |
-      | English  | My other product  | 1      | My Product Family    | published        | 22003016-SIRCO MV 3X160A  |                           |                           | Teser                | {"Marketing":{"group_name":"Marketing","value":{"DC_P_FUNCTIONS":{"id":"DC_P_FUNCTIONS","type":"TXTLONG","value":""},"DC_P_UNIQUE_VALUE_PROPOSAL":{"id":"DC_P_UNIQUE_VALUE_PROPOSAL","type":"TXTLONG","value":""}}}} |
-      | English  | My test product   | 1      | My Product Family    | published        | 22003016-SIRCO MV 3X160A  | My other product          | My ORC                    | Teaser               | {"Marketing":{"group_name":"Marketing","value":{"DC_P_FUNCTIONS":{"id":"DC_P_FUNCTIONS","type":"TXTLONG","value":""},"DC_P_UNIQUE_VALUE_PROPOSAL":{"id":"DC_P_UNIQUE_VALUE_PROPOSAL","type":"TXTLONG","value":""}}}} |
+      | English  | My other product  | 1      | My Product Family    | published        | 22003016-SIRCO MV 3X160A  |                           |                           | Teaser               | {"Marketing":{"group_name":"Marketing","value":{"DC_P_FUNCTIONS":{"id":"DC_P_FUNCTIONS","type":"TXTLONG","value":"Value"},"DC_P_UNIQUE_VALUE_PROPOSAL":{"id":"DC_P_UNIQUE_VALUE_PROPOSAL","type":"TXTLONG","value":"Value"}}}} |
+      | English  | My test product   | 1      | My Product Family    | published        | 22003016-SIRCO MV 3X160A  | My other product          | My ORC                    | Teaser               | {"Marketing":{"group_name":"Marketing","value":{"DC_P_FUNCTIONS":{"id":"DC_P_FUNCTIONS","type":"TXTLONG","value":"Value"},"DC_P_UNIQUE_VALUE_PROPOSAL":{"id":"DC_P_UNIQUE_VALUE_PROPOSAL","type":"TXTLONG","value":"Value"}}}} |
     And I am logged in as a user with the "administrator" role
     And I go to "admin/content"
     And I click "Edit" in the "My test product" row
