@@ -44,9 +44,17 @@ class SocBreadcrumbProductReference implements BreadcrumbBuilderInterface {
   public function build(RouteMatchInterface $route_match) {
     $breadcrumb = new Breadcrumb();
     $breadcrumb->addLink(Link::createFromRoute(t('Home'), '<front>'));
-    $breadcrumb->addLink(Link::createFromRoute(t('Products'), '<none>'));
     // Get the node for the current page
     $node = $route_match->getParameter('node');
+    if ($nodeParent = $this->productReference->getParentProductByProductReference($node)) {
+      if (!empty($nodeParent->getTitle()) && !empty($nodeParent->id())) {
+        $breadcrumb->addLink(Link::createFromRoute(t('Products'), 'entity.node.canonical', ['node' => $nodeParent->id()]));
+      }
+    }
+    else {
+      $breadcrumb->addLink(Link::createFromRoute(t('Products'), '<none>'));
+    }
+
     if ($tid = $this->productReference->getParentProductFamilyByProductReference($node)) {
       if ($ancestors = \Drupal::service('entity_type.manager')->getStorage("taxonomy_term")->loadAllParents($tid)) {
         if (is_array($ancestors)) {
@@ -57,12 +65,11 @@ class SocBreadcrumbProductReference implements BreadcrumbBuilderInterface {
           }
         }
       }
-      if ($nodeParent = $this->productReference->getParentProductByProductReference($node)) {
+      if (!empty($nodeParent)) {
         if (!empty($nodeParent->getTitle()) && !empty($nodeParent->id())) {
           $breadcrumb->addLink(Link::createFromRoute($nodeParent->getTitle(), 'entity.node.canonical', ['node' => $nodeParent->id()]));
         }
       }
-
     }
     // This breadcrumb builder is based on a route parameter, and hence it
     // depends on the 'route' cache context.
