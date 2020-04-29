@@ -26,7 +26,6 @@ Feature: Products
     And I press the "field_product_multiline_model_text_add_more" button
     And I fill in "field_product_multiline[0][subform][field_title][0][value]" with "Text"
     And I press "edit-submit"
-    And I wait 120 seconds
     And I go to "admin/content"
     And I click "Edit" in the "22003016-SIRCO MV 3X160A" row
     And I set the dummy json data on the reference
