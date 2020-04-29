@@ -67,6 +67,17 @@
             margin-bottom: 1rem;
             div {
               display: inline-block;
+              &:after {
+                content:'•';
+                display: inline-block;
+                color: $dark-grey;
+                margin-left: 0.2rem;
+              }
+              &:last-child {
+                &:after {
+                  content:'';
+                }
+              }
             }
           }
         }

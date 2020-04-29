@@ -304,23 +304,28 @@
   /**
    * Smooth scroll for anchor
    */
-  // Drupal.behaviors.socomec_smooth_anchor_scrolling = {
-  //   attach: function (context, settings) {
-  //     $(function() {
-  //       $('a[href^="#"]:not([href="#"])').click(function() {
-  //         var offset = -200;
-  //           var target = $(this.hash);
-  //           target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-  //           if (target.length) {
-  //             $('html, body').animate({
-  //               scrollTop: target.offset().top + offset
-  //             }, 1000);
-  //             return false;
-  //           }
-  //       });
-  //     });
-  //   }
-  // };
+  Drupal.behaviors.socomec_smooth_anchor_scrolling = {
+    attach: function (context, settings) {
+
+      $(document).ready(function() {
+        if ($("body").hasClass("node--type-product")) {
+          $(function() {
+            $('a[href^="#"]:not([href="#"])').click(function() {
+              var offset = -200;
+              var target = $(this.hash);
+              target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+              if (target.length) {
+                $('html, body').animate({
+                  scrollTop: target.offset().top + offset
+                }, 1000);
+                return false;
+              }
+            });
+          });
+        }
+      });
+    }
+  };
 
   /**
    * Facets bootstrap_select
@@ -339,6 +344,9 @@
   function SocomecfacetsSelect(context, settings) {
     $('select').each(function () {
       var element = $(this);
+        if ($("body").hasClass("path-where-to-buy")) {
+          element.attr('data-live-search', 'true');
+        }
       element.selectpicker({
         virtualScroll: false,
       });
@@ -555,4 +563,73 @@
       });
     }
   };
+
+  /**
+   * Close automatically jumpto dropdown
+   */
+  Drupal.behaviors.socomec_jumpto_closing = {
+    attach: function (context, settings) {
+
+      var jumptoLink = $('a[href^="#"]:not([href="#"])');
+
+      jumptoLink.once().on("click", function (e) {
+        $('#product-jumpto').removeClass('show');
+      });
+    }
+  };
+
+  /**
+   * Close automatically other menu on mobile
+   */
+  Drupal.behaviors.socomec_menu_interactions = {
+    attach: function (context, settings) {
+
+      var btnMainMenu = $('#btnMainNav');
+      var btnSearchMenu = $('a[data-drupal-link-system-path="search"]');
+
+      var menuSearch = $('.block-soc-search-block');
+      var menuMainMenu = $('#navbarSupportedContent');
+
+      btnMainMenu.once().on("click", function (e) {
+        menuSearch.addClass('d-none');
+        btnSearchMenu.removeClass('close-search');
+      });
+      btnSearchMenu.once().on("click", function (e) {
+        menuMainMenu.removeClass('show');
+        btnMainMenu.attr("aria-expanded","false");
+      });
+    }
+  };
+
+  /**
+  * Ajax btn bookmarks and wishlist
+  */
+  Drupal.behaviors.socomec_content_list_ajax_btn = {
+    attach: function (context, settings) {
+      var elements = $('a[data-soc-content-list-ajax="1"]');
+      $(elements, context).once('socomec_content_list_ajax_btn').each(function () {
+        $(this).click(function (e) {
+          var element = $(this);
+          var href = element.attr('href');
+          element.addClass( "item-pending" );
+          $.ajax({
+            url: href,
+            type: 'GET',
+            dataType: 'json',
+            success: function (output, statut) {
+              element.removeClass( "item-pending" );
+              if (output == "false") {
+                element.addClass("item-added").delay(5000).queue(function(){
+                  element.removeClass("item-added").dequeue();
+                });
+              }
+            }
+          });
+          e.preventDefault();
+          e.stopPropagation();
+        });
+      });
+    }
+  };
+
 })(jQuery, Drupal);

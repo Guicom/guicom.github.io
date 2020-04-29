@@ -5,3 +5,8 @@ services:
       ['contentList', ]
   soc_content_list.content_list_form_manager:
     class: Drupal\soc_content_list\Service\Manager\ContentListFormManager
+  soc_content_list.twig.extension:
+    arguments: ['@renderer']
+    class: Drupal\soc_content_list\TwigExtension\ContentListTwig
+    tags:
+      - { name: twig.extension}

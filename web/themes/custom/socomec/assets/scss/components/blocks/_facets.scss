@@ -397,8 +397,9 @@
       @include close-btn;
     }
   }
-  // ONLY ON STORE LOCATOR PAGE FOR THE MOMENT -- WILL BE GLOBALIZE AFTER SPRINT 6
-  .store-locator-wrapper {
+  // ONLY ON STORE LOCATOR PAGE AND SEARCH -- WILL BE GLOBALIZED AFTER SPRINT 6
+  .store-locator-wrapper,
+  .soc-search-wrapper {
     .modal-facets-mobile {
       display: none;
       &.active {
