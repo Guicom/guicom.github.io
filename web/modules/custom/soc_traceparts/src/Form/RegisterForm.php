@@ -8,10 +8,18 @@ use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Link;
 use Drupal\Core\Locale\CountryManager;
 use Drupal\Core\Session\AccountInterface;
+use Drupal\Core\TempStore\PrivateTempStoreFactory;
 use Drupal\soc_traceparts\Service\Manager\TracepartsUserManager;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 class RegisterForm extends FormBase {
+
+  /**
+   * Tempstore service.
+   *
+   * @var \Drupal\Core\TempStore\PrivateTempStoreFactory
+   */
+  protected $tempStoreFactory;
 
   /**
    * The current user.
@@ -24,12 +32,15 @@ class RegisterForm extends FormBase {
   protected $tracepartsUser;
 
   /**
+   * @param \Drupal\Core\TempStore\PrivateTempStoreFactory $tempStoreFactory
    * @param \Drupal\Core\Session\AccountInterface $current_user
    *   The current user.
    * @param \Drupal\soc_traceparts\Service\Manager\TracepartsUserManager $traceparts_user
    */
-  public function __construct(AccountInterface $current_user,
+  public function __construct(PrivateTempStoreFactory $tempStoreFactory,
+                              AccountInterface $current_user,
                               TracepartsUserManager $traceparts_user) {
+    $this->tempStoreFactory = $tempStoreFactory;
     $this->currentUser = $current_user;
     $this->tracepartsUser = $traceparts_user;
   }
@@ -39,6 +50,7 @@ class RegisterForm extends FormBase {
    */
   public static function create(ContainerInterface $container) {
     return new static(
+      $container->get('tempstore.private'),
       $container->get('current_user'),
       $container->get('soc_traceparts.traceparts_user_manager')
     );
@@ -149,12 +161,20 @@ class RegisterForm extends FormBase {
       'country' => $values['country'],
       'zipcode' => $values['zipcode'],
     ];
+    // Account creation success: go to download.
     if ($this->tracepartsUser->registerUser($userData) === TRUE) {
-      $form_state->setRedirect('soc_traceparts.download', [
-        'part_number' => $values['part_number'],
-        'format_id' => $values['format_id'],
-      ]);
+      $tempStore = $this->tempStoreFactory->get('soc_traceparts_user_data');
+      try {
+        $tempStore->set('email', $values['email']);
+        $tempStore->set('part_number', $values['part_number']);
+        $tempStore->set('format_id', $values['format_id']);
+        $form_state->setRedirect('soc_traceparts.download');
+      }
+      catch (\Exception $e) {
+        $this->logger('soc_traceparts')->alert($e->getMessage());
+      }
     }
+    // Account creation fail: display message.
     else {
       $message = $this->t('Your Traceparts account could not be created. Please try again in a few moments.');
       \Drupal::messenger()->addMessage($message);

@@ -15,9 +15,8 @@ soc_traceparts.register_form:
     _permission: 'access content'
 
 soc_traceparts.download:
-  path: '/traceparts/download/{part_number}/{format_id}'
+  path: '/traceparts/download'
   defaults:
-    _form: '\Drupal\soc_traceparts\Form\LoginForm'
-    _title: 'Download Traceparts'
-    requirements:
-      _permission: 'access content'
+    _controller: '\Drupal\soc_traceparts\Controller\DownloadController::downloadPage'
+  requirements:
+    _permission: 'access content'

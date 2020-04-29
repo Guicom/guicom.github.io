@@ -50,6 +50,7 @@ class TracepartsApi extends BaseApi {
       'CadDataAvailability' => 'CADdataAvailability',
       'CheckLogin' => 'CheckLogin',
       'UserRegistration' => 'UserRegistration',
+      'DownloadCadPath' => 'DownloadCADPath',
     ];
     $this->apiKey = '4GusSVAXU968or';
   }
@@ -127,6 +128,32 @@ class TracepartsApi extends BaseApi {
       }
     }
     return FALSE;
+  }
+
+  /**
+   * @param array $data
+   *
+   * @return array
+   */
+  public function downloadCadPath(array $data): array {
+    $uri = $this->endpoints['DownloadCadPath'];
+    $params = [
+      'ApiKey' => $this->getApiKey(),
+      'Format' => 'json',
+      'UserEmail' => $data['email'],
+      'ClassificationID' => 'SOCOMEC',
+      'PartNumber' => $data['part_number'],
+      'CADFormatID' => $data['format_id'],
+      'Version' => 2,
+    ];
+    if ($results = $this->call($uri, $params, 'GET', 'json', FALSE)) {
+      if (sizeof((array) $results)) {
+        if (sizeof((array) $results->globalInfo) && sizeof($results->filesPath)) {
+          return (array) $results;
+        }
+      }
+    }
+    return [];
   }
 
   /**

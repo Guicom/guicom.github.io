@@ -7,10 +7,18 @@ use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Link;
 use Drupal\Core\Session\AccountInterface;
+use Drupal\Core\TempStore\PrivateTempStoreFactory;
 use Drupal\soc_traceparts\Service\Manager\TracepartsUserManager;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 class LoginForm extends FormBase {
+
+  /**
+   * Tempstore service.
+   *
+   * @var \Drupal\Core\TempStore\PrivateTempStoreFactory
+   */
+  protected $tempStoreFactory;
 
   /**
    * The current user.
@@ -23,12 +31,15 @@ class LoginForm extends FormBase {
   protected $tracepartsUser;
 
   /**
+   * @param \Drupal\Core\TempStore\PrivateTempStoreFactory $tempStoreFactory
    * @param \Drupal\Core\Session\AccountInterface $current_user
    *   The current user.
    * @param \Drupal\soc_traceparts\Service\Manager\TracepartsUserManager $traceparts_user
    */
-  public function __construct(AccountInterface $current_user,
+  public function __construct(PrivateTempStoreFactory $tempStoreFactory,
+                              AccountInterface $current_user,
                               TracepartsUserManager $traceparts_user) {
+    $this->tempStoreFactory = $tempStoreFactory;
     $this->currentUser = $current_user;
     $this->tracepartsUser = $traceparts_user;
   }
@@ -38,6 +49,7 @@ class LoginForm extends FormBase {
    */
   public static function create(ContainerInterface $container) {
     return new static(
+      $container->get('tempstore.private'),
       $container->get('current_user'),
       $container->get('soc_traceparts.traceparts_user_manager')
     );
@@ -122,12 +134,20 @@ class LoginForm extends FormBase {
    */
   public function submitForm(array &$form, FormStateInterface $form_state) {
     $values = $form_state->cleanValues()->getValues();
+    // Login success: go to download.
     if ($this->tracepartsUser->checkLogin($values['email']) === TRUE) {
-      $form_state->setRedirect('soc_traceparts.download', [
-        'part_number' => $values['part_number'],
-        'format_id' => $values['format_id'],
-      ]);
+      $tempStore = $this->tempStoreFactory->get('soc_traceparts_user_data');
+      try {
+        $tempStore->set('email', $values['email']);
+        $tempStore->set('part_number', $values['part_number']);
+        $tempStore->set('format_id', $values['format_id']);
+        $form_state->setRedirect('soc_traceparts.download');
+      }
+      catch (\Exception $e) {
+        $this->logger('soc_traceparts')->alert($e->getMessage());
+      }
     }
+    // Login fail: go to registration.
     else {
       $message = $this->t('Your email address is not associated to a Traceparts account. Please register in order to access to your download.');
       \Drupal::messenger()->addMessage($message);

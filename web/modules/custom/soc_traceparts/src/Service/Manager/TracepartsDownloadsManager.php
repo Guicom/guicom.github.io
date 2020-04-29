@@ -38,4 +38,24 @@ class TracepartsDownloadsManager {
     return [];
   }
 
+  /**
+   * @param string $part_number
+   * @param int $format_id
+   * @param string $user_email
+   *
+   * @return string
+   */
+  public function getDownloadLink(string $part_number, int $format_id, string $user_email): string {
+    $data = [
+      'part_number' => $part_number,
+      'format_id' => $format_id,
+      'email' => $user_email,
+    ];
+    $downloadData = $this->tracepartsApi->downloadCadPath($data);
+    if (sizeof($downloadData)) {
+      return $downloadData['filesPath'][0]->path;
+    }
+    return NULL;
+  }
+
 }
