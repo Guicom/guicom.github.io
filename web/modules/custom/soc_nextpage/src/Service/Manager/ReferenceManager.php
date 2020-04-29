@@ -102,14 +102,17 @@ class ReferenceManager {
           $paragraph = Paragraph::create(['type' => 'link']);
           $paragraph->set('field_link_paragraph', $entity->id());
           $paragraph->isNew();
-          $paragraph->save();
-          $current = [
-            0 => [
-              'target_id' => $paragraph->id(),
-              'target_revision_id' => $paragraph->getRevisionId(),
-            ]
-          ];
-          $node->set($field, $current);
+          try {
+            $paragraph->save();
+            $current = [
+              0 => [
+                'target_id' => $paragraph->id(),
+                'target_revision_id' => $paragraph->getRevisionId(),
+              ]
+            ];
+            $node->set($field, $current);
+          }
+          catch (\Exception $e) {}
         }
       }
     }
