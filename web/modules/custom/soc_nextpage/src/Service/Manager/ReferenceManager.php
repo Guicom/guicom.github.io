@@ -78,14 +78,53 @@ class ReferenceManager {
    */
   public function updateReference($node, $reference) {
     $json_field = $this->nextpageItemHandler->formatJsonField($reference->Values);
-    $node->set('title', $reference->Values->DC_R_REFERENCE->Value);
+    $node->set('title', $reference->Values->{'DC_R_ADMIN_Invoice_Description'}->Value);
+    $node->set('field_teaser', $reference->Values->{'DC_R_REFERENCE_LONG_DESCRIPTION'}->Value);
     $node->set('field_json_product_data', $json_field);
-    $node->set('field_reference_json_table', $this->buildJsonTable($reference->Values ));
+    $node->set('field_reference_json_table', $this->buildJsonTable($reference->Values));
     $node->set('field_reference_extid', $reference->ExtID);
+    $node->set('field_reference_ref', $reference->Values->{'DC_R_REFERENCE'}->Value);
     $node->setPublished();
     $node->set('moderation_state', 'published');
-    $node->save();
-    return $node->id();
+
+    if ($node->isNew()) {
+      // Initialize Cta btn match with entity uuid of paragraphs_library_item defined in soc_content module install
+      $ctaArray = [
+        'field_product_cta_1' => 'e6335561-cf61-4ed3-b233-6d7b55c1c6e9',
+        'field_product_cta_2' => '57f07f79-dd2a-4886-bf7d-417705232104',
+        'field_product_cta_3' => '69e5214f-5759-46d5-a0f5-4c8c41e0adc3',
+        // ready to by not use for moment 'field_product_cta_4' => 'bd080195-6284-4678-a773-c70b820a50f1',
+      ];
+
+      foreach ($ctaArray as $field => $uuid) {
+        $entity = \Drupal::entityManager()->loadEntityByUuid('paragraphs_library_item', $uuid);
+        if ($entity) {
+          $paragraph = Paragraph::create(['type' => 'link']);
+          $paragraph->set('field_link_paragraph', $entity->id());
+          $paragraph->isNew();
+          try {
+            $paragraph->save();
+            $current = [
+              0 => [
+                'target_id' => $paragraph->id(),
+                'target_revision_id' => $paragraph->getRevisionId(),
+              ]
+            ];
+            $node->set($field, $current);
+          }
+          catch (\Exception $e) {}
+        }
+      }
+    }
+
+    try {
+      $node->save();
+      return $node->id();
+    }
+    catch (\Exception $e) {
+      \Drupal::logger('soc_nextpage')->warning($e->getMessage());
+    }
+    return FALSE;
   }
 
 
