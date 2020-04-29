@@ -128,18 +128,22 @@ class NextpageItemHandler  {
           }
         }
         $value = [
-          'id' => $dico_carac->ExtID,
-          'type' => $dico_carac->TypeCode,
-          'value' => $value_data,
-          'label' => $dico_carac->Name,
+          'id' => (!empty($dico_carac->ExtID)) ? $dico_carac->ExtID :'',
+          'type' => (!empty($dico_carac->TypeCode)) ? $dico_carac->TypeCode :'',
+          'value' => (!empty($value_data)) ? $value_data :[],
+          'libelleDossier' => (!empty($dico_carac->LibelleDossier)) ? $dico_carac->LibelleDossier :'',
+          'label' => (!empty($dico_carac->Name)) ? $dico_carac->Name :'',
+          'order' => (!empty($dico_carac->Order)) ? $dico_carac->Order :'',
         ];
         break;
       default:
         $value = [
-          'id' => $dico_carac->ExtID,
-          'type' => $dico_carac->TypeCode,
-          'value' => ($field->Value ? $field->Value : ''),
-          'label' => $dico_carac->Name,
+          'id' => (!empty($dico_carac->ExtID)) ? $dico_carac->ExtID :'',
+          'type' => (!empty($dico_carac->TypeCode)) ? $dico_carac->TypeCode :'',
+          'value' => (!empty($field->Value)) ? $field->Value :'',
+          'libelleDossier' => (!empty($dico_carac->LibelleDossier)) ? $dico_carac->LibelleDossier :'',
+          'label' => (!empty($dico_carac->Name)) ? $dico_carac->Name :'',
+          'order' => (!empty($dico_carac->Order)) ? $dico_carac->Order :'',
         ];
         break;
     }

@@ -14,8 +14,10 @@ class NextpageTwig extends \Twig_Extension {
    */
   public function getFilters() {
     return [
+      new \Twig_SimpleFilter('getJsonDecode', array($this, 'getJsonDecodeData')),
       new \Twig_SimpleFilter('getfield', array($this, 'getFieldData')),
       new \Twig_SimpleFilter('getMenuIcon', array($this, 'getMenuIcon')),
+      new \Twig_SimpleFilter('getKsort', array($this, 'getKsort')),
     ];
   }
 
@@ -24,6 +26,24 @@ class NextpageTwig extends \Twig_Extension {
    */
   public function getName() {
     return 'NextpageTwig.twig_extension';
+  }
+
+  /**
+   * Get ksort as array.
+   */
+  public static function getKsort($string) {
+    if (is_array($string)) {
+      ksort($string);
+    }
+    return $string;
+  }
+
+
+  /**
+   * Get json as array.
+   */
+  public static function getJsonDecodeData($string) {
+    return json_decode(trim($string), TRUE);
   }
 
   /**
