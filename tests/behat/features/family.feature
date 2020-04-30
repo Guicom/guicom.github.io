@@ -19,7 +19,6 @@ Feature: Family
     When I visit "/famille-niveau-un/famille-niveau-deux/famille-niveau-trois"
     Then I should see an "body.taxonomy-family" element
     Then I should see an "#product-reference-section" element
-    Then I should see the breadcrumb link "Product"
     Then I should see the breadcrumb link "Famille niveau un"
     Then I should see the breadcrumb link "Famille niveau deux"
     Then I should see the breadcrumb link "Famille niveau trois"
