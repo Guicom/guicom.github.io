@@ -2,6 +2,7 @@
 
 namespace Drupal\soc_nextpage\Batch;
 
+use Drupal\Core\Entity\EntityStorageException;
 use Drupal\system\Entity\Menu;
 
 class ImportPendingElement {
@@ -10,7 +11,7 @@ class ImportPendingElement {
     $product = \Drupal::service('soc_nextpage.nextpage_api')->descendantsAndLinks();
 
     $operations[] = [
-      '\Drupal\soc_nextpage\Batch\ImportPendingElement::synchroDictionnary',
+      '\Drupal\soc_nextpage\Batch\ImportPendingElement::synchroDictionary',
       []
     ];
     foreach ($product->Elements ?? [] as $row) {
@@ -25,21 +26,20 @@ class ImportPendingElement {
       'title' => t('Importing pending product...'),
       'operations' => $operations,
       'init_message' => t('Import is starting.'),
-      'finished' => '\Drupal\coc_nextpage\Batch\ImportPendingElement::addPendingElementCallback',
+      'finished' => '\Drupal\soc_nextpage\Batch\ImportPendingElement::addPendingElementCallback',
     ];
     batch_set($batch);
   }
 
   /**
-   * Add a pending user to the batch.
+   * Add a pending item to the batch.
    *
    * @param $item
    * @param $context
    */
   public static function addPendingElement($item, &$context) {
-    $relationships = [];
     switch ($item->ElementType) {
-      // Familly case.
+      // Family case.
       case 103:
         \Drupal::service('soc_nextpage.nextpage_family_manager')->handle($item);
         break;
@@ -58,10 +58,14 @@ class ImportPendingElement {
 
   public static function addPendingElementCallback() {
     $menu = Menu::load('header');
-    $menu->save();
+    try {
+      $menu->save();
+    } catch (EntityStorageException $e) {
+    }
   }
 
-  public static function synchroDictionnary() {
-    \Drupal::service('soc_nextpage.nextpage_api')->synchroniseCharacteristicsDictionary();
+  public static function synchroDictionary() {
+    \Drupal::service('soc_nextpage.nextpage_api')
+      ->synchroniseCharacteristicsDictionary();
   }
 }
