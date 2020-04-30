@@ -97,29 +97,28 @@ class NextpageApi extends NextpageBaseApi implements NextpageApiInterface {
    *
    * @param $languageId
    *
+   * @param bool $ws
+   *
    * @return array|mixed
    */
   public function characteristicsDictionary($languageId, $ws = FALSE) {
-    $filename = 'characteristics_dictionary.json';
+    $filename = 'characteristics_dictionary_' . $languageId . '.json';
     $app_root = \Drupal::root();
-    if ($ws == TRUE) {
-      return $this->synchroniseCharacteristicsDictionary($languageId);
+    if ($ws === FALSE && file_exists($app_root . '/../data/' . $filename)) {
+      return $this->getDictionaryFromFile();
     }
-    else {
-      if (file_exists($app_root . '/../data/' . $filename)) {
-        return $this->getDictionnaryFromFile();
-      }
-      else {
-        return $this->synchroniseCharacteristicsDictionary($languageId);
-      }
-    }
+    return $this->synchroniseCharacteristicsDictionary($languageId);
   }
 
   /**
+   * Return characteristics dictionary from local JSON file.
+   *
+   * @param int $languageId
+   *
    * @return array
    */
-  public function getDictionnaryFromFile() {
-    $filename = 'characteristics_dictionary.json';
+  public function getDictionaryFromFile($languageId = 2) {
+    $filename = 'characteristics_dictionary_' . $languageId . '.json';
     $app_root = \Drupal::root();
     $path = $app_root . '/../data/' . $filename;
     $dico = file_get_contents($path);
@@ -128,12 +127,14 @@ class NextpageApi extends NextpageBaseApi implements NextpageApiInterface {
   }
 
   /**
-   * Synchronises Dictionary and save the json file inside the data folder.
+   * Synchronise dictionary and save the JSON file inside the data folder.
    *
+   * @param int $languageId
+   *
+   * @return bool
    */
   public function synchroniseCharacteristicsDictionary($languageId = 2){
     $endpoints = $this->getEndpoints();
-    $results = [];
     $dictionary = [];
     try {
       $results = $this->call($endpoints['dicocarac'],
@@ -146,15 +147,15 @@ class NextpageApi extends NextpageBaseApi implements NextpageApiInterface {
       $this->logger->error($e->getMessage());
     }
 
-    $filename = 'characteristics_dictionary.json';
+    $filename = 'characteristics_dictionary_' . $languageId . '.json';
     $app_root = \Drupal::root();
 
-    $fh = fopen($app_root . '/../data/' . $filename, 'w') or die('Error opening output file');
+    $fh = fopen($app_root . '/../data/' . $filename, 'w');
     fwrite($fh, json_encode($dictionary));
     fclose($fh);
 
     \Drupal::logger('soc_nextpage')
-      ->info(t('The file has been saved to @file', ['@file' => $filename]));
+      ->info(t('The characteristics dictionary has been saved to @file', ['@file' => $filename]));
     return TRUE;
   }
 
@@ -167,7 +168,9 @@ class NextpageApi extends NextpageBaseApi implements NextpageApiInterface {
    * @return mixed
    */
   protected function returnResults($results) {
-    if (isset($results->Results) && sizeof($results->Results->ResultsExtIDs) || sizeof($results->Results->Caracs)) {
+    if (isset($results->Results)
+      && sizeof($results->Results->ResultsExtIDs)
+      || sizeof($results->Results->Caracs)) {
       return $results->Results;
     }
     elseif (sizeof($results->Warnings)) {
