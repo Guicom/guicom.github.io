@@ -715,3 +715,19 @@ function soc_content_update_8002() {
   }
   catch (\Exception $e) {}
 }
+
+function soc_content_update_8003() {
+  /** @var \Drupal\soc_content\Service\MediaContent $mediaManager */
+  $mediaManager = \Drupal::service('soc_content.media');
+  $fileName = 'soc-no-img.png';
+  if ($file = $mediaManager->createFile($fileName, 'default_img/'.$fileName)) {
+    \Drupal::configFactory()
+      ->getEditable('soc_nextpage.product_default_config' )
+      ->set('default_image_product', [0 => $file->id()])->save();
+  }
+  if ($file = $mediaManager->createFile($fileName, 'default_img/'.$fileName)) {
+    \Drupal::configFactory()
+      ->getEditable('soc_nextpage.product_default_config' )
+      ->set('default_image_reference', [0 => $file->id()])->save();
+  }
+}
