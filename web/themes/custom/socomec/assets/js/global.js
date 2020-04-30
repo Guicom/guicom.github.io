@@ -638,6 +638,7 @@
       var i = 0;
       if(typeof wishlist !== 'undefined' && wishlist != null) {
         $.each(JSON.parse(wishlist), function (key, value) {
+          $('.add-to-favorite[data-soc-content-list-item="'+key+'"]').addClass('soc-list-is-active');
           i++;
         });
       }
@@ -649,12 +650,13 @@
       var j = 0;
       if(typeof bookmark !== 'undefined' && bookmark != null) {
         $.each(JSON.parse(bookmark), function (key, value) {
+          $('.add-to-bookmarks[data-soc-content-list-item="'+key+'"]').addClass('soc-list-is-active');
           j++;
         });
       }
       if (j > 0) {
         $('.menu--header-visitors .ico-bookmark-star-white').addClass('soc-list-is-active');
-        $('.menu--header-visitors .ico-bookmark-star-white').attr("data-soc-list", i);
+        $('.menu--header-visitors .ico-bookmark-star-white').attr("data-soc-list", j);
       }
     }
   };
