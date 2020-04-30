@@ -16,6 +16,7 @@ class NextpageTwig extends \Twig_Extension {
     return [
       new \Twig_SimpleFilter('getfield', array($this, 'getFieldData')),
       new \Twig_SimpleFilter('getMenuIcon', array($this, 'getMenuIcon')),
+      new \Twig_SimpleFilter('getDefaultImg', array($this, 'getDefaultImg')),
     ];
   }
 
@@ -78,5 +79,37 @@ class NextpageTwig extends \Twig_Extension {
       }
     }
     return $url;
+  }
+
+  /**
+   * Get Default image
+   */
+  public static function getDefaultImg($field, $type) {
+    if (empty($field[0])) {
+      if ($type === 'product') {
+        $data = \Drupal::config('soc_nextpage.product_default_config')
+          ->get('default_image_product');
+      } elseif ($type === 'product-reference') {
+        $data = \Drupal::config('soc_nextpage.product_default_config')
+          ->get('default_image_reference');
+      }
+      if (!empty($data)) {
+        $fid = (!empty($data[0])) ? $data[0] : NULL;
+        if (!empty($fid)) {
+          if ($file = \Drupal\file\Entity\File::load($fid)) {
+            if ($path = $file->getFileUri()) {
+              if ($url = \Drupal\image\Entity\ImageStyle::load('product_detail')
+                ->buildUrl($file->getFileUri())) {
+                $render_array = [
+                  '#markup' => "<img class='default-img-$type' src='$url'/>",
+                ];
+                return $render_array;
+              }
+            }
+          }
+        }
+      }
+    }
+    return $field;
   }
 }
