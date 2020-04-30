@@ -4,11 +4,23 @@ use Drupal\soc_nextpage\Batch\ImportPendingElement;
 use Drupal\system\Entity\Menu;
 
 function soc_nextpage_cron() {
+  /** @var \Drupal\soc_nextpage\Service\NextpageApi $nextpageApi */
+  $nextpageApi = \Drupal::service('soc_nextpage.nextpage_api');
+
+  // Synchronize characteristicsDictionary.
+  $nextpageApi->synchroniseCharacteristicsDictionary();
+
+  // Update families, products & references.
   $context = [];
   $product = \Drupal::service('soc_nextpage.nextpage_api')->descendantsAndLinks();
   foreach ($product->Elements ?? [] as $row) {
     ImportPendingElement::addPendingElement($row, $context);
   }
+
+  // Rebuild menu.
   $menu = Menu::load('header');
-  $menu->save();
+  try {
+    $menu->save();
+  } catch (\Drupal\Core\Entity\EntityStorageException $e) {
+  }
 }
