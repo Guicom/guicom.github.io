@@ -29,6 +29,6 @@ interface NextpageApiInterface {
    *
    * @return mixed
    */
-  public function characteristicsDictionary(string $languageId);
+  public function characteristicsDictionary(string $languageId, bool $ws);
 
 }

@@ -4,6 +4,7 @@ use Drupal\soc_nextpage\Batch\ImportPendingElement;
 use Drupal\system\Entity\Menu;
 
 function soc_nextpage_cron() {
+  \Drupal::service('soc_nextpage.nextpage_api')->synchroniseCharacteristicsDictionary();
   $context = [];
   $product = \Drupal::service('soc_nextpage.nextpage_api')->descendantsAndLinks();
   foreach ($product->Elements ?? [] as $row) {

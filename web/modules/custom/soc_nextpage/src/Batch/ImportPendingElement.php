@@ -9,6 +9,10 @@ class ImportPendingElement {
   public static function buildBatch() {
     $product = \Drupal::service('soc_nextpage.nextpage_api')->descendantsAndLinks();
 
+    $operations[] = [
+      '\Drupal\soc_nextpage\Batch\ImportPendingElement::synchroDictionnary',
+      []
+    ];
     foreach ($product->Elements ?? [] as $row) {
       $operations[] = [
         '\Drupal\soc_nextpage\Batch\ImportPendingElement::addPendingElement',
@@ -55,5 +59,9 @@ class ImportPendingElement {
   public static function addPendingElementCallback() {
     $menu = Menu::load('header');
     $menu->save();
+  }
+
+  public static function synchroDictionnary() {
+    \Drupal::service('soc_nextpage.nextpage_api')->synchroniseCharacteristicsDictionary();
   }
 }
