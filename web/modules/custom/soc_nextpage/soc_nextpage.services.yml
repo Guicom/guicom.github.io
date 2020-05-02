@@ -25,5 +25,13 @@ services:
     tags:
       - { name: twig.extension}
   soc_nextpage.product_reference_table:
-    arguments: ['@renderer']
+    arguments: ['@module_handler','@renderer']
     class: Drupal\soc_nextpage\Service\ProductReferenceTable
+  soc_nextpage.product_reference:
+    arguments: ['@entity.query', '@database']
+    class: Drupal\soc_nextpage\Service\ProductReference
+  soc_nextpage.product_reference_breadcrumb:
+    arguments: ['@soc_nextpage.product_reference']
+    class: Drupal\soc_nextpage\Service\Breadcrumb\SocBreadcrumbProductReference
+    tags:
+      - { name: breadcrumb_builder, priority: 100 }
