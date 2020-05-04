@@ -5,8 +5,34 @@ namespace Drupal\soc_nextpage\Service;
 use Drupal\Component\Render\FormattableMarkup;
 use Drupal\Core\Link;
 use Drupal\Core\Url;
+use Drupal\Core\Extension\ModuleHandlerInterface;
 
 class ProductReferenceTable {
+
+  /**
+   * The module handler service.
+   *
+   * @var \Drupal\Core\Extension\ModuleHandlerInterface
+   */
+  protected $moduleHandler;
+
+  /**
+   *
+   * @param \Drupal\Core\Extension\ModuleHandlerInterface $module_handler
+   *   The module handler service.
+   */
+  public function __construct(ModuleHandlerInterface $module_handler) {
+    $this->moduleHandler = $module_handler;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public static function create(ContainerInterface $container) {
+    return new static(
+      $container->get('module_handler')
+    );
+  }
 
   /**
    * @param $field
@@ -23,9 +49,9 @@ class ProductReferenceTable {
       $url = Url::fromRoute('entity.node.canonical', ['node' => $item["content"]["#node"]->id()]);
       $json = (array) json_decode($json[0]["value"]);
       foreach ($header as $head) {
-        $rows[$key][$head] = $json[$head] ? Link::fromTextAndUrl($json[$head], $url) : '';
+        $rows[$key][$head] = isset($json[$head]) ? Link::fromTextAndUrl($json[$head], $url) : '';
       }
-      $rows[$key]['select'] = $this->getCartLink();
+      $rows[$key]['select'] = $this->getCartLink($item["content"]["#node"]);
     }
 
     $footer = $header;
@@ -68,7 +94,18 @@ class ProductReferenceTable {
    * @return \Drupal\Component\Render\FormattableMarkup
    *   Formatted html
    */
-  public function getCartLink() {
-    return new FormattableMarkup("<span class='add-to-favorite'></span>", []);
+  public function getCartLink($node) {
+    if ($this->moduleHandler->moduleExists('soc_wishlist')) {
+      $fieldReferenceExtid = $node->get('field_reference_extid')->getValue();
+      if (!empty($fieldReferenceExtid[0]['value'])) {
+        $extid = $fieldReferenceExtid[0]['value'];
+        $url = Url::fromRoute('soc_wishlist.add_item', ['item_id' => $extid])->toString();
+      }
+      if (!empty($url)) {
+        $link = "<a class='add-to-favorite ajax-soc-content-list' data-soc-content-list-ajax='1' href='$url'></a>";
+        return new FormattableMarkup($link, []);
+      }
+    }
+    return [];
   }
 }
