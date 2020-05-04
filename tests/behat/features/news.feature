@@ -6,13 +6,8 @@ Feature: News
     And news content:
       | language | title                                 | status | moderation_state |
       | English  | Socomec certified ISO-14001 in Alsace | 1      | published        |
-    And I visit "/admin/config/search/search-api/index/news"
-    And I press "Index now"
-    And I visit "/admin/content"
-    And I wait 60 seconds
 
   @api @cit @news @javascript @news_detail
-  Test if the page news is visible
  # vendor/bin/phing behat:run -Dbehat.tags=news_detail
   Scenario: News detail
     Given I am an anonymous user
@@ -32,4 +27,4 @@ Feature: News
     And I wait 2 seconds
     Then I should see "Socomec certified ISO"
     Then I should see the breadcrumb link "Home"
-    Then I should see the breadcrumb link "News"
+    #Then I should see the breadcrumb link "News"
