@@ -42,15 +42,39 @@ class DownloadController extends ControllerBase {
     );
   }
 
+  /**
+   * @return array
+   */
   public function downloadPage() {
     $tempStore = $this->tempStoreFactory->get('soc_traceparts_user_data');
-    $part_number = $tempStore->get('part_number');
-    $format_id = $tempStore->get('format_id');
-    $user_email = $tempStore->get('email');
-    $downloadLink = $this->downloadManager->getDownloadLink($part_number, $format_id, $user_email);
+    $partNumber = $tempStore->get('part_number');
+    $formatId = $tempStore->get('format_id');
+    $userEmail = $tempStore->get('email');
+    $formats = $this->downloadManager->getDownloadableFormats($partNumber);
+    $formatName = $formats[$formatId];
+    $buttonLabel = $this->t('Download as @format_name', [
+      '@format_name' => $formatName,
+    ]);
+    $downloadUrl = $this->downloadManager->getDownloadLink($partNumber, $formatId, $userEmail);
+    $title = $this->t('Thank you!');
     return [
-      '#markup' => $downloadLink,
+      '#theme' => 'soc_traceparts_download_page',
+      '#title' => $title,
+      '#button_label' => $buttonLabel,
+      '#download_url' => $downloadUrl,
     ];
+  }
+
+  public function downloadPageTitle() {
+    $tempStore = $this->tempStoreFactory->get('soc_traceparts_user_data');
+    $partNumber = $tempStore->get('part_number');
+    $formatId = $tempStore->get('format_id');
+    $formats = $this->downloadManager->getDownloadableFormats($partNumber);
+    $formatName = $formats[$formatId];
+    return $this->t('Download @part_number @format_name 3D model', [
+      '@part_number' => $partNumber,
+      '@format_name' => $formatName,
+    ]);
   }
 
 }

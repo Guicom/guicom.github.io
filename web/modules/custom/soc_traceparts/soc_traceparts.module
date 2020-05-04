@@ -10,7 +10,7 @@ use Drupal\Core\Routing\RouteMatchInterface;
 /**
  * Implements hook_theme().
  */
-function soc_traceparts_theme() {
+function soc_traceparts_theme($existing, $type, $theme, $path) {
   return [
     'soc_traceparts_download_block' => [
       'variables' => [
@@ -18,6 +18,14 @@ function soc_traceparts_theme() {
         'formats' => [],
       ],
       'template' => 'traceparts-download-block',
+    ],
+    'soc_traceparts_download_page' => [
+      'variables' => [
+        'title' => NULL,
+        'button_label' => NULL,
+        'download_url' => NULL,
+      ],
+      'template' => 'traceparts-download-page',
     ],
   ];
 }

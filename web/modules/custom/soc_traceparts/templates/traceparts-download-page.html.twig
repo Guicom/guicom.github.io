@@ -1,0 +1,6 @@
+<h1>{{ title }}</h1>
+{% if download_url is not empty %}
+  <p><a href="{{ download_url }}" class="btn">{{ button_label }}</a></p>
+{% else %}
+  <p>{{ 'An error has occurred.'|t }}</p>
+{% endif %}

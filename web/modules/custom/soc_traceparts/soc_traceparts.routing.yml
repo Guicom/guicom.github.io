@@ -18,5 +18,6 @@ soc_traceparts.download:
   path: '/traceparts/download'
   defaults:
     _controller: '\Drupal\soc_traceparts\Controller\DownloadController::downloadPage'
+    _title_callback: '\Drupal\soc_traceparts\Controller\DownloadController::downloadPageTitle'
   requirements:
     _permission: 'access content'
