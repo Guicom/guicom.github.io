@@ -6,7 +6,7 @@ Feature: PIM
     Given I am logged in as a user with the "administrator" role
     And I go to "test/nextpage/characteristics"
     And I should see "Synchronisation is done"
-    And The file "characteristics_dictionary.json" exist
+    And The file "characteristics_dictionary_2.json" exist
 
   @api @cit @javascript @pim @pim_elementLinks
   Scenario: ElementsAndLinks
