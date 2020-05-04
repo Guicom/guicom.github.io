@@ -213,8 +213,8 @@ class NextpageApiSettingsForm extends ConfigFormBase {
     $form['field_matching']['matching_libelle_dossier'] = [
       '#type'           => 'textfield',
       '#title'          => $this->t('Matching Label characteristics'),
-      '#description'    => $this->t('key matching of Label characteristics. Default value = libelleDossier'),
-      '#default_value'  => $config->get('matching_libelle_dossier') ?? 'libelleDossier',
+      '#description'    => $this->t('key matching of Label characteristics. Default value = LibelleDossier'),
+      '#default_value'  => $config->get('matching_libelle_dossier') ?? 'LibelleDossier',
     ];
 
     return parent::buildForm($form, $form_state);
