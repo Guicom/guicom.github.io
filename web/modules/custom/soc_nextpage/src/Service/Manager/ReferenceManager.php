@@ -174,7 +174,7 @@ class ReferenceManager {
     return $json;
   }
 
-  public function buildJsonCharacteristics($referenceFields,array $exclude) {
+  public function buildJsonCharacteristics($referenceFields, array $exclude) {
     $json = [];
     foreach ($referenceFields as $key => $field) {
       if (!in_array("Irix", $exclude)) {
