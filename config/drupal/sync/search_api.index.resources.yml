@@ -13,11 +13,12 @@ dependencies:
     - field.storage.node.field_product_family
     - field.storage.node.field_res_momentum
     - field.storage.node.field_res_original_description
-    - field.storage.node.field_res_resource_type
     - field.storage.node.field_res_original_title
+    - field.storage.node.field_res_product_ref
     - field.storage.node.field_res_segment
     - field.storage.node.field_res_target
     - field.storage.node.field_res_title
+    - field.storage.node.field_res_resource_type
     - search_api.server.socomec
 third_party_settings:
   search_api_solr:
@@ -105,6 +106,14 @@ field_settings:
     dependencies:
       config:
         - field.storage.node.field_product_family
+  field_res_product_ref:
+    label: 'Reference to product'
+    datasource_id: 'entity:node'
+    property_path: field_res_product_ref
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_res_product_ref
   langcode:
     label: Language
     datasource_id: 'entity:node'
@@ -231,6 +240,7 @@ processor_settings:
       field_product_family_terms: taxonomy_term-parent
     weights:
       preprocess_index: -45
+  language_with_fallback: {  }
   rendered_item: {  }
   solr_date_range:
     weights:
