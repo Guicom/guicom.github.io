@@ -477,6 +477,10 @@ JS;
     if ($active->getText() == $arg1) {
       return;
     }
+    $active = $page->find('css', 'li.breadcrumb-item.active + li.breadcrumb-item.active');
+    if ($active->getText() == $arg1) {
+      return;
+    }
 
     throw new \Exception(
       sprintf("Expected link %s not found in breadcrumb on page %s",
