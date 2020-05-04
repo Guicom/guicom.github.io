@@ -3,13 +3,9 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.product_reference.field_characteristics
     - field.field.node.product_reference.field_json_product_data
-    - field.field.node.product_reference.field_product_cta_1
-    - field.field.node.product_reference.field_product_cta_2
-    - field.field.node.product_reference.field_product_cta_3
-    - field.field.node.product_reference.field_product_cta_4
     - field.field.node.product_reference.field_product_status
+    - field.field.node.product_reference.field_reference_content
     - field.field.node.product_reference.field_reference_extid
     - field.field.node.product_reference.field_reference_json_table
     - field.field.node.product_reference.field_reference_name
@@ -20,79 +16,12 @@ dependencies:
     - workflows.workflow.editorial
   module:
     - content_moderation
-    - field_group
     - media_library
     - paragraphs
     - path
     - scheduler
     - scheduler_content_moderation_integration
     - text
-third_party_settings:
-  field_group:
-    group_tabs:
-      children:
-        - group_pim_content
-        - group_webmastering
-      parent_name: ''
-      weight: 0
-      format_type: tabs
-      format_settings:
-        label: Tabs
-        direction: horizontal
-        id: ''
-        classes: ''
-      label: Tabs
-    group_pim_content:
-      children:
-        - title
-        - field_teaser
-        - field_reference_extid
-        - field_reference_json_table
-        - field_product_status
-        - field_reference_name
-        - field_reference_ref
-        - field_reference_picture
-        - field_json_product_data
-        - field_characteristics
-      parent_name: group_tabs
-      weight: 20
-      format_type: tab
-      format_settings:
-        id: ''
-        classes: ''
-        formatter: open
-        description: ''
-        required_fields: true
-      label: 'Pim content'
-    group_webmastering:
-      children:
-        - group_cta
-      parent_name: group_tabs
-      weight: 21
-      format_type: tab
-      format_settings:
-        id: ''
-        classes: ''
-        formatter: open
-        description: ''
-        required_fields: true
-      label: Webmastering
-    group_cta:
-      children:
-        - field_product_cta_1
-        - field_product_cta_2
-        - field_product_cta_3
-        - field_product_cta_4
-      parent_name: group_webmastering
-      weight: 20
-      format_type: tab
-      format_settings:
-        id: ''
-        classes: ''
-        formatter: open
-        description: ''
-        required_fields: true
-      label: CTA
 id: node.product_reference.default
 targetEntityType: node
 bundle: product_reference
@@ -100,76 +29,20 @@ mode: default
 content:
   created:
     type: datetime_timestamp
-    weight: 3
+    weight: 4
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_characteristics:
-    weight: 9
-    settings:
-      rows: 5
-      placeholder: ''
-    third_party_settings: {  }
-    type: string_textarea
-    region: content
   field_json_product_data:
-    weight: 8
+    weight: 14
     settings:
       rows: 5
       placeholder: ''
     third_party_settings: {  }
     type: string_textarea
-    region: content
-  field_product_cta_1:
-    weight: 21
-    settings:
-      title: Paragraph
-      title_plural: Paragraphs
-      edit_mode: open
-      add_mode: dropdown
-      form_display_mode: default
-      default_paragraph_type: ''
-    third_party_settings: {  }
-    type: entity_reference_paragraphs
-    region: content
-  field_product_cta_2:
-    weight: 22
-    settings:
-      title: Paragraph
-      title_plural: Paragraphs
-      edit_mode: open
-      add_mode: dropdown
-      form_display_mode: default
-      default_paragraph_type: ''
-    third_party_settings: {  }
-    type: entity_reference_paragraphs
-    region: content
-  field_product_cta_3:
-    weight: 23
-    settings:
-      title: Paragraph
-      title_plural: Paragraphs
-      edit_mode: open
-      add_mode: dropdown
-      form_display_mode: default
-      default_paragraph_type: link
-    third_party_settings: {  }
-    type: entity_reference_paragraphs
-    region: content
-  field_product_cta_4:
-    weight: 24
-    settings:
-      title: Paragraph
-      title_plural: Paragraphs
-      edit_mode: open
-      add_mode: dropdown
-      form_display_mode: default
-      default_paragraph_type: ''
-    third_party_settings: {  }
-    type: entity_reference_paragraphs
     region: content
   field_product_status:
-    weight: 4
+    weight: 15
     settings:
       match_operator: CONTAINS
       size: 60
@@ -178,8 +51,20 @@ content:
     third_party_settings: {  }
     type: entity_reference_autocomplete
     region: content
+  field_reference_content:
+    type: entity_reference_paragraphs
+    weight: 26
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+    region: content
   field_reference_extid:
-    weight: 2
+    weight: 13
     settings:
       size: 60
       placeholder: ''
@@ -187,7 +72,7 @@ content:
     type: string_textfield
     region: content
   field_reference_json_table:
-    weight: 3
+    weight: 23
     settings:
       rows: 5
       placeholder: ''
@@ -195,7 +80,7 @@ content:
     type: string_textarea
     region: content
   field_reference_name:
-    weight: 5
+    weight: 16
     settings:
       size: 60
       placeholder: ''
@@ -204,13 +89,13 @@ content:
     region: content
   field_reference_picture:
     type: media_library_widget
-    weight: 7
+    weight: 17
     settings:
       media_types: {  }
     third_party_settings: {  }
     region: content
   field_reference_ref:
-    weight: 6
+    weight: 18
     settings:
       size: 60
       placeholder: ''
@@ -229,20 +114,20 @@ content:
     region: content
   langcode:
     type: language_select
-    weight: 1
+    weight: 2
     region: content
     settings:
       include_locked: true
     third_party_settings: {  }
   moderation_state:
     type: moderation_state_default
-    weight: 10
+    weight: 11
     settings: {  }
     region: content
     third_party_settings: {  }
   path:
     type: path
-    weight: 6
+    weight: 7
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -250,18 +135,18 @@ content:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 4
+    weight: 5
     region: content
     third_party_settings: {  }
   publish_on:
     type: datetime_timestamp_no_default
-    weight: 7
+    weight: 8
     region: content
     settings: {  }
     third_party_settings: {  }
   publish_state:
     type: scheduler_moderation
-    weight: 20
+    weight: 25
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -269,14 +154,14 @@ content:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 11
+    weight: 12
     region: content
     third_party_settings: {  }
   sticky:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 5
+    weight: 6
     region: content
     third_party_settings: {  }
   title:
@@ -289,7 +174,7 @@ content:
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 2
+    weight: 3
     settings:
       match_operator: CONTAINS
       size: 60
@@ -299,18 +184,18 @@ content:
     third_party_settings: {  }
   unpublish_on:
     type: datetime_timestamp_no_default
-    weight: 8
+    weight: 9
     region: content
     settings: {  }
     third_party_settings: {  }
   unpublish_state:
     type: scheduler_moderation
-    weight: 19
+    weight: 24
     region: content
     settings: {  }
     third_party_settings: {  }
   url_redirects:
-    weight: 9
+    weight: 10
     region: content
     settings: {  }
     third_party_settings: {  }

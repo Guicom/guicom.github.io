@@ -1,0 +1,95 @@
+uuid: e2977b42-a001-4a1a-9d54-1607bf43a5db
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_reference_content
+    - node.type.product_reference
+    - paragraphs.paragraphs_type.key_figures
+    - paragraphs.paragraphs_type.model_citation
+    - paragraphs.paragraphs_type.model_cta
+    - paragraphs.paragraphs_type.model_cta_pdf
+    - paragraphs.paragraphs_type.model_image
+    - paragraphs.paragraphs_type.model_testimony
+    - paragraphs.paragraphs_type.model_text
+    - paragraphs.paragraphs_type.video_embed
+    - paragraphs.paragraphs_type.video_text
+  module:
+    - entity_reference_revisions
+id: node.product_reference.field_reference_content
+field_name: field_reference_content
+entity_type: node
+bundle: product_reference
+label: 'Reference content'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      key_figures: key_figures
+      model_citation: model_citation
+      model_cta: model_cta
+      model_cta_pdf: model_cta_pdf
+      model_image: model_image
+      model_testimony: model_testimony
+      model_text: model_text
+      video_embed: video_embed
+      video_text: video_text
+    target_bundles_drag_drop:
+      content:
+        weight: 18
+        enabled: false
+      from_library:
+        weight: 19
+        enabled: false
+      hero_paragraph:
+        weight: 20
+        enabled: false
+      key_figures:
+        enabled: true
+        weight: 21
+      link:
+        weight: 22
+        enabled: false
+      model_citation:
+        enabled: true
+        weight: 23
+      model_cta:
+        enabled: true
+        weight: 24
+      model_cta_pdf:
+        enabled: true
+        weight: 25
+      model_image:
+        enabled: true
+        weight: 26
+      model_testimony:
+        enabled: true
+        weight: 27
+      model_text:
+        enabled: true
+        weight: 28
+      pardot_form:
+        weight: 29
+        enabled: false
+      premium_content_promotion:
+        weight: 30
+        enabled: false
+      product_faq:
+        weight: 31
+        enabled: false
+      standard_label:
+        weight: 32
+        enabled: false
+      video_embed:
+        enabled: true
+        weight: 33
+      video_text:
+        enabled: true
+        weight: 34
+field_type: entity_reference_revisions
