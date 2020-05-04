@@ -98,7 +98,7 @@ class ReferenceManager {
       $name = $this->nextpageItemHandler->getJsonField($reference->DC_R_REFERENCE);
       $json[$name["label"]] = $name["value"];
     }
-    if (isset($reference->DC_R_TC1_NAME->Value)) {
+    if (isset($reference->DC_R_TC1_VALUE->Value)) {
       $value = $this->nextpageItemHandler->getJsonField($reference->DC_R_TC1_NAME);
       $json[$value["value"][0]] = $reference->DC_R_TC1_VALUE->Value;
     }
