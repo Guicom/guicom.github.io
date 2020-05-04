@@ -1,5 +1,7 @@
 <?php
 
+use  \Drupal\taxonomy\Entity\Term;
+
 function soc_content_install() {
   /** @var \Drupal\soc_content\Service\TaxonomyTermContent $termManager */
   $termManager = \Drupal::service('soc_content.taxonomy_term');
@@ -723,28 +725,35 @@ function soc_content_update_8002() {
  * - Reseller - field_weight = 1
  */
 function soc_content_update_8003() {
-  $subsidiary = \Drupal::entityTypeManager()->getStorage('taxonomy_term')
-    ->loadByProperties(['name' => 'Subsidiary', 'vid' => 'location_type']);
-  reset($subsidiary);
-  $tid = key($subsidiary);
-  $term = \Drupal\taxonomy\Entity\Term::load($tid);
-  $term->field_weight->setValue(0);
-  $term->Save();
-
-  $distributor = \Drupal::entityTypeManager()->getStorage('taxonomy_term')
-    ->loadByProperties(['name' => 'Distributor', 'vid' => 'location_type']);
-  reset($distributor);
-  $tid = key($distributor);
-  $term = \Drupal\taxonomy\Entity\Term::load($tid);
-  $term->field_weight->setValue(1);
-  $term->Save();
-
-  $reseller = \Drupal::entityTypeManager()->getStorage('taxonomy_term')
-    ->loadByProperties(['name' => 'Reseller', 'vid' => 'location_type']);
-  reset($reseller);
-  $tid = key($reseller);
-  $term = \Drupal\taxonomy\Entity\Term::load($tid);
-  $term->field_weight->setValue(1);
-  $term->Save();
+  $taxonomyTerm = \Drupal::entityTypeManager()->getStorage('taxonomy_term');
+  $terms = [
+    [
+      'name' => 'Subsidiary',
+      'weight' => 0
+    ],
+    [
+      'name' => 'Distributor',
+      'weight' => 1
+    ],
+    [
+      'name' => 'Reseller',
+      'weight' => 1
+    ],
+  ];
+  foreach ($terms as $key => $value) {
+    try {
+      $taxonomyTermLoad = $taxonomyTerm
+        ->loadByProperties(['name' => $value['name'], 'vid' => 'location_type']);
+      if (!empty($taxonomyTermLoad)) {
+        reset($taxonomyTermLoad);
+        $tid = key($taxonomyTermLoad);
+        if ($term = Term::load($tid)) {
+          $term->field_weight->setValue($value['weight']);
+          $term->save();
+        }
+      }
+    }
+    catch (\Exception $e) {}
+  }
 }
 
