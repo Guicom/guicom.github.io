@@ -26,20 +26,24 @@ class ReferenceManager {
    */
   private $nextpageItemHandler;
 
-  public function __construct(NextpageApi $nextpageApi, NextpageItemHandler $nextpageItemHandler) {
+  public function __construct(NextpageApi $nextpageApi,
+                              NextpageItemHandler $nextpageItemHandler) {
     $this->nextpageApi = $nextpageApi;
     $this->nextpageItemHandler = $nextpageItemHandler;
   }
 
 
   /**
-   * @param $pendingReference
+   * @param $ext_id
    *
-   * @return \Drupal\Core\Entity\EntityInterface|mixed|string|void|null
+   * @return array
+   * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
+   * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
    */
-  public function handle($ExtId) {
-    // Manage refernce
-    $references = $this->nextpageApi->descendantsAndLinks(TRUE, [], [], $ExtId);
+  public function handle($ext_id) {
+    $nids = [];
+    // Manage reference.
+    $references = $this->nextpageApi->descendantsAndLinks(TRUE, [], [], $ext_id);
     foreach ($references->Elements as $reference) {
       if ($reference->ElementType === 3) {
         if ($entity = $this->nextpageItemHandler->loadByExtID($reference->ExtID, 'node', 'product_reference')) {
@@ -75,6 +79,7 @@ class ReferenceManager {
    * @param $reference
    *
    * @return mixed
+   * @throws \Drupal\Core\Entity\EntityStorageException
    */
   public function updateReference($node, $reference) {
     $json_field = $this->nextpageItemHandler->formatJsonField($reference->Values);

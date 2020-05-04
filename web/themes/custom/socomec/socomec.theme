@@ -390,6 +390,22 @@ function socomec_preprocess_page(&$variables) {
           }
         }
         break;
+      case 'product_reference':
+        $moduleHandler = \Drupal::service('module_handler');
+        if ($moduleHandler->moduleExists('soc_nextpage')) {
+          /** @var \Drupal\soc_nextpage\Service\ProductReference $product_reference */
+          $product_reference = \Drupal::service('soc_nextpage.product_reference');
+          if ($test = $product_reference->getParentProductFamilyByProductReference($node)) {
+
+          }
+          if ($node_product = $product_reference->getParentProductByProductReference($node)) {
+            $options = ['absolute' => TRUE];
+            $url = \Drupal\Core\Url::fromRoute('entity.node.canonical', ['node' => $node_product->id()], $options);
+            $url = $url->toString();
+            $variables['back_to_product'] = $url;
+          }
+        }
+        break;
       default:
         break;
     }
@@ -560,9 +576,11 @@ function socomec_preprocess_breadcrumb(&$variables) {
       ];
     }
     if (($node = \Drupal::routeMatch()->getParameter('node')) && $variables['breadcrumb']) {
-      $variables['breadcrumb'][] = array(
-        'text' => $node->getTitle(),
-      );
+      if ($node->bundle() !== 'product_reference') {
+        $variables['breadcrumb'][] = array(
+          'text' => $node->getTitle(),
+        );
+      }
     }
   }
   else{

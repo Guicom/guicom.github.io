@@ -2,13 +2,67 @@
 
 use Drupal\soc_nextpage\Batch\ImportPendingElement;
 use Drupal\system\Entity\Menu;
+use Drupal\Core\Form\FormStateInterface;
 
 function soc_nextpage_cron() {
+  /** @var \Drupal\soc_nextpage\Service\NextpageApi $nextpageApi */
+  $nextpageApi = \Drupal::service('soc_nextpage.nextpage_api');
+
+  // Synchronize characteristicsDictionary.
+  $nextpageApi->synchroniseCharacteristicsDictionary();
+
+  // Update families, products & references.
   $context = [];
   $product = \Drupal::service('soc_nextpage.nextpage_api')->descendantsAndLinks();
   foreach ($product->Elements ?? [] as $row) {
     ImportPendingElement::addPendingElement($row, $context);
   }
+
+  // Rebuild menu.
   $menu = Menu::load('header');
-  $menu->save();
+  try {
+    $menu->save();
+  } catch (\Drupal\Core\Entity\EntityStorageException $e) {
+  }
+}
+
+
+/**
+ * Implements hook_form_alter().
+ */
+function soc_nextpage_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  switch ($form_id) {
+    case 'node_product_edit_form':
+      $form['#validate'][] = '_soc_nextpage_validate_json_data';
+  }
+}
+
+function _soc_nextpage_validate_json_data(&$form, FormStateInterface $form_state) {
+  $json_field = $form_state->getValue('field_json_product_data');
+  $moderation = $form_state->getValue('moderation_state');
+  $json_value = json_decode($json_field[0]["value"]);
+  $field = \Drupal::service('soc_nextpage.nextpage_item_handler');
+  $uvp = $field->getFieldFromJson($json_value, 'DC_P_UNIQUE_VALUE_PROPOSAL');
+  if (empty($uvp) && $moderation[0]["value"] == 'published') {
+    $form_state->setErrorByName('field_json_product_data',
+      t('Unique value proposal is missing from the json field, please launch an import to get the complet data'));
+  }
+  $function = $field->getFieldFromJson($json_value, 'DC_P_FUNCTIONS');
+  if (empty($function) && $moderation[0]["value"] == 'published') {
+    $form_state->setErrorByName('field_json_product_data',
+      t('function is missng from the json field, please launch an import to get the complet data'));
+  }
+
+
+  $teaser = $form_state->getValue('field_product_teaser');
+  if (empty($teaser[0]["value"]) && $moderation[0]["value"] == 'published') {
+    $form_state->setErrorByName('field_product_teaser',
+      t('Teaser is missng from the json field, please launch an import to get the complet data'));
+  }
+
+  $title = $form_state->getValue('title');
+  if ($title[0]["value"] == 'TITLEPLACEHOLDER' && $moderation[0]["value"] == 'published') {
+    $form_state->setErrorByName('title',
+      t('The product title is a placeholder, please enter a correct product title or launch an import'));
+  }
 }

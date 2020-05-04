@@ -69,7 +69,8 @@
           border: none;
           &.we-mega-menu-ul {
             border: none;
-            height: auto;
+            height: 75%;
+            overflow-y: auto;
             li {
               background: none;
               border: none;
