@@ -1,6 +1,14 @@
 <div class="hero-block">
   <div class="container">
     <div class="row">
+      {% if back_to_product %}
+        <div class="back-button col-lg-12 col-md-12">
+          <a class="back-to-button" href="{{ back_to_product }}">
+            {% include '/themes/custom/socomec/assets/images/picto/ui/chevron-left-circle.svg' %}
+            {{ "Go back to product page"|t }}
+          </a>
+        </div>
+      {% endif %}
       <div class="product-reference-image col-lg-5 col-md-12">
       </div>
       <div class="product-reference-info col-lg-7 col-md-12">

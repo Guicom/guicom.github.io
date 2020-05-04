@@ -34,6 +34,11 @@ class ProductManager {
    */
   private $nextpageItemHandler;
 
+  /**
+   * @var \Drupal\Core\Entity\EntityInterface|string|void|null
+   */
+  private $referencesNids;
+
   public function __construct(
     ReferenceManager $referenceManager,
     NextpageApi $nextpageApi,
@@ -53,21 +58,15 @@ class ProductManager {
   public function handle($pendingProduct) {
     // First, manage product.
     // Check if all field are filled.
-    if ($this->checkCreate($pendingProduct) == FALSE) {
-      $this->nextpageItemHandler->deleteRelation($pendingProduct->ID);
-      return;
+    // First, create references.
+    $this->referencesNids = $this->refrenceManager->handle($pendingProduct->ExtID);
+    if ($entity = $this->nextpageItemHandler->loadByExtID($pendingProduct->ExtID, 'node', 'produit')) {
+      // Update product.
+      $entity = $this->updateProduct($entity, $pendingProduct);
     }
     else {
-      // First, create references.
-      $this->referencesNids = $this->refrenceManager->handle($pendingProduct->ExtID);
-      if ($entity = $this->nextpageItemHandler->loadByExtID($pendingProduct->ExtID, 'node', 'produit')) {
-        // Update product.
-        $entity = $this->updateProduct($entity, $pendingProduct);
-      }
-      else {
-        // Create product.
-        $entity = $this->createProduct($pendingProduct);
-      }
+      // Create product.
+      $entity = $this->createProduct($pendingProduct);
     }
 
     return $entity;
@@ -78,7 +77,7 @@ class ProductManager {
    *
    * @return bool
    */
-  public function checkCreate($pendingProduct) {
+  public function checkStatus($pendingProduct) {
     if (isset($pendingProduct->Values->DC_P_PRODUCT_NAME->Value) &&
     isset($pendingProduct->Values->DC_P_PRODUCT_SHORT_DESCRIPTION->Value) &&
     isset($pendingProduct->Values->DC_P_ASSORTMENT_WIDTH->Value) &&
@@ -109,25 +108,20 @@ class ProductManager {
   /**
    * @param $node
    * @param $product
-   *
-   * @return mixed
-   */
-  public function saveProduct($node, $product) {
-    $this->updateProduct($node, $product);
-    return $node;
-  }
-
-  /**
-   * @param $node
-   * @param $product
    */
   public function updateProduct(&$node, $product) {
-    $node->set('field_product_teaser', $product->Values->DC_P_PRODUCT_SHORT_DESCRIPTION->Value . ' - ' . $product->Values->DC_P_ASSORTMENT_WIDTH->Value);
-    $node->set('title', $product->Values->DC_P_PRODUCT_NAME->Value);
+    if (!isset($product->Values->DC_P_PRODUCT_SHORT_DESCRIPTION->Value) && isset($product->Values->DC_P_ASSORTMENT_WIDTH->Value)) {
+      $node->set('field_product_teaser', $product->Values->DC_P_PRODUCT_SHORT_DESCRIPTION->Value . ' - ' . $product->Values->DC_P_ASSORTMENT_WIDTH->Value);
+    }
+    $title = $product->Values->DC_P_PRODUCT_NAME->Value ? $product->Values->DC_P_PRODUCT_NAME->Value : 'TITLEPLACEHOLDER';
+    $node->set('title', $title);
     $node->set('field_json_product_data', $this->nextpageItemHandler->formatJsonField($product->Values));
     $node->set('field_product_extid', $product->ExtID);
-    $node->setPublished();
-    $node->set('moderation_state', 'published');
+    if ($this->checkStatus($product) == TRUE) {
+      $node->setPublished();
+      $node->set('moderation_state', 'published');
+    }
+
 
     if (isset($this->referencesNids)) {
       foreach($this->referencesNids as $index => $referencesNid) {
