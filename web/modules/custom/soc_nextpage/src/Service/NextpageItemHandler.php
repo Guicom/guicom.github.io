@@ -9,16 +9,23 @@ use Drupal\Core\Database\Connection;
 class NextpageItemHandler  {
 
   /**
-   * @var \Drupal\soc_nextpage\Service\NextpageApi
+   * @var \Drupal\soc_nextpage\Service\NextpageApi $nextpageApi
    */
   private $nextpageApi;
 
   /**
-   * @var \Drupal\Core\Database\Connection
+   * @var \Drupal\Core\Database\Connection $database
    */
   private $database;
 
-  function __construct(NextpageApi $nextpageApi, Connection $connection) {
+
+  /**
+   * NextpageItemHandler constructor.
+   *
+   * @param \Drupal\soc_nextpage\Service\NextpageApi $nextpageApi
+   * @param \Drupal\Core\Database\Connection $connection
+   */
+  public function __construct(NextpageApi $nextpageApi, Connection $connection) {
     $this->nextpageApi = $nextpageApi;
     $this->connection = $connection;
   }
