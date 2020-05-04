@@ -103,7 +103,7 @@
         <article id="main" class="container-fluid">
           <section class="section-light" id="product-info-section">
             <div class="container">
-              <qdiv class="row">
+              <div class="row">
                 {% set characteristics = drupal_field('field_characteristics', 'node') %}
                 {% if characteristics[0]['#context']['value'] is not empty %}
                   <div class="col-md-12 product-reference-characteristics">
@@ -139,7 +139,16 @@
                     {% endfor %}
                   </div>
                 {% endif %}
-              </qdiv>
+              </div>
+            </div>
+          </section>
+          <section>
+            <div class="container">
+              <div class="row">
+                <div class="col-12 multiline-content">
+                  {{ drupal_field('field_reference_content', 'node') }}
+                </div>
+              </div>
             </div>
           </section>
         </article>
