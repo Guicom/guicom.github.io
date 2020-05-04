@@ -19,6 +19,9 @@ Feature: News
     When I visit "/news/socomec-certified-iso-14001-alsace"
     And I accept all cookies compliance
     Then I should see a "body.node--type-news" element
+    Then I should see the breadcrumb link "Home"
+    Then I should see the breadcrumb link "News"
+    Then I should see the breadcrumb link "Socomec certified ISO-14001 in Alsace"
 
   @api @cit @news @javascript @news_lp
  # vendor/bin/phing behat:run -Dbehat.tags=news_lp
@@ -28,3 +31,5 @@ Feature: News
     And I accept all cookies compliance
     And I wait 2 seconds
     Then I should see "Socomec certified ISO"
+    Then I should see the breadcrumb link "Home"
+    Then I should see the breadcrumb link "News"
