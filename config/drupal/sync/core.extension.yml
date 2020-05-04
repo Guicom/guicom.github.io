@@ -85,6 +85,7 @@ module:
   locale: 0
   media: 0
   media_library: 0
+  menu_breadcrumb: 0
   menu_link_attributes: 0
   menu_per_role: 0
   menu_ui: 0
@@ -138,6 +139,7 @@ module:
   soc_sales_locations: 0
   soc_search: 0
   soc_store_locator: 0
+  soc_traceparts: 0
   soc_user: 0
   soc_views_news: 0
   soc_wishlist: 0

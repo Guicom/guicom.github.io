@@ -16,11 +16,15 @@ class NextpageItemHandler  {
   /**
    * @var \Drupal\Core\Database\Connection
    */
-  private $database;
+  private $connection;
+
+  /** @var array $entityInfo */
+  protected $entityInfo;
 
   function __construct(NextpageApi $nextpageApi, Connection $connection) {
     $this->nextpageApi = $nextpageApi;
     $this->connection = $connection;
+    $this->entityInfo = [];
   }
 
   /**
@@ -51,12 +55,13 @@ class NextpageItemHandler  {
    * @return false|string
    */
   public function formatJsonField($values) {
-    $dico = Drupal::service('soc_nextpage.nextpage_api');
-    $d = $dico->characteristicsDictionary('1');
+    /** @var \Drupal\soc_nextpage\Service\NextpageApi $nextpageApi */
+    $nextpageApi = Drupal::service('soc_nextpage.nextpage_api');
+    $dictionary = $nextpageApi->characteristicsDictionary('2');
     $json = [];
     foreach ($values as $key => $value) {
-      if (isset($d[$key])) {
-        $dico_carac = $d[$key];
+      if (isset($dictionary[$key])) {
+        $dico_carac = $dictionary[$key];
         if ($dico_carac != NULL) {
           if (!isset($json[$dico_carac->LibelleDossier])) {
             $json[$dico_carac->LibelleDossier] = [
@@ -100,22 +105,23 @@ class NextpageItemHandler  {
    * @param $entityType
    */
   public function getEntityInfo($entityType) {
-    $entityInfo = [];
     switch ($entityType) {
       case 'paragraph':
         $this->entityInfo['name'] = 'taxonomy_term';
         $this->entityInfo['type'] = 'vid';
         $this->entityInfo['field'] = 'field_family_extid';
+        break;
       case 'node':
       default:
         $this->entityInfo['name'] = 'node';
         $this->entityInfo['type'] = 'type';
         $this->entityInfo['field'] = 'field_reference_extid';
+        break;
     }
   }
 
   public function getJsonField($field) {
-    $dico = $this->nextpageApi->characteristicsDictionary('1');
+    $dico = $this->nextpageApi->characteristicsDictionary('2');
     $dico_carac = $dico[$field->DicoCaracExtID];
     switch ($dico_carac->TypeCode) {
       case 'CHOIX':
@@ -138,7 +144,7 @@ class NextpageItemHandler  {
         $value = [
           'id' => $dico_carac->ExtID,
           'type' => $dico_carac->TypeCode,
-          'value' => ($field->Value ? $field->Value : ''),
+          'value' => $field->Value ?? '',
           'label' => $dico_carac->Name,
         ];
         break;
@@ -175,6 +181,24 @@ class NextpageItemHandler  {
     $this->connection->delete('soc_nextpage_relations')
       ->condition('product_id', $productId)
       ->execute();
+  }
+
+  public function getFieldFromJson($json_value, $extid) {
+    $data = NULL;
+    if (isset($json_value->{$extid})) {
+      $data = $json_value->{$extid}->value;
+    }
+    else {
+      foreach ($json_value as $values) {
+        if (isset($values->value)) {
+          if (isset($values->value->{$extid})) {
+            $data = $values->value->{$extid}->value;
+          }
+        }
+      }
+    }
+
+    return $data;
   }
 
 }

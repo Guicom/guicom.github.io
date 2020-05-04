@@ -193,3 +193,23 @@ $settings['DISABLE_SUPER_ADMIN_ACCOUNT'] = 1;
  * Modules excluded from config export.
  */
 $settings['config_exclude_modules'] = ['soc_content'];
+
+/**
+ * Pim configuration
+ */
+$config['config_split.config_split.pim_configuration']['status'] = TRUE;
+$config['config_split.config_split.pim_configuration']['folder'] = "../config/drupal/pim_configuration";
+
+/**
+ * Pim Conf
+ */
+$settings['nextpage_base_url'] = 'https://preprod-socomecweb-api.nextpage.fr/com/';
+$settings['nextpage_username'] = 'admin';
+$settings['nextpage_password'] = '';
+$settings['channel_extid'] = '##451471a6-4f2e-4395-820c-db907b1c945c';
+$settings['endpoint_token'] = 'api/auth';
+$settings['endpoint_dicocarac'] = 'api/sdk/dicocarac/GetAll/2';
+$settings['endpoint_elementsandlinks'] = 'api/sdk/element/ElementsAndLinks';
+$settings['endpoint_descendantsandlinks'] = 'api/sdk/element/DescendantsAndLinks';
+$settings['endpoint_elementsbychartemplate'] = 'api/sdk/element/ElementsByCharTemplate';
+

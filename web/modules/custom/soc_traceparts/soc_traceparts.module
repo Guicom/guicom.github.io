@@ -1,0 +1,24 @@
+<?php
+
+/**
+ * @file
+ * Contains soc_traceparts.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function soc_traceparts_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the soc_traceparts module.
+    case 'help.page.soc_traceparts':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Traceparts API interface') . '</p>';
+      return $output;
+
+    default:
+  }
+}

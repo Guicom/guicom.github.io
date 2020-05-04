@@ -1,8 +1,11 @@
 .block-filter-by {
   display: flex;
+  margin-top: 13rem;
+  margin-bottom: 2rem;
   @include media-breakpoint-down(sm) {
     flex-direction: column;
     align-items: center;
+    margin-top: 2.5rem;
   }
   .filter-by{
     color: $dark-grey;
@@ -17,13 +20,15 @@
   }
 }
 
-.store-locator-wrapper {
+.store-locator-wrapper,
+.soc-search-wrapper {
   @include media-breakpoint-down(md) {
     margin-bottom: 1rem;
   }
   .block-filter-by {
     flex-direction: column;
-    .block-facets-ajax {
+    .block-facets-ajax,
+    .facet-full-width {
       @include media-breakpoint-down(md) {
         width: 100%;
         margin-bottom: 20px;
