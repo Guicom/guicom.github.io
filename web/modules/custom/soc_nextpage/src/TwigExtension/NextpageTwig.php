@@ -34,19 +34,8 @@ class NextpageTwig extends \Twig_Extension {
     $data = '';
     if (isset($string[0])) {
       $json_value = json_decode($string[0]["#context"]["value"]);
-      $data = NULL;
-      if (isset($json_value->{$extid})) {
-        $data = $json_value->{$extid}->value;
-      }
-      else {
-        foreach ($json_value as $values) {
-          if (isset($values->value)) {
-            if (isset($values->value->{$extid})) {
-              $data = $values->value->{$extid}->value;
-            }
-          }
-        }
-      }
+      $field = \Drupal::service('soc_nextpage.nextpage_item_handler');
+      $data = $field->getFieldFromJson($json_value, $extid);
     }
     return $data;
   }
