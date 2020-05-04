@@ -7,7 +7,7 @@ Feature: Default
     When I am on the homepage
     Then I should see an "#header .branding .navbar-brand img" element
     Then I should see an "#header .block-we-megamenu .navbar-expand-lg" element
-    Then I should see an "#header .menu--header-visitor .ico-search-white" element
-    Then I should see an "#header .menu--header-visitor .ico-bookmark-star-white" element
-    Then I should see an "#header .menu--header-visitor .ico-favorite" element
-    Then I should see an "#header .menu--header-visitor .ico-user" element
+    Then I should see an "#header .menu--header-visitors .ico-search-white" element
+    Then I should see an "#header .menu--header-visitors .ico-bookmark-star-white" element
+    Then I should see an "#header .menu--header-visitors .ico-favorite" element
+    Then I should see an "#header .menu--header-visitors .ico-user" element
