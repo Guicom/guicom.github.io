@@ -4,9 +4,13 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.table_reference
+    - field.field.node.product_reference.field_characteristics
     - field.field.node.product_reference.field_json_product_data
+    - field.field.node.product_reference.field_product_cta_1
+    - field.field.node.product_reference.field_product_cta_2
+    - field.field.node.product_reference.field_product_cta_3
+    - field.field.node.product_reference.field_product_cta_4
     - field.field.node.product_reference.field_product_status
-    - field.field.node.product_reference.field_reference_content
     - field.field.node.product_reference.field_reference_extid
     - field.field.node.product_reference.field_reference_json_table
     - field.field.node.product_reference.field_reference_name
@@ -41,9 +45,13 @@ content:
     region: content
 hidden:
   addtoany: true
+  field_characteristics: true
   field_json_product_data: true
+  field_product_cta_1: true
+  field_product_cta_2: true
+  field_product_cta_3: true
+  field_product_cta_4: true
   field_product_status: true
-  field_reference_content: true
   field_reference_extid: true
   field_reference_name: true
   field_reference_picture: true
