@@ -158,6 +158,10 @@ class ReferenceManager {
       $value = $this->nextpageItemHandler->getJsonField($reference->DC_R_TC4_NAME);
       $json[$value["value"][0]] = $reference->DC_R_TC4_VALUE->Value;
     }
+    if (isset($reference->DC_R_TC5_VALUE->Value)) {
+      $value = $this->nextpageItemHandler->getJsonField($reference->DC_R_TC5_NAME);
+      $json[$value["value"][0]] = $reference->DC_R_TC5_VALUE->Value;
+    }
     if (isset($reference->DC_R_PRODUCT_STATUS_DATE->Value)) {
       $status = $this->nextpageItemHandler->getJsonField($reference->DC_R_PRODUCT_STATUS);
       $json[$status["label"]] = $status["value"];
