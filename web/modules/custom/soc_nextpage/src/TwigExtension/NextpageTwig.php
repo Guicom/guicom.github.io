@@ -14,8 +14,10 @@ class NextpageTwig extends \Twig_Extension {
    */
   public function getFilters() {
     return [
+      new \Twig_SimpleFilter('getJsonDecode', array($this, 'getJsonDecodeData')),
       new \Twig_SimpleFilter('getfield', array($this, 'getFieldData')),
       new \Twig_SimpleFilter('getMenuIcon', array($this, 'getMenuIcon')),
+      new \Twig_SimpleFilter('getKsort', array($this, 'getKsort')),
     ];
   }
 
@@ -27,25 +29,32 @@ class NextpageTwig extends \Twig_Extension {
   }
 
   /**
+   * Get ksort as array.
+   */
+  public static function getKsort($string) {
+    if (is_array($string)) {
+      ksort($string);
+    }
+    return $string;
+  }
+
+
+  /**
+   * Get json as array.
+   */
+  public static function getJsonDecodeData($string) {
+    return json_decode(trim($string), TRUE);
+  }
+
+  /**
    * Get json field content.
    */
   public static function getFieldData($string, $extid) {
     $data = '';
     if (isset($string[0])) {
       $json_value = json_decode($string[0]["#context"]["value"]);
-      $data = NULL;
-      if (isset($json_value->{$extid})) {
-        $data = $json_value->{$extid}->value;
-      }
-      else {
-        foreach ($json_value as $values) {
-          if (isset($values->value)) {
-            if (isset($values->value->{$extid})) {
-              $data = $values->value->{$extid}->value;
-            }
-          }
-        }
-      }
+      $field = \Drupal::service('soc_nextpage.nextpage_item_handler');
+      $data = $field->getFieldFromJson($json_value, $extid);
     }
     return $data;
   }
