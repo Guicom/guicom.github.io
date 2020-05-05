@@ -601,5 +601,35 @@
     }
   };
 
+  /**
+  * Ajax btn bookmarks and wishlist
+  */
+  Drupal.behaviors.socomec_content_list_ajax_btn = {
+    attach: function (context, settings) {
+      var elements = $('a[data-soc-content-list-ajax="1"]');
+      $(elements, context).once('socomec_content_list_ajax_btn').each(function () {
+        $(this).click(function (e) {
+          var element = $(this);
+          var href = element.attr('href');
+          element.addClass( "item-pending" );
+          $.ajax({
+            url: href,
+            type: 'GET',
+            dataType: 'json',
+            success: function (output, statut) {
+              element.removeClass( "item-pending" );
+              if (output == "false") {
+                element.addClass("item-added").delay(5000).queue(function(){
+                  element.removeClass("item-added").dequeue();
+                });
+              }
+            }
+          });
+          e.preventDefault();
+          e.stopPropagation();
+        });
+      });
+    }
+  };
 
 })(jQuery, Drupal);
