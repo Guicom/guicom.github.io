@@ -103,11 +103,43 @@
         <article id="main" class="container-fluid">
           <section class="section-light" id="product-info-section">
             <div class="container">
-              <div class="row">
-                {{ content }}
-                {{ drupal_block('traceparts_viewer_block') }}
-                {{ drupal_block('traceparts_downloads_block') }}
-              </div>
+              <qdiv class="row">
+                {% set characteristics = drupal_field('field_characteristics', 'node') %}
+                {% if characteristics[0]['#context']['value'] is not empty %}
+                  <div class="col-md-12 product-reference-characteristics">
+                    {% set datas = characteristics[0]['#context']['value']|getJsonDecode %}
+                    {% for label, rows in datas %}
+                      <div class="section-characteristics">
+                        <div class="label-section">{{ label }}</div>
+                        <table class="table table-section">
+                          {% for data in rows|getKsort %}
+                            <tr class="row">
+                              <th class="col-sm-6">{{ data.label }}</th>
+                              <td class="col-sm-6">
+                                {% if data.value is iterable %}
+                                  {% if data.value|length > 1 %}
+                                    <ul>
+                                      {% for list in data.value %}
+                                        <li>{{ list }}</li>
+                                      {% endfor %}
+                                    </ul>
+                                  {% else %}
+                                    {% for list in data.value %}
+                                      {{ list }}
+                                    {% endfor %}
+                                  {% endif %}
+                                {% else %}
+                                  {{ data.value }}
+                                {% endif %}
+                              </td>
+                            </tr>
+                          {% endfor %}
+                        </table>
+                      </div>
+                    {% endfor %}
+                  </div>
+                {% endif %}
+              </qdiv>
             </div>
           </section>
         </article>
