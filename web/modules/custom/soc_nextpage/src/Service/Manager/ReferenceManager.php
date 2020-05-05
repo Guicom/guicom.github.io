@@ -176,8 +176,8 @@ class ReferenceManager {
 
   public function buildJsonCharacteristics($referenceFields, array $exclude) {
     $json = [];
-    foreach ($referenceFields as $key => $field) {
-      if (!in_array($field, $exclude)) {
+    foreach ($referenceFields as $fieldName => $field) {
+      if (!in_array($fieldName, $exclude)) {
         if ($value = $this->nextpageItemHandler->getJsonField($field)) {
           if (!empty($value['value']) && !empty($value['libelleDossier']) && !empty($value['order'])) {
             $json[$value['libelleDossier']][$value['order']] = $value;
