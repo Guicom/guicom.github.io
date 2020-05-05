@@ -15,6 +15,8 @@ dependencies:
     - field.storage.node.field_res_original_description
     - field.storage.node.field_res_original_title
     - field.storage.node.field_res_product_ref
+    - field.storage.node.field_res_product_reference_ref
+    - field.storage.node.field_reference_ref
     - field.storage.node.field_res_segment
     - field.storage.node.field_res_target
     - field.storage.node.field_res_title
@@ -106,6 +108,17 @@ field_settings:
     dependencies:
       config:
         - field.storage.node.field_product_family
+  field_reference_ref:
+    label: 'Reference to product reference » Content » Reference'
+    datasource_id: 'entity:node'
+    property_path: 'field_res_product_reference_ref:entity:field_reference_ref'
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_res_product_reference_ref
+        - field.storage.node.field_reference_ref
+      module:
+        - node
   field_res_product_ref:
     label: 'Reference to product'
     datasource_id: 'entity:node'
