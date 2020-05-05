@@ -8,7 +8,10 @@
   'use strict';
   Drupal.behaviors.product_datatable_add_extratr = {
     attach: function(context, settings) {
-      $('#product-reference-table tbody tr').once.prepend('<td></td>');
+      if ($(window).width() < 420) {
+        $('#product-reference-table tbody tr').prepend('<td></td>');
+        $('#product-reference-table thead tr').prepend('<th></th>');
+      }
     }
   };
 
