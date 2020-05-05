@@ -10,6 +10,7 @@ dependencies:
     - field.field.node.product_reference.field_product_cta_3
     - field.field.node.product_reference.field_product_cta_4
     - field.field.node.product_reference.field_product_status
+    - field.field.node.product_reference.field_reference_content
     - field.field.node.product_reference.field_reference_extid
     - field.field.node.product_reference.field_reference_json_table
     - field.field.node.product_reference.field_reference_name
@@ -67,6 +68,7 @@ third_party_settings:
     group_webmastering:
       children:
         - group_cta
+        - field_reference_content
       parent_name: group_tabs
       weight: 21
       format_type: tab
@@ -177,6 +179,18 @@ content:
       match_limit: 10
     third_party_settings: {  }
     type: entity_reference_autocomplete
+    region: content
+  field_reference_content:
+    type: entity_reference_paragraphs
+    weight: 21
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
     region: content
   field_reference_extid:
     weight: 2
