@@ -1,7 +1,9 @@
 <?php
 
+use Behat\Gherkin\Node\TableNode;
 use Drupal\Component\Utility\UrlHelper;
 use Drupal\DrupalExtension\Context\RawDrupalContext;
+use Drupal\file\Entity\File;
 use Drupal\node\Entity\Node;
 
 /**
@@ -467,6 +469,56 @@ JS;
     $this->getSession()
       ->executeScript("CKEDITOR.instances[\"$fieldId\"].setData(\"$value\");");
   }
+
+  /**
+   * Creates a set of media items from tabular data.
+   *
+   * @param \Behat\Gherkin\Node\TableNode $table
+   *   The table of entity data.
+   *
+   * @Given media items:
+   * @Given media items with file in the :field_name field:
+   * @throws \Exception
+   */
+  public function createMultiple(TableNode $table, $field_name = NULL) {
+    // Create the file entities for file references and replace the file the
+    // path with the created file id.
+    $modified = FALSE;
+    $new_table = [$table->getRow(0)];
+
+    // If field_name is defined, create a file entity based on it and replace
+    // the field in the TableNode by the new created file id.
+    if (!is_null($field_name)) {
+      $absolutePath = $this->getMinkParameter('files_path');
+      $i = 1;
+      foreach ($table as $values) {
+        $new_table[$i] = $values;
+        if (!empty($values[$field_name])) {
+          $file_system = \Drupal::service('file_system');
+
+          // Build a destination URI.
+          $source =  $absolutePath . $values[$field_name];
+          $destination = file_build_uri($file_system->basename($source));
+          $file_system->copy($source, $destination);
+
+          $file = File::create([
+            'uri' => $destination,
+          ]);
+          $file->setTemporary();
+          $file->save();
+
+          $new_table[$i][$field_name] = $file->id();
+          $modified = TRUE;
+        }
+        $i++;
+      }
+    }
+    if ($modified) {
+      $table = new TableNode($new_table);
+    }
+    $this->getContext(EntityContext::class)->createMultiple('media', $table);
+  }
+
 
 
 }
