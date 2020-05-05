@@ -40,13 +40,13 @@ class DefaultImageSettings extends ConfigFormBase {
     $form['default_image_product'] = [
       '#type' => 'managed_file',
       '#title' => $this->t('Default image product'),
-      '#upload_location' => 'public://default_img',
+      '#upload_location' => 'public://',
       '#default_value'  => $config->get('default_image_product' ?? ''),
     ];
     $form['default_image_reference'] = [
       '#type' => 'managed_file',
       '#title' => $this->t('Default image reference'),
-      '#upload_location' => 'public://default_img',
+      '#upload_location' => 'public://',
       '#default_value'  => $config->get('default_image_reference' ?? ''),
     ];
 
