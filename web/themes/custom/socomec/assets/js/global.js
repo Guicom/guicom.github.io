@@ -618,10 +618,21 @@
             dataType: 'json',
             success: function (output, statut) {
               element.removeClass( "item-pending" );
-              if (output == "false") {
-                element.addClass("item-added").delay(5000).queue(function(){
-                  element.removeClass("item-added").dequeue();
-                });
+              if (output == "true") {
+                var original = element.attr('data-soc-content-list-original-title');
+                var alt = element.attr('data-soc-content-list-alt-title');
+                element.addClass("soc-list-is-active");
+                if (typeof(original) !== "undefined" && typeof(alt) !== "undefined") {
+                  element.addClass("item-added").find(".btn-value").replaceWith("<span class ='btn-value'>"+alt+"</span>").delay(5000).queue(function(){
+                    element.removeClass("item-added").find(".btn-value").val("<span class ='btn-value'>"+original+"</span>").replaceWith(original).dequeue();
+                  });
+                }
+                else {
+                  element.addClass("item-added").delay(5000).queue(function(){
+                    element.removeClass("item-added").dequeue();
+                  });
+                }
+
               }
             }
           });
