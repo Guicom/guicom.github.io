@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.product_reference.field_characteristics
     - field.field.node.product_reference.field_json_product_data
     - field.field.node.product_reference.field_product_cta_1
     - field.field.node.product_reference.field_product_cta_2
@@ -52,6 +53,7 @@ third_party_settings:
         - field_reference_ref
         - field_reference_picture
         - field_json_product_data
+        - field_characteristics
       parent_name: group_tabs
       weight: 20
       format_type: tab
@@ -102,6 +104,14 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_characteristics:
+    weight: 9
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+    region: content
   field_json_product_data:
     weight: 8
     settings:
