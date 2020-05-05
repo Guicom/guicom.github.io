@@ -105,8 +105,8 @@ Feature: Models
     Then I should see "Video & text title"
     Then I should see "Text video"
     Then I should see "Text video"
-    Then I should see an ".paragraph--type-video-text .embed-responsive embed-responsive-16by9" element
-    Then I should see an ".paragraph--type--video-embed .embed-responsive embed-responsive-16by9" element
+    Then I should see an ".paragraph--type-video-text .embed-responsive.embed-responsive-16by9" element
+    Then I should see an ".paragraph--type--video-embed .embed-responsive.embed-responsive-16by9" element
 
 
 
