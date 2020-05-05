@@ -58,7 +58,7 @@ class TracepartsViewerBlock extends BlockBase implements ContainerFactoryPluginI
           $params = [
             'SupplierID' => 'SOCOMEC',
             'PartNumber' => $partNumber,
-            'SetBackgroundColor' => '0xfcfcfc',
+            'SetBackgroundColor' => '0xF0EFEF',
             'DisplayLogo' => 'none',
           ];
           $viewerUrl = Url::fromUri($baseUrl, [
