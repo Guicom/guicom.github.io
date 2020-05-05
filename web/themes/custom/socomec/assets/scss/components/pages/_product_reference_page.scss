@@ -167,6 +167,12 @@ body.node--type-product-reference {
       }
     }
     // TRACEPART
+    .product-reference-download3D-model {
+      width: 250px;
+      @include media-breakpoint-down(sm) {
+        width: 100%;
+      }
+    }
     .product-reference-image {
       display: flex;
       width: 100%;
@@ -188,8 +194,12 @@ body.node--type-product-reference {
     }
     .download3D-model {
       position: relative;
-      .cta-simple {
+      width: 100%;
+      .cta-simple,
+      .modal-open {
         display: flex;
+        justify-content: center;
+        width: 100%;
         font-size: $font-size-sm;
         font-weight: 600;
         color: $blue;
@@ -198,6 +208,9 @@ body.node--type-product-reference {
         background: $white;
         padding: 0.8rem 1.5rem 0.8rem 2rem;
         border: 1px solid rgba($blue, 0.5);
+        &:focus {
+          outline: none;
+        }
         &:after {
           content:'';
           display: inline-block;
@@ -205,17 +218,75 @@ body.node--type-product-reference {
           width: 20px;
           height: 20px;
           margin-left: 10px;
+          transition: $transition02;
+        }
+        &[aria-expanded="false"] {
+          &:after {
+            transform: rotate(-90deg);
+            transition: $transition02;
+          }
+        }
+        &[aria-expanded="true"] {
+          &:after {
+            transform: rotate(90deg);
+            transition: $transition02;
+          }
+        }
+      }
+      // open icon only for mobile modal opener
+      .modal-open {
+        &:after {
+          @include media-breakpoint-down(sm) {
+            content:'';
+            display: inline-block;
+            background-image: url("../images/picto/ui/chevron-left-circle.svg");
+            width: 20px;
+            height: 20px;
+            margin-left: 10px;
+            transform: rotate(-90deg);
+            transition: $transition02;
+          }
+        }
+      }
+      // hide desktop btn on mobile
+      .cta-simple {
+        @include media-breakpoint-down(sm) {
+          display: none;
+        }
+      }
+      #tracepart-download-list {
+        position: absolute;
+        z-index: 999;
+        width: 100%;
+        top: calc(100% - 1px);
+        @include media-breakpoint-down(sm) {
+          top: initial;
+          display: block!important;
+          height: 80%;
+          overflow-y: scroll;
         }
       }
       .block-soc-traceparts {
-        position: absolute;
-        z-index: 999;
         .list-group {
-          height: 12rem;
-          width: 15.75rem;
+          height: 11rem;
+          width: 100%;
           overflow-y: scroll;
+          border-bottom: 1px solid rgba($blue, 0.5);
+          border-left: 1px solid rgba($blue, 0.5);
+          border-right: 1px solid rgba($blue, 0.5);
+          @include media-breakpoint-down(sm) {
+            height: 100%;
+            width: 90%;
+            border-left: 0;
+            border-right: 0;
+          }
           .list-group-item {
             padding-left: 0.5rem;
+            border-left: initial;
+            border-right: initial;
+            border-top: initial;
+            border-bottom: 1px solid rgba($blue, 0.5);
+            border-radius: 0;
           }
         }
       }
