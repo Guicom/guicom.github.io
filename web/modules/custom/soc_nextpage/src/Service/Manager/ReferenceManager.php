@@ -165,6 +165,10 @@ class ReferenceManager {
       $value = $this->nextpageItemHandler->getJsonField($reference->DC_R_TC4_NAME);
       $json[$value["value"][0]] = $reference->DC_R_TC4_VALUE->Value;
     }
+    if (isset($reference->DC_R_TC5_VALUE->Value)) {
+      $value = $this->nextpageItemHandler->getJsonField($reference->DC_R_TC5_NAME);
+      $json[$value["value"][0]] = $reference->DC_R_TC5_VALUE->Value;
+    }
     if (isset($reference->DC_R_PRODUCT_STATUS_DATE->Value)) {
       $status = $this->nextpageItemHandler->getJsonField($reference->DC_R_PRODUCT_STATUS);
       $json[$status["label"]] = $status["value"];
@@ -176,8 +180,8 @@ class ReferenceManager {
 
   public function buildJsonCharacteristics($referenceFields, array $exclude) {
     $json = [];
-    foreach ($referenceFields as $key => $field) {
-      if (!in_array($field, $exclude)) {
+    foreach ($referenceFields as $fieldName => $field) {
+      if (!in_array($fieldName, $exclude)) {
         if ($value = $this->nextpageItemHandler->getJsonField($field)) {
           if (!empty($value['value']) && !empty($value['libelleDossier']) && !empty($value['order'])) {
             $json[$value['libelleDossier']][$value['order']] = $value;
