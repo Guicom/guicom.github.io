@@ -26,20 +26,24 @@ class ReferenceManager {
    */
   private $nextpageItemHandler;
 
-  public function __construct(NextpageApi $nextpageApi, NextpageItemHandler $nextpageItemHandler) {
+  public function __construct(NextpageApi $nextpageApi,
+                              NextpageItemHandler $nextpageItemHandler) {
     $this->nextpageApi = $nextpageApi;
     $this->nextpageItemHandler = $nextpageItemHandler;
   }
 
 
   /**
-   * @param $pendingReference
+   * @param $ext_id
    *
-   * @return \Drupal\Core\Entity\EntityInterface|mixed|string|void|null
+   * @return array
+   * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
+   * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
    */
-  public function handle($ExtId) {
-    // Manage refernce
-    $references = $this->nextpageApi->descendantsAndLinks(TRUE, [], [], $ExtId);
+  public function handle($ext_id) {
+    $nids = [];
+    // Manage reference.
+    $references = $this->nextpageApi->descendantsAndLinks(TRUE, [], [], $ext_id);
     foreach ($references->Elements as $reference) {
       if ($reference->ElementType === 3) {
         if ($entity = $this->nextpageItemHandler->loadByExtID($reference->ExtID, 'node', 'product_reference')) {
@@ -75,10 +79,11 @@ class ReferenceManager {
    * @param $reference
    *
    * @return mixed
+   * @throws \Drupal\Core\Entity\EntityStorageException
    */
   public function updateReference($node, $reference) {
     $json_field = $this->nextpageItemHandler->formatJsonField($reference->Values);
-    $node->set('title', $reference->Values->{'DC_R_ADMIN_Invoice Description'}->Value);
+    $node->set('title', $reference->Values->{'DC_R_ADMIN_Invoice_Description'}->Value);
     $node->set('field_teaser', $reference->Values->{'DC_R_REFERENCE_LONG_DESCRIPTION'}->Value);
     $node->set('field_json_product_data', $json_field);
     $node->set('field_reference_json_table', $this->buildJsonTable($reference->Values));
@@ -102,20 +107,29 @@ class ReferenceManager {
           $paragraph = Paragraph::create(['type' => 'link']);
           $paragraph->set('field_link_paragraph', $entity->id());
           $paragraph->isNew();
-          $paragraph->save();
-          $current = [
-            0 => [
-              'target_id' => $paragraph->id(),
-              'target_revision_id' => $paragraph->getRevisionId(),
-            ]
-          ];
-          $node->set($field, $current);
+          try {
+            $paragraph->save();
+            $current = [
+              0 => [
+                'target_id' => $paragraph->id(),
+                'target_revision_id' => $paragraph->getRevisionId(),
+              ]
+            ];
+            $node->set($field, $current);
+          }
+          catch (\Exception $e) {}
         }
       }
     }
 
-    $node->save();
-    return $node->id();
+    try {
+      $node->save();
+      return $node->id();
+    }
+    catch (\Exception $e) {
+      \Drupal::logger('soc_nextpage')->warning($e->getMessage());
+    }
+    return FALSE;
   }
 
 

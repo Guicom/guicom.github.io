@@ -12,7 +12,7 @@ dependencies:
 id: viewsnewsteaser
 theme: socomec
 region: hidden
-weight: -14
+weight: -25
 provider: null
 plugin: 'block_content:c97d069b-ed27-49c0-819a-fb4fcf408469'
 settings:

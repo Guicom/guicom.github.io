@@ -123,8 +123,6 @@
   }
   // HERO HIGHLIGHT LAYOUT
   .hero-block {
-    // creating spacing for the news card highlight on pos absolute, take care of responsive rendering
-    margin-bottom: 14rem;
     @include media-breakpoint-down(md) {
       margin-bottom: 8rem;
     }

@@ -10,6 +10,16 @@ body.node--type-product-reference {
         @include media-breakpoint-down(md) {
           background: $white;
         }
+        .back-to-button {
+          @include back-to-button();
+          color:$blue;
+          margin-bottom: $spacer;
+          transition: $transition02;
+          text-transform: uppercase;
+          @include media-breakpoint-down(md) {
+            margin-bottom: 2rem;
+          }
+        }
         .block-system-breadcrumb-block {
           ol.breadcrumb {
             li.breadcrumb-item {
@@ -35,13 +45,13 @@ body.node--type-product-reference {
         }
         .product-reference-ref {
           padding: 0;
-          margin:0 0 20px 0;
-          color: $turquoize;
-          font-family: $font-poppins;
-          font-size: 12px;
-          font-weight: 600;
-          letter-spacing: 1px;
-          line-height: 20px;
+          margin:0 0 10px 0;
+          color: $dark_blue;
+          font-family: $font-roboto;
+          font-size: 24px;
+          font-weight: 900;
+          letter-spacing: 0;
+          line-height: 30px;
         }
         .product-reference-teaser {
           padding: 0;
@@ -72,13 +82,14 @@ body.node--type-product-reference {
       height: 60px;
       align-items: center;
       justify-content: flex-end;
+      margin:0 -15px;
       @include media-breakpoint-down(md) {
         order: 3;
         position: relative;
         height: 120px;
       }
       @include media-breakpoint-down(xs) {
-        margin-top: 30px;
+        margin: 30px 0px 0px 0px;
         flex-wrap: wrap;
       }
       img {
