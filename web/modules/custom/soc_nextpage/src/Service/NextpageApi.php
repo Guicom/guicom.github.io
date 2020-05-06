@@ -133,7 +133,7 @@ class NextpageApi extends NextpageBaseApi implements NextpageApiInterface {
    *
    * @return bool
    */
-  public function synchroniseCharacteristicsDictionary($languageId = 2){
+  public function synchroniseCharacteristicsDictionary($languageId = 2) {
     $endpoints = $this->getEndpoints();
     $dictionary = [];
     try {

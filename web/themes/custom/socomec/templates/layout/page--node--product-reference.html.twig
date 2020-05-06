@@ -104,10 +104,6 @@
           <section class="section-light" id="product-info-section">
             <div class="container">
               <div class="row">
-                {{ drupal_block('traceparts_viewer_block') }}
-                {{ drupal_block('traceparts_downloads_block') }}
-              </div>
-              <div class="row">
                 {% set characteristics = drupal_field('field_characteristics', 'node') %}
                 {% if characteristics[0]['#context']['value'] is not empty %}
                   <div class="col-md-12 product-reference-characteristics">
