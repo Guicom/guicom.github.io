@@ -1,0 +1,56 @@
+uuid: dde10566-13a7-4cec-9b68-dd38c057e9d9
+langcode: en
+status: true
+dependencies:
+  config:
+    - search_api.index.resources
+    - views.view.resource_center
+  module:
+    - search_api
+id: reference_to_product
+name: Product
+url_alias: reference-to-product
+weight: 0
+min_count: 1
+show_only_one_result: false
+field_identifier: field_res_product_ref
+facet_source_id: 'search_api:views_page__resource_center__page_1'
+widget:
+  type: dropdown
+  config:
+    show_numbers: false
+    default_option_label: All
+query_operator: or
+use_hierarchy: false
+expand_hierarchy: false
+enable_parent_when_child_gets_disabled: true
+hard_limit: 0
+exclude: false
+only_visible_when_facet_source_is_visible: true
+processor_configs:
+  active_widget_order:
+    processor_id: active_widget_order
+    weights:
+      sort: 20
+    settings:
+      sort: DESC
+  display_value_widget_order:
+    processor_id: display_value_widget_order
+    weights:
+      sort: 40
+    settings:
+      sort: ASC
+  translate_entity:
+    processor_id: translate_entity
+    weights:
+      build: 5
+    settings: {  }
+  url_processor_handler:
+    processor_id: url_processor_handler
+    weights:
+      pre_query: 50
+      build: 15
+    settings: {  }
+empty_behavior:
+  behavior: none
+show_title: true

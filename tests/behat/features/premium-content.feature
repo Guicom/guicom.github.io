@@ -21,6 +21,8 @@ Feature: Premium Content
     When I visit "/landing-page-premium/white-paper/my-landing-page"
     And I accept all cookies compliance
     And I wait 1 seconds
+    Then I should see the breadcrumb link "Home"
+    Then I should see the breadcrumb link "My Landing Page"
     Then I should see an ".ancher-button a" element
     Given I switch to the iframe "pardot-iframe"
     And I wait 2 seconds
