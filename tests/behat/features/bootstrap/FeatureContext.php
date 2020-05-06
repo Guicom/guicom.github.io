@@ -448,4 +448,45 @@ JS;
     return FALSE;
   }
 
+  /**
+   * @Then I should see the breadcrumb link :arg1
+   */
+  public function iShouldSeeTheBreadcrumbLink($arg1)
+  {
+    // get the breadcrumb
+    /**
+     * @var Behat\Mink\Element\NodeElement $breadcrumb
+     */
+    $breadcrumb = $this->getSession()->getPage()->find('css', 'div.block-system-breadcrumb-block');
+
+    // this does not work for URLs
+    $link = $breadcrumb->findLink($arg1);
+    if ($link) {
+      return;
+    }
+
+    // filter by url
+    $link = $breadcrumb->findAll('css', "a[href=\"{$arg1}\"]");
+    if ($link) {
+      return;
+    }
+
+    // filter by url
+    $page = $this->getSession()->getPage();
+    $active = $page->find('css', 'li.breadcrumb-item.active');
+    if ($active->getText() == $arg1) {
+      return;
+    }
+    $active = $page->find('css', 'li.breadcrumb-item.active + li.breadcrumb-item.active');
+    if ($active->getText() == $arg1) {
+      return;
+    }
+
+    throw new \Exception(
+      sprintf("Expected link %s not found in breadcrumb on page %s",
+        $arg1,
+        $this->getSession()->getCurrentUrl())
+    );
+  }
+
 }
