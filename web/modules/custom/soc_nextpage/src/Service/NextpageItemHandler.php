@@ -185,7 +185,7 @@ class NextpageItemHandler  {
     $data = $sth->execute();
     $result = $data->fetchAll(\PDO::FETCH_OBJ);
     if (isset($result[0])) {
-      $this->deleteRelation($productId);
+      //$this->deleteRelation($productId);
       return $result;
     }
     return $result;

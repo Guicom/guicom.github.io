@@ -5,7 +5,7 @@ namespace Drupal\soc_nextpage\Service\Manager;
 use Drupal;
 use Drupal\soc_nextpage\Service\NextpageApi;
 use Drupal\soc_nextpage\Service\NextpageItemHandler;
-use Drupal\system\Entity\Menu;
+use Drupal\taxonomy\Entity\Term;
 
 /**
  * Class ProductManager
@@ -41,6 +41,11 @@ class FamilyManager {
     }
   }
 
+  /**
+   * @param $pendingFamily
+   *
+   * @return bool
+   */
   public function isFamily($pendingFamily) {
     if (isset($pendingFamily->Values->C_LV1_TITLE) ||
       isset($pendingFamily->Values->C_LV2_TITLE) ||
@@ -77,12 +82,14 @@ class FamilyManager {
   }
 
   /**
-   * @param $node
-   * @param $product
+   * Update product family.
+   *
+   * @param $term
+   * @param $pendingFamily
    *
    * @return mixed
    */
-  function updateFamilyTerm($term, $pendingFamily) {
+  function updateFamilyTerm(Term $term, $pendingFamily) {
     // Get title.
     $name = $pendingFamily->ExtID;
     if (isset($pendingFamily->Values->C_LV1_TITLE)) {
@@ -127,7 +134,12 @@ class FamilyManager {
     if (isset($pendingFamily->ParentExtID) && !empty($pendingFamily->ParentExtID)) {
       $term->set('parent', [$this->getTidByExtID($pendingFamily->ParentExtID)]);
     }
-    $term->save();
+    try {
+      $term->save();
+    }
+    catch (\Exception $e) {
+      \Drupal::logger('soc_nextpage')->warning($e->getMessage());
+    }
 
     return $term;
   }
