@@ -44,6 +44,12 @@ class LoginForm extends TracepartsForm {
       [
         'part_number' => $part_number,
         'format_id' => $format_id,
+      ],
+      [
+        'attributes' => [
+          'class=' => 'use-ajax',
+          'data-dialog-type' => 'modal',
+        ],
       ]
     );
 
