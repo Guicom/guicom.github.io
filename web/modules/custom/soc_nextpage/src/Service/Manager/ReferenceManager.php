@@ -87,8 +87,15 @@ class ReferenceManager {
     $node->set('field_teaser', $reference->Values->{'DC_R_REFERENCE_LONG_DESCRIPTION'}->Value);
     $node->set('field_json_product_data', $json_field);
     $node->set('field_reference_json_table', $this->buildJsonTable($reference->Values));
+
     $node->set('field_reference_extid', $reference->ExtID);
     $node->set('field_reference_ref', $reference->Values->{'DC_R_REFERENCE'}->Value);
+    $exclude = [
+      'DC_R_ADMIN_Invoice_Description',
+      'DC_R_REFERENCE_LONG_DESCRIPTION',
+      'DC_R_REFERENCE'
+    ];
+    $node->set('field_characteristics', $this->buildJsonCharacteristics($reference->Values, $exclude));
     $node->setPublished();
     $node->set('moderation_state', 'published');
 
@@ -158,6 +165,10 @@ class ReferenceManager {
       $value = $this->nextpageItemHandler->getJsonField($reference->DC_R_TC4_NAME);
       $json[$value["value"][0]] = $reference->DC_R_TC4_VALUE->Value;
     }
+    if (isset($reference->DC_R_TC5_VALUE->Value)) {
+      $value = $this->nextpageItemHandler->getJsonField($reference->DC_R_TC5_NAME);
+      $json[$value["value"][0]] = $reference->DC_R_TC5_VALUE->Value;
+    }
     if (isset($reference->DC_R_PRODUCT_STATUS_DATE->Value)) {
       $status = $this->nextpageItemHandler->getJsonField($reference->DC_R_PRODUCT_STATUS);
       $json[$status["label"]] = $status["value"];
@@ -167,5 +178,26 @@ class ReferenceManager {
     return $json;
   }
 
-
+  public function buildJsonCharacteristics($referenceFields, array $exclude) {
+    $json = [];
+    foreach ($referenceFields as $fieldName => $field) {
+      if (!in_array($fieldName, $exclude)) {
+        if ($value = $this->nextpageItemHandler->getJsonField($field)) {
+          if (!empty($value['value']) && !empty($value['libelleDossier']) && !empty($value['order'])) {
+            $json[$value['libelleDossier']][$value['order']] = $value;
+          }
+        }
+      }
+    }
+    if (!empty($json)) {
+      if (is_array($json)) {
+        foreach ($json as $key => $value) {
+          ksort($json[$key]);
+        }
+      }
+      $json = json_encode($json);
+      return $json;
+    }
+    return NULL;
+  }
 }
