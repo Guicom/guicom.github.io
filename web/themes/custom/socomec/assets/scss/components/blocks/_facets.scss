@@ -399,7 +399,8 @@
   }
   // ONLY ON STORE LOCATOR PAGE AND SEARCH -- WILL BE GLOBALIZED AFTER SPRINT 6
   .store-locator-wrapper,
-  .soc-search-wrapper {
+  .soc-search-wrapper,
+  .node--type-product-reference {
     .modal-facets-mobile {
       display: none;
       &.active {
