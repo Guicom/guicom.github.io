@@ -71,6 +71,9 @@
             border: none;
             height: 80%;
             overflow-y: scroll;
+            @media (orientation: landscape) {
+              height: 65%;
+            }
             li {
               background: none;
               border: none;
