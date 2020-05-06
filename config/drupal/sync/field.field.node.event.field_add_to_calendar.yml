@@ -30,7 +30,7 @@ settings:
       tokenized: '[node:title]'
     atc_description:
       field: token
-      tokenized: '[node:field_event_teaser:value]'
+      tokenized: '[node:field_event_teaser:value]  <br/> [node:field_event_place:value] <br/> [node:url:absolute]'
     atc_location:
       field: token
       tokenized: '[node:field_event_place:value]'
@@ -51,7 +51,7 @@ settings:
     data_calendars:
       iCalendar: iCalendar
       'Google Calendar': 'Google Calendar'
+      Outlook: Outlook
       'Outlook Online': 'Outlook Online'
       'Yahoo! Calendar': 'Yahoo! Calendar'
-      Outlook: Outlook
 field_type: add_to_calendar_field
