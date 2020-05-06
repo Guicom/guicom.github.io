@@ -10,7 +10,7 @@ dependencies:
 id: countryselector
 theme: socomec
 region: hidden
-weight: -26
+weight: -17
 provider: null
 plugin: country_selector
 settings:
