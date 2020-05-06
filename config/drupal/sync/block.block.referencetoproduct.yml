@@ -1,0 +1,23 @@
+uuid: bae0681f-0423-4968-83da-02f3422b0af6
+langcode: en
+status: true
+dependencies:
+  config:
+    - facets.facet.reference_to_product
+  module:
+    - facets
+  theme:
+    - socomec
+id: referencetoproduct
+theme: socomec
+region: facets
+weight: 0
+provider: null
+plugin: 'facet_block:reference_to_product'
+settings:
+  id: 'facet_block:reference_to_product'
+  label: 'Reference to product'
+  provider: facets
+  label_display: '0'
+  block_id: referencetoproduct
+visibility: {  }

@@ -124,7 +124,7 @@ class ProductManager {
 
 
     if (isset($this->referencesNids)) {
-      foreach($this->referencesNids as $index => $referencesNid) {
+      foreach ($this->referencesNids as $index => $referencesNid) {
         if ($index == 0) {
           $node->set('field_product_reference', $referencesNid);
         }
