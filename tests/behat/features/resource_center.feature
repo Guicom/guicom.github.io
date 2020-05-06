@@ -2,6 +2,9 @@ Feature: [Resource center] Tests Behat
   #vendor/bin/phing behat:run -Dbehat.tags=resource_center
   Background:
     Given I am logged in as a user with the "administrator" role
+    And resource_type terms:
+      | language | name        |
+      | English  | MyResourceType |
     And product content:
       | language | title                    | status | moderation_state |
       | English  | TestBehatProductTitle    | 1      | published        |
@@ -12,8 +15,8 @@ Feature: [Resource center] Tests Behat
       | English  | TestBehatProductReferenceTwoTitle | TestBehatProductReferenceTwoRef | 1      | published        |
     And resource content:
       | language | title                     | field_res_original_title          | field_res_reference     | field_res_resource_type | field_res_product_ref    | field_res_product_reference_ref   | status | moderation_state |
-      | English  | TestBehatResourceTitle    | TestBehatResourceOriginalTitle    | TestBehatResourceRef    | Whitepaper              | TestBehatProductTitle    | TestBehatProductReferenceTitle    | 1      | published        |
-      | English  | TestBehatResourceTwoTitle | TestBehatResourceTwoOriginalTitle | TestBehatResourceTwoRef | Whitepaper              | TestBehatProductTwoTitle | TestBehatProductReferenceTwoTitle | 1      | published        |
+      | English  | TestBehatResourceTitle    | TestBehatResourceOriginalTitle    | TestBehatResourceRef    | MyResourceType          | TestBehatProductTitle    | TestBehatProductReferenceTitle    | 1      | published        |
+      | English  | TestBehatResourceTwoTitle | TestBehatResourceTwoOriginalTitle | TestBehatResourceTwoRef | MyResourceType          | TestBehatProductTwoTitle | TestBehatProductReferenceTwoTitle | 1      | published        |
     Then I visit "/admin/config/search/search-api/index/resources"
     And I press "Index now"
 
