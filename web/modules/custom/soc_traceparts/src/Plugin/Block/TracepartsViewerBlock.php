@@ -60,6 +60,7 @@ class TracepartsViewerBlock extends BlockBase implements ContainerFactoryPluginI
             'PartNumber' => $partNumber,
             'SetBackgroundColor' => '0xF0EFEF',
             'DisplayLogo' => 'none',
+            'EnableMirrorEffect' => 'false',
           ];
           $viewerUrl = Url::fromUri($baseUrl, [
             'query' => $params,
