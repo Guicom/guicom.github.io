@@ -275,19 +275,6 @@
   #news-info-section {
     margin-bottom: 2*$spacer;
   }
-  .multiline-content {
-    .field--name-field-body,
-    .field--name-field-event-content{
-      .field__item {
-        .paragraph {
-          &:not(.paragraph--type-video-text) {
-            @include make-col(10);
-            @include make-col-offset(1);
-          }
-        }
-      }
-    }
-  }
   // EVENT DATE
   .event-top {
     background: $yellow;
@@ -357,7 +344,7 @@
         color: $blue;
         font-weight: 600;
         text-transform: uppercase;
-        padding: 0.5rem 1.5rem;
+        padding: 0.5rem 0px 0.5rem 1.5rem;
         text-decoration: none;
         background: none;
         box-shadow: none;
@@ -382,9 +369,9 @@
           font-family: $font-poppins;
           font-weight: 600;
           text-transform: uppercase;
-          padding: 0.5rem 1.5rem;
           border-radius: 0;
         }
+
       }
     }
   }
