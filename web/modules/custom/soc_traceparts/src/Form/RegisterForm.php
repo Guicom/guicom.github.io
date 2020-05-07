@@ -6,6 +6,9 @@ namespace Drupal\soc_traceparts\Form;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Link;
 use Drupal\Core\Locale\CountryManager;
+use Drupal\Core\Ajax\AjaxResponse;
+use Drupal\Core\Ajax\ReplaceCommand;
+use Drupal\Core\Ajax\PrependCommand;
 
 class RegisterForm extends TracepartsForm {
 
@@ -48,54 +51,67 @@ class RegisterForm extends TracepartsForm {
       ],
       [
         'attributes' => [
-          'class=' => 'use-ajax',
+          'class' => ['use-ajax'],
           'data-dialog-type' => 'modal',
         ],
       ]
     );
 
     $values = $form_state->cleanValues()->getValues();
-    $form['register'] = [
+    // Form wrapper for AJAX
+    $form['wrapper_register'] = [
+      '#type' => 'container',
+      '#prefix' => '<div id="soc-traceparts-wrapper-register">',
+      '#suffix' => '</div>'
+    ];
+    $form['wrapper_register']['register'] = [
       '#markup' => '<p class="col-xs-12">' . $registrationLink->toString() . '</p>',
     ];
-    $form['email'] = [
+    $form['wrapper_register']['message'] = [
+      '#markup' => '<div class="soc-traceparts-message"></div>',
+    ];
+    $form['wrapper_register']['email'] = [
       '#type' => 'email',
       '#title' => $this->t('Your email address'),
       '#default_value' => $values['email'] ?? $this->currentUser->getEmail() ?? '',
       '#required' => TRUE,
     ];
-    $form['company'] = [
+    $form['wrapper_register']['company'] = [
       '#type' => 'textfield',
       '#title' => $this->t('Your company'),
       '#default_value' => $values['company'] ?? '',
       '#required' => TRUE,
     ];
-    $form['country'] = [
+    $form['wrapper_register']['country'] = [
       '#type' => 'select',
       '#title' => $this->t('Your country'),
       '#options' => CountryManager::getStandardList(),
       '#default_value' => $values['country'] ?? '',
       '#required' => TRUE,
     ];
-    $form['zipcode'] = [
+    $form['wrapper_register']['zipcode'] = [
       '#type' => 'textfield',
       '#title' => $this->t('Your zip code'),
       '#default_value' => $values['zipcode'] ?? '',
       '#required' => TRUE,
     ];
-    $form['part_number'] = [
+    $form['wrapper_register']['part_number'] = [
       '#type' => 'value',
       '#value' => $part_number,
     ];
-    $form['format_id'] = [
+    $form['wrapper_register']['format_id'] = [
       '#type' => 'value',
       '#value' => $format_id,
     ];
 
-    $form['actions'] = ['#type' => 'actions'];
-    $form['actions']['submit'] = [
+    $form['wrapper_register']['actions'] = ['#type' => 'actions'];
+    $form['wrapper_register']['actions']['submit'] = [
       '#type' => 'submit',
       '#value' => $this->t('Continue'),
+      '#attributes' => ['class' => ['use-ajax-submit']],
+      '#ajax' => [
+        'callback' => '::callTracePartCallback',
+      ],
     ];
 
 
@@ -103,16 +119,15 @@ class RegisterForm extends TracepartsForm {
   }
 
   /**
-   * Form submission handler.
+   * Ajax callback
    *
    * @param array $form
-   *   An associative array containing the structure of the form.
    * @param \Drupal\Core\Form\FormStateInterface $form_state
-   *   The current state of the form.
    *
-   * @return void
+   * @return \Drupal\Core\Ajax\AjaxResponse
    */
-  public function submitForm(array &$form, FormStateInterface $form_state) {
+  public function callTracePartCallback(array &$form, FormStateInterface $form_state) {
+    $response = new AjaxResponse();
     $values = $form_state->cleanValues()->getValues();
     $userData = [
       'UserEmail' => $values['email'],
@@ -122,22 +137,32 @@ class RegisterForm extends TracepartsForm {
     ];
     // Account creation success: go to download.
     if ($this->tracepartsUser->registerUser($userData) === TRUE) {
-      $tempStore = $this->tempStoreFactory->get('soc_traceparts_user_data');
-      try {
-        $tempStore->set('email', $values['email']);
-        $tempStore->set('part_number', $values['part_number']);
-        $tempStore->set('format_id', $values['format_id']);
-        $form_state->setRedirect('soc_traceparts.download');
-      }
-      catch (\Exception $e) {
-        $this->logger('soc_traceparts')->alert($e->getMessage());
+      if ($link = $this->getDownloadLink($values)) {
+        $response->addCommand(new ReplaceCommand('.ui-dialog-title', $this->t('Thank you!')));
+        $response->addCommand(new ReplaceCommand('#soc-traceparts-wrapper-register', $link));
       }
     }
     // Account creation fail: display message.
     else {
       $message = $this->t('Your Traceparts account could not be created. Please try again in a few moments.');
-      \Drupal::messenger()->addMessage($message);
+      $messenger = \Drupal::messenger();
+      if (isset($message)) {
+        $messenger->addMessage($message, 'warning');
+        $status_messages =  [
+          '#type' => 'status_messages'
+        ];
+        $response->addCommand(new PrependCommand('.soc-traceparts-message', $status_messages));
+      }
     }
-    return;
+    return $response;
+  }
+
+  /**
+   * Form submission handler.
+   *
+   * @param array $form
+   * @param \Drupal\Core\Form\FormStateInterface $form_state
+   */
+  public function submitForm(array &$form, FormStateInterface $form_state) {
   }
 }

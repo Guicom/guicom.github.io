@@ -27,6 +27,13 @@ function soc_traceparts_theme($existing, $type, $theme, $path) {
       ],
       'template' => 'traceparts-download-page',
     ],
+    'soc_traceparts_download_link' => [
+      'variables' => [
+        'button_label' => NULL,
+        'download_url' => NULL,
+      ],
+      'template' => 'traceparts-download-link',
+    ],
   ];
 }
 
