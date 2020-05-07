@@ -601,5 +601,64 @@
     }
   };
 
+  /**
+  * Ajax btn bookmarks and wishlist
+  */
+  Drupal.behaviors.socomec_content_list_ajax_btn = {
+    attach: function (context, settings) {
+      Drupal.behaviors.socomec_content_list_ajax_btn.updateRenderNavigation();
+      var elements = $('a[data-soc-content-list-ajax="1"]');
+      $(elements, context).once('socomec_content_list_ajax_btn').each(function () {
+        $(this).click(function (e) {
+          var element = $(this);
+          var href = element.attr('href');
+          element.addClass( "item-pending" );
+          $.ajax({
+            url: href,
+            type: 'GET',
+            dataType: 'json',
+            success: function (output, statut) {
+              element.removeClass( "item-pending" );
+              if (output == "true") {
+                Drupal.behaviors.socomec_content_list_ajax_btn.updateRenderNavigation();
+                element.addClass("soc-list-is-active");
+                element.addClass("item-added").delay(5000).queue(function(){
+                  element.removeClass("item-added").dequeue();
+                });
+              }
+            }
+          });
+          e.preventDefault();
+          e.stopPropagation();
+        });
+      });
+    },
+    updateRenderNavigation: function () {
+      var wishlist = $.cookie("socomec_wishlist");
+      var i = 0;
+      if(typeof wishlist !== 'undefined' && wishlist != null) {
+        $.each(JSON.parse(wishlist), function (key, value) {
+          $('.add-to-favorite[data-soc-content-list-item="'+key+'"]').addClass('soc-list-is-active');
+          i++;
+        });
+      }
+      if (i > 0) {
+        $('.menu--header-visitors .ico-favorite').addClass('soc-list-is-active');
+        $('.menu--header-visitors .ico-favorite').attr("data-soc-list", i);
+      }
+      var bookmark = $.cookie("socomec_bookmark");
+      var j = 0;
+      if(typeof bookmark !== 'undefined' && bookmark != null) {
+        $.each(JSON.parse(bookmark), function (key, value) {
+          $('.add-to-bookmarks[data-soc-content-list-item="'+key+'"]').addClass('soc-list-is-active');
+          j++;
+        });
+      }
+      if (j > 0) {
+        $('.menu--header-visitors .ico-bookmark-star-white').addClass('soc-list-is-active');
+        $('.menu--header-visitors .ico-bookmark-star-white').attr("data-soc-list", j);
+      }
+    }
+  };
 
 })(jQuery, Drupal);

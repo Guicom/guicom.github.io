@@ -2,14 +2,22 @@
 
 namespace Drupal\soc_nextpage\Batch;
 
+use Drupal\Core\Entity\EntityStorageException;
 use Drupal\system\Entity\Menu;
 
 class ImportPendingElement {
 
   public static function buildBatch() {
-    $product = \Drupal::service('soc_nextpage.nextpage_api')->descendantsAndLinks();
+    $pimData = \Drupal::service('soc_nextpage.nextpage_api')->descendantsAndLinks();
 
-    foreach ($product->Elements ?? [] as $row) {
+    // Get characteristics dictionary.
+    $operations[] = [
+      '\Drupal\soc_nextpage\Batch\ImportPendingElement::synchroDictionary',
+      []
+    ];
+
+    // Add pending elements from PIM data.
+    foreach ($pimData->Elements ?? [] as $row) {
       $operations[] = [
         '\Drupal\soc_nextpage\Batch\ImportPendingElement::addPendingElement',
         [$row]
@@ -18,24 +26,23 @@ class ImportPendingElement {
 
     // Setup batch.
     $batch = [
-      'title' => t('Importing pending product...'),
+      'title' => t('Importing product data from PIM...'),
       'operations' => $operations,
       'init_message' => t('Import is starting.'),
-      'finished' => '\Drupal\coc_nextpage\Batch\ImportPendingElement::addPendingElementCallback',
+      'finished' => '\Drupal\soc_nextpage\Batch\ImportPendingElement::addPendingElementCallback',
     ];
     batch_set($batch);
   }
 
   /**
-   * Add a pending user to the batch.
+   * Add a pending item to the batch.
    *
    * @param $item
    * @param $context
    */
   public static function addPendingElement($item, &$context) {
-    $relationships = [];
     switch ($item->ElementType) {
-      // Familly case.
+      // Family case.
       case 103:
         \Drupal::service('soc_nextpage.nextpage_family_manager')->handle($item);
         break;
@@ -52,8 +59,24 @@ class ImportPendingElement {
     $context['sandbox']['current_item'] = $item;
   }
 
+  /**
+   * Called at the end of the import.
+   */
   public static function addPendingElementCallback() {
+    \Drupal::messenger()->addStatus(t('The import has successfully finished.'));
     $menu = Menu::load('header');
-    $menu->save();
+    try {
+      $menu->save();
+    } catch (EntityStorageException $e) {
+      \Drupal::logger('soc_netxpage')->warning($e->getMessage());
+    }
+  }
+
+  /**
+   * Trigger characteristics dictionary synchronization.
+   */
+  public static function synchroDictionary() {
+    \Drupal::service('soc_nextpage.nextpage_api')
+      ->synchroniseCharacteristicsDictionary();
   }
 }
