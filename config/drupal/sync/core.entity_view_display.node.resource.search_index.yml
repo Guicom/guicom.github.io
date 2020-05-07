@@ -13,6 +13,8 @@ dependencies:
     - field.field.node.resource.field_res_momentum
     - field.field.node.resource.field_res_original_description
     - field.field.node.resource.field_res_original_title
+    - field.field.node.resource.field_res_product_ref
+    - field.field.node.resource.field_res_product_reference_ref
     - field.field.node.resource.field_res_reference
     - field.field.node.resource.field_res_remote_file_url
     - field.field.node.resource.field_res_resource_type
@@ -118,6 +120,8 @@ hidden:
   field_res_momentum: true
   field_res_original_description: true
   field_res_original_title: true
+  field_res_product_ref: true
+  field_res_product_reference_ref: true
   field_res_reference: true
   field_res_remote_file_url: true
   field_res_segment: true

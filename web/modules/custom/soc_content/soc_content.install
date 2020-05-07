@@ -584,6 +584,9 @@ function soc_content_install() {
 
 }
 
+/**
+ * Add help center CTA.
+ */
 function soc_content_update_8001() {
   /** @var \Drupal\soc_content\Service\ParagraphContent $paragraphManager */
   $paragraphManager = \Drupal::service('soc_content.paragraph');
@@ -714,4 +717,19 @@ function soc_content_update_8002() {
     $paragraphLibrary->save();
   }
   catch (\Exception $e) {}
+}
+
+/**
+ * Add images for navigation.
+ */
+function soc_content_update_8003() {
+  /** @var \Drupal\soc_content\Service\MediaContent $mediaManager */
+  $mediaManager = \Drupal::service('soc_content.media');
+  /** @var \Drupal\Core\File\FileSystem $fileSystem */
+  $fileSystem = \Drupal::service('file_system');
+  $fileSystem->mkdir('public://2020-02');
+  $mediaManager->createFile('energy-storage.svg', '2020-02/energy-storage.svg');
+  $mediaManager->createFile('metering-monitoring.svg', '2020-02/metering-monitoring.svg');
+  $mediaManager->createFile('power-conversion.svg', '2020-02/power-conversion.svg');
+  $mediaManager->createFile('switching.svg', '2020-02/switching.svg');
 }

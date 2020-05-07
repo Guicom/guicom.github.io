@@ -60,12 +60,31 @@
  */
 #}
 {{ attach_library('bootstrap_barrio/node') }}
+{% if drupal_field('field_event_picture', 'node')[0] is empty %}
+  {%  set classe = 'no-img' %}
+{%  endif %}
+
 <div class="overlay-shadow">
   <a href="{{ url }}">
   <div class="event-card-highlight">
     <div class="card-wrapper">
-      <div class="event-picture">
-        {{ content.field_event_picture }}
+      <div {{ attributes.addClass(classe, 'event-picture') }}>
+        {% if content.field_event_picture|render %}
+          {{ content.field_event_picture }}
+        {% elseif content.field_event_type|render %}
+          {% set type = content.field_event_type['#items']|first.entity %}
+          {% if type %}
+            {% set media = type.field_event_type_icon|first.entity %}
+          {% endif %}
+          {% if media %}
+            {% set url = file_url(media.field_media_image|first.entity.fileuri) %}
+          {% endif %}
+          {% if url %}
+            <div class="event-picture-icon">
+              <img src="{{ url }}"/>
+            </div>
+          {% endif %}
+        {% endif %}
       </div>
       <div class="event-informations">
         <h3{{ title_attributes.addClass('node__title') }}>

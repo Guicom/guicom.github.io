@@ -297,6 +297,13 @@ body {
                   }
                 }
               }
+              .add-to-bookmarks{
+                &.soc-list-is-active {
+                  &:before{
+                    background-image: url(../images/picto/ui/bookmark-star-blue.svg);
+                  }
+                }
+              }
             }
             .field--name-extra-field-button-download-resource{
               position:absolute;

@@ -1,0 +1,28 @@
+uuid: 5f5ea3e5-8bef-427c-bff5-2e894fb6d36a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_res_product_ref
+    - node.type.product
+    - node.type.resource
+id: node.resource.field_res_product_ref
+field_name: field_res_product_ref
+entity_type: node
+bundle: resource
+label: 'Reference to product'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      product: product
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

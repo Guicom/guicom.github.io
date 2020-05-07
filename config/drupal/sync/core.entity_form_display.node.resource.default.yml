@@ -12,6 +12,8 @@ dependencies:
     - field.field.node.resource.field_res_momentum
     - field.field.node.resource.field_res_original_description
     - field.field.node.resource.field_res_original_title
+    - field.field.node.resource.field_res_product_ref
+    - field.field.node.resource.field_res_product_reference_ref
     - field.field.node.resource.field_res_reference
     - field.field.node.resource.field_res_remote_file_url
     - field.field.node.resource.field_res_resource_type
@@ -25,11 +27,27 @@ dependencies:
   module:
     - conditional_fields
     - content_moderation
+    - field_group
     - path
     - remote_stream_wrapper_widget
     - scheduler
     - scheduler_content_moderation_integration
     - svg_image
+third_party_settings:
+  field_group:
+    group_references:
+      children:
+        - field_res_product_ref
+        - field_res_product_reference_ref
+      parent_name: ''
+      weight: 33
+      format_type: fieldset
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        required_fields: true
+      label: References
 id: node.resource.default
 targetEntityType: node
 bundle: resource
@@ -138,6 +156,26 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: string_textfield
+    region: content
+  field_res_product_ref:
+    weight: 31
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_res_product_reference_ref:
+    weight: 32
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
     region: content
   field_res_reference:
     weight: 3
@@ -271,7 +309,7 @@ content:
     third_party_settings: {  }
   publish_state:
     type: scheduler_moderation
-    weight: 30
+    weight: 29
     region: content
     settings: {  }
     third_party_settings: {  }
