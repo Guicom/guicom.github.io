@@ -155,6 +155,7 @@ function soc_premium_content_node_insert(EntityInterface $node) {
       } catch (\Exception $e) {
         \Drupal::logger('soc_premium_content')->error($e->getMessage());
       }
+      // Update thank_you_page title.
       if (!$node->isNew()) {
         $nids = \Drupal::service('soc_premium_content.soc_premium_content_node')
           ->getAllThankYouPageFromLandingPage($node);
