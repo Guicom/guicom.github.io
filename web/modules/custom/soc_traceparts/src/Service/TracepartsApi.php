@@ -115,7 +115,7 @@ class TracepartsApi extends BaseApi {
     $params = [
       'ApiKey' => $this->getApiKey(),
       'Format' => 'json',
-      'UserEmail' => $user_data['email'],
+      'UserEmail' => $user_data['UserEmail'],
       'company' => $user_data['company'],
       'country' => $user_data['country'],
       'zipcode' => $user_data['zipcode'],

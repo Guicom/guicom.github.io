@@ -5,6 +5,9 @@ namespace Drupal\soc_traceparts\Form;
 
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Link;
+use Drupal\Core\Ajax\AjaxResponse;
+use Drupal\Core\Ajax\ReplaceCommand;
+use Drupal\Core\Ajax\PrependCommand;
 
 class LoginForm extends TracepartsForm {
 
@@ -47,34 +50,48 @@ class LoginForm extends TracepartsForm {
       ],
       [
         'attributes' => [
-          'class=' => 'use-ajax',
+          'class' => ['use-ajax'],
           'data-dialog-type' => 'modal',
         ],
       ]
     );
 
-    $form['register'] = [
+    // Form wrapper for AJAX
+    $form['wrapper_login'] = [
+      '#type' => 'container',
+      '#prefix' => '<div id="soc-traceparts-wrapper-login">',
+      '#suffix' => '</div>'
+    ];
+
+    $form['wrapper_login']['register'] = [
       '#markup' => '<p class="col-xs-12">' . $registrationLink->toString() . '</p>',
     ];
-    $form['email'] = [
+    $form['wrapper_login']['message'] = [
+      '#markup' => '<div class="soc-traceparts-message"></div>',
+    ];
+    $form['wrapper_login']['email'] = [
       '#type' => 'email',
       '#title' => $this->t('Your email address'),
       '#default_value' => $this->currentUser->getEmail() ?? '',
       '#required' => TRUE,
     ];
-    $form['part_number'] = [
+    $form['wrapper_login']['part_number'] = [
       '#type' => 'hidden',
       '#value' => $part_number,
     ];
-    $form['format_id'] = [
+    $form['wrapper_login']['format_id'] = [
       '#type' => 'hidden',
       '#value' => $format_id,
     ];
 
-    $form['actions'] = ['#type' => 'actions'];
-    $form['actions']['submit'] = [
+    $form['wrapper_login']['actions'] = ['#type' => 'actions'];
+    $form['wrapper_login']['actions']['submit'] = [
       '#type' => 'submit',
       '#value' => $this->t('Continue'),
+      '#attributes' => ['class' => ['use-ajax-submit']],
+      '#ajax' => [
+        'callback' => '::callTracePartCallback',
+      ],
     ];
 
 
@@ -82,39 +99,48 @@ class LoginForm extends TracepartsForm {
   }
 
   /**
-   * Form submission handler.
+   * Ajax callback
    *
    * @param array $form
-   *   An associative array containing the structure of the form.
    * @param \Drupal\Core\Form\FormStateInterface $form_state
-   *   The current state of the form.
    *
-   * @return void
+   * @return \Drupal\Core\Ajax\AjaxResponse
    */
-  public function submitForm(array &$form, FormStateInterface $form_state) {
+  public function callTracePartCallback(array &$form, FormStateInterface $form_state) {
+    $response = new AjaxResponse();
     $values = $form_state->cleanValues()->getValues();
     // Login success: go to download.
     if ($this->tracepartsUser->checkLogin($values['email']) === TRUE) {
-      $tempStore = $this->tempStoreFactory->get('soc_traceparts_user_data');
-      try {
-        $tempStore->set('email', $values['email']);
-        $tempStore->set('part_number', $values['part_number']);
-        $tempStore->set('format_id', $values['format_id']);
-        $form_state->setRedirect('soc_traceparts.download');
-      }
-      catch (\Exception $e) {
-        $this->logger('soc_traceparts')->alert($e->getMessage());
+      if ($link = $this->getDownloadLink($values)) {
+        //$response->addCommand(new InvokeCommand('.ui-dialog', 'addClass', array('thank-you')));
+        $response->addCommand(new ReplaceCommand('.ui-dialog-title', $this->t('Thank you!')));
+        $response->addCommand(new ReplaceCommand('.soc-traceparts-login', $link));
       }
     }
     // Login fail: go to registration.
     else {
       $message = $this->t('Your email address is not associated to a Traceparts account. Please register in order to access to your download.');
-      \Drupal::messenger()->addMessage($message);
-      $form_state->setRedirect('soc_traceparts.register_form', [
-        'part_number' => $values['part_number'],
-        'format_id' => $values['format_id'],
-      ]);
+      $getForm = \Drupal::formBuilder()->getForm('Drupal\soc_traceparts\Form\RegisterForm', $values['part_number'], $values['format_id']);
+      $response->addCommand(new ReplaceCommand('.ui-dialog-title', $this->t('Login to Traceparts')));
+      $response->addCommand(new ReplaceCommand('.soc-traceparts-login', $getForm));
+      $messenger = \Drupal::messenger();
+      if (isset($message)) {
+        $messenger->addMessage($message, 'error');
+        $status_messages =  [
+          '#type' => 'status_messages'
+        ];
+        $response->addCommand(new PrependCommand('.soc-traceparts-message', $status_messages));
+      }
     }
-    return;
+    return $response;
+  }
+
+  /**
+   * Form submission handler.
+   *
+   * @param array $form
+   * @param \Drupal\Core\Form\FormStateInterface $form_state
+   */
+  public function submitForm(array &$form, FormStateInterface $form_state) {
   }
 }
