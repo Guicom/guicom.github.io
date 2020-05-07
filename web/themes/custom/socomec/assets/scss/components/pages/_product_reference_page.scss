@@ -294,6 +294,13 @@ body.node--type-product-reference {
           }
         }
       }
+      .dropdown-item {
+        display: flex;
+       .loader-pending {
+         @include loader($blue);
+       }
+      }
     }
   }
 }
+

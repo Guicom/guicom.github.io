@@ -602,8 +602,8 @@
   };
 
   /**
-  * Ajax btn bookmarks and wishlist
-  */
+   * Ajax btn bookmarks and wishlist
+   */
   Drupal.behaviors.socomec_content_list_ajax_btn = {
     attach: function (context, settings) {
       Drupal.behaviors.socomec_content_list_ajax_btn.updateRenderNavigation();
@@ -658,6 +658,21 @@
         $('.menu--header-visitors .ico-bookmark-star-white').addClass('soc-list-is-active');
         $('.menu--header-visitors .ico-bookmark-star-white').attr("data-soc-list", j);
       }
+    }
+  };
+
+  /**
+   * Add loader on content
+   */
+  Drupal.behaviors.socomec_loader_content = {
+    attach: function (context, settings) {
+
+      $('.add-loader').click(function () {
+        $(this).next('.loader-pending').addClass('show').delay(3000).queue(function(){
+          console.log('toto');
+          $(this).removeClass("show").dequeue();
+        });
+      });
     }
   };
 

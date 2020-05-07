@@ -2,7 +2,7 @@
   <div class="facet-mobile-modal-open">
     <button class="modal-open" aria-label="open modal">{{ 'Download 3D Model'|t }}</button>
   </div>
-  <button class="cta-simple" type="button" data-toggle="collapse" data-target="#tracepart-download-list" aria-expanded="false" aria-controls="tracepart-download-list">
+  <button class="cta-simple loader-on" type="button" data-toggle="collapse" data-target="#tracepart-download-list" aria-expanded="false" aria-controls="tracepart-download-list">
     {{ label }}
   </button>
   <div class="block-soc-traceparts modal-facets-mobile">
@@ -11,7 +11,7 @@
     </div>
     <div id="tracepart-download-list" class="dropdown-menu list-group collapse" aria-labelledby="navbarDropdownMenuLink">
       {% for format in formats %}
-        <div class="dropdown-item"><a class="use-ajax" data-dialog-type="modal" href="{{ format.download_link }}" target="_blank">{{ format.format_name }}</a></div>
+        <div class="dropdown-item"><a class="use-ajax add-loader" data-dialog-type="modal" data-dialog-options='{"width":640,"minHeight":200,"Height":260}' href="{{ format.download_link }}" target="_blank">{{ format.format_name }}</a><div class="loader-pending"></div></div>
       {% endfor %}
     </div>
   </div>

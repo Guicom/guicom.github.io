@@ -3,6 +3,7 @@
 namespace Drupal\soc_traceparts\Form;
 
 
+use Drupal\Component\Serialization\Json;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Link;
 use Drupal\Core\Ajax\AjaxResponse;
@@ -52,6 +53,10 @@ class LoginForm extends TracepartsForm {
         'attributes' => [
           'class' => ['use-ajax'],
           'data-dialog-type' => 'modal',
+          'data-dialog-options' => Json::encode([
+            'width' => 640,
+            'minHeight' => 500,
+          ]),
         ],
       ]
     );
@@ -64,7 +69,7 @@ class LoginForm extends TracepartsForm {
     ];
 
     $form['wrapper_login']['register'] = [
-      '#markup' => '<p class="col-xs-12">' . $registrationLink->toString() . '</p>',
+      '#markup' => '<p class="col-xs-12 go-to-button left">' . $registrationLink->toString() . '</p>',
     ];
     $form['wrapper_login']['message'] = [
       '#markup' => '<div class="soc-traceparts-message"></div>',
