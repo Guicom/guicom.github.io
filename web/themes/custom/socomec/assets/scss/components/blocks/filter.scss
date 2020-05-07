@@ -27,6 +27,7 @@
   }
   .block-filter-by {
     flex-direction: column;
+    margin-top: 0;
     .block-facets-ajax,
     .facet-full-width {
       @include media-breakpoint-down(md) {
