@@ -157,8 +157,7 @@ function soc_premium_content_node_insert(EntityInterface $node) {
       }
       // Update thank_you_page title.
       if (!$node->isNew()) {
-        $nids = \Drupal::service('soc_premium_content.soc_premium_content_node')
-          ->getAllThankYouPageFromLandingPage($node);
+        $nids = $service->getAllThankYouPageFromLandingPage($node);
         if (!empty($nids)) {
           $nid = reset($nids);
           if ($nid) {
