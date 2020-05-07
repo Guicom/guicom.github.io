@@ -163,7 +163,11 @@ function soc_premium_content_node_insert(EntityInterface $node) {
           if ($nid) {
             if ($thank_you_page = Node::load($nid)) {
               $thank_you_page->setTitle($node->getTitle());
-              $thank_you_page->save();
+              try {
+                $thank_you_page->save();
+              } catch (\Exception $e) {
+                \Drupal::logger('soc_premium_content')->error($e->getMessage());
+              }
             }
           }
         }
