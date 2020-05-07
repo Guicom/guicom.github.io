@@ -259,11 +259,15 @@ body.node--type-product-reference {
         z-index: 999;
         width: 100%;
         top: calc(100% - 1px);
+        border-radius: 0;
+        margin-top: 0;
         @include media-breakpoint-down(sm) {
           top: initial;
           display: block!important;
-          height: 80%;
+          height: 90%;
           overflow-y: scroll;
+          box-shadow: none;
+          border: none;
         }
       }
       .block-soc-traceparts {

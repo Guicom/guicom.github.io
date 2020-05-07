@@ -1,10 +1,18 @@
-<div class="nav-item dropdown">
-  <a class="nav-link dropdown-toggle icon-actions" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+<div class="download3D-model">
+  <div class="facet-mobile-modal-open">
+    <button class="modal-open" aria-label="open modal">{{ 'Download 3D Model'|t }}</button>
+  </div>
+  <button class="cta-simple" type="button" data-toggle="collapse" data-target="#tracepart-download-list" aria-expanded="false" aria-controls="tracepart-download-list">
     {{ label }}
-  </a>
-  <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-    {% for format in formats %}
-      <div class="dropdown-item"><a class="use-ajax" data-dialog-type="modal" href="{{ format.download_link }}" target="_blank">{{ format.format_name }}</a></div>
-    {% endfor %}
+  </button>
+  <div class="block-soc-traceparts modal-facets-mobile">
+    <div class="facet-mobile-modal-close">
+      <button class="modal-close" aria-label="close modal"></button>
+    </div>
+    <div id="tracepart-download-list" class="dropdown-menu list-group collapse" aria-labelledby="navbarDropdownMenuLink">
+      {% for format in formats %}
+        <div class="dropdown-item"><a class="use-ajax" data-dialog-type="modal" href="{{ format.download_link }}" target="_blank">{{ format.format_name }}</a></div>
+      {% endfor %}
+    </div>
   </div>
 </div>
