@@ -51,9 +51,17 @@
     label_display == 'visually_hidden' ? 'visually-hidden',
   ]
 %}
-
-    {% for item in items %}
-      {% if drupal_field('field_add_to_calendar', 'node')[0]['#markup'] != "Add to Calendar Disabled" %}
-        <div{{ attributes.addClass(classes, 'field__item') }}>{{ item.content }}</div>
-      {% endif %}
-    {% endfor %}
+{% set date_event = drupal_field('field_event_date', 'node') %}
+{% if date_event %}
+{% set date_event_end = date_event[0].end_date['#attributes'].datetime | date("U") %}
+{% if date_event_end %}
+  {% set now = "now" | date("U") %}
+    {% if date_event_end > now %}
+      {% for item in items %}
+        {% if drupal_field('field_add_to_calendar', 'node')[0]['#markup'] != "Add to Calendar Disabled" %}
+          <div{{ attributes.addClass(classes, 'field__item') }}>{{ item.content }}</div>
+        {% endif %}
+      {% endfor %}
+    {% endif %}
+  {% endif %}
+{% endif %}
