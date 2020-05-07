@@ -151,7 +151,10 @@ class RegisterForm extends TracepartsForm {
         $status_messages =  [
           '#type' => 'status_messages'
         ];
-        $response->addCommand(new PrependCommand('.soc-traceparts-message', $status_messages));
+        $messages = \Drupal::service('renderer')->renderRoot($status_messages);
+        if (!empty($messages)) {
+          $response->addCommand(new PrependCommand('.soc-traceparts-message', $messages));
+        }
       }
     }
     return $response;
