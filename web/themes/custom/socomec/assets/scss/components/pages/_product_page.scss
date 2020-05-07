@@ -1277,7 +1277,8 @@ body.node--type-product {
     height: 34px;
     width: 34px;
   }
-  &:hover {
+  &:hover,
+  &.soc-list-is-active{
     transition: $transition02;
     &:before {
       content:'';

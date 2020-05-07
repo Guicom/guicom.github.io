@@ -118,12 +118,15 @@ class NextpageApi extends NextpageBaseApi implements NextpageApiInterface {
    * @return array
    */
   public function getDictionaryFromFile($languageId = 2) {
-    $filename = 'characteristics_dictionary_' . $languageId . '.json';
-    $app_root = \Drupal::root();
-    $path = $app_root . '/../data/' . $filename;
-    $dico = file_get_contents($path);
-
-    return get_object_vars(json_decode($dico));
+    $cache = &drupal_static(__FUNCTION__);
+    if (empty($cache[$languageId])) {
+      $filename = 'characteristics_dictionary_' . $languageId . '.json';
+      $app_root = \Drupal::root();
+      $path = $app_root . '/../data/' . $filename;
+      $dico = file_get_contents($path);
+      $cache[$languageId] = get_object_vars(json_decode($dico));
+    }
+    return $cache[$languageId];
   }
 
   /**
@@ -133,7 +136,7 @@ class NextpageApi extends NextpageBaseApi implements NextpageApiInterface {
    *
    * @return bool
    */
-  public function synchroniseCharacteristicsDictionary($languageId = 2){
+  public function synchroniseCharacteristicsDictionary($languageId = 2) {
     $endpoints = $this->getEndpoints();
     $dictionary = [];
     try {
