@@ -9,7 +9,7 @@ dependencies:
 id: quicklinks
 theme: socomec
 region: hidden
-weight: -22
+weight: 0
 provider: null
 plugin: quick_link_block
 settings:
