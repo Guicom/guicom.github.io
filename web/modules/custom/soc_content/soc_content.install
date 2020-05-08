@@ -733,3 +733,17 @@ function soc_content_update_8003() {
   $mediaManager->createFile('power-conversion.svg', '2020-02/power-conversion.svg');
   $mediaManager->createFile('switching.svg', '2020-02/switching.svg');
 }
+
+/**
+ * Add default image to products & references.
+ */
+function soc_content_update_8004() {
+  /** @var \Drupal\soc_content\Service\MediaContent $mediaManager */
+  $mediaManager = \Drupal::service('soc_content.media');
+  $fileName = 'soc-no-img.png';
+  $mediaManager->createFile($fileName, 'product-' . $fileName,
+    '47122bfc-2e61-4824-97f2-109913eb4212');
+  $mediaManager->createFile($fileName, 'reference-' . $fileName,
+    'd1f00744-4f61-4c90-91d4-e1eeb982bfaf');
+}
+
