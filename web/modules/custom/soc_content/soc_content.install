@@ -734,22 +734,16 @@ function soc_content_update_8003() {
   $mediaManager->createFile('switching.svg', '2020-02/switching.svg');
 }
 
+/**
+ * Add default image to products & references.
+ */
 function soc_content_update_8004() {
   /** @var \Drupal\soc_content\Service\MediaContent $mediaManager */
   $mediaManager = \Drupal::service('soc_content.media');
   $fileName = 'soc-no-img.png';
-  if ($file = $mediaManager->createFile($fileName)) {
-    $config = \Drupal::configFactory()
-      ->getEditable('soc_nextpage.product_default_config' );
-    $config->set('default_image_product', [0 => $file->id()]);
-    $config->set('default_image_reference', [0 => $file->id()]);
-    try {
-      $config->save();
-    }
-    catch (\Exception $e) {
-      \Drupal::logger('soc_content')->warning($e->getMessage());
-    }
-  }
-
+  $mediaManager->createFile($fileName, 'product-' . $fileName,
+    '47122bfc-2e61-4824-97f2-109913eb4212');
+  $mediaManager->createFile($fileName, 'reference-' . $fileName,
+    'd1f00744-4f61-4c90-91d4-e1eeb982bfaf');
 }
 

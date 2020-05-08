@@ -95,25 +95,32 @@ class NextpageTwig extends \Twig_Extension {
    */
   public static function getDefaultImg($field, $type) {
     if (empty($field[0])) {
-      if ($type === 'product') {
-        $data = \Drupal::config('soc_nextpage.product_default_config')
-          ->get('default_image_product');
-      } elseif ($type === 'product-reference') {
-        $data = \Drupal::config('soc_nextpage.product_default_config')
-          ->get('default_image_reference');
+      $key = NULL;
+      switch ($type) {
+        case 'product':
+          $key = 'default_image_product';
+          break;
+        case 'product-reference':
+          $key = 'default_image_reference';
       }
-      if (!empty($data)) {
-        $fid = (!empty($data[0])) ? $data[0] : NULL;
-        if (!empty($fid)) {
-          if ($file = \Drupal\file\Entity\File::load($fid)) {
-            if ($path = $file->getFileUri()) {
-              if ($url = \Drupal\image\Entity\ImageStyle::load('product_detail')
-                ->buildUrl($file->getFileUri())) {
-                $render_array = [
-                  '#markup' => "<img class='default-img-$type' src='$url'/>",
-                ];
-                return $render_array;
-              }
+      if ($key !== NULL) {
+        $uuid = \Drupal::config('soc_nextpage.product_default_config')
+          ->get($key);
+      }
+      if (!empty($uuid)) {
+        try {
+          /** @var \Drupal\file\Entity\File $file */
+          $file = \Drupal::service('entity.repository')->loadEntityByUuid('file', $uuid);
+        } catch (\Exception $e) {
+          \Drupal::logger('soc_nextpage')->error($e->getMessage());
+        }
+        if ($file) {
+          if ($path = $file->getFileUri()) {
+            if ($url = \Drupal\image\Entity\ImageStyle::load('product_detail')
+              ->buildUrl($file->getFileUri())) {
+              return [
+                '#markup' => "<img class='default-img-$type' src='$url'/>",
+              ];
             }
           }
         }

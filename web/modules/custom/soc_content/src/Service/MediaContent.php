@@ -24,10 +24,11 @@ class MediaContent extends ContentManager {
    *
    * @param $file_name
    * @param $destination_file_name
+   * @param null $uuid
    *
    * @return bool|\Drupal\file\Entity\File
    */
-  public function createFile($file_name, $destination_file_name = null) {
+  public function createFile($file_name, $destination_file_name = NULL, $uuid = NULL) {
     $file_data = file_get_contents('../content/images/' . $file_name);
     if (is_null($destination_file_name)) {
       $destination_file_name = $file_name;
@@ -35,6 +36,9 @@ class MediaContent extends ContentManager {
     $destination_file_uri = 'public://' . $destination_file_name;
     $file = file_save_data($file_data, $destination_file_uri,
       \Drupal\Core\File\FileSystemInterface::EXISTS_REPLACE);
+    if (!is_null($uuid)) {
+      $file->set('uuid', $uuid);
+    }
     try {
       $file->save();
       return $file;
