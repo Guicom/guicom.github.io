@@ -129,41 +129,51 @@ class NextpageItemHandler  {
 
   public function getJsonField($field) {
     $dico = $this->nextpageApi->characteristicsDictionary('2');
-    $dico_carac = $dico[$field->DicoCaracExtID];
-    $libelleDossier = \Drupal::configFactory()
-        ->getEditable('soc_nextpage.nextpage_ws')
-        ->get('matching_libelle_dossier') ?? 'LibelleDossier';
-    switch ($dico_carac->TypeCode) {
-      case 'CHOIX':
-      case 'LISTE':
-        foreach ($dico_carac->Values as $choices) {
-          foreach ($field->Values as $val) {
-            if ($val->ValueID == $choices->ValeurID) {
-              $value_data[] = $choices->Valeur;
+    if (array_key_exists($field->DicoCaracExtID, $dico)) {
+      $dico_carac = $dico[$field->DicoCaracExtID];
+      $libelleDossier = \Drupal::configFactory()
+          ->getEditable('soc_nextpage.nextpage_ws')
+          ->get('matching_libelle_dossier') ?? 'LibelleDossier';
+      switch ($dico_carac->TypeCode) {
+        case 'CHOIX':
+        case 'LISTE':
+          foreach ($dico_carac->Values as $choices) {
+            foreach ($field->Values as $val) {
+              if ($val->ValueID == $choices->ValeurID) {
+                $value_data[] = $choices->Valeur;
+              }
             }
           }
-        }
-        $value = [
-          'id' => (!empty($dico_carac->ExtID)) ? $dico_carac->ExtID :'',
-          'type' => (!empty($dico_carac->TypeCode)) ? $dico_carac->TypeCode :'',
-          'value' => (!empty($value_data)) ? $value_data :[],
-          'libelleDossier' => (!empty($dico_carac->{$libelleDossier})) ? $dico_carac->LibelleDossier :'',
-          'label' => (!empty($dico_carac->Name)) ? $dico_carac->Name :'',
-          'order' => (!empty($dico_carac->Order)) ? $dico_carac->Order :'',
-        ];
-        break;
-      default:
-        $value = [
-          'id' => (!empty($dico_carac->ExtID)) ? $dico_carac->ExtID :'',
-          'type' => (!empty($dico_carac->TypeCode)) ? $dico_carac->TypeCode :'',
-          'value' => (!empty($field->Value)) ? $field->Value :'',
-          'libelleDossier' => (!empty($dico_carac->{$libelleDossier})) ? $dico_carac->LibelleDossier :'',
-          'label' => (!empty($dico_carac->Name)) ? $dico_carac->Name :'',
-          'order' => (!empty($dico_carac->Order)) ? $dico_carac->Order :'',
-        ];
-        break;
+          $value = [
+            'id' => (!empty($dico_carac->ExtID)) ? $dico_carac->ExtID :'',
+            'type' => (!empty($dico_carac->TypeCode)) ? $dico_carac->TypeCode :'',
+            'value' => (!empty($value_data)) ? $value_data :[],
+            'libelleDossier' => (!empty($dico_carac->{$libelleDossier})) ? $dico_carac->LibelleDossier :'',
+            'label' => (!empty($dico_carac->Name)) ? $dico_carac->Name :'',
+            'order' => (!empty($dico_carac->Order)) ? $dico_carac->Order :'',
+          ];
+          break;
+        default:
+          $value = [
+            'id' => (!empty($dico_carac->ExtID)) ? $dico_carac->ExtID :'',
+            'type' => (!empty($dico_carac->TypeCode)) ? $dico_carac->TypeCode :'',
+            'value' => (!empty($field->Value)) ? $field->Value :'',
+            'libelleDossier' => (!empty($dico_carac->{$libelleDossier})) ? $dico_carac->LibelleDossier :'',
+            'label' => (!empty($dico_carac->Name)) ? $dico_carac->Name :'',
+            'order' => (!empty($dico_carac->Order)) ? $dico_carac->Order :'',
+          ];
+          break;
+      }
+      return $value;
     }
-    return $value;
+    return [
+      'id' => '',
+      'type' => '',
+      'value' => '',
+      'libelleDossier' => '',
+      'label' => '',
+      'order' => '',
+      ];
   }
 
   public function insertRelation($familyId, $productId, $familyParentId) {
