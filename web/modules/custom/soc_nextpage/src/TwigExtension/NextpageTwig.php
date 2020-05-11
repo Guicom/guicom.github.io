@@ -14,8 +14,11 @@ class NextpageTwig extends \Twig_Extension {
    */
   public function getFilters() {
     return [
+      new \Twig_SimpleFilter('getJsonDecode', array($this, 'getJsonDecodeData')),
       new \Twig_SimpleFilter('getfield', array($this, 'getFieldData')),
       new \Twig_SimpleFilter('getMenuIcon', array($this, 'getMenuIcon')),
+      new \Twig_SimpleFilter('getKsort', array($this, 'getKsort')),
+      new \Twig_SimpleFilter('getDefaultImg', array($this, 'getDefaultImg')),
     ];
   }
 
@@ -24,6 +27,24 @@ class NextpageTwig extends \Twig_Extension {
    */
   public function getName() {
     return 'NextpageTwig.twig_extension';
+  }
+
+  /**
+   * Get ksort as array.
+   */
+  public static function getKsort($string) {
+    if (is_array($string)) {
+      ksort($string);
+    }
+    return $string;
+  }
+
+
+  /**
+   * Get json as array.
+   */
+  public static function getJsonDecodeData($string) {
+    return json_decode(trim($string), TRUE);
   }
 
   /**
@@ -67,5 +88,44 @@ class NextpageTwig extends \Twig_Extension {
       }
     }
     return $url;
+  }
+
+  /**
+   * Get Default image
+   */
+  public static function getDefaultImg($field, $type) {
+    if (empty($field[0])) {
+      $key = NULL;
+      switch ($type) {
+        case 'product':
+          $key = 'default_image_product';
+          break;
+        case 'product-reference':
+          $key = 'default_image_reference';
+      }
+      if ($key !== NULL) {
+        $uuid = \Drupal::config('soc_nextpage.product_default_config')
+          ->get($key);
+      }
+      if (!empty($uuid)) {
+        try {
+          /** @var \Drupal\file\Entity\File $file */
+          $file = \Drupal::service('entity.repository')->loadEntityByUuid('file', $uuid);
+        } catch (\Exception $e) {
+          \Drupal::logger('soc_nextpage')->error($e->getMessage());
+        }
+        if ($file) {
+          if ($path = $file->getFileUri()) {
+            if ($url = \Drupal\image\Entity\ImageStyle::load('product_detail')
+              ->buildUrl($file->getFileUri())) {
+              return [
+                '#markup' => "<img class='default-img-$type' src='$url'/>",
+              ];
+            }
+          }
+        }
+      }
+    }
+    return $field;
   }
 }

@@ -5,6 +5,8 @@ use Drupal\system\Entity\Menu;
 use Drupal\Core\Form\FormStateInterface;
 
 function soc_nextpage_cron() {
+  $logger = \Drupal::logger('soc_nextpage');
+
   /** @var \Drupal\soc_nextpage\Service\NextpageApi $nextpageApi */
   $nextpageApi = \Drupal::service('soc_nextpage.nextpage_api');
 
@@ -24,6 +26,8 @@ function soc_nextpage_cron() {
     $menu->save();
   } catch (\Drupal\Core\Entity\EntityStorageException $e) {
   }
+
+  $logger->info('Import finished!');
 }
 
 

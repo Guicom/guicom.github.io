@@ -3,9 +3,6 @@ Feature: Models
   In order to test all the models
 
   Background:
-#    Given media items with file in the "field_media_image" field:
-#      | name                           | bundle      | field_media_image  |
-#      | TEST Media image               | image       | images/example.jpg   |
     Given news content:
       | language | title     | status | moderation_state | field_news_type | field_news_audience | field_news_mommentum | field_teaser | field_news_video | field_country |
       | English  | Test news | 1      | published        | Corporate       | USERS               | Build                | Teaser       | Non              | France        |

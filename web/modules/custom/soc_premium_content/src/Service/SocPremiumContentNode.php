@@ -65,7 +65,6 @@ class SocPremiumContentNode {
       ->referencedEntities();
     $resourceTypes = [];
     if (!empty($premiumContentTypeTermes)) {
-
       foreach ($premiumContentTypeTermes as $premiumContentTypeTerme) {
         $termResourceType = $this->entityTypeManager->getStorage('taxonomy_term')
           ->loadByProperties([

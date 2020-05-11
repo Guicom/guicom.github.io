@@ -225,6 +225,39 @@ class FeatureContext extends RawDrupalContext {
   }
 
   /**
+   * Click some text in element
+   *
+   * @When /^I click on the text "([^"]*)" in "([^"]*)" element$/
+   */
+  public function iClickOnTheTextInElement($text, $selector)
+  {
+    $page = $this->getSession()->getPage();
+    $elements = $page->findAll('css', $selector);
+    $error = TRUE;
+    if (!empty($elements) && is_array($elements)) {
+      /** @var \Behat\Mink\Element\NodeElement $element */
+      foreach ($elements as $key => $element) {
+        if (!empty($element)) {
+          $value = $element->getText();
+          if (!empty($value)) {
+            if (strcmp($value, $text) === 0) {
+              $error = FALSE;
+              $element->click();
+              break;
+            }
+          }
+        }
+      }
+      if ($error) {
+        throw new Exception ("Element $text not found in $selector.");
+      }
+    }
+    else {
+      throw new Exception ("Selector $selector not found.");
+    }
+  }
+
+  /**
    * @Then /^the selectbox "([^"]*)" should have a list containing:$/
    */
   public function shouldHaveAListContaining($element, \Behat\Gherkin\Node\PyStringNode $list)
@@ -416,6 +449,16 @@ JS;
   }
 
   /**
+   * @Then The file :arg1 exist
+   */
+  public function theFileExist($file) {
+    $filename = __DIR__ . '/../../../../data/' . $file;
+    if (!file_exists($filename)) {
+      throw new Exception("The file doesn't exist");
+    }
+  }
+
+  /**
    * @Then /^I bookmark the resource "([^"]*)"$/
    */
   public function iBookmarkTheResource($title) {
@@ -471,54 +514,44 @@ JS;
   }
 
   /**
-   * Creates a set of media items from tabular data.
-   *
-   * @param \Behat\Gherkin\Node\TableNode $table
-   *   The table of entity data.
-   *
-   * @Given media items:
-   * @Given media items with file in the :field_name field:
-   * @throws \Exception
+   * @Then I should see the breadcrumb link :arg1
    */
-  public function createMultiple(TableNode $table, $field_name = NULL) {
-    // Create the file entities for file references and replace the file the
-    // path with the created file id.
-    $modified = FALSE;
-    $new_table = [$table->getRow(0)];
+  public function iShouldSeeTheBreadcrumbLink($arg1)
+  {
+    // get the breadcrumb
+    /**
+     * @var Behat\Mink\Element\NodeElement $breadcrumb
+     */
+    $breadcrumb = $this->getSession()->getPage()->find('css', 'div.block-system-breadcrumb-block');
 
-    // If field_name is defined, create a file entity based on it and replace
-    // the field in the TableNode by the new created file id.
-    if (!is_null($field_name)) {
-      $absolutePath = $this->getMinkParameter('files_path');
-      $i = 1;
-      foreach ($table as $values) {
-        $new_table[$i] = $values;
-        if (!empty($values[$field_name])) {
-          $file_system = \Drupal::service('file_system');
-
-          // Build a destination URI.
-          $source =  $absolutePath . $values[$field_name];
-          $destination = file_build_uri($file_system->basename($source));
-          $file_system->copy($source, $destination);
-
-          $file = File::create([
-            'uri' => $destination,
-          ]);
-          $file->setTemporary();
-          $file->save();
-
-          $new_table[$i][$field_name] = $file->id();
-          $modified = TRUE;
-        }
-        $i++;
-      }
+    // this does not work for URLs
+    $link = $breadcrumb->findLink($arg1);
+    if ($link) {
+      return;
     }
-    if ($modified) {
-      $table = new TableNode($new_table);
+
+    // filter by url
+    $link = $breadcrumb->findAll('css', "a[href=\"{$arg1}\"]");
+    if ($link) {
+      return;
     }
-    $this->getContext(EntityContext::class)->createMultiple('media', $table);
+
+    // filter by url
+    $page = $this->getSession()->getPage();
+    $active = $page->find('css', 'li.breadcrumb-item.active');
+    if ($active->getText() == $arg1) {
+      return;
+    }
+    $active = $page->find('css', 'li.breadcrumb-item.active + li.breadcrumb-item.active');
+    if ($active->getText() == $arg1) {
+      return;
+    }
+
+    throw new \Exception(
+      sprintf("Expected link %s not found in breadcrumb on page %s",
+        $arg1,
+        $this->getSession()->getCurrentUrl())
+    );
   }
-
-
 
 }

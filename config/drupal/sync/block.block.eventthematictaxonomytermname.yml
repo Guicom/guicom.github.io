@@ -12,7 +12,7 @@ dependencies:
 id: eventthematictaxonomytermname
 theme: socomec
 region: hidden
-weight: -21
+weight: 0
 provider: null
 plugin: 'facet_block:event_thematic_taxonomy_term_name'
 settings:

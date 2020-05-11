@@ -12,7 +12,7 @@ dependencies:
 id: viewseventsteaser
 theme: socomec
 region: hidden
-weight: -19
+weight: 0
 provider: null
 plugin: 'block_content:dc9eaeee-27b7-41bb-80fe-b5f35d09fd71'
 settings:
