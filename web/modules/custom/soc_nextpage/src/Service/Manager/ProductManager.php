@@ -123,8 +123,12 @@ class ProductManager {
         $product->Values->DC_P_PRODUCT_SHORT_DESCRIPTION->Value . ' - '
         . $product->Values->DC_P_ASSORTMENT_WIDTH->Value);
     }
-    $title = $product->Values->DC_P_PRODUCT_NAME->Value ?
-      $product->Values->DC_P_PRODUCT_NAME->Value : 'TITLEPLACEHOLDER';
+    if (isset($product->Values->DC_P_PRODUCT_NAME)) {
+      $title = $product->Values->DC_P_PRODUCT_NAME->Value ?? 'TITLEPLACEHOLDER';
+    }
+    else {
+      $title = 'TITLEPLACEHOLDER';
+    }
     $node->set('title', $title);
     $node->set('field_json_product_data', $this->nextpageItemHandler->formatJsonField($product->Values));
     $node->set('field_product_extid', $product->ExtID);
