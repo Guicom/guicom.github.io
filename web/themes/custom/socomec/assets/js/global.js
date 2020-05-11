@@ -342,34 +342,35 @@
   }
 
   function SocomecfacetsSelect(context, settings) {
-    $('select').each(function () {
-      var element = $(this);
+      $('select').each(function () {
+        var element = $(this);
         if ($("body").hasClass("path-where-to-buy")) {
           element.attr('data-live-search', 'true');
         }
-      element.selectpicker({
-        virtualScroll: false,
+        element.selectpicker({
+          virtualScroll: false,
+        });
+        SocomecfacetsCalculate(element);
+        element.parents(".bootstrap-select").find("div.dropdown-menu").first().mCustomScrollbar({
+          theme:"minimal-dark",
+          mouseWheel:{ preventDefault:true }
+        });
       });
-      SocomecfacetsCalculate(element);
-      element.parents(".bootstrap-select").find("div.dropdown-menu").first().mCustomScrollbar({
-        theme:"minimal-dark",
-        mouseWheel:{ preventDefault:true }
-      });
-    });
 
-    $('.bootstrap-select').each(function () {
-      $(this).find("div.dropdown-menu").first().mCustomScrollbar({
-        theme:"minimal-dark",
-        mouseWheel:{ preventDefault:true }
+      $('.bootstrap-select').each(function () {
+        $(this).find("div.dropdown-menu").first().mCustomScrollbar({
+          theme:"minimal-dark",
+          mouseWheel:{ preventDefault:true }
+        });
       });
-    });
+      Drupal.behaviors.socomec_facets_bootstrap_select = {
+        attach: function (context, settings) {
+          SocomecfacetsSelect(context, settings);
+        }
+      };
   }
 
-  Drupal.behaviors.socomec_facets_bootstrap_select = {
-    attach: function (context, settings) {
-      SocomecfacetsSelect(context, settings);
-    }
-  };
+
 
   /**
    * Facets bootstrap_list_select
@@ -522,10 +523,17 @@
         $('.modal-facets-mobile').addClass('active');
         SocomecfacetsSelect(context, settings);
       });
-      closeBtn.once().on("click", function (e) {
-        $('.modal-facets-mobile').removeClass('active');
-        SocomecfacetsSelect(context, settings);
-      });
+      if($('.modal-facets-mobile').hasClass('block-soc-traceparts')) {
+        $('a.use-ajax').once().on("click", function (e) {
+          $('.modal-facets-mobile').removeClass('active');
+          SocomecfacetsSelect(context, settings);
+        });
+      } else {
+        closeBtn.once().on("click", function (e) {
+          $('.modal-facets-mobile').removeClass('active');
+          SocomecfacetsSelect(context, settings);
+        });
+      }
     }
   };
 

@@ -831,11 +831,13 @@ $value in $theme-colors {
   font-weight: 500;
   letter-spacing: 1px;
   text-transform: uppercase;
+  &:hover{
+    background:lighten($color,6%);
+  }
   @include media-breakpoint-down(md) {
     width: 100%!important;
     height: 100%!important;
     top: 0!important;
   }
-
 }
 

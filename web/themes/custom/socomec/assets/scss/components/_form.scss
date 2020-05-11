@@ -111,4 +111,11 @@ fieldset {
     @include submit($blue, $white);
   }
 }
+.dropdown-menu {
+  .dropdown-item {
+    &:active {
+      background-color: initial;
+    }
+  }
+}
 
