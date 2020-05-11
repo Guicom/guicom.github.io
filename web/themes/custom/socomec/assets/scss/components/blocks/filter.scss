@@ -1,6 +1,15 @@
+.path-events,
+.path-news {
+  .block-filter-by {
+    margin-top: 13rem;
+    @include media-breakpoint-down(sm) {
+      margin-top: 2.5rem;
+    }
+  }
+}
+
 .block-filter-by {
   display: flex;
-  margin-top: 13rem;
   margin-bottom: 2rem;
   @include media-breakpoint-down(sm) {
     flex-direction: column;
