@@ -36,6 +36,7 @@ class NextpageItemHandler  {
 
   /**
    * @param $extID
+   * @param $entity_type
    * @param $type
    *
    * @return \Drupal\Core\Entity\EntityInterface|null
@@ -43,7 +44,7 @@ class NextpageItemHandler  {
    * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
    */
   public function loadByExtID($extID, $entity_type, $type) {
-    $this->getEntityInfo($entity_type);
+    $this->getEntityInfo($entity_type, $type);
     $query = \Drupal::entityQuery($this->entityInfo["name"]);
     $query->condition($this->entityInfo["type"], $type);
     $query->condition($this->entityInfo["field"], $extID);
@@ -110,18 +111,26 @@ class NextpageItemHandler  {
   /**
    * @param $entityType
    */
-  public function getEntityInfo($entityType) {
-    switch ($entityType) {
-      case 'paragraph':
+  public function getEntityInfo($entity_type, $type) {
+    switch ($entity_type) {
+      case 'taxonomy_term':
         $this->entityInfo['name'] = 'taxonomy_term';
         $this->entityInfo['type'] = 'vid';
-        $this->entityInfo['field'] = 'field_family_extid';
         break;
       case 'node':
-      default:
         $this->entityInfo['name'] = 'node';
         $this->entityInfo['type'] = 'type';
+        break;
+    }
+    switch ($type) {
+      case 'family':
+        $this->entityInfo['field'] = 'field_family_extid';
+        break;
+      case 'reference':
         $this->entityInfo['field'] = 'field_reference_extid';
+        break;
+      case 'product':
+        $this->entityInfo['field'] = 'field_product_extid';
         break;
     }
   }
