@@ -124,8 +124,10 @@ class LoginForm extends TracepartsForm {
     }
     // Login fail: go to registration.
     else {
-      $message = $this->t('Your email address is not associated to a Traceparts account. Please register in order to access to your download.');
-      $getForm = \Drupal::formBuilder()->getForm('Drupal\soc_traceparts\Form\RegisterForm', $values['part_number'], $values['format_id']);
+      $message = $this->t('Your email address is not associated to a Traceparts account. 
+      Please register in order to access to your download.');
+      $getForm = \Drupal::formBuilder()
+        ->getForm('Drupal\soc_traceparts\Form\RegisterForm', $values['part_number'], $values['format_id']);
       $response->addCommand(new ReplaceCommand('.ui-dialog-title', $this->t('Login to Traceparts')));
       $response->addCommand(new ReplaceCommand('.soc-traceparts-login', $getForm));
       $messenger = \Drupal::messenger();

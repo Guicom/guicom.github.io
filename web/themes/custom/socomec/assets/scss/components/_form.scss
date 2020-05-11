@@ -110,6 +110,14 @@ fieldset {
   .button {
     @include submit($blue, $white);
   }
+  .bootstrap-select {
+    .dropdown-menu {
+      @include media-breakpoint-down(md) {
+        max-width: 320px;
+        max-height: 230px;
+      }
+    }
+  }
 }
 .dropdown-menu {
   .dropdown-item {
