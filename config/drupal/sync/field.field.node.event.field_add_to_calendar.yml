@@ -30,7 +30,7 @@ settings:
       tokenized: '[node:title]'
     atc_description:
       field: token
-      tokenized: '[node:field_event_teaser:value]  <br/> [node:field_event_place:value] <br/> [node:url:absolute]'
+      tokenized: '[node:field_event_place:value] <br/><br/> [node:url:absolute] <br/> '
     atc_location:
       field: token
       tokenized: '[node:field_event_place:value]'
