@@ -3,8 +3,6 @@
 namespace Drupal\soc_nextpage\Service\Manager;
 
 use Drupal;
-use Drupal\Core\Entity\EntityTypeManager;
-use Drupal\node\Entity\Node;
 use Drupal\paragraphs\Entity\Paragraph;
 use Drupal\soc_nextpage\Service\NextpageApi;
 use Drupal\soc_nextpage\Service\NextpageItemHandler;
@@ -34,24 +32,26 @@ class ReferenceManager {
 
 
   /**
-   * @param $ext_id
+   * Handle references of a product: create if not already existing, else update.
+   *
+   * @param $product_ext_id
    *
    * @return array
    * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
    * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
    */
-  public function handle($ext_id) {
+  public function handle($product_ext_id) {
     $nids = [];
     // Manage reference.
-    $references = $this->nextpageApi->descendantsAndLinks(TRUE, [], [], $ext_id);
+    $references = $this->nextpageApi->descendantsAndLinks(TRUE, [], [], $product_ext_id);
     foreach ($references->Elements as $reference) {
       if ($reference->ElementType === 3) {
         if ($entity = $this->nextpageItemHandler->loadByExtID($reference->ExtID, 'node', 'product_reference')) {
-          // Update product.
+          // Update reference.
           $nids[] = $this->updateReference($entity, $reference);
         }
         else {
-          // Create product.
+          // Create reference.
           $nids[] = $this->createReference($reference);
         }
       }
@@ -82,9 +82,14 @@ class ReferenceManager {
    * @throws \Drupal\Core\Entity\EntityStorageException
    */
   public function updateReference($node, $reference) {
+    if (!isset($reference->Values->{'DC_R_ADMIN_Invoice_Description'})) {
+      return FALSE;
+    }
     $json_field = $this->nextpageItemHandler->formatJsonField($reference->Values);
     $node->set('title', $reference->Values->{'DC_R_ADMIN_Invoice_Description'}->Value);
-    $node->set('field_teaser', $reference->Values->{'DC_R_REFERENCE_LONG_DESCRIPTION'}->Value);
+    if (isset($reference->Values->{'DC_R_REFERENCE_LONG_DESCRIPTION'})) {
+      $node->set('field_teaser', $reference->Values->{'DC_R_REFERENCE_LONG_DESCRIPTION'}->Value ?? '');
+    }
     $node->set('field_json_product_data', $json_field);
     $node->set('field_reference_json_table', $this->buildJsonTable($reference->Values));
 

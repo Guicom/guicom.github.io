@@ -1,4 +1,5 @@
 base_url: 'https://preprod-socomecweb-api.nextpage.fr/com/'
+auth_status: 0
 username: admin
 password: ''
 context_id: '1'
@@ -7,4 +8,4 @@ endpoint_token: api/auth
 endpoint_dicocarac: api/sdk/dicocarac/GetAll/2
 endpoint_elementsandlinks: api/sdk/element/ElementsAndLinks
 endpoint_descendantsandlinks: api/sdk/element/DescendantsAndLinks
-endpoint_elementsbychartemplate: api/sdkt/element/ElementsByCharTemplate
+endpoint_elementsbychartemplate: api/sdk/element/ElementsByCharTemplate

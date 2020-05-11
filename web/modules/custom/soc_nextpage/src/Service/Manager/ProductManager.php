@@ -3,7 +3,6 @@
 namespace Drupal\soc_nextpage\Service\Manager;
 
 use Drupal;
-use Drupal\Core\Entity\EntityTypeManager;
 use Drupal\soc_nextpage\Service\NextpageApi;
 use Drupal\soc_nextpage\Service\NextpageItemHandler;
 
@@ -22,7 +21,7 @@ class ProductManager {
   /**
    * @var \Drupal\soc_nextpage\Service\Manager\ReferenceManager
    */
-  protected $refrenceManager;
+  protected $referenceManager;
 
   /**
    * @var \Drupal\soc_nextpage\Service\NextpageApi
@@ -39,16 +38,24 @@ class ProductManager {
    */
   private $referencesNids;
 
-  public function __construct(
-    ReferenceManager $referenceManager,
-    NextpageApi $nextpageApi,
-    NextpageItemHandler $nextpageItemHandler) {
-    $this->refrenceManager = $referenceManager;
+  /**
+   * ProductManager constructor.
+   *
+   * @param \Drupal\soc_nextpage\Service\Manager\ReferenceManager $referenceManager
+   * @param \Drupal\soc_nextpage\Service\NextpageApi $nextpageApi
+   * @param \Drupal\soc_nextpage\Service\NextpageItemHandler $nextpageItemHandler
+   */
+  public function __construct(ReferenceManager $referenceManager,
+                             NextpageApi $nextpageApi,
+                             NextpageItemHandler $nextpageItemHandler) {
+    $this->referenceManager = $referenceManager;
     $this->nextpageApi = $nextpageApi;
     $this->nextpageItemHandler = $nextpageItemHandler;
   }
 
   /**
+   * Handle a product: create if not already existing, else update.
+   *
    * @param $pendingProduct
    *
    * @return \Drupal\Core\Entity\EntityInterface|mixed|string|void|null
@@ -56,33 +63,31 @@ class ProductManager {
    * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
    */
   public function handle($pendingProduct) {
-    // First, manage product.
-    // Check if all field are filled.
-    // First, create references.
-    $this->referencesNids = $this->refrenceManager->handle($pendingProduct->ExtID);
-    if ($entity = $this->nextpageItemHandler->loadByExtID($pendingProduct->ExtID, 'node', 'produit')) {
-      // Update product.
-      $entity = $this->updateProduct($entity, $pendingProduct);
+    $this->referencesNids = $this->referenceManager->handle($pendingProduct->ExtID);
+    $entity = $this->nextpageItemHandler->loadByExtID($pendingProduct->ExtID, 'node', 'product');
+    if (is_null($entity)) {
+      $entity = $this->createProduct($pendingProduct);
     }
     else {
-      // Create product.
-      $entity = $this->createProduct($pendingProduct);
+      $entity = $this->updateProduct($entity, $pendingProduct);
     }
 
     return $entity;
   }
 
   /**
+   * Check if all mandatory fields are present.
+   *
    * @param $pendingProduct
    *
    * @return bool
    */
   public function checkStatus($pendingProduct) {
     if (isset($pendingProduct->Values->DC_P_PRODUCT_NAME->Value) &&
-    isset($pendingProduct->Values->DC_P_PRODUCT_SHORT_DESCRIPTION->Value) &&
-    isset($pendingProduct->Values->DC_P_ASSORTMENT_WIDTH->Value) &&
-    isset($pendingProduct->Values->DC_P_UNIQUE_VALUE_PROPOSAL->Value) &&
-    isset($pendingProduct->Values->DC_P_FUNCTIONS->Value)) {
+      isset($pendingProduct->Values->DC_P_PRODUCT_SHORT_DESCRIPTION->Value) &&
+      isset($pendingProduct->Values->DC_P_ASSORTMENT_WIDTH->Value) &&
+      isset($pendingProduct->Values->DC_P_UNIQUE_VALUE_PROPOSAL->Value) &&
+      isset($pendingProduct->Values->DC_P_FUNCTIONS->Value)) {
       return TRUE;
     }
     else {
@@ -90,6 +95,8 @@ class ProductManager {
     }
   }
   /**
+   * Create a product node.
+   *
    * @param $product
    *
    * @return \Drupal\Core\Entity\EntityInterface
@@ -98,22 +105,31 @@ class ProductManager {
    */
   public function createProduct($product) {
     $node = \Drupal::entityTypeManager()->getStorage('node')->create([
-      'type'        => 'product',
+      'type' => 'product',
     ]);
-
     $this->updateProduct($node, $product);
     return $node;
   }
 
   /**
+   * Update a product node.
+   *
    * @param $node
    * @param $product
    */
   public function updateProduct(&$node, $product) {
-    if (!isset($product->Values->DC_P_PRODUCT_SHORT_DESCRIPTION->Value) && isset($product->Values->DC_P_ASSORTMENT_WIDTH->Value)) {
-      $node->set('field_product_teaser', $product->Values->DC_P_PRODUCT_SHORT_DESCRIPTION->Value . ' - ' . $product->Values->DC_P_ASSORTMENT_WIDTH->Value);
+    if (!isset($product->Values->DC_P_PRODUCT_SHORT_DESCRIPTION->Value)
+        && isset($product->Values->DC_P_ASSORTMENT_WIDTH->Value)) {
+      $node->set('field_product_teaser',
+        $product->Values->DC_P_PRODUCT_SHORT_DESCRIPTION->Value . ' - '
+        . $product->Values->DC_P_ASSORTMENT_WIDTH->Value);
     }
-    $title = $product->Values->DC_P_PRODUCT_NAME->Value ? $product->Values->DC_P_PRODUCT_NAME->Value : 'TITLEPLACEHOLDER';
+    if (isset($product->Values->DC_P_PRODUCT_NAME)) {
+      $title = $product->Values->DC_P_PRODUCT_NAME->Value ?? 'TITLEPLACEHOLDER';
+    }
+    else {
+      $title = 'TITLEPLACEHOLDER';
+    }
     $node->set('title', $title);
     $node->set('field_json_product_data', $this->nextpageItemHandler->formatJsonField($product->Values));
     $node->set('field_product_extid', $product->ExtID);
@@ -121,7 +137,6 @@ class ProductManager {
       $node->setPublished();
       $node->set('moderation_state', 'published');
     }
-
 
     if (isset($this->referencesNids)) {
       foreach ($this->referencesNids as $index => $referencesNid) {
@@ -153,7 +168,12 @@ class ProductManager {
       }
     }
 
-    $node->save();
+    try {
+      $node->save();
+    }
+    catch (\Exception $e) {
+      \Drupal::logger('soc_nextpage')->warning($e->getMessage());
+    }
     return $node;
   }
 }

@@ -7,7 +7,7 @@
             {{ drupal_field('update_new_statut', 'node') }}
           </div>
         {% endif %}
-        {{ drupal_field('field_product_pictures', 'node') }}
+        {{ drupal_field('field_product_pictures', 'node') | getDefaultImg('product') }}
       </div>
       <div class="product-info col-lg-7 col-md-12">
         <h1>

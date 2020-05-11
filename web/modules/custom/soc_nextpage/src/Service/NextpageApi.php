@@ -15,19 +15,21 @@ class NextpageApi extends NextpageBaseApi implements NextpageApiInterface {
    *
    * @return array|mixed
    */
-  public function elementsAndLinks($extIds, $paths = [], $dcExtIds = []) {
+  public function elementsAndLinks($extIds = '', $paths = [], $dcExtIds = []) {
     $endpoints = $this->getEndpoints();
+    $extId = ($extIds == '' ? $this->extIds : $extIds);
     $results = [];
+    $auth = $this->getAuthStatus() === 0 ? FALSE : TRUE;
     try {
       $results = $this->call($endpoints['elementsandlinks'], [
         'body' => json_encode([
-          'ElementsExtIDs' => $extIds,
+          'ElementsExtIDs' => [$extId],
           'Paths' => $paths,
           'ContextID' => $this->getContextId(),
-          'LangID' => $this->getLanguageId(),
+          'LangID' => 2,
           'DCExtIDs' => $dcExtIds,
         ]),
-      ]);
+      ], 'POST', 'json', $auth, 5);
     } catch (\Exception $e) {
       $this->logger->error($e->getMessage());
     }
@@ -118,12 +120,15 @@ class NextpageApi extends NextpageBaseApi implements NextpageApiInterface {
    * @return array
    */
   public function getDictionaryFromFile($languageId = 2) {
-    $filename = 'characteristics_dictionary_' . $languageId . '.json';
-    $app_root = \Drupal::root();
-    $path = $app_root . '/../data/' . $filename;
-    $dico = file_get_contents($path);
-
-    return get_object_vars(json_decode($dico));
+    $cache = &drupal_static(__FUNCTION__);
+    if (empty($cache[$languageId])) {
+      $filename = 'characteristics_dictionary_' . $languageId . '.json';
+      $app_root = \Drupal::root();
+      $path = $app_root . '/../data/' . $filename;
+      $dico = file_get_contents($path);
+      $cache[$languageId] = get_object_vars(json_decode($dico));
+    }
+    return $cache[$languageId];
   }
 
   /**
@@ -133,7 +138,7 @@ class NextpageApi extends NextpageBaseApi implements NextpageApiInterface {
    *
    * @return bool
    */
-  public function synchroniseCharacteristicsDictionary($languageId = 2){
+  public function synchroniseCharacteristicsDictionary($languageId = 2) {
     $endpoints = $this->getEndpoints();
     $dictionary = [];
     try {

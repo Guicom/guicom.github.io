@@ -5,6 +5,7 @@ namespace Drupal\soc_nextpage\Controller;
 
 use Drupal;
 use Drupal\soc_nextpage\Exception\InvalidTokenException;
+use Symfony\Component\HttpFoundation\JsonResponse;
 
 class Test {
 
@@ -46,16 +47,13 @@ class Test {
   }
 
   public function elementsAndLinks() {
-
-    $elements = $this->nextPageApi->elementsAndLinks(['P_000517']);
-    kint($elements);
-    return [];
+    $elements = $this->nextPageApi->elementsAndLinks('', ['##LinkNodeFPR'], []);
+    return new JsonResponse($elements);
   }
 
   public function descendantsAndLinks() {
-    $descendants = $this->nextPageApi->descendantsAndLinks(['FNiveau2_CODE_FAMILLE_3_066']);
-    kint($descendants);
-    return [];
+    $descendants = $this->nextPageApi->descendantsAndLinks(FALSE, ['##LinkNodeFPR'], [], '');
+    return new JsonResponse($descendants);
   }
 
   public function elementsByCharTemplate() {

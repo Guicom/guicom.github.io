@@ -30,6 +30,9 @@
           word-break: break-all;
         }
       }
+      th, td {
+        padding: 9px 20px;
+      }
       tbody {
         tr {
           &:first-child {

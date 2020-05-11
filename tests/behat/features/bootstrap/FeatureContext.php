@@ -223,6 +223,39 @@ class FeatureContext extends RawDrupalContext {
   }
 
   /**
+   * Click some text in element
+   *
+   * @When /^I click on the text "([^"]*)" in "([^"]*)" element$/
+   */
+  public function iClickOnTheTextInElement($text, $selector)
+  {
+    $page = $this->getSession()->getPage();
+    $elements = $page->findAll('css', $selector);
+    $error = TRUE;
+    if (!empty($elements) && is_array($elements)) {
+      /** @var \Behat\Mink\Element\NodeElement $element */
+      foreach ($elements as $key => $element) {
+        if (!empty($element)) {
+          $value = $element->getText();
+          if (!empty($value)) {
+            if (strcmp($value, $text) === 0) {
+              $error = FALSE;
+              $element->click();
+              break;
+            }
+          }
+        }
+      }
+      if ($error) {
+        throw new Exception ("Element $text not found in $selector.");
+      }
+    }
+    else {
+      throw new Exception ("Selector $selector not found.");
+    }
+  }
+
+  /**
    * @Then /^the selectbox "([^"]*)" should have a list containing:$/
    */
   public function shouldHaveAListContaining($element, \Behat\Gherkin\Node\PyStringNode $list)
@@ -410,6 +443,16 @@ JS;
     try {
       $node->save();
     } catch (Exception $e) {
+    }
+  }
+
+  /**
+   * @Then The file :arg1 exist
+   */
+  public function theFileExist($file) {
+    $filename = __DIR__ . '/../../../../data/' . $file;
+    if (!file_exists($filename)) {
+      throw new Exception("The file doesn't exist");
     }
   }
 
