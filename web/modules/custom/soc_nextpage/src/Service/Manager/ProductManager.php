@@ -64,11 +64,12 @@ class ProductManager {
    */
   public function handle($pendingProduct) {
     $this->referencesNids = $this->referenceManager->handle($pendingProduct->ExtID);
-    if ($entity = $this->nextpageItemHandler->loadByExtID($pendingProduct->ExtID, 'node', 'product')) {
-      $entity = $this->updateProduct($entity, $pendingProduct);
+    $entity = $this->nextpageItemHandler->loadByExtID($pendingProduct->ExtID, 'node', 'product');
+    if (is_null($entity)) {
+      $entity = $this->createProduct($pendingProduct);
     }
     else {
-      $entity = $this->createProduct($pendingProduct);
+      $entity = $this->updateProduct($entity, $pendingProduct);
     }
 
     return $entity;

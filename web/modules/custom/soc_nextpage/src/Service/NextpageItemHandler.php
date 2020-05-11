@@ -38,22 +38,21 @@ class NextpageItemHandler  {
    * @param $extID
    * @param $type
    *
-   * @return \Drupal\Core\Entity\EntityInterface|string|null
+   * @return \Drupal\Core\Entity\EntityInterface|null
    * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
    * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
    */
   public function loadByExtID($extID, $entity_type, $type) {
     $this->getEntityInfo($entity_type);
-    $entity = '';
     $query = \Drupal::entityQuery($this->entityInfo["name"]);
     $query->condition($this->entityInfo["type"], $type);
     $query->condition($this->entityInfo["field"], $extID);
     $result = $query->execute();
     if (!empty($result)) {
       $id = reset($result);
-      $entity = \Drupal::entityTypeManager()->getStorage($this->entityInfo["name"])->load($id);
+      return \Drupal::entityTypeManager()->getStorage($this->entityInfo["name"])->load($id);
     }
-    return $entity;
+    return NULL;
   }
 
   /**
