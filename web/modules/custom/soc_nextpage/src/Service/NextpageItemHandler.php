@@ -126,7 +126,7 @@ class NextpageItemHandler  {
       case 'family':
         $this->entityInfo['field'] = 'field_family_extid';
         break;
-      case 'reference':
+      case 'product_reference':
         $this->entityInfo['field'] = 'field_reference_extid';
         break;
       case 'product':
