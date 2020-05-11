@@ -82,9 +82,14 @@ class ReferenceManager {
    * @throws \Drupal\Core\Entity\EntityStorageException
    */
   public function updateReference($node, $reference) {
+    if (!isset($reference->Values->{'DC_R_ADMIN_Invoice_Description'})) {
+      return FALSE;
+    }
     $json_field = $this->nextpageItemHandler->formatJsonField($reference->Values);
     $node->set('title', $reference->Values->{'DC_R_ADMIN_Invoice_Description'}->Value);
-    $node->set('field_teaser', $reference->Values->{'DC_R_REFERENCE_LONG_DESCRIPTION'}->Value);
+    if (isset($reference->Values->{'DC_R_REFERENCE_LONG_DESCRIPTION'})) {
+      $node->set('field_teaser', $reference->Values->{'DC_R_REFERENCE_LONG_DESCRIPTION'}->Value ?? '');
+    }
     $node->set('field_json_product_data', $json_field);
     $node->set('field_reference_json_table', $this->buildJsonTable($reference->Values));
 
