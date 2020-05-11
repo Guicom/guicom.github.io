@@ -6,6 +6,7 @@ use Drupal\Core\Block\BlockBase;
 use Drupal\Core\Cache\Cache;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Drupal\Core\Url;
+use Drupal\soc_nextpage\TwigExtension\NextpageTwig;
 use Drupal\soc_traceparts\Service\Manager\TracepartsViewerManager;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
@@ -69,6 +70,13 @@ class TracepartsViewerBlock extends BlockBase implements ContainerFactoryPluginI
             '#type' => 'inline_template',
             '#template' => '<iframe src="' . $viewerUrl->toString() . '">'
               . $this->t('Loading...') . '</iframe>',
+          ];
+        }
+        else {
+          $html = NextpageTwig::getDefaultImg([], 'product-reference');
+          $build['node_id'] = [
+            '#type' => 'inline_template',
+            '#template' => $html['#markup'],
           ];
         }
       }
