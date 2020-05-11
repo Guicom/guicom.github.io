@@ -110,22 +110,18 @@
           $('body').toggleClass('fixed')
         });
         // SLIDE Dropdown lvl0
-        $("li[data-level='0']", context).once('socomecMobileMenulv0').each(function () {
+        $("li[data-level='0'] > a:first-child", context).once('socomecMobileMenulv0').each(function () {
           $(this).click(function (e) {
             $(this).toggleClass('active');
-            var dropdown = $(this).find('.we-mega-menu-submenu.dropdown-menu').first();
-            e.preventDefault();
-            e.stopPropagation();
+            var dropdown = $(this).next('.we-mega-menu-submenu.dropdown-menu').first();
             $(dropdown).slideToggle("400");
-            console.log('LIDE Dropdown lvl0');
           });
         });
         // CLOSE OTHER Dropdown lvl0
-        $("li[data-level='0']", context).once('socomecMobileMenuClosinglv0').each(function () {
+        $("li[data-level='0'] > a:first-child", context).once('socomecMobileMenuClosinglv0').each(function () {
           $(this).click(function () {
             var dropdown = $(this).find('.we-mega-menu-submenu.dropdown-menu');
             $(".we-mega-menu-submenu.dropdown-menu").not(dropdown).slideUp("400");
-            console.log('CLOSE OTHER Dropdown lvl0');
           });
         });
 
@@ -137,7 +133,6 @@
             e.preventDefault();
             e.stopPropagation();
             $(dropdown).slideToggle("400");
-            console.log('SLIDE OPENING Dropdown lvl1');
           });
         });
         // CLOSE OTHER Dropdown lvl1
@@ -145,7 +140,6 @@
           $(this).click(function () {
             var dropdown = $(this).next('.we-mega-menu-submenu.dropdown-menu');
             $(".level-1 > .we-mega-menu-submenu.dropdown-menu").not(dropdown).slideUp("400");
-            console.log('CLOSE OTHER Dropdown lvl1');
           });
         });
 
@@ -157,7 +151,6 @@
             e.preventDefault();
             e.stopPropagation();
             $(dropdown).slideToggle("400");
-            console.log('SLIDE OPENING Dropdown lvl2');
           });
         });
         // CLOSE OTHER Dropdown lvl2
@@ -165,7 +158,6 @@
           $(this).click(function () {
             var dropdown = $(this).next('.we-mega-menu-submenu.dropdown-menu');
             $(".level-2 > .we-mega-menu-submenu.dropdown-menu").not(dropdown).slideUp("400");
-            console.log('CLOSE OTHER Dropdown lvl2');
           });
         });
       }
@@ -606,6 +598,7 @@
   */
   Drupal.behaviors.socomec_content_list_ajax_btn = {
     attach: function (context, settings) {
+      Drupal.behaviors.socomec_content_list_ajax_btn.updateRenderNavigation();
       var elements = $('a[data-soc-content-list-ajax="1"]');
       $(elements, context).once('socomec_content_list_ajax_btn').each(function () {
         $(this).click(function (e) {
@@ -618,7 +611,9 @@
             dataType: 'json',
             success: function (output, statut) {
               element.removeClass( "item-pending" );
-              if (output == "false") {
+              if (output == "true") {
+                Drupal.behaviors.socomec_content_list_ajax_btn.updateRenderNavigation();
+                element.addClass("soc-list-is-active");
                 element.addClass("item-added").delay(5000).queue(function(){
                   element.removeClass("item-added").dequeue();
                 });
@@ -629,6 +624,32 @@
           e.stopPropagation();
         });
       });
+    },
+    updateRenderNavigation: function () {
+      var wishlist = $.cookie("socomec_wishlist");
+      var i = 0;
+      if(typeof wishlist !== 'undefined' && wishlist != null) {
+        $.each(JSON.parse(wishlist), function (key, value) {
+          $('.add-to-favorite[data-soc-content-list-item="'+key+'"]').addClass('soc-list-is-active');
+          i++;
+        });
+      }
+      if (i > 0) {
+        $('.menu--header-visitors .ico-favorite').addClass('soc-list-is-active');
+        $('.menu--header-visitors .ico-favorite').attr("data-soc-list", i);
+      }
+      var bookmark = $.cookie("socomec_bookmark");
+      var j = 0;
+      if(typeof bookmark !== 'undefined' && bookmark != null) {
+        $.each(JSON.parse(bookmark), function (key, value) {
+          $('.add-to-bookmarks[data-soc-content-list-item="'+key+'"]').addClass('soc-list-is-active');
+          j++;
+        });
+      }
+      if (j > 0) {
+        $('.menu--header-visitors .ico-bookmark-star-white').addClass('soc-list-is-active');
+        $('.menu--header-visitors .ico-bookmark-star-white').attr("data-soc-list", j);
+      }
     }
   };
 

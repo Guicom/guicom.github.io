@@ -10,6 +10,7 @@
         </div>
       {% endif %}
       <div class="product-reference-image col-lg-5 col-md-12">
+        {{ drupal_block('traceparts_viewer_block') }}
       </div>
       <div class="product-reference-info col-lg-7 col-md-12">
         <h1 class="product-reference-title">
@@ -17,6 +18,26 @@
         </h1>
         <div class="product-reference-ref">{{ drupal_field('field_reference_ref', 'node') }}</div>
         <div class="product-reference-teaser">{{ drupal_field('field_teaser', 'node') }}</div>
+        <div class="product-reference-download3D-model">
+          <div class="download3D-model">
+            <div class="facet-mobile-modal-open">
+              <button class="modal-open" aria-label="open modal">{{ 'Download 3D Model'|t }}</button>
+            </div>
+            <button class="cta-simple" type="button" data-toggle="collapse" data-target="#tracepart-download-list" aria-expanded="false" aria-controls="tracepart-download-list">
+              {{ "Download 3D Model"|t }}
+            </button>
+            <div class="modal-facets-mobile">
+              <div class="facet-mobile-modal-close">
+                <button class="modal-close" aria-label="close modal"></button>
+              </div>
+              <div id="tracepart-download-list" class="collapse">
+                {{ drupal_block('traceparts_downloads_block') }}
+              </div>
+            </div>
+          </div>
+
+
+        </div>
       </div>
     </div>
     <aside class="product-reference-cta-wrapper">

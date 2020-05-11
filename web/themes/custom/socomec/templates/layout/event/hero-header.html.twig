@@ -61,13 +61,13 @@
               </div>
               <div class="line-hours">
                 <div class="event-start">
-                  {{ date_event_start|date('G:i') }}
+                  {{ date_event_start|date('G:i', false) }}
                 </div>
                 <div class="separator">
                   -
                 </div>
                 <div class="event-end">
-                  {{ date_event_end|date('G:i') }}
+                  {{ date_event_end|date('G:i', false) }}
                 </div>
               </div>
             </div>

@@ -25,6 +25,9 @@ Feature: Events
     When I visit "/event/mytestevent"
     Then I should see a "body.node--type-event" element
     And I should see "MyTestEvent"
+    Then I should see the breadcrumb link "Home"
+    Then I should see the breadcrumb link "Event"
+    Then I should see the breadcrumb link "MyTestEvent"
 
   @api @cit @javascript @events @events_lp
     # Check if the filter working with the last element.

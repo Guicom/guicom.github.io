@@ -295,7 +295,7 @@
       @include media-breakpoint-down(sm) {
         background-position-x: 50%;
         height: auto;
-        padding: 0 0 2rem 0;
+        padding: 0;
       }
       &:after {
         content: '';
@@ -335,6 +335,17 @@
           @include media-breakpoint-down(sm) {
             overflow: initial;
             background: $yellow;
+          }
+          &.no-img {
+            width: 50%;
+            display: flex;
+            justify-content: center;
+            background: $blue;
+            @include media-breakpoint-down(sm) {
+              width: initial;
+              order: 2;
+              height: 200px;
+            }
           }
           img {
             min-width: 100%;

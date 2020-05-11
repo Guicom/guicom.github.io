@@ -558,6 +558,17 @@ Parent element must have position set to relative
   margin: 0 0 10px 0;
 }
 
+@mixin S1-alt($color) {
+  font-size: 3.5rem;
+  font-family: $font-roboto;
+  color: $color;
+  line-height: 3.75rem;
+  @include media-breakpoint-down(md){
+    font-size: $font-size-h2;
+    line-height: initial;
+  }
+}
+
 @mixin back-to-button {
   display: flex;
   margin-bottom: $spacer;

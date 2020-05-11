@@ -1,6 +1,6 @@
 /* ------------------ Header ------------------ */
 // Position header with hero region.
-@include media-breakpoint-up(md) {
+@media (min-width: 991.98px) {
   .nav-wrapper {
     margin-top:-60px;
     width: 100%;
@@ -109,8 +109,12 @@
                 &.product {
                   .hover,
                   &.hover {
+                    transition-duration: 10s;
+                    transition-delay: 10s;
                     &:hover,
                     &.show {
+                      transition-duration: 10s;
+                      transition-delay: 10s;
                       & > .dropdown-menu {
                         display: block;
                         background: linear-gradient(180deg, #232C77 0%, #084796 100%);
@@ -259,6 +263,8 @@
 
                     &:hover,
                     &.show {
+                      transition-duration: 10s;
+                      transition-delay: 10s;
                       > a {
                         border-color: rgba(255, 255, 255, 1);
                         color: rgba(255, 255, 255, 1);
