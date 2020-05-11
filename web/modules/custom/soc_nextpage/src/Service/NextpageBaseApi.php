@@ -59,9 +59,9 @@ class NextpageBaseApi extends BaseApi {
 
     $config = $configFactory->getEditable('soc_nextpage.nextpage_ws');
 
-    $baseUrl = $config->get('base_url') ?? Settings::get('nextpage_base_url');
-    $user = $config->get('username') ?? Settings::get('nextpage_username');
-    $password = $config->get('password') ?? Settings::get('nextpage_password');
+    $baseUrl = $config->get('base_url') ?? 'https://preprod-socomecweb-api.nextpage.fr/com/';
+    $user = $config->get('username') ?? '';
+    $password = $config->get('password') ?? '';
     $contextId = $config->get('context_id') ?? '1';
     $languageId = $config->get('language_id') ?? '1';
     $endpoints = [

@@ -447,6 +447,16 @@ JS;
   }
 
   /**
+   * @Then The file :arg1 exist
+   */
+  public function theFileExist($file) {
+    $filename = __DIR__ . '/../../../../data/' . $file;
+    if (!file_exists($filename)) {
+      throw new Exception("The file doesn't exist");
+    }
+  }
+
+  /**
    * @Then /^I bookmark the resource "([^"]*)"$/
    */
   public function iBookmarkTheResource($title) {
