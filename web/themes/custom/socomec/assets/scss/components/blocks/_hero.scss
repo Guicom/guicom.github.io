@@ -15,11 +15,9 @@
   }
   .hero-content{
     .title-hero {
-      color: $white;
+      @include S1($white);
       font-family: $font-roboto;
-      font-size: 48px;
       font-weight: 300;
-      line-height: 60px;
     }
   }
   .hero-thumbnail {

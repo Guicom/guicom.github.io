@@ -130,11 +130,7 @@ body.node--type-product {
 
     .product-title {
       display: block;
-      color: $white;
-      font-family: $font-poppins;
-      font-size: 72px;
-      font-weight: 200;
-      line-height: 90px;
+      @include S1-xxl($white);
     }
 
     .product-subtitle {

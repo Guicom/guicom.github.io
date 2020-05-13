@@ -3,12 +3,17 @@
 //
 // STYLES MIXIN
 //
+
+// HEADINGS & TEXT
 @mixin block-title($with-line: false) {
   color: $blue;
   font-family: $font-roboto;
-  font-size: 48px;
+  font-size: $font-size-h1;
   font-weight: lighter;
   margin: 40px 0 20px;
+  @include media-breakpoint-down(sm) {
+    font-size: 2.5rem;
+  }
   @if $with-line == true {
     position: relative;
     display: inline-flex;
@@ -28,7 +33,114 @@
   }
 }
 
-@mixin rounded-icon($size, $color){
+@mixin block-label($backgroound-color, $font-color) {
+  border-radius: 2px;
+  background-color: $backgroound-color;
+  color: $font-color;
+  font-family: $font-poppins;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  line-height: 20px;
+  text-align: center;
+  padding: 0 10px;
+  text-transform: uppercase;
+}
+
+@mixin underscore {
+  content: '';
+  position: absolute;
+  background-color: $yellow;
+  width: 60px;
+  height: 2px;
+  top: -$spacer;
+}
+
+@mixin offset-underscore {
+  position: relative;
+  &:before {
+    @include underscore;
+  }
+}
+
+@mixin S1-xxl($color) {
+  color: $color;
+  font-family: $font-poppins;
+  font-size: 4.5rem;
+  font-weight: 200;
+  line-height: 90px;
+  @include media-breakpoint-down(md){
+    font-size: $font-size-h2;
+    line-height: 4rem;
+  }
+}
+@mixin S1($color) {
+  font-size: $font-size-h1;
+  font-family: $font-roboto;
+  color: $color;
+  line-height: 3.75rem;
+  @include media-breakpoint-down(md){
+    font-size: $font-size-h2;
+    line-height: 1rem;
+  }
+}
+
+@mixin S2($color) {
+  font-size: $font-size-h2;
+  font-family: $font-roboto;
+  color: $color;
+  @include media-breakpoint-down(md){
+    font-size: $font-size-h4;
+  }
+}
+
+@mixin S3($color) {
+  color: $color;
+  font-family: $font-roboto;
+  font-size: $font-size-h4;
+  line-height: 30px;
+  margin: 0 0 10px 0;
+  @include media-breakpoint-down(md){
+    font-size: $font-size-h5;
+  }
+}
+
+@mixin S4($color) {
+  color: $color;
+  font-family: $font-roboto;
+  font-size: $font-size-h5;
+  line-height: 25px;
+  margin: 0 0 10px 0;
+}
+
+@mixin S5($color) {
+  color: $color;
+  font-family: $font-roboto;
+  font-size: 1.125rem;
+  line-height: 25px;
+  margin: 0 0 10px 0;
+}
+@mixin S6($color) {
+  color: $color;
+  font-family: $font-roboto;
+  font-size: 1rem;
+  line-height: 25px;
+  margin: 0 0 10px 0;
+}
+
+@mixin S1-alt($color) {
+  font-size: 3.5rem;
+  font-family: $font-roboto;
+  color: $color;
+  line-height: 3.75rem;
+  @include media-breakpoint-down(md){
+    font-size: $font-size-h2;
+    line-height: initial;
+  }
+}
+
+// ICONS & BUTTONS
+@mixin rounded-icon($size, $color) {
   border: 1px solid $color;
   width: $size;
   height: $size;
@@ -56,51 +168,6 @@
   }
   &:hover {
     text-decoration: none;
-  }
-}
-
-@mixin block-label($backgroound-color, $font-color) {
-  border-radius: 2px;
-  background-color: $backgroound-color;
-  color: $font-color;
-  font-family: $font-poppins;
-  font-size: 12px;
-  font-weight: 600;
-  letter-spacing: 0.5px;
-  line-height: 20px;
-  text-align: center;
-  padding: 0 10px;
-  text-transform: uppercase;
-}
-
-/**
-Use this placeholder to make an element take the full parent size
-Parent element must have position set to relative
-**/
-@mixin parent-overlap {
-  display: block;
-  position: absolute;
-  top: 0;
-  right: 0;
-  left: 0;
-  bottom: 0;
-  text-indent: -9999px;
-  z-index: 3;
-}
-
-@mixin underscore {
-  content: '';
-  position: absolute;
-  background-color: $yellow;
-  width: 60px;
-  height: 2px;
-  top: -$spacer;
-}
-
-@mixin offset-underscore {
-  position: relative;
-  &:before {
-    @include underscore;
   }
 }
 
@@ -135,6 +202,22 @@ Parent element must have position set to relative
   background-position: center;
   background-color: $white;
   border: none;
+}
+
+
+/**
+Use this placeholder to make an element take the full parent size
+Parent element must have position set to relative
+**/
+@mixin parent-overlap {
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  text-indent: -9999px;
+  z-index: 3;
 }
 
 @mixin tag($color, $background) {
@@ -218,8 +301,8 @@ Parent element must have position set to relative
     box-shadow: 0 2px 2px 0 rgba(35,44,119,0.14), 0 3px 1px -2px rgba(0,0,0,0.07), 0 1px 5px 0 rgba(0,0,0,0.14);
   }
   div.dropdown-menu {
-    margin:0px;
-    padding:0px;
+    margin:0;
+    padding:0;
     border-radius: unset;
     box-shadow: 0 2px 2px 0 rgba(35,44,119,0.14), 0 3px 1px -2px rgba(0,0,0,0.07), 0 1px 5px 0 rgba(0,0,0,0.14);
     max-height: 20vh !important;
@@ -294,7 +377,6 @@ Parent element must have position set to relative
 }
 
 //Overflow right oustide container with color
-
 @function side-width($breakpoint) {
   @return calc(((100vw - #{map-get($container-max-widths, $breakpoint)}) / 2) + #{$grid-gutter-width}/2 )
 }
@@ -411,338 +493,7 @@ $value in $theme-colors {
     }
 }
 
-/* MIXINS */
-
-//
-// STYLES MIXIN
-//
-@mixin block-title($with-line: false) {
-  color: $blue;
-  font-family: $font-roboto;
-  font-size: 48px;
-  font-weight: lighter;
-  margin: 40px 0 20px;
-  @if $with-line == true {
-    position: relative;
-    display: inline-flex;
-    &:after {
-      content: '';
-      height: 2px;
-      width: 60px;
-      bottom: 0;
-      right: -30px;
-      background: $yellow;
-      display: block;
-      position: absolute;
-      @include media-breakpoint-down(sm) {
-        right: 0;
-      }
-    }
-  }
-}
-
-@mixin rounded-icon($size, $color){
-  border: 1px solid $color;
-  width: $size;
-  height: $size;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-@mixin button-icon($background, $color) {
-  background: $background;
-  color: $color;
-  font-family: $font-poppins;
-  font-size: 14px;
-  font-weight: 600;
-  letter-spacing: 1px;
-  line-height: 16px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 22px;
-  text-transform: uppercase;
-  img {
-    margin-right: 15px;
-  }
-  &:hover {
-    text-decoration: none;
-  }
-}
 
 @mixin transition-socomec {
   transition: all 0.3s ease-out;
-}
-
-/**
-Use this placeholder to make an element take the full parent size
-Parent element must have position set to relative
-**/
-@mixin parent-overlap {
-  display: block;
-  position: absolute;
-  top: 0;
-  right: 0;
-  left: 0;
-  bottom: 0;
-  text-indent: -9999px;
-  z-index: 3;
-}
-
-@mixin underscore {
-  content: '';
-  position: absolute;
-  background-color: $yellow;
-  width: 60px;
-  height: 2px;
-  top: -$spacer;
-}
-
-@mixin offset-underscore {
-  position: relative;
-  &:before {
-    @include underscore;
-  }
-}
-
-@mixin S1($color) {
-  font-size: $font-size-h1;
-  font-family: $font-roboto;
-  color: $color;
-  line-height: 3.75rem;
-  @include media-breakpoint-down(md){
-    font-size: $font-size-h3;
-    line-height: 1rem;
-  }
-}
-
-@mixin S2($color) {
-  font-size: $font-size-h2;
-  font-family: $font-roboto;
-  color: $color;
-  @include media-breakpoint-down(md){
-    font-size: $font-size-h3;
-  }
-}
-
-@mixin S3($color) {
-  color: $color;
-  font-family: $font-roboto;
-  font-size: $font-size-h4;
-  line-height: 30px;
-  margin: 0 0 10px 0;
-}
-
-@mixin S4($color) {
-  color: $color;
-  font-family: $font-roboto;
-  font-size: $font-size-h5;
-  line-height: 25px;
-  margin: 0 0 10px 0;
-}
-
-@mixin S5($color) {
-  color: $color;
-  font-family: $font-roboto;
-  font-size: 1.125rem;
-  line-height: 25px;
-  margin: 0 0 10px 0;
-}
-@mixin S6($color) {
-  color: $color;
-  font-family: $font-roboto;
-  font-size: 1rem;
-  line-height: 25px;
-  margin: 0 0 10px 0;
-}
-
-@mixin S1-alt($color) {
-  font-size: 3.5rem;
-  font-family: $font-roboto;
-  color: $color;
-  line-height: 3.75rem;
-  @include media-breakpoint-down(md){
-    font-size: $font-size-h2;
-    line-height: initial;
-  }
-}
-
-@mixin back-to-button {
-  display: flex;
-  margin-bottom: $spacer;
-  color: $white;
-  font-family: $font-poppins;
-  font-weight: 600;
-  font-size: $font-size-sm;
-  text-decoration: none;
-  letter-spacing: 1px;
-  svg,
-  img{
-    margin-right: $spacer/2;
-    transform: translateX(0);
-    transition: $transition02;
-  }
-  &:hover {
-    svg {
-      transform: translateX(-3px);
-      transition: $transition02;
-    }
-  }
-}
-
-@mixin tag($color, $background) {
-  display: block;
-  padding: 1px 8px;
-  color: $color;
-  background: $background;
-  border-radius: 3px;
-  text-transform: uppercase;
-  text-decoration: none;
-  font-family: $font-poppins;
-  font-weight: 600;
-  font-size: $font-size-xs;
-  box-shadow: 0 0 0 0 $background;
-  transition: $transition02;
-  &:hover {
-    box-shadow: 0 0 0 1px $background;
-    transition: $transition02;
-  }
-}
-
-//
-// LAYOUT MIXIN
-//
-@mixin right-overflow-calc($width) {
-  width: calc(((100vw - #{map-get($container-max-widths, $width)}) / 2 + #{map-get($container-max-widths, $width)}) - #{$grid-gutter-width}/2);
-  margin-left: calc((100vw - ((100vw - #{map-get($container-max-widths, $width)}) / 2 + #{map-get($container-max-widths, $width)})) + #{$grid-gutter-width} / 2);
-}
-
-//Overflow oustide container with content
-@mixin right-overflow() {
-  @include media-breakpoint-up(lg) {
-    @include right-overflow-calc(lg);
-  }
-  @include media-breakpoint-up(xl) {
-    @include right-overflow-calc(xl);
-  }
-}
-
-//Overflow right oustide container with color
-
-@function side-width($breakpoint) {
-  @return calc(((100vw - #{map-get($container-max-widths, $breakpoint)}) / 2) + #{$grid-gutter-width}/2 )
-}
-@function side-width-negative($breakpoint) {
-  @return calc(((#{map-get($container-max-widths, $breakpoint)} - 100vw ) / 2) - #{$grid-gutter-width}/2 )
-}
-@mixin right-overflow-color($color) {
-  &:after {
-    background: $color;
-    content: '';
-    display: block;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    @include media-breakpoint-down(xl) {
-      right: side-width-negative(xl);
-      width: side-width(xl);
-    }
-    @include media-breakpoint-down(lg) {
-       right: side-width-negative(lg);
-       width: side-width(lg);
-    }
-    @include media-breakpoint-down(md) {
-      right: side-width-negative(md);
-      width: side-width(md);
-    }
-    @include media-breakpoint-down(md) {
-      display: none;
-    }
-  }
-}
-@mixin left-overflow-color($color) {
-  &:before {
-    background: $color;
-    content: '';
-    display: block;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    @include media-breakpoint-down(xl) {
-      left: side-width-negative(xl);
-      width: side-width(xl);
-    }
-    @include media-breakpoint-down(lg) {
-      left: side-width-negative(lg);
-      width: side-width(lg);
-    }
-    @include media-breakpoint-down(md) {
-      left: side-width-negative(md);
-      width: side-width(md);
-    }
-    @include media-breakpoint-down(md) {
-      display: none;
-    }
-  }
-}
-
-//
-// Function & mixin to get relative column width
-//
-@function absolute-width-column($breakpoint) {
- @return (map-get($container-max-widths, $breakpoint) / 12)
-}
-@function calc-column-width($nbr, $breakpoint) {
-  @return (absolute-width-column($breakpoint) * $nbr)
-}
-@mixin getfullwidthcolumn($nbr, $breakpoint) {
-  width: calc-column-width($nbr, $breakpoint);
-  max-width: calc-column-width($nbr, $breakpoint);
-  flex: 0 0 calc-column-width($nbr, $breakpoint);
-}
-
-//
-// Responsive
-//
-@mixin custom-breakpoint-down($widht) {
-  @media screen and (max-width: $widht) {
-    @content;
-  }
-}
-
-@mixin embed-responsive {
-  position: relative;
-  display: block;
-  width: 100%;
-  padding: 0;
-  overflow: hidden;
-  iframe {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    max-width: 100%;
-    height: 100%;
-    border: 0;
-  }
-}
-
-//
-// Alternate buttons
-//
-@each $color,
-$value in $theme-colors {
-    .btn-#{$color} a {
-        @include button-variant($value, $value);
-    }
-}
-
-@each $color,
-$value in $theme-colors {
-    .btn-outline-#{$color} a {
-        @include button-outline-variant($value);
-    }
 }
