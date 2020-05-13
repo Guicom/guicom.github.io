@@ -4,7 +4,7 @@
     position: absolute;
     z-index: 999;
     right: 0;
-    @include media-breakpoint-down(md) {
+    @media (max-width: 992px) {
       right: 3.75rem;
       top: 0.1rem;
     }
@@ -84,7 +84,11 @@
           font-weight: 600;
           letter-spacing: 1px;
           line-height: 23px;
-          @include media-breakpoint-down(lg) {
+          @media (min-width: 992px) and (max-width: 1300px) {
+            text-indent: -9999px;
+            padding:20px 29px;
+          }
+          @media (max-width: 992px) {
             padding:20px;
             text-indent: -99999px;
             background-position: center;
@@ -103,7 +107,7 @@
         }
       }
     }
-    @include media-breakpoint-down(md) {
+    @media (max-width: 992px) {
       ul.nav {
         li {
           display: none;
@@ -127,7 +131,7 @@
   }
 }
 .side-menu-responsive {
-  @include media-breakpoint-up(md){
+  @media (min-width: 992px) {
     display: none;
   }
 }
