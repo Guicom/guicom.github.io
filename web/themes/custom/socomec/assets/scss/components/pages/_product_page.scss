@@ -509,13 +509,11 @@ body.node--type-product {
       }
 
       h2 {
-        color: $yellow;
+        @include S2($yellow);
         font-family: $font-roboto;
-        font-size: 32px;
         font-weight: 300;
         line-height: 40px;
         margin-bottom: 30px;
-        word-break: break-all;
       }
 
       ul {
