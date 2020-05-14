@@ -259,16 +259,20 @@ body.node--type-product-reference {
         z-index: 999;
         width: 100%;
         top: calc(100% - 1px);
+        border-radius: 0;
+        margin-top: 0;
         @include media-breakpoint-down(sm) {
           top: initial;
           display: block!important;
-          height: 80%;
+          height: 90%;
           overflow-y: scroll;
+          box-shadow: none;
+          border: none;
         }
       }
       .block-soc-traceparts {
         .list-group {
-          height: 11rem;
+          height: 11rem!important;
           width: 100%;
           overflow-y: scroll;
           border-bottom: 1px solid rgba($blue, 0.5);
@@ -290,6 +294,20 @@ body.node--type-product-reference {
           }
         }
       }
+      .dropdown-item {
+        display: flex;
+       .loader-pending {
+         @include loader($blue);
+       }
+      }
+    }
+  }
+  .soc-traceparts-register {
+    .js-form-submit {
+      .ajax-progress {
+        top: 100%!important;
+      }
     }
   }
 }
+
