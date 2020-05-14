@@ -1,0 +1,7 @@
+name: 'Soc Basic Auth'
+type: module
+description: 'Allow basic auth on htpasswd protected hosting.'
+core: 8.x
+package: 'Socomec'
+dependencies:
+  - basic_auth
