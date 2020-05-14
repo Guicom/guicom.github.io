@@ -1,0 +1,19 @@
+uuid: 69044975-1ad2-4e43-a9b1-02a2d354327c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.block_promotion_entity.field_external_title
+    - soc_blocks_promotion.block_promotion_entity_type.custom
+id: block_promotion_entity.custom.field_external_title
+field_name: field_external_title
+entity_type: block_promotion_entity
+bundle: custom
+label: 'External title'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

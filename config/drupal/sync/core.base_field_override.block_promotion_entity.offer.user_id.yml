@@ -1,0 +1,20 @@
+uuid: ec026c1b-0e23-475e-9da2-82deda5aaafd
+langcode: en
+status: true
+dependencies:
+  config:
+    - soc_blocks_promotion.block_promotion_entity_type.offer
+id: block_promotion_entity.offer.user_id
+field_name: user_id
+entity_type: block_promotion_entity
+bundle: offer
+label: 'Authored by'
+description: 'The user ID of author of the Block promotion entity entity.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: default
+  handler_settings: {  }
+field_type: entity_reference
