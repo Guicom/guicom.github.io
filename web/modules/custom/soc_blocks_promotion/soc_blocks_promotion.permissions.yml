@@ -1,0 +1,33 @@
+add block promotion entity entities:
+  title: 'Create new Block promotion entity entities'
+
+administer block promotion entity entities:
+  title: 'Administer Block promotion entity entities'
+  description: 'Allow to access the administration form to configure Block promotion entity entities.'
+  restrict access: true
+
+delete block promotion entity entities:
+  title: 'Delete Block promotion entity entities'
+
+edit block promotion entity entities:
+  title: 'Edit Block promotion entity entities'
+
+view published block promotion entity entities:
+  title: 'View published Block promotion entity entities'
+
+view unpublished block promotion entity entities:
+  title: 'View unpublished Block promotion entity entities'
+
+view all block promotion entity revisions:
+  title: 'View all Block promotion entity revisions'
+
+revert all block promotion entity revisions:
+  title: 'Revert all Block promotion entity revisions'
+  description: 'Role requires permission <em>view Block promotion entity revisions</em> and <em>edit rights</em> for block promotion entity entities in question or <em>administer block promotion entity entities</em>.'
+
+delete all block promotion entity revisions:
+  title: 'Delete all revisions'
+  description: 'Role requires permission to <em>view Block promotion entity revisions</em> and <em>delete rights</em> for block promotion entity entities in question or <em>administer block promotion entity entities</em>.'
+
+permission_callbacks:
+  - \Drupal\soc_blocks_promotion\BlockPromotionEntityPermissions::generatePermissions
