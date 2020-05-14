@@ -62,30 +62,51 @@ Feature: Reference_product
     And I click "behatRefProd" in the "behatRefProd" row
 
 
-#  @api @cit @javascript @product_reference @product_reference_cad
-# # vendor/bin/phing behat:run -Dbehat.tags=product_reference_cad
-#  Scenario: Reference cad
-#    Given I am an anonymous user
-#    When I visit "/behatRefProd"
-#    And I accept all cookies compliance
-#    Then I should see a "body.node--type-product-reference" element
-#    And I should see "behatRefProd"
-#    And I click the ".product-reference-download3D-model" element
-#    And I should see a ".block-soc-traceparts .item-list .list-group-item" element
-#    And I click the "3D XML" element
-#    And I wait 6 seconds
+  @api @cit @javascript @product_reference @product_reference_cad
+ # vendor/bin/phing behat:run -Dbehat.tags=product_reference_cad
+  Scenario: Reference cad
+    Given I am an anonymous user
+    When I visit "/behatRefProd"
+    And I accept all cookies compliance
+    Then I should see a "body.node--type-product-reference" element
+    And I should see "behatRefProd"
+    And I click the ".cta-simple" element
+    And I wait 5 seconds
+    And I click the "a[href='/en/traceparts/login/27003011/33']" element
+    And I wait 5 seconds
+    And I click the "a[href='/en/traceparts/register/27003011/33']" element
+    And I wait 5 seconds
+    And I fill in "email" with "testbehat@test.fr"
+    And I fill in "company" with "test behat company"
+    And I select "France" from "country"
+    And I fill in "zipcode" with "67500"
+    And I press "edit-submit"
+    And I wait 5 seconds
+    And I should see a ".submitted-page" element
+    And I wait 5 seconds
+    When I visit "/behatRefProd"
+
 
   @api @cit @javascript @product_reference @product_reference_characteristic
  # vendor/bin/phing behat:run -Dbehat.tags=product_reference_characteristic
-  Scenario: Reference cta
+  Scenario: Reference characteristic
     And I am logged in as a user with the "administrator" role
     And I go to "admin/content"
     And I click "Edit" in the "behatRefProd" row
-    And I click the "a[href='#edit-group-webmastering']" element
-    And I click the "#edit-field-reference-content li.dropbutton-toggle button" element
-    And I press the "edit-field-reference-content-add-more-add-more-button-model-text" button
-    And I fill in "field_reference_content[0][subform][field_title][0][value]" with "Text title"
-    And I fill in "field_reference_content[0][subform][field_text][0][value]" with "Text in text field"
+    And I fill in "field_characteristics[0][value]" with "{\"ETIM\":{\"1\":{\"id\":\"DC_R_CLASSEETIM\",\"type\":\"LISTE\",\"value\":[\"EC000216\"],\"libelleDossier\":\"ETIM\",\"label\":\"Classe ETIM\",\"order\":1}}}"
     And I press "edit-submit"
     And I go to "admin/content"
     And I click "behatRefProd" in the "behatRefProd" row
+    And I should see a ".product-reference-characteristics" element
+
+  @api @cit @javascript @product_reference @product_reference_nocadmodel
+ # vendor/bin/phing behat:run -Dbehat.tags=product_reference_nocadmodel
+  Scenario: Reference no cad model
+    And I am logged in as a user with the "administrator" role
+    And I go to "admin/content"
+    And I click "Edit" in the "behatRefProd" row
+    And I fill in "field_reference_ref[0][value]" with "666"
+    And I press "edit-submit"
+    And I go to "admin/content"
+    And I click "behatRefProd" in the "behatRefProd" row
+    And I should see a "img.default-img-product-reference" element
