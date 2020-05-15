@@ -59,8 +59,8 @@ class SocDefaultImagesTwig extends \Twig_Extension {
               ->buildUrl($file->getFileUri())) {
                 return [
                   '#markup' => "<img class='default-img-$type' src='$url'/>",
-                  '#url' =>$url,
-                  '#img-type' =>$type,
+                  '#url' => $url,
+                  '#img-type' => $type,
                 ];
             }
           }
