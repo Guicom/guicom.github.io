@@ -55,12 +55,12 @@ Feature: Reference_product
     And I click the "a[href='#edit-group-webmastering']" element
     And I click the "#edit-field-reference-content li.dropbutton-toggle button" element
     And I press the "edit-field-reference-content-add-more-add-more-button-model-text" button
+    And I wait 4 seconds
     And I fill in "field_reference_content[0][subform][field_title][0][value]" with "Text title"
-    And I fill in "field_reference_content[0][subform][field_text][0][value]" with "Text in text field"
+    And I wait 2 seconds
     And I press "edit-submit"
     And I go to "admin/content"
     And I click "behatRefProd" in the "behatRefProd" row
-
 
   @api @cit @javascript @product_reference @product_reference_cad
  # vendor/bin/phing behat:run -Dbehat.tags=product_reference_cad
@@ -85,7 +85,6 @@ Feature: Reference_product
     And I should see a ".submitted-page" element
     And I wait 5 seconds
     When I visit "/behatRefProd"
-
 
   @api @cit @javascript @product_reference @product_reference_characteristic
  # vendor/bin/phing behat:run -Dbehat.tags=product_reference_characteristic
