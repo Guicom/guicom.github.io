@@ -9,7 +9,7 @@ dependencies:
 id: top5searches
 theme: socomec
 region: hidden
-weight: -20
+weight: 0
 provider: null
 plugin: top_search_block
 settings:

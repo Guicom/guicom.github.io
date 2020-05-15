@@ -15,5 +15,83 @@
   }
 }
 .ui-dialog {
-  z-index: 1001;
+  z-index: 99999;
+  @include media-breakpoint-down(md) {
+    width: 100%!important;
+    height: 100%!important;
+    top: 0!important;
+  }
+  .ui-dialog-content {
+    display: flex;
+    align-items: center;
+    @include media-breakpoint-down(md) {
+      min-height: 100%!important;
+      max-height: 100%!important;
+    }
+  }
+  .ui-widget-header {
+    background: transparent;
+    border: none;
+    @include S3($blue);
+    .ui-dialog-titlebar-close {
+      background: none;
+      border: none;
+      margin: -15px 10px 0 0;
+      outline: none;
+      .ui-icon {
+        @include close-btn;
+        outline: none;
+      }
+    }
+    a {
+      font-family: $font-roboto;
+      color: $blue;
+      &:visited {
+        color: $dark_blue;
+      }
+    }
+  }
+  .ajax-progress{
+    &.ajax-progress-throbber {
+      top: initial;
+    }
+  }
+  // STATEMENT ALERT
+  .alert-wrapper {
+    .alert {
+      border-radius: 0;
+      border: 0;
+    }
+    .alert-danger {
+      background: $red;
+      color: $white;
+      font-family: $font-roboto;
+      font-weight: 300;
+      hr {
+        border-top-color: $white;
+      }
+      button {
+        background-image: url("../images/picto/ui/close-circle.svg");
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 20px;
+        height: 20px;
+        opacity: 1;
+        span {
+          display: none;
+        }
+      }
+    }
+  }
+  .submitted-page {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  // FOR TRACEPART FORM
+  .soc-traceparts-register {
+    width: 100%;
+  }
 }

@@ -48,6 +48,10 @@ html {
   }
 }
 
+// SAFARI FIX
+.row:after {display: none}
+.row:before {display: none}
+
 /* COLORS
 --------------------------------------------------*/
 

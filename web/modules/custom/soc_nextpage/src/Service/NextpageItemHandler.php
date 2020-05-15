@@ -9,19 +9,26 @@ use Drupal\Core\Database\Connection;
 class NextpageItemHandler  {
 
   /**
-   * @var \Drupal\soc_nextpage\Service\NextpageApi
+   * @var \Drupal\soc_nextpage\Service\NextpageApi $nextpageApi
    */
   private $nextpageApi;
 
   /**
-   * @var \Drupal\Core\Database\Connection
+   * @var \Drupal\Core\Database\Connection $connection
    */
   private $connection;
 
   /** @var array $entityInfo */
   protected $entityInfo;
 
-  function __construct(NextpageApi $nextpageApi, Connection $connection) {
+
+  /**
+   * NextpageItemHandler constructor.
+   *
+   * @param \Drupal\soc_nextpage\Service\NextpageApi $nextpageApi
+   * @param \Drupal\Core\Database\Connection $connection
+   */
+  public function __construct(NextpageApi $nextpageApi, Connection $connection) {
     $this->nextpageApi = $nextpageApi;
     $this->connection = $connection;
     $this->entityInfo = [];
@@ -29,24 +36,24 @@ class NextpageItemHandler  {
 
   /**
    * @param $extID
+   * @param $entity_type
    * @param $type
    *
-   * @return \Drupal\Core\Entity\EntityInterface|string|null
+   * @return \Drupal\Core\Entity\EntityInterface|null
    * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
    * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
    */
   public function loadByExtID($extID, $entity_type, $type) {
-    $this->getEntityInfo($entity_type);
-    $entity = '';
+    $this->getEntityInfo($entity_type, $type);
     $query = \Drupal::entityQuery($this->entityInfo["name"]);
     $query->condition($this->entityInfo["type"], $type);
     $query->condition($this->entityInfo["field"], $extID);
     $result = $query->execute();
     if (!empty($result)) {
       $id = reset($result);
-      $entity = \Drupal::entityTypeManager()->getStorage($this->entityInfo["name"])->load($id);
+      return \Drupal::entityTypeManager()->getStorage($this->entityInfo["name"])->load($id);
     }
-    return $entity;
+    return NULL;
   }
 
   /**
@@ -104,52 +111,77 @@ class NextpageItemHandler  {
   /**
    * @param $entityType
    */
-  public function getEntityInfo($entityType) {
-    switch ($entityType) {
-      case 'paragraph':
+  public function getEntityInfo($entity_type, $type) {
+    switch ($entity_type) {
+      case 'taxonomy_term':
         $this->entityInfo['name'] = 'taxonomy_term';
         $this->entityInfo['type'] = 'vid';
-        $this->entityInfo['field'] = 'field_family_extid';
         break;
       case 'node':
-      default:
         $this->entityInfo['name'] = 'node';
         $this->entityInfo['type'] = 'type';
+        break;
+    }
+    switch ($type) {
+      case 'family':
+        $this->entityInfo['field'] = 'field_family_extid';
+        break;
+      case 'product_reference':
         $this->entityInfo['field'] = 'field_reference_extid';
+        break;
+      case 'product':
+        $this->entityInfo['field'] = 'field_product_extid';
         break;
     }
   }
 
   public function getJsonField($field) {
     $dico = $this->nextpageApi->characteristicsDictionary('2');
-    $dico_carac = $dico[$field->DicoCaracExtID];
-    switch ($dico_carac->TypeCode) {
-      case 'CHOIX':
-      case 'LISTE':
-        foreach ($dico_carac->Values as $choices) {
-          foreach ($field->Values as $val) {
-            if ($val->ValueID == $choices->ValeurID) {
-              $value_data[] = $choices->Valeur;
+    if (array_key_exists($field->DicoCaracExtID, $dico)) {
+      $dico_carac = $dico[$field->DicoCaracExtID];
+      $libelleDossier = \Drupal::configFactory()
+          ->getEditable('soc_nextpage.nextpage_ws')
+          ->get('matching_libelle_dossier') ?? 'LibelleDossier';
+      switch ($dico_carac->TypeCode) {
+        case 'CHOIX':
+        case 'LISTE':
+          foreach ($dico_carac->Values as $choices) {
+            foreach ($field->Values as $val) {
+              if ($val->ValueID == $choices->ValeurID) {
+                $value_data[] = $choices->Valeur;
+              }
             }
           }
-        }
-        $value = [
-          'id' => $dico_carac->ExtID,
-          'type' => $dico_carac->TypeCode,
-          'value' => $value_data,
-          'label' => $dico_carac->Name,
-        ];
-        break;
-      default:
-        $value = [
-          'id' => $dico_carac->ExtID,
-          'type' => $dico_carac->TypeCode,
-          'value' => $field->Value ?? '',
-          'label' => $dico_carac->Name,
-        ];
-        break;
+          $value = [
+            'id' => (!empty($dico_carac->ExtID)) ? $dico_carac->ExtID :'',
+            'type' => (!empty($dico_carac->TypeCode)) ? $dico_carac->TypeCode :'',
+            'value' => (!empty($value_data)) ? $value_data :[],
+            'libelleDossier' => (!empty($dico_carac->{$libelleDossier})) ? $dico_carac->LibelleDossier :'',
+            'label' => (!empty($dico_carac->Name)) ? $dico_carac->Name :'',
+            'order' => (!empty($dico_carac->Order)) ? $dico_carac->Order :'',
+          ];
+          break;
+        default:
+          $value = [
+            'id' => (!empty($dico_carac->ExtID)) ? $dico_carac->ExtID :'',
+            'type' => (!empty($dico_carac->TypeCode)) ? $dico_carac->TypeCode :'',
+            'value' => (!empty($field->Value)) ? $field->Value :'',
+            'libelleDossier' => (!empty($dico_carac->{$libelleDossier})) ? $dico_carac->LibelleDossier :'',
+            'label' => (!empty($dico_carac->Name)) ? $dico_carac->Name :'',
+            'order' => (!empty($dico_carac->Order)) ? $dico_carac->Order :'',
+          ];
+          break;
+      }
+      return $value;
     }
-    return $value;
+    return [
+      'id' => '',
+      'type' => '',
+      'value' => '',
+      'libelleDossier' => '',
+      'label' => '',
+      'order' => '',
+      ];
   }
 
   public function insertRelation($familyId, $productId, $familyParentId) {
@@ -197,7 +229,6 @@ class NextpageItemHandler  {
         }
       }
     }
-
     return $data;
   }
 

@@ -16,6 +16,14 @@ soc_nextpage.synchro_page:
   requirements:
     _permission: 'force nextpage import'
 
+soc_nextpage.default_image_settings:
+  path: '/admin/config/socomec/product/configuration'
+  defaults:
+    _form: '\Drupal\soc_nextpage\Form\DefaultImageSettings'
+    _title: 'Default image settings'
+  requirements:
+    _permission: 'manage default image settings'
+
 # Tests
 
 soc_nextpage.test_get_token:

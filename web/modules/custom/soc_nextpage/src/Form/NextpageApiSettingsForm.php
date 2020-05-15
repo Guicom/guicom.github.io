@@ -68,8 +68,8 @@ class NextpageApiSettingsForm extends ConfigFormBase {
       '#type'           => 'radios',
       '#title'          => $this->t('Active auth connexion'),
       '#options' => $active,
-      '#description'    => $this->t('The password to use to request nextPage.'),
-      '#default_value'  => $config->get('password') ??
+      '#description'    => $this->t('Activate authentification.'),
+      '#default_value'  => $config->get('auth_status') ??
         Settings::get('auth_status', 0),
     ];
 
@@ -204,6 +204,19 @@ class NextpageApiSettingsForm extends ConfigFormBase {
       '#default_value'  => $config->get('endpoint_elementsbychartemplate') ?? 'api/sdk/element/ElementsByCharTemplate',
     ];
 
+    $form['field_matching'] = [
+      '#type'           => 'details',
+      '#open'           => TRUE,
+      '#title'          => $this->t('Fields matching'),
+    ];
+
+    $form['field_matching']['matching_libelle_dossier'] = [
+      '#type'           => 'textfield',
+      '#title'          => $this->t('Matching Label characteristics'),
+      '#description'    => $this->t('key matching of Label characteristics. Default value = LibelleDossier'),
+      '#default_value'  => $config->get('matching_libelle_dossier') ?? 'LibelleDossier',
+    ];
+
     return parent::buildForm($form, $form_state);
   }
 
@@ -221,7 +234,8 @@ class NextpageApiSettingsForm extends ConfigFormBase {
                'endpoint_dicocarac',
                'endpoint_elementsandlinks',
                'endpoint_descendantsandlinks',
-               'endpoint_elementsbychartemplate',] as $configKey) {
+               'endpoint_elementsbychartemplate',
+               'matching_libelle_dossier',] as $configKey) {
       $this->configFactory->getEditable(self::WS_SETTINGS_KEY)
         ->set($configKey, $form_state->getValue($configKey))
         ->save();

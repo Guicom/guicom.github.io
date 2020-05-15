@@ -37,3 +37,93 @@ $checkbox: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcm
 .checkbox-indeterminate [type="checkbox"] + label:after {
   background-image: url('../images/picto/form/Checkbox-indeterminate.svg');
 }
+
+fieldset {
+  label {
+    @include fieldset-label();
+  }
+  input {
+    &.form-control {
+      @include input-text();
+    }
+  }
+  select {
+    @include input-text();
+  }
+  .bootstrap-select {
+    button {
+      @include input-text();
+    }
+  }
+  div[data-drupal-selector="edit-actions"] {
+    button {
+      &.btn-primary {
+        @include submit($blue, $white);
+      }
+    }
+  }
+}
+.go-to-button {
+  @include back-to-button();
+  margin-bottom: $spacer;
+  transition: $transition02;
+  color: $blue!important;
+  text-transform: uppercase;
+  @include media-breakpoint-down(md) {
+    margin-bottom: 2rem;
+  }
+  &.left {
+    &:before {
+      content:'';
+      width: 21px;
+      height: 20px;
+      background-image: url("../images/picto/ui/chevron-left-circle.svg");
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      margin-right: 6px;
+    }
+  }
+  &.right {
+    &:after {
+      content:'';
+      width: 21px;
+      height: 20px;
+      background-image: url("../images/picto/ui/chevron-left-circle.svg");
+      transform: rotate(180deg);
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      margin-right: 6px;
+    }
+  }
+  a {
+    color: $blue!important;
+  }
+}
+.form-text {
+  margin-top: 0;
+}
+
+// OVERRIDE JQUERY UI DIALOG MODAL
+.ui-dialog {
+  .button {
+    @include submit($blue, $white);
+  }
+  .bootstrap-select {
+    .dropdown-menu {
+      @include media-breakpoint-down(md) {
+        max-width: 320px;
+        max-height: 230px;
+      }
+    }
+  }
+}
+.dropdown-menu {
+  .dropdown-item {
+    &:active {
+      background-color: initial;
+    }
+  }
+}
+
