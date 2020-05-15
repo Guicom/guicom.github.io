@@ -1,0 +1,19 @@
+uuid: e32e40ee-c508-4721-b992-9be56a0cef48
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.block_promotion_entity.field_teaser
+    - soc_blocks_promotion.block_promotion_entity_type.offer
+id: block_promotion_entity.offer.field_teaser
+field_name: field_teaser
+entity_type: block_promotion_entity
+bundle: offer
+label: Teaser
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

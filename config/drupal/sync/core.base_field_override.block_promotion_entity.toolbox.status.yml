@@ -1,0 +1,22 @@
+uuid: 7577c6d2-cf0f-433d-9f2c-2a952f0e1bd1
+langcode: en
+status: true
+dependencies:
+  config:
+    - soc_blocks_promotion.block_promotion_entity_type.toolbox
+id: block_promotion_entity.toolbox.status
+field_name: status
+entity_type: block_promotion_entity
+bundle: toolbox
+label: Published
+description: 'A boolean indicating whether the Block promotion entity is published.'
+required: false
+translatable: true
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

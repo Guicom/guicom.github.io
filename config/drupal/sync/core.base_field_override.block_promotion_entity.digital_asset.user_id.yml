@@ -1,0 +1,20 @@
+uuid: ccd813c4-5d62-4924-a23f-8e347f6a71a5
+langcode: en
+status: true
+dependencies:
+  config:
+    - soc_blocks_promotion.block_promotion_entity_type.digital_asset
+id: block_promotion_entity.digital_asset.user_id
+field_name: user_id
+entity_type: block_promotion_entity
+bundle: digital_asset
+label: 'Authored by'
+description: 'The user ID of author of the Block promotion entity entity.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: default
+  handler_settings: {  }
+field_type: entity_reference
