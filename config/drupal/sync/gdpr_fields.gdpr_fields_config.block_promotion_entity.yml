@@ -20,6 +20,72 @@ bundles:
       notes: ''
       relationship: 0
       sars_filename: ''
+    field_background_image:
+      bundle: custom
+      name: field_background_image
+      entity_type_id: block_promotion_entity
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_link:
+      bundle: custom
+      name: field_link
+      entity_type_id: block_promotion_entity
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_sub_title:
+      bundle: custom
+      name: field_sub_title
+      entity_type_id: block_promotion_entity
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_color_combination:
+      bundle: custom
+      name: field_color_combination
+      entity_type_id: block_promotion_entity
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_picto:
+      bundle: custom
+      name: field_picto
+      entity_type_id: block_promotion_entity
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: clear_anonymizer
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_link_target:
+      bundle: custom
+      name: field_link_target
+      entity_type_id: block_promotion_entity
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
   offer:
     field_external_title:
       bundle: offer

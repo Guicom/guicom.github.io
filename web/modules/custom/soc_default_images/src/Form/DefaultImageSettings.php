@@ -72,7 +72,6 @@ class DefaultImageSettings extends ConfigFormBase {
           'default_image_bloc_promo_offer' => t('Default image bloc promo offer'),
           'default_image_bloc_promo_digital_asset' => t('Default image bloc promo digital asset'),
           'default_image_bloc_promo_toolbox' => t('Default image bloc promo toolbox'),
-          'default_image_bloc_promo_custom' => t('Default image bloc promo custom'),
         ]
       ],
     ];
@@ -114,7 +113,6 @@ class DefaultImageSettings extends ConfigFormBase {
                'default_image_bloc_promo_offer',
                'default_image_bloc_promo_digital_asset',
                'default_image_bloc_promo_toolbox',
-               'default_image_bloc_promo_custom',
              ] as $configKey) {
 
       $form_file = $form_state->getValue($configKey, 0);
