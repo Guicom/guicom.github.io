@@ -117,7 +117,6 @@
             e.preventDefault();
             e.stopPropagation();
             $(dropdown).slideToggle("400");
-            console.log('LIDE Dropdown lvl0');
           });
         });
         // CLOSE OTHER Dropdown lvl0
@@ -125,7 +124,6 @@
           $(this).click(function () {
             var dropdown = $(this).find('.we-mega-menu-submenu.dropdown-menu');
             $(".we-mega-menu-submenu.dropdown-menu").not(dropdown).slideUp("400");
-            console.log('CLOSE OTHER Dropdown lvl0');
           });
         });
 
@@ -137,7 +135,6 @@
             e.preventDefault();
             e.stopPropagation();
             $(dropdown).slideToggle("400");
-            console.log('SLIDE OPENING Dropdown lvl1');
           });
         });
         // CLOSE OTHER Dropdown lvl1
@@ -145,7 +142,6 @@
           $(this).click(function () {
             var dropdown = $(this).next('.we-mega-menu-submenu.dropdown-menu');
             $(".level-1 > .we-mega-menu-submenu.dropdown-menu").not(dropdown).slideUp("400");
-            console.log('CLOSE OTHER Dropdown lvl1');
           });
         });
 
@@ -157,7 +153,6 @@
             e.preventDefault();
             e.stopPropagation();
             $(dropdown).slideToggle("400");
-            console.log('SLIDE OPENING Dropdown lvl2');
           });
         });
         // CLOSE OTHER Dropdown lvl2
@@ -165,7 +160,6 @@
           $(this).click(function () {
             var dropdown = $(this).next('.we-mega-menu-submenu.dropdown-menu');
             $(".level-2 > .we-mega-menu-submenu.dropdown-menu").not(dropdown).slideUp("400");
-            console.log('CLOSE OTHER Dropdown lvl2');
           });
         });
       }
