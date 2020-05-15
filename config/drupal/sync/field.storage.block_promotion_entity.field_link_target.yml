@@ -1,0 +1,27 @@
+uuid: 6dd6ed1b-4ff2-40e2-b3a8-29d116ac1be3
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - soc_blocks_promotion
+id: block_promotion_entity.field_link_target
+field_name: field_link_target
+entity_type: block_promotion_entity
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: _blank
+      label: Blank
+    -
+      value: _self
+      label: Self
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

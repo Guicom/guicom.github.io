@@ -1,0 +1,8 @@
+entity.block_promotion_entity.clone_form:
+  path: '/admin/structure/block_promotion_entity/{block_promotion_entity}/clone'
+  defaults:
+    _controller: \Drupal\soc_blocks_promotion\Controller\BlockPromotionEntityController::clone
+  requirements:
+    _permission: 'administer block promotion entity entities'
+  options:
+    no_cache: TRUE

@@ -1,0 +1,5 @@
+name: 'Socomec blocks promotion'
+type: module
+description: 'Manage entity custom promotion.'
+core: 8.x
+package: 'Custom'

@@ -1,0 +1,20 @@
+uuid: 3d935181-f01a-4e76-84fa-8db2ea1a4275
+langcode: en
+status: true
+dependencies:
+  config:
+    - soc_blocks_promotion.block_promotion_entity_type.toolbox
+id: block_promotion_entity.toolbox.user_id
+field_name: user_id
+entity_type: block_promotion_entity
+bundle: toolbox
+label: 'Authored by'
+description: 'The user ID of author of the Block promotion entity entity.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: default
+  handler_settings: {  }
+field_type: entity_reference

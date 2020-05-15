@@ -1,0 +1,6 @@
+uuid: 6a9a3d1b-ed60-4cc1-a967-7477adfecbd3
+langcode: en
+status: true
+dependencies: {  }
+id: digital_asset
+label: 'Digital Asset'

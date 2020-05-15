@@ -1,0 +1,132 @@
+uuid: 1b79ef74-d5fa-47e8-8904-0bfe296aebe7
+langcode: en
+status: true
+dependencies: {  }
+id: block_promotion_entity
+filenames:
+  custom: ''
+  offer: ''
+bundles:
+  custom:
+    field_external_title:
+      bundle: custom
+      name: field_external_title
+      entity_type_id: block_promotion_entity
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+  offer:
+    field_external_title:
+      bundle: offer
+      name: field_external_title
+      entity_type_id: block_promotion_entity
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_is_new:
+      bundle: offer
+      name: field_is_new
+      entity_type_id: block_promotion_entity
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_sub_title:
+      bundle: offer
+      name: field_sub_title
+      entity_type_id: block_promotion_entity
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: clear_anonymizer
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_teaser:
+      bundle: offer
+      name: field_teaser
+      entity_type_id: block_promotion_entity
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: clear_anonymizer
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_description:
+      bundle: offer
+      name: field_description
+      entity_type_id: block_promotion_entity
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_central_picture:
+      bundle: offer
+      name: field_central_picture
+      entity_type_id: block_promotion_entity
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_background_image:
+      bundle: offer
+      name: field_background_image
+      entity_type_id: block_promotion_entity
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: clear_anonymizer
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_central_image:
+      bundle: offer
+      name: field_central_image
+      entity_type_id: block_promotion_entity
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_link:
+      bundle: offer
+      name: field_link
+      entity_type_id: block_promotion_entity
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_link_target:
+      bundle: offer
+      name: field_link_target
+      entity_type_id: block_promotion_entity
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''

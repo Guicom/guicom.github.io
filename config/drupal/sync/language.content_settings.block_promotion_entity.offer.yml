@@ -1,0 +1,18 @@
+uuid: 815c846d-493f-43ee-bd07-c0f2b88c3c9f
+langcode: en
+status: true
+dependencies:
+  config:
+    - soc_blocks_promotion.block_promotion_entity_type.offer
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+    bundle_settings:
+      untranslatable_fields_hide: '0'
+id: block_promotion_entity.offer
+target_entity_type_id: block_promotion_entity
+target_bundle: offer
+default_langcode: site_default
+language_alterable: true

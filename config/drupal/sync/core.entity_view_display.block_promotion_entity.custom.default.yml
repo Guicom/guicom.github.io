@@ -1,0 +1,40 @@
+uuid: 6a007102-b9c0-4e1b-bdf8-fe668b4dbbc4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.block_promotion_entity.custom.field_external_title
+    - soc_blocks_promotion.block_promotion_entity_type.custom
+  module:
+    - user
+id: block_promotion_entity.custom.default
+targetEntityType: block_promotion_entity
+bundle: custom
+mode: default
+content:
+  field_external_title:
+    weight: 2
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  name:
+    label: above
+    type: string
+    weight: -4
+    region: content
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  user_id:
+    label: hidden
+    type: author
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  langcode: true
+  search_api_excerpt: true
