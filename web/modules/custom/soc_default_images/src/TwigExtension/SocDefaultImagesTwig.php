@@ -28,7 +28,7 @@ class SocDefaultImagesTwig extends \Twig_Extension {
   /**
    * Get Default image
    */
-  public static function getDefaultImg($field, $type) {
+  public static function getDefaultImg($field, $type, $style = "product_detail") {
     if (empty($field[0])) {
       $key = NULL;
       switch ($type) {
@@ -55,11 +55,13 @@ class SocDefaultImagesTwig extends \Twig_Extension {
         }
         if ($file) {
           if ($path = $file->getFileUri()) {
-            if ($url = \Drupal\image\Entity\ImageStyle::load('product_detail')
+            if ($url = \Drupal\image\Entity\ImageStyle::load($style)
               ->buildUrl($file->getFileUri())) {
-              return [
-                '#markup' => "<img class='default-img-$type' src='$url'/>",
-              ];
+                return [
+                  '#markup' => "<img class='default-img-$type' src='$url'/>",
+                  '#url' =>$url,
+                  '#img-type' =>$type,
+                ];
             }
           }
         }
