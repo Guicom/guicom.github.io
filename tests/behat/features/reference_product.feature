@@ -6,11 +6,13 @@ Feature: Reference_product
     And product_reference content:
       | language | title        | field_teaser      | field_reference_extid | field_reference_ref  | status | moderation_state |
       | English  | behatRefProd | behat teaser test | R_41903013            | 27003011             | 1      | published        |
-
+    And product content:
+      | language | title             | status | field_product_family | moderation_state | field_product_reference   | field_product_teaser |
+      | English  | My other product  | 1      | My Product Family    | published        | behatRefProd              | Teaser               |
 
   @api @cit @javascript @product_reference @product_reference_page
- # vendor/bin/phing behat:run -Dbehat.tags=product_reference_page
     # testing the presence of reference title, number and short description SOCSOB-1183
+ # vendor/bin/phing behat:run -Dbehat.tags=product_reference_page
   Scenario: Reference page
     Given I am an anonymous user
     When I visit "/behatRefProd"
@@ -23,8 +25,8 @@ Feature: Reference_product
 
 
   @api @cit @javascript @product_reference @product_reference_cta
- # vendor/bin/phing behat:run -Dbehat.tags=product_reference_cta
     # testing the presence of the four CTA paragraph SOCSOB-1177
+ # vendor/bin/phing behat:run -Dbehat.tags=product_reference_cta
   Scenario: Reference cta
     And I am logged in as a user with the "administrator" role
 #    And I go to "admin/content/paragraphs/add/default"
@@ -63,8 +65,8 @@ Feature: Reference_product
     And I click "behatRefProd" in the "behatRefProd" row
 
   @api @cit @javascript @product_reference @product_reference_multiligne
- # vendor/bin/phing behat:run -Dbehat.tags=product_reference_multiligne
     # add a multiligne element on a product reference page SOCSOB-1141
+ # vendor/bin/phing behat:run -Dbehat.tags=product_reference_multiligne
   Scenario: Reference multiligne
     And I am logged in as a user with the "administrator" role
     And I go to "admin/content"
@@ -80,8 +82,8 @@ Feature: Reference_product
     And I click "behatRefProd" in the "behatRefProd" row
 
   @api @cit @javascript @product_reference @product_reference_cad
- # vendor/bin/phing behat:run -Dbehat.tags=product_reference_cad
     # testing access to cad files from product reference page SOCSOB-575
+ # vendor/bin/phing behat:run -Dbehat.tags=product_reference_cad
   Scenario: Reference cad
     Given I am an anonymous user
     When I visit "/behatRefProd"
@@ -105,8 +107,8 @@ Feature: Reference_product
     When I visit "/behatRefProd"
 
   @api @cit @javascript @product_reference @product_reference_characteristic
- # vendor/bin/phing behat:run -Dbehat.tags=product_reference_characteristic
     #testing characteristic table SOCSOB-1192 / SOCSOB-1192
+ # vendor/bin/phing behat:run -Dbehat.tags=product_reference_characteristic
   Scenario: Reference characteristic
     And I am logged in as a user with the "administrator" role
     And I go to "admin/content"
@@ -118,13 +120,14 @@ Feature: Reference_product
     And I should see a ".product-reference-characteristics" element
 
   @api @cit @javascript @product_reference @product_reference_nocadmodel
- # vendor/bin/phing behat:run -Dbehat.tags=product_reference_nocadmodel
     #testing products and references default picture SOCSOB-995
+ # vendor/bin/phing behat:run -Dbehat.tags=product_reference_nocadmodel
   Scenario: Reference no cad model
     And I am logged in as a user with the "administrator" role
     And I go to "admin/content"
     And I click "Edit" in the "behatRefProd" row
     And I fill in "field_reference_ref[0][value]" with "666"
+    And I set the dummy json data on the reference product
     And I press "edit-submit"
     And I go to "admin/content"
     And I click "behatRefProd" in the "behatRefProd" row
@@ -137,9 +140,11 @@ Feature: Reference_product
     And I am logged in as a user with the "administrator" role
     And I go to "admin/content"
     And I click "Edit" in the "behatRefProd" row
-    And I fill in "field_reference_ref[0][value]" with "666"
     And I set the dummy json data on the reference product
     And I press "edit-submit"
     And I go to "admin/content"
     And I click "behatRefProd" in the "behatRefProd" row
-    And I should see a "img.default-img-product-reference" element
+    And I wait 2 seconds
+    And I click the ".back-to-button" element
+    And I wait 2 seconds
+    Then I should see an "body.node--type-product" element
