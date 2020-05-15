@@ -1,0 +1,19 @@
+uuid: 40e39e33-c363-4f5f-91f3-c6c13005b2e9
+langcode: en
+status: true
+dependencies:
+  module:
+    - link
+    - soc_blocks_promotion
+id: block_promotion_entity.field_link
+field_name: field_link
+entity_type: block_promotion_entity
+type: link
+settings: {  }
+module: link
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
