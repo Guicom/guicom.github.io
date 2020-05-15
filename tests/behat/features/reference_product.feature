@@ -10,6 +10,7 @@ Feature: Reference_product
 
   @api @cit @javascript @product_reference @product_reference_page
  # vendor/bin/phing behat:run -Dbehat.tags=product_reference_page
+    # testing the presence of reference title, number and short description SOCSOB-1183
   Scenario: Reference page
     Given I am an anonymous user
     When I visit "/behatRefProd"
@@ -23,10 +24,25 @@ Feature: Reference_product
 
   @api @cit @javascript @product_reference @product_reference_cta
  # vendor/bin/phing behat:run -Dbehat.tags=product_reference_cta
+    # testing the presence of the four CTA paragraph SOCSOB-1177
   Scenario: Reference cta
     And I am logged in as a user with the "administrator" role
+#    And I go to "admin/content/paragraphs/add/default"
+#    And I fill in "label[0][value]" with "Add to my bom"
+#    And I click the "#edit-paragraphs-add-more li.dropbutton-toggle button" element
+#    And I press the "paragraphs_link_add_more" button
+#    And I wait 3 seconds
+#    And I fill in "paragraphs[0][subform][field_link_title][0][value]" with "Label: Product reference - Add to my bom"
+#    And I click on the text "Add media"
+#    And I attach the file "icons/favorite.svg" to "files[upload]"
+#    And I wait for AJAX to finish
+#    And I fill in "media[0][fields][field_media_image][0][alt]" with "Image alt"
+#    And I click the ".ui-dialog button + button" element
+#    And I fill in "paragraphs[0][subform][field_link_link][0][value]" with "/wishlist/add/[ajax_btn_current_extid]"
+#    And I press "edit-submit"
     And I go to "admin/content"
     And I click "Edit" in the "behatRefProd" row
+    And I wait 1 seconds
     And I click the "a[href='#edit-group-webmastering']" element
     And I wait 1 seconds
     And I click the "#edit-field-product-cta-1-add-more-add-more-button-link" element
@@ -48,6 +64,7 @@ Feature: Reference_product
 
   @api @cit @javascript @product_reference @product_reference_multiligne
  # vendor/bin/phing behat:run -Dbehat.tags=product_reference_multiligne
+    # add a multiligne element on a product reference page SOCSOB-1141
   Scenario: Reference multiligne
     And I am logged in as a user with the "administrator" role
     And I go to "admin/content"
@@ -64,6 +81,7 @@ Feature: Reference_product
 
   @api @cit @javascript @product_reference @product_reference_cad
  # vendor/bin/phing behat:run -Dbehat.tags=product_reference_cad
+    # testing access to cad files from product reference page SOCSOB-575
   Scenario: Reference cad
     Given I am an anonymous user
     When I visit "/behatRefProd"
@@ -80,7 +98,7 @@ Feature: Reference_product
     And I fill in "company" with "test behat company"
     And I select "France" from "country"
     And I fill in "zipcode" with "67500"
-    And I press "edit-submit"
+    And I click the "button.use-ajax-submit" element
     And I wait 5 seconds
     And I should see a ".submitted-page" element
     And I wait 5 seconds
@@ -88,6 +106,7 @@ Feature: Reference_product
 
   @api @cit @javascript @product_reference @product_reference_characteristic
  # vendor/bin/phing behat:run -Dbehat.tags=product_reference_characteristic
+    #testing characteristic table SOCSOB-1192 / SOCSOB-1192
   Scenario: Reference characteristic
     And I am logged in as a user with the "administrator" role
     And I go to "admin/content"
@@ -100,11 +119,26 @@ Feature: Reference_product
 
   @api @cit @javascript @product_reference @product_reference_nocadmodel
  # vendor/bin/phing behat:run -Dbehat.tags=product_reference_nocadmodel
+    #testing products and references default picture SOCSOB-995
   Scenario: Reference no cad model
     And I am logged in as a user with the "administrator" role
     And I go to "admin/content"
     And I click "Edit" in the "behatRefProd" row
     And I fill in "field_reference_ref[0][value]" with "666"
+    And I press "edit-submit"
+    And I go to "admin/content"
+    And I click "behatRefProd" in the "behatRefProd" row
+    And I should see a "img.default-img-product-reference" element
+
+  @api @cit @javascript @product_reference @product_reference_btnback
+ # vendor/bin/phing behat:run -Dbehat.tags=product_reference_btnback
+    #testing navigate back to product page SOCSOB-478
+  Scenario: Reference no cad model
+    And I am logged in as a user with the "administrator" role
+    And I go to "admin/content"
+    And I click "Edit" in the "behatRefProd" row
+    And I fill in "field_reference_ref[0][value]" with "666"
+    And I set the dummy json data on the reference product
     And I press "edit-submit"
     And I go to "admin/content"
     And I click "behatRefProd" in the "behatRefProd" row
