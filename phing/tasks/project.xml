@@ -35,6 +35,14 @@
         uri="${multisite.uri}">
         <param>soc_content</param>
       </drush>
+      <drush
+        command="updb"
+        assume="yes"
+        root="${website.drupal.dir}"
+        bin="${drush.bin}"
+        verbose="${drush.verbose}"
+        uri="${multisite.uri}">
+      </drush>
     </target>
 
     <target name="project:post-install">
