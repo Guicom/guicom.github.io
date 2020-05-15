@@ -36,7 +36,7 @@
         <param>soc_content</param>
       </drush>
       <drush
-        command="cr"
+        command="updb"
         assume="yes"
         root="${website.drupal.dir}"
         bin="${drush.bin}"
