@@ -530,7 +530,7 @@
     attach: function (context, settings) {
 
       var openBtn = $('.facet-mobile-modal-open .modal-open');
-      var closeBtn = $('.facet-mobile-modal-close .modal-close');
+      var closeBtn = $('.modal-facets-mobile .modal-close');
 
       openBtn.once().on("click", function (e) {
         $('.modal-facets-mobile').addClass('active');
