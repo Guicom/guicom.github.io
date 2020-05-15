@@ -29,19 +29,6 @@ Feature: Reference_product
  # vendor/bin/phing behat:run -Dbehat.tags=product_reference_cta
   Scenario: Reference cta
     And I am logged in as a user with the "administrator" role
-#    And I go to "admin/content/paragraphs/add/default"
-#    And I fill in "label[0][value]" with "Add to my bom"
-#    And I click the "#edit-paragraphs-add-more li.dropbutton-toggle button" element
-#    And I press the "paragraphs_link_add_more" button
-#    And I wait 3 seconds
-#    And I fill in "paragraphs[0][subform][field_link_title][0][value]" with "Label: Product reference - Add to my bom"
-#    And I click on the text "Add media"
-#    And I attach the file "icons/favorite.svg" to "files[upload]"
-#    And I wait for AJAX to finish
-#    And I fill in "media[0][fields][field_media_image][0][alt]" with "Image alt"
-#    And I click the ".ui-dialog button + button" element
-#    And I fill in "paragraphs[0][subform][field_link_link][0][value]" with "/wishlist/add/[ajax_btn_current_extid]"
-#    And I press "edit-submit"
     And I go to "admin/content"
     And I click "Edit" in the "behatRefProd" row
     And I wait 1 seconds
@@ -100,7 +87,7 @@ Feature: Reference_product
     And I fill in "company" with "test behat company"
     And I select "France" from "country"
     And I fill in "zipcode" with "67500"
-    And I click the "button.use-ajax-submit" element
+    And I press "edit-submit"
     And I wait 5 seconds
     And I should see a ".submitted-page" element
     And I wait 5 seconds
