@@ -1,5 +1,7 @@
 <?php
 
+use  \Drupal\taxonomy\Entity\Term;
+
 function soc_content_install() {
   /** @var \Drupal\soc_content\Service\TaxonomyTermContent $termManager */
   $termManager = \Drupal::service('soc_content.taxonomy_term');
@@ -137,10 +139,10 @@ function soc_content_install() {
     'field_weight' => '1',
   ]);
   $termManager->createTerm('Reseller', 'location_type', [
-    'field_weight' => '0',
+    'field_weight' => '1',
   ]);
   $termManager->createTerm('Subsidiary', 'location_type', [
-    'field_weight' => '1',
+    'field_weight' => '0',
   ]);
 
   // Protection level vocabulary
@@ -745,5 +747,45 @@ function soc_content_update_8004() {
     '47122bfc-2e61-4824-97f2-109913eb4212');
   $mediaManager->createFile($fileName, 'reference-' . $fileName,
     'd1f00744-4f61-4c90-91d4-e1eeb982bfaf');
+}
+
+
+/**
+ * Update terms type location weight
+ * - Subsidiary - field_weight = 0
+ * - Distributor - field_weight = 1
+ * - Reseller - field_weight = 1
+ */
+function soc_content_update_8005() {
+  $taxonomyTerm = \Drupal::entityTypeManager()->getStorage('taxonomy_term');
+  $terms = [
+    [
+      'name' => 'Subsidiary',
+      'weight' => 0
+    ],
+    [
+      'name' => 'Distributor',
+      'weight' => 1
+    ],
+    [
+      'name' => 'Reseller',
+      'weight' => 1
+    ],
+  ];
+  foreach ($terms as $key => $value) {
+    try {
+      $taxonomyTermLoad = $taxonomyTerm
+        ->loadByProperties(['name' => $value['name'], 'vid' => 'location_type']);
+      if (!empty($taxonomyTermLoad)) {
+        reset($taxonomyTermLoad);
+        $tid = key($taxonomyTermLoad);
+        if ($term = Term::load($tid)) {
+          $term->field_weight->setValue($value['weight']);
+          $term->save();
+        }
+      }
+    }
+    catch (\Exception $e) {}
+  }
 }
 
