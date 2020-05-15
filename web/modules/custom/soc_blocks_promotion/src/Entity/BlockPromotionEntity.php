@@ -56,7 +56,7 @@ use Drupal\user\UserInterface;
  *     "published" = "status",
  *   },
  *   links = {
- *     "canonical" = "/admin/structure/block_promotion_entity/{block_promotion_entity}",
+ *     "canonical" = "/block_promotion_entity/{block_promotion_entity}",
  *     "add-page" = "/admin/structure/block_promotion_entity/add",
  *     "add-form" = "/admin/structure/block_promotion_entity/add/{block_promotion_entity_type}",
  *     "edit-form" = "/admin/structure/block_promotion_entity/{block_promotion_entity}/edit",

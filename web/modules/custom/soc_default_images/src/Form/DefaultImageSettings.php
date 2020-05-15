@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Drupal\soc_nextpage\Form;
+namespace Drupal\soc_default_images\Form;
 
 use Drupal\Core\Config\ConfigFactoryInterface;
 use Drupal\Core\Entity\EntityRepository;
@@ -18,6 +18,8 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
  * @package Drupal\soc_nextpage\Form
  */
 class DefaultImageSettings extends ConfigFormBase {
+
+  const DIS_SETTINGS_KEY = 'soc_default_images.socomec_default_image_form';
 
   /** @var \Drupal\Core\Entity\EntityRepository $entityRepository */
   protected $entityRepository;
@@ -39,7 +41,7 @@ class DefaultImageSettings extends ConfigFormBase {
    * {@inheritdoc}
    */
   public function getFormId() {
-    return 'product_default_image_form';
+    return 'socomec_default_image_form';
   }
 
   /**
@@ -47,7 +49,7 @@ class DefaultImageSettings extends ConfigFormBase {
    */
   protected function getEditableConfigNames() {
     return [
-      'soc_nextpage.product_default_config',
+      self::DIS_SETTINGS_KEY,
     ];
   }
 
@@ -55,7 +57,7 @@ class DefaultImageSettings extends ConfigFormBase {
    * {@inheritdoc}
    */
   public function buildForm(array $form, FormStateInterface $form_state) {
-    $config = $this->config('soc_nextpage.product_default_config');
+    $config = $this->config(self::DIS_SETTINGS_KEY);
 
     $product_uuid = $config->get('default_image_product');
     $default_image_product = '';
@@ -112,7 +114,7 @@ class DefaultImageSettings extends ConfigFormBase {
           $file->save();
         } catch (EntityStorageException $e) {
         }
-        $this->configFactory->getEditable('soc_nextpage.product_default_config')
+        $this->configFactory->getEditable(self::DIS_SETTINGS_KEY)
           ->set($configKey, $file->uuid())
           ->save();
       }

@@ -1,0 +1,6 @@
+services:
+  soc_default_images.twig.extension:
+    arguments: ['@renderer']
+    class: Drupal\soc_default_images\TwigExtension\SocDefaultImagesTwig
+    tags:
+      - { name: twig.extension}
