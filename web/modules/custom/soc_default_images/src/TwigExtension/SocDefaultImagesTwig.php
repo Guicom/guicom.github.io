@@ -41,6 +41,15 @@ class SocDefaultImagesTwig extends \Twig_Extension {
         case 'bloc-promo-offer':
           $key = 'default_image_bloc_promo_offer';
           break;
+        case 'bloc-digital-asset':
+          $key = 'default_image_bloc_promo_digital_asset';
+          break;
+        case 'bloc-digital-toolbox':
+          $key = 'default_image_bloc_promo_toolbox';
+          break;
+        case 'bloc-digital-custom':
+          $key = 'default_image_bloc_promo_custom';
+          break;
       }
       if ($key !== NULL) {
         $config = \Drupal::config('soc_default_images.socomec_default_image_form');

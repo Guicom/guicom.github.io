@@ -18,15 +18,15 @@
 {%
   set classes = [
   'block-promotion-entity',
-  'block-promotion-entity-offer',
+  'block-promotion-entity-digital-asset',
 ]
 %}
 <div{{ attributes.addClass(classes) }}>
   {% if content %}
     <div class="soc-block-promo-entity-header">
-      {% if content.field_is_new|render|trim is not empty %}
-        <div class="soc-block-promo-entity-is-new">
-          {{ content.field_is_new.0 }}
+      {% if content.field_tag|render|trim is not empty %}
+        <div class="soc-block-promo-entity-tag">
+          {{ content.field_tag.0 }}
         </div>
       {% endif %}
       <div class="soc-block-promo-entity-external-title">
@@ -46,7 +46,7 @@
     {% if image_uri is not empty %}
       {% set field_background_image = image_uri | image_style('max_width_1140') %}
     {% else %}
-      {% set field_background_image = field_background_image | getDefaultImg('bloc-promo-offer', 'max_width_1140')["#url"] %}
+      {% set field_background_image = field_background_image | getDefaultImg('bloc-digital-asset', 'max_width_1140')["#url"] %}
     {% endif %}
     <div class="soc-block-promo-entity-content" style="background-image:url('{{ file_url(field_background_image) }}')">
       <div class="soc-block-promo-entity-teaser">
@@ -54,6 +54,9 @@
       </div>
       <div class="soc-block-promo-entity-description">
         {{ content.field_description.0 }}
+      </div>
+      <div class="soc-block-promo-entity-type">
+        {{ content.field_type.0 }}
       </div>
       <div class="soc-block-promo-entity-link">
         {% set url = content.field_link.0['#url'] %}
