@@ -58,40 +58,47 @@ class DefaultImageSettings extends ConfigFormBase {
    */
   public function buildForm(array $form, FormStateInterface $form_state) {
     $config = $this->config(self::DIS_SETTINGS_KEY);
-
-    $product_uuid = $config->get('default_image_product');
-    $default_image_product = '';
-    if (!is_null($product_uuid)) {
-      try {
-        $default_image_product = $this->entityRepository->loadEntityByUuid('file', $product_uuid)->id();
-      } catch (EntityStorageException $e) {
-      }
-    }
-
-    $form['default_image_product'] = [
-      '#type' => 'managed_file',
-      '#title' => $this->t('Default image product'),
-      '#upload_location' => 'public://',
-      '#default_value'  => $default_image_product ? [$default_image_product] : NULL,
+    $items = [
+      'nodes' => [
+        'label' =>  t('Default image by node entity bundle'),
+        'fields' =>  [
+          'default_image_product' => t('Default image product'),
+          'default_image_reference' => t('Default image reference'),
+        ]
+      ],
+      'block_promotion_entity' => [
+        'label' =>  t('Default image by blocks promo entity bundle'),
+        'fields' =>  [
+          'default_image_bloc_promo_offer' => t('Default image bloc promo offer'),
+          'default_image_bloc_promo_digital_asset' => t('Default image bloc promo digital asset'),
+          'default_image_bloc_promo_toolbox' => t('Default image bloc promo toolbox'),
+          'default_image_bloc_promo_custom' => t('Default image bloc promo custom'),
+        ]
+      ],
     ];
 
-    $reference_uuid = $config->get('default_image_reference');
-    $default_image_reference = '';
-    if (!is_null($reference_uuid)) {
-      try {
-        $default_image_reference = $this->entityRepository->loadEntityByUuid('file', $reference_uuid)->id();
-      }
-      catch (EntityStorageException $e) {
+    foreach ($items as $key_item => $item) {
+      $form[$key_item] = [
+        '#type' => 'details',
+        '#open' => TRUE,
+        '#title' => $item['label'] ? $item['label'] : NULL,
+      ];
+      foreach ($item['fields'] as $key => $label) {
+        $uuid = $config->get($key);
+        $default_image = '';
+        if (!is_null($uuid)) {
+          try {
+            $default_image = $this->entityRepository->loadEntityByUuid('file', $uuid)->id();
+          } catch (EntityStorageException $e) {}
+        }
+        $form[$key_item][$key] = [
+          '#type' => 'managed_file',
+          '#title' => $label ? $label : NULL,
+          '#upload_location' => 'public://',
+          '#default_value'  => $default_image ? [$default_image] : NULL,
+        ];
       }
     }
-
-    $form['default_image_reference'] = [
-      '#type' => 'managed_file',
-      '#title' => $this->t('Default image reference'),
-      '#upload_location' => 'public://',
-      '#default_value'  => $default_image_reference ? [$default_image_reference] : NULL,
-    ];
-
 
     return parent::buildForm($form, $form_state);
   }
@@ -104,6 +111,10 @@ class DefaultImageSettings extends ConfigFormBase {
     foreach ([
                'default_image_product',
                'default_image_reference',
+               'default_image_bloc_promo_offer',
+               'default_image_bloc_promo_digital_asset',
+               'default_image_bloc_promo_toolbox',
+               'default_image_bloc_promo_custom',
              ] as $configKey) {
 
       $form_file = $form_state->getValue($configKey, 0);
