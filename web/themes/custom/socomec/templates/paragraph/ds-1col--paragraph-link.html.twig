@@ -55,10 +55,10 @@
     {% if content.field_link_paragraph.0 %}
       {{ content.field_link_paragraph }}
     {%  else %}
-      <a {% if ajax %}class="ajax-soc-content-list" data-soc-content-list-ajax="{{ ajax }}"{% endif %}
+      <a {% if ajax %}class="ajax-soc-content-list" data-soc-content-list-ajax="1"  data-soc-content-list-original-title="{{ content.field_link_title|render|striptags|trim }}" data-soc-content-list-alt-title="{{ ajax }}"{% endif %}
          href="{% if url %}{{ url|socContentListGetBtn }}{% else %}#{% endif %}"
         {% if content.field_link_target.0 %} target="{{ content.field_link_target|render|striptags|trim }}"{% endif %}>
-        {{ content.field_link_icon }} {{ content.field_link_title }}
+        {{ content.field_link_icon }} <span class="btn-value">{{ content.field_link_title }}</span>
       </a>
     {% endif %}
   </div>

@@ -34,7 +34,14 @@ class ContentListTwig extends \Twig_Extension {
     foreach ($tokens as $token) {
       $position = strpos($url, "[$token]");
       if ($position !== FALSE) {
-        return TRUE;
+        switch ($token) {
+          case 'ajax_btn_current_extid':
+            return t('Added, go to your BOM');
+            break;
+          case 'ajax_btn_current_nid':
+            return t('Added, go to your bookmarks');
+            break;
+        }
       }
     }
     return FALSE;

@@ -397,6 +397,13 @@
       @include close-btn;
     }
   }
+  .facet-mobile-modal-close-validate{
+    .modal-close {
+      @include submit($blue, $white);
+      border-radius: initial;
+      border:none;
+    }
+  }
   // ONLY ON STORE LOCATOR PAGE AND SEARCH -- WILL BE GLOBALIZED AFTER SPRINT 6
   .store-locator-wrapper,
   .soc-search-wrapper,
