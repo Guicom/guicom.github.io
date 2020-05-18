@@ -61,6 +61,9 @@
   .news-teaser,
   .event-teaser{
     min-height: 13rem;
+    &.with-calendar {
+      min-height: 16rem;
+    }
     @include media-breakpoint-down(md) {
       margin-top: 2rem;
       min-height: initial;
@@ -258,6 +261,7 @@
           top: 0;
           left: 0;
           height: auto;
+          z-index: 1;
           @include media-breakpoint-down(md) {
             position: relative;
           }
@@ -279,7 +283,16 @@
     .field--name-field-event-content{
       .field__item {
         .paragraph {
-          &:not(.paragraph--type-video-text) {
+          &.paragraph--type--key-figures {
+            margin-right: 15px;
+            margin-left: 15px;
+          }
+          &.paragraph--type-video-text{
+            margin-right: 0px;
+            margin-left: 0px;
+          }
+
+          &:not(.paragraph--type-video-text):not(.paragraph--type--key-figures){
             @include make-col(10);
             @include make-col-offset(1);
           }
@@ -344,6 +357,8 @@
     justify-content: space-between;
     align-items: center;
     margin: 2rem 0 3rem 0;
+    @include make-col(10);
+    @include make-col-offset(1);
     .left-links {
       display: flex;
     }
@@ -356,7 +371,7 @@
         color: $blue;
         font-weight: 600;
         text-transform: uppercase;
-        padding: 0.5rem 1.5rem;
+        padding: 0.5rem 0px 0.5rem 1.5rem;
         text-decoration: none;
         background: none;
         box-shadow: none;
@@ -381,9 +396,9 @@
           font-family: $font-poppins;
           font-weight: 600;
           text-transform: uppercase;
-          padding: 0.5rem 1.5rem;
           border-radius: 0;
         }
+
       }
     }
   }

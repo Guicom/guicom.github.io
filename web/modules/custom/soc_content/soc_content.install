@@ -1,5 +1,7 @@
 <?php
 
+use  \Drupal\taxonomy\Entity\Term;
+
 function soc_content_install() {
   /** @var \Drupal\soc_content\Service\TaxonomyTermContent $termManager */
   $termManager = \Drupal::service('soc_content.taxonomy_term');
@@ -137,10 +139,10 @@ function soc_content_install() {
     'field_weight' => '1',
   ]);
   $termManager->createTerm('Reseller', 'location_type', [
-    'field_weight' => '0',
+    'field_weight' => '1',
   ]);
   $termManager->createTerm('Subsidiary', 'location_type', [
-    'field_weight' => '1',
+    'field_weight' => '0',
   ]);
 
   // Protection level vocabulary
@@ -582,8 +584,19 @@ function soc_content_install() {
   }
   $blockContentManager->createBlockContent('home_product_assistance', 'Home Product Assistance', $blockData);
 
+  // Call updates on install
+  $functions = get_defined_functions();
+  foreach ($functions['user'] as $function) {
+    if (strpos($function, 'soc_content_update_') === 0) {
+      call_user_func($function);
+    }
+  }
+
 }
 
+/**
+ * Add help center CTA.
+ */
 function soc_content_update_8001() {
   /** @var \Drupal\soc_content\Service\ParagraphContent $paragraphManager */
   $paragraphManager = \Drupal::service('soc_content.paragraph');
@@ -715,3 +728,72 @@ function soc_content_update_8002() {
   }
   catch (\Exception $e) {}
 }
+
+/**
+ * Add images for navigation.
+ */
+function soc_content_update_8003() {
+  /** @var \Drupal\soc_content\Service\MediaContent $mediaManager */
+  $mediaManager = \Drupal::service('soc_content.media');
+  /** @var \Drupal\Core\File\FileSystem $fileSystem */
+  $fileSystem = \Drupal::service('file_system');
+  $fileSystem->mkdir('public://2020-02');
+  $mediaManager->createFile('energy-storage.svg', '2020-02/energy-storage.svg');
+  $mediaManager->createFile('metering-monitoring.svg', '2020-02/metering-monitoring.svg');
+  $mediaManager->createFile('power-conversion.svg', '2020-02/power-conversion.svg');
+  $mediaManager->createFile('switching.svg', '2020-02/switching.svg');
+}
+
+/**
+ * Add default image to products & references.
+ */
+function soc_content_update_8004() {
+  /** @var \Drupal\soc_content\Service\MediaContent $mediaManager */
+  $mediaManager = \Drupal::service('soc_content.media');
+  $fileName = 'soc-no-img.png';
+  $mediaManager->createFile($fileName, 'product-' . $fileName,
+    '47122bfc-2e61-4824-97f2-109913eb4212');
+  $mediaManager->createFile($fileName, 'reference-' . $fileName,
+    'd1f00744-4f61-4c90-91d4-e1eeb982bfaf');
+}
+
+
+/**
+ * Update terms type location weight
+ * - Subsidiary - field_weight = 0
+ * - Distributor - field_weight = 1
+ * - Reseller - field_weight = 1
+ */
+function soc_content_update_8005() {
+  $taxonomyTerm = \Drupal::entityTypeManager()->getStorage('taxonomy_term');
+  $terms = [
+    [
+      'name' => 'Subsidiary',
+      'weight' => 0
+    ],
+    [
+      'name' => 'Distributor',
+      'weight' => 1
+    ],
+    [
+      'name' => 'Reseller',
+      'weight' => 1
+    ],
+  ];
+  foreach ($terms as $key => $value) {
+    try {
+      $taxonomyTermLoad = $taxonomyTerm
+        ->loadByProperties(['name' => $value['name'], 'vid' => 'location_type']);
+      if (!empty($taxonomyTermLoad)) {
+        reset($taxonomyTermLoad);
+        $tid = key($taxonomyTermLoad);
+        if ($term = Term::load($tid)) {
+          $term->field_weight->setValue($value['weight']);
+          $term->save();
+        }
+      }
+    }
+    catch (\Exception $e) {}
+  }
+}
+

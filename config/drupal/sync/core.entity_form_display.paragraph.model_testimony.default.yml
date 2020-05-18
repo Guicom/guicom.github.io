@@ -11,6 +11,7 @@ dependencies:
     - field.field.paragraph.model_testimony.field_text
     - paragraphs.paragraphs_type.model_testimony
   module:
+    - media_library
     - text
 id: paragraph.model_testimony.default
 targetEntityType: paragraph
@@ -28,22 +29,16 @@ content:
   field_image_1:
     weight: 4
     settings:
-      match_operator: CONTAINS
-      size: 60
-      placeholder: ''
-      match_limit: 10
+      media_types: {  }
     third_party_settings: {  }
-    type: entity_reference_autocomplete
+    type: media_library_widget
     region: content
   field_image_2:
     weight: 1
     settings:
-      match_operator: CONTAINS
-      size: 60
-      placeholder: ''
-      match_limit: 10
+      media_types: {  }
     third_party_settings: {  }
-    type: entity_reference_autocomplete
+    type: media_library_widget
     region: content
   field_nom:
     weight: 2

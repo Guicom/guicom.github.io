@@ -655,7 +655,7 @@ body.node--type-product {
             padding: 0;
             border-bottom: 1px solid $lighter-grey;
             &:first-child {
-              padding-left: 18px;
+              padding-left: 25px;
               &:before {
                 top: 50%;
                 transform: translateY(-50%);
@@ -671,6 +671,15 @@ body.node--type-product {
             font-weight: 400;
             line-height: 25px;
             padding: 18px 10px;
+          }
+        }
+      }
+      thead {
+        tr {
+          th:first-child {
+            select {
+              display: none;
+            }
           }
         }
       }

@@ -17,16 +17,16 @@ class SocPremiumContentNode {
    */
   protected $entityTypeManager;
 
-  protected $resource_vocabulary_type;
+  protected $resourceVocabularyType;
 
   /**
    * SocPremiumContentNode constructor.
    *
    * @param \Drupal\Core\Entity\EntityTypeManagerInterface $entityTypeManager
    */
-  public function __construct(EntityTypeManagerInterface $entityTypeManager, $resource_vocabulary_type) {
+  public function __construct(EntityTypeManagerInterface $entityTypeManager, $resourceVocabularyType) {
     $this->entityTypeManager = $entityTypeManager;
-    $this->resource_vocabulary_type = $resource_vocabulary_type;
+    $this->resourceVocabularyType = $resourceVocabularyType;
   }
 
   /**
@@ -65,11 +65,10 @@ class SocPremiumContentNode {
       ->referencedEntities();
     $resourceTypes = [];
     if (!empty($premiumContentTypeTermes)) {
-
       foreach ($premiumContentTypeTermes as $premiumContentTypeTerme) {
         $termResourceType = $this->entityTypeManager->getStorage('taxonomy_term')
           ->loadByProperties([
-            'vid' => $this->resource_vocabulary_type,
+            'vid' => $this->resourceVocabularyType,
             'name' => $premiumContentTypeTerme->label(),
           ]);
         if (!empty($termResourceType)) {
@@ -78,7 +77,7 @@ class SocPremiumContentNode {
         else {
           $termResourceType = $this->entityTypeManager->getStorage('taxonomy_term')
             ->create([
-              'vid' => $this->resource_vocabulary_type,
+              'vid' => $this->resourceVocabularyType,
               'name' => $premiumContentTypeTerme->label(),
             ]);
           $termResourceType->save();

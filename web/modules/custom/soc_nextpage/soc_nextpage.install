@@ -29,3 +29,43 @@ function soc_nextpage_update_8001() {
   $schema = Database::getConnection()->schema();
   $schema->createTable('soc_nextpage_relations', $spec);
 }
+
+/**
+ * Add new relation_id field & set it as the primary key instead of family_id.
+ */
+function soc_nextpage_update_8002() {
+  $tableName = 'soc_nextpage_relations';
+  $spec = [
+    'description' => 'Relation between int family & product',
+    'fields' => [
+      'relation_id' => [
+        'description' => 'Relation ID',
+        'type' => 'serial',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ],
+      'family_id' => [
+        'description' => 'Intermediate family ID.',
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+        'default' => '',
+      ],
+      'product_id' => [
+        'description' => 'Product ID.',
+        'type' => 'text',
+        'not null' => TRUE,
+      ],
+      'family_parent_id' => [
+        'description' => 'Parent Family ID.',
+        'type' => 'text',
+        'not null' => TRUE,
+      ],
+    ],
+    'primary key' => ['relation_id'],
+  ];
+  $schema = Database::getConnection()->schema();
+  $schema->createTable($tableName . '_tmp', $spec);
+  $schema->dropTable($tableName);
+  $schema->renameTable($tableName . '_tmp', $tableName);
+}
