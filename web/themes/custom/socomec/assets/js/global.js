@@ -530,7 +530,7 @@
     attach: function (context, settings) {
 
       var openBtn = $('.facet-mobile-modal-open .modal-open');
-      var closeBtn = $('.facet-mobile-modal-close .modal-close');
+      var closeBtn = $('.modal-facets-mobile .modal-close');
 
       openBtn.once().on("click", function (e) {
         $('.modal-facets-mobile').addClass('active');
@@ -642,11 +642,20 @@
             success: function (output, statut) {
               element.removeClass( "item-pending" );
               if (output == "true") {
+                var original = element.attr('data-soc-content-list-original-title');
+                var alt = element.attr('data-soc-content-list-alt-title');
                 Drupal.behaviors.socomec_content_list_ajax_btn.updateRenderNavigation();
                 element.addClass("soc-list-is-active");
-                element.addClass("item-added").delay(5000).queue(function(){
-                  element.removeClass("item-added").dequeue();
-                });
+                if (typeof(original) !== "undefined" && typeof(alt) !== "undefined") {
+                  element.addClass("item-added").find(".btn-value").replaceWith("<span class ='btn-value'>"+alt+"</span>").delay(5000).queue(function(){
+                    element.removeClass("item-added").find(".btn-value").val("<span class ='btn-value'>"+original+"</span>").replaceWith(original).dequeue();
+                  });
+                }
+                else {
+                  element.addClass("item-added").delay(5000).queue(function(){
+                    element.removeClass("item-added").dequeue();
+                  });
+                }
               }
             }
           });

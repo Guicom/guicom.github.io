@@ -1,7 +1,9 @@
 <?php
 
+use Behat\Gherkin\Node\TableNode;
 use Drupal\Component\Utility\UrlHelper;
 use Drupal\DrupalExtension\Context\RawDrupalContext;
+use Drupal\file\Entity\File;
 use Drupal\node\Entity\Node;
 
 /**
@@ -489,6 +491,26 @@ JS;
       return TRUE;
     }
     return FALSE;
+  }
+
+  /**
+   * @Then I fill in wysiwyg on field :locator with :value
+   */
+  public function iFillInWysiwygOnFieldWith($locator, $value) {
+    $el = $this->getSession()->getPage()->findField($locator);
+
+    if (empty($el)) {
+      throw new ExpectationException('Could not find WYSIWYG with locator: ' . $locator, $this->getSession());
+    }
+
+    $fieldId = $el->getAttribute('id');
+
+    if (empty($fieldId)) {
+      throw new Exception('Could not find an id for field with locator: ' . $locator);
+    }
+
+    $this->getSession()
+      ->executeScript("CKEDITOR.instances[\"$fieldId\"].setData(\"$value\");");
   }
 
   /**
