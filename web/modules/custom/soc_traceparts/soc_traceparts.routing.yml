@@ -1,0 +1,23 @@
+soc_traceparts.login_form:
+  path: '/traceparts/login/{part_number}/{format_id}'
+  defaults:
+    _form: '\Drupal\soc_traceparts\Form\LoginForm'
+    _title: 'Login to Traceparts'
+  requirements:
+    _permission: 'access content'
+
+soc_traceparts.register_form:
+  path: '/traceparts/register/{part_number}/{format_id}'
+  defaults:
+    _form: '\Drupal\soc_traceparts\Form\RegisterForm'
+    _title: 'Register to Traceparts'
+  requirements:
+    _permission: 'access content'
+
+soc_traceparts.download:
+  path: '/traceparts/download'
+  defaults:
+    _controller: '\Drupal\soc_traceparts\Controller\DownloadController::downloadPage'
+    _title_callback: '\Drupal\soc_traceparts\Controller\DownloadController::downloadPageTitle'
+  requirements:
+    _permission: 'access content'

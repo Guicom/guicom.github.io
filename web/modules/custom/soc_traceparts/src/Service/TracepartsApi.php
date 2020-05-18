@@ -48,11 +48,16 @@ class TracepartsApi extends BaseApi {
     $this->baseUrl = 'http://ws.tracepartsonline.net/tpowebservices/';
     $this->endpoints = [
       'CadDataAvailability' => 'CADdataAvailability',
+      'CheckLogin' => 'CheckLogin',
+      'UserRegistration' => 'UserRegistration',
+      'DownloadCadPath' => 'DownloadCADPath',
     ];
     $this->apiKey = '4GusSVAXU968or';
   }
 
   /**
+   * Get CAD data availability for a given part number.
+   *
    * @param string $part_number
    *
    * @return array
@@ -69,6 +74,83 @@ class TracepartsApi extends BaseApi {
     if ($results = $this->call($uri, $params, 'GET', 'json', FALSE)) {
       if (sizeof((array) $results)) {
         return (array) $results;
+      }
+    }
+    return [];
+  }
+
+  /**
+   * Check if user accounts exists.
+   *
+   * @param string $user_email
+   *
+   * @return bool
+   */
+  public function checkLogin(string $user_email): bool {
+    $uri = $this->endpoints['CheckLogin'];
+    $params = [
+      'ApiKey' => $this->getApiKey(),
+      'Format' => 'json',
+      'UserEmail' => $user_email,
+    ];
+    if ($results = $this->call($uri, $params, 'GET', 'json', FALSE)) {
+      if (sizeof((array) $results)) {
+        if ($results->registered == 'true') {
+          return TRUE;
+        }
+      }
+    }
+    return FALSE;
+  }
+
+  /**
+   * Register a new user account.
+   *
+   * @param array $user_data
+   *
+   * @return bool
+   */
+  public function userRegistration(array $user_data): bool {
+    $uri = $this->endpoints['UserRegistration'];
+    $params = [
+      'ApiKey' => $this->getApiKey(),
+      'Format' => 'json',
+      'UserEmail' => $user_data['UserEmail'],
+      'company' => $user_data['company'],
+      'country' => $user_data['country'],
+      'zipcode' => $user_data['zipcode'],
+    ];
+    if ($results = $this->call($uri, $params, 'GET', 'json', FALSE)) {
+      if (sizeof((array) $results)) {
+        if ($results->registered == 'true') {
+          return TRUE;
+        }
+      }
+    }
+    return FALSE;
+  }
+
+  /**
+   * @param array $data
+   *
+   * @return array
+   */
+  public function downloadCadPath(array $data): array {
+    $uri = $this->endpoints['DownloadCadPath'];
+    $params = [
+      'ApiKey' => $this->getApiKey(),
+      'Format' => 'json',
+      'UserEmail' => $data['email'],
+      'ClassificationID' => 'SOCOMEC',
+      'PartNumber' => $data['part_number'],
+      'CADFormatID' => $data['format_id'],
+      'Version' => 2,
+    ];
+    if ($results = $this->call($uri, $params, 'GET', 'json', FALSE)) {
+      if (sizeof((array) $results)) {
+        if (sizeof((array) $results->globalInfo) && sizeof($results->filesPath)) {
+          return (array) $results;
+        }
       }
     }
     return [];
