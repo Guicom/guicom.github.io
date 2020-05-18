@@ -8,3 +8,6 @@ services:
   soc_traceparts.traceparts_viewer_manager:
     class: Drupal\soc_traceparts\Service\Manager\TracepartsViewerManager
     arguments: ['@soc_traceparts.traceparts_api']
+  soc_traceparts.traceparts_user_manager:
+    class: Drupal\soc_traceparts\Service\Manager\TracepartsUserManager
+    arguments: ['@soc_traceparts.traceparts_api']

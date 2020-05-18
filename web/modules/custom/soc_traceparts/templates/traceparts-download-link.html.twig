@@ -1,0 +1,7 @@
+{% if download_url is not empty %}
+  <div class="submitted-page">
+    <p><a class="use-ajax go-to-button right" data-dialog-type="modal" href="{{ download_url }}" class="btn">{{ button_label }}</a></p>
+  </div>
+{% else %}
+  <p>{{ 'An error has occurred.'|t }}</p>
+{% endif %}

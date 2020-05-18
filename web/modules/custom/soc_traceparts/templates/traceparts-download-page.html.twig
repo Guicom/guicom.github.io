@@ -1,0 +1,8 @@
+{% if title is not empty %}
+  <h1>{{ title }}</h1>
+{% else %}
+{% if download_url is not empty %}
+  <p><a class="use-ajax" data-dialog-type="modal" href="{{ download_url }}" class="btn">{{ button_label }}</a></p>
+{% else %}
+  <p>{{ 'An error has occurred.'|t }}</p>
+{% endif %}
