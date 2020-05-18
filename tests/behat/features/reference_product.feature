@@ -81,13 +81,13 @@ Feature: Reference_product
     And I wait 5 seconds
     And I click the "a[href='/en/traceparts/login/27003011/33']" element
     And I wait 5 seconds
-    And I click the "a[href='/en/traceparts/register/27003011/33']" element
-    And I wait 5 seconds
+    And I click "Register"
+    And I wait max 10 seconds for AJAX to finish
     And I fill in "email" with "testbehat@test.fr"
     And I fill in "company" with "test behat company"
     And I select "France" from "country"
     And I fill in "zipcode" with "67500"
-    And I press "edit-submit"
+    And I press "Continue"
     And I wait 5 seconds
     And I should see a ".submitted-page" element
     And I wait 5 seconds
