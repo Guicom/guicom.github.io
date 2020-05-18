@@ -5,6 +5,7 @@ dependencies:
   module:
     - content_moderation
     - soc_blocks_promotion
+    - user
 id: manage_promo_blocks
 label: 'Manage Promo blocks'
 module: views
@@ -20,8 +21,9 @@ display:
     position: 0
     display_options:
       access:
-        type: none
-        options: {  }
+        type: perm
+        options:
+          perm: 'administer block promotion entity entities'
       cache:
         type: tag
         options: {  }
@@ -839,6 +841,7 @@ display:
         - 'languages:language_interface'
         - url
         - url.query_args
+        - user.permissions
       tags:
         - 'config:workflow_list'
   page_1:
@@ -847,7 +850,8 @@ display:
     display_title: Page
     position: 1
     display_options:
-      display_extenders: {  }
+      display_extenders:
+        metatag_display_extender: {  }
       path: admin/structure/block_promotion_entity
     cache_metadata:
       max-age: -1
@@ -856,5 +860,6 @@ display:
         - 'languages:language_interface'
         - url
         - url.query_args
+        - user.permissions
       tags:
         - 'config:workflow_list'
