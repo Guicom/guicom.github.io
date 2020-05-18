@@ -1,0 +1,17 @@
+
+# Block promotion entity menu items definition
+entity.block_promotion_entity.collection:
+  title: 'Block promotion entity list'
+  route_name: entity.block_promotion_entity.collection
+  description: 'List Block promotion entity entities'
+  parent: system.admin_structure
+  weight: 100
+
+
+# Block promotion entity type menu items definition
+entity.block_promotion_entity_type.collection:
+  title: 'Block promotion entity type'
+  route_name: entity.block_promotion_entity_type.collection
+  description: 'List Block promotion entity type (bundles)'
+  parent: system.admin_structure
+  weight: 99

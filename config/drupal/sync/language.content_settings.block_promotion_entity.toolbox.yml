@@ -1,0 +1,18 @@
+uuid: 1cb80f8a-6e0c-492c-874b-97ee47e8e3f9
+langcode: en
+status: true
+dependencies:
+  config:
+    - soc_blocks_promotion.block_promotion_entity_type.toolbox
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+    bundle_settings:
+      untranslatable_fields_hide: '0'
+id: block_promotion_entity.toolbox
+target_entity_type_id: block_promotion_entity
+target_bundle: toolbox
+default_langcode: site_default
+language_alterable: true

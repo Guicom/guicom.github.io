@@ -1,0 +1,20 @@
+uuid: 1b79ef74-d5fa-47e8-8904-0bfe296aebe7
+langcode: en
+status: true
+dependencies: {  }
+id: block_promotion_entity
+filenames:
+  custom: ''
+bundles:
+  custom:
+    field_external_title:
+      bundle: custom
+      name: field_external_title
+      entity_type_id: block_promotion_entity
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''

@@ -1,0 +1,10 @@
+entity.block_promotion_entity.add_form:
+  route_name: entity.block_promotion_entity.add_page
+  title: 'Add Block promotion entity'
+  appears_on:
+    - entity.block_promotion_entity.collection
+entity.block_promotion_entity_type.add_form:
+  route_name: entity.block_promotion_entity_type.add_form
+  title: 'Add Block promotion entity type'
+  appears_on:
+    - entity.block_promotion_entity_type.collection
