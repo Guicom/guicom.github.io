@@ -110,15 +110,17 @@
           $('body').toggleClass('fixed')
         });
         // SLIDE Dropdown lvl0
-        $("li[data-level='0'] > a:first-child", context).once('socomecMobileMenulv0').each(function () {
+        $("li[data-level='0']", context).once('socomecMobileMenulv0').each(function () {
           $(this).click(function (e) {
             $(this).toggleClass('active');
-            var dropdown = $(this).next('.we-mega-menu-submenu.dropdown-menu').first();
+            var dropdown = $(this).find('.we-mega-menu-submenu.dropdown-menu').first();
+            e.preventDefault();
+            e.stopPropagation();
             $(dropdown).slideToggle("400");
           });
         });
         // CLOSE OTHER Dropdown lvl0
-        $("li[data-level='0'] > a:first-child", context).once('socomecMobileMenuClosinglv0').each(function () {
+        $("li[data-level='0']", context).once('socomecMobileMenuClosinglv0').each(function () {
           $(this).click(function () {
             var dropdown = $(this).find('.we-mega-menu-submenu.dropdown-menu');
             $(".we-mega-menu-submenu.dropdown-menu").not(dropdown).slideUp("400");
@@ -356,12 +358,32 @@
       });
     });
   }
+  function SocomecfacetsSelectScrollNative(context, settings) {
+    $('select').each(function () {
+      var element = $(this);
+      if ($("body").hasClass("path-where-to-buy")) {
+        element.attr('data-live-search', 'true');
+      }
+      element.selectpicker({
+        virtualScroll: false,
+      });
+    });
+  }
+  if (!$("body").hasClass("node--type-product-reference")) {
+    Drupal.behaviors.socomec_facets_bootstrap_select = {
+      attach: function (context, settings) {
+        SocomecfacetsSelect(context, settings);
+      }
+    };
+  } else {
+    Drupal.behaviors.socomec_facets_bootstrap_select = {
+      attach: function (context, settings) {
+        SocomecfacetsSelectScrollNative(context, settings);
+      }
+    };
+  }
 
-  Drupal.behaviors.socomec_facets_bootstrap_select = {
-    attach: function (context, settings) {
-      SocomecfacetsSelect(context, settings);
-    }
-  };
+
 
   /**
    * Facets bootstrap_list_select
@@ -508,19 +530,27 @@
     attach: function (context, settings) {
 
       var openBtn = $('.facet-mobile-modal-open .modal-open');
-      var closeBtn = $('.facet-mobile-modal-close .modal-close');
+      var closeBtn = $('.modal-facets-mobile .modal-close');
 
       openBtn.once().on("click", function (e) {
         $('.modal-facets-mobile').addClass('active');
         SocomecfacetsSelect(context, settings);
       });
-      closeBtn.once().on("click", function (e) {
-        $('.modal-facets-mobile').removeClass('active');
-        SocomecfacetsSelect(context, settings);
-      });
+      if($('.modal-facets-mobile').hasClass('block-soc-traceparts')) {
+        $('a.use-ajax').once().on("click", function (e) {
+          $('.modal-facets-mobile').delay(4000).queue(function(){
+            $(this).removeClass("active").dequeue();
+          });
+          SocomecfacetsSelect(context, settings);
+        });
+      } else {
+        closeBtn.once().on("click", function (e) {
+          $('.modal-facets-mobile').removeClass('active');
+          SocomecfacetsSelect(context, settings);
+        });
+      }
     }
   };
-
   /**
    * Modal with youtube video
    */
@@ -594,8 +624,8 @@
   };
 
   /**
-  * Ajax btn bookmarks and wishlist
-  */
+   * Ajax btn bookmarks and wishlist
+   */
   Drupal.behaviors.socomec_content_list_ajax_btn = {
     attach: function (context, settings) {
       Drupal.behaviors.socomec_content_list_ajax_btn.updateRenderNavigation();
@@ -612,11 +642,20 @@
             success: function (output, statut) {
               element.removeClass( "item-pending" );
               if (output == "true") {
+                var original = element.attr('data-soc-content-list-original-title');
+                var alt = element.attr('data-soc-content-list-alt-title');
                 Drupal.behaviors.socomec_content_list_ajax_btn.updateRenderNavigation();
                 element.addClass("soc-list-is-active");
-                element.addClass("item-added").delay(5000).queue(function(){
-                  element.removeClass("item-added").dequeue();
-                });
+                if (typeof(original) !== "undefined" && typeof(alt) !== "undefined") {
+                  element.addClass("item-added").find(".btn-value").replaceWith("<span class ='btn-value'>"+alt+"</span>").delay(5000).queue(function(){
+                    element.removeClass("item-added").find(".btn-value").val("<span class ='btn-value'>"+original+"</span>").replaceWith(original).dequeue();
+                  });
+                }
+                else {
+                  element.addClass("item-added").delay(5000).queue(function(){
+                    element.removeClass("item-added").dequeue();
+                  });
+                }
               }
             }
           });
@@ -650,6 +689,20 @@
         $('.menu--header-visitors .ico-bookmark-star-white').addClass('soc-list-is-active');
         $('.menu--header-visitors .ico-bookmark-star-white').attr("data-soc-list", j);
       }
+    }
+  };
+
+  /**
+   * Add loader on content
+   */
+  Drupal.behaviors.socomec_loader_content = {
+    attach: function (context, settings) {
+
+      $('.add-loader').click(function () {
+        $(this).next('.loader-pending').addClass('show').delay(5000).queue(function(){
+          $(this).removeClass("show").dequeue();
+        });
+      });
     }
   };
 
