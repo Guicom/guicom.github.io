@@ -1,12 +1,44 @@
+label: Media
 display:
   default:
+    display_title: Główny
     display_options:
+      exposed_form:
+        options:
+          reset_button_label: Resetuj
+          exposed_sorts_label: 'Sortuj po'
+          sort_asc_label: Rosnąco
+          sort_desc_label: Malejąco
+      pager:
+        options:
+          expose:
+            items_per_page_label: 'Elementów na stronę'
+            items_per_page_options_all_label: '- Wszystko -'
+            offset_label: Przesunięcie
+          tags:
+            previous: '‹ Poprzednia'
+            next: 'Następna ›'
       fields:
+        thumbnail__target_id:
+          separator: ', '
+        name:
+          separator: ', '
         bundle:
           label: Typ
+          separator: ', '
+        uid:
+          separator: ', '
+        status:
+          label: Status
+          separator: ', '
+        changed:
+          separator: ', '
         operations:
           label: Operacje
       filters:
         bundle:
           expose:
             label: Typ
+      title: Media
+  media_page_list:
+    display_title: Media

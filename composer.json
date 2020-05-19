@@ -55,6 +55,7 @@
         "drupal/drush_language": "^1.0@RC",
         "drupal/ds": "^3.3",
         "drupal/editor_advanced_link": "^1.4",
+        "drupal/entity_browser": "^2.5",
         "drupal/entity_share": "^2.0@alpha",
         "drupal/entity_share_cron": "^2.0@alpha",
         "drupal/entity_usage": "^2.0@beta",
