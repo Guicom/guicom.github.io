@@ -4,5 +4,7 @@
  * Implements hook_page_attachments().
  */
 function soc_iframe_redirect_page_attachments(array &$attachments) {
-  $attachments['#attached']['library'][] = 'soc_iframe_redirect/iframe_redirect';
+  if (!\Drupal::service('router.admin_context')->isAdminRoute()) {
+    $attachments['#attached']['library'][] = 'soc_iframe_redirect/iframe_redirect';
+  }
 }
