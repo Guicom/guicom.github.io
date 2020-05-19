@@ -87,8 +87,9 @@ Feature: Reference_product
     And I fill in "company" with "test behat company"
     And I select "France" from "country"
     And I fill in "zipcode" with "67500"
+    And I wait max 10 seconds for AJAX to finish
     And I press "Continue"
-    And I wait 5 seconds
+    And I wait max 10 seconds for AJAX to finish
     And I should see a ".submitted-page" element
     And I wait 5 seconds
     When I visit "/behatRefProd"
