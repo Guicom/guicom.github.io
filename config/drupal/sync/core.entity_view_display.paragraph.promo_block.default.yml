@@ -1,0 +1,22 @@
+uuid: b045a018-873a-4c56-a75c-41de8440fc6a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.promo_block.field_promo_block
+    - paragraphs.paragraphs_type.promo_block
+id: paragraph.promo_block.default
+targetEntityType: paragraph
+bundle: promo_block
+mode: default
+content:
+  field_promo_block:
+    weight: 0
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+hidden:
+  search_api_excerpt: true

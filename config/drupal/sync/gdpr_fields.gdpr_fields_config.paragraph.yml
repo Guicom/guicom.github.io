@@ -24,6 +24,7 @@ filenames:
   model_cta_pdf: ''
   video_text: ''
   model_citation: ''
+  promo_block: ''
 bundles:
   product_faq:
     field_question:
@@ -900,6 +901,18 @@ bundles:
       rta: 'no'
       enabled: false
       anonymizer: date_anonymizer
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+  promo_block:
+    field_promo_block:
+      bundle: promo_block
+      name: field_promo_block
+      entity_type_id: paragraph
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
       notes: ''
       relationship: 0
       sars_filename: ''

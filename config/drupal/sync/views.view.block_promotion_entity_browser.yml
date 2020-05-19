@@ -6,7 +6,7 @@ dependencies:
     - entity_browser
     - soc_blocks_promotion
 id: block_promotion_entity_browser
-label: 'block promotion entity browser'
+label: 'Promo block browser'
 module: views
 description: ''
 tag: ''
@@ -292,7 +292,7 @@ display:
           exposed: true
           expose:
             operator_id: entity_browser_bundle_op
-            label: 'Entity Browser Target Bundles'
+            label: 'Block type'
             description: ''
             use_operator: true
             operator: entity_browser_bundle_op
