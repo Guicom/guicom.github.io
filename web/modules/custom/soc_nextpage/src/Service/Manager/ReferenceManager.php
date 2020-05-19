@@ -3,6 +3,7 @@
 namespace Drupal\soc_nextpage\Service\Manager;
 
 use Drupal;
+use Drupal\node\Entity\Node;
 use Drupal\paragraphs\Entity\Paragraph;
 use Drupal\soc_nextpage\Service\NextpageApi;
 use Drupal\soc_nextpage\Service\NextpageItemHandler;
@@ -39,6 +40,7 @@ class ReferenceManager {
    * @return array
    * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
    * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
+   * @throws \Drupal\Core\Entity\EntityStorageException
    */
   public function handle($product_ext_id) {
     $nids = [];
@@ -52,7 +54,14 @@ class ReferenceManager {
         }
         else {
           // Create reference.
-          $nids[] = $this->createReference($reference);
+          $nid = $this->createReference($reference);
+          if ($nid !== FALSE) {
+            $nids[] = $nid;
+            // Add to queue for automatic resource creation.
+            $queue = \Drupal::queue('soc_traceparts_resource_creation');
+            $data = ['entity' => Node::load($nid)];
+            $queue->createItem($data);
+          }
         }
       }
     }
@@ -67,10 +76,10 @@ class ReferenceManager {
    * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
    */
   public function createReference($reference) {
+    // Create node.
     $node = \Drupal::entityTypeManager()->getStorage('node')->create([
       'type'        => 'product_reference',
     ]);
-
     return $this->updateReference($node, $reference);
   }
 
