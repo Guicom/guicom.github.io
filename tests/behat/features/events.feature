@@ -1,6 +1,5 @@
 Feature: Events
   #vendor/bin/phing behat:run -Dbehat.tags=events
-
   Background:
     And I am logged in as a user with the "administrator" role
     And event_type terms:
@@ -17,7 +16,7 @@ Feature: Events
     And I press "Index now"
 
   @api @cit @javascript @events @events_detail
-  # ./vendor/bin/phing behat:run -Dbehat.tags=events
+  # vendor/bin/phing behat:run -Dbehat.tags=events_detail
   # See the example event.
   Scenario: Events detail
     Given I visit "/"
@@ -30,6 +29,7 @@ Feature: Events
     Then I should see the breadcrumb link "MyTestEvent"
 
   @api @cit @javascript @events @events_lp
+    # vendor/bin/phing behat:run -Dbehat.tags=events_lp
     # Check if the filter working with the last element.
   Scenario: Events Landing page
     #Then I am an anonymous user
@@ -42,7 +42,8 @@ Feature: Events
     And I wait 2 seconds
     Then I should not see "MyTestEvent" in the ".view-id-events" element
 
-  @api @cit @javascript @events
+  @api @cit @javascript @events @events_listing
+    # vendor/bin/phing behat:run -Dbehat.tags=events_listing
      # L’EVENT promu à venir s'affiche dans le Hero de la listing EVENT.
   Scenario Outline: Bloc Hero for the events page.
     Given I visit "/"
@@ -55,6 +56,7 @@ Feature: Events
       | body.path-events | Iterative approaches to establish a new normal that has evolved from generation x. |
 
   @api @cit @javascript @events @events_permission @events_permission_add
+    # vendor/bin/phing behat:run -Dbehat.tags=events_permission_add
      # Verifier les permissions pour ajouter un event.
     # ticket(s) SOCSOB-806
   Scenario Outline: Check add permissions for the specific roles.
@@ -69,6 +71,7 @@ Feature: Events
     Then I should see the text "<message>"
 
   @api @cit @javascript @events @events_permission @events_permission_edit
+    # vendor/bin/phing behat:run -Dbehat.tags=events_permission_edit
   Scenario Outline: Check edit permissions for the specific roles.
     Examples:
       | role          | row                      | message                  |
@@ -84,6 +87,7 @@ Feature: Events
 
   @api @cit @javascript @events @events_permission @events_permission_revision
      # Verifier la permission revision pour le CT event.
+    # vendor/bin/phing behat:run -Dbehat.tags=events_permission_revision
     # ticket(s) SOCSOB-806
   Scenario Outline: Check revision permissions for the specific roles.
     Examples:
@@ -96,6 +100,7 @@ Feature: Events
     Then I should see the text "<message>"
 
   @api @cit @javascript @events @events_permission @event_permission_add_term
+    # vendor/bin/phing behat:run -Dbehat.tags=events_permission_add_term
   Scenario Outline: The webmaster role can add a new term.
     Examples:
       | role          | message                                    |
@@ -107,15 +112,41 @@ Feature: Events
     Then I should see the text "<message>"
 
 
-  # @todo: ajouter une brique pour voir le bouton add to calendar
-  @api @cit @javascript @events @wip
+  @api @cit @javascript @events @events_addcalendar
+    # vendor/bin/phing behat:run -Dbehat.tags=events_addcalendar
     # Check if the filter working with the first element.
   Scenario: Events check for calendar items
     Given I visit "/"
     And I accept all cookies compliance
     When I visit "/event/mytestevent"
     Then I should see "Add to Calendar"
-    #Then I should see "Google Calendar" in the "u.atcb-list" element
-    #Then I should see "iCalendar" in the ".atcb-list" element
-    #Then I should see "Outlook Online" in the ".atcb-list" element
-    #Then I should see "Yahoo! Calendar" in the ".atcb-list" element
+    And I click the ".atcb-link" element
+    Then I should see "Google Calendar" in the ".atcb-list" element
+    Then I should see "iCalendar" in the ".atcb-list" element
+    Then I should see "Outlook Online" in the ".atcb-list" element
+    Then I should see "Yahoo! Calendar" in the ".atcb-list" element
+
+  @api @cit @javascript @events @events_cta_multiligne
+    # vendor/bin/phing behat:run -Dbehat.tags=events_cta_multiligne
+    # Check if the cta external link and download rendering correctly and multiligne rendering
+  Scenario: Events check for external link and download link
+    Given I am logged in as a user with the "administrator" role
+    When I visit "admin/content"
+    And I click "Edit" in the "MyTestEvent" row
+    And I click the "#field-event-content-add-more-wrapper li.dropbutton-toggle button" element
+    And I press the "field_event_content_model_text_add_more" button
+    And I wait 4 seconds
+    And I fill in "field_event_content[0][subform][field_title][0][value]" with "Text title"
+    And I fill in "field_event_cta_external_link[0][uri]" with "http://google.com"
+    And I fill in "field_event_cta_external_link[0][title]" with "GO TO LINK"
+    And I select "New window (_blank)" from "field_event_cta_external_link[0][options][attributes][target]"
+    And I fill in "field_event_cta_download[0][uri]" with "http://google.com"
+    And I fill in "field_event_cta_download[0][title]" with "GO TO DWNLD"
+    And I select "New window (_blank)" from "field_event_cta_download[0][options][attributes][target]"
+    And I press the "edit-submit" button
+    Then I visit "/event/mytestevent"
+    And I should see an ".multiline-content" element
+    And I should see an ".paragraph--type--model-text" element
+    And I should see an ".field--name-field-event-cta-download" element
+    And I should see an ".field--name-field-event-cta-external-link" element
+    And I wait 10 seconds
