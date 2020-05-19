@@ -89,7 +89,7 @@ class FamilyManager {
    *
    * @return mixed
    */
-  function updateFamilyTerm(Term $term, $pendingFamily) {
+  public function updateFamilyTerm(Term $term, $pendingFamily) {
     // Get title.
     $name = $pendingFamily->ExtID;
     if (isset($pendingFamily->Values->C_LV1_TITLE)) {

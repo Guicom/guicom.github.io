@@ -1,0 +1,15 @@
+uuid: adbede3c-722f-4a9d-834c-5945fcaa5815
+langcode: en
+status: true
+dependencies: {  }
+id: zh_cn_location
+label: 'ZH-CN / Location'
+channel_entity_type: node
+channel_bundle: contenu_location
+channel_langcode: zh-cn
+channel_filters: null
+channel_groups: null
+channel_sorts: {  }
+channel_searches: null
+authorized_users:
+  cd0d9446-cb19-4e87-9dcf-d3bdc37a70a7: cd0d9446-cb19-4e87-9dcf-d3bdc37a70a7

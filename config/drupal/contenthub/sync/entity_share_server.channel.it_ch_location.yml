@@ -1,0 +1,15 @@
+uuid: 8c641a19-c51a-4523-a52d-d517101df56e
+langcode: en
+status: true
+dependencies: {  }
+id: it_ch_location
+label: 'IT-CH / Location'
+channel_entity_type: node
+channel_bundle: contenu_location
+channel_langcode: it-ch
+channel_filters: null
+channel_groups: null
+channel_sorts: {  }
+channel_searches: null
+authorized_users:
+  cd0d9446-cb19-4e87-9dcf-d3bdc37a70a7: cd0d9446-cb19-4e87-9dcf-d3bdc37a70a7
