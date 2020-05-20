@@ -2,11 +2,7 @@ display:
   default:
     display_options:
       fields:
-        bundle:
-          label: Type
+        status:
+          label: Status
         operations:
           label: Operations
-      filters:
-        bundle:
-          expose:
-            label: Type

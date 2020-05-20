@@ -5,3 +5,26 @@ display:
         status:
           expose:
             label: 'Stato di pubblicazione'
+        name:
+          expose:
+            label: Nome
+  page:
+    display_options:
+      fields:
+        edit_media:
+          text: Modifica
+  widget:
+    display_options:
+      filters:
+        name:
+          expose:
+            label: Nome
+  widget_table:
+    display_options:
+      fields:
+        name:
+          label: Nome
+      filters:
+        name:
+          expose:
+            label: Nome

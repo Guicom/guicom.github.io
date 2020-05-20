@@ -5,3 +5,26 @@ display:
         status:
           expose:
             label: 'Statut de publication'
+        name:
+          expose:
+            label: Nom
+  page:
+    display_options:
+      fields:
+        edit_media:
+          text: Modifier
+  widget:
+    display_options:
+      filters:
+        name:
+          expose:
+            label: Nom
+  widget_table:
+    display_options:
+      fields:
+        name:
+          label: Nom
+      filters:
+        name:
+          expose:
+            label: Nom

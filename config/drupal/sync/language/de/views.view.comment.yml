@@ -1,6 +1,10 @@
 display:
   default:
     display_options:
+      pager:
+        options:
+          expose:
+            offset_label: Offset
       fields:
         operations:
           label: Aktionen

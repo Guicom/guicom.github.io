@@ -1,12 +1,22 @@
+label: Media
 display:
   default:
     display_options:
+      pager:
+        options:
+          expose:
+            offset_label: Offset
       fields:
         bundle:
           label: Typ
+        status:
+          label: Status
         operations:
           label: Aktionen
       filters:
         bundle:
           expose:
             label: Typ
+      title: Media
+  media_page_list:
+    display_title: Media

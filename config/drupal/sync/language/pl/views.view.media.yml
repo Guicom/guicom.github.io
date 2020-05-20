@@ -4,6 +4,8 @@ display:
       fields:
         bundle:
           label: Typ
+        status:
+          label: Status
         operations:
           label: Operacje
       filters:

@@ -222,7 +222,15 @@ display:
     display_title: 'News Page'
     position: 1
     display_options:
-      display_extenders: {  }
+      display_extenders:
+        metatag_display_extender: {  }
+        simple_sitemap_display_extender:
+          index: true
+          variant: default
+          priority: '0.5'
+          changefreq: ''
+          arguments: {  }
+          max_links: 100
       path: news
       display_description: ''
       header: {  }

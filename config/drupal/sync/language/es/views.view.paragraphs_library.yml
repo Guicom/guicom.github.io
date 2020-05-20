@@ -6,8 +6,6 @@ display:
           label: Etiqueta
         type:
           label: Tipo
-        id:
-          label: ID
         changed:
           label: Modificado
         operations:

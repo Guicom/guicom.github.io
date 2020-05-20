@@ -4,5 +4,11 @@ display:
       fields:
         name:
           label: 'Nome utente'
+        status:
+          label: Stato
         operations:
           label: Operazioni
+      filters:
+        status:
+          group_info:
+            label: Stato

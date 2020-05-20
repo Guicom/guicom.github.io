@@ -4,6 +4,8 @@ display:
       fields:
         bundle:
           label: Tipo
+        status:
+          label: Stato
         operations:
           label: Operazioni
       filters:

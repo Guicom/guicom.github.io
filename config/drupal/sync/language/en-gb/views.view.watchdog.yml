@@ -2,11 +2,5 @@ display:
   default:
     display_options:
       fields:
-        type:
-          label: Type
         link:
           label: Operations
-      filters:
-        type:
-          expose:
-            label: Type

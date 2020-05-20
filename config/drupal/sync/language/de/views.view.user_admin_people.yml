@@ -1,8 +1,18 @@
 display:
   default:
     display_options:
+      pager:
+        options:
+          expose:
+            offset_label: Offset
       fields:
         name:
           label: Benutzername
+        status:
+          label: Status
         operations:
           label: Aktionen
+      filters:
+        status:
+          group_info:
+            label: Status

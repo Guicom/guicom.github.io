@@ -2,5 +2,11 @@ display:
   default:
     display_options:
       fields:
+        title:
+          label: Titolo
         operations:
           label: Operazioni
+      filters:
+        title:
+          expose:
+            label: Titolo
