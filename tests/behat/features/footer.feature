@@ -1,5 +1,5 @@
-@api @cit @javascript
 Feature: Footer
+  #vendor/bin/phing behat:run -Dbehat.tags=footer
   In order to test out the global layout footer
 
   Background:
@@ -27,3 +27,13 @@ Feature: Footer
     # backtotop block
     And I should see an "#block-backtotop" element
     And I wait 10 seconds
+
+  @api @cit @javascript @footer @footer_menu
+    # vendor/bin/phing behat:run -Dbehat.tags=footer_menu
+    # See the footer element.
+  Scenario: Global layout footer
+    And I go to "/"
+    # global footer
+    And I should see an "#block-socomec-footer" element
+    And I should see "Products" in the ".nav-item" element
+    And I should see "Switching & protection" in the ".nav-item" element
