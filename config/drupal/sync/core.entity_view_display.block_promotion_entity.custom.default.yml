@@ -3,38 +3,84 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.block_promotion_entity.custom.field_background_image
+    - field.field.block_promotion_entity.custom.field_color_combination
     - field.field.block_promotion_entity.custom.field_external_title
+    - field.field.block_promotion_entity.custom.field_link
+    - field.field.block_promotion_entity.custom.field_link_target
+    - field.field.block_promotion_entity.custom.field_picto
+    - field.field.block_promotion_entity.custom.field_sub_title
     - soc_blocks_promotion.block_promotion_entity_type.custom
   module:
-    - user
+    - link
+    - options
 id: block_promotion_entity.custom.default
 targetEntityType: block_promotion_entity
 bundle: custom
 mode: default
 content:
-  field_external_title:
-    weight: 2
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    type: string
-    region: content
-  name:
-    label: above
-    type: string
-    weight: -4
-    region: content
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-  user_id:
+  field_background_image:
+    weight: 1
     label: hidden
-    type: author
-    weight: 0
+    settings:
+      link: true
+      view_mode: default
+    third_party_settings: {  }
+    type: entity_reference_entity_view
     region: content
+  field_color_combination:
+    weight: 4
+    label: hidden
     settings: {  }
     third_party_settings: {  }
+    type: list_key
+    region: content
+  field_external_title:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_link:
+    weight: 2
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+  field_link_target:
+    weight: 6
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_picto:
+    type: entity_reference_entity_view
+    weight: 5
+    label: hidden
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    region: content
+  field_sub_title:
+    weight: 3
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
 hidden:
   langcode: true
+  name: true
   search_api_excerpt: true
+  user_id: true

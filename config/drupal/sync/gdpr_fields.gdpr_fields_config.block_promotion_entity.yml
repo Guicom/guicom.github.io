@@ -5,11 +5,290 @@ dependencies: {  }
 id: block_promotion_entity
 filenames:
   custom: ''
+  offer: ''
+  digital_asset: ''
 bundles:
   custom:
     field_external_title:
       bundle: custom
       name: field_external_title
+      entity_type_id: block_promotion_entity
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_background_image:
+      bundle: custom
+      name: field_background_image
+      entity_type_id: block_promotion_entity
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_link:
+      bundle: custom
+      name: field_link
+      entity_type_id: block_promotion_entity
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_sub_title:
+      bundle: custom
+      name: field_sub_title
+      entity_type_id: block_promotion_entity
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_color_combination:
+      bundle: custom
+      name: field_color_combination
+      entity_type_id: block_promotion_entity
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_picto:
+      bundle: custom
+      name: field_picto
+      entity_type_id: block_promotion_entity
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: clear_anonymizer
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_link_target:
+      bundle: custom
+      name: field_link_target
+      entity_type_id: block_promotion_entity
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+  offer:
+    field_external_title:
+      bundle: offer
+      name: field_external_title
+      entity_type_id: block_promotion_entity
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_is_new:
+      bundle: offer
+      name: field_is_new
+      entity_type_id: block_promotion_entity
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_sub_title:
+      bundle: offer
+      name: field_sub_title
+      entity_type_id: block_promotion_entity
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: clear_anonymizer
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_teaser:
+      bundle: offer
+      name: field_teaser
+      entity_type_id: block_promotion_entity
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: clear_anonymizer
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_description:
+      bundle: offer
+      name: field_description
+      entity_type_id: block_promotion_entity
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_central_picture:
+      bundle: offer
+      name: field_central_picture
+      entity_type_id: block_promotion_entity
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_background_image:
+      bundle: offer
+      name: field_background_image
+      entity_type_id: block_promotion_entity
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: clear_anonymizer
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_central_image:
+      bundle: offer
+      name: field_central_image
+      entity_type_id: block_promotion_entity
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_link:
+      bundle: offer
+      name: field_link
+      entity_type_id: block_promotion_entity
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_link_target:
+      bundle: offer
+      name: field_link_target
+      entity_type_id: block_promotion_entity
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+  digital_asset:
+    field_external_title:
+      bundle: digital_asset
+      name: field_external_title
+      entity_type_id: block_promotion_entity
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_tag:
+      bundle: digital_asset
+      name: field_tag
+      entity_type_id: block_promotion_entity
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_sub_title:
+      bundle: digital_asset
+      name: field_sub_title
+      entity_type_id: block_promotion_entity
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_description:
+      bundle: digital_asset
+      name: field_description
+      entity_type_id: block_promotion_entity
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_type:
+      bundle: digital_asset
+      name: field_type
+      entity_type_id: block_promotion_entity
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_central_image:
+      bundle: digital_asset
+      name: field_central_image
+      entity_type_id: block_promotion_entity
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: clear_anonymizer
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_background_image:
+      bundle: digital_asset
+      name: field_background_image
+      entity_type_id: block_promotion_entity
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_link:
+      bundle: digital_asset
+      name: field_link
+      entity_type_id: block_promotion_entity
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: clear_anonymizer
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_link_target:
+      bundle: digital_asset
+      name: field_link_target
       entity_type_id: block_promotion_entity
       rtf: 'no'
       rta: 'no'

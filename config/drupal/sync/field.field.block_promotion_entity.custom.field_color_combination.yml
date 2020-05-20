@@ -1,0 +1,21 @@
+uuid: 83e58591-d2cf-4090-884a-b9bbca3e9488
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.block_promotion_entity.field_color_combination
+    - soc_blocks_promotion.block_promotion_entity_type.custom
+  module:
+    - options
+id: block_promotion_entity.custom.field_color_combination
+field_name: field_color_combination
+entity_type: block_promotion_entity
+bundle: custom
+label: 'Color combination'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

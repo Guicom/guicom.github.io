@@ -13,10 +13,3 @@ soc_nextpage.synchro_page:
   parent: soc_core.config
   description: 'Synchronize PIM Product.'
   weight: 0
-
-soc_nextpage.default_image_settings:
-  title: 'Default image settings'
-  route_name: soc_nextpage.default_image_settings
-  parent: soc_core.config
-  description: 'Configure default image for reference and product.'
-  weight: 0
