@@ -16,6 +16,9 @@ use Drupal\soc_blocks_promotion\Entity\BlockPromotionEntity;
  */
 class ProductPagePromotionBlock extends PromotionBlock {
 
+  /**
+   * @return array
+   */
   public function build() {
     $build = [];
     $build['node_id'] = [
@@ -66,6 +69,9 @@ class ProductPagePromotionBlock extends PromotionBlock {
     return '';
   }
 
+  /**
+   * @return array|string[]
+   */
   public function getCacheTags() {
     if ($node = \Drupal::routeMatch()->getParameter('node')) {
       return Cache::mergeTags(parent::getCacheTags(), array('node:' . $node->id()));
@@ -74,6 +80,9 @@ class ProductPagePromotionBlock extends PromotionBlock {
     }
   }
 
+  /**
+   * @return array|string[]
+   */
   public function getCacheContexts() {
     return Cache::mergeContexts(parent::getCacheContexts(), array('route'));
   }
