@@ -3,15 +3,66 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.block_promotion_entity.custom.field_background_image
+    - field.field.block_promotion_entity.custom.field_color_combination
     - field.field.block_promotion_entity.custom.field_external_title
+    - field.field.block_promotion_entity.custom.field_link
+    - field.field.block_promotion_entity.custom.field_link_target
+    - field.field.block_promotion_entity.custom.field_picto
+    - field.field.block_promotion_entity.custom.field_sub_title
     - soc_blocks_promotion.block_promotion_entity_type.custom
+  module:
+    - link
+    - media_library
 id: block_promotion_entity.custom.default
 targetEntityType: block_promotion_entity
 bundle: custom
 mode: default
 content:
+  field_background_image:
+    weight: 6
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+    type: media_library_widget
+    region: content
+  field_color_combination:
+    weight: 5
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
   field_external_title:
     weight: 2
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_link:
+    weight: 7
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  field_link_target:
+    weight: 8
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_picto:
+    type: media_library_widget
+    weight: 4
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+    region: content
+  field_sub_title:
+    weight: 3
     settings:
       size: 60
       placeholder: ''
@@ -34,13 +85,13 @@ content:
       placeholder: ''
     third_party_settings: {  }
   translation:
-    weight: 4
+    weight: 10
     region: content
     settings: {  }
     third_party_settings: {  }
   user_id:
     type: entity_reference_autocomplete
-    weight: 3
+    weight: 9
     settings:
       match_operator: CONTAINS
       size: 60

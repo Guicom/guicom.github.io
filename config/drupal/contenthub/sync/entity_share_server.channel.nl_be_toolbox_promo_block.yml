@@ -1,0 +1,15 @@
+uuid: 6ba55a79-ddff-4bb2-80c7-b13cbe3a58b9
+langcode: en
+status: true
+dependencies: {  }
+id: nl_be_toolbox_promo_block
+label: 'NL-BE / Toolbox - Promo Block'
+channel_entity_type: block_promotion_entity
+channel_bundle: toolbox
+channel_langcode: nl-be
+channel_filters: null
+channel_groups: null
+channel_sorts: {  }
+channel_searches: null
+authorized_users:
+  cd0d9446-cb19-4e87-9dcf-d3bdc37a70a7: cd0d9446-cb19-4e87-9dcf-d3bdc37a70a7

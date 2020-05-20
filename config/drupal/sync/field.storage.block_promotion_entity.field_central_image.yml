@@ -1,0 +1,20 @@
+uuid: ca27ed4a-fdb2-4cbd-9161-825b43adb216
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+    - soc_blocks_promotion
+id: block_promotion_entity.field_central_image
+field_name: field_central_image
+entity_type: block_promotion_entity
+type: entity_reference
+settings:
+  target_type: media
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

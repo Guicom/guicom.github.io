@@ -221,10 +221,12 @@ class NextpageItemHandler  {
       $data = $json_value->{$extid}->value;
     }
     else {
-      foreach ($json_value as $values) {
-        if (isset($values->value)) {
-          if (isset($values->value->{$extid})) {
-            $data = $values->value->{$extid}->value;
+      if (!empty($json_value) && is_iterable($json_value)) {
+        foreach ($json_value as $values) {
+          if (isset($values->value)) {
+            if (isset($values->value->{$extid})) {
+              $data = $values->value->{$extid}->value;
+            }
           }
         }
       }

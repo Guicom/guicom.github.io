@@ -1,0 +1,63 @@
+{#
+/**
+ * @file block_promotion_entity.html.twig
+ * Default theme implementation to present Block promotion entity data.
+ *
+ * This template is used when viewing Block promotion entity pages.
+ *
+ *
+ * Available variables:
+ * - content: A list of content items. Use 'content' to print all content, or
+ * - attributes: HTML attributes for the container element.
+ *
+ * @see template_preprocess_block_promotion_entity()
+ *
+ * @ingroup themeable
+ */
+#}
+{% if content %}
+  {% set color_combination = "" %}
+  {% if content.field_color_combination|render|trim is not empty %}
+    {% set color_combination = content.field_color_combination['#items'].0.value %}
+  {% endif %}
+  {%
+    set classes = [
+    'block-promotion-entity',
+    'block-promotion-entity-offer',
+    color_combination
+  ]
+  %}
+  <div{{ attributes.addClass(classes) }}>
+    {% if content.field_background_image|render|trim is not empty %}
+      {% set field_background_image = content.field_background_image %}
+      {% set image_uri = field_background_image['#items'].entity.field_media_image.0.entity.uri.value %}
+      {% if image_uri is not empty %}
+        {% set background_image = image_uri | image_style('max_width_1140') %}
+      {% endif %}
+    {% endif %}
+    <div class="soc-block-promo-entity-content"{% if background_image is not empty %} style="background-image:url('{{ file_url(background_image) }}'){% endif %}">
+      {% set field_picto_uri = content.field_picto['#items'].entity.field_media_image.0.entity.uri.value %}
+      {% if field_picto_uri is not empty %}
+        <div class="soc-block-promo-entity-picto">
+          <img class="img-picto" src="{{ file_url(field_picto_uri) }}"/>
+        </div>
+      {% endif %}
+      <div class="soc-block-promo-entity-external-title">
+        {{ content.field_external_title.0 }}
+      </div>
+      {% if content.field_sub_title|render|trim is not empty %}
+        <div class="soc-block-promo-entity-sub-title">
+          {{ content.field_sub_title.0 }}
+        </div>
+      {% endif %}
+      <div class="soc-block-promo-entity-link">
+        {% set url = content.field_link.0['#url'] %}
+        {% set text = content.field_link.0['#title'] %}
+        {% if content.field_link_target %}
+          {% set target = content.field_link_target['#items'].0.value %}
+        {% endif %}
+        <a href="{{ url }}"{% if target %} target="{{ target }}{% endif %}">{{ text }}</a>
+      </div>
+    </div>
+  </div>
+{% endif %}

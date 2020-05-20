@@ -117,7 +117,6 @@ class LoginForm extends TracepartsForm {
     // Login success: go to download.
     if ($this->tracepartsUser->checkLogin($values['email']) === TRUE) {
       if ($link = $this->getDownloadLink($values)) {
-        //$response->addCommand(new InvokeCommand('.ui-dialog', 'addClass', array('thank-you')));
         $response->addCommand(new ReplaceCommand('.ui-dialog-title', $this->t('Thank you!')));
         $response->addCommand(new ReplaceCommand('.soc-traceparts-login', $link));
       }
