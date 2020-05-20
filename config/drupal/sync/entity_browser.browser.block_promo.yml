@@ -23,9 +23,9 @@ widgets:
     settings:
       view: block_promotion_entity_browser
       view_display: entity_browser_1
-      submit_text: 'Select reusable block promotion'
+      submit_text: 'Select promo block'
       auto_select: false
     uuid: fd3b4d06-80c9-442c-a2e9-8879e5fe31cc
     weight: 1
-    label: view
+    label: 'Choose a promo block'
     id: view
