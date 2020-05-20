@@ -3,6 +3,7 @@ Feature: Footer
   In order to test out the global layout footer
 
   @api @cit @javascript @footer
+    # Ticket jira : SOCSOB-245
     # vendor/bin/phing behat:run -Dbehat.tags=footer
     # See the footer element.
   Scenario: Global layout footer
