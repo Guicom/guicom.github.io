@@ -204,6 +204,9 @@
             },
             "drupal/search_api_solr": {
                 "Autocomplete suggestions fail for large requests : TO FOLLOW FOR UPDATED ISSUE !": "https://www.drupal.org/files/issues/2020-01-30/search_api_solr-3109911-8.patch"
+            },
+            "drupal/scheduler_content_moderation_integration": {
+                "Missing property \"value\" bug": "https://www.drupal.org/files/issues/2020-04-08/scheduler_content_moderation_integration-3124287-4.patch"
             }
         }
     }

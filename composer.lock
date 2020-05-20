@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "53c6a2230ae17b49f1a32d2ddd527173",
+    "content-hash": "e847993f93da7187cbdabd6c78176854",
     "packages": [
         {
             "name": "actency/foundation",
@@ -7663,6 +7663,9 @@
                         "status": "not-covered",
                         "message": "Project has not opted into security advisory coverage!"
                     }
+                },
+                "patches_applied": {
+                    "Missing property \"value\" bug": "https://www.drupal.org/files/issues/2020-04-08/scheduler_content_moderation_integration-3124287-4.patch"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
