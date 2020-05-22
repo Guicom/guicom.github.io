@@ -13,6 +13,10 @@ dependencies:
     - node.type.product_reference
     - node.type.resource
     - node.type.thank_you_page
+    - soc_blocks_promotion.block_promotion_entity_type.custom
+    - soc_blocks_promotion.block_promotion_entity_type.digital_asset
+    - soc_blocks_promotion.block_promotion_entity_type.offer
+    - soc_blocks_promotion.block_promotion_entity_type.toolbox
   module:
     - content_moderation
 _core:
@@ -103,6 +107,11 @@ type_settings:
       to: pending_review
       weight: -3
   entity_types:
+    block_promotion_entity:
+      - custom
+      - digital_asset
+      - offer
+      - toolbox
     node:
       - article
       - event
