@@ -19,7 +19,3 @@ We truncate at 63 chars because some Kubernetes name fields are limited to this 
 {{- define "varnish.image" -}}
 {{- printf "%s/%s:%s" .Values.registry.location .Values.registry.images.varnish .Values.drupal.environment -}}
 {{- end -}}
-
-{{- define "varnish.image" -}}
-{{- printf "%s/%s:%s" .Values.registry.location .Values.registry.images.varnish .Values.drupal.environment -}}
-{{- end -}}
