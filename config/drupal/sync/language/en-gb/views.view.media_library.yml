@@ -1,0 +1,32 @@
+display:
+  default:
+    display_options:
+      exposed_form:
+        options:
+          reset_button_label: Reset
+      filters:
+        name:
+          expose:
+            label: Name
+  page:
+    display_options:
+      fields:
+        edit_media:
+          text: Edit
+        delete_media:
+          text: Delete
+  widget:
+    display_options:
+      filters:
+        name:
+          expose:
+            label: Name
+  widget_table:
+    display_options:
+      fields:
+        name:
+          label: Name
+      filters:
+        name:
+          expose:
+            label: Name

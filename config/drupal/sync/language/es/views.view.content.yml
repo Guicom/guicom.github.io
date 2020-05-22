@@ -1,6 +1,31 @@
 display:
   default:
     display_options:
+      exposed_form:
+        options:
+          reset_button_label: Restablecer
+          exposed_sorts_label: 'Ordenar por'
+          sort_asc_label: Asc
+          sort_desc_label: Desc
+      pager:
+        options:
+          tags:
+            previous: '‹ Anterior'
+            next: 'Siguiente >'
       fields:
+        title:
+          label: Título
+        type:
+          separator: ', '
+        status:
+          label: Estado
         operations:
           label: Operaciones
+      filters:
+        title:
+          expose:
+            label: Título
+        status:
+          expose:
+            label: Estado
+    display_title: Máster
