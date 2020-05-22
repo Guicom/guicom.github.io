@@ -1,0 +1,52 @@
+label: File
+display:
+  default:
+    display_title: Principale
+    display_options:
+      exposed_form:
+        options:
+          reset_button_label: Ripristina
+          exposed_sorts_label: 'Ordina per'
+          sort_asc_label: Asc
+          sort_desc_label: Disc
+      pager:
+        options:
+          tags:
+            previous: '‹ Precedente'
+            next: 'Seguente ›'
+          expose:
+            items_per_page_label: 'Voci per pagina'
+            items_per_page_options_all_label: '- Tutto -'
+            offset_label: Scostamento
+      fields:
+        filename:
+          label: Nome
+          separator: ', '
+        status:
+          label: Stato
+      filters:
+        filename:
+          expose:
+            label: 'Nome file'
+        status:
+          expose:
+            label: Stato
+      title: File
+  page_1:
+    display_options:
+      menu:
+        title: File
+  page_2:
+    display_options:
+      pager:
+        options:
+          tags:
+            previous: '‹ Precedente'
+            next: 'Seguente ›'
+          expose:
+            items_per_page_label: 'Voci per pagina'
+            items_per_page_options_all_label: '- Tutto -'
+            offset_label: Scostamento
+      fields:
+        type:
+          label: 'Tipo di entità'

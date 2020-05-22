@@ -46,6 +46,7 @@ module:
   editor: 0
   editor_advanced_link: 0
   entity: 0
+  entity_browser: 0
   entity_reference_revisions: 0
   entity_share: 0
   entity_share_client: 0
