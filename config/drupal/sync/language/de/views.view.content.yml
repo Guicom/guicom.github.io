@@ -1,9 +1,22 @@
 display:
   default:
     display_options:
+      exposed_form:
+        options:
+          reset_button_label: Zurücksetzen
+          exposed_sorts_label: 'Sortieren nach'
+          sort_asc_label: Aufsteigend
+          sort_desc_label: Absteigend
+      pager:
+        options:
+          tags:
+            previous: '‹ Vorherige Seite'
+            next: 'Nächste Seite ›'
       fields:
         title:
           label: Titel
+        type:
+          separator: ', '
         status:
           label: Status
         operations:
@@ -15,3 +28,4 @@ display:
         status:
           expose:
             label: Status
+    display_title: Master

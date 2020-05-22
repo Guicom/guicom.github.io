@@ -1,9 +1,22 @@
 display:
   default:
     display_options:
+      exposed_form:
+        options:
+          reset_button_label: Ripristina
+          exposed_sorts_label: 'Ordina per'
+          sort_asc_label: Asc
+          sort_desc_label: Disc
+      pager:
+        options:
+          tags:
+            previous: '‹ Precedente'
+            next: 'Seguente ›'
       fields:
         title:
           label: Titolo
+        type:
+          separator: ', '
         status:
           label: Stato
         operations:
@@ -15,3 +28,4 @@ display:
         status:
           expose:
             label: Stato
+    display_title: Principale

@@ -1,9 +1,22 @@
 display:
   default:
     display_options:
+      exposed_form:
+        options:
+          reset_button_label: Resetuj
+          exposed_sorts_label: 'Sortuj po'
+          sort_asc_label: Rosnąco
+          sort_desc_label: Malejąco
+      pager:
+        options:
+          tags:
+            previous: '‹ Poprzednia'
+            next: 'Następna ›'
       fields:
         title:
           label: Tytuł
+        type:
+          separator: ', '
         status:
           label: Status
         operations:
@@ -15,3 +28,4 @@ display:
         status:
           expose:
             label: Status
+    display_title: Główny

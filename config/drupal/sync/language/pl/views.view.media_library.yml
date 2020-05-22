@@ -1,6 +1,19 @@
 display:
   default:
+    display_title: Główny
     display_options:
+      exposed_form:
+        options:
+          reset_button_label: Resetuj
+          exposed_sorts_label: 'Sortuj po'
+          sort_asc_label: Rosnąco
+          sort_desc_label: Malejąco
+      pager:
+        options:
+          expose:
+            items_per_page_label: 'Elementów na stronę'
+            items_per_page_options_all_label: '- Wszystko -'
+            offset_label: Przesunięcie
       filters:
         status:
           expose:
@@ -8,11 +21,21 @@ display:
         name:
           expose:
             label: Nazwa
+        bundle:
+          expose:
+            label: 'Typ mediów'
+          group_info:
+            label: 'Typ mediów'
+      title: Media
   page:
     display_options:
       fields:
+        name:
+          separator: ', '
         edit_media:
           text: Edytuj
+        delete_media:
+          text: Usuń
   widget:
     display_options:
       filters:

@@ -55,6 +55,7 @@
         "drupal/drush_language": "^1.0@RC",
         "drupal/ds": "^3.3",
         "drupal/editor_advanced_link": "^1.4",
+        "drupal/entity_browser": "^2.5",
         "drupal/entity_share": "^2.0@alpha",
         "drupal/entity_share_cron": "^2.0@alpha",
         "drupal/entity_usage": "^2.0@beta",
@@ -204,6 +205,9 @@
             },
             "drupal/search_api_solr": {
                 "Autocomplete suggestions fail for large requests : TO FOLLOW FOR UPDATED ISSUE !": "https://www.drupal.org/files/issues/2020-01-30/search_api_solr-3109911-8.patch"
+            },
+            "drupal/scheduler_content_moderation_integration": {
+                "Missing property \"value\" bug": "https://www.drupal.org/files/issues/2020-04-08/scheduler_content_moderation_integration-3124287-4.patch"
             }
         }
     }

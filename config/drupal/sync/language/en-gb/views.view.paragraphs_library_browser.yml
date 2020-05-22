@@ -1,0 +1,20 @@
+display:
+  default:
+    display_options:
+      exposed_form:
+        options:
+          reset_button_label: Reset
+      fields:
+        label:
+          label: Label
+        type:
+          label: Type
+      filters:
+        label:
+          expose:
+            label: Label
+          group_info:
+            label: Label
+        type:
+          expose:
+            label: Type

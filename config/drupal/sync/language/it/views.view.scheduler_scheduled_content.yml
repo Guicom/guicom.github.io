@@ -1,11 +1,34 @@
 display:
   default:
     display_options:
+      exposed_form:
+        options:
+          reset_button_label: Ripristina
+          exposed_sorts_label: 'Ordina per'
+          sort_asc_label: Asc
+          sort_desc_label: Disc
+      pager:
+        options:
+          tags:
+            previous: '‹ precedente'
+            next: 'seguente ›'
+            first: '« prima'
+            last: 'ultima »'
       fields:
         title:
           label: Titolo
+          separator: ', '
+        type:
+          separator: ', '
+        name:
+          separator: ', '
         status:
           label: Stato
+          separator: ', '
+        publish_on:
+          separator: ', '
+        unpublish_on:
+          separator: ', '
         operations:
           label: Operazioni
       filters:
@@ -15,3 +38,4 @@ display:
         status:
           expose:
             label: Stato
+    display_title: Principale
