@@ -1,0 +1,20 @@
+uuid: f1afc84f-1019-4cc5-bf56-9e9a1517f1d9
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+    - soc_blocks_promotion
+id: paragraph.field_mutliline_promo_block
+field_name: field_mutliline_promo_block
+entity_type: paragraph
+type: entity_reference
+settings:
+  target_type: block_promotion_entity
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

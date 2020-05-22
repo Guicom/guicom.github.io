@@ -1,0 +1,33 @@
+uuid: 147faf70-3ae8-4bee-8305-51484cd3ff1d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.model_promo_block.field_multiline_diplay_promo
+    - field.field.paragraph.model_promo_block.field_mutliline_promo_block
+    - paragraphs.paragraphs_type.model_promo_block
+  module:
+    - options
+id: paragraph.model_promo_block.default
+targetEntityType: paragraph
+bundle: model_promo_block
+mode: default
+content:
+  field_multiline_diplay_promo:
+    weight: 0
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: list_key
+    region: content
+  field_mutliline_promo_block:
+    weight: 1
+    label: hidden
+    settings:
+      link: true
+      view_mode: default
+    third_party_settings: {  }
+    type: entity_reference_entity_view
+    region: content
+hidden:
+  search_api_excerpt: true
