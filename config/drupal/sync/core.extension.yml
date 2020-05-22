@@ -125,7 +125,6 @@ module:
   smart_trim: 0
   soc_access_block: 0
   soc_addtoany: 0
-  soc_basic_auth: 0
   soc_blocks_promotion: 0
   soc_bookmarks: 0
   soc_content_hub: 0
