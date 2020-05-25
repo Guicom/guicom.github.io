@@ -25,6 +25,7 @@ filenames:
   video_text: ''
   model_citation: ''
   promo_block: ''
+  model_promo_block: ''
 bundles:
   product_faq:
     field_question:
@@ -908,6 +909,51 @@ bundles:
     field_promo_block:
       bundle: promo_block
       name: field_promo_block
+      entity_type_id: paragraph
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_multiline_diplay_promo:
+      bundle: promo_block
+      name: field_multiline_diplay_promo
+      entity_type_id: paragraph
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: clear_anonymizer
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+  model_promo_block:
+    field_promo_block:
+      bundle: model_promo_block
+      name: field_promo_block
+      entity_type_id: paragraph
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_mutliline_promo_block:
+      bundle: model_promo_block
+      name: field_mutliline_promo_block
+      entity_type_id: paragraph
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_multiline_diplay_promo:
+      bundle: model_promo_block
+      name: field_multiline_diplay_promo
       entity_type_id: paragraph
       rtf: 'no'
       rta: 'no'
