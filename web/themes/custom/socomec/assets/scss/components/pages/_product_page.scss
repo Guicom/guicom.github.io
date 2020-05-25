@@ -414,6 +414,10 @@ body.node--type-product {
 
   .product-right-info {
     justify-content: space-between;
+    .row {
+      margin-right: 0;
+      margin-left: 0;
+    }
   }
   .vocabulary-protection-level {
     .protection-title {

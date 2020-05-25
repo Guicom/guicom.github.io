@@ -63,7 +63,7 @@
         {% if content.field_link_target %}
           {% set target = content.field_link_target['#items'].0.value %}
         {% endif %}
-        <a href="{{ url }}"{% if target %} target="{{ target }}{% endif %}">{{ text }}</a>
+        <a class="back-to-button" href="{{ url }}"{% if target %} target="{{ target }}{% endif %}">{% include '/themes/custom/socomec/assets/images/picto/ui/chevron-left-circle.svg' %}{{ text }}</a>
       </div>
     </div>
   {% endif %}
