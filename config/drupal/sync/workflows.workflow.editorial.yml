@@ -32,13 +32,13 @@ type_settings:
       published: false
       default_revision: true
     draft:
-      label: Draft
       published: false
       default_revision: false
+      label: Draft
       weight: -2
     pending_review:
       published: false
-      default_revision: false
+      default_revision: true
       label: Ready
       weight: -1
     published:
@@ -48,7 +48,7 @@ type_settings:
       weight: 2
     scheduled:
       published: false
-      default_revision: false
+      default_revision: true
       label: Scheduled
       weight: 0
   transitions:
@@ -79,7 +79,6 @@ type_settings:
       from:
         - draft
         - pending_review
-        - published
         - scheduled
     publish:
       label: Publish
