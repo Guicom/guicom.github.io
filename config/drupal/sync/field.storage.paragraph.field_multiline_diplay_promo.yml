@@ -1,0 +1,27 @@
+uuid: 448282ce-7db8-4745-8b2e-4ea16a7d8ba7
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+id: paragraph.field_multiline_diplay_promo
+field_name: field_multiline_diplay_promo
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: soc-10-col
+      label: '10 col'
+    -
+      value: soc-fullscreen
+      label: Full
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
