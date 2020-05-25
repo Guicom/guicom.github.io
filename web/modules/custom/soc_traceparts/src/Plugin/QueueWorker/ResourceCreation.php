@@ -8,6 +8,7 @@ use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Drupal\Core\Queue\QueueWorkerBase;
 use Drupal\node\Entity\Node;
+use Drupal\soc_content\Service\Manager\ContentManager;
 use Drupal\soc_traceparts\Service\Manager\TracepartsDownloadsManager;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
@@ -32,6 +33,9 @@ class ResourceCreation extends QueueWorkerBase implements ContainerFactoryPlugin
   /** @var TracepartsDownloadsManager $downloadsManager */
   protected $downloadsManager;
 
+  /** @var ContentManager $contentManager */
+  protected $contentManager;
+
   /**
    * Constructor.
    *
@@ -42,14 +46,18 @@ class ResourceCreation extends QueueWorkerBase implements ContainerFactoryPlugin
    * @param array $plugin_definition
    *   The plugin implementation definition.
    * @param \Drupal\Core\Entity\EntityTypeManagerInterface $entityTypeManager
+   * @param \Drupal\soc_traceparts\Service\Manager\TracepartsDownloadsManager $downloads_manager
+   * @param \Drupal\soc_content\Service\Manager\ContentManager $content_manager
    */
   public function __construct(array $configuration,
                               $plugin_id,
                               array $plugin_definition,
                               EntityTypeManagerInterface $entityTypeManager,
-                              TracepartsDownloadsManager $downloads_manager) {
+                              TracepartsDownloadsManager $downloads_manager,
+                              ContentManager $content_manager) {
     $this->downloadsManager = $downloads_manager;
     $this->entityTypeManager = $entityTypeManager;
+    $this->contentManager = $content_manager;
     parent::__construct($configuration, $plugin_id, $plugin_definition);
   }
 
@@ -65,7 +73,8 @@ class ResourceCreation extends QueueWorkerBase implements ContainerFactoryPlugin
       $plugin_id,
       $plugin_definition,
       $container->get('entity_type.manager'),
-      $container->get('soc_traceparts.traceparts_downloads_manager')
+      $container->get('soc_traceparts.traceparts_downloads_manager'),
+      $container->get('soc_content.content_manager')
     );
   }
 
@@ -75,8 +84,11 @@ class ResourceCreation extends QueueWorkerBase implements ContainerFactoryPlugin
   public function processItem($data) {
     /** @var \Drupal\node\Entity\Node $referenceNode */
     $referenceNode = $data['entity'];
-    $partNumber = $referenceNode->get('field_reference_ref');
-    $title = 'Traceparts CAD ' . $partNumber;
+    $partNumber = $referenceNode->get('field_reference_ref')->value;
+    $title = $referenceNode->getTitle() . ' CAD ' . $partNumber;
+    $resourceType = $this->contentManager
+      ->getEntityByUuid('taxonomy_term', 'be54a7ae-c75a-4c02-ad49-32382e9a5fdf');
+    $host = \Drupal::request()->getSchemeAndHttpHost();
 
     // Check if resource already exists.
     $resourceNids = $this->entityTypeManager
@@ -99,9 +111,14 @@ class ResourceCreation extends QueueWorkerBase implements ContainerFactoryPlugin
           'field_res_original_title' => $referenceNode->getTitle(),
           'field_res_reference' => $partNumber,
           'field_res_downloadable' => 0,
-          'field_res_link_url' => $referenceNode->toUrl()->toString(),
+          'field_res_link_url' => $host . $referenceNode->toUrl()->toString(),
+          'field_res_resource_type' => [
+            'target_id' => $resourceType->id(),
+          ],
+          'moderation_state' => 'published',
         ];
         $resourceNode = Node::create($resourceNodeData);
+        $resourceNode->setPublished();
         try {
           $resourceNode->save();
         }

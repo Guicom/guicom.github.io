@@ -50,19 +50,23 @@ class ReferenceManager {
       if ($reference->ElementType === 3) {
         if ($entity = $this->nextpageItemHandler->loadByExtID($reference->ExtID, 'node', 'product_reference')) {
           // Update reference.
-          $nids[] = $this->updateReference($entity, $reference);
+          $nid = $this->updateReference($entity, $reference);
         }
         else {
           // Create reference.
           $nid = $this->createReference($reference);
-          if ($nid !== FALSE) {
-            $nids[] = $nid;
-            // Add to queue for automatic resource creation.
-            $queue = \Drupal::queue('soc_traceparts_resource_creation');
-            $data = ['entity' => Node::load($nid)];
-            $queue->createItem($data);
-          }
         }
+        if ($nid !== FALSE) {
+          $nids[] = $nid;
+        }
+      }
+    }
+    if (sizeof($nids)) {
+      $nodes = Node::loadMultiple($nids);
+      // Add to queue for automatic resource creation.
+      $queue = \Drupal::queue('soc_traceparts_resource_creation');
+      foreach ($nodes as $node) {
+        $queue->createItem(['entity' => $node]);
       }
     }
     return $nids;
