@@ -1,0 +1,52 @@
+label: Pliki
+display:
+  default:
+    display_title: Główny
+    display_options:
+      exposed_form:
+        options:
+          reset_button_label: Resetuj
+          exposed_sorts_label: 'Sortuj po'
+          sort_asc_label: Rosnąco
+          sort_desc_label: Malejąco
+      pager:
+        options:
+          tags:
+            previous: '‹ Poprzednia'
+            next: 'Następna ›'
+          expose:
+            items_per_page_label: 'Elementów na stronę'
+            items_per_page_options_all_label: '- Wszystko -'
+            offset_label: Przesunięcie
+      fields:
+        filename:
+          label: Nazwa
+          separator: ', '
+        status:
+          label: Status
+      filters:
+        filename:
+          expose:
+            label: 'Nazwa pliku'
+        status:
+          expose:
+            label: Status
+      title: Pliki
+  page_1:
+    display_options:
+      menu:
+        title: Pliki
+  page_2:
+    display_options:
+      pager:
+        options:
+          tags:
+            previous: '‹ Poprzednia'
+            next: 'Następna ›'
+          expose:
+            items_per_page_label: 'Elementów na stronę'
+            items_per_page_options_all_label: '- Wszystko -'
+            offset_label: Przesunięcie
+      fields:
+        type:
+          label: 'Typ encji'

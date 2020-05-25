@@ -1,0 +1,20 @@
+uuid: c35a230c-5784-42f4-9c2f-76c0b8017de9
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+    - soc_blocks_promotion
+id: paragraph.field_promo_block
+field_name: field_promo_block
+entity_type: paragraph
+type: entity_reference
+settings:
+  target_type: block_promotion_entity
+module: core
+locked: false
+cardinality: 2
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

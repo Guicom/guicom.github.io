@@ -1,7 +1,48 @@
 display:
   default:
+    display_title: Principale
     display_options:
+      exposed_form:
+        options:
+          reset_button_label: Ripristina
+          exposed_sorts_label: 'Ordina per'
+          sort_asc_label: Asc
+          sort_desc_label: Disc
+      pager:
+        options:
+          expose:
+            items_per_page_label: 'Voci per pagina'
+            items_per_page_options_all_label: '- Tutto -'
+            offset_label: Scostamento
       filters:
         status:
           expose:
             label: 'Stato di pubblicazione'
+        name:
+          expose:
+            label: Nome
+      title: Media
+  page:
+    display_options:
+      fields:
+        name:
+          separator: ', '
+        edit_media:
+          text: Modifica
+        delete_media:
+          text: Elimina
+  widget:
+    display_options:
+      filters:
+        name:
+          expose:
+            label: Nome
+  widget_table:
+    display_options:
+      fields:
+        name:
+          label: Nome
+      filters:
+        name:
+          expose:
+            label: Nome
