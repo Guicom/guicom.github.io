@@ -5,20 +5,5 @@ display:
         options:
           reset_button_label: Reset
       fields:
-        label:
-          label: Label
-        type:
-          label: Type
-        id:
-          label: ID
         operations:
           label: Operations
-      filters:
-        label:
-          expose:
-            label: Label
-          group_info:
-            label: Label
-        type:
-          expose:
-            label: Type
