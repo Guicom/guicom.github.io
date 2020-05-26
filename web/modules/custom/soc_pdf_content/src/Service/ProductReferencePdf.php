@@ -4,6 +4,7 @@ namespace Drupal\soc_pdf_content\Service;
 
 use Drupal\node\NodeInterface;
 use Drupal\soc_pdf\Service\SocPdfTCPDF;
+use Drupal\Core\Link;
 
 class ProductReferencePdf {
 
@@ -12,16 +13,35 @@ class ProductReferencePdf {
    */
   public static function generatePdf(NodeInterface $node) {
     $pdf = new SocPdfTCPDF();
-    // set document information
+    /** @var \Drupal\soc_nextpage\Service\ProductReference $productReference */
+    $productReference = \Drupal::service('soc_nextpage.product_reference');
+    $outputFamiles = '';
+    if ($families = $productReference->getFamiliesLinkByProductReference($node)) {
+     foreach ($families as $family) {
+       $link = $family->toString();
+       if (!empty($outputFamiles)) {
+         $outputFamiles .= " - ";
+       }
+       $outputFamiles .= $link->getGeneratedLink();
+     }
+    }
+
     $title = $node->getTitle();
     $pdf->prepareHeader($title);
     $url = $node->toUrl()->setAbsolute()->toString();
     $pdf->setUrl($url);
     $pdf->AddPage();
+
+    if (!empty($outputFamiles)) {
+      $pdf->SetFont('helvetica', '', 10);
+      $pdf->SetTextColor(0, 0, 0);
+      $pdf->writeHTML($outputFamiles, true, false, true, false, '');
+    }
+
     $pdf->SetFont('helvetica', 'B', 20);
     $pdf->SetTextColor(0, 79, 159);
     // Title
-    $pdf->Ln(10);
+    $pdf->Ln(5);
     $pdf->writeHTML($title, true, false, true, false, '');
     $pdf->Ln(2);
     if ($node->hasField('field_reference_ref')) {
