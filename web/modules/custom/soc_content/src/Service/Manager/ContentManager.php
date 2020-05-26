@@ -45,10 +45,7 @@ class ContentManager {
   public function getEntityByUuid(string $type, string $uuid) {
     try {
       $entity = $this->entityRepository->loadEntityByUuid($type, $uuid);
-      $entityType = $entity->getEntityType();
-      if (!is_string($entityType)) {
-        $entityType = $entity->getEntityType()->getBaseTable();
-      }
+      $entityType = $entity->getEntityTypeId();
       if ($entityType === $type) {
         return $entity;
       }

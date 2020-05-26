@@ -121,6 +121,8 @@ class NextpageItemHandler  {
         $this->entityInfo['name'] = 'node';
         $this->entityInfo['type'] = 'type';
         break;
+      default:
+        break;
     }
     switch ($type) {
       case 'family':
@@ -131,6 +133,8 @@ class NextpageItemHandler  {
         break;
       case 'product':
         $this->entityInfo['field'] = 'field_product_extid';
+        break;
+      default:
         break;
     }
   }
@@ -221,12 +225,10 @@ class NextpageItemHandler  {
       $data = $json_value->{$extid}->value;
     }
     else {
-      if (!empty($json_value) && is_iterable($json_value)) {
+      if (!empty($json_value)) {
         foreach ($json_value as $values) {
-          if (isset($values->value)) {
-            if (isset($values->value->{$extid})) {
-              $data = $values->value->{$extid}->value;
-            }
+          if (isset($values->value) && isset($values->value->{$extid})) {
+            $data = $values->value->{$extid}->value;
           }
         }
       }

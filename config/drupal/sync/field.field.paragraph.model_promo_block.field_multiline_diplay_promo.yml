@@ -1,0 +1,23 @@
+uuid: 131a17e5-3825-48bf-a671-ce7e303a2113
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_multiline_diplay_promo
+    - paragraphs.paragraphs_type.model_promo_block
+  module:
+    - options
+id: paragraph.model_promo_block.field_multiline_diplay_promo
+field_name: field_multiline_diplay_promo
+entity_type: paragraph
+bundle: model_promo_block
+label: Display
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: soc-10-col
+default_value_callback: ''
+settings: {  }
+field_type: list_string

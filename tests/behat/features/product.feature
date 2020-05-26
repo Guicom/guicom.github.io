@@ -1,6 +1,7 @@
 @api @cit @javascript
 Feature: Products
   In order to test out the products
+  # ./vendor/bin/phing behat:run -Dbehat.tags=product
 
   @api @cit @javascript @product @product_detail
   Scenario: Detail product
