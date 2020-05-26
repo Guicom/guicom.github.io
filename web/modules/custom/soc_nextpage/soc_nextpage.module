@@ -25,6 +25,7 @@ function soc_nextpage_cron() {
   try {
     $menu->save();
   } catch (\Drupal\Core\Entity\EntityStorageException $e) {
+    \Drupal::logger('soc_nextpage')->warning($e->getMessage());
   }
 
   $logger->info('Import finished!');
@@ -38,6 +39,9 @@ function soc_nextpage_form_alter(&$form, FormStateInterface $form_state, $form_i
   switch ($form_id) {
     case 'node_product_edit_form':
       $form['#validate'][] = '_soc_nextpage_validate_json_data';
+      break;
+    default:
+      break;
   }
 }
 
