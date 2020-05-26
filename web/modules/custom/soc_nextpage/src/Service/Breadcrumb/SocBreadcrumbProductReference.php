@@ -52,7 +52,7 @@ class SocBreadcrumbProductReference implements BreadcrumbBuilderInterface {
       foreach ($families as $family) {
         $breadcrumb->addLink($family);
       }
-      
+
       if ($nodeParent = $this->productReference->getParentProductByProductReference($node)) {
         if (!empty($nodeParent->getTitle()) && !empty($nodeParent->id())) {
           $breadcrumb->addLink(Link::createFromRoute($nodeParent->getTitle(),

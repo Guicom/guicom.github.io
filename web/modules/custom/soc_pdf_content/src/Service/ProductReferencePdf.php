@@ -59,9 +59,10 @@ class ProductReferencePdf {
         $pdf->SetFont('helvetica', '', 12);
         $pdf->SetTextColor(0, 0, 0);
         $pdf->writeHTML($teaser[0]['value'], true, false, true, false, '');
-        $pdf->Ln(10);
+        $pdf->Ln(5);
       }
     }
+    $pdf->Ln(5);
     if ($node->hasField('field_characteristics')) {
       $characteristics = $node->get('field_characteristics')->getValue();
     }
@@ -70,23 +71,14 @@ class ProductReferencePdf {
     }
     if (!empty($decodeCharacteristics) && is_array($decodeCharacteristics)) {
       foreach ($decodeCharacteristics as $groupLabel => $groupCharacteristics) {
-        $pdf->SetFont('helvetica', '', 14);
-        $pdf->SetTextColor(0, 112, 192);
-        $pdf->Cell(0, 0, $groupLabel, 0, 0, 'L', 0, '', 0);
-        $pdf->Ln(8);
         $ouput = "";
-        $i = 0;
+        $ouput .= '<tr>';
+        $ouput .= '<th colspan="2" style="border-bottom: 1px solid #FFCC00;color:#0070C0;"><strong>' . $groupLabel . '</strong></th>';
+        $ouput .= '</tr>';
         foreach ($groupCharacteristics as $key => $values) {
           $ouput .= '<tr>';
-          if ($i === 0) {
-            $ouput .= '<th style="border-bottom: 1px solid #DDDDDD;border-top: 1px solid #FFCC00;"><strong>' . $values['label'] . '</strong></th>';
-            $ouput .= '<td style="border-bottom: 1px solid #DDDDDD;border-top: 1px solid #FFCC00;background-color:#f2f6fa;">';
-          }
-          else {
-            $ouput .= '<th style="border-bottom: 1px solid #DDDDDD;"><strong>' . $values['label'] . '</strong></th>';
-            $ouput .= '<td style="border-bottom: 1px solid #DDDDDD;background-color:#F2F6FA;">';
-          }
-          $i++;
+          $ouput .= '<th style="border-bottom: 1px solid #DDDDDD;"><strong>' . $values['label'] . '</strong></th>';
+          $ouput .= '<td style="border-bottom: 1px solid #DDDDDD;background-color:#F2F6FA;">';
           $outputValue = "";
           if (is_array($values['value'])) {
             foreach ($values['value'] as $value) {
@@ -109,7 +101,7 @@ class ProductReferencePdf {
         }
 
         if (!empty($ouput)) {
-          $render = '<table  border="0" cellpadding="10" cellspacing="0">';
+          $render = '<table nobr="true" border="0" cellpadding="10" cellspacing="0">';
           $render .= $ouput;
           $render .= '</table>';
           $pdf->SetFont('helvetica', '', 12);

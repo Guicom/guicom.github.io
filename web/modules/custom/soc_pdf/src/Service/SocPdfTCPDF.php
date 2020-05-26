@@ -25,7 +25,7 @@ class SocPdfTCPDF extends TCPDF{
       false, false, 0, false,
       false, false);
     // Set font
-    $this->SetFont('helvetica', 'B', 20);
+    $this->SetFont('helvetica', 'B', 10);
     $this->SetTextColor(0, 79, 159);
     // Title
     $this->Cell(0, 15, $this->title, 0, false, 'R',
