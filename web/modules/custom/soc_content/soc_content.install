@@ -757,7 +757,6 @@ function soc_content_update_8004() {
     'd1f00744-4f61-4c90-91d4-e1eeb982bfaf');
 }
 
-
 /**
  * Update terms type location weight
  * - Subsidiary - field_weight = 0
@@ -797,3 +796,14 @@ function soc_content_update_8005() {
   }
 }
 
+/**
+ * Create "Mechanical view" resource type.
+ */
+function soc_content_update_8006() {
+  /** @var \Drupal\soc_content\Service\TaxonomyTermContent $termManager */
+  $termManager = \Drupal::service('soc_content.taxonomy_term');
+  $termManager->createTerm('Mechanical view', 'resource_type', [
+    'langcode' => 'en',
+    'uuid' => 'be54a7ae-c75a-4c02-ad49-32382e9a5fdf',
+  ]);
+}

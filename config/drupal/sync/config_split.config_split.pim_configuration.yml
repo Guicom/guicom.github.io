@@ -9,6 +9,8 @@ folder: ''
 module: {  }
 theme: {  }
 blacklist:
+  - soc_nextpage.nextpage_ws
+graylist:
   - ultimate_cron.job.captcha_cron
   - ultimate_cron.job.comment_cron
   - ultimate_cron.job.dblog_cron
@@ -36,8 +38,8 @@ blacklist:
   - ultimate_cron.job.ultimate_cron_queue_media_entity_thumbnail
   - ultimate_cron.job.ultimate_cron_queue_message_check_delete
   - ultimate_cron.job.ultimate_cron_queue_message_delete
-  - soc_nextpage.nextpage_ws
-graylist: {  }
+  - ultimate_cron.job.ultimate_cron_queue_soc_traceparts_resource_creation
+  - ultimate_cron.settings
 graylist_dependents: true
 graylist_skip_equal: true
 weight: 0

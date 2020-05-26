@@ -10,6 +10,7 @@ dependencies:
     - paragraphs.paragraphs_type.model_citation
     - paragraphs.paragraphs_type.model_cta
     - paragraphs.paragraphs_type.model_image
+    - paragraphs.paragraphs_type.model_promo_block
     - paragraphs.paragraphs_type.model_testimony
     - paragraphs.paragraphs_type.model_text
     - paragraphs.paragraphs_type.video_embed
@@ -36,10 +37,11 @@ settings:
       model_cta: model_cta
       model_image: model_image
       model_testimony: model_testimony
-      model_citation: model_citation
       model_text: model_text
+      model_citation: model_citation
       video_embed: video_embed
       video_text: video_text
+      model_promo_block: model_promo_block
     target_bundles_drag_drop:
       content:
         enabled: true
@@ -65,19 +67,19 @@ settings:
       model_testimony:
         enabled: true
         weight: 22
-      model_citation:
+      model_text:
         enabled: true
         weight: 23
-      model_text:
+      model_citation:
         enabled: true
         weight: 23
       pardot_form:
         weight: 24
         enabled: false
-      model_cta_pdf:
+      premium_content_promotion:
         weight: 25
         enabled: false
-      premium_content_promotion:
+      model_cta_pdf:
         weight: 25
         enabled: false
       product_faq:
@@ -89,7 +91,13 @@ settings:
       video_embed:
         enabled: true
         weight: 28
+      promo_block:
+        weight: 32
+        enabled: false
       video_text:
         enabled: true
         weight: 34
+      model_promo_block:
+        enabled: true
+        weight: 37
 field_type: entity_reference_revisions

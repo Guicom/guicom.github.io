@@ -30,6 +30,17 @@ dependencies:
     - field.storage.node.field_product_family
     - field.storage.node.field_product_teaser
     - field.storage.node.field_protection_level
+    - field.storage.node.field_reference_ref
+    - field.storage.node.field_reference_content
+    - field.storage.paragraph.field_citation_author
+    - field.storage.paragraph.field_doc_title
+    - field.storage.paragraph.field_figure_1_number
+    - field.storage.paragraph.field_figure_1_text_line_1
+    - field.storage.paragraph.field_figure_1_text_line_2
+    - field.storage.paragraph.field_figure_2_number
+    - field.storage.paragraph.field_figure_3_number
+    - field.storage.paragraph.field_figure_4_number
+    - field.storage.paragraph.field_figure_4_text_line_1
     - field.storage.node.field_res_resource_type
     - search_api.server.search
 third_party_settings:
@@ -83,6 +94,28 @@ field_settings:
     dependencies:
       module:
         - content_translation
+  field_answer:
+    label: 'Reference content » Paragraph » Answer'
+    datasource_id: 'entity:node'
+    property_path: 'field_reference_content:entity:field_answer'
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_reference_content
+        - field.storage.paragraph.field_answer
+      module:
+        - paragraphs
+  field_citation_author:
+    label: 'Reference content » Paragraph » Citation author'
+    datasource_id: 'entity:node'
+    property_path: 'field_reference_content:entity:field_citation_author'
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_reference_content
+        - field.storage.paragraph.field_citation_author
+      module:
+        - paragraphs
   field_citation_author_position:
     label: 'Body » Paragraph » Citation author''s position'
     datasource_id: 'entity:node'
@@ -91,6 +124,17 @@ field_settings:
     dependencies:
       config:
         - field.storage.node.field_body
+        - field.storage.paragraph.field_citation_author_position
+      module:
+        - paragraphs
+  field_citation_author_position_1:
+    label: 'Reference content » Paragraph » Citation author''s position'
+    datasource_id: 'entity:node'
+    property_path: 'field_reference_content:entity:field_citation_author_position'
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_reference_content
         - field.storage.paragraph.field_citation_author_position
       module:
         - paragraphs
@@ -103,6 +147,28 @@ field_settings:
       config:
         - field.storage.node.field_body
         - field.storage.paragraph.field_citation_content
+      module:
+        - paragraphs
+  field_citation_content_1:
+    label: 'Reference content » Paragraph » Citation content'
+    datasource_id: 'entity:node'
+    property_path: 'field_reference_content:entity:field_citation_content'
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_reference_content
+        - field.storage.paragraph.field_citation_content
+      module:
+        - paragraphs
+  field_doc_title:
+    label: 'Reference content » Paragraph » Document title'
+    datasource_id: 'entity:node'
+    property_path: 'field_reference_content:entity:field_doc_title'
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_reference_content
+        - field.storage.paragraph.field_doc_title
       module:
         - paragraphs
   field_event_teaser:
@@ -129,6 +195,50 @@ field_settings:
     dependencies:
       config:
         - field.storage.node.field_event_type
+  field_figure_1_number:
+    label: 'Reference content » Paragraph » Figure 1 - Number'
+    datasource_id: 'entity:node'
+    property_path: 'field_reference_content:entity:field_figure_1_number'
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_reference_content
+        - field.storage.paragraph.field_figure_1_number
+      module:
+        - paragraphs
+  field_figure_1_text_line_1:
+    label: 'Reference content » Paragraph » Figure 1 - Text line 1'
+    datasource_id: 'entity:node'
+    property_path: 'field_reference_content:entity:field_figure_1_text_line_1'
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_reference_content
+        - field.storage.paragraph.field_figure_1_text_line_1
+      module:
+        - paragraphs
+  field_figure_1_text_line_2:
+    label: 'Reference content » Paragraph » Figure 1 - Text line 2'
+    datasource_id: 'entity:node'
+    property_path: 'field_reference_content:entity:field_figure_1_text_line_2'
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_reference_content
+        - field.storage.paragraph.field_figure_1_text_line_2
+      module:
+        - paragraphs
+  field_figure_2_number:
+    label: 'Reference content » Paragraph » Figure 2 - Number'
+    datasource_id: 'entity:node'
+    property_path: 'field_reference_content:entity:field_figure_2_number'
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_reference_content
+        - field.storage.paragraph.field_figure_2_number
+      module:
+        - paragraphs
   field_figure_2_text_line_1:
     label: 'Body » Paragraph » Figure 2 - Text line 1'
     datasource_id: 'entity:node'
@@ -137,6 +247,17 @@ field_settings:
     dependencies:
       config:
         - field.storage.node.field_body
+        - field.storage.paragraph.field_figure_2_text_line_1
+      module:
+        - paragraphs
+  field_figure_2_text_line_1_1:
+    label: 'Reference content » Paragraph » Figure 2 - Text line 1'
+    datasource_id: 'entity:node'
+    property_path: 'field_reference_content:entity:field_figure_2_text_line_1'
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_reference_content
         - field.storage.paragraph.field_figure_2_text_line_1
       module:
         - paragraphs
@@ -151,6 +272,28 @@ field_settings:
         - field.storage.paragraph.field_figure_2_text_line_2
       module:
         - paragraphs
+  field_figure_2_text_line_2_1:
+    label: 'Reference content » Paragraph » Figure 2 - Text line 2'
+    datasource_id: 'entity:node'
+    property_path: 'field_reference_content:entity:field_figure_2_text_line_2'
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_reference_content
+        - field.storage.paragraph.field_figure_2_text_line_2
+      module:
+        - paragraphs
+  field_figure_3_number:
+    label: 'Reference content » Paragraph » Figure 3 - Number'
+    datasource_id: 'entity:node'
+    property_path: 'field_reference_content:entity:field_figure_3_number'
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_reference_content
+        - field.storage.paragraph.field_figure_3_number
+      module:
+        - paragraphs
   field_figure_3_text_line_1:
     label: 'Body » Paragraph » Figure 3 - Text line 1'
     datasource_id: 'entity:node'
@@ -159,6 +302,17 @@ field_settings:
     dependencies:
       config:
         - field.storage.node.field_body
+        - field.storage.paragraph.field_figure_3_text_line_1
+      module:
+        - paragraphs
+  field_figure_3_text_line_1_1:
+    label: 'Reference content » Paragraph » Figure 3 - Text line 1'
+    datasource_id: 'entity:node'
+    property_path: 'field_reference_content:entity:field_figure_3_text_line_1'
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_reference_content
         - field.storage.paragraph.field_figure_3_text_line_1
       module:
         - paragraphs
@@ -173,6 +327,39 @@ field_settings:
         - field.storage.paragraph.field_figure_3_text_line_2
       module:
         - paragraphs
+  field_figure_3_text_line_2_1:
+    label: 'Reference content » Paragraph » Figure 3 - Text line 2'
+    datasource_id: 'entity:node'
+    property_path: 'field_reference_content:entity:field_figure_3_text_line_2'
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_reference_content
+        - field.storage.paragraph.field_figure_3_text_line_2
+      module:
+        - paragraphs
+  field_figure_4_number:
+    label: 'Reference content » Paragraph » Figure 4 - Number'
+    datasource_id: 'entity:node'
+    property_path: 'field_reference_content:entity:field_figure_4_number'
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_reference_content
+        - field.storage.paragraph.field_figure_4_number
+      module:
+        - paragraphs
+  field_figure_4_text_line_1:
+    label: 'Reference content » Paragraph » Figure 4 - Text line 1'
+    datasource_id: 'entity:node'
+    property_path: 'field_reference_content:entity:field_figure_4_text_line_1'
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_reference_content
+        - field.storage.paragraph.field_figure_4_text_line_1
+      module:
+        - paragraphs
   field_figure_4_text_line_2:
     label: 'Body » Paragraph » Figure 4 - Text line 2'
     datasource_id: 'entity:node'
@@ -181,6 +368,17 @@ field_settings:
     dependencies:
       config:
         - field.storage.node.field_body
+        - field.storage.paragraph.field_figure_4_text_line_2
+      module:
+        - paragraphs
+  field_figure_4_text_line_2_1:
+    label: 'Reference content » Paragraph » Figure 4 - Text line 2'
+    datasource_id: 'entity:node'
+    property_path: 'field_reference_content:entity:field_figure_4_text_line_2'
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_reference_content
         - field.storage.paragraph.field_figure_4_text_line_2
       module:
         - paragraphs
@@ -224,6 +422,14 @@ field_settings:
     dependencies:
       config:
         - field.storage.node.field_protection_level
+  field_reference_ref:
+    label: Reference
+    datasource_id: 'entity:node'
+    property_path: field_reference_ref
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_reference_ref
   field_res_resource_type:
     label: 'Type of resource'
     datasource_id: 'entity:node'
@@ -248,6 +454,17 @@ field_settings:
     dependencies:
       config:
         - field.storage.node.field_body
+        - field.storage.paragraph.field_title
+      module:
+        - paragraphs
+  field_title_1:
+    label: 'Reference content » Paragraph » Title'
+    datasource_id: 'entity:node'
+    property_path: 'field_reference_content:entity:field_title'
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_reference_content
         - field.storage.paragraph.field_title
       module:
         - paragraphs
@@ -304,14 +521,17 @@ field_settings:
     dependencies:
       module:
         - taxonomy
-  processed_4:
-    label: 'Description » Processed text'
-    datasource_id: 'entity:taxonomy_term'
-    property_path: 'description:processed'
-    type: string
+  processed_3:
+    label: 'Reference content » Paragraph » Description » Processed text'
+    datasource_id: 'entity:node'
+    property_path: 'field_reference_content:entity:field_text:processed'
+    type: text
     dependencies:
+      config:
+        - field.storage.node.field_reference_content
+        - field.storage.paragraph.field_text
       module:
-        - taxonomy
+        - paragraphs
   revision_created:
     label: 'Revision create time'
     datasource_id: 'entity:taxonomy_term'
@@ -431,7 +651,6 @@ processor_settings:
       - processed
       - processed_1
       - processed_2
-      - processed_4
       - title
       - type
       - vid
