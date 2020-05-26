@@ -1,4 +1,4 @@
-[![pipeline status](https://gitlab.com/actency/prod/socomec/socomec.com/badges/develop/pipeline.svg)](https://gitlab.com/actency/prod/socomec/socomec.com/commits/develop)
+[![pipeline status](https://gitlab.com/socomec/webfactory/socomec.com/badges/develop/pipeline.svg)](https://gitlab.com/socomec/webfactory/socomec.com/commits/develop)
 
 # Socomec
 
@@ -7,7 +7,7 @@
 ### 1. Clone the project into your workspace directory
 
 ```
-git@gitlab.com:actency/prod/socomec/socomec.com.git
+git@gitlab.com:socomec/webfactory/socomec.com.git
 ```
 
 ### 2. Navigate to the project directory
@@ -85,11 +85,11 @@ The Socomec theme is a subtheme of Barrio.
 ## Pardot Form
 
 Pardot form style & js are manage throw a specfics github project.
-For install 
+For install
 * go to web/themes/custom/socomec/assets
 * git clone git@github.com:Guicom/guicom.github.io.git pardot-assets
 
-To compile CSS you must launch `gulp pardot` 
+To compile CSS you must launch `gulp pardot`
 
 ## Content hub
 
@@ -157,7 +157,7 @@ Two steps are needed to update the content hub.
 
 #### 1. Export specific configuration prior to updating
 
-This step is very important. If any changes are made to the configuration of the content hub, they may be lost if this step is not 
+This step is very important. If any changes are made to the configuration of the content hub, they may be lost if this step is not
 
 ```
 drush --uri=contenthub.loc csex contenthub
