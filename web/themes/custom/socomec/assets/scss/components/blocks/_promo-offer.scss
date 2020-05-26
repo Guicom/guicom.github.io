@@ -2,6 +2,7 @@
 .block-soc-blocks-promotion,
 .block-promotion-block-product-page{
   width: 100%;
+  margin-bottom: 2rem;
 }
 // GLOBAL RENDERING
 .block-promotion-entity {
@@ -14,26 +15,20 @@
         color: $blue;
         text-transform: uppercase;
         font-family: $font-roboto;
-        font-weight: 700;
+        font-weight: 900;
       }
       .soc-block-promo-entity-sub-title {
         font-size: $font-size-xs;
         color: $yellow;
         text-transform: uppercase;
         font-family: $font-poppins;
-        font-weight: 500;
+        font-weight: 600;
         letter-spacing: 1px;
         line-height: 25px;
       }
       .soc-block-promo-entity-central-image {
         display: flex;
         justify-content: center;
-        .field--name-field-media-image {
-          .field__item {
-            background: $blue_lighter;
-            border-radius: 50%;
-          }
-        }
       }
     }
     // BOTTOM SECTION
@@ -48,7 +43,6 @@
       .soc-block-promo-entity-description {
         font-family: $font-poppins;
         font-size: $font-size-xs;
-        letter-spacing: 0.5px;
         font-weight: 500;
         color: $white;
       }
@@ -61,8 +55,12 @@
           text-transform: uppercase;
           font-weight: 500;
           svg {
+            margin-right: 3px;
             g {
               fill: $yellow;
+              path {
+                opacity: 1;
+              }
             }
           }
         }
@@ -71,7 +69,7 @@
   }
 }
 
-// COL-3 RENDERING --------------------------------------------------------------------------------//////
+// COL-3 RENDERING
 .col-md-3,
   //soc-10-col for heriting
 .soc-10-col {
@@ -83,22 +81,31 @@
         padding-top: 1rem;
         padding-left: 1rem;
         padding-right: 1rem;
-        .soc-block-promo-entity-external-title {
-
-        }
         .soc-block-promo-entity-sub-title {
-          margin-bottom: 1rem;
+          margin-bottom: 2rem;
         }
         .soc-block-promo-entity-central-image {
           position: relative;
           z-index: 10;
+          &:before {
+            content: '';
+            position: absolute;
+            display: block;
+            left: 50%;
+            top: 45%;
+            transform: translateX(-50%) translateY(-50%);
+            border-radius: 50%;
+            background: $blue_lighter;
+            width: 210px;
+            height: 210px;
+            z-index: -1;
+          }
           div:first-child {
             width: 13.125rem;
             height: 13.125rem;
           }
-          .field--name-field-media-image {
-            width: initial;
-            height: initial;
+          img {
+            margin-bottom: 1rem;
           }
         }
       }
@@ -106,7 +113,7 @@
       .soc-block-promo-entity-content {
         position: relative;
         top: -5rem;
-        padding-top: 5.625rem;
+        padding-top: 6.5rem;
         padding-bottom: 1rem;
         &:after {
           content: '';
@@ -140,13 +147,14 @@
   }
 }
 
-// Col-10 RENDERING --------------------------------------------------------------------------------//////
+// Col-10 & Fullscreen RENDERING
 .soc-10-col,
 .soc-fullscreen {
   @include media-breakpoint-up(md) {
     .block-promotion-entity {
       &.block-promotion-entity-offer {
         text-align: left;
+        position: relative;
         // TOP SECTION
         .soc-block-promo-entity-header {
           display: flex;
@@ -168,16 +176,24 @@
           .soc-block-promo-entity-central-image {
             position: absolute;
             z-index: 10;
+            top: 45px;
+            left: 60px;
             div:first-child {
               width: 13.125rem;
               height: 13.125rem;
             }
-            .field--name-field-media-image {
-              width: initial;
-              height: initial;
-              .field__item {
-                text-align: center;
-              }
+            &:before {
+              content: '';
+              position: absolute;
+              display: block;
+              left: 50%;
+              top: 45%;
+              transform: translateX(-50%) translateY(-50%);
+              border-radius: 50%;
+              background: $blue_lighter;
+              width: 220px;
+              height: 220px;
+              z-index: -1;
             }
           }
         }
@@ -203,7 +219,7 @@
             min-height: 2rem;
             z-index: 10;
             font-size: 1.125rem;
-            padding-right: 1rem;
+            padding-right: 2rem;
             padding-left: 17.5rem;
             margin-bottom: 0.5rem;
           }
