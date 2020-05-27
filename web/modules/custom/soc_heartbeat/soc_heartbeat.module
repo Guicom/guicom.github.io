@@ -1,0 +1,32 @@
+<?php
+
+/**
+ * @file
+ * Contains soc_heartbeat.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function soc_heartbeat_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the soc_heartbeat module.
+    case 'help.page.soc_heartbeat':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Heartbeat feature') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_cron().
+ */
+function soc_heartbeat_cron() {
+  // Call Heartbeat service.
+  \Drupal::service('soc_heartebeat.heartmanager')->run();
+}
