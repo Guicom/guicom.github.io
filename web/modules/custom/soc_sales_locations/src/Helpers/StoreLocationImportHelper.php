@@ -123,33 +123,56 @@ class StoreLocationImportHelper {
    * @param string $name
    *    Name Term.
    *
+   * @param null $parent
+   *    Parent term.
+   *
    * @return mixed Term.
    * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
    * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
    * @throws \Drupal\Core\Entity\EntityStorageException
    */
-  public function importTerm($voc, $name=NULL) {
-    if ($name === NULL) {
-      return NULL;
-    }
+  public function importTerm($voc, $name, $parent = NULL) {
+    // Handle case of multiple areas by recursively calling this method.
     if ($this->getCountTermsForRow($name) > 1) {
       $_multipleTerms =  [];
         foreach ($this->getNameForRow($name) as $item){
-          $_multipleTerms[]  = $this->importTerm($voc, $item);
+          $_multipleTerms[]  = $this->importTerm($voc, $item, $parent);
         }
       return $_multipleTerms;
     }
+    // If there is a parent, search for it by name.
+    if (!is_null($parent)) {
+      $properties = [
+        'vid' => $voc,
+        'name' => $parent,
+      ];
+      $parentTerms = \Drupal::entityTypeManager()
+        ->getStorage('taxonomy_term')
+        ->loadByProperties($properties);
+      if (!sizeof($parentTerms)) {
+        // It's not possible to create this element if the parent doesn't exist.
+        return FALSE;
+      }
+      else {
+        $parentTerm = reset($parentTerms);
+      }
+    }
+    // Search for this term by name.
+    $properties = [
+      'vid' => $voc,
+      'name' => $name,
+    ];
+    if (isset($parentTerm)) {
+      $properties['parent'] = $parentTerm->id();
+    }
     $terms = \Drupal::entityTypeManager()
       ->getStorage('taxonomy_term')
-      ->loadByProperties([
-        'vid' => $voc,
-        'name' => $name,
-      ]);
+      ->loadByProperties($properties);
     if (count($terms) >= 1) {
       return reset($terms);
     }
-    else{
-      return $this->createTermIfNecessary($voc, $name);
+    else {
+      return $this->createTermIfNecessary($voc, $name, $parentTerm->id());
     }
   }
 
@@ -158,11 +181,11 @@ class StoreLocationImportHelper {
    *
    * @param $voc
    * @param $name
+   * @param $parent
    *
-   * @return Term
-   * @throws \Drupal\Core\Entity\EntityStorageException
+   * @return bool|\Drupal\taxonomy\Entity\Term
    */
-  private function createTermIfNecessary($voc, $name){
+  private function createTermIfNecessary($voc, $name, $parentTid = NULL){
     $message = $this->t('Creation of a new taxonomy term @name for the vocabulary @voc.', [
       '@name' => $name,
       '@voc' => $voc,
@@ -172,8 +195,17 @@ class StoreLocationImportHelper {
       'vid' => $voc,
       'name' => $name,
     ]);
-    $term->save();
-    return $term;
+    if (!is_null($parentTid)) {
+      $term->set('parent', $parentTid);
+    }
+    try {
+      $term->save();
+      return $term;
+    }
+    catch (\Exception $e) {
+      \Drupal::logger('soc_sale_locations')->warning($e->getMessage());
+    }
+    return FALSE;
   }
 
   public function importActivity($activity) {
@@ -182,29 +214,9 @@ class StoreLocationImportHelper {
       $this->node->get('field_location_activity')->setValue(['target_id' => $term->id()]);
     }
   }
-  public function importArea($area){
-    $term = $this->importTerm('location_areas',$area);
-    if(!is_null($term) && !is_array($term) ){
-      $this->node->get('field_location_area')->setValue(['target_id' => $term->id()]);
-    }
-    elseif (is_array($term)){
-      $targets_id = $this->getTargetsId($term);
-      $this->node->set('field_location_area', $targets_id);
-    }
-  }
 
-  public function importSubArea($subarea){
-    $term = $this->importTerm('location_areas',$subarea);
-    if(!is_null($term) && !is_array($term) ){
-      $this->node->get('field_location_subarea')->setValue(['target_id' => $term->id()]);
-    }
-    elseif (is_array($term)){
-      $targets_id = $this->getTargetsId($term);
-      $this->node->set('field_location_subarea', $targets_id);
-    }
-  }
   public function importContinent($continent){
-    $term = $this->importTerm('location_areas',$continent);
+    $term = $this->importTerm('location_areas', $continent);
 
     if(!is_null($term) && !is_array($term) ){
       $this->node->get('field_location_continent')->setValue(['target_id' => $term->id()]);
@@ -212,6 +224,32 @@ class StoreLocationImportHelper {
     elseif (is_array($term)){
       $targets_id = $this->getTargetsId($term);
       $this->node->set('field_location_continent', $targets_id);
+    }
+  }
+
+  public function importArea($area, $continent) {
+    $term = $this->importTerm('location_areas', $area, $continent);
+    if(!is_null($term) && !is_array($term) ){
+      $this->node->get('field_location_area')->setValue([
+        'target_id' => $term->id(),
+      ]);
+    }
+    elseif (is_array($term)){
+      $targets_id = $this->getTargetsId($term);
+      $this->node->set('field_location_area', $targets_id);
+    }
+  }
+
+  public function importSubArea($subarea, $area) {
+    $term = $this->importTerm('location_areas', $subarea, $area);
+    if(!is_null($term) && !is_array($term) ){
+      $this->node->get('field_location_subarea')->setValue([
+        'target_id' => $term->id(),
+      ]);
+    }
+    elseif (is_array($term)){
+      $targets_id = $this->getTargetsId($term);
+      $this->node->set('field_location_subarea', $targets_id);
     }
   }
 

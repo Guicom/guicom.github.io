@@ -70,8 +70,8 @@ class SalesLocationsManagerImportService implements SalesLocationsManagerImportS
       $this->rowNode->importType($row[6]);
       $this->rowNode->importActivity($row[5]);
       $this->rowNode->importContinent($row[2]);
-      $this->rowNode->importArea($row[3]);
-      $this->rowNode->importSubArea($row[4]);
+      $this->rowNode->importArea($row[3], $row[2]);
+      $this->rowNode->importSubArea($row[4], $row[3]);
       $this->rowNode->saveUpdatedRevisionsNode($date_imported);
   }
 
