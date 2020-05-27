@@ -67,7 +67,7 @@ class ImportCsvFileForm extends FormBase {
     ];
     $form['submit'] = [
       '#type' => 'submit',
-      '#value' => $this->t('Submit'),
+      '#value' => $this->t('Import office locations'),
     ];
 
     return $form;

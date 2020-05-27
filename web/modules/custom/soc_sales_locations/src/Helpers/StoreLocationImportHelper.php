@@ -110,7 +110,7 @@ class StoreLocationImportHelper {
   }
 
   public function importType($type) {
-    $term = $this->importTerm('location_type',$type);
+    $term = $this->importTerm('location_type', $type);
     if(!is_null($term) ){
       $this->node->get('field_location_type')->setValue(['target_id' => $term->id()]);
     }
@@ -134,13 +134,25 @@ class StoreLocationImportHelper {
   public function importTerm($voc, $name, $parent = NULL) {
     // Handle case of multiple areas by recursively calling this method.
     if ($this->getCountTermsForRow($name) > 1) {
-      $_multipleTerms =  [];
-        foreach ($this->getNameForRow($name) as $item){
-          $_multipleTerms[]  = $this->importTerm($voc, $item, $parent);
+      $_multipleTerms = [];
+      $parents = NULL;
+      if (!is_null($parent)) {
+        $parents = $this->getNameForRow($parent);
+      }
+      foreach ($this->getNameForRow($name) as $key => $item) {
+        if (!is_null($parents)) {
+          if (array_key_exists($key, $parents)) {
+            $_multipleTerms[] = $this->importTerm($voc, $item, $parents[$key]);
+          }
         }
+        else {
+          $_multipleTerms[] = $this->importTerm($voc, $item);
+        }
+      }
       return $_multipleTerms;
     }
     // If there is a parent, search for it by name.
+    $parentTermId = NULL;
     if (!is_null($parent)) {
       $properties = [
         'vid' => $voc,
@@ -155,6 +167,7 @@ class StoreLocationImportHelper {
       }
       else {
         $parentTerm = reset($parentTerms);
+        $parentTermId = $parentTerm->id();
       }
     }
     // Search for this term by name.
@@ -172,7 +185,7 @@ class StoreLocationImportHelper {
       return reset($terms);
     }
     else {
-      return $this->createTermIfNecessary($voc, $name, $parentTerm->id());
+      return $this->createTermIfNecessary($voc, $name, $parentTermId);
     }
   }
 
@@ -218,7 +231,7 @@ class StoreLocationImportHelper {
   public function importContinent($continent){
     $term = $this->importTerm('location_areas', $continent);
 
-    if(!is_null($term) && !is_array($term) ){
+    if(!is_null($term) && $term !== FALSE && !is_array($term) ){
       $this->node->get('field_location_continent')->setValue(['target_id' => $term->id()]);
     }
     elseif (is_array($term)){
@@ -229,7 +242,7 @@ class StoreLocationImportHelper {
 
   public function importArea($area, $continent) {
     $term = $this->importTerm('location_areas', $area, $continent);
-    if(!is_null($term) && !is_array($term) ){
+    if(!is_null($term) && $term !== FALSE && !is_array($term) ){
       $this->node->get('field_location_area')->setValue([
         'target_id' => $term->id(),
       ]);
@@ -241,8 +254,11 @@ class StoreLocationImportHelper {
   }
 
   public function importSubArea($subarea, $area) {
+    if ($subarea == '') {
+      return;
+    }
     $term = $this->importTerm('location_areas', $subarea, $area);
-    if(!is_null($term) && !is_array($term) ){
+    if (!is_null($term) && $term !== FALSE && !is_array($term)) {
       $this->node->get('field_location_subarea')->setValue([
         'target_id' => $term->id(),
       ]);
@@ -267,26 +283,23 @@ class StoreLocationImportHelper {
   }
 
   public function getNameForRow($name){
-    $sample = explode(self::DELIMITER, $name);
-    $sample = array_filter($sample);
-    return $sample;
-
+    return array_filter(explode(self::DELIMITER, $name));
   }
 
   /**
-   * Return an array ids, using to update some fiels like continent, area, subarea.
+   * Return an array ids, used to update some fields like continent, area, subarea.
    *
    *
    * @param array $term
    *
    * @return array
    */
-  private function getTargetsId(array $term): array {
-    $targets_id = [];
-    foreach ($term as $t) {
-      $targets_id[] = ['target_id' => $t->id()];
+  private function getTargetsId(array $terms): array {
+    $targetIds = [];
+    foreach ($terms as $term) {
+      $targetIds[] = ['target_id' => $term->id()];
     }
-    return $targets_id;
+    return $targetIds;
   }
 
 

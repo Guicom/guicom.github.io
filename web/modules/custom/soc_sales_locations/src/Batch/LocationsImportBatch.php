@@ -56,7 +56,7 @@ class LocationsImportBatch {
       $i++;
     }
     return [
-      'title' => t('Import Sales Locations'),
+      'title' => t('Importing office locations...'),
       'operations' => $operations,
       'progress_message' => t('Processed @current out of @total.'),
       'error_message'    => t('An error occurred during processing'),
@@ -93,6 +93,7 @@ class LocationsImportBatch {
     }
     /*
     $context['message'] = $row[1];
+    */
     $context['results'][] = [
       'row' => $row,
       'options' => [
@@ -100,7 +101,7 @@ class LocationsImportBatch {
         'status' => $status,
       ],
     ];
-    */
+    /*
     //$context['sandbox']['progress']++;
     //$importer->updateCurrentJob($job_id);
     /*if ($context['sandbox']['progress'] != $context['sandbox']['max']) {
@@ -134,7 +135,7 @@ class LocationsImportBatch {
         //$importer->setRollbackStores($options['job_id']);
       }
       else{
-        $messenger->addMessage(t('@count store locators processed.', ['@count' => count($results)]));
+        $messenger->addMessage(t('@count office locations processed.', ['@count' => count($results)]));
         //$importer->updateCurrentJob($options['job_id'],'done');
       }
     }
@@ -150,7 +151,7 @@ class LocationsImportBatch {
           ]
         )
       );
-      $importer->updateCurrentJob($options['job_id'],'failed');
+      //$importer->updateCurrentJob($options['job_id'],'failed');
       //$importer->setRollbackStores($options['job_id']);
     }
   }

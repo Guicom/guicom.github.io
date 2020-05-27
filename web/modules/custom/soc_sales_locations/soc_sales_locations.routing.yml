@@ -12,7 +12,7 @@ soc_sales_locations.csv_import:
   path: '/admin/config/socomec/sales_locations/import_csv_file'
   defaults:
     _form: '\Drupal\soc_sales_locations\Form\ImportCsvFileForm'
-    _title: 'ImportCsvFileForm'
+    _title: 'Import office locations'
   requirements:
     _permission: 'import content location'
   options:
