@@ -2,7 +2,7 @@
 
 /**
  * @file
- * Contains soc_pdf.module.
+ * Contains soc_pdf_content.module.
  */
 
 use Drupal\Core\Routing\RouteMatchInterface;

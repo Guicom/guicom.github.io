@@ -4,7 +4,6 @@ namespace Drupal\soc_pdf_content\Service;
 
 use Drupal\node\NodeInterface;
 use Drupal\soc_pdf\Service\SocPdfTCPDF;
-use Drupal\Core\Link;
 
 class ProductReferencePdf {
 
