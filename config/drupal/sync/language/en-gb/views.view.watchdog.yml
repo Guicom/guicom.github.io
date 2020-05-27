@@ -5,11 +5,5 @@ display:
         options:
           reset_button_label: Reset
       fields:
-        type:
-          label: Type
         link:
           label: Operations
-      filters:
-        type:
-          expose:
-            label: Type
