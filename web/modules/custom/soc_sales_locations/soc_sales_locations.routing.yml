@@ -4,7 +4,7 @@ soc_sales_locations.export_csv_controller_exportfile:
     _controller: '\Drupal\soc_sales_locations\Controller\ExportCsvController::exportFile'
     _title: 'Export CSV File'
   requirements:
-    _permission: 'export location'
+    _permission: 'export content location'
   options:
     _admin_route: TRUE
 
@@ -14,7 +14,7 @@ soc_sales_locations.sales_locations_import_csv_file_form:
     _form: '\Drupal\soc_sales_locations\Form\ImportCsvFileForm'
     _title: 'ImportCsvFileForm'
   requirements:
-    _permission: 'import location'
+    _permission: 'import content location'
   options:
     _admin_route: TRUE
 
