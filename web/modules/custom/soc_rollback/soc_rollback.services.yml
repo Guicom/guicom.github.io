@@ -1,0 +1,5 @@
+services:
+  soc_rollback.rollback_import:
+    class: Drupal\soc_rollback\Service\RollbackImport
+    arguments:
+      ['@logger.factory', '@database', '@soc_job.job_manager', '@soc_heartebeat.heartmanager']

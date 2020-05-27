@@ -1,0 +1,7 @@
+name: 'soc_rollback'
+type: module
+description: 'Rollback module'
+core: 8.x
+package: 'Socomec'
+dependencies:
+  - soc_job
