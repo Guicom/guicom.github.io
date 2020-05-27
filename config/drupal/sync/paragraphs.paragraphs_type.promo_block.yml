@@ -1,0 +1,10 @@
+uuid: 57a98f54-42ae-4518-9264-6f0a1a705543
+langcode: en
+status: true
+dependencies: {  }
+id: promo_block
+label: 'Promo block'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

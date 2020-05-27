@@ -2,7 +2,10 @@
 
 namespace Drupal\soc_nextpage\Service\Manager;
 
+
 use Drupal\Core\Logger\LoggerChannelFactoryInterface;
+use Drupal;
+use Drupal\node\Entity\Node;
 use Drupal\paragraphs\Entity\Paragraph;
 use Drupal\soc_nextpage\Service\NextpageApi;
 use Drupal\soc_nextpage\Service\NextpageItemHandler;
@@ -57,6 +60,7 @@ class ReferenceManager {
    *
    * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
    * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
+   * @throws \Drupal\Core\Entity\EntityStorageException
    */
   public function handle($product_ext_id, $context) {
     $nids = [];
@@ -88,6 +92,14 @@ class ReferenceManager {
               'entity' => $node,
             ]);
         }
+      }
+    }
+    if (sizeof($nids)) {
+      $nodes = Node::loadMultiple($nids);
+      // Add to queue for automatic resource creation.
+      $queue = \Drupal::queue('soc_traceparts_resource_creation');
+      foreach ($nodes as $node) {
+        $queue->createItem(['entity' => $node]);
       }
     }
     return $nids;

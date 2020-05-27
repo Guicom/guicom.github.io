@@ -1,0 +1,7 @@
+name: 'Socomec default images'
+type: module
+description: 'Settings default images'
+core: 8.x
+package: 'Custom'
+dependencies:
+  - soc_core

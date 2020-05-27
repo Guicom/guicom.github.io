@@ -1,0 +1,19 @@
+uuid: bfb509f9-7dde-494a-b51f-fe27b7d96fc2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.block_promotion_entity.field_sub_title
+    - soc_blocks_promotion.block_promotion_entity_type.offer
+id: block_promotion_entity.offer.field_sub_title
+field_name: field_sub_title
+entity_type: block_promotion_entity
+bundle: offer
+label: 'Sub title'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

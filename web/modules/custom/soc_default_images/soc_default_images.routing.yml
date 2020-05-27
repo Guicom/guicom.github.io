@@ -1,0 +1,8 @@
+# Admin / config routes
+soc_default_images.default_image_settings:
+  path: '/admin/config/socomec/images/configuration'
+  defaults:
+    _form: '\Drupal\soc_default_images\Form\DefaultImageSettings'
+    _title: 'Default image settings'
+  requirements:
+    _permission: 'manage default image settings'

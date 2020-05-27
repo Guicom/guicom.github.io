@@ -169,12 +169,17 @@ class BaseApi {
       $message = "$method $url failed (cURL code " . curl_errno($handle) . "): "
         . htmlspecialchars(curl_error($handle));
       $this->logger->error($message);
-      return false;
+      throw new \Exception($message, 1);
     }
     if (NULL === $res) {
       $message = "$method $url failed: " . error_get_last();
       $this->logger->error($message);
-      return false;
+      throw new \Exception($message, 1);
+    }
+    if (401 === $code) {
+      $message = "$method $url failed: " . t('Wrong credentials');
+      $this->logger->error($message);
+      throw new \Exception($message, 1);
     }
 
     curl_close($handle);
@@ -192,8 +197,7 @@ class BaseApi {
     }
     if (null === $res) {
       $message = "Failed to decode response as JSON.";
-      $this->logger->error($message);
-      return false;
+      throw new \Exception($message, 1);
     }
     return $res;
   }

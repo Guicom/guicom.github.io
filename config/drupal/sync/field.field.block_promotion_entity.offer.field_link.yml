@@ -1,0 +1,23 @@
+uuid: be835a0b-eec0-4753-af90-64eba023bc43
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.block_promotion_entity.field_link
+    - soc_blocks_promotion.block_promotion_entity_type.offer
+  module:
+    - link
+id: block_promotion_entity.offer.field_link
+field_name: field_link
+entity_type: block_promotion_entity
+bundle: offer
+label: Link
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 2
+field_type: link

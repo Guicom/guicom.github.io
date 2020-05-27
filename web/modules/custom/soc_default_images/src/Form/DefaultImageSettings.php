@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Drupal\soc_nextpage\Form;
+namespace Drupal\soc_default_images\Form;
 
 use Drupal\Core\Config\ConfigFactoryInterface;
 use Drupal\Core\Entity\EntityRepository;
@@ -10,7 +10,6 @@ use Drupal\Core\Form\ConfigFormBase;
 use Drupal\Core\Form\FormStateInterface;
 
 use Drupal\file\Entity\File;
-use Drupal\soc_nextpage\Exception\InvalidTokenException;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
@@ -19,6 +18,8 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
  * @package Drupal\soc_nextpage\Form
  */
 class DefaultImageSettings extends ConfigFormBase {
+
+  const DIS_SETTINGS_KEY = 'soc_default_images.socomec_default_image_form';
 
   /** @var \Drupal\Core\Entity\EntityRepository $entityRepository */
   protected $entityRepository;
@@ -40,7 +41,7 @@ class DefaultImageSettings extends ConfigFormBase {
    * {@inheritdoc}
    */
   public function getFormId() {
-    return 'product_default_image_form';
+    return 'socomec_default_image_form';
   }
 
   /**
@@ -48,7 +49,7 @@ class DefaultImageSettings extends ConfigFormBase {
    */
   protected function getEditableConfigNames() {
     return [
-      'soc_nextpage.product_default_config',
+      self::DIS_SETTINGS_KEY,
     ];
   }
 
@@ -56,43 +57,47 @@ class DefaultImageSettings extends ConfigFormBase {
    * {@inheritdoc}
    */
   public function buildForm(array $form, FormStateInterface $form_state) {
-    $config = $this->config('soc_nextpage.product_default_config');
-
-    $product_uuid = $config->get('default_image_product');
-    $default_image_product = '';
-    if (!is_null($product_uuid)) {
-      try {
-        $default_image_product = $this->entityRepository->loadEntityByUuid('file', $product_uuid)->id();
-      } catch (EntityStorageException $e) {
-        throw new EntityStorageException($e->getMessage(), 1);
-      }
-    }
-
-    $form['default_image_product'] = [
-      '#type' => 'managed_file',
-      '#title' => $this->t('Default image product'),
-      '#upload_location' => 'public://',
-      '#default_value'  => $default_image_product ? [$default_image_product] : NULL,
+    $config = $this->config(self::DIS_SETTINGS_KEY);
+    $items = [
+      'nodes' => [
+        'label' =>  t('Default image by node entity bundle'),
+        'fields' =>  [
+          'default_image_product' => t('Default image product'),
+          'default_image_reference' => t('Default image reference'),
+        ]
+      ],
+      'block_promotion_entity' => [
+        'label' =>  t('Default image by blocks promo entity bundle'),
+        'fields' =>  [
+          'default_image_bloc_promo_offer' => t('Default image bloc promo offer'),
+          'default_image_bloc_promo_digital_asset' => t('Default image bloc promo digital asset'),
+          'default_image_bloc_promo_toolbox' => t('Default image bloc promo toolbox'),
+        ]
+      ],
     ];
 
-    $reference_uuid = $config->get('default_image_reference');
-    $default_image_reference = '';
-    if (!is_null($reference_uuid)) {
-      try {
-        $default_image_reference = $this->entityRepository->loadEntityByUuid('file', $reference_uuid)->id();
-      }
-      catch (EntityStorageException $e) {
-        throw new EntityStorageException($e->getMessage(), 1);
+    foreach ($items as $key_item => $item) {
+      $form[$key_item] = [
+        '#type' => 'details',
+        '#open' => TRUE,
+        '#title' => $item['label'] ? $item['label'] : NULL,
+      ];
+      foreach ($item['fields'] as $key => $label) {
+        $uuid = $config->get($key);
+        $default_image = '';
+        if (!is_null($uuid)) {
+          try {
+            $default_image = $this->entityRepository->loadEntityByUuid('file', $uuid)->id();
+          } catch (EntityStorageException $e) {}
+        }
+        $form[$key_item][$key] = [
+          '#type' => 'managed_file',
+          '#title' => $label ? $label : NULL,
+          '#upload_location' => 'public://',
+          '#default_value'  => $default_image ? [$default_image] : NULL,
+        ];
       }
     }
-
-    $form['default_image_reference'] = [
-      '#type' => 'managed_file',
-      '#title' => $this->t('Default image reference'),
-      '#upload_location' => 'public://',
-      '#default_value'  => $default_image_reference ? [$default_image_reference] : NULL,
-    ];
-
 
     return parent::buildForm($form, $form_state);
   }
@@ -105,6 +110,9 @@ class DefaultImageSettings extends ConfigFormBase {
     foreach ([
                'default_image_product',
                'default_image_reference',
+               'default_image_bloc_promo_offer',
+               'default_image_bloc_promo_digital_asset',
+               'default_image_bloc_promo_toolbox',
              ] as $configKey) {
 
       $form_file = $form_state->getValue($configKey, 0);
@@ -114,9 +122,8 @@ class DefaultImageSettings extends ConfigFormBase {
         try {
           $file->save();
         } catch (EntityStorageException $e) {
-          throw new EntityStorageException($e->getMessage(), 1);
         }
-        $this->configFactory->getEditable('soc_nextpage.product_default_config')
+        $this->configFactory->getEditable(self::DIS_SETTINGS_KEY)
           ->set($configKey, $file->uuid())
           ->save();
       }

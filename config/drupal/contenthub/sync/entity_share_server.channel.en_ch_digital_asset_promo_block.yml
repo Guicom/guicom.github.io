@@ -1,0 +1,15 @@
+uuid: 94934c28-f79e-4bea-b9ae-57d28d3aef60
+langcode: en
+status: true
+dependencies: {  }
+id: en_ch_digital_asset_promo_block
+label: 'EN-CH / Digital_asset - Promo Block'
+channel_entity_type: block_promotion_entity
+channel_bundle: digital_asset
+channel_langcode: en-ch
+channel_filters: null
+channel_groups: null
+channel_sorts: {  }
+channel_searches: null
+authorized_users:
+  cd0d9446-cb19-4e87-9dcf-d3bdc37a70a7: cd0d9446-cb19-4e87-9dcf-d3bdc37a70a7

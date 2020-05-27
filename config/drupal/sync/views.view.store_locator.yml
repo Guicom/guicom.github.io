@@ -194,6 +194,13 @@ display:
     display_options:
       display_extenders:
         metatag_display_extender: {  }
+        simple_sitemap_display_extender:
+          index: true
+          variant: default
+          priority: '0.5'
+          changefreq: ''
+          arguments: {  }
+          max_links: 100
       path: where-to-buy
       cache:
         type: search_api_tag
