@@ -1,0 +1,257 @@
+// GLOBAL RENDERING
+.block-promotion-entity {
+  &.block-promotion-entity-custom {
+    .soc-block-promo-entity-content {
+      // background color in combination settings
+      padding: 4.6rem 2.5rem 5rem 2.5rem;
+      // PICTO
+      .soc-block-promo-entity-picto {
+        // color in combination settings
+        margin-bottom: 0.5rem;
+      }
+      // MIDDLE SECTION
+      .soc-block-promo-entity-middle {
+        .soc-block-promo-entity-external-title {
+          //color in combination settings
+          font-size: $font-size-h4;
+          font-family: $font-roboto;
+          font-weight: 300;
+          line-height: 30px;
+          margin-bottom: 0.5rem;
+        }
+        .soc-block-promo-entity-sub-title {
+          //color in combination settings
+          font-size: $font-size-base;
+          font-family: $font-roboto;
+          line-height: 25px;
+          margin-bottom: 1rem;
+        }
+      }
+      // BOTTOM SECTION
+      .soc-block-promo-entity-link {
+        .back-to-button {
+          //color in combination settings
+          font-family: $font-poppins;
+          font-size: $font-size-xs;
+          letter-spacing: 1px;
+          text-transform: uppercase;
+          font-weight: 600;
+          svg {
+            margin-right: 3px;
+            g {
+              fill: $yellow;
+              path {
+                opacity: 1;
+              }
+            }
+          }
+        }
+      }
+    }
+    // COLOR COMBINATION RENDERING
+    // COLOR 1
+    &.color-combination-1 {
+      // with blue picto
+      .soc-block-promo-entity-content {
+        background: $yellow;
+        .soc-block-promo-entity-middle {
+          .soc-block-promo-entity-external-title {
+            color: $blue;
+          }
+          .soc-block-promo-entity-sub-title {
+            color: $darker-grey;
+          }
+        }
+        .soc-block-promo-entity-link {
+          .back-to-button {
+            color: $darker-grey;
+            svg {
+              g {
+                fill: $darker-grey;
+              }
+            }
+          }
+        }
+      }
+    }
+    // COLOR 2
+    &.color-combination-2 {
+      // with white picto
+      .soc-block-promo-entity-content {
+        background: $blue_light;
+        .soc-block-promo-entity-middle {
+          .soc-block-promo-entity-external-title {
+            color: $white;
+          }
+          .soc-block-promo-entity-sub-title {
+            color: $white;
+          }
+        }
+        .soc-block-promo-entity-link {
+          .back-to-button {
+            color: $white;
+            svg {
+              g {
+                fill: $white;
+              }
+            }
+          }
+        }
+      }
+    }
+    // COLOR 3
+    &.color-combination-3 {
+      // with blue picto
+      .soc-block-promo-entity-content {
+        background: $white;
+        .soc-block-promo-entity-middle {
+          .soc-block-promo-entity-external-title {
+            color: $blue;
+          }
+          .soc-block-promo-entity-sub-title {
+            color: $blue;
+          }
+        }
+        .soc-block-promo-entity-link {
+          .back-to-button {
+            color: $blue;
+            svg {
+              g {
+                fill: $blue;
+              }
+            }
+          }
+        }
+      }
+    }
+    // COLOR 4
+    &.color-combination-4 {
+      // with white picto
+      .soc-block-promo-entity-content {
+        background: $dark_blue;
+        .soc-block-promo-entity-middle {
+          .soc-block-promo-entity-external-title {
+            color: $white;
+          }
+          .soc-block-promo-entity-sub-title {
+            color: $white;
+          }
+        }
+        .soc-block-promo-entity-link {
+          .back-to-button {
+            color: $white;
+            svg {
+              g {
+                fill: $white;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+// Col-10 & Fullscreen RENDERING
+.soc-10-col,
+.soc-fullscreen {
+  @include media-breakpoint-up(md) {
+    .block-promotion-entity {
+      &.block-promotion-entity-custom {
+        .soc-block-promo-entity-content {
+          display: flex;
+          align-items: center;
+          justify-content: space-evenly;
+          .soc-block-promo-entity-middle {
+            display: flex;
+            align-items: center;
+            .soc-block-promo-entity-picto {
+              margin-right: 1.875rem;
+            }
+          }
+        }
+        .soc-block-promo-entity-link {
+          .back-to-button {
+            padding: 1rem 1.25rem;
+          }
+        }
+        // COLOR 1 FOR 10 COL BTN
+        &.color-combination-1 {
+          .soc-block-promo-entity-link {
+            .back-to-button {
+              transition: 0.2s;
+              background: $blue_light;
+              color: $white;
+              &:hover{
+                background: lighten($blue_light,6%);
+                transition: 0.2s;
+              }
+              svg {
+                g {
+                  fill: $white;
+                }
+              }
+            }
+          }
+        }
+        // COLOR 2 FOR 10 COL BTN
+        &.color-combination-2 {
+          .soc-block-promo-entity-link {
+            .back-to-button {
+              transition: 0.2s;
+              background: $white;
+              color: $blue;
+              &:hover{
+                background: darken($white,6%);
+                transition: 0.2s;
+              }
+              svg {
+                g {
+                  fill: $blue;
+                }
+              }
+            }
+          }
+        }
+        // COLOR 3 FOR 10 COL BTN
+        &.color-combination-3 {
+          .soc-block-promo-entity-link {
+            .back-to-button {
+              transition: 0.2s;
+              background: $blue;
+              color: $white;
+              &:hover{
+                background: lighten($blue,6%);
+                transition: 0.2s;
+              }
+              svg {
+                g {
+                  fill: $white;
+                }
+              }
+            }
+          }
+        }
+        // COLOR 4 FOR 10 COL BTN
+        &.color-combination-4 {
+          .soc-block-promo-entity-link {
+            .back-to-button {
+              transition: 0.2s;
+              background: $white;
+              color: $blue;
+              &:hover{
+                background: darken($white,6%);
+                transition: 0.2s;
+              }
+              svg {
+                g {
+                  fill: $blue;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
