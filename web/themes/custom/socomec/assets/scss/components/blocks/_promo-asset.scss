@@ -210,3 +210,20 @@
     }
   }
 }
+
+//Fullscreen RENDERING
+.fullscreen-parent {
+  margin-left: -1rem;
+  margin-right: -1rem;
+}
+.soc-fullscreen {
+  max-width: 100%!important;
+  padding: 0!important;
+  .block-promotion-entity {
+    &.block-promotion-entity-digital-asset {
+      .container {
+        position: relative;
+      }
+    }
+  }
+}

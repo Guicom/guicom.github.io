@@ -706,4 +706,19 @@
     }
   };
 
+  /**
+   * Rendering multiligne fullscreen
+   */
+  Drupal.behaviors.socomec_soc_fullscreen = {
+    attach: function (context, settings) {
+
+      $(document).ready(function() {
+        if ($(".paragraph").hasClass("soc-fullscreen")) {
+          console.log(this);
+          $(".soc-fullscreen").parents(".field__item").addClass('fullscreen-parent');
+        }
+      });
+    }
+  };
+
 })(jQuery, Drupal);
