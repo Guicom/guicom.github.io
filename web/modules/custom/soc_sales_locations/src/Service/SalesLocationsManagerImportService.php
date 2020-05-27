@@ -2,11 +2,9 @@
 
 namespace Drupal\soc_sales_locations\Service;
 
-use Drupal\Core\Entity\EntityStorageException;
+use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
-use Drupal\file\FileInterface;
 use Drupal\soc_sales_locations\Helpers\StoreLocationImportHelper;
-use InvalidArgumentException;
 
 /**
  * Class SalesLocationsManagerImportService.
@@ -38,10 +36,10 @@ class SalesLocationsManagerImportService implements SalesLocationsManagerImportS
   /**
    * @inheritDoc
    */
-  public function validate(FileInterface $file) {
+  public function validate(EntityInterface $file) {
     $fh = fopen($file->getFileUri(), 'r');
     $row = fgetcsv($fh, 0, ";");
-    if (empty($row) || count($row) !== 21) {
+    if (empty($row)) {
       return FALSE;
     }
     return TRUE;

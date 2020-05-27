@@ -2,9 +2,7 @@
 
 namespace Drupal\soc_sales_locations\Service;
 
-use Drupal\Core\Database\Database;
-use Drupal\Core\Database\Transaction;
-use Drupal\file\FileInterface;
+use Drupal\Core\Entity\EntityInterface;
 
 /**
  * Interface SalesLocationsManagerImportServiceInterface.
@@ -13,17 +11,16 @@ interface SalesLocationsManagerImportServiceInterface {
 
 
   /**
-   * @param \Drupal\file\FileInterface $file
+   * @param \Drupal\Core\Entity\EntityInterface $file
    *
    * @return bool
    */
-  public function validate(FileInterface $file) ;
+  public function validate(EntityInterface $file) ;
 
   /**
    * @param array $row
    *
    * @param $token
-   * @param \Drupal\Core\Database\Database $database
    *
    * @return bool
    */

@@ -2,7 +2,8 @@
 
 namespace Drupal\soc_sales_locations\Batch;
 
-use Drupal\file\FileInterface;
+
+use Drupal\Core\Entity\EntityInterface;
 
 /**
  * Class LocationsImportBatch.
@@ -11,11 +12,15 @@ class LocationsImportBatch {
 
 
   /**
-   * @param \Drupal\file\FileInterface $file
+   * @param \Drupal\Core\Entity\EntityInterface $file
    *
    * @return array
+   * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
+   * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
+   * @throws \Drupal\Core\Entity\EntityStorageException
+   * @throws \Drupal\Core\TypedData\Exception\ReadOnlyException
    */
-  public static function locationImport(FileInterface $file) {
+  public static function locationImport(EntityInterface $file) {
     $date_start_import = time();
     /** @var \Drupal\soc_job\Entity\JobEntity $job */
     $job = \Drupal::entityTypeManager()->getStorage('job')->create();
@@ -60,14 +65,10 @@ class LocationsImportBatch {
   }
 
   /**
-   * @param $row
-   * @param $date_start_import
-   * @param $job_id
-   * @param $max
+   * @param array $options
    * @param $context
    */
-  public static  function importOperationRow(array $options, &$context){
-
+  public static function importOperationRow(array $options, &$context){
     $row = $options['row'];
     $date_start_import = $options['date_start_import'];
     $job_id = $options['job_id'];
@@ -126,7 +127,7 @@ class LocationsImportBatch {
       if(self::findIfRowImportFailed($results)){
         $messenger->addError('Fail sur l\'import');
         $importer->updateCurrentJob($options['job_id'],'failed');
-        $importer->setRollbackStores($options['job_id']);
+        //$importer->setRollbackStores($options['job_id']);
       }
       else{
         $messenger->addMessage(t('@count store locators processed.', ['@count' => count($results)]));
@@ -146,7 +147,7 @@ class LocationsImportBatch {
         )
       );
       $importer->updateCurrentJob($options['job_id'],'failed');
-      $importer->setRollbackStores($options['job_id']);
+      //$importer->setRollbackStores($options['job_id']);
     }
   }
 
