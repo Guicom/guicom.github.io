@@ -6,7 +6,6 @@ use Drupal\Core\Entity\EntityStorageException;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\file\FileInterface;
 use Drupal\soc_sales_locations\Helpers\StoreLocationImportHelper;
-use \Drupal\soc_sales_locations\Exception\ImportStoreLocationException;
 use InvalidArgumentException;
 
 /**

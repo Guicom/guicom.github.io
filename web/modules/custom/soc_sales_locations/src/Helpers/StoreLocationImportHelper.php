@@ -7,7 +7,6 @@ namespace Drupal\soc_sales_locations\Helpers;
 use Drupal\Core\Entity\EntityStorageException;
 use Drupal\Core\StringTranslation\StringTranslationTrait;
 use Drupal\node\NodeInterface;
-use Drupal\soc_sales_locations\Exception\ImportStoreLocationException;
 use Drupal\taxonomy\Entity\Term;
 
 
@@ -206,7 +205,7 @@ class StoreLocationImportHelper {
   }
   public function importContinent($continent){
     $term = $this->importTerm('location_areas',$continent);
-    
+
     if(!is_null($term) && !is_array($term) ){
       $this->node->get('field_location_continent')->setValue(['target_id' => $term->id()]);
     }

@@ -2,10 +2,7 @@
 
 namespace Drupal\soc_sales_locations\Batch;
 
-use Drupal\Core\Entity\EntityStorageException;
 use Drupal\file\FileInterface;
-use Drupal\soc_sales_locations\Exception\ImportStoreLocationException;
-use InvalidArgumentException;
 
 /**
  * Class LocationsImportBatch.
@@ -87,15 +84,7 @@ class LocationsImportBatch {
       $importer->importRow($row, $date_start_import);
       $status = true;
     }
-    catch (EntityStorageException $e) {
-      \Drupal::messenger()->addError($e->getMessage());
-      $status = FALSE;
-    }
-    catch (InvalidArgumentException $e){
-      \Drupal::messenger()->addError($e->getMessage());
-      $status = FALSE;
-    }
-    catch (ImportStoreLocationException $e){
+    catch (\Exception $e){
       \Drupal::messenger()->addError($e->getMessage());
       $status = FALSE;
     }
