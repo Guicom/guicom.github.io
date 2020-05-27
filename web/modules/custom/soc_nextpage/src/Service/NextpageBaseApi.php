@@ -35,9 +35,6 @@ class NextpageBaseApi extends BaseApi {
   /** @var string $apiTokenExpiration */
   protected $apiTokenExpiration;
 
-  /** @var array $endpoints */
-  protected $endpoints;
-
   /** @var \Drupal\Core\TempStore\SharedTempStore $tempStore */
   protected $tempStore;
 
@@ -62,19 +59,19 @@ class NextpageBaseApi extends BaseApi {
 
     $config = $configFactory->getEditable('soc_nextpage.nextpage_ws');
 
-    $baseUrl = $config->get('base_url') ?? Settings::get('nextpage_base_url');
-    $user = $config->get('username') ?? Settings::get('nextpage_username');
-    $password = $config->get('password') ?? Settings::get('nextpage_password');
+    $baseUrl = $config->get('base_url') ?? 'https://preprod-socomecweb-api.nextpage.fr/com/';
+    $user = $config->get('username') ?? '';
+    $password = $config->get('password') ?? '';
     $contextId = $config->get('context_id') ?? '1';
     $languageId = $config->get('language_id') ?? '1';
     $endpoints = [
-      'token' => $config->get('endpoint_token') ?? 'api/auth',
-      'dicocarac' => $config->get('endpoint_dicocarac') ?? 'api/sdk-debug/dicocarac/GetAll',
-      'elementsandlinks' => $config->get('endpoint_elementsandlinks') ?? 'api/sdk-ext/element/ElementsAndLinks',
-      'descendantsandlinks' => $config->get('endpoint_descendantsandlinks') ?? 'api/sdk-ext/element/DescendantsAndLinks',
-      'elementsbychartemplate' => $config->get('endpoint_elementsbychartemplate') ?? 'api/sdk-ext/element/ElementsByCharTemplate',
+      'token' => $config->get('endpoint_token') ?? Settings::get('endpoint_token'),
+      'dicocarac' => $config->get('endpoint_dicocarac') ?? Settings::get('endpoint_dicocarac'),
+      'elementsandlinks' => $config->get('endpoint_elementsandlinks') ?? Settings::get('endpoint_elementsandlinks'),
+      'descendantsandlinks' => $config->get('endpoint_descendantsandlinks') ?? Settings::get('endpoint_descendantsandlinks'),
+      'elementsbychartemplate' => $config->get('endpoint_elementsbychartemplate') ?? Settings::get('endpoint_elementsbychartemplate'),
     ];
-    $extIds = $config->get('channel_extid') ?? '';
+    $extIds = $config->get('channel_extid') ??  Settings::get('channel_extid');
     $authStatus = $config->get('auth_status') ?? 0;
 
     $this->setBaseUrl($baseUrl);
@@ -263,19 +260,6 @@ class NextpageBaseApi extends BaseApi {
    */
   public function setLanguageId(string $languageId): void {
     $this->languageId = $languageId;
-  }
-
-  /**
-   * @return array
-   */
-  public function getEndpoints(): array {
-    return $this->endpoints;
-  }
-  /**
-   * @param array $endpoints
-   */
-  public function setEndpoints(array $endpoints) {
-    $this->endpoints = $endpoints;
   }
 
   /**

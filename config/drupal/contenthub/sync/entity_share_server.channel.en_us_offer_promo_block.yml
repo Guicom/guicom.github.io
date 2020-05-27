@@ -1,0 +1,15 @@
+uuid: 45415d37-3eed-4bf8-9b9d-3c18dc166535
+langcode: en
+status: true
+dependencies: {  }
+id: en_us_offer_promo_block
+label: 'EN-US / Offer - Promo Block'
+channel_entity_type: block_promotion_entity
+channel_bundle: offer
+channel_langcode: en-us
+channel_filters: null
+channel_groups: null
+channel_sorts: {  }
+channel_searches: null
+authorized_users:
+  cd0d9446-cb19-4e87-9dcf-d3bdc37a70a7: cd0d9446-cb19-4e87-9dcf-d3bdc37a70a7

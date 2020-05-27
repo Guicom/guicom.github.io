@@ -121,32 +121,35 @@ class ContentListManager {
    * @return array
    */
   public function loadSavedItems() {
-    if (isset($_COOKIE[$this->getCookieName()])) {
-      $contentList = $_COOKIE[$this->getCookieName()];
-      $this->contentList->setItems(json_decode($contentList, TRUE));
-      // Load items.
-      $datas = $this->contentList->getItems();
-      if (!empty($datas)) {
-        $itemsQuery = \Drupal::entityQuery('node');
-        $itemsQuery->condition('type', $this->getBundle());
-        $itemsQuery->condition($this->getReferencedField(), array_keys($datas), 'IN');
-        $itemsResults = $itemsQuery->execute();
-        $items = Node::loadMultiple($itemsResults);
-        $preparedItems = [];
-        foreach ($items as $item) {
-          $preparedItems[$datas[$item->get($this->getReferencedField())->value][$this->getCookieIdField()]] =  [
-            'node' => $item,
-            $this->getCookieIdField() => $datas[$item->get($this->getReferencedField())->value][$this->getCookieIdField()],
-            'quantity' => $datas[$item->get($this->getReferencedField())->value]['quantity'],
-            'timestamp' => $datas[$item->get($this->getReferencedField())->value]['timestamp'] ?? 0
-          ];
+    $cache = &drupal_static(__FUNCTION__, []);
+    if (empty($cache)) {
+      if (isset($_COOKIE[$this->getCookieName()])) {
+        $contentList = $_COOKIE[$this->getCookieName()];
+        $this->contentList->setItems(json_decode($contentList, TRUE));
+        // Load items.
+        $datas = $this->contentList->getItems();
+        if (!empty($datas)) {
+          $itemsQuery = \Drupal::entityQuery('node');
+          $itemsQuery->condition('type', $this->getBundle());
+          $itemsQuery->condition($this->getReferencedField(), array_keys($datas), 'IN');
+          $itemsResults = $itemsQuery->execute();
+          $items = Node::loadMultiple($itemsResults);
+          $preparedItems = [];
+          foreach ($items as $item) {
+            $preparedItems[$datas[$item->get($this->getReferencedField())->value][$this->getCookieIdField()]] =  [
+              'node' => $item,
+              $this->getCookieIdField() => $datas[$item->get($this->getReferencedField())->value][$this->getCookieIdField()],
+              'quantity' => $datas[$item->get($this->getReferencedField())->value]['quantity'],
+              'timestamp' => $datas[$item->get($this->getReferencedField())->value]['timestamp'] ?? 0
+            ];
+          }
+        }
+        if (!empty($preparedItems)) {
+          $cache = $preparedItems;
         }
       }
-      if (!empty($preparedItems)) {
-        return $preparedItems;
-      }
     }
-    return [];
+    return $cache;
   }
 
   /**

@@ -1,0 +1,18 @@
+uuid: 49f150ef-8782-4093-97a5-8b91688c342e
+langcode: en
+status: true
+dependencies:
+  module:
+    - soc_blocks_promotion
+id: block_promotion_entity.field_is_new
+field_name: field_is_new
+entity_type: block_promotion_entity
+type: boolean
+settings: {  }
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

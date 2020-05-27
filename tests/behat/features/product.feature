@@ -1,6 +1,7 @@
 @api @cit @javascript
 Feature: Products
   In order to test out the products
+  # ./vendor/bin/phing behat:run -Dbehat.tags=product
 
   @api @cit @javascript @product @product_detail
   Scenario: Detail product
@@ -11,12 +12,13 @@ Feature: Products
       | language | title   | status | moderation_state | field_orc_text |
       | English  | My ORC  | 1      | published        | ORC text       |
     And product content:
-      | language | title             | status | field_product_family | moderation_state | field_product_reference   | field_associated_products | field_product_orc_content |
-      | English  | My other product  | 1      | My Product Family    | published        | 22003016-SIRCO MV 3X160A  |                           |                           |
-      | English  | My test product   | 1      | My Product Family    | published        | 22003016-SIRCO MV 3X160A  | My other product          | My ORC                    |
+      | language | title             | status | field_product_family | moderation_state | field_product_reference   | field_associated_products | field_product_orc_content | field_product_teaser |
+      | English  | My other product  | 1      | My Product Family    | published        | 22003016-SIRCO MV 3X160A  |                           |                           | Teaser               |
+      | English  | My test product   | 1      | My Product Family    | published        | 22003016-SIRCO MV 3X160A  | My other product          | My ORC                    | Teaser               |
     And I am logged in as a user with the "administrator" role
     And I go to "admin/content"
     And I click "Edit" in the "My test product" row
+    And I fill in "field_json_product_data[0][value]" with "{\"Marketing\":{\"group_name\":\"Marketing\",\"value\":{\"DC_P_FUNCTIONS\":{\"id\":\"DC_P_FUNCTIONS\",\"type\":\"TXTLONG\",\"value\":\"Value\"},\"DC_P_UNIQUE_VALUE_PROPOSAL\":{\"id\":\"DC_P_UNIQUE_VALUE_PROPOSAL\",\"type\":\"TXTLONG\",\"value\":\"Value\"}}}}"
     And I click the "a[href='#edit-group-webmastering']" element
     And I wait 1 seconds
     And I click the "#edit-group-multiline" element
@@ -42,6 +44,8 @@ Feature: Products
     Then I should see an "#product-associate-section" element
     Then I should see an "#assistance-section" element
     Then I should see an "#product-orc-section" element
+    Then I should see the breadcrumb link "My Product Family"
+    Then I should see the breadcrumb link "My test product"
     Then I click the "#product-reference-table tr td a" element
     And I should see an ".node--type-product-reference" element
 

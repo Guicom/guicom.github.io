@@ -117,7 +117,6 @@
             e.preventDefault();
             e.stopPropagation();
             $(dropdown).slideToggle("400");
-            console.log('LIDE Dropdown lvl0');
           });
         });
         // CLOSE OTHER Dropdown lvl0
@@ -125,7 +124,6 @@
           $(this).click(function () {
             var dropdown = $(this).find('.we-mega-menu-submenu.dropdown-menu');
             $(".we-mega-menu-submenu.dropdown-menu").not(dropdown).slideUp("400");
-            console.log('CLOSE OTHER Dropdown lvl0');
           });
         });
 
@@ -137,7 +135,6 @@
             e.preventDefault();
             e.stopPropagation();
             $(dropdown).slideToggle("400");
-            console.log('SLIDE OPENING Dropdown lvl1');
           });
         });
         // CLOSE OTHER Dropdown lvl1
@@ -145,7 +142,6 @@
           $(this).click(function () {
             var dropdown = $(this).next('.we-mega-menu-submenu.dropdown-menu');
             $(".level-1 > .we-mega-menu-submenu.dropdown-menu").not(dropdown).slideUp("400");
-            console.log('CLOSE OTHER Dropdown lvl1');
           });
         });
 
@@ -157,7 +153,6 @@
             e.preventDefault();
             e.stopPropagation();
             $(dropdown).slideToggle("400");
-            console.log('SLIDE OPENING Dropdown lvl2');
           });
         });
         // CLOSE OTHER Dropdown lvl2
@@ -165,7 +160,6 @@
           $(this).click(function () {
             var dropdown = $(this).next('.we-mega-menu-submenu.dropdown-menu');
             $(".level-2 > .we-mega-menu-submenu.dropdown-menu").not(dropdown).slideUp("400");
-            console.log('CLOSE OTHER Dropdown lvl2');
           });
         });
       }
@@ -304,23 +298,28 @@
   /**
    * Smooth scroll for anchor
    */
-  // Drupal.behaviors.socomec_smooth_anchor_scrolling = {
-  //   attach: function (context, settings) {
-  //     $(function() {
-  //       $('a[href^="#"]:not([href="#"])').click(function() {
-  //         var offset = -200;
-  //           var target = $(this.hash);
-  //           target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-  //           if (target.length) {
-  //             $('html, body').animate({
-  //               scrollTop: target.offset().top + offset
-  //             }, 1000);
-  //             return false;
-  //           }
-  //       });
-  //     });
-  //   }
-  // };
+  Drupal.behaviors.socomec_smooth_anchor_scrolling = {
+    attach: function (context, settings) {
+
+      $(document).ready(function() {
+        if ($("body").hasClass("node--type-product")) {
+          $(function() {
+            $('a[href^="#"]:not([href="#"])').click(function() {
+              var offset = -200;
+              var target = $(this.hash);
+              target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+              if (target.length) {
+                $('html, body').animate({
+                  scrollTop: target.offset().top + offset
+                }, 1000);
+                return false;
+              }
+            });
+          });
+        }
+      });
+    }
+  };
 
   /**
    * Facets bootstrap_select
@@ -339,6 +338,9 @@
   function SocomecfacetsSelect(context, settings) {
     $('select').each(function () {
       var element = $(this);
+        if ($("body").hasClass("path-where-to-buy")) {
+          element.attr('data-live-search', 'true');
+        }
       element.selectpicker({
         virtualScroll: false,
       });
@@ -356,12 +358,32 @@
       });
     });
   }
+  function SocomecfacetsSelectScrollNative(context, settings) {
+    $('select').each(function () {
+      var element = $(this);
+      if ($("body").hasClass("path-where-to-buy")) {
+        element.attr('data-live-search', 'true');
+      }
+      element.selectpicker({
+        virtualScroll: false,
+      });
+    });
+  }
+  if (!$("body").hasClass("node--type-product-reference")) {
+    Drupal.behaviors.socomec_facets_bootstrap_select = {
+      attach: function (context, settings) {
+        SocomecfacetsSelect(context, settings);
+      }
+    };
+  } else {
+    Drupal.behaviors.socomec_facets_bootstrap_select = {
+      attach: function (context, settings) {
+        SocomecfacetsSelectScrollNative(context, settings);
+      }
+    };
+  }
 
-  Drupal.behaviors.socomec_facets_bootstrap_select = {
-    attach: function (context, settings) {
-      SocomecfacetsSelect(context, settings);
-    }
-  };
+
 
   /**
    * Facets bootstrap_list_select
@@ -508,19 +530,27 @@
     attach: function (context, settings) {
 
       var openBtn = $('.facet-mobile-modal-open .modal-open');
-      var closeBtn = $('.facet-mobile-modal-close .modal-close');
+      var closeBtn = $('.modal-facets-mobile .modal-close');
 
       openBtn.once().on("click", function (e) {
         $('.modal-facets-mobile').addClass('active');
         SocomecfacetsSelect(context, settings);
       });
-      closeBtn.once().on("click", function (e) {
-        $('.modal-facets-mobile').removeClass('active');
-        SocomecfacetsSelect(context, settings);
-      });
+      if($('.modal-facets-mobile').hasClass('block-soc-traceparts')) {
+        $('a.use-ajax').once().on("click", function (e) {
+          $('.modal-facets-mobile').delay(4000).queue(function(){
+            $(this).removeClass("active").dequeue();
+          });
+          SocomecfacetsSelect(context, settings);
+        });
+      } else {
+        closeBtn.once().on("click", function (e) {
+          $('.modal-facets-mobile').removeClass('active');
+          SocomecfacetsSelect(context, settings);
+        });
+      }
     }
   };
-
   /**
    * Modal with youtube video
    */
@@ -556,6 +586,124 @@
     }
   };
 
+  /**
+   * Close automatically jumpto dropdown
+   */
+  Drupal.behaviors.socomec_jumpto_closing = {
+    attach: function (context, settings) {
 
+      var jumptoLink = $('a[href^="#"]:not([href="#"])');
+
+      jumptoLink.once().on("click", function (e) {
+        $('#product-jumpto').removeClass('show');
+      });
+    }
+  };
+
+  /**
+   * Close automatically other menu on mobile
+   */
+  Drupal.behaviors.socomec_menu_interactions = {
+    attach: function (context, settings) {
+
+      var btnMainMenu = $('#btnMainNav');
+      var btnSearchMenu = $('a[data-drupal-link-system-path="search"]');
+
+      var menuSearch = $('.block-soc-search-block');
+      var menuMainMenu = $('#navbarSupportedContent');
+
+      btnMainMenu.once().on("click", function (e) {
+        menuSearch.addClass('d-none');
+        btnSearchMenu.removeClass('close-search');
+      });
+      btnSearchMenu.once().on("click", function (e) {
+        menuMainMenu.removeClass('show');
+        btnMainMenu.attr("aria-expanded","false");
+      });
+    }
+  };
+
+  /**
+   * Ajax btn bookmarks and wishlist
+   */
+  Drupal.behaviors.socomec_content_list_ajax_btn = {
+    attach: function (context, settings) {
+      Drupal.behaviors.socomec_content_list_ajax_btn.updateRenderNavigation();
+      var elements = $('a[data-soc-content-list-ajax="1"]');
+      $(elements, context).once('socomec_content_list_ajax_btn').each(function () {
+        $(this).click(function (e) {
+          var element = $(this);
+          var href = element.attr('href');
+          element.addClass( "item-pending" );
+          $.ajax({
+            url: href,
+            type: 'GET',
+            dataType: 'json',
+            success: function (output, statut) {
+              element.removeClass( "item-pending" );
+              if (output == "true") {
+                var original = element.attr('data-soc-content-list-original-title');
+                var alt = element.attr('data-soc-content-list-alt-title');
+                Drupal.behaviors.socomec_content_list_ajax_btn.updateRenderNavigation();
+                element.addClass("soc-list-is-active");
+                if (typeof(original) !== "undefined" && typeof(alt) !== "undefined") {
+                  element.addClass("item-added").find(".btn-value").replaceWith("<span class ='btn-value'>"+alt+"</span>").delay(5000).queue(function(){
+                    element.removeClass("item-added").find(".btn-value").val("<span class ='btn-value'>"+original+"</span>").replaceWith(original).dequeue();
+                  });
+                }
+                else {
+                  element.addClass("item-added").delay(5000).queue(function(){
+                    element.removeClass("item-added").dequeue();
+                  });
+                }
+              }
+            }
+          });
+          e.preventDefault();
+          e.stopPropagation();
+        });
+      });
+    },
+    updateRenderNavigation: function () {
+      var wishlist = $.cookie("socomec_wishlist");
+      var i = 0;
+      if(typeof wishlist !== 'undefined' && wishlist != null) {
+        $.each(JSON.parse(wishlist), function (key, value) {
+          $('.add-to-favorite[data-soc-content-list-item="'+key+'"]').addClass('soc-list-is-active');
+          i++;
+        });
+      }
+      if (i > 0) {
+        $('.menu--header-visitors .ico-favorite').addClass('soc-list-is-active');
+        $('.menu--header-visitors .ico-favorite').attr("data-soc-list", i);
+      }
+      var bookmark = $.cookie("socomec_bookmark");
+      var j = 0;
+      if(typeof bookmark !== 'undefined' && bookmark != null) {
+        $.each(JSON.parse(bookmark), function (key, value) {
+          $('.add-to-bookmarks[data-soc-content-list-item="'+key+'"]').addClass('soc-list-is-active');
+          j++;
+        });
+      }
+      if (j > 0) {
+        $('.menu--header-visitors .ico-bookmark-star-white').addClass('soc-list-is-active');
+        $('.menu--header-visitors .ico-bookmark-star-white').attr("data-soc-list", j);
+      }
+    }
+  };
+
+  /**
+   * Add loader on content
+   */
+  Drupal.behaviors.socomec_loader_content = {
+    attach: function (context, settings) {
+
+      $('.add-loader').click(function () {
+        $(this).next('.loader-pending').addClass('show').delay(5000).queue(function(){
+          $(this).removeClass("show").dequeue();
+        });
+      });
+    }
+  };
 
 })(jQuery, Drupal);

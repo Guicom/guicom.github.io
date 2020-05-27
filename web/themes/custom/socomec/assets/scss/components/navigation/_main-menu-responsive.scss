@@ -1,6 +1,6 @@
 /* ------------------ Header MOBILE ------------------ */
 // Position header with hero region.
-@include media-breakpoint-down(md) {
+@media (max-width: 991.98px) {
   .nav-wrapper {
     margin-top:-60px;
     width: 100%;
@@ -8,6 +8,7 @@
     z-index: 1022;
     height: 60px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(8,71,150, 1);
     z-index: 99999;
     @include transition-socomec;
     &.scrolled,
@@ -68,7 +69,11 @@
           border: none;
           &.we-mega-menu-ul {
             border: none;
-            height: auto;
+            height: 80%;
+            overflow-y: scroll;
+            @media (orientation: landscape) {
+              height: 65%;
+            }
             li {
               background: none;
               border: none;
@@ -313,7 +318,7 @@
                     color: $blue;
                     background-color: $white;
                     background-image: url('../images/picto/ui/user.svg');
-                    background-size: 24px 24px;
+                    background-size: 20px 20px;
                     background-repeat: no-repeat;
                     background-position: left 18px center;
                     text-indent: initial;
@@ -331,6 +336,13 @@
           }
         }
       }
+    }
+  }
+  .navbar-collapse.collapse {
+    display: none!important;
+    &.show {
+      display: block!important;
+      height: 100%!important;
     }
   }
 }

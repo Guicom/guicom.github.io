@@ -1,0 +1,7 @@
+# Admin / config menu links
+soc_default_images.default_image_settings:
+  title: 'Default image settings'
+  route_name: soc_default_images.default_image_settings
+  parent: soc_core.config
+  description: 'Configure default image for reference and product.'
+  weight: 0

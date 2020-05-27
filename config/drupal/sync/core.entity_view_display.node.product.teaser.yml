@@ -25,6 +25,7 @@ dependencies:
     - field.field.node.product.field_product_reference
     - field.field.node.product.field_product_status
     - field.field.node.product.field_product_teaser
+    - field.field.node.product.field_promo_block_paragraph
     - field.field.node.product.field_protection_level
     - field.field.node.product.field_standard_label
     - field.field.node.product.update_new_statut
@@ -145,6 +146,7 @@ hidden:
   field_product_reference: true
   field_product_standard_label: true
   field_product_status: true
+  field_promo_block_paragraph: true
   field_protection_level: true
   field_standard_label: true
   langcode: true

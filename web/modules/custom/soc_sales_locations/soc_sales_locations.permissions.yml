@@ -1,8 +1,4 @@
-import location:
-  title: 'Import locatioon'
-  description: 'Import location.'
-  restrict access: true
-export location:
-  title: 'Export locatioon'
-  description: 'Import location.'
-  restrict access: true
+import content location:
+  title: 'Import content location'
+export content location:
+  title: 'Export content location'

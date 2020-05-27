@@ -1,0 +1,15 @@
+uuid: a153ff5b-4a0f-40d4-b474-f642d81358e4
+langcode: en
+status: true
+dependencies: {  }
+id: it_ch_custom_promo_block
+label: 'IT-CH / Custom - Promo Block'
+channel_entity_type: block_promotion_entity
+channel_bundle: custom
+channel_langcode: it-ch
+channel_filters: null
+channel_groups: null
+channel_sorts: {  }
+channel_searches: null
+authorized_users:
+  cd0d9446-cb19-4e87-9dcf-d3bdc37a70a7: cd0d9446-cb19-4e87-9dcf-d3bdc37a70a7

@@ -634,6 +634,17 @@ bundles:
       notes: ''
       relationship: 0
       sars_filename: ''
+    field_promo_block_paragraph:
+      bundle: product
+      name: field_promo_block_paragraph
+      entity_type_id: node
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
   thank_you_page:
     field_title:
       bundle: thank_you_page
@@ -993,6 +1004,28 @@ bundles:
     field_tc4_value:
       bundle: product_reference
       name: field_tc4_value
+      entity_type_id: node
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_reference_content:
+      bundle: product_reference
+      name: field_reference_content
+      entity_type_id: node
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_characteristics:
+      bundle: product_reference
+      name: field_characteristics
       entity_type_id: node
       rtf: 'no'
       rta: 'no'
@@ -1558,6 +1591,39 @@ bundles:
     field_product_family:
       bundle: resource
       name: field_product_family
+    field_field_res_product_referen:
+      bundle: resource
+      name: field_field_res_product_referen
+      entity_type_id: node
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_res_product_ref:
+      bundle: resource
+      name: field_res_product_ref
+      entity_type_id: node
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_res_product_reference_ref:
+      bundle: resource
+      name: field_res_product_reference_ref
+      entity_type_id: node
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
   event:
     field_event_picture:
       bundle: event

@@ -1,7 +1,9 @@
 <?php
 
+use Behat\Gherkin\Node\TableNode;
 use Drupal\Component\Utility\UrlHelper;
 use Drupal\DrupalExtension\Context\RawDrupalContext;
+use Drupal\file\Entity\File;
 use Drupal\node\Entity\Node;
 
 /**
@@ -223,6 +225,39 @@ class FeatureContext extends RawDrupalContext {
   }
 
   /**
+   * Click some text in element
+   *
+   * @When /^I click on the text "([^"]*)" in "([^"]*)" element$/
+   */
+  public function iClickOnTheTextInElement($text, $selector)
+  {
+    $page = $this->getSession()->getPage();
+    $elements = $page->findAll('css', $selector);
+    $error = TRUE;
+    if (!empty($elements) && is_array($elements)) {
+      /** @var \Behat\Mink\Element\NodeElement $element */
+      foreach ($elements as $key => $element) {
+        if (!empty($element)) {
+          $value = $element->getText();
+          if (!empty($value)) {
+            if (strcmp($value, $text) === 0) {
+              $error = FALSE;
+              $element->click();
+              break;
+            }
+          }
+        }
+      }
+      if ($error) {
+        throw new Exception ("Element $text not found in $selector.");
+      }
+    }
+    else {
+      throw new Exception ("Selector $selector not found.");
+    }
+  }
+
+  /**
    * @Then /^the selectbox "([^"]*)" should have a list containing:$/
    */
   public function shouldHaveAListContaining($element, \Behat\Gherkin\Node\PyStringNode $list)
@@ -414,6 +449,16 @@ JS;
   }
 
   /**
+   * @Then The file :arg1 exist
+   */
+  public function theFileExist($file) {
+    $filename = __DIR__ . '/../../../../data/' . $file;
+    if (!file_exists($filename)) {
+      throw new Exception("The file doesn't exist");
+    }
+  }
+
+  /**
    * @Then /^I bookmark the resource "([^"]*)"$/
    */
   public function iBookmarkTheResource($title) {
@@ -446,6 +491,67 @@ JS;
       return TRUE;
     }
     return FALSE;
+  }
+
+  /**
+   * @Then I fill in wysiwyg on field :locator with :value
+   */
+  public function iFillInWysiwygOnFieldWith($locator, $value) {
+    $el = $this->getSession()->getPage()->findField($locator);
+
+    if (empty($el)) {
+      throw new ExpectationException('Could not find WYSIWYG with locator: ' . $locator, $this->getSession());
+    }
+
+    $fieldId = $el->getAttribute('id');
+
+    if (empty($fieldId)) {
+      throw new Exception('Could not find an id for field with locator: ' . $locator);
+    }
+
+    $this->getSession()
+      ->executeScript("CKEDITOR.instances[\"$fieldId\"].setData(\"$value\");");
+  }
+
+  /**
+   * @Then I should see the breadcrumb link :arg1
+   */
+  public function iShouldSeeTheBreadcrumbLink($arg1)
+  {
+    // get the breadcrumb
+    /**
+     * @var Behat\Mink\Element\NodeElement $breadcrumb
+     */
+    $breadcrumb = $this->getSession()->getPage()->find('css', 'div.block-system-breadcrumb-block');
+
+    // this does not work for URLs
+    $link = $breadcrumb->findLink($arg1);
+    if ($link) {
+      return;
+    }
+
+    // filter by url
+    $link = $breadcrumb->findAll('css', "a[href=\"{$arg1}\"]");
+    if ($link) {
+      return;
+    }
+
+    // filter by url
+    $page = $this->getSession()->getPage();
+    $active = $page->find('css', 'li.breadcrumb-item.active');
+    if ($active->getText() == $arg1) {
+      return;
+    }
+    $active = $page->find('css', 'li.breadcrumb-item.active + li.breadcrumb-item.active');
+    if ($active->getText() == $arg1) {
+      return;
+    }
+
+    throw new \Exception(
+      sprintf("Expected link %s not found in breadcrumb on page %s",
+        $arg1,
+        $this->getSession()->getCurrentUrl())
+    );
   }
 
 }

@@ -1,0 +1,79 @@
+uuid: 8d25197d-4b63-4a18-ba7e-626ff14cae69
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_product_cta_1
+    - node.type.product_reference
+    - paragraphs.paragraphs_type.link
+  module:
+    - entity_reference_revisions
+id: node.product_reference.field_product_cta_1
+field_name: field_product_cta_1
+entity_type: node
+bundle: product_reference
+label: 'CTA 1'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      link: link
+    target_bundles_drag_drop:
+      content:
+        weight: 18
+        enabled: false
+      from_library:
+        weight: 19
+        enabled: false
+      hero_paragraph:
+        weight: 20
+        enabled: false
+      key_figures:
+        weight: 21
+        enabled: false
+      link:
+        enabled: true
+        weight: 22
+      model_citation:
+        weight: 23
+        enabled: false
+      model_cta:
+        weight: 24
+        enabled: false
+      model_cta_pdf:
+        weight: 25
+        enabled: false
+      model_image:
+        weight: 26
+        enabled: false
+      model_testimony:
+        weight: 27
+        enabled: false
+      model_text:
+        weight: 28
+        enabled: false
+      pardot_form:
+        weight: 29
+        enabled: false
+      premium_content_promotion:
+        weight: 30
+        enabled: false
+      product_faq:
+        weight: 31
+        enabled: false
+      standard_label:
+        weight: 32
+        enabled: false
+      video_embed:
+        weight: 33
+        enabled: false
+      video_text:
+        weight: 34
+        enabled: false
+field_type: entity_reference_revisions

@@ -56,4 +56,9 @@ docker-sync.yml
 
 # Ignore SQL files
 *.sql
-/data/characteristics_dictionary.json
+
+# Ignore characteristics dictionary
+/data/characteristics_dictionary*.json
+
+# Ignore Behat reports
+tests/behat/report/

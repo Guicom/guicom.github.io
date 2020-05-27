@@ -119,8 +119,9 @@ body.node--type-product {
       }
     }
 
-    .proouct-info {
+    .product-info {
       position: relative;
+      min-height: 350px;
       @include media-breakpoint-down(md) {
         order: 2;
         position: initial;
@@ -292,6 +293,9 @@ body.node--type-product {
     text-transform: uppercase;
     top: 60px;
     z-index: 900;
+    @include media-breakpoint-down(md) {
+      z-index: 10000;
+    }
     .row {
       align-items: center;
       justify-content: flex-end;
@@ -305,8 +309,22 @@ body.node--type-product {
       font-weight: 600;
       letter-spacing: 1px;
       line-height: 20px;
+      @include media-breakpoint-down(md) {
+        width: 100%;
+        text-align: center;
+        color: $white;
+        background: $blue_light;
+        svg {
+          g {
+            fill: $white;
+          }
+        }
+      }
     }
     .product-nav-item {
+      @include media-breakpoint-up(md) {
+        display: inline-block;
+      }
       a {
         padding: 15px;
         background: $white;
@@ -319,6 +337,26 @@ body.node--type-product {
         height: 51px;
         display: block;
       }
+      @include media-breakpoint-down(md) {
+        width: 100%;
+        text-align: center;
+      }
+    }
+    .mobile-dropdown-jumpto {
+      @include media-breakpoint-up(md) {
+        display: block!important;
+      }
+      @include media-breakpoint-down(md) {
+        width: 100%;
+        box-shadow: $box-shadow02;
+      }
+    }
+  }
+
+  // alter position on admin
+  &.toolbar-fixed {
+    .product-navigation {
+      top: 139px;
     }
   }
   // 1st SECTION
@@ -617,7 +655,7 @@ body.node--type-product {
             padding: 0;
             border-bottom: 1px solid $lighter-grey;
             &:first-child {
-              padding-left: 18px;
+              padding-left: 25px;
               &:before {
                 top: 50%;
                 transform: translateY(-50%);
@@ -633,6 +671,15 @@ body.node--type-product {
             font-weight: 400;
             line-height: 25px;
             padding: 18px 10px;
+          }
+        }
+      }
+      thead {
+        tr {
+          th:first-child {
+            select {
+              display: none;
+            }
           }
         }
       }
@@ -1230,7 +1277,8 @@ body.node--type-product {
     height: 34px;
     width: 34px;
   }
-  &:hover {
+  &:hover,
+  &.soc-list-is-active{
     transition: $transition02;
     &:before {
       content:'';

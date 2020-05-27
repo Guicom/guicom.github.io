@@ -1,0 +1,57 @@
+.product-reference-characteristics {
+  margin-top: 5rem;
+  .section-characteristics {
+    // GENERAL TITLE SECTION
+    .label-section {
+      font-family: $font-roboto;
+      font-size: $font-size-base;
+      color: $blue_light;
+      text-transform: uppercase;
+      height: 40px;
+    }
+    .table-section {
+      margin-bottom: 3.8rem;
+      // title left
+      th {
+        font-family: $font-roboto;
+        font-size: $font-size-base;
+        font-weight: 600;
+        color: $darker-grey;
+        padding-left: 1rem;
+        line-height: 43px;
+      }
+      // data right
+      td {
+        font-family: $font-roboto;
+        font-size: $font-size-base;
+        color: $darker-grey;
+        background: rgba($blue, 0.05);
+        line-height: 43px;
+        @include media-breakpoint-down(sm) {
+          word-break: break-all;
+        }
+      }
+      th, td {
+        padding: 9px 20px;
+      }
+      tbody {
+        tr {
+          td, th {
+            border-top: none;
+            border-bottom: 1px solid rgba($black, 0.1);
+          }
+          &:first-child {
+            td, th {
+              border-top: 1px solid $yellow;
+            }
+            @include media-breakpoint-down(xs) {
+              td {
+                border-top: initial;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
