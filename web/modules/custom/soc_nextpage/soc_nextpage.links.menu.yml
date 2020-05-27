@@ -10,7 +10,7 @@ soc_nextpage.nextpage_ws_settings:
 soc_nextpage.synchro_page:
   title: 'Synchronisation'
   route_name: soc_nextpage.synchro_page
-  parent: soc_core.config
+  parent: soc_nextpage.nextpage_ws_settings
   description: 'Synchronize PIM Product.'
   weight: 0
 

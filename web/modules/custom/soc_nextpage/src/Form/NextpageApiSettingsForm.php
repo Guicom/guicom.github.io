@@ -217,6 +217,28 @@ class NextpageApiSettingsForm extends ConfigFormBase {
       '#default_value'  => $config->get('matching_libelle_dossier') ?? 'LibelleDossier',
     ];
 
+    $form['timeout'] = [
+      '#type'           => 'details',
+      '#open'           => TRUE,
+      '#title'          => $this->t('Timeout API call'),
+    ];
+
+    $active = array(0 => t('No'), 1 => t('Yes'));
+    $form['timeout']['CURLOPT_CONNECTTIMEOUT_MS'] = [
+      '#type'           => 'textfield',
+      '#title'          => $this->t('CURLOPT_CONNECTTIMEOUT_MS'),
+      '#options' => $active,
+      '#default_value'  => $config->get('CURLOPT_CONNECTTIMEOUT_MS') ??
+        Settings::get('CURLOPT_CONNECTTIMEOUT_MS', 5000),
+    ];
+
+    $form['timeout']['CURLOPT_TIMEOUT_MS'] = [
+      '#type'           => 'textfield',
+      '#title'          => $this->t('CURLOPT_TIMEOUT_MS'),
+      '#default_value'  => $config->get('CURLOPT_TIMEOUT_MS') ??
+        Settings::get('soc_nextpage_username', 10000),
+    ];
+
     return parent::buildForm($form, $form_state);
   }
 

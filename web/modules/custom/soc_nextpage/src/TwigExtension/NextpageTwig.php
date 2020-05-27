@@ -3,6 +3,7 @@
 namespace Drupal\soc_nextpage\TwigExtension;
 
 
+use Drupal\Core\TempStore\TempStoreException;
 use Drupal\file\Entity\File;
 use Drupal\media\Entity\Media;
 use Drupal\taxonomy\Entity\Term;
@@ -113,6 +114,7 @@ class NextpageTwig extends \Twig_Extension {
           $file = \Drupal::service('entity.repository')->loadEntityByUuid('file', $uuid);
         } catch (\Exception $e) {
           \Drupal::logger('soc_nextpage')->error($e->getMessage());
+          throw new \Exception($e->getMessage(), 1);
         }
         if ($file) {
           if ($path = $file->getFileUri()) {

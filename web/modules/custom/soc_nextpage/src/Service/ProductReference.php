@@ -6,15 +6,18 @@ use Drupal\Core\Entity\Query\QueryFactory;
 use Drupal\Core\Database\Connection;
 use Drupal\node\Entity\Node;
 
+/**
+ *
+ */
 class ProductReference {
 
   /**
-   * @var \Drupal\Core\Entity\Query\QueryFactory entityQuery
+   * @var \Drupal\Core\Entity\Query\QueryFactoryentityQuery
    */
   protected $entityQuery;
 
   /**
-   * @var \Drupal\Core\Database\Connection $database
+   * @var \Drupal\Core\Database\Connection
    */
   protected $database;
 
@@ -29,10 +32,13 @@ class ProductReference {
     $this->database = $connection;
   }
 
+  /**
+   *
+   */
   public function getParentProductFamilyByProductReference(Node $reference) {
     if ($node = $this->getParentProductByProductReference($reference)) {
-     $family = $node->get('field_product_family')->target_id;
-     return $family;
+      $family = $node->get('field_product_family')->target_id;
+      return $family;
     }
     return FALSE;
   }
@@ -46,7 +52,7 @@ class ProductReference {
     if ($rid = $reference->id()) {
       $entityQuery = $this->entityQuery->get('node');
       $entityQuery->condition('type', 'product');
-      $entityQuery->condition('field_product_reference', $reference->id());
+      $entityQuery->condition('field_product_reference', $rid);
       $entityQuery->range(0, 1);
       $nids = $entityQuery->execute();
       $node = Node::load(reset($nids));

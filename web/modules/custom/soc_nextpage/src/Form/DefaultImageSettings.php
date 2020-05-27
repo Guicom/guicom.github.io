@@ -10,6 +10,7 @@ use Drupal\Core\Form\ConfigFormBase;
 use Drupal\Core\Form\FormStateInterface;
 
 use Drupal\file\Entity\File;
+use Drupal\soc_nextpage\Exception\InvalidTokenException;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
@@ -63,6 +64,7 @@ class DefaultImageSettings extends ConfigFormBase {
       try {
         $default_image_product = $this->entityRepository->loadEntityByUuid('file', $product_uuid)->id();
       } catch (EntityStorageException $e) {
+        throw new EntityStorageException($e->getMessage(), 1);
       }
     }
 
@@ -80,6 +82,7 @@ class DefaultImageSettings extends ConfigFormBase {
         $default_image_reference = $this->entityRepository->loadEntityByUuid('file', $reference_uuid)->id();
       }
       catch (EntityStorageException $e) {
+        throw new EntityStorageException($e->getMessage(), 1);
       }
     }
 
@@ -111,6 +114,7 @@ class DefaultImageSettings extends ConfigFormBase {
         try {
           $file->save();
         } catch (EntityStorageException $e) {
+          throw new EntityStorageException($e->getMessage(), 1);
         }
         $this->configFactory->getEditable('soc_nextpage.product_default_config')
           ->set($configKey, $file->uuid())

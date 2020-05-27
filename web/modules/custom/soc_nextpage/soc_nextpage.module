@@ -4,30 +4,58 @@ use Drupal\soc_nextpage\Batch\ImportPendingElement;
 use Drupal\system\Entity\Menu;
 use Drupal\Core\Form\FormStateInterface;
 
+/**
+ * Implements hook_cron
+ */
 function soc_nextpage_cron() {
   $logger = \Drupal::logger('soc_nextpage');
+  $rollback = \Drupal::service('soc_rollback.rollback_import');
+  $logger->info('Cron in!');
+  // If all is good, let's start import.
+  if ($rollback->checkAllGreen() == TRUE) {
+    $job_id = $rollback->initJob('pim');
+    /** @var \Drupal\soc_nextpage\Service\NextpageApi $nextpageApi */
+    $nextpageApi = \Drupal::service('soc_nextpage.nextpage_api');
 
-  /** @var \Drupal\soc_nextpage\Service\NextpageApi $nextpageApi */
-  $nextpageApi = \Drupal::service('soc_nextpage.nextpage_api');
+    // Synchronize characteristicsDictionary.
+    $logger->info('Start synchronise dictionnary!');
+    $nextpageApi->synchroniseCharacteristicsDictionary();
+    $logger->info('Dictionnary is synchronised !');
 
-  // Synchronize characteristicsDictionary.
-  $nextpageApi->synchroniseCharacteristicsDictionary();
+    // Update Job State
+    $rollback->updateJob($job_id,
+      [
+        'operation' => 'update_state',
+        'state' => 'in_progress',
+      ]
+    );
+    $logger->info('Import starting');
 
-  // Update families, products & references.
-  $context = [];
-  $product = \Drupal::service('soc_nextpage.nextpage_api')->descendantsAndLinks();
-  foreach ($product->Elements ?? [] as $row) {
-    ImportPendingElement::addPendingElement($row, $context);
+    // Update families, products & references.
+    $context['job_id'] = $job_id;
+    $product = \Drupal::service('soc_nextpage.nextpage_api')->descendantsAndLinks();
+    foreach ($product->Elements ?? [] as $row) {
+      ImportPendingElement::addPendingElement($row, $context);
+    }
+
+    // Rebuild menu.
+    $menu = Menu::load('header');
+    try {
+      $menu->save();
+    } catch (Exception $e) {
+      throw new \Exception($e->getMessage(), 1);
+    }
+
+    $rollback->purgeRollbackEntry();
+    $rollback->updateJob($job_id,
+      [
+        'operation' => 'update_state',
+        'state' => 'done',
+      ]
+    );
+    $logger->info('Import finished!');
   }
 
-  // Rebuild menu.
-  $menu = Menu::load('header');
-  try {
-    $menu->save();
-  } catch (\Drupal\Core\Entity\EntityStorageException $e) {
-  }
-
-  $logger->info('Import finished!');
 }
 
 
