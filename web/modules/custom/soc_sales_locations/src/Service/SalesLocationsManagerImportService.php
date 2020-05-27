@@ -48,6 +48,7 @@ class SalesLocationsManagerImportService implements SalesLocationsManagerImportS
 
   /**
    * @inheritDoc
+   * @throws \Exception
    */
   public function importRow($row, $date_imported) {
     /** @var \Drupal\node\NodeInterface $node */
@@ -58,10 +59,11 @@ class SalesLocationsManagerImportService implements SalesLocationsManagerImportS
     else {
       $node = $this->em->getStorage('node')->load($row[0]);
     }
-      $this->rowNode = new StoreLocationImportHelper($node);
+    $this->rowNode = new StoreLocationImportHelper($node);
+    try {
       $this->rowNode->importTitle($row[1]);
-      $this->rowNode->importNameCompany($row[7]);
-      $this->rowNode->importNameContact($row[8]);
+      $this->rowNode->importCompanyName($row[7]);
+      $this->rowNode->importContactName($row[8]);
       $this->rowNode->importFirstName($row[9]);
       $this->rowNode->importAddress($row);
       $this->rowNode->importPhone($row[18]);
@@ -73,6 +75,12 @@ class SalesLocationsManagerImportService implements SalesLocationsManagerImportS
       $this->rowNode->importArea($row[3], $row[2]);
       $this->rowNode->importSubArea($row[4], $row[3]);
       $this->rowNode->saveUpdatedRevisionsNode($date_imported);
+    }
+    catch (\Exception $e) {
+      throw new \Exception(t('Row @row was not imported because of an error.', [
+        '@row' => $row[1],
+      ]));
+    }
   }
 
   /**
