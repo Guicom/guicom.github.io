@@ -71,8 +71,9 @@
 
 // COL-3 RENDERING
 .col-md-3,
-  //soc-10-col for heriting
-.soc-10-col {
+  //soc-10-col and soc-6-col for heriting
+.soc-10-col,
+.soc-6-col {
   .block-promotion-entity {
     &.block-promotion-entity-offer {
       text-align: center;
@@ -149,7 +150,9 @@
 
 // Col-10 & Fullscreen RENDERING
 .soc-10-col,
-.soc-fullscreen {
+.soc-fullscreen,
+// soc-6-col for heriting
+.soc-6-col {
   @include media-breakpoint-up(md) {
     .block-promotion-entity {
       &.block-promotion-entity-offer {
@@ -247,3 +250,38 @@
   }
 }
 
+// Col-6 RENDERING
+// WIP
+.soc-6-col {
+  @include media-breakpoint-up(md) {
+    .block-promotion-entity {
+      &.block-promotion-entity-offer {
+        .soc-block-promo-entity-header {
+          display: block;
+          .soc-block-promo-entity-external-title {
+            padding-left: 16.5rem;
+          }
+          .soc-block-promo-entity-sub-title {
+            padding-left: 15.5rem;
+            margin-bottom: 0;
+          }
+        }
+        .soc-block-promo-entity-content {
+          top: 1rem;
+          padding-top: 3.5rem;
+          .soc-block-promo-entity-teaser {
+            padding-left: 1rem;
+            padding-top: 5rem;
+          }
+          .soc-block-promo-entity-description {
+            color: $white;
+            top: 20px;
+          }
+          .soc-block-promo-entity-link {
+            padding-left: 1rem;
+          }
+        }
+      }
+    }
+  }
+}
