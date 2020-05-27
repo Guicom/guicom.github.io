@@ -73,12 +73,14 @@ class LocationsImportBatch {
     $date_start_import = $options['date_start_import'];
     $job_id = $options['job_id'];
     $max = $options['max'];
+    /*
     if (empty($context['sandbox'])) {
       $context['sandbox']['progress'] = 0;
       $context['sandbox']['current_id'] = 0;
       $context['sandbox']['max'] = $max;
       $context['sandbox']['job_id'] = $job_id;
     }
+    */
     /** @var \Drupal\soc_sales_locations\Service\SalesLocationsManagerImportService $importer */
     $importer = \Drupal::service('soc_sales_locations.manager.import');
     try{
@@ -89,6 +91,7 @@ class LocationsImportBatch {
       \Drupal::messenger()->addError($e->getMessage());
       $status = FALSE;
     }
+    /*
     $context['message'] = $row[1];
     $context['results'][] = [
       'row' => $row,
@@ -97,14 +100,15 @@ class LocationsImportBatch {
         'status' => $status,
       ],
     ];
-    $context['sandbox']['progress']++;
-    $importer->updateCurrentJob($job_id);
-    if ($context['sandbox']['progress'] != $context['sandbox']['max']) {
+    */
+    //$context['sandbox']['progress']++;
+    //$importer->updateCurrentJob($job_id);
+    /*if ($context['sandbox']['progress'] != $context['sandbox']['max']) {
       $context['finished'] = $context['sandbox']['progress'] / $context['sandbox']['max'];
     }
     if (!$status) {
       $context['finished'] = 1;
-    }
+    }*/
   }
 
 
@@ -125,13 +129,13 @@ class LocationsImportBatch {
 
     if ($success) {
       if(self::findIfRowImportFailed($results)){
-        $messenger->addError('Fail sur l\'import');
-        $importer->updateCurrentJob($options['job_id'],'failed');
+        $messenger->addError('Import has failed.');
+        //$importer->updateCurrentJob($options['job_id'],'failed');
         //$importer->setRollbackStores($options['job_id']);
       }
       else{
         $messenger->addMessage(t('@count store locators processed.', ['@count' => count($results)]));
-        $importer->updateCurrentJob($options['job_id'],'done');
+        //$importer->updateCurrentJob($options['job_id'],'done');
       }
     }
     else {
