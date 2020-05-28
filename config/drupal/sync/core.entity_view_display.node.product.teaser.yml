@@ -24,14 +24,15 @@ dependencies:
     - field.field.node.product.field_product_pictures
     - field.field.node.product.field_product_reference
     - field.field.node.product.field_product_status
-    - field.field.node.product.field_product_teaser
     - field.field.node.product.field_promo_block_paragraph
     - field.field.node.product.field_protection_level
     - field.field.node.product.field_standard_label
+    - field.field.node.product.field_teaser
     - field.field.node.product.update_new_statut
     - node.type.product
   module:
     - ds
+    - text
     - user
 third_party_settings:
   ds:
@@ -41,6 +42,7 @@ third_party_settings:
       disable_css: false
       entity_classes: all_classes
       settings:
+        label: ''
         wrappers:
           ds_content: div
         outer_wrapper: div
@@ -57,6 +59,7 @@ third_party_settings:
         - field_product_pictures
         - node_title
         - field_product_teaser
+        - field_teaser
     fields:
       node_title:
         plugin_id: node_title
@@ -98,9 +101,9 @@ content:
             lb: ''
             lb-col: false
             classes: {  }
-  field_product_teaser:
-    type: basic_string
-    weight: 4
+  field_teaser:
+    type: text_default
+    weight: 5
     region: ds_content
     label: hidden
     settings: {  }

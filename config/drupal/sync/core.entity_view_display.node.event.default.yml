@@ -15,9 +15,9 @@ dependencies:
     - field.field.node.event.field_event_picture
     - field.field.node.event.field_event_place
     - field.field.node.event.field_event_product
-    - field.field.node.event.field_event_teaser
     - field.field.node.event.field_event_thematic
     - field.field.node.event.field_event_type
+    - field.field.node.event.field_teaser
     - image.style.event_hero_illustration
     - node.type.event
   module:
@@ -58,7 +58,7 @@ content:
     type: add_to_calendar
     region: content
   field_country:
-    weight: 16
+    weight: 15
     label: above
     settings:
       link: true
@@ -198,13 +198,6 @@ content:
     third_party_settings: {  }
     type: entity_reference_label
     region: content
-  field_event_teaser:
-    weight: 3
-    label: hidden
-    settings: {  }
-    third_party_settings: {  }
-    type: text_default
-    region: content
   field_event_thematic:
     weight: 6
     label: hidden
@@ -235,6 +228,13 @@ content:
             lb-col: false
             classes: {  }
     type: entity_reference_label
+    region: content
+  field_teaser:
+    weight: 3
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
     region: content
   links:
     weight: 1

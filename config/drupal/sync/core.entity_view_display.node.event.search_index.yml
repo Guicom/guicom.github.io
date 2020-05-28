@@ -16,9 +16,9 @@ dependencies:
     - field.field.node.event.field_event_picture
     - field.field.node.event.field_event_place
     - field.field.node.event.field_event_product
-    - field.field.node.event.field_event_teaser
     - field.field.node.event.field_event_thematic
     - field.field.node.event.field_event_type
+    - field.field.node.event.field_teaser
     - image.style.crop_210x160
     - node.type.event
   module:
@@ -217,8 +217,8 @@ hidden:
   field_event_custom_audience: true
   field_event_momemtum: true
   field_event_product: true
-  field_event_teaser: true
   field_event_thematic: true
+  field_teaser: true
   langcode: true
   links: true
   search_api_excerpt: true

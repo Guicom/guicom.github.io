@@ -120,7 +120,7 @@ class ProductManager {
   public function updateProduct(&$node, $product) {
     if (!isset($product->Values->DC_P_PRODUCT_SHORT_DESCRIPTION->Value)
         && isset($product->Values->DC_P_ASSORTMENT_WIDTH->Value)) {
-      $node->set('field_product_teaser',
+      $node->set('field_teaser',
         $product->Values->DC_P_PRODUCT_SHORT_DESCRIPTION->Value . ' - '
         . $product->Values->DC_P_ASSORTMENT_WIDTH->Value);
     }

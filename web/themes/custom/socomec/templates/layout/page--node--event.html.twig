@@ -79,7 +79,7 @@
       {% include '@socomec/layout/event/hero-header.html.twig' %}
       {{ drupal_block('local_tasks_block') }}
     </header>
-    {% if drupal_field('field_event_teaser', 'node')[0] %}
+    {% if drupal_field('field_teaser', 'node')[0] %}
     <div class="event-teaser-wrapper">
       <div class="container">
         <div class="row">
@@ -88,7 +88,7 @@
             {% set event_teaser_class = "with-calendar" %}
           {% endif %}
           <div class="event-teaser col-12 col-md-6 {{ event_teaser_class }}">
-              <span class="event-subtitle">{{ drupal_field('field_event_teaser', 'node') }}</span>
+              <span class="event-subtitle">{{ drupal_field('field_teaser', 'node') }}</span>
             </div>
           </div>
         </div>

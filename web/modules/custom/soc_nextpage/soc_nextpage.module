@@ -61,15 +61,15 @@ function _soc_nextpage_validate_json_data(&$form, FormStateInterface $form_state
   // Check Functions.
   $function = $field->getFieldFromJson($json_value, 'DC_P_FUNCTIONS');
   if (empty($function) && $moderation[0]["value"] == 'published') {
-    $form_state->setErrorByName('field_json_product_data',
-      t('DC_P_FUNCTIONS is missing, please launch an import to get the complete data.'));
+    //$form_state->setErrorByName('field_json_product_data',
+    //  t('DC_P_FUNCTIONS is missing, please launch an import to get the complete data.'));
   }
 
   // Check Teaser.
-  $teaser = $form_state->getValue('field_product_teaser');
+  $teaser = $form_state->getValue('field_teaser');
   if (empty($teaser[0]["value"]) && $moderation[0]["value"] == 'published') {
-    $form_state->setErrorByName('field_product_teaser',
-      t('Teaser is missing, please launch an import to get the complete data.'));
+    //$form_state->setErrorByName('field_teaser',
+    //  t('Teaser is missing, please launch an import to get the complete data.'));
   }
 
   // Check Title.

@@ -24,10 +24,10 @@ dependencies:
     - field.field.node.product.field_product_pictures
     - field.field.node.product.field_product_reference
     - field.field.node.product.field_product_status
-    - field.field.node.product.field_product_teaser
     - field.field.node.product.field_promo_block_paragraph
     - field.field.node.product.field_protection_level
     - field.field.node.product.field_standard_label
+    - field.field.node.product.field_teaser
     - field.field.node.product.update_new_statut
     - image.style.background_transparent_210x140
     - node.type.product
@@ -44,6 +44,7 @@ third_party_settings:
       disable_css: false
       entity_classes: all_classes
       settings:
+        label: ''
         wrappers:
           left: div
           right: div
@@ -60,7 +61,7 @@ third_party_settings:
         - 'bundle_field:node'
         - field_product_status
         - node_title
-        - field_product_teaser
+        - field_teaser
         - node_link
       right:
         - field_product_pictures
@@ -127,22 +128,24 @@ content:
             lb: ''
             lb-col: false
             classes: {  }
-  field_product_teaser:
+  field_teaser:
+    type: smart_trim
     weight: 3
+    region: left
     label: hidden
     settings:
       trim_length: 120
       trim_type: chars
-      trim_suffix: ...
-      wrap_output: true
+      trim_suffix: ''
       wrap_class: trimmed
       more_text: ...
       more_class: more-link
+      summary_handler: full
       trim_options:
         text: true
         trim_zero: false
+      wrap_output: false
       more_link: false
-      summary_handler: full
     third_party_settings:
       ds:
         ft:
@@ -151,8 +154,6 @@ content:
             lb: ''
             lb-col: false
             classes: {  }
-    type: smart_trim
-    region: left
 hidden:
   addtoany: true
   content_moderation_control: true
