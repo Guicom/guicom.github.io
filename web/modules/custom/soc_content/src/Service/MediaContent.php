@@ -29,6 +29,18 @@ class MediaContent extends ContentManager {
    * @return bool|\Drupal\file\Entity\File
    */
   public function createFile($file_name, $destination_file_name = NULL, $uuid = NULL) {
+    // Check if file already exists, return it then.
+    if (!is_null($uuid)) {
+      $filesQuery = \Drupal::entityQuery('file');
+      $filesQuery->condition('uuid', $uuid);
+      $files = $filesQuery->execute();
+      if (!empty($files)) {
+        $fid = reset($files);
+        return File::load($fid);
+      }
+    }
+
+    // If file does not exist, create it.
     $file_data = file_get_contents('../content/images/' . $file_name);
     if (is_null($destination_file_name)) {
       $destination_file_name = $file_name;
