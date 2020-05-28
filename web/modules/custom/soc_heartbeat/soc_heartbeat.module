@@ -28,5 +28,5 @@ function soc_heartbeat_help($route_name, RouteMatchInterface $route_match) {
  */
 function soc_heartbeat_cron() {
   // Call Heartbeat service.
-  \Drupal::service('soc_heartebeat.heartmanager')->run();
+  \Drupal::service('soc_heartbeat.heartmanager')->run();
 }

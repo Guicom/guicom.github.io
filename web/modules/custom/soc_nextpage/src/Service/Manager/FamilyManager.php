@@ -200,10 +200,39 @@ class FamilyManager {
   }
 
   /**
-   *
+   * Delete non imported family.
    */
   public function delete() {
-    // @todo : delete script.
+    // Get all Imported family.
+    $imported = [];
+    $connection = \Drupal::database();
+    $items = $connection->select('soc_rollback_items', 'sri')
+      ->condition('sri.entity_type', 'taxonomy_term')
+      ->fields('sri', ['entity_id']);
+    $data = $items->execute();
+    $results = $data->fetchAll(\PDO::FETCH_OBJ);
+    foreach ($results as $result) {
+      $imported[] = $result->entity_id;
+    }
+
+    $family = [];
+    $storage = \Drupal::entityTypeManager()->getStorage('taxonomy_term');
+    $terms = $storage->loadTree('family');
+    foreach ($terms as $term) {
+      if (!in_array($term->tid, $imported)) {
+        $family[] = $term->tid;
+      }
+    }
+
+    $family = $storage->loadMultiple($family);
+
+    try {
+      $storage->delete($family);
+    }
+    catch (\Exception $e) {
+      throw new \Exception($e->getMessage(), 1);
+    }
+    $this->logger()->info(t('Family purged'));
   }
 
   /**

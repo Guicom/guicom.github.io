@@ -42,7 +42,13 @@ function soc_nextpage_cron() {
       ImportPendingElement::addPendingElement($row, $context);
     }
 
+    // Purge non imported family.
+    $logger->info('Start purge family');
+    \Drupal::service('soc_nextpage.nextpage_family_manager')->delete();
+    $logger->info('Purge family is finished');
+
     // Rebuild menu.
+    $logger->info('Start update menu');
     $menu = Menu::load('header');
     try {
       $menu->save();
@@ -50,6 +56,7 @@ function soc_nextpage_cron() {
     catch (Exception $e) {
       throw new \Exception($e->getMessage(), 1);
     }
+    $logger->info('Update menu is finished');
 
     $rollback->purgeRollbackEntry();
     $rollback->updateJob($job_id,

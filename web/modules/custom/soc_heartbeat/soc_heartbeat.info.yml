@@ -3,3 +3,7 @@ type: module
 description: 'Heartbeat feature'
 core: 8.x
 package: 'Socomec'
+dependencies:
+  - soc_job
+  - soc_rollback
+  - soc_nextpage
