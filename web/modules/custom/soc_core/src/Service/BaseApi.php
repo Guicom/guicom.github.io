@@ -194,7 +194,7 @@ class BaseApi {
       throw new \Exception($message, 1);
     }
     if (200 != $code) {
-      $message = "$method $url failed: " . t('Error in API call, plese check your configuration');
+      $message = "$method $url failed: " . t('Error in API call, please check your configuration');
       throw new \Exception($message, 1);
     }
 
