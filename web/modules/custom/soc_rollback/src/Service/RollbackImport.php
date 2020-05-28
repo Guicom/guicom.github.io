@@ -96,6 +96,10 @@ class RollbackImport {
 
       case 'update_entity':
         $this->writeJob($job_id, $data['entity'], $data['state']);
+        break;
+
+      default:
+        break;
     }
   }
 
@@ -194,6 +198,9 @@ class RollbackImport {
 
               case 'node':
                 $vids = $storage->revisionIds($entity);
+                break;
+
+              default:
                 break;
             }
             end($vids);

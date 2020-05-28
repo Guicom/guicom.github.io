@@ -41,6 +41,10 @@ class JobManager {
     switch ($type) {
       case 'pim':
         $job->set('field_job_type', 'pim');
+        break;
+
+      default:
+        break;
     }
 
     try {
@@ -82,6 +86,9 @@ class JobManager {
 
       case 'node':
         $title = $entity->getTitle();
+        break;
+
+      default:
         break;
     }
     $id = $entity->id();

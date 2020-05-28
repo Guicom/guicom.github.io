@@ -70,7 +70,7 @@ class NextpageApiSettingsForm extends ConfigFormBase {
       '#options' => $active,
       '#description'    => $this->t('Activate authentification.'),
       '#default_value'  => $config->get('auth_status') ??
-        Settings::get('auth_status', 0),
+        Settings::get('auth_status', 1),
     ];
 
     $form['auth']['username'] = [
