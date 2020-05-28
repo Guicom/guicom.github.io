@@ -47,7 +47,7 @@ cache: &global_cache
     - cp ${CI_PROJECT_DIR}/phing/example.build.properties.local ${CI_PROJECT_DIR}/phing/build.properties.local
     - cp ${CI_PROJECT_DIR}/tests/behat/behat.example.yml ${CI_PROJECT_DIR}/tests/behat/behat.local.yml
     - docker-compose up -d
-    - docker-compose exec -u root -T web bash -c 'cd /var/www/html/config/drupal && sed -ri s/NEXTPAGE_PWD/"${NEXTPAGE_PWD}"/g example.settings.local.php && cat example.settings.local.php'
+    - docker-compose exec -u root -T web bash -c 'cd /var/www/html/config/drupal && sed -ri "s/NEXTPAGE_PWD/$NEXTPAGE_PWD/g" example.settings.local.php && cat example.settings.local.php'
     - docker-compose exec -u root -T web bash -c "cd /var/www/html/ && composer install"
     - docker-compose exec -u root -T web bash -c "cd /var/www/html/tests/behat && composer install"
     - docker-compose exec -u root -T web bash -c "cd /var/www/html/ && ./vendor/bin/phing deploy:install"
