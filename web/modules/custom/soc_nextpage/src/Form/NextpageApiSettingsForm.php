@@ -227,7 +227,6 @@ class NextpageApiSettingsForm extends ConfigFormBase {
     $form['timeout']['CURLOPT_CONNECTTIMEOUT_MS'] = [
       '#type'           => 'textfield',
       '#title'          => $this->t('CURLOPT_CONNECTTIMEOUT_MS'),
-      '#options' => $active,
       '#default_value'  => $config->get('CURLOPT_CONNECTTIMEOUT_MS') ??
         Settings::get('CURLOPT_CONNECTTIMEOUT_MS', 5000),
     ];
@@ -248,6 +247,7 @@ class NextpageApiSettingsForm extends ConfigFormBase {
   public function submitForm(array &$form, FormStateInterface $form_state) {
     foreach ([
                'base_url',
+               'auth_status',
                'username',
                'password',
                'context_id',
@@ -257,7 +257,9 @@ class NextpageApiSettingsForm extends ConfigFormBase {
                'endpoint_elementsandlinks',
                'endpoint_descendantsandlinks',
                'endpoint_elementsbychartemplate',
-               'matching_libelle_dossier',] as $configKey) {
+               'matching_libelle_dossier',
+               'CURLOPT_CONNECTTIMEOUT_MS',
+               'CURLOPT_TIMEOUT_MS',] as $configKey) {
       $this->configFactory->getEditable(self::WS_SETTINGS_KEY)
         ->set($configKey, $form_state->getValue($configKey))
         ->save();

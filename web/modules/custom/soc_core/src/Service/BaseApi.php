@@ -1,14 +1,11 @@
 <?php
-/**
- * @file Provides a service to structure an API-based service
- */
 
 namespace Drupal\soc_core\Service;
 
 use Drupal\Core\Logger\LoggerChannelFactoryInterface;
 
 /**
- * Class BaseApi
+ * Class BaseApi.
  *
  * @package Drupal\soc_core\Service
  */
@@ -22,7 +19,8 @@ class BaseApi {
 
   protected $headers;
 
-  /** @var array $endpoints */
+  /**
+   * @var array*/
   protected $endpoints;
 
   /**
@@ -54,6 +52,7 @@ class BaseApi {
   public function getEndpoints(): array {
     return $this->endpoints;
   }
+
   /**
    * @param array $endpoints
    */
@@ -87,16 +86,20 @@ class BaseApi {
    *
    * @return mixed
    */
-  protected function call($uri, $params = NULL, $method = 'POST', $format = 'json',
-                          $auth = TRUE, $max_tries = 5) {
+  protected function call($uri,
+  $params = NULL,
+  $method = 'POST',
+  $format = 'json',
+  $auth = TRUE,
+  $max_tries = 5) {
     $handle = $this->prepareCall($params, $method, $format, $auth);
 
     $url = $this->getBaseUrl() . $uri;
-    $curl = curl_setopt($handle, CURLOPT_URL, $url);
+    curl_setopt($handle, CURLOPT_URL, $url);
     // Upload bug tips. We sent the header and then the body.
-    $headers = [];
     $headers = $this->getHeaders();
-    //$headers[] = "Expect:";
+    $headers[] = 'Content-Type: application/' . $format;
+    // $headers[] = "Expect:";
     $this->setHeaders($headers);
 
     if ($format === 'json') {
@@ -107,7 +110,7 @@ class BaseApi {
     do {
       switch ($method) {
         case 'POST':
-          $curl = curl_setopt($handle, CURLOPT_POST, TRUE);
+          curl_setopt($handle, CURLOPT_POST, TRUE);
           if ($format === 'json') {
             if (is_array($params['body'])) {
               $body = json_encode($params['body']);
@@ -117,8 +120,13 @@ class BaseApi {
             }
             $curl = curl_setopt($handle, CURLOPT_POSTFIELDS, $body);
             $headers = $this->getHeaders();
-            $headers = [];
-            $headers[] = 'Content-Type: application/json';
+            $headers[] = 'Content-Length: ' . strlen($body);
+            $this->setHeaders($headers);
+          }
+          elseif ($format == 'x-www-form-urlencoded') {
+            $body = http_build_query($params["body"]);
+            $curl = curl_setopt($handle, CURLOPT_POSTFIELDS, $body);
+            // $headers[] = 'Content-Type: application/x-www-form-urlencoded';
             $headers[] = 'Content-Length: ' . strlen($body);
             $this->setHeaders($headers);
           }
@@ -127,17 +135,19 @@ class BaseApi {
           }
           $curl = curl_setopt($handle, CURLOPT_HTTPHEADER, $this->getHeaders());
           break;
+
         case 'PUT':
           $curl = curl_setopt($handle, CURLOPT_CUSTOMREQUEST, 'PUT');
           $curl = curl_setopt($handle, CURLOPT_POSTFIELDS, $params);
           $curl = curl_setopt($handle, CURLOPT_HTTPHEADER, $this->getHeaders());
           break;
+
         case 'DELETE':
           $curl = curl_setopt($handle, CURLOPT_CUSTOMREQUEST, 'DELETE');
           $curl = curl_setopt($handle, CURLOPT_HTTPHEADER, $this->getHeaders());
           break;
+
         case 'GET':
-          //curl_setopt($handle);
           if ($format === 'json') {
             $body = '';
             if (isset($params['body']) && is_array($params['body'])) {
@@ -146,12 +156,14 @@ class BaseApi {
             elseif (isset($params['body']) && is_string($params['body'])) {
               $body = $params['body'];
             }
-            curl_setopt($handle,CURLOPT_RETURNTRANSFER, true);
+            curl_setopt($handle, CURLOPT_RETURNTRANSFER, TRUE);
           }
           else {
             curl_setopt($handle, CURLOPT_POSTFIELDS, $params);
           }
+          $curl = curl_setopt($handle, CURLOPT_HTTPHEADER, $this->getHeaders());
           break;
+
         default:
           break;
       }
@@ -181,21 +193,30 @@ class BaseApi {
       $this->logger->error($message);
       throw new \Exception($message, 1);
     }
+    if (200 != $code) {
+      $message = "$method $url failed: " . t('Error in API call, plese check your configuration');
+      throw new \Exception($message, 1);
+    }
 
     curl_close($handle);
 
     switch ($format) {
       case 'json':
+      case 'x-www-form-urlencoded':
         $res = json_decode($res);
+        // Reset header.
+        $this->setHeaders([]);
         break;
+
       case 'xml':
         $res = simplexml_load_string($res);
         break;
+
       default:
-        // We do not implement default as in this case we return the raw data
+        // We do not implement default as in this case we return the raw data.
         break;
     }
-    if (null === $res) {
+    if (NULL === $res) {
       $message = "Failed to decode response as JSON.";
       throw new \Exception($message, 1);
     }
@@ -212,7 +233,9 @@ class BaseApi {
    *
    * @return mixed
    */
-  protected function prepareCall($params = NULL, $method = 'POST', $format = 'json',
+  protected function prepareCall($params = NULL,
+  $method = 'POST',
+  $format = 'json',
                                  $auth = TRUE) {
     $headers = [
       "Accept: application/$format",
@@ -221,7 +244,7 @@ class BaseApi {
 
     $handle = curl_init();
     if ($auth && $this->user && $this->password) {
-      // HTTP basic access authentication
+      // HTTP basic access authentication.
       curl_setopt($handle, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
       curl_setopt($handle, CURLOPT_USERPWD, $this->user . ':' . $this->password);
     }
@@ -233,4 +256,5 @@ class BaseApi {
     curl_setopt($handle, CURLOPT_SAFE_UPLOAD, TRUE);
     return $handle;
   }
+
 }

@@ -107,13 +107,15 @@ class NextpageBaseApi extends BaseApi {
    *
    * @throws \Exception
    */
-  public function setApiToken(string $apiToken): void {
-    $this->apiToken = $apiToken;
+  public function setApiToken(object $apiToken): void {
+    $token = ucfirst($apiToken->token_type) . ' ' . $apiToken->access_token;
+    $this->apiToken = $token;
     try {
-      $this->tempStore->set('api_token', $apiToken);
-      $dateTime = new \DateTimeImmutable();
-      $expiration = $dateTime->modify('+2 hours');
-      $this->setApiTokenExpiration($expiration->getTimestamp());
+      $this->tempStore->set('api_token', $token);
+      $dateTime = new \DateTime();
+      $timestamp = $dateTime->getTimestamp();
+      $expiration = $timestamp + $apiToken->expires_in;
+      $this->setApiTokenExpiration($expiration);
     }
     catch (TempStoreException $e) {
       \Drupal::logger('soc_nextpage')->error($e->getMessage());
@@ -182,8 +184,7 @@ class NextpageBaseApi extends BaseApi {
         }
       }
       if (strlen($token)) {
-        $headers = $this->getHeaders();
-        $headers[] = 'ApiToken: ' . $token;
+        $headers[] = 'Authorization: ' . $token;
         $this->setHeaders($headers);
       }
     }
@@ -193,18 +194,19 @@ class NextpageBaseApi extends BaseApi {
   /**
    * Get a nextPage token.
    *
-   * @return string
+   * @return object
    *
    * @throws \Drupal\soc_nextpage\Exception\InvalidTokenException
    */
-  public function generateApiToken(): string {
+  public function generateApiToken(): object {
     $params = [
       'body' => [
-        'Username' => $this->getUserName(),
-        'Password' => $this->getPassword(),
+        'username' => $this->getUserName(),
+        'password' => $this->getPassword(),
+        'grant_type' => 'password',
       ],
     ];
-    if (!$token = parent::call(self::AUTH_URI, $params, 'POST', 'json', FALSE)) {
+    if (!$token = parent::call(self::AUTH_URI, $params, 'POST', 'x-www-form-urlencoded', FALSE)) {
       throw new InvalidTokenException('Unable to generate valid token.');
     }
     $this->setApiToken($token);
