@@ -11,6 +11,7 @@ module:
   anonymizer: 0
   auto_entitylabel: 0
   automated_cron: 0
+  basic_auth: 0
   better_exposed_filters: 0
   better_normalizers: 0
   big_pipe: 0
@@ -45,6 +46,7 @@ module:
   editor: 0
   editor_advanced_link: 0
   entity: 0
+  entity_browser: 0
   entity_reference_revisions: 0
   entity_share: 0
   entity_share_client: 0
@@ -102,6 +104,7 @@ module:
   paragraphs_library: 0
   path: 0
   path_alias: 0
+  queue_ui: 0
   quickedit: 0
   rdf: 0
   recaptcha: 0
@@ -120,6 +123,8 @@ module:
   search_api_solr: 0
   serialization: 0
   shortcut: 0
+  simple_sitemap: 0
+  simple_sitemap_views: 0
   smart_trim: 0
   soc_access_block: 0
   soc_addtoany: 0
@@ -128,6 +133,7 @@ module:
   soc_content_hub: 0
   soc_content_list: 0
   soc_core: 0
+  soc_default_images: 0
   soc_eu_cookie_compliance: 0
   soc_events: 0
   soc_heartbeat: 0
@@ -156,6 +162,7 @@ module:
   toolbar: 0
   tour: 0
   twig_tweak: 0
+  ultimate_cron: 0
   user: 0
   views_ui: 0
   we_megamenu: 0
