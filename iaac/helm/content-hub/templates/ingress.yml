@@ -1,13 +1,13 @@
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
-  name: {{ .Values.namespace }}-{{ .Values.drupal.name }}-ingress
+  name: {{ .Values.namespace }}-{{ .Values.content-hub.name }}-ingress
   namespace: {{ .Values.namespace }}
   annotations:
     certmanager.k8s.io/cluster-issuer: letsencrypt
     kubernetes.io/ingress.class: nginx-agc
     nginx.ingress.kubernetes.io/auth-realm: Authentication Required
-    nginx.ingress.kubernetes.io/auth-secret: {{ .Values.drupal.name }}-secret
+    nginx.ingress.kubernetes.io/auth-secret: {{ .Values.content-hub.name }}-secret
     nginx.ingress.kubernetes.io/auth-type: basic
     nginx.ingress.kubernetes.io/proxy-body-size: 100m
     nginx.ingress.kubernetes.io/ssl-redirect: "false"
@@ -17,19 +17,19 @@ metadata:
 
     cert-manager.io/cluster-issuer: letsencrypt
   labels:
-    app: {{ .Values.drupal.name }}
+    app: {{ .Values.content-hub.name }}
 spec:
   rules:
-    - host: {{ .Values.drupal.ingress_hostname }}
+    - host: {{ .Values.content-hub.ingress_hostname }}
       http:
         paths:
           - path: /
             backend:
-              serviceName: {{ .Values.drupal.name }}-service
+              serviceName: {{ .Values.content-hub.name }}-service
               servicePort: http
   tls:
     - hosts:
-      - {{ .Values.drupal.ingress_hostname }}
+      - {{ .Values.content-hub.ingress_hostname }}
       secretName: cert-lets-webfactory-drupal
 
 ---
@@ -37,7 +37,7 @@ spec:
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
-  name: {{ .Values.namespace }}-{{ .Values.drupal.name }}-ingress-wl
+  name: {{ .Values.namespace }}-{{ .Values.content-hub.name }}-ingress-wl
   namespace: {{ .Values.namespace }}
   annotations:
     certmanager.k8s.io/cluster-issuer: letsencrypt
@@ -51,17 +51,17 @@ metadata:
 
     cert-manager.io/cluster-issuer: letsencrypt
   labels:
-    app: {{ .Values.drupal.name }}
+    app: {{ .Values.content-hub.name }}
 spec:
   rules:
-    - host: {{ .Values.drupal.ingress_hostname_api }}
+    - host: {{ .Values.content-hub.ingress_hostname_api }}
       http:
         paths:
           - path: /
             backend:
-              serviceName: {{ .Values.drupal.name }}-service
+              serviceName: {{ .Values.content-hub.name }}-service
               servicePort: http
   tls:
     - hosts:
-        - {{ .Values.drupal.ingress_hostname_api }}
+        - {{ .Values.content-hub.ingress_hostname_api }}
       secretName: cert-lets-webfactory-drupal

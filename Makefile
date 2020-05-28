@@ -3,13 +3,19 @@ install:
 	composer install
 	./vendor/bin/phing deploy:install
 
-set-kubernetes-configs:
+set-drupal-configs:
 	cp /var/www/html/config/drupal/example.settings.kubernetes.${ENVIRONMENT}.php /var/www/html/config/drupal/settings.local.php
-	cp /var/www/html/config/drupal/contenthub/example.settings.kubernetes.${ENVIRONMENT}.php /var/www/html/config/drupal/contenthub/settings.local.php
 	cp /var/www/html/web/sites/sites.${ENVIRONMENT}.php /var/www/html/web/sites/sites.php
+	chmod g+r /var/www/html/web/sites/sites.php /var/www/html/config/drupal/settings.local.php
+	chown web:www-data /var/www/html/web/sites/sites.php /var/www/html/config/drupal/settings.local.php
+
+set-content-hub-configs:
+	cp /var/www/html/config/drupal/contenthub/example.settings.kubernetes.${ENVIRONMENT}.php /var/www/html/config/drupal/contenthub/settings.local.php
+	cp /var/www/html/web/sites/sites.content-hub.${ENVIRONMENT}.php /var/www/html/web/sites/sites.php
 	cp /var/www/html/web/sites/contenthub/default.settings.php /var/www/html/web/sites/contenthub/settings.php
-	chmod g+r /var/www/html/web/sites/sites.php /var/www/html/config/drupal/contenthub/settings.local.php /var/www/html/config/drupal/settings.local.php /var/www/html/web/sites/contenthub/settings.php
-	chown web:www-data /var/www/html/web/sites/sites.php /var/www/html/config/drupal/contenthub/settings.local.php /var/www/html/config/drupal/settings.local.php /var/www/html/web/sites/contenthub/settings.php
+	chmod g+r /var/www/html/web/sites/sites.php /var/www/html/config/drupal/contenthub/settings.local.php /var/www/html/web/sites/contenthub/settings.php
+	chown web:www-data /var/www/html/web/sites/sites.php /var/www/html/config/drupal/contenthub/settings.local.php /var/www/html/web/sites/contenthub/settings.php
+
 
 drupal-update:
 	./vendor/bin/phing deploy:update
@@ -22,6 +28,10 @@ drupal-update:
 	./vendor/bin/phing drush:cc
 	contenthub_uri=$$(php -r "include('/var/www/html/web/sites/sites.php'); print array_search('contenthub', \$$sites);"); \
 	./vendor/bin/phing deploy:update-hub -Dmultisite.uri=$${contenthub_uri}
+
+content-hub-update:
+	contenthub_uri=$$(php -r "include('/var/www/html/web/sites/sites.php'); print array_search('contenthub', \$$sites);"); \
+    ./vendor/bin/phing deploy:update-hub -Dmultisite.uri=$${contenthub_uri}
 
 .PHONY: behat-event
 behat-event:

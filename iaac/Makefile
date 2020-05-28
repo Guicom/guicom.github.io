@@ -20,7 +20,7 @@ install-new-release:
 wait-deployment-rollout:
 	sleep 30; \
 	ATTEMPTS=0; \
-	ROLLOUT_STATUS_CMD="kubectl rollout status deployment/webfactory-drupal -n ${NAMESPACE}"; \
+	ROLLOUT_STATUS_CMD="kubectl rollout status deployment/${APP_NAME} -n ${NAMESPACE}"; \
 	until $$ROLLOUT_STATUS_CMD || [ $$ATTEMPTS -eq 60 ]; \
 	do \
 	$$ROLLOUT_STATUS_CMD; \
@@ -29,30 +29,30 @@ wait-deployment-rollout:
 	done
 
 wait-pod-to-be-ready:
-	NUMBER_OF_POD=$$(kubectl get po --namespace=${NAMESPACE} -l 'app=webfactory-drupal,release=${NAMESPACE}-drupal' | wc -l); \
+	NUMBER_OF_POD=$$(kubectl get po --namespace=${NAMESPACE} -l 'app=${APP_NAME},release=${NAMESPACE}-drupal' | wc -l); \
 	while [ $${NUMBER_OF_POD} -ne 2 ]; do \
 	sleep 10; \
-	NUMBER_OF_POD=$$(kubectl get po --namespace=${NAMESPACE} -l 'app=webfactory-drupal,release=${NAMESPACE}-drupal' | wc -l); \
+	NUMBER_OF_POD=$$(kubectl get po --namespace=${NAMESPACE} -l 'app=${APP_NAME},release=${NAMESPACE}-drupal' | wc -l); \
 	done
-	pod=$$(kubectl get po --namespace=${NAMESPACE} -l "app=webfactory-drupal,release=${NAMESPACE}-drupal" -o 'jsonpath={.items[0].metadata.name}'); \
+	pod=$$(kubectl get po --namespace=${NAMESPACE} -l "app=${APP_NAME},release=${NAMESPACE}-drupal" -o 'jsonpath={.items[0].metadata.name}'); \
 	status="False"; \
 	while [ ! "$${status}" = "True" ]; do echo "waiting for pod $${pod}" && sleep 1; \
 	status=$$(kubectl get pods --namespace=${NAMESPACE} $${pod} -o 'jsonpath={..status.conditions[?(@.type=="ContainersReady")].status}'); \
 	done
 
 run-drupal-install:
-	pod=$$(kubectl get po --namespace=${NAMESPACE} -l "app=webfactory-drupal,release=${NAMESPACE}-drupal" -o 'jsonpath={.items[0].metadata.name}'); \
+	pod=$$(kubectl get po --namespace=${NAMESPACE} -l "app=${APP_NAME},release=${NAMESPACE}-drupal" -o 'jsonpath={.items[0].metadata.name}'); \
 	kubectl exec --namespace=${NAMESPACE} $${pod} -- bash -c "cd /var/www/html && make drupal-install && make drupal-cim"
 
 run-drupal-update:
-	pod=$$(kubectl get po --namespace=${NAMESPACE} -l "app=webfactory-drupal,release=${NAMESPACE}-drupal" -o 'jsonpath={.items[0].metadata.name}'); \
+	pod=$$(kubectl get po --namespace=${NAMESPACE} -l "app=${APP_NAME},release=${NAMESPACE}-drupal" -o 'jsonpath={.items[0].metadata.name}'); \
 	kubectl exec --namespace=${NAMESPACE} $${pod} -- bash -c "cd /var/www/html && make drupal-update"
 
 sleep-10:
 	sleep 10
 
 recreate-current-pod:
-	pod=$$(kubectl get po --namespace=${NAMESPACE} -l "app=webfactory-drupal,release=${NAMESPACE}-drupal" -o 'jsonpath={.items[0].metadata.name}'); \
+	pod=$$(kubectl get po --namespace=${NAMESPACE} -l "app=${APP_NAME},release=${NAMESPACE}-drupal" -o 'jsonpath={.items[0].metadata.name}'); \
 	kubectl get pod $${pod} --namespace=${NAMESPACE}  -o yaml | kubectl replace --force -f -
 
 deploy_elasticsearch:
@@ -64,9 +64,20 @@ deploy_drupal:
 	cd helm
 	helm install --namespace develop -f develop.yaml drupal
 
+deploy_content-hub:
+	cd helm
+	helm install --namespace develop -f develop.yaml content-hub
+
 build-web-image:
 	cd .. && docker build -t regis.myagora.fr/socomec-web/drupal:${ENVIRONMENT} -f iaac/docker/drupal/Dockerfile .
+
+build-content-hub-image:
+	cd .. && docker build -t regis.myagora.fr/socomec-web/content-hub:${ENVIRONMENT} -f iaac/docker/drupal/Dockerfile .
 
 push-web-image: build-web-image
 	docker login --username ${REGISTRY_USERNAME} --password ${REGISTRY_PASSWORD} ${REGISTRY_HOSTNAME}
 	docker push regis.myagora.fr/socomec-web/drupal:${ENVIRONMENT}
+
+push-content-hub-image: build-content-hub-image
+	docker login --username ${REGISTRY_USERNAME} --password ${REGISTRY_PASSWORD} ${REGISTRY_HOSTNAME}
+	docker push regis.myagora.fr/socomec-web/content-hub:${ENVIRONMENT}

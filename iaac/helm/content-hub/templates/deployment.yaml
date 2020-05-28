@@ -1,0 +1,93 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Values.content-hub.name }}
+  namespace: {{ .Values.namespace }}
+  labels:
+    app: {{ .Values.content-hub.name }}
+    chart: {{ .Chart.Name }}-{{ .Chart.Version | replace "+" "_" }}
+    release: {{ .Release.Name }}
+    heritage: {{ .Release.Service }}
+  annotations:
+    timestamp: {{ date "20060102150405" .Release.Time | quote }}
+spec:
+  selector:
+    matchLabels:
+      app: {{ .Values.content-hub.name }}
+  replicas: {{ .Values.content-hub.replicaCount }}
+  template:
+    metadata:
+      labels:
+        app: {{ .Values.content-hub.name }}
+        release: {{ .Release.Name }}
+      annotations:
+        timestamp: {{ date "20060102150405" .Release.Time | quote }}
+    spec:
+      hostname: content-hub
+      imagePullSecrets:
+        - name: {{ .Values.registry.name }}
+      containers:
+        - name: content-hub-{{ .Chart.Name }}
+          image: {{ template "content-hub.image" . }}
+          imagePullPolicy: Always
+          volumeMounts:
+            - mountPath: /var/www/html/web/sites/default/files
+              name: content-hub-files-volume
+            - mountPath: /PRIVATE_DATA
+              name: content-hub-private-files-volume
+          ports:
+            - containerPort: {{ .Values.content-hub.service.port }}
+          env:
+            - name: DRUPAL_TRUSTED_HOSTS
+              value: "^.+$"
+            - name: MYSQL_DATABASE
+              valueFrom:
+                secretKeyRef:
+                  key: database
+                  name: webfactory-mysql
+            - name: DRUPAL_USERNAME
+              value: {{ .Values.content-hub.username }}
+            - name: DRUPAL_PASSWORD
+              value: {{ .Values.content-hub.password }}
+            - name: MYSQL_HOSTNAME
+              value: {{ .Values.mysql.hostname }}
+            - name: MYSQL_USER
+              valueFrom:
+                secretKeyRef:
+                  key: username
+                  name: webfactory-mysql
+            - name: MYSQL_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  key: password
+                  name: webfactory-mysql
+            - name: SERVERNAME
+              value: {{ .Values.content-hub.ingress_hostname }}
+            - name: SERVERALIAS
+              value: {{ .Values.content-hub.ingress_hostname }}
+            - name: DOCUMENTROOT
+              value: web
+            - name: DRUSH_VERSION
+              value: "9"
+          livenessProbe:
+            tcpSocket:
+              port: {{ .Values.content-hub.service.port }}
+            initialDelaySeconds: 30
+          readinessProbe:
+            tcpSocket:
+              port: {{ .Values.content-hub.service.port }}
+            initialDelaySeconds: 30
+          resources:
+            limits:
+              cpu: "4"
+              memory: 4Gi
+            requests:
+              cpu: "2"
+              memory: 2Gi
+      volumes:
+        - name: content-hub-files-volume
+          persistentVolumeClaim:
+            claimName: {{ .Values.content-hub.name }}-pvc
+        - name: content-hub-private-files-volume
+          persistentVolumeClaim:
+            claimName: {{ .Values.content-hub.name }}-private-pvc

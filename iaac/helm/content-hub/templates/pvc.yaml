@@ -1,0 +1,33 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: {{ .Values.content-hub.name }}-pvc
+  labels:
+    app: {{ .Values.content-hub.name }}
+  namespace: {{ .Values.namespace }}
+  annotations:
+    volume.beta.kubernetes.io/storage-class: {{ .Values.content-hub.files_storage_class }}
+spec:
+  resources:
+    requests:
+      storage: {{ .Values.content-hub.files_size }}
+  accessModes:
+    - ReadWriteMany
+
+---
+
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: {{ .Values.content-hub.name }}-private-pvc
+  labels:
+    app: {{ .Values.content-hub.name }}
+  namespace: {{ .Values.namespace }}
+  annotations:
+    volume.beta.kubernetes.io/storage-class: {{ .Values.content-hub.files_private_storage_class }}
+spec:
+  resources:
+    requests:
+      storage: {{ .Values.content-hub.files_private_size }}
+  accessModes:
+    - ReadWriteMany
