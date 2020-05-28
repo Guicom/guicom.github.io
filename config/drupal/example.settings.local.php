@@ -204,6 +204,7 @@ $config['config_split.config_split.pim_configuration']['folder'] = "../config/dr
  * Pim Conf
  */
 $settings['nextpage_base_url'] = 'https://preprod-socomecweb-api.nextpage.fr/com/';
+$settings['auth_status'] = 1;
 $settings['nextpage_username'] = 'agence';
 $settings['nextpage_password'] = 'NEXTPAGE_PWD';
 $settings['channel_extid'] = '##451471a6-4f2e-4395-820c-db907b1c945c';
