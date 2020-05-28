@@ -134,6 +134,8 @@ class MediaContent extends ContentManager {
       case 'video':
         $fieldName = 'field_media_video_file';
         break;
+      default:
+        break;
     }
     return $fieldName;
   }
