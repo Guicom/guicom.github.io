@@ -800,6 +800,17 @@ bundles:
       notes: ''
       relationship: 0
       sars_filename: ''
+    field_multiline:
+      bundle: thank_you_page
+      name: field_multiline
+      entity_type_id: node
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
   landing_page:
     field_hero_paragraph:
       bundle: landing_page
@@ -892,6 +903,17 @@ bundles:
     field_country:
       bundle: landing_page
       name: field_country
+      entity_type_id: node
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_multiline:
+      bundle: landing_page
+      name: field_multiline
       entity_type_id: node
       rtf: 'no'
       rta: 'no'

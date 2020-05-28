@@ -280,6 +280,7 @@
   }
   .multiline-content {
     .field--name-field-body,
+    .field--name-field-multiline,
     .field--name-field-event-content{
       .field__item {
         .paragraph {
@@ -458,6 +459,7 @@
   }
   // CONTENT MULTILIGNE
   .field--name-field-body,
+  .field--name-field-multiline,
   .field--name-field-event-content {
     .paragraph--type--video-embed {
       padding-left: 0;

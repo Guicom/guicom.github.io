@@ -3,12 +3,12 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.landing_page.field_body
     - field.field.node.landing_page.field_client_name
     - field.field.node.landing_page.field_country
     - field.field.node.landing_page.field_footer_version
     - field.field.node.landing_page.field_hero_paragraph
     - field.field.node.landing_page.field_metatags
+    - field.field.node.landing_page.field_multiline
     - field.field.node.landing_page.field_pardot_form
     - field.field.node.landing_page.field_premium_content_type
     - field.field.node.landing_page.field_resource
@@ -25,6 +25,7 @@ third_party_settings:
       disable_css: true
       entity_classes: all_classes
       settings:
+        label: ''
         wrappers:
           left: div
           right: div
@@ -43,6 +44,7 @@ third_party_settings:
       left:
         - content_moderation_control
         - field_body
+        - field_multiline
       right:
         - field_pardot_form
 id: node.landing_page.default
@@ -55,9 +57,9 @@ content:
     region: left
     settings: {  }
     third_party_settings: {  }
-  field_body:
+  field_multiline:
     type: entity_reference_revisions_entity_view
-    weight: 1
+    weight: 3
     label: hidden
     settings:
       view_mode: default
