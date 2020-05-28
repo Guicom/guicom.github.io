@@ -70,27 +70,29 @@ class ReferenceManager {
       if ($reference->ElementType === 3) {
         if ($entity = $this->nextpageItemHandler->loadByExtID($reference->ExtID, 'node', 'product_reference')) {
           // Update reference.
-          $node = $this->updateReference($entity, $reference, $context['job_id']);
-          $nids[] = $node->id();
-          $state = 'updated';
-          $this->rollbackImport->updateJob($context['job_id'],
-            [
-              'operation' => 'update_entity',
-              'state' => $state,
-              'entity' => $node,
-            ]);
+          if ($node = $this->updateReference($entity, $reference, $context['job_id'])) {
+            $nids[] = $node->id();
+            $state = 'updated';
+            $this->rollbackImport->updateJob($context['job_id'],
+              [
+                'operation' => 'update_entity',
+                'state' => $state,
+                'entity' => $node,
+              ]);
+          }
         }
         else {
           // Create reference.
-          $node = $this->createReference($reference, $context['job_id']);
-          $nids[] = $node->id();
-          $state = 'created';
-          $this->rollbackImport->updateJob($context['job_id'],
-            [
-              'operation' => 'update_entity',
-              'state' => $state,
-              'entity' => $node,
-            ]);
+          if ($node = $this->createReference($reference, $context['job_id'])) {
+            $nids[] = $node->id();
+            $state = 'created';
+            $this->rollbackImport->updateJob($context['job_id'],
+              [
+                'operation' => 'update_entity',
+                'state' => $state,
+                'entity' => $node,
+              ]);
+          }
         }
       }
     }
