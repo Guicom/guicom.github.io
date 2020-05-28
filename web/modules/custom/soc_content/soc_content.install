@@ -1,7 +1,7 @@
 <?php
 
-use Drupal\paragraphs_library\Entity\LibraryItem;
-use  \Drupal\taxonomy\Entity\Term;
+use \Drupal\taxonomy\Entity\Term;
+use \Drupal\paragraphs_library\Entity\LibraryItem;
 
 function soc_content_install() {
   /** @var \Drupal\soc_content\Service\TaxonomyTermContent $termManager */
