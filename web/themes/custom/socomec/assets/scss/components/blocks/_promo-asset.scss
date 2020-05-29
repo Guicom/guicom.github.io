@@ -5,6 +5,19 @@
     background-size: cover;
     padding-bottom: 10rem;
     overflow: hidden;
+    .global-link {
+      transition: $transition02;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      text-indent: -99999px;
+      &:hover {
+        box-shadow: $box-shadow-card-list;
+        transition: $transition02;
+      }
+    }
     @include media-breakpoint-down(md) {
       min-height: 475px;
     }
