@@ -59,7 +59,7 @@ Feature: News
     And I fill in "media[0][fields][field_media_image][0][alt]" with "Image alt"
     And I click the ".ui-dialog button + button" element
     And I wait max 10 seconds for AJAX to finish
-    And I click the "#edit-field-body-add-more li.dropbutton-toggle button" element
+    And I click the "#edit-field-multiline-add-more li.dropbutton-toggle button" element
     And I press the "field_body_model_text_add_more" button
     And I wait 4 seconds
     And I fill in "field_body[0][subform][field_title][0][value]" with "Text title"

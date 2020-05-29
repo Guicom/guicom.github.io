@@ -13,28 +13,28 @@ Feature: Models
     And I go to "admin/content"
     And I click "Edit" in the "Test news" row
     # ADD Keyfigure
-    And I click the "#edit-field-body-wrapper .paragraphs-add-wrapper li.dropbutton-toggle button" element
+    And I click the "#edit-field-multiline-wrapper .paragraphs-add-wrapper li.dropbutton-toggle button" element
     And I press the "field_body_key_figures_add_more" button
     And I fill in "field_body[0][subform][field_figure_1_number][0][value]" with "33"
     And I fill in "field_body[0][subform][field_figure_1_text_line_1][0][value]" with "Text for my keynumber"
     # ADD CTA
-    And I click the "#edit-field-body-wrapper .paragraphs-add-wrapper li.dropbutton-toggle button" element
+    And I click the "#edit-field-multiline-wrapper .paragraphs-add-wrapper li.dropbutton-toggle button" element
     And I press the "field_body_model_cta_add_more" button
     And I fill in "field_body[1][subform][field_cta][0][uri]" with "<front>"
     And I fill in "field_body[1][subform][field_cta][0][title]" with "My CTA text"
     # ADD Citation
-    And I click the "#edit-field-body-wrapper .paragraphs-add-wrapper li.dropbutton-toggle button" element
+    And I click the "#edit-field-multiline-wrapper .paragraphs-add-wrapper li.dropbutton-toggle button" element
     And I press the "field_body_model_citation_add_more" button
     And I fill in "field_body[2][subform][field_citation_content][0][value]" with "Luke, I am your father"
     And I fill in "field_body[2][subform][field_citation_author][0][value]" with "Darth Vader"
     And I fill in "field_body[2][subform][field_citation_author_position][0][value]" with "Dark Lord of The Sith"
     # ADD Text
-    And I click the "#edit-field-body-wrapper .paragraphs-add-wrapper li.dropbutton-toggle button" element
+    And I click the "#edit-field-multiline-wrapper .paragraphs-add-wrapper li.dropbutton-toggle button" element
     And I press the "field_body_model_text_add_more" button
     And I fill in "field_body[3][subform][field_title][0][value]" with "Title text model"
     And I fill in wysiwyg on field "field_body[3][subform][field_text][0][value]" with "Content text model"
     #Add Image
-    And I click the "#edit-field-body-wrapper .paragraphs-add-wrapper li.dropbutton-toggle button" element
+    And I click the "#edit-field-multiline-wrapper .paragraphs-add-wrapper li.dropbutton-toggle button" element
     And I press the "field_body_model_image_add_more" button
     And I fill in "field_body[4][subform][field_title][0][value]" with "Image title"
     And I fill in "field_body[4][subform][field_legend][0][value]" with "Image legend"
@@ -45,7 +45,7 @@ Feature: Models
     And I fill in "media[0][fields][field_media_image][0][alt]" with "Image alt"
     And I click the ".ui-dialog button + button" element
     # ADD Testimony
-    And I click the "#edit-field-body-wrapper .paragraphs-add-wrapper li.dropbutton-toggle button" element
+    And I click the "#edit-field-multiline-wrapper .paragraphs-add-wrapper li.dropbutton-toggle button" element
     And I press the "field_body_model_testimony_add_more" button
     And I fill in "field_body[5][subform][field_company][0][value]" with "Testimony Company"
     And I fill in "field_body[5][subform][field_nom][0][value]" with "Testimony Name"
@@ -62,7 +62,7 @@ Feature: Models
     And I fill in "media[0][fields][field_media_image][0][alt]" with "Image alt"
     And I click the ".ui-dialog button + button" element
     # ADD Video embed
-    And I click the "#edit-field-body-wrapper .paragraphs-add-wrapper li.dropbutton-toggle button" element
+    And I click the "#edit-field-multiline-wrapper .paragraphs-add-wrapper li.dropbutton-toggle button" element
     And I press the "field_body_video_embed_add_more" button
     And I fill in "field_body[6][subform][field_title][0][value]" with "Video title"
     And I press the "field_video_embed_video-media-library-open-button-field_body-6-subform" button
@@ -71,7 +71,7 @@ Feature: Models
     And I wait for AJAX to finish
     And I click the ".ui-dialog button + button" element
     # ADD Video & text
-    And I click the "#edit-field-body-wrapper .paragraphs-add-wrapper li.dropbutton-toggle button" element
+    And I click the "#edit-field-multiline-wrapper .paragraphs-add-wrapper li.dropbutton-toggle button" element
     And I press the "field_body_video_text_add_more" button
     And I fill in "field_body[7][subform][field_title][0][value]" with "Video & text title"
     And I fill in wysiwyg on field "field_body[7][subform][field_text][0][value]" with "Text video"

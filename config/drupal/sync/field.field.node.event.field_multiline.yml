@@ -1,9 +1,9 @@
-uuid: 3b4740a0-7436-476b-b62a-ade0b3ee811c
+uuid: a97d9033-7652-4be5-9f8b-94e2d8f8ad85
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_event_content
+    - field.storage.node.field_multiline
     - node.type.event
     - paragraphs.paragraphs_type.key_figures
     - paragraphs.paragraphs_type.model_citation
@@ -17,11 +17,11 @@ dependencies:
     - paragraphs.paragraphs_type.video_text
   module:
     - entity_reference_revisions
-id: node.event.field_event_content
-field_name: field_event_content
+id: node.event.field_multiline
+field_name: field_multiline
 entity_type: node
 bundle: event
-label: 'Event Content'
+label: Multiline
 description: ''
 required: true
 translatable: true
@@ -37,67 +37,67 @@ settings:
       model_cta: model_cta
       model_cta_pdf: model_cta_pdf
       model_image: model_image
+      model_promo_block: model_promo_block
       model_testimony: model_testimony
       model_text: model_text
       video_embed: video_embed
       video_text: video_text
-      model_promo_block: model_promo_block
     target_bundles_drag_drop:
       content:
-        weight: 18
+        weight: 20
         enabled: false
       from_library:
-        weight: 19
+        weight: 21
         enabled: false
       hero_paragraph:
-        weight: 20
+        weight: 22
         enabled: false
       key_figures:
         enabled: true
-        weight: 21
+        weight: 23
       link:
-        weight: 22
+        weight: 24
         enabled: false
       model_citation:
         enabled: true
-        weight: 23
+        weight: 25
       model_cta:
         enabled: true
-        weight: 24
+        weight: 26
       model_cta_pdf:
         enabled: true
-        weight: 25
+        weight: 27
       model_image:
         enabled: true
-        weight: 26
+        weight: 28
+      model_promo_block:
+        enabled: true
+        weight: 29
       model_testimony:
         enabled: true
-        weight: 27
+        weight: 30
       model_text:
         enabled: true
-        weight: 28
+        weight: 31
       pardot_form:
-        weight: 29
+        weight: 32
         enabled: false
       premium_content_promotion:
-        weight: 30
+        weight: 33
         enabled: false
       product_faq:
-        weight: 31
+        weight: 34
         enabled: false
       promo_block:
-        weight: 32
+        weight: 35
         enabled: false
       standard_label:
-        weight: 32
+        weight: 36
         enabled: false
       video_embed:
         enabled: true
-        weight: 33
+        weight: 37
       video_text:
         enabled: true
-        weight: 34
-      model_promo_block:
-        enabled: true
-        weight: 37
+        weight: 38
 field_type: entity_reference_revisions

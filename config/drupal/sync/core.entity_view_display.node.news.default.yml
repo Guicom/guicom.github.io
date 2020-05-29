@@ -3,11 +3,11 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.news.field_body
     - field.field.node.news.field_country
     - field.field.node.news.field_media_image
     - field.field.node.news.field_metatags
     - field.field.node.news.field_model_pdf
+    - field.field.node.news.field_multiline
     - field.field.node.news.field_news_audience
     - field.field.node.news.field_news_mommentum
     - field.field.node.news.field_news_theme
@@ -32,6 +32,7 @@ third_party_settings:
       disable_css: false
       entity_classes: all_classes
       settings:
+        label: ''
         wrappers:
           first: div
         outer_wrapper: div
@@ -51,10 +52,12 @@ third_party_settings:
         - field_news_type
         - field_teaser
         - field_body
+        - field_multiline
         - field_product_reference
         - field_model_pdf
         - field_metatags
         - field_country
+        - field_news_video
     fields:
       node_post_date:
         plugin_id: node_post_date
@@ -76,17 +79,8 @@ content:
     region: first
     settings: {  }
     third_party_settings: {  }
-  field_body:
-    weight: 7
-    label: hidden
-    settings:
-      view_mode: default
-      link: ''
-    third_party_settings: {  }
-    type: entity_reference_revisions_entity_view
-    region: first
   field_country:
-    weight: 11
+    weight: 12
     label: above
     settings:
       link: true
@@ -110,7 +104,7 @@ content:
             classes: {  }
     region: first
   field_metatags:
-    weight: 10
+    weight: 11
     label: above
     settings: {  }
     third_party_settings: {  }
@@ -118,12 +112,21 @@ content:
     region: first
   field_model_pdf:
     type: entity_reference_revisions_entity_view
-    weight: 9
+    weight: 10
     label: hidden
     settings:
       view_mode: default
       link: ''
     third_party_settings: {  }
+    region: first
+  field_multiline:
+    weight: 8
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    type: entity_reference_revisions_entity_view
     region: first
   field_news_theme:
     weight: 4
@@ -157,7 +160,7 @@ content:
     type: entity_reference_label
     region: first
   field_news_video:
-    weight: 12
+    weight: 13
     label: above
     settings:
       format: default
@@ -165,9 +168,9 @@ content:
       format_custom_true: ''
     third_party_settings: {  }
     type: boolean
-    region: content
+    region: first
   field_product_reference:
-    weight: 8
+    weight: 9
     label: hidden
     settings:
       link: true

@@ -6,7 +6,6 @@ dependencies:
     - core.entity_view_mode.node.search_index
     - field.field.node.event.field_add_to_calendar
     - field.field.node.event.field_country
-    - field.field.node.event.field_event_content
     - field.field.node.event.field_event_country
     - field.field.node.event.field_event_cta_download
     - field.field.node.event.field_event_cta_external_link
@@ -18,6 +17,7 @@ dependencies:
     - field.field.node.event.field_event_product
     - field.field.node.event.field_event_thematic
     - field.field.node.event.field_event_type
+    - field.field.node.event.field_multiline
     - field.field.node.event.field_teaser
     - image.style.crop_210x160
     - node.type.event
@@ -210,7 +210,6 @@ hidden:
   extra_field_event_type_icon_file: true
   field_add_to_calendar: true
   field_country: true
-  field_event_content: true
   field_event_country: true
   field_event_cta_download: true
   field_event_cta_external_link: true
@@ -218,6 +217,7 @@ hidden:
   field_event_momemtum: true
   field_event_product: true
   field_event_thematic: true
+  field_multiline: true
   field_teaser: true
   langcode: true
   links: true
