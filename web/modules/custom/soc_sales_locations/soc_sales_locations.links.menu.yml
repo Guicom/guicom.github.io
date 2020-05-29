@@ -1,12 +1,12 @@
-soc_sales_locations.export_csv_controller_exportfile:
+soc_sales_locations.csv_export:
   title: Sales Locations Export
-  route_name: soc_sales_locations.export_csv_controller_exportfile
+  route_name: soc_sales_locations.csv_export
   parent: soc_core.config
   description: Click on the link.
   weight: 0
 
-soc_sales_locations.sales_locations_import_cvs_file_form:
+soc_sales_locations.csv_import:
   title: Sales Locations Import
-  route_name: soc_sales_locations.sales_locations_import_cvs_file_form
+  route_name: soc_sales_locations.csv_import
   parent: soc_core.config
   weight: 0

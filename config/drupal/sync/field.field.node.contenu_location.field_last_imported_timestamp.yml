@@ -1,0 +1,19 @@
+uuid: 10ddfc15-3bab-411b-b431-15e232d92c3f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_last_imported_timestamp
+    - node.type.contenu_location
+id: node.contenu_location.field_last_imported_timestamp
+field_name: field_last_imported_timestamp
+entity_type: node
+bundle: contenu_location
+label: 'Last Imported Timestamp'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: timestamp

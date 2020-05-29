@@ -1,0 +1,3 @@
+services:
+  soc_pdf_content.product_reference_pdf:
+    class: Drupal\soc_pdf_content\Service\ProductReferencePdf
