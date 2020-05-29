@@ -1,4 +1,4 @@
-soc_sales_locations.export_csv_controller_exportfile:
+soc_sales_locations.csv_export:
   path: '/admin/config/socomec/sales_locations/export/file'
   defaults:
     _controller: '\Drupal\soc_sales_locations\Controller\ExportCsvController::exportFile'
@@ -8,11 +8,11 @@ soc_sales_locations.export_csv_controller_exportfile:
   options:
     _admin_route: TRUE
 
-soc_sales_locations.sales_locations_import_cvs_file_form:
+soc_sales_locations.csv_import:
   path: '/admin/config/socomec/sales_locations/import_csv_file'
   defaults:
     _form: '\Drupal\soc_sales_locations\Form\ImportCsvFileForm'
-    _title: 'ImportCsvFileForm'
+    _title: 'Import office locations'
   requirements:
     _permission: 'import content location'
   options:

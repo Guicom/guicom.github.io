@@ -141,6 +141,8 @@ module:
   soc_multisite: 0
   soc_nextpage: 0
   soc_pardot: 0
+  soc_pdf: 0
+  soc_pdf_content: 0
   soc_premium_content: 0
   soc_resource_center: 0
   soc_sales_locations: 0
