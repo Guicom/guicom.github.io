@@ -590,10 +590,10 @@ persistence:
   ##   set, choosing the default provisioner.  (gp2 on AWS, standard on
   ##   GKE, AWS & OpenStack)
   ##
-  storageClass: jenkins-nfs-fast01
+  storageClass: jenkins-fast01
   annotations: {}
   accessMode: "ReadWriteOnce"
-  size: "8Gi"
+  size: "15Gi"
   volumes:
   #  - name: nothing
   #    emptyDir: {}
