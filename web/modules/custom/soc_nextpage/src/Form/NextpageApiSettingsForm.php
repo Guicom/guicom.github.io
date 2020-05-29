@@ -54,7 +54,7 @@ class NextpageApiSettingsForm extends ConfigFormBase {
       '#title'          => $this->t('Base URL'),
       '#description'    => $this->t('The base URL to use to request nextPage.'),
       '#default_value'  => $config->get('base_url') ??
-        Settings::get('soc_nextpage_base_url', self::DEFAULT_BASE_URL),
+        Settings::get('nextpage_base_url', self::DEFAULT_BASE_URL),
     ];
 
     $form['auth'] = [
@@ -78,7 +78,7 @@ class NextpageApiSettingsForm extends ConfigFormBase {
       '#title'          => $this->t('Username'),
       '#description'    => $this->t('The username to use to request nextPage.'),
       '#default_value'  => $config->get('username') ??
-        Settings::get('soc_nextpage_username', self::DEFAULT_USERNAME),
+        Settings::get('nextpage_username', self::DEFAULT_USERNAME),
     ];
 
     $form['auth']['password'] = [
@@ -86,7 +86,7 @@ class NextpageApiSettingsForm extends ConfigFormBase {
       '#title'          => $this->t('Password'),
       '#description'    => $this->t('The password to use to request nextPage.'),
       '#default_value'  => $config->get('password') ??
-        Settings::get('soc_nextpage_password', ''),
+        Settings::get('nextpage_password', ''),
     ];
 
     $form['context'] = [

@@ -76,9 +76,9 @@ class NextpageBaseApi extends BaseApi {
     $config = $configFactory->getEditable('soc_nextpage.nextpage_ws');
     $this->config = $config;
 
-    $baseUrl = $config->get('base_url') ?? 'https://preprod-socomecweb-api.nextpage.fr/com/';
-    $user = $config->get('username') ?? '';
-    $password = $config->get('password') ?? '';
+    $baseUrl = $config->get('base_url') ?? Settings::get('nextpage_base_url');
+    $user = $config->get('username') ?? Settings::get('nextpage_username');
+    $password = $config->get('password') ?? Settings::get('nextpage_password');
     $contextId = $config->get('context_id') ?? '1';
     $languageId = $config->get('language_id') ?? '1';
     $endpoints = [
@@ -89,7 +89,7 @@ class NextpageBaseApi extends BaseApi {
       'elementsbychartemplate' => $config->get('endpoint_elementsbychartemplate') ?? Settings::get('endpoint_elementsbychartemplate'),
     ];
     $extIds = $config->get('channel_extid') ?? Settings::get('channel_extid');
-    $authStatus = $config->get('auth_status') ?? 0;
+    $authStatus = $config->get('auth_status') ?? Settings::get('auth_status');
 
     $this->setBaseUrl($baseUrl);
     $this->setUserName($user);
