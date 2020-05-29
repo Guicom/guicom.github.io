@@ -1,0 +1,10 @@
+
+soc_pdf_content.soc_pdf_controller_generate_pdf:
+  path: '/generate-pdf/{node}'
+  defaults:
+    _controller: '\Drupal\soc_pdf_content\Controller\SocPdfController::generatePdf'
+    _title: 'generatePdf'
+  requirements:
+    _permission: 'access content'
+    _custom_access: '\Drupal\soc_pdf_content\Controller\SocPdfController::access'
+    node: \d+
