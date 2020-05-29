@@ -489,7 +489,7 @@ field_settings:
     label: 'Multiline » Paragraph » Content » Content » Title'
     datasource_id: 'entity:node'
     property_path: 'field_multiline:entity:field_content:entity:title'
-    type: string
+    type: text
     dependencies:
       config:
         - field.storage.node.field_multiline
