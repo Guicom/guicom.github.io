@@ -7,6 +7,7 @@ dependencies:
     - field.field.node.product.field_associated_products
     - field.field.node.product.field_background_hero_block
     - field.field.node.product.field_json_product_data
+    - field.field.node.product.field_multiline
     - field.field.node.product.field_multiline_anchor_name
     - field.field.node.product.field_product_advantage_text
     - field.field.node.product.field_product_application_label
@@ -17,7 +18,6 @@ dependencies:
     - field.field.node.product.field_product_cta_4
     - field.field.node.product.field_product_extid
     - field.field.node.product.field_product_family
-    - field.field.node.product.field_product_multiline
     - field.field.node.product.field_product_new
     - field.field.node.product.field_product_orc_content
     - field.field.node.product.field_product_orc_title
@@ -132,6 +132,7 @@ hidden:
   field_family_first_level: true
   field_family_second_level: true
   field_json_product_data: true
+  field_multiline: true
   field_multiline_anchor_name: true
   field_product_advantage_text: true
   field_product_application_label: true
@@ -142,7 +143,6 @@ hidden:
   field_product_cta_4: true
   field_product_extid: true
   field_product_family: true
-  field_product_multiline: true
   field_product_new: true
   field_product_orc_content: true
   field_product_orc_title: true

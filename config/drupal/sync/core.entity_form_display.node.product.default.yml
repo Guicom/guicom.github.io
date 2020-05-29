@@ -6,6 +6,7 @@ dependencies:
     - field.field.node.product.field_associated_products
     - field.field.node.product.field_background_hero_block
     - field.field.node.product.field_json_product_data
+    - field.field.node.product.field_multiline
     - field.field.node.product.field_multiline_anchor_name
     - field.field.node.product.field_product_advantage_text
     - field.field.node.product.field_product_application_label
@@ -16,7 +17,6 @@ dependencies:
     - field.field.node.product.field_product_cta_4
     - field.field.node.product.field_product_extid
     - field.field.node.product.field_product_family
-    - field.field.node.product.field_product_multiline
     - field.field.node.product.field_product_new
     - field.field.node.product.field_product_orc_content
     - field.field.node.product.field_product_orc_title
@@ -59,7 +59,6 @@ third_party_settings:
       children:
         - field_json_product_data
         - title
-        - field_product_teaser
         - field_teaser
         - field_product_pictures
         - field_protection_level
@@ -160,6 +159,7 @@ third_party_settings:
       children:
         - field_multiline_anchor_name
         - field_product_multiline
+        - field_multiline
       parent_name: group_webmastering
       weight: 7
       format_type: tab
@@ -219,6 +219,18 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: string_textarea
+    region: content
+  field_multiline:
+    weight: 10
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+    type: entity_reference_paragraphs
     region: content
   field_multiline_anchor_name:
     weight: 8
@@ -317,18 +329,6 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: options_buttons
-    region: content
-  field_product_multiline:
-    type: entity_reference_paragraphs
-    weight: 9
-    settings:
-      title: Paragraph
-      title_plural: Paragraphs
-      edit_mode: closed
-      add_mode: dropdown
-      form_display_mode: default
-      default_paragraph_type: _none
-    third_party_settings: {  }
     region: content
   field_product_orc_content:
     weight: 27
