@@ -1,0 +1,24 @@
+<?php
+
+/**
+ * @file
+ * Contains soc_pdf.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function soc_pdf_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the soc_pdf module.
+    case 'help.page.soc_pdf':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Generate pdf') . '</p>';
+      return $output;
+
+    default:
+  }
+}

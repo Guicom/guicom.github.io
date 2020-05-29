@@ -5,6 +5,7 @@ namespace Drupal\soc_nextpage\Service;
 use Drupal\Core\Entity\Query\QueryFactory;
 use Drupal\Core\Database\Connection;
 use Drupal\node\Entity\Node;
+use Drupal\Core\Link;
 
 class ProductReference {
 
@@ -55,4 +56,26 @@ class ProductReference {
     return FALSE;
   }
 
+  /**
+   * @param \Drupal\node\Entity\Node $reference
+   *
+   * @return array
+   */
+  public function getFamiliesLinkByProductReference(Node $reference) {
+    $families = [];
+    if ($tid = $this->getParentProductFamilyByProductReference($reference)) {
+      if ($ancestors = \Drupal::service('entity_type.manager')->getStorage("taxonomy_term")->loadAllParents($tid)) {
+        if (is_array($ancestors)) {
+          foreach ($ancestors as $term) {
+            if (!empty($term->label()) && !empty($term->id())) {
+              $families[$term->id()] = Link::createFromRoute($term->label(),
+                'entity.taxonomy_term.canonical',
+                ['taxonomy_term' => $term->id()]);
+            }
+          }
+        }
+      }
+    }
+    return $families;
+  }
 }
