@@ -372,9 +372,9 @@ master:
     enabled: true
     # Override for the default paths that map requests to the backend
     paths: /
-    # - backend:
-    #     serviceName: jenkins-agc-service
-    #     servicePort: http
+    - backend:
+        serviceName: ssl-redirect
+        servicePort: use-annotation
     - backend:
         serviceName: >-
           {{ template "jenkins.fullname" . }}
