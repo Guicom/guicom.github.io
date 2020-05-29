@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.product_reference.field_characteristics
+    - field.field.node.product_reference.field_extid
     - field.field.node.product_reference.field_json_product_data
     - field.field.node.product_reference.field_multiline
     - field.field.node.product_reference.field_product_cta_1
@@ -11,7 +12,6 @@ dependencies:
     - field.field.node.product_reference.field_product_cta_3
     - field.field.node.product_reference.field_product_cta_4
     - field.field.node.product_reference.field_product_status
-    - field.field.node.product_reference.field_reference_extid
     - field.field.node.product_reference.field_reference_json_table
     - field.field.node.product_reference.field_reference_name
     - field.field.node.product_reference.field_reference_picture
@@ -48,6 +48,7 @@ third_party_settings:
         - title
         - field_teaser
         - field_reference_extid
+        - field_extid
         - field_reference_json_table
         - field_product_status
         - field_reference_name
@@ -68,7 +69,6 @@ third_party_settings:
     group_webmastering:
       children:
         - group_cta
-        - field_reference_content
         - field_multiline
       parent_name: group_tabs
       weight: 21
@@ -108,15 +108,23 @@ content:
     settings: {  }
     third_party_settings: {  }
   field_characteristics:
-    weight: 9
+    weight: 10
     settings:
       rows: 5
       placeholder: ''
     third_party_settings: {  }
     type: string_textarea
     region: content
+  field_extid:
+    weight: 3
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
   field_json_product_data:
-    weight: 8
+    weight: 9
     settings:
       rows: 5
       placeholder: ''
@@ -184,7 +192,7 @@ content:
     type: entity_reference_paragraphs
     region: content
   field_product_status:
-    weight: 4
+    weight: 5
     settings:
       match_operator: CONTAINS
       size: 60
@@ -193,16 +201,8 @@ content:
     third_party_settings: {  }
     type: entity_reference_autocomplete
     region: content
-  field_reference_extid:
-    weight: 2
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-    type: string_textfield
-    region: content
   field_reference_json_table:
-    weight: 3
+    weight: 4
     settings:
       rows: 5
       placeholder: ''
@@ -210,7 +210,7 @@ content:
     type: string_textarea
     region: content
   field_reference_name:
-    weight: 5
+    weight: 6
     settings:
       size: 60
       placeholder: ''
@@ -219,13 +219,13 @@ content:
     region: content
   field_reference_picture:
     type: media_library_widget
-    weight: 7
+    weight: 8
     settings:
       media_types: {  }
     third_party_settings: {  }
     region: content
   field_reference_ref:
-    weight: 6
+    weight: 7
     settings:
       size: 60
       placeholder: ''

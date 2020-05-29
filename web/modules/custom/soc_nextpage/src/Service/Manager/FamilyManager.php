@@ -129,7 +129,7 @@ class FamilyManager {
     }
     $term->set('description', $description);
 
-    $term->set('field_family_extid', $pendingFamily->ExtID);
+    $term->set('field_extid', $pendingFamily->ExtID);
 
     if (isset($pendingFamily->ParentExtID) && !empty($pendingFamily->ParentExtID)) {
       $term->set('parent', [$this->getTidByExtID($pendingFamily->ParentExtID)]);
@@ -163,7 +163,7 @@ class FamilyManager {
     $entity = '';
     $query = \Drupal::entityQuery('taxonomy_term');
     $query->condition('vid', 'family');
-    $query->condition('field_family_extid', $extID);
+    $query->condition('field_extid', $extID);
     $result = $query->execute();
     if (!empty($result)) {
       $id = reset($result);
@@ -177,9 +177,9 @@ class FamilyManager {
   public function getTidByExtID($extID) {
     $tid = 0;
     $database = \Drupal::database();
-    $query = $database->select('taxonomy_term__field_family_extid', 'f');
+    $query = $database->select('taxonomy_term__field_extid', 'f');
     $query->fields('f', ['entity_id']);
-    $query->condition('f.field_family_extid_value', $extID);
+    $query->condition('f.field_extid_value', $extID);
     $result = $query->execute();
     $result = $result->fetchAll();
 

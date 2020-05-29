@@ -6,6 +6,7 @@ dependencies:
     - core.entity_view_mode.node.search_index
     - field.field.node.product.field_associated_products
     - field.field.node.product.field_background_hero_block
+    - field.field.node.product.field_extid
     - field.field.node.product.field_json_product_data
     - field.field.node.product.field_multiline
     - field.field.node.product.field_multiline_anchor_name
@@ -16,7 +17,6 @@ dependencies:
     - field.field.node.product.field_product_cta_2
     - field.field.node.product.field_product_cta_3
     - field.field.node.product.field_product_cta_4
-    - field.field.node.product.field_product_extid
     - field.field.node.product.field_product_family
     - field.field.node.product.field_product_new
     - field.field.node.product.field_product_orc_content
@@ -159,6 +159,7 @@ hidden:
   content_moderation_control: true
   field_associated_products: true
   field_background_hero_block: true
+  field_extid: true
   field_json_product_data: true
   field_multiline: true
   field_multiline_anchor_name: true
@@ -169,7 +170,6 @@ hidden:
   field_product_cta_2: true
   field_product_cta_3: true
   field_product_cta_4: true
-  field_product_extid: true
   field_product_family: true
   field_product_new: true
   field_product_orc_content: true

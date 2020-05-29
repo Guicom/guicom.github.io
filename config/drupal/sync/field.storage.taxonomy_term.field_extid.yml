@@ -1,11 +1,11 @@
-uuid: d1d9e780-7de4-4f65-bb1f-ad3b01434496
+uuid: f6542c6e-85eb-4059-b479-bebd63674b5b
 langcode: en
 status: true
 dependencies:
   module:
     - taxonomy
-id: taxonomy_term.field_family_extid
-field_name: field_family_extid
+id: taxonomy_term.field_extid
+field_name: field_extid
 entity_type: taxonomy_term
 type: string
 settings:

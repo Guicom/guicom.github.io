@@ -98,7 +98,7 @@ class ProductReferenceTable {
     if ($this->moduleHandler->moduleExists('soc_wishlist')) {
       //$wishlistManager = \Drupal::service('soc_wishlist.wishlist_manager');
       //$loadSavedItems = $wishlistManager->loadSavedItems();
-      $fieldReferenceExtid = $node->get('field_reference_extid')->getValue();
+      $fieldReferenceExtid = $node->get('field_extid')->getValue();
       if (!empty($fieldReferenceExtid[0]['value'])) {
         $extid = $fieldReferenceExtid[0]['value'];
         $url = Url::fromRoute('soc_wishlist.add_item', ['item_id' => $extid])->toString();

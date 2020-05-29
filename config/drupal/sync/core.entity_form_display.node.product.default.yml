@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.node.product.field_associated_products
     - field.field.node.product.field_background_hero_block
+    - field.field.node.product.field_extid
     - field.field.node.product.field_json_product_data
     - field.field.node.product.field_multiline
     - field.field.node.product.field_multiline_anchor_name
@@ -15,7 +16,6 @@ dependencies:
     - field.field.node.product.field_product_cta_2
     - field.field.node.product.field_product_cta_3
     - field.field.node.product.field_product_cta_4
-    - field.field.node.product.field_product_extid
     - field.field.node.product.field_product_family
     - field.field.node.product.field_product_new
     - field.field.node.product.field_product_orc_content
@@ -64,6 +64,7 @@ third_party_settings:
         - field_protection_level
         - field_standard_label
         - field_product_extid
+        - field_extid
         - field_product_status
         - field_product_family
       parent_name: group_tabs
@@ -158,7 +159,6 @@ third_party_settings:
     group_multiline:
       children:
         - field_multiline_anchor_name
-        - field_product_multiline
         - field_multiline
       parent_name: group_webmastering
       weight: 7
@@ -211,6 +211,14 @@ content:
     settings:
       media_types: {  }
     third_party_settings: {  }
+    region: content
+  field_extid:
+    weight: 9
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
     region: content
   field_json_product_data:
     weight: 2
@@ -316,14 +324,6 @@ content:
       default_paragraph_type: ''
     third_party_settings: {  }
     region: content
-  field_product_extid:
-    weight: 9
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-    type: string_textfield
-    region: content
   field_product_family:
     weight: 11
     settings: {  }
@@ -357,7 +357,7 @@ content:
     region: content
   field_product_pictures:
     type: media_library_widget
-    weight: 6
+    weight: 5
     settings:
       media_types: {  }
     third_party_settings: {  }
@@ -395,7 +395,7 @@ content:
     third_party_settings: {  }
     region: content
   field_protection_level:
-    weight: 7
+    weight: 6
     settings:
       match_operator: CONTAINS
       size: 60
@@ -406,7 +406,7 @@ content:
     region: content
   field_standard_label:
     type: entity_reference_paragraphs
-    weight: 8
+    weight: 7
     settings:
       title: Paragraph
       title_plural: Paragraphs
@@ -417,7 +417,7 @@ content:
     third_party_settings: {  }
     region: content
   field_teaser:
-    weight: 5
+    weight: 4
     settings:
       rows: 9
       summary_rows: 3

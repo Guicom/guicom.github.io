@@ -5,6 +5,7 @@ dependencies:
   config:
     - core.entity_view_mode.node.search_index
     - field.field.node.product_reference.field_characteristics
+    - field.field.node.product_reference.field_extid
     - field.field.node.product_reference.field_json_product_data
     - field.field.node.product_reference.field_multiline
     - field.field.node.product_reference.field_product_cta_1
@@ -12,7 +13,6 @@ dependencies:
     - field.field.node.product_reference.field_product_cta_3
     - field.field.node.product_reference.field_product_cta_4
     - field.field.node.product_reference.field_product_status
-    - field.field.node.product_reference.field_reference_extid
     - field.field.node.product_reference.field_reference_json_table
     - field.field.node.product_reference.field_reference_name
     - field.field.node.product_reference.field_reference_picture
@@ -139,6 +139,7 @@ hidden:
   addtoany: true
   content_moderation_control: true
   field_characteristics: true
+  field_extid: true
   field_json_product_data: true
   field_multiline: true
   field_product_cta_1: true
@@ -146,7 +147,6 @@ hidden:
   field_product_cta_3: true
   field_product_cta_4: true
   field_product_status: true
-  field_reference_extid: true
   field_reference_json_table: true
   field_reference_name: true
   langcode: true

@@ -132,7 +132,7 @@ class ProductManager {
     }
     $node->set('title', $title);
     $node->set('field_json_product_data', $this->nextpageItemHandler->formatJsonField($product->Values));
-    $node->set('field_product_extid', $product->ExtID);
+    $node->set('field_extid', $product->ExtID);
     if ($this->checkStatus($product) == TRUE) {
       $node->setPublished();
       $node->set('moderation_state', 'published');

@@ -1,12 +1,12 @@
-uuid: 359754b0-d9cf-40d3-8085-41b477fb0ea2
+uuid: 4c7a6846-fd2c-4951-9fbc-b57561b49421
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_product_extid
+    - field.storage.node.field_extid
     - node.type.product
-id: node.product.field_product_extid
-field_name: field_product_extid
+id: node.product.field_extid
+field_name: field_extid
 entity_type: node
 bundle: product
 label: ExtID
