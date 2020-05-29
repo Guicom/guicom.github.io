@@ -1078,6 +1078,17 @@ bundles:
       notes: ''
       relationship: 0
       sars_filename: ''
+    field_multiline:
+      bundle: product_reference
+      name: field_multiline
+      entity_type_id: node
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
   article:
     body:
       bundle: article

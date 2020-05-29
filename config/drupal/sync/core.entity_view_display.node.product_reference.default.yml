@@ -5,12 +5,12 @@ dependencies:
   config:
     - field.field.node.product_reference.field_characteristics
     - field.field.node.product_reference.field_json_product_data
+    - field.field.node.product_reference.field_multiline
     - field.field.node.product_reference.field_product_cta_1
     - field.field.node.product_reference.field_product_cta_2
     - field.field.node.product_reference.field_product_cta_3
     - field.field.node.product_reference.field_product_cta_4
     - field.field.node.product_reference.field_product_status
-    - field.field.node.product_reference.field_reference_content
     - field.field.node.product_reference.field_reference_extid
     - field.field.node.product_reference.field_reference_json_table
     - field.field.node.product_reference.field_reference_name
@@ -34,7 +34,7 @@ content:
     third_party_settings: {  }
   field_characteristics:
     weight: 117
-    label: above
+    label: hidden
     settings: {  }
     third_party_settings: {  }
     type: basic_string
@@ -45,6 +45,15 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: basic_string
+    region: content
+  field_multiline:
+    weight: 119
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    type: entity_reference_revisions_entity_view
     region: content
   field_product_cta_1:
     weight: 113
@@ -89,15 +98,6 @@ content:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
-    region: content
-  field_reference_content:
-    type: entity_reference_revisions_entity_view
-    weight: 118
-    label: hidden
-    settings:
-      view_mode: default
-      link: ''
-    third_party_settings: {  }
     region: content
   field_reference_extid:
     weight: 101
