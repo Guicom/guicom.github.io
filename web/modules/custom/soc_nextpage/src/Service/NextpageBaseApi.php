@@ -183,7 +183,7 @@ class NextpageBaseApi extends BaseApi {
           $token = $this->getApiToken();
         }
       }
-      if (strlen($token)) {
+      if (!empty($token)) {
         $headers[] = 'Authorization: ' . $token;
         $this->setHeaders($headers);
       }
