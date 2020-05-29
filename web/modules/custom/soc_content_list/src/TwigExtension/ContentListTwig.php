@@ -41,6 +41,8 @@ class ContentListTwig extends \Twig_Extension {
           case 'ajax_btn_current_nid':
             return t('Added, go to your bookmarks');
             break;
+          default;
+            break;
         }
       }
     }
