@@ -34,7 +34,7 @@ class BookmarkDownload {
   }
 
   /**
-   * WishlistExport manage export
+   * Download bookmark.
    */
   public function download() {
     $tmpItems = $this->bookmarkManager->loadSavedItems();
