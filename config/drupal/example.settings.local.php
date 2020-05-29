@@ -184,7 +184,7 @@ $settings['we_megamenu_deploy_content'] = $app_ground . '/content/we_megamenu_co
  * @see \soc_user_install()
  */
 $settings['admin_username'] = 'admin_socomec';
-$settings['admin_password'] = 'admin_socomec12!';
+$settings['admin_password'] = 'ADMIN_SOCOMEC_PWD';
 $settings['admin_email'] = 'admin_socomec@socomec.com';
 
 $settings['DISABLE_SUPER_ADMIN_ACCOUNT'] = 1;
