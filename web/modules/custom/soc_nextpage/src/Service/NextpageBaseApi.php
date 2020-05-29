@@ -184,7 +184,7 @@ class NextpageBaseApi extends BaseApi {
         }
       }
       if (!empty($token)) {
-        $headers[] = 'Authorization: ' . $this->apiToken;
+        $headers[] = 'Authorization: ' . $this->getApiToken();
         $this->setHeaders($headers);
       }
     }
