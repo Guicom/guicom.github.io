@@ -1,0 +1,10 @@
+uuid: 0fe319dc-4e96-467d-a5bf-c75b46d03536
+langcode: en
+status: true
+dependencies: {  }
+id: model_promo_block
+label: 'Model - Promo block'
+icon_uuid: null
+icon_default: null
+description: 'Multiline- Promo block'
+behavior_plugins: {  }

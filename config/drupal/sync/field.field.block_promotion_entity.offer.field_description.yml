@@ -1,0 +1,19 @@
+uuid: 22998b9e-a3c5-4e2f-8962-e4b2ca89ffbd
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.block_promotion_entity.field_description
+    - soc_blocks_promotion.block_promotion_entity_type.offer
+id: block_promotion_entity.offer.field_description
+field_name: field_description
+entity_type: block_promotion_entity
+bundle: offer
+label: Description
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

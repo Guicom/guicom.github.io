@@ -1,0 +1,18 @@
+uuid: 573e2532-410f-4be1-a654-d167d2634982
+langcode: en
+status: true
+dependencies:
+  config:
+    - soc_blocks_promotion.block_promotion_entity_type.custom
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+    bundle_settings:
+      untranslatable_fields_hide: '0'
+id: block_promotion_entity.custom
+target_entity_type_id: block_promotion_entity
+target_bundle: custom
+default_langcode: site_default
+language_alterable: true

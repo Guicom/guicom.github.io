@@ -4,19 +4,17 @@ namespace Drupal\soc_nextpage\Form;
 
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
-use Drupal\Core\Logger\LoggerChannelFactory;
-use Drupal\Core\Logger\LoggerChannelFactoryInterface;
-use Drupal\prae_pending_users\Form\PendingUsersMappingForm;
 use Drupal\soc_nextpage\Batch\ImportPendingElement;
-use Drupal\soc_nextpage\NextpageApiInterface;
-use Drupal\soc_nextpage\Service\Manager\ProductManager;
 use Drupal\soc_nextpage\Service\NextpageApi;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
+/**
+ *
+ */
 class NextPageSynchroForm extends FormBase {
 
   /**
-   * @var NextpageApi $nextpageApi
+   * @var \Drupal\soc_nextpage\Service\NextpageApi
    */
   protected $nextpageApi;
 
@@ -71,7 +69,7 @@ class NextPageSynchroForm extends FormBase {
    *   The form structure.
    */
   public function buildForm(array $form, FormStateInterface $form_state) {
-    // Synchro submit
+    // Synchro submit.
     $form['actions']['submit'] = [
       '#type' => 'submit',
       '#value' => $this->t('Import PIM Product'),
@@ -91,4 +89,5 @@ class NextPageSynchroForm extends FormBase {
   public function submitForm(array &$form, FormStateInterface $form_state) {
     ImportPendingElement::buildBatch();
   }
+
 }

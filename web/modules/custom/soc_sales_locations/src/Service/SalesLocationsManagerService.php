@@ -125,9 +125,8 @@ class SalesLocationsManagerService implements SalesLocationsManagerServiceInterf
     if ($node->get('field_location_continent')->isEmpty()) {
       return '';
     }
-    $id =  $node->get('field_location_continent')->first()->getValue()['target_id'];
-    $term = Term::load($id);
-    return $term->label();
+    return $this->getOneLabelOrMoreForAreasField($node,'field_location_continent');
+
   }
 
   /**
@@ -137,9 +136,7 @@ class SalesLocationsManagerService implements SalesLocationsManagerServiceInterf
     if ($node->get('field_location_subarea')->isEmpty()) {
       return '';
     }
-    $id =  $node->get('field_location_subarea')->first()->getValue()['target_id'];
-    $term = Term::load($id);
-    return $term->label();
+    return $this->getOneLabelOrMoreForAreasField($node,'field_location_subarea');
   }
 
   /**
@@ -149,9 +146,7 @@ class SalesLocationsManagerService implements SalesLocationsManagerServiceInterf
     if ($node->get('field_location_area')->isEmpty()) {
       return '';
     }
-    $id =  $node->get('field_location_area')->first()->getValue()['target_id'];
-    $term = Term::load($id);
-    return $term->label();
+    return $this->getOneLabelOrMoreForAreasField($node,'field_location_area');
   }
 
   /**
@@ -265,6 +260,37 @@ class SalesLocationsManagerService implements SalesLocationsManagerServiceInterf
       return '';
     }
     return $node->get('field_location_address')->getValue()[0]['dependent_locality'];
+  }
+
+  /**
+   * Return only the label's term or many label's term with delimiter.
+   * @param \Drupal\node\NodeInterface $node
+   *
+   * @return string|null
+   * @throws \Drupal\Core\TypedData\Exception\MissingDataException
+   */
+  private function getOneLabelOrMoreForAreasField(NodeInterface $node, $field_name='field_location_continent') {
+    $count = $node->get($field_name)->count();
+    if ($count == 1) {
+      $id = $node->get($field_name)
+        ->first()
+        ->getValue()['target_id'];
+      $term = Term::load($id);
+      return $term->label();
+    }
+    else {
+      $ids = [];
+      $labels = [];
+      for ($i = 0; $i < $count; $i++) {
+        $ids[] = $node->get($field_name)
+          ->getValue()[$i]['target_id'];
+      }
+      $terms = Term::loadMultiple($ids);
+      foreach ($terms as $term) {
+        $labels[] = $term->label();
+      }
+      return implode("|", $labels);
+    }
   }
 
 

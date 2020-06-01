@@ -1,0 +1,28 @@
+# Block promotion entity routing definition
+
+entity.block_promotion_entity.canonical:
+  route_name: entity.block_promotion_entity.canonical
+  base_route: entity.block_promotion_entity.canonical
+  title: 'View'
+
+entity.block_promotion_entity.edit_form:
+  route_name: entity.block_promotion_entity.edit_form
+  base_route: entity.block_promotion_entity.canonical
+  title: 'Edit'
+
+entity.block_promotion_entity.clone_form:
+  route_name:  entity.block_promotion_entity.clone_form
+  base_route:  entity.block_promotion_entity.canonical
+  title: 'Clone'
+
+entity.block_promotion_entity.version_history:
+  route_name: entity.block_promotion_entity.version_history
+  base_route: entity.block_promotion_entity.canonical
+  title: 'Revisions'
+
+entity.block_promotion_entity.delete_form:
+  route_name:  entity.block_promotion_entity.delete_form
+  base_route:  entity.block_promotion_entity.canonical
+  title: Delete
+  weight: 10
+

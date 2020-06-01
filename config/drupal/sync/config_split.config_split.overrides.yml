@@ -13,6 +13,8 @@ graylist:
   - dblog.settings
   - entity_share_client.remote.content_hub
   - entity_share_cron.settings
+  - google_analytics.settings
+  - hotjar.settings
   - soc_pardot.privacy_policy
   - soc_search.settings
   - soc_wishlist.settings

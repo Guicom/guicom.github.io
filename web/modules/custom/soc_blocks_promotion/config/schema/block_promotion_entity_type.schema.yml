@@ -1,0 +1,12 @@
+soc_blocks_promotion.block_promotion_entity_type.*:
+  type: config_entity
+  label: 'Block promotion entity type config'
+  mapping:
+    id:
+      type: string
+      label: 'ID'
+    label:
+      type: label
+      label: 'Label'
+    uuid:
+      type: string

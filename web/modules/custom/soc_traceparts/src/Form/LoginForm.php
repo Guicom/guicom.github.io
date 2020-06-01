@@ -117,15 +117,15 @@ class LoginForm extends TracepartsForm {
     // Login success: go to download.
     if ($this->tracepartsUser->checkLogin($values['email']) === TRUE) {
       if ($link = $this->getDownloadLink($values)) {
-        //$response->addCommand(new InvokeCommand('.ui-dialog', 'addClass', array('thank-you')));
         $response->addCommand(new ReplaceCommand('.ui-dialog-title', $this->t('Thank you!')));
         $response->addCommand(new ReplaceCommand('.soc-traceparts-login', $link));
       }
     }
     // Login fail: go to registration.
     else {
-      $message = $this->t('Your email address is not associated to a Traceparts account. 
-      Please register in order to access to your download.');
+      $message = 'Your email address is not associated to a Traceparts account.
+      Please register in order to access to your download.';
+      $message = $this->t($message);
       $getForm = \Drupal::formBuilder()
         ->getForm('Drupal\soc_traceparts\Form\RegisterForm', $values['part_number'], $values['format_id']);
       $response->addCommand(new ReplaceCommand('.ui-dialog-title', $this->t('Login to Traceparts')));

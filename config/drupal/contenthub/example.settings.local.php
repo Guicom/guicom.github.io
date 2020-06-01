@@ -118,9 +118,7 @@ $settings['trusted_host_patterns'] = array(
 
 // Config directories
 $_overrides_name = str_replace('socomec_', 'overrides_', $_site_name);
-$config_directories['sync'] = "$app_ground/config/drupal/sync";
-$config_directories['local'] = "$app_ground/config/drupal/local";
-$config_directories['contenthub'] = "$app_ground/config/drupal/contenthub/sync";
+$settings['config_sync_directory'] = $app_ground . '/config/drupal/sync';
 
 /**
  * Files configurations.

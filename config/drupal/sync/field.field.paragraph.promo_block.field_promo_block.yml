@@ -1,0 +1,34 @@
+uuid: 6f1e5452-6e34-436f-b7fa-f57a1103d7fa
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_promo_block
+    - paragraphs.paragraphs_type.promo_block
+    - soc_blocks_promotion.block_promotion_entity_type.custom
+    - soc_blocks_promotion.block_promotion_entity_type.digital_asset
+    - soc_blocks_promotion.block_promotion_entity_type.offer
+    - soc_blocks_promotion.block_promotion_entity_type.toolbox
+id: paragraph.promo_block.field_promo_block
+field_name: field_promo_block
+entity_type: paragraph
+bundle: promo_block
+label: 'Promo block'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:block_promotion_entity'
+  handler_settings:
+    target_bundles:
+      custom: custom
+      digital_asset: digital_asset
+      offer: offer
+      toolbox: toolbox
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: custom
+field_type: entity_reference
