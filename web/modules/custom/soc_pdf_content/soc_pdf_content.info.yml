@@ -1,0 +1,8 @@
+name: 'Socomec PDF content'
+type: module
+description: 'Generate pdf for socomec content'
+core: 8.x
+package: 'Custom'
+dependencies:
+  - soc_pdf
+  - soc_nextpage

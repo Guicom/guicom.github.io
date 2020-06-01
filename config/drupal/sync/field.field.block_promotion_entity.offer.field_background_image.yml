@@ -1,0 +1,28 @@
+uuid: f092e533-b786-4cd9-ab4b-27ae2119769b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.block_promotion_entity.field_background_image
+    - media.type.image
+    - soc_blocks_promotion.block_promotion_entity_type.offer
+id: block_promotion_entity.offer.field_background_image
+field_name: field_background_image
+entity_type: block_promotion_entity
+bundle: offer
+label: 'Background image'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

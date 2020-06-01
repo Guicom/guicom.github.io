@@ -1,0 +1,82 @@
+uuid: ba908289-5b68-476a-b796-a51500a3c6fd
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_promo_block_paragraph
+    - node.type.product
+    - paragraphs.paragraphs_type.promo_block
+  module:
+    - entity_reference_revisions
+id: node.product.field_promo_block_paragraph
+field_name: field_promo_block_paragraph
+entity_type: node
+bundle: product
+label: 'Promo block'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      promo_block: promo_block
+    target_bundles_drag_drop:
+      promo_block:
+        enabled: true
+        weight: 19
+      content:
+        weight: 20
+        enabled: false
+      from_library:
+        weight: 21
+        enabled: false
+      hero_paragraph:
+        weight: 22
+        enabled: false
+      key_figures:
+        weight: 23
+        enabled: false
+      link:
+        weight: 24
+        enabled: false
+      model_citation:
+        weight: 25
+        enabled: false
+      model_cta:
+        weight: 26
+        enabled: false
+      model_cta_pdf:
+        weight: 27
+        enabled: false
+      model_image:
+        weight: 28
+        enabled: false
+      model_testimony:
+        weight: 29
+        enabled: false
+      model_text:
+        weight: 30
+        enabled: false
+      pardot_form:
+        weight: 31
+        enabled: false
+      premium_content_promotion:
+        weight: 32
+        enabled: false
+      product_faq:
+        weight: 33
+        enabled: false
+      standard_label:
+        weight: 34
+        enabled: false
+      video_embed:
+        weight: 35
+        enabled: false
+      video_text:
+        weight: 36
+        enabled: false
+field_type: entity_reference_revisions

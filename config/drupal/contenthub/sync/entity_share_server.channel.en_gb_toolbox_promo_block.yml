@@ -1,0 +1,15 @@
+uuid: 13949802-2a8c-4123-923d-88d9d9d72e85
+langcode: en
+status: true
+dependencies: {  }
+id: en_gb_toolbox_promo_block
+label: 'EN-GB / Toolbox - Promo Block'
+channel_entity_type: block_promotion_entity
+channel_bundle: toolbox
+channel_langcode: en-gb
+channel_filters: null
+channel_groups: null
+channel_sorts: {  }
+channel_searches: null
+authorized_users:
+  cd0d9446-cb19-4e87-9dcf-d3bdc37a70a7: cd0d9446-cb19-4e87-9dcf-d3bdc37a70a7

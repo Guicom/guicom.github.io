@@ -5,22 +5,28 @@ namespace Drupal\soc_nextpage\Batch;
 use Drupal\Core\Entity\EntityStorageException;
 use Drupal\system\Entity\Menu;
 
+/**
+ *
+ */
 class ImportPendingElement {
 
+  /**
+   *
+   */
   public static function buildBatch() {
     $pimData = \Drupal::service('soc_nextpage.nextpage_api')->descendantsAndLinks();
 
     // Get characteristics dictionary.
     $operations[] = [
       '\Drupal\soc_nextpage\Batch\ImportPendingElement::synchroDictionary',
-      []
+      [],
     ];
 
     // Add pending elements from PIM data.
     foreach ($pimData->Elements ?? [] as $row) {
       $operations[] = [
         '\Drupal\soc_nextpage\Batch\ImportPendingElement::addPendingElement',
-        [$row]
+        [$row],
       ];
     }
 
@@ -44,13 +50,15 @@ class ImportPendingElement {
     switch ($item->ElementType) {
       // Family case.
       case 103:
-        \Drupal::service('soc_nextpage.nextpage_family_manager')->handle($item);
+        \Drupal::service('soc_nextpage.nextpage_family_manager')->handle($item, $context);
         break;
+
       // Product & reference case.
       case 2:
       case 3:
-        \Drupal::service('soc_nextpage.nextpage_product_manager')->handle($item);
+        \Drupal::service('soc_nextpage.nextpage_product_manager')->handle($item, $context);
         break;
+
       default:
         break;
     }
@@ -67,8 +75,10 @@ class ImportPendingElement {
     $menu = Menu::load('header');
     try {
       $menu->save();
-    } catch (EntityStorageException $e) {
+    }
+    catch (EntityStorageException $e) {
       \Drupal::logger('soc_netxpage')->warning($e->getMessage());
+      throw new EntityStorageException($e->getMessage(), 1);
     }
   }
 
@@ -79,4 +89,5 @@ class ImportPendingElement {
     \Drupal::service('soc_nextpage.nextpage_api')
       ->synchroniseCharacteristicsDictionary();
   }
+
 }

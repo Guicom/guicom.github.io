@@ -24,6 +24,7 @@ dependencies:
     - field.field.node.product.field_product_reference
     - field.field.node.product.field_product_status
     - field.field.node.product.field_product_teaser
+    - field.field.node.product.field_promo_block_paragraph
     - field.field.node.product.field_protection_level
     - field.field.node.product.field_standard_label
     - field.field.node.product.update_new_statut
@@ -116,6 +117,7 @@ third_party_settings:
         - group_application
         - group_cta
         - update_new_statut
+        - field_promo_block_paragraph
       parent_name: group_tabs
       weight: 11
       format_type: tab
@@ -340,6 +342,7 @@ content:
       override_labels: false
       collapsed: false
       allow_duplicate: false
+      revision: false
     third_party_settings: {  }
     type: inline_entity_form_complex
     region: content
@@ -385,6 +388,18 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: string_textarea
+    region: content
+  field_promo_block_paragraph:
+    type: entity_reference_paragraphs
+    weight: 13
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
     region: content
   field_protection_level:
     weight: 6
@@ -497,7 +512,7 @@ content:
     third_party_settings: {  }
   update_new_statut:
     type: inline_entity_form_complex
-    weight: 13
+    weight: 12
     settings:
       override_labels: true
       label_singular: 'Update new statut'
@@ -509,6 +524,7 @@ content:
       collapsible: false
       collapsed: false
       allow_duplicate: false
+      revision: false
     third_party_settings: {  }
     region: content
   url_redirects:

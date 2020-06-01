@@ -1,0 +1,33 @@
+uuid: 2091542a-f947-48f7-8685-b6731c6ce4ee
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - soc_blocks_promotion
+id: block_promotion_entity.field_color_combination
+field_name: field_color_combination
+entity_type: block_promotion_entity
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: color-combination-1
+      label: 'Color combination 1'
+    -
+      value: color-combination-2
+      label: 'Color combination 2'
+    -
+      value: color-combination-3
+      label: 'Color combination 3'
+    -
+      value: color-combination-4
+      label: 'Color combination 4'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
