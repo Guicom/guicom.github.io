@@ -6,6 +6,7 @@ namespace Drupal\soc_default_images\TwigExtension;
 use Drupal\file\Entity\File;
 use Drupal\media\Entity\Media;
 use Drupal\taxonomy\Entity\Term;
+use Drupal\image\Entity\ImageStyle;
 
 class SocDefaultImagesTwig extends \Twig_Extension {
 
@@ -50,6 +51,11 @@ class SocDefaultImagesTwig extends \Twig_Extension {
         case 'bloc-digital-custom':
           $key = 'default_image_bloc_promo_custom';
           break;
+        case 'hero-paragraph-type-1':
+          $key = 'default_background_image_hero_type_1';
+          break;
+        default:
+          break;
       }
       if ($key !== NULL) {
         $config = \Drupal::config('soc_default_images.socomec_default_image_form');
@@ -64,7 +70,7 @@ class SocDefaultImagesTwig extends \Twig_Extension {
         }
         if ($file) {
           if ($path = $file->getFileUri()) {
-            if ($url = \Drupal\image\Entity\ImageStyle::load($style)
+            if ($url = ImageStyle::load($style)
               ->buildUrl($file->getFileUri())) {
                 return [
                   '#markup' => "<img class='default-img-$type' src='$url'/>",

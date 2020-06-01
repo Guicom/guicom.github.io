@@ -1,0 +1,88 @@
+uuid: 6767bab4-a3a3-4fc7-9b01-0a1c0ec65eae
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_hero
+    - node.type.page
+    - paragraphs.paragraphs_type.model_hero_type_1
+  module:
+    - entity_reference_revisions
+id: node.page.field_hero
+field_name: field_hero
+entity_type: node
+bundle: page
+label: Hero
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      model_hero_type_1: model_hero_type_1
+    target_bundles_drag_drop:
+      model_hero_type_1:
+        enabled: true
+        weight: 21
+      content:
+        weight: 22
+        enabled: false
+      from_library:
+        weight: 23
+        enabled: false
+      hero_paragraph:
+        weight: 24
+        enabled: false
+      key_figures:
+        weight: 25
+        enabled: false
+      link:
+        weight: 26
+        enabled: false
+      model_citation:
+        weight: 27
+        enabled: false
+      model_cta:
+        weight: 28
+        enabled: false
+      model_cta_pdf:
+        weight: 29
+        enabled: false
+      model_image:
+        weight: 30
+        enabled: false
+      model_promo_block:
+        weight: 31
+        enabled: false
+      model_testimony:
+        weight: 32
+        enabled: false
+      model_text:
+        weight: 33
+        enabled: false
+      pardot_form:
+        weight: 34
+        enabled: false
+      premium_content_promotion:
+        weight: 35
+        enabled: false
+      product_faq:
+        weight: 36
+        enabled: false
+      promo_block:
+        weight: 37
+        enabled: false
+      standard_label:
+        weight: 38
+        enabled: false
+      video_embed:
+        weight: 39
+        enabled: false
+      video_text:
+        weight: 40
+        enabled: false
+field_type: entity_reference_revisions
