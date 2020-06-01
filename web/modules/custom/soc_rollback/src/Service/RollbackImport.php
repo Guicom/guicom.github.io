@@ -188,8 +188,8 @@ class RollbackImport {
     foreach ($results as $result) {
       switch ($result->entity_statut) {
         case 'updated':
-          $storage = \Drupal::entityTypeManager()->getStorage($data->entity_type);
-          if ($entity = $storage->load($data->entity_id)) {
+          $storage = \Drupal::entityTypeManager()->getStorage($result->entity_type);
+          if ($entity = $storage->load($result->entity_id)) {
             switch ($result->entity_type) {
               case 'taxonomy_term':
                 $query = $storage->getQuery()->condition($entity->getEntityType()->getKey('id'), $entity->id())->allRevisions()->execute();
