@@ -1,0 +1,15 @@
+uuid: e7a37428-9c9f-4c07-82f5-b50a56d4b341
+langcode: en
+status: true
+dependencies: {  }
+id: nl_be_location
+label: 'NL-BE / Location'
+channel_entity_type: node
+channel_bundle: contenu_location
+channel_langcode: nl-be
+channel_filters: null
+channel_groups: null
+channel_sorts: {  }
+channel_searches: null
+authorized_users:
+  cd0d9446-cb19-4e87-9dcf-d3bdc37a70a7: cd0d9446-cb19-4e87-9dcf-d3bdc37a70a7

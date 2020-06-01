@@ -81,6 +81,15 @@ class WishlistSettingsForm extends ConfigFormBase {
           ?? $this->t('My wishlist'),
       ];
 
+      $form['language_' . $lang->getId()]['wishlist_no_result_' . $lang->getId()] = [
+        '#type' => 'text_format',
+        '#format' => 'socomec',
+        '#title'          => $this->t('Message without result'),
+        '#description'    => $this->t('The message when wishlist is empty.'),
+        '#default_value'  => $config->get('wishlist_no_result_'. $lang->getId())
+          ?? $this->t('You do not have any references saved.'),
+      ];
+
     }
 
     $form['settings'] = [
@@ -112,11 +121,22 @@ class WishlistSettingsForm extends ConfigFormBase {
   public function submitForm(array &$form, FormStateInterface $form_state) {
     $values = $form_state->getValues();
     foreach ($values as $configKey => $value) {
-      $this->configFactory->getEditable(self::WS_SETTINGS_KEY)
-        ->set($configKey, $value)
-        ->save();
+      $languages = $this->languageManager->getLanguages();
+      if (strpos($configKey, 'wishlist_no_result_') !== FALSE) {
+        foreach ($languages as $lang) {
+          if ($configKey === 'wishlist_no_result_' . $lang->getId()) {
+            $this->configFactory->getEditable(self::WS_SETTINGS_KEY)
+              ->set($configKey, $value['value'])
+              ->save();
+          }
+        }
+      }
+      else {
+        $this->configFactory->getEditable(self::WS_SETTINGS_KEY)
+          ->set($configKey, $value)
+          ->save();
+      }
     }
-
     parent::submitForm($form, $form_state);
   }
 }

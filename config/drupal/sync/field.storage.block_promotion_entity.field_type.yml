@@ -1,0 +1,21 @@
+uuid: ced2e374-d723-4744-90d3-92b447023d9b
+langcode: en
+status: true
+dependencies:
+  module:
+    - soc_blocks_promotion
+id: block_promotion_entity.field_type
+field_name: field_type
+entity_type: block_promotion_entity
+type: string
+settings:
+  max_length: 255
+  is_ascii: false
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

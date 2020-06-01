@@ -1,0 +1,28 @@
+uuid: af3a97a8-c8d3-41c7-94bb-f8473187ae6f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.block_promotion_entity.field_picto
+    - media.type.icone
+    - soc_blocks_promotion.block_promotion_entity_type.custom
+id: block_promotion_entity.custom.field_picto
+field_name: field_picto
+entity_type: block_promotion_entity
+bundle: custom
+label: 'Icon / Picto'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      icone: icone
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

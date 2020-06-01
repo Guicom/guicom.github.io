@@ -1,0 +1,19 @@
+uuid: 914e573d-fe5d-4343-926d-02dcffbd101c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.block_promotion_entity.field_type
+    - soc_blocks_promotion.block_promotion_entity_type.digital_asset
+id: block_promotion_entity.digital_asset.field_type
+field_name: field_type
+entity_type: block_promotion_entity
+bundle: digital_asset
+label: Type
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

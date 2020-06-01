@@ -11,6 +11,7 @@ dependencies:
     - paragraphs.paragraphs_type.model_cta
     - paragraphs.paragraphs_type.model_cta_pdf
     - paragraphs.paragraphs_type.model_image
+    - paragraphs.paragraphs_type.model_promo_block
     - paragraphs.paragraphs_type.model_testimony
     - paragraphs.paragraphs_type.model_text
     - paragraphs.paragraphs_type.video_embed
@@ -42,6 +43,7 @@ settings:
       model_text: model_text
       video_embed: video_embed
       video_text: video_text
+      model_promo_block: model_promo_block
     target_bundles_drag_drop:
       content:
         enabled: true
@@ -85,6 +87,9 @@ settings:
       product_faq:
         weight: 31
         enabled: false
+      promo_block:
+        weight: 32
+        enabled: false
       standard_label:
         weight: 32
         enabled: false
@@ -94,4 +99,7 @@ settings:
       video_text:
         enabled: true
         weight: 34
+      model_promo_block:
+        enabled: true
+        weight: 37
 field_type: entity_reference_revisions

@@ -1,0 +1,21 @@
+uuid: 7ef831bf-cb2c-4972-acfc-d6d591ddf61a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.block_promotion_entity.field_link_target
+    - soc_blocks_promotion.block_promotion_entity_type.digital_asset
+  module:
+    - options
+id: block_promotion_entity.digital_asset.field_link_target
+field_name: field_link_target
+entity_type: block_promotion_entity
+bundle: digital_asset
+label: 'Link target'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

@@ -6,12 +6,40 @@ id: pim_configuration
 label: 'Pim configuration'
 description: ''
 folder: ''
-module:
-  ultimate_cron: 0
+module: {  }
 theme: {  }
 blacklist:
   - soc_nextpage.nextpage_ws
-graylist: {  }
+graylist:
+  - ultimate_cron.job.captcha_cron
+  - ultimate_cron.job.comment_cron
+  - ultimate_cron.job.dblog_cron
+  - ultimate_cron.job.entity_share_cron_cron
+  - ultimate_cron.job.field_cron
+  - ultimate_cron.job.file_cron
+  - ultimate_cron.job.google_analytics_cron
+  - ultimate_cron.job.history_cron
+  - ultimate_cron.job.hook_event_dispatcher_cron
+  - ultimate_cron.job.locale_cron
+  - ultimate_cron.job.message_cron
+  - ultimate_cron.job.node_cron
+  - ultimate_cron.job.scheduled_updates_cron
+  - ultimate_cron.job.scheduler_cron
+  - ultimate_cron.job.search_api_cron
+  - ultimate_cron.job.search_api_solr_cron
+  - ultimate_cron.job.search_cron
+  - ultimate_cron.job.soc_nextpage_cron
+  - ultimate_cron.job.system_cron
+  - ultimate_cron.job.ultimate_cron_cron
+  - ultimate_cron.job.ultimate_cron_queue_entity_reference_revisions_orphan_purger
+  - ultimate_cron.job.ultimate_cron_queue_entity_share_cron_pending
+  - ultimate_cron.job.ultimate_cron_queue_gdpr_tasks_process_gdpr_sar
+  - ultimate_cron.job.ultimate_cron_queue_locale_translation
+  - ultimate_cron.job.ultimate_cron_queue_media_entity_thumbnail
+  - ultimate_cron.job.ultimate_cron_queue_message_check_delete
+  - ultimate_cron.job.ultimate_cron_queue_message_delete
+  - ultimate_cron.job.ultimate_cron_queue_soc_traceparts_resource_creation
+  - ultimate_cron.settings
 graylist_dependents: true
 graylist_skip_equal: true
 weight: 0

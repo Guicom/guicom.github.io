@@ -10,37 +10,53 @@ use Drupal\Core\TempStore\TempStoreException;
 use Drupal\soc_core\Service\BaseApi;
 use Drupal\soc_nextpage\Exception\InvalidTokenException;
 
+/**
+ *
+ */
 class NextpageBaseApi extends BaseApi {
 
   const AUTH_URI = '/api/auth';
 
-  /** @var string $baseUrl */
+  /**
+   * @var string*/
   public $baseUrl;
 
-  /** @var string $config */
+  /**
+   * @var string*/
   protected $userName;
 
-  /** @var string $password */
+  /**
+   * @var string*/
   protected $password;
 
-  /** @var string $contextId */
+  /**
+   * @var string*/
   protected $contextId;
 
-  /** @var string $languageId */
+  /**
+   * @var string*/
   protected $languageId;
 
-  /** @var string $apiToken */
+  /**
+   * @var string*/
   protected $apiToken;
 
-  /** @var string $apiTokenExpiration */
+  /**
+   * @var string*/
   protected $apiTokenExpiration;
 
-  /** @var \Drupal\Core\TempStore\SharedTempStore $tempStore */
+  /**
+   * @var \Drupal\Core\TempStore\SharedTempStore*/
   protected $tempStore;
 
   protected $extIds;
 
   protected $authStatus;
+
+  /**
+   * @var \Drupal\Core\Config\Config
+   */
+  private $config;
 
   /**
    * Constructor.
@@ -58,10 +74,11 @@ class NextpageBaseApi extends BaseApi {
     $this->tempStore = $sharedTempStoreFactory->get('soc_nextpage');
 
     $config = $configFactory->getEditable('soc_nextpage.nextpage_ws');
+    $this->config = $config;
 
-    $baseUrl = $config->get('base_url') ?? 'https://preprod-socomecweb-api.nextpage.fr/com/';
-    $user = $config->get('username') ?? '';
-    $password = $config->get('password') ?? '';
+    $baseUrl = $config->get('base_url') ?? Settings::get('nextpage_base_url');
+    $user = $config->get('username') ?? Settings::get('nextpage_username');
+    $password = $config->get('password') ?? Settings::get('nextpage_password');
     $contextId = $config->get('context_id') ?? '1';
     $languageId = $config->get('language_id') ?? '1';
     $endpoints = [
@@ -71,8 +88,8 @@ class NextpageBaseApi extends BaseApi {
       'descendantsandlinks' => $config->get('endpoint_descendantsandlinks') ?? Settings::get('endpoint_descendantsandlinks'),
       'elementsbychartemplate' => $config->get('endpoint_elementsbychartemplate') ?? Settings::get('endpoint_elementsbychartemplate'),
     ];
-    $extIds = $config->get('channel_extid') ??  Settings::get('channel_extid');
-    $authStatus = $config->get('auth_status') ?? 0;
+    $extIds = $config->get('channel_extid') ?? Settings::get('channel_extid');
+    $authStatus = $config->get('auth_status') ?? Settings::get('auth_status');
 
     $this->setBaseUrl($baseUrl);
     $this->setUserName($user);
@@ -90,15 +107,19 @@ class NextpageBaseApi extends BaseApi {
    *
    * @throws \Exception
    */
-  public function setApiToken(string $apiToken): void {
-    $this->apiToken = $apiToken;
+  public function setApiToken(object $apiToken): void {
+    $token = ucfirst($apiToken->token_type) . ' ' . $apiToken->access_token;
+    $this->apiToken = $token;
     try {
-      $this->tempStore->set('api_token', $apiToken);
-      $dateTime = new \DateTimeImmutable();
-      $expiration = $dateTime->modify('+2 hours');
-      $this->setApiTokenExpiration($expiration->getTimestamp());
-    } catch (TempStoreException $e) {
+      $this->tempStore->set('api_token', $token);
+      $dateTime = new \DateTime();
+      $timestamp = $dateTime->getTimestamp();
+      $expiration = $timestamp + $apiToken->expires_in;
+      $this->setApiTokenExpiration($expiration);
+    }
+    catch (TempStoreException $e) {
       \Drupal::logger('soc_nextpage')->error($e->getMessage());
+      throw new TempStoreException($e->getMessage(), 1);
     }
   }
 
@@ -116,8 +137,10 @@ class NextpageBaseApi extends BaseApi {
     $this->apiTokenExpiration = $apiTokenExpiration;
     try {
       $this->tempStore->set('api_token_expiration', $apiTokenExpiration);
-    } catch (TempStoreException $e) {
+    }
+    catch (TempStoreException $e) {
       \Drupal::logger('soc_nextpage')->error($e->getMessage());
+      throw new TempStoreException($e->getMessage(), 1);
     }
   }
 
@@ -128,35 +151,40 @@ class NextpageBaseApi extends BaseApi {
                               $method = 'POST',
                               $format = 'json',
                               $auth = TRUE) {
-    $handle = Parent::prepareCall($params, $method, $format, $auth);
-    // if request needs authentication
+    $handle = parent::prepareCall($params, $method, $format, $auth);
+    curl_setopt($handle, CURLOPT_CONNECTTIMEOUT_MS, $this->config->get('CURLOPT_CONNECTTIMEOUT_MS'));
+    curl_setopt($handle, CURLOPT_TIMEOUT_MS, $this->config->get('CURLOPT_TIMEOUT_MS'));
+    // If request needs authentication.
     if ($auth === TRUE) {
       $token = '';
-      // if there is no token, generate one
+      // If there is no token, generate one.
       if (!strlen($this->getApiToken())) {
         try {
           $token = $this->generateApiToken();
-        } catch (InvalidTokenException $e) {
+        }
+        catch (InvalidTokenException $e) {
           \Drupal::logger('soc_nextpage')->error($e->getMessage());
+          throw new InvalidTokenException($e->getMessage(), 1);
         }
       }
       else {
-        // if token is expired, generate one
+        // If token is expired, generate one.
         if (time() > $this->getApiTokenExpiration()) {
           try {
             $token = $this->generateApiToken();
-          } catch (InvalidTokenException $e) {
+          }
+          catch (InvalidTokenException $e) {
             \Drupal::logger('soc_nextpage')->error($e->getMessage());
+            throw new InvalidTokenException($e->getMessage(), 1);
           }
         }
-        // everything is ok, use the current token
+        // Everything is ok, use the current token.
         else {
           $token = $this->getApiToken();
         }
       }
-      if (strlen($token)) {
-        $headers = $this->getHeaders();
-        $headers[] = 'ApiToken: ' . $token;
+      if (!empty($token)) {
+        $headers[] = 'Authorization: ' . $this->getApiToken();
         $this->setHeaders($headers);
       }
     }
@@ -166,17 +194,19 @@ class NextpageBaseApi extends BaseApi {
   /**
    * Get a nextPage token.
    *
-   * @return string
+   * @return object
+   *
    * @throws \Drupal\soc_nextpage\Exception\InvalidTokenException
    */
-  public function generateApiToken(): string {
+  public function generateApiToken(): object {
     $params = [
       'body' => [
-        'Username' => $this->getUserName(),
-        'Password' => $this->getPassword(),
+        'username' => $this->getUserName(),
+        'password' => $this->getPassword(),
+        'grant_type' => 'password',
       ],
     ];
-    if (!$token = parent::call(self::AUTH_URI, $params, 'POST', 'json', FALSE)) {
+    if (!$token = parent::call(self::AUTH_URI, $params, 'POST', 'x-www-form-urlencoded', FALSE)) {
       throw new InvalidTokenException('Unable to generate valid token.');
     }
     $this->setApiToken($token);
@@ -289,6 +319,5 @@ class NextpageBaseApi extends BaseApi {
   public function setAuthStatusxt(int $authStatus) {
     $this->authStatus = $authStatus;
   }
-
 
 }

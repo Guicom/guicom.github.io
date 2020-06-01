@@ -13,6 +13,10 @@ dependencies:
     - node.type.product_reference
     - node.type.resource
     - node.type.thank_you_page
+    - soc_blocks_promotion.block_promotion_entity_type.custom
+    - soc_blocks_promotion.block_promotion_entity_type.digital_asset
+    - soc_blocks_promotion.block_promotion_entity_type.offer
+    - soc_blocks_promotion.block_promotion_entity_type.toolbox
   module:
     - content_moderation
 _core:
@@ -28,13 +32,13 @@ type_settings:
       published: false
       default_revision: true
     draft:
-      label: Draft
       published: false
       default_revision: false
+      label: Draft
       weight: -2
     pending_review:
       published: false
-      default_revision: false
+      default_revision: true
       label: Ready
       weight: -1
     published:
@@ -44,7 +48,7 @@ type_settings:
       weight: 2
     scheduled:
       published: false
-      default_revision: false
+      default_revision: true
       label: Scheduled
       weight: 0
   transitions:
@@ -75,7 +79,6 @@ type_settings:
       from:
         - draft
         - pending_review
-        - published
         - scheduled
     publish:
       label: Publish
@@ -103,6 +106,11 @@ type_settings:
       to: pending_review
       weight: -3
   entity_types:
+    block_promotion_entity:
+      - custom
+      - digital_asset
+      - offer
+      - toolbox
     node:
       - article
       - event

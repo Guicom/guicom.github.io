@@ -1,0 +1,20 @@
+uuid: 10f68a6c-df6e-4d9d-a79b-5cf916a6ce7a
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+    - soc_blocks_promotion
+id: block_promotion_entity.field_picto
+field_name: field_picto
+entity_type: block_promotion_entity
+type: entity_reference
+settings:
+  target_type: media
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
