@@ -4,6 +4,9 @@ namespace Drupal\soc_nextpage\Service;
 
 use Drupal\soc_nextpage\NextpageApiInterface;
 
+/**
+ *
+ */
 class NextpageApi extends NextpageBaseApi implements NextpageApiInterface {
 
   /**
@@ -30,8 +33,9 @@ class NextpageApi extends NextpageBaseApi implements NextpageApiInterface {
           'DCExtIDs' => $dcExtIds,
         ]),
       ], 'POST', 'json', $auth, 5);
-    } catch (\Exception $e) {
-      $this->logger->error($e->getMessage());
+    }
+    catch (\Exception $e) {
+      throw new \Exception($e->getMessage(), 1);
     }
     return $this->returnResults($results);
   }
@@ -62,8 +66,9 @@ class NextpageApi extends NextpageBaseApi implements NextpageApiInterface {
           'OnlyOneLevel' => $onlyOneLevel,
         ]),
       ], 'POST', 'json', $auth, 5);
-    } catch (\Exception $e) {
-      $this->logger->error($e->getMessage());
+    }
+    catch (\Exception $e) {
+      throw new \Exception($e->getMessage(), 1);
     }
     return $this->returnResults($results);
   }
@@ -88,8 +93,9 @@ class NextpageApi extends NextpageBaseApi implements NextpageApiInterface {
           'LangID' => $this->getLanguageId(),
         ]),
       ]);
-    } catch (\Exception $e) {
-      $this->logger->error($e->getMessage());
+    }
+    catch (\Exception $e) {
+      throw new \Exception($e->getMessage(), 1);
     }
     return $this->returnResults($results);
   }
@@ -102,6 +108,8 @@ class NextpageApi extends NextpageBaseApi implements NextpageApiInterface {
    * @param bool $ws
    *
    * @return array|mixed
+   *
+   * @throws \Exception
    */
   public function characteristicsDictionary($languageId, $ws = FALSE) {
     $filename = 'characteristics_dictionary_' . $languageId . '.json';
@@ -143,13 +151,14 @@ class NextpageApi extends NextpageBaseApi implements NextpageApiInterface {
     $dictionary = [];
     try {
       $results = $this->call($endpoints['dicocarac'],
-        NULL, 'GET', 'json', FALSE);
+        NULL, 'GET', 'json', TRUE);
       // Build dictionary using extid for easier search.
       foreach ($results->Results->Caracs as $carac) {
         $dictionary[$carac->ExtID] = $carac;
       }
-    } catch (\Exception $e) {
-      $this->logger->error($e->getMessage());
+    }
+    catch (\Exception $e) {
+      throw new \Exception($e->getMessage(), 1);
     }
 
     $filename = 'characteristics_dictionary_' . $languageId . '.json';
@@ -163,7 +172,6 @@ class NextpageApi extends NextpageBaseApi implements NextpageApiInterface {
       ->info(t('The characteristics dictionary has been saved to @file', ['@file' => $filename]));
     return TRUE;
   }
-
 
   /**
    * Error management.
@@ -190,4 +198,5 @@ class NextpageApi extends NextpageBaseApi implements NextpageApiInterface {
     }
     return [];
   }
+
 }

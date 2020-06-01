@@ -89,6 +89,8 @@ class WishlistExport {
         } catch (\PhpOffice\PhpSpreadsheet\Exception $e) {
         }
         break;
+      default:
+        break;
     }
     return false;
   }

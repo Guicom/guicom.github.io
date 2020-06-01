@@ -1,0 +1,4 @@
+services:
+  soc_heartbeat.heartmanager:
+    class: Drupal\soc_heartbeat\Service\Manager\HeartbeatManager
+    arguments: ['@logger.factory', '@entity_type.manager']
