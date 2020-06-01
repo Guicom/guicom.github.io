@@ -31,7 +31,7 @@ class SocBreadcrumbProductReference implements BreadcrumbBuilderInterface {
    */
   public function applies(RouteMatchInterface $route_match) {
     if ($node = $route_match->getParameter('node')) {
-      if ($node->bundle() === 'product_reference') {
+      if (is_object($node) && $node->bundle() === 'product_reference') {
         return TRUE;
       }
     }
