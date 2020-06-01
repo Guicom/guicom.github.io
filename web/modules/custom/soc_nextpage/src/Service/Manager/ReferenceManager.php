@@ -249,12 +249,12 @@ class ReferenceManager {
   public function buildJsonCharacteristics($referenceFields, array $exclude) {
     $json = [];
     foreach ($referenceFields as $fieldName => $field) {
-      if (!in_array($fieldName, $exclude)) {
-        if ($value = $this->nextpageItemHandler->getJsonField($field)) {
-          if (!empty($value['value']) && !empty($value['libelleDossier']) && !empty($value['order'])) {
-            $json[$value['libelleDossier']][$value['order']] = $value;
-          }
-        }
+      if (!in_array($fieldName, $exclude)
+        && ($value = $this->nextpageItemHandler->getJsonField($field))
+        && !empty($value['value'])
+        && !empty($value['libelleDossier'])
+        && !empty($value['order'])) {
+        $json[$value['libelleDossier']][$value['order']] = $value;
       }
     }
     if (!empty($json)) {
