@@ -12,7 +12,7 @@
       <div class="product-info col-lg-7 col-md-12">
         <h1>
           <span class="product-title">{{ drupal_field('title', 'node') }}</span>
-          <span class="product-subtitle">{{ drupal_field('field_product_teaser', 'node') }}</span>
+          <span class="product-subtitle">{{ drupal_field('field_teaser', 'node') }}</span>
         </h1>
         <h2 class="product-baseline">{{ drupal_field('field_json_product_data', 'node') | getfield('DC_P_UNIQUE_VALUE_PROPOSAL') }}</h2>
         {% if drupal_field('field_json_product_data', 'node') | getfield('DC_R_PAGECATALOGUEPDF1') %}

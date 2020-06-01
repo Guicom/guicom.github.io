@@ -5,7 +5,9 @@ dependencies:
   config:
     - field.field.node.product.field_associated_products
     - field.field.node.product.field_background_hero_block
+    - field.field.node.product.field_extid
     - field.field.node.product.field_json_product_data
+    - field.field.node.product.field_multiline
     - field.field.node.product.field_multiline_anchor_name
     - field.field.node.product.field_product_advantage_text
     - field.field.node.product.field_product_application_label
@@ -14,19 +16,17 @@ dependencies:
     - field.field.node.product.field_product_cta_2
     - field.field.node.product.field_product_cta_3
     - field.field.node.product.field_product_cta_4
-    - field.field.node.product.field_product_extid
     - field.field.node.product.field_product_family
-    - field.field.node.product.field_product_multiline
     - field.field.node.product.field_product_new
     - field.field.node.product.field_product_orc_content
     - field.field.node.product.field_product_orc_title
     - field.field.node.product.field_product_pictures
     - field.field.node.product.field_product_reference
     - field.field.node.product.field_product_status
-    - field.field.node.product.field_product_teaser
     - field.field.node.product.field_promo_block_paragraph
     - field.field.node.product.field_protection_level
     - field.field.node.product.field_standard_label
+    - field.field.node.product.field_teaser
     - field.field.node.product.update_new_statut
     - node.type.product
   module:
@@ -43,6 +43,7 @@ third_party_settings:
       disable_css: false
       entity_classes: all_classes
       settings:
+        label: ''
         wrappers:
           ds_content: div
         outer_wrapper: div
@@ -58,7 +59,7 @@ third_party_settings:
         - addtoany
         - field_product_family
         - field_product_pictures
-        - field_product_teaser
+        - field_teaser
         - field_protection_level
         - field_product_advantage_text
         - field_product_reference
@@ -74,12 +75,15 @@ third_party_settings:
         - field_product_orc_title
         - field_product_orc_content
         - field_associated_products
-        - field_product_multiline
         - field_multiline_anchor_name
         - field_product_application_label
         - field_product_application_link
         - field_product_new
         - update_new_statut
+        - field_promo_block_paragraph
+        - field_multiline
+        - field_extid
+        - field_product_extid
     fields:
       node_post_date:
         plugin_id: node_post_date
@@ -140,6 +144,14 @@ content:
       link: false
     third_party_settings: {  }
     region: ds_content
+  field_extid:
+    weight: 27
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: ds_content
   field_json_product_data:
     type: basic_string
     weight: 11
@@ -147,8 +159,17 @@ content:
     label: above
     settings: {  }
     third_party_settings: {  }
+  field_multiline:
+    weight: 26
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    type: entity_reference_revisions_entity_view
+    region: ds_content
   field_multiline_anchor_name:
-    weight: 21
+    weight: 20
     label: hidden
     settings:
       link_to_entity: false
@@ -168,7 +189,7 @@ content:
     type: text_default
     region: ds_content
   field_product_application_label:
-    weight: 22
+    weight: 21
     label: hidden
     settings:
       link_to_entity: false
@@ -182,7 +203,7 @@ content:
     region: ds_content
   field_product_application_link:
     type: entity_reference_revisions_entity_view
-    weight: 23
+    weight: 22
     label: hidden
     settings:
       view_mode: default
@@ -233,17 +254,8 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-  field_product_multiline:
-    type: entity_reference_revisions_entity_view
-    weight: 20
-    label: hidden
-    settings:
-      view_mode: default
-      link: ''
-    third_party_settings: {  }
-    region: ds_content
   field_product_new:
-    weight: 24
+    weight: 23
     label: above
     settings: {  }
     third_party_settings: {  }
@@ -311,27 +323,15 @@ content:
             classes: {  }
     type: entity_reference_entity_view
     region: ds_content
-  field_product_teaser:
-    weight: 4
-    label: hidden
-    settings: {  }
-    third_party_settings:
-      ds:
-        ft:
-          id: reset
-          settings:
-            lb: ''
-    type: basic_string
-    region: ds_content
   field_promo_block_paragraph:
     type: entity_reference_revisions_entity_view
-    weight: 26
-    label: above
+    weight: 25
+    label: hidden
     settings:
       view_mode: default
       link: ''
     third_party_settings: {  }
-    region: content
+    region: ds_content
   field_protection_level:
     weight: 5
     label: hidden
@@ -357,9 +357,21 @@ content:
       link: ''
     third_party_settings: {  }
     region: ds_content
+  field_teaser:
+    weight: 4
+    label: hidden
+    settings: {  }
+    third_party_settings:
+      ds:
+        ft:
+          id: reset
+          settings:
+            lb: ''
+    type: text_default
+    region: ds_content
   update_new_statut:
     type: entity_reference_entity_view
-    weight: 25
+    weight: 24
     region: ds_content
     label: hidden
     settings:
@@ -375,7 +387,6 @@ content:
             lb-col: false
             classes: {  }
 hidden:
-  field_product_extid: true
   field_product_status: true
   langcode: true
   links: true

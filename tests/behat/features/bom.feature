@@ -27,10 +27,10 @@ Feature: [BOM] Tests Behat
     Given I am logged in as a user with the "administrator" role
     And I accept all cookies compliance
     And product_reference content:
-      | Language | title                     | field_reference_extid | field_product_status | field_reference_name   | field_reference_ref   | status |
-      | English  | Product reference test 01 | EXTID_TEST_REF_01     | Discontinued         | Test reference name 01 | Test reference ref 01 | 1      |
-      | English  | Product reference test 02 | EXTID_TEST_REF_02     | Discontinued         | Test reference name 02 | Test reference ref 02 | 1      |
-      | English  | Product reference test 03 | EXTID_TEST_REF_03     | Discontinued         | Test reference name 03 | Test reference ref 03 | 1      |
+      | Language | title                     | field_extid       | field_product_status | field_reference_name   | field_reference_ref   | status |
+      | English  | Product reference test 01 | EXTID_TEST_REF_01 | Discontinued         | Test reference name 01 | Test reference ref 01 | 1      |
+      | English  | Product reference test 02 | EXTID_TEST_REF_02 | Discontinued         | Test reference name 02 | Test reference ref 02 | 1      |
+      | English  | Product reference test 03 | EXTID_TEST_REF_03 | Discontinued         | Test reference name 03 | Test reference ref 03 | 1      |
     Then I am an anonymous user
     And I accept all cookies compliance
     Then I visit "wishlist/add/EXTID_TEST_REF_01"

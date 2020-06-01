@@ -118,7 +118,7 @@ class WishlistEditForm extends FormBase {
     if (!empty($items) && is_array($items)) {
       foreach ($items as $result) {
         if ($result['node'] instanceof Node) {
-          $extId = $result['node']->get('field_reference_extid')->value;
+          $extId = $result['node']->get('field_extid')->value;
           $mediaId = $result['node']->get('field_reference_picture')->target_id;
           $picture = '';
           if (!empty($mediaId)) {
