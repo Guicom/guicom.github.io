@@ -42,7 +42,10 @@ class RollbackImport {
    * @param \Drupal\soc_job\Service\Manager\JobManager $jobManager
    * @param \Drupal\soc_heartbeat\Service\Manager\HeartbeatManager $heartbeatManager
    */
-  public function __construct(LoggerChannelFactoryInterface $channelFactory, Connection $connection, JobManager $jobManager, HeartbeatManager $heartbeatManager) {
+  public function __construct(LoggerChannelFactoryInterface $channelFactory,
+                              Connection $connection,
+                              JobManager $jobManager,
+                              HeartbeatManager $heartbeatManager) {
     $this->logger = $channelFactory->get('soc_rollback');
     $this->connection = $connection;
     $this->job = $jobManager;
@@ -230,6 +233,9 @@ class RollbackImport {
           $storage = \Drupal::entityTypeManager()->getStorage($result->entity_type);
           $entity = $storage->load($result->entity_id);
           $entity->delete();
+          break;
+
+        default:
           break;
       }
       // Delete entry in DB.
