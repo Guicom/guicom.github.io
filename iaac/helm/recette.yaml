@@ -9,7 +9,15 @@ registry:
   location: regis.myagora.fr/socomec-web
   images:
     drupal: drupal
-    varnish: image-varnish-name
+    varnish: varnish
+
+varnish:
+  name: webfactory-varnish
+  replicaCount: 1
+  service:
+    port: 80
+  ingress_hostname: webfactory-drupal-rec-varnish.dpk-soc-web-cl01.doobesha.org
+  ingress_content_hub_hostname: contenthub-drupal-rec-varnish.dpk-soc-web-cl01.doobesha.org
 
 drupal:
   environment: recette
