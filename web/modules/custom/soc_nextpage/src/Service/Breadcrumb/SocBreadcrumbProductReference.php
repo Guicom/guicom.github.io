@@ -31,7 +31,7 @@ class SocBreadcrumbProductReference implements BreadcrumbBuilderInterface {
    */
   public function applies(RouteMatchInterface $route_match) {
     if ($node = $route_match->getParameter('node')) {
-      if ($node->bundle() === 'product_reference') {
+      if (is_object($node) && $node->bundle() === 'product_reference') {
         return TRUE;
       }
     }
@@ -48,18 +48,9 @@ class SocBreadcrumbProductReference implements BreadcrumbBuilderInterface {
 
     // Get the node for the current page
     $node = $route_match->getParameter('node');
-    if ($tid = $this->productReference->getParentProductFamilyByProductReference($node)) {
-      if ($ancestors = \Drupal::service('entity_type.manager')->getStorage("taxonomy_term")->loadAllParents($tid)) {
-        if (is_array($ancestors)) {
-          foreach ($ancestors as $term) {
-            if (!empty($term->label()) && !empty($term->id())) {
-              $breadcrumb->addLink(Link::createFromRoute($term->label(),
-                'entity.taxonomy_term.canonical',
-                ['taxonomy_term' => $term->id()])
-              );
-            }
-          }
-        }
+    if ($families = $this->productReference->getFamiliesLinkByProductReference($node)) {
+      foreach ($families as $family) {
+        $breadcrumb->addLink($family);
       }
 
       if ($nodeParent = $this->productReference->getParentProductByProductReference($node)) {

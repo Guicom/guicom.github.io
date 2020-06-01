@@ -54,7 +54,7 @@ class NextpageApiSettingsForm extends ConfigFormBase {
       '#title'          => $this->t('Base URL'),
       '#description'    => $this->t('The base URL to use to request nextPage.'),
       '#default_value'  => $config->get('base_url') ??
-        Settings::get('soc_nextpage_base_url', self::DEFAULT_BASE_URL),
+        Settings::get('nextpage_base_url', self::DEFAULT_BASE_URL),
     ];
 
     $form['auth'] = [
@@ -70,7 +70,7 @@ class NextpageApiSettingsForm extends ConfigFormBase {
       '#options' => $active,
       '#description'    => $this->t('Activate authentification.'),
       '#default_value'  => $config->get('auth_status') ??
-        Settings::get('auth_status', 0),
+        Settings::get('auth_status', 1),
     ];
 
     $form['auth']['username'] = [
@@ -78,7 +78,7 @@ class NextpageApiSettingsForm extends ConfigFormBase {
       '#title'          => $this->t('Username'),
       '#description'    => $this->t('The username to use to request nextPage.'),
       '#default_value'  => $config->get('username') ??
-        Settings::get('soc_nextpage_username', self::DEFAULT_USERNAME),
+        Settings::get('nextpage_username', self::DEFAULT_USERNAME),
     ];
 
     $form['auth']['password'] = [
@@ -86,7 +86,7 @@ class NextpageApiSettingsForm extends ConfigFormBase {
       '#title'          => $this->t('Password'),
       '#description'    => $this->t('The password to use to request nextPage.'),
       '#default_value'  => $config->get('password') ??
-        Settings::get('soc_nextpage_password', ''),
+        Settings::get('nextpage_password', ''),
     ];
 
     $form['context'] = [
@@ -217,6 +217,27 @@ class NextpageApiSettingsForm extends ConfigFormBase {
       '#default_value'  => $config->get('matching_libelle_dossier') ?? 'LibelleDossier',
     ];
 
+    $form['timeout'] = [
+      '#type'           => 'details',
+      '#open'           => TRUE,
+      '#title'          => $this->t('Timeout API call'),
+    ];
+
+    $active = array(0 => t('No'), 1 => t('Yes'));
+    $form['timeout']['CURLOPT_CONNECTTIMEOUT_MS'] = [
+      '#type'           => 'textfield',
+      '#title'          => $this->t('CURLOPT_CONNECTTIMEOUT_MS'),
+      '#default_value'  => $config->get('CURLOPT_CONNECTTIMEOUT_MS') ??
+        Settings::get('CURLOPT_CONNECTTIMEOUT_MS', 5000),
+    ];
+
+    $form['timeout']['CURLOPT_TIMEOUT_MS'] = [
+      '#type'           => 'textfield',
+      '#title'          => $this->t('CURLOPT_TIMEOUT_MS'),
+      '#default_value'  => $config->get('CURLOPT_TIMEOUT_MS') ??
+        Settings::get('soc_nextpage_username', 10000),
+    ];
+
     return parent::buildForm($form, $form_state);
   }
 
@@ -226,6 +247,7 @@ class NextpageApiSettingsForm extends ConfigFormBase {
   public function submitForm(array &$form, FormStateInterface $form_state) {
     foreach ([
                'base_url',
+               'auth_status',
                'username',
                'password',
                'context_id',
@@ -235,7 +257,9 @@ class NextpageApiSettingsForm extends ConfigFormBase {
                'endpoint_elementsandlinks',
                'endpoint_descendantsandlinks',
                'endpoint_elementsbychartemplate',
-               'matching_libelle_dossier',] as $configKey) {
+               'matching_libelle_dossier',
+               'CURLOPT_CONNECTTIMEOUT_MS',
+               'CURLOPT_TIMEOUT_MS',] as $configKey) {
       $this->configFactory->getEditable(self::WS_SETTINGS_KEY)
         ->set($configKey, $form_state->getValue($configKey))
         ->save();

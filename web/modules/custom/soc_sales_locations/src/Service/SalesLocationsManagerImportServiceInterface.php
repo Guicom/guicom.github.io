@@ -2,7 +2,7 @@
 
 namespace Drupal\soc_sales_locations\Service;
 
-use Drupal\file\FileInterface;
+use Drupal\Core\Entity\EntityInterface;
 
 /**
  * Interface SalesLocationsManagerImportServiceInterface.
@@ -11,24 +11,27 @@ interface SalesLocationsManagerImportServiceInterface {
 
 
   /**
-   * @param \Drupal\file\FileInterface $file
+   * @param \Drupal\Core\Entity\EntityInterface $file
    *
    * @return bool
    */
-  public function validate(FileInterface $file) ;
+  public function validate(EntityInterface $file) ;
 
   /**
    * @param array $row
    *
+   * @param $token
+   *
    * @return bool
    */
-  public function importRow($row);
+  public function importRow($row, $token);
 
   /**
-   * @param \Drupal\file\FileInterface $file
+   * @param string $job_id
+   *   Job Id.
    *
-   * @return mixed
+   * @return bool
    */
-  public function importAllRow(FileInterface $file);
+  public function updateCurrentJob($job_id);
 
 }
