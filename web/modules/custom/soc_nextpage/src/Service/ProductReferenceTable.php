@@ -7,6 +7,9 @@ use Drupal\Core\Link;
 use Drupal\Core\Url;
 use Drupal\Core\Extension\ModuleHandlerInterface;
 
+/**
+ *
+ */
 class ProductReferenceTable {
 
   /**
@@ -54,8 +57,7 @@ class ProductReferenceTable {
       $rows[$key]['select'] = $this->getCartLink($item["content"]["#node"]);
     }
 
-    $footer = $header;
-    // We don't want translation ono this string as we have a test on it in JS
+    // We don't want translation ono this string as we have a test on it in JS.
     $header['select'] = t('Select', [], ['context' => 'product-reference-table']);
     $lib['library'][] = 'soc_nextpage/product-datatable';
     return [
@@ -64,8 +66,8 @@ class ProductReferenceTable {
       '#rows' => $rows,
       '#attached' => $lib,
       '#attributes' => [
-        'id' => 'product-reference-table'
-      ]
+        'id' => 'product-reference-table',
+      ],
     ];
   }
 
@@ -81,7 +83,7 @@ class ProductReferenceTable {
       $json = $item["content"]["#node"]->get('field_reference_json_table')->getValue();
       $json = (array) json_decode($json[0]["value"]);
       foreach ($json as $label => $data) {
-        //$rows[$label][$key] = $data;
+        // $rows[$label][$key] = $data;
         if (!in_array($label, $header) && !empty($data)) {
           $header[$label] = $label;
         }
@@ -96,23 +98,22 @@ class ProductReferenceTable {
    */
   public function getCartLink($node) {
     if ($this->moduleHandler->moduleExists('soc_wishlist')) {
-      //$wishlistManager = \Drupal::service('soc_wishlist.wishlist_manager');
-      //$loadSavedItems = $wishlistManager->loadSavedItems();
       $fieldReferenceExtid = $node->get('field_extid')->getValue();
       if (!empty($fieldReferenceExtid[0]['value'])) {
         $extid = $fieldReferenceExtid[0]['value'];
         $url = Url::fromRoute('soc_wishlist.add_item', ['item_id' => $extid])->toString();
       }
       if (!empty($url)) {
-        $link = "<a class='add-to-favorite ajax-soc-content-list' data-soc-content-list-ajax='1' 
+        $link = "<a class='add-to-favorite ajax-soc-content-list' data-soc-content-list-ajax='1'
           data-soc-content-list-item='$extid' href='$url'></a>";
         /*if (!empty($loadSavedItems[$extid])) {
-          $link = "<a class='add-to-favorite soc-list-is-active ajax-soc-content-list' data-soc-content-list-ajax='1' 
-            data-soc-content-list-item='$extid' href='$url'></a>";
+        $link = "<a class='add-to-favorite soc-list-is-active ajax-soc-content-list' data-soc-content-list-ajax='1'
+        data-soc-content-list-item='$extid' href='$url'></a>";
         }*/
         return new FormattableMarkup($link, []);
       }
     }
     return [];
   }
+
 }

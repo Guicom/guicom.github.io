@@ -12,13 +12,13 @@ services:
     arguments: ['@soc_nextpage.nextpage_api', '@database']
   soc_nextpage.nextpage_reference_manager:
     class: Drupal\soc_nextpage\Service\Manager\ReferenceManager
-    arguments: ['@soc_nextpage.nextpage_api', '@soc_nextpage.nextpage_item_handler']
+    arguments: ['@soc_nextpage.nextpage_api', '@soc_nextpage.nextpage_item_handler', '@soc_rollback.rollback_import', '@logger.factory']
   soc_nextpage.nextpage_product_manager:
     class: Drupal\soc_nextpage\Service\Manager\ProductManager
-    arguments: ['@soc_nextpage.nextpage_reference_manager', '@soc_nextpage.nextpage_api', '@soc_nextpage.nextpage_item_handler']
+    arguments: ['@soc_nextpage.nextpage_reference_manager', '@soc_nextpage.nextpage_api', '@soc_nextpage.nextpage_item_handler', '@soc_rollback.rollback_import', '@logger.factory']
   soc_nextpage.nextpage_family_manager:
     class: Drupal\soc_nextpage\Service\Manager\FamilyManager
-    arguments: ['@soc_nextpage.nextpage_api', '@soc_nextpage.nextpage_item_handler']
+    arguments: ['@soc_nextpage.nextpage_api', '@soc_nextpage.nextpage_item_handler', '@soc_rollback.rollback_import', '@logger.factory']
   soc_nextpage.twig.extension:
     arguments: ['@renderer']
     class: Drupal\soc_nextpage\TwigExtension\NextpageTwig
