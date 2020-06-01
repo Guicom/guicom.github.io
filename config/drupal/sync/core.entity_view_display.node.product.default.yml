@@ -24,6 +24,7 @@ dependencies:
     - field.field.node.product.field_product_reference
     - field.field.node.product.field_product_status
     - field.field.node.product.field_product_teaser
+    - field.field.node.product.field_promo_block_paragraph
     - field.field.node.product.field_protection_level
     - field.field.node.product.field_standard_label
     - field.field.node.product.update_new_statut
@@ -322,6 +323,15 @@ content:
             lb: ''
     type: basic_string
     region: ds_content
+  field_promo_block_paragraph:
+    type: entity_reference_revisions_entity_view
+    weight: 26
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
   field_protection_level:
     weight: 5
     label: hidden

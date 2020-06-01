@@ -3,8 +3,9 @@
 namespace Drupal\soc_wishlist\Service\Manager;
 
 use Drupal\Core\Config\ConfigFactoryInterface;
+use Drupal\Core\Logger\LoggerChannelFactoryInterface;
 use Drupal\node\Entity\Node;
-use Drupal\soc_wishlist\Service\WishlistTCPDF;
+use Drupal\soc_pdf\Service\SocPdfTCPDF;
 use PhpOffice\PhpSpreadsheet\Writer\Exception;
 use Symfony\Component\HttpFoundation\Response;
 use PhpOffice\PhpSpreadsheet\Spreadsheet;
@@ -27,16 +28,23 @@ class WishlistExport {
   /** @var $settings */
   protected $settings;
 
+  /** @var $logger */
+  protected $logger;
+
   /**
    * WishlistExport constructor.
    *
    * @param \Drupal\soc_wishlist\Service\Manager\WishlistManager $wishlistManager
    * @param \Drupal\Core\Config\ConfigFactoryInterface $configFactory
+   * @param \Drupal\Core\Logger\LoggerChannelFactoryInterface $channel_factory
    */
   public function __construct(WishlistManager $wishlistManager,
-                              ConfigFactoryInterface $configFactory) {
+                              ConfigFactoryInterface $configFactory,
+                              LoggerChannelFactoryInterface $channel_factory
+  ) {
     $this->wishlistManager = $wishlistManager;
     $this->settings = $configFactory->getEditable('soc_wishlist.settings');
+    $this->logger = $channel_factory->get('soc_wishlist');
   }
 
   /**
@@ -79,15 +87,21 @@ class WishlistExport {
 
           return $this->exportXLS($response, $writerType, $items);
         } catch (Exception $e) {
+          $this->logger->error($e->getMessage());
         } catch (\PhpOffice\PhpSpreadsheet\Exception $e) {
+          $this->logger->error($e->getMessage());
         }
         break;
       case 'pdf':
         try {
           return $this->exportPDF($items);
         } catch (Exception $e) {
+          $this->logger->error($e->getMessage());
         } catch (\PhpOffice\PhpSpreadsheet\Exception $e) {
+          $this->logger->error($e->getMessage());
         }
+        break;
+      default:
         break;
     }
     return false;
@@ -210,55 +224,18 @@ class WishlistExport {
    * @throws \PhpOffice\PhpSpreadsheet\Writer\Exception
    */
   protected function exportPDF($items) {
-    $response = new Response();
-    $response->headers->set('Pragma', 'no-cache');
-    $response->headers->set('Expires', '0');
-    $response->headers->set('Content-Type', 'application/pdf');
-    $response->headers->set('Content-Disposition', 'attachment; filename=' . self::WISHLIST_FILENAME . '.pdf');
-
-    $pdf = new WishlistTCPDF();
-
-    // set document information
+    $pdf = new SocPdfTCPDF();
     $title = t('Wishlist') . ' - '. date('Y-m-d');
-    $pdf->SetCreator('Socomec');
-    $pdf->SetAuthor('Socomec');
-    $pdf->SetTitle($title);
-
-    $logo = theme_get_setting('logo.url');
-    $host = \Drupal::request()->getSchemeAndHttpHost();
-
-
-    $urlLogo = $host.$logo;
-    $pdf->SetHeaderData($urlLogo, PDF_HEADER_LOGO_WIDTH, $title);
-
-    // set header and footer fonts
-    $pdf->setHeaderFont(Array(PDF_FONT_NAME_MAIN, '', PDF_FONT_SIZE_MAIN));
-    $pdf->setFooterFont(Array(PDF_FONT_NAME_DATA, '', PDF_FONT_SIZE_DATA));
-
-    // set default monospaced font
-    $pdf->SetDefaultMonospacedFont(PDF_FONT_MONOSPACED);
-
-    // set margins
-    $pdf->SetMargins(PDF_MARGIN_LEFT, PDF_MARGIN_TOP, PDF_MARGIN_RIGHT);
-    $pdf->SetHeaderMargin(PDF_MARGIN_HEADER);
-    $pdf->SetFooterMargin(PDF_MARGIN_FOOTER);
-
-    // set auto page breaks
-    $pdf->SetAutoPageBreak(TRUE, PDF_MARGIN_BOTTOM);
-
-    // set image scale factor
-    $pdf->setImageScale(PDF_IMAGE_SCALE_RATIO);
-
+    // set document information
+    $pdf->prepareHeader($title);
     $pdf->AddPage();
     $pdf->SetFont('helveticaI', '', 12);
     $text = $this->settings->get('pdf_disclaimer');
     $pdf->writeHTML($text, true, false, false, false, 'J');
     $pdf->Ln(10);
-
     $pdf->Ln();
     $pdf->SetFont('helveticaI', '', 12);
-
-    $tbl = '<table cellspacing="0" cellpadding="1" border="1">';
+    $tbl = '<table cellpadding="5" cellspacing="0" border="1">';
     $tbl .= '<tr>';
     $tbl .= '<th>' . t('Model') . '</th>';
     $tbl .= '<th>' . t('Reference') . '</th>';
@@ -278,12 +255,8 @@ class WishlistExport {
       $tbl .= '</tr>';
     }
     $tbl .= '</table>';
-
     $pdf->writeHTML($tbl, true, false, false, false, '');
-    ob_start();
-    $response->setContent($pdf->Output('S'));
-    ob_end_flush();
-    return $response;
+    return $pdf->getResponse(self::WISHLIST_FILENAME, $pdf->Output('S'));
   }
 
   /**

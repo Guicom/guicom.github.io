@@ -147,13 +147,12 @@ Feature: [STORE_LOCATOR] Tests Behat
   # ticket JIRA: SOCSOB-839
   # Testing Export
   Scenario: Testing export
-    Given I am logged in as a user with the "webmaster" role
+    Given I am logged in as a user with the "administrator" role
     And I accept all cookies compliance
     # We create en location_type terme
     And I visit "/en/admin/config/socomec/sales_locations/import_csv_file"
     When I attach the file "csv/export-sales-locations-test.csv" to "edit-file-csv-upload"
-    And I press "Submit"
-    And I am logged in as a user with the "administrator" role
+    And I press "Import office locations"
     And I visit "/admin/config/search/search-api/index/location"
     And I press "Index now"
     Then I am an anonymous user

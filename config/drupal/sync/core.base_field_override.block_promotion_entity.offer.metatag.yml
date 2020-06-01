@@ -1,0 +1,18 @@
+uuid: b10b0fd3-7308-41ff-82a6-72f0ddc30f49
+langcode: en
+status: true
+dependencies:
+  config:
+    - soc_blocks_promotion.block_promotion_entity_type.offer
+id: block_promotion_entity.offer.metatag
+field_name: metatag
+entity_type: block_promotion_entity
+bundle: offer
+label: Metatags
+description: 'The meta tags for the entity.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: map

@@ -1,0 +1,77 @@
+<?php
+
+/**
+ * @file
+ * Contains soc_blocks_promotion.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\Core\Url;
+
+/**
+ * Implements hook_help().
+ */
+function soc_blocks_promotion_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the soc_blocks_promotion module.
+    case 'help.page.soc_blocks_promotion':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Manage entity custom promotion.') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function soc_blocks_promotion_theme() {
+  $theme = [];
+  $theme['soc_blocks_promotion'] = [
+    'render element' => 'children',
+  ];
+  $theme['block_promotion_entity'] = [
+    'render element' => 'elements',
+    'file' => 'block_promotion_entity.page.inc',
+    'template' => 'block_promotion_entity',
+  ];
+  $theme['block_promotion_entity_content_add_list'] = [
+    'render element' => 'content',
+    'variables' => ['content' => NULL],
+    'file' => 'block_promotion_entity.page.inc',
+  ];
+  return $theme;
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK().
+ */
+function soc_blocks_promotion_theme_suggestions_block_promotion_entity(array $variables) {
+  $suggestions = [];
+  $entity = $variables['elements']['#block_promotion_entity'];
+  $sanitized_view_mode = strtr($variables['elements']['#view_mode'], '.', '_');
+
+  $suggestions[] = 'block_promotion_entity__' . $sanitized_view_mode;
+  $suggestions[] = 'block_promotion_entity__' . $entity->bundle();
+  $suggestions[] = 'block_promotion_entity__' . $entity->bundle() . '__' . $sanitized_view_mode;
+  $suggestions[] = 'block_promotion_entity__' . $entity->id();
+  $suggestions[] = 'block_promotion_entity__' . $entity->id() . '__' . $sanitized_view_mode;
+  return $suggestions;
+}
+
+/**
+ * Implements hook_entity_operation_alter().
+ *
+ * @param array $operations
+ * @param \Drupal\Core\Entity\EntityInterface $entity
+ */
+function soc_blocks_promotion_entity_operation_alter(array &$operations, \Drupal\Core\Entity\EntityInterface $entity) {
+ if ($entity->getEntityType()->getBundleEntityType() === "block_promotion_entity_type") {
+   $redirect_url = Url::fromRoute('entity.block_promotion_entity.clone_form', ['block_promotion_entity' => $entity->id()]);
+   $operations['clone']['title'] = t('Clone');
+   $operations['clone']['url'] = $redirect_url;
+   $operations['clone']['weight'] = 10;
+ }
+}

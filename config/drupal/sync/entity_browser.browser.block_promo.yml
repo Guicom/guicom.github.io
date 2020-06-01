@@ -1,0 +1,31 @@
+uuid: 502800d3-4e2d-4228-8720-925b511bbb97
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.block_promotion_entity_browser
+  module:
+    - views
+name: block_promo
+label: 'Block promo'
+display: modal
+display_configuration:
+  width: '650'
+  height: '500'
+  link_text: 'Select entities'
+  auto_open: false
+selection_display: no_display
+selection_display_configuration: {  }
+widget_selector: drop_down
+widget_selector_configuration: {  }
+widgets:
+  fd3b4d06-80c9-442c-a2e9-8879e5fe31cc:
+    settings:
+      view: block_promotion_entity_browser
+      view_display: entity_browser_1
+      submit_text: 'Select promo block'
+      auto_select: false
+    uuid: fd3b4d06-80c9-442c-a2e9-8879e5fe31cc
+    weight: 1
+    label: 'Choose a promo block'
+    id: view

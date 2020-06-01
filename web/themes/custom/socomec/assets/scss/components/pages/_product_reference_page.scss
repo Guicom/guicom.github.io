@@ -97,7 +97,7 @@ body.node--type-product-reference {
         }
         a {
           height: 60px;
-          padding: 0 12px;
+          padding: 0 20px;
           text-transform: uppercase;
           color: $blue;
           font-family: $font-poppins;
@@ -108,16 +108,19 @@ body.node--type-product-reference {
           display: flex;
           align-items: center;
           justify-content: center;
+          border: 1px solid transparent;
+          text-decoration: none;
+          &:hover{
+            border: 1px solid #004F9F;
+          }
         }
       }
-
       .cta-blue {
-        width: 197px;
         @include media-breakpoint-down(xs) {
           width: 50%;
         }
         a {
-          padding: 0 12px;
+          padding: 0 20px;
           text-transform: uppercase;
           height: 60px;
           width: 100%;
@@ -131,16 +134,69 @@ body.node--type-product-reference {
           display: flex;
           align-items: center;
           justify-content: center;
+          text-decoration: none;
+          &:hover{
+            background: lighten($blue_light,6%);
+          }
+          &.ajax-soc-content-list{
+            //background: linear-gradient(to right, $green-added-btn 50%, $blue_light 50%);
+            //background-size: 200% 100%;
+            //background-position: right bottom;
+            transition: all .5s ease-out;
+            &:hover{
+             // background: linear-gradient(to right, $green-added-btn 50%, lighten($blue_light,6%) 50%);
+             // background-size: 200% 100%;
+              //background-position: right bottom;
+            }
+            &.soc-list-is-active {
+              padding: 0 20px 0 44px;
+              position: relative;
+              img {
+                display: none;
+              }
+              &:before {
+                position: absolute;
+                content: '';
+                background-image: url("../images/picto/ui/bom-blue-background-white.svg");
+                background-repeat: no-repeat;
+                background-size: 24px 24px;
+                height: 24px;
+                width: 24px;
+                left:12px;
+              }
+            }
+            &.item-added{
+              padding: 0 20px 0 44px;
+              position: relative;
+              background: $green-added-btn;
+              &:before {
+                position: absolute;
+                content: '';
+                background-image: url("../images/picto/ui/validate-action-white.svg");
+                background-repeat: no-repeat;
+                background-size: 24px 24px;
+                height: 24px;
+                width: 24px;
+                left:12px;
+              }
+              //background-position: left bottom;
+              img {
+                display: none;
+              }
+              .btn-value {
+                white-space: nowrap;
+              }
+            }
+          }
         }
       }
 
       .cta-yellow {
-        width: 166px;
         @include media-breakpoint-down(xs) {
           width: 50%;
         }
         a {
-          padding: 0 12px;
+          padding: 0 20px;
           text-transform: uppercase;
           height: 60px;
           width: 100%;
@@ -154,6 +210,10 @@ body.node--type-product-reference {
           display: flex;
           align-items: center;
           justify-content: center;
+          text-decoration: none;
+          &:hover{
+            background: lighten($yellow,6%);
+          }
         }
       }
       //reset
@@ -259,16 +319,20 @@ body.node--type-product-reference {
         z-index: 999;
         width: 100%;
         top: calc(100% - 1px);
+        border-radius: 0;
+        margin-top: 0;
         @include media-breakpoint-down(sm) {
           top: initial;
           display: block!important;
-          height: 80%;
+          height: 90%;
           overflow-y: scroll;
+          box-shadow: none;
+          border: none;
         }
       }
       .block-soc-traceparts {
         .list-group {
-          height: 11rem;
+          height: 11rem!important;
           width: 100%;
           overflow-y: scroll;
           border-bottom: 1px solid rgba($blue, 0.5);
@@ -290,6 +354,20 @@ body.node--type-product-reference {
           }
         }
       }
+      .dropdown-item {
+        display: flex;
+       .loader-pending {
+         @include loader($blue);
+       }
+      }
+    }
+  }
+  .soc-traceparts-register {
+    .js-form-submit {
+      .ajax-progress {
+        top: 100%!important;
+      }
     }
   }
 }
+

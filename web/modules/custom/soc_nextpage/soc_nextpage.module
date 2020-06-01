@@ -1,35 +1,74 @@
 <?php
 
+/**
+ * @file
+ */
+
 use Drupal\soc_nextpage\Batch\ImportPendingElement;
 use Drupal\system\Entity\Menu;
 use Drupal\Core\Form\FormStateInterface;
 
+/**
+ * Implements hook_cron().
+ */
 function soc_nextpage_cron() {
   $logger = \Drupal::logger('soc_nextpage');
+  $rollback = \Drupal::service('soc_rollback.rollback_import');
+  $logger->info('Cron in!');
+  // If all is good, let's start import.
+  if ($rollback->checkAllGreen() == TRUE) {
+    $job_id = $rollback->initJob('pim');
+    /** @var \Drupal\soc_nextpage\Service\NextpageApi $nextpageApi */
+    $nextpageApi = \Drupal::service('soc_nextpage.nextpage_api');
 
-  /** @var \Drupal\soc_nextpage\Service\NextpageApi $nextpageApi */
-  $nextpageApi = \Drupal::service('soc_nextpage.nextpage_api');
+    // Synchronize characteristicsDictionary.
+    $logger->info('Start synchronise dictionnary!');
+    $nextpageApi->synchroniseCharacteristicsDictionary();
+    $logger->info('Dictionnary is synchronised !');
 
-  // Synchronize characteristicsDictionary.
-  $nextpageApi->synchroniseCharacteristicsDictionary();
+    // Update Job State.
+    $rollback->updateJob($job_id,
+      [
+        'operation' => 'update_state',
+        'state' => 'in_progress',
+      ]
+    );
+    $logger->info('Import starting');
 
-  // Update families, products & references.
-  $context = [];
-  $product = \Drupal::service('soc_nextpage.nextpage_api')->descendantsAndLinks();
-  foreach ($product->Elements ?? [] as $row) {
-    ImportPendingElement::addPendingElement($row, $context);
+    // Update families, products & references.
+    $context['job_id'] = $job_id;
+    $product = \Drupal::service('soc_nextpage.nextpage_api')->descendantsAndLinks();
+    foreach ($product->Elements ?? [] as $row) {
+      ImportPendingElement::addPendingElement($row, $context);
+    }
+
+    // Purge non imported family.
+    $logger->info('Start purge family');
+    \Drupal::service('soc_nextpage.nextpage_family_manager')->delete();
+    $logger->info('Purge family is finished');
+
+    // Rebuild menu.
+    $logger->info('Start update menu');
+    $menu = Menu::load('header');
+    try {
+      $menu->save();
+    }
+    catch (Exception $e) {
+      throw new \Exception($e->getMessage(), 1);
+    }
+    $logger->info('Update menu is finished');
+
+    $rollback->purgeRollbackEntry();
+    $rollback->updateJob($job_id,
+      [
+        'operation' => 'update_state',
+        'state' => 'done',
+      ]
+    );
+    $logger->info('Import finished!');
   }
 
-  // Rebuild menu.
-  $menu = Menu::load('header');
-  try {
-    $menu->save();
-  } catch (\Drupal\Core\Entity\EntityStorageException $e) {
-  }
-
-  $logger->info('Import finished!');
 }
-
 
 /**
  * Implements hook_form_alter().
@@ -38,35 +77,47 @@ function soc_nextpage_form_alter(&$form, FormStateInterface $form_state, $form_i
   switch ($form_id) {
     case 'node_product_edit_form':
       $form['#validate'][] = '_soc_nextpage_validate_json_data';
+      break;
+
+    default:
+      break;
   }
 }
 
+/**
+ *
+ */
 function _soc_nextpage_validate_json_data(&$form, FormStateInterface $form_state) {
   $json_field = $form_state->getValue('field_json_product_data');
   $moderation = $form_state->getValue('moderation_state');
   $json_value = json_decode($json_field[0]["value"]);
   $field = \Drupal::service('soc_nextpage.nextpage_item_handler');
+
+  // Check UVP.
   $uvp = $field->getFieldFromJson($json_value, 'DC_P_UNIQUE_VALUE_PROPOSAL');
   if (empty($uvp) && $moderation[0]["value"] == 'published') {
     $form_state->setErrorByName('field_json_product_data',
-      t('Unique value proposal is missing from the json field, please launch an import to get the complet data'));
+      t('DC_P_UNIQUE_VALUE_PROPOSAL is missing, please launch an import to get the complete data.'));
   }
+
+  // Check Functions.
   $function = $field->getFieldFromJson($json_value, 'DC_P_FUNCTIONS');
   if (empty($function) && $moderation[0]["value"] == 'published') {
     $form_state->setErrorByName('field_json_product_data',
-      t('function is missng from the json field, please launch an import to get the complet data'));
+      t('DC_P_FUNCTIONS is missing, please launch an import to get the complete data.'));
   }
 
-
+  // Check Teaser.
   $teaser = $form_state->getValue('field_product_teaser');
   if (empty($teaser[0]["value"]) && $moderation[0]["value"] == 'published') {
     $form_state->setErrorByName('field_product_teaser',
-      t('Teaser is missng from the json field, please launch an import to get the complet data'));
+      t('Teaser is missing, please launch an import to get the complete data.'));
   }
 
+  // Check Title.
   $title = $form_state->getValue('title');
   if ($title[0]["value"] == 'TITLEPLACEHOLDER' && $moderation[0]["value"] == 'published') {
     $form_state->setErrorByName('title',
-      t('The product title is a placeholder, please enter a correct product title or launch an import'));
+      t('The product title is a placeholder, please enter a correct product title or launch an import.'));
   }
 }

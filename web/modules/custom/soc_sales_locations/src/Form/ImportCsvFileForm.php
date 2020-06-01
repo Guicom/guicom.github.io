@@ -2,8 +2,10 @@
 
 namespace Drupal\soc_sales_locations\Form;
 
+use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\soc_sales_locations\Batch\LocationsImportBatch;
 use Drupal\soc_sales_locations\Service\SalesLocationsManagerImportService;
 use Exception;
 use Symfony\Component\DependencyInjection\ContainerInterface;
@@ -16,17 +18,27 @@ class ImportCsvFileForm extends FormBase {
   /**
    * @var \Drupal\soc_sales_locations\Service\SalesLocationsManagerImportService
    */
-  private $smi;
+  protected $importManager;
 
-  public function __construct(SalesLocationsManagerImportService $smi) {
-    $this->smi = $smi;
+  /**
+   * @var \Drupal\Core\Entity\EntityTypeManagerInterface
+   */
+  protected $entityTypeManager;
+
+  public function __construct(SalesLocationsManagerImportService $import_manager,
+                              EntityTypeManagerInterface $entityTypeManager) {
+    $this->importManager = $import_manager;
+    $this->entityTypeManager = $entityTypeManager;
   }
 
   /**
    * {@inheritdoc}
    */
   public static function create(ContainerInterface $container) {
-    return new static($container->get('soc_sales_locations.manager.import'));
+    return new static(
+      $container->get('soc_sales_locations.manager.import'),
+      $container->get('entity_type.manager')
+    );
   }
 
 
@@ -43,19 +55,19 @@ class ImportCsvFileForm extends FormBase {
   public function buildForm(array $form, FormStateInterface $form_state) {
     $form['file_csv'] = [
       '#type' => 'managed_file',
-      '#title' => $this->t('File CSV'),
+      '#title' => $this->t('Import file'),
       '#weight' => '0',
       '#upload_location' => 'private://csv_files',
       '#upload_validators' => [
         'file_validate_extensions' => ['csv'],
         'file_validate_size' => [25600000],
       ],
-      '#description' => $this->t('Only CSV file.'),
+      '#description' => $this->t('CSV format.'),
       '#required' => TRUE,
     ];
     $form['submit'] = [
       '#type' => 'submit',
-      '#value' => $this->t('Submit'),
+      '#value' => $this->t('Import office locations'),
     ];
 
     return $form;
@@ -64,30 +76,16 @@ class ImportCsvFileForm extends FormBase {
   /**
    * {@inheritdoc}
    */
-  public function validateForm(array &$form, FormStateInterface $form_state) {
-    foreach ($form_state->getValues() as $key => $value) {
-      // @TODO: Validate fields.
-    }
-    parent::validateForm($form, $form_state);
-  }
-
-  /**
-   * {@inheritdoc}
-   */
   public function submitForm(array &$form, FormStateInterface $form_state) {
-    $file_id = $form_state->getValue('file_csv');
-    // @todo: avoir une injection de dépendance dans les régles de l'art.
-    /** @var \Drupal\file\Entity\File $file */
-    $file = \Drupal::service('entity_type.manager')->getStorage('file')->load($file_id[0]);
-    // @todo: avoir une injection de dépendance dans les régles de l'art.
-    /** @var \Drupal\soc_sales_locations\Service\SalesLocationsManagerImportServiceInterface $smi */
-    $smi  = \Drupal::service('soc_sales_locations.manager.import');
-    if (!$smi->validate($file)) {
-      throw new Exception('souci sur la qualité du fichier csv.');
-    }
-    $smi->importAllRow($file);
-
-    foreach ($form_state->getValues() as $key => $value) {
+    $fileId = $form_state->getValue('file_csv');
+    try {
+      $file = $this->entityTypeManager->getStorage('file')->load($fileId[0]);
+      if ($this->importManager->validate($file)) {
+        $batch = LocationsImportBatch::locationImport($file);
+        batch_set($batch);
+      }
+    } catch (Exception $e){
+      \Drupal::messenger()->addError($e->getMessage());
     }
   }
 

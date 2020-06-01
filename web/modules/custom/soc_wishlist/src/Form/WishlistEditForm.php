@@ -115,126 +115,142 @@ class WishlistEditForm extends FormBase {
 
     $exportList = (isset($_SESSION['socomec_wishlist_export'])) ? $_SESSION['socomec_wishlist_export'] : '';
     $i = 0;
-    foreach ($items as $result) {
-      if ($result['node'] instanceof Node) {
-        $extId = $result['node']->get('field_reference_extid')->value;
-        $mediaId = $result['node']->get('field_reference_picture')->target_id;
-        $picture = '';
-        if (!empty($mediaId)) {
-          $picture = $this->mediaApi->getFileUriFromMediaId($mediaId);
-        }
+    if (!empty($items) && is_array($items)) {
+      foreach ($items as $result) {
+        if ($result['node'] instanceof Node) {
+          $extId = $result['node']->get('field_reference_extid')->value;
+          $mediaId = $result['node']->get('field_reference_picture')->target_id;
+          $picture = '';
+          if (!empty($mediaId)) {
+            $picture = $this->mediaApi->getFileUriFromMediaId($mediaId);
+          }
 
-        $form['wrapper_wishlist'][$i]['extid'] = [
-          '#value' => $extId
-        ];
+          $form['wrapper_wishlist'][$i]['extid'] = [
+            '#value' => $extId
+          ];
 
-        $form['wrapper_wishlist'][$i]['picture_'.$extId] = [
+          $form['wrapper_wishlist'][$i]['picture_' . $extId] = [
             '#theme' => 'image_style',
             '#style_name' => 'thumbnail',
             '#uri' => $picture,
-        ];
+          ];
 
-        $form['wrapper_wishlist'][$i]['model_'.$extId] = [
-          '#markup' => $result['node']->get('field_reference_name')->value,
-        ];
+          $form['wrapper_wishlist'][$i]['model_' . $extId] = [
+            '#markup' => $result['node']->get('field_reference_name')->value,
+          ];
 
-        $form['wrapper_wishlist'][$i]['reference_'.$extId] = [
-          '#markup' => $result['node']->get('field_reference_ref')->value,
-        ];
+          $form['wrapper_wishlist'][$i]['reference_' . $extId] = [
+            '#markup' => $result['node']->get('field_reference_ref')->value,
+          ];
 
-        $form['wrapper_wishlist'][$i]['description_'.$extId] = [
-          '#markup' => $result['node']->getTitle(),
-        ];
+          $form['wrapper_wishlist'][$i]['description_' . $extId] = [
+            '#markup' => $result['node']->getTitle(),
+          ];
 
-        $form['wrapper_wishlist'][$i]['quantity_'.$extId] = [
-          '#type' => 'number',
-          '#title' => 'Quantity',
-          '#title_display' => 'invisible',
-          '#default_value' => $result['quantity'],
-          '#prefix' => '<div id="wishlist_quantity_wrapper_'.$extId.'">',
-          '#suffix' => '</div>',
-          '#size' => 2,
-          '#ajax' => [
-            'callback' => [$this, 'updateQuantity'],
-            'event' => 'change',
-            'progress' => ['type' => 'none'],
-            'wrapper' => 'wishlist_quantity_wrapper_'.$extId,
-          ],
-        ];
+          $form['wrapper_wishlist'][$i]['quantity_' . $extId] = [
+            '#type' => 'number',
+            '#title' => 'Quantity',
+            '#title_display' => 'invisible',
+            '#default_value' => $result['quantity'],
+            '#prefix' => '<div id="wishlist_quantity_wrapper_' . $extId . '">',
+            '#suffix' => '</div>',
+            '#size' => 2,
+            '#ajax' => [
+              'callback' => [$this, 'updateQuantity'],
+              'event' => 'change',
+              'progress' => ['type' => 'none'],
+              'wrapper' => 'wishlist_quantity_wrapper_' . $extId,
+            ],
+          ];
 
-        $default_value = [];
-        if (!empty($exportList[$extId])) {
-          $default_value = [$extId];
+          $default_value = [];
+          if (!empty($exportList[$extId])) {
+            $default_value = [$extId];
+          }
+          $form['wrapper_wishlist'][$i]['wishlist_action_' . $extId] = [
+            '#title' => 'action',
+            '#title_display' => 'invisible',
+            '#type' => 'checkboxes',
+            '#options' => [$extId => ''],
+            '#default_value' => $default_value,
+            '#ajax' => [
+              'callback' => [$this, 'updateSession'],
+              'event' => 'change',
+              'progress' => ['type' => 'none'],
+            ],
+            '#attributes' => [
+              'class' => [
+                'wishlist-action-item',
+                'soc-list-action-item',
+                'soc-list-action-item-wrapper'
+              ]
+            ]
+          ];
+          $i++;
         }
-        $form['wrapper_wishlist'][$i]['wishlist_action_'.$extId] = [
-          '#title' => 'action',
-          '#title_display' => 'invisible',
-          '#type' => 'checkboxes',
-          '#options' =>  [$extId => ''],
-          '#default_value' => $default_value,
-          '#ajax' => [
-            'callback' => [$this, 'updateSession'],
-            'event' => 'change',
-            'progress' => ['type' => 'none'],
-          ],
-          '#attributes' => ['class' => ['wishlist-action-item', 'soc-list-action-item', 'soc-list-action-item-wrapper']]
-        ];
-        $i++;
       }
-    }
 
-    $form['wrapper_wishlist']['nb'] = ['#value' => $i];
+      $form['wrapper_wishlist']['nb'] = ['#value' => $i];
 
-    $confirmRemoveClass = 'confirm-remove';
-    for ($i = 0; $i < 2; ++$i) {
-      // Export btn
-      $form['actions']['exports'][$i]['xls'] = [
-        '#type' => 'link',
-        '#title' => t('Export to an XLS file'),
-        '#url' => Url::fromRoute('soc_wishlist.export', ['type' => 'xls']),
-        "#prefix" => '<div class="dropdown-item-text">',
-        "#suffix" => '</div>'
-      ];
-
-      $form['actions']['exports'][$i]['pdf'] = [
-        '#type' => 'link',
-        '#title' => t('Export to an PDF file'),
-        '#url' => Url::fromRoute('soc_wishlist.export', ['type' => 'pdf']),
-        "#prefix" => '<div class="dropdown-item-text">',
-        "#suffix" => '</div>',
-        '#attributes' => ['target' => '_blank']
-      ];
-
-      $form['actions']['exports'][$i]['csv'] = [
-        '#type' => 'link',
-        '#title' => t('Export to an CSV file'),
-        '#url' => Url::fromRoute('soc_wishlist.export', ['type' => 'csv']),
-        "#prefix" => '<div class="dropdown-item-text">',
-        "#suffix" => '</div>'
-      ];
-
-      // Update quantity
-      if (sizeof($items)) {
-        $form['actions']['others'][$i]['remove'][$i] = [
-          '#type' => 'submit',
-          '#value' => t('Remove selected'),
-          '#ajax' => [
-            'callback' => [$this, 'removeItems'],
-            'wrapper' => 'wishlist_form_wrapper',
-            'progress' => ['type' => 'none'],
-          ],
+      $confirmRemoveClass = 'confirm-remove';
+      for ($i = 0; $i < 2; ++$i) {
+        // Export btn
+        $form['actions']['exports'][$i]['xls'] = [
+          '#type' => 'link',
+          '#title' => t('Export to an XLS file'),
+          '#url' => Url::fromRoute('soc_wishlist.export', ['type' => 'xls']),
+          "#prefix" => '<div class="dropdown-item-text">',
+          "#suffix" => '</div>'
         ];
-        $form['actions']['others'][$i]['remove'][$i]['#attributes']['class'][] = $confirmRemoveClass;
+
+        $form['actions']['exports'][$i]['pdf'] = [
+          '#type' => 'link',
+          '#title' => t('Export to an PDF file'),
+          '#url' => Url::fromRoute('soc_wishlist.export', ['type' => 'pdf']),
+          "#prefix" => '<div class="dropdown-item-text">',
+          "#suffix" => '</div>',
+          '#attributes' => ['target' => '_blank']
+        ];
+
+        $form['actions']['exports'][$i]['csv'] = [
+          '#type' => 'link',
+          '#title' => t('Export to an CSV file'),
+          '#url' => Url::fromRoute('soc_wishlist.export', ['type' => 'csv']),
+          "#prefix" => '<div class="dropdown-item-text">',
+          "#suffix" => '</div>'
+        ];
+
+        // Update quantity
+        if (sizeof($items)) {
+          $form['actions']['others'][$i]['remove'][$i] = [
+            '#type' => 'submit',
+            '#value' => t('Remove selected'),
+            '#ajax' => [
+              'callback' => [$this, 'removeItems'],
+              'wrapper' => 'wishlist_form_wrapper',
+              'progress' => ['type' => 'none'],
+            ],
+          ];
+          $form['actions']['others'][$i]['remove'][$i]['#attributes']['class'][] = $confirmRemoveClass;
+        }
       }
-    }
 
-    if (empty($this->contentListFormManager)) {
-      $this->contentListFormManager = \Drupal::service('soc_content_list.content_list_form_manager');
+      if (empty($this->contentListFormManager)) {
+        $this->contentListFormManager = \Drupal::service('soc_content_list.content_list_form_manager');
+      }
+      $this->contentListFormManager->attached($form, $confirmRemoveClass);
     }
-    $this->contentListFormManager->attached($form, $confirmRemoveClass);
-
+    else {
+      $language = \Drupal::languageManager()->getCurrentLanguage();
+      $markup = \Drupal::config('soc_wishlist.settings')->get('wishlist_no_result_' . $language->getId()) ?? t('No result');
+      $form['wrapper_wishlist']['no_result'] = [
+        '#markup' => $markup,
+      ];
+    }
     return $form;
   }
+
+
 
   /**
    * Form submission handler.
