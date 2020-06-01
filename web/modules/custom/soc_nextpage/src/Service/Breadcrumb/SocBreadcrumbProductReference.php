@@ -30,10 +30,10 @@ class SocBreadcrumbProductReference implements BreadcrumbBuilderInterface {
    * {@inheritdoc}
    */
   public function applies(RouteMatchInterface $route_match) {
-    if ($node = $route_match->getParameter('node')) {
-      if (is_object($node) && $node->bundle() === 'product_reference') {
-        return TRUE;
-      }
+    if (($node = $route_match->getParameter('node'))
+      && is_object($node)
+      && ($node->bundle() === 'product_reference')) {
+      return TRUE;
     }
     return FALSE;
   }
@@ -53,15 +53,15 @@ class SocBreadcrumbProductReference implements BreadcrumbBuilderInterface {
         $breadcrumb->addLink($family);
       }
 
-      if ($nodeParent = $this->productReference->getParentProductByProductReference($node)) {
-        if (!empty($nodeParent->getTitle()) && !empty($nodeParent->id())) {
-          $breadcrumb->addLink(Link::createFromRoute($nodeParent->getTitle(),
+      if (($nodeParent = $this->productReference->getParentProductByProductReference($node))
+        && (!empty($nodeParent->getTitle())
+        && !empty($nodeParent->id()))) {
+        $breadcrumb->addLink(Link::createFromRoute($nodeParent->getTitle(),
             'entity.node.canonical',
             ['node' => $nodeParent->id()])
           );
         }
       }
-    }
 
     // This breadcrumb builder is based on a route parameter, and hence it
     // depends on the 'route' cache context.
