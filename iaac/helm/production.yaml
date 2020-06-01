@@ -28,6 +28,9 @@ drupal:
   username: admin
   password: admin
   ingress_hostname: webfactory-drupal-prod.dpk-soc-web-cl01.doobesha.org
+  ingress_hostname_api: webfactory-drupal-prod-api.dpk-soc-web-cl01.doobesha.org
+  ingress_content_hub_hostname: contenthub-drupal-prod.dpk-soc-web-cl01.doobesha.org
+  ingress_content_hub_hostname_api: contenthub-drupal-prod-api.dpk-soc-web-cl01.doobesha.org
   files_storage_class: webfactory-prod-fast01
   files_size: 5Gi
   files_private_storage_class: webfactory-prod-fast01
