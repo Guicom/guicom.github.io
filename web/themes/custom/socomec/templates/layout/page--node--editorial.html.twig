@@ -76,7 +76,7 @@
       {% endblock %}
       {{ drupal_block('local_tasks_block') }}
       {{ drupal_block('system_breadcrumb_block') }}
-      {% include '@socomec/layout/page/hero-header.html.twig' %}
+      {% include '@socomec/layout/editorial/hero-header.html.twig' %}
     </header>
     {% if page.highlighted %}
       <div class="highlighted">
@@ -96,31 +96,17 @@
     {% endif %}
     <div id="main-wrapper" class="layout-main-wrapper clearfix">
       {% block content %}
-        <div id="main" class="{{ container }}">
-          {{ page.breadcrumb }}
-          <div class="row row-offcanvas row-offcanvas-left clearfix">
-            <main{{ content_attributes }}>
-              <section class="section">
-                <a id="main-content" tabindex="-1"></a>
-                {{ page.content|without('socomec_page_title') }}
-              </section>
-            </main>
-            {% if page.sidebar_first %}
-              <div{{ sidebar_first_attributes }}>
-                <aside class="section" role="complementary">
-                  {{ page.sidebar_first }}
-                </aside>
+        <article id="main" class="container-fluid">
+          <section class="section-light" id="news-info-section">
+            <div class="container">
+              <div class="row">
+                <div class="multiline-content">
+                  {{ drupal_field('field_multiline', 'node') }}
+                </div>
               </div>
-            {% endif %}
-            {% if page.sidebar_second %}
-              <div{{ sidebar_second_attributes }}>
-                <aside class="section" role="complementary">
-                  {{ page.sidebar_second }}
-                </aside>
-              </div>
-            {% endif %}
-          </div>
-        </div>
+            </div>
+          </section>
+        </article>
       {% endblock %}
     </div>
     {% if page.featured_bottom_first or page.featured_bottom_second or page.featured_bottom_third %}
