@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - node.type.article
+    - node.type.editorial
     - node.type.event
     - node.type.landing_page
     - node.type.news
@@ -113,6 +114,7 @@ type_settings:
       - toolbox
     node:
       - article
+      - editorial
       - event
       - landing_page
       - news

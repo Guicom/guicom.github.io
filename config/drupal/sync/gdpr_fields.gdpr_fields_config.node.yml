@@ -16,6 +16,7 @@ filenames:
   resource_youtube: ''
   article: ''
   contenu_location: ''
+  editorial: ''
 bundles:
   product:
     field_complementary_info:
@@ -1946,6 +1947,29 @@ bundles:
       rta: 'no'
       enabled: false
       anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+  editorial:
+    field_hero:
+      bundle: editorial
+      name: field_hero
+      entity_type_id: node
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: clear_anonymizer
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_multiline:
+      bundle: editorial
+      name: field_multiline
+      entity_type_id: node
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: clear_anonymizer
       notes: ''
       relationship: 0
       sars_filename: ''

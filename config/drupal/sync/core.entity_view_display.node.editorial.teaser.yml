@@ -1,0 +1,32 @@
+uuid: 5479f0a3-4f92-4802-a432-e9da5ba07217
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.editorial.field_hero
+    - field.field.node.editorial.field_multiline
+    - node.type.editorial
+  module:
+    - user
+id: node.editorial.teaser
+targetEntityType: node
+bundle: editorial
+mode: teaser
+content:
+  content_moderation_control:
+    weight: -20
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  addtoany: true
+  field_hero: true
+  field_multiline: true
+  langcode: true
+  search_api_excerpt: true
