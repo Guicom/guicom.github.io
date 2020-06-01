@@ -6,4 +6,4 @@ services:
   soc_bookmarks.bookmark_download:
     class: Drupal\soc_bookmarks\Service\Manager\BookmarkDownload
     arguments:
-      ['@soc_bookmarks.bookmark_manager', '@config.factory']
+      ['@soc_bookmarks.bookmark_manager', '@config.factory', '@messenger']

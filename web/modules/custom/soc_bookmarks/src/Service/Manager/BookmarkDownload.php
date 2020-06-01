@@ -3,6 +3,7 @@
 namespace Drupal\soc_bookmarks\Service\Manager;
 
 use Drupal\Core\Config\ConfigFactoryInterface;
+use Drupal\Core\Messenger\Messenger;
 use Drupal\node\Entity\Node;
 use Symfony\Component\HttpFoundation\BinaryFileResponse;
 use Symfony\Component\HttpFoundation\ResponseHeaderBag;
@@ -21,16 +22,22 @@ class BookmarkDownload {
   /** @var $folder */
   protected $folder;
 
+  /** @var \Drupal\Core\Messenger\Messenger $messenger */
+  protected $messenger;
+
   /**
    * BookmarkDownload constructor.
    *
    * @param \Drupal\soc_bookmarks\Service\Manager\BookmarkManager $bookmarkManager
    * @param \Drupal\Core\Config\ConfigFactoryInterface $configFactory
+   * @param \Drupal\Core\Messenger\Messenger $messenger
    */
   public function __construct(BookmarkManager $bookmarkManager,
-                              ConfigFactoryInterface $configFactory) {
+                              ConfigFactoryInterface $configFactory,
+                              Messenger $messenger) {
     $this->bookmarkManager = $bookmarkManager;
     $this->settings = $configFactory->getEditable('soc_bookmarks.settings');
+    $this->messenger = $messenger;
   }
 
   /**
@@ -98,16 +105,16 @@ class BookmarkDownload {
     }
     if ($last_route = $this->getLastReferer()) {
       $url = Url::fromRoute($last_route);
-      \Drupal::messenger()->addWarning(t('No file available. <a href="@url">Return</a>',['@url' => $url->toString()]), TRUE);
+      $this->messenger->addWarning(t('No file available. <a href="@url">Return</a>',
+        ['@url' => $url->toString()]), TRUE);
     }
     else {
-      \Drupal::messenger()->addWarning(t('No file available.'), TRUE);
+      $this->messenger->addWarning(t('No file available.'), TRUE);
     }
-    $message = [
+    return [
       '#theme' => 'status_messages',
-      '#message_list' => drupal_get_messages(),
+      '#message_list' => $this->messenger->all(),
     ];
-    return $message;
   }
 
   /**
