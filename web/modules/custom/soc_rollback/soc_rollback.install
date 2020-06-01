@@ -1,0 +1,46 @@
+<?php
+
+/**
+ * @file
+ * Contains soc_rollback.install.
+ */
+
+
+use Drupal\Core\Database\Database;
+
+/**
+ * Implements hook_schema().
+ */
+function soc_rollback_schema() {
+  $shema['soc_rollback_items'] = [
+    'description' => 'All entities processed during import',
+    'fields' => [
+      'items_id' => [
+        'description' => 'Items ID',
+        'type' => 'serial',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ],
+      'entity_type' => [
+        'description' => 'Entity type.',
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+        'default' => '',
+      ],
+      'entity_id' => [
+        'description' => 'Entity ID.',
+        'type' => 'text',
+        'not null' => TRUE,
+      ],
+      'entity_statut' => [
+        'description' => 'New or updated entity.',
+        'type' => 'text',
+        'not null' => TRUE,
+      ],
+    ],
+    'primary key' => ['items_id'],
+  ];
+
+  return $shema;
+}

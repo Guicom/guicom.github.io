@@ -1,6 +1,20 @@
 // GLOBAL RENDERING
 .block-promotion-entity {
   &.block-promotion-entity-custom {
+    position: relative;
+    .global-link {
+      transition: $transition02;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      text-indent: -99999px;
+      &:hover {
+        box-shadow: $box-shadow-card-list;
+        transition: $transition02;
+      }
+    }
     .soc-block-promo-entity-content {
       // background color in combination settings
       padding: 4.6rem 2.5rem 5rem 2.5rem;
@@ -154,7 +168,7 @@
 // Col-10 & Fullscreen RENDERING
 .soc-10-col,
 .soc-fullscreen {
-  @include media-breakpoint-up(md) {
+  @include media-breakpoint-up(lg) {
     .block-promotion-entity {
       &.block-promotion-entity-custom {
         .soc-block-promo-entity-content {
@@ -167,20 +181,34 @@
             .soc-block-promo-entity-picto {
               margin-right: 1.875rem;
             }
+            .soc-block-promo-entity-sub-title {
+              font-size: $font-size-h5;
+              font-weight: 300;
+            }
           }
         }
-        .soc-block-promo-entity-link {
-          .back-to-button {
-            padding: 1rem 1.25rem;
-          }
+      }
+    }
+  }
+  .block-promotion-entity {
+    &.block-promotion-entity-custom {
+      .soc-block-promo-entity-link {
+        @include media-breakpoint-down(md) {
+          margin-top: 3.5rem;
         }
-        // COLOR 1 FOR 10 COL BTN
+        .back-to-button {
+          font-size: $font-size-sm;
+        }
+      }
+      // COLOR 1 FOR 10 COL BTN
+      @include media-breakpoint-up(sm) {
         &.color-combination-1 {
           .soc-block-promo-entity-link {
             .back-to-button {
               transition: 0.2s;
               background: $blue_light;
               color: $white;
+              padding: 1rem 1.25rem;
               &:hover{
                 background: lighten($blue_light,6%);
                 transition: 0.2s;
@@ -200,6 +228,7 @@
               transition: 0.2s;
               background: $white;
               color: $blue;
+              padding: 1rem 1.25rem;
               &:hover{
                 background: darken($white,6%);
                 transition: 0.2s;
@@ -219,6 +248,7 @@
               transition: 0.2s;
               background: $blue;
               color: $white;
+              padding: 1rem 1.25rem;
               &:hover{
                 background: lighten($blue,6%);
                 transition: 0.2s;
@@ -238,6 +268,7 @@
               transition: 0.2s;
               background: $white;
               color: $blue;
+              padding: 1rem 1.25rem;
               &:hover{
                 background: darken($white,6%);
                 transition: 0.2s;

@@ -707,15 +707,20 @@
   };
 
   /**
-   * Rendering multiligne fullscreen
+   * Rendering multiligne promo coldisplay
    */
-  Drupal.behaviors.socomec_soc_fullscreen = {
+  Drupal.behaviors.socomec_soc_promo_coldisplay = {
     attach: function (context, settings) {
 
       $(document).ready(function() {
-        if ($(".paragraph").hasClass("soc-fullscreen")) {
-          console.log(this);
+        $(".soc-10-col").addClass("col-md-10 offset-md-1");
+
+        var paragraph = $('.paragraph');
+        if (paragraph.hasClass("soc-fullscreen")) {
           $(".soc-fullscreen").parents(".field__item").addClass('fullscreen-parent');
+        }
+        if (paragraph.hasClass("soc-10-col")) {
+          $(".soc-10-col").parents(".field__item").addClass('container');
         }
       });
     }

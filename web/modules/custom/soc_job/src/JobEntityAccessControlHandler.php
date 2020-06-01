@@ -31,6 +31,9 @@ class JobEntityAccessControlHandler extends EntityAccessControlHandler {
 
       case 'delete':
         return AccessResult::allowedIfHasPermission($account, 'delete job entities');
+
+      default:
+        break;
     }
 
     // Unknown operation, no opinion.

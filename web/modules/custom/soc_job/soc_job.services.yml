@@ -1,0 +1,3 @@
+services:
+  soc_job.job_manager:
+    class: Drupal\soc_job\Service\Manager\JobManager

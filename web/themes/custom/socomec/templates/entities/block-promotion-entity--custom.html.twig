@@ -28,6 +28,12 @@
   ]
   %}
   <div{{ attributes.addClass(classes) }}>
+    {% set url = content.field_link.0['#url'] %}
+    {% set text = content.field_link.0['#title'] %}
+    {% if content.field_link_target %}
+      {% set target = content.field_link_target['#items'].0.value %}
+    {% endif %}
+    <a class="global-link" href="{{ url }}"{% if target %} target="{{ target }}{% endif %}"></a>
     {% if content.field_background_image|render|trim is not empty %}
       {% set field_background_image = content.field_background_image %}
       {% set image_uri = field_background_image['#items'].entity.field_media_image.0.entity.uri.value %}
@@ -55,11 +61,6 @@
         </div>
       </div>
       <div class="soc-block-promo-entity-link">
-        {% set url = content.field_link.0['#url'] %}
-        {% set text = content.field_link.0['#title'] %}
-        {% if content.field_link_target %}
-          {% set target = content.field_link_target['#items'].0.value %}
-        {% endif %}
         <a class="back-to-button" href="{{ url }}"{% if target %} target="{{ target }}{% endif %}">{% include '/themes/custom/socomec/assets/images/picto/ui/chevron-right-circle.svg' %}{{ text }}</a>
       </div>
     </div>

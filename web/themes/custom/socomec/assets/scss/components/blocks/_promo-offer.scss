@@ -7,6 +7,21 @@
 // GLOBAL RENDERING
 .block-promotion-entity {
   &.block-promotion-entity-offer {
+    position: relative;
+    .global-link {
+      transition: $transition02;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      text-indent: -99999px;
+      z-index: 20;
+      &:hover {
+        box-shadow: $box-shadow-card-list;
+        transition: $transition02;
+      }
+    }
     // TOP SECTION
     .soc-block-promo-entity-header {
       background: $white;
@@ -34,13 +49,13 @@
     // BOTTOM SECTION
     .soc-block-promo-entity-content {
       background-size: cover;
-      .soc-block-promo-entity-teaser {
+      .soc-block-promo-entity-description{
         font-family: $font-roboto;
         font-size: $font-size-h4;
         font-weight: 300;
         color: $white;
       }
-      .soc-block-promo-entity-description {
+      .soc-block-promo-entity-teaser {
         font-family: $font-poppins;
         font-size: $font-size-xs;
         font-weight: 500;
@@ -53,7 +68,7 @@
           font-size: $font-size-xs;
           letter-spacing: 1px;
           text-transform: uppercase;
-          font-weight: 500;
+          font-weight: 600;
           svg {
             margin-right: 3px;
             g {
@@ -80,14 +95,14 @@
       // TOP SECTION
       .soc-block-promo-entity-header {
         padding-top: 1rem;
-        padding-left: 1rem;
-        padding-right: 1rem;
+        padding-left: 1.25rem;
+        padding-right: 1.25rem;
         .soc-block-promo-entity-sub-title {
-          margin-bottom: 2rem;
         }
         .soc-block-promo-entity-central-image {
           position: relative;
           z-index: 10;
+          top: 60px;
           &:before {
             content: '';
             position: absolute;
@@ -113,7 +128,6 @@
       // BOTTOM SECTION
       .soc-block-promo-entity-content {
         position: relative;
-        top: -5rem;
         padding-top: 6.5rem;
         padding-bottom: 1rem;
         &:after {
@@ -126,22 +140,23 @@
           background: $blue;
           opacity: 0.8;
         }
-        .soc-block-promo-entity-teaser {
+        .soc-block-promo-entity-description {
           display: none;
           position: relative;
           z-index: 10;
-          padding: 0 1rem;
+          padding: 0 1.25rem;
         }
-        .soc-block-promo-entity-description {
+        .soc-block-promo-entity-teaser {
           position: relative;
           z-index: 10;
           margin-bottom: 1.5rem;
-          padding: 0 1rem;
+          padding: 0 1.25rem;
         }
         .soc-block-promo-entity-link {
           position: relative;
           z-index: 10;
-          padding: 0 1rem;
+          padding: 0 1.25rem;
+          text-align: left;
         }
       }
     }
@@ -161,11 +176,12 @@
         // TOP SECTION
         .soc-block-promo-entity-header {
           display: flex;
-          padding-top: 1rem;
+          padding-top: 2rem;
           padding-left: 2rem;
           padding-right: 1rem;
           .soc-block-promo-entity-external-title {
             padding-left: 15.5rem;
+            padding-bottom: 5rem;
             font-size: $font-size-h4;
           }
           .soc-block-promo-entity-sub-title {
@@ -179,7 +195,7 @@
           .soc-block-promo-entity-central-image {
             position: absolute;
             z-index: 10;
-            top: 45px;
+            top: 80px;
             left: 60px;
             div:first-child {
               width: 13.125rem;
@@ -203,7 +219,6 @@
         // BOTTOM SECTION
         .soc-block-promo-entity-content {
           position: relative;
-          top: 4rem;
           padding-top: 1.5rem;
           padding-bottom: 3rem;
           &:after {
@@ -216,7 +231,7 @@
             background: $blue;
             opacity: 0.8;
           }
-          .soc-block-promo-entity-teaser {
+          .soc-block-promo-entity-description {
             display: block;
             position: relative;
             min-height: 2rem;
@@ -226,7 +241,7 @@
             padding-left: 17.5rem;
             margin-bottom: 0.5rem;
           }
-          .soc-block-promo-entity-description {
+          .soc-block-promo-entity-teaser {
             position: absolute;
             top: -70px;
             z-index: 10;
@@ -269,11 +284,11 @@
         .soc-block-promo-entity-content {
           top: 1rem;
           padding-top: 3.5rem;
-          .soc-block-promo-entity-teaser {
+          .soc-block-promo-entity-description {
             padding-left: 1rem;
             padding-top: 5rem;
           }
-          .soc-block-promo-entity-description {
+          .soc-block-promo-entity-teaser {
             color: $white;
             top: 20px;
           }

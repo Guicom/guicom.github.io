@@ -16,7 +16,7 @@ interface NextpageApiInterface {
    *
    * @return string
    */
-  public function generateApiToken(): string;
+  public function generateApiToken(): object ;
 
   public function elementsAndLinks(array $extIds, $paths, $dcExtIds);
 

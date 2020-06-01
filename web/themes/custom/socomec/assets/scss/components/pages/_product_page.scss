@@ -755,7 +755,7 @@ body.node--type-product {
 
   .field--name-field-product-multiline {
     > .field__item {
-      > div:not(.paragraph--type-content) {
+      > div:not(.paragraph--type-content):not(.paragraph--type--model-promo-block) {
         @include make-container-max-widths();
         margin-right: auto;
         margin-left: auto;
