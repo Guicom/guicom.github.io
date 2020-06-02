@@ -6,7 +6,9 @@ dependencies:
     - core.entity_view_mode.node.teaser
     - field.field.node.product.field_associated_products
     - field.field.node.product.field_background_hero_block
+    - field.field.node.product.field_extid
     - field.field.node.product.field_json_product_data
+    - field.field.node.product.field_multiline
     - field.field.node.product.field_multiline_anchor_name
     - field.field.node.product.field_product_advantage_text
     - field.field.node.product.field_product_application_label
@@ -15,23 +17,22 @@ dependencies:
     - field.field.node.product.field_product_cta_2
     - field.field.node.product.field_product_cta_3
     - field.field.node.product.field_product_cta_4
-    - field.field.node.product.field_product_extid
     - field.field.node.product.field_product_family
-    - field.field.node.product.field_product_multiline
     - field.field.node.product.field_product_new
     - field.field.node.product.field_product_orc_content
     - field.field.node.product.field_product_orc_title
     - field.field.node.product.field_product_pictures
     - field.field.node.product.field_product_reference
     - field.field.node.product.field_product_status
-    - field.field.node.product.field_product_teaser
     - field.field.node.product.field_promo_block_paragraph
     - field.field.node.product.field_protection_level
     - field.field.node.product.field_standard_label
+    - field.field.node.product.field_teaser
     - field.field.node.product.update_new_statut
     - node.type.product
   module:
     - ds
+    - text
     - user
 third_party_settings:
   ds:
@@ -41,6 +42,7 @@ third_party_settings:
       disable_css: false
       entity_classes: all_classes
       settings:
+        label: ''
         wrappers:
           ds_content: div
         outer_wrapper: div
@@ -56,7 +58,7 @@ third_party_settings:
         - update_new_statut
         - field_product_pictures
         - node_title
-        - field_product_teaser
+        - field_teaser
     fields:
       node_title:
         plugin_id: node_title
@@ -98,9 +100,9 @@ content:
             lb: ''
             lb-col: false
             classes: {  }
-  field_product_teaser:
-    type: basic_string
-    weight: 4
+  field_teaser:
+    type: text_default
+    weight: 5
     region: ds_content
     label: hidden
     settings: {  }
@@ -126,9 +128,11 @@ hidden:
   addtoany: true
   field_associated_products: true
   field_background_hero_block: true
+  field_extid: true
   field_family_first_level: true
   field_family_second_level: true
   field_json_product_data: true
+  field_multiline: true
   field_multiline_anchor_name: true
   field_product_advantage_text: true
   field_product_application_label: true
@@ -137,9 +141,7 @@ hidden:
   field_product_cta_2: true
   field_product_cta_3: true
   field_product_cta_4: true
-  field_product_extid: true
   field_product_family: true
-  field_product_multiline: true
   field_product_new: true
   field_product_orc_content: true
   field_product_orc_title: true

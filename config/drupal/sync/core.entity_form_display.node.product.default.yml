@@ -5,7 +5,9 @@ dependencies:
   config:
     - field.field.node.product.field_associated_products
     - field.field.node.product.field_background_hero_block
+    - field.field.node.product.field_extid
     - field.field.node.product.field_json_product_data
+    - field.field.node.product.field_multiline
     - field.field.node.product.field_multiline_anchor_name
     - field.field.node.product.field_product_advantage_text
     - field.field.node.product.field_product_application_label
@@ -14,19 +16,17 @@ dependencies:
     - field.field.node.product.field_product_cta_2
     - field.field.node.product.field_product_cta_3
     - field.field.node.product.field_product_cta_4
-    - field.field.node.product.field_product_extid
     - field.field.node.product.field_product_family
-    - field.field.node.product.field_product_multiline
     - field.field.node.product.field_product_new
     - field.field.node.product.field_product_orc_content
     - field.field.node.product.field_product_orc_title
     - field.field.node.product.field_product_pictures
     - field.field.node.product.field_product_reference
     - field.field.node.product.field_product_status
-    - field.field.node.product.field_product_teaser
     - field.field.node.product.field_promo_block_paragraph
     - field.field.node.product.field_protection_level
     - field.field.node.product.field_standard_label
+    - field.field.node.product.field_teaser
     - field.field.node.product.update_new_statut
     - node.type.product
     - workflows.workflow.editorial
@@ -59,11 +59,12 @@ third_party_settings:
       children:
         - field_json_product_data
         - title
-        - field_product_teaser
+        - field_teaser
         - field_product_pictures
         - field_protection_level
         - field_standard_label
         - field_product_extid
+        - field_extid
         - field_product_status
         - field_product_family
       parent_name: group_tabs
@@ -158,7 +159,7 @@ third_party_settings:
     group_multiline:
       children:
         - field_multiline_anchor_name
-        - field_product_multiline
+        - field_multiline
       parent_name: group_webmastering
       weight: 7
       format_type: tab
@@ -211,6 +212,14 @@ content:
       media_types: {  }
     third_party_settings: {  }
     region: content
+  field_extid:
+    weight: 9
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
   field_json_product_data:
     weight: 2
     settings:
@@ -218,6 +227,18 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: string_textarea
+    region: content
+  field_multiline:
+    weight: 10
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+    type: entity_reference_paragraphs
     region: content
   field_multiline_anchor_name:
     weight: 8
@@ -303,31 +324,11 @@ content:
       default_paragraph_type: ''
     third_party_settings: {  }
     region: content
-  field_product_extid:
-    weight: 8
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-    type: string_textfield
-    region: content
   field_product_family:
-    weight: 12
+    weight: 11
     settings: {  }
     third_party_settings: {  }
     type: options_buttons
-    region: content
-  field_product_multiline:
-    type: entity_reference_paragraphs
-    weight: 9
-    settings:
-      title: Paragraph
-      title_plural: Paragraphs
-      edit_mode: closed
-      add_mode: dropdown
-      form_display_mode: default
-      default_paragraph_type: _none
-    third_party_settings: {  }
     region: content
   field_product_orc_content:
     weight: 27
@@ -372,7 +373,7 @@ content:
     type: entity_reference_autocomplete
     region: content
   field_product_status:
-    weight: 9
+    weight: 10
     settings:
       match_operator: CONTAINS
       size: 60
@@ -380,14 +381,6 @@ content:
       match_limit: 10
     third_party_settings: {  }
     type: entity_reference_autocomplete
-    region: content
-  field_product_teaser:
-    weight: 4
-    settings:
-      rows: 5
-      placeholder: ''
-    third_party_settings: {  }
-    type: string_textarea
     region: content
   field_promo_block_paragraph:
     type: entity_reference_paragraphs
@@ -422,6 +415,16 @@ content:
       form_display_mode: default
       default_paragraph_type: ''
     third_party_settings: {  }
+    region: content
+  field_teaser:
+    weight: 4
+    settings:
+      rows: 9
+      summary_rows: 3
+      placeholder: ''
+      show_summary: false
+    third_party_settings: {  }
+    type: text_textarea_with_summary
     region: content
   langcode:
     type: language_select

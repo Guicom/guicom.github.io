@@ -1,14 +1,16 @@
-uuid: b658f0b3-0af1-4adf-9146-4b9961ccf6ce
+uuid: f6542c6e-85eb-4059-b479-bebd63674b5b
 langcode: en
 status: true
 dependencies:
   module:
-    - node
-id: node.field_product_teaser
-field_name: field_product_teaser
-entity_type: node
-type: string_long
+    - taxonomy
+id: taxonomy_term.field_extid
+field_name: field_extid
+entity_type: taxonomy_term
+type: string
 settings:
+  max_length: 255
+  is_ascii: false
   case_sensitive: false
 module: core
 locked: false

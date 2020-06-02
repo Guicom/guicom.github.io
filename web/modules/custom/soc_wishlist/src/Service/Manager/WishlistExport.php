@@ -3,6 +3,7 @@
 namespace Drupal\soc_wishlist\Service\Manager;
 
 use Drupal\Core\Config\ConfigFactoryInterface;
+use Drupal\Core\Logger\LoggerChannelFactoryInterface;
 use Drupal\node\Entity\Node;
 use Drupal\soc_pdf\Service\SocPdfTCPDF;
 use PhpOffice\PhpSpreadsheet\Writer\Exception;
@@ -27,16 +28,23 @@ class WishlistExport {
   /** @var $settings */
   protected $settings;
 
+  /** @var $logger */
+  protected $logger;
+
   /**
    * WishlistExport constructor.
    *
    * @param \Drupal\soc_wishlist\Service\Manager\WishlistManager $wishlistManager
    * @param \Drupal\Core\Config\ConfigFactoryInterface $configFactory
+   * @param \Drupal\Core\Logger\LoggerChannelFactoryInterface $channel_factory
    */
   public function __construct(WishlistManager $wishlistManager,
-                              ConfigFactoryInterface $configFactory) {
+                              ConfigFactoryInterface $configFactory,
+                              LoggerChannelFactoryInterface $channel_factory
+  ) {
     $this->wishlistManager = $wishlistManager;
     $this->settings = $configFactory->getEditable('soc_wishlist.settings');
+    $this->logger = $channel_factory->get('soc_wishlist');
   }
 
   /**
@@ -79,14 +87,18 @@ class WishlistExport {
 
           return $this->exportXLS($response, $writerType, $items);
         } catch (Exception $e) {
+          $this->logger->error($e->getMessage());
         } catch (\PhpOffice\PhpSpreadsheet\Exception $e) {
+          $this->logger->error($e->getMessage());
         }
         break;
       case 'pdf':
         try {
           return $this->exportPDF($items);
         } catch (Exception $e) {
+          $this->logger->error($e->getMessage());
         } catch (\PhpOffice\PhpSpreadsheet\Exception $e) {
+          $this->logger->error($e->getMessage());
         }
         break;
       default:
@@ -130,7 +142,7 @@ class WishlistExport {
     }
 
     $content = implode(PHP_EOL, $csvData);
-    $bom = ( chr(0xEF) . chr(0xBB) . chr(0xBF) );
+    $bom = (chr(0xEF) . chr(0xBB) . chr(0xBF));
     $content = $bom . $content;
     $response->setContent($content);
     return $response;

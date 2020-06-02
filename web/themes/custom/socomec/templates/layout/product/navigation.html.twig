@@ -15,7 +15,7 @@
           <a href="#product-advantage-section">{{ 'Advantages' |t }}</a>
         </div>
       {%  endif %}
-      {% if drupal_field('field_product_multiline', 'node')[0] %}
+      {% if drupal_field('field_multiline', 'node')[0] %}
         <div class="product-nav-item">
           <a href="#product-multiline-section">{{ drupal_field('field_multiline_anchor_name', 'node') }}</a>
         </div>

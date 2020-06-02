@@ -143,6 +143,7 @@ module:
   soc_default_images: 0
   soc_eu_cookie_compliance: 0
   soc_events: 0
+  soc_heartbeat: 0
   soc_iframe_redirect: 0
   soc_job: 0
   soc_multisite: 0
@@ -152,6 +153,7 @@ module:
   soc_pdf_content: 0
   soc_premium_content: 0
   soc_resource_center: 0
+  soc_rollback: 0
   soc_sales_locations: 0
   soc_search: 0
   soc_store_locator: 0

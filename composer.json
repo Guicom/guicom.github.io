@@ -203,7 +203,8 @@
                 "Add taxonomy menu compatibnilty": "./patches/we_mega_menu_menu_taxonmy_integration.patch"
             },
             "drupal/ultimate_cron": {
-                "port drush commands to drush 9.x": "https://www.drupal.org/files/issues/2020-03-21/2912724-21.patch"
+                "port drush commands to drush 9.x": "https://www.drupal.org/files/issues/2020-03-21/2912724-21.patch",
+                "#2977639 Ability to unlock a cron job": "https://www.drupal.org/files/issues/2020-01-31/2977639-7.patch"
             },
             "drupal/search_api_solr": {
                 "Autocomplete suggestions fail for large requests : TO FOLLOW FOR UPDATED ISSUE !": "https://www.drupal.org/files/issues/2020-01-30/search_api_solr-3109911-8.patch"

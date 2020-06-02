@@ -16,7 +16,7 @@ Feature: News
       | language | name        |
       | English  | MyNewsTheme |
     And news content:
-      | language | title                                 | field_teaser           | field_news_video |field_country |	field_news_mommentum | field_news_audience | status | moderation_state |
+      | language | title                                 | field_teaser           | field_news_video |field_country | field_news_mommentum | field_news_audience | status | moderation_state |
       | English  | Socomec certified ISO-14001 in Alsace | Test behat news teaser | 0                |France        | MyNewsMommentum      | MyNewsAudience      | 1      | published        |
     And I visit "/admin/config/search/search-api/index/news"
     And I press "Index now"
@@ -59,10 +59,10 @@ Feature: News
     And I fill in "media[0][fields][field_media_image][0][alt]" with "Image alt"
     And I click the ".ui-dialog button + button" element
     And I wait max 10 seconds for AJAX to finish
-    And I click the "#edit-field-body-add-more li.dropbutton-toggle button" element
-    And I press the "field_body_model_text_add_more" button
+    And I click the "#edit-field-multiline-add-more li.dropbutton-toggle button" element
+    And I press the "field_multiline_model_text_add_more" button
     And I wait 4 seconds
-    And I fill in "field_body[0][subform][field_title][0][value]" with "Text title"
+    And I fill in "field_multiline[0][subform][field_title][0][value]" with "Text title"
     And I wait 2 seconds
     And I press "edit-submit"
     And I visit "/news/socomec-certified-iso-14001-alsace"

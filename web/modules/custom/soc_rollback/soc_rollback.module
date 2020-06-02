@@ -1,0 +1,24 @@
+<?php
+
+/**
+ * @file
+ * Contains soc_rollback.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function soc_rollback_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the soc_rollback module.
+    case 'help.page.soc_rollback':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Rollback module') . '</p>';
+      return $output;
+
+    default:
+  }
+}
