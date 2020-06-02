@@ -12,7 +12,7 @@ Feature: Reference_product
 
   @api @cit @javascript @product_reference @product_reference_page
     # testing the presence of reference title, number and short description SOCSOB-1183
- # vendor/bin/phing behat:run -Dbehat.tags=product_reference_page
+    # ./vendor/bin/phing behat:run -Dbehat.tags=product_reference_page
   Scenario: Reference page
     Given I am an anonymous user
     When I visit "/behatRefProd"
@@ -26,9 +26,21 @@ Feature: Reference_product
 
   @api @cit @javascript @product_reference @product_reference_cta
     # testing the presence of the four CTA paragraph SOCSOB-1177
- # vendor/bin/phing behat:run -Dbehat.tags=product_reference_cta
+    # ./vendor/bin/phing behat:run -Dbehat.tags=product_reference_cta
   Scenario: Reference cta
     And I am logged in as a user with the "administrator" role
+    And I go to "admin/content/paragraphs/add/default"
+    And I fill in "label[0][value]" with "cta test ref"
+    And I click the "#edit-paragraphs-add-more li.dropbutton-toggle button" element
+    And I press the "paragraphs_link_add_more" button
+    And I fill in "paragraphs[0][subform][field_link_title][0][value]" with "cta test ref"
+    And I press the "field_link_icon-media-library-open-button-paragraphs-0-subform" button
+    And I attach the file "icons/ask-pricing.svg" to "files[upload]"
+    And I wait for AJAX to finish
+    And I fill in "media[0][fields][field_media_image][0][alt]" with "Image alt"
+    And I click the ".ui-dialog button + button" element
+    And I fill in "paragraphs[0][subform][field_link_link][0][value]" with "/url"
+    And I press "edit-submit"
     And I go to "admin/content"
     And I click "Edit" in the "behatRefProd" row
     And I wait 1 seconds
@@ -36,24 +48,16 @@ Feature: Reference_product
     And I wait 1 seconds
     And I click the "#edit-field-product-cta-1-add-more-add-more-button-link" element
     And I wait 1 seconds
-    And I select "Label: Product reference - Add to my bom" from "field_product_cta_1[0][subform][field_link_paragraph]"
-    And I click the "#edit-field-product-cta-2-add-more-add-more-button-link" element
-    And I wait 1 seconds
-    And I select "Label: Product reference - Find a dealer" from "field_product_cta_2[0][subform][field_link_paragraph]"
-    And I click the "#edit-field-product-cta-3-add-more-add-more-button-link" element
-    And I wait 1 seconds
-    And I select "Label: Product reference - Ask an expert" from "field_product_cta_3[0][subform][field_link_paragraph]"
-    And I click the "#edit-field-product-cta-4-add-more-add-more-button-link" element
-    And I wait 1 seconds
-    And I select "Label: Product reference - Ready to buy" from "field_product_cta_4[0][subform][field_link_paragraph]"
+    And I select "cta test ref" from "field_product_cta_1[0][subform][field_link_paragraph]"
     And I wait 1 seconds
     And I press "edit-submit"
     And I go to "admin/content"
     And I click "behatRefProd" in the "behatRefProd" row
+    Then I should see an ".field--name-field-product-cta-1" element
 
   @api @cit @javascript @product_reference @product_reference_multiligne
     # add a multiligne element on a product reference page SOCSOB-1141
- # vendor/bin/phing behat:run -Dbehat.tags=product_reference_multiligne
+    # ./vendor/bin/phing behat:run -Dbehat.tags=product_reference_multiligne
   Scenario: Reference multiligne
     And I am logged in as a user with the "administrator" role
     And I go to "admin/content"
@@ -70,7 +74,7 @@ Feature: Reference_product
 
   @api @cit @javascript @product_reference @product_reference_cad
     # testing access to cad files from product reference page SOCSOB-575
- # vendor/bin/phing behat:run -Dbehat.tags=product_reference_cad
+    # ./vendor/bin/phing behat:run -Dbehat.tags=product_reference_cad
   Scenario: Reference cad
     Given I am an anonymous user
     When I visit "/behatRefProd"
@@ -87,16 +91,16 @@ Feature: Reference_product
     And I fill in "company" with "test behat company"
     And I select "France" from "country"
     And I fill in "zipcode" with "67500"
-    And I wait max 20 seconds for AJAX to finish
+    And I wait max 30 seconds for AJAX to finish
     And I press "Continue"
-    And I wait max 20 seconds for AJAX to finish
+    And I wait max 30 seconds for AJAX to finish
     And I should see a ".submitted-page" element
     And I wait 5 seconds
     When I visit "/behatRefProd"
 
   @api @cit @javascript @product_reference @product_reference_characteristic
     #testing characteristic table SOCSOB-1192 / SOCSOB-1192
- # vendor/bin/phing behat:run -Dbehat.tags=product_reference_characteristic
+    # ./vendor/bin/phing behat:run -Dbehat.tags=product_reference_characteristic
   Scenario: Reference characteristic
     And I am logged in as a user with the "administrator" role
     And I go to "admin/content"
@@ -109,7 +113,7 @@ Feature: Reference_product
 
   @api @cit @javascript @product_reference @product_reference_nocadmodel
     #testing products and references default picture SOCSOB-995
- # vendor/bin/phing behat:run -Dbehat.tags=product_reference_nocadmodel
+    # ./vendor/bin/phing behat:run -Dbehat.tags=product_reference_nocadmodel
   Scenario: Reference no cad model
     And I am logged in as a user with the "administrator" role
     And I go to "admin/content"
@@ -122,8 +126,8 @@ Feature: Reference_product
     And I should see a "img.default-img-product-reference" element
 
   @api @cit @javascript @product_reference @product_reference_btnback
- # vendor/bin/phing behat:run -Dbehat.tags=product_reference_btnback
     #testing navigate back to product page SOCSOB-478
+    # ./vendor/bin/phing behat:run -Dbehat.tags=product_reference_btnback
   Scenario: Reference no cad model
     And I am logged in as a user with the "administrator" role
     And I go to "admin/content"
