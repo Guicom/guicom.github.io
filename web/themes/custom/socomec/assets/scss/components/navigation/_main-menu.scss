@@ -47,6 +47,9 @@
                 position: initial;
                 height: 60px;
                 border: 0;
+                @include media-breakpoint-down(lg) {
+                  padding: 0.5rem 0.75rem;
+                }
                 &:before,
                 &:after {
                   display: none;
