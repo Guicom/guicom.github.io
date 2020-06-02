@@ -4,13 +4,15 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.promoted_content
-    - field.field.node.landing_page.field_body
     - field.field.node.landing_page.field_client_name
+    - field.field.node.landing_page.field_country
     - field.field.node.landing_page.field_footer_version
     - field.field.node.landing_page.field_hero_paragraph
     - field.field.node.landing_page.field_metatags
+    - field.field.node.landing_page.field_multiline
     - field.field.node.landing_page.field_pardot_form
     - field.field.node.landing_page.field_premium_content_type
+    - field.field.node.landing_page.field_resource
     - node.type.landing_page
   module:
     - ds
@@ -100,10 +102,10 @@ content:
 hidden:
   addtoany: true
   content_moderation_control: true
-  field_body: true
   field_country: true
   field_footer_version: true
   field_metatags: true
+  field_multiline: true
   field_resource: true
   langcode: true
   layout_builder__layout: true

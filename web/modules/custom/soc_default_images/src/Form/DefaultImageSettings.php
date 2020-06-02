@@ -74,6 +74,12 @@ class DefaultImageSettings extends ConfigFormBase {
           'default_image_bloc_promo_toolbox' => t('Default image bloc promo toolbox'),
         ]
       ],
+      'hero_paragraph' => [
+        'label' =>  t('Default image by hero paragraph'),
+        'fields' =>  [
+          'default_background_image_hero_type_1' => t('Default background image - Hero type 1'),
+        ]
+      ],
     ];
 
     foreach ($items as $key_item => $item) {
@@ -113,6 +119,7 @@ class DefaultImageSettings extends ConfigFormBase {
                'default_image_bloc_promo_offer',
                'default_image_bloc_promo_digital_asset',
                'default_image_bloc_promo_toolbox',
+               'default_background_image_hero_type_1',
              ] as $configKey) {
 
       $form_file = $form_state->getValue($configKey, 0);

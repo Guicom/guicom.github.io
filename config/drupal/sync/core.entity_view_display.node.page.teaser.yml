@@ -5,6 +5,8 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.page.body
+    - field.field.node.page.field_hero
+    - field.field.node.page.field_table
     - node.type.page
   module:
     - text
@@ -29,10 +31,16 @@ content:
     settings:
       trim_length: 600
     third_party_settings: {  }
+  content_moderation_control:
+    weight: -20
+    settings: {  }
+    third_party_settings: {  }
+    region: content
   links:
     weight: 101
     region: content
 hidden:
+  field_hero: true
   field_table: true
   langcode: true
   search_api_excerpt: true

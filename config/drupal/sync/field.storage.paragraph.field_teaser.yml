@@ -1,13 +1,13 @@
-uuid: 5623c9b4-80c6-4e6d-a5ba-ba74cebc56d8
+uuid: e364645c-0426-459f-9bd8-25d5f5309540
 langcode: en
 status: true
 dependencies:
   module:
-    - node
+    - paragraphs
     - text
-id: node.field_event_teaser
-field_name: field_event_teaser
-entity_type: node
+id: paragraph.field_teaser
+field_name: field_teaser
+entity_type: paragraph
 type: text_with_summary
 settings: {  }
 module: text

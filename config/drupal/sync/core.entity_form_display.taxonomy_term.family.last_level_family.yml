@@ -5,7 +5,7 @@ dependencies:
   config:
     - core.entity_form_mode.taxonomy_term.last_level_family
     - field.field.taxonomy_term.family.field_background_image
-    - field.field.taxonomy_term.family.field_family_extid
+    - field.field.taxonomy_term.family.field_extid
     - field.field.taxonomy_term.family.field_family_first_multiline
     - field.field.taxonomy_term.family.field_family_image
     - field.field.taxonomy_term.family.field_family_menu_icon
@@ -29,9 +29,9 @@ content:
       placeholder: ''
       rows: 5
     third_party_settings: {  }
-  field_family_extid:
+  field_extid:
     type: string_textfield
-    weight: 4
+    weight: 5
     region: content
     settings:
       size: 60
@@ -54,7 +54,7 @@ content:
     region: content
   langcode:
     type: language_select
-    weight: 5
+    weight: 6
     region: content
     settings:
       include_locked: true
@@ -69,7 +69,7 @@ content:
     third_party_settings: {  }
   path:
     type: path
-    weight: 6
+    weight: 7
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -77,7 +77,7 @@ content:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 100
+    weight: 8
     region: content
     third_party_settings: {  }
 hidden:

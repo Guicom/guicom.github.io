@@ -1,12 +1,12 @@
-uuid: b658f0b3-0af1-4adf-9146-4b9961ccf6ce
+uuid: 946b4059-d10a-4b4c-85ed-b69ec857c85c
 langcode: en
 status: true
 dependencies:
   module:
-    - node
-id: node.field_product_teaser
-field_name: field_product_teaser
-entity_type: node
+    - paragraphs
+id: paragraph.field_subtitle
+field_name: field_subtitle
+entity_type: paragraph
 type: string_long
 settings:
   case_sensitive: false

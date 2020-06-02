@@ -4,6 +4,21 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
+    - field.field.node.event.field_add_to_calendar
+    - field.field.node.event.field_country
+    - field.field.node.event.field_event_country
+    - field.field.node.event.field_event_cta_download
+    - field.field.node.event.field_event_cta_external_link
+    - field.field.node.event.field_event_custom_audience
+    - field.field.node.event.field_event_date
+    - field.field.node.event.field_event_momemtum
+    - field.field.node.event.field_event_picture
+    - field.field.node.event.field_event_place
+    - field.field.node.event.field_event_product
+    - field.field.node.event.field_event_thematic
+    - field.field.node.event.field_event_type
+    - field.field.node.event.field_multiline
+    - field.field.node.event.field_teaser
     - node.type.event
   module:
     - user
@@ -27,7 +42,6 @@ hidden:
   extra_field_event_type_icon_file: true
   field_add_to_calendar: true
   field_country: true
-  field_event_content: true
   field_event_country: true
   field_event_cta_download: true
   field_event_cta_external_link: true
@@ -37,8 +51,9 @@ hidden:
   field_event_picture: true
   field_event_place: true
   field_event_product: true
-  field_event_teaser: true
   field_event_thematic: true
   field_event_type: true
+  field_multiline: true
+  field_teaser: true
   langcode: true
   search_api_excerpt: true
