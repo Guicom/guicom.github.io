@@ -63,10 +63,10 @@ Feature: Reference_product
     And I go to "admin/content"
     And I click "Edit" in the "behatRefProd" row
     And I click the "a[href='#edit-group-webmastering']" element
-    And I click the "#edit-field-reference-content li.dropbutton-toggle button" element
-    And I press the "edit-field-reference-content-add-more-add-more-button-model-text" button
+    And I click the "#edit-field-multiline li.dropbutton-toggle button" element
+    And I press the "field_multiline_model_text_add_more" button
     And I wait 4 seconds
-    And I fill in "field_reference_content[0][subform][field_title][0][value]" with "Text title"
+    And I fill in "field_multiline[0][subform][field_title][0][value]" with "Text title"
     And I wait 2 seconds
     And I press "edit-submit"
     And I go to "admin/content"
@@ -87,16 +87,10 @@ Feature: Reference_product
     And I wait 5 seconds
     And I click "Register"
     And I wait max 10 seconds for AJAX to finish
-    And I fill in "email" with "testbehat@test.fr"
-    And I fill in "company" with "test behat company"
-    And I select "France" from "country"
-    And I fill in "zipcode" with "67500"
-    And I wait max 30 seconds for AJAX to finish
-    And I press "Continue"
-    And I wait max 30 seconds for AJAX to finish
-    And I should see a ".submitted-page" element
-    And I wait 5 seconds
-    When I visit "/behatRefProd"
+    And I wait 60 seconds
+    And I should see an ".form-email" element
+    And I should see an ".form-text" element
+    And I should see an ".form-select" element
 
   @api @cit @javascript @product_reference @product_reference_characteristic
     #testing characteristic table SOCSOB-1192 / SOCSOB-1192
