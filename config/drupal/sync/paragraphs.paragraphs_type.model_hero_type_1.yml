@@ -1,0 +1,10 @@
+uuid: 711fe548-03a5-4282-ba4f-5636a1e65c0d
+langcode: en
+status: true
+dependencies: {  }
+id: model_hero_type_1
+label: 'Model hero - type 1'
+icon_uuid: null
+icon_default: null
+description: 'Fields Subtitle, Teaser, Image and Background Image.'
+behavior_plugins: {  }

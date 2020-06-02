@@ -1,10 +1,11 @@
-uuid: 14fd28dc-d79a-4c87-adcd-6aee41f78a31
+uuid: 69fc7023-4f0f-48ee-bc6f-5728052a2152
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_body
-    - node.type.news
+    - field.storage.node.field_multiline
+    - node.type.product
+    - paragraphs.paragraphs_type.content
     - paragraphs.paragraphs_type.key_figures
     - paragraphs.paragraphs_type.model_citation
     - paragraphs.paragraphs_type.model_cta
@@ -16,11 +17,11 @@ dependencies:
     - paragraphs.paragraphs_type.video_text
   module:
     - entity_reference_revisions
-id: node.news.field_body
-field_name: field_body
+id: node.product.field_multiline
+field_name: field_multiline
 entity_type: node
-bundle: news
-label: 'News Content'
+bundle: product
+label: Multiline
 description: ''
 required: false
 translatable: true
@@ -31,71 +32,72 @@ settings:
   handler_settings:
     negate: 0
     target_bundles:
+      content: content
       key_figures: key_figures
+      model_citation: model_citation
       model_cta: model_cta
-      model_promo_block: model_promo_block
       model_image: model_image
+      model_promo_block: model_promo_block
       model_testimony: model_testimony
       model_text: model_text
-      model_citation: model_citation
       video_embed: video_embed
       video_text: video_text
     target_bundles_drag_drop:
+      content:
+        enabled: true
+        weight: 20
       from_library:
-        weight: 14
+        weight: 21
         enabled: false
       hero_paragraph:
-        weight: 15
+        weight: 22
         enabled: false
       key_figures:
         enabled: true
-        weight: 16
+        weight: 23
       link:
-        weight: 17
-        enabled: false
-      content:
-        weight: 18
-        enabled: false
-      model_cta:
-        enabled: true
-        weight: 18
-      model_cta_pdf:
-        weight: 19
-        enabled: false
-      model_promo_block:
-        enabled: true
-        weight: 20
-      model_image:
-        enabled: true
-        weight: 20
-      model_testimony:
-        enabled: true
-        weight: 21
-      model_text:
-        enabled: true
-        weight: 22
-      model_citation:
-        enabled: true
-        weight: 23
-      pardot_form:
-        weight: 23
-        enabled: false
-      premium_content_promotion:
         weight: 24
         enabled: false
-      product_faq:
+      model_citation:
+        enabled: true
         weight: 25
-        enabled: false
-      video_embed:
+      model_cta:
         enabled: true
         weight: 26
-      standard_label:
+      model_cta_pdf:
+        weight: 27
+        enabled: false
+      model_image:
+        enabled: true
+        weight: 28
+      model_promo_block:
+        enabled: true
+        weight: 29
+      model_testimony:
+        enabled: true
+        weight: 30
+      model_text:
+        enabled: true
+        weight: 31
+      pardot_form:
         weight: 32
         enabled: false
-      video_text:
-        enabled: true
+      premium_content_promotion:
+        weight: 33
+        enabled: false
+      product_faq:
         weight: 34
+        enabled: false
       promo_block:
         weight: 35
         enabled: false
+      standard_label:
+        weight: 36
+        enabled: false
+      video_embed:
+        enabled: true
+        weight: 37
+      video_text:
+        enabled: true
+        weight: 38
 field_type: entity_reference_revisions

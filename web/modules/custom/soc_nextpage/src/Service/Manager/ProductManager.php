@@ -149,7 +149,7 @@ class ProductManager {
   public function updateProduct(&$node, $product, $job_id) {
     if (isset($product->Values->DC_P_PRODUCT_SHORT_DESCRIPTION->Value)
         && isset($product->Values->DC_P_ASSORTMENT_WIDTH->Value)) {
-      $node->set('field_product_teaser',
+      $node->set('field_teaser',
         $product->Values->DC_P_PRODUCT_SHORT_DESCRIPTION->Value . ' - '
         . $product->Values->DC_P_ASSORTMENT_WIDTH->Value);
     }
@@ -161,7 +161,7 @@ class ProductManager {
     }
     $node->set('title', $title);
     $node->set('field_json_product_data', $this->nextpageItemHandler->formatJsonField($product->Values));
-    $node->set('field_product_extid', $product->ExtID);
+    $node->set('field_extid', $product->ExtID);
 
     if (isset($this->referencesNids)) {
       foreach ($this->referencesNids as $index => $referencesNid) {

@@ -128,6 +128,7 @@ class ReferenceManager {
    *
    * @return mixed
    * @throws \Drupal\Core\Entity\EntityStorageException
+   * @throws \Exception
    */
   public function updateReference($node, $reference, $job_id) {
     if (!isset($reference->Values->{'DC_R_ADMIN_Invoice_Description'})) {
@@ -141,7 +142,7 @@ class ReferenceManager {
     $node->set('field_json_product_data', $json_field);
     $node->set('field_reference_json_table', $this->buildJsonTable($reference->Values));
 
-    $node->set('field_reference_extid', $reference->ExtID);
+    $node->set('field_extid', $reference->ExtID);
     $node->set('field_reference_ref', $reference->Values->{'DC_R_REFERENCE'}->Value);
     $exclude = [
       'DC_R_ADMIN_Invoice_Description',
@@ -191,7 +192,6 @@ class ReferenceManager {
       "@job_id" => $job_id,
     ]);
     $node->setRevisionCreationTime(REQUEST_TIME);
-    // $node->setRevisionUserId($user_id);
     try {
       $node->save();
       return $node;
@@ -199,11 +199,12 @@ class ReferenceManager {
     catch (\Exception $e) {
       throw new \Exception($e->getMessage(), 1);
     }
-    return FALSE;
   }
 
   /**
+   * @param $reference
    *
+   * @return false|string
    */
   public function buildJsonTable($reference) {
     if (isset($reference->DC_R_PRODUCT_STATUS)) {
@@ -239,8 +240,7 @@ class ReferenceManager {
       $json[$status["label"]] = $status["value"];
     }
 
-    $json = json_encode($json);
-    return $json;
+    return json_encode($json);
   }
 
   /**
@@ -263,8 +263,7 @@ class ReferenceManager {
           ksort($json[$key]);
         }
       }
-      $json = json_encode($json);
-      return $json;
+      return json_encode($json);
     }
     return NULL;
   }
