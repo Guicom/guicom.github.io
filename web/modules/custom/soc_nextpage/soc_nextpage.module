@@ -108,9 +108,9 @@ function _soc_nextpage_validate_json_data(&$form, FormStateInterface $form_state
   }
 
   // Check Teaser.
-  $teaser = $form_state->getValue('field_product_teaser');
+  $teaser = $form_state->getValue('field_teaser');
   if (empty($teaser[0]["value"]) && $moderation[0]["value"] == 'published') {
-    $form_state->setErrorByName('field_product_teaser',
+    $form_state->setErrorByName('field_teaser',
       t('Teaser is missing, please launch an import to get the complete data.'));
   }
 

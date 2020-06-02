@@ -229,8 +229,8 @@
                 margin-top:10px;
               }
               .field--name-extra-field-resource-description,
-              .field--name-field-event-teaser,
-              .field--name-field-event-teaser p {
+              .field--name-field-teaser,
+              .field--name-field-teaser p {
                 margin:0;
                 padding: 0;
                 color: $dark-grey;
@@ -250,10 +250,6 @@
                   text-indent: -9999px;
                   z-index: 1;
                 }
-              }
-              .field--name-field-product-teaser {
-                font-family: $font-roboto;
-                color: $dark-grey;
               }
               &.node--type-event {
                 background: $blue_lighter_alt;

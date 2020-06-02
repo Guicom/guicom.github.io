@@ -55,9 +55,14 @@
     {% if content.field_link_paragraph.0 %}
       {{ content.field_link_paragraph }}
     {%  else %}
+      {% if content.field_target|render is not empty %}
+        {% if content.field_target['#items'].0.value == 1 %}
+          {% set target = "_blank" %}
+        {% endif %}
+      {% endif %}
       <a {% if ajax %}class="ajax-soc-content-list" data-soc-content-list-ajax="1"  data-soc-content-list-original-title="{{ content.field_link_title|render|striptags|trim }}" data-soc-content-list-alt-title="{{ ajax }}"{% endif %}
          href="{% if url %}{{ url|socContentListGetBtn }}{% else %}#{% endif %}"
-        {% if content.field_link_target.0 %} target="{{ content.field_link_target|render|striptags|trim }}"{% endif %}>
+        {% if target is not empty %} target="{{ target }}"{% endif %}>
         {{ content.field_link_icon }} <span class="btn-value">{{ content.field_link_title }}</span>
       </a>
     {% endif %}
