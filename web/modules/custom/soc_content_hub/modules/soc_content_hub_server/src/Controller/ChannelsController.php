@@ -45,6 +45,12 @@ class ChannelsController extends ControllerBase {
         'video',
         'remote_video',
       ],
+      'block_promotion_entity' => [
+        'custom',
+        'digital_asset',
+        'offer',
+        'toolbox',
+      ]
     ];
 
     // Get languages
@@ -65,7 +71,14 @@ class ChannelsController extends ControllerBase {
     } catch (\Exception $e) {
       \Drupal::logger('soc_content_hub_server')->error($e->getMessage());
     }
-    if (!$nodeModelChannel || !$mediaModelChannel) {
+    try {
+      $BlockPromotionModelChannel = \Drupal::entityTypeManager()
+        ->getStorage('channel')
+        ->load('en_custom_promo_block');
+    } catch (\Exception $e) {
+      \Drupal::logger('soc_content_hub_server')->error($e->getMessage());
+    }
+    if (!$nodeModelChannel || !$mediaModelChannel || !$BlockPromotionModelChannel) {
       return [];
     }
 
@@ -89,11 +102,22 @@ class ChannelsController extends ControllerBase {
         }
         $this->saveChannel($newChannel, $channelId, $languageId, $entityType);
       }
+      // block_promotion_entity
+      foreach ($entityTypes['block_promotion_entity'] as $entityType) {
+        $channelId = $configLanguageId . '_' . $entityType . '_promo_block';
+        if (!array_key_exists($channelId, $existingChannels)) {
+          $newChannel = $BlockPromotionModelChannel->createDuplicate();
+        }
+        else {
+          $newChannel = $existingChannels[$channelId];
+        }
+        $this->saveChannel($newChannel, $channelId, $languageId, $entityType, ' - Promo Block');
+      }
       // Media
       foreach ($entityTypes['media'] as $entityType) {
         $channelId = $configLanguageId . '_' . $entityType;
         if (!array_key_exists($channelId, $existingChannels)) {
-          $newChannel = $nodeModelChannel->createDuplicate();
+          $newChannel = $mediaModelChannel->createDuplicate();
         }
         else {
           $newChannel = $existingChannels[$channelId];
@@ -101,12 +125,13 @@ class ChannelsController extends ControllerBase {
         $this->saveChannel($newChannel, $channelId, $languageId, $entityType);
       }
     }
+    return [];
   }
 
-  protected function saveChannel($newChannel, $channelId, $languageId, $entityType) {
+  protected function saveChannel($newChannel, $channelId, $languageId, $entityType ,$suffixLabel = "") {
     $newChannel->set('id', $channelId);
     $newChannel->set('langcode', 'en');
-    $newChannel->set('label', strtoupper($languageId) . ' / ' . ucfirst($entityType));
+    $newChannel->set('label', strtoupper($languageId) . ' / ' . ucfirst($entityType) . $suffixLabel);
     $newChannel->set('channel_langcode', $languageId);
     $newChannel->set('channel_bundle', $entityType);
     try {

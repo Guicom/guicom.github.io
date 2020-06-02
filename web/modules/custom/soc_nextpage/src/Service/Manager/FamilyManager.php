@@ -2,38 +2,82 @@
 
 namespace Drupal\soc_nextpage\Service\Manager;
 
-use Drupal;
+use Drupal\Core\Logger\LoggerChannelFactoryInterface;
 use Drupal\soc_nextpage\Service\NextpageApi;
 use Drupal\soc_nextpage\Service\NextpageItemHandler;
+use Drupal\soc_rollback\Service\RollbackImport;
 use Drupal\taxonomy\Entity\Term;
 
 /**
- * Class ProductManager
+ * Class ProductManager.
  *
  * @package Drupal\soc_nextpage\Service\Manager
  */
 class FamilyManager {
 
+  /**
+   * @var \Drupal\soc_nextpage\Service\Manager\RollbackImport
+   */
+  private $rollbackImport;
+
+  /**
+   * @var \Drupal\soc_nextpage\Service\NextpageItemHandler
+   */
+  private $nextpageItemHandler;
+
+  /**
+   * @var \Drupal\soc_nextpage\Service\NextpageApi
+   */
+  private $nextpageApi;
+
+  /**
+   * @var \Drupal\Core\Logger\LoggerChannelInterface
+   */
+  private $logger;
+
+  /**
+   *
+   */
   public function __construct(
     NextpageApi $nextpageApi,
-    NextpageItemHandler $nextpageItemHandler) {
+    NextpageItemHandler $nextpageItemHandler,
+    RollbackImport $rollbackImport,
+    LoggerChannelFactoryInterface $channelFactory) {
     $this->nextpageApi = $nextpageApi;
     $this->nextpageItemHandler = $nextpageItemHandler;
+    $this->rollbackImport = $rollbackImport;
+    $this->logger = $channelFactory->get('soc_nextpage');
   }
 
   /**
    * @param $pendingFamily
    *
+   * @param $context
+   *
    * @return \Drupal\Core\Entity\EntityInterface|mixed|string|void|null
+   * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
+   * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
+   * @throws \Drupal\Core\Entity\EntityStorageException
    */
-  public function handle($pendingFamily) {
-    // Check if we had to handle this family
+  public function handle($pendingFamily, $context) {
+    // Check if we had to handle this family.
     if ($this->isFamily($pendingFamily) === TRUE) {
-      // Check if term exist
+      $state = 'updated';
+      // Check if term exist.
       if (!$term = $this->loadByExtID($pendingFamily->ExtID)) {
         $term = $this->createFamilyTerm($pendingFamily->ExtID);
+        $state = 'created';
       }
-      $this->updateFamilyTerm($term, $pendingFamily);
+      $this->updateFamilyTerm($term, $pendingFamily, $context);
+
+      // Feed rollback service.
+      $this->rollbackImport->updateJob($context['job_id'],
+        [
+          'operation' => 'update_entity',
+          'state' => $state,
+          'entity' => $term,
+        ]);
+
       return $term;
     }
     else {
@@ -57,6 +101,9 @@ class FamilyManager {
     }
   }
 
+  /**
+   *
+   */
   public function getParents($pendingFamily) {
     $linkNode = "##LinkNodeFPR";
     if (isset($pendingFamily->Values->{$linkNode}->LinkedElements[0]->ElementID)) {
@@ -76,7 +123,7 @@ class FamilyManager {
    */
   public function createFamilyTerm($textId) {
     $term = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->create([
-      'vid' => 'family'
+      'vid' => 'family',
     ]);
     return $term;
   }
@@ -89,7 +136,7 @@ class FamilyManager {
    *
    * @return mixed
    */
-  public function updateFamilyTerm(Term $term, $pendingFamily) {
+  public function updateFamilyTerm(Term $term, $pendingFamily, $job_id) {
     // Get title.
     $name = $pendingFamily->ExtID;
     if (isset($pendingFamily->Values->C_LV1_TITLE)) {
@@ -103,7 +150,7 @@ class FamilyManager {
     }
     $term->set('name', $name);
 
-    // Get Subtitle
+    // Get Subtitle.
     $subtitle = '';
     if (isset($pendingFamily->Values->C_LV1_SUBTITLE)) {
       $subtitle = $pendingFamily->Values->C_LV1_SUBTITLE->Value;
@@ -116,7 +163,7 @@ class FamilyManager {
     }
     $term->set('field_family_sub_title', $subtitle);
 
-    // Get Description
+    // Get Description.
     $description = '';
     if (isset($pendingFamily->Values->C_LV1_DESCRIPTION)) {
       $description = $pendingFamily->Values->C_LV1_DESCRIPTION->Value;
@@ -134,21 +181,58 @@ class FamilyManager {
     if (isset($pendingFamily->ParentExtID) && !empty($pendingFamily->ParentExtID)) {
       $term->set('parent', [$this->getTidByExtID($pendingFamily->ParentExtID)]);
     }
+    $term->setNewRevision(TRUE);
+    $term->revision_log = t('Created revision for @nid in Job @job_id',
+      [
+        "@nid" => $term->id(),
+        "@job_id" => $job_id,
+      ]);
+    $term->setRevisionCreationTime(REQUEST_TIME);
+
     try {
       $term->save();
     }
     catch (\Exception $e) {
-      \Drupal::logger('soc_nextpage')->warning($e->getMessage());
+      throw new \Exception($e->getMessage(), 1);
     }
 
     return $term;
   }
 
   /**
-   *
+   * Delete non imported family.
    */
   public function delete() {
-    // @todo : delete script.
+    // Get all Imported family.
+    $imported = [];
+    $connection = \Drupal::database();
+    $items = $connection->select('soc_rollback_items', 'sri')
+      ->condition('sri.entity_type', 'taxonomy_term')
+      ->fields('sri', ['entity_id']);
+    $data = $items->execute();
+    $results = $data->fetchAll(\PDO::FETCH_OBJ);
+    foreach ($results as $result) {
+      $imported[] = $result->entity_id;
+    }
+
+    $family = [];
+    $storage = \Drupal::entityTypeManager()->getStorage('taxonomy_term');
+    $terms = $storage->loadTree('family');
+    foreach ($terms as $term) {
+      if (!in_array($term->tid, $imported)) {
+        $family[] = $term->tid;
+      }
+    }
+
+    $family = $storage->loadMultiple($family);
+
+    try {
+      $storage->delete($family);
+    }
+    catch (\Exception $e) {
+      throw new \Exception($e->getMessage(), 1);
+    }
+    $this->logger()->info(t('Family purged'));
   }
 
   /**
@@ -165,6 +249,7 @@ class FamilyManager {
     $query->condition('vid', 'family');
     $query->condition('field_family_extid', $extID);
     $result = $query->execute();
+
     if (!empty($result)) {
       $id = reset($result);
       $entity = \Drupal::entityTypeManager()
@@ -174,6 +259,9 @@ class FamilyManager {
     return $entity;
   }
 
+  /**
+   *
+   */
   public function getTidByExtID($extID) {
     $tid = 0;
     $database = \Drupal::database();
@@ -186,7 +274,6 @@ class FamilyManager {
     if (!empty($result)) {
       $tid = $result[0]->entity_id;
     }
-
     return $tid;
 
   }

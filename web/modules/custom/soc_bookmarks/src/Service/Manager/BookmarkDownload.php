@@ -34,7 +34,7 @@ class BookmarkDownload {
   }
 
   /**
-   * WishlistExport manage export
+   * Download bookmark.
    */
   public function download() {
     $tmpItems = $this->bookmarkManager->loadSavedItems();
@@ -175,15 +175,11 @@ class BookmarkDownload {
   protected function getLastReferer() {
     $request = \Drupal::request();
     $referer = $request->headers->get('referer');
-    if ($referer) {
-      // Getting the base url.
-      if ($base_url = $request::createFromGlobals()->getSchemeAndHttpHost()) {
-        if ($alias = substr($referer, strlen($base_url))) {
-          if ($url_object = \Drupal::service('path.validator')->getUrlIfValid($alias)) {
-            return $url_object->getRouteName();
-          }
-        }
-      }
+    if ($referer
+      && ($base_url = $request::createFromGlobals()->getSchemeAndHttpHost())
+      && ($alias = substr($referer, strlen($base_url)))
+      && ($url_object = \Drupal::service('path.validator')->getUrlIfValid($alias))) {
+      return $url_object->getRouteName();
     }
     return FALSE;
   }

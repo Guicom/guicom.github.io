@@ -1,0 +1,15 @@
+uuid: 55456d0c-ab30-4276-b037-a764e049603a
+langcode: en
+status: true
+dependencies: {  }
+id: en_gb_offer_promo_block
+label: 'EN-GB / Offer - Promo Block'
+channel_entity_type: block_promotion_entity
+channel_bundle: offer
+channel_langcode: en-gb
+channel_filters: null
+channel_groups: null
+channel_sorts: {  }
+channel_searches: null
+authorized_users:
+  cd0d9446-cb19-4e87-9dcf-d3bdc37a70a7: cd0d9446-cb19-4e87-9dcf-d3bdc37a70a7

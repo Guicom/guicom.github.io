@@ -1,0 +1,23 @@
+uuid: 2dd59d59-8ed7-42bd-8d0c-76a63c027581
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.block_promotion_entity.field_is_new
+    - soc_blocks_promotion.block_promotion_entity_type.offer
+id: block_promotion_entity.offer.field_is_new
+field_name: field_is_new
+entity_type: block_promotion_entity
+bundle: offer
+label: New
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

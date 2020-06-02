@@ -14,8 +14,8 @@ services:
       - SOLR_PORT=8983
       - SOLR_COLLECTION=collection1
     volumes:
-      - /builds/actency/prod/socomec/socomec.com/:/var/www/html
-      - /builds/actency/prod/socomec/socomec.com/config/.bashrc:/var/www/.bashrc
+      - /builds/socomec/webfactory/socomec.com/:/var/www/html
+      - /builds/socomec/webfactory/socomec.com/config/.bashrc:/var/www/.bashrc
     links:
       - database:mysql
       - mailhog

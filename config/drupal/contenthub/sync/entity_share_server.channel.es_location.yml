@@ -1,0 +1,15 @@
+uuid: 89b5d0fb-e9e3-43b8-8fe8-f20eecb025f8
+langcode: en
+status: true
+dependencies: {  }
+id: es_location
+label: 'ES / Location'
+channel_entity_type: node
+channel_bundle: contenu_location
+channel_langcode: es
+channel_filters: null
+channel_groups: null
+channel_sorts: {  }
+channel_searches: null
+authorized_users:
+  cd0d9446-cb19-4e87-9dcf-d3bdc37a70a7: cd0d9446-cb19-4e87-9dcf-d3bdc37a70a7

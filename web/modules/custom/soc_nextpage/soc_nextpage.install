@@ -69,3 +69,11 @@ function soc_nextpage_update_8002() {
   $schema->dropTable($tableName);
   $schema->renameTable($tableName . '_tmp', $tableName);
 }
+
+/**
+ * Install require modules.
+ */
+function soc_nextpage_update_8003() {
+  \Drupal::service('module_installer')->install(['soc_rollback'], FALSE);
+  \Drupal::service('module_installer')->install(['soc_heartbeat'], FALSE);
+}
