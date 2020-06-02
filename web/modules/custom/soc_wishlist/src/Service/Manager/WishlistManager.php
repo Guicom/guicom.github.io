@@ -19,7 +19,7 @@ class WishlistManager extends ContentListManager {
     $cookieName = 'socomec_wishlist';
     $settings = $configFactory->getEditable('soc_wishlist.settings');
     $bundle = 'product_reference';
-    $referencedField = 'field_reference_extid';
+    $referencedField = 'field_extid';
     $cookieIdField = 'extid';
     $ItemActionRoute = 'soc_wishlist.edit_wishlist';
     $LastDeletedSessionName = 'socomec_wishlist_last_deleted';

@@ -6,8 +6,8 @@ dependencies:
     - field.field.paragraph.link.field_link_icon
     - field.field.paragraph.link.field_link_link
     - field.field.paragraph.link.field_link_paragraph
-    - field.field.paragraph.link.field_link_target
     - field.field.paragraph.link.field_link_title
+    - field.field.paragraph.link.field_target
     - paragraphs.paragraphs_type.link
   module:
     - media_library
@@ -37,12 +37,6 @@ content:
     third_party_settings: {  }
     type: options_select
     region: content
-  field_link_target:
-    weight: 3
-    settings: {  }
-    third_party_settings: {  }
-    type: options_select
-    region: content
   field_link_title:
     weight: 0
     settings:
@@ -50,6 +44,12 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: string_textfield
+    region: content
+  field_target:
+    weight: 5
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
     region: content
 hidden:
   created: true

@@ -645,6 +645,39 @@ bundles:
       notes: ''
       relationship: 0
       sars_filename: ''
+    field_teaser:
+      bundle: product
+      name: field_teaser
+      entity_type_id: node
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_multiline:
+      bundle: product
+      name: field_multiline
+      entity_type_id: node
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_extid:
+      bundle: product
+      name: field_extid
+      entity_type_id: node
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
   thank_you_page:
     field_title:
       bundle: thank_you_page
@@ -789,6 +822,17 @@ bundles:
       notes: ''
       relationship: 0
       sars_filename: ''
+    field_multiline:
+      bundle: thank_you_page
+      name: field_multiline
+      entity_type_id: node
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
   landing_page:
     field_hero_paragraph:
       bundle: landing_page
@@ -881,6 +925,17 @@ bundles:
     field_country:
       bundle: landing_page
       name: field_country
+      entity_type_id: node
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_multiline:
+      bundle: landing_page
+      name: field_multiline
       entity_type_id: node
       rtf: 'no'
       rta: 'no'
@@ -1042,6 +1097,17 @@ bundles:
       rta: 'no'
       enabled: false
       anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_multiline:
+      bundle: product_reference
+      name: field_multiline
+      entity_type_id: node
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: clear_anonymizer
       notes: ''
       relationship: 0
       sars_filename: ''
@@ -1411,6 +1477,17 @@ bundles:
       notes: ''
       relationship: 0
       sars_filename: ''
+    field_multiline:
+      bundle: news
+      name: field_multiline
+      entity_type_id: node
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
   resource:
     field_res_reference:
       bundle: resource
@@ -1763,6 +1840,28 @@ bundles:
     field_country:
       bundle: event
       name: field_country
+      entity_type_id: node
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_teaser:
+      bundle: event
+      name: field_teaser
+      entity_type_id: node
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: clear_anonymizer
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_multiline:
+      bundle: event
+      name: field_multiline
       entity_type_id: node
       rtf: 'no'
       rta: 'no'
