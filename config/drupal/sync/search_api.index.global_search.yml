@@ -4,43 +4,45 @@ status: true
 dependencies:
   module:
     - search_api_solr
-    - paragraphs
     - node
+    - paragraphs
+    - media
     - taxonomy
     - content_translation
     - search_api
   config:
-    - field.storage.node.field_body
-    - field.storage.paragraph.field_answer
-    - field.storage.paragraph.field_citation_author_position
-    - field.storage.paragraph.field_citation_content
-    - field.storage.paragraph.field_text
-    - field.storage.paragraph.field_figure_2_text_line_1
-    - field.storage.paragraph.field_figure_2_text_line_2
-    - field.storage.paragraph.field_figure_3_text_line_1
-    - field.storage.paragraph.field_figure_3_text_line_2
-    - field.storage.paragraph.field_figure_4_text_line_2
-    - field.storage.paragraph.field_title
-    - field.storage.node.field_event_teaser
     - field.storage.node.field_event_thematic
     - field.storage.node.field_event_type
-    - field.storage.node.field_teaser
-    - field.storage.node.field_news_theme
-    - field.storage.node.field_news_type
-    - field.storage.node.field_product_family
-    - field.storage.node.field_product_teaser
-    - field.storage.node.field_protection_level
-    - field.storage.node.field_reference_ref
-    - field.storage.node.field_reference_content
+    - field.storage.node.field_multiline
     - field.storage.paragraph.field_citation_author
-    - field.storage.paragraph.field_doc_title
+    - field.storage.paragraph.field_citation_author_position
+    - field.storage.paragraph.field_citation_content
+    - field.storage.paragraph.field_company
+    - field.storage.paragraph.field_content
+    - field.storage.paragraph.field_cta_text
+    - field.storage.paragraph.field_text
     - field.storage.paragraph.field_figure_1_number
     - field.storage.paragraph.field_figure_1_text_line_1
     - field.storage.paragraph.field_figure_1_text_line_2
     - field.storage.paragraph.field_figure_2_number
+    - field.storage.paragraph.field_figure_2_text_line_1
+    - field.storage.paragraph.field_figure_2_text_line_2
     - field.storage.paragraph.field_figure_3_number
+    - field.storage.paragraph.field_figure_3_text_line_1
+    - field.storage.paragraph.field_figure_3_text_line_2
     - field.storage.paragraph.field_figure_4_number
     - field.storage.paragraph.field_figure_4_text_line_1
+    - field.storage.paragraph.field_figure_4_text_line_2
+    - field.storage.paragraph.field_legend
+    - field.storage.paragraph.field_media_pdf
+    - field.storage.paragraph.field_nom
+    - field.storage.paragraph.field_title
+    - field.storage.node.field_news_theme
+    - field.storage.node.field_news_type
+    - field.storage.node.field_product_family
+    - field.storage.node.field_protection_level
+    - field.storage.node.field_reference_ref
+    - field.storage.node.field_teaser
     - field.storage.node.field_res_resource_type
     - search_api.server.search
 third_party_settings:
@@ -94,91 +96,61 @@ field_settings:
     dependencies:
       module:
         - content_translation
-  field_answer:
-    label: 'Reference content » Paragraph » Answer'
-    datasource_id: 'entity:node'
-    property_path: 'field_reference_content:entity:field_answer'
-    type: text
-    dependencies:
-      config:
-        - field.storage.node.field_reference_content
-        - field.storage.paragraph.field_answer
-      module:
-        - paragraphs
   field_citation_author:
-    label: 'Reference content » Paragraph » Citation author'
+    label: 'Multiline » Paragraph » Citation author'
     datasource_id: 'entity:node'
-    property_path: 'field_reference_content:entity:field_citation_author'
+    property_path: 'field_multiline:entity:field_citation_author'
     type: text
     dependencies:
       config:
-        - field.storage.node.field_reference_content
+        - field.storage.node.field_multiline
         - field.storage.paragraph.field_citation_author
       module:
         - paragraphs
   field_citation_author_position:
-    label: 'Body » Paragraph » Citation author''s position'
+    label: 'Multiline » Paragraph » Citation author''s position'
     datasource_id: 'entity:node'
-    property_path: 'field_body:entity:field_citation_author_position'
+    property_path: 'field_multiline:entity:field_citation_author_position'
     type: text
     dependencies:
       config:
-        - field.storage.node.field_body
-        - field.storage.paragraph.field_citation_author_position
-      module:
-        - paragraphs
-  field_citation_author_position_1:
-    label: 'Reference content » Paragraph » Citation author''s position'
-    datasource_id: 'entity:node'
-    property_path: 'field_reference_content:entity:field_citation_author_position'
-    type: text
-    dependencies:
-      config:
-        - field.storage.node.field_reference_content
+        - field.storage.node.field_multiline
         - field.storage.paragraph.field_citation_author_position
       module:
         - paragraphs
   field_citation_content:
-    label: 'Body » Paragraph » Citation content'
+    label: 'Multiline » Paragraph » Citation content'
     datasource_id: 'entity:node'
-    property_path: 'field_body:entity:field_citation_content'
+    property_path: 'field_multiline:entity:field_citation_content'
     type: text
     dependencies:
       config:
-        - field.storage.node.field_body
+        - field.storage.node.field_multiline
         - field.storage.paragraph.field_citation_content
       module:
         - paragraphs
-  field_citation_content_1:
-    label: 'Reference content » Paragraph » Citation content'
+  field_company:
+    label: 'Multiline » Paragraph » Company'
     datasource_id: 'entity:node'
-    property_path: 'field_reference_content:entity:field_citation_content'
+    property_path: 'field_multiline:entity:field_company'
     type: text
     dependencies:
       config:
-        - field.storage.node.field_reference_content
-        - field.storage.paragraph.field_citation_content
+        - field.storage.node.field_multiline
+        - field.storage.paragraph.field_company
       module:
         - paragraphs
-  field_doc_title:
-    label: 'Reference content » Paragraph » Document title'
+  field_cta_text:
+    label: 'Multiline » Paragraph » CTA Text'
     datasource_id: 'entity:node'
-    property_path: 'field_reference_content:entity:field_doc_title'
+    property_path: 'field_multiline:entity:field_cta_text'
     type: text
     dependencies:
       config:
-        - field.storage.node.field_reference_content
-        - field.storage.paragraph.field_doc_title
+        - field.storage.node.field_multiline
+        - field.storage.paragraph.field_cta_text
       module:
         - paragraphs
-  field_event_teaser:
-    label: 'Event Teaser'
-    datasource_id: 'entity:node'
-    property_path: field_event_teaser
-    type: text
-    dependencies:
-      config:
-        - field.storage.node.field_event_teaser
   field_event_thematic:
     label: 'Event Thematic'
     datasource_id: 'entity:node'
@@ -196,190 +168,146 @@ field_settings:
       config:
         - field.storage.node.field_event_type
   field_figure_1_number:
-    label: 'Reference content » Paragraph » Figure 1 - Number'
+    label: 'Multiline » Paragraph » Figure 1 - Number'
     datasource_id: 'entity:node'
-    property_path: 'field_reference_content:entity:field_figure_1_number'
+    property_path: 'field_multiline:entity:field_figure_1_number'
     type: text
     dependencies:
       config:
-        - field.storage.node.field_reference_content
+        - field.storage.node.field_multiline
         - field.storage.paragraph.field_figure_1_number
       module:
         - paragraphs
   field_figure_1_text_line_1:
-    label: 'Reference content » Paragraph » Figure 1 - Text line 1'
+    label: 'Multiline » Paragraph » Figure 1 - Text line 1'
     datasource_id: 'entity:node'
-    property_path: 'field_reference_content:entity:field_figure_1_text_line_1'
+    property_path: 'field_multiline:entity:field_figure_1_text_line_1'
     type: text
     dependencies:
       config:
-        - field.storage.node.field_reference_content
+        - field.storage.node.field_multiline
         - field.storage.paragraph.field_figure_1_text_line_1
       module:
         - paragraphs
   field_figure_1_text_line_2:
-    label: 'Reference content » Paragraph » Figure 1 - Text line 2'
+    label: 'Multiline » Paragraph » Figure 1 - Text line 2'
     datasource_id: 'entity:node'
-    property_path: 'field_reference_content:entity:field_figure_1_text_line_2'
+    property_path: 'field_multiline:entity:field_figure_1_text_line_2'
     type: text
     dependencies:
       config:
-        - field.storage.node.field_reference_content
+        - field.storage.node.field_multiline
         - field.storage.paragraph.field_figure_1_text_line_2
       module:
         - paragraphs
   field_figure_2_number:
-    label: 'Reference content » Paragraph » Figure 2 - Number'
+    label: 'Multiline » Paragraph » Figure 2 - Number'
     datasource_id: 'entity:node'
-    property_path: 'field_reference_content:entity:field_figure_2_number'
+    property_path: 'field_multiline:entity:field_figure_2_number'
     type: text
     dependencies:
       config:
-        - field.storage.node.field_reference_content
+        - field.storage.node.field_multiline
         - field.storage.paragraph.field_figure_2_number
       module:
         - paragraphs
   field_figure_2_text_line_1:
-    label: 'Body » Paragraph » Figure 2 - Text line 1'
+    label: 'Multiline » Paragraph » Figure 2 - Text line 1'
     datasource_id: 'entity:node'
-    property_path: 'field_body:entity:field_figure_2_text_line_1'
+    property_path: 'field_multiline:entity:field_figure_2_text_line_1'
     type: text
     dependencies:
       config:
-        - field.storage.node.field_body
-        - field.storage.paragraph.field_figure_2_text_line_1
-      module:
-        - paragraphs
-  field_figure_2_text_line_1_1:
-    label: 'Reference content » Paragraph » Figure 2 - Text line 1'
-    datasource_id: 'entity:node'
-    property_path: 'field_reference_content:entity:field_figure_2_text_line_1'
-    type: text
-    dependencies:
-      config:
-        - field.storage.node.field_reference_content
+        - field.storage.node.field_multiline
         - field.storage.paragraph.field_figure_2_text_line_1
       module:
         - paragraphs
   field_figure_2_text_line_2:
-    label: 'Body » Paragraph » Figure 2 - Text line 2'
+    label: 'Multiline » Paragraph » Figure 2 - Text line 2'
     datasource_id: 'entity:node'
-    property_path: 'field_body:entity:field_figure_2_text_line_2'
+    property_path: 'field_multiline:entity:field_figure_2_text_line_2'
     type: text
     dependencies:
       config:
-        - field.storage.node.field_body
-        - field.storage.paragraph.field_figure_2_text_line_2
-      module:
-        - paragraphs
-  field_figure_2_text_line_2_1:
-    label: 'Reference content » Paragraph » Figure 2 - Text line 2'
-    datasource_id: 'entity:node'
-    property_path: 'field_reference_content:entity:field_figure_2_text_line_2'
-    type: text
-    dependencies:
-      config:
-        - field.storage.node.field_reference_content
+        - field.storage.node.field_multiline
         - field.storage.paragraph.field_figure_2_text_line_2
       module:
         - paragraphs
   field_figure_3_number:
-    label: 'Reference content » Paragraph » Figure 3 - Number'
+    label: 'Multiline » Paragraph » Figure 3 - Number'
     datasource_id: 'entity:node'
-    property_path: 'field_reference_content:entity:field_figure_3_number'
+    property_path: 'field_multiline:entity:field_figure_3_number'
     type: text
     dependencies:
       config:
-        - field.storage.node.field_reference_content
+        - field.storage.node.field_multiline
         - field.storage.paragraph.field_figure_3_number
       module:
         - paragraphs
   field_figure_3_text_line_1:
-    label: 'Body » Paragraph » Figure 3 - Text line 1'
+    label: 'Multiline » Paragraph » Figure 3 - Text line 1'
     datasource_id: 'entity:node'
-    property_path: 'field_body:entity:field_figure_3_text_line_1'
+    property_path: 'field_multiline:entity:field_figure_3_text_line_1'
     type: text
     dependencies:
       config:
-        - field.storage.node.field_body
-        - field.storage.paragraph.field_figure_3_text_line_1
-      module:
-        - paragraphs
-  field_figure_3_text_line_1_1:
-    label: 'Reference content » Paragraph » Figure 3 - Text line 1'
-    datasource_id: 'entity:node'
-    property_path: 'field_reference_content:entity:field_figure_3_text_line_1'
-    type: text
-    dependencies:
-      config:
-        - field.storage.node.field_reference_content
+        - field.storage.node.field_multiline
         - field.storage.paragraph.field_figure_3_text_line_1
       module:
         - paragraphs
   field_figure_3_text_line_2:
-    label: 'Body » Paragraph » Figure 3 - Text line 2'
+    label: 'Multiline » Paragraph » Figure 3 - Text line 2'
     datasource_id: 'entity:node'
-    property_path: 'field_body:entity:field_figure_3_text_line_2'
+    property_path: 'field_multiline:entity:field_figure_3_text_line_2'
     type: text
     dependencies:
       config:
-        - field.storage.node.field_body
-        - field.storage.paragraph.field_figure_3_text_line_2
-      module:
-        - paragraphs
-  field_figure_3_text_line_2_1:
-    label: 'Reference content » Paragraph » Figure 3 - Text line 2'
-    datasource_id: 'entity:node'
-    property_path: 'field_reference_content:entity:field_figure_3_text_line_2'
-    type: text
-    dependencies:
-      config:
-        - field.storage.node.field_reference_content
+        - field.storage.node.field_multiline
         - field.storage.paragraph.field_figure_3_text_line_2
       module:
         - paragraphs
   field_figure_4_number:
-    label: 'Reference content » Paragraph » Figure 4 - Number'
+    label: 'Multiline » Paragraph » Figure 4 - Number'
     datasource_id: 'entity:node'
-    property_path: 'field_reference_content:entity:field_figure_4_number'
+    property_path: 'field_multiline:entity:field_figure_4_number'
     type: text
     dependencies:
       config:
-        - field.storage.node.field_reference_content
+        - field.storage.node.field_multiline
         - field.storage.paragraph.field_figure_4_number
       module:
         - paragraphs
   field_figure_4_text_line_1:
-    label: 'Reference content » Paragraph » Figure 4 - Text line 1'
+    label: 'Multiline » Paragraph » Figure 4 - Text line 1'
     datasource_id: 'entity:node'
-    property_path: 'field_reference_content:entity:field_figure_4_text_line_1'
+    property_path: 'field_multiline:entity:field_figure_4_text_line_1'
     type: text
     dependencies:
       config:
-        - field.storage.node.field_reference_content
+        - field.storage.node.field_multiline
         - field.storage.paragraph.field_figure_4_text_line_1
       module:
         - paragraphs
   field_figure_4_text_line_2:
-    label: 'Body » Paragraph » Figure 4 - Text line 2'
+    label: 'Multiline » Paragraph » Figure 4 - Text line 2'
     datasource_id: 'entity:node'
-    property_path: 'field_body:entity:field_figure_4_text_line_2'
+    property_path: 'field_multiline:entity:field_figure_4_text_line_2'
     type: text
     dependencies:
       config:
-        - field.storage.node.field_body
+        - field.storage.node.field_multiline
         - field.storage.paragraph.field_figure_4_text_line_2
       module:
         - paragraphs
-  field_figure_4_text_line_2_1:
-    label: 'Reference content » Paragraph » Figure 4 - Text line 2'
+  field_legend:
+    label: 'Multiline » Paragraph » Legend'
     datasource_id: 'entity:node'
-    property_path: 'field_reference_content:entity:field_figure_4_text_line_2'
+    property_path: 'field_multiline:entity:field_legend'
     type: text
     dependencies:
       config:
-        - field.storage.node.field_reference_content
-        - field.storage.paragraph.field_figure_4_text_line_2
+        - field.storage.node.field_multiline
+        - field.storage.paragraph.field_legend
       module:
         - paragraphs
   field_news_theme:
@@ -398,6 +326,17 @@ field_settings:
     dependencies:
       config:
         - field.storage.node.field_news_type
+  field_nom:
+    label: 'Multiline » Paragraph » Name'
+    datasource_id: 'entity:node'
+    property_path: 'field_multiline:entity:field_nom'
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_multiline
+        - field.storage.paragraph.field_nom
+      module:
+        - paragraphs
   field_product_family:
     label: 'Product Family'
     datasource_id: 'entity:node'
@@ -406,14 +345,6 @@ field_settings:
     dependencies:
       config:
         - field.storage.node.field_product_family
-  field_product_teaser:
-    label: 'Product Teaser'
-    datasource_id: 'entity:node'
-    property_path: field_product_teaser
-    type: text
-    dependencies:
-      config:
-        - field.storage.node.field_product_teaser
   field_protection_level:
     label: 'Protection level'
     datasource_id: 'entity:node'
@@ -439,7 +370,7 @@ field_settings:
       config:
         - field.storage.node.field_res_resource_type
   field_teaser:
-    label: 'News / Resource teaser'
+    label: Teaser
     datasource_id: 'entity:node'
     property_path: field_teaser
     type: text
@@ -447,27 +378,29 @@ field_settings:
       config:
         - field.storage.node.field_teaser
   field_title:
-    label: 'Body » Paragraph » Title'
+    label: 'Multiline » Paragraph » Title'
     datasource_id: 'entity:node'
-    property_path: 'field_body:entity:field_title'
+    property_path: 'field_multiline:entity:field_title'
     type: text
     dependencies:
       config:
-        - field.storage.node.field_body
+        - field.storage.node.field_multiline
         - field.storage.paragraph.field_title
       module:
         - paragraphs
-  field_title_1:
-    label: 'Reference content » Paragraph » Title'
+  name:
+    label: 'Multiline » Paragraph » Media PDF » Media » Name'
     datasource_id: 'entity:node'
-    property_path: 'field_reference_content:entity:field_title'
+    property_path: 'field_multiline:entity:field_media_pdf:entity:name'
     type: text
     dependencies:
       config:
-        - field.storage.node.field_reference_content
-        - field.storage.paragraph.field_title
+        - field.storage.node.field_multiline
+        - field.storage.paragraph.field_media_pdf
       module:
         - paragraphs
+        - media
+        - media
   name_14:
     label: Name
     datasource_id: 'entity:taxonomy_term'
@@ -492,25 +425,14 @@ field_settings:
       module:
         - taxonomy
   processed:
-    label: 'Body » Paragraph » Description » Processed text'
+    label: 'Multiline » Paragraph » Description » Processed text'
     datasource_id: 'entity:node'
-    property_path: 'field_body:entity:field_text:processed'
+    property_path: 'field_multiline:entity:field_text:processed'
     type: text
     dependencies:
       config:
-        - field.storage.node.field_body
+        - field.storage.node.field_multiline
         - field.storage.paragraph.field_text
-      module:
-        - paragraphs
-  processed_1:
-    label: 'Body » Paragraph » Answer » Processed text'
-    datasource_id: 'entity:node'
-    property_path: 'field_body:entity:field_answer:processed'
-    type: text
-    dependencies:
-      config:
-        - field.storage.node.field_body
-        - field.storage.paragraph.field_answer
       module:
         - paragraphs
   processed_2:
@@ -521,17 +443,6 @@ field_settings:
     dependencies:
       module:
         - taxonomy
-  processed_3:
-    label: 'Reference content » Paragraph » Description » Processed text'
-    datasource_id: 'entity:node'
-    property_path: 'field_reference_content:entity:field_text:processed'
-    type: text
-    dependencies:
-      config:
-        - field.storage.node.field_reference_content
-        - field.storage.paragraph.field_text
-      module:
-        - paragraphs
   revision_created:
     label: 'Revision create time'
     datasource_id: 'entity:taxonomy_term'
@@ -573,6 +484,19 @@ field_settings:
     type: text
     dependencies:
       module:
+        - node
+  title_1:
+    label: 'Multiline » Paragraph » Content » Content » Title'
+    datasource_id: 'entity:node'
+    property_path: 'field_multiline:entity:field_content:entity:title'
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_multiline
+        - field.storage.paragraph.field_content
+      module:
+        - paragraphs
+        - node
         - node
   type:
     label: 'Content type'
@@ -636,20 +560,8 @@ processor_settings:
   html_filter:
     all_fields: false
     fields:
-      - field_citation_author_position
-      - field_citation_content
-      - field_event_teaser
-      - field_figure_2_text_line_1
-      - field_figure_2_text_line_2
-      - field_figure_3_text_line_1
-      - field_figure_3_text_line_2
-      - field_figure_4_text_line_2
-      - field_product_teaser
       - field_teaser
-      - field_title
       - name_14
-      - processed
-      - processed_1
       - processed_2
       - title
       - type

@@ -12,9 +12,9 @@ Feature: Products
       | language | title   | status | moderation_state | field_orc_text |
       | English  | My ORC  | 1      | published        | ORC text       |
     And product content:
-      | language | title             | status | field_product_family | moderation_state | field_product_reference   | field_associated_products | field_product_orc_content | field_product_teaser |
-      | English  | My other product  | 1      | My Product Family    | published        | 22003016-SIRCO MV 3X160A  |                           |                           | Teaser               |
-      | English  | My test product   | 1      | My Product Family    | published        | 22003016-SIRCO MV 3X160A  | My other product          | My ORC                    | Teaser               |
+      | language | title             | status | field_product_family | moderation_state | field_product_reference   | field_associated_products | field_product_orc_content | field_teaser |
+      | English  | My other product  | 1      | My Product Family    | published        | 22003016-SIRCO MV 3X160A  |                           |                           | Teaser       |
+      | English  | My test product   | 1      | My Product Family    | published        | 22003016-SIRCO MV 3X160A  | My other product          | My ORC                    | Teaser       |
     And I am logged in as a user with the "administrator" role
     And I go to "admin/content"
     And I click "Edit" in the "My test product" row
@@ -23,9 +23,9 @@ Feature: Products
     And I wait 1 seconds
     And I click the "#edit-group-multiline" element
     And I wait 1 seconds
-    And I click the "#edit-field-product-multiline li.dropbutton-toggle button" element
-    And I press the "field_product_multiline_model_text_add_more" button
-    And I fill in "field_product_multiline[0][subform][field_title][0][value]" with "Text"
+    And I click the "#edit-field-multiline li.dropbutton-toggle button" element
+    And I press the "field_multiline_model_text_add_more" button
+    And I fill in "field_multiline[0][subform][field_title][0][value]" with "Text"
     And I press "edit-submit"
     And I go to "admin/content"
     And I click "Edit" in the "22003016-SIRCO MV 3X160A" row

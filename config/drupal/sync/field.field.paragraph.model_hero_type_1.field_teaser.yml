@@ -1,0 +1,23 @@
+uuid: 6fc5b183-ea9c-4a11-93b1-72085e36ea38
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_teaser
+    - paragraphs.paragraphs_type.model_hero_type_1
+  module:
+    - text
+id: paragraph.model_hero_type_1.field_teaser
+field_name: field_teaser
+entity_type: paragraph
+bundle: model_hero_type_1
+label: Teaser
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: false
+  required_summary: false
+field_type: text_with_summary

@@ -1,11 +1,11 @@
-uuid: e2137bb3-0730-4162-a451-8af1f15ccfba
+uuid: 0d90e0a1-c8e7-495e-a648-457d3f94478a
 langcode: en
 status: true
 dependencies:
   module:
     - node
-id: node.field_reference_extid
-field_name: field_reference_extid
+id: node.field_extid
+field_name: field_extid
 entity_type: node
 type: string
 settings:

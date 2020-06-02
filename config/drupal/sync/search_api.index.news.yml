@@ -8,7 +8,6 @@ dependencies:
     - taxonomy
     - search_api
   config:
-    - field.storage.node.field_body
     - field.storage.node.field_media_image
     - field.storage.node.field_teaser
     - field.storage.node.field_news_audience
@@ -75,14 +74,6 @@ field_settings:
     dependencies:
       module:
         - node
-  field_body:
-    label: 'News Content'
-    datasource_id: 'entity:node'
-    property_path: field_body
-    type: integer
-    dependencies:
-      config:
-        - field.storage.node.field_body
   field_media_image:
     label: 'News Picture'
     datasource_id: 'entity:node'
@@ -218,6 +209,7 @@ processor_settings:
     weights:
       preprocess_query: -30
   entity_status: {  }
+  language_with_fallback: {  }
   rendered_item: {  }
   solr_date_range:
     weights:

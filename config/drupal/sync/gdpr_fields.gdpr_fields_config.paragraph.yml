@@ -26,6 +26,7 @@ filenames:
   model_citation: ''
   promo_block: ''
   model_promo_block: ''
+  model_hero_type_1: ''
 bundles:
   product_faq:
     field_question:
@@ -767,6 +768,17 @@ bundles:
       notes: ''
       relationship: 0
       sars_filename: ''
+    field_target:
+      bundle: link
+      name: field_target
+      entity_type_id: paragraph
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: clear_anonymizer
+      notes: ''
+      relationship: 0
+      sars_filename: ''
   standard_label:
     field_label:
       bundle: standard_label
@@ -954,6 +966,51 @@ bundles:
     field_multiline_diplay_promo:
       bundle: model_promo_block
       name: field_multiline_diplay_promo
+      entity_type_id: paragraph
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+  model_hero_type_1:
+    field_background_image:
+      bundle: model_hero_type_1
+      name: field_background_image
+      entity_type_id: paragraph
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_subtitle:
+      bundle: model_hero_type_1
+      name: field_subtitle
+      entity_type_id: paragraph
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: ''
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_teaser:
+      bundle: model_hero_type_1
+      name: field_teaser
+      entity_type_id: paragraph
+      rtf: 'no'
+      rta: 'no'
+      enabled: false
+      anonymizer: clear_anonymizer
+      notes: ''
+      relationship: 0
+      sars_filename: ''
+    field_image:
+      bundle: model_hero_type_1
+      name: field_image
       entity_type_id: paragraph
       rtf: 'no'
       rta: 'no'

@@ -4,15 +4,16 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.search_index
-    - field.field.node.news.field_body
     - field.field.node.news.field_country
     - field.field.node.news.field_media_image
     - field.field.node.news.field_metatags
     - field.field.node.news.field_model_pdf
+    - field.field.node.news.field_multiline
     - field.field.node.news.field_news_audience
     - field.field.node.news.field_news_mommentum
     - field.field.node.news.field_news_theme
     - field.field.node.news.field_news_type
+    - field.field.node.news.field_news_video
     - field.field.node.news.field_product_reference
     - field.field.node.news.field_teaser
     - image.style.crop_210x160
@@ -120,10 +121,10 @@ content:
 hidden:
   addtoany: true
   content_moderation_control: true
-  field_body: true
   field_country: true
   field_metatags: true
   field_model_pdf: true
+  field_multiline: true
   field_news_audience: true
   field_news_mommentum: true
   field_news_type: true

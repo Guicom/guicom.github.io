@@ -142,7 +142,7 @@ class WishlistExport {
     }
 
     $content = implode(PHP_EOL, $csvData);
-    $bom = ( chr(0xEF) . chr(0xBB) . chr(0xBF) );
+    $bom = (chr(0xEF) . chr(0xBB) . chr(0xBF));
     $content = $bom . $content;
     $response->setContent($content);
     return $response;
