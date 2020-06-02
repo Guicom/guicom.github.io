@@ -1,12 +1,12 @@
-uuid: 05b1351b-45c0-45fa-a034-c86932a1d93e
+uuid: 58b72bfd-30f7-4a7c-851c-1839ce8eaa17
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.taxonomy_term.field_family_extid
+    - field.storage.taxonomy_term.field_extid
     - taxonomy.vocabulary.family
-id: taxonomy_term.family.field_family_extid
-field_name: field_family_extid
+id: taxonomy_term.family.field_extid
+field_name: field_extid
 entity_type: taxonomy_term
 bundle: family
 label: ExtID

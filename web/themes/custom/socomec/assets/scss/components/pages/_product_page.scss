@@ -753,7 +753,8 @@ body.node--type-product {
   // Multiline
   // Standard style
 
-  .field--name-field-product-multiline {
+  .field--name-field-product-multiline,
+  .field--name-field-multiline{
     > .field__item {
       > div:not(.paragraph--type-content):not(.paragraph--type--model-promo-block) {
         @include make-container-max-widths();
