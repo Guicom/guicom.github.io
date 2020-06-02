@@ -3,7 +3,7 @@ langcode: en
 status: true
 dependencies: {  }
 id: hero_paragraph
-label: 'Hero Paragraph'
+label: 'Landing - Hero Paragraph'
 icon_uuid: null
 icon_default: null
 description: 'Highlighting area'

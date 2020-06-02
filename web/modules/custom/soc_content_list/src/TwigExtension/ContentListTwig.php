@@ -41,6 +41,8 @@ class ContentListTwig extends \Twig_Extension {
           case 'ajax_btn_current_nid':
             return t('Added, go to your bookmarks');
             break;
+          default;
+            break;
         }
       }
     }
@@ -59,8 +61,8 @@ class ContentListTwig extends \Twig_Extension {
         $node = \Drupal::routeMatch()->getParameter('node');
         if ($node) {
           if ($token === "ajax_btn_current_extid") {
-            if ($node->hasField('field_reference_extid')) {
-              $fieldReferenceExtid = $node->get('field_reference_extid')->getValue();
+            if ($node->hasField('field_extid')) {
+              $fieldReferenceExtid = $node->get('field_extid')->getValue();
               if (!empty($fieldReferenceExtid[0]['value'])) {
                 $value = $fieldReferenceExtid[0]['value'];
               }

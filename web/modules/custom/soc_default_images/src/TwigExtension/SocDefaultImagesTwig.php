@@ -68,17 +68,14 @@ class SocDefaultImagesTwig extends \Twig_Extension {
         } catch (\Exception $e) {
           \Drupal::logger('soc_default_images')->error($e->getMessage());
         }
-        if ($file) {
-          if ($path = $file->getFileUri()) {
-            if ($url = ImageStyle::load($style)
-              ->buildUrl($file->getFileUri())) {
-                return [
-                  '#markup' => "<img class='default-img-$type' src='$url'/>",
-                  '#url' => $url,
-                  '#img-type' => $type,
-                ];
-            }
-          }
+        if ($file
+            && ($path = $file->getFileUri())
+            && ($url = ImageStyle::load($style)->buildUrl($file->getFileUri()))) {
+          return [
+            '#markup' => "<img class='default-img-$type' src='$url'/>",
+            '#url' => $url,
+            '#img-type' => $type,
+          ];
         }
       }
     }

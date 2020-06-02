@@ -56,7 +56,7 @@ Feature: Search
     # Creation des contenus de test
     # event /!\ Le module datetime_range ne fonctionne pas sur les tests.
     And event content:
-      | Language | title                                            | field_event_teaser                                  | field_event_place                                 | field_event_type | field_event_thematic | moderation_state | status |
+      | Language | title                                            | field_teaser                                        | field_event_place                                 | field_event_type | field_event_thematic | moderation_state | status |
       | English  | TestingSearchTitle TestingSearchTitleEvent Title | TestingSearchTeaser TestingSearchTeaserEvent teaser | TestingSearchPlace TestingSearchPlaceEvent place  | Conference       | Energy               | published        | 1      |
     # landing_page genre une Resource
     And landing_page content:
@@ -68,7 +68,7 @@ Feature: Search
       | English  | TestingSearchTitle TestingSearchTitleNews Title | Corporate        | Building         | TestingSearchTeaser TestingSearchTeaserNews teaser | published        | 1      |
     # product
     And product content:
-      | Language | title                                               | field_product_teaser                                  | field_protection_level | field_product_status | moderation_state | status |
+      | Language | title                                               | field_teaser                                          | field_protection_level | field_product_status | moderation_state | status |
       | English  | TestingSearchTitle TestingSearchTitleProduct Title  | TestingSearchTeaser TestingSearchTeaserProduct teaser | Ultimate               | New                  | published        | 1      |
     # product_reference
     And product_reference content:
