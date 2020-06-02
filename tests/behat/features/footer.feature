@@ -31,7 +31,6 @@ Feature: Footer
     And I click the ".dropdown-language-item" element
     And I should see "FR"
     And I should see "IT"
-    And I should see "EN-US"
     And I should see "DE"
     And I should see "PL"
     # sub footer menu block
