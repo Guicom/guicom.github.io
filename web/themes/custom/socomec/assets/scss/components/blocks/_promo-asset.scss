@@ -1,4 +1,18 @@
 // GLOBAL RENDERING
+.block-soc-blocks-promotion {
+  &.block-promotion-block-product-page {
+    &:hover {
+      box-shadow: $box-shadow-card-list;
+      transition: $transition02;
+    }
+  }
+}
+.field--name-field-mutliline-promo-block {
+  &:hover {
+    box-shadow: $box-shadow-card-list;
+    transition: $transition02;
+  }
+}
 .block-promotion-entity {
   &.block-promotion-entity-digital-asset {
     position: relative;
@@ -13,6 +27,7 @@
       right: 0;
       bottom: 0;
       text-indent: -99999px;
+      z-index: 999;
       &:hover {
         box-shadow: $box-shadow-card-list;
         transition: $transition02;
@@ -40,7 +55,7 @@
         color: $turquoize;
         font-size: $font-size-xs;
         text-transform: uppercase;
-        font-weight: 700;
+        font-weight: 600;
       }
       .soc-block-promo-entity-type {
         display: inline-flex;
@@ -62,14 +77,14 @@
         color: $yellow;
         font-size: 1.125rem;
         font-family: $font-poppins;
-        font-weight: 500;
+        font-weight: 600;
         line-height: 30px;
       }
       .soc-block-promo-entity-sub-title {
         color: $white;
         font-size: 1.125rem;
         font-family: $font-poppins;
-        font-weight: 500;
+        font-weight: 600;
         line-height: 30px;
       }
       .soc-block-promo-entity-description {
@@ -114,10 +129,10 @@
       .soc-block-promo-entity-central-image {
         position: absolute;
         bottom: -6.5rem;
-        left: 0;
+        left: 50%;
+        transform: translateX(-50%);
         z-index: 10;
         text-align: center;
-        width: 100%;
         &:before {
           content: '';
           position: absolute;
@@ -131,6 +146,17 @@
           height: 220px;
           z-index: -1;
           opacity: 0.5;
+        }
+        &:after {
+          content: '';
+          display: block;
+          position: absolute;
+          top: 2px;
+          left: 2px;
+          background: $mid-grey;
+          width: 100%;
+          height: 98%;
+          z-index: -1;
         }
         img {
           width: 150px;
