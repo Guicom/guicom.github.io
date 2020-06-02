@@ -8,11 +8,9 @@ dependencies:
     - taxonomy
     - search_api
   config:
-    - field.storage.node.field_event_date
-    - field.storage.node.field_event_content
     - field.storage.node.field_event_country
-    - field.storage.node.field_event_teaser
     - field.storage.node.field_event_custom_audience
+    - field.storage.node.field_event_date
     - field.storage.node.field_event_thematic
     - field.storage.node.field_event_type
     - search_api.server.socomec
@@ -83,14 +81,6 @@ field_settings:
     dependencies:
       config:
         - field.storage.node.field_event_date
-  field_body:
-    label: 'Event Content'
-    datasource_id: 'entity:node'
-    property_path: field_event_content
-    type: text
-    dependencies:
-      config:
-        - field.storage.node.field_event_content
   field_event_country:
     label: 'Event Country'
     datasource_id: 'entity:node'
@@ -107,14 +97,6 @@ field_settings:
     dependencies:
       config:
         - field.storage.node.field_event_date
-  field_event_teaser:
-    label: 'Event Teaser'
-    datasource_id: 'entity:node'
-    property_path: field_event_teaser
-    type: text
-    dependencies:
-      config:
-        - field.storage.node.field_event_teaser
   name:
     label: 'Event Custom Audience » Taxonomy term » Name'
     datasource_id: 'entity:node'
@@ -189,15 +171,6 @@ field_settings:
     dependencies:
       module:
         - node
-  title:
-    label: Title
-    datasource_id: 'entity:node'
-    property_path: title
-    type: text
-    boost: !!float 2
-    dependencies:
-      module:
-        - node
   uid:
     label: uid
     datasource_id: 'entity:node'
@@ -224,6 +197,7 @@ processor_settings:
     weights:
       preprocess_query: -30
   entity_status: {  }
+  language_with_fallback: {  }
   rendered_item: {  }
   solr_date_range:
     weights:

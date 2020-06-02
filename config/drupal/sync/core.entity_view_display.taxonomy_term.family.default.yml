@@ -4,7 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.taxonomy_term.family.field_background_image
-    - field.field.taxonomy_term.family.field_family_extid
+    - field.field.taxonomy_term.family.field_extid
     - field.field.taxonomy_term.family.field_family_first_multiline
     - field.field.taxonomy_term.family.field_family_image
     - field.field.taxonomy_term.family.field_family_menu_icon
@@ -23,6 +23,7 @@ third_party_settings:
       disable_css: false
       entity_classes: all_classes
       settings:
+        label: ''
         wrappers:
           ds_content: div
         outer_wrapper: div
@@ -42,12 +43,13 @@ third_party_settings:
         - field_family_first_multiline
         - field_family_second_multiline
         - field_family_extid
+        - field_extid
         - field_background_image
         - field_family_menu_icon
     fields:
       taxonomy_term_title:
         plugin_id: taxonomy_term_title
-        weight: 0
+        weight: 2
         label: hidden
         formatter: default
 id: taxonomy_term.family.default
@@ -58,7 +60,7 @@ content:
   description:
     label: hidden
     type: text_default
-    weight: 0
+    weight: 1
     region: ds_content
     settings: {  }
     third_party_settings:
@@ -83,7 +85,7 @@ content:
             lb-col: false
             classes: {  }
     region: ds_content
-  field_family_extid:
+  field_extid:
     weight: 8
     label: hidden
     settings:
@@ -93,7 +95,7 @@ content:
     region: ds_content
   field_family_first_multiline:
     type: entity_reference_revisions_entity_view
-    weight: 6
+    weight: 5
     label: hidden
     settings:
       view_mode: default
@@ -102,7 +104,7 @@ content:
     region: ds_content
   field_family_image:
     type: entity_reference_entity_view
-    weight: 5
+    weight: 4
     label: hidden
     settings:
       view_mode: family_display
@@ -125,7 +127,7 @@ content:
     region: ds_content
   field_family_second_multiline:
     type: entity_reference_revisions_entity_view
-    weight: 7
+    weight: 6
     label: hidden
     settings:
       view_mode: default

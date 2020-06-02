@@ -4,7 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.taxonomy_term.family.field_background_image
-    - field.field.taxonomy_term.family.field_family_extid
+    - field.field.taxonomy_term.family.field_extid
     - field.field.taxonomy_term.family.field_family_first_multiline
     - field.field.taxonomy_term.family.field_family_image
     - field.field.taxonomy_term.family.field_family_menu_icon
@@ -31,13 +31,13 @@ content:
     third_party_settings: {  }
   field_background_image:
     type: media_library_widget
-    weight: 9
+    weight: 10
     settings:
       media_types: {  }
     third_party_settings: {  }
     region: content
-  field_family_extid:
-    weight: 6
+  field_extid:
+    weight: 7
     settings:
       size: 60
       placeholder: ''
@@ -65,7 +65,7 @@ content:
     region: content
   field_family_menu_icon:
     type: media_library_widget
-    weight: 10
+    weight: 11
     settings:
       media_types: {  }
     third_party_settings: {  }
@@ -92,7 +92,7 @@ content:
     region: content
   langcode:
     type: language_select
-    weight: 7
+    weight: 8
     region: content
     settings:
       include_locked: true
@@ -107,7 +107,7 @@ content:
     third_party_settings: {  }
   path:
     type: path
-    weight: 8
+    weight: 9
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -115,7 +115,7 @@ content:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 100
+    weight: 12
     region: content
     third_party_settings: {  }
 hidden: {  }

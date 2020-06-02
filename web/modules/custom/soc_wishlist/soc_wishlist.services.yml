@@ -6,4 +6,4 @@ services:
   soc_wishlist.wishlist_export:
     class: Drupal\soc_wishlist\Service\Manager\WishlistExport
     arguments:
-      ['@soc_wishlist.wishlist_manager', '@config.factory']
+      ['@soc_wishlist.wishlist_manager', '@config.factory', '@logger.factory']

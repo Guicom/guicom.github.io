@@ -17,7 +17,8 @@ body {
       }
     }
 
-    .field--name-field-body {
+    .field--name-field-body,
+    .field--name-field-multiline{
       > .field__item {
         margin-bottom: 70px;
         &:last-of-type {
