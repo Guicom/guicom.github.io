@@ -1,0 +1,40 @@
+uuid: e9fc3de7-5058-47ef-a4fb-e32029654bc2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.editorial.field_hero
+    - field.field.node.editorial.field_multiline
+    - node.type.editorial
+  module:
+    - entity_reference_revisions
+    - user
+id: node.editorial.default
+targetEntityType: node
+bundle: editorial
+mode: default
+content:
+  field_hero:
+    weight: 0
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    type: entity_reference_revisions_entity_view
+    region: content
+  field_multiline:
+    type: entity_reference_revisions_entity_view
+    weight: 1
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+hidden:
+  addtoany: true
+  content_moderation_control: true
+  langcode: true
+  links: true
+  search_api_excerpt: true

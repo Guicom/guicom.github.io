@@ -1,0 +1,22 @@
+uuid: 6264ecf9-7bbe-4dec-a752-7a6740fe9995
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: pathauto_editorial_page
+label: 'Pathauto editorial page'
+type: 'canonical_entities:node'
+pattern: '[node:title]'
+selection_criteria:
+  2581219e-a815-4986-9b66-553b0f05b7ef:
+    id: node_type
+    bundles:
+      editorial: editorial
+    negate: false
+    context_mapping:
+      node: node
+    uuid: 2581219e-a815-4986-9b66-553b0f05b7ef
+selection_logic: and
+weight: -5
+relationships: {  }
