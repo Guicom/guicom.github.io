@@ -12,7 +12,7 @@ use Drupal\Core\Database\Database;
  * Implements hook_schema().
  */
 function soc_rollback_schema() {
-  $shema['soc_rollback_items'] = [
+  $schema['soc_rollback_items'] = [
     'description' => 'All entities processed during import',
     'fields' => [
       'items_id' => [
@@ -42,5 +42,5 @@ function soc_rollback_schema() {
     'primary key' => ['items_id'],
   ];
 
-  return $shema;
+  return $schema;
 }

@@ -13,7 +13,7 @@ use Drupal\Core\Form\FormStateInterface;
  */
 function soc_nextpage_cron() {
   $logger = \Drupal::logger('soc_nextpage');
-  $rollback = \Drupal::service('soc_rollback.rollback_import');
+  $rollback = \Drupal::service('soc_nextpage.rollback_import');
   $logger->info('Cron in!');
   // If all is good, let's start import.
   if ($rollback->checkAllGreen() == TRUE) {

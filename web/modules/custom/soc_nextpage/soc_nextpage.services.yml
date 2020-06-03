@@ -35,3 +35,6 @@ services:
     class: Drupal\soc_nextpage\Service\Breadcrumb\SocBreadcrumbProductReference
     tags:
       - { name: breadcrumb_builder, priority: 100 }
+  soc_nextpage.rollback_import:
+    class: Drupal\soc_nextpage\Service\RollbackImport
+    arguments: ['@soc_heartbeat.heartmanager', '@soc_nextpage.nextpage_item_handler', '@database']
