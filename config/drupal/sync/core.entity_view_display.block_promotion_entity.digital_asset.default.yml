@@ -12,15 +12,23 @@ dependencies:
     - field.field.block_promotion_entity.digital_asset.field_sub_title
     - field.field.block_promotion_entity.digital_asset.field_tag
     - field.field.block_promotion_entity.digital_asset.field_type
+    - image.style.promo_asset
     - soc_blocks_promotion.block_promotion_entity_type.digital_asset
   module:
+    - ds
     - link
+    - media
     - options
 id: block_promotion_entity.digital_asset.default
 targetEntityType: block_promotion_entity
 bundle: digital_asset
 mode: default
 content:
+  content_moderation_control:
+    weight: -20
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   field_background_image:
     weight: 7
     label: hidden
@@ -34,10 +42,17 @@ content:
     weight: 6
     label: hidden
     settings:
-      link: true
-      view_mode: default
-    third_party_settings: {  }
-    type: entity_reference_entity_view
+      image_style: promo_asset
+      image_link: ''
+    third_party_settings:
+      ds:
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
+    type: media_thumbnail
     region: content
   field_description:
     weight: 4

@@ -410,6 +410,10 @@ body.node--type-product {
 
   .product-right-info {
     justify-content: space-between;
+    .row {
+      margin-right: 0;
+      margin-left: 0;
+    }
   }
   .vocabulary-protection-level {
     .protection-title {
@@ -746,7 +750,7 @@ body.node--type-product {
   .field--name-field-product-multiline,
   .field--name-field-multiline{
     > .field__item {
-      > div:not(.paragraph--type-content) {
+      > div:not(.paragraph--type-content):not(.paragraph--type--model-promo-block) {
         @include make-container-max-widths();
         margin-right: auto;
         margin-left: auto;
@@ -768,6 +772,7 @@ body.node--type-product {
   }
   // Hero style
   .product-content-related {
+    margin: 0 0 1.2rem;
     .product-content-related-wrapper {
       width: 100%;
       padding: 70px 0;
