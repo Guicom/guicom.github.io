@@ -6,7 +6,7 @@ Feature: Events
       | language | name        |
       | English  | MyEventType |
     And event content:
-      | language | title       | status | field_event_country | field_event_place | field_event_type | field_event_teaser | field_add_to_calendar | moderation_state |
+      | language | title       | status | field_event_country | field_event_place | field_event_type | field_teaser       | field_add_to_calendar | moderation_state |
       | English  | MyTestEvent | 1      | FR                  | Zenith Strasbourg | MyEventType      | Nice event         | 1                     | published        |
     And I go to "admin/content"
     # needed for next step
@@ -140,10 +140,10 @@ Feature: Events
     Given I am logged in as a user with the "administrator" role
     When I visit "admin/content"
     And I click "Edit" in the "MyTestEvent" row
-    And I click the "#field-event-content-add-more-wrapper li.dropbutton-toggle button" element
-    And I press the "field_event_content_model_text_add_more" button
+    And I click the "#edit-field-multiline li.dropbutton-toggle button" element
+    And I press the "field_multiline_model_text_add_more" button
     And I wait 4 seconds
-    And I fill in "field_event_content[0][subform][field_title][0][value]" with "Text title"
+    And I fill in "field_multiline[0][subform][field_title][0][value]" with "Text title"
     And I fill in "field_event_cta_external_link[0][uri]" with "http://google.com"
     And I fill in "field_event_cta_external_link[0][title]" with "GO TO LINK"
     And I select "New window (_blank)" from "field_event_cta_external_link[0][options][attributes][target]"
@@ -152,6 +152,7 @@ Feature: Events
     And I select "New window (_blank)" from "field_event_cta_download[0][options][attributes][target]"
     And I press the "edit-submit" button
     Then I visit "/event/mytestevent"
+    And I accept all cookies compliance
     And I should see an ".multiline-content" element
     And I should see an ".paragraph--type--model-text" element
     And I should see an ".field--name-field-event-cta-download" element
