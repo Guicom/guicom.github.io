@@ -101,9 +101,16 @@ module:
   multiselect: 0
   node: 0
   options: 0
+  page_cache: 0
   paragraphs_library: 0
   path: 0
   path_alias: 0
+  purge: 0
+  purge_drush: 0
+  purge_processor_cron: 0
+  purge_queuer_coretags: 0
+  purge_tokens: 0
+  purge_ui: 0
   queue_ui: 0
   quickedit: 0
   rdf: 0
@@ -166,6 +173,9 @@ module:
   twig_tweak: 0
   ultimate_cron: 0
   user: 0
+  varnish_image_purge: 0
+  varnish_purge_tags: 0
+  varnish_purger: 0
   views_ui: 0
   we_megamenu: 0
   we_megamenu_deploy: 0
