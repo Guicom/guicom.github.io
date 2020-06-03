@@ -10,6 +10,11 @@
           </div>
           <div class="hero-content col-md-5">
             <h2 class="field--name-field-title ">{% spaceless %}{{ content.field_premium_content_type  }}{% endspaceless %}</h2>
+            <div class="thumbnail-wrapper hero-thumbnail-mobile">
+              <div class="thumbnail-wrapper thumbnail-mobile-wrapper">
+                {{ drupal_field('field_thumbnail', 'paragraph', content.field_hero_paragraph[0]['#paragraph'].id(), 'simple_html') }}
+              </div>
+            </div>
             {{ content.title }}
             {{ content.field_client_name }}
             <p class="product-content-related-baseline">{{ drupal_field('field_baseline', 'paragraph', content.field_hero_paragraph[0]['#paragraph'].id(), 'simple_html') }}</p>

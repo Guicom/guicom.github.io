@@ -5,11 +5,8 @@
     margin-top: 0;
   }
   .field--name-field-title {
-    color: $blue;
-    font-family: $font-roboto;
-    font-size: 48px;
+    @include S1($blue);
     font-weight: 300;
-    line-height: 60px;
     margin-bottom: 20px;
     display: inline-flex;
     position: relative;

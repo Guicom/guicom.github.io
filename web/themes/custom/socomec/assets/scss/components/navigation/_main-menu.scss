@@ -1,6 +1,6 @@
 /* ------------------ Header ------------------ */
 // Position header with hero region.
-@media (min-width: 991.98px) {
+@media (min-width: 1023.98px) {
   .nav-wrapper {
     margin-top:-60px;
     width: 100%;
@@ -47,6 +47,9 @@
                 position: initial;
                 height: 60px;
                 border: 0;
+                @include media-breakpoint-down(lg) {
+                  padding: 0.5rem 0.75rem;
+                }
                 &:before,
                 &:after {
                   display: none;
