@@ -21,8 +21,6 @@ varnish:
   ingress_hostname: webfactory-drupal-dev-varnish.dpk-soc-web-cl01.doobesha.org
   ingress_content_hub_hostname: contenthub-drupal-dev-varnish.dpk-soc-web-cl01.doobesha.org
 
->>>>>>> iaac/helm/develop.yaml
-
 drupal:
   version: 8
   name: webfactory-drupal
