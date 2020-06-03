@@ -22,6 +22,11 @@ targetEntityType: block_promotion_entity
 bundle: offer
 mode: default
 content:
+  content_moderation_control:
+    weight: -20
+    settings: {  }
+    third_party_settings: {  }
+    region: content
   field_background_image:
     type: entity_reference_entity_view
     weight: 5
