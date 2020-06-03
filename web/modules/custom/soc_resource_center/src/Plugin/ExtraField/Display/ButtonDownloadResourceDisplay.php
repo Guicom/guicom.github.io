@@ -72,7 +72,7 @@ class ButtonDownloadResourceDisplay extends ExtraFieldDisplayFormattedBase {
           try {
             /* @var \Drupal\file\FileInterface $file */
             $file = \Drupal::entityTypeManager()->getStorage('file')->load($id);
-            $url = Url::fromUri($file->getFileUri());
+            $url = Url::fromUri(file_create_url($file->getFileUri()));
             $attributes['download'] = TRUE;
             $attributes['class'][]='is-file';
           } catch (\Exception $e) {
