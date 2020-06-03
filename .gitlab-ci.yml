@@ -41,7 +41,7 @@ cache: &global_cache
     SE_OPTS: ""
   before_script:
     - mkdir -p "${DOCKER_IMAGE_BUILD_PATH}/"
-    - apk add --no-cache py-pip python-dev libffi-dev openssl-dev gcc libc-dev make
+    - apk add --no-cache py-pip python3-dev libffi-dev openssl-dev gcc libc-dev make
     - pip install docker-compose
     - cp ${CI_PROJECT_DIR}/docker-compose.example.gitlab-ci.yml ${CI_PROJECT_DIR}/docker-compose.yml
     - cp ${CI_PROJECT_DIR}/phing/example.build.properties.local ${CI_PROJECT_DIR}/phing/build.properties.local
@@ -64,7 +64,7 @@ cache: &global_cache
     APACHE_RUN_GROUP: "www-data"
   before_script:
     - mkdir -p "${DOCKER_IMAGE_BUILD_PATH}/"
-    - apk add --no-cache py-pip python-dev libffi-dev openssl-dev gcc libc-dev make
+    - apk add --no-cache py-pip python3-dev libffi-dev openssl-dev gcc libc-dev make
     - pip install docker-compose
     - cp ${CI_PROJECT_DIR}/docker-compose.example.gitlab-ci.yml ${CI_PROJECT_DIR}/docker-compose.yml
     - cp ${CI_PROJECT_DIR}/phing/example.build.properties.local ${CI_PROJECT_DIR}/phing/build.properties.local
@@ -83,7 +83,7 @@ cache: &global_cache
     APACHE_RUN_GROUP: "www-data"
   before_script:
     - mkdir -p "${DOCKER_IMAGE_BUILD_PATH}/"
-    - apk add --no-cache py-pip python-dev libffi-dev openssl-dev gcc libc-dev make
+    - apk add --no-cache py-pip python3-dev libffi-dev openssl-dev gcc libc-dev make
     - pip install docker-compose
     - cp ${CI_PROJECT_DIR}/docker-compose.example.gitlab-ci.yml ${CI_PROJECT_DIR}/docker-compose.yml
     - cp ${CI_PROJECT_DIR}/phing/example.build.properties.local ${CI_PROJECT_DIR}/phing/build.properties.local

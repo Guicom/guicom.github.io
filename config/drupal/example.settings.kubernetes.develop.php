@@ -224,3 +224,7 @@ $settings['config_exclude_modules'] = ['soc_content'];
  * Varnish host
  */
 $config['varnish_purger.settings.1563b06bbe']['hostname'] = 'webfactory-drupal-service.webfactory-dev.svc.cluster.local';
+
+// Content hub URL
+// TODO: HRI to check with k8s internal DNS
+$config['entity_share_client.remote.content_hub']['url'] = 'http://webfactory-content-hub-service.webfactory-dev.svc.cluster.local';
