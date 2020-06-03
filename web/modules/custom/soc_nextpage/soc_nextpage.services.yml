@@ -37,4 +37,4 @@ services:
       - { name: breadcrumb_builder, priority: 100 }
   soc_nextpage.rollback_import:
     class: Drupal\soc_nextpage\Service\RollbackImport
-    parent: Drupal\soc_rollback\Service\RollbackImport
+    arguments: ['@soc_heartbeat.heartmanager', '@soc_nextpage.nextpage_item_handler', '@database']

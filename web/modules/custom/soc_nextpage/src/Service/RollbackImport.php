@@ -3,11 +3,43 @@
 namespace Drupal\soc_nextpage\Service;
 
 use Drupal;
+use Drupal\Core\Database\Connection;
+use Drupal\soc_heartbeat\Service\Manager\HeartbeatManager;
 
 /**
  *
  */
-class RollbackImport extends Drupal\soc_rollback\Service\RollbackImport {
+class RollbackImport {
+
+  /**
+   * @var \Drupal\soc_heartbeat\Service\Manager\HeartbeatManager
+   */
+  protected $heartBeat;
+
+  /**
+   * @var \Drupal\soc_nextpage\Service\NextpageItemHandler
+   */
+  protected $nextpageItemHandler;
+
+  /**
+   * @var \Drupal\Core\Database\Connection
+   */
+  private $connection;
+
+  /**
+   * RollbackImport constructor.
+   *
+   * @param \Drupal\soc_heartbeat\Service\Manager\HeartbeatManager $heartbeatManager
+   * @param \Drupal\soc_nextpage\Service\NextpageItemHandler $nextpageItemHandler
+   * @param \Drupal\Core\Database\Connection $connection
+   */
+  public function __construct(HeartbeatManager $heartbeatManager,
+                              NextpageItemHandler $nextpageItemHandler,
+                              Connection $connection) {
+    $this->heartBeat = $heartbeatManager;
+    $this->nextpageItemHandler = $nextpageItemHandler;
+    $this->connection = $connection;
+  }
 
   /**
    * @return bool
@@ -22,11 +54,21 @@ class RollbackImport extends Drupal\soc_rollback\Service\RollbackImport {
     if (count($items) > 0) {
       throw new \Exception(t('The rollback table is not empty.'), 1);
     }
-    $relation = \Drupal::service('soc_nextpage.nextpage_item_handler')->selectRelation();
+    $relation = $this->nextpageItemHandler->selectRelation();
     if (count($relation) > 0) {
       throw new \Exception(t('The relation table is not empty.'), 1);
     }
     return TRUE;
+  }
+
+  /**
+   * @return mixed
+   */
+  public function selectRollbackEntry() {
+    $items = $this->connection->select('soc_rollback_items', 'sri')
+      ->fields('sri', ['entity_id']);
+    $data = $items->execute();
+    return $data->fetchAll(\PDO::FETCH_OBJ);
   }
 
 }
