@@ -5,7 +5,7 @@ dependencies:
   config:
     - core.entity_view_mode.taxonomy_term.search_index
     - field.field.taxonomy_term.family.field_background_image
-    - field.field.taxonomy_term.family.field_family_extid
+    - field.field.taxonomy_term.family.field_extid
     - field.field.taxonomy_term.family.field_family_first_multiline
     - field.field.taxonomy_term.family.field_family_image
     - field.field.taxonomy_term.family.field_family_menu_icon
@@ -117,7 +117,7 @@ content:
             classes: {  }
 hidden:
   field_background_image: true
-  field_family_extid: true
+  field_extid: true
   field_family_first_multiline: true
   field_family_menu_icon: true
   field_family_second_multiline: true

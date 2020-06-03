@@ -8,6 +8,7 @@ body.taxonomy-family {
   h2.field--name-field-title {
     @include block-title(true);
     margin-bottom: 40px;
+    line-height: 3rem;
   }
   header {
     @include media-breakpoint-up(lg) {
@@ -21,11 +22,7 @@ body.taxonomy-family {
           margin-bottom: 180px;
         }
         .family-title {
-          color: $white;
-          font-family: $font-roboto;
-          font-size: 48px;
-          font-weight: 300;
-          line-height: 60px;
+          @include S1($white);
           text-transform: uppercase;
         }
 
@@ -56,6 +53,9 @@ body.taxonomy-family {
 
       .family-baseline-wrapper {
         position: relative;
+        @include media-breakpoint-down(lg) {
+          top: 2.5rem;
+        }
         .family-baseline-inner {
           @include media-breakpoint-up(lg) {
             position: absolute;

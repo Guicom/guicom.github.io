@@ -22,9 +22,7 @@ body {
         }
       }
       .text-formatted p {
-        color: $white;
-        font-size: 24px;
-        line-height: 30px;
+        @include S3($white);
         @include media-breakpoint-down(md) {
           margin-bottom: 3rem;
         }

@@ -4,6 +4,7 @@ namespace Drupal\soc_nextpage\Controller;
 
 
 use Drupal;
+use Drupal\Core\Entity\EntityStorageException;
 use Drupal\soc_nextpage\Exception\InvalidTokenException;
 use Symfony\Component\HttpFoundation\JsonResponse;
 
@@ -28,6 +29,7 @@ class Test {
     try {
       $token = $this->nextPageApi->generateApiToken();
     } catch (InvalidTokenException $e) {
+      throw new InvalidTokenException($e->getMessage(), 1);
     }
     return [
       '#markup' => $token,

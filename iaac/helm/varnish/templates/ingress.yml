@@ -1,0 +1,40 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: {{ .Values.namespace }}-{{ .Values.varnish.name }}-ingress
+  namespace: {{ .Values.namespace }}
+  annotations:
+    certmanager.k8s.io/cluster-issuer: letsencrypt
+    kubernetes.io/ingress.class: nginx-agc
+    nginx.ingress.kubernetes.io/auth-realm: Authentication Required
+    nginx.ingress.kubernetes.io/auth-secret: {{ .Values.drupal.name }}-secret
+    nginx.ingress.kubernetes.io/auth-type: basic
+    nginx.ingress.kubernetes.io/proxy-body-size: 100m
+    nginx.ingress.kubernetes.io/ssl-redirect: "false"
+    nginx.ingress.kubernetes.io/proxy-buffer-size: "256k"
+    nginx.ingress.kubernetes.io/configuration-snippet: |
+      proxy_busy_buffers_size 256k;
+
+    cert-manager.io/cluster-issuer: letsencrypt
+  labels:
+    app: {{ .Values.varnish.name }}
+spec:
+  rules:
+    - host: {{ .Values.varnish.ingress_hostname }}
+      http:
+        paths:
+          - path: /
+            backend:
+              serviceName: {{ .Values.varnish.name }}-service
+              servicePort: http
+    - host: {{ .Values.varnish.ingress_content_hub_hostname }}
+      http:
+        paths:
+          - path: /
+            backend:
+              serviceName: {{ .Values.varnish.name }}-service
+              servicePort: http
+  tls:
+    - hosts:
+      - {{ .Values.varnish.ingress_hostname }}
+      secretName: cert-lets-webfactory-drupal

@@ -1,0 +1,19 @@
+uuid: 5dcadeaa-a5cc-499b-9535-8e690845513c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_extid
+    - node.type.product_reference
+id: node.product_reference.field_extid
+field_name: field_extid
+entity_type: node
+bundle: product_reference
+label: ExtID
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

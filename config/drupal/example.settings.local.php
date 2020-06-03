@@ -184,7 +184,7 @@ $settings['we_megamenu_deploy_content'] = $app_ground . '/content/we_megamenu_co
  * @see \soc_user_install()
  */
 $settings['admin_username'] = 'admin_socomec';
-$settings['admin_password'] = 'admin_socomec12!';
+$settings['admin_password'] = 'ADMIN_SOCOMEC_PWD';
 $settings['admin_email'] = 'admin_socomec@socomec.com';
 
 $settings['DISABLE_SUPER_ADMIN_ACCOUNT'] = 1;
@@ -204,8 +204,9 @@ $config['config_split.config_split.pim_configuration']['folder'] = "../config/dr
  * Pim Conf
  */
 $settings['nextpage_base_url'] = 'https://preprod-socomecweb-api.nextpage.fr/com/';
-$settings['nextpage_username'] = 'admin';
-$settings['nextpage_password'] = '';
+$settings['auth_status'] = 1;
+$settings['nextpage_username'] = 'agence';
+$settings['nextpage_password'] = 'NEXTPAGE_PWD';
 $settings['channel_extid'] = '##451471a6-4f2e-4395-820c-db907b1c945c';
 $settings['endpoint_token'] = 'api/auth';
 $settings['endpoint_dicocarac'] = 'api/sdk/dicocarac/GetAll/2';
@@ -213,3 +214,4 @@ $settings['endpoint_elementsandlinks'] = 'api/sdk/element/ElementsAndLinks';
 $settings['endpoint_descendantsandlinks'] = 'api/sdk/element/DescendantsAndLinks';
 $settings['endpoint_elementsbychartemplate'] = 'api/sdk/element/ElementsByCharTemplate';
 
+$settings['trusted_host_patterns'] = array('^.*$',);

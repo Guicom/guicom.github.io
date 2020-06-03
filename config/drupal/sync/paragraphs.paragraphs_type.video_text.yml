@@ -3,7 +3,7 @@ langcode: en
 status: true
 dependencies: {  }
 id: video_text
-label: 'Video & Text'
+label: 'Model - Video & Text'
 icon_uuid: null
 icon_default: null
 description: ''

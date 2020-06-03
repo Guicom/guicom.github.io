@@ -1,0 +1,55 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Values.varnish.name }}
+  namespace: {{ .Values.namespace }}
+  labels:
+    app: {{ .Values.varnish.name }}
+    chart: {{ .Chart.Name }}-{{ .Chart.Version | replace "+" "_" }}
+    release: {{ .Release.Name }}
+    heritage: {{ .Release.Service }}
+  annotations:
+    timestamp: {{ date "20060102150405" .Release.Time | quote }}
+spec:
+  selector:
+    matchLabels:
+      app: {{ .Values.varnish.name }}
+  replicas: {{ .Values.varnish.replicaCount }}
+  template:
+    metadata:
+      labels:
+        app: {{ .Values.varnish.name }}
+        release: {{ .Release.Name }}
+      annotations:
+        timestamp: {{ date "20060102150405" .Release.Time | quote }}
+    spec:
+      hostname: varnish
+      imagePullSecrets:
+        - name: {{ .Values.registry.name }}
+      containers:
+        - name: varnish-{{ .Chart.Name }}
+          image: {{ template "varnish.image" . }}
+          imagePullPolicy: Always
+          ports:
+            - containerPort: {{ .Values.varnish.service.port }}
+          env:
+            - name: VCL_CONFIG
+              value: "/etc/varnish/custom.vcl"
+            - name: VARNISHD_PARAMS
+              value: "-p default_ttl=3600 -p default_grace=3600 -p http_max_hdr=512"
+          livenessProbe:
+            tcpSocket:
+              port: {{ .Values.varnish.service.port }}
+            initialDelaySeconds: 30
+          readinessProbe:
+            tcpSocket:
+              port: {{ .Values.varnish.service.port }}
+            initialDelaySeconds: 30
+          resources:
+            limits:
+              cpu: "4"
+              memory: 4Gi
+            requests:
+              cpu: "1"
+              memory: 1Gi
+

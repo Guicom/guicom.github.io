@@ -101,9 +101,16 @@ module:
   multiselect: 0
   node: 0
   options: 0
+  page_cache: 0
   paragraphs_library: 0
   path: 0
   path_alias: 0
+  purge: 0
+  purge_drush: 0
+  purge_processor_cron: 0
+  purge_queuer_coretags: 0
+  purge_tokens: 0
+  purge_ui: 0
   queue_ui: 0
   quickedit: 0
   rdf: 0
@@ -136,6 +143,7 @@ module:
   soc_default_images: 0
   soc_eu_cookie_compliance: 0
   soc_events: 0
+  soc_heartbeat: 0
   soc_iframe_redirect: 0
   soc_job: 0
   soc_multisite: 0
@@ -145,6 +153,7 @@ module:
   soc_pdf_content: 0
   soc_premium_content: 0
   soc_resource_center: 0
+  soc_rollback: 0
   soc_sales_locations: 0
   soc_search: 0
   soc_store_locator: 0
@@ -164,6 +173,9 @@ module:
   twig_tweak: 0
   ultimate_cron: 0
   user: 0
+  varnish_image_purge: 0
+  varnish_purge_tags: 0
+  varnish_purger: 0
   views_ui: 0
   we_megamenu: 0
   we_megamenu_deploy: 0

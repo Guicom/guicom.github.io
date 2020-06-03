@@ -130,11 +130,7 @@ body.node--type-product {
 
     .product-title {
       display: block;
-      color: $white;
-      font-family: $font-poppins;
-      font-size: 72px;
-      font-weight: 200;
-      line-height: 90px;
+      @include S1-xxl($white);
     }
 
     .product-subtitle {
@@ -513,13 +509,11 @@ body.node--type-product {
       }
 
       h2 {
-        color: $yellow;
+        @include S2($yellow);
         font-family: $font-roboto;
-        font-size: 32px;
         font-weight: 300;
         line-height: 40px;
         margin-bottom: 30px;
-        word-break: break-all;
       }
 
       ul {
@@ -749,7 +743,8 @@ body.node--type-product {
   // Multiline
   // Standard style
 
-  .field--name-field-product-multiline {
+  .field--name-field-product-multiline,
+  .field--name-field-multiline{
     > .field__item {
       > div:not(.paragraph--type-content) {
         @include make-container-max-widths();
@@ -791,9 +786,7 @@ body.node--type-product {
         min-width: 471px;
         max-width: 471px;
         @include custom-breakpoint-down(500px) {
-          flex-basis: 100%;
-          min-width: 100%;
-          max-width: 100%;
+          display: none;
         }
         .thumbnail-wrapper {
           background: rgba(76, 175, 228, 0.5);
@@ -803,9 +796,12 @@ body.node--type-product {
           display: flex;
           align-items: center;
           justify-content: center;
-          @include custom-breakpoint-down(500px) {
+          @include custom-breakpoint-down(800px) {
             height: 300px;
             width: 300px;
+          }
+          @include media-breakpoint-down(md) {
+            display: none;
           }
           img {
             width: 270px;
@@ -857,6 +853,30 @@ body.node--type-product {
             line-height: 20px;
             margin-left: 10px;
             text-transform: uppercase;
+          }
+        }
+        .thumbnail-wrapper {
+          background: rgba(76, 175, 228, 0.5);
+          width: 441px;
+          height: 441px;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          @include custom-breakpoint-down(500px) {
+            height: 300px;
+            width: 300px;
+          }
+          img {
+            width: 270px;
+            height: auto;
+            box-shadow: 0 24px 38px 3px rgba(35,44,119,0.14), 0 9px 46px 8px rgba(0,0,0,0.07), 0 11px 15px -7px rgba(0,0,0,0.14), 1px 0 0 0 #F5F5F5, 2px 0 0 0 rgba(0,0,0,0.1), 3px 0 0 -1px #F4F4F4, 5px 0 0 -2px #E8E8E8;
+          }
+        }
+        .hero-thumbnail-mobile {
+          display: none;
+          @include media-breakpoint-down(md) {
+            display: block;
           }
         }
       }

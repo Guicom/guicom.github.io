@@ -1,0 +1,23 @@
+uuid: 5878ec5b-7306-44ef-9ab9-efad140457ed
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_teaser
+    - node.type.event
+  module:
+    - text
+id: node.event.field_teaser
+field_name: field_teaser
+entity_type: node
+bundle: event
+label: 'Event Teaser'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+  required_summary: false
+field_type: text_with_summary

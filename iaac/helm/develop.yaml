@@ -11,7 +11,17 @@ registry:
   images:
     drupal: drupal
     content-hub: content-hub
-    varnish: image-varnish-name
+    varnish: varnish
+
+varnish:
+  name: webfactory-varnish
+  replicaCount: 1
+  service:
+    port: 80
+  ingress_hostname: webfactory-drupal-dev-varnish.dpk-soc-web-cl01.doobesha.org
+  ingress_content_hub_hostname: contenthub-drupal-dev-varnish.dpk-soc-web-cl01.doobesha.org
+
+>>>>>>> iaac/helm/develop.yaml
 
 drupal:
   version: 8

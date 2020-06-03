@@ -5,22 +5,24 @@ namespace Drupal\soc_nextpage\Service;
 use Drupal;
 use Drupal\Core\Database\Connection;
 
-
-class NextpageItemHandler  {
+/**
+ *
+ */
+class NextpageItemHandler {
 
   /**
-   * @var \Drupal\soc_nextpage\Service\NextpageApi $nextpageApi
+   * @var \Drupal\soc_nextpage\Service\NextpageApi
    */
   private $nextpageApi;
 
   /**
-   * @var \Drupal\Core\Database\Connection $connection
+   * @var \Drupal\Core\Database\Connection
    */
   private $connection;
 
-  /** @var array $entityInfo */
+  /**
+   * @var array*/
   protected $entityInfo;
-
 
   /**
    * NextpageItemHandler constructor.
@@ -93,6 +95,7 @@ class NextpageItemHandler  {
                 'value' => $value_data,
               ];
               break;
+
             default:
               $value = [
                 'id' => $dico_carac->ExtID,
@@ -117,6 +120,7 @@ class NextpageItemHandler  {
         $this->entityInfo['name'] = 'taxonomy_term';
         $this->entityInfo['type'] = 'vid';
         break;
+
       case 'node':
         $this->entityInfo['name'] = 'node';
         $this->entityInfo['type'] = 'type';
@@ -126,26 +130,25 @@ class NextpageItemHandler  {
     }
     switch ($type) {
       case 'family':
-        $this->entityInfo['field'] = 'field_family_extid';
-        break;
       case 'product_reference':
-        $this->entityInfo['field'] = 'field_reference_extid';
-        break;
       case 'product':
-        $this->entityInfo['field'] = 'field_product_extid';
+        $this->entityInfo['field'] = 'field_extid';
         break;
       default:
         break;
     }
   }
 
+  /**
+   *
+   */
   public function getJsonField($field) {
     $dico = $this->nextpageApi->characteristicsDictionary('2');
     if (array_key_exists($field->DicoCaracExtID, $dico)) {
       $dico_carac = $dico[$field->DicoCaracExtID];
       $libelleDossier = \Drupal::configFactory()
-          ->getEditable('soc_nextpage.nextpage_ws')
-          ->get('matching_libelle_dossier') ?? 'LibelleDossier';
+        ->getEditable('soc_nextpage.nextpage_ws')
+        ->get('matching_libelle_dossier') ?? 'LibelleDossier';
       switch ($dico_carac->TypeCode) {
         case 'CHOIX':
         case 'LISTE':
@@ -157,22 +160,23 @@ class NextpageItemHandler  {
             }
           }
           $value = [
-            'id' => (!empty($dico_carac->ExtID)) ? $dico_carac->ExtID :'',
-            'type' => (!empty($dico_carac->TypeCode)) ? $dico_carac->TypeCode :'',
-            'value' => (!empty($value_data)) ? $value_data :[],
-            'libelleDossier' => (!empty($dico_carac->{$libelleDossier})) ? $dico_carac->LibelleDossier :'',
-            'label' => (!empty($dico_carac->Name)) ? $dico_carac->Name :'',
-            'order' => (!empty($dico_carac->Order)) ? $dico_carac->Order :'',
+            'id' => (!empty($dico_carac->ExtID)) ? $dico_carac->ExtID : '',
+            'type' => (!empty($dico_carac->TypeCode)) ? $dico_carac->TypeCode : '',
+            'value' => (!empty($value_data)) ? $value_data : [],
+            'libelleDossier' => (!empty($dico_carac->{$libelleDossier})) ? $dico_carac->LibelleDossier : '',
+            'label' => (!empty($dico_carac->Name)) ? $dico_carac->Name : '',
+            'order' => (!empty($dico_carac->Order)) ? $dico_carac->Order : '',
           ];
           break;
+
         default:
           $value = [
-            'id' => (!empty($dico_carac->ExtID)) ? $dico_carac->ExtID :'',
-            'type' => (!empty($dico_carac->TypeCode)) ? $dico_carac->TypeCode :'',
-            'value' => (!empty($field->Value)) ? $field->Value :'',
-            'libelleDossier' => (!empty($dico_carac->{$libelleDossier})) ? $dico_carac->LibelleDossier :'',
-            'label' => (!empty($dico_carac->Name)) ? $dico_carac->Name :'',
-            'order' => (!empty($dico_carac->Order)) ? $dico_carac->Order :'',
+            'id' => (!empty($dico_carac->ExtID)) ? $dico_carac->ExtID : '',
+            'type' => (!empty($dico_carac->TypeCode)) ? $dico_carac->TypeCode : '',
+            'value' => (!empty($field->Value)) ? $field->Value : '',
+            'libelleDossier' => (!empty($dico_carac->{$libelleDossier})) ? $dico_carac->LibelleDossier : '',
+            'label' => (!empty($dico_carac->Name)) ? $dico_carac->Name : '',
+            'order' => (!empty($dico_carac->Order)) ? $dico_carac->Order : '',
           ];
           break;
       }
@@ -185,11 +189,14 @@ class NextpageItemHandler  {
       'libelleDossier' => '',
       'label' => '',
       'order' => '',
-      ];
+    ];
   }
 
+  /**
+   *
+   */
   public function insertRelation($familyId, $productId, $familyParentId) {
-    $result = $this->connection->insert('soc_nextpage_relations')
+    $this->connection->insert('soc_nextpage_relations')
       ->fields([
         'family_id' => $familyId,
         'product_id' => $productId,
@@ -198,12 +205,15 @@ class NextpageItemHandler  {
       ->execute();
   }
 
+  /**
+   *
+   */
   public function getRelation($productId) {
     $sth = $this->connection->select('soc_nextpage_relations', 'snr')
-      ->fields('snr', array('family_parent_id'))
+      ->fields('snr', ['family_parent_id'])
       ->condition('snr.product_id', $productId);
 
-    // Execute the statement
+    // Execute the statement.
     $data = $sth->execute();
     $result = $data->fetchAll(\PDO::FETCH_OBJ);
     if (isset($result[0])) {
@@ -213,12 +223,36 @@ class NextpageItemHandler  {
     return $result;
   }
 
+  /**
+   *
+   */
   public function deleteRelation($productId) {
     $this->connection->delete('soc_nextpage_relations')
       ->condition('product_id', $productId)
       ->execute();
   }
 
+  /**
+   *
+   */
+  public function selectRelation() {
+    $items = $this->connection->select('soc_nextpage_relations', 'snr')
+      ->fields('snr', ['relation_id']);
+    $data = $items->execute();
+    return $data->fetchAll(\PDO::FETCH_OBJ);
+  }
+
+  /**
+   *
+   */
+  public function purgeRelation($productId) {
+    $this->connection->delete('soc_nextpage_relations')
+      ->execute();
+  }
+
+  /**
+   *
+   */
   public function getFieldFromJson($json_value, $extid) {
     $data = NULL;
     if (isset($json_value->{$extid})) {

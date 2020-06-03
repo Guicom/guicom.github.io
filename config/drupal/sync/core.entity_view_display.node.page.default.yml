@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.page.body
+    - field.field.node.page.field_hero
     - field.field.node.page.field_table
     - node.type.page
   module:
@@ -17,30 +18,34 @@ targetEntityType: node
 bundle: page
 mode: default
 content:
-  addtoany:
-    weight: 101
-    settings: {  }
-    third_party_settings: {  }
-    region: content
   body:
     label: hidden
     type: text_default
-    weight: 100
+    weight: 1
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  content_moderation_control:
+    weight: 0
     region: content
     settings: {  }
     third_party_settings: {  }
   field_table:
     type: entity_reference_revisions_entity_view
-    weight: 102
-    label: above
+    weight: 3
+    label: hidden
     settings:
       view_mode: default
       link: ''
     third_party_settings: {  }
     region: content
   links:
-    weight: 101
+    weight: 2
     region: content
+    settings: {  }
+    third_party_settings: {  }
 hidden:
+  addtoany: true
+  field_hero: true
   langcode: true
   search_api_excerpt: true

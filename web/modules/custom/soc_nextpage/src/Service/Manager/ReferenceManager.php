@@ -2,14 +2,17 @@
 
 namespace Drupal\soc_nextpage\Service\Manager;
 
+
+use Drupal\Core\Logger\LoggerChannelFactoryInterface;
 use Drupal;
 use Drupal\node\Entity\Node;
 use Drupal\paragraphs\Entity\Paragraph;
 use Drupal\soc_nextpage\Service\NextpageApi;
 use Drupal\soc_nextpage\Service\NextpageItemHandler;
+use Drupal\soc_rollback\Service\RollbackImport;
 
 /**
- * Class ReferenceManager
+ * Class ReferenceManager.
  *
  * @package Drupal\soc_nextpage\Service\Manager
  */
@@ -25,12 +28,28 @@ class ReferenceManager {
    */
   private $nextpageItemHandler;
 
+  /**
+   * @var \Drupal\soc_rollback\Service\RollbackImport
+   */
+  private $rollbackImport;
+
+  /**
+   * @var \Drupal\Core\Logger\LoggerChannelInterface
+   */
+  private $logger;
+
+  /**
+   *
+   */
   public function __construct(NextpageApi $nextpageApi,
-                              NextpageItemHandler $nextpageItemHandler) {
+                              NextpageItemHandler $nextpageItemHandler,
+                              RollbackImport $rollbackImport,
+                              LoggerChannelFactoryInterface $channelFactory) {
     $this->nextpageApi = $nextpageApi;
     $this->nextpageItemHandler = $nextpageItemHandler;
+    $this->rollbackImport = $rollbackImport;
+    $this->logger = $channelFactory->get('soc_nextpage');
   }
-
 
   /**
    * Handle references of a product: create if not already existing, else update.
@@ -38,11 +57,12 @@ class ReferenceManager {
    * @param $product_ext_id
    *
    * @return array
+   *
    * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
    * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
    * @throws \Drupal\Core\Entity\EntityStorageException
    */
-  public function handle($product_ext_id) {
+  public function handle($product_ext_id, $context) {
     $nids = [];
     // Manage reference.
     $references = $this->nextpageApi->descendantsAndLinks(TRUE, [], [], $product_ext_id);
@@ -50,14 +70,29 @@ class ReferenceManager {
       if ($reference->ElementType === 3) {
         if ($entity = $this->nextpageItemHandler->loadByExtID($reference->ExtID, 'node', 'product_reference')) {
           // Update reference.
-          $nid = $this->updateReference($entity, $reference);
+          if ($node = $this->updateReference($entity, $reference, $context['job_id'])) {
+            $nids[] = $node->id();
+            $state = 'updated';
+            $this->rollbackImport->updateJob($context['job_id'],
+              [
+                'operation' => 'update_entity',
+                'state' => $state,
+                'entity' => $node,
+              ]);
+          }
         }
         else {
           // Create reference.
-          $nid = $this->createReference($reference);
-        }
-        if ($nid !== FALSE) {
-          $nids[] = $nid;
+          if ($node = $this->createReference($reference, $context['job_id'])) {
+            $nids[] = $node->id();
+            $state = 'created';
+            $this->rollbackImport->updateJob($context['job_id'],
+              [
+                'operation' => 'update_entity',
+                'state' => $state,
+                'entity' => $node,
+              ]);
+          }
         }
       }
     }
@@ -79,12 +114,12 @@ class ReferenceManager {
    * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
    * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
    */
-  public function createReference($reference) {
-    // Create node.
+  public function createReference($reference, $job_id) {
     $node = \Drupal::entityTypeManager()->getStorage('node')->create([
       'type'        => 'product_reference',
     ]);
-    return $this->updateReference($node, $reference);
+
+    return $this->updateReference($node, $reference, $job_id);
   }
 
   /**
@@ -93,8 +128,9 @@ class ReferenceManager {
    *
    * @return mixed
    * @throws \Drupal\Core\Entity\EntityStorageException
+   * @throws \Exception
    */
-  public function updateReference($node, $reference) {
+  public function updateReference($node, $reference, $job_id) {
     if (!isset($reference->Values->{'DC_R_ADMIN_Invoice_Description'})) {
       return FALSE;
     }
@@ -106,24 +142,24 @@ class ReferenceManager {
     $node->set('field_json_product_data', $json_field);
     $node->set('field_reference_json_table', $this->buildJsonTable($reference->Values));
 
-    $node->set('field_reference_extid', $reference->ExtID);
+    $node->set('field_extid', $reference->ExtID);
     $node->set('field_reference_ref', $reference->Values->{'DC_R_REFERENCE'}->Value);
     $exclude = [
       'DC_R_ADMIN_Invoice_Description',
       'DC_R_REFERENCE_LONG_DESCRIPTION',
-      'DC_R_REFERENCE'
+      'DC_R_REFERENCE',
     ];
     $node->set('field_characteristics', $this->buildJsonCharacteristics($reference->Values, $exclude));
     $node->setPublished();
     $node->set('moderation_state', 'published');
 
     if ($node->isNew()) {
-      // Initialize Cta btn match with entity uuid of paragraphs_library_item defined in soc_content module install
+      // Initialize Cta btn match with entity uuid of paragraphs_library_item defined in soc_content module install.
       $ctaArray = [
         'field_product_cta_1' => 'e6335561-cf61-4ed3-b233-6d7b55c1c6e9',
         'field_product_cta_2' => '57f07f79-dd2a-4886-bf7d-417705232104',
         'field_product_cta_3' => '69e5214f-5759-46d5-a0f5-4c8c41e0adc3',
-        // ready to by not use for moment 'field_product_cta_4' => 'bd080195-6284-4678-a773-c70b820a50f1',
+        // Ready to by not use for moment 'field_product_cta_4' => 'bd080195-6284-4678-a773-c70b820a50f1',.
       ];
 
       foreach ($ctaArray as $field => $uuid) {
@@ -138,26 +174,38 @@ class ReferenceManager {
               0 => [
                 'target_id' => $paragraph->id(),
                 'target_revision_id' => $paragraph->getRevisionId(),
-              ]
+              ],
             ];
             $node->set($field, $current);
           }
-          catch (\Exception $e) {}
+          catch (\Exception $e) {
+            throw new \Exception($e->getMessage(), 1);
+          }
         }
       }
     }
 
+    $node->setNewRevision(TRUE);
+    $node->revision_log = t('Created revision for @nid in Job @job_id',
+    [
+      "@nid" => $node->id(),
+      "@job_id" => $job_id,
+    ]);
+    $node->setRevisionCreationTime(REQUEST_TIME);
     try {
       $node->save();
-      return $node->id();
+      return $node;
     }
     catch (\Exception $e) {
-      \Drupal::logger('soc_nextpage')->warning($e->getMessage());
+      throw new \Exception($e->getMessage(), 1);
     }
-    return FALSE;
   }
 
-
+  /**
+   * @param $reference
+   *
+   * @return false|string
+   */
   public function buildJsonTable($reference) {
     if (isset($reference->DC_R_PRODUCT_STATUS)) {
       $status = $this->nextpageItemHandler->getJsonField($reference->DC_R_PRODUCT_STATUS);
@@ -177,7 +225,7 @@ class ReferenceManager {
     }
     if (isset($reference->DC_R_TC3_VALUE->Value)) {
       $value = $this->nextpageItemHandler->getJsonField($reference->DC_R_TC3_NAME);
-      $json[$value["value"][0]] =  $reference->DC_R_TC3_VALUE->Value;
+      $json[$value["value"][0]] = $reference->DC_R_TC3_VALUE->Value;
     }
     if (isset($reference->DC_R_TC4_VALUE->Value)) {
       $value = $this->nextpageItemHandler->getJsonField($reference->DC_R_TC4_NAME);
@@ -192,19 +240,21 @@ class ReferenceManager {
       $json[$status["label"]] = $status["value"];
     }
 
-    $json = json_encode($json);
-    return $json;
+    return json_encode($json);
   }
 
+  /**
+   *
+   */
   public function buildJsonCharacteristics($referenceFields, array $exclude) {
     $json = [];
     foreach ($referenceFields as $fieldName => $field) {
-      if (!in_array($fieldName, $exclude)) {
-        if ($value = $this->nextpageItemHandler->getJsonField($field)) {
-          if (!empty($value['value']) && !empty($value['libelleDossier']) && !empty($value['order'])) {
-            $json[$value['libelleDossier']][$value['order']] = $value;
-          }
-        }
+      if (!in_array($fieldName, $exclude)
+        && ($value = $this->nextpageItemHandler->getJsonField($field))
+        && !empty($value['value'])
+        && !empty($value['libelleDossier'])
+        && !empty($value['order'])) {
+        $json[$value['libelleDossier']][$value['order']] = $value;
       }
     }
     if (!empty($json)) {
@@ -213,9 +263,9 @@ class ReferenceManager {
           ksort($json[$key]);
         }
       }
-      $json = json_encode($json);
-      return $json;
+      return json_encode($json);
     }
     return NULL;
   }
+
 }
