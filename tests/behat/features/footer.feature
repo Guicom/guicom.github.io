@@ -31,9 +31,7 @@ Feature: Footer
     And I click the ".dropdown-language-item" element
     And I should see "FR"
     And I should see "IT"
-    And I should see "EN-US"
     And I should see "DE"
-    And I should see "PL"
     # sub footer menu block
     Then I should see an "#block-socomec-footer-legal-mentions" element
     And I should see "Legal mention" in the "#block-socomec-footer-legal-mentions" element

@@ -214,3 +214,4 @@ $settings['endpoint_elementsandlinks'] = 'api/sdk/element/ElementsAndLinks';
 $settings['endpoint_descendantsandlinks'] = 'api/sdk/element/DescendantsAndLinks';
 $settings['endpoint_elementsbychartemplate'] = 'api/sdk/element/ElementsByCharTemplate';
 
+$settings['trusted_host_patterns'] = array('^.*$',);

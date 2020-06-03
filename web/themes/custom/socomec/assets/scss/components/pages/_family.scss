@@ -112,5 +112,12 @@ body.taxonomy-family {
       }
     }
   }
-
+  .family-article {
+    .multiline-wrapper {
+      .field--name-field-family-second-multiline,
+      .field--name-field-family-first-multiline {
+        width: 100%;
+      }
+    }
+  }
 }

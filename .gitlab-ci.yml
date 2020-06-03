@@ -41,7 +41,7 @@ cache: &global_cache
     SE_OPTS: ""
   before_script:
     - mkdir -p "${DOCKER_IMAGE_BUILD_PATH}/"
-    - apk add --no-cache py-pip python-dev libffi-dev openssl-dev gcc libc-dev make
+    - apk add --no-cache py-pip python3-dev libffi-dev openssl-dev gcc libc-dev make
     - pip install docker-compose
     - cp ${CI_PROJECT_DIR}/docker-compose.example.gitlab-ci.yml ${CI_PROJECT_DIR}/docker-compose.yml
     - cp ${CI_PROJECT_DIR}/phing/example.build.properties.local ${CI_PROJECT_DIR}/phing/build.properties.local
@@ -64,13 +64,32 @@ cache: &global_cache
     APACHE_RUN_GROUP: "www-data"
   before_script:
     - mkdir -p "${DOCKER_IMAGE_BUILD_PATH}/"
-    - apk add --no-cache py-pip python-dev libffi-dev openssl-dev gcc libc-dev make
+    - apk add --no-cache py-pip python3-dev libffi-dev openssl-dev gcc libc-dev make
     - pip install docker-compose
     - cp ${CI_PROJECT_DIR}/docker-compose.example.gitlab-ci.yml ${CI_PROJECT_DIR}/docker-compose.yml
     - cp ${CI_PROJECT_DIR}/phing/example.build.properties.local ${CI_PROJECT_DIR}/phing/build.properties.local
     - docker-compose up -d
     - docker-compose exec -u root -T web bash -c "cd /var/www/html/ && make install"
-    - docker-compose exec -u root -T web bash -c "cd /var/www/html/ && make set-kubernetes-configs"
+    - docker-compose exec -u root -T web bash -c "cd /var/www/html/ && make set-drupal-configs"
+    - docker-compose exec -u root -T web bash -c "chown -R web:www-data /var/www/html/"
+
+.build_content-hub: &build_content-hub
+  artifacts:
+    paths:
+      - "${DOCKER_IMAGE_BUILD_PATH}/"
+  variables:
+    # No spaces.
+    APACHE_RUN_USER: "www-data"
+    APACHE_RUN_GROUP: "www-data"
+  before_script:
+    - mkdir -p "${DOCKER_IMAGE_BUILD_PATH}/"
+    - apk add --no-cache py-pip python3-dev libffi-dev openssl-dev gcc libc-dev make
+    - pip install docker-compose
+    - cp ${CI_PROJECT_DIR}/docker-compose.example.gitlab-ci.yml ${CI_PROJECT_DIR}/docker-compose.yml
+    - cp ${CI_PROJECT_DIR}/phing/example.build.properties.local ${CI_PROJECT_DIR}/phing/build.properties.local
+    - docker-compose up -d
+    - docker-compose exec -u root -T web bash -c "cd /var/www/html/ && make install"
+    - docker-compose exec -u root -T web bash -c "cd /var/www/html/ && make set-content-hub-configs"
     - docker-compose exec -u root -T web bash -c "chown -R web:www-data /var/www/html/"
 
 # SonarQube Runner
@@ -120,11 +139,33 @@ behat:
   script:
     - cd iaac && make push-web-image
 
+.push-content-hub-image: &push-content-hub-image
+  stage: build
+  tags:
+    - actency
+  cache:
+    # inherit all global cache settings
+    <<: *global_cache
+  extends:
+    - .build_content-hub
+  script:
+    - cd iaac && make push-content-hub-image
+
 build:
   variables:
     ENVIRONMENT: $CI_COMMIT_REF_NAME
   extends:
     - .push-web-image
+  only:
+    refs:
+      - recette
+      - develop
+
+build-content-hub:
+  variables:
+    ENVIRONMENT: $CI_COMMIT_REF_NAME
+  extends:
+    - .push-content-hub-image
   only:
     refs:
       - recette
@@ -194,6 +235,7 @@ deploy-dev:
     ENVIRONMENT: $CI_COMMIT_REF_NAME
     KUBE_LATEST_VERSION: v1.14.2
     NAMESPACE: webfactory-dev
+    APP_NAME: webfactory-drupal
   before_script:
     - apk add --no-cache make jq curl
     - curl -L https://storage.googleapis.com/kubernetes-release/release/${KUBE_LATEST_VERSION}/bin/linux/amd64/kubectl -o /usr/local/bin/kubectl
@@ -201,6 +243,29 @@ deploy-dev:
   script:
     - helm ls --namespace ${NAMESPACE}
     - cd iaac/helm && helm upgrade -i --wait --namespace ${NAMESPACE} -f ${ENVIRONMENT}.yaml ${NAMESPACE}-drupal drupal
+    - cd .. && make wait-deployment-rollout && make wait-pod-to-be-ready && make run-drupal-update
+  only:
+    refs:
+      - develop
+  when: manual
+
+deploy-content-hub-dev:
+  stage: deploy
+  image: alpine/helm:3.0.3
+  tags:
+    - socomec
+  variables:
+    ENVIRONMENT: $CI_COMMIT_REF_NAME
+    KUBE_LATEST_VERSION: v1.14.2
+    NAMESPACE: webfactory-dev
+    APP_NAME: webfactory-content-hub
+  before_script:
+    - apk add --no-cache make jq curl
+    - curl -L https://storage.googleapis.com/kubernetes-release/release/${KUBE_LATEST_VERSION}/bin/linux/amd64/kubectl -o /usr/local/bin/kubectl
+    - chmod +x /usr/local/bin/kubectl
+  script:
+    - helm ls --namespace ${NAMESPACE}
+    - cd iaac/helm && helm upgrade -i --wait --namespace ${NAMESPACE} -f ${ENVIRONMENT}.yaml ${NAMESPACE}-content-hub content-hub
     - cd .. && make wait-deployment-rollout && make wait-pod-to-be-ready && make run-drupal-update
   only:
     refs:

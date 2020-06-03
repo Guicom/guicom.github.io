@@ -15,11 +15,6 @@ We truncate at 63 chars because some Kubernetes name fields are limited to this 
 {{- printf "%s-%s" .Release.Name $name | trunc 63 | trimSuffix "-" -}}
 {{- end -}}
 
-
 {{- define "drupal.image" -}}
-{{- printf "%s/%s:%s" .Values.registry.location .Values.registry.images.drupal .Values.drupal.environment -}}
-{{- end -}}
-
-{{- define "varnish.image" -}}
-{{- printf "%s/%s:%s" .Values.registry.location .Values.registry.images.varnish .Values.drupal.environment -}}
+{{- printf "%s/%s:%s" .Values.registry.location .Values.registry.images.drupal .Values.environment -}}
 {{- end -}}

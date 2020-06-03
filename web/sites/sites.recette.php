@@ -56,10 +56,6 @@
  * @see https://www.drupal.org/documentation/install/multi-site
  */
 
-$sites['contenthub-drupal-rct.dpk-soc-web-cl01.doobesha.org'] = 'contenthub'; // keep first
-$sites['contenthub-drupal-rct-api.dpk-soc-web-cl01.doobesha.org'] = 'contenthub'; // keep first
-$sites['contenthub-drupal-rct-varnish.dpk-soc-web-cl01.doobesha.org'] = 'contenthub'; // keep first
-$sites['localhost'] = 'contenthub';
 $sites['webfactory-drupal-rct.dpk-soc-web-cl01.doobesha.org'] = 'default';
 $sites['webfactory-drupal-rct-api.dpk-soc-web-cl01.doobesha.org'] = 'default';
 $sites['webfactory-drupal-rct-varnish.dpk-soc-web-cl01.doobesha.org'] = 'default';

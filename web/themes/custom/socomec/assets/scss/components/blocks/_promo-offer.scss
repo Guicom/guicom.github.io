@@ -1,0 +1,401 @@
+// BLOCK PROMO OFFER
+.block-soc-blocks-promotion,
+.block-promotion-block-product-page{
+  width: 100%;
+  margin-bottom: 2rem;
+}
+// GLOBAL RENDERING
+.block-promotion-entity {
+  &.block-promotion-entity-offer {
+    position: relative;
+    .global-link {
+      transition: $transition02;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      text-indent: -99999px;
+      z-index: 20;
+      &:hover {
+        box-shadow: $box-shadow-card-list;
+        transition: $transition02;
+      }
+    }
+    // TOP SECTION
+    .soc-block-promo-entity-header {
+      background: $white;
+      .soc-block-promo-entity-external-title {
+        font-size: $font-size-h5;
+        color: $blue;
+        text-transform: uppercase;
+        font-family: $font-roboto;
+        font-weight: 900;
+      }
+      .soc-block-promo-entity-sub-title {
+        font-size: $font-size-xs;
+        color: $yellow;
+        text-transform: uppercase;
+        font-family: $font-poppins;
+        font-weight: 600;
+        letter-spacing: 1px;
+        line-height: 25px;
+      }
+      .soc-block-promo-entity-central-image {
+        display: flex;
+        justify-content: center;
+      }
+    }
+    // BOTTOM SECTION
+    .soc-block-promo-entity-content {
+      background-size: cover;
+      .soc-block-promo-entity-description{
+        font-family: $font-roboto;
+        font-size: $font-size-h4;
+        font-weight: 300;
+        color: $white;
+      }
+      .soc-block-promo-entity-teaser {
+        font-family: $font-poppins;
+        font-size: $font-size-xs;
+        font-weight: 500;
+        color: $white;
+      }
+      .soc-block-promo-entity-link {
+        .back-to-button {
+          color: $yellow;
+          font-family: $font-poppins;
+          font-size: $font-size-xs;
+          letter-spacing: 1px;
+          text-transform: uppercase;
+          font-weight: 600;
+          svg {
+            margin-right: 3px;
+            g {
+              fill: $yellow;
+              path {
+                opacity: 1;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// COL-3 RENDERING
+.col-md-3,
+  //soc-10-col and soc-6-col for heriting
+.soc-10-col,
+.soc-6-col {
+  .block-promotion-entity {
+    &.block-promotion-entity-offer {
+      text-align: center;
+      // TOP SECTION
+      .soc-block-promo-entity-header {
+        padding-top: 1rem;
+        padding-left: 1.25rem;
+        padding-right: 1.25rem;
+        .soc-block-promo-entity-sub-title {
+        }
+        .soc-block-promo-entity-central-image {
+          position: relative;
+          z-index: 10;
+          top: 60px;
+          &:before {
+            content: '';
+            position: absolute;
+            display: block;
+            left: 50%;
+            top: 45%;
+            transform: translateX(-50%) translateY(-50%);
+            border-radius: 50%;
+            background: $blue_lighter;
+            width: 210px;
+            height: 210px;
+            z-index: -1;
+          }
+          div:first-child {
+            width: 13.125rem;
+            height: 13.125rem;
+          }
+          img {
+            margin-bottom: 1rem;
+          }
+        }
+      }
+      // BOTTOM SECTION
+      .soc-block-promo-entity-content {
+        position: relative;
+        padding-top: 6.5rem;
+        padding-bottom: 1rem;
+        &:after {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: $blue;
+          opacity: 0.8;
+        }
+        .soc-block-promo-entity-description {
+          display: none;
+          position: relative;
+          z-index: 10;
+          padding: 0 1.25rem;
+        }
+        .soc-block-promo-entity-teaser {
+          position: relative;
+          z-index: 10;
+          margin-bottom: 1.5rem;
+          padding: 0 1.25rem;
+        }
+        .soc-block-promo-entity-link {
+          position: relative;
+          z-index: 10;
+          padding: 0 1.25rem;
+          text-align: left;
+        }
+      }
+    }
+  }
+}
+
+// Col-10 & Fullscreen RENDERING
+.soc-10-col,
+.soc-fullscreen,
+// soc-6-col for heriting
+.soc-6-col {
+  @include media-breakpoint-up(md) {
+    .block-promotion-entity {
+      &.block-promotion-entity-offer {
+        text-align: left;
+        position: relative;
+        // TOP SECTION
+        .soc-block-promo-entity-header {
+          display: block;
+          padding-top: 2rem;
+          padding-left: 2rem;
+          padding-right: 1rem;
+          .soc-block-promo-entity-external-title {
+            padding-left: 16.5rem;
+            padding-bottom: 0;
+            font-size: $font-size-h4;
+          }
+          .soc-block-promo-entity-sub-title {
+            padding-left: 15.5rem;
+            line-height: 41px;
+            margin-left: 1rem;
+            margin-bottom: 1rem;
+            @include media-breakpoint-down(md) {
+              line-height: initial;
+            }
+          }
+          .soc-block-promo-entity-central-image {
+            position: absolute;
+            z-index: 10;
+            top: 65px;
+            left: 60px;
+            div:first-child {
+              width: 13.125rem;
+              height: 13.125rem;
+            }
+            &:before {
+              content: '';
+              position: absolute;
+              display: block;
+              left: 50%;
+              top: 45%;
+              transform: translateX(-50%) translateY(-50%);
+              border-radius: 50%;
+              background: $blue_lighter;
+              width: 220px;
+              height: 220px;
+              z-index: -1;
+            }
+          }
+        }
+        // BOTTOM SECTION
+        .soc-block-promo-entity-content {
+          position: relative;
+          padding-bottom: 3rem;
+          padding-top: 3.5rem;
+          &:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: $blue;
+            opacity: 0.8;
+          }
+          .soc-block-promo-entity-description {
+            display: block;
+            position: relative;
+            min-height: 2rem;
+            z-index: 10;
+            font-size: 1.125rem;
+            padding-right: 2rem;
+            margin-bottom: 0.5rem;
+            padding-left: 1rem;
+            padding-top: 5.5rem;
+          }
+          .soc-block-promo-entity-teaser {
+            position: absolute;
+            z-index: 10;
+            margin-bottom: 1.5rem;
+            padding-right: 1rem;
+            padding-left: 17.5rem;
+            font-size: $font-size-h4;
+            font-weight: 300;
+            font-family: $font-roboto;
+            color: $white;
+            top: 20px;
+          }
+          .soc-block-promo-entity-link {
+            position: relative;
+            z-index: 10;
+            padding-right: 1rem;
+            padding-left: 1rem;
+          }
+        }
+      }
+    }
+  }
+  @include media-breakpoint-up(lg) {
+    .block-promotion-entity {
+      &.block-promotion-entity-offer {
+        text-align: left;
+        position: relative;
+        // TOP SECTION
+        .soc-block-promo-entity-header {
+          display: flex;
+          padding-top: 2rem;
+          padding-left: 2rem;
+          padding-right: 1rem;
+          .soc-block-promo-entity-external-title {
+            padding-left: 15.5rem;
+            padding-bottom: 5rem;
+            font-size: $font-size-h4;
+          }
+          .soc-block-promo-entity-sub-title {
+            margin-bottom: 1rem;
+            line-height: 41px;
+            margin-left: 1rem;
+            padding-left: 0;
+            @include media-breakpoint-down(md) {
+              line-height: initial;
+            }
+          }
+          .soc-block-promo-entity-central-image {
+            position: absolute;
+            z-index: 10;
+            top: 80px;
+            left: 60px;
+            div:first-child {
+              width: 13.125rem;
+              height: 13.125rem;
+            }
+            &:before {
+              content: '';
+              position: absolute;
+              display: block;
+              left: 50%;
+              top: 45%;
+              transform: translateX(-50%) translateY(-50%);
+              border-radius: 50%;
+              background: $blue_lighter;
+              width: 220px;
+              height: 220px;
+              z-index: -1;
+            }
+          }
+        }
+        // BOTTOM SECTION
+        .soc-block-promo-entity-content {
+          position: relative;
+          padding-top: 1.5rem;
+          padding-bottom: 3rem;
+          &:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: $blue;
+            opacity: 0.8;
+          }
+          .soc-block-promo-entity-description {
+            display: block;
+            position: relative;
+            min-height: 2rem;
+            z-index: 10;
+            font-size: 1.125rem;
+            padding-right: 2rem;
+            padding-left: 17.5rem;
+            margin-bottom: 0.5rem;
+            padding-top: 0;
+          }
+          .soc-block-promo-entity-teaser {
+            position: absolute;
+            top: -70px;
+            z-index: 10;
+            margin-bottom: 1.5rem;
+            padding-right: 1rem;
+            padding-left: 17.5rem;
+            color: $blue_light;
+            font-size: $font-size-h4;
+            font-weight: 300;
+            font-family: $font-roboto;
+          }
+          .soc-block-promo-entity-link {
+            position: relative;
+            z-index: 10;
+            padding-right: 1rem;
+            padding-left: 17.5rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Col-6 RENDERING
+// WIP
+.soc-6-col {
+  @include media-breakpoint-up(md) {
+    .block-promotion-entity {
+      &.block-promotion-entity-offer {
+        .soc-block-promo-entity-header {
+          display: block;
+          .soc-block-promo-entity-external-title {
+            padding-left: 16.5rem;
+          }
+          .soc-block-promo-entity-sub-title {
+            padding-left: 15.5rem;
+            margin-bottom: 0;
+          }
+        }
+        .soc-block-promo-entity-content {
+          top: 1rem;
+          padding-top: 3.5rem;
+          .soc-block-promo-entity-description {
+            padding-left: 1rem;
+            padding-top: 5rem;
+          }
+          .soc-block-promo-entity-teaser {
+            color: $white;
+            top: 20px;
+          }
+          .soc-block-promo-entity-link {
+            padding-left: 1rem;
+          }
+        }
+      }
+    }
+  }
+}

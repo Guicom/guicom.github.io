@@ -1,0 +1,15 @@
+uuid: f1600952-ac76-4903-be80-b4c8eb070525
+langcode: en
+status: true
+dependencies: {  }
+name: promo_offer_180x180
+label: 'Promo offer 180x180'
+effects:
+  3a918fdf-c941-499d-b165-ba434a0fd5fb:
+    uuid: 3a918fdf-c941-499d-b165-ba434a0fd5fb
+    id: image_scale
+    weight: 2
+    data:
+      width: 180
+      height: 180
+      upscale: false
