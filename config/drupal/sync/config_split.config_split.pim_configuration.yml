@@ -8,8 +8,7 @@ description: ''
 folder: ''
 module: {  }
 theme: {  }
-blacklist:
-  - soc_nextpage.nextpage_ws
+blacklist: {  }
 graylist:
   - ultimate_cron.job.captcha_cron
   - ultimate_cron.job.comment_cron

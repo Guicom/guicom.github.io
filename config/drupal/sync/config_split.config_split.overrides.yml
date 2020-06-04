@@ -15,6 +15,7 @@ graylist:
   - entity_share_cron.settings
   - google_analytics.settings
   - hotjar.settings
+  - soc_nextpage.nextpage_ws
   - soc_pardot.privacy_policy
   - soc_search.settings
   - soc_wishlist.settings
@@ -23,7 +24,6 @@ graylist:
   - system.logging
   - system.mail
   - 'varnish_purger.settings.*'
-  - soc_nextpage.nextpage_ws
 graylist_dependents: true
 graylist_skip_equal: true
 weight: 0
