@@ -6,8 +6,7 @@
     depends="install, project:create-content, megamenu-socomec:import, solr:cr, gulp-socomec:install, gulp-socomec:css, gulp-socomec:clear-cache, cache-clear:all"/>
 
   <target name="deploy:update">
-    <phincall target="project:updates" />
-
+    <phingcall target="project:updates" />
     <drush
       command="csex"
       assume="yes"
