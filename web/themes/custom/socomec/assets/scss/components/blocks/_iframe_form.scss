@@ -6,6 +6,9 @@
   @include media-breakpoint-down(lg) {
     margin-top: 0;
   }
+  @include media-breakpoint-down(md) {
+   top: -4rem;
+  }
   @include right-overflow-color($yellow);
 
   .ancher-button a {

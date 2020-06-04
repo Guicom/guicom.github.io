@@ -200,6 +200,8 @@ form.form {
       appearance: none;
       border: none;
       cursor: pointer;
+      margin: 0;
+      border-radius: none;
     }
     &:before {
       content: '';

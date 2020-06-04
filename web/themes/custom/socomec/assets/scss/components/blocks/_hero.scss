@@ -7,17 +7,18 @@
   background: linear-gradient(26.93deg, #00519D 0%, rgba(0, 81, 157, 0.8) 100%) no-repeat;
   background-size: cover;
   height: auto;
-  padding-bottom: 80px;
+  padding-bottom: 140px;
   margin-top: -122px;
   padding-top: 122px;
   @include media-breakpoint-down(sm) {
-    padding-bottom: 40px;
+    padding-bottom: 80px;
   }
   .hero-content{
     .title-hero {
       @include S1($white);
       font-family: $font-roboto;
       font-weight: 300;
+      margin-bottom: 1.5rem;
     }
   }
   .hero-thumbnail {
@@ -75,7 +76,7 @@
             color: $white;
             font-family: $font-roboto, sans-serif;
             font-size: 20px;
-            font-weight: 900;
+            font-weight: 800;
             line-height: 30px;
             text-transform: uppercase;
             margin-bottom: 20px;
@@ -86,7 +87,7 @@
             color: $yellow;
             font-family: $font-roboto;
             font-size: 24px;
-            font-weight: 900;
+            font-weight: 800;
             line-height: 30px;
             margin-bottom: 20px;
           }
@@ -138,7 +139,6 @@
             img{
               max-width: 100%;
               width: auto;
-              height: 280px;
             }
           }
           .hero-content{
