@@ -6,4 +6,3 @@ package: 'Socomec'
 dependencies:
   - soc_job
   - soc_heartbeat
-  - soc_nextpage

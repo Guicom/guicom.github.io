@@ -219,3 +219,8 @@ $databases['default']['default']['init_commands'] = array(
  * Modules excluded from config export.
  */
 $settings['config_exclude_modules'] = ['soc_content'];
+
+/**
+ * Varnish host
+ */
+$config['varnish_purger.settings.1563b06bbe']['hostname'] = 'webfactory-drupal-service.webfactory-prod.svc.cluster.local';

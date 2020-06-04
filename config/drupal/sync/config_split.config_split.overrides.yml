@@ -22,7 +22,7 @@ graylist:
   - system.file
   - system.logging
   - system.mail
-  - soc_nextpage.nextpage_ws
+  - 'varnish_purger.settings.*'
 graylist_dependents: true
 graylist_skip_equal: true
 weight: 0

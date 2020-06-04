@@ -5,7 +5,6 @@ core: 8.x
 package: Socomec
 dependencies:
   - soc_core
-  - soc_nextpage
   - soc_rollback
   - soc_job
   - soc_heartbeat

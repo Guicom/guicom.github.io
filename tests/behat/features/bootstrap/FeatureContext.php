@@ -554,4 +554,290 @@ JS;
     );
   }
 
+  /**
+   * Set dummy JSON data on a reference.
+   *
+   * @Given I set the dummy json data on the reference product
+   */
+  public function setReferenceProductDummyJsonData() {
+
+    // get ID of reference
+    $myPath = UrlHelper::parse($this->getSession()->getCurrentUrl());
+    $arrayUrl = explode('/', $myPath['path']);
+    array_pop($arrayUrl); // remove the "edit" at the end
+    $nid = end($arrayUrl);
+
+    $node = Node::load($nid);
+    $jsonData = json_encode([
+        'Marketing' =>
+          [
+            'group_name' => 'Marketing',
+            'value' =>
+              [
+                'DC_R_ADMIN_Invoice_Description' =>
+                  [
+                    'id' => 'DC_R_ADMIN_Invoice_Description',
+                    'type' => 'TXT',
+                    'value' => 'SIRCOVER CC 3X125A F',
+                  ],
+                'DC_R_REFERENCE' =>
+                  [
+                    'id' => 'DC_R_REFERENCE',
+                    'type' => 'TXT',
+                    'value' => '41903013',
+                  ],
+                'DC_R_REFERENCE_LONG_DESCRIPTION' =>
+                  [
+                    'id' => 'DC_R_REFERENCE_LONG_DESCRIPTION',
+                    'type' => 'TXT',
+                    'value' => 'Manually operated transfer switch SIRCOVER I-I+II-II 3P 125A',
+                  ],
+                'DC_R_REFERENCE_SALE_DESCRIPTION' =>
+                  [
+                    'id' => 'DC_R_REFERENCE_SALE_DESCRIPTION',
+                    'type' => 'TXTLONG',
+                    'value' => 'SIRCOVER I-I+II-II 3X125A FRONT OPERATION',
+                  ],
+              ],
+          ],
+        'ETIM' =>
+          [
+            'group_name' => 'ETIM',
+            'value' =>
+              [
+                'EF003118' =>
+                  [
+                    'id' => 'EF003118',
+                    'type' => 'LISTE',
+                    'value' =>
+                      [
+                        0 => 'EV006404|IP00',
+                      ],
+                  ],
+                'EF006819' =>
+                  [
+                    'id' => 'EF006819',
+                    'type' => 'LISTE',
+                    'value' =>
+                      [
+                        0 => 'EV008864|Bolt connection',
+                      ],
+                  ],
+                'EF006976' =>
+                  [
+                    'id' => 'EF006976',
+                    'type' => 'LISTE',
+                    'value' =>
+                      [
+                        0 => 'EV000092|Turn button',
+                      ],
+                  ],
+                'EF007167' =>
+                  [
+                    'id' => 'EF007167',
+                    'type' => 'LISTE',
+                    'value' =>
+                      [
+                        0 => 'EV000270|Grey',
+                      ],
+                  ],
+                'EF008240' =>
+                  [
+                    'id' => 'EF008240',
+                    'type' => 'LISTE',
+                    'value' =>
+                      [
+                        0 => 'EV009311|Complete device in housing',
+                      ],
+                  ],
+                'EF011959' =>
+                  [
+                    'id' => 'EF011959',
+                    'type' => 'LISTE',
+                    'value' =>
+                      [
+                        0 => 'EV000599|1',
+                      ],
+                  ],
+                'DC_R_CLASSEETIM' =>
+                  [
+                    'id' => 'DC_R_CLASSEETIM',
+                    'type' => 'LISTE',
+                    'value' =>
+                      [
+                        0 => 'EC000216',
+                      ],
+                  ],
+              ],
+          ],
+        'BME-Cat' =>
+          [
+            'group_name' => 'BME-Cat',
+            'value' =>
+              [
+                'DC_R_COUNTRY_OF_ORIGIN' =>
+                  [
+                    'id' => 'DC_R_COUNTRY_OF_ORIGIN',
+                    'type' => 'TXT',
+                    'value' => 'FR',
+                  ],
+                'DC_R_CUSTOMS_NUMBER' =>
+                  [
+                    'id' => 'DC_R_CUSTOMS_NUMBER',
+                    'type' => 'TXT',
+                    'value' => '85365080',
+                  ],
+                'DC_R_DEPTH_OF_THE_PACKING_UNIT' =>
+                  [
+                    'id' => 'DC_R_DEPTH_OF_THE_PACKING_UNIT',
+                    'type' => 'TXT',
+                    'value' => '0.28',
+                  ],
+                'DC_R_GROSS_WEIGHT_OF_THE_PACKING_UNIT' =>
+                  [
+                    'id' => 'DC_R_GROSS_WEIGHT_OF_THE_PACKING_UNIT',
+                    'type' => 'TXT',
+                    'value' => '3.213',
+                  ],
+                'DC_R_GTIN/EAN' =>
+                  [
+                    'id' => 'DC_R_GTIN/EAN',
+                    'type' => 'TXT',
+                    'value' => '3596031206377',
+                  ],
+                'DC_R_LENGTH_OF_THE_PACKING_UNIT' =>
+                  [
+                    'id' => 'DC_R_LENGTH_OF_THE_PACKING_UNIT',
+                    'type' => 'TXT',
+                    'value' => '0.21',
+                  ],
+                'DC_R_PRODUCT_STATUS' =>
+                  [
+                    'id' => 'DC_R_PRODUCT_STATUS',
+                    'type' => 'TXT',
+                    'value' => 'END OF LIFE',
+                  ],
+                'DC_R_PRODUCT_STATUS_DATE' =>
+                  [
+                    'id' => 'DC_R_PRODUCT_STATUS_DATE',
+                    'type' => 'TXT',
+                    'value' => '26/11/2019',
+                  ],
+                'DC_R_WIDTH_OF_THE_PACKING_UNIT' =>
+                  [
+                    'id' => 'DC_R_WIDTH_OF_THE_PACKING_UNIT',
+                    'type' => 'TXT',
+                    'value' => '0.17',
+                  ],
+              ],
+          ],
+        'FAB-DIS' =>
+          [
+            'group_name' => 'FAB-DIS',
+            'value' =>
+              [
+                'DC_R_GAMME' =>
+                  [
+                    'id' => 'DC_R_GAMME',
+                    'type' => 'TXT',
+                    'value' => 'SIRCOVER 125-630 I-I+II-II',
+                  ],
+              ],
+          ],
+        'Norms' =>
+          [
+            'group_name' => 'Norms',
+            'value' =>
+              [
+                'DC_R_IEC_UL_CCC' =>
+                  [
+                    'id' => 'DC_R_IEC_UL_CCC',
+                    'type' => 'CHOIX',
+                    'value' =>
+                      [
+                        0 => 'IEC',
+                      ],
+                  ],
+              ],
+          ],
+        'Technical characteristics (new)' =>
+          [
+            'group_name' => 'Technical characteristics (new)',
+            'value' =>
+              [
+                'DC_R_TC1_NAME' =>
+                  [
+                    'id' => 'DC_R_TC1_NAME',
+                    'type' => 'CHOIX',
+                    'value' =>
+                      [
+                        0 => 'Rating (A)',
+                      ],
+                  ],
+                'DC_R_TC1_VALUE' =>
+                  [
+                    'id' => 'DC_R_TC1_VALUE',
+                    'type' => 'TXT',
+                    'value' => '125',
+                  ],
+                'DC_R_TC2_NAME' =>
+                  [
+                    'id' => 'DC_R_TC2_NAME',
+                    'type' => 'CHOIX',
+                    'value' =>
+                      [
+                        0 => 'Nb pole',
+                      ],
+                  ],
+                'DC_R_TC2_VALUE' =>
+                  [
+                    'id' => 'DC_R_TC2_VALUE',
+                    'type' => 'TXT',
+                    'value' => '3',
+                  ],
+                'DC_R_TC3_NAME' =>
+                  [
+                    'id' => 'DC_R_TC3_NAME',
+                    'type' => 'CHOIX',
+                    'value' =>
+                      [
+                        0 => 'Size',
+                      ],
+                  ],
+              ],
+          ],
+        'Classification Characteristics' =>
+          [
+            'group_name' => 'Classification Characteristics',
+            'value' =>
+              [
+                'DC_MODEL' =>
+                  [
+                    'id' => 'DC_MODEL',
+                    'type' => 'TXT',
+                    'value' => 'SRCV-CC',
+                  ],
+              ],
+          ],
+        'SYSTEM' =>
+          [
+            'group_name' => 'SYSTEM',
+            'value' =>
+              [
+                '##ReferenceLabel' =>
+                  [
+                    'id' => '##ReferenceLabel',
+                    'type' => 'SYSLABEL',
+                    'value' => '41903013-SIRCOVER CC 3X125A F',
+                  ],
+              ],
+          ],
+      ]);
+    $node->set('field_json_product_data', $jsonData);
+    try {
+      $node->save();
+    } catch (Exception $e) {
+    }
+  }
+
 }

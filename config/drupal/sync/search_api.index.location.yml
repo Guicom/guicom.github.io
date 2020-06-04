@@ -17,7 +17,7 @@ dependencies:
     - field.storage.node.field_location_address
     - field.storage.node.field_location_activity
     - field.storage.node.field_location_subarea
-    - search_api.server.location
+    - search_api.server.socomec
 third_party_settings:
   search_api_solr:
     finalize: false
@@ -57,7 +57,7 @@ third_party_settings:
       collection: ''
       timezone: ''
 id: location
-name: location
+name: Locations
 description: ''
 read_only: false
 field_settings:
@@ -201,6 +201,7 @@ datasource_settings:
 processor_settings:
   add_url: {  }
   aggregated_field: {  }
+  language_with_fallback: {  }
   rendered_item: {  }
   solr_date_range: {  }
 tracker_settings:
@@ -209,4 +210,4 @@ tracker_settings:
 options:
   index_directly: true
   cron_limit: 50
-server: location
+server: socomec

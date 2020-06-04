@@ -1,0 +1,19 @@
+uuid: b7c869db-880d-4dc5-a08d-f7296e622db6
+langcode: en
+status: true
+dependencies:
+  module:
+    - image_effects
+name: promo_asset
+label: 'Promo asset 270x380'
+effects:
+  efa9aac7-121e-41ab-8288-e2c5437893a1:
+    uuid: efa9aac7-121e-41ab-8288-e2c5437893a1
+    id: image_effects_scale_and_smart_crop
+    weight: 1
+    data:
+      width: '270'
+      height: '380'
+      upscale: false
+      simulate: false
+      algorithm: entropy_slice

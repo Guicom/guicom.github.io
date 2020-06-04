@@ -17,7 +17,7 @@ class RollbackImport {
   /**
    * @var \Drupal\Core\Logger\LoggerChannelInterface
    */
-  private $logger;
+  protected $logger;
 
   /**
    * @var \Drupal\Core\Database\Connection
@@ -27,12 +27,12 @@ class RollbackImport {
   /**
    * @var \Drupal\soc_job\Service\Manager\JobManager
    */
-  private $job;
+  protected $job;
 
   /**
    * @var \Drupal\soc_heartbeat\Service\Manager\HeartbeatManager
    */
-  private $heartBeat;
+  protected $heartBeat;
 
   /**
    * RollbackImport constructor.
@@ -50,26 +50,6 @@ class RollbackImport {
     $this->connection = $connection;
     $this->job = $jobManager;
     $this->heartBeat = $heartbeatManager;
-  }
-
-  /**
-   * @return bool
-   * @throws \Exception
-   */
-  public function checkAllGreen() {
-    $job = $this->heartBeat->getInprogressJob();
-    if (count($job) > 0) {
-      throw new \Exception(t('There is current Job in progress'), 1);
-    }
-    $items = $this->selectRollbackEntry();
-    if (count($items) > 0) {
-      throw new \Exception(t('The rollback datable is not empty.'), 1);
-    }
-    $relation = Drupal::service('soc_nextpage.nextpage_item_handler')->selectRelation();
-    if (count($relation) > 0) {
-      throw new \Exception(t('The reletation datable is not empty.'), 1);
-    }
-    return TRUE;
   }
 
   /**
