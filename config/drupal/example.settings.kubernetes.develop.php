@@ -193,6 +193,9 @@ $config['config_split.config_split.dev']['folder'] = "../config/drupal/dev";
 $config['config_split.config_split.overrides']['status'] = TRUE;
 $config['config_split.config_split.overrides']['folder'] = "../config/drupal/overrides";
 
+$config['config_split.config_split.pim_configuration']['status'] = TRUE;
+$config['config_split.config_split.pim_configuration']['folder'] = "../config/drupal/pim_configuration";
+
 /**
  * @see \soc_user_install()
  */
