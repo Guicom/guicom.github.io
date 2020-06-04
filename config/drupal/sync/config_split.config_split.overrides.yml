@@ -23,6 +23,7 @@ graylist:
   - system.logging
   - system.mail
   - 'varnish_purger.settings.*'
+  - soc_nextpage.nextpage_ws
 graylist_dependents: true
 graylist_skip_equal: true
 weight: 0
