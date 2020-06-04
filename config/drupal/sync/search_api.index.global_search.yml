@@ -100,7 +100,7 @@ field_settings:
     label: 'Multiline » Paragraph » Citation author'
     datasource_id: 'entity:node'
     property_path: 'field_multiline:entity:field_citation_author'
-    type: text
+    type: solr_text_unstemmed
     dependencies:
       config:
         - field.storage.node.field_multiline
@@ -111,7 +111,7 @@ field_settings:
     label: 'Multiline » Paragraph » Citation author''s position'
     datasource_id: 'entity:node'
     property_path: 'field_multiline:entity:field_citation_author_position'
-    type: text
+    type: solr_text_unstemmed
     dependencies:
       config:
         - field.storage.node.field_multiline
@@ -122,7 +122,7 @@ field_settings:
     label: 'Multiline » Paragraph » Citation content'
     datasource_id: 'entity:node'
     property_path: 'field_multiline:entity:field_citation_content'
-    type: text
+    type: solr_text_unstemmed
     dependencies:
       config:
         - field.storage.node.field_multiline
@@ -133,7 +133,7 @@ field_settings:
     label: 'Multiline » Paragraph » Company'
     datasource_id: 'entity:node'
     property_path: 'field_multiline:entity:field_company'
-    type: text
+    type: solr_text_unstemmed
     dependencies:
       config:
         - field.storage.node.field_multiline
@@ -144,7 +144,7 @@ field_settings:
     label: 'Multiline » Paragraph » CTA Text'
     datasource_id: 'entity:node'
     property_path: 'field_multiline:entity:field_cta_text'
-    type: text
+    type: solr_text_unstemmed
     dependencies:
       config:
         - field.storage.node.field_multiline
@@ -171,7 +171,7 @@ field_settings:
     label: 'Multiline » Paragraph » Figure 1 - Number'
     datasource_id: 'entity:node'
     property_path: 'field_multiline:entity:field_figure_1_number'
-    type: text
+    type: solr_text_unstemmed
     dependencies:
       config:
         - field.storage.node.field_multiline
@@ -182,7 +182,7 @@ field_settings:
     label: 'Multiline » Paragraph » Figure 1 - Text line 1'
     datasource_id: 'entity:node'
     property_path: 'field_multiline:entity:field_figure_1_text_line_1'
-    type: text
+    type: solr_text_unstemmed
     dependencies:
       config:
         - field.storage.node.field_multiline
@@ -193,7 +193,7 @@ field_settings:
     label: 'Multiline » Paragraph » Figure 1 - Text line 2'
     datasource_id: 'entity:node'
     property_path: 'field_multiline:entity:field_figure_1_text_line_2'
-    type: text
+    type: solr_text_unstemmed
     dependencies:
       config:
         - field.storage.node.field_multiline
@@ -204,7 +204,7 @@ field_settings:
     label: 'Multiline » Paragraph » Figure 2 - Number'
     datasource_id: 'entity:node'
     property_path: 'field_multiline:entity:field_figure_2_number'
-    type: text
+    type: solr_text_unstemmed
     dependencies:
       config:
         - field.storage.node.field_multiline
@@ -215,7 +215,7 @@ field_settings:
     label: 'Multiline » Paragraph » Figure 2 - Text line 1'
     datasource_id: 'entity:node'
     property_path: 'field_multiline:entity:field_figure_2_text_line_1'
-    type: text
+    type: solr_text_unstemmed
     dependencies:
       config:
         - field.storage.node.field_multiline
@@ -226,7 +226,7 @@ field_settings:
     label: 'Multiline » Paragraph » Figure 2 - Text line 2'
     datasource_id: 'entity:node'
     property_path: 'field_multiline:entity:field_figure_2_text_line_2'
-    type: text
+    type: solr_text_unstemmed
     dependencies:
       config:
         - field.storage.node.field_multiline
@@ -237,7 +237,7 @@ field_settings:
     label: 'Multiline » Paragraph » Figure 3 - Number'
     datasource_id: 'entity:node'
     property_path: 'field_multiline:entity:field_figure_3_number'
-    type: text
+    type: solr_text_unstemmed
     dependencies:
       config:
         - field.storage.node.field_multiline
@@ -248,7 +248,7 @@ field_settings:
     label: 'Multiline » Paragraph » Figure 3 - Text line 1'
     datasource_id: 'entity:node'
     property_path: 'field_multiline:entity:field_figure_3_text_line_1'
-    type: text
+    type: solr_text_unstemmed
     dependencies:
       config:
         - field.storage.node.field_multiline
@@ -259,7 +259,7 @@ field_settings:
     label: 'Multiline » Paragraph » Figure 3 - Text line 2'
     datasource_id: 'entity:node'
     property_path: 'field_multiline:entity:field_figure_3_text_line_2'
-    type: text
+    type: solr_text_unstemmed
     dependencies:
       config:
         - field.storage.node.field_multiline
@@ -270,7 +270,7 @@ field_settings:
     label: 'Multiline » Paragraph » Figure 4 - Number'
     datasource_id: 'entity:node'
     property_path: 'field_multiline:entity:field_figure_4_number'
-    type: text
+    type: solr_text_unstemmed
     dependencies:
       config:
         - field.storage.node.field_multiline
@@ -281,7 +281,7 @@ field_settings:
     label: 'Multiline » Paragraph » Figure 4 - Text line 1'
     datasource_id: 'entity:node'
     property_path: 'field_multiline:entity:field_figure_4_text_line_1'
-    type: text
+    type: solr_text_unstemmed
     dependencies:
       config:
         - field.storage.node.field_multiline
@@ -292,7 +292,7 @@ field_settings:
     label: 'Multiline » Paragraph » Figure 4 - Text line 2'
     datasource_id: 'entity:node'
     property_path: 'field_multiline:entity:field_figure_4_text_line_2'
-    type: text
+    type: solr_text_unstemmed
     dependencies:
       config:
         - field.storage.node.field_multiline
@@ -303,7 +303,7 @@ field_settings:
     label: 'Multiline » Paragraph » Legend'
     datasource_id: 'entity:node'
     property_path: 'field_multiline:entity:field_legend'
-    type: text
+    type: solr_text_unstemmed
     dependencies:
       config:
         - field.storage.node.field_multiline
@@ -330,7 +330,7 @@ field_settings:
     label: 'Multiline » Paragraph » Name'
     datasource_id: 'entity:node'
     property_path: 'field_multiline:entity:field_nom'
-    type: text
+    type: solr_text_unstemmed
     dependencies:
       config:
         - field.storage.node.field_multiline
@@ -357,7 +357,7 @@ field_settings:
     label: Reference
     datasource_id: 'entity:node'
     property_path: field_reference_ref
-    type: text
+    type: solr_text_unstemmed
     dependencies:
       config:
         - field.storage.node.field_reference_ref
@@ -373,7 +373,7 @@ field_settings:
     label: Teaser
     datasource_id: 'entity:node'
     property_path: field_teaser
-    type: text
+    type: solr_text_unstemmed
     dependencies:
       config:
         - field.storage.node.field_teaser
@@ -381,7 +381,7 @@ field_settings:
     label: 'Multiline » Paragraph » Title'
     datasource_id: 'entity:node'
     property_path: 'field_multiline:entity:field_title'
-    type: text
+    type: solr_text_unstemmed
     dependencies:
       config:
         - field.storage.node.field_multiline
@@ -392,7 +392,7 @@ field_settings:
     label: 'Multiline » Paragraph » Media PDF » Media » Name'
     datasource_id: 'entity:node'
     property_path: 'field_multiline:entity:field_media_pdf:entity:name'
-    type: text
+    type: solr_text_unstemmed
     dependencies:
       config:
         - field.storage.node.field_multiline
@@ -428,7 +428,7 @@ field_settings:
     label: 'Multiline » Paragraph » Description » Processed text'
     datasource_id: 'entity:node'
     property_path: 'field_multiline:entity:field_text:processed'
-    type: text
+    type: solr_text_unstemmed
     dependencies:
       config:
         - field.storage.node.field_multiline
@@ -439,7 +439,7 @@ field_settings:
     label: 'Description » Processed text'
     datasource_id: 'entity:taxonomy_term'
     property_path: 'description:processed'
-    type: text
+    type: solr_text_unstemmed
     dependencies:
       module:
         - taxonomy
@@ -481,7 +481,7 @@ field_settings:
     label: Title
     datasource_id: 'entity:node'
     property_path: title
-    type: text
+    type: solr_text_unstemmed
     dependencies:
       module:
         - node
@@ -489,7 +489,7 @@ field_settings:
     label: 'Multiline » Paragraph » Content » Content » Title'
     datasource_id: 'entity:node'
     property_path: 'field_multiline:entity:field_content:entity:title'
-    type: text
+    type: solr_text_unstemmed
     dependencies:
       config:
         - field.storage.node.field_multiline
@@ -558,27 +558,94 @@ processor_settings:
     weights:
       preprocess_index: -45
   html_filter:
-    all_fields: false
+    all_fields: true
     fields:
+      - field_citation_author
+      - field_citation_author_position
+      - field_citation_content
+      - field_company
+      - field_cta_text
+      - field_figure_1_number
+      - field_figure_1_text_line_1
+      - field_figure_1_text_line_2
+      - field_figure_2_number
+      - field_figure_2_text_line_1
+      - field_figure_2_text_line_2
+      - field_figure_3_number
+      - field_figure_3_text_line_1
+      - field_figure_3_text_line_2
+      - field_figure_4_number
+      - field_figure_4_text_line_1
+      - field_figure_4_text_line_2
+      - field_legend
+      - field_nom
+      - field_reference_ref
       - field_teaser
+      - field_title
+      - name
       - name_14
+      - processed
       - processed_2
       - title
+      - title_1
       - type
       - vid
     title: true
     alt: true
     tags:
       b: 2
-      em: 1
       h1: 5
       h2: 3
       h3: 2
       strong: 2
-      u: 1
     weights:
       preprocess_index: -15
       preprocess_query: -15
+  ignore_character:
+    all_fields: true
+    fields:
+      - field_citation_author
+      - field_citation_author_position
+      - field_citation_content
+      - field_company
+      - field_cta_text
+      - field_figure_1_number
+      - field_figure_1_text_line_1
+      - field_figure_1_text_line_2
+      - field_figure_2_number
+      - field_figure_2_text_line_1
+      - field_figure_2_text_line_2
+      - field_figure_3_number
+      - field_figure_3_text_line_1
+      - field_figure_3_text_line_2
+      - field_figure_4_number
+      - field_figure_4_text_line_1
+      - field_figure_4_text_line_2
+      - field_legend
+      - field_nom
+      - field_reference_ref
+      - field_teaser
+      - field_title
+      - name
+      - name_14
+      - processed
+      - processed_2
+      - title
+      - title_1
+      - type
+      - vid
+    ignorable: '[''¿¡!?,.:;]'
+    ignorable_classes:
+      - Pc
+      - Pd
+      - Pe
+      - Pf
+      - Pi
+      - Po
+      - Ps
+    weights:
+      preprocess_index: -10
+      preprocess_query: -10
   language_with_fallback: {  }
   rendered_item: {  }
   solr_date_range:
