@@ -16,11 +16,6 @@
       });
     });
 
-    $('.pd-checkbox').each(function () {
-      var input = $(this).find('input');
-      $(this).prepend(input);
-    });
-
     $("select").change(function(){
       // 866572 is default empty choice.
       if ( $(this).val() && $(this).val() != "866572" ) {
