@@ -211,9 +211,6 @@
 /* VARIABLES */
 /* VARIABLES */
 /* TYPOGRAPHY */
-body {
-  display: none; }
-
 p {
   color: #000;
   font-family: var(--main-font);
