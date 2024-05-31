@@ -1,7 +1,5 @@
 /* VARIABLES */
 /* VARIABLES */
-body {
-  display: none; }
 
 p {
   color: #000;
@@ -55,12 +53,13 @@ form.form {
     font-size: 16px;
     line-height: 25px;
     padding: 28px 8px 8px;
-    border-radius: unset; }
+    border-radius: unset; 
+  }
   input[type="text"]:focus,
   textarea:focus,
   select:focus {
     color: #004F9F;
-    background-color: #fff; }
+    background-color: #fff; 
   }
 }
 
