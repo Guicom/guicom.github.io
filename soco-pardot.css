@@ -266,7 +266,8 @@ form.form select {
   font-size: 16px;
   line-height: 25px;
   padding: 28px 8px 8px;
-  border-radius: unset; }
+  border-radius: unset;
+  width: 100% !important; }
 
 form.form input[type="text"]:focus,
 form.form textarea:focus,
