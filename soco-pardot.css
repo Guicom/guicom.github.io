@@ -272,6 +272,9 @@ form.form select:focus {
   color: #004F9F;
   background-color: #fff; }
 
+form.form .form-content-item {
+  position: relative; }
+
 form.form .pd-text label {
   display: -webkit-box;
   display: -webkit-flex;
