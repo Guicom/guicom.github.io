@@ -312,12 +312,18 @@ form.form .pd-text label {
   z-index: 1;
   padding: 8px 8px 0 8px !important; }
 
+form.form .pd-text.filled label {
+  color: #4A4A47; }
+
+form.form .pd-text.filled input {
+  background-color: #fff; }
+
 form.form .form-action input {
   border: none;
   background: #004F9F;
   color: #fff;
   border-radius: 0;
-  padding: 0.938rem 1.875rem;
+  padding: 0.938rem 1.875rem !important;
   font-family: 'Poppins', Arial, Verdana, sans-serif;
   font-size: 0.75rem;
   font-weight: 500;
