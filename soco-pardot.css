@@ -729,3 +729,63 @@ form.form p {
 
 .form-footer p {
   line-height: 15px !important; }
+
+.bootstrap-select {
+  width: 100% !important;
+  margin: 0;
+  padding: 0;
+  border-radius: unset;
+  -webkit-box-shadow: 0 2px 2px 0 rgba(35, 44, 119, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.07), 0 1px 5px 0 rgba(0, 0, 0, 0.14);
+          box-shadow: 0 2px 2px 0 rgba(35, 44, 119, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.07), 0 1px 5px 0 rgba(0, 0, 0, 0.14);
+  max-height: 20vh !important;
+  max-height: 30vh !important; }
+  .bootstrap-select div.inner {
+    height: auto !important;
+    max-height: inherit !important;
+    overflow-y: inherit !important; }
+  .bootstrap-select ul.dropdown-menu.inner {
+    padding: 5px;
+    position: static; }
+    .bootstrap-select ul.dropdown-menu.inner li {
+      color: #4A4A47;
+      font-family: var(--main-font);
+      font-size: 16px;
+      line-height: 25px;
+      border-bottom: 0;
+      padding: 7px 0; }
+      .bootstrap-select ul.dropdown-menu.inner li > a {
+        color: #4A4A47;
+        background-color: transparent;
+        padding: 6px; }
+      .bootstrap-select ul.dropdown-menu.inner li.selected, .bootstrap-select ul.dropdown-menu.inner li.active, .bootstrap-select ul.dropdown-menu.inner li:hover {
+        background-color: rgba(76, 175, 228, 0.1); }
+        .bootstrap-select ul.dropdown-menu.inner li.selected > a, .bootstrap-select ul.dropdown-menu.inner li.active > a, .bootstrap-select ul.dropdown-menu.inner li:hover > a {
+          color: #4A4A47;
+          background-color: transparent; }
+      .bootstrap-select ul.dropdown-menu.inner li.dropdown-header {
+        color: #232C77;
+        font-family: var(--main-font);
+        text-transform: uppercase;
+        font-size: 14px;
+        font-weight: bold;
+        line-height: 20px;
+        padding: 15px 5px; }
+        .bootstrap-select ul.dropdown-menu.inner li.dropdown-header.selected, .bootstrap-select ul.dropdown-menu.inner li.dropdown-header.active, .bootstrap-select ul.dropdown-menu.inner li.dropdown-header:hover {
+          background-color: transparent; }
+      .bootstrap-select ul.dropdown-menu.inner li.dropdown-divider {
+        display: none; }
+  .bootstrap-select ul.dropdown-menu button {
+    background: #F0EFEF;
+    border: 1px solid #B7B7B5;
+    -webkit-box-shadow: 0px 1px 5px 0px #00000033 inset;
+            box-shadow: 0px 1px 5px 0px #00000033 inset;
+    color: #777772;
+    font-family: var(--main-font);
+    height: auto;
+    font-size: 16px;
+    line-height: 25px;
+    padding: 28px 8px 8px;
+    border-radius: unset; }
+    .bootstrap-select ul.dropdown-menu button:focus {
+      color: #004F9F;
+      background-color: #fff; }
