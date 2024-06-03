@@ -10128,10 +10128,10 @@ return t.apply(e,arguments)}}function a(){this.onload=null,e(t).addClass(d[2]),r
   $(document).ready(function() {
     $('select').each(function () {
       $(this).selectpicker();
-      $(this).parents(".bootstrap-select").find("div.dropdown-menu").first().mCustomScrollbar({
-        theme:"minimal-dark",
-        mouseWheel:{ preventDefault:true }
-      });
+      // $(this).parents(".bootstrap-select").find("div.dropdown-menu").first().mCustomScrollbar({
+      //   theme:"minimal-dark",
+      //   mouseWheel:{ preventDefault:true }
+      // });
     });
 
     // FORM
@@ -10165,15 +10165,15 @@ return t.apply(e,arguments)}}function a(){this.onload=null,e(t).addClass(d[2]),r
     //   });
     // });
 
-    // $("select").change(function(){
-    //   // 866572 is default empty choice.
-    //   if ( $(this).val() && $(this).val() != "866572" ) {
-    //     $(this).parent().addClass('filled');
-    //   }
-    //   else {
-    //     $(this).parent().removeClass('filled');
-    //   }
-    // });
+    $("select").change(function(){
+      // 866572 is default empty choice.
+      if ( $(this).val() && $(this).val() != "866572" ) {
+        $(this).parent().addClass('filled');
+      }
+      else {
+        $(this).parent().removeClass('filled');
+      }
+    });
   });
   $(window).on('load', function() {
     $('body').show();
