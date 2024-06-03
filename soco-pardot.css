@@ -11273,7 +11273,7 @@ form.form p {
   line-height: 15px !important; }
 
 .bootstrap-select {
-  margin-bottom: 0px;
+  margin-bottom: 20px;
   width: 100 !important;
   background: -webkit-gradient(linear, left top, left bottom, from(#E5E6E6), to(#F2F3F3));
   background: -webkit-linear-gradient(top, #E5E6E6 0%, #F2F3F3 100%);
