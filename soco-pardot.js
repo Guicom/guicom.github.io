@@ -3084,10 +3084,10 @@
   $(document).ready(function() {
     $('select').each(function () {
       $(this).selectpicker();
-      $(this).parents(".bootstrap-select").find("div.dropdown-menu").first().mCustomScrollbar({
-        theme:"minimal-dark",
-        mouseWheel:{ preventDefault:true }
-      });
+      // $(this).parents(".bootstrap-select").find("div.dropdown-menu").first().mCustomScrollbar({
+      //   theme:"minimal-dark",
+      //   mouseWheel:{ preventDefault:true }
+      // });
     });
 
     // FORM
