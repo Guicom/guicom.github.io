@@ -9789,7 +9789,8 @@ form.form select {
   font-size: 16px;
   line-height: 25px;
   padding: 28px 8px 8px;
-  border-radius: unset; }
+  border-radius: unset;
+  width: 100%; }
   @media (max-width: 1199.98px) {
     form.form input.text,
     form.form textarea,
@@ -9811,7 +9812,8 @@ form.form select:focus {
 form.form .form-content-item {
   position: relative; }
 
-form.form .pd-text label {
+form.form .pd-text label,
+form.form .pd-select label {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -9840,10 +9842,12 @@ form.form .pd-text label {
   z-index: 1;
   padding: 8px 8px 0 8px !important; }
 
-form.form .pd-text.filled label {
+form.form .pd-text.filled label,
+form.form .pd-select.filled label {
   color: #4A4A47; }
 
-form.form .pd-text.filled input {
+form.form .pd-text.filled input,
+form.form .pd-select.filled input {
   background-color: #fff; }
 
 form.form .form-action input {
@@ -9882,7 +9886,6 @@ form.form p {
 
 .bootstrap-select {
   margin-bottom: 20px;
-  width: 50% !important;
   width: 100 !important;
   background: -webkit-gradient(linear, left top, left bottom, from(#E5E6E6), to(#F2F3F3));
   background: -webkit-linear-gradient(top, #E5E6E6 0%, #F2F3F3 100%);
@@ -9890,6 +9893,7 @@ form.form p {
   background: linear-gradient(180deg, #E5E6E6 0%, #F2F3F3 100%);
   -webkit-box-shadow: inset 0 -1px 0 0 #777772;
           box-shadow: inset 0 -1px 0 0 #777772;
+  width: 100% !important;
   position: relative !important;
   background: #F2F3F3;
   -webkit-box-shadow: inset 0 1px 5px 0 rgba(0, 0, 0, 0.2);
@@ -10086,7 +10090,8 @@ form.form p {
     font-size: 16px;
     line-height: 25px;
     padding: 28px 8px 8px;
-    border-radius: unset; }
+    border-radius: unset;
+    padding: 28px 8px 8px !important; }
     @media (max-width: 1199.98px) {
       .bootstrap-select button {
         width: 100%;
