@@ -10122,9 +10122,7 @@ return Popper;
 (function(){
   $(document).ready(function() {
     $('select').each(function () {
-      $(this).selectpicker({
-        style: null
-      });
+      $(this).selectpicker();
       // $(this).parents(".bootstrap-select").find("div.dropdown-menu").first().mCustomScrollbar({
       //   theme:"minimal-dark",
       //   mouseWheel:{ preventDefault:true }
