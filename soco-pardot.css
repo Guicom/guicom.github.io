@@ -11457,6 +11457,8 @@ form.form p {
             background-color: transparent; }
         .bootstrap-select div.dropdown-menu ul.dropdown-menu.inner li.dropdown-divider {
           display: none; }
+  .bootstrap-select.show {
+    margin-bottom: -4px; }
   .bootstrap-select select:focus + button {
     background: #fff; }
   @media (max-width: 1199.98px) {
