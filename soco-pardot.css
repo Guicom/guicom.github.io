@@ -9790,7 +9790,7 @@ form.form select {
   line-height: 25px;
   padding: 28px 8px 8px;
   border-radius: unset;
-  width: 100%; }
+  width: 100% !important; }
   @media (max-width: 1199.98px) {
     form.form input.text,
     form.form textarea,
