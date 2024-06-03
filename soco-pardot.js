@@ -10128,12 +10128,12 @@ return t.apply(e,arguments)}}function a(){this.onload=null,e(t).addClass(d[2]),r
   $(document).ready(function() {
     $('select').each(function () {
       $(this).selectpicker({
-        virtualScroll: false,
+        style: null,
       });
-      $(this).parents(".bootstrap-select").find("div.dropdown-menu").first().mCustomScrollbar({
-        theme:"minimal-dark",
-        mouseWheel:{ preventDefault:true }
-      });
+      // $(this).parents(".bootstrap-select").find("div.dropdown-menu").first().mCustomScrollbar({
+      //   theme:"minimal-dark",
+      //   mouseWheel:{ preventDefault:true }
+      // });
     });
 
     // FORM
