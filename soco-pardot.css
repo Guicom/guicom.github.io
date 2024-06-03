@@ -11463,8 +11463,9 @@ form.form p {
       width: 100% !important; } }
   .bootstrap-select .dropdown-menu {
     min-width: auto !important;
-    right: 0;
-    max-height: 200px !important; }
+    right: 0; }
+    .bootstrap-select .dropdown-menu .mCustomScrollBox {
+      max-height: 200px !important; }
   .bootstrap-select button {
     background: #F0EFEF;
     border: 1px solid #B7B7B5;
