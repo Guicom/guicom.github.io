@@ -11273,7 +11273,6 @@ form.form p {
   line-height: 15px !important; }
 
 .bootstrap-select {
-  margin-bottom: 20px;
   width: 100 !important;
   background: -webkit-gradient(linear, left top, left bottom, from(#E5E6E6), to(#F2F3F3));
   background: -webkit-linear-gradient(top, #E5E6E6 0%, #F2F3F3 100%);
@@ -11457,8 +11456,6 @@ form.form p {
             background-color: transparent; }
         .bootstrap-select div.dropdown-menu ul.dropdown-menu.inner li.dropdown-divider {
           display: none; }
-  .bootstrap-select.show {
-    margin-bottom: -4px; }
   .bootstrap-select select:focus + button {
     background: #fff; }
   @media (max-width: 1199.98px) {
@@ -11466,7 +11463,8 @@ form.form p {
       width: 100% !important; } }
   .bootstrap-select .dropdown-menu {
     min-width: auto !important;
-    right: 0; }
+    right: 0;
+    max-height: 200px !important; }
   .bootstrap-select button {
     background: #F0EFEF;
     border: 1px solid #B7B7B5;
