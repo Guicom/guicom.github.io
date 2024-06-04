@@ -17750,7 +17750,7 @@ form.form select {
   form.form select:focus {
     color: #004F9F;
     background-color: #fff;
-    outline: none; }
+    outline: none !important; }
 
 form.form input[type="text"]:focus,
 form.form textarea:focus,
@@ -17875,6 +17875,6 @@ form.form p {
     .bootstrap-select button:focus {
       color: #004F9F;
       background-color: #fff;
-      outline: none; }
+      outline: none !important; }
   .bootstrap-select .dropdown-toggle:after {
     color: #777772 !important; }
