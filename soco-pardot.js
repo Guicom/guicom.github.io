@@ -10122,7 +10122,9 @@ return Popper;
 (function(){
   $(document).ready(function() {
     $('select').each(function () {
-      $(this).selectpicker();
+      $(this).selectpicker({
+        style: ''
+      });
       // $(this).parents(".bootstrap-select").find("div.dropdown-menu").first().mCustomScrollbar({
       //   theme:"minimal-dark",
       //   mouseWheel:{ preventDefault:true }
@@ -10141,7 +10143,7 @@ return Popper;
     });
 
     $('.bootstrap-select').on('changed.bs.select', function (e) {
-      $(this).closest('fieldset').addClass("filled");
+      $(this).closest('.pd-select').addClass("filled");
     });
 
     // $('input').each(function () {
