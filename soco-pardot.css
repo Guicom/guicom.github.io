@@ -17799,6 +17799,10 @@ form.form .pd-text.filled input,
 form.form .pd-select.filled input {
   background-color: #fff; }
 
+form.form .pd-text.filled .filter-option-inner-inner,
+form.form .pd-select.filled .filter-option-inner-inner {
+  color: #4A4A47; }
+
 form.form .form-action input {
   border: none;
   background: #004F9F;
