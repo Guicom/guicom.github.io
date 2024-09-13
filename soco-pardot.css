@@ -11185,7 +11185,9 @@ p {
   line-height: 25px; }
 
 :not(.form-no-label) > [type="checkbox"]:checked,
-:not(.form-no-label) > [type="checkbox"]:not(:checked) {
+:not(.form-no-label) > [type="checkbox"]:not(:checked),
+:not(.form-no-label) > [type="radio"]:checked,
+:not(.form-no-label) > [type="radio"]:not(:checked) {
   position: absolute;
   left: -9999px; }
 
