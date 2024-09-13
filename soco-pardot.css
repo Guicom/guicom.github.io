@@ -11340,7 +11340,7 @@ form.form .pd-date.filled .filter-option-inner-inner,
 form.form .pd-radio.filled .filter-option-inner-inner {
   color: var(--n-600); }
 
-form.form .pd-radio label {
+form.form .pd-radio > label {
   position: relative;
   padding: 0 !important; }
 
