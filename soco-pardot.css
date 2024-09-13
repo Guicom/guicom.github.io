@@ -11340,6 +11340,18 @@ form.form .pd-date.filled .filter-option-inner-inner,
 form.form .pd-radio.filled .filter-option-inner-inner {
   color: var(--n-600); }
 
+form.form .pd-radio label {
+  position: relative;
+  padding: 0; }
+
+form.form .pd-radio .value {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 1rem;
+  margin: 1rem 0; }
+
 form.form .form-action input {
   border: none;
   background: var(--c1-500);
