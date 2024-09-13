@@ -11342,7 +11342,7 @@ form.form .pd-radio.filled .filter-option-inner-inner {
 
 form.form .pd-radio label {
   position: relative;
-  padding: 0; }
+  padding: 0 !important; }
 
 form.form .pd-radio .value {
   display: -webkit-box;
