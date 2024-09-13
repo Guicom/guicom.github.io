@@ -11218,6 +11218,7 @@ p {
   background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxNiAxNiI+CiAgPGRlZnM+CiAgICA8cmVjdCBpZD0iY2hlY2tib3gtYSIgd2lkdGg9IjE0IiBoZWlnaHQ9IjE0IiB4PSIxIiB5PSIxIi8+CiAgICA8ZmlsdGVyIGlkPSJjaGVja2JveC1iIiB3aWR0aD0iMTQyLjklIiBoZWlnaHQ9IjE0Mi45JSIgeD0iLTIxLjQlIiB5PSItMjEuNCUiIGZpbHRlclVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCI+CiAgICAgIDxmZUdhdXNzaWFuQmx1ciBpbj0iU291cmNlQWxwaGEiIHJlc3VsdD0ic2hhZG93Qmx1cklubmVyMSIgc3RkRGV2aWF0aW9uPSIyLjUiLz4KICAgICAgPGZlT2Zmc2V0IGR5PSIxIiBpbj0ic2hhZG93Qmx1cklubmVyMSIgcmVzdWx0PSJzaGFkb3dPZmZzZXRJbm5lcjEiLz4KICAgICAgPGZlQ29tcG9zaXRlIGluPSJzaGFkb3dPZmZzZXRJbm5lcjEiIGluMj0iU291cmNlQWxwaGEiIGsyPSItMSIgazM9IjEiIG9wZXJhdG9yPSJhcml0aG1ldGljIiByZXN1bHQ9InNoYWRvd0lubmVySW5uZXIxIi8+CiAgICAgIDxmZUNvbG9yTWF0cml4IGluPSJzaGFkb3dJbm5lcklubmVyMSIgdmFsdWVzPSIwIDAgMCAwIDAgICAwIDAgMCAwIDAgICAwIDAgMCAwIDAgIDAgMCAwIDAuMiAwIi8+CiAgICA8L2ZpbHRlcj4KICA8L2RlZnM+CiAgPGcgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIj4KICAgIDx1c2UgZmlsbD0iI0YyRjNGMyIgeGxpbms6aHJlZj0iI2NoZWNrYm94LWEiLz4KICAgIDx1c2UgZmlsbD0iIzAwMCIgZmlsdGVyPSJ1cmwoI2NoZWNrYm94LWIpIiB4bGluazpocmVmPSIjY2hlY2tib3gtYSIvPgogICAgPHBhdGggZmlsbD0iIzRDQUZFNCIgZD0iTTEzLjQxMTM3NjksNS41NjY5MjUwNSBMNy4zNDM1MDU4OCwxMS4zMjI0MTgyIEM3LjA5OTM2NTI1LDExLjU2NjQzNjcgNi43MDM3MzUzNCwxMS41NjY0MzY3IDYuNDU5NTk0NzIsMTEuMzIyNDE4MiBMMi41ODg2MjMwNiw3LjEzODgyNDQ2IEMyLjM0NDQ4MjQ0LDYuODk0ODA1OSAyLjM0NDQ4MjQ0LDYuNDk5MDUzOTMgMi41ODg2MjMwNiw2LjI1NTAzNTQgQzIuODMyNjQxNTksNi4wMTA4OTQ3NyAzLjIyODM5MzU2LDYuMDEwODk0NzcgMy40NzI0MTIxMyw2LjI1NTAzNTQgTDYuOTAxNDg5MjUsOS45OTY2MTI1NSBMMTIuNTI3NDY1OCw0LjY4MzAxMzkgQzEyLjc3MTYwNjQsNC40Mzg5OTUzNyAxMy4xNjczNTg0LDQuNDM4OTk1MzcgMTMuNDExMzc2OSw0LjY4MzAxMzkgQzEzLjY1NTUxNzYsNC45MjcxNTQ1MiAxMy42NTU1MTc2LDUuMzIyOTA2NDkgMTMuNDExMzc2OSw1LjU2NjkyNTA1IFoiLz4KICAgIDxwYXRoIGZpbGw9IiMwMDRGOUYiIGQ9Ik0xLjg3NSwwIEwxNC4xMjUsMCBDMTUuMTYwNTMzOSwwIDE2LDAuODM5NDY2MDk0IDE2LDEuODc1IEwxNiwxNC4xMjUgQzE2LDE1LjE2MDUzMzkgMTUuMTYwNTMzOSwxNiAxNC4xMjUsMTYgTDEuODc1LDE2IEMwLjgzOTQ2NjA5NCwxNiAwLDE1LjE2MDUzMzkgMCwxNC4xMjUgTDAsMS44NzUgQzAsMC44Mzk0NjYwOTQgMC44Mzk0NjYwOTQsMCAxLjg3NSwwIFogTTEuODc1LDEuMjUgQzEuNTI5ODIyMDMsMS4yNSAxLjI1LDEuNTI5ODIyMDMgMS4yNSwxLjg3NSBMMS4yNSwxNC4xMjUgQzEuMjUsMTQuNDcwMTc4IDEuNTI5ODIyMDMsMTQuNzUgMS44NzUsMTQuNzUgTDE0LjEyNSwxNC43NSBDMTQuNDcwMTc4LDE0Ljc1IDE0Ljc1LDE0LjQ3MDE3OCAxNC43NSwxNC4xMjUgTDE0Ljc1LDEuODc1IEMxNC43NSwxLjUyOTgyMjAzIDE0LjQ3MDE3OCwxLjI1IDE0LjEyNSwxLjI1IEwxLjg3NSwxLjI1IFoiLz4KICA8L2c+Cjwvc3ZnPgo="); }
 
 form.form input.text,
+form.form input.date,
 form.form textarea,
 form.form select {
   background: var(--n-025);
@@ -11234,11 +11235,13 @@ form.form select {
   width: 100% !important; }
   @media (max-width: 1199.98px) {
     form.form input.text,
+    form.form input.date,
     form.form textarea,
     form.form select {
       width: 100%;
       margin: 0; } }
   form.form input.text:focus,
+  form.form input.date:focus,
   form.form textarea:focus,
   form.form select:focus {
     color: var(--c1-500);
@@ -11377,5 +11380,7 @@ form.form p {
       color: var(--c1-500);
       background-color: var(--n-00);
       outline: none !important; }
-  .bootstrap-select .dropdown-toggle:after {
-    color: var(--n-500) !important; }
+  .bootstrap-select .dropdown-toggle {
+    display: none; }
+    .bootstrap-select .dropdown-toggle:after {
+      color: var(--n-500) !important; }
