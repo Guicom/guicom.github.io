@@ -11328,10 +11328,15 @@ form.form .pd-radio.filled label {
   color: var(--n-600); }
 
 form.form .pd-text.filled input,
+form.form .pd-text.filled textarea,
 form.form .pd-select.filled input,
+form.form .pd-select.filled textarea,
 form.form .pd-textarea.filled input,
+form.form .pd-textarea.filled textarea,
 form.form .pd-date.filled input,
-form.form .pd-radio.filled input {
+form.form .pd-date.filled textarea,
+form.form .pd-radio.filled input,
+form.form .pd-radio.filled textarea {
   background-color: #fff !important; }
 
 form.form .pd-text.filled .filter-option-inner-inner,
