@@ -10132,7 +10132,7 @@ return Popper;
     });
 
     // FORM
-    $(".pd-text inputt").each(function() {
+    $(".pd-text input").each(function() {
       $(this).on("input", function () {
         if ($(this).val() !== "") {
           $(this).closest('.pd-text').addClass('filled')
