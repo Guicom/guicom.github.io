@@ -11255,7 +11255,8 @@ form.form select {
   padding: 28px 8px 8px;
   border-radius: unset;
   background: var(--n-025) !important;
-  width: 100% !important; }
+  width: 100% !important;
+  padding: 28px 8px 8px !important; }
   @media (max-width: 1199.98px) {
     form.form input.text,
     form.form input.date,
