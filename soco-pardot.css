@@ -11250,7 +11250,9 @@ form.form select {
     outline: none !important; }
 
 form.form input.date {
-  background: url(/images/calendar.png) no-repeat left 32px !important;
+  background-image: url(/images/calendar.png);
+  background-repeat: no-repeat;
+  background-position: left 32px;
   width: auto !important; }
 
 form.form input[type="text"]:focus,
