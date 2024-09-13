@@ -10132,7 +10132,7 @@ return Popper;
     });
 
     // FORM
-    $(".pd-text input, .pd-text input").each(function() {
+    $(".pd-text inputt").each(function() {
       $(this).on("input", function () {
         if ($(this).val() !== "") {
           $(this).closest('.pd-text').addClass('filled')
@@ -10142,7 +10142,7 @@ return Popper;
       });
     });
 
-    $(".pd-text input, .pd-text textarea").each(function() {
+    $(".pd-text textarea").each(function() {
       $(this).on("input", function () {
         if ($(this).val() !== "") {
           $(this).closest('.pd-textarea').addClass('filled')
