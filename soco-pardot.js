@@ -10142,6 +10142,16 @@ return Popper;
       });
     });
 
+    $(".pd-date input").each(function() {
+      $(this).on("input", function () {
+        if ($(this).val() !== "") {
+          $(this).closest('.pd-date').addClass('filled')
+        } else {
+          $(this).closest('.pd-date').removeClass('filled')
+        }
+      });
+    });
+
     $(".pd-textarea textarea").each(function() {
       $(this).on("input", function () {
         console.log('input');
