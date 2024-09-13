@@ -10132,12 +10132,22 @@ return Popper;
     });
 
     // FORM
-    $(".pd-text input, .pd-text textarea").each(function() {
+    $(".pd-text input, .pd-text input").each(function() {
       $(this).on("input", function () {
         if ($(this).val() !== "") {
           $(this).closest('.pd-text').addClass('filled')
         } else {
           $(this).closest('.pd-text').removeClass('filled')
+        }
+      });
+    });
+
+    $(".pd-text input, .pd-text textarea").each(function() {
+      $(this).on("input", function () {
+        if ($(this).val() !== "") {
+          $(this).closest('.pd-textarea').addClass('filled')
+        } else {
+          $(this).closest('.pd-textarea').removeClass('filled')
         }
       });
     });
