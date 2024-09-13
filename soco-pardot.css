@@ -11207,7 +11207,7 @@ p {
   transition: all ease-in 0.2s;
   position: absolute;
   left: 0;
-  top: 5px;
+  top: 0;
   width: 21px;
   height: 21px;
   -webkit-background-size: cover;
@@ -11255,7 +11255,9 @@ form.form .form-content-item {
   position: relative; }
 
 form.form .pd-text label,
-form.form .pd-select label {
+form.form .pd-select label,
+form.form .pd-textarea label,
+form.form .pd-date label {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -11285,15 +11287,21 @@ form.form .pd-select label {
   padding: 8px 8px 0 8px !important; }
 
 form.form .pd-text.filled label,
-form.form .pd-select.filled label {
+form.form .pd-select.filled label,
+form.form .pd-textarea.filled label,
+form.form .pd-date.filled label {
   color: var(--n-600); }
 
 form.form .pd-text.filled input,
-form.form .pd-select.filled input {
+form.form .pd-select.filled input,
+form.form .pd-textarea.filled input,
+form.form .pd-date.filled input {
   background-color: #fff; }
 
 form.form .pd-text.filled .filter-option-inner-inner,
-form.form .pd-select.filled .filter-option-inner-inner {
+form.form .pd-select.filled .filter-option-inner-inner,
+form.form .pd-textarea.filled .filter-option-inner-inner,
+form.form .pd-date.filled .filter-option-inner-inner {
   color: var(--n-600); }
 
 form.form .form-action input {
