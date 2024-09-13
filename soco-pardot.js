@@ -10142,7 +10142,7 @@ return Popper;
       });
     });
 
-    $(".pd-text textarea").each(function() {
+    $(".pd-textarea textarea").each(function() {
       $(this).on("input", function () {
         console.log('input');
         console.log($(this).val());
