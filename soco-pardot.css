@@ -11232,6 +11232,7 @@ form.form select {
   line-height: 25px;
   padding: 28px 8px 8px;
   border-radius: unset;
+  background: var(--n-025) !important;
   width: 100% !important; }
   @media (max-width: 1199.98px) {
     form.form input.text,
@@ -11248,11 +11249,15 @@ form.form select {
     background-color: var(--n-00);
     outline: none !important; }
 
+form.form input.date {
+  background: url(/images/calendar.png) no-repeat left 32px !important;
+  width: auto !important; }
+
 form.form input[type="text"]:focus,
 form.form textarea:focus,
 form.form select:focus {
   color: var(--c1-500);
-  background-color: #fff; }
+  background-color: #fff !important; }
 
 form.form .form-content-item {
   position: relative; }
@@ -11299,7 +11304,7 @@ form.form .pd-text.filled input,
 form.form .pd-select.filled input,
 form.form .pd-textarea.filled input,
 form.form .pd-date.filled input {
-  background-color: #fff; }
+  background-color: #fff !important; }
 
 form.form .pd-text.filled .filter-option-inner-inner,
 form.form .pd-select.filled .filter-option-inner-inner,
