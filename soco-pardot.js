@@ -10144,6 +10144,8 @@ return Popper;
 
     $(".pd-text textarea").each(function() {
       $(this).on("input", function () {
+        console.log('input');
+        console.log($(this).val());
         if ($(this).val() !== "") {
           $(this).closest('.pd-textarea').addClass('filled')
         } else {
