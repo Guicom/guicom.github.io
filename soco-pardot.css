@@ -11286,10 +11286,11 @@ form.form select:focus {
 form.form .form-content-item {
   position: relative; }
 
-form.form .pd-text label,
-form.form .pd-select label,
-form.form .pd-textarea label,
-form.form .pd-date label {
+form.form .pd-text > label,
+form.form .pd-select > label,
+form.form .pd-textarea > label,
+form.form .pd-date > label,
+form.form .pd-radio > label {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -11321,19 +11322,22 @@ form.form .pd-date label {
 form.form .pd-text.filled label,
 form.form .pd-select.filled label,
 form.form .pd-textarea.filled label,
-form.form .pd-date.filled label {
+form.form .pd-date.filled label,
+form.form .pd-radio.filled label {
   color: var(--n-600); }
 
 form.form .pd-text.filled input,
 form.form .pd-select.filled input,
 form.form .pd-textarea.filled input,
-form.form .pd-date.filled input {
+form.form .pd-date.filled input,
+form.form .pd-radio.filled input {
   background-color: #fff !important; }
 
 form.form .pd-text.filled .filter-option-inner-inner,
 form.form .pd-select.filled .filter-option-inner-inner,
 form.form .pd-textarea.filled .filter-option-inner-inner,
-form.form .pd-date.filled .filter-option-inner-inner {
+form.form .pd-date.filled .filter-option-inner-inner,
+form.form .pd-radio.filled .filter-option-inner-inner {
   color: var(--n-600); }
 
 form.form .form-action input {
