@@ -1,6 +1,6 @@
 :root {
-  --main-font: 'Roboto' !important;
-  --heading-font: 'Open Sans' !important;
+  --main-font: 'Roboto', Arial, Verdana, sans-serif !important;
+  --heading-font: 'Poppins', Arial, Verdana, sans-serif !important;
   --c1-025: #ECF2FC;
   --c1-050: #BACEF5;
   --c1-100: #82A0E6;
