@@ -10125,10 +10125,6 @@ return Popper;
       $(this).selectpicker({
         style: ''
       });
-      // $(this).parents(".bootstrap-select").find("div.dropdown-menu").first().mCustomScrollbar({
-      //   theme:"minimal-dark",
-      //   mouseWheel:{ preventDefault:true }
-      // });
     });
 
     // FORM
@@ -10168,21 +10164,12 @@ return Popper;
       $(this).closest('.pd-select').addClass("filled");
     });
 
-    // $('input').each(function () {
-    //   $(this).on('blur input', function() {
-    //     if ($(this).val()) {
-    //       $(this).parent().addClass('filled');
-    //     }
-    //     else {
-    //       $(this).parent().removeClass('filled');
-    //     }
-    //   });
-    //   $(this).focus(function(){
-    //     $(this).parent().addClass('focused');
-    //   }).blur(function(){
-    //     $(this).parent().removeClass('focused');
-    //   });
-    // });
+    $("select").on("focus", function () {
+      $(this).closest('.pd-select').addClass("focus");
+    });
+    $("select").on("focusout", function () {
+      $(this).closest('.pd-select').removeClass("focus");
+    });
 
     $("select").change(function(){
       // 866572 is default empty choice.
