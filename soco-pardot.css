@@ -10542,14 +10542,19 @@ form.form .pd-radio.filled label {
 
 form.form .pd-text.filled input,
 form.form .pd-text.filled textarea,
+form.form .pd-text.filled .bootstrap-select,
 form.form .pd-select.filled input,
 form.form .pd-select.filled textarea,
+form.form .pd-select.filled .bootstrap-select,
 form.form .pd-textarea.filled input,
 form.form .pd-textarea.filled textarea,
+form.form .pd-textarea.filled .bootstrap-select,
 form.form .pd-date.filled input,
 form.form .pd-date.filled textarea,
+form.form .pd-date.filled .bootstrap-select,
 form.form .pd-radio.filled input,
-form.form .pd-radio.filled textarea {
+form.form .pd-radio.filled textarea,
+form.form .pd-radio.filled .bootstrap-select {
   background-color: #fff !important; }
 
 form.form .pd-text.filled .filter-option-inner-inner,
@@ -10611,6 +10616,14 @@ form.form p {
   background: #F2F3F3;
   -webkit-box-shadow: inset 0 1px 5px 0 rgba(0, 0, 0, 0.2);
           box-shadow: inset 0 1px 5px 0 rgba(0, 0, 0, 0.2); }
+  .bootstrap-select select {
+    width: 100%;
+    border: none;
+    background: none;
+    color: var(--n-500);
+    font-family: var(--main-font);
+    height: auto;
+    font-size: 16px; }
   .bootstrap-select select:focus + button {
     background: var(--n-00); }
   .bootstrap-select .dropdown-toggle:focus {
