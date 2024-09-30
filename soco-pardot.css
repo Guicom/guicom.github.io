@@ -10493,7 +10493,8 @@ form.form input.date {
 
 form.form input[type="text"]:focus,
 form.form textarea:focus,
-form.form select:focus {
+form.form select:focus,
+form.form .bootstrap-select.focus {
   color: var(--c1-500);
   background-color: #fff !important; }
 
@@ -10624,6 +10625,8 @@ form.form p {
     font-family: var(--main-font);
     height: auto;
     font-size: 16px; }
+    .bootstrap-select select:focus-visible {
+      outline: none; }
   .bootstrap-select select:focus + button {
     background: var(--n-00); }
   .bootstrap-select .dropdown-toggle:focus {
