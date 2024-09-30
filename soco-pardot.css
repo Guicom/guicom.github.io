@@ -10494,7 +10494,7 @@ form.form input.date {
 form.form input[type="text"]:focus,
 form.form textarea:focus,
 form.form select:focus,
-form.form.focus .bootstrap-select {
+form.form pd-select.focus .bootstrap-select {
   color: var(--c1-500);
   background-color: #fff !important; }
 
