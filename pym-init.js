@@ -1,12 +1,11 @@
 (function() {
     // Initialise le Child pym
-    var pymChild = new pym.Child({ id: 'pardot-form' });
+    var pymChild = new pym.Child({ id: 'pardot-iframe' });
 
     // Fonction pour envoyer la hauteur du document
     function sendHeight() {
         const h = document.body.scrollHeight;
         pymChild.sendHeight();
-        console.log('[PYM][child] Height sent:', h);
     }
 
     // Envoi répété jusqu'à stabilisation (utile pour POST / reload)
