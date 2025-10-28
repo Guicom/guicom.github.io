@@ -49,10 +49,13 @@
     // 2. Listen for form submission - CAPTURE PHASE
     document.addEventListener('submit', function(e) {
         console.log('[Pym] Form submitted');
-        // Send height before page reload
+        // Send height before page reload with more aggressive timing
         updateHeight(0, 'submit-immediate');
-        updateHeight(100, 'submit-quick');
-        updateHeight(300, 'submit-delayed');
+        updateHeight(50, 'submit-quick');
+        updateHeight(100, 'submit-fast');
+        updateHeight(200, 'submit-medium');
+        updateHeight(500, 'submit-delayed');
+        updateHeight(1000, 'submit-final');
     }, true);
 
     // 3. Listen for clicks on submit button
@@ -72,10 +75,15 @@
     var maxUpdates = 8; // Reduced to 4 seconds
     var periodicInterval;
 
+    // Listen for form field changes
     document.addEventListener('change', function(e) {
         console.log('[Pym] Change event detected on:', e.target.name || e.target.id);
         updateCounter = 0;
         clearInterval(periodicInterval);
+
+        // Immediate height update
+        updateHeight(0, 'field-change-immediate');
+        updateHeight(100, 'field-change-delayed');
 
         periodicInterval = setInterval(function() {
             pymChild.sendHeight();
@@ -85,6 +93,14 @@
                 clearInterval(periodicInterval);
             }
         }, 500);
+    });
+
+    // Listen for input events (typing, etc.)
+    document.addEventListener('input', function(e) {
+        if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA' || e.target.tagName === 'SELECT') {
+            console.log('[Pym] Input event detected on:', e.target.name || e.target.id);
+            updateHeight(100, 'input-event');
+        }
     });
 
     // 5. Aggressive height monitoring on page load
@@ -108,6 +124,12 @@
             console.log('[Pym] Height monitoring stopped');
         }
     }, 500); // Check every 500ms
+
+    // 6. Listen for height requests from parent
+    pymChild.onMessage('requestHeight', function() {
+        console.log('[Pym] Height request received from parent');
+        updateHeight(0, 'parent-request');
+    });
 
     console.log('[Pym] All listeners attached successfully');
 })();
