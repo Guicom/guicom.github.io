@@ -1,11 +1,32 @@
 (function() {
+    // Initialise le Child pym
     var pymChild = new pym.Child();
-    window.addEventListener('load', function() {
-        console.log("[PYM] Loaded")
-        setTimeout(function() {
-            var height = document.getElementsByTagName('body')[0].offsetHeight.toString();
-            console.log("[PYM] Height sent ("+ height +"px)")
-            pymChild.sendHeight();
-        }, 300);
+
+    // Fonction pour envoyer la hauteur du document
+    function sendHeight() {
+        const h = document.body.scrollHeight;
+        pymChild.sendHeight();
+        console.log('[PYM][child] Height sent:', h);
+    }
+
+    // Envoi répété jusqu'à stabilisation (utile pour POST / reload)
+    function sendHeightRepeatedly(maxAttempts = 20, intervalMs = 250) {
+        let attempts = 0;
+        const interval = setInterval(() => {
+            attempts++;
+            sendHeight();
+            if (attempts >= maxAttempts) clearInterval(interval);
+        }, intervalMs);
+    }
+
+    // Observer les changements DOM pour attraper les messages d'erreur
+    const observer = new MutationObserver(() => {
+        setTimeout(sendHeight, 100);
+    });
+    observer.observe(document.body, { childList: true, subtree: true, attributes: true });
+
+    // Lancer après load
+    window.addEventListener('load', () => {
+        sendHeightRepeatedly();
     });
 })();
