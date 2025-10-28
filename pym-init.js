@@ -1,6 +1,8 @@
-(function(){
+(function() {
     var pymChild = new pym.Child();
-    setTimeout(function () {
-        pymChild.sendHeight();
-    }, 2000)
+    window.addEventListener('load', function() {
+        setTimeout(function() {
+            pymChild.sendHeight();
+        }, 300);
+    });
 })();
